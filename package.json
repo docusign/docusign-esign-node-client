@@ -1,0 +1,29 @@
+{
+  "name": "docusign",
+  "version": "1.0.0",
+  "description": "A DocuSign helper library",
+  "main": "docusign.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "keywords": [
+    "DocuSign",
+    "electronic",
+    "signature",
+    "eSignature",
+    "certificate",
+    "DTM",
+    "PDF"
+  ],
+  "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com> & Chris Beiter <chris.beiter@docusign.com> (http://www.docusign.com)",
+  "license": "ISC",
+  "dependencies": {
+    "async": "0.9.0",
+    "request": "2.22.0",
+    "streamifier": "0.1.0",
+    "mocha": "2.2.4",
+    "rewire": "1.1.3",
+    "file-type": "2.5.0",
+    "temp": "0.8.1"
+  }
+}
