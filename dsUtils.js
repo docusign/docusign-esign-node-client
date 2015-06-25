@@ -1,8 +1,4 @@
-/**
- * Utility functions used across DocuSign NPM package
- *
- * @returns {string}
- */
+// Utility functions used across DocuSign NPM package
 
 var fs = require('fs'); // core
 var util = require('util');

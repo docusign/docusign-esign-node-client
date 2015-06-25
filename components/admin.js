@@ -1,9 +1,4 @@
-/**
- * Handles administration of given organization's DocuSign account
- *
- *
- * @type {exports}
- */
+// Handles administration of given organization's DocuSign account
 
 var dsUtils = require('./../dsUtils');
 

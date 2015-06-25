@@ -1,6 +1,4 @@
-/**
- * For working with folders, mostly for searching for envelopes
- */
+// For working with folders, mostly for searching for envelopes
 
 var async = require('async');
 var dsUtils = require('./../dsUtils');

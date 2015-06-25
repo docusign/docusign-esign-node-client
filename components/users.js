@@ -1,7 +1,4 @@
-/**
- * Wrappers for User APIs
- *
- */
+// Wrappers for User APIs
 
 var dsUtils = require('./../dsUtils');
 

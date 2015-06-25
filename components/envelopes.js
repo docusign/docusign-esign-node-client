@@ -1,7 +1,5 @@
-/**
- * Wrapper dealing with DS views APIs
- *
- */
+// Wrapper dealing with DS views APIs
+
 
 var streamifier = require('streamifier');
 var async = require('async');
@@ -317,7 +315,7 @@ function sendEnvelope(apiToken, baseUrl, recipients, emailSubject, files, callba
     try {
       callback(false, JSON.parse(body));
     } catch (e){
-      callback(true, body || 'Any empty response body was received.');
+      callback(body || 'Any empty response body was received.');
     }
   });
 

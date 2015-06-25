@@ -1,10 +1,7 @@
-/**
- * Wrapper for authentication needs including user login info and token handling.
- *
- * NOTE: Does not provide protection of token.  Tokens need to be stored carefully by the consumer
- * of these methods.  We do not offer encryption or key handling here.
- *
- */
+// Wrapper for authentication needs including user login info and token handling.
+// NOTE: Does not provide protection of token.  Tokens need to be stored carefully by the consumer
+// of these methods.  We do not offer encryption or key handling here.
+
 
 var querystring = require('querystring'); // core
 var util = require('util');
@@ -153,7 +150,7 @@ function revokeOauthToken(token, baseUrl, callback) {
 
   dsUtils.makeRequest('Revoke DS OAuth2 Token', options, process.env.dsDebug, function(response) {
     if (response && response.error) {
-      callback({ error: 'Cannot revoke DS OAuth2 access token. Err: ' + response.error + " Description: " + response.error_description });
+      callback('Cannot revoke DS OAuth2 access token. Err: ' + response.error + " Description: " + response.error_description);
     } else {
       callback(null, response);
     }
