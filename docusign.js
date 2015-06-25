@@ -33,7 +33,6 @@ var util = require("util");
 // Local Imports
 var admin = require("./components/admin");
 var users = require("./components/users");
-var envelope = require("./components/envelope");
 var auth = require("./components/auth");
 var folders = require("./components/folders");
 var envelopes = require("./components/envelopes");

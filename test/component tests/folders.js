@@ -2,7 +2,6 @@
  
 //Unit Testing Imports
 var assert = require('assert');
-var rewire = require('rewire');
 var fs = require('fs');
 
 //Imported file to be tested

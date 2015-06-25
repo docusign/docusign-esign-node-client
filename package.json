@@ -15,14 +15,13 @@
     "DTM",
     "PDF"
   ],
-  "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com> & Chris Beiter <chris.beiter@docusign.com> (http://www.docusign.com)",
+  "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>, Chris Beiter <chris.beiter@docusign.com>",
   "license": "ISC",
   "dependencies": {
     "async": "0.9.0",
     "request": "2.22.0",
     "streamifier": "0.1.0",
     "mocha": "2.2.4",
-    "rewire": "1.1.3",
     "file-type": "2.5.0",
     "temp": "0.8.1"
   }
