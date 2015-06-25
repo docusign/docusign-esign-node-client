@@ -52,7 +52,7 @@ describe('request_signature_template', function(){
         // Step 3 - Request Signature via Template
         //**********************************************************************************
         function sendTemplate(client, next){
-          client.envelope.sendTemplate('DS API call - Request Signature', templateId, templateRoles, function(response){
+          client.envelopes.sendTemplate('DS API call - Request Signature', templateId, templateRoles, function(response){
             assert.ok(!response.error);
             console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
             next(null, client);

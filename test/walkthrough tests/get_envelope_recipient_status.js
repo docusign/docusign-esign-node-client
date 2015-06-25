@@ -45,7 +45,7 @@ describe('get_envelope_recipient_status', function(){
       // Step 3 - Get Recipients of the Specified Envelope Id
       //**********************************************************************************
       function getRecipients(client, next){
-        client.envelope.getRecipients(envelopeId, function(response){
+        client.envelopes.getRecipients(envelopeId, function(response){
           assert.ok(!response.error);
           assert.ok(response.signers);
           assert.ok(response.signers[0].isBulkRecipient);

@@ -8,12 +8,39 @@ var dsUtils = require('./../dsUtils');
 
 exports.init = function(accountId, baseUrl, accessToken) {
   return {
+    /**
+     * Get user info for a given user.
+     *
+     * @memberOf Users
+     * @function
+     * @param {string} userId - DocuSign userId.
+     * @param {function} callback - Returned in the form of function(response).
+     */
     getInfo: function(userId, callback){
       getInfo(accessToken, baseUrl, userId, callback);
     },
+
+    /**
+     * Gets the user signature.
+     *
+     * @memberOf Users
+     * @function
+     * @param {string} userId - DocuSign UserId.
+     * @param {function} callback - Returned in the form of function(err, response).
+     */
     getSignature: function(userId, callback){
       getSignature(accessToken, baseUrl, userId, callback);
     },
+
+    /**
+     * Gets social connection details for a given user.
+     *
+     * @memberOf Users
+     * @function
+     * @param {string} userId - DocuSign UserId.
+     * @param {function} callback - Returned in the form of function(response).
+     */
+
     getSocialConnection: function(userId, callback){
       getSocialConnection(accessToken, baseUrl, userId, callback);
     }
@@ -23,6 +50,8 @@ exports.init = function(accountId, baseUrl, accessToken) {
 /**
  * Get user info for a given user.
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign userId.
@@ -48,6 +77,8 @@ function getInfo(apiToken, baseUrl, userId, callback) {
 /**
  * Gets the user signature.
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign UserId.
@@ -72,6 +103,8 @@ function getSignature(apiToken, baseUrl, userId, callback) {
 /**
  * Gets social connection details for a given user.
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign UserId.

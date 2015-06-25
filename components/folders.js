@@ -7,9 +7,33 @@ var dsUtils = require('./../dsUtils');
 
 exports.init = function(accountId, baseUrl, accessToken) {
   return {
+    /**
+     * Get information about envelopes for the account with the given `apiToken`.
+     *
+     * @memberOf Folders
+     * @function
+     * @param {string} envelopeType - The type of envelope to get.
+     *   Valid values are 'all', 'awaiting_my_signature', 'out_for_signature',
+     *   'completed', and 'drafts'.
+     * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
+     *  the given `envelopeType`. Otherwise, only get the first 50 most recent
+     *  envelopes.
+     * @param {function} callback - Returns envelope info that is in
+     *   `response.folderItems`.
+     */
     getEnvelopes: function(envelopeType, doFullRetrieval, callback){
       getEnvelopes(accessToken, baseUrl, envelopeType, doFullRetrieval, callback);
     },
+
+    /**
+     * Search DS envelopes with the given `searchTerm`.
+     *
+     * @memberOf Folders
+     * @function
+     * @param {string} searchTerm - The term that the DS API should search for.
+     * @param {function} callback - Returns the list of envelopes matching the
+     *   search term.
+     */
     searchThroughEnvelopes: function(searchTerm, callback){
       searchThroughEnvelopes(accessToken, baseUrl, searchTerm, callback);
     }
@@ -19,6 +43,8 @@ exports.init = function(accountId, baseUrl, accessToken) {
 /**
  * Get information about envelopes for the account with the given `apiToken`.
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} envelopeType - The type of envelope to get.
@@ -67,6 +93,8 @@ function getEnvelopes(apiToken, baseUrl, envelopeType, doFullRetrieval, callback
 /**
  * Search DS envelopes with the given `searchTerm`.
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL..
  * @param {string} searchTerm - The term that the DS API should search for.

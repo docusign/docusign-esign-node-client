@@ -24,6 +24,8 @@ exports.validateCallback = function(testCallback, callback) {
 /**
  * Creates guids for use with when creating new users
  *
+ * @memberOf Private
+ * @function
  * @returns {string}
  */
 exports.generateNewGuid = function() {
@@ -37,6 +39,8 @@ exports.generateNewGuid = function() {
 /**
  * Provides an environment specific URL for the highest level API calls
  *
+ * @memberOf Private
+ * @function
  * @returns {string}
  */
 exports.getApiUrl = function () {
@@ -46,7 +50,9 @@ exports.getApiUrl = function () {
 
 /**
  * Formats and return an authorization header with the given oAuth token
- *
+ * 
+ * @memberOf Private
+ * @function
  * @param token
  * @returns {{Authorization: string}}
  */
@@ -58,7 +64,9 @@ exports.getHeaders = function (token) {
 
 /**
  * Helper function for making web requests to DocuSign
- *
+ * 
+ * @memberOf Private
+ * @function
  * @param apiName - name of the API to be requested
  * @param options - options for the request
  * @param logResponse - flag indicating whether the response object should be echoed to the logs
@@ -136,6 +144,8 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
  * structure { error, request, body }.
  *
  *
+ * @memberOf Private
+ * @function
  * @param mpUrl
  * @param mpHeaders
  * @param parts

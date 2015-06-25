@@ -10,21 +10,85 @@ var dsUtils = require('./../dsUtils');
 
 exports.init = function(accountId, baseUrl, accessToken) {
   return {
+    /**
+     * Gets the account info for the given org accountId
+     *
+     * @memberOf Admin
+     * @function
+     * @param {function} callback - Returned in the form of function(response).
+     */
+
     getOrgAccountInfo: function(callback){
       getOrgAccountInfo(accountId, accessToken, callback);
     },
+
+    /**
+     * Returns a list of users for the organization in the base URL
+     *
+     * @memberOf Admin
+     * @function
+     * @param {function} callback - Returned in the form of function(response).
+     */
+
     getUserList: function(callback){
       getUserList(accessToken, baseUrl, callback);
     },
+
+    /**
+     * Creates a set of new users in DocuSign for the Org associated to the base URL
+     *
+     * @memberOf Admin
+     * @function
+     * @param {object[]} usersToAdd - Array of Objects with account creation information.
+     *   @param {string} usersToAdd[].first - First Name
+     *   @param {string} usersToAdd[].last - Last Name
+     *   @param {string} usersToAdd[].email - Email Address
+     *   @param {string} usersToAdd[].password - Password
+     * @param {function} callback - Returned in the form of function(response).
+     */
+
     addUsers: function(usersToAdd, callback){
       addUsers(accessToken, baseUrl, usersToAdd, callback);
     },
+
+    /**
+     * Deletes a set of users from DocuSign
+     *
+     * @memberOf Admin
+     * @function
+     * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
+     * @param {function} callback - Returned in the form of function(response).
+     */
+
     deleteUsers: function(usersToDelete, callback){
       deleteUsers(accessToken, baseUrl, usersToDelete, callback);
     },
+
+    /**
+     * Gets the templates for a given account
+     *
+     * @memberOf Admin
+     * @function
+     * @param {function} callback - Returned in the form of function(response).
+     */    
+
     getTemplates: function(callback){
       getTemplates(accessToken, baseUrl, callback);
     },
+
+    /**
+     * Get the billing plan info for DS account with the given `apiToken`.
+     *
+     * Adds custom properties to plan object before sending it to the callback
+     * envelopesLeft - calculated
+     * name - shortcut for planName which is redundant plan.planName. :)
+     *
+     *
+     * @memberOf Admin
+     * @function
+     * @param {function} callback - Returned in the form of function(response).
+     */
+
     getPlan: function(callback){
       getPlan(accessToken, baseUrl, callback);
     }
@@ -35,6 +99,8 @@ exports.init = function(accountId, baseUrl, accessToken) {
 /**
  * Gets the account info for the given org accountId
  *
+ * @memberOf Private
+ * @function
  * @param {string} accountId - DocuSign AccountId.
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {function} callback - Returned in the form of function(response).
@@ -57,6 +123,8 @@ function getOrgAccountInfo(accountId, apiToken, callback) {
 /**
  * Returns a list of users for the organization in the base URL
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {function} callback - Returned in the form of function(response).
@@ -81,6 +149,8 @@ function getUserList(apiToken, baseUrl, callback) {
 /**
  * Creates a set of new users in DocuSign for the Org associated to the base URL
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {object[]} usersToAdd - Array of Objects with account creation information.
@@ -121,6 +191,8 @@ function addUsers(apiToken, baseUrl, usersToAdd, callback) {
 /**
  * Deletes a set of users from DocuSign
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DS API OAuth2 access token.
  * @param {string} baseUrl - DS API base URL.
  * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
@@ -150,6 +222,8 @@ function deleteUsers(apiToken, baseUrl, usersToDelete, callback) {
 /**
  * Gets the templates for a given account
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {function} callback - Returned in the form of function(response).
@@ -179,6 +253,8 @@ function getTemplates(apiToken, baseUrl, callback) {
  * name - shortcut for planName which is redundant plan.planName. :)
  *
  *
+ * @memberOf Private
+ * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {function} callback - Returned in the form of function(response).

@@ -3,6 +3,31 @@
  *
  */
 
+/**
+ * @namespace Admin
+ * @desc Public API for DocuSign Admin API
+ */
+
+ /**
+ * @namespace Envelopes
+ * @desc Public API for DocuSign Envelopes API
+ */
+
+ /**
+ * @namespace Folders
+ * @desc Public API for DocuSign Folders API
+ */
+
+ /**
+ * @namespace Users
+ * @desc Public API for DocuSign Users API
+ */
+
+/**
+ * @namespace Private
+ * @desc Private DoucSign API
+ */
+
 var util = require("util");
 
 // Local Imports
@@ -53,7 +78,6 @@ var docusign = (function () {
       } else {
         callback({
           admin: admin.init(response.accountId, response.baseUrl, response.access_token),
-          envelope: envelope.init(response.accountId, response.baseUrl, response.access_token),
           envelopes: envelopes.init(response.accountId, response.baseUrl, response.access_token),
           folders: folders.init(response.accountId, response.baseUrl, response.access_token),
           users: users.init(response.accountId, response.baseUrl, response.access_token),

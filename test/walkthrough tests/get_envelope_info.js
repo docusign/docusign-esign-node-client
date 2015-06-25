@@ -45,7 +45,7 @@ describe('get_envelope_info', function(){
       // Step 3 - Get Envelope Information
       //**********************************************************************************
       function getEnvelopeInfo(client, next){
-        client.envelope.getEnvelopeInfo(envelopeId, function(response){
+        client.envelopes.getEnvelopeInfo(envelopeId, function(response){
           assert.ok(response.status);
           assert.ok(response.documentsUri);
           assert.ok(response.envelopeUri);

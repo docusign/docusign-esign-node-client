@@ -53,7 +53,7 @@ describe('embedded_signing', function(){
       // Step 3 - Request Signature via Template
       //**********************************************************************************
       function sendTemplate(client, next){
-        client.envelope.sendTemplate('DS API call - Request Signature', templateId, templateRoles, function(response){
+        client.envelopes.sendTemplate('DS API call - Request Signature', templateId, templateRoles, function(response){
           assert.ok(!response.error);
           next(null, client, response.envelopeId);
         });
@@ -63,7 +63,7 @@ describe('embedded_signing', function(){
       // Step 4 - Get the Embedded Signing View (aka the recipient view)
       //**********************************************************************************
       function getSignerView(client, envelopeId, next){
-        client.envelope.getSignerView(null, fullName, email, null, envelopeId, 'http://www.docusign.com/devcenter', function(response){
+        client.envelopes.getSignerView(null, fullName, email, null, envelopeId, 'http://www.docusign.com/devcenter', function(response){
           assert.ok(!response.error);
           console.log('Navigate to this URL for Embedded Signing workflow: ' + response.url);
           next(null, client);

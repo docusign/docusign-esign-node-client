@@ -46,7 +46,7 @@ describe('get_doc_list_download', function(){
       // Step 3 - Get Signed Documents
       //**********************************************************************************
       function getSignedDocuments(client, next){
-        client.envelope.getSignedDocuments(envelopeId, null, attachCertificate, function(response){
+        client.envelopes.getSignedDocuments(envelopeId, null, attachCertificate, function(response){
           assert.ok(!response.error);
           fs.writeFile("Documents.pdf", response, "binary", function(err){
             assert.ok(!err);
