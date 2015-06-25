@@ -17,6 +17,7 @@
   ],
   "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>, Chris Beiter <chris.beiter@docusign.com>",
   "license": "ISC",
+  "repository": "https://github.com/docusign/DocuSign-Node-Client",
   "dependencies": {
     "async": "0.9.0",
     "request": "2.22.0",
