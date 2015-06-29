@@ -3,7 +3,7 @@ DocuSign Node Client
 
 NPM module that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
-For more information about the DocuSign API <a href="https://www.docusign.com/developer-center/documentation">click here</a>.
+For more information about the DocuSign API <a href="https://www.docusign.com/developer-center">click here</a>.
 
 For more information about how to use this Node Package <a href="https://github.com/docusign/DocuSign-Node-Client/wiki">click here</a>.
 
@@ -14,7 +14,7 @@ Pre-requisites
 
 ### DocuSign Developer account (Free)
 
-You can create your free dev account at the [DocuSign DevCenter](https://www.docusign.com/developer-center) using this [registration from](https://www.docusign.com/developer-center/get-started). You will need the **Integrator Key** from your developer account in order to use the DocuSign Node Client Library.
+You can create your free dev account at the [DocuSign DevCenter](https://www.docusign.com/developer-center) using this [registration form](https://www.docusign.com/developer-center/get-started). You will need the **Integrator Key** from your developer account in order to use the DocuSign Node Client Library.
 
 ### Useful Reading
 
@@ -25,7 +25,7 @@ Getting Started
 
 This example shows you how to do the following:
 - Create a DocuSign Object with an Integrator Key and a Target DocuSign Environment
-- Create a DocuSign Client Object with your DocuSign Account Credentials
+- Create a DocuSign Client Object and Login using your DocuSign Account Credentials
 - Create a new Envelope using a Template and sending to the recipient you specify
 - Logout of the Client by Revoking the DocuSign user's OAuth Token
 
