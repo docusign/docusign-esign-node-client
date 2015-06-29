@@ -1,7 +1,7 @@
 {
-  "name": "docusign",
+  "name": "docusign-node",
   "version": "1.0.0",
-  "description": "A DocuSign helper library",
+  "description": "A DocuSign API helper library",
   "main": "docusign.js",
   "scripts": {
     "test": "node_modules/.bin/mocha"
@@ -16,7 +16,6 @@
     "PDF"
   ],
   "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>, Chris Beiter <chris.beiter@docusign.com>",
-  "license": "ISC",
   "repository": "https://github.com/docusign/DocuSign-Node-Client",
   "dependencies": {
     "async": "0.9.0",
