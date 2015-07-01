@@ -117,4 +117,4 @@ In the console run "npm test".
 License
 ----------
 
-The DocuSign Node Client is licensed under the [DOCUSIGN Mobile iOS SDK LICENSE](LICENSE).
+The DocuSign Node Client is licensed under the [DOCUSIGN SDK LICENSE](LICENSE).
