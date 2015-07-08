@@ -110,9 +110,15 @@ async.waterfall([
 How to run Unit Tests
 -----------
 
-There is a config.json file provided. Please copy your DocuSign Integrator key along with an Email Address, Password, Template Id, Template Role, and Envelope Id associated with your DocuSign account.
+There is a `config.json` file provided. Please copy your
+ - DocuSign Integrator key
+ - Email Address
+ - Password
+ - Template Id
+ - Template Role
+ - and Envelope Id associated with your DocuSign account.
 
-In the console run "npm test".
+In the console run `npm test`.
 
 
 License
