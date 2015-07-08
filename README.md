@@ -113,7 +113,7 @@ async.waterfall([
 How to run Unit Tests
 -----------
 
-There is a `config.json` file provided. Please copy your
+There is a `sample-config.json` file provided. Please copy it into a new file called `config.json` along with your
  - DocuSign Integrator key
  - Email Address
  - Password
@@ -121,7 +121,7 @@ There is a `config.json` file provided. Please copy your
  - Template Role
  - and Envelope Id associated with your DocuSign account.
 
-Then use `git update-index --assume-unchanged config.json` to make git ignore any changes to that file, safeguarding your information.
+The `config.json` is ignored so any changes to that file are not committable.
 
 In the console run `npm test`.
 

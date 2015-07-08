@@ -5,7 +5,8 @@
   "main": "docusign.js",
   "scripts": {
     "style-check": "node_modules/.bin/semistandard",
-    "test": "node_modules/.bin/semistandard && node_modules/.bin/mocha"
+    "check-config": "./scripts/check-config.js",
+    "test": "npm run check-config && node_modules/.bin/semistandard && node_modules/.bin/mocha"
   },
   "keywords": [
     "DocuSign",
@@ -36,6 +37,7 @@
     "temp": "0.8.1"
   },
   "devDependencies": {
+    "chalk": "^1.1.0",
     "file-type": "2.5.0",
     "mocha": "2.2.4",
     "pre-commit": "1.0.10",
