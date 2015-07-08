@@ -1,5 +1,5 @@
 /* Mocha Test File for envelopes.js */
- 
+
 //Unit Testing Imports
 var assert = require('assert');
 var fs = require('fs');
@@ -37,7 +37,7 @@ describe('envelopes', function(){
         assert.ok(response.url);
         assert.strictEqual(true, regex.test(response.url));
         done();
-      });  
+      });
     });
   });
 
@@ -58,7 +58,7 @@ describe('envelopes', function(){
       client.envelopes.getSignedDocuments(envelopeId, null, true, function(response){
         assert.strictEqual('pdf', fileType(response).ext);
         done();
-      });  
+      });
     });
   });
 

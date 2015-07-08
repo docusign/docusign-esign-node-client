@@ -52,7 +52,7 @@ describe('users', function(){
         assert.strictEqual(userId, response.userId);
         assert.ok(response.socialAccountInformation);
         done();
-      }); 
+      });
     });
   });
 

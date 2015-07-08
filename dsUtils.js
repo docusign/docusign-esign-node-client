@@ -46,7 +46,7 @@ exports.getApiUrl = function () {
 
 /**
  * Formats and return an authorization header with the given oAuth token
- * 
+ *
  * @memberOf Private
  * @function
  * @param token
@@ -60,7 +60,7 @@ exports.getHeaders = function (token) {
 
 /**
  * Helper function for making web requests to DocuSign
- * 
+ *
  * @memberOf Private
  * @function
  * @param apiName - name of the API to be requested

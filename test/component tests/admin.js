@@ -80,7 +80,7 @@ describe('admin', function(){
       });
     });
   });
-  
+
   describe('getTemplates', function(){
     it('should return docusign templates', function(done){
       client.admin.getTemplates(function(response){

@@ -29,7 +29,7 @@ describe('request_signature_on_document', function(){
         "xPosition": "100",
         "yPosition": "100",
         "documentId": "1",
-        "pageNumber": "1"                                         
+        "pageNumber": "1"
       }]
     }
   }];

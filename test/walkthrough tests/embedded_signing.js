@@ -58,7 +58,7 @@ describe('embedded_signing', function(){
           next(null, client, response.envelopeId);
         });
       },
-      
+
       //**********************************************************************************
       // Step 4 - Get the Embedded Signing View (aka the recipient view)
       //**********************************************************************************

@@ -16,7 +16,7 @@ describe('get_status_envelopes', function(){
   var email = config.DOCUSIGN_TEST_EMAIL;
   var password = config.DOCUSIGN_TEST_PASSWORD;
   var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
-  
+
   var date = new Date();
   if(date.getMonth() != 0){
     date.setMonth(date.getMonth() - 1);
