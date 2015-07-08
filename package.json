@@ -4,7 +4,7 @@
   "description": "A DocuSign API helper library",
   "main": "docusign.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "node_modules/.bin/semistandard && node_modules/.bin/mocha"
   },
   "keywords": [
     "DocuSign",
