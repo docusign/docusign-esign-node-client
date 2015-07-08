@@ -34,14 +34,15 @@ var docusign = require('docusign');
 var async = require('async');
 
 
-var integratorKey     = "***", //Integrator Key associated with your DocuSign Integration
-    email             = "***", //Email for your DocuSign Account
-    password          = "***", //Password for your DocuSign Account
-    docusignEnv       = "***", //DocuSign Environment generally demo for testing purposes
-    fullName          = "***", //Recipient's Full Name
-    recipientEmail    = "***", //Recipient's Email
-    templateId        = "***", //ID of the Template you with to create the Envelope with
-    templateRoleName  = "***"; //Role Name of the Template
+var integratorKey     = '***',                   // Integrator Key associated with your DocuSign Integration
+    email             = 'YOUR_EMAIL',            // Email for your DocuSign Account
+    password          = 'YOUR_PASSWORD',         // Password for your DocuSign Account
+    docusignEnv       = 'demo',                  // DocuSign Environment generally demo for testing purposes
+    fullName          = 'Joan Jett',             // Recipient's Full Name
+    recipientEmail    = 'joan.jett@example.com', // Recipient's Email
+    templateId        = '***',                   // ID of the Template you want to create the Envelope with
+    templateRoleName  = '***',                   // Role Name of the Template
+    debug             = false;                   // Enable debug logging
 
 var templateRoles = [{
   email: email,
@@ -51,7 +52,7 @@ var templateRoles = [{
 
 async.waterfall([
   //**********************************************************************************
-  // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
+  // Step 1 - Initialize DocuSign Object with Integrator Key and Desired Environment
   //**********************************************************************************
   function init(next){
     docusign.init(integratorKey, docusignEnv, debug, function(response){
