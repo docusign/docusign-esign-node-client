@@ -125,6 +125,11 @@ Then use `git update-index --assume-unchanged config.json` to make git ignore an
 
 In the console run `npm test`.
 
+Contributing
+----------
+
+Pull requests and new issues are welcomed and encouraged!
+We follow the [semistandard](https://www.npmjs.com/package/semistandard) style, please make your contributions conform to this.
 
 License
 ----------
