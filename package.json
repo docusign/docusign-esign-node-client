@@ -20,6 +20,9 @@
     "type": "DocuSign",
     "url": "https://raw.githubusercontent.com/docusign/DocuSign-Node-Client/master/LICENSE"
   },
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>",
   "contributors": [
     "Chris Beiter <chris.beiter@docusign.com>",
