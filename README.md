@@ -118,6 +118,8 @@ There is a `config.json` file provided. Please copy your
  - Template Role
  - and Envelope Id associated with your DocuSign account.
 
+Then use `git update-index --assume-unchanged config.json` to make git ignore any changes to that file, safeguarding your information.
+
 In the console run `npm test`.
 
 
