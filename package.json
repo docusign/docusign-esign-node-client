@@ -15,7 +15,10 @@
     "DTM",
     "PDF"
   ],
-  "license": {"type": "DocuSign" , "url": "https://raw.githubusercontent.com/docusign/DocuSign-Node-Client/master/LICENSE" },
+  "license": {
+    "type": "DocuSign",
+    "url": "https://raw.githubusercontent.com/docusign/DocuSign-Node-Client/master/LICENSE"
+  },
   "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>, Chris Beiter <chris.beiter@docusign.com>",
   "repository": "https://github.com/docusign/DocuSign-Node-Client",
   "dependencies": {
@@ -25,5 +28,8 @@
     "mocha": "2.2.4",
     "file-type": "2.5.0",
     "temp": "0.8.1"
+  },
+  "devDependencies": {
+    "semistandard": "6.1.2"
   }
 }
