@@ -48,7 +48,7 @@ var docusign = (function () {
       process.env.dsDebug = true;
     } else {
       process.env.dsDebug = false;
-    } 
+    }
 
     if(targetEnv == "demo") {
       process.env.targetEnv = "demo";
@@ -56,7 +56,7 @@ var docusign = (function () {
     else if(targetEnv == "www" || targetEnv == "live") {
       process.env.targetEnv = "www";
     }
-    else {          
+    else {
       return callback({error:"Invalid environment value. 'Demo' or 'Live' are the only valid environments."});
     }
 
@@ -66,7 +66,7 @@ var docusign = (function () {
     else {
       callback({error: "Integrator key cannot be null or empty string."});
     }
-    
+
     callback({message:"successfully initialized"});
   }
 

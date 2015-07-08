@@ -129,7 +129,7 @@ exports.revokeOauthToken = function(accessToken, baseUrl) {
 
 /**
  * Revoke the given DocuSign OAuth2 `token`.
- * 
+ *
  * @memberOf Private
  * @function
  * @param {string} token - The DocuSign OAuth2 token to revoke.

@@ -160,7 +160,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {string} templateId - ID of template you wish to create an envelope from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have tagged the envelope.
      * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(response).
-     */    
+     */
     getTemplateView: function(templateId, returnUrl, callback){
       getTemplateView(accessToken, baseUrl, templateId, returnUrl, callback);
     },
@@ -292,7 +292,7 @@ function sendEnvelope(apiToken, baseUrl, recipients, emailSubject, files, callba
     recipient.recipientId = recipientCounter;
     recipientCounter++;
   }
-  
+
   recipients.signers.forEach(generateId);
 
   var data = {

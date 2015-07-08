@@ -65,7 +65,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @function
      * @param {function} callback - Returned in the form of function(response).
-     */    
+     */
 
     getTemplates: function(callback){
       getTemplates(accessToken, baseUrl, callback);
