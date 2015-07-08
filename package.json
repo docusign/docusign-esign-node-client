@@ -20,7 +20,11 @@
     "type": "DocuSign",
     "url": "https://raw.githubusercontent.com/docusign/DocuSign-Node-Client/master/LICENSE"
   },
-  "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>, Chris Beiter <chris.beiter@docusign.com>",
+  "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>",
+  "contributors": [
+    "Chris Beiter <chris.beiter@docusign.com>",
+    "CJ Winslow <whoaa512@gmail.com> (https://github.com/whoaa512)"
+  ],
   "repository": "https://github.com/docusign/DocuSign-Node-Client",
   "dependencies": {
     "async": "0.9.0",
