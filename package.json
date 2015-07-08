@@ -4,6 +4,7 @@
   "description": "A DocuSign API helper library",
   "main": "docusign.js",
   "scripts": {
+    "style-check": "node_modules/.bin/semistandard",
     "test": "node_modules/.bin/semistandard && node_modules/.bin/mocha"
   },
   "keywords": [
@@ -30,9 +31,18 @@
     "temp": "0.8.1"
   },
   "devDependencies": {
+    "pre-commit": "1.0.10",
     "semistandard": "6.1.2"
   },
+  "pre-commit": [
+    "style-check"
+  ],
   "semistandard": {
-    "global": ["it", "describe", "before", "after"]
+    "global": [
+      "it",
+      "describe",
+      "before",
+      "after"
+    ]
   }
 }
