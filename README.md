@@ -42,7 +42,7 @@ var integratorKey     = '***',                   // Integrator Key associated wi
     recipientEmail    = 'joan.jett@example.com', // Recipient's Email
     templateId        = '***',                   // ID of the Template you want to create the Envelope with
     templateRoleName  = '***',                   // Role Name of the Template
-    debug             = false;                   // Enable debug logging
+    debug             = false;                   // Enable debug logging and debug responses from API
 
 var templateRoles = [{
   email: email,
