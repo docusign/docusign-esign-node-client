@@ -3,7 +3,7 @@
 var async = require('async');
 var dsUtils = require('./../dsUtils');
 
-exports.init = function(accountId, baseUrl, accessToken) {
+exports.init = function (accountId, baseUrl, accessToken) {
   return {
     /**
      * Get information about envelopes for the account with the given `apiToken`.
@@ -19,7 +19,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {function} callback - Returns envelope info that is in
      *   `response.folderItems`.
      */
-    getEnvelopes: function(envelopeType, doFullRetrieval, callback){
+    getEnvelopes: function (envelopeType, doFullRetrieval, callback) {
       getEnvelopes(accessToken, baseUrl, envelopeType, doFullRetrieval, callback);
     },
 
@@ -32,11 +32,11 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {function} callback - Returns the list of envelopes matching the
      *   search term.
      */
-    searchThroughEnvelopes: function(searchTerm, callback){
+    searchThroughEnvelopes: function (searchTerm, callback) {
       searchThroughEnvelopes(accessToken, baseUrl, searchTerm, callback);
     }
-  }
-}
+  };
+};
 
 /**
  * Get information about envelopes for the account with the given `apiToken`.
@@ -54,22 +54,22 @@ exports.init = function(accountId, baseUrl, accessToken) {
  * @param {function} callback - Returns envelope info that is in
  *   `response.folderItems`.
  */
-function getEnvelopes(apiToken, baseUrl, envelopeType, doFullRetrieval, callback) {
+function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callback) {
   var envelopes = [];
   var nextUri = '/search_folders/' + envelopeType + '?start_position=0';
 
   async.whilst(
-    function condition() {
+    function condition () {
       return nextUri != null;
     },
-    function getEnvelopeStep(next) {
+    function getEnvelopeStep (next) {
       var options = {
         method: 'GET',
         url: baseUrl + nextUri + '&include_recipients=true',
         headers: dsUtils.getHeaders(apiToken)
       };
 
-      dsUtils.makeRequest('Get Envelopes', options, process.env.dsDebug, function(response) {
+      dsUtils.makeRequest('Get Envelopes', options, process.env.dsDebug, function (response) {
         envelopes = envelopes.concat(response.folderItems);
 
         /*
@@ -81,12 +81,11 @@ function getEnvelopes(apiToken, baseUrl, envelopeType, doFullRetrieval, callback
         next(false); // continue onto the next step
       });
     },
-    function end() {
+    function end () {
       callback(envelopes);
     }
   );
-};
-
+}
 
 /**
  * Search DS envelopes with the given `searchTerm`.
@@ -99,7 +98,7 @@ function getEnvelopes(apiToken, baseUrl, envelopeType, doFullRetrieval, callback
  * @param {function} callback - Returns the list of envelopes matching the
  *   search term.
  */
-function searchThroughEnvelopes(apiToken, baseUrl, searchTerm, callback) {
+function searchThroughEnvelopes (apiToken, baseUrl, searchTerm, callback) {
   var options = {
     method: 'GET',
     url: baseUrl + '/folders/inbox',
@@ -109,8 +108,7 @@ function searchThroughEnvelopes(apiToken, baseUrl, searchTerm, callback) {
     }
   };
 
-  dsUtils.makeRequest('Search Through Envelopes', options, process.env.dsDebug, function(response) {
+  dsUtils.makeRequest('Search Through Envelopes', options, process.env.dsDebug, function (response) {
     callback(response);
   });
-};
-
+}

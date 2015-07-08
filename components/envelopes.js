@@ -1,6 +1,5 @@
 // Wrapper dealing with DS views APIs
 
-
 var streamifier = require('streamifier');
 var async = require('async');
 var fs = require('fs'); // core
@@ -8,7 +7,7 @@ var dsUtils = require('./../dsUtils');
 var util = require('util');
 var request = require('request');
 
-exports.init = function(accountId, baseUrl, accessToken) {
+exports.init = function (accountId, baseUrl, accessToken) {
   return {
     /**
      * Gets the DocuSign Embedded Dashboard view
@@ -17,7 +16,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @function
      * @param {function} callback - Returned in the form of function(response).
      */
-    getConsoleUrl: function(callback){
+    getConsoleUrl: function (callback) {
       getConsoleUrl(accessToken, baseUrl, callback);
     },
 
@@ -29,7 +28,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {string} fromDate - Date string.
      * @param {function} callback - Returned in the form of function(err, response).
      */
-    getEnvelopeList: function(fromDate, callback){
+    getEnvelopeList: function (fromDate, callback) {
       getEnvelopeList(accessToken, baseUrl, fromDate, callback);
     },
 
@@ -69,7 +68,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {function} callback - Returns the response body from DS API
      *   (this also includes an additional `envelopeId` field). Returned in the form of function(response).
      */
-    getView: function(action, fullName, email, files, returnUrl, event, callback){
+    getView: function (action, fullName, email, files, returnUrl, event, callback) {
       getView(accessToken, baseUrl, action, fullName, email, files, returnUrl, event, callback);
     },
 
@@ -88,10 +87,10 @@ exports.init = function(accountId, baseUrl, accessToken) {
      *   @param {string} files[].base64 - The base64-encoded buffer of the file
      * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
      */
-    sendEnvelope: function(recipients, emailSubject, files, callback){
+    sendEnvelope: function (recipients, emailSubject, files, callback) {
       sendEnvelope(accessToken, baseUrl, recipients, emailSubject, files, callback);
     },
-        /**
+    /**
      * Get information about the specified Envelope.
      *
      * @memberOf Public
@@ -100,7 +99,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(response).
      *
      */
-    getEnvelopeInfo: function(envelopeId, callback){
+    getEnvelopeInfo: function (envelopeId, callback) {
       getEnvelopeInfo(accessToken, baseUrl, envelopeId, callback);
     },
 
@@ -116,7 +115,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      *   attach the Certificate of Completion (CoC) into the returned PDF.
      * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
      */
-    getSignedDocuments: function(envelopeId, encoding, attachCertificate, callback){
+    getSignedDocuments: function (envelopeId, encoding, attachCertificate, callback) {
       getSignedDocuments(accessToken, baseUrl, envelopeId, encoding, attachCertificate, callback);
     },
 
@@ -131,7 +130,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
      * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
      */
-    getSignerView: function(userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback){
+    getSignerView: function (userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback) {
       getSignerView(accessToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback);
     },
 
@@ -147,7 +146,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(response).
      *
      */
-    sendTemplate: function(emailSubject, templateId, templateRoles, callback){
+    sendTemplate: function (emailSubject, templateId, templateRoles, callback) {
       sendTemplate(accessToken, baseUrl, emailSubject, templateId, templateRoles, callback);
     },
 
@@ -161,7 +160,7 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have tagged the envelope.
      * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(response).
      */
-    getTemplateView: function(templateId, returnUrl, callback){
+    getTemplateView: function (templateId, returnUrl, callback) {
       getTemplateView(accessToken, baseUrl, templateId, returnUrl, callback);
     },
 
@@ -173,11 +172,11 @@ exports.init = function(accountId, baseUrl, accessToken) {
      * @param {string} envelopeId - ID of envelope to get list of recipients from.
      * @param {function} callback - Returns the list of recipients in the form of function(response).
      */
-    getRecipients: function(envelopeId, callback){
+    getRecipients: function (envelopeId, callback) {
       getRecipients(accessToken, baseUrl, envelopeId, callback);
     }
-  }
-}
+  };
+};
 
 /**
  * Gets the DocuSign Embedded Dashboard view
@@ -189,17 +188,17 @@ exports.init = function(accountId, baseUrl, accessToken) {
  * @param {function} callback - Returned in the form of function(response).
  */
 
-function getConsoleUrl(apiToken, baseUrl, callback) {
+function getConsoleUrl (apiToken, baseUrl, callback) {
   var options = {
     method: 'POST',
     url: baseUrl + '/views/console',
-    headers: dsUtils.getHeaders(apiToken),
+    headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Dashboard URL', options, process.env.dsDebug, function(response) {
+  dsUtils.makeRequest('Get Dashboard URL', options, process.env.dsDebug, function (response) {
     callback(response);
   });
-};
+}
 
 /**
  * Gets a list of envelopes that have been created starting from the designated date to the present.
@@ -211,24 +210,23 @@ function getConsoleUrl(apiToken, baseUrl, callback) {
  * @param {string} fromDate - Date string.
  * @param {function} callback - Returned in the form of function(err, response).
  */
-function getEnvelopeList(apiToken, baseUrl, fromDate, callback) {
+function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
   fromDate = new Date(fromDate);
 
   var options = {
     method: 'GET',
-    url: baseUrl + '/envelopes?from_date=' + (fromDate.getMonth() + 1) + '%2F' + fromDate.getDate() + "%2F" + fromDate.getFullYear(),
+    url: baseUrl + '/envelopes?from_date=' + (fromDate.getMonth() + 1) + '%2F' + fromDate.getDate() + '%2F' + fromDate.getFullYear(),
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest("Get Envelope List", options, process.env.dsDebug, function(response) {
-    if('errorCode' in response) {
-      return callback({error:response.errorCode});
-    }
-    else {
+  dsUtils.makeRequest('Get Envelope List', options, process.env.dsDebug, function (response) {
+    if ('errorCode' in response) {
+      return callback({error: response.errorCode});
+    } else {
       return callback(null, response);
     }
   });
-};
+}
 
 /**
  * Request a Signature on a Document.
@@ -248,25 +246,26 @@ function getEnvelopeList(apiToken, baseUrl, fromDate, callback) {
  * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
  */
 
-function sendEnvelope(apiToken, baseUrl, recipients, emailSubject, files, callback) {
+function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callback) {
   var documents = [];
   var parts = [];
 
-  var logResponse = process.env.dsDebug == 'true' ? true: false
+  var logResponse = process.env.dsDebug === 'true';
 
-  files.forEach(function(file, index){
+  files.forEach(function (file, index) {
     var documentId = index + 1;
     documents.push({
       documentId: documentId,
       name: file.name,
-      fileExtension: file.extension,
+      fileExtension: file.extension
     });
 
-    if(logResponse)
-      util.log("Now retrieving the following file with documentId: %s \n %s", documentId, JSON.stringify(file).substr(0, 256));
+    if (logResponse) {
+      util.log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
+    }
 
     var download;
-    if('path' in file){
+    if ('path' in file) {
       download = fs.createReadStream(file.path);
     } else if ('base64' in file) {
       download = streamifier.createReadStream(new Buffer(file.base64, 'base64'));
@@ -274,24 +273,24 @@ function sendEnvelope(apiToken, baseUrl, recipients, emailSubject, files, callba
       download = request({
         method: 'GET',
         url: file.url,
-        encoding: null,
+        encoding: null
       });
     }
     download.pause();
 
     parts.push({
       headers: {
-        'Content-Disposition': 'documentId=' + documentId,
+        'Content-Disposition': 'documentId=' + documentId
       },
-      body: download,
+      body: download
     });
   });
 
   var recipientCounter = 2;
-  var generateId = function(recipient) {
+  var generateId = function (recipient) {
     recipient.recipientId = recipientCounter;
     recipientCounter++;
-  }
+  };
 
   recipients.signers.forEach(generateId);
 
@@ -299,22 +298,26 @@ function sendEnvelope(apiToken, baseUrl, recipients, emailSubject, files, callba
     recipients: recipients,
     emailSubject: emailSubject,
     documents: documents,
-    status: 'sent',
-  }
+    status: 'sent'
+  };
 
   parts.unshift({
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   });
 
   dsUtils.sendMultipart(baseUrl + '/envelopes', {
-    Authorization: 'bearer ' + apiToken,
-  }, parts, function(error, response, body){
+    Authorization: 'bearer ' + apiToken
+  }, parts, function (error, response, body) {
+    if (error) {
+      return callback(error);
+    }
+
     try {
       callback(false, JSON.parse(body));
-    } catch (e){
+    } catch (e) {
       callback(body || 'Any empty response body was received.');
     }
   });
@@ -360,11 +363,11 @@ function sendEnvelope(apiToken, baseUrl, recipients, emailSubject, files, callba
  *   (this also includes an additional `envelopeId` field). Returned in the form of function(response).
  */
 
-function getView(apiToken, baseUrl, action, fullName, email, files, returnUrl, event, callback) {
+function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, event, callback) {
   async.waterfall([
 
-    function createNewEnvelope(next) {
-      _createEnvelope(apiToken, baseUrl, action, fullName, email, files, event, function(error, response) {
+    function createNewEnvelope (next) {
+      _createEnvelope(apiToken, baseUrl, action, fullName, email, files, event, function (error, response) {
         if (error) {
           callback({ error: 'An error has occurred: ' + response });
           next(true); // end the waterfall
@@ -379,7 +382,7 @@ function getView(apiToken, baseUrl, action, fullName, email, files, returnUrl, e
       });
     },
 
-    function getEnvelopeEmbedView(envelopeUri, envelopeId, next) {
+    function getEnvelopeEmbedView (envelopeUri, envelopeId, next) {
       var data = {};
       if (action === 'sign') {
         data = {
@@ -406,10 +409,10 @@ function getView(apiToken, baseUrl, action, fullName, email, files, returnUrl, e
         method: 'POST',
         url: baseUrl + envelopeUri + '/views/' + ending,
         headers: dsUtils.getHeaders(apiToken, baseUrl),
-        json: data,
+        json: data
       };
 
-      dsUtils.makeRequest('Get Envelope View', options, process.env.dsDebug, function(response) {
+      dsUtils.makeRequest('Get Envelope View', options, process.env.dsDebug, function (response) {
         if ('errorCode' in response) {
           callback({ error: response.errorCode + ': ' + response.message });
           next(true); // end the waterfall
@@ -422,31 +425,33 @@ function getView(apiToken, baseUrl, action, fullName, email, files, returnUrl, e
         callback(response);
         next(null);
       });
-    },
+    }
 
   ]);
 }
 
-function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, event, callback) {
-  var logResponse = process.env.dsDebug == 'true' ? true: false
-  if(logResponse)
+function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, event, callback) {
+  var logResponse = process.env.dsDebug === 'true';
+  if (logResponse) {
     util.log('Starting to create envelope');
+  }
 
   // construct the parts of the multipart request
   var documents = [];
   var parts = [];
   var customFields = [];
 
-  files.forEach(function(file, index) {
+  files.forEach(function (file, index) {
     var documentId = index + 1;
     documents.push({
       documentId: documentId,
       name: file.name,
-      fileExtension: file.extension,
+      fileExtension: file.extension
     });
 
-    if(logResponse)
-      util.log("Now retrieving the following file with documentId: %s \n %s", documentId, JSON.stringify(file).substr(0, 256));
+    if (logResponse) {
+      util.log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
+    }
 
     var download;
     if ('path' in file) {
@@ -457,7 +462,7 @@ function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, even
       download = request({
         method: 'GET',
         url: file.url,
-        encoding: null, // get file as binary buffer
+        encoding: null // get file as binary buffer
       });
     } else {
       callback(true, 'Files array provided had no buffer or url to retrieve file from.');
@@ -466,12 +471,11 @@ function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, even
 
     parts.push({
       headers: {
-        'Content-Disposition': 'documentId=' + documentId,
+        'Content-Disposition': 'documentId=' + documentId
       },
-      body: download,
+      body: download
     });
   });
-
 
   var recipients;
   if (event && 'recipients' in event) {
@@ -479,13 +483,13 @@ function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, even
   } else {
     recipients = {
       signers: [],
-      carbonCopies: [],
+      carbonCopies: []
     };
   }
 
   // generate recipient IDs to satisfy DS API
   var recipientCounter = 2;
-  var generateId = function(recipient) {
+  var generateId = function (recipient) {
     recipient.recipientId = recipientCounter;
     recipientCounter++;
   };
@@ -497,7 +501,7 @@ function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, even
     recipients.signers.unshift({
       recipientId: 1,
       name: fullName,
-      email: email,
+      email: email
     });
   }
 
@@ -510,11 +514,11 @@ function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, even
     emailSubject: (action === 'sign') ? subjectEnding : (subjectPrefix + subjectEnding),
     documents: documents,
     customFields: {
-      textCustomFields: customFields,
-    },
+      textCustomFields: customFields
+    }
   };
 
-  if(event != null){
+  if (event != null) {
     if ('eventNotification' in event) {
       body.eventNotification = event.eventNotification;
     } else {
@@ -523,30 +527,33 @@ function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, even
         loggingEnabled: true,
         envelopeEvents: [{
           envelopeEventStatusCode: 'completed',
-          includeDocuments: true,
-        }],
+          includeDocuments: true
+        }]
       };
     }
   }
 
   parts.unshift({
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(body)
   });
 
-
   dsUtils.sendMultipart(baseUrl + '/envelopes', {
-    Authorization: 'bearer ' + apiToken,
-  }, parts, function(error, response, body) {
+    Authorization: 'bearer ' + apiToken
+  }, parts, function (error, response, body) {
+    if (error) {
+      return callback(error);
+    }
+
     try {
       callback(false, JSON.parse(body));
     } catch (e) {
       callback(true, body || 'An empty response body was received.');
     }
   });
-};
+}
 
 /**
  * Get information about the specified Envelope.
@@ -559,22 +566,22 @@ function _createEnvelope(apiToken, baseUrl, action, fullName, email, files, even
  * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(response).
  *
  */
-function getEnvelopeInfo(apiToken, baseUrl, envelopeId, callback) {
+function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
   var options = {
     method: 'GET',
     url: baseUrl + '/envelopes/' + envelopeId,
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Envelope Information', options, process.env.dsDebug, function(response){
-    if('errorCode' in response){
+  dsUtils.makeRequest('Get Envelope Information', options, process.env.dsDebug, function (response) {
+    if ('errorCode' in response) {
       callback({ error: response.errorCode + ': ' + response.message });
       return;
     }
     callback(response);
   });
 
-};
+}
 
 /**
  * Get all the signed documents that were in the given envelope.
@@ -590,7 +597,7 @@ function getEnvelopeInfo(apiToken, baseUrl, envelopeId, callback) {
  *   attach the Certificate of Completion (CoC) into the returned PDF.
  * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
  */
-function getSignedDocuments(apiToken, baseUrl, envelopeId, encoding, attachCertificate, callback) {
+function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCertificate, callback) {
   var options = {
     method: 'GET',
     url: baseUrl + '/envelopes/' + envelopeId + '/documents/combined?certificate=' + attachCertificate,
@@ -598,14 +605,14 @@ function getSignedDocuments(apiToken, baseUrl, envelopeId, encoding, attachCerti
     encoding: encoding
   };
 
-  request(options, function(error, response, body) {
-    if (response.statusCode != 200 && response.statusCode != 201){
+  request(options, function (error, response, body) {
+    if (response.statusCode !== 200 && response.statusCode !== 201) {
       callback({ error: response.statusCode + ': ' + error });
       return;
     }
     callback(body);
   });
-};
+}
 
 /**
  * Get the URL for the Embedded Signing View.
@@ -620,16 +627,16 @@ function getSignedDocuments(apiToken, baseUrl, envelopeId, encoding, attachCerti
  * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
  * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
  */
-function getSignerView(apiToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback) {
+function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback) {
   var data = {
     returnUrl: returnUrl,
     authenticationMethod: 'email',
     userId: userId,
     userName: recipientName,
-    email: email,
+    email: email
   };
 
-  if(clientUserId){
+  if (clientUserId) {
     data.clientUserId = clientUserId;
   }
 
@@ -637,10 +644,10 @@ function getSignerView(apiToken, baseUrl, userId, recipientName, email, clientUs
     method: 'POST',
     url: baseUrl + '/envelopes/' + envelopeId + '/views/recipient',
     headers: dsUtils.getHeaders(apiToken),
-    json: data,
+    json: data
   };
 
-  dsUtils.makeRequest('Get Signer View', options, process.env.dsDebug, function(response) {
+  dsUtils.makeRequest('Get Signer View', options, process.env.dsDebug, function (response) {
     if ('errorCode' in response) {
       callback({ error: response.errorCode + ': ' + response.message });
       return;
@@ -648,7 +655,7 @@ function getSignerView(apiToken, baseUrl, userId, recipientName, email, clientUs
 
     callback(response);
   });
-};
+}
 
 /**
  * Request Signature via Template.
@@ -665,24 +672,23 @@ function getSignerView(apiToken, baseUrl, userId, recipientName, email, clientUs
  *
  */
 
-function sendTemplate(apiToken, baseUrl, emailSubject, templateId, templateRoles, callback) {
-
+function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRoles, callback) {
   var data = {
     emailSubject: emailSubject,
     templateId: templateId,
     templateRoles: templateRoles,
     status: 'sent'
-  }
+  };
 
   var options = {
     method: 'POST',
     url: baseUrl + '/envelopes',
     headers: dsUtils.getHeaders(apiToken),
-    json: data,
-  }
+    json: data
+  };
 
-  dsUtils.makeRequest('Send Template', options, process.env.dsDebug, function(response){
-    if('errorCode' in response) {
+  dsUtils.makeRequest('Send Template', options, process.env.dsDebug, function (response) {
+    if ('errorCode' in response) {
       callback({ error: response.errorCode + ': ' + response.message });
       return;
     }
@@ -691,7 +697,6 @@ function sendTemplate(apiToken, baseUrl, emailSubject, templateId, templateRoles
   });
 
 }
-
 
 /**
  * Creates an envelope from a template, and then obtains a view of the newly created envelope
@@ -705,10 +710,10 @@ function sendTemplate(apiToken, baseUrl, emailSubject, templateId, templateRoles
  * @param {string} returnUrl - URL you want the Embedded View to return to after you have tagged the envelope.
  * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(response).
  */
-function getTemplateView(apiToken, baseUrl, templateId, returnUrl, callback) {
+function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
   async.waterfall([
 
-    function createEnvelope(next) {
+    function createEnvelope (next) {
       var options = {
         method: 'POST',
         url: baseUrl + '/envelopes',
@@ -719,7 +724,7 @@ function getTemplateView(apiToken, baseUrl, templateId, returnUrl, callback) {
         }
       };
 
-      dsUtils.makeRequest('Create Envelope From Template', options, process.env.dsDebug, function(response) {
+      dsUtils.makeRequest('Create Envelope From Template', options, process.env.dsDebug, function (response) {
         if ('errorCode' in response) {
           callback({ error: response.errorCode + ': ' + response.message });
           next(true); // end the waterfall
@@ -730,17 +735,17 @@ function getTemplateView(apiToken, baseUrl, templateId, returnUrl, callback) {
       });
     },
 
-    function getView(envelopeId, next) {
+    function getView (envelopeId, next) {
       var options = {
         method: 'POST',
         url: baseUrl + '/envelopes/' + envelopeId + '/views/sender',
         headers: dsUtils.getHeaders(apiToken),
         json: {
-          returnUrl: returnUrl,
-        },
+          returnUrl: returnUrl
+        }
       };
 
-      dsUtils.makeRequest('Get Template View', options, process.env.dsDebug, function(response) {
+      dsUtils.makeRequest('Get Template View', options, process.env.dsDebug, function (response) {
         if ('errorCode' in response) {
           callback({ error: response.errorCode + ': ' + response.message });
           next(true); // end the waterfall
@@ -750,11 +755,10 @@ function getTemplateView(apiToken, baseUrl, templateId, returnUrl, callback) {
         callback(response);
         next(null);
       });
-    },
+    }
 
   ]);
-};
-
+}
 
 /**
  * Get a list of recipients for a given `envelopeId`.
@@ -766,16 +770,14 @@ function getTemplateView(apiToken, baseUrl, templateId, returnUrl, callback) {
  * @param {string} envelopeId - ID of envelope to get list of recipients from.
  * @param {function} callback - Returns the list of recipients in the form of function(response).
  */
-function getRecipients(apiToken, baseUrl, envelopeId, callback) {
+function getRecipients (apiToken, baseUrl, envelopeId, callback) {
   var options = {
     method: 'GET',
     url: baseUrl + '/envelopes/' + envelopeId + '/recipients',
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get List of Recipients', options, false, function(response) {
+  dsUtils.makeRequest('Get List of Recipients', options, false, function (response) {
     callback(response);
   });
-};
-
-
+}

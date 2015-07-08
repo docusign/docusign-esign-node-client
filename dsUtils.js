@@ -8,11 +8,10 @@ var temp = require('temp');
 var stream = require('stream');
 var crypto = require('crypto');
 
-exports.validateCallback = function(testCallback, callback) {
-  if(typeof testCallback !== "function") {
-    return callback({error:"Callback is not a function.  You must pass a valid function as callback to this method"});
-  }
-  else {
+exports.validateCallback = function (testCallback, callback) {
+  if (typeof testCallback !== 'function') {
+    return callback({error: 'Callback is not a function.  You must pass a valid function as callback to this method'});
+  } else {
     return callback(null);
   }
 };
@@ -24,8 +23,8 @@ exports.validateCallback = function(testCallback, callback) {
  * @function
  * @returns {string}
  */
-exports.generateNewGuid = function() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+exports.generateNewGuid = function () {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     var r = crypto.randomBytes(16).toString('hex');
     var v = (c === 'x') ? r : (r & 0x3 | 0x8);
     return v.toString(16);
@@ -42,7 +41,7 @@ exports.generateNewGuid = function() {
 exports.getApiUrl = function () {
   var env = process.env.targetEnv;
   return 'https://' + env + '.docusign.net/restapi/v2';
-}
+};
 
 /**
  * Formats and return an authorization header with the given oAuth token
@@ -56,7 +55,7 @@ exports.getHeaders = function (token) {
   return {
     Authorization: 'bearer ' + token
   };
-}
+};
 
 /**
  * Helper function for making web requests to DocuSign
@@ -69,6 +68,7 @@ exports.getHeaders = function (token) {
  * @param callback
  */
 exports.makeRequest = function (apiName, options, logResponse, callback) {
+  logResponse = logResponse === 'true';
   var data;
   if ('json' in options) {
     data = JSON.stringify(options.json);
@@ -79,7 +79,7 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
     } catch(_) {
       json = null;
     }
-    if(json !== null){
+    if (json !== null) {
       data = JSON.stringify(json);
     } else {
       data = '';
@@ -90,10 +90,11 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
     data = '';
   }
 
-  if(logResponse == 'true')
+  if (logResponse) {
     util.log(util.format('DS API %s Request:\n  %s %s\t  %s', apiName, options.method, options.url, data));
+  }
 
-  request(options, function(error, response, body) {
+  request(options, function (error, response, body) {
     if (error) {
       callback(error);
       return;
@@ -112,14 +113,13 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
       util.log(util.format('DS API %s Error:\n  %s', apiName, JSON.stringify(json.message)));
       callback(json);
     } else { // no error
-      if (logResponse == 'true') {
+      if (logResponse) {
         util.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));
       }
       callback(json);
     }
   });
 };
-
 
 /**
  *
@@ -148,7 +148,7 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
  * @param callback
  */
 
-exports.sendMultipart = function(mpUrl, mpHeaders, parts, callback) {
+exports.sendMultipart = function (mpUrl, mpHeaders, parts, callback) {
   var crlf = '\r\n';
 
   var tempPath = temp.path('docusign');
@@ -157,8 +157,8 @@ exports.sendMultipart = function(mpUrl, mpHeaders, parts, callback) {
   var boundary = exports.generateNewGuid();
   mpHeaders['Content-Type'] = 'multipart/form-data; boundary=' + boundary;
 
-  async.eachSeries(parts, function(part, next) {
-    var headers = Object.keys(part.headers).map(function(key) {
+  async.eachSeries(parts, function (part, next) {
+    var headers = Object.keys(part.headers).map(function (key) {
       return key + ': ' + part.headers[key];
     }).join(crlf);
 
@@ -169,23 +169,23 @@ exports.sendMultipart = function(mpUrl, mpHeaders, parts, callback) {
     var body = (Buffer.isBuffer(part.body) || typeof part.body === 'string') ?
       _createStringStream(part.body) : part.body;
 
-    body.on('data', function(chunk) {
+    body.on('data', function (chunk) {
       multipart.write(chunk);
     });
-    body.on('end', function() {
+    body.on('end', function () {
       multipart.write(crlf);
       next(null); // continue
     });
     body.resume();
 
-  }, function() { // called when all is done
+  }, function () { // called when all is done
     multipart.write('--' + boundary + '--');
-    multipart.end(function() {
+    multipart.end(function () {
       fs.createReadStream(tempPath).pipe(request({
         method: 'POST',
         url: mpUrl,
-        headers: mpHeaders,
-      }, function(error, response, body) {
+        headers: mpHeaders
+      }, function (error, response, body) {
         fs.unlinkSync(tempPath);
         callback(error, response, body);
       }));
@@ -193,10 +193,10 @@ exports.sendMultipart = function(mpUrl, mpHeaders, parts, callback) {
   });
 };
 
-function _createStringStream(str) {
+function _createStringStream (str) {
   var s = new stream.Readable();
   s.pause();
   s.push(str);
   s.push(null);
   return s;
-};
+}

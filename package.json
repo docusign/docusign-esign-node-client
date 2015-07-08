@@ -31,5 +31,8 @@
   },
   "devDependencies": {
     "semistandard": "6.1.2"
+  },
+  "semistandard": {
+    "global": ["it", "describe", "before", "after"]
   }
 }

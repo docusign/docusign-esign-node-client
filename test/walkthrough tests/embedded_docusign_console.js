@@ -1,13 +1,11 @@
-//Unit Testing Imports
+// Unit Testing Imports
 var assert = require('assert');
 var fs = require('fs');
 var async = require('async');
 
 var docusign = require('../../docusign.js');
 
-describe('embedded_docusign_console', function(){
-  var client;
-  var fullName = 'DocuSign NPM';
+describe('embedded_docusign_console', function () {
   var docusignEnv = 'demo';
   var debug = false;
 
@@ -16,51 +14,51 @@ describe('embedded_docusign_console', function(){
   var email = config.DOCUSIGN_TEST_EMAIL;
   var password = config.DOCUSIGN_TEST_PASSWORD;
 
-  it('should return embedded sending url', function(done){
+  it('should return embedded sending url', function (done) {
     async.waterfall([
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
-      //**********************************************************************************
-      function init(next){
-        docusign.init(integratorKey, docusignEnv, debug, function(response){
+      // **********************************************************************************
+      function init (next) {
+        docusign.init(integratorKey, docusignEnv, debug, function (response) {
           var message = response.message;
           assert.strictEqual(message, 'successfully initialized');
           next(null);
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
-      //**********************************************************************************
-      function createClient(next){
-        docusign.client(email, password, function(response){
+      // **********************************************************************************
+      function createClient (next) {
+        docusign.client(email, password, function (response) {
           assert.ok(!response.error);
           next(null, response);
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 3 - Get the Embedded Console View
-      //**********************************************************************************
-      function getConsoleUrl(client, next){
-        client.envelopes.getConsoleUrl(function(response){
+      // **********************************************************************************
+      function getConsoleUrl (client, next) {
+        client.envelopes.getConsoleUrl(function (response) {
           assert.ok(!response.error);
           console.log('Navigate to this URL for the Embedded DocuSign Console: ' + response.url);
           next(null, client);
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 4 - Revoke OAuth Token for Logout
-      //**********************************************************************************
-      function logOut(client, next){
-        client.logOut(function(err, response){
+      // **********************************************************************************
+      function logOut (client, next) {
+        client.logOut(function (err, response) {
           assert.strictEqual(err, null);
           next(null);
         });
-      },
-    ], function() {
+      }
+    ], function () {
       done();
     });
   });
