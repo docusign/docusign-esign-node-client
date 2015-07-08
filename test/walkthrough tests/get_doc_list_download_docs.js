@@ -1,13 +1,11 @@
-//Unit Testing Imports
+// Unit Testing Imports
 var assert = require('assert');
 var fs = require('fs');
 var async = require('async');
 
 var docusign = require('../../docusign.js');
 
-describe('get_doc_list_download', function(){
-  var client;
-  var fullName = 'DocuSign NPM';
+describe('get_doc_list_download', function () {
   var docusignEnv = 'demo';
   var debug = false;
 
@@ -18,52 +16,52 @@ describe('get_doc_list_download', function(){
   var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
   var attachCertificate = false;
 
-  it('should return document list and documents', function(done){
+  it('should return document list and documents', function (done) {
     async.waterfall([
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
-      //**********************************************************************************
-      function init(next){
-        docusign.init(integratorKey, docusignEnv, debug, function(response){
+      // **********************************************************************************
+      function init (next) {
+        docusign.init(integratorKey, docusignEnv, debug, function (response) {
           var message = response.message;
           assert.strictEqual(message, 'successfully initialized');
           next(null);
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
-      //**********************************************************************************
-      function createClient(next){
-        docusign.client(email, password, function(response){
+      // **********************************************************************************
+      function createClient (next) {
+        docusign.client(email, password, function (response) {
           assert.ok(!response.error);
           next(null, response);
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 3 - Get Signed Documents
-      //**********************************************************************************
-      function getSignedDocuments(client, next){
-        client.envelopes.getSignedDocuments(envelopeId, null, attachCertificate, function(response){
+      // **********************************************************************************
+      function getSignedDocuments (client, next) {
+        client.envelopes.getSignedDocuments(envelopeId, null, attachCertificate, function (response) {
           assert.ok(!response.error);
-          fs.writeFile("Documents.pdf", response, "binary", function(err){
+          fs.writeFile('Documents.pdf', response, 'binary', function (err) {
             assert.ok(!err);
             next(null, client);
           });
         });
       },
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 4 - Revoke OAuth Token for Logout
-      //**********************************************************************************
-      function logOut(client, next){
-        client.logOut(function(err, response){
+      // **********************************************************************************
+      function logOut (client, next) {
+        client.logOut(function (err, response) {
           assert.strictEqual(err, null);
           next(null);
         });
-      },
-    ], function(){
+      }
+    ], function () {
       done();
     });
   });

@@ -2,10 +2,8 @@
 // NOTE: Does not provide protection of token.  Tokens need to be stored carefully by the consumer
 // of these methods.  We do not offer encryption or key handling here.
 
-
 var querystring = require('querystring'); // core
-var util = require('util');
-var async = require ('async');
+var async = require('async');
 var dsUtils = require('./../dsUtils');
 
 /**
@@ -17,7 +15,7 @@ var dsUtils = require('./../dsUtils');
  * @param {string} password - Password of the DocuSign user.
  * @param {function} callback - Returned in the form of function(err, response).
  */
-exports.getLoginInfo = function(email, password, callback) {
+exports.getLoginInfo = function (email, password, callback) {
   var options = {
     method: 'GET',
     url: dsUtils.getApiUrl() + '/login_information',
@@ -30,13 +28,13 @@ exports.getLoginInfo = function(email, password, callback) {
     }
   };
 
-  dsUtils.makeRequest('Get DS User Account Info', options, process.env.dsDebug, function(response) {
+  dsUtils.makeRequest('Get DS User Account Info', options, process.env.dsDebug, function (response) {
     if ('errorCode' in response) {
       callback(response);
       return;
     }
 
-    callback(null, response.loginAccounts.filter(function(account) {
+    callback(null, response.loginAccounts.filter(function (account) {
       return account.isDefault === 'true';
     })[0]);
   });
@@ -53,10 +51,10 @@ exports.getLoginInfo = function(email, password, callback) {
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {function} callback - Returned in the form of function(err, response).
  */
-exports.getOauthToken = function(email, password, baseUrl, callback) {
+exports.getOauthToken = function (email, password, baseUrl, callback) {
   var options = {
     method: 'POST',
-    url: _getTokenEndpoint(baseUrl, "token"),
+    url: _getTokenEndpoint(baseUrl, 'token'),
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: querystring.stringify({
       grant_type: 'password',
@@ -64,10 +62,10 @@ exports.getOauthToken = function(email, password, baseUrl, callback) {
       username: email,
       password: password,
       scope: 'api'
-    }),
+    })
   };
 
-  dsUtils.makeRequest('Get DS OAuth2 Token', options, process.env.dsDebug, function(response) {
+  dsUtils.makeRequest('Get DS OAuth2 Token', options, process.env.dsDebug, function (response) {
     if ('error' in response) {
       return callback(response.error_description);
     }
@@ -87,23 +85,23 @@ exports.getOauthToken = function(email, password, baseUrl, callback) {
  * @param {string} password - Password of the DocuSign user.
  * @param {function} callback - Returned in the form of function(err, response).
  */
-exports.getAPIToken = function(email, password, callback) {
+exports.getAPIToken = function (email, password, callback) {
   var thisObj = this;
   async.waterfall([
-    function getLoginInfo(next) {
-      //step 1
-      thisObj.getLoginInfo(email, password, function(err, response) {
-        if(err) {
+    function getLoginInfo (next) {
+      // step 1
+      thisObj.getLoginInfo(email, password, function (err, response) {
+        if (err) {
           next(err); // end the waterfall
           return;
         }
         next(null, response.baseUrl, response.accountId);
       });
     },
-    function getToken(baseUrl, accountId, next) {
+    function getToken (baseUrl, accountId, next) {
       // step 2
-      thisObj.getOauthToken(email, password, baseUrl, function(err, response) {
-        if(err) {
+      thisObj.getOauthToken(email, password, baseUrl, function (err, response) {
+        if (err) {
           next(err);
           return;
         }
@@ -111,21 +109,20 @@ exports.getAPIToken = function(email, password, callback) {
       });
     }
   ],
-  function waterfallDone(err, token, baseUrl, accountId) {
-    if(err){
-      callback("Error getting token: " + JSON.stringify(err));
-    }
-    else {
-      callback(null, { access_token: token, baseUrl: baseUrl, accountId: accountId });
-    }
-  });
+    function waterfallDone (err, token, baseUrl, accountId) {
+      if (err) {
+        callback('Error getting token: ' + JSON.stringify(err));
+      } else {
+        callback(null, { access_token: token, baseUrl: baseUrl, accountId: accountId });
+      }
+    });
 };
 
-exports.revokeOauthToken = function(accessToken, baseUrl) {
-  return function(callback){
+exports.revokeOauthToken = function (accessToken, baseUrl) {
+  return function (callback) {
     revokeOauthToken(accessToken, baseUrl, callback);
-  }
-}
+  };
+};
 
 /**
  * Revoke the given DocuSign OAuth2 `token`.
@@ -136,26 +133,26 @@ exports.revokeOauthToken = function(accessToken, baseUrl) {
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {function} callback - Returned in the form of function(err, response).
  */
-function revokeOauthToken(token, baseUrl, callback) {
+function revokeOauthToken (token, baseUrl, callback) {
   var headers = {
-    "Content-Type": "application/x-www-form-urlencoded"
+    'Content-Type': 'application/x-www-form-urlencoded'
   };
 
   var options = {
     method: 'POST',
     url: _getTokenEndpoint(baseUrl, 'revoke'),
     headers: headers,
-    body: "token=" + token
+    body: 'token=' + token
   };
 
-  dsUtils.makeRequest('Revoke DS OAuth2 Token', options, process.env.dsDebug, function(response) {
+  dsUtils.makeRequest('Revoke DS OAuth2 Token', options, process.env.dsDebug, function (response) {
     if (response && response.error) {
-      callback('Cannot revoke DS OAuth2 access token. Err: ' + response.error + " Description: " + response.error_description);
+      callback('Cannot revoke DS OAuth2 access token. Err: ' + response.error + ' Description: ' + response.error_description);
     } else {
       callback(null, response);
     }
   });
-};
+}
 
 /**
  * Constructs the URL necessary for token management. Internal function that should not be called.
@@ -166,13 +163,12 @@ function revokeOauthToken(token, baseUrl, callback) {
  * @param {string} action - Action for API calls.
  * @returns {*}
  */
-function _getTokenEndpoint(baseUrl, action) {
+function _getTokenEndpoint (baseUrl, action) {
   var environ = /^https:\/\/(.*?)\.docusign\.net/.exec(baseUrl);
 
-  if(environ && environ.length) {
+  if (environ && environ.length) {
     return 'https://' + environ[1] + '.docusign.net/restapi/v2/oauth2/' + action;
-  }
-  else {
-    return {error: "getTokenEndpoint unable to parse baseUrl"};
+  } else {
+    return {error: 'getTokenEndpoint unable to parse baseUrl'};
   }
 }

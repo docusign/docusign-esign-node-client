@@ -8,71 +8,67 @@
  * @desc Public API for DocuSign Admin API
  */
 
- /**
- * @namespace Envelopes
- * @desc Public API for DocuSign Envelopes API
- */
+/**
+* @namespace Envelopes
+* @desc Public API for DocuSign Envelopes API
+*/
 
- /**
- * @namespace Folders
- * @desc Public API for DocuSign Folders API
- */
+/**
+* @namespace Folders
+* @desc Public API for DocuSign Folders API
+*/
 
- /**
- * @namespace Users
- * @desc Public API for DocuSign Users API
- */
+/**
+* @namespace Users
+* @desc Public API for DocuSign Users API
+*/
 
 /**
  * @namespace Private
  * @desc Private DoucSign API
  */
 
-var util = require("util");
+var util = require('util');
 
 // Local Imports
-var admin = require("./components/admin");
-var users = require("./components/users");
-var auth = require("./components/auth");
-var folders = require("./components/folders");
-var envelopes = require("./components/envelopes");
+var admin = require('./components/admin');
+var users = require('./components/users');
+var auth = require('./components/auth');
+var folders = require('./components/folders');
+var envelopes = require('./components/envelopes');
 
 // Create DocuSign Object
 var docusign = (function () {
-
-  function init(integratorKey, targetEnv, debug, callback){
+  function init (integratorKey, targetEnv, debug, callback) {
     targetEnv = targetEnv.toLowerCase();
 
-    if(debug){
+    if (debug) {
       util.log('docusign starting init');
       process.env.dsDebug = true;
     } else {
       process.env.dsDebug = false;
     }
 
-    if(targetEnv == "demo") {
-      process.env.targetEnv = "demo";
-    }
-    else if(targetEnv == "www" || targetEnv == "live") {
-      process.env.targetEnv = "www";
-    }
-    else {
-      return callback({error:"Invalid environment value. 'Demo' or 'Live' are the only valid environments."});
+    if (targetEnv === 'demo') {
+      process.env.targetEnv = 'demo';
+    } else if (targetEnv === 'www' || targetEnv === 'live') {
+      process.env.targetEnv = 'www';
+    } else {
+      return callback({error: "Invalid environment value. 'Demo' or 'Live' are the only valid environments."});
     }
 
-    if(integratorKey) {
+    if (integratorKey) {
       process.env.integratorKey = integratorKey;
-    }
-    else {
-      callback({error: "Integrator key cannot be null or empty string."});
+    } else {
+      callback({error: 'Integrator key cannot be null or empty string.'});
     }
 
-    callback({message:"successfully initialized"});
+    callback({message: 'successfully initialized'});
   }
 
-  function client(email, password, callback){
-    auth.getAPIToken(email, password, function(err, response){
-      if(err){
+  function client (email, password, callback) {
+    auth.getAPIToken(email, password, function (err, response) {
+      if (err) {
         return {error: err};
       } else {
         callback({
@@ -89,7 +85,7 @@ var docusign = (function () {
   return {
     init: init,
     client: client
-  }
+  };
 })();
 
 module.exports = docusign;

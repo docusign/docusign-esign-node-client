@@ -1,13 +1,11 @@
-//Unit Testing Imports
+// Unit Testing Imports
 var assert = require('assert');
 var fs = require('fs');
 var async = require('async');
 
 var docusign = require('../../docusign.js');
 
-describe('get_envelope_recipient_status', function(){
-  var client;
-  var fullName = 'DocuSign NPM';
+describe('get_envelope_recipient_status', function () {
   var docusignEnv = 'demo';
   var debug = false;
 
@@ -17,35 +15,35 @@ describe('get_envelope_recipient_status', function(){
   var password = config.DOCUSIGN_TEST_PASSWORD;
   var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
 
-  it('should return recipient status information for the specified envelope', function(done){
+  it('should return recipient status information for the specified envelope', function (done) {
     async.waterfall([
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
-      //**********************************************************************************
-      function init(next){
-        docusign.init(integratorKey, docusignEnv, debug, function(response){
+      // **********************************************************************************
+      function init (next) {
+        docusign.init(integratorKey, docusignEnv, debug, function (response) {
           var message = response.message;
           assert.strictEqual(message, 'successfully initialized');
           next(null);
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
-      //**********************************************************************************
-      function createClient(next){
-        docusign.client(email, password, function(response){
+      // **********************************************************************************
+      function createClient (next) {
+        docusign.client(email, password, function (response) {
           assert.ok(!response.error);
           next(null, response);
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 3 - Get Recipients of the Specified Envelope Id
-      //**********************************************************************************
-      function getRecipients(client, next){
-        client.envelopes.getRecipients(envelopeId, function(response){
+      // **********************************************************************************
+      function getRecipients (client, next) {
+        client.envelopes.getRecipients(envelopeId, function (response) {
           assert.ok(!response.error);
           assert.ok(response.signers);
           assert.ok(response.signers[0].isBulkRecipient);
@@ -60,17 +58,17 @@ describe('get_envelope_recipient_status', function(){
         });
       },
 
-      //**********************************************************************************
+      // **********************************************************************************
       // Step 4 - Revoke OAuth Token for Logout
-      //**********************************************************************************
-      function logOut(client, next){
-        client.logOut(function(err, response){
+      // **********************************************************************************
+      function logOut (client, next) {
+        client.logOut(function (err, response) {
           assert.strictEqual(err, null);
           next(null);
         });
-      },
-    ], function(){
-        done();
+      }
+    ], function () {
+      done();
     });
   });
 });

@@ -1,17 +1,16 @@
 /* Mocha Test File for admin.js */
 
-//Unit Testing Imports
+// Unit Testing Imports
 var assert = require('assert');
 var fs = require('fs');
 
-//Imported file to be tested
+// Imported file to be tested
 var docusign = require('../../docusign.js');
 
-describe('admin', function(){
+describe('admin', function () {
   var client;
   var debug = false;
   var userId;
-  var accountId;
 
   /* READ CONFIG FILE FOR VARIABLES */
   var config = JSON.parse(fs.readFileSync('config.json'));
@@ -20,10 +19,10 @@ describe('admin', function(){
   var password = config.DOCUSIGN_TEST_PASSWORD;
 
   /* SETUP DOCUSIGN OBJECT AND LOGIN TO DOCUSIGN */
-  before(function(done){
-    docusign.init(integratorKey, 'demo', debug, function(response){
+  before(function (done) {
+    docusign.init(integratorKey, 'demo', debug, function (response) {
       assert.strictEqual(response.message, 'successfully initialized');
-      docusign.client(email, password, function(response){
+      docusign.client(email, password, function (response) {
         assert.ok(!response.error);
         client = response;
         done();
@@ -31,9 +30,9 @@ describe('admin', function(){
     });
   });
 
-  describe('getOrgAccountInfo', function(){
-    it('should return the docusign org info', function(done){
-      client.admin.getOrgAccountInfo(function(response){
+  describe('getOrgAccountInfo', function () {
+    it('should return the docusign org info', function (done) {
+      client.admin.getOrgAccountInfo(function (response) {
         assert.ok(response.planStartDate);
         assert.ok(response.planName);
         assert.ok(response.billingPeriodStartDate);
@@ -42,9 +41,9 @@ describe('admin', function(){
     });
   });
 
-  describe('getUserList', function(){
-    it('should return a docusign user list', function(done){
-      client.admin.getUserList(function(response){
+  describe('getUserList', function () {
+    it('should return a docusign user list', function (done) {
+      client.admin.getUserList(function (response) {
         assert.ok(response[0].userName);
         assert.ok(response[0].userId);
         assert.ok(response[0].userType);
@@ -59,10 +58,10 @@ describe('admin', function(){
     });
   });
 
-  describe('addUsers', function(){
-    it('should create a set of new users in DocuSign', function(done){
+  describe('addUsers', function () {
+    it('should create a set of new users in DocuSign', function (done) {
       var usersToAdd = [{first: 'test', last: 'docusign', email: 'test.docusign@test.com', password: 'password'}];
-      client.admin.addUsers(usersToAdd, function(response){
+      client.admin.addUsers(usersToAdd, function (response) {
         assert.ok(response.newUsers[0].userId);
         userId = response.newUsers[0].userId;
         done();
@@ -70,10 +69,10 @@ describe('admin', function(){
     });
   });
 
-  describe('deleteUsers', function(){
-    it('should delete a set of users in DocuSign', function(done){
+  describe('deleteUsers', function () {
+    it('should delete a set of users in DocuSign', function (done) {
       var usersToDelete = [{userId: userId}];
-      client.admin.deleteUsers(usersToDelete, function(response){
+      client.admin.deleteUsers(usersToDelete, function (response) {
         assert.strictEqual(response.users[0].userId, userId);
         assert.strictEqual(response.users[0].userStatus, 'closed');
         done();
@@ -81,26 +80,26 @@ describe('admin', function(){
     });
   });
 
-  describe('getTemplates', function(){
-    it('should return docusign templates', function(done){
-      client.admin.getTemplates(function(response){
+  describe('getTemplates', function () {
+    it('should return docusign templates', function (done) {
+      client.admin.getTemplates(function (response) {
         assert.ok(response.envelopeTemplates);
         done();
       });
     });
   });
 
-  describe('getPlan', function(){
-    it('should return docusign templates', function(done){
-      client.admin.getPlan(function(response){
+  describe('getPlan', function () {
+    it('should return docusign templates', function (done) {
+      client.admin.getPlan(function (response) {
         assert.ok(response.planName);
         done();
       });
     });
   });
 
-  after(function(done){
-    client.logOut(function(err, response){
+  after(function (done) {
+    client.logOut(function (err, response) {
       assert.strictEqual(err, null);
       assert.strictEqual(response, '');
       done();

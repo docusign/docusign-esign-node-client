@@ -33,30 +33,29 @@ This example shows you how to do the following:
 var docusign = require('docusign');
 var async = require('async');
 
-
-var integratorKey     = '***',                   // Integrator Key associated with your DocuSign Integration
-    email             = 'YOUR_EMAIL',            // Email for your DocuSign Account
-    password          = 'YOUR_PASSWORD',         // Password for your DocuSign Account
-    docusignEnv       = 'demo',                  // DocuSign Environment generally demo for testing purposes
-    fullName          = 'Joan Jett',             // Recipient's Full Name
-    recipientEmail    = 'joan.jett@example.com', // Recipient's Email
-    templateId        = '***',                   // ID of the Template you want to create the Envelope with
-    templateRoleName  = '***',                   // Role Name of the Template
-    debug             = false;                   // Enable debug logging
+var integratorKey  = '***',                   // Integrator Key associated with your DocuSign Integration
+  email            = 'YOUR_EMAIL',            // Email for your DocuSign Account
+  password         = 'YOUR_PASSWORD',         // Password for your DocuSign Account
+  docusignEnv      = 'demo',                  // DocuSign Environment generally demo for testing purposes
+  fullName         = 'Joan Jett',             // Recipient's Full Name
+  recipientEmail   = 'joan.jett@example.com', // Recipient's Email
+  templateId       = '***',                   // ID of the Template you want to create the Envelope with
+  templateRoleName = '***',                   // Role Name of the Template
+  debug            = false;                   // Enable debug logging and debug responses from API
 
 var templateRoles = [{
   email: email,
   name: fullName,
-  roleName: tempalteRoleName,
-}]
+  roleName: templateRoleName
+}];
 
 async.waterfall([
-  //**********************************************************************************
+  // **********************************************************************************
   // Step 1 - Initialize DocuSign Object with Integrator Key and Desired Environment
-  //**********************************************************************************
-  function init(next){
-    docusign.init(integratorKey, docusignEnv, debug, function(response){
-      if(response.message === 'succesfully initialized'){
+  // **********************************************************************************
+  function init (next) {
+    docusign.init(integratorKey, docusignEnv, debug, function (response) {
+      if (response.message === 'succesfully initialized') {
         next(null);
       } else {
         return;
@@ -64,12 +63,12 @@ async.waterfall([
     });
   },
 
-  //**********************************************************************************
+  // **********************************************************************************
   // Step 2 - Create a DocuSign Client Object
-  //**********************************************************************************
-  function createClient(next){
-    docusign.client(email, password, function(response){
-      if('error' in response){
+  // **********************************************************************************
+  function createClient (next) {
+    docusign.client(email, password, function (response) {
+      if ('error' in response) {
         console.log('Error: ' + response.error);
         return;
       }
@@ -77,32 +76,36 @@ async.waterfall([
     });
   },
 
-  //**********************************************************************************
+  // **********************************************************************************
   // Step 3 - Request Signature via Template
-  //**********************************************************************************
-  function sendTemplate(client, next){
-      client.envelopes.sendEnvelope('Sent from a Template', templateId, templateRoles, function(err, response){
-        if(response.error){
-          console.log('Error: ' + response.error);
-          return;
-        }
-        console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
-        next(null, client);
-      });
-    },
+  // **********************************************************************************
+  function sendTemplate (client, next) {
+    client.envelopes.sendEnvelope('Sent from a Template', templateId, templateRoles, function (err, response) {
+      if (err) {
+        console.log('Error: ', err);
+        return next(err);
+      }
+      if (response.error) {
+        console.log('Error: ', response.error);
+        return;
+      }
+      console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
+      next(null, client);
+    });
+  },
 
-  //**********************************************************************************
+  // **********************************************************************************
   // Step 4 - Revoke OAuth Token for Logout
-  //**********************************************************************************
-  function logOut(client, next){
-    client.logOut(function(err, response){
-      if(!err){
+  // **********************************************************************************
+  function logOut (client, next) {
+    client.logOut(function (err, response) {
+      if (!err) {
         next(null);
       } else {
         console.log(err);
       }
     });
-  },
+  }
 
 ]);
 ```
@@ -122,6 +125,11 @@ Then use `git update-index --assume-unchanged config.json` to make git ignore an
 
 In the console run `npm test`.
 
+Contributing
+----------
+
+Pull requests and new issues are welcomed and encouraged!
+We follow the [semistandard](https://www.npmjs.com/package/semistandard) style, please make your contributions conform to this.
 
 License
 ----------
