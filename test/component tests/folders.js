@@ -19,10 +19,11 @@ describe('folder', function () {
 
   /* SETUP DOCUSIGN OBJECT AND LOGIN TO DOCUSIGN */
   before(function (done) {
-    docusign.init(integratorKey, 'demo', debug, function (response) {
+    docusign.init(integratorKey, 'demo', debug, function (error, response) {
+      assert.ok(!error, 'Unexpected ' + error);
       assert.strictEqual(response.message, 'successfully initialized');
-      docusign.client(email, password, function (response) {
-        assert.ok(!response.error);
+      docusign.client(email, password, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         client = response;
         done();
       });
@@ -31,7 +32,8 @@ describe('folder', function () {
 
   describe('getEnvelopes', function () {
     it('should get information about the envelopes for the DocuSign account', function (done) {
-      client.folders.getEnvelopes('all', true, function (response) {
+      client.folders.getEnvelopes('all', true, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response[0].subject);
         done();
       });

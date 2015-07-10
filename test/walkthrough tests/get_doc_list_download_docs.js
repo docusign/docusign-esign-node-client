@@ -23,7 +23,8 @@ describe('get_doc_list_download', function () {
       // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
       // **********************************************************************************
       function init (next) {
-        docusign.init(integratorKey, docusignEnv, debug, function (response) {
+        docusign.init(integratorKey, docusignEnv, debug, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           var message = response.message;
           assert.strictEqual(message, 'successfully initialized');
           next(null);
@@ -34,8 +35,8 @@ describe('get_doc_list_download', function () {
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
       // **********************************************************************************
       function createClient (next) {
-        docusign.client(email, password, function (response) {
-          assert.ok(!response.error);
+        docusign.client(email, password, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           next(null, response);
         });
       },
@@ -44,8 +45,8 @@ describe('get_doc_list_download', function () {
       // Step 3 - Get Signed Documents
       // **********************************************************************************
       function getSignedDocuments (client, next) {
-        client.envelopes.getSignedDocuments(envelopeId, null, attachCertificate, function (response) {
-          assert.ok(!response.error);
+        client.envelopes.getSignedDocuments(envelopeId, null, attachCertificate, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           fs.writeFile('Documents.pdf', response, 'binary', function (err) {
             assert.ok(!err);
             next(null, client);

@@ -22,7 +22,8 @@ describe('get_envelope_recipient_status', function () {
       // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
       // **********************************************************************************
       function init (next) {
-        docusign.init(integratorKey, docusignEnv, debug, function (response) {
+        docusign.init(integratorKey, docusignEnv, debug, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           var message = response.message;
           assert.strictEqual(message, 'successfully initialized');
           next(null);
@@ -33,8 +34,8 @@ describe('get_envelope_recipient_status', function () {
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
       // **********************************************************************************
       function createClient (next) {
-        docusign.client(email, password, function (response) {
-          assert.ok(!response.error);
+        docusign.client(email, password, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           next(null, response);
         });
       },
@@ -43,8 +44,8 @@ describe('get_envelope_recipient_status', function () {
       // Step 3 - Get Recipients of the Specified Envelope Id
       // **********************************************************************************
       function getRecipients (client, next) {
-        client.envelopes.getRecipients(envelopeId, function (response) {
-          assert.ok(!response.error);
+        client.envelopes.getRecipients(envelopeId, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           assert.ok(response.signers);
           assert.ok(response.signers[0].isBulkRecipient);
           assert.ok(response.signers[0].name);

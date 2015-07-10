@@ -24,12 +24,14 @@ describe('users', function () {
 
   /* SETUP DOCUSIGN OBJECT AND LOGIN TO DOCUSIGN */
   before(function (done) {
-    docusign.init(integratorKey, docusignEnv, debug, function (response) {
+    docusign.init(integratorKey, docusignEnv, debug, function (error, response) {
+      assert.ok(!error, 'Unexpected ' + error);
       assert.strictEqual(response.message, 'successfully initialized');
-      docusign.client(email, password, function (response) {
-        assert.ok(!response.error);
+      docusign.client(email, password, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         client = response;
-        client.admin.getUserList(function (response) {
+        client.admin.getUserList(function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           userId = response[0].userId;
           done();
         });
@@ -39,7 +41,8 @@ describe('users', function () {
 
   describe('getInfo', function () {
     it('should return user info', function (done) {
-      client.users.getInfo(userId, function (response) {
+      client.users.getInfo(userId, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.userName);
         assert.strictEqual(response.userId, userId);
         done();
@@ -49,7 +52,8 @@ describe('users', function () {
 
   describe('getSocialConnection', function () {
     it('should get the social connection details for a given user', function (done) {
-      client.users.getSocialConnection(userId, function (response) {
+      client.users.getSocialConnection(userId, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.strictEqual(userId, response.userId);
         assert.ok(response.socialAccountInformation);
         done();

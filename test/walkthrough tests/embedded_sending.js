@@ -22,7 +22,8 @@ describe('embedded_sending', function () {
       // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
       // **********************************************************************************
       function init (next) {
-        docusign.init(integratorKey, docusignEnv, debug, function (response) {
+        docusign.init(integratorKey, docusignEnv, debug, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           var message = response.message;
           assert.strictEqual(message, 'successfully initialized');
           next(null);
@@ -33,8 +34,8 @@ describe('embedded_sending', function () {
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
       // **********************************************************************************
       function createClient (next) {
-        docusign.client(email, password, function (response) {
-          assert.ok(!response.error);
+        docusign.client(email, password, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           next(null, response);
         });
       },
@@ -49,8 +50,8 @@ describe('embedded_sending', function () {
           extension: 'pdf',
           base64: new Buffer(buffer).toString('base64')
         }];
-        client.envelopes.getView('send', fullName, email, files, 'http://www.docusign.com/devcenter', null, function (response) {
-          assert.ok(!response.error);
+        client.envelopes.getView('send', fullName, email, files, 'http://www.docusign.com/devcenter', null, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           console.log('Navigate to this URL to start the Embedded Sending workflow: ' + response.url);
           next(null, client);
         });

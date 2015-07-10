@@ -20,10 +20,11 @@ describe('admin', function () {
 
   /* SETUP DOCUSIGN OBJECT AND LOGIN TO DOCUSIGN */
   before(function (done) {
-    docusign.init(integratorKey, 'demo', debug, function (response) {
+    docusign.init(integratorKey, 'demo', debug, function (error, response) {
+      assert.ok(!error, 'Unexpected ' + error);
       assert.strictEqual(response.message, 'successfully initialized');
-      docusign.client(email, password, function (response) {
-        assert.ok(!response.error);
+      docusign.client(email, password, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         client = response;
         done();
       });
@@ -32,7 +33,8 @@ describe('admin', function () {
 
   describe('getOrgAccountInfo', function () {
     it('should return the docusign org info', function (done) {
-      client.admin.getOrgAccountInfo(function (response) {
+      client.admin.getOrgAccountInfo(function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.planStartDate);
         assert.ok(response.planName);
         assert.ok(response.billingPeriodStartDate);
@@ -43,7 +45,8 @@ describe('admin', function () {
 
   describe('getUserList', function () {
     it('should return a docusign user list', function (done) {
-      client.admin.getUserList(function (response) {
+      client.admin.getUserList(function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response[0].userName);
         assert.ok(response[0].userId);
         assert.ok(response[0].userType);
@@ -61,7 +64,8 @@ describe('admin', function () {
   describe('addUsers', function () {
     it('should create a set of new users in DocuSign', function (done) {
       var usersToAdd = [{first: 'test', last: 'docusign', email: 'test.docusign@test.com', password: 'password'}];
-      client.admin.addUsers(usersToAdd, function (response) {
+      client.admin.addUsers(usersToAdd, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.newUsers[0].userId);
         userId = response.newUsers[0].userId;
         done();
@@ -72,7 +76,8 @@ describe('admin', function () {
   describe('deleteUsers', function () {
     it('should delete a set of users in DocuSign', function (done) {
       var usersToDelete = [{userId: userId}];
-      client.admin.deleteUsers(usersToDelete, function (response) {
+      client.admin.deleteUsers(usersToDelete, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.strictEqual(response.users[0].userId, userId);
         assert.strictEqual(response.users[0].userStatus, 'closed');
         done();
@@ -82,7 +87,8 @@ describe('admin', function () {
 
   describe('getTemplates', function () {
     it('should return docusign templates', function (done) {
-      client.admin.getTemplates(function (response) {
+      client.admin.getTemplates(function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.envelopeTemplates);
         done();
       });
@@ -91,7 +97,8 @@ describe('admin', function () {
 
   describe('getPlan', function () {
     it('should return docusign templates', function (done) {
-      client.admin.getPlan(function (response) {
+      client.admin.getPlan(function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.planName);
         done();
       });

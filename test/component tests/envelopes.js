@@ -20,10 +20,11 @@ describe('envelopes', function () {
   var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
 
   before(function (done) {
-    docusign.init(integratorKey, 'demo', debug, function (response) {
+    docusign.init(integratorKey, 'demo', debug, function (error, response) {
+      assert.ok(!error, 'Unexpected ' + error);
       assert.strictEqual(response.message, 'successfully initialized');
-      docusign.client(email, password, function (response) {
-        assert.ok(!response.error);
+      docusign.client(email, password, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         client = response;
         done();
       });
@@ -32,7 +33,8 @@ describe('envelopes', function () {
 
   describe('getConsoleUrl', function () {
     it('should return the dashboard url', function (done) {
-      client.envelopes.getConsoleUrl(function (response) {
+      client.envelopes.getConsoleUrl(function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         var regex = new RegExp('https://demo.docusign.net/Member/StartInSession.aspx?');
         assert.ok(response.url);
         assert.strictEqual(true, regex.test(response.url));
@@ -43,7 +45,8 @@ describe('envelopes', function () {
 
   describe('getEnvelopeInfo', function () {
     it('should get envelope information', function (done) {
-      client.envelopes.getEnvelopeInfo(envelopeId, function (response) {
+      client.envelopes.getEnvelopeInfo(envelopeId, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.status);
         assert.ok(response.documentsUri);
         assert.ok(response.envelopeUri);
@@ -55,7 +58,8 @@ describe('envelopes', function () {
 
   describe('getSignedDocuments', function () {
     it('should get signed documents', function (done) {
-      client.envelopes.getSignedDocuments(envelopeId, null, true, function (response) {
+      client.envelopes.getSignedDocuments(envelopeId, null, true, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.strictEqual('pdf', fileType(response).ext);
         done();
       });
@@ -64,7 +68,8 @@ describe('envelopes', function () {
 
   describe('getRecipients', function () {
     it('should get recipients of an envelope', function (done) {
-      client.envelopes.getRecipients(envelopeId, function (response) {
+      client.envelopes.getRecipients(envelopeId, function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.signers);
         assert.ok(response.signers[0].isBulkRecipient);
         assert.ok(response.signers[0].name);
@@ -80,7 +85,8 @@ describe('envelopes', function () {
 
   describe('getTemplateView', function () {
     it('should get the template view of a specified templateId', function (done) {
-      client.envelopes.getTemplateView(templateId, 'http://www.docusign.com/devcenter', function (response) {
+      client.envelopes.getTemplateView(templateId, 'http://www.docusign.com/devcenter', function (error, response) {
+        assert.ok(!error, 'Unexpected ' + error);
         var regex = new RegExp('https://demo.docusign.net/Member/StartInSession.aspx?');
         assert.ok(response.url);
         assert.strictEqual(true, regex.test(response.url));
