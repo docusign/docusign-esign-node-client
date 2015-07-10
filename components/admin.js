@@ -38,6 +38,16 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *   @param {string} usersToAdd[].last - Last Name
      *   @param {string} usersToAdd[].email - Email Address
      *   @param {string} usersToAdd[].password - Password
+     *   @param {object} usersToAdd[].forgottenPasswordInfo - Hash of question and answers
+     *     that will be asked when a password is forgotten. At least 1st pair is required
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion1
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer1
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion2
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer2
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion3
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer3
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion4
+     *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer4
      * @param {function} callback - Returned in the form of function(error, response).
      */
 
@@ -144,6 +154,16 @@ function getUserList (apiToken, baseUrl, callback) {
  *   @param {string} usersToAdd[].last - Last Name
  *   @param {string} usersToAdd[].email - Email Address
  *   @param {string} usersToAdd[].password - Password
+ *   @param {object} usersToAdd[].forgottenPasswordInfo - Hash of question and answers
+ *     that will be asked when a password is forgotten. At least 1st pair is required
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion1
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer1
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion2
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer2
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion3
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer3
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion4
+ *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer4
  * @param {function} callback - Returned in the form of function(error, response).
  */
 function addUsers (apiToken, baseUrl, usersToAdd, callback) {
@@ -154,6 +174,7 @@ function addUsers (apiToken, baseUrl, usersToAdd, callback) {
       lastName: user.last,
       email: user.email,
       password: user.password,
+      forgottenPasswordInfo: user.forgottenPasswordInfo,
       userSettings: [
         { name: 'canSendEnvelope', value: true }
       ]

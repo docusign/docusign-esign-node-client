@@ -63,7 +63,16 @@ describe('admin', function () {
 
   describe('addUsers', function () {
     it('should create a set of new users in DocuSign', function (done) {
-      var usersToAdd = [{first: 'test', last: 'docusign', email: 'test.docusign@test.com', password: 'password'}];
+      var usersToAdd = [{
+        first: 'test',
+        last: 'docusign',
+        email: 'test.docusign@test.com',
+        password: 'password',
+        forgottenPasswordInfo: {
+          forgottenPasswordQuestion1: "What is your mother's maiden name?",
+          forgottenPasswordAnswer1: 'docusign'
+        }
+      }];
       client.admin.addUsers(usersToAdd, function (error, response) {
         assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.newUsers[0].userId);
