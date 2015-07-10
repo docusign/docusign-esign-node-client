@@ -54,11 +54,12 @@ async.waterfall([
   // Step 1 - Initialize DocuSign Object with Integrator Key and Desired Environment
   // **********************************************************************************
   function init (next) {
-    docusign.init(integratorKey, docusignEnv, debug, function (response) {
+    docusign.init(integratorKey, docusignEnv, debug, function(err, response) {
+      if (err) {
+        return next(err);
+      }
       if (response.message === 'succesfully initialized') {
-        next(null);
-      } else {
-        return;
+        next();
       }
     });
   },
@@ -67,12 +68,11 @@ async.waterfall([
   // Step 2 - Create a DocuSign Client Object
   // **********************************************************************************
   function createClient (next) {
-    docusign.client(email, password, function (response) {
-      if ('error' in response) {
-        console.log('Error: ' + response.error);
-        return;
+    docusign.client(email, password, function(err, client) {
+      if (err) {
+        return next(err);
       }
-      next(null, response);
+      next(null, client);
     });
   },
 
@@ -82,12 +82,7 @@ async.waterfall([
   function sendTemplate (client, next) {
     client.envelopes.sendEnvelope('Sent from a Template', templateId, templateRoles, function (err, response) {
       if (err) {
-        console.log('Error: ', err);
         return next(err);
-      }
-      if (response.error) {
-        console.log('Error: ', response.error);
-        return;
       }
       console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
       next(null, client);
@@ -99,15 +94,20 @@ async.waterfall([
   // **********************************************************************************
   function logOut (client, next) {
     client.logOut(function (err, response) {
-      if (!err) {
-        next(null);
-      } else {
-        console.log(err);
+      if (err) {
+        return next(err);
       }
+      next(null);
     });
   }
 
-]);
+], function end (error) {
+  if (error) {
+    console.log('Error: ', error);
+    process.exit(1)
+  }
+  process.exit()
+});
 ```
 
 How to run Unit Tests

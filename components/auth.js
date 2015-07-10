@@ -5,6 +5,7 @@
 var querystring = require('querystring'); // core
 var async = require('async');
 var dsUtils = require('./../dsUtils');
+var DocuSignError = dsUtils.DocuSignError;
 
 /**
  * Gets login information for the default account/organization.
@@ -13,7 +14,7 @@ var dsUtils = require('./../dsUtils');
  * @function
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
- * @param {function} callback - Returned in the form of function(err, response).
+ * @param {function} callback - Returned in the form of function(error, loginInfo).
  */
 exports.getLoginInfo = function (email, password, callback) {
   var options = {
@@ -28,15 +29,16 @@ exports.getLoginInfo = function (email, password, callback) {
     }
   };
 
-  dsUtils.makeRequest('Get DS User Account Info', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      callback(response);
+  dsUtils.makeRequest('Get DS User Account Info', options, process.env.dsDebug, function (error, response) {
+    if (error) {
+      callback(error);
       return;
     }
-
-    callback(null, response.loginAccounts.filter(function (account) {
+    var loginInfo = response.loginAccounts.filter(function (account) {
       return account.isDefault === 'true';
-    })[0]);
+    })[0];
+
+    callback(null, loginInfo);
   });
 };
 
@@ -49,7 +51,7 @@ exports.getLoginInfo = function (email, password, callback) {
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(err, response).
+ * @param {function} callback - Returned in the form of function(error, accessToken).
  */
 exports.getOauthToken = function (email, password, baseUrl, callback) {
   var options = {
@@ -65,9 +67,9 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
     })
   };
 
-  dsUtils.makeRequest('Get DS OAuth2 Token', options, process.env.dsDebug, function (response) {
-    if ('error' in response) {
-      return callback(response.error_description);
+  dsUtils.makeRequest('Get DS OAuth2 Token', options, process.env.dsDebug, function (error, response) {
+    if (error) {
+      return callback(error);
     }
 
     return callback(null, response.access_token);
@@ -83,7 +85,7 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
  * @function
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
- * @param {function} callback - Returned in the form of function(err, response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 exports.getAPIToken = function (email, password, callback) {
   var thisObj = this;
@@ -111,10 +113,11 @@ exports.getAPIToken = function (email, password, callback) {
   ],
     function waterfallDone (err, token, baseUrl, accountId) {
       if (err) {
-        callback('Error getting token: ' + JSON.stringify(err));
-      } else {
-        callback(null, { access_token: token, baseUrl: baseUrl, accountId: accountId });
+        var errMsg = 'Error getting API token: ' + JSON.stringify(err);
+        var error = new DocuSignError(errMsg);
+        return callback(error);
       }
+      callback(null, { access_token: token, baseUrl: baseUrl, accountId: accountId });
     });
 };
 
@@ -131,7 +134,7 @@ exports.revokeOauthToken = function (accessToken, baseUrl) {
  * @function
  * @param {string} token - The DocuSign OAuth2 token to revoke.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(err, response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function revokeOauthToken (token, baseUrl, callback) {
   var headers = {
@@ -145,12 +148,12 @@ function revokeOauthToken (token, baseUrl, callback) {
     body: 'token=' + token
   };
 
-  dsUtils.makeRequest('Revoke DS OAuth2 Token', options, process.env.dsDebug, function (response) {
-    if (response && response.error) {
-      callback('Cannot revoke DS OAuth2 access token. Err: ' + response.error + ' Description: ' + response.error_description);
-    } else {
-      callback(null, response);
+  dsUtils.makeRequest('Revoke DS OAuth2 Token', options, process.env.dsDebug, function (error, response) {
+    if (error) {
+      error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
+      return callback(error);
     }
+    callback(null, response);
   });
 }
 

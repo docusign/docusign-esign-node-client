@@ -9,7 +9,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *
      * @memberOf Admin
      * @function
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
 
     getOrgAccountInfo: function (callback) {
@@ -21,7 +21,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *
      * @memberOf Admin
      * @function
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, users).
      */
 
     getUserList: function (callback) {
@@ -38,7 +38,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *   @param {string} usersToAdd[].last - Last Name
      *   @param {string} usersToAdd[].email - Email Address
      *   @param {string} usersToAdd[].password - Password
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
 
     addUsers: function (usersToAdd, callback) {
@@ -51,7 +51,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @function
      * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
 
     deleteUsers: function (usersToDelete, callback) {
@@ -63,7 +63,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *
      * @memberOf Admin
      * @function
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
 
     getTemplates: function (callback) {
@@ -80,7 +80,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *
      * @memberOf Admin
      * @function
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, plan).
      */
 
     getPlan: function (callback) {
@@ -96,7 +96,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @function
  * @param {string} accountId - DocuSign AccountId.
  * @param {string} apiToken - DocuSign API OAuth2 access token.
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function getOrgAccountInfo (accountId, apiToken, callback) {
   var options = {
@@ -105,12 +105,7 @@ function getOrgAccountInfo (accountId, apiToken, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get DS Org Account Info', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      return callback(response);
-    }
-    callback(response);
-  });
+  dsUtils.makeRequest('Get DS Org Account Info', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -120,7 +115,7 @@ function getOrgAccountInfo (accountId, apiToken, callback) {
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, users).
  */
 function getUserList (apiToken, baseUrl, callback) {
   var options = {
@@ -129,13 +124,11 @@ function getUserList (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken, baseUrl)
   };
 
-  dsUtils.makeRequest('Get DS Account User List', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      callback(response);
-      return;
+  dsUtils.makeRequest('Get DS Account User List', options, process.env.dsDebug, function (error, response) {
+    if (error) {
+      return callback(error);
     }
-
-    callback(response.users);
+    callback(null, response.users);
   });
 }
 
@@ -151,7 +144,7 @@ function getUserList (apiToken, baseUrl, callback) {
  *   @param {string} usersToAdd[].last - Last Name
  *   @param {string} usersToAdd[].email - Email Address
  *   @param {string} usersToAdd[].password - Password
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function addUsers (apiToken, baseUrl, usersToAdd, callback) {
   var users = usersToAdd.map(function (user) {
@@ -176,9 +169,7 @@ function addUsers (apiToken, baseUrl, usersToAdd, callback) {
     }
   };
 
-  dsUtils.makeRequest('Add Users to DS Account', options, process.env.dsDebug, function (response) {
-    callback(response);
-  });
+  dsUtils.makeRequest('Add Users to DS Account', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -189,7 +180,7 @@ function addUsers (apiToken, baseUrl, usersToAdd, callback) {
  * @param {string} apiToken - DS API OAuth2 access token.
  * @param {string} baseUrl - DS API base URL.
  * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
   var userIds = usersToDelete.map(function (user) {
@@ -207,9 +198,7 @@ function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
     }
   };
 
-  dsUtils.makeRequest('Delete Users in DS Account', options, process.env.dsDebug, function (response) {
-    callback(response);
-  });
+  dsUtils.makeRequest('Delete Users in DS Account', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -219,7 +208,7 @@ function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function getTemplates (apiToken, baseUrl, callback) {
   var options = {
@@ -228,14 +217,7 @@ function getTemplates (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Templates', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      callback({ error: response.errorCode + ': ' + response.message });
-      return;
-    }
-
-    callback(response);
-  });
+  dsUtils.makeRequest('Get Templates', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -250,7 +232,7 @@ function getTemplates (apiToken, baseUrl, callback) {
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, plan).
  */
 function getPlan (apiToken, baseUrl, callback) {
   var options = {
@@ -259,7 +241,11 @@ function getPlan (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Billing Plan Info', options, process.env.dsDebug, function (plan) {
+  dsUtils.makeRequest('Get Billing Plan Info', options, process.env.dsDebug, function (error, plan) {
+    if (error) {
+      return callback(error);
+    }
+
     var envelopesLeft = plan.billingPeriodEnvelopesAllowed - plan.billingPeriodEnvelopesSent;
 
     // a negative number signifies unlimited amount
@@ -267,6 +253,6 @@ function getPlan (apiToken, baseUrl, callback) {
 
     plan.name = plan.planName;
 
-    callback(plan);
+    callback(null, plan);
   });
 }

@@ -1,6 +1,9 @@
 // Wrappers for User APIs
 
+var util = require('util');
 var dsUtils = require('./../dsUtils');
+var isEmpty = require('lodash.isempty');
+var DocuSignError = dsUtils.DocuSignError;
 
 exports.init = function (accountId, baseUrl, accessToken) {
   return {
@@ -10,7 +13,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Users
      * @function
      * @param {string} userId - DocuSign userId.
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
     getInfo: function (userId, callback) {
       getInfo(accessToken, baseUrl, userId, callback);
@@ -22,7 +25,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Users
      * @function
      * @param {string} userId - DocuSign UserId.
-     * @param {function} callback - Returned in the form of function(err, response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
     getSignature: function (userId, callback) {
       getSignature(accessToken, baseUrl, userId, callback);
@@ -34,7 +37,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Users
      * @function
      * @param {string} userId - DocuSign UserId.
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
 
     getSocialConnection: function (userId, callback) {
@@ -51,7 +54,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign userId.
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function getInfo (apiToken, baseUrl, userId, callback) {
   var options = {
@@ -60,13 +63,7 @@ function getInfo (apiToken, baseUrl, userId, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get User Information', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      return callback(response);
-    } else {
-      return callback(response);
-    }
-  });
+  dsUtils.makeRequest('Get User Information', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -77,7 +74,7 @@ function getInfo (apiToken, baseUrl, userId, callback) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign UserId.
- * @param {function} callback - Returned in the form of function(err, response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function getSignature (apiToken, baseUrl, userId, callback) {
   var options = {
@@ -85,15 +82,15 @@ function getSignature (apiToken, baseUrl, userId, callback) {
     url: baseUrl + '/users/' + userId + '/signatures',
     headers: dsUtils.getHeaders(apiToken)
   };
-  dsUtils.makeRequest('Get User Signature', options, process.env.dsDebug, function (response) {
-    if (
-    'errorCode' in response ||
-    response.userSignatures == null ||
-    response.userSignatures.length === 0) {
-      callback(response.message);
-    } else {
-      callback(null, baseUrl + response.userSignatures[0].signatureImageUri);
+  dsUtils.makeRequest('Get User Signature', options, process.env.dsDebug, function (error, response) {
+    if (error) {
+      return callback(error);
     }
+    if (isEmpty(response.userSignatures)) {
+      var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
+      return callback(new DocuSignError(errMsg));
+    }
+    callback(null, baseUrl + response.userSignatures[0].signatureImageUri);
   });
 }
 
@@ -105,7 +102,7 @@ function getSignature (apiToken, baseUrl, userId, callback) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign UserId.
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function getSocialConnection (apiToken, baseUrl, userId, callback) {
   var options = {
@@ -114,12 +111,5 @@ function getSocialConnection (apiToken, baseUrl, userId, callback) {
     headers: dsUtils.getHeaders(apiToken, baseUrl)
   };
 
-  dsUtils.makeRequest('Get DS Social Connection', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      callback(response);
-      return;
-    }
-
-    callback(response);
-  });
+  dsUtils.makeRequest('Get DS Social Connection', options, process.env.dsDebug, callback);
 }

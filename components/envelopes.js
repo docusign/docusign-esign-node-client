@@ -6,6 +6,8 @@ var fs = require('fs'); // core
 var dsUtils = require('./../dsUtils');
 var util = require('util');
 var request = require('request');
+var isEmpty = require('lodash.isempty');
+var DocuSignError = dsUtils.DocuSignError;
 
 exports.init = function (accountId, baseUrl, accessToken) {
   return {
@@ -14,7 +16,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *
      * @memberOf Envelopes
      * @function
-     * @param {function} callback - Returned in the form of function(response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
     getConsoleUrl: function (callback) {
       getConsoleUrl(accessToken, baseUrl, callback);
@@ -26,7 +28,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Envelopes
      * @function
      * @param {string} fromDate - Date string.
-     * @param {function} callback - Returned in the form of function(err, response).
+     * @param {function} callback - Returned in the form of function(error, response).
      */
     getEnvelopeList: function (fromDate, callback) {
       getEnvelopeList(accessToken, baseUrl, fromDate, callback);
@@ -66,7 +68,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *   @param {object} event.eventNotification - This object mirrors the
      *     structure of the event notification request in the DS API.
      * @param {function} callback - Returns the response body from DS API
-     *   (this also includes an additional `envelopeId` field). Returned in the form of function(response).
+     *   (this also includes an additional `envelopeId` field). Returned in the form of function(error, response).
      */
     getView: function (action, fullName, email, files, returnUrl, event, callback) {
       getView(accessToken, baseUrl, action, fullName, email, files, returnUrl, event, callback);
@@ -85,7 +87,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
      *   @param {string} files[].url - The URL to download from.
      *   @param {string} files[].base64 - The base64-encoded buffer of the file
-     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
+     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      */
     sendEnvelope: function (recipients, emailSubject, files, callback) {
       sendEnvelope(accessToken, baseUrl, recipients, emailSubject, files, callback);
@@ -96,7 +98,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Public
      * @function
      * @param {string} envelopeId - ID of envelope to get documents from.
-     * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(response).
+     * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
      *
      */
     getEnvelopeInfo: function (envelopeId, callback) {
@@ -113,7 +115,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *   Pass `null` for binary or `base64` for Base64 encoding.
      * @param {boolean} attachCertificate - A flag to decide whether or not to
      *   attach the Certificate of Completion (CoC) into the returned PDF.
-     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
+     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      */
     getSignedDocuments: function (envelopeId, encoding, attachCertificate, callback) {
       getSignedDocuments(accessToken, baseUrl, envelopeId, encoding, attachCertificate, callback);
@@ -128,7 +130,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {string} clientUserId - This is required if the signer is an offline signer.
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
-     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
+     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      */
     getSignerView: function (userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback) {
       getSignerView(accessToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback);
@@ -143,7 +145,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {string} templateId - ID of template you wish to create an envelope from.
      * @param {array} templateRoles - Array of JSON objects of templateRoles. For more information please visit:
      *    https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST API References/Send an Envelope from a Template.htm%3FTocPath%3DREST%2520API%2520References%7C_____39
-     * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(response).
+     * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(error, response).
      *
      */
     sendTemplate: function (emailSubject, templateId, templateRoles, callback) {
@@ -158,7 +160,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} templateId - ID of template you wish to create an envelope from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have tagged the envelope.
-     * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(response).
+     * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(error, response).
      */
     getTemplateView: function (templateId, returnUrl, callback) {
       getTemplateView(accessToken, baseUrl, templateId, returnUrl, callback);
@@ -170,7 +172,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Public
      * @function
      * @param {string} envelopeId - ID of envelope to get list of recipients from.
-     * @param {function} callback - Returns the list of recipients in the form of function(response).
+     * @param {function} callback - Returns the list of recipients in the form of function(error, response).
      */
     getRecipients: function (envelopeId, callback) {
       getRecipients(accessToken, baseUrl, envelopeId, callback);
@@ -185,7 +187,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 
 function getConsoleUrl (apiToken, baseUrl, callback) {
@@ -195,9 +197,7 @@ function getConsoleUrl (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Dashboard URL', options, process.env.dsDebug, function (response) {
-    callback(response);
-  });
+  dsUtils.makeRequest('Get Dashboard URL', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -208,7 +208,7 @@ function getConsoleUrl (apiToken, baseUrl, callback) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} fromDate - Date string.
- * @param {function} callback - Returned in the form of function(err, response).
+ * @param {function} callback - Returned in the form of function(error, response).
  */
 function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
   fromDate = new Date(fromDate);
@@ -219,13 +219,7 @@ function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Envelope List', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      return callback({error: response.errorCode});
-    } else {
-      return callback(null, response);
-    }
-  });
+  dsUtils.makeRequest('Get Envelope List', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -243,7 +237,7 @@ function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
  *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
  *   @param {string} files[].url - The URL to download from.
  *   @param {string} files[].base64 - The base64-encoded buffer of the file
- * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
+ * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
  */
 
 function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callback) {
@@ -314,12 +308,16 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callb
     if (error) {
       return callback(error);
     }
+    if (isEmpty(body)) {
+      return callback(new DocuSignError('Any empty response body was received.'));
+    }
 
     try {
-      callback(false, JSON.parse(body));
+      var parsedBody = JSON.parse(body);
     } catch (e) {
-      callback(body || 'Any empty response body was received.');
+      callback(new DocuSignError('Problem trying to parse the body'));
     }
+    callback(null, parsedBody);
   });
 
 }
@@ -360,7 +358,7 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callb
  *   @param {object} event.eventNotification - This object mirrors the
  *     structure of the event notification request in the DS API.
  * @param {function} callback - Returns the response body from DS API
- *   (this also includes an additional `envelopeId` field). Returned in the form of function(response).
+ *   (this also includes an additional `envelopeId` field). Returned in the form of function(error, response).
  */
 
 function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, event, callback) {
@@ -369,11 +367,13 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
     function createNewEnvelope (next) {
       _createEnvelope(apiToken, baseUrl, action, fullName, email, files, event, function (error, response) {
         if (error) {
-          callback({ error: 'An error has occurred: ' + response });
+          callback(error);
           next(true); // end the waterfall
           return;
         } else if ('errorCode' in response) {
-          callback({ error: response.errorCode + ': ' + response.message });
+          var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
+          var err = new DocuSignError(errMsg);
+          callback(err);
           next(true); // end the waterfall
           return;
         }
@@ -412,9 +412,9 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
         json: data
       };
 
-      dsUtils.makeRequest('Get Envelope View', options, process.env.dsDebug, function (response) {
-        if ('errorCode' in response) {
-          callback({ error: response.errorCode + ': ' + response.message });
+      dsUtils.makeRequest('Get Envelope View', options, process.env.dsDebug, function (error, response) {
+        if (error) {
+          callback(error);
           next(true); // end the waterfall
           return;
         }
@@ -422,7 +422,7 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
         // return the envelope ID for the post-signing page
         response.envelopeId = envelopeId;
 
-        callback(response);
+        callback(null, response);
         next(null);
       });
     }
@@ -546,12 +546,16 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
     if (error) {
       return callback(error);
     }
+    if (isEmpty(body)) {
+      return callback(new DocuSignError('Any empty response body was received.'));
+    }
 
     try {
-      callback(false, JSON.parse(body));
+      var parsedBody = JSON.parse(body);
     } catch (e) {
-      callback(true, body || 'An empty response body was received.');
+      callback(new DocuSignError('Problem trying to parse the body'));
     }
+    callback(null, parsedBody);
   });
 }
 
@@ -563,7 +567,7 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} envelopeId - ID of envelope to get documents from.
- * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(response).
+ * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
  *
  */
 function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
@@ -573,13 +577,7 @@ function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Envelope Information', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      callback({ error: response.errorCode + ': ' + response.message });
-      return;
-    }
-    callback(response);
-  });
+  dsUtils.makeRequest('Get Envelope Information', options, process.env.dsDebug, callback);
 
 }
 
@@ -595,7 +593,7 @@ function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
  *   Pass `null` for binary or `base64` for Base64 encoding.
  * @param {boolean} attachCertificate - A flag to decide whether or not to
  *   attach the Certificate of Completion (CoC) into the returned PDF.
- * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
+ * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
  */
 function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCertificate, callback) {
   var options = {
@@ -606,11 +604,13 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
   };
 
   request(options, function (error, response, body) {
-    if (response.statusCode !== 200 && response.statusCode !== 201) {
-      callback({ error: response.statusCode + ': ' + error });
-      return;
+    if (error) {
+      return callback(error);
     }
-    callback(body);
+    if (response.statusCode !== 200 && response.statusCode !== 201) {
+      return callback(new DocuSignError(response.statusCode + ': ' + error));
+    }
+    callback(null, body);
   });
 }
 
@@ -625,7 +625,7 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
  * @param {string} clientUserId - This is required if the signer is an offline signer.
  * @param {string} envelopeId - ID of envelope to get documents from.
  * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
- * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(response).
+ * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
  */
 function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback) {
   var data = {
@@ -647,14 +647,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
     json: data
   };
 
-  dsUtils.makeRequest('Get Signer View', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      callback({ error: response.errorCode + ': ' + response.message });
-      return;
-    }
-
-    callback(response);
-  });
+  dsUtils.makeRequest('Get Signer View', options, process.env.dsDebug, callback);
 }
 
 /**
@@ -668,7 +661,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
  * @param {string} templateId - ID of template you wish to create an envelope from.
  * @param {array} templateRoles - Array of JSON objects of templateRoles. For more information please visit:
  *    https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST API References/Send an Envelope from a Template.htm%3FTocPath%3DREST%2520API%2520References%7C_____39
- * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(response).
+ * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(error, response).
  *
  */
 
@@ -687,14 +680,7 @@ function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRole
     json: data
   };
 
-  dsUtils.makeRequest('Send Template', options, process.env.dsDebug, function (response) {
-    if ('errorCode' in response) {
-      callback({ error: response.errorCode + ': ' + response.message });
-      return;
-    }
-
-    callback(response);
-  });
+  dsUtils.makeRequest('Send Template', options, process.env.dsDebug, callback);
 
 }
 
@@ -708,7 +694,7 @@ function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRole
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} templateId - ID of template you wish to create an envelope from.
  * @param {string} returnUrl - URL you want the Embedded View to return to after you have tagged the envelope.
- * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(response).
+ * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(error, response).
  */
 function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
   async.waterfall([
@@ -724,9 +710,9 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
         }
       };
 
-      dsUtils.makeRequest('Create Envelope From Template', options, process.env.dsDebug, function (response) {
-        if ('errorCode' in response) {
-          callback({ error: response.errorCode + ': ' + response.message });
+      dsUtils.makeRequest('Create Envelope From Template', options, process.env.dsDebug, function (error, response) {
+        if (error) {
+          callback(error);
           next(true); // end the waterfall
           return;
         }
@@ -745,14 +731,14 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
         }
       };
 
-      dsUtils.makeRequest('Get Template View', options, process.env.dsDebug, function (response) {
-        if ('errorCode' in response) {
-          callback({ error: response.errorCode + ': ' + response.message });
+      dsUtils.makeRequest('Get Template View', options, process.env.dsDebug, function (error, response) {
+        if (error) {
+          callback(error);
           next(true); // end the waterfall
           return;
         }
 
-        callback(response);
+        callback(null, response);
         next(null);
       });
     }
@@ -768,7 +754,7 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} envelopeId - ID of envelope to get list of recipients from.
- * @param {function} callback - Returns the list of recipients in the form of function(response).
+ * @param {function} callback - Returns the list of recipients in the form of function(error, response).
  */
 function getRecipients (apiToken, baseUrl, envelopeId, callback) {
   var options = {
@@ -777,7 +763,5 @@ function getRecipients (apiToken, baseUrl, envelopeId, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get List of Recipients', options, false, function (response) {
-    callback(response);
-  });
+  dsUtils.makeRequest('Get List of Recipients', options, false, callback);
 }

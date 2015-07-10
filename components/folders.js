@@ -16,8 +16,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
      *  the given `envelopeType`. Otherwise, only get the first 50 most recent
      *  envelopes.
-     * @param {function} callback - Returns envelope info that is in
-     *   `response.folderItems`.
+     * @param {function} callback - Returns in the form of function(error, response)
+     *   such that envelopes will live at `response.folderItems.
      */
     getEnvelopes: function (envelopeType, doFullRetrieval, callback) {
       getEnvelopes(accessToken, baseUrl, envelopeType, doFullRetrieval, callback);
@@ -29,8 +29,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Folders
      * @function
      * @param {string} searchTerm - The term that the DS API should search for.
-     * @param {function} callback - Returns the list of envelopes matching the
-     *   search term.
+     * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
      */
     searchThroughEnvelopes: function (searchTerm, callback) {
       searchThroughEnvelopes(accessToken, baseUrl, searchTerm, callback);
@@ -51,8 +50,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
  *  the given `envelopeType`. Otherwise, only get the first 50 most recent
  *  envelopes.
- * @param {function} callback - Returns envelope info that is in
- *   `response.folderItems`.
+ * @param {function} callback - Returns in the form of function(error, response)
+ *   such that envelopes will live at `response.folderItems.
  */
 function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callback) {
   var envelopes = [];
@@ -69,7 +68,10 @@ function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callbac
         headers: dsUtils.getHeaders(apiToken)
       };
 
-      dsUtils.makeRequest('Get Envelopes', options, process.env.dsDebug, function (response) {
+      dsUtils.makeRequest('Get Envelopes', options, process.env.dsDebug, function (error, response) {
+        if (error) {
+          return next(error);
+        }
         envelopes = envelopes.concat(response.folderItems);
 
         /*
@@ -78,11 +80,11 @@ function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callbac
          */
         nextUri = doFullRetrieval ? response.nextUri : null;
 
-        next(false); // continue onto the next step
+        next(); // continue onto the next step
       });
     },
-    function end () {
-      callback(envelopes);
+    function end (error) {
+      callback(error, envelopes);
     }
   );
 }
@@ -95,8 +97,7 @@ function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callbac
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL..
  * @param {string} searchTerm - The term that the DS API should search for.
- * @param {function} callback - Returns the list of envelopes matching the
- *   search term.
+ * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
  */
 function searchThroughEnvelopes (apiToken, baseUrl, searchTerm, callback) {
   var options = {
@@ -108,7 +109,5 @@ function searchThroughEnvelopes (apiToken, baseUrl, searchTerm, callback) {
     }
   };
 
-  dsUtils.makeRequest('Search Through Envelopes', options, process.env.dsDebug, function (response) {
-    callback(response);
-  });
+  dsUtils.makeRequest('Search Through Envelopes', options, process.env.dsDebug, callback);
 }
