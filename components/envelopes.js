@@ -633,10 +633,18 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
       return callback(error);
     }
     if (response.statusCode !== 200 && response.statusCode !== 201) {
-      var parsedBody = JSON.parse(body.toString());
-      return callback(new DocuSignError(response.statusCode + ': ' + parsedBody.message, {
+      var parsedBody, message, errorCode;
+      try {
+        parsedBody = JSON.parse(body.toString());
+        message = parsedBody.message;
+        errorCode = parsedBody.errorCode;
+      } catch (e) {
+        message = body.toString();
+        errorCode = null;
+      }
+      return callback(new DocuSignError(response.statusCode + ': ' + message, {
         statusCode: response.statusCode,
-        errorCode: parsedBody.errorCode
+        errorCode: errorCode
       }));
     }
     callback(null, body);
