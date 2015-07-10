@@ -7,6 +7,7 @@ var fileType = require('file-type');
 
 // Imported file to be tested
 var docusign = require('../../docusign.js');
+var dsUtils = require('../../dsUtils.js');
 
 describe('envelopes', function () {
   var client;
@@ -57,7 +58,20 @@ describe('envelopes', function () {
   });
 
   describe('getSignedDocuments', function () {
-    it('should get signed documents', function (done) {
+    // Skipped since it 400's if the envelopeId given is not valid
+    // and also returns html not JSON
+    it.skip('should 404 to get non-existent signed documents', function (done) {
+      var nonExistentEnvelopeId = dsUtils.generateNewGuid();
+      client.envelopes.getSignedDocuments(nonExistentEnvelopeId, null, true, function (error, response) {
+        assert.ok(error.statusCode === 404, 'Unexpected status code: ' + error.statusCode);
+        assert.ok(!response, 'Got response, expected none');
+        done();
+      });
+    });
+
+    // Skipped since it 404's if the envelopeId given is not signed
+    // and also since 404's are considered errors
+    it.skip('should get signed documents', function (done) {
       client.envelopes.getSignedDocuments(envelopeId, null, true, function (error, response) {
         assert.ok(!error, 'Unexpected ' + error);
         assert.strictEqual('pdf', fileType(response).ext);
