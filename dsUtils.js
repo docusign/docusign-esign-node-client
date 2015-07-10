@@ -8,6 +8,15 @@ var temp = require('temp');
 var stream = require('stream');
 var crypto = require('crypto');
 
+exports.DocuSignError = DocuSignError;
+function DocuSignError (message) {
+  this.message = message;
+  this.name = 'DocuSignError';
+  Error.captureStackTrace(this, DocuSignError);
+}
+DocuSignError.prototype = Object.create(Error.prototype);
+DocuSignError.prototype.constrcutor = DocuSignError;
+
 exports.validateCallback = function (testCallback, callback) {
   if (typeof testCallback !== 'function') {
     return callback({error: 'Callback is not a function.  You must pass a valid function as callback to this method'});
