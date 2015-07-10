@@ -30,7 +30,7 @@ This example shows you how to do the following:
 - Logout of the Client by Revoking the DocuSign user's OAuth Token
 
 ```javascript
-var docusign = require('docusign');
+var docusign = require('docusign-node');
 var async = require('async');
 
 var integratorKey  = '***',                   // Integrator Key associated with your DocuSign Integration
