@@ -34,7 +34,7 @@ describe('folder', function () {
     it('should get information about the envelopes for the DocuSign account', function (done) {
       client.folders.getEnvelopes('all', true, function (error, response) {
         assert.ok(!error, 'Unexpected ' + error);
-        assert.ok(response[0].subject);
+        assert.ok(response[0].subject != null);
         done();
       });
     });
