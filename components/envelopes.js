@@ -430,6 +430,38 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
   ]);
 }
 
+/**
+ * Internal method to create an envelope based on a specified action
+ *
+ * @memberOf Private
+ * @function
+ * @param {string} apiToken - DocuSign API OAuth2 access token.
+ * @param {string} baseUrl - DocuSign API base URL.
+ * @param {string} action - The DS process to use. Valid values are:
+ *   `sign` - Only the user signs the envelope.
+ *   `send` - Recipients selected by the user sign the envelope.
+ *   `both` - The user and selected recipients sign the envelope.
+ * @param {string} fullName - The full name of the user.
+ * @param {string} email - The email address of the user.
+ * @param {object[]} files - A list of file objects to be uploaded into DS.
+ *   @param {string} files.name - The name of the file.
+ *   @param {string} files.extension - The extension of the file (e.g. `pdf`).
+ *   @param {string} files.url - The URL to download from.
+ *   @param {string} files.base64 - The base64-encoded buffer of the file.
+ *     contents (`files[].url` does not need to be set).
+ * @param {object} event - An object with values concerning what happens
+ *   after the DS process is done (e.g. webhook registration). Can be `null`.
+ *   @param {string} event.platform - The name of the calling app.
+ *   @param {object} event.recipients - Mirrors DS API Recipients structure
+ *     (note that `recipientId` will be filled in by this function).
+ *   @param {boolean} event.showSignAndReturn - A flag to control whether
+ *     or not to show the Sign & Return popup after the user signs.
+ *   @param {object} event.eventNotification - This object mirrors the
+ *     structure of the event notification request in the DS API.
+ * @param {function} callback - Returns the response body from DS API
+ *   (this also includes an additional `envelopeId` field). Returned in the form of function(error, response).
+ */
+
 function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, event, callback) {
   var logResponse = process.env.dsDebug === 'true';
   if (logResponse) {
