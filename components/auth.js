@@ -114,7 +114,7 @@ exports.getAPIToken = function (email, password, callback) {
     function waterfallDone (err, token, baseUrl, accountId) {
       if (err) {
         var errMsg = 'Error getting API token: ' + JSON.stringify(err);
-        var error = new DocuSignError(errMsg);
+        var error = new DocuSignError(errMsg, err);
         return callback(error);
       }
       callback(null, { access_token: token, baseUrl: baseUrl, accountId: accountId });

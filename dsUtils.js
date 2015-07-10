@@ -7,11 +7,14 @@ var async = require('async');
 var temp = require('temp');
 var stream = require('stream');
 var crypto = require('crypto');
+var assign = require('lodash.assign');
 
 exports.DocuSignError = DocuSignError;
-function DocuSignError (message) {
+function DocuSignError (message, errorDetails) {
+  errorDetails = errorDetails || {};
   this.message = message;
   this.name = 'DocuSignError';
+  assign(this, errorDetails);
   Error.captureStackTrace(this, DocuSignError);
 }
 DocuSignError.prototype = Object.create(Error.prototype);

@@ -370,7 +370,7 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
           return next(error);
         } else if ('errorCode' in response) {
           var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
-          var err = new DocuSignError(errMsg);
+          var err = new DocuSignError(errMsg, {errorCode: response.errorCode});
           return next(err);
         }
 
@@ -633,7 +633,11 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
       return callback(error);
     }
     if (response.statusCode !== 200 && response.statusCode !== 201) {
-      return callback(new DocuSignError(response.statusCode + ': ' + error));
+      var parsedBody = JSON.parse(body.toString());
+      return callback(new DocuSignError(response.statusCode + ': ' + parsedBody.message, {
+        statusCode: response.statusCode,
+        errorCode: parsedBody.errorCode
+      }));
     }
     callback(null, body);
   });

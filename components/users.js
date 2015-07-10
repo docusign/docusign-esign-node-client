@@ -88,7 +88,7 @@ function getSignature (apiToken, baseUrl, userId, callback) {
     }
     if (isEmpty(response.userSignatures)) {
       var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
-      return callback(new DocuSignError(errMsg));
+      return callback(new DocuSignError(errMsg, {errorCode: response.errorCode}));
     }
     callback(null, baseUrl + response.userSignatures[0].signatureImageUri);
   });
