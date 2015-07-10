@@ -367,15 +367,11 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
     function createNewEnvelope (next) {
       _createEnvelope(apiToken, baseUrl, action, fullName, email, files, event, function (error, response) {
         if (error) {
-          callback(error);
-          next(true); // end the waterfall
-          return;
+          return next(error);
         } else if ('errorCode' in response) {
           var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
           var err = new DocuSignError(errMsg);
-          callback(err);
-          next(true); // end the waterfall
-          return;
+          return next(err);
         }
 
         next(null, response.uri, response.envelopeId);
@@ -414,20 +410,17 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
 
       dsUtils.makeRequest('Get Envelope View', options, process.env.dsDebug, function (error, response) {
         if (error) {
-          callback(error);
-          next(true); // end the waterfall
-          return;
+          return next(error);
         }
 
         // return the envelope ID for the post-signing page
         response.envelopeId = envelopeId;
 
-        callback(null, response);
-        next(null);
+        next(null, response);
       });
     }
 
-  ]);
+  ], callback);
 }
 
 /**
@@ -744,9 +737,7 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
 
       dsUtils.makeRequest('Create Envelope From Template', options, process.env.dsDebug, function (error, response) {
         if (error) {
-          callback(error);
-          next(true); // end the waterfall
-          return;
+          return next(error);
         }
 
         next(null, response.envelopeId);
@@ -765,17 +756,14 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
 
       dsUtils.makeRequest('Get Template View', options, process.env.dsDebug, function (error, response) {
         if (error) {
-          callback(error);
-          next(true); // end the waterfall
-          return;
+          return next(error);
         }
 
-        callback(null, response);
-        next(null);
+        next(null, response);
       });
     }
 
-  ]);
+  ], callback);
 }
 
 /**
