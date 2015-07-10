@@ -12,6 +12,9 @@ var assign = require('lodash.assign');
 exports.DocuSignError = DocuSignError;
 function DocuSignError (message, errorDetails) {
   errorDetails = errorDetails || {};
+  if (message instanceof DocuSignError) {
+    return message;
+  }
   this.message = message;
   this.name = 'DocuSignError';
   assign(this, errorDetails);
