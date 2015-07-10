@@ -6,7 +6,7 @@ var fs = require('fs'); // core
 var dsUtils = require('./../dsUtils');
 var util = require('util');
 var request = require('request');
-var isEmpty = require('lodash.isempty');
+var isEmpty = require('lodash/lang/isEmpty');
 var DocuSignError = dsUtils.DocuSignError;
 
 exports.init = function (accountId, baseUrl, accessToken) {

@@ -2,7 +2,7 @@
 
 var util = require('util');
 var dsUtils = require('./../dsUtils');
-var isEmpty = require('lodash.isempty');
+var isEmpty = require('lodash/lang/isEmpty');
 var DocuSignError = dsUtils.DocuSignError;
 
 exports.init = function (accountId, baseUrl, accessToken) {
