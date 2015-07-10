@@ -119,7 +119,7 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
     if (json === null) { // successful request; no json in response body
       callback(null, body);
     } else if ('errorCode' in json) {
-      errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, JSON.stringify(json.message));
+      errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, json.message);
       err = new DocuSignError(errMsg);
       util.log(errMsg);
       callback(err, json);
