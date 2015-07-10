@@ -17,14 +17,6 @@ function DocuSignError (message) {
 DocuSignError.prototype = Object.create(Error.prototype);
 DocuSignError.prototype.constrcutor = DocuSignError;
 
-exports.validateCallback = function (testCallback, callback) {
-  if (typeof testCallback !== 'function') {
-    return callback({error: 'Callback is not a function.  You must pass a valid function as callback to this method'});
-  } else {
-    return callback(null);
-  }
-};
-
 /**
  * Creates guids for use with when creating new users
  *
