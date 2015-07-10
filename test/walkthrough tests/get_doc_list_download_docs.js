@@ -16,7 +16,7 @@ describe('get_doc_list_download', function () {
   var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
   var attachCertificate = false;
 
-  it('should return document list and documents', function (done) {
+  it.skip('should return document list and documents', function (done) {
     async.waterfall([
 
       // **********************************************************************************

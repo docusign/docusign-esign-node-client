@@ -15,7 +15,7 @@ describe('get_envelope_recipient_status', function () {
   var password = config.DOCUSIGN_TEST_PASSWORD;
   var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
 
-  it('should return recipient status information for the specified envelope', function (done) {
+  it.skip('should return recipient status information for the specified envelope', function (done) {
     async.waterfall([
 
       // **********************************************************************************

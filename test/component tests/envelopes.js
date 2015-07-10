@@ -81,7 +81,7 @@ describe('envelopes', function () {
   });
 
   describe('getRecipients', function () {
-    it('should get recipients of an envelope', function (done) {
+    it.skip('should get recipients of an envelope', function (done) {
       client.envelopes.getRecipients(envelopeId, function (error, response) {
         assert.ok(!error, 'Unexpected ' + error);
         assert.ok(response.signers);

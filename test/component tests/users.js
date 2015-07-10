@@ -51,7 +51,7 @@ describe('users', function () {
   });
 
   describe('getSocialConnection', function () {
-    it('should get the social connection details for a given user', function (done) {
+    it.skip('should get the social connection details for a given user', function (done) {
       client.users.getSocialConnection(userId, function (error, response) {
         assert.ok(!error, 'Unexpected ' + error);
         assert.strictEqual(userId, response.userId);
