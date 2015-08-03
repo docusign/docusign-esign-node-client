@@ -80,7 +80,7 @@ async.waterfall([
   // Step 3 - Request Signature via Template
   // **********************************************************************************
   function sendTemplate (client, next) {
-    client.envelopes.sendEnvelope('Sent from a Template', templateId, templateRoles, function (err, response) {
+    client.envelopes.sendTemplate('Sent from a Template', templateId, templateRoles, function (err, response) {
       if (err) {
         return next(err);
       }
