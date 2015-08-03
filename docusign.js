@@ -29,6 +29,7 @@
  */
 
 var util = require('util');
+var bluebird = require('bluebird');
 
 // Local Imports
 var admin = require('./components/admin');
@@ -74,18 +75,27 @@ var docusign = (function () {
       if (err) {
         return callback(err);
       }
+      var adminApi = admin.init(response.accountId, response.baseUrl, response.access_token);
+      var envelopesApi = envelopes.init(response.accountId, response.baseUrl, response.access_token);
+      var foldersApi = folders.init(response.accountId, response.baseUrl, response.access_token);
+      var usersApi = users.init(response.accountId, response.baseUrl, response.access_token);
+      var logOut = auth.revokeOauthToken(response.access_token, response.baseUrl);
+
       callback(null, {
-        admin: admin.init(response.accountId, response.baseUrl, response.access_token),
-        envelopes: envelopes.init(response.accountId, response.baseUrl, response.access_token),
-        folders: folders.init(response.accountId, response.baseUrl, response.access_token),
-        users: users.init(response.accountId, response.baseUrl, response.access_token),
-        logOut: auth.revokeOauthToken(response.access_token, response.baseUrl)
+        admin: bluebird.promisifyAll(adminApi),
+        envelopes: bluebird.promisifyAll(envelopesApi),
+        folders: bluebird.promisifyAll(foldersApi),
+        users: bluebird.promisifyAll(usersApi),
+        logOutAsync: bluebird.promisify(logOut),
+        logOut: logOut
       });
     });
   }
 
   return {
     init: init,
+    initAsync: bluebird.promisify(init),
+    clientAsync: bluebird.promisify(client),
     client: client
   };
 })();
