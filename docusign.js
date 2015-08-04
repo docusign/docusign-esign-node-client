@@ -36,6 +36,9 @@ var users = require('./components/users');
 var auth = require('./components/auth');
 var folders = require('./components/folders');
 var envelopes = require('./components/envelopes');
+var dsUtils = require('./dsUtils');
+
+var DocuSignError = dsUtils.DocuSignError;
 
 // Create DocuSign Object
 var docusign = (function () {
@@ -54,31 +57,30 @@ var docusign = (function () {
     } else if (targetEnv === 'www' || targetEnv === 'live') {
       process.env.targetEnv = 'www';
     } else {
-      return callback({error: "Invalid environment value. 'Demo' or 'Live' are the only valid environments."});
+      return callback(new DocuSignError("Invalid environment value. 'Demo' or 'Live' are the only valid environments."));
     }
 
     if (integratorKey) {
       process.env.integratorKey = integratorKey;
     } else {
-      callback({error: 'Integrator key cannot be null or empty string.'});
+      return callback(new DocuSignError('Integrator key cannot be null or empty string.'));
     }
 
-    callback({message: 'successfully initialized'});
+    callback(null, {message: 'successfully initialized'});
   }
 
   function client (email, password, callback) {
     auth.getAPIToken(email, password, function (err, response) {
       if (err) {
-        return {error: err};
-      } else {
-        callback({
-          admin: admin.init(response.accountId, response.baseUrl, response.access_token),
-          envelopes: envelopes.init(response.accountId, response.baseUrl, response.access_token),
-          folders: folders.init(response.accountId, response.baseUrl, response.access_token),
-          users: users.init(response.accountId, response.baseUrl, response.access_token),
-          logOut: auth.revokeOauthToken(response.access_token, response.baseUrl)
-        });
+        return callback(err);
       }
+      callback(null, {
+        admin: admin.init(response.accountId, response.baseUrl, response.access_token),
+        envelopes: envelopes.init(response.accountId, response.baseUrl, response.access_token),
+        folders: folders.init(response.accountId, response.baseUrl, response.access_token),
+        users: users.init(response.accountId, response.baseUrl, response.access_token),
+        logOut: auth.revokeOauthToken(response.access_token, response.baseUrl)
+      });
     });
   }
 

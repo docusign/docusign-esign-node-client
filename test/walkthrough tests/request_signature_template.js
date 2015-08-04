@@ -30,7 +30,8 @@ describe('request_signature_template', function () {
         // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
         // **********************************************************************************
         function init (next) {
-          docusign.init(integratorKey, 'demo', debug, function (response) {
+          docusign.init(integratorKey, 'demo', debug, function (error, response) {
+            assert.ok(!error, 'Unexpected ' + error);
             var message = response.message;
             assert.strictEqual(message, 'successfully initialized');
             next(null);
@@ -41,8 +42,8 @@ describe('request_signature_template', function () {
         // Step 2 - Create a DocuSign Client Object
         // **********************************************************************************
         function createClient (next) {
-          docusign.client(email, password, function (response) {
-            assert.ok(!response.error);
+          docusign.client(email, password, function (error, response) {
+            assert.ok(!error, 'Unexpected ' + error);
             next(null, response);
           });
         },
@@ -51,8 +52,8 @@ describe('request_signature_template', function () {
         // Step 3 - Request Signature via Template
         // **********************************************************************************
         function sendTemplate (client, next) {
-          client.envelopes.sendTemplate('DS API call - Request Signature', templateId, templateRoles, function (response) {
-            assert.ok(!response.error);
+          client.envelopes.sendTemplate('DS API call - Request Signature', templateId, templateRoles, function (error, response) {
+            assert.ok(!error, 'Unexpected ' + error);
             console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
             next(null, client);
           });

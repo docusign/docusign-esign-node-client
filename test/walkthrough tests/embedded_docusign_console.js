@@ -21,7 +21,8 @@ describe('embedded_docusign_console', function () {
       // Step 1 - Initialize DocuSign Object with Integratory Key and Desired Environment
       // **********************************************************************************
       function init (next) {
-        docusign.init(integratorKey, docusignEnv, debug, function (response) {
+        docusign.init(integratorKey, docusignEnv, debug, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           var message = response.message;
           assert.strictEqual(message, 'successfully initialized');
           next(null);
@@ -32,8 +33,8 @@ describe('embedded_docusign_console', function () {
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
       // **********************************************************************************
       function createClient (next) {
-        docusign.client(email, password, function (response) {
-          assert.ok(!response.error);
+        docusign.client(email, password, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           next(null, response);
         });
       },
@@ -42,8 +43,8 @@ describe('embedded_docusign_console', function () {
       // Step 3 - Get the Embedded Console View
       // **********************************************************************************
       function getConsoleUrl (client, next) {
-        client.envelopes.getConsoleUrl(function (response) {
-          assert.ok(!response.error);
+        client.envelopes.getConsoleUrl(function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
           console.log('Navigate to this URL for the Embedded DocuSign Console: ' + response.url);
           next(null, client);
         });
