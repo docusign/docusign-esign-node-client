@@ -44,7 +44,7 @@
     "file-type": "2.5.0",
     "mocha": "2.2.4",
     "pre-commit": "1.0.10",
-    "semistandard": "6.1.2"
+    "semistandard": "7.0.2"
   },
   "pre-commit": [
     "style-check"
