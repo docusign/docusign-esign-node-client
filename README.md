@@ -23,7 +23,9 @@ See [Common Terms](https://www.docusign.com/developer-center/explore/overview) f
 Getting Started
 ----------
 
-This example shows you how to do the following:
+Install the client locally:  `npm install docusign-node` (note you may have to use `sudo` based on your permissions)
+
+The below examples show you how to:
 - Create a DocuSign Object with an Integrator Key and a Target DocuSign Environment
 - Create a DocuSign Client Object and Login using your DocuSign Account Credentials
 - Create a new Envelope using a Template and sending to the recipient you specify
