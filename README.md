@@ -18,7 +18,7 @@ You can create your free dev account at the [DocuSign DevCenter](https://www.doc
 
 ### Useful Reading
 
-See [Common Terms](https://www.docusign.com/developer-center/explore/common-terms) for an explantion of the basic components of the DocuSign platform.
+See [Common Terms](https://www.docusign.com/developer-center/explore/overview) for an explantion of the basic components of the DocuSign platform.
 
 Getting Started
 ----------
