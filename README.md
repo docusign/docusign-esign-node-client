@@ -31,6 +31,8 @@ The below examples show you how to:
 - Create a new Envelope using a Template and sending to the recipient you specify
 - Logout of the Client by Revoking the DocuSign user's OAuth Token
 
+Alternatively, this SDK supports a promise interface via [`bluebird`](https://www.npmjs.com/package/bluebird). An [example](./examples/promise.js).
+
 ```javascript
 var docusign = require('docusign-node');
 var async = require('async');
