@@ -76,7 +76,7 @@ async.waterfall([
       if (err) {
         return next(err);
       }
-      next(null, client);
+      next(null, docusign.client);
     });
   },
 
