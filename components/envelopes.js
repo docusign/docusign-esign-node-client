@@ -673,13 +673,11 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
 function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, authMethod, callback) {
   var data = {};
   
-  if (clientUserId === null)
-  {
+  if (clientUserId === null) {
     return callback(new DocuSignError('clientUserId is a required recipient parameter for embedded signing.'));
   }
   
-  if (!userId)
-  {
+  if (!userId) {
     data = {
       returnUrl: returnUrl,
       authenticationMethod: authMethod,
