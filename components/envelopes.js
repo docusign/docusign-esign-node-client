@@ -126,14 +126,17 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *
      * @memberOf Public
      * @function
-     * @param {string} userId - DocuSign userId.
-     * @param {string} clientUserId - This is required if the signer is an offline signer.
+     * @param {string} userId - The unique userId of the recipient (required or name and email are required).
+     * @param {string} recipientName - The full name of the recipient (required if userId null).
+     * @param {string} email - The email address of the recipient (required if userId null).               
+     * @param {string} clientUserId - This is required to designate signer as embedded.
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
-     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
+     * @param {string} authMethod - The main authentication method that gets listed in the certificate of completion.
+     * @param {function} callback - Returns the embedded signing url for the recipient. Returned in the form of function(error, response).
      */
-    getSignerView: function (userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback) {
-      getSignerView(accessToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback);
+    getSignerView: function (userId, recipientName, email, clientUserId, envelopeId, returnUrl, authMethod, callback) {
+      getSignerView(accessToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, authMethod, callback);
     },
 
     /**
@@ -658,23 +661,35 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {string} userId - DocuSign userId.
- * @param {string} clientUserId - This is required if the signer is an offline signer.
+ * @param {string} userId - The DocuSign userId of the recipient (required or name and email are required).
+ * @param {string} recipientName - Name of the recipient (required if userId is null).
+ * @param {string} email - Email of the recipient (required if userId is null).
+ * @param {string} clientUserId - Required for embedded signers, client provided string. 
  * @param {string} envelopeId - ID of envelope to get documents from.
  * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
- * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
+ * @param {string} authMethod - The main authentication method that gets listed in the certificate of completion.
+ * @param {function} callback - Returns the embedded signing URL. Returned in the form of function(error, response).
  */
-function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, callback) {
-  var data = {
-    returnUrl: returnUrl,
-    authenticationMethod: 'email',
-    userId: userId,
-    userName: recipientName,
-    email: email
-  };
-
-  if (clientUserId) {
-    data.clientUserId = clientUserId;
+function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, authMethod, callback) {
+  var data = {};
+  
+  if (!userId)
+  {
+    data = {
+      returnUrl: returnUrl,
+      authenticationMethod: authMethod,
+      clientUserId: clientUserId,
+      userName: recipientName,
+      email: email
+    };
+  }
+  else {
+    data = {
+      returnUrl: returnUrl,
+      authenticationMethod: authMethod,
+      clientUserId: clientUserId,
+      userId: userId
+    };
   }
 
   var options = {
