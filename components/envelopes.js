@@ -128,7 +128,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} userId - The unique userId of the recipient (required or name and email are required).
      * @param {string} recipientName - The full name of the recipient (required if userId null).
-     * @param {string} email - The email address of the recipient (required if userId null).               
+     * @param {string} email - The email address of the recipient (required if userId null).
      * @param {string} clientUserId - This is required to designate signer as embedded.
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
@@ -664,7 +664,7 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
  * @param {string} userId - The DocuSign userId of the recipient (required or name and email are required).
  * @param {string} recipientName - Name of the recipient (required if userId is null).
  * @param {string} email - Email of the recipient (required if userId is null).
- * @param {string} clientUserId - Required for embedded signers, client provided string. 
+ * @param {string} clientUserId - Required for embedded signers, client provided string.
  * @param {string} envelopeId - ID of envelope to get documents from.
  * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
  * @param {string} authMethod - The main authentication method that gets listed in the certificate of completion.
@@ -672,11 +672,11 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
  */
 function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientUserId, envelopeId, returnUrl, authMethod, callback) {
   var data = {};
-  
+
   if (clientUserId === null) {
     return callback(new DocuSignError('clientUserId is a required recipient parameter for embedded signing.'));
   }
-  
+
   if (!userId) {
     data = {
       returnUrl: returnUrl,
@@ -685,8 +685,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
       userName: recipientName,
       email: email
     };
-  }
-  else {
+  } else {
     data = {
       returnUrl: returnUrl,
       authenticationMethod: authMethod,
