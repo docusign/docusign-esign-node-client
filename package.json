@@ -29,6 +29,14 @@
     "Chris Beiter <chris.beiter@docusign.com>",
     "CJ Winslow <whoaa512@gmail.com> (https://github.com/whoaa512)"
   ],
+  "files": [
+    "docusign.js",
+    "dsUtils.js",
+    "components",
+    "scripts",
+    "examples",
+    "sample-config.json"
+  ],
   "repository": "https://github.com/docusign/DocuSign-Node-Client",
   "dependencies": {
     "async": "0.9.0",
