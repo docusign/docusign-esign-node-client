@@ -24,6 +24,21 @@ DocuSignError.prototype = Object.create(Error.prototype);
 DocuSignError.prototype.constrcutor = DocuSignError;
 
 /**
+ * General logging function for debugging use
+ *
+ * @memberOf Private
+ * @function
+ */
+exports.log = debugLog;
+function debugLog () {
+  var isDebugLogEnabled = process.env.dsDebug === 'true' || /docusign/ig.test(process.env.DEBUG);
+  if (isDebugLogEnabled) {
+    var timestamp = '[' + new Date().toISOString() + ']';
+    console.log.apply(console, [timestamp].concat(arguments));
+  }
+}
+
+/**
  * Creates guids for use with when creating new users
  *
  * @memberOf Private
@@ -71,11 +86,9 @@ exports.getHeaders = function (token) {
  * @function
  * @param apiName - name of the API to be requested
  * @param options - options for the request
- * @param logResponse - flag indicating whether the response object should be echoed to the logs
  * @param callback
  */
-exports.makeRequest = function (apiName, options, logResponse, callback) {
-  logResponse = logResponse === 'true';
+exports.makeRequest = function (apiName, options, callback) {
   var data;
   if ('json' in options) {
     data = JSON.stringify(options.json);
@@ -97,9 +110,7 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
     data = '';
   }
 
-  if (logResponse) {
-    util.log(util.format('DS API %s Request:\n  %s %s\t  %s', apiName, options.method, options.url, data));
-  }
+  exports.log(util.format('DS API %s Request:\n  %s %s\t  %s', apiName, options.method, options.url, data));
 
   request(options, function (error, response, body) {
     if (error) {
@@ -119,17 +130,15 @@ exports.makeRequest = function (apiName, options, logResponse, callback) {
     } else if ('errorCode' in json) {
       errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, json.message);
       err = new DocuSignError(errMsg);
-      util.log(errMsg);
+      exports.log(errMsg);
       callback(err, json);
     } else if ('error' in json) {
       errMsg = util.format('DS API %s Error:\n  %s \n\nDescription: %s', apiName, json.error, json.error_description);
       err = new DocuSignError(errMsg);
-      util.log(errMsg);
+      exports.log(errMsg);
       callback(err, json);
     } else { // no error
-      if (logResponse) {
-        util.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));
-      }
+      exports.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));
       callback(null, json);
     }
   });

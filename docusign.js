@@ -28,7 +28,6 @@
  * @desc Private DoucSign API
  */
 
-var util = require('util');
 var bluebird = require('bluebird');
 
 // Local Imports
@@ -39,6 +38,8 @@ var folders = require('./components/folders');
 var envelopes = require('./components/envelopes');
 var dsUtils = require('./dsUtils');
 
+var log = dsUtils.log;
+// @todo: add this to the main exports
 var DocuSignError = dsUtils.DocuSignError;
 
 // Create DocuSign Object
@@ -47,7 +48,7 @@ var docusign = (function () {
     targetEnv = targetEnv.toLowerCase();
 
     if (debug) {
-      util.log('docusign starting init');
+      log('docusign starting init');
       process.env.dsDebug = true;
     } else {
       process.env.dsDebug = false;

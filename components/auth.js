@@ -29,7 +29,7 @@ exports.getLoginInfo = function (email, password, callback) {
     }
   };
 
-  dsUtils.makeRequest('Get DS User Account Info', options, process.env.dsDebug, function (error, response) {
+  dsUtils.makeRequest('Get DS User Account Info', options, function (error, response) {
     if (error) {
       callback(error);
       return;
@@ -67,7 +67,7 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
     })
   };
 
-  dsUtils.makeRequest('Get DS OAuth2 Token', options, process.env.dsDebug, function (error, response) {
+  dsUtils.makeRequest('Get DS OAuth2 Token', options, function (error, response) {
     if (error) {
       return callback(error);
     }
@@ -148,7 +148,7 @@ function revokeOauthToken (token, baseUrl, callback) {
     body: 'token=' + token
   };
 
-  dsUtils.makeRequest('Revoke DS OAuth2 Token', options, process.env.dsDebug, function (error, response) {
+  dsUtils.makeRequest('Revoke DS OAuth2 Token', options, function (error, response) {
     if (error) {
       error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
       return callback(error);

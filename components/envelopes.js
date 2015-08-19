@@ -7,6 +7,7 @@ var dsUtils = require('./../dsUtils');
 var util = require('util');
 var request = require('request');
 var isEmpty = require('lodash.isempty');
+var log = dsUtils.log;
 var DocuSignError = dsUtils.DocuSignError;
 
 exports.init = function (accountId, baseUrl, accessToken) {
@@ -200,7 +201,7 @@ function getConsoleUrl (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Dashboard URL', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get Dashboard URL', options, callback);
 }
 
 /**
@@ -222,7 +223,7 @@ function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Envelope List', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get Envelope List', options, callback);
 }
 
 /**
@@ -247,8 +248,6 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callb
   var documents = [];
   var parts = [];
 
-  var logResponse = process.env.dsDebug === 'true';
-
   files.forEach(function (file, index) {
     var documentId = index + 1;
     documents.push({
@@ -257,9 +256,7 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callb
       fileExtension: file.extension
     });
 
-    if (logResponse) {
-      util.log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
-    }
+    log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
 
     var download;
     if ('path' in file) {
@@ -411,7 +408,7 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
         json: data
       };
 
-      dsUtils.makeRequest('Get Envelope View', options, process.env.dsDebug, function (error, response) {
+      dsUtils.makeRequest('Get Envelope View', options, function (error, response) {
         if (error) {
           return next(error);
         }
@@ -459,10 +456,7 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
  */
 
 function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, event, callback) {
-  var logResponse = process.env.dsDebug === 'true';
-  if (logResponse) {
-    util.log('Starting to create envelope');
-  }
+  log('Starting to create envelope');
 
   // construct the parts of the multipart request
   var documents = [];
@@ -477,9 +471,7 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
       fileExtension: file.extension
     });
 
-    if (logResponse) {
-      util.log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
-    }
+    log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
 
     var download;
     if ('path' in file) {
@@ -605,7 +597,7 @@ function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Envelope Information', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get Envelope Information', options, callback);
 
 }
 
@@ -701,7 +693,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
     json: data
   };
 
-  dsUtils.makeRequest('Get Signer View', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get Signer View', options, callback);
 }
 
 /**
@@ -734,7 +726,7 @@ function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRole
     json: data
   };
 
-  dsUtils.makeRequest('Send Template', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Send Template', options, callback);
 
 }
 
@@ -764,7 +756,7 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
         }
       };
 
-      dsUtils.makeRequest('Create Envelope From Template', options, process.env.dsDebug, function (error, response) {
+      dsUtils.makeRequest('Create Envelope From Template', options, function (error, response) {
         if (error) {
           return next(error);
         }
@@ -783,7 +775,7 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
         }
       };
 
-      dsUtils.makeRequest('Get Template View', options, process.env.dsDebug, function (error, response) {
+      dsUtils.makeRequest('Get Template View', options, function (error, response) {
         if (error) {
           return next(error);
         }

@@ -68,7 +68,7 @@ function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callbac
         headers: dsUtils.getHeaders(apiToken)
       };
 
-      dsUtils.makeRequest('Get Envelopes', options, process.env.dsDebug, function (error, response) {
+      dsUtils.makeRequest('Get Envelopes', options, function (error, response) {
         if (error) {
           return next(error);
         }
@@ -109,5 +109,5 @@ function searchThroughEnvelopes (apiToken, baseUrl, searchTerm, callback) {
     }
   };
 
-  dsUtils.makeRequest('Search Through Envelopes', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Search Through Envelopes', options, callback);
 }

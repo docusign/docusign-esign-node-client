@@ -115,7 +115,7 @@ function getOrgAccountInfo (accountId, apiToken, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get DS Org Account Info', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get DS Org Account Info', options, callback);
 }
 
 /**
@@ -134,7 +134,7 @@ function getUserList (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken, baseUrl)
   };
 
-  dsUtils.makeRequest('Get DS Account User List', options, process.env.dsDebug, function (error, response) {
+  dsUtils.makeRequest('Get DS Account User List', options, function (error, response) {
     if (error) {
       return callback(error);
     }
@@ -190,7 +190,7 @@ function addUsers (apiToken, baseUrl, usersToAdd, callback) {
     }
   };
 
-  dsUtils.makeRequest('Add Users to DS Account', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Add Users to DS Account', options, callback);
 }
 
 /**
@@ -219,7 +219,7 @@ function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
     }
   };
 
-  dsUtils.makeRequest('Delete Users in DS Account', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Delete Users in DS Account', options, callback);
 }
 
 /**
@@ -238,7 +238,7 @@ function getTemplates (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Templates', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get Templates', options, callback);
 }
 
 /**
@@ -262,7 +262,7 @@ function getPlan (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Billing Plan Info', options, process.env.dsDebug, function (error, plan) {
+  dsUtils.makeRequest('Get Billing Plan Info', options, function (error, plan) {
     if (error) {
       return callback(error);
     }

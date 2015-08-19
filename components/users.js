@@ -63,7 +63,7 @@ function getInfo (apiToken, baseUrl, userId, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get User Information', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get User Information', options, callback);
 }
 
 /**
@@ -82,7 +82,7 @@ function getSignature (apiToken, baseUrl, userId, callback) {
     url: baseUrl + '/users/' + userId + '/signatures',
     headers: dsUtils.getHeaders(apiToken)
   };
-  dsUtils.makeRequest('Get User Signature', options, process.env.dsDebug, function (error, response) {
+  dsUtils.makeRequest('Get User Signature', options, function (error, response) {
     if (error) {
       return callback(error);
     }
@@ -111,5 +111,5 @@ function getSocialConnection (apiToken, baseUrl, userId, callback) {
     headers: dsUtils.getHeaders(apiToken, baseUrl)
   };
 
-  dsUtils.makeRequest('Get DS Social Connection', options, process.env.dsDebug, callback);
+  dsUtils.makeRequest('Get DS Social Connection', options, callback);
 }
