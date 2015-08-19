@@ -4,7 +4,7 @@
   "description": "A DocuSign API helper library",
   "main": "docusign.js",
   "scripts": {
-    "style-check": "node_modules/.bin/semistandard",
+    "lint": "node_modules/.bin/semistandard",
     "check-config": "./scripts/check-config.js",
     "test": "npm run check-config && node_modules/.bin/semistandard && node_modules/.bin/mocha"
   },
@@ -47,7 +47,7 @@
     "semistandard": "7.0.2"
   },
   "pre-commit": [
-    "style-check"
+    "lint"
   ],
   "semistandard": {
     "global": [
