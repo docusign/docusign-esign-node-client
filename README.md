@@ -18,7 +18,7 @@ You can create your free dev account at the [DocuSign DevCenter](https://www.doc
 
 ### Useful Reading
 
-See [Common Terms](https://www.docusign.com/developer-center/explore/overview) for an explantion of the basic components of the DocuSign platform.
+See [Common Terms](https://www.docusign.com/developer-center/explore/overview) for an explanation of the basic components of the DocuSign platform.
 
 Getting Started
 ----------
@@ -62,7 +62,7 @@ async.waterfall([
       if (err) {
         return next(err);
       }
-      if (response.message === 'succesfully initialized') {
+      if (response.message === 'successfully initialized') {
         next();
       }
     });
@@ -76,7 +76,7 @@ async.waterfall([
       if (err) {
         return next(err);
       }
-      next(null, docusign.client);
+      next(null, client);
     });
   },
 
