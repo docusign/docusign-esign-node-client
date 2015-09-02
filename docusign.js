@@ -94,6 +94,7 @@ var docusign = (function () {
   }
 
   return {
+    DocuSignError: DocuSignError,
     init: init,
     initAsync: bluebird.promisify(init),
     clientAsync: bluebird.promisify(client),
