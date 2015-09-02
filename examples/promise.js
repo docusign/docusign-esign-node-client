@@ -1,4 +1,5 @@
 var docusign = require('docusign-node');
+var DocuSignError = docusign.DocuSignError;
 
 var integratorKey = '***';        // Integrator Key associated with your DocuSign Integration
 var email = 'YOUR_EMAIL';         // Email for your DocuSign Account
@@ -44,6 +45,10 @@ docusign.initAsync(integratorKey, docusignEnv, debug)
   // **********************************************************************************
   .then(function (client) {
     return client.logOutAsync();
+  })
+  .catch(DocuSignError, function (dsError) {
+    console.log('DocuSignError: ', dsError.stack || dsError);
+    process.exit(1);
   })
   .catch(function (error) {
     console.log('Error: ', error.stack || error);
