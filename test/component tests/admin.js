@@ -23,7 +23,7 @@ describe('admin', function () {
     docusign.init(integratorKey, 'demo', debug, function (error, response) {
       assert.ok(!error, 'Unexpected ' + error);
       assert.strictEqual(response.message, 'successfully initialized');
-      docusign.client(email, password, function (error, response) {
+      docusign.createClient(email, password, function (error, response) {
         assert.ok(!error, 'Unexpected ' + error);
         client = response;
         done();

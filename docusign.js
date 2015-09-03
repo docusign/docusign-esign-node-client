@@ -71,25 +71,43 @@ var docusign = (function () {
     callback(null, {message: 'successfully initialized'});
   }
 
-  function client (email, password, callback) {
+  function createClientBase (authInfo, callback) {
+    var accountId = authInfo.accountId;
+    var baseUrl = authInfo.baseUrl;
+    var accessToken = authInfo.accessToken;
+
+    var adminApi = admin.init(accountId, baseUrl, accessToken);
+    var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
+    var foldersApi = folders.init(accountId, baseUrl, accessToken);
+    var usersApi = users.init(accountId, baseUrl, accessToken);
+    var logOut = auth.revokeOauthToken(accessToken, response.baseUrl);
+
+    callback(null, {
+      clientAuthData: authInfo,
+      admin: bluebird.promisifyAll(adminApi),
+      envelopes: bluebird.promisifyAll(envelopesApi),
+      folders: bluebird.promisifyAll(foldersApi),
+      users: bluebird.promisifyAll(usersApi),
+      logOutAsync: bluebird.promisify(logOut),
+      logOut: logOut
+    });
+  }
+
+  function createClient (email, password, callback) {
     auth.getAPIToken(email, password, function (err, response) {
       if (err) {
         return callback(err);
       }
-      var adminApi = admin.init(response.accountId, response.baseUrl, response.access_token);
-      var envelopesApi = envelopes.init(response.accountId, response.baseUrl, response.access_token);
-      var foldersApi = folders.init(response.accountId, response.baseUrl, response.access_token);
-      var usersApi = users.init(response.accountId, response.baseUrl, response.access_token);
-      var logOut = auth.revokeOauthToken(response.access_token, response.baseUrl);
+      var accountId = response.accountId;
+      var baseUrl = response.baseUrl;
+      var accessToken = response.accessToken;
+      var clientAuthData = {
+        accountId: accountId,
+        baseUrl: baseUrl,
+        accessToken: accessToken
+      };
 
-      callback(null, {
-        admin: bluebird.promisifyAll(adminApi),
-        envelopes: bluebird.promisifyAll(envelopesApi),
-        folders: bluebird.promisifyAll(foldersApi),
-        users: bluebird.promisifyAll(usersApi),
-        logOutAsync: bluebird.promisify(logOut),
-        logOut: logOut
-      });
+      createClientBase(clientAuthData, callback);
     });
   }
 
@@ -97,8 +115,12 @@ var docusign = (function () {
     DocuSignError: DocuSignError,
     init: init,
     initAsync: bluebird.promisify(init),
-    clientAsync: bluebird.promisify(client),
-    client: client
+    getAuthInfo: auth.getAPIToken,
+    getAuthInfoAsync: bluebird.promisify(auth.getAPIToken),
+    createClientFromAuth: createClientBase
+    createClientFromAuthAsync: bluebird.promisify(createClientBase),
+    createClientAsync: bluebird.promisify(createClient),
+    createClient: createClient
   };
 })();
 

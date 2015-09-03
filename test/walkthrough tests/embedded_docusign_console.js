@@ -33,7 +33,7 @@ describe('embedded_docusign_console', function () {
       // Step 2 - Authenticate Youself With DocuSign to Recieve an OAuth Token and BaseUrl
       // **********************************************************************************
       function createClient (next) {
-        docusign.client(email, password, function (error, response) {
+        docusign.createClient(email, password, function (error, response) {
           assert.ok(!error, 'Unexpected ' + error);
           next(null, response);
         });

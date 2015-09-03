@@ -72,7 +72,7 @@ async.waterfall([
   // Step 2 - Create a DocuSign Client Object
   // **********************************************************************************
   function createClient (next) {
-    docusign.client(email, password, function(err, client) {
+    docusign.createClient(email, password, function(err, client) {
       if (err) {
         return next(err);
       }

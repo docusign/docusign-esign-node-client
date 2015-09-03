@@ -102,12 +102,12 @@ exports.getAPIToken = function (email, password, callback) {
     },
     function getToken (baseUrl, accountId, next) {
       // step 2
-      thisObj.getOauthToken(email, password, baseUrl, function (err, response) {
+      thisObj.getOauthToken(email, password, baseUrl, function (err, accessToken) {
         if (err) {
           next(err);
           return;
         }
-        next(null, response, baseUrl, accountId);
+        next(null, accessToken, baseUrl, accountId);
       });
     }
   ],
@@ -117,7 +117,7 @@ exports.getAPIToken = function (email, password, callback) {
         var error = new DocuSignError(errMsg, err);
         return callback(error);
       }
-      callback(null, { access_token: token, baseUrl: baseUrl, accountId: accountId });
+      callback(null, { accessToken: token, baseUrl: baseUrl, accountId: accountId });
     });
 };
 
