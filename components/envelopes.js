@@ -7,6 +7,7 @@ var dsUtils = require('./../dsUtils');
 var util = require('util');
 var request = require('request');
 var isEmpty = require('lodash.isempty');
+var merge = require('lodash.merge');
 var log = dsUtils.log;
 var DocuSignError = dsUtils.DocuSignError;
 
@@ -88,10 +89,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
      *   @param {string} files[].url - The URL to download from.
      *   @param {string} files[].base64 - The base64-encoded buffer of the file
+     * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
      * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      */
-    sendEnvelope: function (recipients, emailSubject, files, callback) {
-      sendEnvelope(accessToken, baseUrl, recipients, emailSubject, files, callback);
+    sendEnvelope: function (recipients, emailSubject, files, additionalParams, callback) {
+      sendEnvelope(accessToken, baseUrl, recipients, emailSubject, files, additionalParams, callback);
     },
     /**
      * Get information about the specified Envelope.
@@ -241,12 +243,14 @@ function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
  *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
  *   @param {string} files[].url - The URL to download from.
  *   @param {string} files[].base64 - The base64-encoded buffer of the file
+ * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
  * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
  */
 
-function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callback) {
+function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, additionalParams, callback) {
   var documents = [];
   var parts = [];
+  additionalParams = additionalParams != null ? additionalParams : {};
 
   files.forEach(function (file, index) {
     var documentId = index + 1;
@@ -288,12 +292,14 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, callb
 
   recipients.signers.forEach(generateId);
 
-  var data = {
+  var data = merge({}, additionalParams, {
     recipients: recipients,
     emailSubject: emailSubject,
     documents: documents,
     status: 'sent'
-  };
+  }, function(a, b) {
+    return Array.isArray(a) ? a.concat(b) : undefined;
+  });
 
   parts.unshift({
     headers: {
