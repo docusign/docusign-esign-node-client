@@ -71,6 +71,28 @@ var docusign = (function () {
     callback(null, {message: 'successfully initialized'});
   }
 
+  function createClientBase (authInfo, callback) {
+    var accountId = authInfo.accountId;
+    var baseUrl = authInfo.baseUrl;
+    var accessToken = authInfo.accessToken;
+
+    var adminApi = admin.init(accountId, baseUrl, accessToken);
+    var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
+    var foldersApi = folders.init(accountId, baseUrl, accessToken);
+    var usersApi = users.init(accountId, baseUrl, accessToken);
+    var logOut = auth.revokeOauthToken(accessToken, response.baseUrl);
+
+    callback(null, {
+      clientAuthData: authInfo,
+      admin: bluebird.promisifyAll(adminApi),
+      envelopes: bluebird.promisifyAll(envelopesApi),
+      folders: bluebird.promisifyAll(foldersApi),
+      users: bluebird.promisifyAll(usersApi),
+      logOutAsync: bluebird.promisify(logOut),
+      logOut: logOut
+    });
+  }
+
   function createClient (email, password, callback) {
     auth.getAPIToken(email, password, function (err, response) {
       if (err) {
@@ -85,21 +107,7 @@ var docusign = (function () {
         accessToken: accessToken
       };
 
-      var adminApi = admin.init(accountId, baseUrl, accessToken);
-      var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
-      var foldersApi = folders.init(accountId, baseUrl, accessToken);
-      var usersApi = users.init(accountId, baseUrl, accessToken);
-      var logOut = auth.revokeOauthToken(accessToken, response.baseUrl);
-
-      callback(null, {
-        clientAuthData: clientAuthData,
-        admin: bluebird.promisifyAll(adminApi),
-        envelopes: bluebird.promisifyAll(envelopesApi),
-        folders: bluebird.promisifyAll(foldersApi),
-        users: bluebird.promisifyAll(usersApi),
-        logOutAsync: bluebird.promisify(logOut),
-        logOut: logOut
-      });
+      createClientBase(clientAuthData, callback);
     });
   }
 
@@ -107,6 +115,8 @@ var docusign = (function () {
     DocuSignError: DocuSignError,
     init: init,
     initAsync: bluebird.promisify(init),
+    createClientFromAuth: createClientBase
+    createClientFromAuthAsync: bluebird.promisify(createClientBase),
     createClientAsync: bluebird.promisify(createClient),
     createClient: createClient
   };
