@@ -79,6 +79,12 @@ var docusign = (function () {
       var accountId = response.accountId;
       var baseUrl = response.baseUrl;
       var accessToken = response.accessToken;
+      var clientAuthData = {
+        accountId: accountId,
+        baseUrl: baseUrl,
+        accessToken: accessToken
+      };
+
       var adminApi = admin.init(accountId, baseUrl, accessToken);
       var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
       var foldersApi = folders.init(accountId, baseUrl, accessToken);
@@ -86,6 +92,7 @@ var docusign = (function () {
       var logOut = auth.revokeOauthToken(accessToken, response.baseUrl);
 
       callback(null, {
+        clientAuthData: clientAuthData,
         admin: bluebird.promisifyAll(adminApi),
         envelopes: bluebird.promisifyAll(envelopesApi),
         folders: bluebird.promisifyAll(foldersApi),
