@@ -115,6 +115,8 @@ var docusign = (function () {
     DocuSignError: DocuSignError,
     init: init,
     initAsync: bluebird.promisify(init),
+    getAuthInfo: auth.getAPIToken,
+    getAuthInfoAsync: bluebird.promisify(auth.getAPIToken),
     createClientFromAuth: createClientBase
     createClientFromAuthAsync: bluebird.promisify(createClientBase),
     createClientAsync: bluebird.promisify(createClient),
