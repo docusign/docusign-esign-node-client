@@ -71,7 +71,7 @@ var docusign = (function () {
     callback(null, {message: 'successfully initialized'});
   }
 
-  function client (email, password, callback) {
+  function createClient (email, password, callback) {
     auth.getAPIToken(email, password, function (err, response) {
       if (err) {
         return callback(err);
@@ -107,8 +107,8 @@ var docusign = (function () {
     DocuSignError: DocuSignError,
     init: init,
     initAsync: bluebird.promisify(init),
-    clientAsync: bluebird.promisify(client),
-    client: client
+    createClientAsync: bluebird.promisify(createClient),
+    createClient: createClient
   };
 })();
 

@@ -42,7 +42,7 @@ describe('request_signature_template', function () {
         // Step 2 - Create a DocuSign Client Object
         // **********************************************************************************
         function createClient (next) {
-          docusign.client(email, password, function (error, response) {
+          docusign.createClient(email, password, function (error, response) {
             assert.ok(!error, 'Unexpected ' + error);
             next(null, response);
           });

@@ -25,7 +25,7 @@ docusign.initAsync(integratorKey, docusignEnv, debug)
   // **********************************************************************************
   .then(function (response) {
     if (response.message === 'succesfully initialized') {
-      return docusign.clientAsync(email, password);
+      return docusign.createClientAsync(email, password);
     } else {
       throw new Error('Did not initialize');
     }
