@@ -76,11 +76,14 @@ var docusign = (function () {
       if (err) {
         return callback(err);
       }
-      var adminApi = admin.init(response.accountId, response.baseUrl, response.access_token);
-      var envelopesApi = envelopes.init(response.accountId, response.baseUrl, response.access_token);
-      var foldersApi = folders.init(response.accountId, response.baseUrl, response.access_token);
-      var usersApi = users.init(response.accountId, response.baseUrl, response.access_token);
-      var logOut = auth.revokeOauthToken(response.access_token, response.baseUrl);
+      var accountId = response.accountId;
+      var baseUrl = response.baseUrl;
+      var accessToken = response.accessToken;
+      var adminApi = admin.init(accountId, baseUrl, accessToken);
+      var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
+      var foldersApi = folders.init(accountId, baseUrl, accessToken);
+      var usersApi = users.init(accountId, baseUrl, accessToken);
+      var logOut = auth.revokeOauthToken(accessToken, response.baseUrl);
 
       callback(null, {
         admin: bluebird.promisifyAll(adminApi),
