@@ -297,7 +297,7 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
     emailSubject: emailSubject,
     documents: documents,
     status: 'sent'
-  }, function(a, b) {
+  }, function (a, b) {
     return Array.isArray(a) ? a.concat(b) : undefined;
   });
 
