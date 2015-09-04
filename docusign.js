@@ -117,7 +117,7 @@ var docusign = (function () {
     initAsync: bluebird.promisify(init),
     getAuthInfo: auth.getAPIToken,
     getAuthInfoAsync: bluebird.promisify(auth.getAPIToken),
-    createClientFromAuth: createClientBase
+    createClientFromAuth: createClientBase,
     createClientFromAuthAsync: bluebird.promisify(createClientBase),
     createClientAsync: bluebird.promisify(createClient),
     createClient: createClient
