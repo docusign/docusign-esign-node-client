@@ -80,7 +80,7 @@ var docusign = (function () {
     var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
     var foldersApi = folders.init(accountId, baseUrl, accessToken);
     var usersApi = users.init(accountId, baseUrl, accessToken);
-    var logOut = auth.revokeOauthToken(accessToken, response.baseUrl);
+    var logOut = auth.revokeOauthToken(accessToken, baseUrl);
 
     callback(null, {
       clientAuthData: authInfo,
