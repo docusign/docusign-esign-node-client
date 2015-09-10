@@ -68,5 +68,4 @@ describe('users', function () {
       done();
     });
   });
-
 });

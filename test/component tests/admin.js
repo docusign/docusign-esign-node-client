@@ -121,5 +121,4 @@ describe('admin', function () {
       done();
     });
   });
-
 });

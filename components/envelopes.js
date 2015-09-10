@@ -325,7 +325,6 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
     }
     callback(null, parsedBody);
   });
-
 }
 
 /**
@@ -604,7 +603,6 @@ function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
   };
 
   dsUtils.makeRequest('Get Envelope Information', options, callback);
-
 }
 
 /**
@@ -733,7 +731,6 @@ function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRole
   };
 
   dsUtils.makeRequest('Send Template', options, callback);
-
 }
 
 /**

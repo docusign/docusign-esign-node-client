@@ -72,8 +72,6 @@ describe('request_signature_template', function () {
       ], function () {
         done();
       });
-
     });
-
   });
 });

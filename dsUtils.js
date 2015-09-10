@@ -189,8 +189,8 @@ exports.sendMultipart = function (mpUrl, mpHeaders, parts, callback) {
     multipart.write(headers);
     multipart.write(crlf + crlf);
 
-    var body = (Buffer.isBuffer(part.body) || typeof part.body === 'string') ?
-      _createStringStream(part.body) : part.body;
+    var body = (Buffer.isBuffer(part.body) || typeof part.body === 'string')
+      ? _createStringStream(part.body) : part.body;
 
     body.on('data', function (chunk) {
       multipart.write(chunk);
@@ -200,7 +200,6 @@ exports.sendMultipart = function (mpUrl, mpHeaders, parts, callback) {
       next(null); // continue
     });
     body.resume();
-
   }, function () { // called when all is done
     multipart.write('--' + boundary + '--');
     multipart.end(function () {
