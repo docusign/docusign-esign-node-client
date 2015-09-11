@@ -23,11 +23,6 @@
 * @desc Public API for DocuSign Users API
 */
 
-/**
- * @namespace Utils
- * @desc Private DoucSign API utilities
- */
-
 var bluebird = require('bluebird');
 
 // Local Imports

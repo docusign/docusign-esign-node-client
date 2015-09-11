@@ -4,7 +4,7 @@
   "description": "A DocuSign API helper library",
   "main": "docusign.js",
   "scripts": {
-    "docs": "jsdoc -d doc -a all -r docusign.js dsUtils.js components/ README.md",
+    "docs": "jsdoc -d doc -r docusign.js dsUtils.js components/ README.md",
     "lint": "node_modules/.bin/semistandard",
     "check-config": "./scripts/check-config.js",
     "test": "npm run check-config && node_modules/.bin/semistandard && node_modules/.bin/mocha"
