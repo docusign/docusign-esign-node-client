@@ -83,7 +83,7 @@ var docusign = (function () {
     var logOut = auth.revokeOauthToken(accessToken, baseUrl);
 
     callback(null, {
-      clientAuthData: authInfo,
+      authInfo: authInfo,
       admin: bluebird.promisifyAll(adminApi),
       envelopes: bluebird.promisifyAll(envelopesApi),
       folders: bluebird.promisifyAll(foldersApi),
@@ -101,13 +101,13 @@ var docusign = (function () {
       var accountId = response.accountId;
       var baseUrl = response.baseUrl;
       var accessToken = response.accessToken;
-      var clientAuthData = {
+      var authInfo = {
         accountId: accountId,
         baseUrl: baseUrl,
         accessToken: accessToken
       };
 
-      createClientBase(clientAuthData, callback);
+      createClientBase(authInfo, callback);
     });
   }
 

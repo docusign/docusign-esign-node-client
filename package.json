@@ -1,6 +1,6 @@
 {
   "name": "docusign-node",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "A DocuSign API helper library",
   "main": "docusign.js",
   "scripts": {

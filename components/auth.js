@@ -4,6 +4,7 @@
 
 var querystring = require('querystring'); // core
 var async = require('async');
+var assign = require('lodash.assign');
 var dsUtils = require('./../dsUtils');
 var DocuSignError = dsUtils.DocuSignError;
 
@@ -92,32 +93,35 @@ exports.getAPIToken = function (email, password, callback) {
   async.waterfall([
     function getLoginInfo (next) {
       // step 1
-      thisObj.getLoginInfo(email, password, function (err, response) {
+      thisObj.getLoginInfo(email, password, function (err, accountInfo) {
         if (err) {
           next(err); // end the waterfall
           return;
         }
-        next(null, response.baseUrl, response.accountId);
+        next(null, accountInfo);
       });
     },
-    function getToken (baseUrl, accountId, next) {
+    function getToken (accountInfo, next) {
       // step 2
-      thisObj.getOauthToken(email, password, baseUrl, function (err, accessToken) {
+      thisObj.getOauthToken(email, password, accountInfo.baseUrl, function (err, accessToken) {
         if (err) {
           next(err);
           return;
         }
-        next(null, accessToken, baseUrl, accountId);
+        next(null, accessToken, accountInfo);
       });
     }
   ],
-    function waterfallDone (err, token, baseUrl, accountId) {
+    function waterfallDone (err, accessToken, accountInfo) {
       if (err) {
         var errMsg = 'Error getting API token: ' + JSON.stringify(err);
         var error = new DocuSignError(errMsg, err);
         return callback(error);
       }
-      callback(null, { accessToken: token, baseUrl: baseUrl, accountId: accountId });
+      var accountAndAuthInfo = assign({
+        accessToken: accessToken
+      }, accountInfo);
+      callback(null, accountAndAuthInfo);
     });
 };
 

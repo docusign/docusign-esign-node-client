@@ -116,5 +116,4 @@ describe('envelopes', function () {
       done();
     });
   });
-
 });
