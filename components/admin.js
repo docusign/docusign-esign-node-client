@@ -8,6 +8,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Gets the account info for the given org accountId
      *
      * @memberOf Admin
+     * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, response).
      */
@@ -20,6 +21,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Returns a list of users for the organization in the base URL
      *
      * @memberOf Admin
+     * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, users).
      */
@@ -32,6 +34,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Creates a set of new users in DocuSign for the Org associated to the base URL
      *
      * @memberOf Admin
+     * @public
      * @function
      * @param {object[]} usersToAdd - Array of Objects with account creation information.
      *   @param {string} usersToAdd[].first - First Name
@@ -59,6 +62,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Deletes a set of users from DocuSign
      *
      * @memberOf Admin
+     * @public
      * @function
      * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
      * @param {function} callback - Returned in the form of function(error, response).
@@ -72,6 +76,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Gets the templates for a given account
      *
      * @memberOf Admin
+     * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, response).
      */
@@ -89,6 +94,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *
      *
      * @memberOf Admin
+     * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, plan).
      */
@@ -102,7 +108,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
 /**
  * Gets the account info for the given org accountId
  *
- * @memberOf Private
+ * @memberOf Admin
+ * @private
  * @function
  * @param {string} accountId - DocuSign AccountId.
  * @param {string} apiToken - DocuSign API OAuth2 access token.
@@ -121,7 +128,8 @@ function getOrgAccountInfo (accountId, apiToken, callback) {
 /**
  * Returns a list of users for the organization in the base URL
  *
- * @memberOf Private
+ * @memberOf Admin
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -145,7 +153,8 @@ function getUserList (apiToken, baseUrl, callback) {
 /**
  * Creates a set of new users in DocuSign for the Org associated to the base URL
  *
- * @memberOf Private
+ * @memberOf Admin
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -196,7 +205,8 @@ function addUsers (apiToken, baseUrl, usersToAdd, callback) {
 /**
  * Deletes a set of users from DocuSign
  *
- * @memberOf Private
+ * @memberOf Admin
+ * @private
  * @function
  * @param {string} apiToken - DS API OAuth2 access token.
  * @param {string} baseUrl - DS API base URL.
@@ -225,7 +235,8 @@ function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
 /**
  * Gets the templates for a given account
  *
- * @memberOf Private
+ * @memberOf Admin
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -249,7 +260,8 @@ function getTemplates (apiToken, baseUrl, callback) {
  * name - shortcut for planName which is redundant plan.planName. :)
  *
  *
- * @memberOf Private
+ * @memberOf Admin
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.

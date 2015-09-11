@@ -11,6 +11,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Get user info for a given user.
      *
      * @memberOf Users
+     * @public
      * @function
      * @param {string} userId - DocuSign userId.
      * @param {function} callback - Returned in the form of function(error, response).
@@ -23,6 +24,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Gets the user signature.
      *
      * @memberOf Users
+     * @public
      * @function
      * @param {string} userId - DocuSign UserId.
      * @param {function} callback - Returned in the form of function(error, response).
@@ -35,6 +37,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Gets social connection details for a given user.
      *
      * @memberOf Users
+     * @public
      * @function
      * @param {string} userId - DocuSign UserId.
      * @param {function} callback - Returned in the form of function(error, response).
@@ -49,7 +52,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
 /**
  * Get user info for a given user.
  *
- * @memberOf Private
+ * @memberOf Users
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -69,7 +73,8 @@ function getInfo (apiToken, baseUrl, userId, callback) {
 /**
  * Gets the user signature.
  *
- * @memberOf Private
+ * @memberOf Users
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -97,7 +102,8 @@ function getSignature (apiToken, baseUrl, userId, callback) {
 /**
  * Gets social connection details for a given user.
  *
- * @memberOf Private
+ * @memberOf Users
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.

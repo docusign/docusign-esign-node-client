@@ -24,8 +24,8 @@
 */
 
 /**
- * @namespace Private
- * @desc Private DoucSign API
+ * @namespace Utils
+ * @desc Private DoucSign API utilities
  */
 
 var bluebird = require('bluebird');

@@ -9,6 +9,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Get information about envelopes for the account with the given `apiToken`.
      *
      * @memberOf Folders
+     * @public
      * @function
      * @param {string} envelopeType - The type of envelope to get.
      *   Valid values are 'all', 'awaiting_my_signature', 'out_for_signature',
@@ -27,6 +28,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Search DS envelopes with the given `searchTerm`.
      *
      * @memberOf Folders
+     * @public
      * @function
      * @param {string} searchTerm - The term that the DS API should search for.
      * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
@@ -40,7 +42,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
 /**
  * Get information about envelopes for the account with the given `apiToken`.
  *
- * @memberOf Private
+ * @memberOf Folders
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -92,7 +95,8 @@ function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callbac
 /**
  * Search DS envelopes with the given `searchTerm`.
  *
- * @memberOf Private
+ * @memberOf Folders
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL..

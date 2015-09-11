@@ -26,7 +26,8 @@ DocuSignError.prototype.constrcutor = DocuSignError;
 /**
  * General logging function for debugging use
  *
- * @memberOf Private
+ * @memberOf Utils
+ * @private
  * @function
  */
 exports.log = debugLog;
@@ -41,7 +42,8 @@ function debugLog () {
 /**
  * Creates guids for use with when creating new users
  *
- * @memberOf Private
+ * @memberOf Utils
+ * @private
  * @function
  * @returns {string}
  */
@@ -56,7 +58,8 @@ exports.generateNewGuid = function () {
 /**
  * Provides an environment specific URL for the highest level API calls
  *
- * @memberOf Private
+ * @memberOf Utils
+ * @private
  * @function
  * @returns {string}
  */
@@ -68,7 +71,8 @@ exports.getApiUrl = function () {
 /**
  * Formats and return an authorization header with the given oAuth token
  *
- * @memberOf Private
+ * @memberOf Utils
+ * @private
  * @function
  * @param token
  * @returns {{Authorization: string}}
@@ -82,7 +86,8 @@ exports.getHeaders = function (token) {
 /**
  * Helper function for making web requests to DocuSign
  *
- * @memberOf Private
+ * @memberOf Utils
+ * @private
  * @function
  * @param apiName - name of the API to be requested
  * @param options - options for the request
@@ -163,7 +168,8 @@ exports.makeRequest = function (apiName, options, callback) {
  * structure { error, request, body }.
  *
  *
- * @memberOf Private
+ * @memberOf Utils
+ * @private
  * @function
  * @param mpUrl
  * @param mpHeaders

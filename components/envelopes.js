@@ -17,6 +17,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Gets the DocuSign Embedded Dashboard view
      *
      * @memberOf Envelopes
+     * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, response).
      */
@@ -28,6 +29,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Gets a list of envelopes that have been created starting from the designated date to the present.
      *
      * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} fromDate - Date string.
      * @param {function} callback - Returned in the form of function(error, response).
@@ -45,6 +47,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * envelope and getting the embedUrl for the DocuSign envelope configuration view of the document
      *
      * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} action - The DS process to use. Valid values are:
      *   `sign` - Only the user signs the envelope.
@@ -80,6 +83,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Request a Signature on a Document.
      *
      * @memberOf Envelopes
+     * @public
      * @function
      * @param {JSON} recipients - JSON object with recipient information. For more information on how to construct
      *    a recipient object please visit: <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Recipient Parameter.htm</a>
@@ -98,7 +102,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
     /**
      * Get information about the specified Envelope.
      *
-     * @memberOf Public
+     * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
@@ -111,7 +116,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
     /**
      * Get all the signed documents that were in the given envelope.
      *
-     * @memberOf Public
+     * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {string} encoding - Node.js buffer encoding for the returned value.
@@ -127,7 +133,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
     /**
      * Get the URL for the Embedded Signing View.
      *
-     * @memberOf Public
+     * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} userId - The unique userId of the recipient (required or name and email are required).
      * @param {string} recipientName - The full name of the recipient (required if userId null).
@@ -145,7 +152,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
     /**
      * Request Signature via Template.
      *
-     * @memberOf Public
+     * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} emailSubject - The Email Subject of the Envelope created from the Template you wish to send.
      * @param {string} templateId - ID of template you wish to create an envelope from.
@@ -162,7 +170,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * Creates an envelope from a template, and then obtains a view of the newly created envelope
      * for the envelope sender.
      *
-     * @memberOf Public
+     * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} templateId - ID of template you wish to create an envelope from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have tagged the envelope.
@@ -175,7 +184,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
     /**
      * Get a list of recipients for a given `envelopeId`.
      *
-     * @memberOf Public
+     * @memberOf Envelopes
+     * @public
      * @function
      * @param {string} envelopeId - ID of envelope to get list of recipients from.
      * @param {function} callback - Returns the list of recipients in the form of function(error, response).
@@ -189,7 +199,8 @@ exports.init = function (accountId, baseUrl, accessToken) {
 /**
  * Gets the DocuSign Embedded Dashboard view
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -209,7 +220,8 @@ function getConsoleUrl (apiToken, baseUrl, callback) {
 /**
  * Gets a list of envelopes that have been created starting from the designated date to the present.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -231,7 +243,8 @@ function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
 /**
  * Request a Signature on a Document.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -335,7 +348,8 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
  * Pass all of that in this convenience function and the API handles both creating the
  * envelope and getting the embedUrl for the DocuSign envelope configuration view of the document
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -431,7 +445,8 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
 /**
  * Internal method to create an envelope based on a specified action
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -587,7 +602,8 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
 /**
  * Get information about the specified Envelope.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -608,7 +624,8 @@ function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
 /**
  * Get all the signed documents that were in the given envelope.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -653,7 +670,8 @@ function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCert
 /**
  * Get the URL for the Embedded Signing View.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -703,7 +721,8 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
 /**
  * Request Signature via Template.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -737,7 +756,8 @@ function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRole
  * Creates an envelope from a template, and then obtains a view of the newly created envelope
  * for the envelope sender.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -793,7 +813,8 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl, callback) {
 /**
  * Get a list of recipients for a given `envelopeId`.
  *
- * @memberOf Private
+ * @memberOf Envelopes
+ * @private
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.

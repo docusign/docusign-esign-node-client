@@ -11,7 +11,8 @@ var DocuSignError = dsUtils.DocuSignError;
 /**
  * Gets login information for the default account/organization.
  *
- * @memberOf Private
+ * @memberOf Auth
+ * @private
  * @function
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
@@ -47,7 +48,8 @@ exports.getLoginInfo = function (email, password, callback) {
  * Gets an oAuth Token for given username & password that can be used to access
  * the DocuSign API on subsequent calls instead of using the password repeatedly.
  *
- * @memberOf Private
+ * @memberOf Auth
+ * @private
  * @function
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
@@ -82,7 +84,9 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
  * containing the oAuth Token and baseUrl for future calls.  This is mostly a
  * convenience function.
  *
- * @memberOf Private
+ * @memberOf Auth
+ * @private
+ * @alias getAuthInfo
  * @function
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
@@ -134,7 +138,8 @@ exports.revokeOauthToken = function (accessToken, baseUrl) {
 /**
  * Revoke the given DocuSign OAuth2 `token`.
  *
- * @memberOf Private
+ * @memberOf Auth
+ * @private
  * @function
  * @param {string} token - The DocuSign OAuth2 token to revoke.
  * @param {string} baseUrl - DocuSign API base URL.
@@ -164,7 +169,8 @@ function revokeOauthToken (token, baseUrl, callback) {
 /**
  * Constructs the URL necessary for token management. Internal function that should not be called.
  *
- * @memberOf Private
+ * @memberOf Auth
+ * @private
  * @function
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} action - Action for API calls.
