@@ -4,6 +4,7 @@
   "description": "A DocuSign API helper library",
   "main": "docusign.js",
   "scripts": {
+    "docs": "jsdoc -d doc -a all -r docusign.js dsUtils.js components/ README.md",
     "lint": "node_modules/.bin/semistandard",
     "check-config": "./scripts/check-config.js",
     "test": "npm run check-config && node_modules/.bin/semistandard && node_modules/.bin/mocha"
@@ -51,6 +52,7 @@
   "devDependencies": {
     "chalk": "^1.1.0",
     "file-type": "2.5.0",
+    "jsdoc": "3.3.2",
     "mocha": "2.2.4",
     "pre-commit": "1.0.10",
     "semistandard": "7.0.2"
