@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/folders.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/folders.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// For working with folders, mostly for searching for envelopes
+
+var async = require('async');
+var dsUtils = require('./../dsUtils');
+
+exports.init = function (accountId, baseUrl, accessToken) {
+  return {
+    /**
+     * Get information about envelopes for the account with the given `apiToken`.
+     *
+     * @memberOf Folders
+     * @function
+     * @param {string} envelopeType - The type of envelope to get.
+     *   Valid values are 'all', 'awaiting_my_signature', 'out_for_signature',
+     *   'completed', and 'drafts'.
+     * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
+     *  the given `envelopeType`. Otherwise, only get the first 50 most recent
+     *  envelopes.
+     * @param {function} callback - Returns in the form of function(error, response)
+     *   such that envelopes will live at `response.folderItems.
+     */
+    getEnvelopes: function (envelopeType, doFullRetrieval, callback) {
+      getEnvelopes(accessToken, baseUrl, envelopeType, doFullRetrieval, callback);
+    },
+
+    /**
+     * Search DS envelopes with the given `searchTerm`.
+     *
+     * @memberOf Folders
+     * @function
+     * @param {string} searchTerm - The term that the DS API should search for.
+     * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
+     */
+    searchThroughEnvelopes: function (searchTerm, callback) {
+      searchThroughEnvelopes(accessToken, baseUrl, searchTerm, callback);
+    }
+  };
+};
+
+/**
+ * Get information about envelopes for the account with the given `apiToken`.
+ *
+ * @memberOf Private
+ * @function
+ * @param {string} apiToken - DocuSign API OAuth2 access token.
+ * @param {string} baseUrl - DocuSign API base URL.
+ * @param {string} envelopeType - The type of envelope to get.
+ *   Valid values are 'all', 'awaiting_my_signature', 'out_for_signature',
+ *   'completed', and 'drafts'.
+ * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
+ *  the given `envelopeType`. Otherwise, only get the first 50 most recent
+ *  envelopes.
+ * @param {function} callback - Returns in the form of function(error, response)
+ *   such that envelopes will live at `response.folderItems.
+ */
+function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callback) {
+  var envelopes = [];
+  var nextUri = '/search_folders/' + envelopeType + '?start_position=0';
+
+  async.whilst(
+    function condition () {
+      return nextUri != null;
+    },
+    function getEnvelopeStep (next) {
+      var options = {
+        method: 'GET',
+        url: baseUrl + nextUri + '&amp;include_recipients=true',
+        headers: dsUtils.getHeaders(apiToken)
+      };
+
+      dsUtils.makeRequest('Get Envelopes', options, function (error, response) {
+        if (error) {
+          return next(error);
+        }
+        envelopes = envelopes.concat(response.folderItems);
+
+        /*
+         * By setting `nextUri` to "null", we are making this loop exit
+         * early. We only do this when `doFullRetrieval` is "false".
+         */
+        nextUri = doFullRetrieval ? response.nextUri : null;
+
+        next(); // continue onto the next step
+      });
+    },
+    function end (error) {
+      callback(error, envelopes);
+    }
+  );
+}
+
+/**
+ * Search DS envelopes with the given `searchTerm`.
+ *
+ * @memberOf Private
+ * @function
+ * @param {string} apiToken - DocuSign API OAuth2 access token.
+ * @param {string} baseUrl - DocuSign API base URL..
+ * @param {string} searchTerm - The term that the DS API should search for.
+ * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
+ */
+function searchThroughEnvelopes (apiToken, baseUrl, searchTerm, callback) {
+  var options = {
+    method: 'GET',
+    url: baseUrl + '/folders/inbox',
+    headers: dsUtils.getHeaders(apiToken),
+    qs: {
+      search_text: searchTerm
+    }
+  };
+
+  dsUtils.makeRequest('Search Through Envelopes', options, callback);
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Admin.html">Admin</a></li><li><a href="Envelopes.html">Envelopes</a></li><li><a href="Folders.html">Folders</a></li><li><a href="Private.html">Private</a></li><li><a href="Users.html">Users</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Fri Sep 11 2015 14:21:53 GMT-0700 (PDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
