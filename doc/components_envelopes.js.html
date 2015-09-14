@@ -856,7 +856,7 @@ function getRecipients (apiToken, baseUrl, envelopeId, callback) {
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get List of Recipients', options, false, callback);
+  dsUtils.makeRequest('Get List of Recipients', options, callback);
 }
 </code></pre>
         </article>
