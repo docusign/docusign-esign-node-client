@@ -159,11 +159,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {string} templateId - ID of template you wish to create an envelope from.
      * @param {array} templateRoles - Array of JSON objects of templateRoles. For more information please visit:
      *    https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST API References/Send an Envelope from a Template.htm%3FTocPath%3DREST%2520API%2520References%7C_____39
+     * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
      * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(error, response).
      *
      */
-    sendTemplate: function (emailSubject, templateId, templateRoles, callback) {
-      sendTemplate(accessToken, baseUrl, emailSubject, templateId, templateRoles, callback);
+    sendTemplate: function (emailSubject, templateId, templateRoles, additionalParams, callback) {
+      sendTemplate(accessToken, baseUrl, emailSubject, templateId, templateRoles, additionalParams, callback);
     },
 
     /**
@@ -730,17 +731,22 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
  * @param {string} templateId - ID of template you wish to create an envelope from.
  * @param {array} templateRoles - Array of JSON objects of templateRoles. For more information please visit:
  *    https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST API References/Send an Envelope from a Template.htm%3FTocPath%3DREST%2520API%2520References%7C_____39
+ * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
  * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(error, response).
  *
  */
 
-function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRoles, callback) {
-  var data = {
+function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRoles, additionalParams, callback) {
+  additionalParams = additionalParams != null ? additionalParams : {};
+
+  var data = merge({}, additionalParams, {
     emailSubject: emailSubject,
     templateId: templateId,
     templateRoles: templateRoles,
     status: 'sent'
-  };
+  }, function (a, b) {
+    return Array.isArray(a) ? a.concat(b) : undefined;
+  });
 
   var options = {
     method: 'POST',
