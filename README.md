@@ -3,9 +3,9 @@ DocuSign Node Client
 
 NPM module that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
-For more information about the DocuSign API <a href="https://www.docusign.com/developer-center">click here</a>.
+[Documentation about the DocuSign API](https://www.docusign.com/developer-center)
 
-For more information about how to use this Node Package <a href="https://github.com/docusign/DocuSign-Node-Client/wiki">click here</a>.
+[Documentation about this package](http://docusign.github.io/DocuSign-Node-Client)
 
 Feel free to create a Pull Request!
 
