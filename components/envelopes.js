@@ -114,6 +114,22 @@ exports.init = function (accountId, baseUrl, accessToken) {
     },
 
     /**
+     * Sets the status of an existing envelope
+     *
+     * @memberOf Envelopes
+     * @public
+     * @function
+     * @param {string} envelopeId - ID of envelope to get documents from.
+     * @param {string} status - either `sent` or `voided`
+     * @param {object} additionalParams - additional params such as the voidReason
+     * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
+     *
+     */
+    setEnvelopeStatus: function (envelopeId, status, additionalParams, callback) {
+      setEnvelopeStatus(accessToken, baseUrl, envelopeId, status, additionalParams, callback);
+    },
+
+    /**
      * Get all the signed documents that were in the given envelope.
      *
      * @memberOf Envelopes
@@ -620,6 +636,38 @@ function getEnvelopeInfo (apiToken, baseUrl, envelopeId, callback) {
   };
 
   dsUtils.makeRequest('Get Envelope Information', options, callback);
+}
+
+/**
+ * Sets the envelope status.
+ *
+ * @memberOf Envelopes
+ * @private
+ * @function
+ * @param {string} apiToken - DocuSign API OAuth2 access token.
+ * @param {string} baseUrl - DocuSign API base URL.
+ * @param {string} envelopeId - ID of envelope to get documents from.
+ * @param {string} status - either `sent` or `voided`
+ * @param {object} additionalParams - additional params such as the voidReason
+ * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
+ *
+ */
+function setEnvelopeStatus (apiToken, baseUrl, envelopeId, status, additionalParams, callback) {
+  var options = {
+    method: 'PUT',
+    url: baseUrl + '/envelopes/' + envelopeId,
+    headers: dsUtils.getHeaders(apiToken)
+  };
+
+  var data = merge({}, additionalParams, {
+    status: status
+  }, function (a, b) {
+    return Array.isArray(a) ? a.concat(b) : undefined;
+  });
+
+  options.json = data;
+
+  dsUtils.makeRequest('Set Envelope Status', options, callback);
 }
 
 /**
