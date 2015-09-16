@@ -101,7 +101,7 @@ exports.makeRequest = function (apiName, options, callback) {
     var json;
     try {
       json = JSON.parse(options.multipart[0].body);
-    } catch(_) {
+    } catch (_) {
       json = null;
     }
     if (json !== null) {
@@ -126,7 +126,7 @@ exports.makeRequest = function (apiName, options, callback) {
     var json, err, errMsg;
     try {
       json = JSON.parse(body);
-    } catch(_) {
+    } catch (_) {
       json = null;
     }
 
