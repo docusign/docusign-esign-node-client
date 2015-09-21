@@ -86,14 +86,14 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {JSON} recipients - JSON object with recipient information. For more information on how to construct
-     *    a recipient object please visit: <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Recipient Parameter.htm</a>
+     *    a recipient object please visit: <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Recipient Parameter.htm">Recipient Parameters</a>
      * @param {string} emailSubject - Subject of the email sent for the envelope created.
      * @param {object[]} files - A list of file objects to be uploaded into DS.
      *   @param {string} files[].name - The name of the file.
      *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
      *   @param {string} files[].url - The URL to download from.
      *   @param {string} files[].base64 - The base64-encoded buffer of the file
-     * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
+     * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
      * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      */
     sendEnvelope: function (recipients, emailSubject, files, additionalParams, callback) {
@@ -175,7 +175,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {string} templateId - ID of template you wish to create an envelope from.
      * @param {array} templateRoles - Array of JSON objects of templateRoles. For more information please visit:
      *    https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST API References/Send an Envelope from a Template.htm%3FTocPath%3DREST%2520API%2520References%7C_____39
-     * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
+     * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
      * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(error, response).
      *
      */
@@ -266,14 +266,14 @@ function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {JSON} recipients - JSON object with recipient information. For more information on how to construct
- *    a recipient object please visit: <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Recipient Parameter.htm</a>
+ *    a recipient object please visit: <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Recipient Parameter.htm">Recipient Parameters</a>
  * @param {string} emailSubject - Subject of the email sent for the envelope created.
  * @param {object[]} files - A list of file objects to be uploaded into DS.
  *   @param {string} files[].name - The name of the file.
  *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
  *   @param {string} files[].url - The URL to download from.
  *   @param {string} files[].base64 - The base64-encoded buffer of the file
- * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
+ * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
  * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
  */
 
@@ -779,7 +779,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
  * @param {string} templateId - ID of template you wish to create an envelope from.
  * @param {array} templateRoles - Array of JSON objects of templateRoles. For more information please visit:
  *    https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST API References/Send an Envelope from a Template.htm%3FTocPath%3DREST%2520API%2520References%7C_____39
- * @param {object} additionalParams - Please visit <a>https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0</a>
+ * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
  * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(error, response).
  *
  */
