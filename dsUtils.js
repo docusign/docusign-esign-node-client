@@ -115,7 +115,7 @@ exports.makeRequest = function (apiName, options, callback) {
     data = '';
   }
 
-  exports.log(util.format('DS API %s Request:\n  %s %s\t  %s', apiName, options.method, options.url, data));
+  exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, data, util.inspect(options.headers, {depth: null})));
 
   request(options, function (error, response, body) {
     if (error) {
@@ -186,10 +186,13 @@ exports.sendMultipart = function (mpUrl, mpHeaders, parts, callback) {
   var boundary = exports.generateNewGuid();
   mpHeaders['Content-Type'] = 'multipart/form-data; boundary=' + boundary;
 
+  exports.log('mpHeaders', mpHeaders);
+
   async.eachSeries(parts, function (part, next) {
     var headers = Object.keys(part.headers).map(function (key) {
       return key + ': ' + part.headers[key];
     }).join(crlf);
+    exports.log('part.headers', part.headers);
 
     multipart.write('--' + boundary + crlf);
     multipart.write(headers);
