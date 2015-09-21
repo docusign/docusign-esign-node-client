@@ -440,7 +440,7 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
       var options = {
         method: 'POST',
         url: baseUrl + envelopeUri + '/views/' + ending,
-        headers: dsUtils.getHeaders(apiToken, baseUrl),
+        headers: dsUtils.getHeaders(apiToken),
         json: data
       };
 

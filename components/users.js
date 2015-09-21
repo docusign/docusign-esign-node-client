@@ -114,7 +114,7 @@ function getSocialConnection (apiToken, baseUrl, userId, callback) {
   var options = {
     method: 'GET',
     url: baseUrl + '/users/' + userId + '/social',
-    headers: dsUtils.getHeaders(apiToken, baseUrl)
+    headers: dsUtils.getHeaders(apiToken)
   };
 
   dsUtils.makeRequest('Get DS Social Connection', options, callback);
