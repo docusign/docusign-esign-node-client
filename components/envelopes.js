@@ -6,6 +6,7 @@ var fs = require('fs'); // core
 var dsUtils = require('./../dsUtils');
 var util = require('util');
 var request = require('request');
+var forEach = require('lodash.foreach');
 var isEmpty = require('lodash.isempty');
 var merge = require('lodash.merge');
 var log = dsUtils.log;
@@ -91,8 +92,9 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {object[]} files - A list of file objects to be uploaded into DS.
      *   @param {string} files[].name - The name of the file.
      *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
-     *   @param {string} files[].url - The URL to download from.
-     *   @param {string} files[].base64 - The base64-encoded buffer of the file
+     *   @param {object} files[].source - The file source to use
+     *     @param {string} files[].source.type - The type of source, either `base64`, `path`, or `url`
+     *     @param {string|buffer} files[].source.content - The base64-encoded buffer of the file, OR the local file path, OR the url to download.
      * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
      * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      */
@@ -271,8 +273,9 @@ function getEnvelopeList (apiToken, baseUrl, fromDate, callback) {
  * @param {object[]} files - A list of file objects to be uploaded into DS.
  *   @param {string} files[].name - The name of the file.
  *   @param {string} files[].extension - The extension of the file (e.g. `pdf`).
- *   @param {string} files[].url - The URL to download from.
- *   @param {string} files[].base64 - The base64-encoded buffer of the file
+ *   @param {object} files[].source - The file source to use
+ *     @param {string} files[].source.type - The type of source, either `base64`, `path`, or `url`
+ *     @param {string|buffer} files[].source.content - The base64-encoded buffer of the file, OR the local file path, OR the url to download.
  * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
  * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
  */
@@ -282,37 +285,7 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
   var parts = [];
   additionalParams = additionalParams != null ? additionalParams : {};
 
-  files.forEach(function (file, index) {
-    var documentId = index + 1;
-    documents.push({
-      documentId: documentId,
-      name: file.name,
-      fileExtension: file.extension
-    });
-
-    log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
-
-    var download;
-    if ('path' in file) {
-      download = fs.createReadStream(file.path);
-    } else if ('base64' in file) {
-      download = streamifier.createReadStream(new Buffer(file.base64, 'base64'));
-    } else {
-      download = request({
-        method: 'GET',
-        url: file.url,
-        encoding: null
-      });
-    }
-    download.pause();
-
-    parts.push({
-      headers: {
-        'Content-Disposition': 'documentId=' + documentId
-      },
-      body: download
-    });
-  });
+  forEach(files, createMultipartFilesPrep(parts, documents, callback));
 
   var recipientCounter = 2;
   var generateId = function (recipient) {
@@ -358,6 +331,61 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
 }
 
 /**
+ * Helper method to prep files for multipart submission
+ *
+ * @memberOf Envelopes
+ * @private
+ * @function
+ * @param  {array} parts - Array to push multipart files into
+ * @param  {array} documents - Array to push file meta data into
+ * @param  {function} failureCb - Function to call in case of failure
+ * @return {function} Function to be used with forEach
+ */
+function createMultipartFilesPrep (parts, documents, failureCb) {
+  return function (file, index) {
+    var documentId = index + 1;
+    documents.push({
+      documentId: documentId,
+      name: file.name,
+      fileExtension: file.extension
+    });
+
+    log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
+
+    var download;
+    var fileSource = file.source;
+    switch (fileSource.type) {
+      case 'path':
+        download = fs.createReadStream(fileSource.content);
+        break;
+
+      case 'base64':
+        download = streamifier.createReadStream(new Buffer(fileSource.content, 'base64'));
+        break;
+
+      case 'url':
+        download = request({
+          method: 'GET',
+          url: fileSource.content,
+          encoding: null
+        });
+        break;
+      default:
+        failureCb(new DocuSignError('Files array had no buffer, local file path, or url to retrieve file from.'));
+        return false;
+    }
+    download.pause();
+
+    parts.push({
+      headers: {
+        'Content-Disposition': 'documentId=' + documentId
+      },
+      body: download
+    });
+  };
+}
+
+/**
  * Wrapper function that is designed for high convenience scenario
  * where you have all information up front about what action user wants to do
  * with the documents, the list of documents & their buffers, etc
@@ -379,9 +407,9 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
  * @param {object[]} files - A list of file objects to be uploaded into DS.
  *   @param {string} files.name - The name of the file.
  *   @param {string} files.extension - The extension of the file (e.g. `pdf`).
- *   @param {string} files.url - The URL to download from.
- *   @param {string} files.base64 - The base64-encoded buffer of the file.
- *     contents (`files[].url` does not need to be set).
+ *   @param {object} files[].source - The file source to use
+ *     @param {string} files[].source.type - The type of source, either `base64`, `path`, or `url`
+ *     @param {string|buffer} files[].source.content - The base64-encoded buffer of the file, OR the local file path, OR the url to download.
  * @param {string} returnUrl - The URL to be redirected to after the
  *   DS process is done.
  * @param {object} event - An object with values concerning what happens
@@ -476,9 +504,9 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
  * @param {object[]} files - A list of file objects to be uploaded into DS.
  *   @param {string} files.name - The name of the file.
  *   @param {string} files.extension - The extension of the file (e.g. `pdf`).
- *   @param {string} files.url - The URL to download from.
- *   @param {string} files.base64 - The base64-encoded buffer of the file.
- *     contents (`files[].url` does not need to be set).
+ *   @param {object} files[].source - The file source to use
+ *     @param {string} files[].source.type - The type of source, either `base64`, `path`, or `url`
+ *     @param {string|buffer} files[].source.content - The base64-encoded buffer of the file, OR the local file path, OR the url to download.
  * @param {object} event - An object with values concerning what happens
  *   after the DS process is done (e.g. webhook registration). Can be `null`.
  *   @param {string} event.platform - The name of the calling app.
@@ -500,39 +528,7 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
   var parts = [];
   var customFields = [];
 
-  files.forEach(function (file, index) {
-    var documentId = index + 1;
-    documents.push({
-      documentId: documentId,
-      name: file.name,
-      fileExtension: file.extension
-    });
-
-    log('Now retrieving the following file with documentId: %s \n %s', documentId, JSON.stringify(file).substr(0, 256));
-
-    var download;
-    if ('path' in file) {
-      download = fs.createReadStream(file.path);
-    } else if ('base64' in file) {
-      download = streamifier.createReadStream(new Buffer(file.base64, 'base64'));
-    } else if ('url' in file) {
-      download = request({
-        method: 'GET',
-        url: file.url,
-        encoding: null // get file as binary buffer
-      });
-    } else {
-      callback(true, 'Files array provided had no buffer or url to retrieve file from.');
-    }
-    download.pause();
-
-    parts.push({
-      headers: {
-        'Content-Disposition': 'documentId=' + documentId
-      },
-      body: download
-    });
-  });
+  forEach(files, createMultipartFilesPrep(parts, documents, callback));
 
   var recipients;
   if (event && 'recipients' in event) {
