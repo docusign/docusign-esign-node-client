@@ -21,7 +21,7 @@ var DocuSignError = dsUtils.DocuSignError;
 exports.getLoginInfo = function (email, password, callback) {
   var options = {
     method: 'GET',
-    url: dsUtils.getApiUrl() + '/login_information',
+    url: dsUtils.getApiUrl() + '/login_information?include_account_id_guid=true',
     headers: {
       'X-DocuSign-Authentication': JSON.stringify({
         Username: email,

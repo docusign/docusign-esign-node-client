@@ -67,7 +67,7 @@ var docusign = (function () {
   }
 
   function createClientBase (authInfo, callback) {
-    var accountId = authInfo.accountId;
+    var accountId = authInfo.accountIdGuid;
     var baseUrl = authInfo.baseUrl;
     var accessToken = authInfo.accessToken;
 
@@ -89,19 +89,10 @@ var docusign = (function () {
   }
 
   function createClient (email, password, callback) {
-    auth.getAPIToken(email, password, function (err, response) {
+    auth.getAPIToken(email, password, function (err, authInfo) {
       if (err) {
         return callback(err);
       }
-      var accountId = response.accountId;
-      var baseUrl = response.baseUrl;
-      var accessToken = response.accessToken;
-      var authInfo = {
-        accountId: accountId,
-        baseUrl: baseUrl,
-        accessToken: accessToken
-      };
-
       createClientBase(authInfo, callback);
     });
   }
