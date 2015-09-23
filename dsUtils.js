@@ -137,12 +137,10 @@ exports.makeRequest = function (apiName, options, callback) {
       } else if ('errorCode' in json) {
         errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, json.message);
         err = new DocuSignError(errMsg);
-        exports.log(errMsg);
         reject(err);
       } else if ('error' in json) {
         errMsg = util.format('DS API %s Error:\n  %s \n\nDescription: %s', apiName, json.error, json.error_description);
         err = new DocuSignError(errMsg);
-        exports.log(errMsg);
         reject(err);
       } else { // no error
         exports.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));
@@ -150,7 +148,10 @@ exports.makeRequest = function (apiName, options, callback) {
       }
     });
   });
-  return makeRequestAsync.asCallback(callback);
+  return makeRequestAsync.asCallback(callback).catch(DocuSignError, function (error) {
+    exports.log(error.message);
+    throw error;
+  });
 };
 
 /**
