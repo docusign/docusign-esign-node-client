@@ -101,9 +101,8 @@ exports.getAccountInfoAndToken = function (email, password, callback) {
   });
 };
 
-exports.revokeOauthToken = function (accessToken, baseUrl, callback) {
 /**
- * Revoke the given DocuSign OAuth2 `token`.
+ * Revoke the given DocuSign OAuth2 `token` to log out the user
  *
  * @memberOf Auth
  * @public
@@ -112,6 +111,7 @@ exports.revokeOauthToken = function (accessToken, baseUrl, callback) {
  * @param {function} callback - Returned in the form of function(error, response).
  * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
  */
+exports.revokeOauthToken = function (accessToken, baseUrl, callback) {
   return function logOut (callback) {
     return revokeOauthToken(accessToken, baseUrl).asCallback(callback);
   };
