@@ -1,6 +1,7 @@
 // For working with folders, mostly for searching for envelopes
 
 var async = require('async');
+var Bluebird = require('bluebird');
 var dsUtils = require('./../dsUtils');
 
 exports.init = function (accountId, baseUrl, accessToken) {
@@ -19,9 +20,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *  envelopes.
      * @param {function} callback - Returns in the form of function(error, response)
      *   such that envelopes will live at `response.folderItems.
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getEnvelopes: function (envelopeType, doFullRetrieval, callback) {
-      getEnvelopes(accessToken, baseUrl, envelopeType, doFullRetrieval, callback);
+      var getEnvelopesAsync = Bluebird.promisify(getEnvelopes);
+      return getEnvelopesAsync(accessToken, baseUrl, envelopeType, doFullRetrieval).asCallback(callback);
     },
 
     /**
@@ -32,9 +35,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} searchTerm - The term that the DS API should search for.
      * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     searchThroughEnvelopes: function (searchTerm, callback) {
-      searchThroughEnvelopes(accessToken, baseUrl, searchTerm, callback);
+      var searchThroughEnvelopesAsync = Bluebird.promisify(searchThroughEnvelopes);
+      return searchThroughEnvelopesAsync(accessToken, baseUrl, searchTerm).asCallback(callback);
     }
   };
 };

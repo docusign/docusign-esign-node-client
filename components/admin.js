@@ -1,5 +1,6 @@
 // Handles administration of given organization's DocuSign account
 
+var Bluebird = require('bluebird');
 var dsUtils = require('./../dsUtils');
 
 exports.init = function (accountId, baseUrl, accessToken) {
@@ -11,10 +12,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getOrgAccountInfo: function (callback) {
-      getOrgAccountInfo(accountId, accessToken, callback);
+      var getOrgAccountInfoAsync = Bluebird.promisify(getOrgAccountInfo);
+      return getOrgAccountInfoAsync(accountId, accessToken).asCallback(callback);
     },
 
     /**
@@ -24,10 +27,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, users).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getUserList: function (callback) {
-      getUserList(accessToken, baseUrl, callback);
+      var getUserListAsync = Bluebird.promisify(getUserList);
+      return getUserListAsync(accessToken, baseUrl).asCallback(callback);
     },
 
     /**
@@ -52,10 +57,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion4
      *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer4
      * @param {function} callback - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     addUsers: function (usersToAdd, callback) {
-      addUsers(accessToken, baseUrl, usersToAdd, callback);
+      var addUsersAsync = Bluebird.promisify(addUsers);
+      return addUsersAsync(accessToken, baseUrl, usersToAdd).asCallback(callback);
     },
 
     /**
@@ -66,10 +73,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
      * @param {function} callback - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     deleteUsers: function (usersToDelete, callback) {
-      deleteUsers(accessToken, baseUrl, usersToDelete, callback);
+      var deleteUsersAsync = Bluebird.promisify(deleteUsers);
+      return deleteUsersAsync(accessToken, baseUrl, usersToDelete).asCallback(callback);
     },
 
     /**
@@ -79,10 +88,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getTemplates: function (callback) {
-      getTemplates(accessToken, baseUrl, callback);
+      var getTemplatesAsync = Bluebird.promisify(getTemplates);
+      return getTemplatesAsync(accessToken, baseUrl).asCallback(callback);
     },
 
     /**
@@ -97,10 +108,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {function} callback - Returned in the form of function(error, plan).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getPlan: function (callback) {
-      getPlan(accessToken, baseUrl, callback);
+      var getPlanAsync = Bluebird.promisify(getPlan);
+      return getPlanAsync(accessToken, baseUrl).asCallback(callback);
     }
   };
 };

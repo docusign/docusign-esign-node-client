@@ -1,6 +1,7 @@
 // Wrappers for User APIs
 
 var util = require('util');
+var Bluebird = require('bluebird');
 var dsUtils = require('./../dsUtils');
 var isEmpty = require('lodash.isempty');
 var DocuSignError = dsUtils.DocuSignError;
@@ -15,9 +16,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} userId - DocuSign userId.
      * @param {function} callback - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getInfo: function (userId, callback) {
-      getInfo(accessToken, baseUrl, userId, callback);
+      var getInfoAsync = Bluebird.promisify(getInfo);
+      return getInfoAsync(accessToken, baseUrl, userId).asCallback(callback);
     },
 
     /**
@@ -28,9 +31,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} userId - DocuSign UserId.
      * @param {function} callback - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getSignature: function (userId, callback) {
-      getSignature(accessToken, baseUrl, userId, callback);
+      var getSignatureAsync = Bluebird.promisify(getSignature);
+      return getSignatureAsync(accessToken, baseUrl, userId).asCallback(callback);
     },
 
     /**
@@ -41,10 +46,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} userId - DocuSign UserId.
      * @param {function} callback - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getSocialConnection: function (userId, callback) {
-      getSocialConnection(accessToken, baseUrl, userId, callback);
+      var getSocialConnectionAsync = Bluebird.promisify(getSocialConnection);
+      return getSocialConnectionAsync(accessToken, baseUrl, userId).asCallback(callback);
     }
   };
 };

@@ -3,6 +3,7 @@
 // of these methods.  We do not offer encryption or key handling here.
 
 var querystring = require('querystring'); // core
+var Bluebird = require('bluebird');
 var async = require('async');
 var assign = require('lodash.assign');
 var dsUtils = require('./../dsUtils');
@@ -80,7 +81,7 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
 };
 
 /**
- * getAPIToken wraps both getLoginInformation and getOauthToken to return a single object
+ * getAccountInfoAndToken wraps both getLoginInformation and getOauthToken to return a single object
  * containing the oAuth Token and baseUrl for future calls.  This is mostly a
  * convenience function.
  *
@@ -91,47 +92,49 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
  * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
  */
-exports.getAPIToken = function (email, password, callback) {
-  var thisObj = this;
-  async.waterfall([
-    function getLoginInfo (next) {
-      // step 1
-      thisObj.getLoginInfo(email, password, function (err, accountInfo) {
-        if (err) {
-          next(err); // end the waterfall
-          return;
-        }
-        next(null, accountInfo);
-      });
-    },
-    function getToken (accountInfo, next) {
-      // step 2
-      thisObj.getOauthToken(email, password, accountInfo.baseUrl, function (err, accessToken) {
-        if (err) {
-          next(err);
-          return;
-        }
-        next(null, accessToken, accountInfo);
-      });
-    }
-  ],
-    function waterfallDone (err, accessToken, accountInfo) {
+exports.getAccountInfoAndToken = function (email, password, callback) {
+  var getAccountInfoAndTokenAsync = new Bluebird(function (resolve, reject) {
+    async.waterfall([
+      function getLoginInfo (next) {
+        // step 1
+        exports.getLoginInfo(email, password, function (err, accountInfo) {
+          if (err) {
+            return next(err); // end the waterfall
+          }
+          next(null, accountInfo);
+        });
+      },
+      function getToken (accountInfo, next) {
+        // step 2
+        exports.getOauthToken(email, password, accountInfo.baseUrl, function (err, accessToken) {
+          if (err) {
+            return next(err);
+          }
+          next(null, accessToken, accountInfo);
+        });
+      }
+    ], function waterfallDone (err, accessToken, accountInfo) {
       if (err) {
         var errMsg = 'Error getting API token: ' + JSON.stringify(err);
         var error = new DocuSignError(errMsg, err);
-        return callback(error);
+        return reject(error);
       }
       var accountAndAuthInfo = assign({
         accessToken: accessToken
       }, accountInfo);
-      callback(null, accountAndAuthInfo);
+      resolve(accountAndAuthInfo);
     });
+  });
+
+  return getAccountInfoAndTokenAsync.asCallback(callback);
 };
 
 exports.revokeOauthToken = function (accessToken, baseUrl) {
   return function (callback) {
-    revokeOauthToken(accessToken, baseUrl, callback);
+    var revokeOauthTokenAsync = Bluebird.promisify(revokeOauthToken);
+    return revokeOauthTokenAsync(accessToken, baseUrl).asCallback(callback);
   };
 };
 
