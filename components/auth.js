@@ -75,7 +75,7 @@ exports.getOauthToken = function (email, password, baseUrl) {
  * convenience function.
  *
  * @memberOf Auth
- * @private
+ * @public
  * @alias getAuthInfo
  * @function
  * @param {string} email - Email address of the DocuSign user.
