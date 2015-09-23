@@ -9,6 +9,11 @@
  */
 
 /**
+ * @namespace Auth
+ * @desc Public API for DocuSign Auth API
+ */
+
+/**
 * @namespace Envelopes
 * @desc Public API for DocuSign Envelopes API
 */
