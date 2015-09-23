@@ -19,13 +19,13 @@ var templateRoles = [{
 // **********************************************************************************
 // Step 1 - Initialize DocuSign Object with Integrator Key and Desired Environment
 // **********************************************************************************
-docusign.initAsync(integratorKey, docusignEnv, debug)
+docusign.init(integratorKey, docusignEnv, debug)
   // **********************************************************************************
   // Step 2 - Create a DocuSign Client Object
   // **********************************************************************************
   .then(function (response) {
     if (response.message === 'succesfully initialized') {
-      return docusign.createClientAsync(email, password);
+      return docusign.createClient(email, password);
     } else {
       throw new Error('Did not initialize');
     }
@@ -34,7 +34,7 @@ docusign.initAsync(integratorKey, docusignEnv, debug)
   // Step 3 - Request Signature via Template
   // **********************************************************************************
   .then(function (client) {
-    return [client, client.envelopes.sendTemplateAsync('Sent from a Template', templateId, templateRoles)];
+    return [client, client.envelopes.sendTemplate('Sent from a Template', templateId, templateRoles)];
   })
   .spread(function (client, response) {
     console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
@@ -44,7 +44,7 @@ docusign.initAsync(integratorKey, docusignEnv, debug)
   // Step 4 - Revoke OAuth Token for Logout
   // **********************************************************************************
   .then(function (client) {
-    return client.logOutAsync();
+    return client.logOut();
   })
   .catch(DocuSignError, function (dsError) {
     console.log('DocuSignError: ', dsError.stack || dsError);
