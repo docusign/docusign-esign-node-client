@@ -3,8 +3,6 @@
 // of these methods.  We do not offer encryption or key handling here.
 
 var querystring = require('querystring'); // core
-var Bluebird = require('bluebird');
-var async = require('async');
 var assign = require('lodash.assign');
 var dsUtils = require('./../dsUtils');
 var DocuSignError = dsUtils.DocuSignError;
@@ -17,9 +15,9 @@ var DocuSignError = dsUtils.DocuSignError;
  * @function
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
- * @param {function} callback - Returned in the form of function(error, loginInfo).
+ * @returns {Promise} - A thenable bluebird Promise fulfilled with login info.
  */
-exports.getLoginInfo = function (email, password, callback) {
+exports.getLoginInfo = function (email, password) {
   var options = {
     method: 'GET',
     url: dsUtils.getApiUrl() + '/login_information?include_account_id_guid=true',
@@ -32,16 +30,11 @@ exports.getLoginInfo = function (email, password, callback) {
     }
   };
 
-  dsUtils.makeRequest('Get DS User Account Info', options, function (error, response) {
-    if (error) {
-      callback(error);
-      return;
-    }
+  return dsUtils.makeRequest('Get DS User Account Info', options).then(function (response) {
     var loginInfo = response.loginAccounts.filter(function (account) {
       return account.isDefault === 'true';
     })[0];
-
-    callback(null, loginInfo);
+    return loginInfo;
   });
 };
 
@@ -55,9 +48,9 @@ exports.getLoginInfo = function (email, password, callback) {
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(error, accessToken).
+ * @returns {Promise} - A thenable bluebird Promise fulfilled with an access token
  */
-exports.getOauthToken = function (email, password, baseUrl, callback) {
+exports.getOauthToken = function (email, password, baseUrl) {
   var options = {
     method: 'POST',
     url: _getTokenEndpoint(baseUrl, 'token'),
@@ -71,12 +64,8 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
     })
   };
 
-  dsUtils.makeRequest('Get DS OAuth2 Token', options, function (error, response) {
-    if (error) {
-      return callback(error);
-    }
-
-    return callback(null, response.access_token);
+  return dsUtils.makeRequest('Get DS OAuth2 Token', options).then(function (response) {
+    return response.access_token;
   });
 };
 
@@ -95,46 +84,26 @@ exports.getOauthToken = function (email, password, baseUrl, callback) {
  * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
  */
 exports.getAccountInfoAndToken = function (email, password, callback) {
-  var getAccountInfoAndTokenAsync = new Bluebird(function (resolve, reject) {
-    async.waterfall([
-      function getLoginInfo (next) {
-        // step 1
-        exports.getLoginInfo(email, password, function (err, accountInfo) {
-          if (err) {
-            return next(err); // end the waterfall
-          }
-          next(null, accountInfo);
-        });
-      },
-      function getToken (accountInfo, next) {
-        // step 2
-        exports.getOauthToken(email, password, accountInfo.baseUrl, function (err, accessToken) {
-          if (err) {
-            return next(err);
-          }
-          next(null, accessToken, accountInfo);
-        });
-      }
-    ], function waterfallDone (err, accessToken, accountInfo) {
-      if (err) {
-        var errMsg = 'Error getting API token: ' + JSON.stringify(err);
-        var error = new DocuSignError(errMsg, err);
-        return reject(error);
-      }
+  return exports.getLoginInfo(email, password).asCallback(callback)
+  .then(function (accountInfo) {
+    return exports.getOauthToken(email, password, accountInfo.baseUrl)
+    .then(function (accessToken) {
       var accountAndAuthInfo = assign({
         accessToken: accessToken
       }, accountInfo);
-      resolve(accountAndAuthInfo);
+      return accountAndAuthInfo;
     });
+  })
+  .catch(function (err) {
+    var errMsg = 'Error getting API token: ' + JSON.stringify(err);
+    var error = new DocuSignError(errMsg, err);
+    throw error;
   });
-
-  return getAccountInfoAndTokenAsync.asCallback(callback);
 };
 
 exports.revokeOauthToken = function (accessToken, baseUrl) {
   return function (callback) {
-    var revokeOauthTokenAsync = Bluebird.promisify(revokeOauthToken);
-    return revokeOauthTokenAsync(accessToken, baseUrl).asCallback(callback);
+    return revokeOauthToken(accessToken, baseUrl).asCallback(callback);
   };
 };
 
@@ -146,9 +115,9 @@ exports.revokeOauthToken = function (accessToken, baseUrl) {
  * @function
  * @param {string} token - The DocuSign OAuth2 token to revoke.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise
  */
-function revokeOauthToken (token, baseUrl, callback) {
+function revokeOauthToken (token, baseUrl) {
   var headers = {
     'Content-Type': 'application/x-www-form-urlencoded'
   };
@@ -160,12 +129,12 @@ function revokeOauthToken (token, baseUrl, callback) {
     body: 'token=' + token
   };
 
-  dsUtils.makeRequest('Revoke DS OAuth2 Token', options, function (error, response) {
-    if (error) {
-      error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
-      return callback(error);
-    }
-    callback(null, response);
+  return dsUtils.makeRequest('Revoke DS OAuth2 Token', options).then(function (response) {
+    return response;
+  })
+  .catch(function (error) {
+    error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
+    throw error;
   });
 }
 
