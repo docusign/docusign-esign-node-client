@@ -34,7 +34,6 @@ var envelopes = require('./components/envelopes');
 var dsUtils = require('./dsUtils');
 
 var log = dsUtils.log;
-// @todo: add this to the main exports
 var DocuSignError = dsUtils.DocuSignError;
 
 // Create DocuSign Object
