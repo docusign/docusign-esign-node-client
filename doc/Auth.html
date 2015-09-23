@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: Users</title>
+    <title>JSDoc: Namespace: Auth</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Namespace: Users</h1>
+    <h1 class="page-title">Namespace: Auth</h1>
 
     
 
@@ -29,7 +29,7 @@
 <header>
     
         <h2>
-        Users
+        Auth
         </h2>
         
     
@@ -39,7 +39,7 @@
     <div class="container-overview">
     
         
-            <div class="description">Public API for DocuSign Users API</div>
+            <div class="description">Public API for DocuSign Auth API</div>
         
 
         
@@ -74,7 +74,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="docusign.js.html">docusign.js</a>, <a href="docusign.js.html#line26">line 26</a>
+        <a href="docusign.js.html">docusign.js</a>, <a href="docusign.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -110,14 +110,16 @@
 
     
 
-    <h4 class="name" id=".getInfo"><span class="type-signature">(static) </span>getInfo<span class="signature">(userId, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".getAuthInfo"><span class="type-signature">(static) </span>getAuthInfo<span class="signature">(email, password, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
 
 
 <div class="description">
-    Get user info for a given user.
+    getAccountInfoAndToken wraps both getLoginInformation and getOauthToken to return a single object
+containing the oAuth Token and baseUrl for future calls.  This is mostly a
+convenience function.
 </div>
 
 
@@ -155,7 +157,7 @@
 
         <tr>
             
-                <td class="name"><code>userId</code></td>
+                <td class="name"><code>email</code></td>
             
 
             <td class="type">
@@ -179,7 +181,38 @@
 
             
 
-            <td class="description last">DocuSign userId.</td>
+            <td class="description last">Email address of the DocuSign user.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>password</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Password of the DocuSign user.</td>
         </tr>
 
     
@@ -253,7 +286,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_users.js.html">components/users.js</a>, <a href="components_users.js.html#line20">line 20</a>
+        <a href="components_auth.js.html">components/auth.js</a>, <a href="components_auth.js.html#line86">line 86</a>
     </li></ul></dd>
     
 
@@ -306,14 +339,14 @@
 
     
 
-    <h4 class="name" id=".getSignature"><span class="type-signature">(static) </span>getSignature<span class="signature">(userId, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".logOut"><span class="type-signature">(static) </span>logOut<span class="signature">(callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
 
 
 <div class="description">
-    Gets the user signature.
+    Revoke the given DocuSign OAuth2 `token` to log out the user
 </div>
 
 
@@ -347,37 +380,6 @@
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>userId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">DocuSign UserId.</td>
-        </tr>
-
     
 
         <tr>
@@ -449,203 +451,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_users.js.html">components/users.js</a>, <a href="components_users.js.html#line34">line 34</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getSocialConnection"><span class="type-signature">(static) </span>getSocialConnection<span class="signature">(userId, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-
-
-
-<div class="description">
-    Gets social connection details for a given user.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>userId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">DocuSign UserId.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Returned in the form of function(error, response).</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="components_users.js.html">components/users.js</a>, <a href="components_users.js.html#line49">line 49</a>
+        <a href="components_auth.js.html">components/auth.js</a>, <a href="components_auth.js.html#line114">line 114</a>
     </li></ul></dd>
     
 

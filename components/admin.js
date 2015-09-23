@@ -10,11 +10,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getOrgAccountInfo: function (callback) {
-      getOrgAccountInfo(accountId, accessToken, callback);
+      return getOrgAccountInfo(accountId, accessToken).asCallback(callback);
     },
 
     /**
@@ -23,11 +24,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, users).
+     * @param {function} [callback] - Returned in the form of function(error, users).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getUserList: function (callback) {
-      getUserList(accessToken, baseUrl, callback);
+      return getUserList(accessToken, baseUrl).asCallback(callback);
     },
 
     /**
@@ -51,11 +53,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer3
      *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion4
      *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer4
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     addUsers: function (usersToAdd, callback) {
-      addUsers(accessToken, baseUrl, usersToAdd, callback);
+      return addUsers(accessToken, baseUrl, usersToAdd).asCallback(callback);
     },
 
     /**
@@ -65,11 +68,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     deleteUsers: function (usersToDelete, callback) {
-      deleteUsers(accessToken, baseUrl, usersToDelete, callback);
+      return deleteUsers(accessToken, baseUrl, usersToDelete).asCallback(callback);
     },
 
     /**
@@ -78,11 +82,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getTemplates: function (callback) {
-      getTemplates(accessToken, baseUrl, callback);
+      return getTemplates(accessToken, baseUrl).asCallback(callback);
     },
 
     /**
@@ -96,11 +101,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, plan).
+     * @param {function} [callback] - Returned in the form of function(error, plan).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getPlan: function (callback) {
-      getPlan(accessToken, baseUrl, callback);
+      return getPlan(accessToken, baseUrl).asCallback(callback);
     }
   };
 };
@@ -113,16 +119,16 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @function
  * @param {string} accountId - DocuSign AccountId.
  * @param {string} apiToken - DocuSign API OAuth2 access token.
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise fulfilled with organization account info
  */
-function getOrgAccountInfo (accountId, apiToken, callback) {
+function getOrgAccountInfo (accountId, apiToken) {
   var options = {
     method: 'GET',
     url: dsUtils.getApiUrl() + '/accounts/' + accountId,
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get DS Org Account Info', options, callback);
+  return dsUtils.makeRequest('Get DS Org Account Info', options);
 }
 
 /**
@@ -133,7 +139,7 @@ function getOrgAccountInfo (accountId, apiToken, callback) {
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(error, users).
+ * @returns {Promise} - A thenable bluebird Promise fulfilled with user objects.
  */
 function getUserList (apiToken, baseUrl, callback) {
   var options = {
@@ -142,11 +148,8 @@ function getUserList (apiToken, baseUrl, callback) {
     headers: dsUtils.getHeaders(apiToken, baseUrl)
   };
 
-  dsUtils.makeRequest('Get DS Account User List', options, function (error, response) {
-    if (error) {
-      return callback(error);
-    }
-    callback(null, response.users);
+  return dsUtils.makeRequest('Get DS Account User List', options).then(function (response) {
+    return response.users;
   });
 }
 
@@ -173,9 +176,9 @@ function getUserList (apiToken, baseUrl, callback) {
  *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer3
  *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion4
  *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer4
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise
  */
-function addUsers (apiToken, baseUrl, usersToAdd, callback) {
+function addUsers (apiToken, baseUrl, usersToAdd) {
   var users = usersToAdd.map(function (user) {
     return {
       userName: user.first + ' ' + user.last,
@@ -199,7 +202,7 @@ function addUsers (apiToken, baseUrl, usersToAdd, callback) {
     }
   };
 
-  dsUtils.makeRequest('Add Users to DS Account', options, callback);
+  return dsUtils.makeRequest('Add Users to DS Account', options);
 }
 
 /**
@@ -211,9 +214,9 @@ function addUsers (apiToken, baseUrl, usersToAdd, callback) {
  * @param {string} apiToken - DS API OAuth2 access token.
  * @param {string} baseUrl - DS API base URL.
  * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise
  */
-function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
+function deleteUsers (apiToken, baseUrl, usersToDelete) {
   var userIds = usersToDelete.map(function (user) {
     return {
       userId: user.userId
@@ -229,7 +232,7 @@ function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
     }
   };
 
-  dsUtils.makeRequest('Delete Users in DS Account', options, callback);
+  return dsUtils.makeRequest('Delete Users in DS Account', options);
 }
 
 /**
@@ -240,16 +243,16 @@ function deleteUsers (apiToken, baseUrl, usersToDelete, callback) {
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise fulfilled with list of templates
  */
-function getTemplates (apiToken, baseUrl, callback) {
+function getTemplates (apiToken, baseUrl) {
   var options = {
     method: 'GET',
     url: baseUrl + '/templates',
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Templates', options, callback);
+  return dsUtils.makeRequest('Get Templates', options);
 }
 
 /**
@@ -265,20 +268,16 @@ function getTemplates (apiToken, baseUrl, callback) {
  * @function
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
- * @param {function} callback - Returned in the form of function(error, plan).
+ * @returns {Promise} - A thenable bluebird Promise fulfilled with the account plan.
  */
-function getPlan (apiToken, baseUrl, callback) {
+function getPlan (apiToken, baseUrl) {
   var options = {
     method: 'GET',
     url: baseUrl,
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  dsUtils.makeRequest('Get Billing Plan Info', options, function (error, plan) {
-    if (error) {
-      return callback(error);
-    }
-
+  return dsUtils.makeRequest('Get Billing Plan Info', options).then(function (plan) {
     var envelopesLeft = plan.billingPeriodEnvelopesAllowed - plan.billingPeriodEnvelopesSent;
 
     // a negative number signifies unlimited amount
@@ -286,6 +285,6 @@ function getPlan (apiToken, baseUrl, callback) {
 
     plan.name = plan.planName;
 
-    callback(null, plan);
+    return plan;
   });
 }

@@ -14,10 +14,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} userId - DocuSign userId.
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getInfo: function (userId, callback) {
-      getInfo(accessToken, baseUrl, userId, callback);
+      return getInfo(accessToken, baseUrl, userId).asCallback(callback);
     },
 
     /**
@@ -27,10 +28,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} userId - DocuSign UserId.
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getSignature: function (userId, callback) {
-      getSignature(accessToken, baseUrl, userId, callback);
+      return getSignature(accessToken, baseUrl, userId).asCallback(callback);
     },
 
     /**
@@ -40,11 +42,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} userId - DocuSign UserId.
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
     getSocialConnection: function (userId, callback) {
-      getSocialConnection(accessToken, baseUrl, userId, callback);
+      return getSocialConnection(accessToken, baseUrl, userId).asCallback(callback);
     }
   };
 };
@@ -58,16 +61,15 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign userId.
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise
  */
-function getInfo (apiToken, baseUrl, userId, callback) {
+function getInfo (apiToken, baseUrl, userId) {
   var options = {
     method: 'GET',
     url: baseUrl + '/users/' + userId,
     headers: dsUtils.getHeaders(apiToken)
   };
-
-  dsUtils.makeRequest('Get User Information', options, callback);
+  return dsUtils.makeRequest('Get User Information', options);
 }
 
 /**
@@ -79,23 +81,20 @@ function getInfo (apiToken, baseUrl, userId, callback) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign UserId.
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise
  */
-function getSignature (apiToken, baseUrl, userId, callback) {
+function getSignature (apiToken, baseUrl, userId) {
   var options = {
     method: 'GET',
     url: baseUrl + '/users/' + userId + '/signatures',
     headers: dsUtils.getHeaders(apiToken)
   };
-  dsUtils.makeRequest('Get User Signature', options, function (error, response) {
-    if (error) {
-      return callback(error);
-    }
+  return dsUtils.makeRequest('Get User Signature', options).then(function (response) {
     if (isEmpty(response.userSignatures)) {
       var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
-      return callback(new DocuSignError(errMsg, {errorCode: response.errorCode}));
+      throw new DocuSignError(errMsg, {errorCode: response.errorCode});
     }
-    callback(null, baseUrl + response.userSignatures[0].signatureImageUri);
+    return baseUrl + response.userSignatures[0].signatureImageUri;
   });
 }
 
@@ -108,14 +107,13 @@ function getSignature (apiToken, baseUrl, userId, callback) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} userId - DocuSign UserId.
- * @param {function} callback - Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise
  */
-function getSocialConnection (apiToken, baseUrl, userId, callback) {
+function getSocialConnection (apiToken, baseUrl, userId) {
   var options = {
     method: 'GET',
     url: baseUrl + '/users/' + userId + '/social',
     headers: dsUtils.getHeaders(apiToken)
   };
-
-  dsUtils.makeRequest('Get DS Social Connection', options, callback);
+  return dsUtils.makeRequest('Get DS Social Connection', options);
 }

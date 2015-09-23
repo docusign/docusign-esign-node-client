@@ -1,6 +1,7 @@
 // For working with folders, mostly for searching for envelopes
 
 var async = require('async');
+var Bluebird = require('bluebird');
 var dsUtils = require('./../dsUtils');
 
 exports.init = function (accountId, baseUrl, accessToken) {
@@ -17,11 +18,12 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
      *  the given `envelopeType`. Otherwise, only get the first 50 most recent
      *  envelopes.
-     * @param {function} callback - Returns in the form of function(error, response)
+     * @param {function} [callback] - Returns in the form of function(error, response)
      *   such that envelopes will live at `response.folderItems.
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getEnvelopes: function (envelopeType, doFullRetrieval, callback) {
-      getEnvelopes(accessToken, baseUrl, envelopeType, doFullRetrieval, callback);
+      return getEnvelopes(accessToken, baseUrl, envelopeType, doFullRetrieval).asCallback(callback);
     },
 
     /**
@@ -31,10 +33,11 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} searchTerm - The term that the DS API should search for.
-     * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
+     * @param {function} [callback] - Returns in the form of function(error, matchingEnvelopes).
+     * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     searchThroughEnvelopes: function (searchTerm, callback) {
-      searchThroughEnvelopes(accessToken, baseUrl, searchTerm, callback);
+      return searchThroughEnvelopes(accessToken, baseUrl, searchTerm).asCallback(callback);
     }
   };
 };
@@ -53,43 +56,47 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
  *  the given `envelopeType`. Otherwise, only get the first 50 most recent
  *  envelopes.
- * @param {function} callback - Returns in the form of function(error, response)
- *   such that envelopes will live at `response.folderItems.
+ * @returns {Promise} - A thenable bluebird Promise that it is fulfilled with envelopes at `result.folderItems`.
  */
-function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callback) {
-  var envelopes = [];
-  var nextUri = '/search_folders/' + envelopeType + '?start_position=0';
+function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval) {
+  return new Bluebird(function (resolve, reject) {
+    var envelopes = [];
+    var nextUri = '/search_folders/' + envelopeType + '?start_position=0';
 
-  async.whilst(
-    function condition () {
-      return nextUri != null;
-    },
-    function getEnvelopeStep (next) {
-      var options = {
-        method: 'GET',
-        url: baseUrl + nextUri + '&include_recipients=true',
-        headers: dsUtils.getHeaders(apiToken)
-      };
+    // @todo: understand if promises can replace async.whilst more elegantly
+    async.whilst(
+      function condition () {
+        return nextUri != null;
+      },
+      function getEnvelopeStep (next) {
+        var options = {
+          method: 'GET',
+          url: baseUrl + nextUri + '&include_recipients=true',
+          headers: dsUtils.getHeaders(apiToken)
+        };
 
-      dsUtils.makeRequest('Get Envelopes', options, function (error, response) {
+        dsUtils.makeRequest('Get Envelopes', options).then(function (response) {
+          envelopes = envelopes.concat(response.folderItems);
+
+          /*
+           * By setting `nextUri` to "null", we are making this loop exit
+           * early. We only do this when `doFullRetrieval` is "false".
+           */
+          nextUri = doFullRetrieval ? response.nextUri : null;
+          next(); // continue onto the next step
+        })
+        .catch(function (error) {
+          next(error);
+        });
+      },
+      function end (error) {
         if (error) {
-          return next(error);
+          return reject(error);
         }
-        envelopes = envelopes.concat(response.folderItems);
-
-        /*
-         * By setting `nextUri` to "null", we are making this loop exit
-         * early. We only do this when `doFullRetrieval` is "false".
-         */
-        nextUri = doFullRetrieval ? response.nextUri : null;
-
-        next(); // continue onto the next step
-      });
-    },
-    function end (error) {
-      callback(error, envelopes);
-    }
-  );
+        resolve(envelopes);
+      }
+    );
+  });
 }
 
 /**
@@ -101,9 +108,9 @@ function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval, callbac
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL..
  * @param {string} searchTerm - The term that the DS API should search for.
- * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
+ * @returns {Promise} - A thenable bluebird Promise
  */
-function searchThroughEnvelopes (apiToken, baseUrl, searchTerm, callback) {
+function searchThroughEnvelopes (apiToken, baseUrl, searchTerm) {
   var options = {
     method: 'GET',
     url: baseUrl + '/folders/inbox',
@@ -112,6 +119,5 @@ function searchThroughEnvelopes (apiToken, baseUrl, searchTerm, callback) {
       search_text: searchTerm
     }
   };
-
-  dsUtils.makeRequest('Search Through Envelopes', options, callback);
+  return dsUtils.makeRequest('Search Through Envelopes', options);
 }
