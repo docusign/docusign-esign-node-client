@@ -37,6 +37,11 @@
  */
 
 /**
+ * @namespace Auth
+ * @desc Public API for DocuSign Auth API
+ */
+
+/**
 * @namespace Envelopes
 * @desc Public API for DocuSign Envelopes API
 */
@@ -51,7 +56,7 @@
 * @desc Public API for DocuSign Users API
 */
 
-var bluebird = require('bluebird');
+var Bluebird = require('bluebird');
 
 // Local Imports
 var admin = require('./components/admin');
@@ -62,87 +67,73 @@ var envelopes = require('./components/envelopes');
 var dsUtils = require('./dsUtils');
 
 var log = dsUtils.log;
-// @todo: add this to the main exports
 var DocuSignError = dsUtils.DocuSignError;
 
 // Create DocuSign Object
 var docusign = (function () {
   function init (integratorKey, targetEnv, debug, callback) {
-    targetEnv = targetEnv.toLowerCase();
+    return new Bluebird(function (resolve, reject) {
+      targetEnv = targetEnv.toLowerCase();
 
-    if (debug) {
-      log('docusign starting init');
-      process.env.dsDebug = true;
-    } else {
-      process.env.dsDebug = false;
-    }
+      if (debug) {
+        log('docusign starting init');
+        process.env.dsDebug = true;
+      } else {
+        process.env.dsDebug = false;
+      }
 
-    if (targetEnv === 'demo') {
-      process.env.targetEnv = 'demo';
-    } else if (targetEnv === 'www' || targetEnv === 'live') {
-      process.env.targetEnv = 'www';
-    } else {
-      return callback(new DocuSignError("Invalid environment value. 'Demo' or 'Live' are the only valid environments."));
-    }
+      if (targetEnv === 'demo') {
+        process.env.targetEnv = 'demo';
+      } else if (targetEnv === 'www' || targetEnv === 'live') {
+        process.env.targetEnv = 'www';
+      } else {
+        return reject(new DocuSignError("Invalid environment value. 'Demo' or 'Live' are the only valid environments."));
+      }
 
-    if (integratorKey) {
-      process.env.integratorKey = integratorKey;
-    } else {
-      return callback(new DocuSignError('Integrator key cannot be null or empty string.'));
-    }
+      if (integratorKey) {
+        process.env.integratorKey = integratorKey;
+      } else {
+        return reject(new DocuSignError('Integrator key cannot be null or empty string.'));
+      }
 
-    callback(null, {message: 'successfully initialized'});
+      resolve({message: 'successfully initialized'});
+    }).asCallback(callback);
   }
 
   function createClientBase (authInfo, callback) {
-    var accountId = authInfo.accountId;
-    var baseUrl = authInfo.baseUrl;
-    var accessToken = authInfo.accessToken;
+    return new Bluebird(function (resolve, reject) {
+      var accountId = authInfo.accountIdGuid;
+      var baseUrl = authInfo.baseUrl;
+      var accessToken = authInfo.accessToken;
 
-    var adminApi = admin.init(accountId, baseUrl, accessToken);
-    var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
-    var foldersApi = folders.init(accountId, baseUrl, accessToken);
-    var usersApi = users.init(accountId, baseUrl, accessToken);
-    var logOut = auth.revokeOauthToken(accessToken, baseUrl);
+      var adminApi = admin.init(accountId, baseUrl, accessToken);
+      var envelopesApi = envelopes.init(accountId, baseUrl, accessToken);
+      var foldersApi = folders.init(accountId, baseUrl, accessToken);
+      var usersApi = users.init(accountId, baseUrl, accessToken);
+      var logOut = auth.revokeOauthToken(accessToken, baseUrl);
 
-    callback(null, {
-      authInfo: authInfo,
-      admin: bluebird.promisifyAll(adminApi),
-      envelopes: bluebird.promisifyAll(envelopesApi),
-      folders: bluebird.promisifyAll(foldersApi),
-      users: bluebird.promisifyAll(usersApi),
-      logOutAsync: bluebird.promisify(logOut),
-      logOut: logOut
-    });
+      resolve({
+        authInfo: authInfo,
+        admin: adminApi,
+        envelopes: envelopesApi,
+        folders: foldersApi,
+        users: usersApi,
+        logOut: logOut
+      });
+    }).asCallback(callback);
   }
 
   function createClient (email, password, callback) {
-    auth.getAPIToken(email, password, function (err, response) {
-      if (err) {
-        return callback(err);
-      }
-      var accountId = response.accountId;
-      var baseUrl = response.baseUrl;
-      var accessToken = response.accessToken;
-      var authInfo = {
-        accountId: accountId,
-        baseUrl: baseUrl,
-        accessToken: accessToken
-      };
-
-      createClientBase(authInfo, callback);
+    return auth.getAccountInfoAndToken(email, password).then(function (authInfo) {
+      return createClientBase(authInfo).asCallback(callback);
     });
   }
 
   return {
     DocuSignError: DocuSignError,
     init: init,
-    initAsync: bluebird.promisify(init),
-    getAuthInfo: auth.getAPIToken,
-    getAuthInfoAsync: bluebird.promisify(auth.getAPIToken),
+    getAuthInfo: auth.getAccountInfoAndToken,
     createClientFromAuth: createClientBase,
-    createClientFromAuthAsync: bluebird.promisify(createClientBase),
-    createClientAsync: bluebird.promisify(createClient),
     createClient: createClient
   };
 })();
@@ -158,13 +149,13 @@ module.exports = docusign;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Admin.html">Admin</a></li><li><a href="Envelopes.html">Envelopes</a></li><li><a href="Folders.html">Folders</a></li><li><a href="Users.html">Users</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Admin.html">Admin</a></li><li><a href="Auth.html">Auth</a></li><li><a href="Envelopes.html">Envelopes</a></li><li><a href="Folders.html">Folders</a></li><li><a href="Users.html">Users</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Mon Sep 21 2015 16:36:23 GMT-0700 (PDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Tue Sep 22 2015 21:23:13 GMT-0700 (PDT)
 </footer>
 
 <script> prettyPrint(); </script>
