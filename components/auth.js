@@ -80,7 +80,7 @@ exports.getOauthToken = function (email, password, baseUrl) {
  * @function
  * @param {string} email - Email address of the DocuSign user.
  * @param {string} password - Password of the DocuSign user.
- * @param {function} callback - Returned in the form of function(error, response).
+ * @param {function} [callback] - Returned in the form of function(error, response).
  * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
  */
 exports.getAccountInfoAndToken = function (email, password, callback) {
@@ -108,7 +108,7 @@ exports.getAccountInfoAndToken = function (email, password, callback) {
  * @public
  * @alias logOut
  * @function
- * @param {function} callback - Returned in the form of function(error, response).
+ * @param {function} [callback] - Returned in the form of function(error, response).
  * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
  */
 exports.revokeOauthToken = function (accessToken, baseUrl, callback) {

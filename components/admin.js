@@ -10,7 +10,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
@@ -24,7 +24,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, users).
+     * @param {function} [callback] - Returned in the form of function(error, users).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
@@ -53,7 +53,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer3
      *     @param {string} forgottenPasswordInfo.forgottenPasswordQuestion4
      *     @param {string} forgottenPasswordInfo.forgottenPasswordAnswer4
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
@@ -68,7 +68,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {array} usersToDelete - Collection of users in the form of {userId: userId}
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
@@ -82,7 +82,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
@@ -101,7 +101,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Admin
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, plan).
+     * @param {function} [callback] - Returned in the form of function(error, plan).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 

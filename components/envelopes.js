@@ -20,7 +20,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @memberOf Envelopes
      * @public
      * @function
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getConsoleUrl: function (callback) {
@@ -34,7 +34,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} fromDate - Date string.
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getEnvelopeList: function (fromDate, callback) {
@@ -75,7 +75,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *     or not to show the Sign & Return popup after the user signs.
      *   @param {object} event.eventNotification - This object mirrors the
      *     structure of the event notification request in the DS API.
-     * @param {function} callback - Returns the response body from DS API
+     * @param {function} [callback] - Returns the response body from DS API
      *   (this also includes an additional `envelopeId` field). Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
@@ -99,7 +99,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *     @param {string} files[].source.type - The type of source, either `base64`, `path`, or `url`
      *     @param {string|buffer} files[].source.content - The base64-encoded buffer of the file, OR the local file path, OR the url to download.
      * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
-     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
+     * @param {function} [callback] - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     sendEnvelope: function (recipients, emailSubject, files, additionalParams, callback) {
@@ -113,7 +113,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} envelopeId - ID of envelope to get documents from.
-     * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
+     * @param {function} [callback] - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      *
      */
@@ -130,7 +130,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {string} status - either `sent` or `voided`
      * @param {object} additionalParams - additional params such as the voidReason
-     * @param {function} callback - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
+     * @param {function} [callback] - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      *
      */
@@ -149,7 +149,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      *   Pass `null` for binary or `base64` for Base64 encoding.
      * @param {boolean} attachCertificate - A flag to decide whether or not to
      *   attach the Certificate of Completion (CoC) into the returned PDF.
-     * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
+     * @param {function} [callback] - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getSignedDocuments: function (envelopeId, encoding, attachCertificate, callback) {
@@ -169,7 +169,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have signed the envelope.
      * @param {string} authMethod - The main authentication method that gets listed in the certificate of completion.
-     * @param {function} callback - Returns the embedded signing url for the recipient. Returned in the form of function(error, response).
+     * @param {function} [callback] - Returns the embedded signing url for the recipient. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getSignerView: function (userId, recipientName, email, clientUserId, envelopeId, returnUrl, authMethod, callback) {
@@ -187,7 +187,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {array} templateRoles - Array of JSON objects of templateRoles. For more information please visit:
      *    https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST API References/Send an Envelope from a Template.htm%3FTocPath%3DREST%2520API%2520References%7C_____39
      * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
-     * @param {function} callback - Returns JSON object with envelope information. Returned in the form of function(error, response).
+     * @param {function} [callback] - Returns JSON object with envelope information. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      *
      */
@@ -204,7 +204,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} templateId - ID of template you wish to create an envelope from.
      * @param {string} returnUrl - URL you want the Embedded View to return to after you have tagged the envelope.
-     * @param {function} callback - Returns the Embedded Sending View created from the template. Returned in the form of function(error, response).
+     * @param {function} [callback] - Returns the Embedded Sending View created from the template. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getTemplateView: function (templateId, returnUrl, callback) {
@@ -218,7 +218,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} envelopeId - ID of envelope to get list of recipients from.
-     * @param {function} callback - Returns the list of recipients in the form of function(error, response).
+     * @param {function} [callback] - Returns the list of recipients in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getRecipients: function (envelopeId, callback) {
@@ -287,7 +287,7 @@ function getEnvelopeList (apiToken, baseUrl, fromDate) {
  *     @param {string} files[].source.type - The type of source, either `base64`, `path`, or `url`
  *     @param {string|buffer} files[].source.content - The base64-encoded buffer of the file, OR the local file path, OR the url to download.
  * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
- * @param {function} callback - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
+ * @param {function} [callback] - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
  */
 
 function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, additionalParams, callback) {
@@ -518,7 +518,7 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
  *     or not to show the Sign & Return popup after the user signs.
  *   @param {object} event.eventNotification - This object mirrors the
  *     structure of the event notification request in the DS API.
- * @param {function} callback - Returns the response body from DS API
+ * @param {function} [callback] - Returns the response body from DS API
  *   (this also includes an additional `envelopeId` field). Returned in the form of function(error, response).
  */
 

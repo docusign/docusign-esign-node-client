@@ -18,7 +18,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @param {boolean} doFullRetrieval - If true, retrieve all envelopes of
      *  the given `envelopeType`. Otherwise, only get the first 50 most recent
      *  envelopes.
-     * @param {function} callback - Returns in the form of function(error, response)
+     * @param {function} [callback] - Returns in the form of function(error, response)
      *   such that envelopes will live at `response.folderItems.
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
@@ -33,7 +33,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} searchTerm - The term that the DS API should search for.
-     * @param {function} callback - Returns in the form of function(error, matchingEnvelopes).
+     * @param {function} [callback] - Returns in the form of function(error, matchingEnvelopes).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     searchThroughEnvelopes: function (searchTerm, callback) {

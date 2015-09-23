@@ -14,7 +14,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} userId - DocuSign userId.
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getInfo: function (userId, callback) {
@@ -28,7 +28,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} userId - DocuSign UserId.
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getSignature: function (userId, callback) {
@@ -42,7 +42,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} userId - DocuSign UserId.
-     * @param {function} callback - Returned in the form of function(error, response).
+     * @param {function} [callback] - Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
 
