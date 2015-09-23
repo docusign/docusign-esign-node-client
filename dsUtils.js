@@ -2,6 +2,7 @@
 
 var fs = require('fs'); // core
 var util = require('util');
+var Bluebird = require('bluebird');
 var request = require('request');
 var async = require('async');
 var temp = require('temp');
@@ -92,61 +93,64 @@ exports.getHeaders = function (token) {
  * @param apiName - name of the API to be requested
  * @param options - options for the request
  * @param callback
+ * @returns {Promise} - A thenable bluebird Promise; If callback is given it is called before the promise is resolved
  */
 exports.makeRequest = function (apiName, options, callback) {
-  var data;
-  if ('json' in options) {
-    data = JSON.stringify(options.json);
-  } else if ('multipart' in options) {
-    var json;
-    try {
-      json = JSON.parse(options.multipart[0].body);
-    } catch (_) {
-      json = null;
-    }
-    if (json !== null) {
-      data = JSON.stringify(json);
+  var makeRequestAsync = new Bluebird(function (resolve, reject) {
+    var data;
+    if ('json' in options) {
+      data = JSON.stringify(options.json);
+    } else if ('multipart' in options) {
+      var json;
+      try {
+        json = JSON.parse(options.multipart[0].body);
+      } catch (_) {
+        json = null;
+      }
+      if (json !== null) {
+        data = JSON.stringify(json);
+      } else {
+        data = '';
+      }
+    } else if ('form' in options) {
+      data = JSON.stringify(options.form);
     } else {
       data = '';
     }
-  } else if ('form' in options) {
-    data = JSON.stringify(options.form);
-  } else {
-    data = '';
-  }
 
-  exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, data, util.inspect(options.headers, {depth: null})));
+    exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, data, util.inspect(options.headers, {depth: null})));
 
-  request(options, function (error, response, body) {
-    if (error) {
-      callback(error);
-      return;
-    }
+    request(options, function (error, response, body) {
+      if (error) {
+        return reject(error);
+      }
 
-    var json, err, errMsg;
-    try {
-      json = JSON.parse(body);
-    } catch (_) {
-      json = null;
-    }
+      var json, err, errMsg;
+      try {
+        json = JSON.parse(body);
+      } catch (_) {
+        json = null;
+      }
 
-    if (json === null) { // successful request; no json in response body
-      callback(null, body);
-    } else if ('errorCode' in json) {
-      errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, json.message);
-      err = new DocuSignError(errMsg);
-      exports.log(errMsg);
-      callback(err, json);
-    } else if ('error' in json) {
-      errMsg = util.format('DS API %s Error:\n  %s \n\nDescription: %s', apiName, json.error, json.error_description);
-      err = new DocuSignError(errMsg);
-      exports.log(errMsg);
-      callback(err, json);
-    } else { // no error
-      exports.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));
-      callback(null, json);
-    }
+      if (json === null) { // successful request; no json in response body
+        resolve(body);
+      } else if ('errorCode' in json) {
+        errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, json.message);
+        err = new DocuSignError(errMsg);
+        exports.log(errMsg);
+        reject(err);
+      } else if ('error' in json) {
+        errMsg = util.format('DS API %s Error:\n  %s \n\nDescription: %s', apiName, json.error, json.error_description);
+        err = new DocuSignError(errMsg);
+        exports.log(errMsg);
+        reject(err);
+      } else { // no error
+        exports.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));
+        resolve(json);
+      }
+    });
   });
+  return makeRequestAsync.asCallback(callback);
 };
 
 /**
