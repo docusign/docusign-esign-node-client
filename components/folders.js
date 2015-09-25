@@ -1,7 +1,5 @@
 // For working with folders, mostly for searching for envelopes
 
-var async = require('async');
-var Bluebird = require('bluebird');
 var dsUtils = require('./../dsUtils');
 
 exports.init = function (accountId, baseUrl, accessToken) {
@@ -59,44 +57,21 @@ exports.init = function (accountId, baseUrl, accessToken) {
  * @returns {Promise} - A thenable bluebird Promise that it is fulfilled with envelopes at `result.folderItems`.
  */
 function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval) {
-  return new Bluebird(function (resolve, reject) {
-    var envelopes = [];
-    var nextUri = '/search_folders/' + envelopeType + '?start_position=0';
-
-    // @todo: understand if promises can replace async.whilst more elegantly
-    async.whilst(
-      function condition () {
-        return nextUri != null;
-      },
-      function getEnvelopeStep (next) {
-        var options = {
-          method: 'GET',
-          url: baseUrl + nextUri + '&include_recipients=true',
-          headers: dsUtils.getHeaders(apiToken)
-        };
-
-        dsUtils.makeRequest('Get Envelopes', options).then(function (response) {
-          envelopes = envelopes.concat(response.folderItems);
-
-          /*
-           * By setting `nextUri` to "null", we are making this loop exit
-           * early. We only do this when `doFullRetrieval` is "false".
-           */
-          nextUri = doFullRetrieval ? response.nextUri : null;
-          next(); // continue onto the next step
-        })
-        .catch(function (error) {
-          next(error);
-        });
-      },
-      function end (error) {
-        if (error) {
-          return reject(error);
-        }
-        resolve(envelopes);
-      }
-    );
-  });
+  var startUri = '/search_folders/' + envelopeType + '?start_position=0';
+  function _getEnvelopes (uri, envelopes) {
+    envelopes = envelopes || [];
+    var options = {
+      method: 'GET',
+      url: baseUrl + uri + '&include_recipients=true',
+      headers: dsUtils.getHeaders(apiToken)
+    };
+    return dsUtils.makeRequest('Get Envelopes', options).then(function (response) {
+      envelopes = envelopes.concat(response.folderItems);
+      // continue or return envelopes
+      return doFullRetrieval ? _getEnvelopes(response.nextUri, envelopes) : envelopes;
+    });
+  }
+  return _getEnvelopes(startUri);
 }
 
 /**
