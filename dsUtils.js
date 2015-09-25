@@ -4,7 +4,6 @@ var fs = require('fs'); // core
 var util = require('util');
 var Bluebird = require('bluebird');
 var request = require('request');
-var async = require('async');
 var temp = require('temp');
 var stream = require('stream');
 var crypto = require('crypto');
@@ -193,40 +192,62 @@ exports.sendMultipart = function (mpUrl, mpHeaders, parts, callback) {
 
   exports.log('mpHeaders', mpHeaders);
 
-  async.eachSeries(parts, function (part, next) {
-    var headers = Object.keys(part.headers).map(function (key) {
-      return key + ': ' + part.headers[key];
-    }).join(crlf);
-    exports.log('part.headers', part.headers);
+  var buildMultipartBody = parts.reduce(function (lastPromise, part) {
+    return lastPromise.then(function () {
+      return new Bluebird(function (resolve, reject) {
+        var headers = Object.keys(part.headers).map(function (key) {
+          return key + ': ' + part.headers[key];
+        }).join(crlf);
+        exports.log('part.headers', part.headers);
 
-    multipart.write('--' + boundary + crlf);
-    multipart.write(headers);
-    multipart.write(crlf + crlf);
+        multipart.write('--' + boundary + crlf);
+        multipart.write(headers);
+        multipart.write(crlf + crlf);
 
-    var body = (Buffer.isBuffer(part.body) || typeof part.body === 'string')
-      ? _createStringStream(part.body) : part.body;
+        var body = (Buffer.isBuffer(part.body) || typeof part.body === 'string')
+          ? _createStringStream(part.body) : part.body;
 
-    body.on('data', function (chunk) {
-      multipart.write(chunk);
+        body.on('data', function (chunk) {
+          multipart.write(chunk);
+        });
+        body.on('end', function () {
+          multipart.write(crlf);
+          resolve();
+        });
+        body.resume();
+      });
     });
-    body.on('end', function () {
-      multipart.write(crlf);
-      next(null); // continue
+  }, Bluebird.resolve());
+
+  return new Bluebird(function (resolve, reject) {
+    buildMultipartBody.then(function () { // called when all is done
+      multipart.write('--' + boundary + '--');
+      var endAsync = Bluebird.promisify(multipart.end, multipart);
+
+      return endAsync().then(function () {
+        fs.createReadStream(tempPath).pipe(request({
+          method: 'POST',
+          url: mpUrl,
+          headers: mpHeaders
+        }, function (error, response, body) {
+          try {
+            fs.unlinkSync(tempPath);
+          } catch (e) {
+            exports.log('Failed to fs.unlink', e);
+          }
+          if (error) {
+            return reject(error);
+          }
+          exports.log('sendMultipart response body', body);
+          resolve([response, body]);
+        }));
+      })
+      .catch(function (err) {
+        exports.log('sendMultipart error', err);
+        reject(err);
+      });
     });
-    body.resume();
-  }, function () { // called when all is done
-    multipart.write('--' + boundary + '--');
-    multipart.end(function () {
-      fs.createReadStream(tempPath).pipe(request({
-        method: 'POST',
-        url: mpUrl,
-        headers: mpHeaders
-      }, function (error, response, body) {
-        fs.unlinkSync(tempPath);
-        callback(error, response, body);
-      }));
-    });
-  });
+  }).asCallback(callback, { spread: true });
 };
 
 function _createStringStream (str) {

@@ -321,22 +321,20 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
     body: JSON.stringify(data)
   });
 
-  dsUtils.sendMultipart(baseUrl + '/envelopes', {
+  return dsUtils.sendMultipart(baseUrl + '/envelopes', {
     Authorization: 'bearer ' + apiToken
-  }, parts, function (error, response, body) {
-    if (error) {
-      return callback(error);
-    }
+  }, parts)
+  .spread(function (response, body) {
     if (isEmpty(body)) {
-      return callback(new DocuSignError('Any empty response body was received.'));
+      throw new DocuSignError('Any empty response body was received.');
     }
 
     try {
       var parsedBody = JSON.parse(body);
     } catch (e) {
-      callback(new DocuSignError('Problem trying to parse the body'));
+      throw new DocuSignError('Problem trying to parse the body');
     }
-    callback(null, parsedBody);
+    return parsedBody;
   });
 }
 
@@ -595,22 +593,20 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
     body: JSON.stringify(body)
   });
 
-  dsUtils.sendMultipart(baseUrl + '/envelopes', {
+  return dsUtils.sendMultipart(baseUrl + '/envelopes', {
     Authorization: 'bearer ' + apiToken
-  }, parts, function (error, response, body) {
-    if (error) {
-      return callback(error);
-    }
+  }, parts)
+  .spread(function (response, body) {
     if (isEmpty(body)) {
-      return callback(new DocuSignError('Any empty response body was received.'));
+      throw new DocuSignError('Any empty response body was received.');
     }
 
     try {
       var parsedBody = JSON.parse(body);
     } catch (e) {
-      callback(new DocuSignError('Problem trying to parse the body'));
+      throw new DocuSignError('Problem trying to parse the body');
     }
-    callback(null, parsedBody);
+    return parsedBody;
   });
 }
 
