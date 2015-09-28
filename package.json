@@ -1,7 +1,7 @@
 {
   "name": "docusign-node",
   "version": "7.0.1",
-  "description": "A DocuSign API helper library",
+  "description": "A DocuSign API helper library with promise support",
   "main": "docusign.js",
   "scripts": {
     "docs": "jsdoc -d doc -r docusign.js dsUtils.js components/ README.md",
@@ -11,6 +11,7 @@
   },
   "keywords": [
     "DocuSign",
+    "promise",
     "electronic",
     "signature",
     "eSignature",
