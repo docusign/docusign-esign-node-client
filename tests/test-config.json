@@ -4,6 +4,7 @@
   "debug": false,
   "email": "node_sdk@mailinator.com",
   "password": "{PASSWORD}",
-  "templateID": "cf2a46c2-xxxx-xxxx-xxxx-752547b1a419",
+  "templateId": "cf2a46c2-xxxx-xxxx-xxxx-752547b1a419",
+  "envelopeId": "e5266e64-d7a3-4467-9fe0-31cfa18474ca",
   "templateRole": "bob"
 }
