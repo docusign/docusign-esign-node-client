@@ -103,8 +103,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     sendEnvelope: function (recipients, emailSubject, files, additionalParams, callback) {
-      var sendEnvelopeAsync = Bluebird.promisify(sendEnvelope);
-      return sendEnvelopeAsync(accessToken, baseUrl, recipients, emailSubject, files, additionalParams).asCallback(callback);
+      return sendEnvelope(accessToken, baseUrl, recipients, emailSubject, files, additionalParams).asCallback(callback);
     },
     /**
      * Get information about the specified Envelope.
@@ -287,54 +286,57 @@ function getEnvelopeList (apiToken, baseUrl, fromDate) {
  *     @param {string} files[].source.type - The type of source, either `base64`, `path`, or `url`
  *     @param {string|buffer} files[].source.content - The base64-encoded buffer of the file, OR the local file path, OR the url to download.
  * @param {object} additionalParams - Please visit <a href="https://www.docusign.com/p/RESTAPIGuide/RESTAPIGuide.htm#REST%20API%20References/Send%20an%20Envelope.htm%3FTocPath%3DREST%2520API%2520References%7CSend%2520an%2520Envelope%2520or%2520Create%2520a%2520Draft%2520Envelope%7C_____0">Envelope Parameters</a>
- * @param {function} [callback] - Returns the PDF file buffer in the given `encoding`. Returned in the form of function(error, response).
+ * @returns {Promise} - A thenable bluebird Promise fulfilled with the PDF file buffer in the given `encoding`.
  */
+function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, additionalParams) {
+  return new Bluebird(function (resolve, reject) {
+    var documents = [];
+    var parts = [];
+    additionalParams = additionalParams != null ? additionalParams : {};
 
-function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, additionalParams, callback) {
-  var documents = [];
-  var parts = [];
-  additionalParams = additionalParams != null ? additionalParams : {};
+    forEach(files, createMultipartFilesPrep(parts, documents, reject));
 
-  forEach(files, createMultipartFilesPrep(parts, documents, callback));
+    var recipientCounter = 2;
+    var generateId = function (recipient) {
+      recipient.recipientId = recipientCounter;
+      recipientCounter++;
+    };
 
-  var recipientCounter = 2;
-  var generateId = function (recipient) {
-    recipient.recipientId = recipientCounter;
-    recipientCounter++;
-  };
+    recipients.signers.forEach(generateId);
 
-  recipients.signers.forEach(generateId);
+    var data = merge({}, additionalParams, {
+      recipients: recipients,
+      emailSubject: emailSubject,
+      documents: documents,
+      status: 'sent'
+    }, function (a, b) {
+      return Array.isArray(a) ? a.concat(b) : undefined;
+    });
 
-  var data = merge({}, additionalParams, {
-    recipients: recipients,
-    emailSubject: emailSubject,
-    documents: documents,
-    status: 'sent'
-  }, function (a, b) {
-    return Array.isArray(a) ? a.concat(b) : undefined;
-  });
+    parts.unshift({
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-  parts.unshift({
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
+    var multipartPromise = dsUtils.sendMultipart(baseUrl + '/envelopes', {
+      Authorization: 'bearer ' + apiToken
+    }, parts)
+    .spread(function (response, body) {
+      if (isEmpty(body)) {
+        throw new DocuSignError('Any empty response body was received.');
+      }
 
-  return dsUtils.sendMultipart(baseUrl + '/envelopes', {
-    Authorization: 'bearer ' + apiToken
-  }, parts)
-  .spread(function (response, body) {
-    if (isEmpty(body)) {
-      throw new DocuSignError('Any empty response body was received.');
-    }
+      try {
+        var parsedBody = JSON.parse(body);
+      } catch (e) {
+        throw new DocuSignError('Problem trying to parse the body');
+      }
+      return parsedBody;
+    });
 
-    try {
-      var parsedBody = JSON.parse(body);
-    } catch (e) {
-      throw new DocuSignError('Problem trying to parse the body');
-    }
-    return parsedBody;
+    resolve(multipartPromise);
   });
 }
 
@@ -521,92 +523,96 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
  */
 
 function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, event, callback) {
-  log('Starting to create envelope');
+  return new Bluebird(function (resolve, reject) {
+    log('Starting to create envelope');
 
-  // construct the parts of the multipart request
-  var documents = [];
-  var parts = [];
-  var customFields = [];
+    // construct the parts of the multipart request
+    var documents = [];
+    var parts = [];
+    var customFields = [];
 
-  forEach(files, createMultipartFilesPrep(parts, documents, callback));
+    forEach(files, createMultipartFilesPrep(parts, documents, reject));
 
-  var recipients;
-  if (event && 'recipients' in event) {
-    recipients = event.recipients;
-  } else {
-    recipients = {
-      signers: [],
-      carbonCopies: []
-    };
-  }
-
-  // generate recipient IDs to satisfy DS API
-  var recipientCounter = 2;
-  var generateId = function (recipient) {
-    recipient.recipientId = recipientCounter;
-    recipientCounter++;
-  };
-  recipients.signers.forEach(generateId);
-  recipients.carbonCopies.forEach(generateId);
-
-  if (action !== 'send') {
-    // add self as a recipient
-    recipients.signers.unshift({
-      recipientId: 1,
-      name: fullName,
-      email: email
-    });
-  }
-
-  var subjectPrefix = 'Please DocuSign this document: ';
-  var subjectEnding = (files.length > 0) ? files[0].name : '';
-
-  var body = {
-    status: (action === 'sign') ? 'sent' : 'created',
-    recipients: recipients,
-    emailSubject: (action === 'sign') ? subjectEnding : (subjectPrefix + subjectEnding),
-    documents: documents,
-    customFields: {
-      textCustomFields: customFields
-    }
-  };
-
-  if (event != null) {
-    if ('eventNotification' in event) {
-      body.eventNotification = event.eventNotification;
+    var recipients;
+    if (event && 'recipients' in event) {
+      recipients = event.recipients;
     } else {
-      body.eventNotification = {
-        url: event.url,
-        loggingEnabled: true,
-        envelopeEvents: [{
-          envelopeEventStatusCode: 'completed',
-          includeDocuments: true
-        }]
+      recipients = {
+        signers: [],
+        carbonCopies: []
       };
     }
-  }
 
-  parts.unshift({
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  });
+    // generate recipient IDs to satisfy DS API
+    var recipientCounter = 2;
+    var generateId = function (recipient) {
+      recipient.recipientId = recipientCounter;
+      recipientCounter++;
+    };
+    recipients.signers.forEach(generateId);
+    recipients.carbonCopies.forEach(generateId);
 
-  return dsUtils.sendMultipart(baseUrl + '/envelopes', {
-    Authorization: 'bearer ' + apiToken
-  }, parts)
-  .spread(function (response, body) {
-    if (isEmpty(body)) {
-      throw new DocuSignError('Any empty response body was received.');
+    if (action !== 'send') {
+      // add self as a recipient
+      recipients.signers.unshift({
+        recipientId: 1,
+        name: fullName,
+        email: email
+      });
     }
 
-    try {
-      var parsedBody = JSON.parse(body);
-    } catch (e) {
-      throw new DocuSignError('Problem trying to parse the body');
+    var subjectPrefix = 'Please DocuSign this document: ';
+    var subjectEnding = (files.length > 0) ? files[0].name : '';
+
+    var body = {
+      status: (action === 'sign') ? 'sent' : 'created',
+      recipients: recipients,
+      emailSubject: (action === 'sign') ? subjectEnding : (subjectPrefix + subjectEnding),
+      documents: documents,
+      customFields: {
+        textCustomFields: customFields
+      }
+    };
+
+    if (event != null) {
+      if ('eventNotification' in event) {
+        body.eventNotification = event.eventNotification;
+      } else {
+        body.eventNotification = {
+          url: event.url,
+          loggingEnabled: true,
+          envelopeEvents: [{
+            envelopeEventStatusCode: 'completed',
+            includeDocuments: true
+          }]
+        };
+      }
     }
-    return parsedBody;
+
+    parts.unshift({
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    var multipartPromise = dsUtils.sendMultipart(baseUrl + '/envelopes', {
+      Authorization: 'bearer ' + apiToken
+    }, parts)
+    .spread(function (response, body) {
+      if (isEmpty(body)) {
+        throw new DocuSignError('Any empty response body was received.');
+      }
+
+      try {
+        var parsedBody = JSON.parse(body);
+      } catch (e) {
+        throw new DocuSignError('Problem trying to parse the body');
+      }
+      return parsedBody;
+    });
+
+    resolve(multipartPromise);
   });
 }
 
