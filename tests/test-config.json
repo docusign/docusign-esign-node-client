@@ -1,0 +1,9 @@
+{
+  "integratorKey": "SAND-7c8746af-7f4d-4dbb-bf53-fc10861ef45b",
+  "apiEnv": "demo",
+  "debug": false,
+  "email": "node_sdk@mailinator.com",
+  "password": "{PASSWORD}",
+  "templateID": "cf2a46c2-XXXX-XXXX-XXXX-X52547b1a419",
+  "templateRole": "bob"
+}
