@@ -3,7 +3,6 @@
 const test = require('ava');
 const docusign = require('../docusign');
 const config = require('./test-config.json');
-const { getStoredAuthInfo, storeAuthInfo } = require('./test-helpers.js');
 
 let client = null;
 let userId = null;
@@ -12,16 +11,10 @@ test.before(function before (t) {
   return docusign.init(config.integratorKey, config.apiEnv, config.debug)
   .then(response => {
     t.ok(response.message === 'successfully initialized');
-    let authInfo = getStoredAuthInfo();
-    if (authInfo == null) {
-      return docusign.createClient(config.email, config.password);
-    } else {
-      return docusign.createClientFromAuth(authInfo);
-    }
+    return docusign.createClient(config.email, config.password);
   })
   .then(_client => {
     client = _client;
-    return storeAuthInfo(client.authInfo);
   });
 });
 

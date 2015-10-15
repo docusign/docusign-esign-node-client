@@ -1,9 +1,10 @@
 'use strict';
 
 const Bluebird = require('bluebird');
+const path = require('path');
 const writeJson = require('write-json-file');
 
-const authInfoPath = '../auth-info.json';
+const authInfoPath = path.resolve('./auth-info.json');
 
 module.exports = {
   getStoredAuthInfo,
