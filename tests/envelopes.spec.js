@@ -10,7 +10,7 @@ let client = null;
 let envelopeId = config.envelopeId;
 let templateId = config.templateId;
 
-test.before(function before (t) {
+test.before(function envelopesBefore (t) {
   return docusign.init(config.integratorKey, config.apiEnv, config.debug)
   .then(response => {
     t.ok(response.message === 'successfully initialized');
@@ -21,7 +21,7 @@ test.before(function before (t) {
   });
 });
 
-test.after(function after (t) {
+test.after(function envelopesAfter (t) {
   return client.logOut();
 });
 

@@ -6,7 +6,7 @@ const config = require('./test-config.json');
 
 let client = null;
 
-test.before(function before (t) {
+test.before(function foldersBefore (t) {
   return docusign.init(config.integratorKey, config.apiEnv, config.debug)
   .then(response => {
     t.ok(response.message === 'successfully initialized');
@@ -17,7 +17,7 @@ test.before(function before (t) {
   });
 });
 
-test.after(function after (t) {
+test.after(function foldersAfter (t) {
   return client.logOut();
 });
 
