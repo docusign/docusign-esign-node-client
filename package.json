@@ -7,7 +7,7 @@
     "docs": "jsdoc -d doc -r docusign.js dsUtils.js components/ README.md",
     "lint": "node_modules/.bin/semistandard",
     "check-config": "./scripts/check-config.js",
-    "test": "ava tests/**/*.spec.js"
+    "test": "ava test/**/*.spec.js"
   },
   "keywords": [
     "DocuSign",
