@@ -1,8 +1,8 @@
 'use strict';
 
 const test = require('ava');
-const docusign = require('../docusign');
-const config = require('./test-config.json');
+const docusign = require('../../docusign');
+const config = require('../test-config.json');
 
 let client = null;
 let userId = null;
