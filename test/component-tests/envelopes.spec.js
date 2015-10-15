@@ -2,7 +2,7 @@
 
 const test = require('ava');
 const fileType = require('file-type');
-const config = require('../test-config.json');
+const config = require('../../test-config.json');
 const docusign = require('../../docusign');
 const dsUtils = require('../../dsUtils');
 
