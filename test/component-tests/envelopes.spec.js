@@ -2,9 +2,9 @@
 
 const test = require('ava');
 const fileType = require('file-type');
-const docusign = require('../docusign');
-const config = require('./test-config.json');
-const dsUtils = require('../dsUtils');
+const config = require('../test-config.json');
+const docusign = require('../../docusign');
+const dsUtils = require('../../dsUtils');
 
 let client = null;
 let envelopeId = config.envelopeId;
