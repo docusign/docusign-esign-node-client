@@ -2,7 +2,7 @@
 
 const test = require('ava');
 const docusign = require('../../docusign');
-const config = require('../test-config.json');
+const config = require('../../test-config.json');
 
 let client = null;
 
