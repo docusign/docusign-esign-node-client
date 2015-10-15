@@ -5,10 +5,11 @@
   "main": "docusign.js",
   "scripts": {
     "docs": "jsdoc -d doc -r docusign.js dsUtils.js components/ README.md",
-    "lint": "node_modules/.bin/semistandard",
+    "lint": "semistandard",
     "check-config": "./scripts/check-config.js",
+    "test-spec": "ava test/**/*.spec.js",
     "test-cov": "istanbul cover ava -- test/**/*.spec.js",
-    "test": "ava test/**/*.spec.js"
+    "test": "npm run lint && npm run test-cov"
   },
   "keywords": [
     "DocuSign",
