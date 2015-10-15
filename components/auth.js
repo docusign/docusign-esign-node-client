@@ -4,6 +4,7 @@
 
 var querystring = require('querystring'); // core
 var assign = require('lodash.assign');
+var Bluebird = require('bluebird');
 var dsUtils = require('./../dsUtils');
 var DocuSignError = dsUtils.DocuSignError;
 
@@ -128,23 +129,25 @@ exports.revokeOauthToken = function (accessToken, baseUrl, callback) {
  * @returns {Promise} - A thenable bluebird Promise
  */
 function revokeOauthToken (token, baseUrl) {
-  var headers = {
-    'Content-Type': 'application/x-www-form-urlencoded'
-  };
+  return Bluebird.try(function () {
+    var headers = {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    };
 
-  var options = {
-    method: 'POST',
-    url: _getTokenEndpoint(baseUrl, 'revoke'),
-    headers: headers,
-    body: 'token=' + token
-  };
+    var options = {
+      method: 'POST',
+      url: _getTokenEndpoint(baseUrl, 'revoke'),
+      headers: headers,
+      body: 'token=' + token
+    };
 
-  return dsUtils.makeRequest('Revoke DS OAuth2 Token', options).then(function (response) {
-    return response;
-  })
-  .catch(function (error) {
-    error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
-    throw error;
+    return dsUtils.makeRequest('Revoke DS OAuth2 Token', options).then(function (response) {
+      return response;
+    })
+    .catch(function (error) {
+      error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
+      throw error;
+    });
   });
 }
 
@@ -164,6 +167,6 @@ function _getTokenEndpoint (baseUrl, action) {
   if (environ && environ.length) {
     return 'https://' + environ[1] + '.docusign.net/restapi/v2/oauth2/' + action;
   } else {
-    return {error: 'getTokenEndpoint unable to parse baseUrl'};
+    throw new DocuSignError('Unable to parse baseUrl', { baseUrl: baseUrl });
   }
 }

@@ -60,6 +60,9 @@ function getEnvelopes (apiToken, baseUrl, envelopeType, doFullRetrieval) {
   var startUri = '/search_folders/' + envelopeType + '?start_position=0';
   function _getEnvelopes (uri, envelopes) {
     envelopes = envelopes || [];
+    if (uri == null) {
+      return envelopes;
+    }
     var options = {
       method: 'GET',
       url: baseUrl + uri + '&include_recipients=true',
