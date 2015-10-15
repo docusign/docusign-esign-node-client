@@ -6,7 +6,7 @@ var Bluebird = require('bluebird');
 var request = require('request');
 var temp = require('temp');
 var stream = require('stream');
-var crypto = require('crypto');
+var uuid = require('uuid');
 var assign = require('lodash.assign');
 
 exports.DocuSignError = DocuSignError;
@@ -47,13 +47,7 @@ function debugLog () {
  * @function
  * @returns {string}
  */
-exports.generateNewGuid = function () {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    var r = crypto.randomBytes(16).toString('hex');
-    var v = (c === 'x') ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-  });
-};
+exports.generateNewGuid = uuid;
 
 /**
  * Provides an environment specific URL for the highest level API calls
