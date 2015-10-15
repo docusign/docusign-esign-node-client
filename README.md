@@ -1,7 +1,7 @@
 DocuSign Node Client
 ===========
 
-NPM module that wraps the <a href="https://www.docusign.com">DocuSign</a> API
+[NPM module](https://www.npmjs.com/package/docusign-node) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
 [Documentation about the DocuSign API](https://www.docusign.com/developer-center)
 
