@@ -1,21 +1,31 @@
 // Unit Testing Imports
 var assert = require('assert');
-var fs = require('fs');
 var async = require('async');
 
 var docusign = require('../../docusign.js');
 
-describe('embedded_sending', function () {
+describe('embedded_signing', function () {
   var fullName = 'DocuSign NPM';
   var docusignEnv = 'demo';
-  var debug = false;
 
-  var config = JSON.parse(fs.readFileSync('config.json'));
-  var integratorKey = config.DOCUSIGN_INTEGRATOR_KEY;
-  var email = config.DOCUSIGN_TEST_EMAIL;
-  var password = config.DOCUSIGN_TEST_PASSWORD;
+  var config = require('../../test-config.json');
+  var debug = config.debug;
+  var integratorKey = config.integratorKey;
+  var email = config.email;
+  var password = config.password;
+  var templateId = config.templateId;
+  var templateRoleName = config.templateRole;
+  var clientUserId = '1001'; // User configurable
+  var authMethod = 'email'; // The authentication method that gets listed in the certificate of completion.
 
-  it('should return embedded sending url', function (done) {
+  var templateRoles = [{
+    email: email,
+    name: fullName,
+    roleName: templateRoleName,
+    clientUserId: clientUserId
+  }];
+
+  it('should return embedded signing url', function (done) {
     async.waterfall([
 
       // **********************************************************************************
@@ -39,26 +49,29 @@ describe('embedded_sending', function () {
           next(null, response);
         });
       },
+      // **********************************************************************************
+      // Step 3 - Request Signature via Template
+      // **********************************************************************************
+      function sendTemplate (client, next) {
+        client.envelopes.sendTemplate('DS API call - Request Signature', templateId, templateRoles, {}, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
+          next(null, client, response.envelopeId);
+        });
+      },
 
       // **********************************************************************************
-      // Step 3 - Get the Embedded Sender View
+      // Step 4 - Get the Embedded Signing View (aka the recipient view)
       // **********************************************************************************
-      function getEmbeddedSenderView (client, next) {
-        var buffer = fs.readFileSync('test/SampleDocument.pdf');
-        var files = [{
-          name: 'SampleDocument.pdf',
-          extension: 'pdf',
-          base64: new Buffer(buffer).toString('base64')
-        }];
-        client.envelopes.getView('send', fullName, email, files, 'http://www.docusign.com/devcenter', null, function (error, response) {
+      function getSignerView (client, envelopeId, next) {
+        client.envelopes.getSignerView(null, fullName, email, clientUserId, envelopeId, 'http://www.docusign.com/devcenter', authMethod, function (error, response) {
           assert.ok(!error, 'Unexpected ' + error);
-          console.log('Navigate to this URL to start the Embedded Sending workflow: ' + response.url);
+          console.log('Navigate to this URL for Embedded Signing workflow: ' + response.url);
           next(null, client);
         });
       },
 
       // **********************************************************************************
-      // Step 4 - Revoke OAuth Token for Logout
+      // Step 5 - Revoke OAuth Token for Logout
       // **********************************************************************************
       function logOut (client, next) {
         client.logOut(function (err, response) {
@@ -66,6 +79,7 @@ describe('embedded_sending', function () {
           next(null);
         });
       }
+
     ], function () {
       done();
     });
