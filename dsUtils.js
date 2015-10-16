@@ -95,20 +95,6 @@ exports.makeRequest = function (apiName, options, callback) {
     var data;
     if ('json' in options) {
       data = JSON.stringify(options.json);
-    } else if ('multipart' in options) {
-      var json;
-      try {
-        json = JSON.parse(options.multipart[0].body);
-      } catch (_) {
-        json = null;
-      }
-      if (json !== null) {
-        data = JSON.stringify(json);
-      } else {
-        data = '';
-      }
-    } else if ('form' in options) {
-      data = JSON.stringify(options.form);
     } else {
       data = '';
     }
