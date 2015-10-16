@@ -232,6 +232,20 @@ test(function getSignerView (t) {
   });
 });
 
+test(function getSignerViewMissingClientUserId (t) {
+  let clientUserId = null;
+  let authMethod = 'email';
+  let userId = null;
+  return client.envelopes.getSignerView(userId, fullName, email, clientUserId, envelopeId, returnUrl, authMethod)
+  .then(response => {
+    t.notOk(response);
+  })
+  .catch(err => {
+    t.ok(err);
+    t.regexTest(/clientUserId is a required recipient parameter for embedded signing/i, err.message);
+  });
+});
+
 test(function sendTemplate (t) {
   return client.envelopes.sendTemplate(emailSubject, templateId, templateRoles, additionalParams)
   .then(response => {
