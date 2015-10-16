@@ -97,6 +97,30 @@ test(function getRecipients (t) {
   });
 });
 
+test(function getView (t) {
+  let action = 'send';
+  let fullName = 'DocuSign NPM';
+  let email = config.email;
+  let files = [{
+    name: 'SampleDocument.pdf',
+    extension: 'pdf',
+    source: {
+      type: 'path',
+      content: 'test/SampleDocument.pdf'
+    }
+  }];
+  let returnUrl = 'http://www.docusign.com/devcenter';
+  let event = null;
+
+  return client.envelopes.getView(action, fullName, email, files, returnUrl, event)
+  .then(response => {
+    var regex = new RegExp('https://demo.docusign.net/Member/StartInSession.aspx?');
+    t.ok(response.url);
+    t.ok(response.envelopeId);
+    t.ok(regex.test(response.url));
+  });
+});
+
 test(function getTemplateView (t) {
   return client.envelopes.getTemplateView(templateId, 'http://www.docusign.com/devcenter')
   .then(response => {
