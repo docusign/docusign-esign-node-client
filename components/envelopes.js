@@ -363,6 +363,9 @@ function createMultipartFilesPrep (parts, documents) {
 
     var download;
     var fileSource = file.source;
+    if (fileSource == null) {
+      throw new DocuSignError('Files array had no buffer, local file path, or url to retrieve file from.');
+    }
     switch (fileSource.type) {
       case 'path':
         download = fs.createReadStream(fileSource.content);
@@ -381,8 +384,6 @@ function createMultipartFilesPrep (parts, documents) {
           encoding: null
         });
         break;
-      default:
-        throw new DocuSignError('Files array had no buffer, local file path, or url to retrieve file from.');
     }
     download.pause();
 
