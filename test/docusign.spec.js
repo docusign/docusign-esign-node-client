@@ -66,3 +66,13 @@ test('init with empty integratorKey', t => {
     t.ok(/Integrator key cannot be null or empty string/i.test(err.message), 'Wrong error message');
   });
 });
+
+test(function getAuthInfoError (t) {
+  return docusign.getAuthInfo(config.email, `${config.password}nope`)
+  .then(response => {
+    t.notOk(response);
+  })
+  .catch(err => {
+    t.ok(err);
+  });
+});
