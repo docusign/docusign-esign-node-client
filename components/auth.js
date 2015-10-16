@@ -144,8 +144,10 @@ function revokeOauthToken (token, baseUrl) {
     return dsUtils.makeRequest('Revoke DS OAuth2 Token', options).then(function (response) {
       return response;
     })
-    .catch(/* istanbul ignore next */function (error) {
+    .catch(function (error) {
+    /* istanbul ignore next */
       error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
+    /* istanbul ignore next */
       throw error;
     });
   });
