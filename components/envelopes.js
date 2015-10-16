@@ -518,11 +518,10 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
  *     or not to show the Sign & Return popup after the user signs.
  *   @param {object} event.eventNotification - This object mirrors the
  *     structure of the event notification request in the DS API.
- * @param {function} [callback] - Returns the response body from DS API
- *   (this also includes an additional `envelopeId` field). Returned in the form of function(error, response).
+ * @param {function} [callback] - Returns a thenable Bluebird Promise including additional `envelopeId` field in the response
  */
 
-function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, event, callback) {
+function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, event) {
   return new Bluebird(function (resolve, reject) {
     log('Starting to create envelope');
 
