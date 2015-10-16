@@ -431,17 +431,14 @@ function createMultipartFilesPrep (parts, documents) {
  */
 function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, event) {
   function createNewEnvelope () {
-    return new Bluebird(function (resolve, reject) {
-      _createEnvelope(apiToken, baseUrl, action, fullName, email, files, event, function (error, response) {
-        if (error) {
-          return reject(error);
-        } else if ('errorCode' in response) {
-          var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
-          var err = new DocuSignError(errMsg, {errorCode: response.errorCode});
-          return reject(err);
-        }
-        resolve([response.uri, response.envelopeId]);
-      });
+    return _createEnvelope(apiToken, baseUrl, action, fullName, email, files, event)
+    .then(function (response) {
+      if ('errorCode' in response) {
+        var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
+        var err = new DocuSignError(errMsg, {errorCode: response.errorCode});
+        throw err;
+      }
+      return [response.uri, response.envelopeId];
     });
   }
 
