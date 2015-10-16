@@ -751,7 +751,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
   var data = {};
 
   if (clientUserId === null) {
-    throw new DocuSignError('clientUserId is a required recipient parameter for embedded signing.');
+    return Bluebird.reject(new DocuSignError('clientUserId is a required recipient parameter for embedded signing.'));
   }
 
   if (!userId) {
