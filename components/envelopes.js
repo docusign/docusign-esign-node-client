@@ -289,12 +289,12 @@ function getEnvelopeList (apiToken, baseUrl, fromDate) {
  * @returns {Promise} - A thenable bluebird Promise fulfilled with the PDF file buffer in the given `encoding`.
  */
 function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, additionalParams) {
-  return new Bluebird(function (resolve, reject) {
+  return Bluebird.try(function () {
     var documents = [];
     var parts = [];
     additionalParams = additionalParams != null ? additionalParams : {};
 
-    forEach(files, createMultipartFilesPrep(parts, documents, reject));
+    forEach(files, createMultipartFilesPrep(parts, documents));
 
     var recipientCounter = 2;
     var generateId = function (recipient) {
@@ -320,7 +320,7 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
       body: JSON.stringify(data)
     });
 
-    var multipartPromise = dsUtils.sendMultipart(baseUrl + '/envelopes', {
+    return dsUtils.sendMultipart(baseUrl + '/envelopes', {
       Authorization: 'bearer ' + apiToken
     }, parts)
     .spread(function (response, body) {
@@ -335,8 +335,6 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
       }
       return parsedBody;
     });
-
-    resolve(multipartPromise);
   });
 }
 
@@ -348,10 +346,9 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
  * @function
  * @param  {array} parts - Array to push multipart files into
  * @param  {array} documents - Array to push file meta data into
- * @param  {function} failureCb - Function to call in case of failure
  * @return {function} Function to be used with forEach
  */
-function createMultipartFilesPrep (parts, documents, failureCb) {
+function createMultipartFilesPrep (parts, documents) {
   return function (file, index) {
     var documentId = index + 1;
     documents.push({
@@ -381,8 +378,7 @@ function createMultipartFilesPrep (parts, documents, failureCb) {
         });
         break;
       default:
-        failureCb(new DocuSignError('Files array had no buffer, local file path, or url to retrieve file from.'));
-        return false;
+        throw new DocuSignError('Files array had no buffer, local file path, or url to retrieve file from.');
     }
     download.pause();
 
@@ -522,7 +518,7 @@ function getView (apiToken, baseUrl, action, fullName, email, files, returnUrl, 
  */
 
 function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, event) {
-  return new Bluebird(function (resolve, reject) {
+  return Bluebird.try(function () {
     log('Starting to create envelope');
 
     // construct the parts of the multipart request
@@ -530,7 +526,7 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
     var parts = [];
     var customFields = [];
 
-    forEach(files, createMultipartFilesPrep(parts, documents, reject));
+    forEach(files, createMultipartFilesPrep(parts, documents));
 
     var recipients;
     if (event && 'recipients' in event) {
@@ -595,7 +591,7 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
       body: JSON.stringify(body)
     });
 
-    var multipartPromise = dsUtils.sendMultipart(baseUrl + '/envelopes', {
+    return dsUtils.sendMultipart(baseUrl + '/envelopes', {
       Authorization: 'bearer ' + apiToken
     }, parts)
     .spread(function (response, body) {
@@ -610,8 +606,6 @@ function _createEnvelope (apiToken, baseUrl, action, fullName, email, files, eve
       }
       return parsedBody;
     });
-
-    resolve(multipartPromise);
   });
 }
 
