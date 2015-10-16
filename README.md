@@ -35,7 +35,7 @@ The below examples show you how to:
 - Create a new Envelope using a Template and sending to the recipient you specify
 - Logout of the Client by Revoking the DocuSign user's OAuth Token
 
-Alternatively, this SDK supports a promise interface via [`bluebird`](https://www.npmjs.com/package/bluebird). An [example](./examples/promise.js).
+Alternatively, this SDK supports a promise interface via [`bluebird`](https://www.npmjs.com/package/bluebird). An [example](./examples/promise.js) is provided.
 
 ```javascript
 var docusign = require('docusign-node');
@@ -120,16 +120,6 @@ async.waterfall([
 
 How to run Unit Tests
 -----------
-
-There is a `sample-config.json` file provided. Please copy it into a new file called `config.json` along with your
- - DocuSign Integrator key
- - Email Address
- - Password
- - Template Id
- - Template Role
- - and Envelope Id associated with your DocuSign account.
-
-The `config.json` is ignored so any changes to that file are not committable.
 
 In the console run `npm test`.
 
