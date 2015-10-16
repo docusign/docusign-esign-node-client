@@ -1,9 +1,7 @@
 // Wrappers for User APIs
 
-var util = require('util');
 var dsUtils = require('./../dsUtils');
 var isEmpty = require('lodash.isempty');
-var DocuSignError = dsUtils.DocuSignError;
 
 exports.init = function (accountId, baseUrl, accessToken) {
   return {
@@ -91,8 +89,7 @@ function getSignature (apiToken, baseUrl, userId) {
   };
   return dsUtils.makeRequest('Get User Signature', options).then(function (response) {
     if (isEmpty(response.userSignatures)) {
-      var errMsg = util.format('(Error Code: %s) Error:\n  %s', response.errorCode, JSON.stringify(response.message));
-      throw new DocuSignError(errMsg, {errorCode: response.errorCode});
+      return 'No signatures found';
     }
     return baseUrl + response.userSignatures[0].signatureImageUri;
   });
