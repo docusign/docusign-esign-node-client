@@ -44,6 +44,7 @@ exports.internalState = {};
 exports.log = debugLog;
 function debugLog () {
   var isDebugLogEnabled = exports.internalState.dsDebug === 'true' || /docusign/ig.test(process.env.DEBUG);
+  /* istanbul ignore if */
   if (isDebugLogEnabled) {
     var timestamp = '[' + new Date().toISOString() + ']';
     console.log.apply(console, [timestamp].concat(arguments));
