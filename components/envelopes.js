@@ -762,6 +762,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
       userName: recipientName,
       email: email
     };
+  /* istanbul ignore else */
   } else {
     data = {
       returnUrl: returnUrl,
