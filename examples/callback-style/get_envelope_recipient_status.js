@@ -1,22 +1,20 @@
 // Unit Testing Imports
 var assert = require('assert');
-var fs = require('fs');
 var async = require('async');
 
 var docusign = require('../../docusign.js');
 
-describe('get_doc_list_download', function () {
+describe('get_envelope_recipient_status', function () {
   var docusignEnv = 'demo';
-  var debug = false;
 
-  var config = JSON.parse(fs.readFileSync('config.json'));
-  var integratorKey = config.DOCUSIGN_INTEGRATOR_KEY;
-  var email = config.DOCUSIGN_TEST_EMAIL;
-  var password = config.DOCUSIGN_TEST_PASSWORD;
-  var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
-  var attachCertificate = false;
+  var config = require('../../test-config.json');
+  var debug = config.debug;
+  var integratorKey = config.integratorKey;
+  var email = config.email;
+  var password = config.password;
+  var envelopeId = config.envelopeId;
 
-  it.skip('should return document list and documents', function (done) {
+  it('should return recipient status information for the specified envelope', function (done) {
     async.waterfall([
 
       // **********************************************************************************
@@ -42,17 +40,24 @@ describe('get_doc_list_download', function () {
       },
 
       // **********************************************************************************
-      // Step 3 - Get Signed Documents
+      // Step 3 - Get Recipients of the Specified Envelope Id
       // **********************************************************************************
-      function getSignedDocuments (client, next) {
-        client.envelopes.getSignedDocuments(envelopeId, null, attachCertificate, function (error, response) {
+      function getRecipients (client, next) {
+        client.envelopes.getRecipients(envelopeId, function (error, response) {
           assert.ok(!error, 'Unexpected ' + error);
-          fs.writeFile('Documents.pdf', response, 'binary', function (err) {
-            assert.ok(!err);
-            next(null, client);
-          });
+          assert.ok(response.signers);
+          assert.ok(response.signers[0].isBulkRecipient);
+          assert.ok(response.signers[0].name);
+          assert.ok(response.signers[0].email);
+          assert.ok(response.signers[0].recipientId);
+          assert.ok(response.signers[0].recipientIdGuid);
+          assert.ok(response.signers[0].requireIdLookup);
+          assert.ok(response.signers[0].userId);
+          console.log('The Recipients of envelopeId: ' + envelopeId + ' is: \n', response);
+          next(null, client);
         });
       },
+
       // **********************************************************************************
       // Step 4 - Revoke OAuth Token for Logout
       // **********************************************************************************
