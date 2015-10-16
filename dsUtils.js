@@ -26,6 +26,15 @@ DocuSignError.prototype = Object.create(Error.prototype);
 DocuSignError.prototype.constrcutor = DocuSignError;
 
 /**
+ * Simple space to share internal state
+ *
+ * @memberOf Utils
+ * @private
+ * @type {Object}
+ */
+exports.internalState = {};
+
+/**
  * General logging function for debugging use
  *
  * @memberOf Utils
@@ -34,7 +43,7 @@ DocuSignError.prototype.constrcutor = DocuSignError;
  */
 exports.log = debugLog;
 function debugLog () {
-  var isDebugLogEnabled = process.env.dsDebug === 'true' || /docusign/ig.test(process.env.DEBUG);
+  var isDebugLogEnabled = exports.internalState.dsDebug === 'true' || /docusign/ig.test(process.env.DEBUG);
   if (isDebugLogEnabled) {
     var timestamp = '[' + new Date().toISOString() + ']';
     console.log.apply(console, [timestamp].concat(arguments));
@@ -60,7 +69,7 @@ exports.generateNewGuid = uuid;
  * @returns {string}
  */
 exports.getApiUrl = function () {
-  var env = process.env.targetEnv;
+  var env = exports.internalState.targetEnv;
   return 'https://' + env + '.docusign.net/restapi/v2';
 };
 
