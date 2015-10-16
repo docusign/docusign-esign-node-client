@@ -13,6 +13,7 @@ var isPlainObject = require('lodash.isplainobject');
 exports.DocuSignError = DocuSignError;
 function DocuSignError (message, errorDetails) {
   errorDetails = errorDetails || {};
+  /* istanbul ignore if */
   if (message instanceof DocuSignError) {
     return message;
   }
