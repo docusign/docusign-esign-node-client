@@ -4,6 +4,8 @@
   "debug": false,
   "email": "node_sdk@mailinator.com",
   "noSigEmail": "no_sig@mailinator.com",
+  "userId": "fcc5726c-XXXX-XXXX-XXXX-X0bbbe6ca126",
+  "noSigUserId": "538241a0-XXXX-XXXX-XXXX-X8aef23da8c4",
   "password": "{PASSWORD}",
   "templateId": "cf2a46c2-XXXX-XXXX-XXXX-X52547b1a419",
   "envelopeId": "e5266e64-d7a3-4467-9fe0-31cfa18474ca",
