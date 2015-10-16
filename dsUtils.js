@@ -8,6 +8,7 @@ var temp = require('temp');
 var stream = require('stream');
 var uuid = require('uuid');
 var assign = require('lodash.assign');
+var isPlainObject = require('lodash.isplainobject');
 
 exports.DocuSignError = DocuSignError;
 function DocuSignError (message, errorDetails) {
@@ -122,7 +123,11 @@ exports.makeRequest = function (apiName, options, callback) {
       try {
         json = JSON.parse(body);
       } catch (_) {
-        json = null;
+        if (isPlainObject(body)) {
+          json = body;
+        } else {
+          json = null;
+        }
       }
 
       if (json === null) { // successful request; no json in response body
