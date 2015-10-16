@@ -374,7 +374,7 @@ function createMultipartFilesPrep (parts, documents) {
         }
       }));
     }
-    switch (fileSource.type) {
+    switch (fileSource.type.toLowerCase()) {
       case 'path':
         download = fs.createReadStream(fileSource.content);
         break;
