@@ -144,7 +144,7 @@ function revokeOauthToken (token, baseUrl) {
     return dsUtils.makeRequest('Revoke DS OAuth2 Token', options).then(function (response) {
       return response;
     })
-    .catch(function (error) {
+    .catch(/* istanbul ignore next */function (error) {
       error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
       throw error;
     });
@@ -167,6 +167,7 @@ function _getTokenEndpoint (baseUrl, action) {
   if (environ && environ.length) {
     return 'https://' + environ[1] + '.docusign.net/restapi/v2/oauth2/' + action;
   } else {
+    /* istanbul ignore next */
     throw new DocuSignError('Unable to parse baseUrl', { baseUrl: baseUrl });
   }
 }
