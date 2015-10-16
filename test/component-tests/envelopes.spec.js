@@ -155,3 +155,40 @@ test(function sendEnvelope (t) {
     t.ok(response.status === 'sent');
   });
 });
+
+test(function setEnvelopeStatus (t) {
+  let emailSubject = 'DocuSign API - Signature Request on Document Call';
+  let recipients = {
+    signers: [{
+      'email': config.email,
+      'name': fullName,
+      'recipientId': 1,
+      'tabs': {
+        'signHereTabs': [{
+          'xPosition': '100',
+          'yPosition': '100',
+          'documentId': '1',
+          'pageNumber': '1'
+        }]
+      }
+    }]
+  };
+  let additionalParams = {};
+  return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
+  .then(response => {
+    t.ok(response.envelopeId);
+    t.ok(response.uri);
+    t.ok(response.status === 'sent');
+    return response.envelopeId;
+  })
+  .then(envelopeId => {
+    let status = 'voided';
+    let additionalParams = {
+      voidedReason: 'Broken signature'
+    };
+    return client.envelopes.setEnvelopeStatus(envelopeId, status, additionalParams);
+  })
+  .then(response => {
+    t.ok(response);
+  });
+});
