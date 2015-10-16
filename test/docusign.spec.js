@@ -1,37 +1,44 @@
 'use strict';
 
 const test = require('ava');
-const clone = require('lodash.clone');
-const docusign = require('../docusign');
-const dsUtils = require('../dsUtils');
+const proxyquire = require('proxyquire');
+const requireUncached = require('require-uncached');
 const config = require('../test-config.json');
-const DocuSignError = dsUtils.DocuSignError;
 
-let baseEnv = clone(process.env);
+let docusign;
+let dsUtils;
+let DocuSignError;
+let internalState;
 
 test.beforeEach(function docusignBeforeEach (t) {
-  process.env = clone(baseEnv);
+  dsUtils = requireUncached('../dsUtils');
+  docusign = proxyquire('../docusign', {
+    './dsUtils': dsUtils
+  });
+  DocuSignError = dsUtils.DocuSignError;
+  internalState = dsUtils.internalState;
+  t.ok(Object.keys(internalState).length === 0, 'Internal state was not empty');
   t.end();
 });
 
 test('init with debug', t => {
   return docusign.init(config.integratorKey, config.apiEnv, true)
   .then(response => {
-    t.ok(process.env.dsDebug != null);
+    t.ok(internalState.dsDebug != null);
   });
 });
 
 test('init with live targetEnv', t => {
   return docusign.init(config.integratorKey, 'live', config.debug)
   .then(response => {
-    t.ok(process.env.targetEnv != null);
+    t.ok(internalState.targetEnv != null);
   });
 });
 
 test('init with www targetEnv', t => {
   return docusign.init(config.integratorKey, 'www', config.debug)
   .then(response => {
-    t.ok(process.env.targetEnv != null);
+    t.ok(internalState.targetEnv != null);
   });
 });
 
