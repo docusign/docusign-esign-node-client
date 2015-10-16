@@ -364,7 +364,15 @@ function createMultipartFilesPrep (parts, documents) {
     var download;
     var fileSource = file.source;
     if (fileSource == null) {
-      throw new DocuSignError('Files array had no buffer, local file path, or url to retrieve file from.');
+      throw new DocuSignError('File had no source. Requires a base64 buffer, local file path, or url to retrieve file from.\nMust be in the form of: ' +
+      util.inspect({
+        name: 'SampleDocument.pdf',
+        ext: 'pdf',
+        source: {
+          type: 'path|base64|url',
+          content: 'string|buffer'
+        }
+      }));
     }
     switch (fileSource.type) {
       case 'path':
