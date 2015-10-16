@@ -1,7 +1,11 @@
-DocuSign Node Client
-===========
+# DocuSign Node Client
 
-[NPM module](https://www.npmjs.com/package/docusign-node) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][downloads-image]][downloads-url]
+[![Build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+
+> [NPM module](https://www.npmjs.com/package/docusign-node) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
 [Documentation about the DocuSign API](https://www.docusign.com/developer-center)
 
@@ -139,3 +143,12 @@ License
 ----------
 
 The DocuSign-Node-Client is licensed under the [following LICENSE](LICENSE).
+
+[npm-image]: https://img.shields.io/npm/v/docusign-node.svg?style=flat
+[npm-url]: https://npmjs.org/package/docusign-node
+[downloads-image]: https://img.shields.io/npm/dm/docusign-node.svg?style=flat
+[downloads-url]: https://npmjs.org/package/docusign-node
+[travis-image]: https://img.shields.io/travis/docusign/DocuSign-Node-Client.svg?style=flat
+[travis-url]: https://travis-ci.org/docusign/DocuSign-Node-Client
+[coveralls-image]: https://img.shields.io/coveralls/docusign/DocuSign-Node-Client.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/docusign/DocuSign-Node-Client?branch=master
