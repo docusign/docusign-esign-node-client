@@ -1,13 +1,11 @@
 'use strict';
 
 const test = require('ava');
-const find = require('lodash.find');
 const docusign = require('../../docusign');
 const config = require('../../test-config.json');
 
 let client = null;
-let userId = null;
-let noSigUserId = null;
+let { userId, noSigUserId } = config;
 
 test.before(function usersBefore (t) {
   return docusign.init(config.integratorKey, config.apiEnv, config.debug)
@@ -17,11 +15,6 @@ test.before(function usersBefore (t) {
   })
   .then(_client => {
     client = _client;
-    return client.admin.getUserList();
-  })
-  .then(userList => {
-    userId = find(userList, 'email', config.email).userId;
-    noSigUserId = find(userList, 'email', config.noSigEmail).userId;
   });
 });
 
