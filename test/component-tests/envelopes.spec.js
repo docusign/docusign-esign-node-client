@@ -9,6 +9,16 @@ const dsUtils = require('../../dsUtils');
 let client = null;
 let envelopeId = config.envelopeId;
 let templateId = config.templateId;
+let fullName = 'DocuSign NPM';
+let email = config.email;
+let files = [{
+  name: 'SampleDocument.pdf',
+  extension: 'pdf',
+  source: {
+    type: 'path',
+    content: 'test/SampleDocument.pdf'
+  }
+}];
 
 test.before(function envelopesBefore (t) {
   return docusign.init(config.integratorKey, config.apiEnv, config.debug)
@@ -99,16 +109,6 @@ test(function getRecipients (t) {
 
 test(function getView (t) {
   let action = 'send';
-  let fullName = 'DocuSign NPM';
-  let email = config.email;
-  let files = [{
-    name: 'SampleDocument.pdf',
-    extension: 'pdf',
-    source: {
-      type: 'path',
-      content: 'test/SampleDocument.pdf'
-    }
-  }];
   let returnUrl = 'http://www.docusign.com/devcenter';
   let event = null;
 
@@ -127,5 +127,31 @@ test(function getTemplateView (t) {
     var regex = new RegExp('https://demo.docusign.net/Member/StartInSession.aspx?');
     t.ok(response.url);
     t.ok(regex.test(response.url));
+  });
+});
+
+test(function sendEnvelope (t) {
+  let emailSubject = 'DocuSign API - Signature Request on Document Call';
+  let recipients = {
+    signers: [{
+      'email': config.email,
+      'name': fullName,
+      'recipientId': 1,
+      'tabs': {
+        'signHereTabs': [{
+          'xPosition': '100',
+          'yPosition': '100',
+          'documentId': '1',
+          'pageNumber': '1'
+        }]
+      }
+    }]
+  };
+  let additionalParams = {};
+  return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
+  .then(response => {
+    t.ok(response.envelopeId);
+    t.ok(response.uri);
+    t.ok(response.status === 'sent');
   });
 });
