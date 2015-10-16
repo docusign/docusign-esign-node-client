@@ -63,6 +63,7 @@
     "file-type": "2.5.0",
     "istanbul": "0.3.22",
     "jsdoc": "3.3.2",
+    "lodash.find": "3.2.1",
     "mocha": "2.2.4",
     "nock": "2.15.0",
     "pre-commit": "1.0.10",
