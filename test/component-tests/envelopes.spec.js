@@ -146,6 +146,20 @@ test(function getView (t) {
   });
 });
 
+test('[getView] sign action with showSignAndReturn', t => {
+  let action = 'sign';
+  let event = {
+    showSignAndReturn: true
+  };
+  return client.envelopes.getView(action, fullName, email, files, returnUrl, event)
+  .then(response => {
+    var regex = new RegExp('https://demo.docusign.net/Signing/StartInSession.aspx?', 'i');
+    t.ok(response.url);
+    t.ok(response.envelopeId);
+    t.ok(regex.test(response.url));
+  });
+});
+
 test(function getTemplateView (t) {
   return client.envelopes.getTemplateView(templateId, 'http://www.docusign.com/devcenter')
   .then(response => {
