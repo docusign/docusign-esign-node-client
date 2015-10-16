@@ -94,12 +94,12 @@ exports.makeRequest = function (apiName, options, callback) {
   var makeRequestAsync = new Bluebird(function (resolve, reject) {
     var data;
     if ('json' in options) {
-      data = JSON.stringify(options.json);
+      data = options.json;
     } else {
       data = '';
     }
 
-    exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, data, util.inspect(options.headers, {depth: null})));
+    exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, util.inspect(data, {depth: null}), util.inspect(options.headers, {depth: null})));
 
     request(options, function (error, response, body) {
       if (error) {
