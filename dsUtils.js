@@ -112,7 +112,6 @@ exports.makeRequest = function (apiName, options, callback) {
     exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, util.inspect(data, {depth: null}), util.inspect(options.headers, {depth: null})));
 
     request(options, function (error, response, body) {
-      /* istanbul ignore if */
       if (error) {
         return reject(error);
       }
@@ -145,9 +144,7 @@ exports.makeRequest = function (apiName, options, callback) {
     });
   });
   return makeRequestAsync.asCallback(callback).catch(DocuSignError, function (error) {
-    /* istanbul ignore next */
     exports.log(error.message);
-    /* istanbul ignore next */
     throw error;
   });
 };
