@@ -8,10 +8,12 @@ var temp = require('temp');
 var stream = require('stream');
 var uuid = require('uuid');
 var assign = require('lodash.assign');
+var isPlainObject = require('lodash.isplainobject');
 
 exports.DocuSignError = DocuSignError;
 function DocuSignError (message, errorDetails) {
   errorDetails = errorDetails || {};
+  /* istanbul ignore if */
   if (message instanceof DocuSignError) {
     return message;
   }
@@ -24,6 +26,15 @@ DocuSignError.prototype = Object.create(Error.prototype);
 DocuSignError.prototype.constrcutor = DocuSignError;
 
 /**
+ * Simple space to share internal state
+ *
+ * @memberOf Utils
+ * @private
+ * @type {Object}
+ */
+exports.internalState = {};
+
+/**
  * General logging function for debugging use
  *
  * @memberOf Utils
@@ -32,7 +43,8 @@ DocuSignError.prototype.constrcutor = DocuSignError;
  */
 exports.log = debugLog;
 function debugLog () {
-  var isDebugLogEnabled = process.env.dsDebug === 'true' || /docusign/ig.test(process.env.DEBUG);
+  var isDebugLogEnabled = exports.internalState.dsDebug === 'true' || /docusign/ig.test(process.env.DEBUG);
+  /* istanbul ignore if */
   if (isDebugLogEnabled) {
     var timestamp = '[' + new Date().toISOString() + ']';
     console.log.apply(console, [timestamp].concat(arguments));
@@ -58,7 +70,7 @@ exports.generateNewGuid = uuid;
  * @returns {string}
  */
 exports.getApiUrl = function () {
-  var env = process.env.targetEnv;
+  var env = exports.internalState.targetEnv;
   return 'https://' + env + '.docusign.net/restapi/v2';
 };
 
@@ -92,48 +104,46 @@ exports.makeRequest = function (apiName, options, callback) {
   var makeRequestAsync = new Bluebird(function (resolve, reject) {
     var data;
     if ('json' in options) {
-      data = JSON.stringify(options.json);
-    } else if ('multipart' in options) {
-      var json;
-      try {
-        json = JSON.parse(options.multipart[0].body);
-      } catch (_) {
-        json = null;
-      }
-      if (json !== null) {
-        data = JSON.stringify(json);
-      } else {
-        data = '';
-      }
-    } else if ('form' in options) {
-      data = JSON.stringify(options.form);
+      data = options.json;
     } else {
       data = '';
     }
 
-    exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, data, util.inspect(options.headers, {depth: null})));
+    exports.log(util.format('DS API %s Request:\n  %s %s\t  %s\nHeaders: %s', apiName, options.method, options.url, util.inspect(data, {depth: null}), util.inspect(options.headers, {depth: null})));
 
     request(options, function (error, response, body) {
       if (error) {
         return reject(error);
       }
 
+      var errorDetails = {};
+
+      if (response.statusCode >= 400) {
+        errorDetails.statusCode = response.statusCode;
+      }
+
       var json, err, errMsg;
       try {
         json = JSON.parse(body);
       } catch (_) {
-        json = null;
+        if (isPlainObject(body)) {
+          json = body;
+        } else {
+          json = null;
+        }
       }
 
       if (json === null) { // successful request; no json in response body
         resolve(body);
       } else if ('errorCode' in json) {
         errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, json.message);
-        err = new DocuSignError(errMsg);
+        errorDetails.errorCode = json.errorCode;
+        err = new DocuSignError(errMsg, errorDetails);
         reject(err);
       } else if ('error' in json) {
         errMsg = util.format('DS API %s Error:\n  %s \n\nDescription: %s', apiName, json.error, json.error_description);
-        err = new DocuSignError(errMsg);
+        errorDetails.errorCode = json.error;
+        err = new DocuSignError(errMsg, errorDetails);
         reject(err);
       } else { // no error
         exports.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));

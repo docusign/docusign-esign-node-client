@@ -1,20 +1,19 @@
 // Unit Testing Imports
 var assert = require('assert');
-var fs = require('fs');
 var async = require('async');
 
 var docusign = require('../../docusign.js');
 
 describe('request_signature_template', function () {
   var fullName = 'Nikhil Mashettiwar';
-  var debug = false;
 
-  var config = JSON.parse(fs.readFileSync('config.json'));
-  var integratorKey = config.DOCUSIGN_INTEGRATOR_KEY;
-  var email = config.DOCUSIGN_TEST_EMAIL;
-  var password = config.DOCUSIGN_TEST_PASSWORD;
-  var templateId = config.DOCUSIGN_TEST_TEMPLATE_ID;
-  var templateRoleName = config.DOCUSIGN_TEST_TEMPLATE_ROLE;
+  var config = require('../../test-config.json');
+  var debug = config.debug;
+  var integratorKey = config.integratorKey;
+  var email = config.email;
+  var password = config.password;
+  var templateId = config.templateId;
+  var templateRoleName = config.templateRole;
 
   var templateRoles = [{
     email: email,
@@ -52,7 +51,7 @@ describe('request_signature_template', function () {
         // Step 3 - Request Signature via Template
         // **********************************************************************************
         function sendTemplate (client, next) {
-          client.envelopes.sendTemplate('DS API call - Request Signature', templateId, templateRoles, function (error, response) {
+          client.envelopes.sendTemplate('DS API call - Request Signature', templateId, templateRoles, {}, function (error, response) {
             assert.ok(!error, 'Unexpected ' + error);
             console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
             next(null, client);

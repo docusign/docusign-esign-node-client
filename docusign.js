@@ -40,6 +40,7 @@ var dsUtils = require('./dsUtils');
 
 var log = dsUtils.log;
 var DocuSignError = dsUtils.DocuSignError;
+var internalState = dsUtils.internalState;
 
 // Create DocuSign Object
 var docusign = (function () {
@@ -49,21 +50,21 @@ var docusign = (function () {
 
       if (debug) {
         log('docusign starting init');
-        process.env.dsDebug = true;
+        internalState.dsDebug = true;
       } else {
-        process.env.dsDebug = false;
+        internalState.dsDebug = false;
       }
 
       if (targetEnv === 'demo') {
-        process.env.targetEnv = 'demo';
+        internalState.targetEnv = 'demo';
       } else if (targetEnv === 'www' || targetEnv === 'live') {
-        process.env.targetEnv = 'www';
+        internalState.targetEnv = 'www';
       } else {
         return reject(new DocuSignError("Invalid environment value. 'Demo' or 'Live' are the only valid environments."));
       }
 
       if (integratorKey) {
-        process.env.integratorKey = integratorKey;
+        internalState.integratorKey = integratorKey;
       } else {
         return reject(new DocuSignError('Integrator key cannot be null or empty string.'));
       }

@@ -1,21 +1,27 @@
 // Unit Testing Imports
 var assert = require('assert');
-var fs = require('fs');
 var async = require('async');
 
 var docusign = require('../../docusign.js');
 
-describe('get_envelope_recipient_status', function () {
+describe('get_status_envelopes', function () {
   var docusignEnv = 'demo';
-  var debug = false;
 
-  var config = JSON.parse(fs.readFileSync('config.json'));
-  var integratorKey = config.DOCUSIGN_INTEGRATOR_KEY;
-  var email = config.DOCUSIGN_TEST_EMAIL;
-  var password = config.DOCUSIGN_TEST_PASSWORD;
-  var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
+  var config = require('../../test-config.json');
+  var debug = config.debug;
+  var integratorKey = config.integratorKey;
+  var email = config.email;
+  var password = config.password;
 
-  it.skip('should return recipient status information for the specified envelope', function (done) {
+  var date = new Date();
+  if (date.getMonth() !== 0) {
+    date.setMonth(date.getMonth() - 1);
+  } else {
+    date.setMonth(12);
+    date.setYear(date.getYear() - 1);
+  }
+
+  it('should return an envelope list', function (done) {
     async.waterfall([
 
       // **********************************************************************************
@@ -41,20 +47,12 @@ describe('get_envelope_recipient_status', function () {
       },
 
       // **********************************************************************************
-      // Step 3 - Get Recipients of the Specified Envelope Id
+      // Step 3 - Get Envelope List
       // **********************************************************************************
-      function getRecipients (client, next) {
-        client.envelopes.getRecipients(envelopeId, function (error, response) {
-          assert.ok(!error, 'Unexpected ' + error);
-          assert.ok(response.signers);
-          assert.ok(response.signers[0].isBulkRecipient);
-          assert.ok(response.signers[0].name);
-          assert.ok(response.signers[0].email);
-          assert.ok(response.signers[0].recipientId);
-          assert.ok(response.signers[0].recipientIdGuid);
-          assert.ok(response.signers[0].requireIdLookup);
-          assert.ok(response.signers[0].userId);
-          console.log('The Recipients of envelopeId: ' + envelopeId + ' is: \n' + JSON.stringify(response));
+      function getEnvelopeList (client, next) {
+        client.envelopes.getEnvelopeList(date, function (err, response) {
+          assert.ok(!err);
+          // console.log('The Envelopes from ' + date + ' to the present is: \n' + JSON.stringify(response));
           next(null, client);
         });
       },
