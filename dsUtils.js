@@ -116,6 +116,12 @@ exports.makeRequest = function (apiName, options, callback) {
         return reject(error);
       }
 
+      var errorDetails = {};
+
+      if (response.statusCode >= 400) {
+        errorDetails.statusCode = response.statusCode;
+      }
+
       var json, err, errMsg;
       try {
         json = JSON.parse(body);
@@ -131,11 +137,13 @@ exports.makeRequest = function (apiName, options, callback) {
         resolve(body);
       } else if ('errorCode' in json) {
         errMsg = util.format('DS API %s (Error Code: %s) Error:\n  %s', apiName, json.errorCode, json.message);
-        err = new DocuSignError(errMsg);
+        errorDetails.errorCode = json.errorCode;
+        err = new DocuSignError(errMsg, errorDetails);
         reject(err);
       } else if ('error' in json) {
         errMsg = util.format('DS API %s Error:\n  %s \n\nDescription: %s', apiName, json.error, json.error_description);
-        err = new DocuSignError(errMsg);
+        errorDetails.errorCode = json.error;
+        err = new DocuSignError(errMsg, errorDetails);
         reject(err);
       } else { // no error
         exports.log(util.format('DS API %s Response:\n  %s', apiName, JSON.stringify(json)));
