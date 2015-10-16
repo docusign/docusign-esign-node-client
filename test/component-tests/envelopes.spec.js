@@ -66,6 +66,23 @@ test('[getSignedDocuments] 404 on get non-existent signed documents', t => {
   });
 });
 
+test(function getEnvelopeList (t) {
+  let date = new Date();
+  if (date.getMonth() !== 0) {
+    date.setMonth(date.getMonth() - 1);
+  } else {
+    date.setMonth(12);
+    date.setYear(date.getYear() - 1);
+  }
+  return client.envelopes.getEnvelopeList(date)
+  .then(response => {
+    t.ok(response);
+    t.ok(response.envelopes.length > 0);
+    t.ok(response.totalSetSize);
+    t.ok(response.resultSetSize);
+  });
+});
+
 test(function getRecipients (t) {
   return client.envelopes.getRecipients(envelopeId)
   .then(response => {
