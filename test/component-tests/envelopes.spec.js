@@ -2,6 +2,7 @@
 
 const test = require('ava');
 const fileType = require('file-type');
+const clone = require('lodash.clone');
 const config = require('../../test-config.json');
 const docusign = require('../../docusign');
 const dsUtils = require('../../dsUtils');
@@ -175,6 +176,20 @@ test(function sendEnvelope (t) {
     t.ok(response.envelopeId);
     t.ok(response.uri);
     t.ok(response.status === 'sent');
+  });
+});
+
+test(function sendEnvelopeMissingSource (t) {
+  let badFiles = clone(files, true);
+  delete badFiles[0].source;
+  return client.envelopes.sendEnvelope(recipients, emailSubject, badFiles, additionalParams)
+  .then(response => {
+    t.notOk(response);
+  })
+  .catch(err => {
+    t.ok(err);
+    t.ok(err instanceof dsUtils.DocuSignError);
+    t.regexTest(/File had no source/i, err.message);
   });
 });
 
