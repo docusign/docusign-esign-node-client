@@ -11,6 +11,31 @@ let envelopeId = config.envelopeId;
 let templateId = config.templateId;
 let fullName = 'DocuSign NPM';
 let email = config.email;
+let roleName = config.templateRole;
+let clientUserId = '1001';
+let returnUrl = 'http://www.docusign.com/devcenter';
+let emailSubject = 'DocuSign API - Signature Request on Document Call';
+let recipients = {
+  signers: [{
+    email,
+    name: fullName,
+    recipientId: 1,
+    tabs: {
+      signHereTabs: [{
+        xPosition: '100',
+        yPosition: '100',
+        documentId: '1',
+        pageNumber: '1'
+      }]
+    }
+  }]
+};
+let templateRoles = [{
+  email,
+  name: fullName,
+  roleName,
+  clientUserId
+}];
 let files = [{
   name: 'SampleDocument.pdf',
   extension: 'pdf',
@@ -109,7 +134,6 @@ test(function getRecipients (t) {
 
 test(function getView (t) {
   let action = 'send';
-  let returnUrl = 'http://www.docusign.com/devcenter';
   let event = null;
 
   return client.envelopes.getView(action, fullName, email, files, returnUrl, event)
@@ -131,22 +155,6 @@ test(function getTemplateView (t) {
 });
 
 test(function sendEnvelope (t) {
-  let emailSubject = 'DocuSign API - Signature Request on Document Call';
-  let recipients = {
-    signers: [{
-      'email': config.email,
-      'name': fullName,
-      'recipientId': 1,
-      'tabs': {
-        'signHereTabs': [{
-          'xPosition': '100',
-          'yPosition': '100',
-          'documentId': '1',
-          'pageNumber': '1'
-        }]
-      }
-    }]
-  };
   let additionalParams = {};
   return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
   .then(response => {
@@ -157,22 +165,6 @@ test(function sendEnvelope (t) {
 });
 
 test(function setEnvelopeStatus (t) {
-  let emailSubject = 'DocuSign API - Signature Request on Document Call';
-  let recipients = {
-    signers: [{
-      'email': config.email,
-      'name': fullName,
-      'recipientId': 1,
-      'tabs': {
-        'signHereTabs': [{
-          'xPosition': '100',
-          'yPosition': '100',
-          'documentId': '1',
-          'pageNumber': '1'
-        }]
-      }
-    }]
-  };
   let additionalParams = {};
   return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
   .then(response => {
@@ -190,5 +182,25 @@ test(function setEnvelopeStatus (t) {
   })
   .then(response => {
     t.ok(response);
+  });
+});
+
+test(function getSignerView (t) {
+  let userId = null;
+  let authMethod = 'email';
+  let additionalParams = {};
+  return client.envelopes.sendTemplate(emailSubject, templateId, templateRoles, additionalParams)
+  .then(response => {
+    t.ok(response.envelopeId);
+    t.ok(response.uri);
+    t.ok(response.status === 'sent');
+    return response.envelopeId;
+  })
+  .then(envelopeId => {
+    return client.envelopes.getSignerView(userId, fullName, email, clientUserId, envelopeId, returnUrl, authMethod);
+  })
+  .then(response => {
+    t.ok(response);
+    t.ok(response.url);
   });
 });
