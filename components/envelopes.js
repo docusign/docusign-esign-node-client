@@ -128,7 +128,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @function
      * @param {string} envelopeId - ID of envelope to get documents from.
      * @param {string} status - either `sent` or `voided`
-     * @param {object} additionalParams - additional params such as the voidReason
+     * @param {object} additionalParams - additional params such as the voidedReason
      * @param {function} [callback] - Returns the envelope information in a JSON object. Returned in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      *
