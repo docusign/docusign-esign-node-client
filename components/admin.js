@@ -281,7 +281,7 @@ function getPlan (apiToken, baseUrl) {
     var envelopesLeft = plan.billingPeriodEnvelopesAllowed - plan.billingPeriodEnvelopesSent;
 
     // a negative number signifies unlimited amount
-    plan.envelopesLeft = isNaN(envelopesLeft) ? -1 : envelopesLeft;
+    plan.envelopesLeft = isNaN(envelopesLeft) ? -1 : /* istanbul ignore next */ envelopesLeft;
 
     plan.name = plan.planName;
 

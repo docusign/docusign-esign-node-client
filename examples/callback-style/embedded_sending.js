@@ -1,21 +1,21 @@
 // Unit Testing Imports
 var assert = require('assert');
-var fs = require('fs');
 var async = require('async');
+var fs = require('fs');
 
 var docusign = require('../../docusign.js');
 
-describe('get_envelope_info', function () {
+describe('embedded_sending', function () {
+  var fullName = 'DocuSign NPM';
   var docusignEnv = 'demo';
-  var debug = false;
 
-  var config = JSON.parse(fs.readFileSync('config.json'));
-  var integratorKey = config.DOCUSIGN_INTEGRATOR_KEY;
-  var email = config.DOCUSIGN_TEST_EMAIL;
-  var password = config.DOCUSIGN_TEST_PASSWORD;
-  var envelopeId = config.DOCUSIGN_TEST_ENVELOPE_ID;
+  var config = require('../../test-config.json');
+  var debug = config.debug;
+  var integratorKey = config.integratorKey;
+  var email = config.email;
+  var password = config.password;
 
-  it('should return envelope information', function (done) {
+  it('should return embedded sending url', function (done) {
     async.waterfall([
 
       // **********************************************************************************
@@ -41,16 +41,22 @@ describe('get_envelope_info', function () {
       },
 
       // **********************************************************************************
-      // Step 3 - Get Envelope Information
+      // Step 3 - Get the Embedded Sender View
       // **********************************************************************************
-      function getEnvelopeInfo (client, next) {
-        client.envelopes.getEnvelopeInfo(envelopeId, function (error, response) {
+      function getEmbeddedSenderView (client, next) {
+        var buffer = fs.readFileSync('test/SampleDocument.pdf');
+        var files = [{
+          name: 'SampleDocument.pdf',
+          extension: 'pdf',
+          source: {
+            type: 'base64',
+            content: new Buffer(buffer).toString('base64')
+          }
+        }];
+
+        client.envelopes.getView('send', fullName, email, files, 'http://www.docusign.com/devcenter', null, function (error, response) {
           assert.ok(!error, 'Unexpected ' + error);
-          assert.ok(response.status);
-          assert.ok(response.documentsUri);
-          assert.ok(response.envelopeUri);
-          assert.ok(response.recipientsUri);
-          console.log('The Envelope Information is: \n' + JSON.stringify(response));
+          console.log('Navigate to this URL to start the Embedded Sending workflow: ' + response.url);
           next(null, client);
         });
       },
@@ -62,10 +68,8 @@ describe('get_envelope_info', function () {
         client.logOut(function (err, response) {
           assert.strictEqual(err, null);
           next(null);
-        // done();
         });
       }
-
     ], function () {
       done();
     });

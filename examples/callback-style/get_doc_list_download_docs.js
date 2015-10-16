@@ -1,28 +1,22 @@
 // Unit Testing Imports
 var assert = require('assert');
-var fs = require('fs');
 var async = require('async');
+var fs = require('fs');
 
 var docusign = require('../../docusign.js');
 
-describe('get_status_envelopes', function () {
+describe('get_doc_list_download', function () {
   var docusignEnv = 'demo';
-  var debug = false;
 
-  var config = JSON.parse(fs.readFileSync('config.json'));
-  var integratorKey = config.DOCUSIGN_INTEGRATOR_KEY;
-  var email = config.DOCUSIGN_TEST_EMAIL;
-  var password = config.DOCUSIGN_TEST_PASSWORD;
+  var config = require('../../test-config.json');
+  var debug = config.debug;
+  var integratorKey = config.integratorKey;
+  var email = config.email;
+  var password = config.password;
+  var envelopeId = config.envelopeId;
+  var attachCertificate = false;
 
-  var date = new Date();
-  if (date.getMonth() !== 0) {
-    date.setMonth(date.getMonth() - 1);
-  } else {
-    date.setMonth(12);
-    date.setYear(date.getYear() - 1);
-  }
-
-  it('should return an envelope list', function (done) {
+  it('should return document list and documents', function (done) {
     async.waterfall([
 
       // **********************************************************************************
@@ -48,16 +42,17 @@ describe('get_status_envelopes', function () {
       },
 
       // **********************************************************************************
-      // Step 3 - Get Envelope List
+      // Step 3 - Get Signed Documents
       // **********************************************************************************
-      function getEnvelopeList (client, next) {
-        client.envelopes.getEnvelopeList(date, function (err, response) {
-          assert.ok(!err);
-          // console.log('The Envelopes from ' + date + ' to the present is: \n' + JSON.stringify(response));
-          next(null, client);
+      function getSignedDocuments (client, next) {
+        client.envelopes.getSignedDocuments(envelopeId, null, attachCertificate, function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
+          fs.writeFile('Documents.pdf', response, 'binary', function (err) {
+            assert.ok(!err);
+            next(null, client);
+          });
         });
       },
-
       // **********************************************************************************
       // Step 4 - Revoke OAuth Token for Logout
       // **********************************************************************************

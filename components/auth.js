@@ -26,7 +26,7 @@ exports.getLoginInfo = function (email, password) {
       'X-DocuSign-Authentication': JSON.stringify({
         Username: email,
         Password: password,
-        IntegratorKey: process.env.integratorKey
+        IntegratorKey: dsUtils.internalState.integratorKey
       })
     }
   };
@@ -58,7 +58,7 @@ exports.getOauthToken = function (email, password, baseUrl) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: querystring.stringify({
       grant_type: 'password',
-      client_id: process.env.integratorKey,
+      client_id: dsUtils.internalState.integratorKey,
       username: email,
       password: password,
       scope: 'api'
@@ -145,7 +145,9 @@ function revokeOauthToken (token, baseUrl) {
       return response;
     })
     .catch(function (error) {
+    /* istanbul ignore next */
       error.message = error.message + '\nCannot revoke DS OAuth2 access token.';
+    /* istanbul ignore next */
       throw error;
     });
   });
@@ -167,6 +169,7 @@ function _getTokenEndpoint (baseUrl, action) {
   if (environ && environ.length) {
     return 'https://' + environ[1] + '.docusign.net/restapi/v2/oauth2/' + action;
   } else {
+    /* istanbul ignore next */
     throw new DocuSignError('Unable to parse baseUrl', { baseUrl: baseUrl });
   }
 }
