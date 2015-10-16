@@ -81,7 +81,7 @@ test(function getEnvelopeInfo (t) {
   });
 });
 
-test('getSignedDocuments', t => {
+test(function getSignedDocuments (t) {
   let encoding = null;
   let attachCertificate = true;
   return client.envelopes.getSignedDocuments(envelopeId, encoding, attachCertificate)
