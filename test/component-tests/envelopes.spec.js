@@ -15,6 +15,7 @@ let roleName = config.templateRole;
 let clientUserId = '1001';
 let returnUrl = 'http://www.docusign.com/devcenter';
 let emailSubject = 'DocuSign API - Signature Request on Document Call';
+let additionalParams = {};
 let recipients = {
   signers: [{
     email,
@@ -155,7 +156,6 @@ test(function getTemplateView (t) {
 });
 
 test(function sendEnvelope (t) {
-  let additionalParams = {};
   return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
   .then(response => {
     t.ok(response.envelopeId);
@@ -165,7 +165,6 @@ test(function sendEnvelope (t) {
 });
 
 test(function setEnvelopeStatus (t) {
-  let additionalParams = {};
   return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
   .then(response => {
     t.ok(response.envelopeId);
@@ -188,7 +187,6 @@ test(function setEnvelopeStatus (t) {
 test(function getSignerView (t) {
   let userId = null;
   let authMethod = 'email';
-  let additionalParams = {};
   return client.envelopes.sendTemplate(emailSubject, templateId, templateRoles, additionalParams)
   .then(response => {
     t.ok(response.envelopeId);
@@ -202,5 +200,14 @@ test(function getSignerView (t) {
   .then(response => {
     t.ok(response);
     t.ok(response.url);
+  });
+});
+
+test(function sendTemplate (t) {
+  return client.envelopes.sendTemplate(emailSubject, templateId, templateRoles, additionalParams)
+  .then(response => {
+    t.ok(response.envelopeId);
+    t.ok(response.uri);
+    t.ok(response.status === 'sent');
   });
 });
