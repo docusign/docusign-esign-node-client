@@ -47,6 +47,7 @@
     "lodash.assign": "3.2.0",
     "lodash.foreach": "3.0.3",
     "lodash.isempty": "3.0.4",
+    "lodash.isplainobject": "3.2.0",
     "lodash.merge": "3.3.2",
     "request": "2.22.0",
     "streamifier": "0.1.0",
