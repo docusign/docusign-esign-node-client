@@ -26,7 +26,7 @@ exports.getLoginInfo = function (email, password) {
       'X-DocuSign-Authentication': JSON.stringify({
         Username: email,
         Password: password,
-        IntegratorKey: process.env.integratorKey
+        IntegratorKey: dsUtils.internalState.integratorKey
       })
     }
   };
@@ -58,7 +58,7 @@ exports.getOauthToken = function (email, password, baseUrl) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: querystring.stringify({
       grant_type: 'password',
-      client_id: process.env.integratorKey,
+      client_id: dsUtils.internalState.integratorKey,
       username: email,
       password: password,
       scope: 'api'
