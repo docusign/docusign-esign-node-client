@@ -693,41 +693,14 @@ function setEnvelopeStatus (apiToken, baseUrl, envelopeId, status, additionalPar
  * @returns {Promise} - A thenable bluebird Promise fulfilled with the PDF file buffer in the given `encoding`.
  */
 function getSignedDocuments (apiToken, baseUrl, envelopeId, encoding, attachCertificate) {
-  return new Bluebird(function (resolve, reject) {
-    var options = {
-      method: 'GET',
-      url: baseUrl + '/envelopes/' + envelopeId + '/documents/combined?certificate=' + attachCertificate,
-      headers: dsUtils.getHeaders(apiToken),
-      encoding: encoding
-    };
+  var options = {
+    method: 'GET',
+    url: baseUrl + '/envelopes/' + envelopeId + '/documents/combined?certificate=' + attachCertificate,
+    headers: dsUtils.getHeaders(apiToken),
+    encoding: encoding
+  };
 
-    // @todo: fix this to use makeRequest
-    request(options, function (error, response, body) {
-      if (error) {
-        return reject(error);
-      }
-      if (response.statusCode !== 200 && response.statusCode !== 201) {
-        var parsedBody, message, errorCode;
-        try {
-          parsedBody = JSON.parse(body.toString());
-          message = parsedBody.message;
-          errorCode = parsedBody.errorCode;
-        } catch (e) {
-          message = body.toString();
-          errorCode = null;
-        }
-        return reject(new DocuSignError(response.statusCode + ': ' + message, {
-          statusCode: response.statusCode,
-          errorCode: errorCode
-        }));
-      }
-      resolve(body);
-    });
-  })
-  .catch(DocuSignError, function (error) {
-    dsUtils.log('DS API Get Signed Documents Error:\n %s', error.message);
-    throw error;
-  });
+  return dsUtils.makeRequest('Get Signed Documents', options);
 }
 
 /**
