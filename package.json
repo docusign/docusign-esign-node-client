@@ -9,7 +9,7 @@
     "check-config": "./scripts/check-config.js",
     "test-cb-examples": "mocha examples/callback-style",
     "test-spec": "ava test/**/*.spec.js",
-    "test-cov": "istanbul cover ava -- test/**/*.spec.js",
+    "test-cov": "nyc --reporter=lcov ava test/**/*.spec.js test/*.spec.js",
     "test": "npm run lint && npm run test-cov"
   },
   "keywords": [
@@ -61,11 +61,11 @@
     "babel-eslint": "4.1.3",
     "chalk": "^1.1.0",
     "file-type": "2.5.0",
-    "istanbul": "0.3.22",
     "jsdoc": "3.3.2",
     "lodash.clone": "3.0.3",
     "mocha": "2.2.4",
     "nock": "2.15.0",
+    "nyc": "3.2.2",
     "pre-commit": "1.0.10",
     "proxyquire": "1.7.3",
     "require-uncached": "1.0.2",
