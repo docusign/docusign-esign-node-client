@@ -134,6 +134,23 @@ test(function getRecipients (t) {
   });
 });
 
+test(function getRecipientsWithTabs (t) {
+  return client.envelopes.getRecipients(envelopeId, true)
+  .then(response => {
+    t.ok(response.signers);
+    t.ok(response.signers[0].isBulkRecipient);
+    t.ok(response.signers[0].name);
+    t.ok(response.signers[0].email);
+    t.ok(response.signers[0].recipientId);
+    t.ok(response.signers[0].recipientIdGuid);
+    t.ok(response.signers[0].requireIdLookup);
+    t.ok(response.signers[0].userId);
+    t.ok(response.signers[0].tabs);
+    t.ok(response.signers[0].tabs.signHereTabs);
+    t.ok(response.signers[0].tabs.signHereTabs.length === 1);
+  });
+});
+
 test(function getView (t) {
   let action = 'send';
   let event = null;
