@@ -222,9 +222,6 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
     getRecipients: function (envelopeId, include_tabs, callback) {
-      console.log('arguments: ' + arguments.length);
-      console.log('include_tabs: ' + include_tabs);
-      console.log('callback: ' + callback);
       // handle the case where people omit the tabs
       if (arguments.length === 2 && Object.prototype.toString.call(include_tabs) === '[object Function]') {
         callback = include_tabs;
@@ -867,6 +864,5 @@ function getRecipients (apiToken, baseUrl, envelopeId, include_tabs) {
     url: baseUrl + '/envelopes/' + envelopeId + '/recipients?include_tabs=' + include_tabs,
     headers: dsUtils.getHeaders(apiToken)
   };
-  console.log('options: ' + options.url);
   return dsUtils.makeRequest('Get List of Recipients', options);
 }
