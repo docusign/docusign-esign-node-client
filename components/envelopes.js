@@ -217,11 +217,22 @@ exports.init = function (accountId, baseUrl, accessToken) {
      * @public
      * @function
      * @param {string} envelopeId - ID of envelope to get list of recipients from.
+     * @param {boolean} [include_tabs] - When true the tab information associated with the recipient is included in the response.
      * @param {function} [callback] - Returns the list of recipients in the form of function(error, response).
      * @returns {Promise} - A thenable bluebird Promise; if callback is given it is called before the promise is resolved
      */
-    getRecipients: function (envelopeId, callback) {
-      return getRecipients(accessToken, baseUrl, envelopeId).asCallback(callback);
+    getRecipients: function (envelopeId, include_tabs, callback) {
+      console.log('arguments: ' + arguments.length);
+      console.log('include_tabs: ' + include_tabs);
+      console.log('callback: ' + callback);
+      // handle the case where people omit the tabs
+      if (arguments.length === 2 && Object.prototype.toString.call(include_tabs) === '[object Function]') {
+        callback = include_tabs;
+        include_tabs = false;
+      } else if (arguments.length === 1) {
+        include_tabs = false;
+      }
+      return getRecipients(accessToken, baseUrl, envelopeId, include_tabs).asCallback(callback);
     }
   };
 };
@@ -847,14 +858,15 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl) {
  * @param {string} apiToken - DocuSign API OAuth2 access token.
  * @param {string} baseUrl - DocuSign API base URL.
  * @param {string} envelopeId - ID of envelope to get list of recipients from.
+ * @param {boolean} [include_tabs] - When true the tab information associated with the recipient is included in the response.
  * @returns {Promise} - A thenable bluebird Promise fulfilled with the list of recipients
  */
-function getRecipients (apiToken, baseUrl, envelopeId) {
+function getRecipients (apiToken, baseUrl, envelopeId, include_tabs) {
   var options = {
     method: 'GET',
-    url: baseUrl + '/envelopes/' + envelopeId + '/recipients',
+    url: baseUrl + '/envelopes/' + envelopeId + '/recipients?include_tabs=' + include_tabs,
     headers: dsUtils.getHeaders(apiToken)
   };
-
+  console.log('options: ' + options.url);
   return dsUtils.makeRequest('Get List of Recipients', options);
 }
