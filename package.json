@@ -1,6 +1,6 @@
 {
   "name": "docusign-node",
-  "version": "7.0.4",
+  "version": "7.1.0",
   "description": "A DocuSign API helper library with promise support",
   "main": "docusign.js",
   "scripts": {
