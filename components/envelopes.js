@@ -859,6 +859,7 @@ function getTemplateView (apiToken, baseUrl, templateId, returnUrl) {
  * @returns {Promise} - A thenable bluebird Promise fulfilled with the list of recipients
  */
 function getRecipients (apiToken, baseUrl, envelopeId, include_tabs) {
+  include_tabs = include_tabs != null ? include_tabs : false;
   var options = {
     method: 'GET',
     url: baseUrl + '/envelopes/' + envelopeId + '/recipients?include_tabs=' + include_tabs,

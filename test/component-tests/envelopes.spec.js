@@ -16,6 +16,7 @@ let roleName = config.templateRole;
 let clientUserId = '1001';
 let returnUrl = 'http://www.docusign.com/devcenter';
 let emailSubject = 'DocuSign API - Signature Request on Document Call';
+let include_tabs = true;
 let additionalParams = {};
 let recipients = {
   signers: [{
@@ -135,7 +136,7 @@ test(function getRecipients (t) {
 });
 
 test(function getRecipientsWithTabs (t) {
-  return client.envelopes.getRecipients(envelopeId, true)
+  return client.envelopes.getRecipients(envelopeId, include_tabs)
   .then(response => {
     t.ok(response.signers);
     t.ok(response.signers[0].isBulkRecipient);
