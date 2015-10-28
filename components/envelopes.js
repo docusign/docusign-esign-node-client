@@ -223,6 +223,7 @@ exports.init = function (accountId, baseUrl, accessToken) {
      */
     getRecipients: function (envelopeId, include_tabs, callback) {
       // handle the case where people omit the tabs
+      /* istanbul ignore if */
       if (arguments.length === 2 && Object.prototype.toString.call(include_tabs) === '[object Function]') {
         callback = include_tabs;
         include_tabs = false;
