@@ -56,6 +56,7 @@ var templateRoles = [{
   name: fullName,
   roleName: templateRoleName
 }];
+var additionalParams = {};
 
 async.waterfall([
   // **********************************************************************************
@@ -88,7 +89,7 @@ async.waterfall([
   // Step 3 - Request Signature via Template
   // **********************************************************************************
   function sendTemplate (client, next) {
-    client.envelopes.sendTemplate('Sent from a Template', templateId, templateRoles, function (err, response) {
+    client.envelopes.sendTemplate('Sent from a Template', templateId, templateRoles, additionalParams, function (err, response) {
       if (err) {
         return next(err);
       }
