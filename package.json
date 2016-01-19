@@ -24,7 +24,7 @@
   ],
   "license": {
     "type": "DocuSign",
-    "url": "https://raw.githubusercontent.com/docusign/DocuSign-Node-Client/master/LICENSE"
+    "url": "https://raw.githubusercontent.com/docusign/docusign-node-client/master/LICENSE"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -42,7 +42,7 @@
     "examples",
     "sample-config.json"
   ],
-  "repository": "https://github.com/docusign/DocuSign-Node-Client",
+  "repository": "https://github.com/docusign/docusign-node-client",
   "dependencies": {
     "bluebird": "2.9.34",
     "lodash.assign": "3.2.0",
