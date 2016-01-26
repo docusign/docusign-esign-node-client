@@ -121,7 +121,7 @@ test(function getEnvelopeList (t) {
     date.setMonth(date.getMonth() - 1);
   } else {
     date.setMonth(12);
-    date.setYear(date.getYear() - 1);
+    date.setYear(date.getFullYear() - 1);
   }
   return client.envelopes.getEnvelopeList(date)
   .then(response => {
