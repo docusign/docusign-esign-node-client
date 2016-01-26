@@ -8,7 +8,7 @@ const docusign = require('../../docusign');
 const dsUtils = require('../../dsUtils');
 
 let client = null;
-let envelopeId = config.envelopeId;
+let envelopeId;
 let templateId = config.templateId;
 let fullName = 'DocuSign NPM';
 let email = config.email;
@@ -56,6 +56,17 @@ test.before(function envelopesBefore (t) {
   })
   .then(_client => {
     client = _client;
+    return client;
+  })
+  .then(client => {
+    return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
+    .then(response => {
+      t.ok(response.envelopeId);
+      envelopeId = response.envelopeId;
+      t.ok(response.uri);
+      t.ok(response.status === 'sent');
+      t.pass('Send envelope success');
+    });
   });
 });
 
@@ -185,15 +196,6 @@ test(function getTemplateView (t) {
     var regex = new RegExp('https://demo.docusign.net/Member/StartInSession.aspx?');
     t.ok(response.url);
     t.ok(regex.test(response.url));
-  });
-});
-
-test(function sendEnvelope (t) {
-  return client.envelopes.sendEnvelope(recipients, emailSubject, files, additionalParams)
-  .then(response => {
-    t.ok(response.envelopeId);
-    t.ok(response.uri);
-    t.ok(response.status === 'sent');
   });
 });
 
