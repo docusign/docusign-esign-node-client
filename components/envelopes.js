@@ -8,7 +8,7 @@ var util = require('util');
 var request = require('request');
 var forEach = require('lodash.foreach');
 var isEmpty = require('lodash.isempty');
-var merge = require('lodash.merge');
+var mergeWith = require('lodash.mergewith');
 var log = dsUtils.log;
 var DocuSignError = dsUtils.DocuSignError;
 
@@ -313,7 +313,7 @@ function sendEnvelope (apiToken, baseUrl, recipients, emailSubject, files, addit
 
     recipients.signers.forEach(generateId);
 
-    var data = merge({}, additionalParams, {
+    var data = mergeWith({}, additionalParams, {
       recipients: recipients,
       emailSubject: emailSubject,
       documents: documents,
@@ -675,7 +675,7 @@ function setEnvelopeStatus (apiToken, baseUrl, envelopeId, status, additionalPar
     headers: dsUtils.getHeaders(apiToken)
   };
 
-  var data = merge({}, additionalParams, {
+  var data = mergeWith({}, additionalParams, {
     status: status
   }, function (a, b) {
     return Array.isArray(a) ? /* istanbul ignore next */ a.concat(b) : undefined;
@@ -782,7 +782,7 @@ function getSignerView (apiToken, baseUrl, userId, recipientName, email, clientU
 function sendTemplate (apiToken, baseUrl, emailSubject, templateId, templateRoles, additionalParams) {
   additionalParams = additionalParams != null ? additionalParams : /* istanbul ignore next */ {};
 
-  var data = merge({}, additionalParams, {
+  var data = mergeWith({}, additionalParams, {
     emailSubject: emailSubject,
     templateId: templateId,
     templateRoles: templateRoles,
