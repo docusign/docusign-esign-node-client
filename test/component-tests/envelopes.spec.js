@@ -44,7 +44,7 @@ let files = [{
   extension: 'pdf',
   source: {
     type: 'path',
-    content: 'test/SampleDocument.pdf'
+    content: '../SampleDocument.pdf'
   }
 }];
 
