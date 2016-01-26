@@ -1,7 +1,7 @@
 // Wrapper dealing with DS views APIs
 
 var Bluebird = require('bluebird');
-var streamifier = require('streamifier');
+var intoStream = require('into-stream');
 var fs = require('fs'); // core
 var dsUtils = require('./../dsUtils');
 var util = require('util');
@@ -390,7 +390,7 @@ function createMultipartFilesPrep (parts, documents) {
 
       /* istanbul ignore next */
       case 'base64':
-        download = streamifier.createReadStream(new Buffer(fileSource.content, 'base64'));
+        download = intoStream(new Buffer(fileSource.content, 'base64'));
         break;
 
       /* istanbul ignore next */
