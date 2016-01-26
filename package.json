@@ -50,7 +50,7 @@
     "lodash.isempty": "3.0.4",
     "lodash.isplainobject": "3.2.0",
     "lodash.merge": "3.3.2",
-    "request": "2.22.0",
+    "request": "2.67.0",
     "streamifier": "0.1.0",
     "temp": "0.8.1",
     "uuid": "2.0.1"
@@ -69,7 +69,7 @@
     "pre-commit": "1.0.10",
     "proxyquire": "1.7.3",
     "require-uncached": "1.0.2",
-    "semistandard": "7.0.2",
+    "semistandard": "7.0.5",
     "sinon": "1.17.1",
     "write-json-file": "1.1.1"
   },
