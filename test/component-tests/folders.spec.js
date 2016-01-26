@@ -30,7 +30,7 @@ test(function getEnvelopes (t) {
 });
 
 test(function searchThroughEnvelopes (t) {
-  return client.folders.searchThroughEnvelopes('please')
+  return client.folders.searchThroughEnvelopes('DocuSign')
   .then(response => {
     t.ok(response.folderItems.length > 0);
     t.ok(response.totalSetSize);
