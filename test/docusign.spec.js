@@ -18,7 +18,6 @@ test.beforeEach(function docusignBeforeEach (t) {
   DocuSignError = dsUtils.DocuSignError;
   internalState = dsUtils.internalState;
   t.ok(Object.keys(internalState).length === 0, 'Internal state was not empty');
-  t.end();
 });
 
 test('init with debug', t => {
@@ -68,11 +67,5 @@ test('init with empty integratorKey', t => {
 });
 
 test(function getAuthInfoError (t) {
-  return docusign.getAuthInfo(config.email, `${config.password}nope`)
-  .then(response => {
-    t.notOk(response);
-  })
-  .catch(err => {
-    t.ok(err);
-  });
+  return t.throws(docusign.getAuthInfo(config.email, `${config.password}nope`), /Error getting API token/i);
 });
