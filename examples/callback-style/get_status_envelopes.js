@@ -18,7 +18,7 @@ describe('get_status_envelopes', function () {
     date.setMonth(date.getMonth() - 1);
   } else {
     date.setMonth(12);
-    date.setYear(date.getYear() - 1);
+    date.setYear(date.getFullYear() - 1);
   }
 
   it('should return an envelope list', function (done) {
