@@ -70,7 +70,7 @@
     "proxyquire": "1.7.3",
     "require-uncached": "1.0.2",
     "semistandard": "7.0.5",
-    "sinon": "1.17.1",
+    "sinon": "1.17.2",
     "write-json-file": "1.2.0"
   },
   "pre-commit": [
