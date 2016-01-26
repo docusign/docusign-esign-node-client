@@ -12,7 +12,7 @@ describe('get_envelope_info', function () {
   var integratorKey = config.integratorKey;
   var email = config.email;
   var password = config.password;
-  var envelopeId = config.envelopeId;
+  var envelopeId;
 
   it('should return envelope information', function (done) {
     async.waterfall([
@@ -36,6 +36,18 @@ describe('get_envelope_info', function () {
         docusign.createClient(email, password, function (error, response) {
           assert.ok(!error, 'Unexpected ' + error);
           next(null, response);
+        });
+      },
+
+      // **********************************************************************************
+      // Step 2.1 - Get a valid envelopeId
+      // **********************************************************************************
+      function grabEnvelopeId (client, next) {
+        client.folders.searchThroughEnvelopes('DocuSign', function (error, response) {
+          assert.ok(!error, 'Unexpected ' + error);
+          var sentItems = response.folderItems.filter(function (item) { return item.status === 'sent'; });
+          envelopeId = sentItems[0].envelopeId;
+          next(null, client);
         });
       },
 
