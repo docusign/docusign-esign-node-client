@@ -1,10 +1,10 @@
 'use strict';
 
-const Bluebird = require('bluebird');
-const path = require('path');
-const writeJson = require('write-json-file');
+var Bluebird = require('bluebird');
+var path = require('path');
+var writeJson = require('write-json-file');
 
-const authInfoPath = path.resolve('./auth-info.json');
+var authInfoPath = path.resolve(__dirname, 'auth-info.json');
 
 module.exports = {
   getStoredAuthInfo,
@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function getStoredAuthInfo () {
-  let authInfo;
+  var authInfo;
   try {
     authInfo = require(authInfoPath);
   } catch (e) {
@@ -23,7 +23,7 @@ function getStoredAuthInfo () {
 
 function storeAuthInfo (freshInfo) {
   // make sure we don't overwrite
-  let storedInfo = getStoredAuthInfo();
+  var storedInfo = getStoredAuthInfo();
   if (storedInfo == null) {
     return writeJson(authInfoPath, freshInfo);
   }
