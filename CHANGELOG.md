@@ -1,8 +1,14 @@
 # Changelog
 
 ## Unreleased
+
+## [`a208c63`](https://github.com/docusign/DocuSign-Node-Client/commit/a208c63) (tag: v8.0.0) 8.0.0
+  - [`375efb8`](https://github.com/docusign/DocuSign-Node-Client/commit/375efb8) update docs
+  - [`b4f313f`](https://github.com/docusign/DocuSign-Node-Client/commit/b4f313f) add more comprehensive scripts to update docs
+  - [`73a84b6`](https://github.com/docusign/DocuSign-Node-Client/commit/73a84b6) remove the -node prefix from the package name
+  - [`f4123f0`](https://github.com/docusign/DocuSign-Node-Client/commit/f4123f0) update changelog
   - [`f27f1c8`](https://github.com/docusign/DocuSign-Node-Client/commit/f27f1c8) Merge pull request #42 from docusign/update-deps
-  - [`7349836`](https://github.com/docusign/DocuSign-Node-Client/commit/7349836) (origin/update-deps, update-deps) update babel-eslint to fix build
+  - [`7349836`](https://github.com/docusign/DocuSign-Node-Client/commit/7349836) (origin/update-deps) update babel-eslint to fix build
   - [`bf4171b`](https://github.com/docusign/DocuSign-Node-Client/commit/bf4171b) use mergeWith since merge no longer supports customizers
   - [`a3ffacb`](https://github.com/docusign/DocuSign-Node-Client/commit/a3ffacb) fix the callback tests as well
   - [`05b6ba4`](https://github.com/docusign/DocuSign-Node-Client/commit/05b6ba4) update to latest ava
