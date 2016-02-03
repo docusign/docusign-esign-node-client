@@ -226,7 +226,7 @@ exports.sendMultipart = function (mpUrl, mpHeaders, parts, callback) {
   return new Bluebird(function (resolve, reject) {
     buildMultipartBody.then(function () { // called when all is done
       multipart.write('--' + boundary + '--');
-      var endAsync = Bluebird.promisify(multipart.end, multipart);
+      var endAsync = Bluebird.promisify(multipart.end, {context: multipart});
 
       return endAsync().then(function () {
         fs.createReadStream(tempPath).pipe(request({
