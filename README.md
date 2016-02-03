@@ -11,6 +11,8 @@
 
 [Documentation about this package](http://docusign.github.io/docusign-node-client)
 
+[Changelog](./CHANGELOG.md)
+
 Feel free to create a Pull Request!
 
 Pre-requisites
