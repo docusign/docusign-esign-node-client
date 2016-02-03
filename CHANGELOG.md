@@ -1,12 +1,38 @@
 # Changelog
 
 ## Unreleased
-  - [`c6a342e`](https://github.com/docusign/DocuSign-Node-Client/commit/c6a342e) add changelog
+  - [`f27f1c8`](https://github.com/docusign/DocuSign-Node-Client/commit/f27f1c8) Merge pull request #42 from docusign/update-deps
+  - [`7349836`](https://github.com/docusign/DocuSign-Node-Client/commit/7349836) (origin/update-deps, update-deps) update babel-eslint to fix build
+  - [`bf4171b`](https://github.com/docusign/DocuSign-Node-Client/commit/bf4171b) use mergeWith since merge no longer supports customizers
+  - [`a3ffacb`](https://github.com/docusign/DocuSign-Node-Client/commit/a3ffacb) fix the callback tests as well
+  - [`05b6ba4`](https://github.com/docusign/DocuSign-Node-Client/commit/05b6ba4) update to latest ava
+  - [`61a6ead`](https://github.com/docusign/DocuSign-Node-Client/commit/61a6ead) update chalk
+  - [`1b3a917`](https://github.com/docusign/DocuSign-Node-Client/commit/1b3a917) update pre-commit
+  - [`27501c0`](https://github.com/docusign/DocuSign-Node-Client/commit/27501c0) update sinon
+  - [`e74f454`](https://github.com/docusign/DocuSign-Node-Client/commit/e74f454) update write-json-file
+  - [`077fee8`](https://github.com/docusign/DocuSign-Node-Client/commit/077fee8) bump temp to 0.8.3
+  - [`717f291`](https://github.com/docusign/DocuSign-Node-Client/commit/717f291) use the more reliable and performant into-stream
+  - [`a39d994`](https://github.com/docusign/DocuSign-Node-Client/commit/a39d994) update lodash deps
+  - **BREAKING** [`ff57147`](https://github.com/docusign/DocuSign-Node-Client/commit/ff57147) update to bluebird 3.1.5
+    - This technically could be considered breaking since the promises returned from our public API have changed in accordance with [bluebird 3.0](http://bluebirdjs.com/docs/new-in-bluebird-3.html)
+
+## [`57cd0c5`](https://github.com/docusign/DocuSign-Node-Client/commit/57cd0c5) (tag: v7.1.1) 7.1.1
+  - [`5a2e32c`](https://github.com/docusign/DocuSign-Node-Client/commit/5a2e32c) Merge pull request #41 from docusign/stored-auth-example
+  - [`d28e93c`](https://github.com/docusign/DocuSign-Node-Client/commit/d28e93c) (origin/stored-auth-example) create example of how to store and use authInfo
+  - [`ea07f00`](https://github.com/docusign/DocuSign-Node-Client/commit/ea07f00) include node v5 in travis builds
+  - [`504dcf1`](https://github.com/docusign/DocuSign-Node-Client/commit/504dcf1) Merge pull request #40 from docusign/fix-test-errors
+  - [`84e6646`](https://github.com/docusign/DocuSign-Node-Client/commit/84e6646) (origin/fix-test-errors) use better search term for folder search
+  - [`d55b0b1`](https://github.com/docusign/DocuSign-Node-Client/commit/d55b0b1) use getFullYear in favor of deprecated getYear
+  - [`937d646`](https://github.com/docusign/DocuSign-Node-Client/commit/937d646) set up envelopeId in the setup before envelopes tests
+  - [`38d97bc`](https://github.com/docusign/DocuSign-Node-Client/commit/38d97bc) Merge pull request #39 from drags/upgrade-request
+  - [`6052ada`](https://github.com/docusign/DocuSign-Node-Client/commit/6052ada) Upgrade to non-vulnerable request, upgrade semistandard
+  - [`4af6d3a`](https://github.com/docusign/DocuSign-Node-Client/commit/4af6d3a) lowercase repo now to align with docusign standards :koko:
+  - [`75745ba`](https://github.com/docusign/DocuSign-Node-Client/commit/75745ba) add changelog
   - [`60a2c6e`](https://github.com/docusign/DocuSign-Node-Client/commit/60a2c6e) Update roadmap.md
   - [`dd7bb03`](https://github.com/docusign/DocuSign-Node-Client/commit/dd7bb03) add roadmap
   - [`c278636`](https://github.com/docusign/DocuSign-Node-Client/commit/c278636) update readme example fix #37
 
-## `69fee21` 7.1.0
+## [`69fee21`](https://github.com/docusign/DocuSign-Node-Client/commit/69fee21) 7.1.0
   - [`bf378c5`](https://github.com/docusign/DocuSign-Node-Client/commit/bf378c5) ignore the callback case
   - [`fdd6896`](https://github.com/docusign/DocuSign-Node-Client/commit/fdd6896) Merge pull request #36 from docusign/recipienttabs
   - [`d75ff66`](https://github.com/docusign/DocuSign-Node-Client/commit/d75ff66) (origin/recipienttabs) adopted a few stylistic suggestions from CJ.
@@ -14,7 +40,7 @@
   - **NEW** [`d8d827d`](https://github.com/docusign/DocuSign-Node-Client/commit/) added a parameter to getRecipients to add tabs for recipients
   - [`0c24f91`](https://github.com/docusign/DocuSign-Node-Client/commit/0c24f91) added jsconfig.json file to help with ES6 support in VS Code
 
-## `e686289` (tag: v7.0.4) 7.0.4
+## [`e686289`](https://github.com/docusign/DocuSign-Node-Client/commit/e686289) (tag: v7.0.4) 7.0.4
   - More testing, plus coverage and little badges to denote coverage
   - [`441a99f`](https://github.com/docusign/DocuSign-Node-Client/commit/441a99f) use nyc over istanbul since it works with subprocesses
   - [`29a6c87`](https://github.com/docusign/DocuSign-Node-Client/commit/29a6c87) update docs
