@@ -2,7 +2,7 @@
 
 const test = require('ava');
 const fileType = require('file-type');
-const clone = require('lodash.clone');
+const cloneDeep = require('lodash.clonedeep');
 const config = require('../../test-config.json');
 const docusign = require('../../docusign');
 const dsUtils = require('../../dsUtils');
@@ -44,7 +44,7 @@ let files = [{
   extension: 'pdf',
   source: {
     type: 'path',
-    content: 'test/SampleDocument.pdf'
+    content: '../SampleDocument.pdf'
   }
 }];
 
@@ -200,7 +200,7 @@ test(function getTemplateView (t) {
 });
 
 test(function sendEnvelopeMissingSource (t) {
-  let badFiles = clone(files, true);
+  let badFiles = cloneDeep(files);
   delete badFiles[0].source;
   return client.envelopes.sendEnvelope(recipients, emailSubject, badFiles, additionalParams)
   .then(response => {
