@@ -4,7 +4,9 @@
   "description": "A DocuSign API helper library with promise support",
   "main": "docusign.js",
   "scripts": {
-    "docs": "jsdoc -d doc -r docusign.js dsUtils.js components/ README.md",
+    "docs": "npm run update-docs && git add doc/ && git commit -m 'update docs' && npm run push-docs",
+    "push-docs": "git subtree push --prefix doc origin gh-pages",
+    "update-docs": "jsdoc -d doc -r docusign.js dsUtils.js components/ README.md",
     "lint": "semistandard",
     "check-config": "./scripts/check-config.js",
     "test-cb-examples": "mocha -t 30000 examples/callback-style",
