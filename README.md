@@ -5,7 +5,7 @@
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-> [NPM module](https://www.npmjs.com/package/docusign-node) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
+> [NPM module](https://www.npmjs.com/package/docusign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
 [Documentation about the DocuSign API](https://www.docusign.com/developer-center)
 
@@ -27,7 +27,7 @@ See [Common Terms](https://www.docusign.com/developer-center/explore/overview) f
 Getting Started
 ----------
 
-Install the client locally:  `npm install docusign-node` (note you may have to use `sudo` based on your permissions)
+Install the client locally:  `npm install docusign --save --save-exact` (note you may have to use `sudo` based on your permissions)
 
 The below examples show you how to:
 - Create a DocuSign Object with an Integrator Key and a Target DocuSign Environment
@@ -38,7 +38,7 @@ The below examples show you how to:
 Alternatively, this SDK supports a promise interface via [`bluebird`](https://www.npmjs.com/package/bluebird). An [example](./examples/promise.js) is provided.
 
 ```javascript
-var docusign = require('docusign-node');
+var docusign = require('docusign');
 var async = require('async');
 
 var integratorKey  = '***',                   // Integrator Key associated with your DocuSign Integration
@@ -135,10 +135,10 @@ License
 
 The DocuSign-Node-Client is licensed under the [following LICENSE](LICENSE).
 
-[npm-image]: https://img.shields.io/npm/v/docusign-node.svg?style=flat
-[npm-url]: https://npmjs.org/package/docusign-node
-[downloads-image]: https://img.shields.io/npm/dm/docusign-node.svg?style=flat
-[downloads-url]: https://npmjs.org/package/docusign-node
+[npm-image]: https://img.shields.io/npm/v/docusign.svg?style=flat
+[npm-url]: https://npmjs.org/package/docusign
+[downloads-image]: https://img.shields.io/npm/dm/docusign.svg?style=flat
+[downloads-url]: https://npmjs.org/package/docusign
 [travis-image]: https://img.shields.io/travis/docusign/docusign-node-client.svg?style=flat
 [travis-url]: https://travis-ci.org/docusign/docusign-node-client
 [coveralls-image]: https://img.shields.io/coveralls/docusign/docusign-node-client.svg?style=flat
