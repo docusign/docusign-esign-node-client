@@ -1,4 +1,4 @@
-var docusign = require('docusign-node');
+var docusign = require('docusign');
 var DocuSignError = docusign.DocuSignError;
 
 var integratorKey = '***';        // Integrator Key associated with your DocuSign Integration

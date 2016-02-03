@@ -1,4 +1,4 @@
-var docusign = require('docusign-node');
+var docusign = require('docusign');
 var authStoreHelpers = require('./auth-store-helpers');
 var DocuSignError = docusign.DocuSignError;
 var storeAuthInfo = authStoreHelpers.storeAuthInfo;
