@@ -85,7 +85,7 @@ exports.getApiUrl = function () {
  */
 exports.getHeaders = function (token) {
   return {
-    X-DocuSign-SDK: "Node-legacy",
+    'X-DocuSign-SDK': 'Node-legacy',
     Authorization: 'bearer ' + token
   };
 };
