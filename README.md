@@ -84,7 +84,7 @@ async.waterfall([
     var loginOps = new authApi.LoginOptions();
     loginOps.setApiPassword("true");
     loginOps.setIncludeAccountIdGuid("true");
-    authApi.login(loginOps, function (error, loginInfo, response) {
+    authApi.login(loginOps, function (err, loginInfo, response) {
       if (err) {
         return next(err);
       }
@@ -107,8 +107,8 @@ async.waterfall([
     // create a template role with a valid templateId and roleName and assign signer info
     var tRole = new docusign.TemplateRole();
     tRole.setRoleName(templateRoleName);
-    tRole.setName(signerName);
-    tRole.setEmail(signerEmail);
+    tRole.setName(fullName);
+    tRole.setEmail(recipientEmail);
     
     // create a list of template roles and add our newly created role
     var templateRolesList = [];
@@ -122,14 +122,14 @@ async.waterfall([
     
     // use the |accountId| we retrieved through the Login API to create the Envelope
     var loginAccount = new docusign.LoginAccount();
-   jloginAccount = loginAccounts[0];
+    loginAccount = loginAccounts[0];
     var accountId = loginAccount.accountId;
     
     // instantiate a new EnvelopesApi object
     var envelopesApi = new docusign.EnvelopesApi();
     
-    // call the createEnvelope() API
-    envelopesApi.createEnvelope(accountId, envDef, null, function (error, envelopeSummary, response) {
+    // call the createEnvelope() API 
+    envelopesApi.createEnvelope(accountId, envDef, null, function (err, envelopeSummary, response) {
       if (err) {
         return next(err);
       }
