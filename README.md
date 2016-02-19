@@ -69,7 +69,11 @@ var apiClient = new docusign.ApiClient();
 apiClient.setBasePath(baseUrl);
 
 // create JSON formatted auth header
-const creds = "{\"Username\":\"" + email + "\",\"Password\":\"" + password + "\",\"IntegratorKey\":\"" + integratorKey + "\"}";
+var creds = JSON.stringify({
+  Username: email,
+  Password: password,
+  IntegratorKey: integratorKey
+});
 apiClient.addDefaultHeader("X-DocuSign-Authentication", creds);
 
 // assign api client to the Configuration object
