@@ -1,6 +1,6 @@
 {
   "name": "docusign",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "A DocuSign API helper library with promise support",
   "main": "docusign.js",
   "scripts": {
