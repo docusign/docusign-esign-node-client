@@ -151,12 +151,12 @@ async.waterfall([
 });
 ```
 
-See [CoreRecipes.js](https://github.com/docusign/docusign-node-client/blob/master/test/Recipes/CoreRecipes.js) for more examples.
+See [CoreRecipes.js](./test/Recipes/CoreRecipes.js) for more examples.
 
 Testing
 =======
 
-Unit tests are available in the [Test](/test) folder. 
+Unit tests are available in the [Test](./test) folder.
 
 Support
 =======
