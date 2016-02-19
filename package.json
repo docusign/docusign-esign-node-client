@@ -2,7 +2,7 @@
   "name": "docusign-esign",
   "version": "2.0.0",
   "description": "DocuSign Node.js API client.",
-  "license": "LicenseRef-LICENSE",
+  "license": "MIT",
   "main": "src/index.js",
   "author": "DocuSign Developer Center <devcenter@docusign.com>",
   "contributors": [ "https://github.com/docusign/docusign-node-client/contributors" ],
