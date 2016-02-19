@@ -1,83 +1,33 @@
 {
-  "name": "docusign",
-  "version": "8.0.0",
-  "description": "A DocuSign API helper library with promise support",
-  "main": "docusign.js",
+  "name": "docusign-esign",
+  "version": "2.0.0",
+  "description": "DocuSign Node.js API client.",
+  "license": "LicenseRef-LICENSE",
+  "main": "src/index.js",
+  "author": "DocuSign Developer Center <devcenter@docusign.com>",
+  "contributors": [ "https://github.com/docusign/docusign-node-client/contributors" ],
+  "files": [ "src" ],
+  "keywords": [ "docusign", "esignature", "esign", "digital", "electronic", "transaction", "document", "certificate", "DTM", "PDF" ],
+  "engines": { "node": ">=4.2.0" },
+  "private": true,
+  "repository": { "type": "git", "url": "https://github.com/docusign/docusign-node-client.git" },
   "scripts": {
     "docs": "npm run update-docs && git add doc/ && git commit -m 'update docs' && npm run push-docs",
     "push-docs": "git subtree push --prefix doc origin gh-pages",
-    "update-docs": "jsdoc -d doc -r docusign.js dsUtils.js components/ README.md",
+    "update-docs": "jsdoc -d doc -r src/index.js src/ApiClient.js src/Configuration.js README.md",
     "lint": "semistandard",
-    "check-config": "./scripts/check-config.js",
-    "test-cb-examples": "mocha -t 30000 examples/callback-style",
-    "test-spec": "ava test/**/*.spec.js",
-    "test-cov": "nyc --reporter=lcov ava test/**/*.spec.js test/*.spec.js",
-    "test": "npm run lint && npm run test-cov"
+    "//check-config": "./scripts/check-config.js",
+    "//test": "./node_modules/mocha/bin/mocha SdkUnitTests"
   },
-  "ava": {
-    "verbose": true,
-    "failFast": false
-  },
-  "keywords": [
-    "DocuSign",
-    "promise",
-    "electronic",
-    "signature",
-    "eSignature",
-    "certificate",
-    "DTM",
-    "PDF"
-  ],
-  "license": {
-    "type": "DocuSign",
-    "url": "https://raw.githubusercontent.com/docusign/docusign-node-client/master/LICENSE"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "author": "Nikhil Mashettiwar <nikhil.mashettiwar@docusign.com>",
-  "contributors": [
-    "Chris Beiter <chris.beiter@docusign.com>",
-    "CJ Winslow <whoaa512@gmail.com> (https://github.com/whoaa512)"
-  ],
-  "files": [
-    "docusign.js",
-    "dsUtils.js",
-    "components",
-    "scripts",
-    "examples",
-    "sample-config.json"
-  ],
-  "repository": "https://github.com/docusign/docusign-node-client",
   "dependencies": {
-    "bluebird": "3.1.5",
-    "into-stream": "2.0.0",
-    "lodash.assign": "4.0.1",
-    "lodash.foreach": "4.0.0",
-    "lodash.isempty": "4.0.0",
-    "lodash.isplainobject": "4.0.0",
-    "lodash.mergewith": "4.0.3",
-    "request": "2.67.0",
-    "temp": "0.8.3",
-    "uuid": "2.0.1"
+    "superagent": "1.7.1"
   },
   "devDependencies": {
-    "async": "0.9.0",
-    "ava": "0.11.0",
-    "babel-eslint": "4.1.8",
-    "chalk": "1.1.1",
-    "file-type": "2.5.0",
+    "mocha": "~2.3.4",
     "jsdoc": "3.3.2",
-    "lodash.clonedeep": "4.0.2",
-    "mocha": "2.2.4",
-    "nock": "2.15.0",
-    "nyc": "3.2.2",
+    "babel-eslint": "4.1.8",
     "pre-commit": "1.1.2",
-    "proxyquire": "1.7.3",
-    "require-uncached": "1.0.2",
-    "semistandard": "7.0.5",
-    "sinon": "1.17.2",
-    "write-json-file": "1.2.0"
+    "expect.js": "~0.3.1"
   },
   "pre-commit": [
     "lint"
