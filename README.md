@@ -32,7 +32,7 @@ Alternatively you can just copy the source code directly into your project.
 
 #### Dependencies
 
-This client has the following external dependencies: 
+This client has the following external dependencies:
 
 * superagent 1.7.1
 
@@ -83,7 +83,7 @@ async.waterfall([
   function login (next) {
     // login call available off the AuthenticationApi
     var authApi = new docusign.AuthenticationApi();
-    
+
     // login has some optional parameters we can set
     var loginOps = new authApi.LoginOptions();
     loginOps.setApiPassword("true");
@@ -107,32 +107,32 @@ async.waterfall([
     var envDef = new docusign.EnvelopeDefinition();
     envDef.setEmailSubject("Please sign this document sent from Node SDK)");
     envDef.setTemplateId(templateId);
-    
+
     // create a template role with a valid templateId and roleName and assign signer info
     var tRole = new docusign.TemplateRole();
     tRole.setRoleName(templateRoleName);
     tRole.setName(fullName);
     tRole.setEmail(recipientEmail);
-    
+
     // create a list of template roles and add our newly created role
     var templateRolesList = [];
     templateRolesList.push(tRole);
-    
-    // assign template role(s) to the envelope 
+
+    // assign template role(s) to the envelope
     envDef.setTemplateRoles(templateRolesList);
-    
+
     // send the envelope by setting |status| to "sent". To save as a draft set to "created"
     envDef.setStatus("sent");
-    
+
     // use the |accountId| we retrieved through the Login API to create the Envelope
     var loginAccount = new docusign.LoginAccount();
     loginAccount = loginAccounts[0];
     var accountId = loginAccount.accountId;
-    
+
     // instantiate a new EnvelopesApi object
     var envelopesApi = new docusign.EnvelopesApi();
-    
-    // call the createEnvelope() API 
+
+    // call the createEnvelope() API
     envelopesApi.createEnvelope(accountId, envDef, null, function (err, envelopeSummary, response) {
       if (err) {
         return next(err);
