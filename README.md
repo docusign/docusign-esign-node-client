@@ -26,7 +26,7 @@ Installation
 
 ### NPM Package Manager
 
-Install the client locally:  `npm install docusign --save --save-exact` (note you may have to use `sudo` based on your permissions)
+Install the client locally:  `npm install docusign-esign --save --save-exact` (note you may have to use `sudo` based on your permissions)
 
 Alternatively you can just copy the source code directly into your project.
 
