@@ -9,7 +9,6 @@
   "files": [ "src" ],
   "keywords": [ "docusign", "esignature", "esign", "digital", "electronic", "transaction", "document", "certificate", "DTM", "PDF" ],
   "engines": { "node": ">=4.2.0" },
-  "private": true,
   "repository": { "type": "git", "url": "https://github.com/docusign/docusign-node-client.git" },
   "scripts": {
     "docs": "npm run update-docs && git add doc/ && git commit -m 'update docs' && npm run push-docs",
