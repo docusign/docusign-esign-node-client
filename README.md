@@ -62,9 +62,11 @@ var templateRoles = [{
 }];
 var additionalParams = {};
 
+var baseUrl = "https://demo.docusign.net/restapi";
+
 // initialize the api client
 var apiClient = new docusign.ApiClient();
-apiClient.setBasePath(BaseUrl);
+apiClient.setBasePath(baseUrl);
 
 // create JSON formatted auth header
 const creds = "{\"Username\":\"" + email + "\",\"Password\":\"" + password + "\",\"IntegratorKey\":\"" + integratorKey + "\"}";
