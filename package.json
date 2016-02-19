@@ -28,10 +28,7 @@
     "DTM",
     "PDF"
   ],
-  "license": {
-    "type": "DocuSign",
-    "url": "https://raw.githubusercontent.com/docusign/docusign-node-client/master/LICENSE"
-  },
+  "license": "MIT",
   "engines": {
     "node": ">=0.10.0"
   },

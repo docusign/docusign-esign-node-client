@@ -135,7 +135,7 @@ We follow the [semistandard](https://www.npmjs.com/package/semistandard) style, 
 License
 ----------
 
-The DocuSign-Node-Client is licensed under the [following LICENSE](LICENSE).
+The DocuSign-Node-Client is licensed under the [MIT License](LICENSE).
 
 [npm-image]: https://img.shields.io/npm/v/docusign.svg?style=flat
 [npm-url]: https://npmjs.org/package/docusign
