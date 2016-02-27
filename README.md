@@ -23,7 +23,7 @@ See [Common Terms](https://www.docusign.com/developer-center/explore/overview) f
 Getting Started
 ----------
 
-Install the client locally:  `npm install docusign-node` (note you may have to use `sudo` based on your permissions)
+Install the client locally:  `npm install docusign` (note you may have to use `sudo` based on your permissions)
 
 The below examples show you how to:
 - Create a DocuSign Object with an Integrator Key and a Target DocuSign Environment
@@ -34,7 +34,7 @@ The below examples show you how to:
 Alternatively, this SDK supports a promise interface via [`bluebird`](https://www.npmjs.com/package/bluebird). An [example](./examples/promise.js).
 
 ```javascript
-var docusign = require('docusign-node');
+var docusign = require('docusign');
 var async = require('async');
 
 var integratorKey  = '***',                   // Integrator Key associated with your DocuSign Integration
