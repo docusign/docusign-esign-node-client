@@ -1,7 +1,3 @@
-/* CoreRecipes.js
- * 
- * Simple script that demonstrates how to accomplish various REST API use-cases.  
- */
 const assert = require('assert');
 const docusign = require('../src/index');
 const config = require('../test-config.json');
