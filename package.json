@@ -7,16 +7,15 @@
   "author": "DocuSign Developer Center <devcenter@docusign.com>",
   "contributors": [ "https://github.com/docusign/docusign-node-client/contributors" ],
   "files": [ "src" ],
-  "keywords": [ "docusign", "esignature", "esign", "digital", "electronic", "transaction", "document", "certificate", "DTM", "PDF" ],
+  "keywords": [ "docusign", "signature", "esignature", "esign", "digital", "electronic", "transaction", "document", "certificate", "DTM", "PDF" ],
   "engines": { "node": ">=4.2.0" },
   "repository": { "type": "git", "url": "https://github.com/docusign/docusign-node-client.git" },
   "scripts": {
     "docs": "npm run update-docs && git add doc/ && git commit -m 'update docs' && npm run push-docs",
     "push-docs": "git subtree push --prefix doc origin gh-pages",
     "update-docs": "jsdoc -d doc -r src/index.js src/ApiClient.js src/Configuration.js README.md",
-    "lint": "semistandard",
     "//check-config": "./scripts/check-config.js",
-    "//test": "./node_modules/mocha/bin/mocha SdkUnitTests"
+    "test": "./node_modules/mocha/bin/mocha test/SdkUnitTests"
   },
   "dependencies": {
     "superagent": "1.7.1"
@@ -24,23 +23,6 @@
   "devDependencies": {
     "mocha": "~2.3.4",
     "jsdoc": "3.3.2",
-    "babel-eslint": "4.1.8",
-    "pre-commit": "1.1.2",
     "expect.js": "~0.3.1"
-  },
-  "pre-commit": [
-    "lint"
-  ],
-  "semistandard": {
-    "parser": "babel-eslint",
-    "ignore": [
-      "doc"
-    ],
-    "global": [
-      "it",
-      "describe",
-      "before",
-      "after"
-    ]
   }
 }
