@@ -20,7 +20,7 @@ You can sign up for a free [developer sandbox](https://www.docusign.com/develope
 Requirements
 ============
 
-Node 4.2 or later.
+Node 0.10 or later.
 
 Installation
 ============
