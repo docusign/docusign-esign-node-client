@@ -2,45 +2,47 @@
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
 
-> [NPM module](https://www.npmjs.com/package/docusign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
+> [NPM module](https://www.npmjs.com/package/docusign-esign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
 [Documentation about the DocuSign API](https://www.docusign.com/developer-center)
 
 [Documentation about this package](http://docusign.github.io/docusign-node-client)
-
+<!---
 [Changelog](./CHANGELOG.md)
+commented out
+-->
 
-Feel free to create a Pull Request!
+You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center).
 
-Pre-requisites
-----------
+============
+Requirements
+============
 
-### DocuSign Developer account (Free)
+Node 4.2 or later.
 
-You can create your free dev account at the [DocuSign DevCenter](https://www.docusign.com/developer-center) using this [registration form](https://www.docusign.com/developer-center/get-started). You will need the **Integrator Key** from your developer account in order to use the DocuSign Node Client Library.
+Installation
+============
 
-### Useful Reading
+### NPM Package Manager
 
-See [Common Terms](https://www.docusign.com/developer-center/explore/overview) for an explanation of the basic components of the DocuSign platform.
+Install the client locally:  `npm install docusign-esign --save --save-exact` (note you may have to use `sudo` based on your permissions)
 
-Getting Started
-----------
+Alternatively you can just copy the source code directly into your project.
 
-Install the client locally:  `npm install docusign --save --save-exact` (note you may have to use `sudo` based on your permissions)
+#### Dependencies
 
-The below examples show you how to:
-- Create a DocuSign Object with an Integrator Key and a Target DocuSign Environment
-- Create a DocuSign Client Object and Login using your DocuSign Account Credentials
-- Create a new Envelope using a Template and sending to the recipient you specify
-- Logout of the Client by Revoking the DocuSign user's OAuth Token
+This client has the following external dependencies:
 
-Alternatively, this SDK supports a promise interface via [`bluebird`](https://www.npmjs.com/package/bluebird). An [example](./examples/promise.js) is provided.
+* superagent 1.7.1
+
+Usage
+=====
+
+To initialize the client, make the Login API Call and send a template for signature:
 
 ```javascript
-var docusign = require('docusign');
+var docusign = require('docusign-esign');
 var async = require('async');
 
 var integratorKey  = '***',                   // Integrator Key associated with your DocuSign Integration
@@ -60,54 +62,82 @@ var templateRoles = [{
 }];
 var additionalParams = {};
 
+var baseUrl = "https://demo.docusign.net/restapi";
+
+// initialize the api client
+var apiClient = new docusign.ApiClient();
+apiClient.setBasePath(baseUrl);
+
+// create JSON formatted auth header
+var creds = JSON.stringify({
+  Username: email,
+  Password: password,
+  IntegratorKey: integratorKey
+});
+apiClient.addDefaultHeader("X-DocuSign-Authentication", creds);
+
+// assign api client to the Configuration object
+docusign.Configuration.default.setDefaultApiClient(apiClient);
+
 async.waterfall([
-  // **********************************************************************************
-  // Step 1 - Initialize DocuSign Object with Integrator Key and Desired Environment
-  // **********************************************************************************
-  function init (next) {
-    docusign.init(integratorKey, docusignEnv, debug, function(err, response) {
+  function login (next) {
+    // login call available off the AuthenticationApi
+    var authApi = new docusign.AuthenticationApi();
+
+    // login has some optional parameters we can set
+    var loginOps = new authApi.LoginOptions();
+    loginOps.setApiPassword("true");
+    loginOps.setIncludeAccountIdGuid("true");
+    authApi.login(loginOps, function (err, loginInfo, response) {
       if (err) {
         return next(err);
       }
-      if (response.message === 'successfully initialized') {
-        next();
+      if (loginInfo) {
+        // list of user account(s)
+        // note that a given user may be a member of multiple accounts
+        var loginAccounts = loginInfo.getLoginAccounts();
+        console.log("LoginInformation: " + JSON.stringify(loginAccounts));
+        next(null, loginAccounts);
       }
     });
   },
 
-  // **********************************************************************************
-  // Step 2 - Create a DocuSign Client Object
-  // **********************************************************************************
-  function createClient (next) {
-    docusign.createClient(email, password, function(err, client) {
-      if (err) {
-        return next(err);
-      }
-      next(null, client);
-    });
-  },
+  function sendTemplate (loginAccounts, next) {
+    // create a new envelope object that we will manage the signature request through
+    var envDef = new docusign.EnvelopeDefinition();
+    envDef.setEmailSubject("Please sign this document sent from Node SDK)");
+    envDef.setTemplateId(templateId);
 
-  // **********************************************************************************
-  // Step 3 - Request Signature via Template
-  // **********************************************************************************
-  function sendTemplate (client, next) {
-    client.envelopes.sendTemplate('Sent from a Template', templateId, templateRoles, additionalParams, function (err, response) {
-      if (err) {
-        return next(err);
-      }
-      console.log('The envelope information of the created envelope is: \n' + JSON.stringify(response));
-      next(null, client);
-    });
-  },
+    // create a template role with a valid templateId and roleName and assign signer info
+    var tRole = new docusign.TemplateRole();
+    tRole.setRoleName(templateRoleName);
+    tRole.setName(fullName);
+    tRole.setEmail(recipientEmail);
 
-  // **********************************************************************************
-  // Step 4 - Revoke OAuth Token for Logout
-  // **********************************************************************************
-  function logOut (client, next) {
-    client.logOut(function (err, response) {
+    // create a list of template roles and add our newly created role
+    var templateRolesList = [];
+    templateRolesList.push(tRole);
+
+    // assign template role(s) to the envelope
+    envDef.setTemplateRoles(templateRolesList);
+
+    // send the envelope by setting |status| to "sent". To save as a draft set to "created"
+    envDef.setStatus("sent");
+
+    // use the |accountId| we retrieved through the Login API to create the Envelope
+    var loginAccount = new docusign.LoginAccount();
+    loginAccount = loginAccounts[0];
+    var accountId = loginAccount.accountId;
+
+    // instantiate a new EnvelopesApi object
+    var envelopesApi = new docusign.EnvelopesApi();
+
+    // call the createEnvelope() API
+    envelopesApi.createEnvelope(accountId, envDef, null, function (err, envelopeSummary, response) {
       if (err) {
         return next(err);
       }
+      console.log("EnvelopeSummary: " + JSON.stringify(envelopeSummary));
       next(null);
     });
   }
@@ -121,27 +151,29 @@ async.waterfall([
 });
 ```
 
-How to run Unit Tests
------------
+See [CoreRecipes.js](./test/Recipes/CoreRecipes.js) for more examples.
 
-In the console run `npm test`.
+Testing
+=======
 
-Contributing
-----------
+Unit tests are available in the [Test](./test) folder.
 
-Pull requests and new issues are welcomed and encouraged!
-We follow the [semistandard](https://www.npmjs.com/package/semistandard) style, please make your contributions conform to this.
+Support
+=======
+
+Feel free to log issues against this client through GitHub.  We also have an active developer community on Stack Overflow, search the [DocuSignAPI](http://stackoverflow.com/questions/tagged/docusignapi) tag.
 
 License
-----------
+=======
 
-The DocuSign-Node-Client is licensed under the [MIT License](LICENSE).
+The DocuSign Node Client is licensed under the following [License](LICENSE).
 
-[npm-image]: https://img.shields.io/npm/v/docusign.svg?style=flat
-[npm-url]: https://npmjs.org/package/docusign
-[downloads-image]: https://img.shields.io/npm/dm/docusign.svg?style=flat
-[downloads-url]: https://npmjs.org/package/docusign
-[travis-image]: https://img.shields.io/travis/docusign/docusign-node-client.svg?style=flat
-[travis-url]: https://travis-ci.org/docusign/docusign-node-client
-[coveralls-image]: https://img.shields.io/coveralls/docusign/docusign-node-client.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/docusign/docusign-node-client?branch=master
+Notes
+=======
+
+This version of the client library does not implement all of the DocuSign REST API methods. The current client omits methods in the Accounts, Billing, Cloud Storage, Connect, Groups (Branding), and Templates (Bulk Recipients) categories. The client's methods support the core set of use cases that most integrations will encounter. For a complete list of omitted endpoints, see [Omitted Endpoints](./omitted_endpoints.md).
+
+[npm-image]: https://img.shields.io/npm/v/docusign-esign.svg?style=flat
+[npm-url]: https://npmjs.org/package/docusign-esign
+[downloads-image]: https://img.shields.io/npm/dm/docusign-esign.svg?style=flat
+[downloads-url]: https://npmjs.org/package/docusign-esign
