@@ -1,15 +1,36 @@
 {
   "name": "docusign-esign",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "DocuSign Node.js API client.",
   "license": "MIT",
   "main": "src/index.js",
   "author": "DocuSign Developer Center <devcenter@docusign.com>",
-  "contributors": [ "https://github.com/docusign/docusign-node-client/contributors" ],
-  "files": [ "src" ],
-  "keywords": [ "docusign", "signature", "esignature", "esign", "digital", "electronic", "transaction", "document", "certificate", "DTM", "PDF" ],
-  "engines": { "node": ">=4.2.0" },
-  "repository": { "type": "git", "url": "https://github.com/docusign/docusign-node-client.git" },
+  "contributors": [
+    "https://github.com/docusign/docusign-node-client/contributors"
+  ],
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "docusign",
+    "signature",
+    "esignature",
+    "esign",
+    "digital",
+    "electronic",
+    "transaction",
+    "document",
+    "certificate",
+    "DTM",
+    "PDF"
+  ],
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/docusign/docusign-node-client.git"
+  },
   "scripts": {
     "docs": "npm run update-docs && git add doc/ && git commit -m 'update docs' && npm run push-docs",
     "push-docs": "git subtree push --prefix doc origin gh-pages",
@@ -18,7 +39,10 @@
     "test": "semistandard && ./node_modules/mocha/bin/mocha test/SdkUnitTests"
   },
   "semistandard": {
-    "globals": [ "describe", "it" ],
+    "globals": [
+      "describe",
+      "it"
+    ],
     "ignore": [
       "/src",
       "/doc",
