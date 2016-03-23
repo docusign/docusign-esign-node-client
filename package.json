@@ -15,7 +15,15 @@
     "push-docs": "git subtree push --prefix doc origin gh-pages",
     "update-docs": "jsdoc -d doc -r src/index.js src/ApiClient.js src/Configuration.js README.md",
     "//check-config": "./scripts/check-config.js",
-    "test": "./node_modules/mocha/bin/mocha test/SdkUnitTests"
+    "test": "semistandard && ./node_modules/mocha/bin/mocha test/SdkUnitTests"
+  },
+  "semistandard": {
+    "globals": [ "describe", "it" ],
+    "ignore": [
+      "/src",
+      "/doc",
+      "/scripts"
+    ]
   },
   "dependencies": {
     "superagent": "1.7.1"
@@ -23,6 +31,7 @@
   "devDependencies": {
     "mocha": "~2.3.4",
     "jsdoc": "3.3.2",
+    "semistandard": "*",
     "expect.js": "~0.3.1"
   }
 }
