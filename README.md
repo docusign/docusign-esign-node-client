@@ -46,24 +46,16 @@ To initialize the client, make the Login API Call and send a template for signat
 var docusign = require('docusign-esign');
 var async = require('async');
 
-var integratorKey  = '***',                   // Integrator Key associated with your DocuSign Integration
-  email            = 'YOUR_EMAIL',            // Email for your DocuSign Account
-  password         = 'YOUR_PASSWORD',         // Password for your DocuSign Account
-  docusignEnv      = 'demo',                  // DocuSign Environment generally demo for testing purposes
-  fullName         = 'Joan Jett',             // Recipient's Full Name
-  recipientEmail   = 'joan.jett@example.com', // Recipient's Email
-  templateId       = '***',                   // ID of the Template you want to create the Envelope with
-  templateRoleName = '***',                   // Role Name of the Template
-  debug            = false;                   // Enable debug logging and debug responses from API
+var integratorKey = '***';                    // Integrator Key associated with your DocuSign Integration
+var email = 'YOUR_EMAIL';                     // Email for your DocuSign Account
+var password = 'YOUR_PASSWORD';               // Password for your DocuSign Account
+var docusignEnv = 'demo';                     // DocuSign Environment generally demo for testing purposes
+var fullName = 'Joan Jett';                   // Recipient's Full Name
+var recipientEmail = 'joan.jett@example.com'; // Recipient's Email
+var templateId = '***';                       // ID of the Template you want to create the Envelope with
+var templateRoleName = '***';                 // Role Name of the Template
 
-var templateRoles = [{
-  email: email,
-  name: fullName,
-  roleName: templateRoleName
-}];
-var additionalParams = {};
-
-var baseUrl = "https://demo.docusign.net/restapi";
+var baseUrl = 'https://' + docusignEnv + '.docusign.net/restapi';
 
 // initialize the api client
 var apiClient = new docusign.ApiClient();
@@ -75,7 +67,7 @@ var creds = JSON.stringify({
   Password: password,
   IntegratorKey: integratorKey
 });
-apiClient.addDefaultHeader("X-DocuSign-Authentication", creds);
+apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
 // assign api client to the Configuration object
 docusign.Configuration.default.setDefaultApiClient(apiClient);
@@ -87,8 +79,8 @@ async.waterfall([
 
     // login has some optional parameters we can set
     var loginOps = new authApi.LoginOptions();
-    loginOps.setApiPassword("true");
-    loginOps.setIncludeAccountIdGuid("true");
+    loginOps.setApiPassword('true');
+    loginOps.setIncludeAccountIdGuid('true');
     authApi.login(loginOps, function (err, loginInfo, response) {
       if (err) {
         return next(err);
@@ -97,7 +89,7 @@ async.waterfall([
         // list of user account(s)
         // note that a given user may be a member of multiple accounts
         var loginAccounts = loginInfo.getLoginAccounts();
-        console.log("LoginInformation: " + JSON.stringify(loginAccounts));
+        console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
         next(null, loginAccounts);
       }
     });
@@ -106,7 +98,7 @@ async.waterfall([
   function sendTemplate (loginAccounts, next) {
     // create a new envelope object that we will manage the signature request through
     var envDef = new docusign.EnvelopeDefinition();
-    envDef.setEmailSubject("Please sign this document sent from Node SDK)");
+    envDef.setEmailSubject('Please sign this document sent from Node SDK');
     envDef.setTemplateId(templateId);
 
     // create a template role with a valid templateId and roleName and assign signer info
@@ -122,8 +114,8 @@ async.waterfall([
     // assign template role(s) to the envelope
     envDef.setTemplateRoles(templateRolesList);
 
-    // send the envelope by setting |status| to "sent". To save as a draft set to "created"
-    envDef.setStatus("sent");
+    // send the envelope by setting |status| to 'sent'. To save as a draft set to 'created'
+    envDef.setStatus('sent');
 
     // use the |accountId| we retrieved through the Login API to create the Envelope
     var loginAccount = new docusign.LoginAccount();
@@ -138,7 +130,7 @@ async.waterfall([
       if (err) {
         return next(err);
       }
-      console.log("EnvelopeSummary: " + JSON.stringify(envelopeSummary));
+      console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
       next(null);
     });
   }
@@ -146,10 +138,11 @@ async.waterfall([
 ], function end (error) {
   if (error) {
     console.log('Error: ', error);
-    process.exit(1)
+    process.exit(1);
   }
-  process.exit()
+  process.exit();
 });
+
 ```
 
 See [CoreRecipes.js](./test/Recipes/CoreRecipes.js) for more examples.
