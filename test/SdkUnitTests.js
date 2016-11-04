@@ -9,7 +9,7 @@ const TemplateId = config.templateId;
 
 // for production environment update to "www.docusign.net/restapi"
 const BaseUrl = 'https://demo.docusign.net/restapi';
-const SignTest1File = '/docs/SignTest1.pdf';
+const SignTest1File = './docs/SignTest1.pdf';
 var accountId = '';
 var envelopeId = '';
 
@@ -48,7 +48,7 @@ describe('SDK Unit Tests:', function () {
       var fs = require('fs');
       var path = require('path');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve('/..', SignTest1File));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -162,7 +162,7 @@ describe('SDK Unit Tests:', function () {
       var fs = require('fs');
       var path = require('path');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve('/..', SignTest1File));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -255,7 +255,7 @@ describe('SDK Unit Tests:', function () {
             var fs = require('fs'),
                 path = require('path');
             // read file from a local directory
-            fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+            fileBytes = fs.readFileSync(path.resolve('/..', SignTest1File));
 
         } catch (ex) {
             // handle error
@@ -327,7 +327,7 @@ describe('SDK Unit Tests:', function () {
       var fs = require('fs');
       var path = require('path');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve('/..', SignTest1File));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -403,7 +403,8 @@ describe('SDK Unit Tests:', function () {
               var fs = require('fs');
               var path = require('path');
               // download the document pdf
-              var tempFile = path.resolve(__filename + '/../' + accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf');
+              var filename = './' + accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+              var tempFile = path.resolve('/../', filename);
               fs.writeFile(tempFile, new Buffer(pdfBytes, 'binary'), function (err) {
                 if (err) console.log('Error: ' + err);
               });
@@ -440,7 +441,7 @@ describe('SDK Unit Tests:', function () {
       var fs = require('fs');
       var path = require('path');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve('/..', SignTest1File));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -522,7 +523,8 @@ describe('SDK Unit Tests:', function () {
               var fs = require('fs');
               var path = require('path');
               // download the document pdf
-              var tempFile = path.resolve(__filename + '/../' + accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf');
+              var filename = './' + accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+              var tempFile = path.resolve('/..', filename);
               fs.writeFile(tempFile, new Buffer(pdfBytes, 'binary'), function (err) {
                 if (err) console.log('Error: ' + err);
               });
@@ -548,7 +550,8 @@ describe('SDK Unit Tests:', function () {
                       var fs = require('fs');
                       var path = require('path');
                       // download the document pdf
-                      var tempFile = path.resolve(__filename + '/../' + requestLogId + '.txt');
+                      var filename = './' + requestLogId + '.txt';
+                      var tempFile = path.resolve('/..', filename);
                       fs.writeFile(tempFile, diagBytes, function (err) {
                         if (err) console.log('Error: ' + err);
                       });
