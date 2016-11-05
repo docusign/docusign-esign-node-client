@@ -1,15 +1,15 @@
-const assert = require('assert');
-const docusign = require('../src/index');
-const config = require('../test-config.json');
+var assert = require('assert');
+var docusign = require('../src/index');
+var config = require('../test-config.json');
 
-const UserName = config.email;
-const Password = config.password;
-const IntegratorKey = config.integratorKey;
-const TemplateId = config.templateId;
+var UserName = config.email;
+var Password = config.password;
+var IntegratorKey = config.integratorKey;
+var TemplateId = config.templateId;
 
 // for production environment update to "www.docusign.net/restapi"
-const BaseUrl = 'https://demo.docusign.net/restapi';
-const SignTest1File = 'docs/SignTest1.pdf';
+var BaseUrl = 'https://demo.docusign.net/restapi';
+var SignTest1File = 'docs/SignTest1.pdf';
 var accountId = '';
 var envelopeId = '';
 
@@ -18,7 +18,7 @@ describe('SDK Unit Tests:', function () {
     var apiClient = new docusign.ApiClient();
     apiClient.setBasePath(BaseUrl);
 
-    const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+    var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
     apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
     docusign.Configuration.default.setDefaultApiClient(apiClient);
 
@@ -116,7 +116,7 @@ describe('SDK Unit Tests:', function () {
   });
 
   it('requestSignatureFromTemplate', function (done) {
-    const templateRoleName = 'Needs to sign';
+    var templateRoleName = 'Needs to sign';
 
     // create an envelope to be signed
     var envDef = new docusign.EnvelopeDefinition();
@@ -187,12 +187,12 @@ describe('SDK Unit Tests:', function () {
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
     signer.setEmail(UserName);
-    const name = 'Pat Developer';
+    var name = 'Pat Developer';
     signer.setName(name);
     signer.setRecipientId('1');
 
     // this value represents the client's unique identifier for the signer
-    const clientUserId = '2939';
+    var clientUserId = '2939';
     signer.setClientUserId(clientUserId);
 
     // create a signHere tab somewhere on the document for the signer to sign
@@ -228,7 +228,7 @@ describe('SDK Unit Tests:', function () {
 
       if (envelopeSummary) {
         console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-        const returnUrl = 'http://www.docusign.com/developer-center';
+        var returnUrl = 'http://www.docusign.com/developer-center';
         var recipientView = new docusign.RecipientViewRequest();
         recipientView.setReturnUrl(returnUrl);
         recipientView.setClientUserId(clientUserId);
@@ -352,12 +352,12 @@ describe('SDK Unit Tests:', function () {
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
     signer.setEmail(UserName);
-    const name = 'Pat Developer';
+    var name = 'Pat Developer';
     signer.setName(name);
     signer.setRecipientId('1');
 
     // this value represents the client's unique identifier for the signer
-    const clientUserId = '2939';
+    var clientUserId = '2939';
     signer.setClientUserId(clientUserId);
 
     // create a signHere tab somewhere on the document for the signer to sign
@@ -466,12 +466,12 @@ describe('SDK Unit Tests:', function () {
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
     signer.setEmail(UserName);
-    const name = 'Pat Developer';
+    var name = 'Pat Developer';
     signer.setName(name);
     signer.setRecipientId('1');
 
     // this value represents the client's unique identifier for the signer
-    const clientUserId = '2939';
+    var clientUserId = '2939';
     signer.setClientUserId(clientUserId);
 
     // create a signHere tab somewhere on the document for the signer to sign

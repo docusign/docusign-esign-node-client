@@ -7,14 +7,14 @@ var docusign = require('docusign-esign');
 
 // Note: Following values are class members for readability and easy testing
 // TODO: Enter your DocuSign credentials
-const UserName = '[EMAIL]';
-const Password = '[PASSWORD]';
+var UserName = '[EMAIL]';
+var Password = '[PASSWORD]';
 
 // TODO: Enter your Integrator Key (aka API key), created through your developer sandbox preferences
-const IntegratorKey = '[INTEGRATOR_KEY]';
+var IntegratorKey = '[INTEGRATOR_KEY]';
 
 // for production environment update to 'www.docusign.net/restapi'
-const BaseUrl = 'https://demo.docusign.net/restapi';
+var BaseUrl = 'https://demo.docusign.net/restapi';
 
 /* ****************************************************************************************************************
 * RequestSignatureOnDocument()
@@ -24,18 +24,18 @@ const BaseUrl = 'https://demo.docusign.net/restapi';
 ******************************************************************************************************************/
 var RequestSignatureOnDocument = function () {
   // TODO: Enter signer information and path to a test file
-  const signerName = '[SIGNER_NAME]';
-  const signerEmail = '[SIGNER_EMAIL]';
+  var signerName = '[SIGNER_NAME]';
+  var signerEmail = '[SIGNER_EMAIL]';
 
   // point to a local document for testing
-  const SignTest1File = '[PATH/TO/DOCUMENT/TEST.PDF]';
+  var SignTest1File = '[PATH/TO/DOCUMENT/TEST.PDF]';
 
   // initialize the api client
   var apiClient = new docusign.ApiClient();
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -156,17 +156,17 @@ var RequestSignatureOnDocument = function () {
 ******************************************************************************************************************/
 var RequestSignatureFromTemplate = function () {
   // TODO: Enter signer information and template info from a template in your account
-  const signerName = '[SIGNER_NAME]';
-  const signerEmail = '[SIGNER_EMAIL]';
-  const templateId = '[TEMPLATE_ID]';
-  const templateRoleName = '[TEMPLATE_ROLE_NAME]';
+  var signerName = '[SIGNER_NAME]';
+  var signerEmail = '[SIGNER_EMAIL]';
+  var templateId = '[TEMPLATE_ID]';
+  var templateRoleName = '[TEMPLATE_ROLE_NAME]';
 
   // initialize the api client
   var apiClient = new docusign.ApiClient();
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -251,14 +251,14 @@ var RequestSignatureFromTemplate = function () {
 ******************************************************************************************************************/
 var GetEnvelopeInformation = function () {
   // TODO: Enter envelopeId of an envelope you have access to (i.e. you sent the envelope or you're an account admin)
-  const envelopeId = '[ENVELOPE_ID]';
+  var envelopeId = '[ENVELOPE_ID]';
 
   // initialize the api client
   var apiClient = new docusign.ApiClient();
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -321,14 +321,14 @@ var GetEnvelopeInformation = function () {
 ******************************************************************************************************************/
 var listRecipients = function () {
   // TODO: Enter envelopeId of an envelope you have access to (i.e. you sent the envelope or you're an account admin)
-  const envelopeId = '[ENVELOPE_ID]';
+  var envelopeId = '[ENVELOPE_ID]';
 
   // initialize the api client
   var apiClient = new docusign.ApiClient();
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -395,7 +395,7 @@ var ListEnvelopes = function () {
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -466,15 +466,15 @@ var ListEnvelopes = function () {
 var GetEnvelopeDocuments = function () {
   // TODO: Enter envelopeId of an envelope you have access to (i.e. you sent the envelope or
   // you're an account admin in same account).  Also provide a valid documentId
-  const envelopeId = '[ENVELOPE_ID]';
-  const documentId = '[DOCUMENT_ID]';
+  var envelopeId = '[ENVELOPE_ID]';
+  var documentId = '[DOCUMENT_ID]';
 
   // initialize the api client
   var apiClient = new docusign.ApiClient();
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -550,11 +550,11 @@ var GetEnvelopeDocuments = function () {
 ******************************************************************************************************************/
 var EmbeddedSending = function () {
   // TODO: Enter signer info and path to a test file
-  const signerName = '[SIGNER_NAME]';
-  const signerEmail = '[SIGNER_EMAIL]';
+  var signerName = '[SIGNER_NAME]';
+  var signerEmail = '[SIGNER_EMAIL]';
 
   // point to a local document for testing
-  const SignTest1File = '[PATH/TO/DOCUMENT/TEST.PDF]';
+  var SignTest1File = '[PATH/TO/DOCUMENT/TEST.PDF]';
 
   // we will generate this from the second API call we make
   var envelopeId = '';
@@ -564,7 +564,7 @@ var EmbeddedSending = function () {
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -713,11 +713,11 @@ var EmbeddedSending = function () {
 ******************************************************************************************************************/
 var EmbeddedSigning = function () {
   // TODO: Enter signer info and path to a test file
-  const signerName = '[SIGNER_NAME]';
-  const signerEmail = '[SIGNER_EMAIL]';
+  var signerName = '[SIGNER_NAME]';
+  var signerEmail = '[SIGNER_EMAIL]';
 
   // point to a local document for testing
-  const SignTest1File = '[PATH/TO/DOCUMENT/TEST.PDF]';
+  var SignTest1File = '[PATH/TO/DOCUMENT/TEST.PDF]';
 
   // we will generate this from the second API call we make
   var envelopeId = '';
@@ -727,7 +727,7 @@ var EmbeddedSigning = function () {
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
@@ -890,7 +890,7 @@ var EmbeddedConsole = function () {
   apiClient.setBasePath(BaseUrl);
 
   // create JSON formatted auth header
-  const creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+  var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
   apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
   // assign api client to the Configuration object
