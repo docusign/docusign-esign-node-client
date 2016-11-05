@@ -4,6 +4,7 @@
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 [![bitHound Overall Score][bitHound-image]][bitHound-url]
+[![Dependency Status] [david-image]][david-url]
 
 > [NPM module](https://www.npmjs.com/package/docusign-esign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
@@ -176,4 +177,5 @@ This version of the client library does not implement all of the DocuSign REST A
 [travis-url]: https://travis-ci.org/docusign/docusign-node-client
 [bitHound-image]: https://www.bithound.io/github/docusign/docusign-node-client/badges/score.svg
 [bitHound-url]: https://www.bithound.io/github/docusign/docusign-node-client
- 
+[david-image]: https://david-dm.org/docusign/docusign-node-client.svg
+[david-url]: https://david-dm.org/docusign/docusign-node-client
