@@ -55,7 +55,7 @@
   "devDependencies": {
     "mocha": "~2.3.4",
     "jsdoc": "3.3.2",
-    "semistandard": "*",
+    "semistandard": "^8.0.0",
     "expect.js": "~0.3.1"
   }
 }
