@@ -73,7 +73,7 @@ var RequestSignatureOnDocument = function () {
         var fs = require('fs');
         var path = require('path');
         // read file from a local directory
-        fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+        fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
       } catch (ex) {
         // handle error
         console.log('Exception: ' + ex);
@@ -526,7 +526,8 @@ var GetEnvelopeDocuments = function () {
             var fs = require('fs');
             var path = require('path');
             // download the document pdf
-            var tempFile = path.resolve(__filename + '/../' + accountId + '_' + envelopeId + '_' + documentId + '.pdf');
+            var filename = accountId + '_' + envelopeId + '_' + documentId + '.pdf';
+            var tempFile = path.resolve(__dirname, filename);
             fs.writeFile(tempFile, new Buffer(document, 'binary'), function (err) {
               if (err) console.log('Error: ' + err);
             });
@@ -601,7 +602,7 @@ var EmbeddedSending = function () {
         var fs = require('fs');
         var path = require('path');
         // read file from a local directory
-        fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+        fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
       } catch (ex) {
         console.log('Exception: ' + ex);
       }
@@ -764,7 +765,7 @@ var EmbeddedSigning = function () {
         var fs = require('fs');
         var path = require('path');
         // read file from a local directory
-        fileBytes = fs.readFileSync(path.resolve(__filename + '/..' + SignTest1File));
+        fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
       } catch (ex) {
         // TODO: handle error
         console.log('Exception: ' + ex);
