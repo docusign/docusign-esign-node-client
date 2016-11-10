@@ -92,12 +92,20 @@ async.waterfall([
         // note that a given user may be a member of multiple accounts
         var loginAccounts = loginInfo.getLoginAccounts();
         console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
-        next(null, loginAccounts);
+        var loginAccount = loginAccounts[0];
+        var accountId = loginAccount.accountId;
+        var baseUrl = loginAccount.baseUrl;
+        var accountDomain = baseUrl.split("/v2");
+
+        // below code required for production, no effect in demo (same domain)
+        apiClient.setBasePath(accountDomain[0]);
+        docusign.Configuration.default.setDefaultApiClient(apiClient);
+        next(null, loginAccount);
       }
     });
   },
 
-  function sendTemplate (loginAccounts, next) {
+  function sendTemplate (loginAccount, next) {
     // create a new envelope object that we will manage the signature request through
     var envDef = new docusign.EnvelopeDefinition();
     envDef.setEmailSubject('Please sign this document sent from Node SDK');
@@ -120,8 +128,6 @@ async.waterfall([
     envDef.setStatus('sent');
 
     // use the |accountId| we retrieved through the Login API to create the Envelope
-    var loginAccount = new docusign.LoginAccount();
-    loginAccount = loginAccounts[0];
     var accountId = loginAccount.accountId;
 
     // instantiate a new EnvelopesApi object
