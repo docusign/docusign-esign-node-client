@@ -22,24 +22,6 @@
   var DiagnosticsSettingsInformation = function DiagnosticsSettingsInformation() { 
     var self = this;
     
-    /**
-     * When set to **true**, enables API request logging for the user.
-     * datatype: String
-     **/
-    self.apiRequestLogging = null;
-    
-    /**
-     * Specifies the maximum number of API requests to log.
-     * datatype: String
-     **/
-    self.apiRequestLogMaxEntries = null;
-    
-    /**
-     * Indicates the remaining number of API requests that can be logged.
-     * datatype: String
-     **/
-    self.apiRequestLogRemainingEntries = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

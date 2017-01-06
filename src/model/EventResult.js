@@ -22,30 +22,6 @@
   var EventResult = function EventResult() { 
     var self = this;
     
-    /**
-     * Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * datatype: String
-     **/
-    self.status = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.eventTimestamp = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.failureDescription = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.vendorFailureStatusCode = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

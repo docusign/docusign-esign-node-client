@@ -22,24 +22,6 @@
   var TemplateMatch = function TemplateMatch() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.matchPercentage = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.documentStartPage = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.documentEndPage = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

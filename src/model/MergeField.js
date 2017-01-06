@@ -24,36 +24,6 @@
   var MergeField = function MergeField() { 
     var self = this;
     
-    /**
-     * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
-     * datatype: String
-     **/
-    self.configurationType = null;
-    
-    /**
-     * Sets the object associated with the custom tab. Currently this is the Salesforce Object.
-     * datatype: String
-     **/
-    self.path = null;
-    
-    /**
-     * When wet to true, the information entered in the tab automatically updates the related Salesforce data when an envelope is completed.
-     * datatype: String
-     **/
-    self.writeBack = null;
-    
-    /**
-     * When set to **true**, the sender can modify the value of the custom tab during the sending process.
-     * datatype: String
-     **/
-    self.allowSenderToEdit = null;
-    
-    /**
-     * Specifies the row number in a Salesforce table that the merge field value corresponds to.
-     * datatype: String
-     **/
-    self.row = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

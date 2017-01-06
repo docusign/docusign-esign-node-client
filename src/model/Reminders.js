@@ -22,24 +22,6 @@
   var Reminders = function Reminders() { 
     var self = this;
     
-    /**
-     * When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used.
-     * datatype: String
-     **/
-    self.reminderEnabled = null;
-    
-    /**
-     * An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient.
-     * datatype: String
-     **/
-    self.reminderDelay = null;
-    
-    /**
-     * An interger that sets the interval, in days, between reminder emails.
-     * datatype: String
-     **/
-    self.reminderFrequency = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -29,30 +29,6 @@
     self.serviceVersions = [];
     
     /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.buildVersion = null;
-    
-    /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.buildBranch = null;
-    
-    /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.buildSHA = null;
-    
-    /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.buildBranchDeployedDateTime = null;
-    
-    /**
      * 
      * datatype: Array
      **/

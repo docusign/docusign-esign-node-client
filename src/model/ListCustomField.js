@@ -28,47 +28,6 @@
      **/
     self.listItems = [];
     
-    /**
-     * An ID used to specify a custom field.
-     * datatype: String
-     **/
-    self.fieldId = null;
-    
-    /**
-     * The name of the custom field.
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * A boolean indicating if the value should be displayed.
-     * datatype: String
-     **/
-    self.show = null;
-    
-    /**
-     * When set to **true**, the signer is required to fill out this tab
-     * datatype: String
-     **/
-    self.required = null;
-    
-    /**
-     * The value of the custom field.\n\nMaximum Length: 100 characters.
-     * datatype: String
-     **/
-    self.value = null;
-    
-    /**
-     * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
-     * datatype: String
-     **/
-    self.configurationType = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -22,22 +22,6 @@
   var Notification = function Notification() { 
     var self = this;
     
-    /**
-     * When set to **true**, the account default notification settings are used for the envelope.
-     * datatype: String
-     **/
-    self.useAccountDefaults = null;
-    
-    /**
-     * datatype: Reminders
-     **/
-    self.reminders = null;
-    
-    /**
-     * datatype: Expirations
-     **/
-    self.expirations = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -35,23 +35,14 @@
     /// </summary>
     self.LoginOptions = function () {
       
-      var apiPassword = null;
-      
       var includeAccountIdGuid = null;
+      
+      var apiPassword = null;
       
       var loginSettings = null;
       
+      var embedAccountIdGuid = null;
       
-      /*
-       * When set to **true**, shows the account API password in the response.
-       */
-      this.setApiPassword = function(apiPassword) {
-        this.apiPassword = apiPassword;
-      }
-	
-      this.getApiPassword = function() {
-        return this.apiPassword;
-      }
       
       /*
        * When set to **true**, shows the account ID GUID in the response.
@@ -65,6 +56,17 @@
       }
       
       /*
+       * When set to **true**, shows the account API password in the response.
+       */
+      this.setApiPassword = function(apiPassword) {
+        this.apiPassword = apiPassword;
+      }
+	
+      this.getApiPassword = function() {
+        return this.apiPassword;
+      }
+      
+      /*
        * Determines whether login settings are returned in the response.\n\nValid Values:\n\n* all -  All the login settings are returned. \n* none - no login settings are returned.
        */
       this.setLoginSettings = function(loginSettings) {
@@ -73,6 +75,14 @@
 	
       this.getLoginSettings = function() {
         return this.loginSettings;
+      }
+      
+      this.setEmbedAccountIdGuid = function(embedAccountIdGuid) {
+        this.embedAccountIdGuid = embedAccountIdGuid;
+      }
+	
+      this.getEmbedAccountIdGuid = function() {
+        return this.embedAccountIdGuid;
       }
       
     }
@@ -95,9 +105,10 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
-          'api_password': options.apiPassword,
           'include_account_id_guid': options.includeAccountIdGuid,
-          'login_settings': options.loginSettings
+          'api_password': options.apiPassword,
+          'login_settings': options.loginSettings,
+          'embed_account_id_guid': options.embedAccountIdGuid
         };
       }
       var headerParams = {

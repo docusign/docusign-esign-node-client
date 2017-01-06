@@ -22,18 +22,6 @@
   var FileType = function FileType() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.fileExtension = null;
-    
-    /**
-     * The mime-type of a file type listed in a fileTypes collection.
-     * datatype: String
-     **/
-    self.mimeType = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -22,78 +22,6 @@
   var RecipientViewRequest = function RecipientViewRequest() { 
     var self = this;
     
-    /**
-     * A sender created value that shows the recipient is embedded (captive). \n\nMaximum length: 100 characters.
-     * datatype: String
-     **/
-    self.clientUserId = null;
-    
-    /**
-     * Specifies the user ID of the recipient. You can use with user ID or email and user name to identify the recipient. If user ID is used and a client user ID is provided, the value in the `userId` property must match a recipient ID (which can be retrieved with a GET recipients call) for the envelope. If a user ID is used and a clientUser ID is not provided, the user ID match the user ID of the authenticating user.
-     * datatype: String
-     **/
-    self.userId = null;
-    
-    /**
-     * Specifies the username of the recipient. You can use either email and userName or userId to identify the recipient.
-     * datatype: String
-     **/
-    self.userName = null;
-    
-    /**
-     * Specifies the email of the recipient. You can use either email and userName or userId to identify the recipient.
-     * datatype: String
-     **/
-    self.email = null;
-    
-    /**
-     * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-     * datatype: String
-     **/
-    self.recipientId = null;
-    
-    /**
-     * The URL the recipient is directed to on certain events. DocuSign sends returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* cancel (recipient cancels signing)\n* decline (recipient declines signing)\n* exception (exception occurs)\n* fax_pending (recipient has fax pending)\n* check); session_timeout (session times out)\n* completes signing)\n* expires)\n* viewing_complete (recipient completes viewing the envelope)\n\n## Important: You must include HTTPS:// in the URL or the redirect might be blocked by some browsers.
-     * datatype: String
-     **/
-    self.returnUrl = null;
-    
-    /**
-     * A client Url to be pinged by the DocuSign Signing experience to indicate to the client that Signing is active. An HTTP Get is executed against the client. The response from the client is ignored. The intent is for the client to reset it's session timer when the request is received.
-     * datatype: String
-     **/
-    self.pingUrl = null;
-    
-    /**
-     * Only used if pingUrl is specified. This is the interval, in seconds, between pings on the pingUrl.  The default is 300 seconds. Valid values are 60-1200 seconds.
-     * datatype: String
-     **/
-    self.pingFrequency = null;
-    
-    /**
-     * A sender created value that indicates the convention used to authenticate the signer. This information is included in the Certificate of Completion.
-     * datatype: String
-     **/
-    self.authenticationMethod = null;
-    
-    /**
-     * A unique identifier of the authentication event executed by the client application.
-     * datatype: String
-     **/
-    self.assertionId = null;
-    
-    /**
-     * A sender generated value that indicates the date/time that the signer was authenticated.
-     * datatype: String
-     **/
-    self.authenticationInstant = null;
-    
-    /**
-     * The domain in which the user authenticated.
-     * datatype: String
-     **/
-    self.securityDomain = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {
@@ -146,6 +74,14 @@
       
       if (data.securityDomain) {
         self.securityDomain = data.securityDomain;
+      }
+      
+      if (data.xFrameOptions) {
+        self.xFrameOptions = data.xFrameOptions;
+      }
+      
+      if (data.xFrameOptionsAllowFromUrl) {
+        self.xFrameOptionsAllowFromUrl = data.xFrameOptionsAllowFromUrl;
       }
       
     }
@@ -232,7 +168,7 @@
     }
     
     /**
-     * get The URL the recipient is directed to on certain events. DocuSign sends returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* cancel (recipient cancels signing)\n* decline (recipient declines signing)\n* exception (exception occurs)\n* fax_pending (recipient has fax pending)\n* check); session_timeout (session times out)\n* completes signing)\n* expires)\n* viewing_complete (recipient completes viewing the envelope)\n\n## Important: You must include HTTPS:// in the URL or the redirect might be blocked by some browsers.
+     * get The url the recipient is redirected to after the signing session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your application. Possible event parameter values: \n\n* cancel (recipient canceled the signing operation)\n* decline (recipient declined to sign)\n* exception (an exception occurred)\n* fax_pending (recipient has a fax pending)\n* session_timeout (session timed out)\n* signing_complete (signer completed the signing ceremony)\n* ttl_expired (the TTL, time to live, timer expired)\n* viewing_complete (recipient completed viewing the envelope)\n\n###### Note: Include https:// in the URL or the redirect might not succeed on some browsers.
      * @return {String}
      **/
     self.getReturnUrl = function() {
@@ -240,7 +176,7 @@
     }
 
     /**
-     * set The URL the recipient is directed to on certain events. DocuSign sends returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* cancel (recipient cancels signing)\n* decline (recipient declines signing)\n* exception (exception occurs)\n* fax_pending (recipient has fax pending)\n* check); session_timeout (session times out)\n* completes signing)\n* expires)\n* viewing_complete (recipient completes viewing the envelope)\n\n## Important: You must include HTTPS:// in the URL or the redirect might be blocked by some browsers.
+     * set The url the recipient is redirected to after the signing session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your application. Possible event parameter values: \n\n* cancel (recipient canceled the signing operation)\n* decline (recipient declined to sign)\n* exception (an exception occurred)\n* fax_pending (recipient has a fax pending)\n* session_timeout (session timed out)\n* signing_complete (signer completed the signing ceremony)\n* ttl_expired (the TTL, time to live, timer expired)\n* viewing_complete (recipient completed viewing the envelope)\n\n###### Note: Include https:// in the URL or the redirect might not succeed on some browsers.
      * @param {String} returnUrl
      **/
     self.setReturnUrl = function (returnUrl) {
@@ -341,6 +277,38 @@
      **/
     self.setSecurityDomain = function (securityDomain) {
       self.securityDomain = securityDomain;
+    }
+    
+    /**
+     * get 
+     * @return {String}
+     **/
+    self.getXFrameOptions = function() {
+      return self.xFrameOptions;
+    }
+
+    /**
+     * set 
+     * @param {String} xFrameOptions
+     **/
+    self.setXFrameOptions = function (xFrameOptions) {
+      self.xFrameOptions = xFrameOptions;
+    }
+    
+    /**
+     * get 
+     * @return {String}
+     **/
+    self.getXFrameOptionsAllowFromUrl = function() {
+      return self.xFrameOptionsAllowFromUrl;
+    }
+
+    /**
+     * set 
+     * @param {String} xFrameOptionsAllowFromUrl
+     **/
+    self.setXFrameOptionsAllowFromUrl = function (xFrameOptionsAllowFromUrl) {
+      self.xFrameOptionsAllowFromUrl = xFrameOptionsAllowFromUrl;
     }
     
 

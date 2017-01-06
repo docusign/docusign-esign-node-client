@@ -23,12 +23,6 @@
     var self = this;
     
     /**
-     * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * datatype: String
-     **/
-    self.templateId = null;
-    
-    /**
      * 
      * datatype: Array
      **/

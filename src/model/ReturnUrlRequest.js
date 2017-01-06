@@ -22,12 +22,6 @@
   var ReturnUrlRequest = function ReturnUrlRequest() { 
     var self = this;
     
-    /**
-     * Identifies the return point after sending the envelope. DocuSign returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* send (user sends the envelope)\n* save (user saves the envelope)\n* cancel (user cancels the sending transaction. No envelopeId is returned in this case.)\n* error (there is an error when performing the send)\n* sessionEnd (the sending session ends before the user completes another action).
-     * datatype: String
-     **/
-    self.returnUrl = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {
