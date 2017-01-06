@@ -22,36 +22,6 @@
   var MatchBox = function MatchBox() { 
     var self = this;
     
-    /**
-     * Specifies the page number on which the tab is located.
-     * datatype: Integer
-     **/
-    self.pageNumber = null;
-    
-    /**
-     * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
-     * datatype: Integer
-     **/
-    self.xPosition = null;
-    
-    /**
-     * This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
-     * datatype: Integer
-     **/
-    self.yPosition = null;
-    
-    /**
-     * Width of the tab in pixels.
-     * datatype: Integer
-     **/
-    self.width = null;
-    
-    /**
-     * Height of the tab in pixels.
-     * datatype: Integer
-     **/
-    self.height = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

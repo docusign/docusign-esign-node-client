@@ -64,23 +64,6 @@
      **/
     self.inPersonSigners = [];
     
-    /**
-     * The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:\n\n* recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.\n* includeDocuments - When set to **true**, the envelope time zone information is included in the message.
-     * datatype: String
-     **/
-    self.recipientCount = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.currentRoutingOrder = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

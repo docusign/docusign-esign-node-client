@@ -22,22 +22,6 @@
   var SharedItem = function SharedItem() { 
     var self = this;
     
-    /**
-     * datatype: UserInfo
-     **/
-    self.user = null;
-    
-    /**
-     * When set to **true**, this custom tab is shared.
-     * datatype: String
-     **/
-    self.shared = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -25,57 +25,10 @@
     var self = this;
     
     /**
-     * The number of results returned in this response.
-     * datatype: String
-     **/
-    self.resultSetSize = null;
-    
-    /**
-     * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-     * datatype: String
-     **/
-    self.totalSetSize = null;
-    
-    /**
-     * Starting position of the current result set.
-     * datatype: String
-     **/
-    self.startPosition = null;
-    
-    /**
-     * The last position in the result set.
-     * datatype: String
-     **/
-    self.endPosition = null;
-    
-    /**
-     * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * datatype: String
-     **/
-    self.nextUri = null;
-    
-    /**
-     * The postal code for the billing address.
-     * datatype: String
-     **/
-    self.previousUri = null;
-    
-    /**
-     * The account ID associated with the envelope.
-     * datatype: String
-     **/
-    self.accountId = null;
-    
-    /**
      * A complex type containing the shared access information to an envelope for the users specified in the request.
      * datatype: Array
      **/
     self.sharedAccess = [];
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
     
 
     self.constructFromObject = function(data) {

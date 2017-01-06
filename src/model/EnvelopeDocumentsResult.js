@@ -23,12 +23,6 @@
     var self = this;
     
     /**
-     * The envelope ID of the envelope status that failed to post.
-     * datatype: String
-     **/
-    self.envelopeId = null;
-    
-    /**
      * 
      * datatype: Array
      **/

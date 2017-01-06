@@ -22,18 +22,6 @@
   var ConsoleViewRequest = function ConsoleViewRequest() { 
     var self = this;
     
-    /**
-     * The envelope ID of the envelope status that failed to post.
-     * datatype: String
-     **/
-    self.envelopeId = null;
-    
-    /**
-     * The URL to be redirected to after the console view session has ended.
-     * datatype: String
-     **/
-    self.returnUrl = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

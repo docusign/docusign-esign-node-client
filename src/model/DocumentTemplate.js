@@ -22,35 +22,6 @@
   var DocumentTemplate = function DocumentTemplate() { 
     var self = this;
     
-    /**
-     * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * datatype: String
-     **/
-    self.documentId = null;
-    
-    /**
-     * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * datatype: String
-     **/
-    self.templateId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.documentStartPage = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.documentEndPage = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -24,30 +24,6 @@
   var ApiRequestLog = function ApiRequestLog() { 
     var self = this;
     
-    /**
-     * Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * datatype: String
-     **/
-    self.status = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.description = null;
-    
-    /**
-     * Indicates the date and time the item was created.
-     * datatype: String
-     **/
-    self.createdDateTime = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.requestLogId = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

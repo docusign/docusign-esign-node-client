@@ -22,196 +22,6 @@
   var Approve = function Approve() { 
     var self = this;
     
-    /**
-     * Specifies the approval text displayed in the tab.
-     * datatype: String
-     **/
-    self.buttonText = null;
-    
-    /**
-     * Width of the tab in pixels.
-     * datatype: Integer
-     **/
-    self.width = null;
-    
-    /**
-     * Height of the tab in pixels.
-     * datatype: Integer
-     **/
-    self.height = null;
-    
-    /**
-     * The label string associated with the tab.
-     * datatype: String
-     **/
-    self.tabLabel = null;
-    
-    /**
-     * The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
-     * datatype: String
-     **/
-    self.font = null;
-    
-    /**
-     * When set to **true**, the information in the tab is bold.
-     * datatype: String
-     **/
-    self.bold = null;
-    
-    /**
-     * When set to **true**, the information in the tab is italic.
-     * datatype: String
-     **/
-    self.italic = null;
-    
-    /**
-     * When set to **true**, the information in the tab is underlined.
-     * datatype: String
-     **/
-    self.underline = null;
-    
-    /**
-     * The font color used for the information in the tab.\n\nPossible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
-     * datatype: String
-     **/
-    self.fontColor = null;
-    
-    /**
-     * The font size used for the information in the tab.\n\nPossible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
-     * datatype: String
-     **/
-    self.fontSize = null;
-    
-    /**
-     * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * datatype: String
-     **/
-    self.documentId = null;
-    
-    /**
-     * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-     * datatype: String
-     **/
-    self.recipientId = null;
-    
-    /**
-     * Specifies the page number on which the tab is located.
-     * datatype: String
-     **/
-    self.pageNumber = null;
-    
-    /**
-     * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
-     * datatype: String
-     **/
-    self.xPosition = null;
-    
-    /**
-     * This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
-     * datatype: String
-     **/
-    self.yPosition = null;
-    
-    /**
-     * Anchor text information for a radio button.
-     * datatype: String
-     **/
-    self.anchorString = null;
-    
-    /**
-     * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
-     * datatype: String
-     **/
-    self.anchorXOffset = null;
-    
-    /**
-     * Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
-     * datatype: String
-     **/
-    self.anchorYOffset = null;
-    
-    /**
-     * Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
-     * datatype: String
-     **/
-    self.anchorUnits = null;
-    
-    /**
-     * When set to **true**, this tab is ignored if anchorString is not found in the document.
-     * datatype: String
-     **/
-    self.anchorIgnoreIfNotPresent = null;
-    
-    /**
-     * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
-     * datatype: String
-     **/
-    self.anchorCaseSensitive = null;
-    
-    /**
-     * When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**.
-     * datatype: String
-     **/
-    self.anchorMatchWholeWord = null;
-    
-    /**
-     * Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**.
-     * datatype: String
-     **/
-    self.anchorHorizontalAlignment = null;
-    
-    /**
-     * The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].
-     * datatype: String
-     **/
-    self.tabId = null;
-    
-    /**
-     * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients.
-     * datatype: String
-     **/
-    self.templateLocked = null;
-    
-    /**
-     * When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
-     * datatype: String
-     **/
-    self.templateRequired = null;
-    
-    /**
-     * For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
-     * datatype: String
-     **/
-    self.conditionalParentLabel = null;
-    
-    /**
-     * For conditional fields, this is the value of the parent tab that controls the tab's visibility.\n\nIf the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \"on\" as the value to show that the parent tab is active.
-     * datatype: String
-     **/
-    self.conditionalParentValue = null;
-    
-    /**
-     * The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.
-     * datatype: String
-     **/
-    self.customTabId = null;
-    
-    /**
-     * datatype: MergeField
-     **/
-    self.mergeField = null;
-    
-    /**
-     * Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * datatype: String
-     **/
-    self.status = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {
@@ -346,6 +156,10 @@
       if (data.errorDetails) {
         self.errorDetails = new data.errorDetails.constructor();
         self.errorDetails.constructFromObject(data.errorDetails);
+      }
+      
+      if (data.tabOrder) {
+        self.tabOrder = data.tabOrder;
       }
       
     }
@@ -857,6 +671,22 @@
      **/
     self.setErrorDetails = function (errorDetails) {
       self.errorDetails = errorDetails;
+    }
+    
+    /**
+     * get 
+     * @return {String}
+     **/
+    self.getTabOrder = function() {
+      return self.tabOrder;
+    }
+
+    /**
+     * set 
+     * @param {String} tabOrder
+     **/
+    self.setTabOrder = function (tabOrder) {
+      self.tabOrder = tabOrder;
     }
     
 

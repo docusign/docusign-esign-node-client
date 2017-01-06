@@ -22,12 +22,6 @@
   var SocialAuthentication = function SocialAuthentication() { 
     var self = this;
     
-    /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.authentication = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

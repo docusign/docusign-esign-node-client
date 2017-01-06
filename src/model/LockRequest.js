@@ -22,36 +22,6 @@
   var LockRequest = function LockRequest() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.lockedByApp = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.lockDurationInSeconds = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.lockType = null;
-    
-    /**
-     * Reserved for future use.\n\nIndicates whether a scratchpad is used for editing information.
-     * datatype: String
-     **/
-    self.useScratchPad = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.templatePassword = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {
@@ -82,7 +52,7 @@
 
     
     /**
-     * get 
+     * get A friendly name of the application used to lock the envelope.  Will be used in error messages to the user when lock conflicts occur.
      * @return {String}
      **/
     self.getLockedByApp = function() {
@@ -90,7 +60,7 @@
     }
 
     /**
-     * set 
+     * set A friendly name of the application used to lock the envelope.  Will be used in error messages to the user when lock conflicts occur.
      * @param {String} lockedByApp
      **/
     self.setLockedByApp = function (lockedByApp) {
@@ -98,7 +68,7 @@
     }
     
     /**
-     * get 
+     * get The number of seconds to lock the envelope for editing.  Must be greater than 0 seconds.
      * @return {String}
      **/
     self.getLockDurationInSeconds = function() {
@@ -106,7 +76,7 @@
     }
 
     /**
-     * set 
+     * set The number of seconds to lock the envelope for editing.  Must be greater than 0 seconds.
      * @param {String} lockDurationInSeconds
      **/
     self.setLockDurationInSeconds = function (lockDurationInSeconds) {
@@ -114,7 +84,7 @@
     }
     
     /**
-     * get 
+     * get The type of envelope lock.  Currently \"edit\" is the only supported type.
      * @return {String}
      **/
     self.getLockType = function() {
@@ -122,7 +92,7 @@
     }
 
     /**
-     * set 
+     * set The type of envelope lock.  Currently \"edit\" is the only supported type.
      * @param {String} lockType
      **/
     self.setLockType = function (lockType) {

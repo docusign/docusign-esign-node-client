@@ -22,24 +22,6 @@
   var Expirations = function Expirations() { 
     var self = this;
     
-    /**
-     * When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used.
-     * datatype: String
-     **/
-    self.expireEnabled = null;
-    
-    /**
-     * An integer that sets the number of days the envelope is active.
-     * datatype: String
-     **/
-    self.expireAfter = null;
-    
-    /**
-     * An integer that sets the number of days before envelope expiration that an expiration warning email is sent to the recipient. If set to 0 (zero), no warning email is sent.
-     * datatype: String
-     **/
-    self.expireWarn = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

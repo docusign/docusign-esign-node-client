@@ -22,42 +22,6 @@
   var OfflineAttributes = function OfflineAttributes() { 
     var self = this;
     
-    /**
-     * A string containing information about the type of device used for offline signing.
-     * datatype: String
-     **/
-    self.deviceName = null;
-    
-    /**
-     * A string containing information about the model of the device used for offline signing.
-     * datatype: String
-     **/
-    self.deviceModel = null;
-    
-    /**
-     * A string containing the latitude of the device location at the time of signing.
-     * datatype: String
-     **/
-    self.gpsLatitude = null;
-    
-    /**
-     * A string containing the longitude of the device location at the time of signing.
-     * datatype: String
-     **/
-    self.gpsLongitude = null;
-    
-    /**
-     * A GUID identifying the account associated with the consumer disclosure
-     * datatype: String
-     **/
-    self.accountEsignId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.offlineSigningHash = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

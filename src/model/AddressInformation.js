@@ -24,54 +24,6 @@
   var AddressInformation = function AddressInformation() { 
     var self = this;
     
-    /**
-     * The first line of the address.
-     * datatype: String
-     **/
-    self.street1 = null;
-    
-    /**
-     * The second line of the address (optional).
-     * datatype: String
-     **/
-    self.street2 = null;
-    
-    /**
-     * The city associated with the address.
-     * datatype: String
-     **/
-    self.city = null;
-    
-    /**
-     * The state or province associated with the address.
-     * datatype: String
-     **/
-    self.state = null;
-    
-    /**
-     * The zip or postal code associated with the address.
-     * datatype: String
-     **/
-    self.zip = null;
-    
-    /**
-     * A phone number associated with the address.
-     * datatype: String
-     **/
-    self.phone = null;
-    
-    /**
-     * A Fax number associated with the address if one is available.
-     * datatype: String
-     **/
-    self.fax = null;
-    
-    /**
-     * Specifies the country associated with the address.
-     * datatype: String
-     **/
-    self.country = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

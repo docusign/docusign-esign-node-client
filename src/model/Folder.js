@@ -23,74 +23,10 @@
     var self = this;
     
     /**
-     * 
-     * datatype: String
-     **/
-    self.ownerUserName = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.ownerEmail = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.ownerUserId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.type = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.uri = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.parentFolderId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.parentFolderUri = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.folderId = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
-    /**
      * A collection of folder objects returned in a response.
      * datatype: Array
      **/
     self.folders = [];
-    
-    /**
-     * datatype: Filter
-     **/
-    self.filter = null;
     
 
     self.constructFromObject = function(data) {

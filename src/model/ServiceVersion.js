@@ -22,18 +22,6 @@
   var ServiceVersion = function ServiceVersion() { 
     var self = this;
     
-    /**
-     * The version of the rest API.
-     * datatype: String
-     **/
-    self.version = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.versionUrl = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

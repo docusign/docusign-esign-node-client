@@ -22,18 +22,6 @@
   var PageRequest = function PageRequest() { 
     var self = this;
     
-    /**
-     * Sets the direction the page image is rotated. The possible settings are: left or right
-     * datatype: String
-     **/
-    self.rotate = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.password = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

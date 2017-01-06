@@ -22,24 +22,6 @@
   var RecipientSignatureInformation = function RecipientSignatureInformation() { 
     var self = this;
     
-    /**
-     * Specifies the user signature name.
-     * datatype: String
-     **/
-    self.signatureName = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.signatureInitials = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.fontStyle = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

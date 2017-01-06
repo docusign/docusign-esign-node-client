@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './BulkEnvelopeStatus', './ErrorDetails', './LockInformation'], factory);
+    define([undefined, './BulkEnvelopeStatus', './ErrorDetails', './ListCustomField', './LockInformation', './RecipientUpdateResponse', './Tabs', './TextCustomField'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./BulkEnvelopeStatus'), require('./ErrorDetails'), require('./LockInformation'));
+    module.exports = factory(undefined, require('./BulkEnvelopeStatus'), require('./ErrorDetails'), require('./ListCustomField'), require('./LockInformation'), require('./RecipientUpdateResponse'), require('./Tabs'), require('./TextCustomField'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.BulkEnvelopeStatus, root.Docusign.ErrorDetails, root.Docusign.LockInformation);
+    factory(root.Docusign, root.Docusign.BulkEnvelopeStatus, root.Docusign.ErrorDetails, root.Docusign.ListCustomField, root.Docusign.LockInformation, root.Docusign.RecipientUpdateResponse, root.Docusign.Tabs, root.Docusign.TextCustomField);
   }
-}(this, function(module, BulkEnvelopeStatus, ErrorDetails, LockInformation) {
+}(this, function(module, BulkEnvelopeStatus, ErrorDetails, ListCustomField, LockInformation, RecipientUpdateResponse, Tabs, TextCustomField) {
   'use strict';
 
   
@@ -23,25 +23,22 @@
     var self = this;
     
     /**
-     * The envelope ID of the envelope status that failed to post.
-     * datatype: String
+     * 
+     * datatype: Array
      **/
-    self.envelopeId = null;
+    self.recipientUpdateResults = [];
     
     /**
-     * datatype: BulkEnvelopeStatus
+     * 
+     * datatype: Array
      **/
-    self.bulkEnvelopeStatus = null;
+    self.textCustomFieldUpdateResults = [];
     
     /**
-     * datatype: LockInformation
+     * 
+     * datatype: Array
      **/
-    self.lockInformation = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
+    self.listCustomFieldUpdateResults = [];
     
 
     self.constructFromObject = function(data) {
@@ -56,6 +53,23 @@
       if (data.bulkEnvelopeStatus) {
         self.bulkEnvelopeStatus = new data.bulkEnvelopeStatus.constructor();
         self.bulkEnvelopeStatus.constructFromObject(data.bulkEnvelopeStatus);
+      }
+      
+      if (data.recipientUpdateResults) {
+        self.recipientUpdateResults = data.recipientUpdateResults;
+      }
+      
+      if (data.tabUpdateResults) {
+        self.tabUpdateResults = new data.tabUpdateResults.constructor();
+        self.tabUpdateResults.constructFromObject(data.tabUpdateResults);
+      }
+      
+      if (data.textCustomFieldUpdateResults) {
+        self.textCustomFieldUpdateResults = data.textCustomFieldUpdateResults;
+      }
+      
+      if (data.listCustomFieldUpdateResults) {
+        self.listCustomFieldUpdateResults = data.listCustomFieldUpdateResults;
       }
       
       if (data.lockInformation) {
@@ -99,6 +113,68 @@
      **/
     self.setBulkEnvelopeStatus = function (bulkEnvelopeStatus) {
       self.bulkEnvelopeStatus = bulkEnvelopeStatus;
+    }
+    
+    /**
+     * get 
+     * @return {Array}
+     **/
+    self.getRecipientUpdateResults = function() {
+      return self.recipientUpdateResults;
+    }
+
+    /**
+     * set 
+     * @param {Array} recipientUpdateResults
+     **/
+    self.setRecipientUpdateResults = function (recipientUpdateResults) {
+      self.recipientUpdateResults = recipientUpdateResults;
+    }
+    
+    /**
+     * @return {Tabs}
+     **/
+    self.getTabUpdateResults = function() {
+      return self.tabUpdateResults;
+    }
+
+    /**
+     * @param {Tabs} tabUpdateResults
+     **/
+    self.setTabUpdateResults = function (tabUpdateResults) {
+      self.tabUpdateResults = tabUpdateResults;
+    }
+    
+    /**
+     * get 
+     * @return {Array}
+     **/
+    self.getTextCustomFieldUpdateResults = function() {
+      return self.textCustomFieldUpdateResults;
+    }
+
+    /**
+     * set 
+     * @param {Array} textCustomFieldUpdateResults
+     **/
+    self.setTextCustomFieldUpdateResults = function (textCustomFieldUpdateResults) {
+      self.textCustomFieldUpdateResults = textCustomFieldUpdateResults;
+    }
+    
+    /**
+     * get 
+     * @return {Array}
+     **/
+    self.getListCustomFieldUpdateResults = function() {
+      return self.listCustomFieldUpdateResults;
+    }
+
+    /**
+     * set 
+     * @param {Array} listCustomFieldUpdateResults
+     **/
+    self.setListCustomFieldUpdateResults = function (listCustomFieldUpdateResults) {
+      self.listCustomFieldUpdateResults = listCustomFieldUpdateResults;
     }
     
     /**

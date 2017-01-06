@@ -28,12 +28,6 @@
      **/
     self.loginAccounts = [];
     
-    /**
-     * Contains a token that can be used for authentication in API calls instead of using the user name and password. Only returned if the `api_password=true` query string is added to the URL.
-     * datatype: String
-     **/
-    self.apiPassword = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {
