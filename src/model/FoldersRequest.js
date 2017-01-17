@@ -28,12 +28,6 @@
      **/
     self.envelopeIds = [];
     
-    /**
-     * The folder ID the envelope is being moved from.
-     * datatype: String
-     **/
-    self.fromFolderId = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

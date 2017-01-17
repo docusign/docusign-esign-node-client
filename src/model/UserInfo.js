@@ -22,47 +22,6 @@
   var UserInfo = function UserInfo() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.userName = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.email = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.userId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.userType = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.userStatus = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.uri = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

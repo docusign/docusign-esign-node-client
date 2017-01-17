@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './Attachment', './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './SocialAuthentication', './UserInfo'], factory);
+    define([undefined, './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './RecipientAttachment', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './SocialAuthentication', './UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./Attachment'), require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
+    module.exports = factory(undefined, require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.Attachment, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
+    factory(root.Docusign, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
   }
-}(this, function(module, Attachment, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
+}(this, function(module, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, RecipientAttachment, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
   'use strict';
 
   
@@ -23,76 +23,10 @@
     var self = this;
     
     /**
-     * legal name of the recipient.\n\nMaximum Length: 100 characters.
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * Email id of the recipient. Notification of the document to sign is sent to this email id. \n\nMaximum length: 100 characters.
-     * datatype: String
-     **/
-    self.email = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.emailRecipientPostSigningURL = null;
-    
-    /**
-     * When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
-     * datatype: String
-     **/
-    self.signingGroupId = null;
-    
-    /**
-     * The display name for the signing group. \n\nMaximum Length: 100 characters.
-     * datatype: String
-     **/
-    self.signingGroupName = null;
-    
-    /**
      * A complex type that contains information about users in the signing group.
      * datatype: Array
      **/
     self.signingGroupUsers = [];
-    
-    /**
-     * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-     * datatype: String
-     **/
-    self.recipientId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.recipientIdGuid = null;
-    
-    /**
-     * If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
-     * datatype: String
-     **/
-    self.accessCode = null;
-    
-    /**
-     * This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.
-     * datatype: String
-     **/
-    self.addAccessCodeToEmail = null;
-    
-    /**
-     * When set to **true**, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity.
-     * datatype: String
-     **/
-    self.requireIdLookup = null;
-    
-    /**
-     * Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.\n\n*Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
-     * datatype: String
-     **/
-    self.idCheckConfigurationName = null;
     
     /**
      * Lists the social ID type that can be used for recipient authentication.
@@ -101,159 +35,16 @@
     self.socialAuthentications = [];
     
     /**
-     * datatype: RecipientPhoneAuthentication
-     **/
-    self.phoneAuthentication = null;
-    
-    /**
-     * datatype: RecipientSAMLAuthentication
-     **/
-    self.samlAuthentication = null;
-    
-    /**
-     * datatype: RecipientSMSAuthentication
-     **/
-    self.smsAuthentication = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.userId = null;
-    
-    /**
-     * Specifies whether the recipient is embedded or remote. \n\nIf the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng. \n\nMaximum length: 100 characters.
-     * datatype: String
-     **/
-    self.clientUserId = null;
-    
-    /**
-     * Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender’s system (the server responding to the URL) must request a recipient token to launch a signing session. \n\nIf set to `SIGN_AT_DOCUSIGN`, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.\n\nIt is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient’s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets `EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN`, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.\n\nIf the `clientUserId` property is NOT set, and the `embeddedRecipientStartURL` is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The `customFields` property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets. \n\n*Example*: \n\n`http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&[[mergeField3]]`
-     * datatype: String
-     **/
-    self.embeddedRecipientStartURL = null;
-    
-    /**
      * An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
      * datatype: Array
      **/
     self.customFields = [];
     
     /**
-     * Specifies the routing order of the recipient in the envelope.
-     * datatype: String
-     **/
-    self.routingOrder = null;
-    
-    /**
-     * datatype: IdCheckInformationInput
-     **/
-    self.idCheckInformationInput = null;
-    
-    /**
      * Reserved:
      * datatype: Array
      **/
     self.recipientAttachments = [];
-    
-    /**
-     * Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.\n\nMaximum Length: 1000 characters.
-     * datatype: String
-     **/
-    self.note = null;
-    
-    /**
-     * Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.
-     * datatype: String
-     **/
-    self.roleName = null;
-    
-    /**
-     * Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * datatype: String
-     **/
-    self.status = null;
-    
-    /**
-     * Reserved: For DocuSign use only.
-     * datatype: String
-     **/
-    self.signedDateTime = null;
-    
-    /**
-     * Reserved: For DocuSign use only.
-     * datatype: String
-     **/
-    self.deliveredDateTime = null;
-    
-    /**
-     * The date and time the recipient declined the document.
-     * datatype: String
-     **/
-    self.declinedDateTime = null;
-    
-    /**
-     * The date and time the envelope was sent.
-     * datatype: String
-     **/
-    self.sentDateTime = null;
-    
-    /**
-     * The reason the recipient declined the document.
-     * datatype: String
-     **/
-    self.declinedReason = null;
-    
-    /**
-     * Reserved: For DocuSign use only.
-     * datatype: String
-     **/
-    self.deliveryMethod = null;
-    
-    /**
-     * Reserved:
-     * datatype: String
-     **/
-    self.faxNumber = null;
-    
-    /**
-     * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients.
-     * datatype: String
-     **/
-    self.templateLocked = null;
-    
-    /**
-     * When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
-     * datatype: String
-     **/
-    self.templateRequired = null;
-    
-    /**
-     * datatype: RecipientEmailNotification
-     **/
-    self.emailNotification = null;
-    
-    /**
-     * When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account.
-     * datatype: String
-     **/
-    self.inheritEmailNotificationConfiguration = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
-    /**
-     * datatype: AuthenticationStatus
-     **/
-    self.recipientAuthenticationStatus = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.totalTabCount = null;
     
 
     self.constructFromObject = function(data) {
@@ -560,7 +351,7 @@
     }
     
     /**
-     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
+     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
      * @return {String}
      **/
     self.getAccessCode = function() {
@@ -568,7 +359,7 @@
     }
 
     /**
-     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
+     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
      * @param {String} accessCode
      **/
     self.setAccessCode = function (accessCode) {

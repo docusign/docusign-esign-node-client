@@ -28,42 +28,6 @@
      **/
     self.groups = [];
     
-    /**
-     * The number of results returned in this response.
-     * datatype: String
-     **/
-    self.resultSetSize = null;
-    
-    /**
-     * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-     * datatype: String
-     **/
-    self.totalSetSize = null;
-    
-    /**
-     * Starting position of the current result set.
-     * datatype: String
-     **/
-    self.startPosition = null;
-    
-    /**
-     * The last position in the result set.
-     * datatype: String
-     **/
-    self.endPosition = null;
-    
-    /**
-     * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * datatype: String
-     **/
-    self.nextUri = null;
-    
-    /**
-     * The postal code for the billing address.
-     * datatype: String
-     **/
-    self.previousUri = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

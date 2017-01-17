@@ -22,24 +22,6 @@
   var ListItem = function ListItem() { 
     var self = this;
     
-    /**
-     * Specifies the text that is shown in the dropdown list.
-     * datatype: String
-     **/
-    self.text = null;
-    
-    /**
-     * Specifies the value that is used when the list item is selected.
-     * datatype: String
-     **/
-    self.value = null;
-    
-    /**
-     * When set to **true**, indicates that this item is the default selection shown to a signer. \n\nOnly one selection can be set as the default.
-     * datatype: String
-     **/
-    self.selected = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

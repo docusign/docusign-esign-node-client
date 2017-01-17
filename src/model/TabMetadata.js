@@ -23,231 +23,10 @@
     var self = this;
     
     /**
-     * The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
-     * datatype: String
-     **/
-    self.font = null;
-    
-    /**
-     * When set to **true**, the information in the tab is bold.
-     * datatype: String
-     **/
-    self.bold = null;
-    
-    /**
-     * When set to **true**, the information in the tab is italic.
-     * datatype: String
-     **/
-    self.italic = null;
-    
-    /**
-     * When set to **true**, the information in the tab is underlined.
-     * datatype: String
-     **/
-    self.underline = null;
-    
-    /**
-     * The font color used for the information in the tab.\n\nPossible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
-     * datatype: String
-     **/
-    self.fontColor = null;
-    
-    /**
-     * The font size used for the information in the tab.\n\nPossible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
-     * datatype: String
-     **/
-    self.fontSize = null;
-    
-    /**
-     * Height of the tab in pixels.
-     * datatype: String
-     **/
-    self.height = null;
-    
-    /**
-     * Width of the tab in pixels.
-     * datatype: String
-     **/
-    self.width = null;
-    
-    /**
-     * The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.
-     * datatype: String
-     **/
-    self.customTabId = null;
-    
-    /**
-     * The original value of the tab.
-     * datatype: String
-     **/
-    self.initialValue = null;
-    
-    /**
-     * When set to **true**, the tab is included in e-mails related to the envelope on which it exists. This applies to only specific tabs.
-     * datatype: String
-     **/
-    self.includedInEmail = null;
-    
-    /**
-     * When set to **true**, disables the auto sizing of single line text boxes in the signing screen when the signer enters data. If disabled users will only be able enter as much data as the text box can hold. By default this is false. This property only affects single line text boxes.
-     * datatype: String
-     **/
-    self.disableAutoSize = null;
-    
-    /**
-     * When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.\n\nWhen an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.\n\nThis setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
-     * datatype: String
-     **/
-    self.concealValueOnDocument = null;
-    
-    /**
-     * When set to **true**, the signer cannot change the data of the custom tab.
-     * datatype: String
-     **/
-    self.locked = null;
-    
-    /**
-     * When set to **true**, the signer is required to fill out this tab
-     * datatype: String
-     **/
-    self.required = null;
-    
-    /**
-     * When set to **true**, this custom tab is shared.
-     * datatype: String
-     **/
-    self.shared = null;
-    
-    /**
      * If the tab is a list, this represents the values that are possible for the tab.
      * datatype: Array
      **/
     self.items = [];
-    
-    /**
-     * The label string associated with the tab.
-     * datatype: String
-     **/
-    self.tabLabel = null;
-    
-    /**
-     * The maximum number of entry characters supported by the custom tab.
-     * datatype: String
-     **/
-    self.maximumLength = null;
-    
-    /**
-     * An optional string that is used to auto-match tabs to strings located in the documents of an envelope.
-     * datatype: String
-     **/
-    self.anchor = null;
-    
-    /**
-     * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
-     * datatype: String
-     **/
-    self.anchorXOffset = null;
-    
-    /**
-     * Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
-     * datatype: String
-     **/
-    self.anchorYOffset = null;
-    
-    /**
-     * Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
-     * datatype: String
-     **/
-    self.anchorUnits = null;
-    
-    /**
-     * When set to **true**, this tab is ignored if anchorString is not found in the document.
-     * datatype: String
-     **/
-    self.anchorIgnoreIfNotPresent = null;
-    
-    /**
-     * When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**.
-     * datatype: String
-     **/
-    self.anchorMatchWholeWord = null;
-    
-    /**
-     * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
-     * datatype: String
-     **/
-    self.anchorCaseSensitive = null;
-    
-    /**
-     * Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**.
-     * datatype: String
-     **/
-    self.anchorHorizontalAlignment = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * The type of this tab. Values are: Approve, CheckBox, Company, Date, DateSigned,	Decline, Email,	EmailAddress, EnvelopeId, FirstName, Formula, FullName,	InitialHere, InitialHereOptional, LastName, List, Note, Number,	Radio, SignerAttachment, SignHere, SignHereOptional, Ssn, Text, Title, Zip5, or Zip5Dash4.
-     * datatype: String
-     **/
-    self.type = null;
-    
-    /**
-     * The message displayed if the custom tab fails input validation (either custom of embedded).
-     * datatype: String
-     **/
-    self.validationMessage = null;
-    
-    /**
-     * A regular expressionn used to validate input for the tab.
-     * datatype: String
-     **/
-    self.validationPattern = null;
-    
-    /**
-     * The userId of the DocuSign user who last modified this object.
-     * datatype: String
-     **/
-    self.lastModifiedByUserId = null;
-    
-    /**
-     * The User Name of the DocuSign user who last modified this object.
-     * datatype: String
-     **/
-    self.lastModifiedByDisplayName = null;
-    
-    /**
-     * The UTC DateTime this object was last modified. This is in ISO8601 format.
-     * datatype: String
-     **/
-    self.lastModified = null;
-    
-    /**
-     * The userId of the DocuSign user who created this object.
-     * datatype: String
-     **/
-    self.createdByUserId = null;
-    
-    /**
-     * The user name of the DocuSign user who created this object.
-     * datatype: String
-     **/
-    self.createdByDisplayName = null;
-    
-    /**
-     * When set to **true**, the custom tab is editable. Otherwise the custom tab cannot be modified.
-     * datatype: String
-     **/
-    self.editable = null;
-    
-    /**
-     * datatype: MergeField
-     **/
-    self.mergeField = null;
     
 
     self.constructFromObject = function(data) {
@@ -329,6 +108,10 @@
       
       if (data.maximumLength) {
         self.maximumLength = data.maximumLength;
+      }
+      
+      if (data.scaleValue) {
+        self.scaleValue = data.scaleValue;
       }
       
       if (data.anchor) {
@@ -713,6 +496,22 @@
      **/
     self.setMaximumLength = function (maximumLength) {
       self.maximumLength = maximumLength;
+    }
+    
+    /**
+     * get 
+     * @return {String}
+     **/
+    self.getScaleValue = function() {
+      return self.scaleValue;
+    }
+
+    /**
+     * set 
+     * @param {String} scaleValue
+     **/
+    self.setScaleValue = function (scaleValue) {
+      self.scaleValue = scaleValue;
     }
     
     /**

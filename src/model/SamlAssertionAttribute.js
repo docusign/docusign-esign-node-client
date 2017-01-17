@@ -22,23 +22,6 @@
   var SamlAssertionAttribute = function SamlAssertionAttribute() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * The value associated with the named SAML assertion attribute
-     * datatype: String
-     **/
-    self.value = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

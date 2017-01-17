@@ -22,22 +22,6 @@
   var RecipientUpdateResponse = function RecipientUpdateResponse() { 
     var self = this;
     
-    /**
-     * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-     * datatype: String
-     **/
-    self.recipientId = null;
-    
-    /**
-     * datatype: Tabs
-     **/
-    self.tabs = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -22,30 +22,6 @@
   var EnvelopeSummary = function EnvelopeSummary() { 
     var self = this;
     
-    /**
-     * The envelope ID of the envelope status that failed to post.
-     * datatype: String
-     **/
-    self.envelopeId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.uri = null;
-    
-    /**
-     * The DateTime that the envelope changed status (i.e. was created or sent.)
-     * datatype: String
-     **/
-    self.statusDateTime = null;
-    
-    /**
-     * Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * datatype: String
-     **/
-    self.status = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

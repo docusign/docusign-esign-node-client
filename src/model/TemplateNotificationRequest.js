@@ -22,28 +22,6 @@
   var TemplateNotificationRequest = function TemplateNotificationRequest() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.password = null;
-    
-    /**
-     * When set to **true**, the account default notification settings are used for the envelope.
-     * datatype: String
-     **/
-    self.useAccountDefaults = null;
-    
-    /**
-     * datatype: Reminders
-     **/
-    self.reminders = null;
-    
-    /**
-     * datatype: Expirations
-     **/
-    self.expirations = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

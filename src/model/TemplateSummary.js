@@ -22,47 +22,6 @@
   var TemplateSummary = function TemplateSummary() { 
     var self = this;
     
-    /**
-     * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * datatype: String
-     **/
-    self.templateId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * datatype: String
-     **/
-    self.documentId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.documentName = null;
-    
-    /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.applied = null;
-    
-    /**
-     * datatype: TemplateMatch
-     **/
-    self.templateMatch = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.uri = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

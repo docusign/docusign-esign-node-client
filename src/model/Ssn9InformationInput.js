@@ -22,18 +22,6 @@
   var Ssn9InformationInput = function Ssn9InformationInput() { 
     var self = this;
     
-    /**
-     * The recipient's Social Security Number(SSN).
-     * datatype: String
-     **/
-    self.ssn9 = null;
-    
-    /**
-     * Specifies the display level for the recipient. \nValid values are: \n\n* ReadOnly\n* Editable\n* DoNotDisplay
-     * datatype: String
-     **/
-    self.displayLevelCode = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

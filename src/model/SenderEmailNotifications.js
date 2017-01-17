@@ -22,48 +22,6 @@
   var SenderEmailNotifications = function SenderEmailNotifications() { 
     var self = this;
     
-    /**
-     * When set to **true**, the user receives notification that the envelope has been completed.
-     * datatype: String
-     **/
-    self.envelopeComplete = null;
-    
-    /**
-     * When set to **true**, the sender receives notification if the signer changes.
-     * datatype: String
-     **/
-    self.changedSigner = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.senderEnvelopeDeclined = null;
-    
-    /**
-     * When set to **true**, the user receives notification if consent is withdrawn.
-     * datatype: String
-     **/
-    self.withdrawnConsent = null;
-    
-    /**
-     * When set to **true**, the sender receives notification that the recipient viewed the enveloper.
-     * datatype: String
-     **/
-    self.recipientViewed = null;
-    
-    /**
-     * When set to **true**, the sender receives notification if the delivery of the envelope fails.
-     * datatype: String
-     **/
-    self.deliveryFailed = null;
-    
-    /**
-     * When set to **true**, the user receives notification if the offline signing failed.
-     * datatype: String
-     **/
-    self.offlineSigningFailed = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

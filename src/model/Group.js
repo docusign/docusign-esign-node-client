@@ -23,39 +23,10 @@
     var self = this;
     
     /**
-     * The DocuSign group ID for the group.
-     * datatype: String
-     **/
-    self.groupId = null;
-    
-    /**
-     * The name of the group.
-     * datatype: String
-     **/
-    self.groupName = null;
-    
-    /**
-     * The ID of the permission profile associated with the group.
-     * datatype: String
-     **/
-    self.permissionProfileId = null;
-    
-    /**
-     * The group type.
-     * datatype: String
-     **/
-    self.groupType = null;
-    
-    /**
      * 
      * datatype: Array
      **/
     self.users = [];
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
     
 
     self.constructFromObject = function(data) {

@@ -23,126 +23,6 @@
     var self = this;
     
     /**
-     * Name of the envelope owner.
-     * datatype: String
-     **/
-    self.ownerName = null;
-    
-    /**
-     * The envelope ID of the envelope status that failed to post.
-     * datatype: String
-     **/
-    self.envelopeId = null;
-    
-    /**
-     * Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * datatype: String
-     **/
-    self.envelopeUri = null;
-    
-    /**
-     * Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * datatype: String
-     **/
-    self.status = null;
-    
-    /**
-     * Name of the envelope sender.
-     * datatype: String
-     **/
-    self.senderName = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.senderEmail = null;
-    
-    /**
-     * Indicates the date and time the item was created.
-     * datatype: String
-     **/
-    self.createdDateTime = null;
-    
-    /**
-     * The date and time the envelope was sent.
-     * datatype: String
-     **/
-    self.sentDateTime = null;
-    
-    /**
-     * Specifies the date and time this item was completed.
-     * datatype: String
-     **/
-    self.completedDateTime = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.subject = null;
-    
-    /**
-     * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * datatype: String
-     **/
-    self.templateId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * When set to **true**, this custom tab is shared.
-     * datatype: String
-     **/
-    self.shared = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.password = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.description = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.lastModified = null;
-    
-    /**
-     * 
-     * datatype: Integer
-     **/
-    self.pageCount = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.uri = null;
-    
-    /**
-     * When set to **true**, indicates that this module is enabled on the account.
-     * datatype: String
-     **/
-    self.is21CFRPart11 = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.isUniversalSignatureEnvelope = null;
-    
-    /**
      * An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
      * datatype: Array
      **/
@@ -230,8 +110,8 @@
         self.is21CFRPart11 = data.is21CFRPart11;
       }
       
-      if (data.isUniversalSignatureEnvelope) {
-        self.isUniversalSignatureEnvelope = data.isUniversalSignatureEnvelope;
+      if (data.isSignatureProviderEnvelope) {
+        self.isSignatureProviderEnvelope = data.isSignatureProviderEnvelope;
       }
       
       if (data.customFields) {
@@ -549,16 +429,16 @@
      * get 
      * @return {String}
      **/
-    self.getIsUniversalSignatureEnvelope = function() {
-      return self.isUniversalSignatureEnvelope;
+    self.getIsSignatureProviderEnvelope = function() {
+      return self.isSignatureProviderEnvelope;
     }
 
     /**
      * set 
-     * @param {String} isUniversalSignatureEnvelope
+     * @param {String} isSignatureProviderEnvelope
      **/
-    self.setIsUniversalSignatureEnvelope = function (isUniversalSignatureEnvelope) {
-      self.isUniversalSignatureEnvelope = isUniversalSignatureEnvelope;
+    self.setIsSignatureProviderEnvelope = function (isSignatureProviderEnvelope) {
+      self.isSignatureProviderEnvelope = isSignatureProviderEnvelope;
     }
     
     /**

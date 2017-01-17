@@ -22,26 +22,6 @@
   var IdCheckInformationInput = function IdCheckInformationInput() { 
     var self = this;
     
-    /**
-     * datatype: AddressInformationInput
-     **/
-    self.addressInformationInput = null;
-    
-    /**
-     * datatype: DobInformationInput
-     **/
-    self.dobInformationInput = null;
-    
-    /**
-     * datatype: Ssn4InformationInput
-     **/
-    self.ssn4InformationInput = null;
-    
-    /**
-     * datatype: Ssn9InformationInput
-     **/
-    self.ssn9InformationInput = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {
