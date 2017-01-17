@@ -24,23 +24,6 @@
   var AddressInformationInput = function AddressInformationInput() { 
     var self = this;
     
-    /**
-     * datatype: AddressInformation
-     **/
-    self.addressInformation = null;
-    
-    /**
-     * Specifies the display level for the recipient. \nValid values are: \n\n* ReadOnly\n* Editable\n* DoNotDisplay
-     * datatype: String
-     **/
-    self.displayLevelCode = null;
-    
-    /**
-     * When set to **true**, the information needs to be returned in the response.
-     * datatype: String
-     **/
-    self.receiveInResponse = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -23,48 +23,6 @@
     var self = this;
     
     /**
-     * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * datatype: String
-     **/
-    self.documentId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.uri = null;
-    
-    /**
-     * The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}].
-     * datatype: String
-     **/
-    self.remoteUrl = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.password = null;
-    
-    /**
-     * When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs.
-     * datatype: String
-     **/
-    self.transformPdfFields = null;
-    
-    /**
-     * The file extension type of the document. If the document is not a PDF it is converted to a PDF.
-     * datatype: String
-     **/
-    self.fileExtension = null;
-    
-    /**
      * Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template. \n\nA matchbox consists of 5 elements:\n\n* pageNumber - The document page number  on which the matchbox will appear. \n* xPosition - The x position of the matchbox on a page. \n* yPosition - The y position of the matchbox on a page.\n* width - The width of the matchbox. \n* height - The height of the matchbox.
      * datatype: Array
      **/
@@ -72,39 +30,9 @@
     
     /**
      * 
-     * datatype: String
-     **/
-    self.order = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.pages = null;
-    
-    /**
-     * 
      * datatype: Array
      **/
     self.documentFields = [];
-    
-    /**
-     * When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.
-     * datatype: String
-     **/
-    self.encryptedWithKeyManager = null;
-    
-    /**
-     * The document byte stream. This allows putting a base64 version of document bytes into an envelope.
-     * datatype: String
-     **/
-    self.documentBase64 = null;
-    
-    /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.applyAnchorTabs = null;
     
 
     self.constructFromObject = function(data) {
@@ -166,6 +94,18 @@
       
       if (data.applyAnchorTabs) {
         self.applyAnchorTabs = data.applyAnchorTabs;
+      }
+      
+      if (data.display) {
+        self.display = data.display;
+      }
+      
+      if (data.includeInDownload) {
+        self.includeInDownload = data.includeInDownload;
+      }
+      
+      if (data.signerMustAcknowledge) {
+        self.signerMustAcknowledge = data.signerMustAcknowledge;
       }
       
     }
@@ -364,7 +304,7 @@
     }
     
     /**
-     * get The document byte stream. This allows putting a base64 version of document bytes into an envelope.
+     * get The document’s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
      * @return {String}
      **/
     self.getDocumentBase64 = function() {
@@ -372,7 +312,7 @@
     }
 
     /**
-     * set The document byte stream. This allows putting a base64 version of document bytes into an envelope.
+     * set The document’s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
      * @param {String} documentBase64
      **/
     self.setDocumentBase64 = function (documentBase64) {
@@ -393,6 +333,54 @@
      **/
     self.setApplyAnchorTabs = function (applyAnchorTabs) {
       self.applyAnchorTabs = applyAnchorTabs;
+    }
+    
+    /**
+     * get 
+     * @return {String}
+     **/
+    self.getDisplay = function() {
+      return self.display;
+    }
+
+    /**
+     * set 
+     * @param {String} display
+     **/
+    self.setDisplay = function (display) {
+      self.display = display;
+    }
+    
+    /**
+     * get 
+     * @return {String}
+     **/
+    self.getIncludeInDownload = function() {
+      return self.includeInDownload;
+    }
+
+    /**
+     * set 
+     * @param {String} includeInDownload
+     **/
+    self.setIncludeInDownload = function (includeInDownload) {
+      self.includeInDownload = includeInDownload;
+    }
+    
+    /**
+     * get 
+     * @return {String}
+     **/
+    self.getSignerMustAcknowledge = function() {
+      return self.signerMustAcknowledge;
+    }
+
+    /**
+     * set 
+     * @param {String} signerMustAcknowledge
+     **/
+    self.setSignerMustAcknowledge = function (signerMustAcknowledge) {
+      self.signerMustAcknowledge = signerMustAcknowledge;
     }
     
 

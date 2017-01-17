@@ -18,21 +18,11 @@
   
   
 
-  
+  /**
+   * This object describes errors that occur. It is only valid for responses, and ignored in requests.
+   **/
   var ErrorDetails = function ErrorDetails() { 
     var self = this;
-    
-    /**
-     * An error code associated with the error.
-     * datatype: String
-     **/
-    self.errorCode = null;
-    
-    /**
-     * A short error message.
-     * datatype: String
-     **/
-    self.message = null;
     
 
     self.constructFromObject = function(data) {

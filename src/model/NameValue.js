@@ -22,23 +22,6 @@
   var NameValue = function NameValue() { 
     var self = this;
     
-    /**
-     * The name or key of a name/value pair.
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * The value field of a name/value pair.
-     * datatype: String
-     **/
-    self.value = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

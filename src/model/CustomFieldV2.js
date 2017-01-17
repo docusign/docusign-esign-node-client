@@ -22,47 +22,6 @@
   var CustomFieldV2 = function CustomFieldV2() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.fieldId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.show = null;
-    
-    /**
-     * When set to **true**, the signer is required to fill out this tab
-     * datatype: String
-     **/
-    self.required = null;
-    
-    /**
-     * The value of the custom field.
-     * datatype: String
-     **/
-    self.value = null;
-    
-    /**
-     * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
-     * datatype: String
-     **/
-    self.configurationType = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

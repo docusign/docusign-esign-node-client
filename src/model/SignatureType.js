@@ -22,18 +22,6 @@
   var SignatureType = function SignatureType() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.type = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.isDefault = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

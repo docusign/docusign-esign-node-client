@@ -22,12 +22,6 @@
   var ViewUrl = function ViewUrl() { 
     var self = this;
     
-    /**
-     * The view URL to be navigated to.
-     * datatype: String
-     **/
-    self.url = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

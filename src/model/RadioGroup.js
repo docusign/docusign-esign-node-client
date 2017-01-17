@@ -23,58 +23,10 @@
     var self = this;
     
     /**
-     * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * datatype: String
-     **/
-    self.documentId = null;
-    
-    /**
-     * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-     * datatype: String
-     **/
-    self.recipientId = null;
-    
-    /**
-     * For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
-     * datatype: String
-     **/
-    self.conditionalParentLabel = null;
-    
-    /**
-     * For conditional fields, this is the value of the parent tab that controls the tab's visibility.\n\nIf the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \"on\" as the value to show that the parent tab is active.
-     * datatype: String
-     **/
-    self.conditionalParentValue = null;
-    
-    /**
-     * The name of the group.
-     * datatype: String
-     **/
-    self.groupName = null;
-    
-    /**
      * Specifies the locations and status for radio buttons that are grouped together.
      * datatype: Array
      **/
     self.radios = [];
-    
-    /**
-     * When set to **true**, this custom tab is shared.
-     * datatype: String
-     **/
-    self.shared = null;
-    
-    /**
-     * Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
-     * datatype: String
-     **/
-    self.requireInitialOnSharedChange = null;
-    
-    /**
-     * When set to **true** and shared is true, information must be entered in this field to complete the envelope.
-     * datatype: String
-     **/
-    self.requireAll = null;
     
 
     self.constructFromObject = function(data) {

@@ -22,18 +22,6 @@
   var ViewLinkRequest = function ViewLinkRequest() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.returnUrl = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.email = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

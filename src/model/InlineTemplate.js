@@ -23,31 +23,10 @@
     var self = this;
     
     /**
-     * Specifies the order in which templates are overlaid.
-     * datatype: String
-     **/
-    self.sequence = null;
-    
-    /**
-     * datatype: Envelope
-     **/
-    self.envelope = null;
-    
-    /**
      * Complex element contains the details on the documents in the envelope.
      * datatype: Array
      **/
     self.documents = [];
-    
-    /**
-     * datatype: Recipients
-     **/
-    self.recipients = null;
-    
-    /**
-     * datatype: CustomFields
-     **/
-    self.customFields = null;
     
 
     self.constructFromObject = function(data) {

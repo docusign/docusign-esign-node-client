@@ -22,18 +22,6 @@
   var ServerTemplate = function ServerTemplate() { 
     var self = this;
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.sequence = null;
-    
-    /**
-     * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * datatype: String
-     **/
-    self.templateId = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

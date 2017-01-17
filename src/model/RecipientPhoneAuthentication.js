@@ -23,24 +23,6 @@
     var self = this;
     
     /**
-     * Boolean. When set to **true**, the recipient can supply a phone number their choice.
-     * datatype: String
-     **/
-    self.recipMayProvideNumber = null;
-    
-    /**
-     * Reserved.
-     * datatype: String
-     **/
-    self.validateRecipProvidedNumber = null;
-    
-    /**
-     * Reserved.
-     * datatype: String
-     **/
-    self.recordVoicePrint = null;
-    
-    /**
      * An Array containing a list of phone numbers the recipient may use for SMS text authentication.
      * datatype: Array
      **/

@@ -64,23 +64,6 @@
      **/
     self.inPersonSigners = [];
     
-    /**
-     * 
-     * datatype: String
-     **/
-    self.recipientCount = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.currentRoutingOrder = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

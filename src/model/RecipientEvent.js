@@ -22,18 +22,6 @@
   var RecipientEvent = function RecipientEvent() { 
     var self = this;
     
-    /**
-     * The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
-     * datatype: String
-     **/
-    self.recipientEventStatusCode = null;
-    
-    /**
-     * When set to **true**, the PDF documents are included in the message along with the updated XML.
-     * datatype: String
-     **/
-    self.includeDocuments = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

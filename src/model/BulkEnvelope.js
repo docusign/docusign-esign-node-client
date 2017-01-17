@@ -22,59 +22,6 @@
   var BulkEnvelope = function BulkEnvelope() { 
     var self = this;
     
-    /**
-     * Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
-     * datatype: String
-     **/
-    self.transactionId = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.submittedDateTime = null;
-    
-    /**
-     * The envelope ID of the envelope status that failed to post.
-     * datatype: String
-     **/
-    self.envelopeId = null;
-    
-    /**
-     * Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * datatype: String
-     **/
-    self.envelopeUri = null;
-    
-    /**
-     * Reserved: TBD
-     * datatype: String
-     **/
-    self.bulkRecipientRow = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.name = null;
-    
-    /**
-     * 
-     * datatype: String
-     **/
-    self.email = null;
-    
-    /**
-     * Indicates the status of the bulk send operation. Returned values can be:\n* queued\n* processing\n* sent\n* failed
-     * datatype: String
-     **/
-    self.bulkStatus = null;
-    
-    /**
-     * datatype: ErrorDetails
-     **/
-    self.errorDetails = null;
-    
 
     self.constructFromObject = function(data) {
       if (!data) {

@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './Approve', './Checkbox', './Company', './DateSigned', './Decline', './Email', './EmailAddress', './EnvelopeId', './FirstName', './FormulaTab', './FullName', './InitialHere', './LastName', './List', './Note', './RadioGroup', './SignHere', './SignerAttachment', './Ssn', './Text', './Title', './Zip'], factory);
+    define([undefined, './Approve', './Checkbox', './Company', './DateSigned', './Decline', './Email', './EmailAddress', './EnvelopeId', './FirstName', './FormulaTab', './FullName', './InitialHere', './LastName', './List', './Note', './RadioGroup', './SignHere', './SignerAttachment', './Ssn', './Text', './Title', './View', './Zip'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./Approve'), require('./Checkbox'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./Note'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./Ssn'), require('./Text'), require('./Title'), require('./Zip'));
+    module.exports = factory(undefined, require('./Approve'), require('./Checkbox'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./Note'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./Ssn'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.Note, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.Ssn, root.Docusign.Text, root.Docusign.Title, root.Docusign.Zip);
+    factory(root.Docusign, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.Note, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.Ssn, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
   }
-}(this, function(module, Approve, Checkbox, Company, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, Note, RadioGroup, SignHere, SignerAttachment, Ssn, Text, Title, Zip) {
+}(this, function(module, Approve, Checkbox, Company, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, Note, RadioGroup, SignHere, SignerAttachment, Ssn, Text, Title, View, Zip) {
   'use strict';
 
   
@@ -51,6 +51,12 @@
      * datatype: Array
      **/
     self.declineTabs = [];
+    
+    /**
+     * 
+     * datatype: Array
+     **/
+    self.viewTabs = [];
     
     /**
      * Specifies a tag on the document where you want the recipient's name to appear.
@@ -190,6 +196,10 @@
       
       if (data.declineTabs) {
         self.declineTabs = data.declineTabs;
+      }
+      
+      if (data.viewTabs) {
+        self.viewTabs = data.viewTabs;
       }
       
       if (data.fullNameTabs) {
@@ -349,6 +359,22 @@
      **/
     self.setDeclineTabs = function (declineTabs) {
       self.declineTabs = declineTabs;
+    }
+    
+    /**
+     * get 
+     * @return {Array}
+     **/
+    self.getViewTabs = function() {
+      return self.viewTabs;
+    }
+
+    /**
+     * set 
+     * @param {Array} viewTabs
+     **/
+    self.setViewTabs = function (viewTabs) {
+      self.viewTabs = viewTabs;
     }
     
     /**
