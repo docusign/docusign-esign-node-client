@@ -15,6 +15,16 @@
 }(this, function(superagent) {
   'use strict';
 
+  var removeNulls = function(obj) {
+    var isArray = obj instanceof Array;
+    for (var k in obj) {
+      if (typeof obj[k] === "object") removeNulls(obj[k]);
+      if (isArray && obj.length === k) removeNulls(obj);
+      if (obj[k] instanceof Array && obj[k].length === 0) delete obj[k];
+    }
+    return obj;
+  };
+
   var ApiClient = function ApiClient() {
     /**
      * The base path to put in front of every API call's (relative) path.
@@ -33,7 +43,7 @@
    */  
   ApiClient.prototype.setBasePath = function setBasePath(basePath) {
     this.basePath = basePath;
-  }
+  };
     
   /**
    * Adds request headers to the API client. Useful for Authentication.
@@ -174,7 +184,7 @@
         }
       }
     } else if (bodyParam) {
-      request.send(bodyParam);
+      request.send(removeNulls(bodyParam));
     }
 
     var accept = this.jsonPreferredMime(accepts);
