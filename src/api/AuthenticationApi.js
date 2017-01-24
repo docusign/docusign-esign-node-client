@@ -35,36 +35,14 @@
     /// </summary>
     self.LoginOptions = function () {
       
-      var includeAccountIdGuid = null;
-      
-      var apiPassword = null;
-      
       var loginSettings = null;
       
       var embedAccountIdGuid = null;
       
+      var apiPassword = null;
       
-      /*
-       * When set to **true**, shows the account ID GUID in the response.
-       */
-      this.setIncludeAccountIdGuid = function(includeAccountIdGuid) {
-        this.includeAccountIdGuid = includeAccountIdGuid;
-      }
-	
-      this.getIncludeAccountIdGuid = function() {
-        return this.includeAccountIdGuid;
-      }
+      var includeAccountIdGuid = null;
       
-      /*
-       * When set to **true**, shows the account API password in the response.
-       */
-      this.setApiPassword = function(apiPassword) {
-        this.apiPassword = apiPassword;
-      }
-	
-      this.getApiPassword = function() {
-        return this.apiPassword;
-      }
       
       /*
        * Determines whether login settings are returned in the response.\n\nValid Values:\n\n* all -  All the login settings are returned. \n* none - no login settings are returned.
@@ -83,6 +61,28 @@
 	
       this.getEmbedAccountIdGuid = function() {
         return this.embedAccountIdGuid;
+      }
+      
+      /*
+       * When set to **true**, shows the account API password in the response.
+       */
+      this.setApiPassword = function(apiPassword) {
+        this.apiPassword = apiPassword;
+      }
+	
+      this.getApiPassword = function() {
+        return this.apiPassword;
+      }
+      
+      /*
+       * When set to **true**, shows the account ID GUID in the response.
+       */
+      this.setIncludeAccountIdGuid = function(includeAccountIdGuid) {
+        this.includeAccountIdGuid = includeAccountIdGuid;
+      }
+	
+      this.getIncludeAccountIdGuid = function() {
+        return this.includeAccountIdGuid;
       }
       
     }
@@ -105,10 +105,10 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
-          'include_account_id_guid': options.includeAccountIdGuid,
-          'api_password': options.apiPassword,
           'login_settings': options.loginSettings,
-          'embed_account_id_guid': options.embedAccountIdGuid
+          'embed_account_id_guid': options.embedAccountIdGuid,
+          'api_password': options.apiPassword,
+          'include_account_id_guid': options.includeAccountIdGuid
         };
       }
       var headerParams = {

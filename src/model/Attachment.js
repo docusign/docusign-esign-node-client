@@ -30,10 +30,6 @@
         return;
       }
       
-      if (data.attachmentId) {
-        self.attachmentId = data.attachmentId;
-      }
-      
       if (data.label) {
         self.label = data.label;
       }
@@ -42,32 +38,8 @@
         self.attachmentType = data.attachmentType;
       }
       
-      if (data.accessControl) {
-        self.accessControl = data.accessControl;
-      }
-      
-      if (data.data) {
-        self.data = data.data;
-      }
-      
     }
 
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAttachmentId = function() {
-      return self.attachmentId;
-    }
-
-    /**
-     * set 
-     * @param {String} attachmentId
-     **/
-    self.setAttachmentId = function (attachmentId) {
-      self.attachmentId = attachmentId;
-    }
     
     /**
      * get 
@@ -99,38 +71,6 @@
      **/
     self.setAttachmentType = function (attachmentType) {
       self.attachmentType = attachmentType;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAccessControl = function() {
-      return self.accessControl;
-    }
-
-    /**
-     * set 
-     * @param {String} accessControl
-     **/
-    self.setAccessControl = function (accessControl) {
-      self.accessControl = accessControl;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getData = function() {
-      return self.data;
-    }
-
-    /**
-     * set 
-     * @param {String} data
-     **/
-    self.setData = function (data) {
-      self.data = data;
     }
     
 

@@ -18,9 +18,7 @@
   
   
 
-  /**
-   * This object describes errors that occur. It is only valid for responses, and ignored in requests.
-   **/
+  
   var ErrorDetails = function ErrorDetails() { 
     var self = this;
     

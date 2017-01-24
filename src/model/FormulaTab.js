@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails', './MergeField', './PaymentDetails'], factory);
+    define([undefined, './ErrorDetails', './MergeField'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'), require('./MergeField'), require('./PaymentDetails'));
+    module.exports = factory(undefined, require('./ErrorDetails'), require('./MergeField'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.PaymentDetails);
+    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.MergeField);
   }
-}(this, function(module, ErrorDetails, MergeField, PaymentDetails) {
+}(this, function(module, ErrorDetails, MergeField) {
   'use strict';
 
   
@@ -38,11 +38,6 @@
       
       if (data.roundDecimalPlaces) {
         self.roundDecimalPlaces = data.roundDecimalPlaces;
-      }
-      
-      if (data.paymentDetails) {
-        self.paymentDetails = new data.paymentDetails.constructor();
-        self.paymentDetails.constructFromObject(data.paymentDetails);
       }
       
       if (data.validationPattern) {
@@ -276,20 +271,6 @@
      **/
     self.setRoundDecimalPlaces = function (roundDecimalPlaces) {
       self.roundDecimalPlaces = roundDecimalPlaces;
-    }
-    
-    /**
-     * @return {PaymentDetails}
-     **/
-    self.getPaymentDetails = function() {
-      return self.paymentDetails;
-    }
-
-    /**
-     * @param {PaymentDetails} paymentDetails
-     **/
-    self.setPaymentDetails = function (paymentDetails) {
-      self.paymentDetails = paymentDetails;
     }
     
     /**

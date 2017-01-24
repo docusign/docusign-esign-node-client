@@ -56,7 +56,7 @@
     }
     
     /**
-     * get The URL to be redirected to after the console view session has ended.
+     * get 
      * @return {String}
      **/
     self.getReturnUrl = function() {
@@ -64,7 +64,7 @@
     }
 
     /**
-     * set The URL to be redirected to after the console view session has ended.
+     * set 
      * @param {String} returnUrl
      **/
     self.setReturnUrl = function (returnUrl) {
