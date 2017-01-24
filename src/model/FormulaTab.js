@@ -36,10 +36,6 @@
         self.formula = data.formula;
       }
       
-      if (data.roundDecimalPlaces) {
-        self.roundDecimalPlaces = data.roundDecimalPlaces;
-      }
-      
       if (data.validationPattern) {
         self.validationPattern = data.validationPattern;
       }
@@ -218,10 +214,6 @@
         self.errorDetails.constructFromObject(data.errorDetails);
       }
       
-      if (data.tabOrder) {
-        self.tabOrder = data.tabOrder;
-      }
-      
     }
 
     
@@ -255,22 +247,6 @@
      **/
     self.setFormula = function (formula) {
       self.formula = formula;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getRoundDecimalPlaces = function() {
-      return self.roundDecimalPlaces;
-    }
-
-    /**
-     * set 
-     * @param {String} roundDecimalPlaces
-     **/
-    self.setRoundDecimalPlaces = function (roundDecimalPlaces) {
-      self.roundDecimalPlaces = roundDecimalPlaces;
     }
     
     /**
@@ -971,22 +947,6 @@
      **/
     self.setErrorDetails = function (errorDetails) {
       self.errorDetails = errorDetails;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getTabOrder = function() {
-      return self.tabOrder;
-    }
-
-    /**
-     * set 
-     * @param {String} tabOrder
-     **/
-    self.setTabOrder = function (tabOrder) {
-      self.tabOrder = tabOrder;
     }
     
 

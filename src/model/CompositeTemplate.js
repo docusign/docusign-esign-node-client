@@ -65,7 +65,7 @@
 
     
     /**
-     * get The identify of this composite template. It is used as a reference when adding document object information. If used, the document’s `content-disposition` must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
+     * get Specifies the identify the composite template. It is used as a reference when adding document object information. If used, the document content-disposition must include the composite template ID to which the document should be added. If composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
      * @return {String}
      **/
     self.getCompositeTemplateId = function() {
@@ -73,7 +73,7 @@
     }
 
     /**
-     * set The identify of this composite template. It is used as a reference when adding document object information. If used, the document’s `content-disposition` must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
+     * set Specifies the identify the composite template. It is used as a reference when adding document object information. If used, the document content-disposition must include the composite template ID to which the document should be added. If composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
      * @param {String} compositeTemplateId
      **/
     self.setCompositeTemplateId = function (compositeTemplateId) {

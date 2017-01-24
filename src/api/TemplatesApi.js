@@ -86,9 +86,9 @@
     
     /**
      * Creates an envelope from a template.
-     * Creates a template definition using a multipart request.\n\n###Template Email Subject Merge Fields\n\nCall this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.\n\nThe merge fields, based on the recipient’s role name, are added to the `emailSubject` property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.\n\nBoth the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.\n###### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.\n\nTo add a recipient’s name in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:\n\n[[&lt;roleName&gt;_UserName]]\n\nExample:\n\n`\&quot;emailSubject\&quot;:\&quot;[[Signer 1_UserName]], Please sign this NDA\&quot;,`\n\nTo add a recipient’s email address in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:\n\n[[&lt;roleName&gt;_Email]]\n\nExample:\n\n`\&quot;emailSubject\&quot;:\&quot;[[Signer 1_Email]], Please sign this NDA\&quot;,`\n\n\nIn both cases the &lt;roleName&gt; is the recipient&#39;s contents of the `roleName` property in the template.\n\nFor cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&lt;roleName&gt;_UserName]] or [[&lt;roleName&gt;_Email]] is shown in the email subject.
+     * Creates a template definition using a multipart request.\n\n###Template Email Subject Merge Fields\n\nCall this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.\n\nThe merge fields, based on the recipient’s role name, are added to the `emailSubject` property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.\n\nBoth the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.\n#### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.\n\nTo add a recipient’s name in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:\n\n[[&lt;roleName&gt;_UserName]]\n\nExample:\n\n`\&quot;emailSubject\&quot;:\&quot;[[Signer 1_UserName]], Please sign this NDA\&quot;,`\n\nTo add a recipient’s email address in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:\n\n[[&lt;roleName&gt;_Email]]\n\nExample:\n\n`\&quot;emailSubject\&quot;:\&quot;[[Signer 1_Email]], Please sign this NDA\&quot;,`\n\n\nIn both cases the &lt;roleName&gt; is the recipient&#39;s contents of the `roleName` property in the template.\n\nFor cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&lt;roleName&gt;_UserName]] or [[&lt;roleName&gt;_Email]] is shown in the email subject.
      * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {EnvelopeTemplate} envelopeTemplate: 
+     * @param {EnvelopeTemplate} envelopeTemplate: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TemplateSummary
      */
@@ -203,7 +203,7 @@
      * Updates an existing template.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {EnvelopeTemplate} envelopeTemplate: 
+     * @param {EnvelopeTemplate} envelopeTemplate: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TemplateUpdateSummary
      */
@@ -324,7 +324,7 @@
      * Updates the custom fields in a template.\n\nEach custom field used in a template must have a unique name.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {TemplateCustomFields} templateCustomFields: 
+     * @param {TemplateCustomFields} templateCustomFields: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: CustomFields
      */
@@ -385,7 +385,7 @@
      * Creates custom document fields in an existing template document.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {TemplateCustomFields} templateCustomFields: 
+     * @param {TemplateCustomFields} templateCustomFields: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: CustomFields
      */
@@ -446,7 +446,7 @@
      * Deletes envelope custom fields in a template.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {TemplateCustomFields} templateCustomFields: 
+     * @param {TemplateCustomFields} templateCustomFields: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: CustomFields
      */
@@ -561,36 +561,17 @@
     }
     
     
-    /// <summary>
-    /// Adds documents to a template document. Adds one or more documents to an existing template document.
-    /// </summary>
-    self.UpdateDocumentsOptions = function () {
-      
-      var applyDocumentFields = null;
-      
-      
-      this.setApplyDocumentFields = function(applyDocumentFields) {
-        this.applyDocumentFields = applyDocumentFields;
-      }
-	
-      this.getApplyDocumentFields = function() {
-        return this.applyDocumentFields;
-      }
-      
-    }
-    
     
     /**
      * Adds documents to a template document.
      * Adds one or more documents to an existing template document.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {EnvelopeDefinition} envelopeDefinition: 
-     * @param {TemplatesApi.UpdateDocumentsOptions} options: Options for modifying the method behavior.
+     * @param {EnvelopeDefinition} envelopeDefinition: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TemplateDocumentsResult
      */
-    self.updateDocuments = function(accountId, templateId, envelopeDefinition, options, callback) {
+    self.updateDocuments = function(accountId, templateId, envelopeDefinition, callback) {
       var postBody = envelopeDefinition;
       
       // verify the required parameter 'accountId' is set
@@ -610,11 +591,7 @@
         'templateId': templateId
       };
       var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'apply_document_fields': options.applyDocumentFields
-        };
-      }
+      
       var headerParams = {
       };
       var formParams = {
@@ -651,7 +628,7 @@
      * Deletes one or more documents from an existing template.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {EnvelopeDefinition} envelopeDefinition: 
+     * @param {EnvelopeDefinition} envelopeDefinition: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TemplateDocumentsResult
      */
@@ -841,7 +818,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} documentId: The ID of the document being accessed.
-     * @param {DocumentFieldsInformation} documentFieldsInformation: 
+     * @param {DocumentFieldsInformation} documentFieldsInformation: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: DocumentFieldsInformation
      */
@@ -909,7 +886,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} documentId: The ID of the document being accessed.
-     * @param {DocumentFieldsInformation} documentFieldsInformation: 
+     * @param {DocumentFieldsInformation} documentFieldsInformation: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: DocumentFieldsInformation
      */
@@ -977,7 +954,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} documentId: The ID of the document being accessed.
-     * @param {DocumentFieldsInformation} documentFieldsInformation: 
+     * @param {DocumentFieldsInformation} documentFieldsInformation: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: DocumentFieldsInformation
      */
@@ -1046,7 +1023,7 @@
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} documentId: The ID of the document being accessed.
      * @param {String} pageNumber: The page number being accessed.
-     * @param {PageRequest} pageRequest: 
+     * @param {PageRequest} pageRequest: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
 
      */
@@ -1233,7 +1210,7 @@
      * Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {TemplateNotificationRequest} templateNotificationRequest: 
+     * @param {TemplateNotificationRequest} templateNotificationRequest: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Notification
      */
@@ -1354,7 +1331,7 @@
      * Updates recipients in a template. \n\nYou can edit the following properties: `email`, `userName`, `routingOrder`, `faxNumber`, `deliveryMethod`, `accessCode`, and `requireIdLookup`.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {TemplateRecipients} templateRecipients: 
+     * @param {TemplateRecipients} templateRecipients: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: RecipientsUpdateSummary
      */
@@ -1415,7 +1392,7 @@
      * Adds one or more recipients to a template.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {TemplateRecipients} templateRecipients: 
+     * @param {TemplateRecipients} templateRecipients: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Recipients
      */
@@ -1476,7 +1453,7 @@
      * Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the `recipientId` being used as the key for deleting recipients.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
-     * @param {TemplateRecipients} templateRecipients: 
+     * @param {TemplateRecipients} templateRecipients: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Recipients
      */
@@ -1538,7 +1515,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} recipientId: The ID of the recipient being accessed.
-     * @param {TemplateRecipients} templateRecipients: 
+     * @param {TemplateRecipients} templateRecipients: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Recipients
      */
@@ -1606,7 +1583,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} recipientId: The ID of the recipient being accessed.
-     * @param {Tabs} tabs: 
+     * @param {Tabs} tabs: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Tabs
      */
@@ -1674,7 +1651,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} recipientId: The ID of the recipient being accessed.
-     * @param {TemplateTabs} templateTabs: 
+     * @param {TemplateTabs} templateTabs: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Tabs
      */
@@ -1742,7 +1719,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} recipientId: The ID of the recipient being accessed.
-     * @param {TemplateTabs} templateTabs: 
+     * @param {TemplateTabs} templateTabs: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Tabs
      */
@@ -1810,7 +1787,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} recipientId: The ID of the recipient being accessed.
-     * @param {TemplateTabs} templateTabs: 
+     * @param {TemplateTabs} templateTabs: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Tabs
      */
@@ -1878,7 +1855,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} templatePart: Currently, the only defined part is **groups**.
-     * @param {GroupInformation} groupInformation: 
+     * @param {GroupInformation} groupInformation: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: GroupInformation
      */
@@ -1946,7 +1923,7 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} templateId: The ID of the template being accessed.
      * @param {String} templatePart: Currently, the only defined part is **groups**.
-     * @param {GroupInformation} groupInformation: 
+     * @param {GroupInformation} groupInformation: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: GroupInformation
      */

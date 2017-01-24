@@ -146,10 +146,10 @@
     
     /**
      * Moves an envelope from its current folder to the specified folder.
-     * Moves an envelope from its current folder to the specified folder.\n\n###### Note: You can use this endpoint to delete envelopes by specifying `recyclebin&#39; in the `folderId` parameter of the endpoint. Placing an in process envelope (envelope status of `sent` or `delivered`) in the recycle bin voids the envelope. You can also use this endpoint to delete templates by specifying a template ID instead of an envelope ID in the &#39;envelopeIds&#39; property and specifying `recyclebin` in the `folderId` parameter.
+     * Moves an envelope from its current folder to the specified folder.\n\n#### Note: You can use this endpoint to delete envelopes by specifying `recyclebin&#39; in the `folderId` parameter of the endpoint. Placing an in process envelope (envelope status of `sent` or `delivered`) in the recycle bin voids the envelope. You can also use this endpoint to delete templates by specifying a template ID instead of an envelope ID in the &#39;envelopeIds&#39; property and specifying `recyclebin` in the `folderId` parameter.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} folderId: The ID of the folder being accessed.
-     * @param {FoldersRequest} foldersRequest: 
+     * @param {FoldersRequest} foldersRequest: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: FoldersResponse
      */
@@ -209,15 +209,7 @@
     /// </summary>
     self.SearchOptions = function () {
       
-      var orderBy = null;
-      
-      var count = null;
-      
-      var fromDate = null;
-      
       var toDate = null;
-      
-      var startPosition = null;
       
       var order = null;
       
@@ -225,39 +217,14 @@
       
       var all = null;
       
+      var orderBy = null;
       
-      /*
-       * Specifies the property used to sort the list. Valid values are: `action_required`, `created`, `completed`, `sent`, `signer_list`, `status`, or `subject`.
-       */
-      this.setOrderBy = function(orderBy) {
-        this.orderBy = orderBy;
-      }
-	
-      this.getOrderBy = function() {
-        return this.orderBy;
-      }
+      var startPosition = null;
       
-      /*
-       * Specifies the number of records returned in the cache. The number must be greater than 0 and less than or equal to 100.
-       */
-      this.setCount = function(count) {
-        this.count = count;
-      }
-	
-      this.getCount = function() {
-        return this.count;
-      }
+      var count = null;
       
-      /*
-       * Specifies the start of the date range to return. If no value is provided, the default search is the previous 30 days.
-       */
-      this.setFromDate = function(fromDate) {
-        this.fromDate = fromDate;
-      }
-	
-      this.getFromDate = function() {
-        return this.fromDate;
-      }
+      var fromDate = null;
+      
       
       /*
        * Specifies the end of the date range to return.
@@ -268,17 +235,6 @@
 	
       this.getToDate = function() {
         return this.toDate;
-      }
-      
-      /*
-       * Specifies the the starting location in the result set of the items that are returned.
-       */
-      this.setStartPosition = function(startPosition) {
-        this.startPosition = startPosition;
-      }
-	
-      this.getStartPosition = function() {
-        return this.startPosition;
       }
       
       /*
@@ -312,6 +268,50 @@
 	
       this.getAll = function() {
         return this.all;
+      }
+      
+      /*
+       * Specifies the property used to sort the list. Valid values are: `action_required`, `created`, `completed`, `sent`, `signer_list`, `status`, or `subject`.
+       */
+      this.setOrderBy = function(orderBy) {
+        this.orderBy = orderBy;
+      }
+	
+      this.getOrderBy = function() {
+        return this.orderBy;
+      }
+      
+      /*
+       * Specifies the the starting location in the result set of the items that are returned.
+       */
+      this.setStartPosition = function(startPosition) {
+        this.startPosition = startPosition;
+      }
+	
+      this.getStartPosition = function() {
+        return this.startPosition;
+      }
+      
+      /*
+       * Specifies the number of records returned in the cache. The number must be greater than 0 and less than or equal to 100.
+       */
+      this.setCount = function(count) {
+        this.count = count;
+      }
+	
+      this.getCount = function() {
+        return this.count;
+      }
+      
+      /*
+       * Specifies the start of the date range to return. If no value is provided, the default search is the previous 30 days.
+       */
+      this.setFromDate = function(fromDate) {
+        this.fromDate = fromDate;
+      }
+	
+      this.getFromDate = function() {
+        return this.fromDate;
       }
       
     }
@@ -348,14 +348,14 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
-          'order_by': options.orderBy,
-          'count': options.count,
-          'from_date': options.fromDate,
           'to_date': options.toDate,
-          'start_position': options.startPosition,
           'order': options.order,
           'include_recipients': options.includeRecipients,
-          'all': options.all
+          'all': options.all,
+          'order_by': options.orderBy,
+          'start_position': options.startPosition,
+          'count': options.count,
+          'from_date': options.fromDate
         };
       }
       var headerParams = {
