@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './OfflineAttributes', './RecipientAttachment', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './RecipientSignatureInformation', './RecipientSignatureProvider', './SocialAuthentication', './Tabs', './UserInfo'], factory);
+    define([undefined, './Attachment', './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './OfflineAttributes', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './RecipientSignatureInformation', './SocialAuthentication', './Tabs', './UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
+    module.exports = factory(undefined, require('./Attachment'), require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
+    factory(root.Docusign, root.Docusign.Attachment, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
   }
-}(this, function(module, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, OfflineAttributes, RecipientAttachment, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
+}(this, function(module, Attachment, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, OfflineAttributes, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, RecipientSignatureInformation, SocialAuthentication, Tabs, UserInfo) {
   'use strict';
 
   
@@ -21,12 +21,6 @@
   
   var Signer = function Signer() { 
     var self = this;
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.recipientSignatureProviders = [];
     
     /**
      * Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the `enforceSignerVisibility` property must be set to **true** for the envelope to use this.\n\nWhen enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.
@@ -69,10 +63,6 @@
         self.signatureInfo.constructFromObject(data.signatureInfo);
       }
       
-      if (data.autoNavigation) {
-        self.autoNavigation = data.autoNavigation;
-      }
-      
       if (data.defaultRecipient) {
         self.defaultRecipient = data.defaultRecipient;
       }
@@ -113,10 +103,6 @@
       
       if (data.recipientSuppliesTabs) {
         self.recipientSuppliesTabs = data.recipientSuppliesTabs;
-      }
-      
-      if (data.recipientSignatureProviders) {
-        self.recipientSignatureProviders = data.recipientSignatureProviders;
       }
       
       if (data.excludedDocuments) {
@@ -311,22 +297,6 @@
      * get 
      * @return {String}
      **/
-    self.getAutoNavigation = function() {
-      return self.autoNavigation;
-    }
-
-    /**
-     * set 
-     * @param {String} autoNavigation
-     **/
-    self.setAutoNavigation = function (autoNavigation) {
-      self.autoNavigation = autoNavigation;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
     self.getDefaultRecipient = function() {
       return self.defaultRecipient;
     }
@@ -480,22 +450,6 @@
     }
     
     /**
-     * get 
-     * @return {Array}
-     **/
-    self.getRecipientSignatureProviders = function() {
-      return self.recipientSignatureProviders;
-    }
-
-    /**
-     * set 
-     * @param {Array} recipientSignatureProviders
-     **/
-    self.setRecipientSignatureProviders = function (recipientSignatureProviders) {
-      self.recipientSignatureProviders = recipientSignatureProviders;
-    }
-    
-    /**
      * get Specifies the documents that are not visible to this recipient. Document Visibility must be enabled for the account and the `enforceSignerVisibility` property must be set to **true** for the envelope to use this.\n\nWhen enforce signer visibility is enabled, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.
      * @return {Array}
      **/
@@ -640,7 +594,7 @@
     }
     
     /**
-     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
+     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
      * @return {String}
      **/
     self.getAccessCode = function() {
@@ -648,7 +602,7 @@
     }
 
     /**
-     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
+     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
      * @param {String} accessCode
      **/
     self.setAccessCode = function (accessCode) {

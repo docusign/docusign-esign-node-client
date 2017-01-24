@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './CustomFields', './Document', './EmailSettings', './LockInformation', './Notification', './Recipients', './UserInfo'], factory);
+    define([undefined, './Document', './EmailSettings', './LockInformation', './Notification', './Recipients', './UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./CustomFields'), require('./Document'), require('./EmailSettings'), require('./LockInformation'), require('./Notification'), require('./Recipients'), require('./UserInfo'));
+    module.exports = factory(undefined, require('./Document'), require('./EmailSettings'), require('./LockInformation'), require('./Notification'), require('./Recipients'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.Recipients, root.Docusign.UserInfo);
+    factory(root.Docusign, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.Recipients, root.Docusign.UserInfo);
   }
-}(this, function(module, CustomFields, Document, EmailSettings, LockInformation, Notification, Recipients, UserInfo) {
+}(this, function(module, Document, EmailSettings, LockInformation, Notification, Recipients, UserInfo) {
   'use strict';
 
   
@@ -91,6 +91,11 @@
         self.documents = data.documents;
       }
       
+      if (data.recipients) {
+        self.recipients = new data.recipients.constructor();
+        self.recipients.constructFromObject(data.recipients);
+      }
+      
       if (data.transactionId) {
         self.transactionId = data.transactionId;
       }
@@ -105,10 +110,6 @@
       
       if (data.recipientsUri) {
         self.recipientsUri = data.recipientsUri;
-      }
-      
-      if (data.attachmentsUri) {
-        self.attachmentsUri = data.attachmentsUri;
       }
       
       if (data.asynchronous) {
@@ -137,15 +138,6 @@
       
       if (data.customFieldsUri) {
         self.customFieldsUri = data.customFieldsUri;
-      }
-      
-      if (data.customFields) {
-        self.customFields = new data.customFields.constructor();
-        self.customFields.constructFromObject(data.customFields);
-      }
-      
-      if (data.autoNavigation) {
-        self.autoNavigation = data.autoNavigation;
       }
       
       if (data.envelopeIdStamping) {
@@ -191,10 +183,6 @@
       
       if (data.deliveredDateTime) {
         self.deliveredDateTime = data.deliveredDateTime;
-      }
-      
-      if (data.initialSentDateTime) {
-        self.initialSentDateTime = data.initialSentDateTime;
       }
       
       if (data.sentDateTime) {
@@ -245,11 +233,6 @@
         self.recipientsLock = data.recipientsLock;
       }
       
-      if (data.recipients) {
-        self.recipients = new data.recipients.constructor();
-        self.recipients.constructFromObject(data.recipients);
-      }
-      
       if (data.brandLock) {
         self.brandLock = data.brandLock;
       }
@@ -280,8 +263,8 @@
         self.is21CFRPart11 = data.is21CFRPart11;
       }
       
-      if (data.isSignatureProviderEnvelope) {
-        self.isSignatureProviderEnvelope = data.isSignatureProviderEnvelope;
+      if (data.isUniversalSignatureEnvelope) {
+        self.isUniversalSignatureEnvelope = data.isUniversalSignatureEnvelope;
       }
       
     }
@@ -510,6 +493,20 @@
     }
     
     /**
+     * @return {Recipients}
+     **/
+    self.getRecipients = function() {
+      return self.recipients;
+    }
+
+    /**
+     * @param {Recipients} recipients
+     **/
+    self.setRecipients = function (recipients) {
+      self.recipients = recipients;
+    }
+    
+    /**
      * get Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
      * @return {String}
      **/
@@ -571,22 +568,6 @@
      **/
     self.setRecipientsUri = function (recipientsUri) {
       self.recipientsUri = recipientsUri;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAttachmentsUri = function() {
-      return self.attachmentsUri;
-    }
-
-    /**
-     * set 
-     * @param {String} attachmentsUri
-     **/
-    self.setAttachmentsUri = function (attachmentsUri) {
-      self.attachmentsUri = attachmentsUri;
     }
     
     /**
@@ -699,36 +680,6 @@
      **/
     self.setCustomFieldsUri = function (customFieldsUri) {
       self.customFieldsUri = customFieldsUri;
-    }
-    
-    /**
-     * @return {CustomFields}
-     **/
-    self.getCustomFields = function() {
-      return self.customFields;
-    }
-
-    /**
-     * @param {CustomFields} customFields
-     **/
-    self.setCustomFields = function (customFields) {
-      self.customFields = customFields;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAutoNavigation = function() {
-      return self.autoNavigation;
-    }
-
-    /**
-     * set 
-     * @param {String} autoNavigation
-     **/
-    self.setAutoNavigation = function (autoNavigation) {
-      self.autoNavigation = autoNavigation;
     }
     
     /**
@@ -903,22 +854,6 @@
      **/
     self.setDeliveredDateTime = function (deliveredDateTime) {
       self.deliveredDateTime = deliveredDateTime;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getInitialSentDateTime = function() {
-      return self.initialSentDateTime;
-    }
-
-    /**
-     * set 
-     * @param {String} initialSentDateTime
-     **/
-    self.setInitialSentDateTime = function (initialSentDateTime) {
-      self.initialSentDateTime = initialSentDateTime;
     }
     
     /**
@@ -1114,20 +1049,6 @@
     }
     
     /**
-     * @return {Recipients}
-     **/
-    self.getRecipients = function() {
-      return self.recipients;
-    }
-
-    /**
-     * @param {Recipients} recipients
-     **/
-    self.setRecipients = function (recipients) {
-      self.recipients = recipients;
-    }
-    
-    /**
      * get 
      * @return {String}
      **/
@@ -1239,16 +1160,16 @@
      * get 
      * @return {String}
      **/
-    self.getIsSignatureProviderEnvelope = function() {
-      return self.isSignatureProviderEnvelope;
+    self.getIsUniversalSignatureEnvelope = function() {
+      return self.isUniversalSignatureEnvelope;
     }
 
     /**
      * set 
-     * @param {String} isSignatureProviderEnvelope
+     * @param {String} isUniversalSignatureEnvelope
      **/
-    self.setIsSignatureProviderEnvelope = function (isSignatureProviderEnvelope) {
-      self.isSignatureProviderEnvelope = isSignatureProviderEnvelope;
+    self.setIsUniversalSignatureEnvelope = function (isUniversalSignatureEnvelope) {
+      self.isUniversalSignatureEnvelope = isUniversalSignatureEnvelope;
     }
     
 

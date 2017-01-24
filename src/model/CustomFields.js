@@ -18,9 +18,7 @@
   
   
 
-  /**
-   * Contains information about custom fields.
-   **/
+  
   var CustomFields = function CustomFields() { 
     var self = this;
     

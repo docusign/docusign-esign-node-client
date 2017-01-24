@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './NameValue', './SenderEmailNotifications', './SignerEmailNotifications', './UserAccountManagementGranularInformation'], factory);
+    define([undefined, './NameValue', './SenderEmailNotifications', './SignerEmailNotifications'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./NameValue'), require('./SenderEmailNotifications'), require('./SignerEmailNotifications'), require('./UserAccountManagementGranularInformation'));
+    module.exports = factory(undefined, require('./NameValue'), require('./SenderEmailNotifications'), require('./SignerEmailNotifications'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.NameValue, root.Docusign.SenderEmailNotifications, root.Docusign.SignerEmailNotifications, root.Docusign.UserAccountManagementGranularInformation);
+    factory(root.Docusign, root.Docusign.NameValue, root.Docusign.SenderEmailNotifications, root.Docusign.SignerEmailNotifications);
   }
-}(this, function(module, NameValue, SenderEmailNotifications, SignerEmailNotifications, UserAccountManagementGranularInformation) {
+}(this, function(module, NameValue, SenderEmailNotifications, SignerEmailNotifications) {
   'use strict';
 
   
@@ -36,11 +36,6 @@
       
       if (data.userSettings) {
         self.userSettings = data.userSettings;
-      }
-      
-      if (data.accountManagementGranular) {
-        self.accountManagementGranular = new data.accountManagementGranular.constructor();
-        self.accountManagementGranular.constructFromObject(data.accountManagementGranular);
       }
       
       if (data.signerEmailNotifications) {
@@ -70,20 +65,6 @@
      **/
     self.setUserSettings = function (userSettings) {
       self.userSettings = userSettings;
-    }
-    
-    /**
-     * @return {UserAccountManagementGranularInformation}
-     **/
-    self.getAccountManagementGranular = function() {
-      return self.accountManagementGranular;
-    }
-
-    /**
-     * @param {UserAccountManagementGranularInformation} accountManagementGranular
-     **/
-    self.setAccountManagementGranular = function (accountManagementGranular) {
-      self.accountManagementGranular = accountManagementGranular;
     }
     
     /**

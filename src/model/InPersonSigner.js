@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './NotaryHost', './OfflineAttributes', './RecipientAttachment', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './RecipientSignatureInformation', './RecipientSignatureProvider', './SocialAuthentication', './Tabs', './UserInfo'], factory);
+    define([undefined, './Attachment', './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './OfflineAttributes', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './RecipientSignatureInformation', './SocialAuthentication', './Tabs', './UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./NotaryHost'), require('./OfflineAttributes'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
+    module.exports = factory(undefined, require('./Attachment'), require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.NotaryHost, root.Docusign.OfflineAttributes, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
+    factory(root.Docusign, root.Docusign.Attachment, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
   }
-}(this, function(module, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, NotaryHost, OfflineAttributes, RecipientAttachment, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
+}(this, function(module, Attachment, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, OfflineAttributes, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, RecipientSignatureInformation, SocialAuthentication, Tabs, UserInfo) {
   'use strict';
 
   
@@ -27,12 +27,6 @@
      * datatype: Array
      **/
     self.signingGroupUsers = [];
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.recipientSignatureProviders = [];
     
     /**
      * Lists the social ID type that can be used for recipient authentication.
@@ -79,10 +73,6 @@
         self.signatureInfo.constructFromObject(data.signatureInfo);
       }
       
-      if (data.autoNavigation) {
-        self.autoNavigation = data.autoNavigation;
-      }
-      
       if (data.defaultRecipient) {
         self.defaultRecipient = data.defaultRecipient;
       }
@@ -127,19 +117,6 @@
       
       if (data.signingGroupUsers) {
         self.signingGroupUsers = data.signingGroupUsers;
-      }
-      
-      if (data.notaryHost) {
-        self.notaryHost = new data.notaryHost.constructor();
-        self.notaryHost.constructFromObject(data.notaryHost);
-      }
-      
-      if (data.inPersonSigningType) {
-        self.inPersonSigningType = data.inPersonSigningType;
-      }
-      
-      if (data.recipientSignatureProviders) {
-        self.recipientSignatureProviders = data.recipientSignatureProviders;
       }
       
       if (data.recipientId) {
@@ -370,22 +347,6 @@
      * get 
      * @return {String}
      **/
-    self.getAutoNavigation = function() {
-      return self.autoNavigation;
-    }
-
-    /**
-     * set 
-     * @param {String} autoNavigation
-     **/
-    self.setAutoNavigation = function (autoNavigation) {
-      self.autoNavigation = autoNavigation;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
     self.getDefaultRecipient = function() {
       return self.defaultRecipient;
     }
@@ -555,52 +516,6 @@
     }
     
     /**
-     * @return {NotaryHost}
-     **/
-    self.getNotaryHost = function() {
-      return self.notaryHost;
-    }
-
-    /**
-     * @param {NotaryHost} notaryHost
-     **/
-    self.setNotaryHost = function (notaryHost) {
-      self.notaryHost = notaryHost;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getInPersonSigningType = function() {
-      return self.inPersonSigningType;
-    }
-
-    /**
-     * set 
-     * @param {String} inPersonSigningType
-     **/
-    self.setInPersonSigningType = function (inPersonSigningType) {
-      self.inPersonSigningType = inPersonSigningType;
-    }
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
-    self.getRecipientSignatureProviders = function() {
-      return self.recipientSignatureProviders;
-    }
-
-    /**
-     * set 
-     * @param {Array} recipientSignatureProviders
-     **/
-    self.setRecipientSignatureProviders = function (recipientSignatureProviders) {
-      self.recipientSignatureProviders = recipientSignatureProviders;
-    }
-    
-    /**
      * get Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
      * @return {String}
      **/
@@ -633,7 +548,7 @@
     }
     
     /**
-     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
+     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
      * @return {String}
      **/
     self.getAccessCode = function() {
@@ -641,7 +556,7 @@
     }
 
     /**
-     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
+     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
      * @param {String} accessCode
      **/
     self.setAccessCode = function (accessCode) {

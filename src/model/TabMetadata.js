@@ -110,10 +110,6 @@
         self.maximumLength = data.maximumLength;
       }
       
-      if (data.scaleValue) {
-        self.scaleValue = data.scaleValue;
-      }
-      
       if (data.anchor) {
         self.anchor = data.anchor;
       }
@@ -496,22 +492,6 @@
      **/
     self.setMaximumLength = function (maximumLength) {
       self.maximumLength = maximumLength;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getScaleValue = function() {
-      return self.scaleValue;
-    }
-
-    /**
-     * set 
-     * @param {String} scaleValue
-     **/
-    self.setScaleValue = function (scaleValue) {
-      self.scaleValue = scaleValue;
     }
     
     /**
