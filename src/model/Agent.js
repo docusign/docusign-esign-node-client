@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './RecipientAttachment', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './SocialAuthentication', './UserInfo'], factory);
+    define([undefined, './Attachment', './AuthenticationStatus', './ErrorDetails', './IdCheckInformationInput', './RecipientEmailNotification', './RecipientPhoneAuthentication', './RecipientSAMLAuthentication', './RecipientSMSAuthentication', './SocialAuthentication', './UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
+    module.exports = factory(undefined, require('./Attachment'), require('./AuthenticationStatus'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
+    factory(root.Docusign, root.Docusign.Attachment, root.Docusign.AuthenticationStatus, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
   }
-}(this, function(module, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, RecipientAttachment, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
+}(this, function(module, Attachment, AuthenticationStatus, ErrorDetails, IdCheckInformationInput, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
   'use strict';
 
   
@@ -379,7 +379,7 @@
     }
     
     /**
-     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
+     * get If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
      * @return {String}
      **/
     self.getAccessCode = function() {
@@ -387,7 +387,7 @@
     }
 
     /**
-     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and it must conform to the account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then the access code is not required.
+     * set If a value is provided, the recipient must enter the value as the access code to view and sign the envelope. \n\nMaximum Length: 50 characters and must conform to account’s access code format setting.\n\nIf blank, but the signer `accessCode` property is set in the envelope, then that value is used.\n\nIf blank and the signer `accessCode` property is not set, then access code is not required.
      * @param {String} accessCode
      **/
     self.setAccessCode = function (accessCode) {

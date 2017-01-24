@@ -96,18 +96,6 @@
         self.applyAnchorTabs = data.applyAnchorTabs;
       }
       
-      if (data.display) {
-        self.display = data.display;
-      }
-      
-      if (data.includeInDownload) {
-        self.includeInDownload = data.includeInDownload;
-      }
-      
-      if (data.signerMustAcknowledge) {
-        self.signerMustAcknowledge = data.signerMustAcknowledge;
-      }
-      
     }
 
     
@@ -304,7 +292,7 @@
     }
     
     /**
-     * get The document’s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
+     * get The document byte stream. This allows putting a base64 version of document bytes into an envelope.
      * @return {String}
      **/
     self.getDocumentBase64 = function() {
@@ -312,7 +300,7 @@
     }
 
     /**
-     * set The document’s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
+     * set The document byte stream. This allows putting a base64 version of document bytes into an envelope.
      * @param {String} documentBase64
      **/
     self.setDocumentBase64 = function (documentBase64) {
@@ -333,54 +321,6 @@
      **/
     self.setApplyAnchorTabs = function (applyAnchorTabs) {
       self.applyAnchorTabs = applyAnchorTabs;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDisplay = function() {
-      return self.display;
-    }
-
-    /**
-     * set 
-     * @param {String} display
-     **/
-    self.setDisplay = function (display) {
-      self.display = display;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getIncludeInDownload = function() {
-      return self.includeInDownload;
-    }
-
-    /**
-     * set 
-     * @param {String} includeInDownload
-     **/
-    self.setIncludeInDownload = function (includeInDownload) {
-      self.includeInDownload = includeInDownload;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSignerMustAcknowledge = function() {
-      return self.signerMustAcknowledge;
-    }
-
-    /**
-     * set 
-     * @param {String} signerMustAcknowledge
-     **/
-    self.setSignerMustAcknowledge = function (signerMustAcknowledge) {
-      self.signerMustAcknowledge = signerMustAcknowledge;
     }
     
 

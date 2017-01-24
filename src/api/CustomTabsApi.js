@@ -114,7 +114,7 @@
      * Creates a custom tab.
      * Creates a tab with pre-defined properties, such as a text tab with a certain font type and validation pattern. Users can access the custom tabs when sending documents through the DocuSign web application.\n\nCustom tabs can be created for approve, checkbox, company, date, date signed, decline, email, email address, envelope ID, first name, formula, full name, initial here, last name, list, note, number, radio, sign here, signer attachment, SSN, text, title, and zip tabs.
      * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {TabMetadata} tabMetadata: 
+     * @param {TabMetadata} tabMetadata: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TabMetadata
      */
@@ -229,7 +229,7 @@
      * Updates the information in a custom tab for the specified account.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} customTabId: 
-     * @param {TabMetadata} tabMetadata: 
+     * @param {TabMetadata} tabMetadata: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TabMetadata
      */

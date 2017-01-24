@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails', './SharedItem', './TemplateSharedItem', './UserInfo'], factory);
+    define([undefined, './ErrorDetails', './SharedItem', './UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'), require('./SharedItem'), require('./TemplateSharedItem'), require('./UserInfo'));
+    module.exports = factory(undefined, require('./ErrorDetails'), require('./SharedItem'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.SharedItem, root.Docusign.TemplateSharedItem, root.Docusign.UserInfo);
+    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.SharedItem, root.Docusign.UserInfo);
   }
-}(this, function(module, ErrorDetails, SharedItem, TemplateSharedItem, UserInfo) {
+}(this, function(module, ErrorDetails, SharedItem, UserInfo) {
   'use strict';
 
   
@@ -28,12 +28,6 @@
      **/
     self.envelopes = [];
     
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.templates = [];
-    
 
     self.constructFromObject = function(data) {
       if (!data) {
@@ -47,10 +41,6 @@
       
       if (data.envelopes) {
         self.envelopes = data.envelopes;
-      }
-      
-      if (data.templates) {
-        self.templates = data.templates;
       }
       
       if (data.errorDetails) {
@@ -89,22 +79,6 @@
      **/
     self.setEnvelopes = function (envelopes) {
       self.envelopes = envelopes;
-    }
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
-    self.getTemplates = function() {
-      return self.templates;
-    }
-
-    /**
-     * set 
-     * @param {Array} templates
-     **/
-    self.setTemplates = function (templates) {
-      self.templates = templates;
     }
     
     /**

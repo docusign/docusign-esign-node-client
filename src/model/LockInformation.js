@@ -96,7 +96,7 @@
     }
     
     /**
-     * get The datetime until the envelope lock expires.
+     * get 
      * @return {String}
      **/
     self.getLockedUntilDateTime = function() {
@@ -104,7 +104,7 @@
     }
 
     /**
-     * set The datetime until the envelope lock expires.
+     * set 
      * @param {String} lockedUntilDateTime
      **/
     self.setLockedUntilDateTime = function (lockedUntilDateTime) {
@@ -128,7 +128,7 @@
     }
     
     /**
-     * get The type of envelope lock.  Currently \"edit\" is the only supported type.
+     * get 
      * @return {String}
      **/
     self.getLockType = function() {
@@ -136,7 +136,7 @@
     }
 
     /**
-     * set The type of envelope lock.  Currently \"edit\" is the only supported type.
+     * set 
      * @param {String} lockType
      **/
     self.setLockType = function (lockType) {
@@ -160,7 +160,7 @@
     }
     
     /**
-     * get A unique identifier provided to the owner of the envelope lock.   Used to prove ownership of the lock.
+     * get 
      * @return {String}
      **/
     self.getLockToken = function() {
@@ -168,7 +168,7 @@
     }
 
     /**
-     * set A unique identifier provided to the owner of the envelope lock.   Used to prove ownership of the lock.
+     * set 
      * @param {String} lockToken
      **/
     self.setLockToken = function (lockToken) {

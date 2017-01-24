@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './CustomFields', './EmailSettings', './LockInformation', './Notification', './Recipients'], factory);
+    define([undefined, './EmailSettings', './LockInformation', './Notification'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./CustomFields'), require('./EmailSettings'), require('./LockInformation'), require('./Notification'), require('./Recipients'));
+    module.exports = factory(undefined, require('./EmailSettings'), require('./LockInformation'), require('./Notification'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.CustomFields, root.Docusign.EmailSettings, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.Recipients);
+    factory(root.Docusign, root.Docusign.EmailSettings, root.Docusign.LockInformation, root.Docusign.Notification);
   }
-}(this, function(module, CustomFields, EmailSettings, LockInformation, Notification, Recipients) {
+}(this, function(module, EmailSettings, LockInformation, Notification) {
   'use strict';
 
   
@@ -44,10 +44,6 @@
         self.recipientsUri = data.recipientsUri;
       }
       
-      if (data.attachmentsUri) {
-        self.attachmentsUri = data.attachmentsUri;
-      }
-      
       if (data.asynchronous) {
         self.asynchronous = data.asynchronous;
       }
@@ -74,15 +70,6 @@
       
       if (data.customFieldsUri) {
         self.customFieldsUri = data.customFieldsUri;
-      }
-      
-      if (data.customFields) {
-        self.customFields = new data.customFields.constructor();
-        self.customFields.constructFromObject(data.customFields);
-      }
-      
-      if (data.autoNavigation) {
-        self.autoNavigation = data.autoNavigation;
       }
       
       if (data.envelopeIdStamping) {
@@ -128,10 +115,6 @@
       
       if (data.deliveredDateTime) {
         self.deliveredDateTime = data.deliveredDateTime;
-      }
-      
-      if (data.initialSentDateTime) {
-        self.initialSentDateTime = data.initialSentDateTime;
       }
       
       if (data.sentDateTime) {
@@ -182,11 +165,6 @@
         self.recipientsLock = data.recipientsLock;
       }
       
-      if (data.recipients) {
-        self.recipients = new data.recipients.constructor();
-        self.recipients.constructFromObject(data.recipients);
-      }
-      
       if (data.brandLock) {
         self.brandLock = data.brandLock;
       }
@@ -217,8 +195,8 @@
         self.is21CFRPart11 = data.is21CFRPart11;
       }
       
-      if (data.isSignatureProviderEnvelope) {
-        self.isSignatureProviderEnvelope = data.isSignatureProviderEnvelope;
+      if (data.isUniversalSignatureEnvelope) {
+        self.isUniversalSignatureEnvelope = data.isUniversalSignatureEnvelope;
       }
       
     }
@@ -286,22 +264,6 @@
      **/
     self.setRecipientsUri = function (recipientsUri) {
       self.recipientsUri = recipientsUri;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAttachmentsUri = function() {
-      return self.attachmentsUri;
-    }
-
-    /**
-     * set 
-     * @param {String} attachmentsUri
-     **/
-    self.setAttachmentsUri = function (attachmentsUri) {
-      self.attachmentsUri = attachmentsUri;
     }
     
     /**
@@ -414,36 +376,6 @@
      **/
     self.setCustomFieldsUri = function (customFieldsUri) {
       self.customFieldsUri = customFieldsUri;
-    }
-    
-    /**
-     * @return {CustomFields}
-     **/
-    self.getCustomFields = function() {
-      return self.customFields;
-    }
-
-    /**
-     * @param {CustomFields} customFields
-     **/
-    self.setCustomFields = function (customFields) {
-      self.customFields = customFields;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAutoNavigation = function() {
-      return self.autoNavigation;
-    }
-
-    /**
-     * set 
-     * @param {String} autoNavigation
-     **/
-    self.setAutoNavigation = function (autoNavigation) {
-      self.autoNavigation = autoNavigation;
     }
     
     /**
@@ -618,22 +550,6 @@
      **/
     self.setDeliveredDateTime = function (deliveredDateTime) {
       self.deliveredDateTime = deliveredDateTime;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getInitialSentDateTime = function() {
-      return self.initialSentDateTime;
-    }
-
-    /**
-     * set 
-     * @param {String} initialSentDateTime
-     **/
-    self.setInitialSentDateTime = function (initialSentDateTime) {
-      self.initialSentDateTime = initialSentDateTime;
     }
     
     /**
@@ -829,20 +745,6 @@
     }
     
     /**
-     * @return {Recipients}
-     **/
-    self.getRecipients = function() {
-      return self.recipients;
-    }
-
-    /**
-     * @param {Recipients} recipients
-     **/
-    self.setRecipients = function (recipients) {
-      self.recipients = recipients;
-    }
-    
-    /**
      * get 
      * @return {String}
      **/
@@ -954,16 +856,16 @@
      * get 
      * @return {String}
      **/
-    self.getIsSignatureProviderEnvelope = function() {
-      return self.isSignatureProviderEnvelope;
+    self.getIsUniversalSignatureEnvelope = function() {
+      return self.isUniversalSignatureEnvelope;
     }
 
     /**
      * set 
-     * @param {String} isSignatureProviderEnvelope
+     * @param {String} isUniversalSignatureEnvelope
      **/
-    self.setIsSignatureProviderEnvelope = function (isSignatureProviderEnvelope) {
-      self.isSignatureProviderEnvelope = isSignatureProviderEnvelope;
+    self.setIsUniversalSignatureEnvelope = function (isUniversalSignatureEnvelope) {
+      self.isUniversalSignatureEnvelope = isUniversalSignatureEnvelope;
     }
     
 
