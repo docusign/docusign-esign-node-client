@@ -59,10 +59,6 @@
         self.recipientsUri = data.recipientsUri;
       }
       
-      if (data.attachmentsUri) {
-        self.attachmentsUri = data.attachmentsUri;
-      }
-      
       if (data.asynchronous) {
         self.asynchronous = data.asynchronous;
       }
@@ -331,22 +327,6 @@
      **/
     self.setRecipientsUri = function (recipientsUri) {
       self.recipientsUri = recipientsUri;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAttachmentsUri = function() {
-      return self.attachmentsUri;
-    }
-
-    /**
-     * set 
-     * @param {String} attachmentsUri
-     **/
-    self.setAttachmentsUri = function (attachmentsUri) {
-      self.attachmentsUri = attachmentsUri;
     }
     
     /**

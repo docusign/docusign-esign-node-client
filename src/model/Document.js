@@ -96,18 +96,6 @@
         self.applyAnchorTabs = data.applyAnchorTabs;
       }
       
-      if (data.display) {
-        self.display = data.display;
-      }
-      
-      if (data.includeInDownload) {
-        self.includeInDownload = data.includeInDownload;
-      }
-      
-      if (data.signerMustAcknowledge) {
-        self.signerMustAcknowledge = data.signerMustAcknowledge;
-      }
-      
     }
 
     
@@ -333,54 +321,6 @@
      **/
     self.setApplyAnchorTabs = function (applyAnchorTabs) {
       self.applyAnchorTabs = applyAnchorTabs;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDisplay = function() {
-      return self.display;
-    }
-
-    /**
-     * set 
-     * @param {String} display
-     **/
-    self.setDisplay = function (display) {
-      self.display = display;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getIncludeInDownload = function() {
-      return self.includeInDownload;
-    }
-
-    /**
-     * set 
-     * @param {String} includeInDownload
-     **/
-    self.setIncludeInDownload = function (includeInDownload) {
-      self.includeInDownload = includeInDownload;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSignerMustAcknowledge = function() {
-      return self.signerMustAcknowledge;
-    }
-
-    /**
-     * set 
-     * @param {String} signerMustAcknowledge
-     **/
-    self.setSignerMustAcknowledge = function (signerMustAcknowledge) {
-      self.signerMustAcknowledge = signerMustAcknowledge;
     }
     
 

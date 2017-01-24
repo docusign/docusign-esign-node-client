@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../Configuration', '../ApiClient', '../model/ErrorDetails', '../model/AccountInformation', '../model/CustomFields', '../model/AccountSettingsInformation', '../model/AccountSharedAccess', '../model/AccountSignatureProviders', '../model/FileTypeList'], factory);
+    define(['../Configuration', '../ApiClient', '../model/ErrorDetails', '../model/AccountInformation', '../model/CustomFields', '../model/AccountSettingsInformation', '../model/AccountSharedAccess', '../model/FileTypeList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'), require('../model/AccountInformation'), require('../model/CustomFields'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/FileTypeList'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'), require('../model/AccountInformation'), require('../model/CustomFields'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/FileTypeList'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.AccountInformation, root.Docusign.CustomFields, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.FileTypeList);
+    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.AccountInformation, root.Docusign.CustomFields, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.FileTypeList);
   }
-}(this, function(Configuration, ApiClient, ErrorDetails, AccountInformation, CustomFields, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, FileTypeList) {
+}(this, function(Configuration, ApiClient, ErrorDetails, AccountInformation, CustomFields, AccountSettingsInformation, AccountSharedAccess, FileTypeList) {
   'use strict';
 
   var AccountsApi = function AccountsApi(apiClient) {
@@ -274,122 +274,15 @@
     }
     
     
-    /// <summary>
-    /// Reserved: Gets the shared item status for one or more users. Reserved: Retrieves shared item status for one or more users and types of items.\n\nUsers with account administration privileges can retrieve shared access information for all account users. Users without account administrator privileges can only retrieve shared access information for themselves and the returned information is limited to the retrieving the status of all members of the account that are sharing their folders to the user. This is equivalent to setting the shared=shared_from.
-    /// </summary>
-    self.ListSharedAccessOptions = function () {
-      
-      var searchText = null;
-      
-      var envelopesNotSharedUserStatus = null;
-      
-      var shared = null;
-      
-      var itemType = null;
-      
-      var userIds = null;
-      
-      var folderIds = null;
-      
-      var count = null;
-      
-      var startPosition = null;
-      
-      
-      /*
-       * This can be used to filter user names in the response. The wild-card ‘*’ (asterisk) can be used around the string.
-       */
-      this.setSearchText = function(searchText) {
-        this.searchText = searchText;
-      }
-	
-      this.getSearchText = function() {
-        return this.searchText;
-      }
-      
-      this.setEnvelopesNotSharedUserStatus = function(envelopesNotSharedUserStatus) {
-        this.envelopesNotSharedUserStatus = envelopesNotSharedUserStatus;
-      }
-	
-      this.getEnvelopesNotSharedUserStatus = function() {
-        return this.envelopesNotSharedUserStatus;
-      }
-      
-      /*
-       * Specifies which users should be included in the response. Multiple values can be used in the query by using a comma separated list of shared values. If the requestor does not have account administrator privileges, the shared_to value is used. Requestors that do not have account administrator privileges can only use the shared_to, any other setting will result in an error. The accepted values are:\n\n-not_shared: Returns account users that the specified item type is not being shared with and that are not sharing the specified item type with the user.\n\nUser X (Share) X Account user\n\n-shared_to: Returns account users that the specified item type is not being shared with and who are sharing the specified item type with the user (only shared to the user).\n\nUser X (Share) Account user\n\n-shared_from: Returns account users that the specified item type is being shared with and who are not sharing the specified item type with the user (only shared from the user).\n\nUser (Share) &gt;&gt; Account user\n\n-shared_to_and_from: Returns account users that the specified item type is being shared with and who are sharing the specified item type with the user.\n\nUser &lt;&lt; (Share) &gt;&gt; Account user
-       */
-      this.setShared = function(shared) {
-        this.shared = shared;
-      }
-	
-      this.getShared = function() {
-        return this.shared;
-      }
-      
-      /*
-       * Specifies the type of shared item being requested. The accepted values are:\n-envelopes: returns information about envelope sharing between users.
-       */
-      this.setItemType = function(itemType) {
-        this.itemType = itemType;
-      }
-	
-      this.getItemType = function() {
-        return this.itemType;
-      }
-      
-      /*
-       * A comma separated list of userIds for whom the shared item information is being requested.
-       */
-      this.setUserIds = function(userIds) {
-        this.userIds = userIds;
-      }
-	
-      this.getUserIds = function() {
-        return this.userIds;
-      }
-      
-      this.setFolderIds = function(folderIds) {
-        this.folderIds = folderIds;
-      }
-	
-      this.getFolderIds = function() {
-        return this.folderIds;
-      }
-      
-      /*
-       * Specifies maximum number of results included in the response. If no value is specified, this defaults to 1000.
-       */
-      this.setCount = function(count) {
-        this.count = count;
-      }
-	
-      this.getCount = function() {
-        return this.count;
-      }
-      
-      /*
-       * If the response set exceeds Count, this can be used to specify that the method should return users starting at the specified index. The first index is 0, and should be used in the first GET call. Typically this number is a multiple of Count. If no value is specified, this defaults to be 0.
-       */
-      this.setStartPosition = function(startPosition) {
-        this.startPosition = startPosition;
-      }
-	
-      this.getStartPosition = function() {
-        return this.startPosition;
-      }
-      
-    }
-    
     
     /**
      * Reserved: Gets the shared item status for one or more users.
      * Reserved: Retrieves shared item status for one or more users and types of items.\n\nUsers with account administration privileges can retrieve shared access information for all account users. Users without account administrator privileges can only retrieve shared access information for themselves and the returned information is limited to the retrieving the status of all members of the account that are sharing their folders to the user. This is equivalent to setting the shared=shared_from.
      * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {AccountsApi.ListSharedAccessOptions} options: Options for modifying the method behavior.
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: AccountSharedAccess
      */
-    self.listSharedAccess = function(accountId, options, callback) {
+    self.listSharedAccess = function(accountId, callback) {
       var postBody = null;
       
       // verify the required parameter 'accountId' is set
@@ -403,18 +296,7 @@
         'accountId': accountId
       };
       var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'search_text': options.searchText,
-          'envelopes_not_shared_user_status': options.envelopesNotSharedUserStatus,
-          'shared': options.shared,
-          'item_type': options.itemType,
-          'user_ids': options.userIds,
-          'folder_ids': options.folderIds,
-          'count': options.count,
-          'start_position': options.startPosition
-        };
-      }
+      
       var headerParams = {
       };
       var formParams = {
@@ -438,59 +320,6 @@
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/shared_access', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    
-    /**
-     * Returns Account available signature providers for specified account.
-     * 
-     * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: AccountSignatureProviders
-     */
-    self.listSignatureProviders = function(accountId, callback) {
-      var postBody = null;
-      
-      // verify the required parameter 'accountId' is set
-      if (accountId == null) {
-        throw "Missing the required parameter 'accountId' when calling listSignatureProviders";
-      }
-      
-
-      
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {};
-      
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new AccountSignatureProviders();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/signatureProviders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         contentTypes, accepts, handleResponse
       );

@@ -35,9 +35,21 @@
     /// </summary>
     self.ListStatusChangesOptions = function () {
       
+      var transactionIds = null;
+      
+      var folderIds = null;
+      
+      var envelopeIds = null;
+      
+      var powerformids = null;
+      
       var startPosition = null;
       
-      var transactionIds = null;
+      var status = null;
+      
+      var fromToStatus = null;
+      
+      var order = null;
       
       var userFilter = null;
       
@@ -45,52 +57,32 @@
       
       var userName = null;
       
+      var count = null;
+      
       var customField = null;
       
       var email = null;
       
-      var envelopeIds = null;
+      var toDate = null;
+      
+      var searchText = null;
       
       var exclude = null;
       
-      var folderIds = null;
-      
       var acStatus = null;
+      
+      var orderBy = null;
       
       var folderTypes = null;
       
-      var fromDate = null;
-      
       var block = null;
-      
-      var toDate = null;
       
       var include = null;
       
       var intersectingFolderIds = null;
       
-      var order = null;
+      var fromDate = null;
       
-      var orderBy = null;
-      
-      var fromToStatus = null;
-      
-      var powerformids = null;
-      
-      var searchText = null;
-      
-      var count = null;
-      
-      var status = null;
-      
-      
-      this.setStartPosition = function(startPosition) {
-        this.startPosition = startPosition;
-      }
-	
-      this.getStartPosition = function() {
-        return this.startPosition;
-      }
       
       /*
        * If included in the query string, this is a comma separated list of envelope `transactionId`s. \n\nIf included in the `request_body`, this is a list of envelope `transactionId`s. \n\n###### Note: `transactionId`s are only valid in the DocuSign system for seven days.
@@ -101,6 +93,68 @@
 	
       this.getTransactionIds = function() {
         return this.transactionIds;
+      }
+      
+      this.setFolderIds = function(folderIds) {
+        this.folderIds = folderIds;
+      }
+	
+      this.getFolderIds = function() {
+        return this.folderIds;
+      }
+      
+      this.setEnvelopeIds = function(envelopeIds) {
+        this.envelopeIds = envelopeIds;
+      }
+	
+      this.getEnvelopeIds = function() {
+        return this.envelopeIds;
+      }
+      
+      this.setPowerformids = function(powerformids) {
+        this.powerformids = powerformids;
+      }
+	
+      this.getPowerformids = function() {
+        return this.powerformids;
+      }
+      
+      this.setStartPosition = function(startPosition) {
+        this.startPosition = startPosition;
+      }
+	
+      this.getStartPosition = function() {
+        return this.startPosition;
+      }
+      
+      /*
+       * The list of current statuses to include in the response. By default, all envelopes found are returned. If values are specified, then of the envelopes found, only those with the current status specified are returned in the results. \n\nPossible values are: Voided, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
+       */
+      this.setStatus = function(status) {
+        this.status = status;
+      }
+	
+      this.getStatus = function() {
+        return this.status;
+      }
+      
+      /*
+       * This is the status type checked for in the `from_date`/`to_date` period. If `changed` is specified, then envelopes that changed status during the period are found. If for example, `created` is specified, then envelopes created during the period are found. Default is `changed`. \n\nPossible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
+       */
+      this.setFromToStatus = function(fromToStatus) {
+        this.fromToStatus = fromToStatus;
+      }
+	
+      this.getFromToStatus = function() {
+        return this.fromToStatus;
+      }
+      
+      this.setOrder = function(order) {
+        this.order = order;
+      }
+	
+      this.getOrder = function() {
+        return this.order;
       }
       
       this.setUserFilter = function(userFilter) {
@@ -127,6 +181,14 @@
         return this.userName;
       }
       
+      this.setCount = function(count) {
+        this.count = count;
+      }
+	
+      this.getCount = function() {
+        return this.count;
+      }
+      
       /*
        * This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding &#39;%&#39; (percent sign) around the custom field query value. \n\nExample 1: If you have an envelope custom field called \&quot;Region\&quot; and you want to search for all envelopes where the value is \&quot;West\&quot; you would use the query: `?custom_field=Region=West`. \n\nExample 2: To search for envelopes where the `ApplicationID` custom field has the value or partial value of \&quot;DocuSign\&quot; in field, the query would be: `?custom_field=ApplicationId=%DocuSign%` This would find envelopes where the custom field value is \&quot;DocuSign for Salesforce\&quot; or \&quot;DocuSign envelope.\&quot;
        */
@@ -146,12 +208,23 @@
         return this.email;
       }
       
-      this.setEnvelopeIds = function(envelopeIds) {
-        this.envelopeIds = envelopeIds;
+      /*
+       * Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the `to_date`.
+       */
+      this.setToDate = function(toDate) {
+        this.toDate = toDate;
       }
 	
-      this.getEnvelopeIds = function() {
-        return this.envelopeIds;
+      this.getToDate = function() {
+        return this.toDate;
+      }
+      
+      this.setSearchText = function(searchText) {
+        this.searchText = searchText;
+      }
+	
+      this.getSearchText = function() {
+        return this.searchText;
       }
       
       this.setExclude = function(exclude) {
@@ -160,14 +233,6 @@
 	
       this.getExclude = function() {
         return this.exclude;
-      }
-      
-      this.setFolderIds = function(folderIds) {
-        this.folderIds = folderIds;
-      }
-	
-      this.getFolderIds = function() {
-        return this.folderIds;
       }
       
       /*
@@ -181,6 +246,14 @@
         return this.acStatus;
       }
       
+      this.setOrderBy = function(orderBy) {
+        this.orderBy = orderBy;
+      }
+	
+      this.getOrderBy = function() {
+        return this.orderBy;
+      }
+      
       this.setFolderTypes = function(folderTypes) {
         this.folderTypes = folderTypes;
       }
@@ -189,34 +262,12 @@
         return this.folderTypes;
       }
       
-      /*
-       * The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.\n\nThis is required unless &#39;envelopeId&#39;s are used.
-       */
-      this.setFromDate = function(fromDate) {
-        this.fromDate = fromDate;
-      }
-	
-      this.getFromDate = function() {
-        return this.fromDate;
-      }
-      
       this.setBlock = function(block) {
         this.block = block;
       }
 	
       this.getBlock = function() {
         return this.block;
-      }
-      
-      /*
-       * Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the `to_date`.
-       */
-      this.setToDate = function(toDate) {
-        this.toDate = toDate;
-      }
-	
-      this.getToDate = function() {
-        return this.toDate;
       }
       
       this.setInclude = function(include) {
@@ -235,66 +286,15 @@
         return this.intersectingFolderIds;
       }
       
-      this.setOrder = function(order) {
-        this.order = order;
-      }
-	
-      this.getOrder = function() {
-        return this.order;
-      }
-      
-      this.setOrderBy = function(orderBy) {
-        this.orderBy = orderBy;
-      }
-	
-      this.getOrderBy = function() {
-        return this.orderBy;
-      }
-      
       /*
-       * This is the status type checked for in the `from_date`/`to_date` period. If `changed` is specified, then envelopes that changed status during the period are found. If for example, `created` is specified, then envelopes created during the period are found. Default is `changed`. \n\nPossible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
+       * The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.\n\nThis is required unless &#39;envelopeId&#39;s are used.
        */
-      this.setFromToStatus = function(fromToStatus) {
-        this.fromToStatus = fromToStatus;
+      this.setFromDate = function(fromDate) {
+        this.fromDate = fromDate;
       }
 	
-      this.getFromToStatus = function() {
-        return this.fromToStatus;
-      }
-      
-      this.setPowerformids = function(powerformids) {
-        this.powerformids = powerformids;
-      }
-	
-      this.getPowerformids = function() {
-        return this.powerformids;
-      }
-      
-      this.setSearchText = function(searchText) {
-        this.searchText = searchText;
-      }
-	
-      this.getSearchText = function() {
-        return this.searchText;
-      }
-      
-      this.setCount = function(count) {
-        this.count = count;
-      }
-	
-      this.getCount = function() {
-        return this.count;
-      }
-      
-      /*
-       * The list of current statuses to include in the response. By default, all envelopes found are returned. If values are specified, then of the envelopes found, only those with the current status specified are returned in the results. \n\nPossible values are: Voided, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
-       */
-      this.setStatus = function(status) {
-        this.status = status;
-      }
-	
-      this.getStatus = function() {
-        return this.status;
+      this.getFromDate = function() {
+        return this.fromDate;
       }
       
     }
@@ -324,30 +324,30 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
-          'start_position': options.startPosition,
           'transaction_ids': options.transactionIds,
+          'folder_ids': options.folderIds,
+          'envelope_ids': options.envelopeIds,
+          'powerformids': options.powerformids,
+          'start_position': options.startPosition,
+          'status': options.status,
+          'from_to_status': options.fromToStatus,
+          'order': options.order,
           'user_filter': options.userFilter,
           'user_id': options.userId,
           'user_name': options.userName,
+          'count': options.count,
           'custom_field': options.customField,
           'email': options.email,
-          'envelope_ids': options.envelopeIds,
-          'exclude': options.exclude,
-          'folder_ids': options.folderIds,
-          'ac_status': options.acStatus,
-          'folder_types': options.folderTypes,
-          'from_date': options.fromDate,
-          'block': options.block,
           'to_date': options.toDate,
+          'search_text': options.searchText,
+          'exclude': options.exclude,
+          'ac_status': options.acStatus,
+          'order_by': options.orderBy,
+          'folder_types': options.folderTypes,
+          'block': options.block,
           'include': options.include,
           'intersecting_folder_ids': options.intersectingFolderIds,
-          'order': options.order,
-          'order_by': options.orderBy,
-          'from_to_status': options.fromToStatus,
-          'powerformids': options.powerformids,
-          'search_text': options.searchText,
-          'count': options.count,
-          'status': options.status
+          'from_date': options.fromDate
         };
       }
       var headerParams = {
@@ -385,12 +385,20 @@
     /// </summary>
     self.CreateEnvelopeOptions = function () {
       
+      var completedDocumentsOnly = null;
+      
       var mergeRolesOnDraft = null;
       
       var cdseMode = null;
       
-      var completedDocumentsOnly = null;
       
+      this.setCompletedDocumentsOnly = function(completedDocumentsOnly) {
+        this.completedDocumentsOnly = completedDocumentsOnly;
+      }
+	
+      this.getCompletedDocumentsOnly = function() {
+        return this.completedDocumentsOnly;
+      }
       
       /*
        * When set to **true**, merges template roles and remove empty recipients when you create an envelope with multiple templates.
@@ -409,17 +417,6 @@
 	
       this.getCdseMode = function() {
         return this.cdseMode;
-      }
-      
-      /*
-       * If set to true then we want to set the sourceEnvelopeId to indicate that this is a\&quot;forward\&quot; envelope action
-       */
-      this.setCompletedDocumentsOnly = function(completedDocumentsOnly) {
-        this.completedDocumentsOnly = completedDocumentsOnly;
-      }
-	
-      this.getCompletedDocumentsOnly = function() {
-        return this.completedDocumentsOnly;
       }
       
     }
@@ -450,9 +447,9 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
+          'completed_documents_only': options.completedDocumentsOnly,
           'merge_roles_on_draft': options.mergeRolesOnDraft,
-          'cdse_mode': options.cdseMode,
-          'completed_documents_only': options.completedDocumentsOnly
+          'cdse_mode': options.cdseMode
         };
       }
       var headerParams = {
@@ -485,65 +482,16 @@
     }
     
     
-    /// <summary>
-    /// Gets the envelope status for the specified envelopes. Retrieves the envelope status for the specified envelopes.
-    /// </summary>
-    self.ListStatusOptions = function () {
-      
-      var fromDate = null;
-      
-      var startPosition = null;
-      
-      var toDate = null;
-      
-      var email = null;
-      
-      
-      this.setFromDate = function(fromDate) {
-        this.fromDate = fromDate;
-      }
-	
-      this.getFromDate = function() {
-        return this.fromDate;
-      }
-      
-      this.setStartPosition = function(startPosition) {
-        this.startPosition = startPosition;
-      }
-	
-      this.getStartPosition = function() {
-        return this.startPosition;
-      }
-      
-      this.setToDate = function(toDate) {
-        this.toDate = toDate;
-      }
-	
-      this.getToDate = function() {
-        return this.toDate;
-      }
-      
-      this.setEmail = function(email) {
-        this.email = email;
-      }
-	
-      this.getEmail = function() {
-        return this.email;
-      }
-      
-    }
-    
     
     /**
      * Gets the envelope status for the specified envelopes.
      * Retrieves the envelope status for the specified envelopes.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {EnvelopeIdsRequest} envelopeIdsRequest: 
-     * @param {EnvelopesApi.ListStatusOptions} options: Options for modifying the method behavior.
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: EnvelopesInformation
      */
-    self.listStatus = function(accountId, envelopeIdsRequest, options, callback) {
+    self.listStatus = function(accountId, envelopeIdsRequest, callback) {
       var postBody = envelopeIdsRequest;
       
       // verify the required parameter 'accountId' is set
@@ -557,14 +505,7 @@
         'accountId': accountId
       };
       var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'from_date': options.fromDate,
-          'start_position': options.startPosition,
-          'to_date': options.toDate,
-          'email': options.email
-        };
-      }
+      
       var headerParams = {
       };
       var formParams = {
@@ -600,21 +541,8 @@
     /// </summary>
     self.GetEnvelopeOptions = function () {
       
-      var advancedUpdate = null;
-      
       var include = null;
       
-      
-      /*
-       * When true, envelope information can be added or modified.
-       */
-      this.setAdvancedUpdate = function(advancedUpdate) {
-        this.advancedUpdate = advancedUpdate;
-      }
-	
-      this.getAdvancedUpdate = function() {
-        return this.advancedUpdate;
-      }
       
       this.setInclude = function(include) {
         this.include = include;
@@ -658,7 +586,6 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
-          'advanced_update': options.advancedUpdate,
           'include': options.include
         };
       }
@@ -1164,9 +1091,6 @@
       var applyDocumentFields = null;
       
       
-      /*
-       * When true, Document fields can be added or modified while adding or modifying envelope documents.
-       */
       this.setApplyDocumentFields = function(applyDocumentFields) {
         this.applyDocumentFields = applyDocumentFields;
       }
@@ -1309,20 +1233,31 @@
     /// </summary>
     self.GetDocumentOptions = function () {
       
+      var watermark = null;
+      
       var recipientId = null;
+      
+      var encoding = null;
       
       var certificate = null;
       
       var language = null;
       
-      var encoding = null;
+      var encrypt = null;
       
       var showChanges = null;
       
-      var encrypt = null;
       
-      var watermark = null;
-      
+      /*
+       * When set to **true**, the account has the watermark feature enabled, and the envelope is not complete, the watermark for the account is added to the PDF documents. This option can remove the watermark.
+       */
+      this.setWatermark = function(watermark) {
+        this.watermark = watermark;
+      }
+	
+      this.getWatermark = function() {
+        return this.watermark;
+      }
       
       this.setRecipientId = function(recipientId) {
         this.recipientId = recipientId;
@@ -1330,6 +1265,14 @@
 	
       this.getRecipientId = function() {
         return this.recipientId;
+      }
+      
+      this.setEncoding = function(encoding) {
+        this.encoding = encoding;
+      }
+	
+      this.getEncoding = function() {
+        return this.encoding;
       }
       
       /*
@@ -1354,25 +1297,6 @@
         return this.language;
       }
       
-      this.setEncoding = function(encoding) {
-        this.encoding = encoding;
-      }
-	
-      this.getEncoding = function() {
-        return this.encoding;
-      }
-      
-      /*
-       * When set to **true**, any changed fields for the returned PDF are highlighted in yellow and optional signatures or initials outlined in red.
-       */
-      this.setShowChanges = function(showChanges) {
-        this.showChanges = showChanges;
-      }
-	
-      this.getShowChanges = function() {
-        return this.showChanges;
-      }
-      
       /*
        * When set to **true**, the PDF bytes returned in the response are encrypted for all the key managers configured on your DocuSign account. The documents can be decrypted with the KeyManager Decrypt Document API.
        */
@@ -1385,14 +1309,14 @@
       }
       
       /*
-       * When set to **true**, the account has the watermark feature enabled, and the envelope is not complete, the watermark for the account is added to the PDF documents. This option can remove the watermark.
+       * When set to **true**, any changed fields for the returned PDF are highlighted in yellow and optional signatures or initials outlined in red.
        */
-      this.setWatermark = function(watermark) {
-        this.watermark = watermark;
+      this.setShowChanges = function(showChanges) {
+        this.showChanges = showChanges;
       }
 	
-      this.getWatermark = function() {
-        return this.watermark;
+      this.getShowChanges = function() {
+        return this.showChanges;
       }
       
     }
@@ -1436,13 +1360,13 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
+          'watermark': options.watermark,
           'recipient_id': options.recipientId,
+          'encoding': options.encoding,
           'certificate': options.certificate,
           'language': options.language,
-          'encoding': options.encoding,
-          'show_changes': options.showChanges,
           'encrypt': options.encrypt,
-          'watermark': options.watermark
+          'show_changes': options.showChanges
         };
       }
       var headerParams = {
@@ -1808,24 +1732,6 @@
     }
     
     
-    /// <summary>
-    /// Gets the templates associated with a document in an existing envelope. Retrieves the templates associated with a document in the specified envelope.
-    /// </summary>
-    self.ListTemplatesForDocumentOptions = function () {
-      
-      var include = null;
-      
-      
-      this.setInclude = function(include) {
-        this.include = include;
-      }
-	
-      this.getInclude = function() {
-        return this.include;
-      }
-      
-    }
-    
     
     /**
      * Gets the templates associated with a document in an existing envelope.
@@ -1833,11 +1739,10 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} envelopeId: The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId: The ID of the document being accessed.
-     * @param {EnvelopesApi.ListTemplatesForDocumentOptions} options: Options for modifying the method behavior.
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TemplateInformation
      */
-    self.listTemplatesForDocument = function(accountId, envelopeId, documentId, options, callback) {
+    self.listTemplatesForDocument = function(accountId, envelopeId, documentId, callback) {
       var postBody = null;
       
       // verify the required parameter 'accountId' is set
@@ -1863,11 +1768,7 @@
         'documentId': documentId
       };
       var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'include': options.include
-        };
-      }
+      
       var headerParams = {
       };
       var formParams = {
@@ -2583,35 +2484,17 @@
     /// </summary>
     self.ListRecipientsOptions = function () {
       
-      var includeExtended = null;
-      
-      var includeAnchorTabLocations = null;
+      var includeMetadata = null;
       
       var includeTabs = null;
       
-      var includeMetadata = null;
       
-      
-      /*
-       * When set to **true**, the extended properties are included in the response.
-       */
-      this.setIncludeExtended = function(includeExtended) {
-        this.includeExtended = includeExtended;
+      this.setIncludeMetadata = function(includeMetadata) {
+        this.includeMetadata = includeMetadata;
       }
 	
-      this.getIncludeExtended = function() {
-        return this.includeExtended;
-      }
-      
-      /*
-       * When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response.
-       */
-      this.setIncludeAnchorTabLocations = function(includeAnchorTabLocations) {
-        this.includeAnchorTabLocations = includeAnchorTabLocations;
-      }
-	
-      this.getIncludeAnchorTabLocations = function() {
-        return this.includeAnchorTabLocations;
+      this.getIncludeMetadata = function() {
+        return this.includeMetadata;
       }
       
       /*
@@ -2623,14 +2506,6 @@
 	
       this.getIncludeTabs = function() {
         return this.includeTabs;
-      }
-      
-      this.setIncludeMetadata = function(includeMetadata) {
-        this.includeMetadata = includeMetadata;
-      }
-	
-      this.getIncludeMetadata = function() {
-        return this.includeMetadata;
       }
       
     }
@@ -2667,10 +2542,8 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
-          'include_extended': options.includeExtended,
-          'include_anchor_tab_locations': options.includeAnchorTabLocations,
-          'include_tabs': options.includeTabs,
-          'include_metadata': options.includeMetadata
+          'include_metadata': options.includeMetadata,
+          'include_tabs': options.includeTabs
         };
       }
       var headerParams = {
@@ -2703,27 +2576,6 @@
     }
     
     
-    /// <summary>
-    /// Updates recipients in a draft envelope or corrects recipient information for an in process envelope. Updates recipients in a draft envelope or corrects recipient information for an in process envelope. \n\nFor draft envelopes, you can edit the following properties: `email`, `userName`, `routingOrder`, `faxNumber`, `deliveryMethod`, `accessCode`, and `requireIdLookup`.\n\nOnce an envelope has been sent, you can only edit: `email`, `userName`, `signerName`, `routingOrder`, `faxNumber`, and `deliveryMethod`. You can also select to resend an envelope by using the `resend_envelope` option.\n\nIf you send information for a recipient that does not already exist in a draft envelope, the recipient is added to the envelope (similar to the POST).
-    /// </summary>
-    self.UpdateRecipientsOptions = function () {
-      
-      var resendEnvelope = null;
-      
-      
-      /*
-       * When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope’s next recipient.
-       */
-      this.setResendEnvelope = function(resendEnvelope) {
-        this.resendEnvelope = resendEnvelope;
-      }
-	
-      this.getResendEnvelope = function() {
-        return this.resendEnvelope;
-      }
-      
-    }
-    
     
     /**
      * Updates recipients in a draft envelope or corrects recipient information for an in process envelope.
@@ -2731,11 +2583,10 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} envelopeId: The envelopeId Guid of the envelope being accessed.
      * @param {Recipients} recipients: 
-     * @param {EnvelopesApi.UpdateRecipientsOptions} options: Options for modifying the method behavior.
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: RecipientsUpdateSummary
      */
-    self.updateRecipients = function(accountId, envelopeId, recipients, options, callback) {
+    self.updateRecipients = function(accountId, envelopeId, recipients, callback) {
       var postBody = recipients;
       
       // verify the required parameter 'accountId' is set
@@ -2755,11 +2606,7 @@
         'envelopeId': envelopeId
       };
       var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'resend_envelope': options.resendEnvelope
-        };
-      }
+      
       var headerParams = {
       };
       var formParams = {
@@ -2790,27 +2637,6 @@
     }
     
     
-    /// <summary>
-    /// Adds one or more recipients to an envelope. Adds one or more recipients to an envelope.\n\nFor an in process envelope, one that has been sent and has not been completed or voided, an email is sent to a new recipient when they are reached in the routing order. If the new recipient&#39;s routing order is before or the same as the envelope&#39;s next recipient, an email is only sent if the optional `resend_envelope` query string is set to **true**.
-    /// </summary>
-    self.CreateRecipientOptions = function () {
-      
-      var resendEnvelope = null;
-      
-      
-      /*
-       * When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope’s next recipient.
-       */
-      this.setResendEnvelope = function(resendEnvelope) {
-        this.resendEnvelope = resendEnvelope;
-      }
-	
-      this.getResendEnvelope = function() {
-        return this.resendEnvelope;
-      }
-      
-    }
-    
     
     /**
      * Adds one or more recipients to an envelope.
@@ -2818,11 +2644,10 @@
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} envelopeId: The envelopeId Guid of the envelope being accessed.
      * @param {Recipients} recipients: 
-     * @param {EnvelopesApi.CreateRecipientOptions} options: Options for modifying the method behavior.
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: Recipients
      */
-    self.createRecipient = function(accountId, envelopeId, recipients, options, callback) {
+    self.createRecipient = function(accountId, envelopeId, recipients, callback) {
       var postBody = recipients;
       
       // verify the required parameter 'accountId' is set
@@ -2842,11 +2667,7 @@
         'envelopeId': envelopeId
       };
       var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'resend_envelope': options.resendEnvelope
-        };
-      }
+      
       var headerParams = {
       };
       var formParams = {
@@ -3010,21 +2831,8 @@
     /// </summary>
     self.ListTabsOptions = function () {
       
-      var includeAnchorTabLocations = null;
-      
       var includeMetadata = null;
       
-      
-      /*
-       * When set to **true**, all tabs with anchor tab properties are included in the response.
-       */
-      this.setIncludeAnchorTabLocations = function(includeAnchorTabLocations) {
-        this.includeAnchorTabLocations = includeAnchorTabLocations;
-      }
-	
-      this.getIncludeAnchorTabLocations = function() {
-        return this.includeAnchorTabLocations;
-      }
       
       this.setIncludeMetadata = function(includeMetadata) {
         this.includeMetadata = includeMetadata;
@@ -3075,7 +2883,6 @@
       var queryParams = {};
       if (options != null) {
         queryParams = {
-          'include_anchor_tab_locations': options.includeAnchorTabLocations,
           'include_metadata': options.includeMetadata
         };
       }
@@ -3313,38 +3120,16 @@
     }
     
     
-    /// <summary>
-    /// Get List of Templates used in an Envelope This returns a list of the server-side templates, their name and ID, used in an envelope.
-    /// </summary>
-    self.ListTemplatesOptions = function () {
-      
-      var include = null;
-      
-      
-      /*
-       * The possible values are:  matching_applied – This returns template matching information for the template.
-       */
-      this.setInclude = function(include) {
-        this.include = include;
-      }
-	
-      this.getInclude = function() {
-        return this.include;
-      }
-      
-    }
-    
     
     /**
      * Get List of Templates used in an Envelope
      * This returns a list of the server-side templates, their name and ID, used in an envelope.
      * @param {String} accountId: The external account number (int) or account ID Guid.
      * @param {String} envelopeId: The envelopeId Guid of the envelope being accessed.
-     * @param {EnvelopesApi.ListTemplatesOptions} options: Options for modifying the method behavior.
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
      *   data is of type: TemplateInformation
      */
-    self.listTemplates = function(accountId, envelopeId, options, callback) {
+    self.listTemplates = function(accountId, envelopeId, callback) {
       var postBody = null;
       
       // verify the required parameter 'accountId' is set
@@ -3364,11 +3149,7 @@
         'envelopeId': envelopeId
       };
       var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'include': options.include
-        };
-      }
+      
       var headerParams = {
       };
       var formParams = {
