@@ -231,7 +231,7 @@
      * Updates the account settings for an account.
      * Updates the account settings for the specified account.
      * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {AccountSettingsInformation} accountSettingsInformation: 
+     * @param {AccountSettingsInformation} accountSettingsInformation: TBD Description
      * @param {function} callback: the callback function, accepting three arguments: error, data, response
 
      */

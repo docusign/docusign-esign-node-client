@@ -1,18 +1,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails', './NameValue', './SignatureType'], factory);
+    define([undefined, './ErrorDetails', './SignatureType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'), require('./NameValue'), require('./SignatureType'));
+    module.exports = factory(undefined, require('./ErrorDetails'), require('./SignatureType'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.NameValue, root.Docusign.SignatureType);
+    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.SignatureType);
   }
-}(this, function(module, ErrorDetails, NameValue, SignatureType) {
+}(this, function(module, ErrorDetails, SignatureType) {
   'use strict';
 
   
@@ -21,12 +21,6 @@
   
   var EnvelopeDocument = function EnvelopeDocument() { 
     var self = this;
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.documentFields = [];
     
     /**
      * 
@@ -68,16 +62,8 @@
         self.containsPdfFormFields = data.containsPdfFormFields;
       }
       
-      if (data.documentFields) {
-        self.documentFields = data.documentFields;
-      }
-      
       if (data.availableDocumentTypes) {
         self.availableDocumentTypes = data.availableDocumentTypes;
-      }
-      
-      if (data.attachmentTabId) {
-        self.attachmentTabId = data.attachmentTabId;
       }
       
       if (data.errorDetails) {
@@ -204,22 +190,6 @@
      * get 
      * @return {Array}
      **/
-    self.getDocumentFields = function() {
-      return self.documentFields;
-    }
-
-    /**
-     * set 
-     * @param {Array} documentFields
-     **/
-    self.setDocumentFields = function (documentFields) {
-      self.documentFields = documentFields;
-    }
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
     self.getAvailableDocumentTypes = function() {
       return self.availableDocumentTypes;
     }
@@ -230,22 +200,6 @@
      **/
     self.setAvailableDocumentTypes = function (availableDocumentTypes) {
       self.availableDocumentTypes = availableDocumentTypes;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getAttachmentTabId = function() {
-      return self.attachmentTabId;
-    }
-
-    /**
-     * set 
-     * @param {String} attachmentTabId
-     **/
-    self.setAttachmentTabId = function (attachmentTabId) {
-      self.attachmentTabId = attachmentTabId;
     }
     
     /**

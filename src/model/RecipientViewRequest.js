@@ -76,14 +76,6 @@
         self.securityDomain = data.securityDomain;
       }
       
-      if (data.xFrameOptions) {
-        self.xFrameOptions = data.xFrameOptions;
-      }
-      
-      if (data.xFrameOptionsAllowFromUrl) {
-        self.xFrameOptionsAllowFromUrl = data.xFrameOptionsAllowFromUrl;
-      }
-      
     }
 
     
@@ -168,7 +160,7 @@
     }
     
     /**
-     * get The url the recipient is redirected to after the signing session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your application. Possible event parameter values: \n\n* cancel (recipient canceled the signing operation)\n* decline (recipient declined to sign)\n* exception (an exception occurred)\n* fax_pending (recipient has a fax pending)\n* session_timeout (session timed out)\n* signing_complete (signer completed the signing ceremony)\n* ttl_expired (the TTL, time to live, timer expired)\n* viewing_complete (recipient completed viewing the envelope)\n\n###### Note: Include https:// in the URL or the redirect might not succeed on some browsers.
+     * get The URL the recipient is directed to on certain events. DocuSign sends returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* cancel (recipient cancels signing)\n* decline (recipient declines signing)\n* exception (exception occurs)\n* fax_pending (recipient has fax pending)\n* check); session_timeout (session times out)\n* completes signing)\n* expires)\n* viewing_complete (recipient completes viewing the envelope)\n\n## Important: You must include HTTPS:// in the URL or the redirect might be blocked by some browsers.
      * @return {String}
      **/
     self.getReturnUrl = function() {
@@ -176,7 +168,7 @@
     }
 
     /**
-     * set The url the recipient is redirected to after the signing session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your application. Possible event parameter values: \n\n* cancel (recipient canceled the signing operation)\n* decline (recipient declined to sign)\n* exception (an exception occurred)\n* fax_pending (recipient has a fax pending)\n* session_timeout (session timed out)\n* signing_complete (signer completed the signing ceremony)\n* ttl_expired (the TTL, time to live, timer expired)\n* viewing_complete (recipient completed viewing the envelope)\n\n###### Note: Include https:// in the URL or the redirect might not succeed on some browsers.
+     * set The URL the recipient is directed to on certain events. DocuSign sends returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are: \n\n* cancel (recipient cancels signing)\n* decline (recipient declines signing)\n* exception (exception occurs)\n* fax_pending (recipient has fax pending)\n* check); session_timeout (session times out)\n* completes signing)\n* expires)\n* viewing_complete (recipient completes viewing the envelope)\n\n## Important: You must include HTTPS:// in the URL or the redirect might be blocked by some browsers.
      * @param {String} returnUrl
      **/
     self.setReturnUrl = function (returnUrl) {
@@ -277,38 +269,6 @@
      **/
     self.setSecurityDomain = function (securityDomain) {
       self.securityDomain = securityDomain;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getXFrameOptions = function() {
-      return self.xFrameOptions;
-    }
-
-    /**
-     * set 
-     * @param {String} xFrameOptions
-     **/
-    self.setXFrameOptions = function (xFrameOptions) {
-      self.xFrameOptions = xFrameOptions;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getXFrameOptionsAllowFromUrl = function() {
-      return self.xFrameOptionsAllowFromUrl;
-    }
-
-    /**
-     * set 
-     * @param {String} xFrameOptionsAllowFromUrl
-     **/
-    self.setXFrameOptionsAllowFromUrl = function (xFrameOptionsAllowFromUrl) {
-      self.xFrameOptionsAllowFromUrl = xFrameOptionsAllowFromUrl;
     }
     
 

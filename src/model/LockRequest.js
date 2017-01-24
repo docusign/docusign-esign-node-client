@@ -52,7 +52,7 @@
 
     
     /**
-     * get A friendly name of the application used to lock the envelope.  Will be used in error messages to the user when lock conflicts occur.
+     * get 
      * @return {String}
      **/
     self.getLockedByApp = function() {
@@ -60,7 +60,7 @@
     }
 
     /**
-     * set A friendly name of the application used to lock the envelope.  Will be used in error messages to the user when lock conflicts occur.
+     * set 
      * @param {String} lockedByApp
      **/
     self.setLockedByApp = function (lockedByApp) {
@@ -68,7 +68,7 @@
     }
     
     /**
-     * get The number of seconds to lock the envelope for editing.  Must be greater than 0 seconds.
+     * get 
      * @return {String}
      **/
     self.getLockDurationInSeconds = function() {
@@ -76,7 +76,7 @@
     }
 
     /**
-     * set The number of seconds to lock the envelope for editing.  Must be greater than 0 seconds.
+     * set 
      * @param {String} lockDurationInSeconds
      **/
     self.setLockDurationInSeconds = function (lockDurationInSeconds) {
@@ -84,7 +84,7 @@
     }
     
     /**
-     * get The type of envelope lock.  Currently \"edit\" is the only supported type.
+     * get 
      * @return {String}
      **/
     self.getLockType = function() {
@@ -92,7 +92,7 @@
     }
 
     /**
-     * set The type of envelope lock.  Currently \"edit\" is the only supported type.
+     * set 
      * @param {String} lockType
      **/
     self.setLockType = function (lockType) {

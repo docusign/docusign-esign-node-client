@@ -105,8 +105,8 @@
         self.is21CFRPart11 = data.is21CFRPart11;
       }
       
-      if (data.isSignatureProviderEnvelope) {
-        self.isSignatureProviderEnvelope = data.isSignatureProviderEnvelope;
+      if (data.isUniversalSignatureEnvelope) {
+        self.isUniversalSignatureEnvelope = data.isUniversalSignatureEnvelope;
       }
       
     }
@@ -418,16 +418,16 @@
      * get 
      * @return {String}
      **/
-    self.getIsSignatureProviderEnvelope = function() {
-      return self.isSignatureProviderEnvelope;
+    self.getIsUniversalSignatureEnvelope = function() {
+      return self.isUniversalSignatureEnvelope;
     }
 
     /**
      * set 
-     * @param {String} isSignatureProviderEnvelope
+     * @param {String} isUniversalSignatureEnvelope
      **/
-    self.setIsSignatureProviderEnvelope = function (isSignatureProviderEnvelope) {
-      self.isSignatureProviderEnvelope = isSignatureProviderEnvelope;
+    self.setIsUniversalSignatureEnvelope = function (isUniversalSignatureEnvelope) {
+      self.isUniversalSignatureEnvelope = isUniversalSignatureEnvelope;
     }
     
 

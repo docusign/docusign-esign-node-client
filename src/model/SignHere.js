@@ -134,10 +134,6 @@
         self.errorDetails.constructFromObject(data.errorDetails);
       }
       
-      if (data.tabOrder) {
-        self.tabOrder = data.tabOrder;
-      }
-      
     }
 
     
@@ -551,22 +547,6 @@
      **/
     self.setErrorDetails = function (errorDetails) {
       self.errorDetails = errorDetails;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getTabOrder = function() {
-      return self.tabOrder;
-    }
-
-    /**
-     * set 
-     * @param {String} tabOrder
-     **/
-    self.setTabOrder = function (tabOrder) {
-      self.tabOrder = tabOrder;
     }
     
 
