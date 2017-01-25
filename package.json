@@ -1,6 +1,6 @@
 {
   "name": "docusign-esign",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "DocuSign Node.js API client.",
   "license": "MIT",
   "main": "src/index.js",
