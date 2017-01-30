@@ -4,6 +4,8 @@ language: node_js
 
 notifications:
   email:
+    recipients:
+      - devcenter@docusign.com
     on_success: never
     on_failure: change
 
