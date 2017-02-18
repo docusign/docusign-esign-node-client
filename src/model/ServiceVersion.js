@@ -1,87 +1,87 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.ServiceVersion = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var ServiceVersion = function ServiceVersion() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.version) {
-        self.version = data.version;
-      }
-      
-      if (data.versionUrl) {
-        self.versionUrl = data.versionUrl;
-      }
-      
-    }
 
-    
-    /**
-     * get The version of the rest API.
-     * @return {String}
-     **/
-    self.getVersion = function() {
-      return self.version;
-    }
+  /**
+   * The ServiceVersion model module.
+   * @module model/ServiceVersion
+   * @version 3.0.0
+   */
 
-    /**
-     * set The version of the rest API.
-     * @param {String} version
-     **/
-    self.setVersion = function (version) {
-      self.version = version;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getVersionUrl = function() {
-      return self.versionUrl;
-    }
+  /**
+   * Constructs a new <code>ServiceVersion</code>.
+   * @alias module:model/ServiceVersion
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 
-     * @param {String} versionUrl
-     **/
-    self.setVersionUrl = function (versionUrl) {
-      self.versionUrl = versionUrl;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.ServiceVersion = ServiceVersion;
+  /**
+   * Constructs a <code>ServiceVersion</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/ServiceVersion} obj Optional instance to populate.
+   * @return {module:model/ServiceVersion} The populated <code>ServiceVersion</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('version')) {
+        obj['version'] = ApiClient.convertToType(data['version'], 'String');
+      }
+      if (data.hasOwnProperty('versionUrl')) {
+        obj['versionUrl'] = ApiClient.convertToType(data['versionUrl'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return ServiceVersion;
-  
-  
+  /**
+   * The version of the rest API.
+   * @member {String} version
+   */
+  exports.prototype['version'] = undefined;
+  /**
+   * 
+   * @member {String} versionUrl
+   */
+  exports.prototype['versionUrl'] = undefined;
+
+
+
+  return exports;
 }));
+
+

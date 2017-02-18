@@ -1,226 +1,149 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails'], factory);
+    define(['ApiClient', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails);
+    root.Docusign.BulkEnvelope = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(module, ErrorDetails) {
+}(this, function(ApiClient, ErrorDetails) {
   'use strict';
 
-  
-  
 
-  
-  var BulkEnvelope = function BulkEnvelope() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.transactionId) {
-        self.transactionId = data.transactionId;
-      }
-      
-      if (data.submittedDateTime) {
-        self.submittedDateTime = data.submittedDateTime;
-      }
-      
-      if (data.envelopeId) {
-        self.envelopeId = data.envelopeId;
-      }
-      
-      if (data.envelopeUri) {
-        self.envelopeUri = data.envelopeUri;
-      }
-      
-      if (data.bulkRecipientRow) {
-        self.bulkRecipientRow = data.bulkRecipientRow;
-      }
-      
-      if (data.name) {
-        self.name = data.name;
-      }
-      
-      if (data.email) {
-        self.email = data.email;
-      }
-      
-      if (data.bulkStatus) {
-        self.bulkStatus = data.bulkStatus;
-      }
-      
-      if (data.errorDetails) {
-        self.errorDetails = new data.errorDetails.constructor();
-        self.errorDetails.constructFromObject(data.errorDetails);
-      }
-      
-    }
 
-    
-    /**
-     * get Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
-     * @return {String}
-     **/
-    self.getTransactionId = function() {
-      return self.transactionId;
-    }
+  /**
+   * The BulkEnvelope model module.
+   * @module model/BulkEnvelope
+   * @version 3.0.0
+   */
 
-    /**
-     * set Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
-     * @param {String} transactionId
-     **/
-    self.setTransactionId = function (transactionId) {
-      self.transactionId = transactionId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSubmittedDateTime = function() {
-      return self.submittedDateTime;
-    }
+  /**
+   * Constructs a new <code>BulkEnvelope</code>.
+   * @alias module:model/BulkEnvelope
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 
-     * @param {String} submittedDateTime
-     **/
-    self.setSubmittedDateTime = function (submittedDateTime) {
-      self.submittedDateTime = submittedDateTime;
-    }
-    
-    /**
-     * get The envelope ID of the envelope status that failed to post.
-     * @return {String}
-     **/
-    self.getEnvelopeId = function() {
-      return self.envelopeId;
-    }
 
-    /**
-     * set The envelope ID of the envelope status that failed to post.
-     * @param {String} envelopeId
-     **/
-    self.setEnvelopeId = function (envelopeId) {
-      self.envelopeId = envelopeId;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * @return {String}
-     **/
-    self.getEnvelopeUri = function() {
-      return self.envelopeUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * @param {String} envelopeUri
-     **/
-    self.setEnvelopeUri = function (envelopeUri) {
-      self.envelopeUri = envelopeUri;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBulkRecipientRow = function() {
-      return self.bulkRecipientRow;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} bulkRecipientRow
-     **/
-    self.setBulkRecipientRow = function (bulkRecipientRow) {
-      self.bulkRecipientRow = bulkRecipientRow;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getName = function() {
-      return self.name;
-    }
 
-    /**
-     * set 
-     * @param {String} name
-     **/
-    self.setName = function (name) {
-      self.name = name;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getEmail = function() {
-      return self.email;
-    }
 
-    /**
-     * set 
-     * @param {String} email
-     **/
-    self.setEmail = function (email) {
-      self.email = email;
-    }
-    
-    /**
-     * get Indicates the status of the bulk send operation. Returned values can be:\n* queued\n* processing\n* sent\n* failed
-     * @return {String}
-     **/
-    self.getBulkStatus = function() {
-      return self.bulkStatus;
-    }
 
-    /**
-     * set Indicates the status of the bulk send operation. Returned values can be:\n* queued\n* processing\n* sent\n* failed
-     * @param {String} bulkStatus
-     **/
-    self.setBulkStatus = function (bulkStatus) {
-      self.bulkStatus = bulkStatus;
-    }
-    
-    /**
-     * @return {ErrorDetails}
-     **/
-    self.getErrorDetails = function() {
-      return self.errorDetails;
-    }
 
-    /**
-     * @param {ErrorDetails} errorDetails
-     **/
-    self.setErrorDetails = function (errorDetails) {
-      self.errorDetails = errorDetails;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.BulkEnvelope = BulkEnvelope;
+  /**
+   * Constructs a <code>BulkEnvelope</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/BulkEnvelope} obj Optional instance to populate.
+   * @return {module:model/BulkEnvelope} The populated <code>BulkEnvelope</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('transactionId')) {
+        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
+      }
+      if (data.hasOwnProperty('submittedDateTime')) {
+        obj['submittedDateTime'] = ApiClient.convertToType(data['submittedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeId')) {
+        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeUri')) {
+        obj['envelopeUri'] = ApiClient.convertToType(data['envelopeUri'], 'String');
+      }
+      if (data.hasOwnProperty('bulkRecipientRow')) {
+        obj['bulkRecipientRow'] = ApiClient.convertToType(data['bulkRecipientRow'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('bulkStatus')) {
+        obj['bulkStatus'] = ApiClient.convertToType(data['bulkStatus'], 'String');
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+    }
+    return obj;
   }
 
-  return BulkEnvelope;
-  
-  
+  /**
+   *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
+   * @member {String} transactionId
+   */
+  exports.prototype['transactionId'] = undefined;
+  /**
+   * 
+   * @member {String} submittedDateTime
+   */
+  exports.prototype['submittedDateTime'] = undefined;
+  /**
+   * The envelope ID of the envelope status that failed to post.
+   * @member {String} envelopeId
+   */
+  exports.prototype['envelopeId'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
+   * @member {String} envelopeUri
+   */
+  exports.prototype['envelopeUri'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} bulkRecipientRow
+   */
+  exports.prototype['bulkRecipientRow'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * Indicates the status of the bulk send operation. Returned values can be: * queued * processing * sent * failed
+   * @member {String} bulkStatus
+   */
+  exports.prototype['bulkStatus'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+
+
+
+  return exports;
 }));
+
+

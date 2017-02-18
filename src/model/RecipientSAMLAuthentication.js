@@ -1,73 +1,78 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './SamlAssertionAttribute'], factory);
+    define(['ApiClient', 'model/SamlAssertionAttribute'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./SamlAssertionAttribute'));
+    module.exports = factory(require('../ApiClient'), require('./SamlAssertionAttribute'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.SamlAssertionAttribute);
+    root.Docusign.RecipientSAMLAuthentication = factory(root.Docusign.ApiClient, root.Docusign.SamlAssertionAttribute);
   }
-}(this, function(module, SamlAssertionAttribute) {
+}(this, function(ApiClient, SamlAssertionAttribute) {
   'use strict';
 
-  
-  
 
-  
-  var RecipientSAMLAuthentication = function RecipientSAMLAuthentication() { 
-    var self = this;
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.samlAssertionAttributes = [];
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.samlAssertionAttributes) {
-        self.samlAssertionAttributes = data.samlAssertionAttributes;
-      }
-      
-    }
 
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
-    self.getSamlAssertionAttributes = function() {
-      return self.samlAssertionAttributes;
-    }
+  /**
+   * The RecipientSAMLAuthentication model module.
+   * @module model/RecipientSAMLAuthentication
+   * @version 3.0.0
+   */
 
-    /**
-     * set 
-     * @param {Array} samlAssertionAttributes
-     **/
-    self.setSamlAssertionAttributes = function (samlAssertionAttributes) {
-      self.samlAssertionAttributes = samlAssertionAttributes;
-    }
-    
+  /**
+   * Constructs a new <code>RecipientSAMLAuthentication</code>.
+   * @alias module:model/RecipientSAMLAuthentication
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.RecipientSAMLAuthentication = RecipientSAMLAuthentication;
+  /**
+   * Constructs a <code>RecipientSAMLAuthentication</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/RecipientSAMLAuthentication} obj Optional instance to populate.
+   * @return {module:model/RecipientSAMLAuthentication} The populated <code>RecipientSAMLAuthentication</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('samlAssertionAttributes')) {
+        obj['samlAssertionAttributes'] = ApiClient.convertToType(data['samlAssertionAttributes'], [SamlAssertionAttribute]);
+      }
+    }
+    return obj;
   }
 
-  return RecipientSAMLAuthentication;
-  
-  
+  /**
+   * 
+   * @member {Array.<module:model/SamlAssertionAttribute>} samlAssertionAttributes
+   */
+  exports.prototype['samlAssertionAttributes'] = undefined;
+
+
+
+  return exports;
 }));
+
+

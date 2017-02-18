@@ -1,186 +1,131 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails'], factory);
+    define(['ApiClient', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails);
+    root.Docusign.UserInfo = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(module, ErrorDetails) {
+}(this, function(ApiClient, ErrorDetails) {
   'use strict';
 
-  
-  
 
-  
-  var UserInfo = function UserInfo() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.userName) {
-        self.userName = data.userName;
-      }
-      
-      if (data.email) {
-        self.email = data.email;
-      }
-      
-      if (data.userId) {
-        self.userId = data.userId;
-      }
-      
-      if (data.userType) {
-        self.userType = data.userType;
-      }
-      
-      if (data.userStatus) {
-        self.userStatus = data.userStatus;
-      }
-      
-      if (data.uri) {
-        self.uri = data.uri;
-      }
-      
-      if (data.errorDetails) {
-        self.errorDetails = new data.errorDetails.constructor();
-        self.errorDetails.constructFromObject(data.errorDetails);
-      }
-      
-    }
 
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUserName = function() {
-      return self.userName;
-    }
+  /**
+   * The UserInfo model module.
+   * @module model/UserInfo
+   * @version 3.0.0
+   */
 
-    /**
-     * set 
-     * @param {String} userName
-     **/
-    self.setUserName = function (userName) {
-      self.userName = userName;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getEmail = function() {
-      return self.email;
-    }
+  /**
+   * Constructs a new <code>UserInfo</code>.
+   * @alias module:model/UserInfo
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 
-     * @param {String} email
-     **/
-    self.setEmail = function (email) {
-      self.email = email;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUserId = function() {
-      return self.userId;
-    }
 
-    /**
-     * set 
-     * @param {String} userId
-     **/
-    self.setUserId = function (userId) {
-      self.userId = userId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUserType = function() {
-      return self.userType;
-    }
 
-    /**
-     * set 
-     * @param {String} userType
-     **/
-    self.setUserType = function (userType) {
-      self.userType = userType;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUserStatus = function() {
-      return self.userStatus;
-    }
 
-    /**
-     * set 
-     * @param {String} userStatus
-     **/
-    self.setUserStatus = function (userStatus) {
-      self.userStatus = userStatus;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUri = function() {
-      return self.uri;
-    }
 
-    /**
-     * set 
-     * @param {String} uri
-     **/
-    self.setUri = function (uri) {
-      self.uri = uri;
-    }
-    
-    /**
-     * @return {ErrorDetails}
-     **/
-    self.getErrorDetails = function() {
-      return self.errorDetails;
-    }
 
-    /**
-     * @param {ErrorDetails} errorDetails
-     **/
-    self.setErrorDetails = function (errorDetails) {
-      self.errorDetails = errorDetails;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.UserInfo = UserInfo;
+  /**
+   * Constructs a <code>UserInfo</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/UserInfo} obj Optional instance to populate.
+   * @return {module:model/UserInfo} The populated <code>UserInfo</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('userName')) {
+        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('userId')) {
+        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      }
+      if (data.hasOwnProperty('userType')) {
+        obj['userType'] = ApiClient.convertToType(data['userType'], 'String');
+      }
+      if (data.hasOwnProperty('userStatus')) {
+        obj['userStatus'] = ApiClient.convertToType(data['userStatus'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+    }
+    return obj;
   }
 
-  return UserInfo;
-  
-  
+  /**
+   * 
+   * @member {String} userName
+   */
+  exports.prototype['userName'] = undefined;
+  /**
+   * 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * 
+   * @member {String} userId
+   */
+  exports.prototype['userId'] = undefined;
+  /**
+   * 
+   * @member {String} userType
+   */
+  exports.prototype['userType'] = undefined;
+  /**
+   * 
+   * @member {String} userStatus
+   */
+  exports.prototype['userStatus'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+
+
+
+  return exports;
 }));
+
+

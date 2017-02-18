@@ -12,20 +12,18 @@ var BaseUrl = 'https://demo.docusign.net/restapi';
 var SignTest1File = 'docs/SignTest1.pdf';
 var accountId = '';
 var envelopeId = '';
+var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+
+var apiClient = new docusign.ApiClient();
+apiClient.setBasePath(BaseUrl);
+apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 
 describe('SDK Unit Tests:', function () {
   it('login', function (done) {
-    var apiClient = new docusign.ApiClient();
-    apiClient.setBasePath(BaseUrl);
-
-    var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
-    apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
-    docusign.Configuration.default.setDefaultApiClient(apiClient);
-
-    var authApi = new docusign.AuthenticationApi();
+    var authApi = new docusign.AuthenticationApi(apiClient);
     var loginOps = new authApi.LoginOptions();
-    loginOps.setApiPassword('true');
-    loginOps.setIncludeAccountIdGuid('true');
+    loginOps.apiPassword = 'true';
+    loginOps.includeAccountIdGuid = 'true';
     authApi.login(loginOps, function (error, loginInfo, response) {
       if (error) {
         return done(error);
@@ -34,7 +32,7 @@ describe('SDK Unit Tests:', function () {
       if (loginInfo) {
         // list of user account(s)
         // note that a given user may be a member of multiple accounts
-        var loginAccounts = loginInfo.getLoginAccounts();
+        var loginAccounts = loginInfo.loginAccounts;
         accountId = loginAccounts[0].accountId;
         console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
         done();
@@ -56,53 +54,53 @@ describe('SDK Unit Tests:', function () {
 
     // create an envelope to be signed
     var envDef = new docusign.EnvelopeDefinition();
-    envDef.setEmailSubject('Please Sign my Node SDK Envelope');
-    envDef.setEmailBlurb('Hello, Please sign my Node SDK Envelope.');
+    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
+    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // add a document to the envelope
     var doc = new docusign.Document();
     var base64Doc = new Buffer(fileBytes).toString('base64');
-    doc.setDocumentBase64(base64Doc);
-    doc.setName('TestFile.pdf');
-    doc.setDocumentId('1');
+    doc.documentBase64 = base64Doc;
+    doc.name = 'TestFile.pdf';
+    doc.documentId = '1';
 
     var docs = [];
     docs.push(doc);
-    envDef.setDocuments(docs);
+    envDef.documents = docs;
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.setEmail(UserName);
-    signer.setName('Pat Developer');
-    signer.setRecipientId('1');
+    signer.email = UserName;
+    signer.name = 'Pat Developer';
+    signer.recipientId = '1';
 
     // create a signHere tab somewhere on the document for the signer to sign
     // default unit of measurement is pixels, can be mms, cms, inches also
     var signHere = new docusign.SignHere();
-    signHere.setDocumentId('1');
-    signHere.setPageNumber('1');
-    signHere.setRecipientId('1');
-    signHere.setXPosition('100');
-    signHere.setYPosition('100');
+    signHere.documentId = '1';
+    signHere.pageNumber = '1';
+    signHere.recipientId = '1';
+    signHere.xPosition = '100';
+    signHere.yPosition = '100';
 
     // can have multiple tabs, so need to add to envelope as a single element list
     var signHereTabs = [];
     signHereTabs.push(signHere);
     var tabs = new docusign.Tabs();
-    tabs.setSignHereTabs(signHereTabs);
-    signer.setTabs(tabs);
+    tabs.signHereTabs = signHereTabs;
+    signer.tabs = tabs;
 
     // Above causes issue
-    envDef.setRecipients(new docusign.Recipients());
-    envDef.getRecipients().setSigners([]);
-    envDef.getRecipients().getSigners().push(signer);
+    envDef.recipients = new docusign.Recipients();
+    envDef.recipients.signers = [];
+    envDef.recipients.signers.push(signer);
 
     // send the envelope (otherwise it will be "created" in the Draft folder
-    envDef.setStatus('sent');
+    envDef.status = 'sent';
 
-    var envelopesApi = new docusign.EnvelopesApi();
+    var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, envDef, null, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -120,31 +118,31 @@ describe('SDK Unit Tests:', function () {
 
     // create an envelope to be signed
     var envDef = new docusign.EnvelopeDefinition();
-    envDef.setEmailSubject('Please Sign my Node SDK Envelope');
-    envDef.setEmailBlurb('Hello, Please sign my Node SDK Envelope.');
+    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
+    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // / assign template information including ID and role(s)
-    envDef.setTemplateId(TemplateId);
+    envDef.templateId = TemplateId;
 
     // create a template role with a valid templateId and roleName and assign signer info
     var tRole = new docusign.TemplateRole();
-    tRole.setRoleName(templateRoleName);
-    tRole.setName('Pat Developer');
-    tRole.setEmail(UserName);
+    tRole.roleName = templateRoleName;
+    tRole.name = 'Pat Developer';
+    tRole.email = UserName;
 
     // create a list of template roles and add our newly created role
     var templateRolesList = [];
     templateRolesList.push(tRole);
 
     // assign template role(s) to the envelope
-    envDef.setTemplateRoles(templateRolesList);
+    envDef.templateRoles = templateRolesList;
 
     // send the envelope by setting |status| to "sent". To save as a draft set to "created"
-    envDef.setStatus('sent');
+    envDef.status = 'sent';
 
-    var envelopesApi = new docusign.EnvelopesApi();
+    var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, envDef, null, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -170,58 +168,58 @@ describe('SDK Unit Tests:', function () {
 
     // create an envelope to be signed
     var envDef = new docusign.EnvelopeDefinition();
-    envDef.setEmailSubject('Please Sign my Node SDK Envelope');
-    envDef.setEmailBlurb('Hello, Please sign my Node SDK Envelope.');
+    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
+    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // add a document to the envelope
     var doc = new docusign.Document();
     var base64Doc = new Buffer(fileBytes).toString('base64');
-    doc.setDocumentBase64(base64Doc);
-    doc.setName('TestFile.pdf');
-    doc.setDocumentId('1');
+    doc.documentBase64 = base64Doc;
+    doc.name = 'TestFile.pdf';
+    doc.documentId = '1';
 
     var docs = [];
     docs.push(doc);
-    envDef.setDocuments(docs);
+    envDef.documents = docs;
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.setEmail(UserName);
+    signer.email = UserName;
     var name = 'Pat Developer';
-    signer.setName(name);
-    signer.setRecipientId('1');
+    signer.name = name;
+    signer.recipientId = '1';
 
     // this value represents the client's unique identifier for the signer
     var clientUserId = '2939';
-    signer.setClientUserId(clientUserId);
+    signer.clientUserId = clientUserId;
 
     // create a signHere tab somewhere on the document for the signer to sign
     // default unit of measurement is pixels, can be mms, cms, inches also
     var signHere = new docusign.SignHere();
-    signHere.setDocumentId('1');
-    signHere.setPageNumber('1');
-    signHere.setRecipientId('1');
-    signHere.setXPosition('100');
-    signHere.setYPosition('100');
+    signHere.documentId = '1';
+    signHere.pageNumber = '1';
+    signHere.recipientId = '1';
+    signHere.xPosition = '100';
+    signHere.yPosition = '100';
 
     // can have multiple tabs, so need to add to envelope as a single element list
     var signHereTabs = [];
     signHereTabs.push(signHere);
     var tabs = new docusign.Tabs();
-    tabs.setSignHereTabs(signHereTabs);
-    signer.setTabs(tabs);
+    tabs.signHereTabs = signHereTabs;
+    signer.tabs = tabs;
 
     // Above causes issue
-    envDef.setRecipients(new docusign.Recipients());
-    envDef.getRecipients().setSigners([]);
-    envDef.getRecipients().getSigners().push(signer);
+    envDef.recipients = new docusign.Recipients();
+    envDef.recipients.signers = [];
+    envDef.recipients.signers.push(signer);
 
     // send the envelope (otherwise it will be "created" in the Draft folder
-    envDef.setStatus('sent');
+    envDef.status = 'sent';
 
-    var envelopesApi = new docusign.EnvelopesApi();
+    var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, envDef, null, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -230,12 +228,12 @@ describe('SDK Unit Tests:', function () {
         console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
         var returnUrl = 'http://www.docusign.com/developer-center';
         var recipientView = new docusign.RecipientViewRequest();
-        recipientView.setReturnUrl(returnUrl);
-        recipientView.setClientUserId(clientUserId);
-        recipientView.setAuthenticationMethod('email');
-        recipientView.setUserName(name);
-        recipientView.setEmail(UserName);
-        envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, recipientView, function (error, viewUrl, response) {
+        recipientView.returnUrl = returnUrl;
+        recipientView.clientUserId = clientUserId;
+        recipientView.authenticationMethod = 'email';
+        recipientView.userName = name;
+        recipientView.email = UserName;
+        envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, {'recipientViewRequest': recipientView}, function (error, viewUrl, response) {
           if (error) {
             return done(error);
           }
@@ -249,78 +247,77 @@ describe('SDK Unit Tests:', function () {
     });
   });
 
-  /*  it('createTemplate', function(done) {
-        var fileBytes = null;
-        try {
-            var fs = require('fs'),
-                path = require('path');
-            // read file from a local directory
-            fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+  it('createTemplate', function (done) {
+    var fileBytes = null;
+    try {
+      var fs = require('fs');
+      var path = require('path');
+      // read file from a local directory
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+    } catch (ex) {
+      // handle error
+      console.log('Exception: ' + ex);
+    }
 
-        } catch (ex) {
-            // handle error
-            console.log("Exception: " + ex);
-        }
+    // create an envelope to be signed
+    var templateDef = new docusign.EnvelopeTemplate();
+    templateDef.emailSubject = 'Please Sign my Node SDK Envelope';
+    templateDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
-        // create an envelope to be signed
-        var templateDef = new docusign.EnvelopeTemplate();
-        templateDef.setEmailSubject("Please Sign my Node SDK Envelope");
-        templateDef.setEmailBlurb("Hello, Please sign my Node SDK Envelope.");
+    // add a document to the envelope
+    var doc = new docusign.Document();
+    var base64Doc = new Buffer(fileBytes).toString('base64');
+    doc.documentBase64 = base64Doc;
+    doc.name = 'TestFile.pdf';
+    doc.documentId = '1';
 
-        // add a document to the envelope
-        var doc = new docusign.Document();
-        var base64Doc = new Buffer(fileBytes).toString('base64');
-        doc.setDocumentBase64(base64Doc);
-        doc.setName("TestFile.pdf");
-        doc.setDocumentId("1");
+    var docs = [];
+    docs.push(doc);
+    templateDef.documents = docs;
 
-        var docs = [];
-        docs.push(doc);
-        templateDef.setDocuments(docs);
+    // Add a recipient to sign the document
+    var signer = new docusign.Signer();
+    signer.roleName = 'Signer1';
+    signer.recipientId = '1';
 
-        // Add a recipient to sign the document
-        var signer = new docusign.Signer();
-        signer.setRoleName("Signer1");
-        signer.setRecipientId("1");
+    // Create a SignHere tab somewhere on the document for the signer to sign
+    var signHere = new docusign.SignHere();
+    signHere.documentId = '1';
+    signHere.pageNumber = '1';
+    signHere.recipientId = '1';
+    signHere.xPosition = '100';
+    signHere.yPosition = '100';
 
-        // Create a SignHere tab somewhere on the document for the signer to sign
-        var signHere = new docusign.SignHere();
-        signHere.setDocumentId("1");
-        signHere.setPageNumber("1");
-        signHere.setRecipientId("1");
-        signHere.setXPosition("100");
-        signHere.setYPosition("100");
+    // can have multiple tabs, so need to add to envelope as a single element list
+    var signHereTabs = [];
+    signHereTabs.push(signHere);
+    var tabs = new docusign.Tabs();
+    tabs.signHereTabs = signHereTabs;
+    signer.tabs = tabs;
 
-        // can have multiple tabs, so need to add to envelope as a single element list
-        var signHereTabs = [];
-        signHereTabs.push(signHere);
-        var tabs = new docusign.Tabs();
-        tabs.setSignHereTabs(signHereTabs);
-        signer.setTabs(tabs);
+    // Above causes issue
+    templateDef.recipients = new docusign.Recipients();
+    templateDef.recipients.signers = [];
+    templateDef.recipients.signers.push(signer);
 
-        // Above causes issue
-        templateDef.setRecipients(new docusign.Recipients());
-        templateDef.getRecipients().setSigners([]);
-        templateDef.getRecipients().getSigners().push(signer);
+    var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
+    envTemplateDef.name = 'myTemplate';
+    templateDef.envelopeTemplateDefinition = envTemplateDef;
 
-        var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
-        envTemplateDef.setName("myTemplate");
-        templateDef.setEnvelopeTemplateDefinition(envTemplateDef);
+    var templatesApi = new docusign.TemplatesApi(apiClient);
 
-        var templatesApi = new docusign.TemplatesApi();
+    templatesApi.createTemplate(accountId, {'envelopeTemplate': templateDef}, function (error, templateSummary, response) {
+      if (error) {
+        return done(error);
+      }
 
-        templatesApi.createTemplate(accountId, templateDef, function(error, templateSummary, response) {
-            if (error) {
-                return done(error);
-            }
-
-            if (templateSummary) {
-                console.log("TemplateSummary: " + JSON.stringify(templateSummary));
-                done();
-            }
-        });
+      if (templateSummary) {
+        console.log('TemplateSummary: ' + JSON.stringify(templateSummary));
+        done();
+      }
     });
-*/
+  });
+
   it('downLoadEnvelopeDocuments', function (done) {
     var fileBytes = null;
     try {
@@ -335,58 +332,58 @@ describe('SDK Unit Tests:', function () {
 
     // create an envelope to be signed
     var envDef = new docusign.EnvelopeDefinition();
-    envDef.setEmailSubject('downLoadEnvelopeDocuments');
-    envDef.setEmailBlurb('Hello, Please sign my Node SDK Envelope.');
+    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
+    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // add a document to the envelope
     var doc = new docusign.Document();
     var base64Doc = new Buffer(fileBytes).toString('base64');
-    doc.setDocumentBase64(base64Doc);
-    doc.setName('TestFile.pdf');
-    doc.setDocumentId('1');
+    doc.documentBase64 = base64Doc;
+    doc.name = 'TestFile.pdf';
+    doc.documentId = '1';
 
     var docs = [];
     docs.push(doc);
-    envDef.setDocuments(docs);
+    envDef.documents = docs;
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.setEmail(UserName);
+    signer.email = UserName;
     var name = 'Pat Developer';
-    signer.setName(name);
-    signer.setRecipientId('1');
+    signer.name = name;
+    signer.recipientId = '1';
 
     // this value represents the client's unique identifier for the signer
     var clientUserId = '2939';
-    signer.setClientUserId(clientUserId);
+    signer.clientUserId = clientUserId;
 
     // create a signHere tab somewhere on the document for the signer to sign
     // default unit of measurement is pixels, can be mms, cms, inches also
     var signHere = new docusign.SignHere();
-    signHere.setDocumentId('1');
-    signHere.setPageNumber('1');
-    signHere.setRecipientId('1');
-    signHere.setXPosition('100');
-    signHere.setYPosition('100');
+    signHere.documentId = '1';
+    signHere.pageNumber = '1';
+    signHere.recipientId = '1';
+    signHere.xPosition = '100';
+    signHere.yPosition = '100';
 
     // can have multiple tabs, so need to add to envelope as a single element list
     var signHereTabs = [];
     signHereTabs.push(signHere);
     var tabs = new docusign.Tabs();
-    tabs.setSignHereTabs(signHereTabs);
-    signer.setTabs(tabs);
+    tabs.signHereTabs = signHereTabs;
+    signer.tabs = tabs;
 
     // Above causes issue
-    envDef.setRecipients(new docusign.Recipients());
-    envDef.getRecipients().setSigners([]);
-    envDef.getRecipients().getSigners().push(signer);
+    envDef.recipients = new docusign.Recipients();
+    envDef.recipients.signers = [];
+    envDef.recipients.signers.push(signer);
 
     // send the envelope (otherwise it will be "created" in the Draft folder
-    envDef.setStatus('sent');
+    envDef.status = 'sent';
 
-    var envelopesApi = new docusign.EnvelopesApi();
+    var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, envDef, null, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -420,7 +417,7 @@ describe('SDK Unit Tests:', function () {
   });
 
   it('listDocuments', function (done) {
-    var envelopesApi = new docusign.EnvelopesApi();
+    var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
     envelopesApi.listDocuments(accountId, envelopeId, function (error, docsList, response) {
       if (error) {
@@ -449,117 +446,125 @@ describe('SDK Unit Tests:', function () {
 
     // create an envelope to be signed
     var envDef = new docusign.EnvelopeDefinition();
-    envDef.setEmailSubject('downLoadEnvelopeDocuments');
-    envDef.setEmailBlurb('Hello, Please sign my Node SDK Envelope.');
+    envDef.emailSubject = 'downLoadEnvelopeDocuments';
+    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // add a document to the envelope
     var doc = new docusign.Document();
     var base64Doc = new Buffer(fileBytes).toString('base64');
-    doc.setDocumentBase64(base64Doc);
-    doc.setName('TestFile.pdf');
-    doc.setDocumentId('1');
+    doc.documentBase64 = base64Doc;
+    doc.name = 'TestFile.pdf';
+    doc.documentId = '1';
 
     var docs = [];
     docs.push(doc);
-    envDef.setDocuments(docs);
+    envDef.documents = docs;
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.setEmail(UserName);
+    signer.email = UserName;
     var name = 'Pat Developer';
-    signer.setName(name);
-    signer.setRecipientId('1');
+    signer.name = name;
+    signer.recipientId = '1';
 
     // this value represents the client's unique identifier for the signer
     var clientUserId = '2939';
-    signer.setClientUserId(clientUserId);
+    signer.clientUserId = clientUserId;
 
     // create a signHere tab somewhere on the document for the signer to sign
     // default unit of measurement is pixels, can be mms, cms, inches also
     var signHere = new docusign.SignHere();
-    signHere.setDocumentId('1');
-    signHere.setPageNumber('1');
-    signHere.setRecipientId('1');
-    signHere.setXPosition('100');
-    signHere.setYPosition('100');
+    signHere.documentId = '1';
+    signHere.pageNumber = '1';
+    signHere.recipientId = '1';
+    signHere.xPosition = '100';
+    signHere.yPosition = '100';
 
     // can have multiple tabs, so need to add to envelope as a single element list
     var signHereTabs = [];
     signHereTabs.push(signHere);
     var tabs = new docusign.Tabs();
-    tabs.setSignHereTabs(signHereTabs);
-    signer.setTabs(tabs);
+    tabs.signHereTabs = signHereTabs;
+    signer.tabs = tabs;
 
     // Above causes issue
-    envDef.setRecipients(new docusign.Recipients());
-    envDef.getRecipients().setSigners([]);
-    envDef.getRecipients().getSigners().push(signer);
+    envDef.recipients = new docusign.Recipients();
+    envDef.recipients.signers = [];
+    envDef.recipients.signers.push(signer);
 
     // send the envelope (otherwise it will be "created" in the Draft folder
-    envDef.setStatus('sent');
+    envDef.status = 'sent';
 
-    var diagApi = new docusign.DiagnosticsApi();
+    var diagApi = new docusign.DiagnosticsApi(apiClient);
 
     var diagSettings = new docusign.DiagnosticsSettingsInformation();
-    diagSettings.setApiRequestLogging('true');
-    diagApi.updateRequestLogSettings(diagSettings);
-
-    var envelopesApi = new docusign.EnvelopesApi();
-
-    envelopesApi.createEnvelope(accountId, envDef, null, function (error, envelopeSummary, response) {
+    diagSettings.apiRequestLogging = 'true';
+    diagApi.updateRequestLogSettings({'diagnosticsSettingsInformation': diagSettings}, function (error, diagnosticsSettingsInformation, response) {
       if (error) {
         return done(error);
       }
 
-      if (envelopeSummary) {
-        console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-        envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', function (error, pdfBytes, response) {
+      if (diagnosticsSettingsInformation) {
+        console.log('DiagnosticsSettingsInformation: ' + JSON.stringify(diagnosticsSettingsInformation));
+
+        var envelopesApi = new docusign.EnvelopesApi(apiClient);
+
+        envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
           if (error) {
             return done(error);
           }
 
-          if (pdfBytes) {
-            try {
-              var fs = require('fs');
-              var path = require('path');
-              // download the document pdf
-              var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
-              var tempFile = path.resolve(__dirname, filename);
-              fs.writeFile(tempFile, new Buffer(pdfBytes, 'binary'), function (err) {
-                if (err) console.log('Error: ' + err);
-              });
-              console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
-            } catch (ex) {
-              console.log('Exception: ' + ex);
-            }
-            diagApi.listRequestLogs(null, function (error, logsList, response) {
+          if (envelopeSummary) {
+            console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+            envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', function (error, pdfBytes, response) {
               if (error) {
                 return done(error);
               }
 
-              if (logsList) {
-                var requestLogId = logsList.apiRequestLogs[0].requestLogId;
-                console.log(requestLogId);
-                diagApi.getRequestLog(requestLogId, function (error, diagBytes, response) {
+              if (pdfBytes) {
+                try {
+                  var fs = require('fs');
+                  var path = require('path');
+                  // download the document pdf
+                  var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+                  var tempFile = path.resolve(__dirname, filename);
+                  fs.writeFile(tempFile, new Buffer(pdfBytes, 'binary'), function (err) {
+                    if (err) console.log('Error: ' + err);
+                  });
+                  console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
+                } catch (ex) {
+                  console.log('Exception: ' + ex);
+                }
+                diagApi.listRequestLogs(null, function (error, logsList, response) {
                   if (error) {
                     return done(error);
                   }
 
-                  if (diagBytes) {
-                    try {
-                      var fs = require('fs');
-                      var path = require('path');
-                      // download the document pdf
-                      var filename = requestLogId + '.txt';
-                      var tempFile = path.resolve(__dirname, filename);
-                      fs.writeFile(tempFile, diagBytes, function (err) {
-                        if (err) console.log('Error: ' + err);
-                      });
-                      console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
-                      done();
-                    } catch (ex) {
-                      console.log('Exception: ' + ex);
-                    }
+                  if (logsList) {
+                    var requestLogId = logsList.apiRequestLogs[0].requestLogId;
+                    console.log(requestLogId);
+                    diagApi.getRequestLog(requestLogId, function (error, diagBytes, response) {
+                      if (error) {
+                        return done(error);
+                      }
+
+                      if (diagBytes) {
+                        try {
+                          var fs = require('fs');
+                          var path = require('path');
+                          // download the document pdf
+                          var filename = requestLogId + '.txt';
+                          var tempFile = path.resolve(__dirname, filename);
+                          fs.writeFile(tempFile, diagBytes, function (err) {
+                            if (err) console.log('Error: ' + err);
+                          });
+                          console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
+                          done();
+                        } catch (ex) {
+                          console.log('Exception: ' + ex);
+                        }
+                      }
+                    });
                   }
                 });
               }

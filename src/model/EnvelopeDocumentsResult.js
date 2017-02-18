@@ -1,93 +1,87 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './EnvelopeDocument'], factory);
+    define(['ApiClient', 'model/EnvelopeDocument'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./EnvelopeDocument'));
+    module.exports = factory(require('../ApiClient'), require('./EnvelopeDocument'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.EnvelopeDocument);
+    root.Docusign.EnvelopeDocumentsResult = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeDocument);
   }
-}(this, function(module, EnvelopeDocument) {
+}(this, function(ApiClient, EnvelopeDocument) {
   'use strict';
 
-  
-  
 
-  
-  var EnvelopeDocumentsResult = function EnvelopeDocumentsResult() { 
-    var self = this;
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.envelopeDocuments = [];
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.envelopeId) {
-        self.envelopeId = data.envelopeId;
-      }
-      
-      if (data.envelopeDocuments) {
-        self.envelopeDocuments = data.envelopeDocuments;
-      }
-      
-    }
 
-    
-    /**
-     * get The envelope ID of the envelope status that failed to post.
-     * @return {String}
-     **/
-    self.getEnvelopeId = function() {
-      return self.envelopeId;
-    }
+  /**
+   * The EnvelopeDocumentsResult model module.
+   * @module model/EnvelopeDocumentsResult
+   * @version 3.0.0
+   */
 
-    /**
-     * set The envelope ID of the envelope status that failed to post.
-     * @param {String} envelopeId
-     **/
-    self.setEnvelopeId = function (envelopeId) {
-      self.envelopeId = envelopeId;
-    }
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
-    self.getEnvelopeDocuments = function() {
-      return self.envelopeDocuments;
-    }
+  /**
+   * Constructs a new <code>EnvelopeDocumentsResult</code>.
+   * @alias module:model/EnvelopeDocumentsResult
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 
-     * @param {Array} envelopeDocuments
-     **/
-    self.setEnvelopeDocuments = function (envelopeDocuments) {
-      self.envelopeDocuments = envelopeDocuments;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.EnvelopeDocumentsResult = EnvelopeDocumentsResult;
+  /**
+   * Constructs a <code>EnvelopeDocumentsResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/EnvelopeDocumentsResult} obj Optional instance to populate.
+   * @return {module:model/EnvelopeDocumentsResult} The populated <code>EnvelopeDocumentsResult</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('envelopeId')) {
+        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeDocuments')) {
+        obj['envelopeDocuments'] = ApiClient.convertToType(data['envelopeDocuments'], [EnvelopeDocument]);
+      }
+    }
+    return obj;
   }
 
-  return EnvelopeDocumentsResult;
-  
-  
+  /**
+   * The envelope ID of the envelope status that failed to post.
+   * @member {String} envelopeId
+   */
+  exports.prototype['envelopeId'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/EnvelopeDocument>} envelopeDocuments
+   */
+  exports.prototype['envelopeDocuments'] = undefined;
+
+
+
+  return exports;
 }));
+
+
