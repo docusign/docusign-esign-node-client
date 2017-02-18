@@ -1,158 +1,113 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './Document', './InlineTemplate', './ServerTemplate'], factory);
+    define(['ApiClient', 'model/Document', 'model/InlineTemplate', 'model/ServerTemplate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./Document'), require('./InlineTemplate'), require('./ServerTemplate'));
+    module.exports = factory(require('../ApiClient'), require('./Document'), require('./InlineTemplate'), require('./ServerTemplate'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.Document, root.Docusign.InlineTemplate, root.Docusign.ServerTemplate);
+    root.Docusign.CompositeTemplate = factory(root.Docusign.ApiClient, root.Docusign.Document, root.Docusign.InlineTemplate, root.Docusign.ServerTemplate);
   }
-}(this, function(module, Document, InlineTemplate, ServerTemplate) {
+}(this, function(ApiClient, Document, InlineTemplate, ServerTemplate) {
   'use strict';
 
-  
-  
 
-  
-  var CompositeTemplate = function CompositeTemplate() { 
-    var self = this;
-    
-    /**
-     * 0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value
-     * datatype: Array
-     **/
-    self.serverTemplates = [];
-    
-    /**
-     * Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.
-     * datatype: Array
-     **/
-    self.inlineTemplates = [];
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.compositeTemplateId) {
-        self.compositeTemplateId = data.compositeTemplateId;
-      }
-      
-      if (data.serverTemplates) {
-        self.serverTemplates = data.serverTemplates;
-      }
-      
-      if (data.inlineTemplates) {
-        self.inlineTemplates = data.inlineTemplates;
-      }
-      
-      if (data.pdfMetaDataTemplateSequence) {
-        self.pdfMetaDataTemplateSequence = data.pdfMetaDataTemplateSequence;
-      }
-      
-      if (data.document) {
-        self.document = new data.document.constructor();
-        self.document.constructFromObject(data.document);
-      }
-      
-    }
 
-    
-    /**
-     * get Specifies the identify the composite template. It is used as a reference when adding document object information. If used, the document content-disposition must include the composite template ID to which the document should be added. If composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
-     * @return {String}
-     **/
-    self.getCompositeTemplateId = function() {
-      return self.compositeTemplateId;
-    }
+  /**
+   * The CompositeTemplate model module.
+   * @module model/CompositeTemplate
+   * @version 3.0.0
+   */
 
-    /**
-     * set Specifies the identify the composite template. It is used as a reference when adding document object information. If used, the document content-disposition must include the composite template ID to which the document should be added. If composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
-     * @param {String} compositeTemplateId
-     **/
-    self.setCompositeTemplateId = function (compositeTemplateId) {
-      self.compositeTemplateId = compositeTemplateId;
-    }
-    
-    /**
-     * get 0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value
-     * @return {Array}
-     **/
-    self.getServerTemplates = function() {
-      return self.serverTemplates;
-    }
+  /**
+   * Constructs a new <code>CompositeTemplate</code>.
+   * @alias module:model/CompositeTemplate
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value
-     * @param {Array} serverTemplates
-     **/
-    self.setServerTemplates = function (serverTemplates) {
-      self.serverTemplates = serverTemplates;
-    }
-    
-    /**
-     * get Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.
-     * @return {Array}
-     **/
-    self.getInlineTemplates = function() {
-      return self.inlineTemplates;
-    }
 
-    /**
-     * set Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.
-     * @param {Array} inlineTemplates
-     **/
-    self.setInlineTemplates = function (inlineTemplates) {
-      self.inlineTemplates = inlineTemplates;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getPdfMetaDataTemplateSequence = function() {
-      return self.pdfMetaDataTemplateSequence;
-    }
 
-    /**
-     * set 
-     * @param {String} pdfMetaDataTemplateSequence
-     **/
-    self.setPdfMetaDataTemplateSequence = function (pdfMetaDataTemplateSequence) {
-      self.pdfMetaDataTemplateSequence = pdfMetaDataTemplateSequence;
-    }
-    
-    /**
-     * @return {Document}
-     **/
-    self.getDocument = function() {
-      return self.document;
-    }
 
-    /**
-     * @param {Document} document
-     **/
-    self.setDocument = function (document) {
-      self.document = document;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.CompositeTemplate = CompositeTemplate;
+  /**
+   * Constructs a <code>CompositeTemplate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/CompositeTemplate} obj Optional instance to populate.
+   * @return {module:model/CompositeTemplate} The populated <code>CompositeTemplate</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('compositeTemplateId')) {
+        obj['compositeTemplateId'] = ApiClient.convertToType(data['compositeTemplateId'], 'String');
+      }
+      if (data.hasOwnProperty('serverTemplates')) {
+        obj['serverTemplates'] = ApiClient.convertToType(data['serverTemplates'], [ServerTemplate]);
+      }
+      if (data.hasOwnProperty('inlineTemplates')) {
+        obj['inlineTemplates'] = ApiClient.convertToType(data['inlineTemplates'], [InlineTemplate]);
+      }
+      if (data.hasOwnProperty('pdfMetaDataTemplateSequence')) {
+        obj['pdfMetaDataTemplateSequence'] = ApiClient.convertToType(data['pdfMetaDataTemplateSequence'], 'String');
+      }
+      if (data.hasOwnProperty('document')) {
+        obj['document'] = Document.constructFromObject(data['document']);
+      }
+    }
+    return obj;
   }
 
-  return CompositeTemplate;
-  
-  
+  /**
+   * Specifies the identify the composite template. It is used as a reference when adding document object information. If used, the document content-disposition must include the composite template ID to which the document should be added. If composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
+   * @member {String} compositeTemplateId
+   */
+  exports.prototype['compositeTemplateId'] = undefined;
+  /**
+   * 0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value
+   * @member {Array.<module:model/ServerTemplate>} serverTemplates
+   */
+  exports.prototype['serverTemplates'] = undefined;
+  /**
+   *  Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.
+   * @member {Array.<module:model/InlineTemplate>} inlineTemplates
+   */
+  exports.prototype['inlineTemplates'] = undefined;
+  /**
+   * 
+   * @member {String} pdfMetaDataTemplateSequence
+   */
+  exports.prototype['pdfMetaDataTemplateSequence'] = undefined;
+  /**
+   * @member {module:model/Document} document
+   */
+  exports.prototype['document'] = undefined;
+
+
+
+  return exports;
 }));
+
+

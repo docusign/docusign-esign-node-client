@@ -1,105 +1,94 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './Expirations', './Reminders'], factory);
+    define(['ApiClient', 'model/Expirations', 'model/Reminders'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./Expirations'), require('./Reminders'));
+    module.exports = factory(require('../ApiClient'), require('./Expirations'), require('./Reminders'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.Expirations, root.Docusign.Reminders);
+    root.Docusign.Notification = factory(root.Docusign.ApiClient, root.Docusign.Expirations, root.Docusign.Reminders);
   }
-}(this, function(module, Expirations, Reminders) {
+}(this, function(ApiClient, Expirations, Reminders) {
   'use strict';
 
-  
-  
 
-  
-  var Notification = function Notification() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.useAccountDefaults) {
-        self.useAccountDefaults = data.useAccountDefaults;
-      }
-      
-      if (data.reminders) {
-        self.reminders = new data.reminders.constructor();
-        self.reminders.constructFromObject(data.reminders);
-      }
-      
-      if (data.expirations) {
-        self.expirations = new data.expirations.constructor();
-        self.expirations.constructFromObject(data.expirations);
-      }
-      
-    }
 
-    
-    /**
-     * get When set to **true**, the account default notification settings are used for the envelope.
-     * @return {String}
-     **/
-    self.getUseAccountDefaults = function() {
-      return self.useAccountDefaults;
-    }
+  /**
+   * The Notification model module.
+   * @module model/Notification
+   * @version 3.0.0
+   */
 
-    /**
-     * set When set to **true**, the account default notification settings are used for the envelope.
-     * @param {String} useAccountDefaults
-     **/
-    self.setUseAccountDefaults = function (useAccountDefaults) {
-      self.useAccountDefaults = useAccountDefaults;
-    }
-    
-    /**
-     * @return {Reminders}
-     **/
-    self.getReminders = function() {
-      return self.reminders;
-    }
+  /**
+   * Constructs a new <code>Notification</code>.
+   * @alias module:model/Notification
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * @param {Reminders} reminders
-     **/
-    self.setReminders = function (reminders) {
-      self.reminders = reminders;
-    }
-    
-    /**
-     * @return {Expirations}
-     **/
-    self.getExpirations = function() {
-      return self.expirations;
-    }
 
-    /**
-     * @param {Expirations} expirations
-     **/
-    self.setExpirations = function (expirations) {
-      self.expirations = expirations;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.Notification = Notification;
+  /**
+   * Constructs a <code>Notification</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/Notification} obj Optional instance to populate.
+   * @return {module:model/Notification} The populated <code>Notification</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('useAccountDefaults')) {
+        obj['useAccountDefaults'] = ApiClient.convertToType(data['useAccountDefaults'], 'String');
+      }
+      if (data.hasOwnProperty('reminders')) {
+        obj['reminders'] = Reminders.constructFromObject(data['reminders']);
+      }
+      if (data.hasOwnProperty('expirations')) {
+        obj['expirations'] = Expirations.constructFromObject(data['expirations']);
+      }
+    }
+    return obj;
   }
 
-  return Notification;
-  
-  
+  /**
+   * When set to **true**, the account default notification settings are used for the envelope.
+   * @member {String} useAccountDefaults
+   */
+  exports.prototype['useAccountDefaults'] = undefined;
+  /**
+   * @member {module:model/Reminders} reminders
+   */
+  exports.prototype['reminders'] = undefined;
+  /**
+   * @member {module:model/Expirations} expirations
+   */
+  exports.prototype['expirations'] = undefined;
+
+
+
+  return exports;
 }));
+
+

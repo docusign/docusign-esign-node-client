@@ -1,186 +1,131 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails'], factory);
+    define(['ApiClient', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails);
+    root.Docusign.CustomFieldV2 = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(module, ErrorDetails) {
+}(this, function(ApiClient, ErrorDetails) {
   'use strict';
 
-  
-  
 
-  
-  var CustomFieldV2 = function CustomFieldV2() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.fieldId) {
-        self.fieldId = data.fieldId;
-      }
-      
-      if (data.name) {
-        self.name = data.name;
-      }
-      
-      if (data.show) {
-        self.show = data.show;
-      }
-      
-      if (data.required) {
-        self.required = data.required;
-      }
-      
-      if (data.value) {
-        self.value = data.value;
-      }
-      
-      if (data.configurationType) {
-        self.configurationType = data.configurationType;
-      }
-      
-      if (data.errorDetails) {
-        self.errorDetails = new data.errorDetails.constructor();
-        self.errorDetails.constructFromObject(data.errorDetails);
-      }
-      
-    }
 
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getFieldId = function() {
-      return self.fieldId;
-    }
+  /**
+   * The CustomFieldV2 model module.
+   * @module model/CustomFieldV2
+   * @version 3.0.0
+   */
 
-    /**
-     * set 
-     * @param {String} fieldId
-     **/
-    self.setFieldId = function (fieldId) {
-      self.fieldId = fieldId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getName = function() {
-      return self.name;
-    }
+  /**
+   * Constructs a new <code>CustomFieldV2</code>.
+   * @alias module:model/CustomFieldV2
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 
-     * @param {String} name
-     **/
-    self.setName = function (name) {
-      self.name = name;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getShow = function() {
-      return self.show;
-    }
 
-    /**
-     * set 
-     * @param {String} show
-     **/
-    self.setShow = function (show) {
-      self.show = show;
-    }
-    
-    /**
-     * get When set to **true**, the signer is required to fill out this tab
-     * @return {String}
-     **/
-    self.getRequired = function() {
-      return self.required;
-    }
 
-    /**
-     * set When set to **true**, the signer is required to fill out this tab
-     * @param {String} required
-     **/
-    self.setRequired = function (required) {
-      self.required = required;
-    }
-    
-    /**
-     * get The value of the custom field.
-     * @return {String}
-     **/
-    self.getValue = function() {
-      return self.value;
-    }
 
-    /**
-     * set The value of the custom field.
-     * @param {String} value
-     **/
-    self.setValue = function (value) {
-      self.value = value;
-    }
-    
-    /**
-     * get If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
-     * @return {String}
-     **/
-    self.getConfigurationType = function() {
-      return self.configurationType;
-    }
 
-    /**
-     * set If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
-     * @param {String} configurationType
-     **/
-    self.setConfigurationType = function (configurationType) {
-      self.configurationType = configurationType;
-    }
-    
-    /**
-     * @return {ErrorDetails}
-     **/
-    self.getErrorDetails = function() {
-      return self.errorDetails;
-    }
 
-    /**
-     * @param {ErrorDetails} errorDetails
-     **/
-    self.setErrorDetails = function (errorDetails) {
-      self.errorDetails = errorDetails;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.CustomFieldV2 = CustomFieldV2;
+  /**
+   * Constructs a <code>CustomFieldV2</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/CustomFieldV2} obj Optional instance to populate.
+   * @return {module:model/CustomFieldV2} The populated <code>CustomFieldV2</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('fieldId')) {
+        obj['fieldId'] = ApiClient.convertToType(data['fieldId'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('show')) {
+        obj['show'] = ApiClient.convertToType(data['show'], 'String');
+      }
+      if (data.hasOwnProperty('required')) {
+        obj['required'] = ApiClient.convertToType(data['required'], 'String');
+      }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
+      if (data.hasOwnProperty('configurationType')) {
+        obj['configurationType'] = ApiClient.convertToType(data['configurationType'], 'String');
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+    }
+    return obj;
   }
 
-  return CustomFieldV2;
-  
-  
+  /**
+   * 
+   * @member {String} fieldId
+   */
+  exports.prototype['fieldId'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} show
+   */
+  exports.prototype['show'] = undefined;
+  /**
+   * When set to **true**, the signer is required to fill out this tab
+   * @member {String} required
+   */
+  exports.prototype['required'] = undefined;
+  /**
+   * The value of the custom field.
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
+  /**
+   * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
+   * @member {String} configurationType
+   */
+  exports.prototype['configurationType'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+
+
+
+  return exports;
 }));
+
+

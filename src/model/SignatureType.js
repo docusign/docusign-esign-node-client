@@ -1,87 +1,87 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.SignatureType = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var SignatureType = function SignatureType() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.type) {
-        self.type = data.type;
-      }
-      
-      if (data.isDefault) {
-        self.isDefault = data.isDefault;
-      }
-      
-    }
 
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getType = function() {
-      return self.type;
-    }
+  /**
+   * The SignatureType model module.
+   * @module model/SignatureType
+   * @version 3.0.0
+   */
 
-    /**
-     * set 
-     * @param {String} type
-     **/
-    self.setType = function (type) {
-      self.type = type;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getIsDefault = function() {
-      return self.isDefault;
-    }
+  /**
+   * Constructs a new <code>SignatureType</code>.
+   * @alias module:model/SignatureType
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 
-     * @param {String} isDefault
-     **/
-    self.setIsDefault = function (isDefault) {
-      self.isDefault = isDefault;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.SignatureType = SignatureType;
+  /**
+   * Constructs a <code>SignatureType</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/SignatureType} obj Optional instance to populate.
+   * @return {module:model/SignatureType} The populated <code>SignatureType</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('isDefault')) {
+        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return SignatureType;
-  
-  
+  /**
+   * 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * 
+   * @member {String} isDefault
+   */
+  exports.prototype['isDefault'] = undefined;
+
+
+
+  return exports;
 }));
+
+

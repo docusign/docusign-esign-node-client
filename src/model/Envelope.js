@@ -1,884 +1,444 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './EmailSettings', './LockInformation', './Notification'], factory);
+    define(['ApiClient', 'model/EmailSettings', 'model/LockInformation', 'model/Notification'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./EmailSettings'), require('./LockInformation'), require('./Notification'));
+    module.exports = factory(require('../ApiClient'), require('./EmailSettings'), require('./LockInformation'), require('./Notification'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.EmailSettings, root.Docusign.LockInformation, root.Docusign.Notification);
+    root.Docusign.Envelope = factory(root.Docusign.ApiClient, root.Docusign.EmailSettings, root.Docusign.LockInformation, root.Docusign.Notification);
   }
-}(this, function(module, EmailSettings, LockInformation, Notification) {
+}(this, function(ApiClient, EmailSettings, LockInformation, Notification) {
   'use strict';
 
-  
-  
 
-  
-  var Envelope = function Envelope() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.transactionId) {
-        self.transactionId = data.transactionId;
-      }
-      
-      if (data.status) {
-        self.status = data.status;
-      }
-      
-      if (data.documentsUri) {
-        self.documentsUri = data.documentsUri;
-      }
-      
-      if (data.recipientsUri) {
-        self.recipientsUri = data.recipientsUri;
-      }
-      
-      if (data.asynchronous) {
-        self.asynchronous = data.asynchronous;
-      }
-      
-      if (data.envelopeUri) {
-        self.envelopeUri = data.envelopeUri;
-      }
-      
-      if (data.emailSubject) {
-        self.emailSubject = data.emailSubject;
-      }
-      
-      if (data.emailBlurb) {
-        self.emailBlurb = data.emailBlurb;
-      }
-      
-      if (data.envelopeId) {
-        self.envelopeId = data.envelopeId;
-      }
-      
-      if (data.signingLocation) {
-        self.signingLocation = data.signingLocation;
-      }
-      
-      if (data.customFieldsUri) {
-        self.customFieldsUri = data.customFieldsUri;
-      }
-      
-      if (data.envelopeIdStamping) {
-        self.envelopeIdStamping = data.envelopeIdStamping;
-      }
-      
-      if (data.authoritativeCopy) {
-        self.authoritativeCopy = data.authoritativeCopy;
-      }
-      
-      if (data.notification) {
-        self.notification = new data.notification.constructor();
-        self.notification.constructFromObject(data.notification);
-      }
-      
-      if (data.notificationUri) {
-        self.notificationUri = data.notificationUri;
-      }
-      
-      if (data.enforceSignerVisibility) {
-        self.enforceSignerVisibility = data.enforceSignerVisibility;
-      }
-      
-      if (data.enableWetSign) {
-        self.enableWetSign = data.enableWetSign;
-      }
-      
-      if (data.allowMarkup) {
-        self.allowMarkup = data.allowMarkup;
-      }
-      
-      if (data.allowReassign) {
-        self.allowReassign = data.allowReassign;
-      }
-      
-      if (data.createdDateTime) {
-        self.createdDateTime = data.createdDateTime;
-      }
-      
-      if (data.lastModifiedDateTime) {
-        self.lastModifiedDateTime = data.lastModifiedDateTime;
-      }
-      
-      if (data.deliveredDateTime) {
-        self.deliveredDateTime = data.deliveredDateTime;
-      }
-      
-      if (data.sentDateTime) {
-        self.sentDateTime = data.sentDateTime;
-      }
-      
-      if (data.completedDateTime) {
-        self.completedDateTime = data.completedDateTime;
-      }
-      
-      if (data.voidedDateTime) {
-        self.voidedDateTime = data.voidedDateTime;
-      }
-      
-      if (data.voidedReason) {
-        self.voidedReason = data.voidedReason;
-      }
-      
-      if (data.deletedDateTime) {
-        self.deletedDateTime = data.deletedDateTime;
-      }
-      
-      if (data.declinedDateTime) {
-        self.declinedDateTime = data.declinedDateTime;
-      }
-      
-      if (data.statusChangedDateTime) {
-        self.statusChangedDateTime = data.statusChangedDateTime;
-      }
-      
-      if (data.documentsCombinedUri) {
-        self.documentsCombinedUri = data.documentsCombinedUri;
-      }
-      
-      if (data.certificateUri) {
-        self.certificateUri = data.certificateUri;
-      }
-      
-      if (data.templatesUri) {
-        self.templatesUri = data.templatesUri;
-      }
-      
-      if (data.messageLock) {
-        self.messageLock = data.messageLock;
-      }
-      
-      if (data.recipientsLock) {
-        self.recipientsLock = data.recipientsLock;
-      }
-      
-      if (data.brandLock) {
-        self.brandLock = data.brandLock;
-      }
-      
-      if (data.brandId) {
-        self.brandId = data.brandId;
-      }
-      
-      if (data.useDisclosure) {
-        self.useDisclosure = data.useDisclosure;
-      }
-      
-      if (data.emailSettings) {
-        self.emailSettings = new data.emailSettings.constructor();
-        self.emailSettings.constructFromObject(data.emailSettings);
-      }
-      
-      if (data.purgeState) {
-        self.purgeState = data.purgeState;
-      }
-      
-      if (data.lockInformation) {
-        self.lockInformation = new data.lockInformation.constructor();
-        self.lockInformation.constructFromObject(data.lockInformation);
-      }
-      
-      if (data.is21CFRPart11) {
-        self.is21CFRPart11 = data.is21CFRPart11;
-      }
-      
-      if (data.isUniversalSignatureEnvelope) {
-        self.isUniversalSignatureEnvelope = data.isUniversalSignatureEnvelope;
-      }
-      
-    }
 
-    
-    /**
-     * get Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
-     * @return {String}
-     **/
-    self.getTransactionId = function() {
-      return self.transactionId;
-    }
+  /**
+   * The Envelope model module.
+   * @module model/Envelope
+   * @version 3.0.0
+   */
 
-    /**
-     * set Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
-     * @param {String} transactionId
-     **/
-    self.setTransactionId = function (transactionId) {
-      self.transactionId = transactionId;
-    }
-    
-    /**
-     * get Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n*created - The envelope is saved as a draft and can be modified and sent later.
-     * @return {String}
-     **/
-    self.getStatus = function() {
-      return self.status;
-    }
+  /**
+   * Constructs a new <code>Envelope</code>.
+   * @alias module:model/Envelope
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n*created - The envelope is saved as a draft and can be modified and sent later.
-     * @param {String} status
-     **/
-    self.setStatus = function (status) {
-      self.status = status;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the documents.
-     * @return {String}
-     **/
-    self.getDocumentsUri = function() {
-      return self.documentsUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the documents.
-     * @param {String} documentsUri
-     **/
-    self.setDocumentsUri = function (documentsUri) {
-      self.documentsUri = documentsUri;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the recipients.
-     * @return {String}
-     **/
-    self.getRecipientsUri = function() {
-      return self.recipientsUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the recipients.
-     * @param {String} recipientsUri
-     **/
-    self.setRecipientsUri = function (recipientsUri) {
-      self.recipientsUri = recipientsUri;
-    }
-    
-    /**
-     * get When set to **true**, the envelope is queued for processing and the value of the `status` property is set to 'Processing'. Additionally, get status calls return 'Processing' until completed.
-     * @return {String}
-     **/
-    self.getAsynchronous = function() {
-      return self.asynchronous;
-    }
 
-    /**
-     * set When set to **true**, the envelope is queued for processing and the value of the `status` property is set to 'Processing'. Additionally, get status calls return 'Processing' until completed.
-     * @param {String} asynchronous
-     **/
-    self.setAsynchronous = function (asynchronous) {
-      self.asynchronous = asynchronous;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * @return {String}
-     **/
-    self.getEnvelopeUri = function() {
-      return self.envelopeUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * @param {String} envelopeUri
-     **/
-    self.setEnvelopeUri = function (envelopeUri) {
-      self.envelopeUri = envelopeUri;
-    }
-    
-    /**
-     * get Specifies the subject of the email that is sent to all recipients.\n\nSee [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
-     * @return {String}
-     **/
-    self.getEmailSubject = function() {
-      return self.emailSubject;
-    }
 
-    /**
-     * set Specifies the subject of the email that is sent to all recipients.\n\nSee [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
-     * @param {String} emailSubject
-     **/
-    self.setEmailSubject = function (emailSubject) {
-      self.emailSubject = emailSubject;
-    }
-    
-    /**
-     * get This is the same as the email body. If specified it is included in email body for all envelope recipients.
-     * @return {String}
-     **/
-    self.getEmailBlurb = function() {
-      return self.emailBlurb;
-    }
 
-    /**
-     * set This is the same as the email body. If specified it is included in email body for all envelope recipients.
-     * @param {String} emailBlurb
-     **/
-    self.setEmailBlurb = function (emailBlurb) {
-      self.emailBlurb = emailBlurb;
-    }
-    
-    /**
-     * get The envelope ID of the envelope status that failed to post.
-     * @return {String}
-     **/
-    self.getEnvelopeId = function() {
-      return self.envelopeId;
-    }
 
-    /**
-     * set The envelope ID of the envelope status that failed to post.
-     * @param {String} envelopeId
-     **/
-    self.setEnvelopeId = function (envelopeId) {
-      self.envelopeId = envelopeId;
-    }
-    
-    /**
-     * get Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
-     * @return {String}
-     **/
-    self.getSigningLocation = function() {
-      return self.signingLocation;
-    }
 
-    /**
-     * set Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
-     * @param {String} signingLocation
-     **/
-    self.setSigningLocation = function (signingLocation) {
-      self.signingLocation = signingLocation;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the custom fields.
-     * @return {String}
-     **/
-    self.getCustomFieldsUri = function() {
-      return self.customFieldsUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the custom fields.
-     * @param {String} customFieldsUri
-     **/
-    self.setCustomFieldsUri = function (customFieldsUri) {
-      self.customFieldsUri = customFieldsUri;
-    }
-    
-    /**
-     * get When set to **true**, Envelope ID Stamping is enabled.
-     * @return {String}
-     **/
-    self.getEnvelopeIdStamping = function() {
-      return self.envelopeIdStamping;
-    }
 
-    /**
-     * set When set to **true**, Envelope ID Stamping is enabled.
-     * @param {String} envelopeIdStamping
-     **/
-    self.setEnvelopeIdStamping = function (envelopeIdStamping) {
-      self.envelopeIdStamping = envelopeIdStamping;
-    }
-    
-    /**
-     * get Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
-     * @return {String}
-     **/
-    self.getAuthoritativeCopy = function() {
-      return self.authoritativeCopy;
-    }
 
-    /**
-     * set Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
-     * @param {String} authoritativeCopy
-     **/
-    self.setAuthoritativeCopy = function (authoritativeCopy) {
-      self.authoritativeCopy = authoritativeCopy;
-    }
-    
-    /**
-     * @return {Notification}
-     **/
-    self.getNotification = function() {
-      return self.notification;
-    }
 
-    /**
-     * @param {Notification} notification
-     **/
-    self.setNotification = function (notification) {
-      self.notification = notification;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the notifications.
-     * @return {String}
-     **/
-    self.getNotificationUri = function() {
-      return self.notificationUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the notifications.
-     * @param {String} notificationUri
-     **/
-    self.setNotificationUri = function (notificationUri) {
-      self.notificationUri = notificationUri;
-    }
-    
-    /**
-     * get When set to **true**, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.\n\nYour account must have Document Visibility enabled to use this.
-     * @return {String}
-     **/
-    self.getEnforceSignerVisibility = function() {
-      return self.enforceSignerVisibility;
-    }
 
-    /**
-     * set When set to **true**, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.\n\nYour account must have Document Visibility enabled to use this.
-     * @param {String} enforceSignerVisibility
-     **/
-    self.setEnforceSignerVisibility = function (enforceSignerVisibility) {
-      self.enforceSignerVisibility = enforceSignerVisibility;
-    }
-    
-    /**
-     * get When set to **true**, the signer is allowed to print the document and sign it on paper.
-     * @return {String}
-     **/
-    self.getEnableWetSign = function() {
-      return self.enableWetSign;
-    }
 
-    /**
-     * set When set to **true**, the signer is allowed to print the document and sign it on paper.
-     * @param {String} enableWetSign
-     **/
-    self.setEnableWetSign = function (enableWetSign) {
-      self.enableWetSign = enableWetSign;
-    }
-    
-    /**
-     * get When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this
-     * @return {String}
-     **/
-    self.getAllowMarkup = function() {
-      return self.allowMarkup;
-    }
 
-    /**
-     * set When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this
-     * @param {String} allowMarkup
-     **/
-    self.setAllowMarkup = function (allowMarkup) {
-      self.allowMarkup = allowMarkup;
-    }
-    
-    /**
-     * get When set to **true**, the recipient can redirect an envelope to a more appropriate recipient.
-     * @return {String}
-     **/
-    self.getAllowReassign = function() {
-      return self.allowReassign;
-    }
 
-    /**
-     * set When set to **true**, the recipient can redirect an envelope to a more appropriate recipient.
-     * @param {String} allowReassign
-     **/
-    self.setAllowReassign = function (allowReassign) {
-      self.allowReassign = allowReassign;
-    }
-    
-    /**
-     * get Indicates the date and time the item was created.
-     * @return {String}
-     **/
-    self.getCreatedDateTime = function() {
-      return self.createdDateTime;
-    }
 
-    /**
-     * set Indicates the date and time the item was created.
-     * @param {String} createdDateTime
-     **/
-    self.setCreatedDateTime = function (createdDateTime) {
-      self.createdDateTime = createdDateTime;
-    }
-    
-    /**
-     * get The date and time the item was last modified.
-     * @return {String}
-     **/
-    self.getLastModifiedDateTime = function() {
-      return self.lastModifiedDateTime;
-    }
 
-    /**
-     * set The date and time the item was last modified.
-     * @param {String} lastModifiedDateTime
-     **/
-    self.setLastModifiedDateTime = function (lastModifiedDateTime) {
-      self.lastModifiedDateTime = lastModifiedDateTime;
-    }
-    
-    /**
-     * get Reserved: For DocuSign use only.
-     * @return {String}
-     **/
-    self.getDeliveredDateTime = function() {
-      return self.deliveredDateTime;
-    }
 
-    /**
-     * set Reserved: For DocuSign use only.
-     * @param {String} deliveredDateTime
-     **/
-    self.setDeliveredDateTime = function (deliveredDateTime) {
-      self.deliveredDateTime = deliveredDateTime;
-    }
-    
-    /**
-     * get The date and time the envelope was sent.
-     * @return {String}
-     **/
-    self.getSentDateTime = function() {
-      return self.sentDateTime;
-    }
 
-    /**
-     * set The date and time the envelope was sent.
-     * @param {String} sentDateTime
-     **/
-    self.setSentDateTime = function (sentDateTime) {
-      self.sentDateTime = sentDateTime;
-    }
-    
-    /**
-     * get Specifies the date and time this item was completed.
-     * @return {String}
-     **/
-    self.getCompletedDateTime = function() {
-      return self.completedDateTime;
-    }
 
-    /**
-     * set Specifies the date and time this item was completed.
-     * @param {String} completedDateTime
-     **/
-    self.setCompletedDateTime = function (completedDateTime) {
-      self.completedDateTime = completedDateTime;
-    }
-    
-    /**
-     * get The date and time the envelope or template was voided.
-     * @return {String}
-     **/
-    self.getVoidedDateTime = function() {
-      return self.voidedDateTime;
-    }
 
-    /**
-     * set The date and time the envelope or template was voided.
-     * @param {String} voidedDateTime
-     **/
-    self.setVoidedDateTime = function (voidedDateTime) {
-      self.voidedDateTime = voidedDateTime;
-    }
-    
-    /**
-     * get The reason the envelope or template was voided.
-     * @return {String}
-     **/
-    self.getVoidedReason = function() {
-      return self.voidedReason;
-    }
 
-    /**
-     * set The reason the envelope or template was voided.
-     * @param {String} voidedReason
-     **/
-    self.setVoidedReason = function (voidedReason) {
-      self.voidedReason = voidedReason;
-    }
-    
-    /**
-     * get Specifies the data and time the item was deleted.
-     * @return {String}
-     **/
-    self.getDeletedDateTime = function() {
-      return self.deletedDateTime;
-    }
 
-    /**
-     * set Specifies the data and time the item was deleted.
-     * @param {String} deletedDateTime
-     **/
-    self.setDeletedDateTime = function (deletedDateTime) {
-      self.deletedDateTime = deletedDateTime;
-    }
-    
-    /**
-     * get The date and time the recipient declined the document.
-     * @return {String}
-     **/
-    self.getDeclinedDateTime = function() {
-      return self.declinedDateTime;
-    }
 
-    /**
-     * set The date and time the recipient declined the document.
-     * @param {String} declinedDateTime
-     **/
-    self.setDeclinedDateTime = function (declinedDateTime) {
-      self.declinedDateTime = declinedDateTime;
-    }
-    
-    /**
-     * get The data and time the status changed.
-     * @return {String}
-     **/
-    self.getStatusChangedDateTime = function() {
-      return self.statusChangedDateTime;
-    }
 
-    /**
-     * set The data and time the status changed.
-     * @param {String} statusChangedDateTime
-     **/
-    self.setStatusChangedDateTime = function (statusChangedDateTime) {
-      self.statusChangedDateTime = statusChangedDateTime;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDocumentsCombinedUri = function() {
-      return self.documentsCombinedUri;
-    }
 
-    /**
-     * set 
-     * @param {String} documentsCombinedUri
-     **/
-    self.setDocumentsCombinedUri = function (documentsCombinedUri) {
-      self.documentsCombinedUri = documentsCombinedUri;
-    }
-    
-    /**
-     * get Retrieves a URI for an endpoint that allows you to easily retrieve certificate information.
-     * @return {String}
-     **/
-    self.getCertificateUri = function() {
-      return self.certificateUri;
-    }
 
-    /**
-     * set Retrieves a URI for an endpoint that allows you to easily retrieve certificate information.
-     * @param {String} certificateUri
-     **/
-    self.setCertificateUri = function (certificateUri) {
-      self.certificateUri = certificateUri;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint which you can use to retrieve the templates.
-     * @return {String}
-     **/
-    self.getTemplatesUri = function() {
-      return self.templatesUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint which you can use to retrieve the templates.
-     * @param {String} templatesUri
-     **/
-    self.setTemplatesUri = function (templatesUri) {
-      self.templatesUri = templatesUri;
-    }
-    
-    /**
-     * get When set to **true**, prevents senders from changing the contents of `emailBlurb` and `emailSubject` properties for the envelope. \n\nAdditionally, this prevents users from making changes to the contents of `emailBlurb` and `emailSubject` properties when correcting envelopes. \n\nHowever, if the `messageLock` node is set to true**** and the `emailSubject` property is empty, senders and correctors are able to add a subject to the envelope.
-     * @return {String}
-     **/
-    self.getMessageLock = function() {
-      return self.messageLock;
-    }
 
-    /**
-     * set When set to **true**, prevents senders from changing the contents of `emailBlurb` and `emailSubject` properties for the envelope. \n\nAdditionally, this prevents users from making changes to the contents of `emailBlurb` and `emailSubject` properties when correcting envelopes. \n\nHowever, if the `messageLock` node is set to true**** and the `emailSubject` property is empty, senders and correctors are able to add a subject to the envelope.
-     * @param {String} messageLock
-     **/
-    self.setMessageLock = function (messageLock) {
-      self.messageLock = messageLock;
-    }
-    
-    /**
-     * get When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope.
-     * @return {String}
-     **/
-    self.getRecipientsLock = function() {
-      return self.recipientsLock;
-    }
 
-    /**
-     * set When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope.
-     * @param {String} recipientsLock
-     **/
-    self.setRecipientsLock = function (recipientsLock) {
-      self.recipientsLock = recipientsLock;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getBrandLock = function() {
-      return self.brandLock;
-    }
 
-    /**
-     * set 
-     * @param {String} brandLock
-     **/
-    self.setBrandLock = function (brandLock) {
-      self.brandLock = brandLock;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getBrandId = function() {
-      return self.brandId;
-    }
 
-    /**
-     * set 
-     * @param {String} brandId
-     **/
-    self.setBrandId = function (brandId) {
-      self.brandId = brandId;
-    }
-    
-    /**
-     * get When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients. \n\nIf the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
-     * @return {String}
-     **/
-    self.getUseDisclosure = function() {
-      return self.useDisclosure;
-    }
 
-    /**
-     * set When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients. \n\nIf the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
-     * @param {String} useDisclosure
-     **/
-    self.setUseDisclosure = function (useDisclosure) {
-      self.useDisclosure = useDisclosure;
-    }
-    
-    /**
-     * @return {EmailSettings}
-     **/
-    self.getEmailSettings = function() {
-      return self.emailSettings;
-    }
 
-    /**
-     * @param {EmailSettings} emailSettings
-     **/
-    self.setEmailSettings = function (emailSettings) {
-      self.emailSettings = emailSettings;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getPurgeState = function() {
-      return self.purgeState;
-    }
 
-    /**
-     * set 
-     * @param {String} purgeState
-     **/
-    self.setPurgeState = function (purgeState) {
-      self.purgeState = purgeState;
-    }
-    
-    /**
-     * @return {LockInformation}
-     **/
-    self.getLockInformation = function() {
-      return self.lockInformation;
-    }
 
-    /**
-     * @param {LockInformation} lockInformation
-     **/
-    self.setLockInformation = function (lockInformation) {
-      self.lockInformation = lockInformation;
-    }
-    
-    /**
-     * get When set to **true**, indicates that this module is enabled on the account.
-     * @return {String}
-     **/
-    self.getIs21CFRPart11 = function() {
-      return self.is21CFRPart11;
-    }
 
-    /**
-     * set When set to **true**, indicates that this module is enabled on the account.
-     * @param {String} is21CFRPart11
-     **/
-    self.setIs21CFRPart11 = function (is21CFRPart11) {
-      self.is21CFRPart11 = is21CFRPart11;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getIsUniversalSignatureEnvelope = function() {
-      return self.isUniversalSignatureEnvelope;
-    }
 
-    /**
-     * set 
-     * @param {String} isUniversalSignatureEnvelope
-     **/
-    self.setIsUniversalSignatureEnvelope = function (isUniversalSignatureEnvelope) {
-      self.isUniversalSignatureEnvelope = isUniversalSignatureEnvelope;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.Envelope = Envelope;
+  /**
+   * Constructs a <code>Envelope</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/Envelope} obj Optional instance to populate.
+   * @return {module:model/Envelope} The populated <code>Envelope</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('transactionId')) {
+        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('documentsUri')) {
+        obj['documentsUri'] = ApiClient.convertToType(data['documentsUri'], 'String');
+      }
+      if (data.hasOwnProperty('recipientsUri')) {
+        obj['recipientsUri'] = ApiClient.convertToType(data['recipientsUri'], 'String');
+      }
+      if (data.hasOwnProperty('asynchronous')) {
+        obj['asynchronous'] = ApiClient.convertToType(data['asynchronous'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeUri')) {
+        obj['envelopeUri'] = ApiClient.convertToType(data['envelopeUri'], 'String');
+      }
+      if (data.hasOwnProperty('emailSubject')) {
+        obj['emailSubject'] = ApiClient.convertToType(data['emailSubject'], 'String');
+      }
+      if (data.hasOwnProperty('emailBlurb')) {
+        obj['emailBlurb'] = ApiClient.convertToType(data['emailBlurb'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeId')) {
+        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+      }
+      if (data.hasOwnProperty('signingLocation')) {
+        obj['signingLocation'] = ApiClient.convertToType(data['signingLocation'], 'String');
+      }
+      if (data.hasOwnProperty('customFieldsUri')) {
+        obj['customFieldsUri'] = ApiClient.convertToType(data['customFieldsUri'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeIdStamping')) {
+        obj['envelopeIdStamping'] = ApiClient.convertToType(data['envelopeIdStamping'], 'String');
+      }
+      if (data.hasOwnProperty('authoritativeCopy')) {
+        obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'String');
+      }
+      if (data.hasOwnProperty('notification')) {
+        obj['notification'] = Notification.constructFromObject(data['notification']);
+      }
+      if (data.hasOwnProperty('notificationUri')) {
+        obj['notificationUri'] = ApiClient.convertToType(data['notificationUri'], 'String');
+      }
+      if (data.hasOwnProperty('enforceSignerVisibility')) {
+        obj['enforceSignerVisibility'] = ApiClient.convertToType(data['enforceSignerVisibility'], 'String');
+      }
+      if (data.hasOwnProperty('enableWetSign')) {
+        obj['enableWetSign'] = ApiClient.convertToType(data['enableWetSign'], 'String');
+      }
+      if (data.hasOwnProperty('allowMarkup')) {
+        obj['allowMarkup'] = ApiClient.convertToType(data['allowMarkup'], 'String');
+      }
+      if (data.hasOwnProperty('allowReassign')) {
+        obj['allowReassign'] = ApiClient.convertToType(data['allowReassign'], 'String');
+      }
+      if (data.hasOwnProperty('createdDateTime')) {
+        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('lastModifiedDateTime')) {
+        obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('deliveredDateTime')) {
+        obj['deliveredDateTime'] = ApiClient.convertToType(data['deliveredDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('sentDateTime')) {
+        obj['sentDateTime'] = ApiClient.convertToType(data['sentDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('completedDateTime')) {
+        obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('voidedDateTime')) {
+        obj['voidedDateTime'] = ApiClient.convertToType(data['voidedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('voidedReason')) {
+        obj['voidedReason'] = ApiClient.convertToType(data['voidedReason'], 'String');
+      }
+      if (data.hasOwnProperty('deletedDateTime')) {
+        obj['deletedDateTime'] = ApiClient.convertToType(data['deletedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('declinedDateTime')) {
+        obj['declinedDateTime'] = ApiClient.convertToType(data['declinedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('statusChangedDateTime')) {
+        obj['statusChangedDateTime'] = ApiClient.convertToType(data['statusChangedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('documentsCombinedUri')) {
+        obj['documentsCombinedUri'] = ApiClient.convertToType(data['documentsCombinedUri'], 'String');
+      }
+      if (data.hasOwnProperty('certificateUri')) {
+        obj['certificateUri'] = ApiClient.convertToType(data['certificateUri'], 'String');
+      }
+      if (data.hasOwnProperty('templatesUri')) {
+        obj['templatesUri'] = ApiClient.convertToType(data['templatesUri'], 'String');
+      }
+      if (data.hasOwnProperty('messageLock')) {
+        obj['messageLock'] = ApiClient.convertToType(data['messageLock'], 'String');
+      }
+      if (data.hasOwnProperty('recipientsLock')) {
+        obj['recipientsLock'] = ApiClient.convertToType(data['recipientsLock'], 'String');
+      }
+      if (data.hasOwnProperty('brandLock')) {
+        obj['brandLock'] = ApiClient.convertToType(data['brandLock'], 'String');
+      }
+      if (data.hasOwnProperty('brandId')) {
+        obj['brandId'] = ApiClient.convertToType(data['brandId'], 'String');
+      }
+      if (data.hasOwnProperty('useDisclosure')) {
+        obj['useDisclosure'] = ApiClient.convertToType(data['useDisclosure'], 'String');
+      }
+      if (data.hasOwnProperty('emailSettings')) {
+        obj['emailSettings'] = EmailSettings.constructFromObject(data['emailSettings']);
+      }
+      if (data.hasOwnProperty('purgeState')) {
+        obj['purgeState'] = ApiClient.convertToType(data['purgeState'], 'String');
+      }
+      if (data.hasOwnProperty('lockInformation')) {
+        obj['lockInformation'] = LockInformation.constructFromObject(data['lockInformation']);
+      }
+      if (data.hasOwnProperty('is21CFRPart11')) {
+        obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
+      }
+      if (data.hasOwnProperty('isUniversalSignatureEnvelope')) {
+        obj['isUniversalSignatureEnvelope'] = ApiClient.convertToType(data['isUniversalSignatureEnvelope'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return Envelope;
-  
-  
+  /**
+   *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
+   * @member {String} transactionId
+   */
+  exports.prototype['transactionId'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  *created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the documents.
+   * @member {String} documentsUri
+   */
+  exports.prototype['documentsUri'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the recipients.
+   * @member {String} recipientsUri
+   */
+  exports.prototype['recipientsUri'] = undefined;
+  /**
+   * When set to **true**, the envelope is queued for processing and the value of the `status` property is set to 'Processing'. Additionally, get status calls return 'Processing' until completed.
+   * @member {String} asynchronous
+   */
+  exports.prototype['asynchronous'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
+   * @member {String} envelopeUri
+   */
+  exports.prototype['envelopeUri'] = undefined;
+  /**
+   * Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
+   * @member {String} emailSubject
+   */
+  exports.prototype['emailSubject'] = undefined;
+  /**
+   * This is the same as the email body. If specified it is included in email body for all envelope recipients.
+   * @member {String} emailBlurb
+   */
+  exports.prototype['emailBlurb'] = undefined;
+  /**
+   * The envelope ID of the envelope status that failed to post.
+   * @member {String} envelopeId
+   */
+  exports.prototype['envelopeId'] = undefined;
+  /**
+   * Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
+   * @member {String} signingLocation
+   */
+  exports.prototype['signingLocation'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the custom fields.
+   * @member {String} customFieldsUri
+   */
+  exports.prototype['customFieldsUri'] = undefined;
+  /**
+   * When set to **true**, Envelope ID Stamping is enabled.
+   * @member {String} envelopeIdStamping
+   */
+  exports.prototype['envelopeIdStamping'] = undefined;
+  /**
+   * Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+   * @member {String} authoritativeCopy
+   */
+  exports.prototype['authoritativeCopy'] = undefined;
+  /**
+   * @member {module:model/Notification} notification
+   */
+  exports.prototype['notification'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the notifications.
+   * @member {String} notificationUri
+   */
+  exports.prototype['notificationUri'] = undefined;
+  /**
+   * When set to **true**, documents with tabs can only be viewed by signers that have a tab on that document. Recipients that have an administrative role (Agent, Editor, or Intermediaries) or informational role (Certified Deliveries or Carbon Copies) can always see all the documents in an envelope, unless they are specifically excluded using this setting when an envelope is sent. Documents that do not have tabs are always visible to all recipients, unless they are specifically excluded using this setting when an envelope is sent.  Your account must have Document Visibility enabled to use this.
+   * @member {String} enforceSignerVisibility
+   */
+  exports.prototype['enforceSignerVisibility'] = undefined;
+  /**
+   * When set to **true**, the signer is allowed to print the document and sign it on paper.
+   * @member {String} enableWetSign
+   */
+  exports.prototype['enableWetSign'] = undefined;
+  /**
+   * When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this
+   * @member {String} allowMarkup
+   */
+  exports.prototype['allowMarkup'] = undefined;
+  /**
+   * When set to **true**, the recipient can redirect an envelope to a more appropriate recipient.
+   * @member {String} allowReassign
+   */
+  exports.prototype['allowReassign'] = undefined;
+  /**
+   * Indicates the date and time the item was created.
+   * @member {String} createdDateTime
+   */
+  exports.prototype['createdDateTime'] = undefined;
+  /**
+   * The date and time the item was last modified.
+   * @member {String} lastModifiedDateTime
+   */
+  exports.prototype['lastModifiedDateTime'] = undefined;
+  /**
+   * Reserved: For DocuSign use only.
+   * @member {String} deliveredDateTime
+   */
+  exports.prototype['deliveredDateTime'] = undefined;
+  /**
+   * The date and time the envelope was sent.
+   * @member {String} sentDateTime
+   */
+  exports.prototype['sentDateTime'] = undefined;
+  /**
+   * Specifies the date and time this item was completed.
+   * @member {String} completedDateTime
+   */
+  exports.prototype['completedDateTime'] = undefined;
+  /**
+   * The date and time the envelope or template was voided.
+   * @member {String} voidedDateTime
+   */
+  exports.prototype['voidedDateTime'] = undefined;
+  /**
+   * The reason the envelope or template was voided.
+   * @member {String} voidedReason
+   */
+  exports.prototype['voidedReason'] = undefined;
+  /**
+   * Specifies the data and time the item was deleted.
+   * @member {String} deletedDateTime
+   */
+  exports.prototype['deletedDateTime'] = undefined;
+  /**
+   * The date and time the recipient declined the document.
+   * @member {String} declinedDateTime
+   */
+  exports.prototype['declinedDateTime'] = undefined;
+  /**
+   * The data and time the status changed.
+   * @member {String} statusChangedDateTime
+   */
+  exports.prototype['statusChangedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} documentsCombinedUri
+   */
+  exports.prototype['documentsCombinedUri'] = undefined;
+  /**
+   * Retrieves a URI for an endpoint that allows you to easily retrieve certificate information.
+   * @member {String} certificateUri
+   */
+  exports.prototype['certificateUri'] = undefined;
+  /**
+   * Contains a URI for an endpoint which you can use to retrieve the templates.
+   * @member {String} templatesUri
+   */
+  exports.prototype['templatesUri'] = undefined;
+  /**
+   * When set to **true**, prevents senders from changing the contents of `emailBlurb` and `emailSubject` properties for the envelope.   Additionally, this prevents users from making changes to the contents of `emailBlurb` and `emailSubject` properties when correcting envelopes.   However, if the `messageLock` node is set to true**** and the `emailSubject` property is empty, senders and correctors are able to add a subject to the envelope.
+   * @member {String} messageLock
+   */
+  exports.prototype['messageLock'] = undefined;
+  /**
+   * When set to **true**, prevents senders from changing, correcting, or deleting the recipient information for the envelope.
+   * @member {String} recipientsLock
+   */
+  exports.prototype['recipientsLock'] = undefined;
+  /**
+   * 
+   * @member {String} brandLock
+   */
+  exports.prototype['brandLock'] = undefined;
+  /**
+   * 
+   * @member {String} brandId
+   */
+  exports.prototype['brandId'] = undefined;
+  /**
+   * When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
+   * @member {String} useDisclosure
+   */
+  exports.prototype['useDisclosure'] = undefined;
+  /**
+   * @member {module:model/EmailSettings} emailSettings
+   */
+  exports.prototype['emailSettings'] = undefined;
+  /**
+   * 
+   * @member {String} purgeState
+   */
+  exports.prototype['purgeState'] = undefined;
+  /**
+   * @member {module:model/LockInformation} lockInformation
+   */
+  exports.prototype['lockInformation'] = undefined;
+  /**
+   * When set to **true**, indicates that this module is enabled on the account.
+   * @member {String} is21CFRPart11
+   */
+  exports.prototype['is21CFRPart11'] = undefined;
+  /**
+   * 
+   * @member {String} isUniversalSignatureEnvelope
+   */
+  exports.prototype['isUniversalSignatureEnvelope'] = undefined;
+
+
+
+  return exports;
 }));
+
+

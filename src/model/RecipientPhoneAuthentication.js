@@ -1,133 +1,105 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.RecipientPhoneAuthentication = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var RecipientPhoneAuthentication = function RecipientPhoneAuthentication() { 
-    var self = this;
-    
-    /**
-     * An Array containing a list of phone numbers the recipient may use for SMS text authentication.
-     * datatype: Array
-     **/
-    self.senderProvidedNumbers = [];
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.recipMayProvideNumber) {
-        self.recipMayProvideNumber = data.recipMayProvideNumber;
-      }
-      
-      if (data.validateRecipProvidedNumber) {
-        self.validateRecipProvidedNumber = data.validateRecipProvidedNumber;
-      }
-      
-      if (data.recordVoicePrint) {
-        self.recordVoicePrint = data.recordVoicePrint;
-      }
-      
-      if (data.senderProvidedNumbers) {
-        self.senderProvidedNumbers = data.senderProvidedNumbers;
-      }
-      
-    }
 
-    
-    /**
-     * get Boolean. When set to **true**, the recipient can supply a phone number their choice.
-     * @return {String}
-     **/
-    self.getRecipMayProvideNumber = function() {
-      return self.recipMayProvideNumber;
-    }
+  /**
+   * The RecipientPhoneAuthentication model module.
+   * @module model/RecipientPhoneAuthentication
+   * @version 3.0.0
+   */
 
-    /**
-     * set Boolean. When set to **true**, the recipient can supply a phone number their choice.
-     * @param {String} recipMayProvideNumber
-     **/
-    self.setRecipMayProvideNumber = function (recipMayProvideNumber) {
-      self.recipMayProvideNumber = recipMayProvideNumber;
-    }
-    
-    /**
-     * get Reserved.
-     * @return {String}
-     **/
-    self.getValidateRecipProvidedNumber = function() {
-      return self.validateRecipProvidedNumber;
-    }
+  /**
+   * Constructs a new <code>RecipientPhoneAuthentication</code>.
+   * @alias module:model/RecipientPhoneAuthentication
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set Reserved.
-     * @param {String} validateRecipProvidedNumber
-     **/
-    self.setValidateRecipProvidedNumber = function (validateRecipProvidedNumber) {
-      self.validateRecipProvidedNumber = validateRecipProvidedNumber;
-    }
-    
-    /**
-     * get Reserved.
-     * @return {String}
-     **/
-    self.getRecordVoicePrint = function() {
-      return self.recordVoicePrint;
-    }
 
-    /**
-     * set Reserved.
-     * @param {String} recordVoicePrint
-     **/
-    self.setRecordVoicePrint = function (recordVoicePrint) {
-      self.recordVoicePrint = recordVoicePrint;
-    }
-    
-    /**
-     * get An Array containing a list of phone numbers the recipient may use for SMS text authentication.
-     * @return {Array}
-     **/
-    self.getSenderProvidedNumbers = function() {
-      return self.senderProvidedNumbers;
-    }
 
-    /**
-     * set An Array containing a list of phone numbers the recipient may use for SMS text authentication.
-     * @param {Array} senderProvidedNumbers
-     **/
-    self.setSenderProvidedNumbers = function (senderProvidedNumbers) {
-      self.senderProvidedNumbers = senderProvidedNumbers;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.RecipientPhoneAuthentication = RecipientPhoneAuthentication;
+  /**
+   * Constructs a <code>RecipientPhoneAuthentication</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/RecipientPhoneAuthentication} obj Optional instance to populate.
+   * @return {module:model/RecipientPhoneAuthentication} The populated <code>RecipientPhoneAuthentication</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('recipMayProvideNumber')) {
+        obj['recipMayProvideNumber'] = ApiClient.convertToType(data['recipMayProvideNumber'], 'String');
+      }
+      if (data.hasOwnProperty('validateRecipProvidedNumber')) {
+        obj['validateRecipProvidedNumber'] = ApiClient.convertToType(data['validateRecipProvidedNumber'], 'String');
+      }
+      if (data.hasOwnProperty('recordVoicePrint')) {
+        obj['recordVoicePrint'] = ApiClient.convertToType(data['recordVoicePrint'], 'String');
+      }
+      if (data.hasOwnProperty('senderProvidedNumbers')) {
+        obj['senderProvidedNumbers'] = ApiClient.convertToType(data['senderProvidedNumbers'], ['String']);
+      }
+    }
+    return obj;
   }
 
-  return RecipientPhoneAuthentication;
-  
-  
+  /**
+   * Boolean. When set to **true**, the recipient can supply a phone number their choice.
+   * @member {String} recipMayProvideNumber
+   */
+  exports.prototype['recipMayProvideNumber'] = undefined;
+  /**
+   *  Reserved.
+   * @member {String} validateRecipProvidedNumber
+   */
+  exports.prototype['validateRecipProvidedNumber'] = undefined;
+  /**
+   * Reserved.
+   * @member {String} recordVoicePrint
+   */
+  exports.prototype['recordVoicePrint'] = undefined;
+  /**
+   * An Array containing a list of phone numbers the recipient may use for SMS text authentication. 
+   * @member {Array.<String>} senderProvidedNumbers
+   */
+  exports.prototype['senderProvidedNumbers'] = undefined;
+
+
+
+  return exports;
 }));
+
+

@@ -1,669 +1,349 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.AccountInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
+
+
 
   /**
+   * The AccountInformation model module.
+   * @module model/AccountInformation
+   * @version 3.0.0
+   */
+
+  /**
+   * Constructs a new <code>AccountInformation</code>.
    * Contains account Information.
-   **/
-  var AccountInformation = function AccountInformation() { 
-    var self = this;
-    
+   * @alias module:model/AccountInformation
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.currentPlanId) {
-        self.currentPlanId = data.currentPlanId;
-      }
-      
-      if (data.planName) {
-        self.planName = data.planName;
-      }
-      
-      if (data.planClassification) {
-        self.planClassification = data.planClassification;
-      }
-      
-      if (data.planStartDate) {
-        self.planStartDate = data.planStartDate;
-      }
-      
-      if (data.planEndDate) {
-        self.planEndDate = data.planEndDate;
-      }
-      
-      if (data.billingPeriodStartDate) {
-        self.billingPeriodStartDate = data.billingPeriodStartDate;
-      }
-      
-      if (data.billingPeriodEndDate) {
-        self.billingPeriodEndDate = data.billingPeriodEndDate;
-      }
-      
-      if (data.billingPeriodEnvelopesSent) {
-        self.billingPeriodEnvelopesSent = data.billingPeriodEnvelopesSent;
-      }
-      
-      if (data.billingPeriodEnvelopesAllowed) {
-        self.billingPeriodEnvelopesAllowed = data.billingPeriodEnvelopesAllowed;
-      }
-      
-      if (data.billingPeriodDaysRemaining) {
-        self.billingPeriodDaysRemaining = data.billingPeriodDaysRemaining;
-      }
-      
-      if (data.canUpgrade) {
-        self.canUpgrade = data.canUpgrade;
-      }
-      
-      if (data.canCancelRenewal) {
-        self.canCancelRenewal = data.canCancelRenewal;
-      }
-      
-      if (data.envelopeSendingBlocked) {
-        self.envelopeSendingBlocked = data.envelopeSendingBlocked;
-      }
-      
-      if (data.envelopeUnitPrice) {
-        self.envelopeUnitPrice = data.envelopeUnitPrice;
-      }
-      
-      if (data.suspensionStatus) {
-        self.suspensionStatus = data.suspensionStatus;
-      }
-      
-      if (data.suspensionDate) {
-        self.suspensionDate = data.suspensionDate;
-      }
-      
-      if (data.accountName) {
-        self.accountName = data.accountName;
-      }
-      
-      if (data.connectPermission) {
-        self.connectPermission = data.connectPermission;
-      }
-      
-      if (data.docuSignLandingUrl) {
-        self.docuSignLandingUrl = data.docuSignLandingUrl;
-      }
-      
-      if (data.distributorCode) {
-        self.distributorCode = data.distributorCode;
-      }
-      
-      if (data.accountIdGuid) {
-        self.accountIdGuid = data.accountIdGuid;
-      }
-      
-      if (data.currencyCode) {
-        self.currencyCode = data.currencyCode;
-      }
-      
-      if (data.forgottenPasswordQuestionsCount) {
-        self.forgottenPasswordQuestionsCount = data.forgottenPasswordQuestionsCount;
-      }
-      
-      if (data.paymentMethod) {
-        self.paymentMethod = data.paymentMethod;
-      }
-      
-      if (data.seatsAllowed) {
-        self.seatsAllowed = data.seatsAllowed;
-      }
-      
-      if (data.seatsInUse) {
-        self.seatsInUse = data.seatsInUse;
-      }
-      
-      if (data.createdDate) {
-        self.createdDate = data.createdDate;
-      }
-      
-      if (data.isDowngrade) {
-        self.isDowngrade = data.isDowngrade;
-      }
-      
-      if (data.billingProfile) {
-        self.billingProfile = data.billingProfile;
-      }
-      
-      if (data.status21CFRPart11) {
-        self.status21CFRPart11 = data.status21CFRPart11;
-      }
-      
-      if (data.allowTransactionRooms) {
-        self.allowTransactionRooms = data.allowTransactionRooms;
-      }
-      
-    }
 
-    
-    /**
-     * get Identifies the plan that was used create this account.
-     * @return {String}
-     **/
-    self.getCurrentPlanId = function() {
-      return self.currentPlanId;
-    }
 
-    /**
-     * set Identifies the plan that was used create this account.
-     * @param {String} currentPlanId
-     **/
-    self.setCurrentPlanId = function (currentPlanId) {
-      self.currentPlanId = currentPlanId;
-    }
-    
-    /**
-     * get The name of the Billing Plan.
-     * @return {String}
-     **/
-    self.getPlanName = function() {
-      return self.planName;
-    }
 
-    /**
-     * set The name of the Billing Plan.
-     * @param {String} planName
-     **/
-    self.setPlanName = function (planName) {
-      self.planName = planName;
-    }
-    
-    /**
-     * get Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free.
-     * @return {String}
-     **/
-    self.getPlanClassification = function() {
-      return self.planClassification;
-    }
 
-    /**
-     * set Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free.
-     * @param {String} planClassification
-     **/
-    self.setPlanClassification = function (planClassification) {
-      self.planClassification = planClassification;
-    }
-    
-    /**
-     * get The date that the Account started using the current plan.
-     * @return {String}
-     **/
-    self.getPlanStartDate = function() {
-      return self.planStartDate;
-    }
 
-    /**
-     * set The date that the Account started using the current plan.
-     * @param {String} planStartDate
-     **/
-    self.setPlanStartDate = function (planStartDate) {
-      self.planStartDate = planStartDate;
-    }
-    
-    /**
-     * get The date that the current plan will end.
-     * @return {String}
-     **/
-    self.getPlanEndDate = function() {
-      return self.planEndDate;
-    }
 
-    /**
-     * set The date that the current plan will end.
-     * @param {String} planEndDate
-     **/
-    self.setPlanEndDate = function (planEndDate) {
-      self.planEndDate = planEndDate;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBillingPeriodStartDate = function() {
-      return self.billingPeriodStartDate;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} billingPeriodStartDate
-     **/
-    self.setBillingPeriodStartDate = function (billingPeriodStartDate) {
-      self.billingPeriodStartDate = billingPeriodStartDate;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBillingPeriodEndDate = function() {
-      return self.billingPeriodEndDate;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} billingPeriodEndDate
-     **/
-    self.setBillingPeriodEndDate = function (billingPeriodEndDate) {
-      self.billingPeriodEndDate = billingPeriodEndDate;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBillingPeriodEnvelopesSent = function() {
-      return self.billingPeriodEnvelopesSent;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} billingPeriodEnvelopesSent
-     **/
-    self.setBillingPeriodEnvelopesSent = function (billingPeriodEnvelopesSent) {
-      self.billingPeriodEnvelopesSent = billingPeriodEnvelopesSent;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBillingPeriodEnvelopesAllowed = function() {
-      return self.billingPeriodEnvelopesAllowed;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} billingPeriodEnvelopesAllowed
-     **/
-    self.setBillingPeriodEnvelopesAllowed = function (billingPeriodEnvelopesAllowed) {
-      self.billingPeriodEnvelopesAllowed = billingPeriodEnvelopesAllowed;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBillingPeriodDaysRemaining = function() {
-      return self.billingPeriodDaysRemaining;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} billingPeriodDaysRemaining
-     **/
-    self.setBillingPeriodDaysRemaining = function (billingPeriodDaysRemaining) {
-      self.billingPeriodDaysRemaining = billingPeriodDaysRemaining;
-    }
-    
-    /**
-     * get When set to **true**, specifies that you can upgrade the account through the API.
-     * @return {String}
-     **/
-    self.getCanUpgrade = function() {
-      return self.canUpgrade;
-    }
 
-    /**
-     * set When set to **true**, specifies that you can upgrade the account through the API.
-     * @param {String} canUpgrade
-     **/
-    self.setCanUpgrade = function (canUpgrade) {
-      self.canUpgrade = canUpgrade;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getCanCancelRenewal = function() {
-      return self.canCancelRenewal;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} canCancelRenewal
-     **/
-    self.setCanCancelRenewal = function (canCancelRenewal) {
-      self.canCancelRenewal = canCancelRenewal;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getEnvelopeSendingBlocked = function() {
-      return self.envelopeSendingBlocked;
-    }
 
-    /**
-     * set 
-     * @param {String} envelopeSendingBlocked
-     **/
-    self.setEnvelopeSendingBlocked = function (envelopeSendingBlocked) {
-      self.envelopeSendingBlocked = envelopeSendingBlocked;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getEnvelopeUnitPrice = function() {
-      return self.envelopeUnitPrice;
-    }
 
-    /**
-     * set 
-     * @param {String} envelopeUnitPrice
-     **/
-    self.setEnvelopeUnitPrice = function (envelopeUnitPrice) {
-      self.envelopeUnitPrice = envelopeUnitPrice;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSuspensionStatus = function() {
-      return self.suspensionStatus;
-    }
 
-    /**
-     * set 
-     * @param {String} suspensionStatus
-     **/
-    self.setSuspensionStatus = function (suspensionStatus) {
-      self.suspensionStatus = suspensionStatus;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSuspensionDate = function() {
-      return self.suspensionDate;
-    }
 
-    /**
-     * set 
-     * @param {String} suspensionDate
-     **/
-    self.setSuspensionDate = function (suspensionDate) {
-      self.suspensionDate = suspensionDate;
-    }
-    
-    /**
-     * get The name of the current account.
-     * @return {String}
-     **/
-    self.getAccountName = function() {
-      return self.accountName;
-    }
 
-    /**
-     * set The name of the current account.
-     * @param {String} accountName
-     **/
-    self.setAccountName = function (accountName) {
-      self.accountName = accountName;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getConnectPermission = function() {
-      return self.connectPermission;
-    }
 
-    /**
-     * set 
-     * @param {String} connectPermission
-     **/
-    self.setConnectPermission = function (connectPermission) {
-      self.connectPermission = connectPermission;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDocuSignLandingUrl = function() {
-      return self.docuSignLandingUrl;
-    }
 
-    /**
-     * set 
-     * @param {String} docuSignLandingUrl
-     **/
-    self.setDocuSignLandingUrl = function (docuSignLandingUrl) {
-      self.docuSignLandingUrl = docuSignLandingUrl;
-    }
-    
-    /**
-     * get The code that identifies the billing plan groups and plans for the new account.
-     * @return {String}
-     **/
-    self.getDistributorCode = function() {
-      return self.distributorCode;
-    }
 
-    /**
-     * set The code that identifies the billing plan groups and plans for the new account.
-     * @param {String} distributorCode
-     **/
-    self.setDistributorCode = function (distributorCode) {
-      self.distributorCode = distributorCode;
-    }
-    
-    /**
-     * get The GUID associated with the account ID.
-     * @return {String}
-     **/
-    self.getAccountIdGuid = function() {
-      return self.accountIdGuid;
-    }
 
-    /**
-     * set The GUID associated with the account ID.
-     * @param {String} accountIdGuid
-     **/
-    self.setAccountIdGuid = function (accountIdGuid) {
-      self.accountIdGuid = accountIdGuid;
-    }
-    
-    /**
-     * get Specifies the ISO currency code for the account.
-     * @return {String}
-     **/
-    self.getCurrencyCode = function() {
-      return self.currencyCode;
-    }
 
-    /**
-     * set Specifies the ISO currency code for the account.
-     * @param {String} currencyCode
-     **/
-    self.setCurrencyCode = function (currencyCode) {
-      self.currencyCode = currencyCode;
-    }
-    
-    /**
-     * get A complex element that contains up to four Question/Answer pairs for forgotten password information for a user.
-     * @return {String}
-     **/
-    self.getForgottenPasswordQuestionsCount = function() {
-      return self.forgottenPasswordQuestionsCount;
-    }
 
-    /**
-     * set A complex element that contains up to four Question/Answer pairs for forgotten password information for a user.
-     * @param {String} forgottenPasswordQuestionsCount
-     **/
-    self.setForgottenPasswordQuestionsCount = function (forgottenPasswordQuestionsCount) {
-      self.forgottenPasswordQuestionsCount = forgottenPasswordQuestionsCount;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getPaymentMethod = function() {
-      return self.paymentMethod;
-    }
 
-    /**
-     * set 
-     * @param {String} paymentMethod
-     **/
-    self.setPaymentMethod = function (paymentMethod) {
-      self.paymentMethod = paymentMethod;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSeatsAllowed = function() {
-      return self.seatsAllowed;
-    }
 
-    /**
-     * set 
-     * @param {String} seatsAllowed
-     **/
-    self.setSeatsAllowed = function (seatsAllowed) {
-      self.seatsAllowed = seatsAllowed;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSeatsInUse = function() {
-      return self.seatsInUse;
-    }
 
-    /**
-     * set 
-     * @param {String} seatsInUse
-     **/
-    self.setSeatsInUse = function (seatsInUse) {
-      self.seatsInUse = seatsInUse;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getCreatedDate = function() {
-      return self.createdDate;
-    }
 
-    /**
-     * set 
-     * @param {String} createdDate
-     **/
-    self.setCreatedDate = function (createdDate) {
-      self.createdDate = createdDate;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getIsDowngrade = function() {
-      return self.isDowngrade;
-    }
 
-    /**
-     * set 
-     * @param {String} isDowngrade
-     **/
-    self.setIsDowngrade = function (isDowngrade) {
-      self.isDowngrade = isDowngrade;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBillingProfile = function() {
-      return self.billingProfile;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} billingProfile
-     **/
-    self.setBillingProfile = function (billingProfile) {
-      self.billingProfile = billingProfile;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getStatus21CFRPart11 = function() {
-      return self.status21CFRPart11;
-    }
 
-    /**
-     * set 
-     * @param {String} status21CFRPart11
-     **/
-    self.setStatus21CFRPart11 = function (status21CFRPart11) {
-      self.status21CFRPart11 = status21CFRPart11;
-    }
-    
-    /**
-     * get When set to **true**, the transaction rooms feature exposed through the Workspaces API is enabled.
-     * @return {String}
-     **/
-    self.getAllowTransactionRooms = function() {
-      return self.allowTransactionRooms;
-    }
-
-    /**
-     * set When set to **true**, the transaction rooms feature exposed through the Workspaces API is enabled.
-     * @param {String} allowTransactionRooms
-     **/
-    self.setAllowTransactionRooms = function (allowTransactionRooms) {
-      self.allowTransactionRooms = allowTransactionRooms;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.AccountInformation = AccountInformation;
+  /**
+   * Constructs a <code>AccountInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/AccountInformation} obj Optional instance to populate.
+   * @return {module:model/AccountInformation} The populated <code>AccountInformation</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('currentPlanId')) {
+        obj['currentPlanId'] = ApiClient.convertToType(data['currentPlanId'], 'String');
+      }
+      if (data.hasOwnProperty('planName')) {
+        obj['planName'] = ApiClient.convertToType(data['planName'], 'String');
+      }
+      if (data.hasOwnProperty('planClassification')) {
+        obj['planClassification'] = ApiClient.convertToType(data['planClassification'], 'String');
+      }
+      if (data.hasOwnProperty('planStartDate')) {
+        obj['planStartDate'] = ApiClient.convertToType(data['planStartDate'], 'String');
+      }
+      if (data.hasOwnProperty('planEndDate')) {
+        obj['planEndDate'] = ApiClient.convertToType(data['planEndDate'], 'String');
+      }
+      if (data.hasOwnProperty('billingPeriodStartDate')) {
+        obj['billingPeriodStartDate'] = ApiClient.convertToType(data['billingPeriodStartDate'], 'String');
+      }
+      if (data.hasOwnProperty('billingPeriodEndDate')) {
+        obj['billingPeriodEndDate'] = ApiClient.convertToType(data['billingPeriodEndDate'], 'String');
+      }
+      if (data.hasOwnProperty('billingPeriodEnvelopesSent')) {
+        obj['billingPeriodEnvelopesSent'] = ApiClient.convertToType(data['billingPeriodEnvelopesSent'], 'String');
+      }
+      if (data.hasOwnProperty('billingPeriodEnvelopesAllowed')) {
+        obj['billingPeriodEnvelopesAllowed'] = ApiClient.convertToType(data['billingPeriodEnvelopesAllowed'], 'String');
+      }
+      if (data.hasOwnProperty('billingPeriodDaysRemaining')) {
+        obj['billingPeriodDaysRemaining'] = ApiClient.convertToType(data['billingPeriodDaysRemaining'], 'String');
+      }
+      if (data.hasOwnProperty('canUpgrade')) {
+        obj['canUpgrade'] = ApiClient.convertToType(data['canUpgrade'], 'String');
+      }
+      if (data.hasOwnProperty('canCancelRenewal')) {
+        obj['canCancelRenewal'] = ApiClient.convertToType(data['canCancelRenewal'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeSendingBlocked')) {
+        obj['envelopeSendingBlocked'] = ApiClient.convertToType(data['envelopeSendingBlocked'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeUnitPrice')) {
+        obj['envelopeUnitPrice'] = ApiClient.convertToType(data['envelopeUnitPrice'], 'String');
+      }
+      if (data.hasOwnProperty('suspensionStatus')) {
+        obj['suspensionStatus'] = ApiClient.convertToType(data['suspensionStatus'], 'String');
+      }
+      if (data.hasOwnProperty('suspensionDate')) {
+        obj['suspensionDate'] = ApiClient.convertToType(data['suspensionDate'], 'String');
+      }
+      if (data.hasOwnProperty('accountName')) {
+        obj['accountName'] = ApiClient.convertToType(data['accountName'], 'String');
+      }
+      if (data.hasOwnProperty('connectPermission')) {
+        obj['connectPermission'] = ApiClient.convertToType(data['connectPermission'], 'String');
+      }
+      if (data.hasOwnProperty('docuSignLandingUrl')) {
+        obj['docuSignLandingUrl'] = ApiClient.convertToType(data['docuSignLandingUrl'], 'String');
+      }
+      if (data.hasOwnProperty('distributorCode')) {
+        obj['distributorCode'] = ApiClient.convertToType(data['distributorCode'], 'String');
+      }
+      if (data.hasOwnProperty('accountIdGuid')) {
+        obj['accountIdGuid'] = ApiClient.convertToType(data['accountIdGuid'], 'String');
+      }
+      if (data.hasOwnProperty('currencyCode')) {
+        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+      }
+      if (data.hasOwnProperty('forgottenPasswordQuestionsCount')) {
+        obj['forgottenPasswordQuestionsCount'] = ApiClient.convertToType(data['forgottenPasswordQuestionsCount'], 'String');
+      }
+      if (data.hasOwnProperty('paymentMethod')) {
+        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+      }
+      if (data.hasOwnProperty('seatsAllowed')) {
+        obj['seatsAllowed'] = ApiClient.convertToType(data['seatsAllowed'], 'String');
+      }
+      if (data.hasOwnProperty('seatsInUse')) {
+        obj['seatsInUse'] = ApiClient.convertToType(data['seatsInUse'], 'String');
+      }
+      if (data.hasOwnProperty('createdDate')) {
+        obj['createdDate'] = ApiClient.convertToType(data['createdDate'], 'String');
+      }
+      if (data.hasOwnProperty('isDowngrade')) {
+        obj['isDowngrade'] = ApiClient.convertToType(data['isDowngrade'], 'String');
+      }
+      if (data.hasOwnProperty('billingProfile')) {
+        obj['billingProfile'] = ApiClient.convertToType(data['billingProfile'], 'String');
+      }
+      if (data.hasOwnProperty('status21CFRPart11')) {
+        obj['status21CFRPart11'] = ApiClient.convertToType(data['status21CFRPart11'], 'String');
+      }
+      if (data.hasOwnProperty('allowTransactionRooms')) {
+        obj['allowTransactionRooms'] = ApiClient.convertToType(data['allowTransactionRooms'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return AccountInformation;
-  
-  
+  /**
+   * Identifies the plan that was used create this account.
+   * @member {String} currentPlanId
+   */
+  exports.prototype['currentPlanId'] = undefined;
+  /**
+   * The name of the Billing Plan.
+   * @member {String} planName
+   */
+  exports.prototype['planName'] = undefined;
+  /**
+   * Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free.
+   * @member {String} planClassification
+   */
+  exports.prototype['planClassification'] = undefined;
+  /**
+   * The date that the Account started using the current plan.
+   * @member {String} planStartDate
+   */
+  exports.prototype['planStartDate'] = undefined;
+  /**
+   * The date that the current plan will end.
+   * @member {String} planEndDate
+   */
+  exports.prototype['planEndDate'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} billingPeriodStartDate
+   */
+  exports.prototype['billingPeriodStartDate'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} billingPeriodEndDate
+   */
+  exports.prototype['billingPeriodEndDate'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} billingPeriodEnvelopesSent
+   */
+  exports.prototype['billingPeriodEnvelopesSent'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} billingPeriodEnvelopesAllowed
+   */
+  exports.prototype['billingPeriodEnvelopesAllowed'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} billingPeriodDaysRemaining
+   */
+  exports.prototype['billingPeriodDaysRemaining'] = undefined;
+  /**
+   * When set to **true**, specifies that you can upgrade the account through the API.
+   * @member {String} canUpgrade
+   */
+  exports.prototype['canUpgrade'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} canCancelRenewal
+   */
+  exports.prototype['canCancelRenewal'] = undefined;
+  /**
+   * 
+   * @member {String} envelopeSendingBlocked
+   */
+  exports.prototype['envelopeSendingBlocked'] = undefined;
+  /**
+   * 
+   * @member {String} envelopeUnitPrice
+   */
+  exports.prototype['envelopeUnitPrice'] = undefined;
+  /**
+   * 
+   * @member {String} suspensionStatus
+   */
+  exports.prototype['suspensionStatus'] = undefined;
+  /**
+   * 
+   * @member {String} suspensionDate
+   */
+  exports.prototype['suspensionDate'] = undefined;
+  /**
+   * The name of the current account.
+   * @member {String} accountName
+   */
+  exports.prototype['accountName'] = undefined;
+  /**
+   * 
+   * @member {String} connectPermission
+   */
+  exports.prototype['connectPermission'] = undefined;
+  /**
+   * 
+   * @member {String} docuSignLandingUrl
+   */
+  exports.prototype['docuSignLandingUrl'] = undefined;
+  /**
+   * The code that identifies the billing plan groups and plans for the new account.
+   * @member {String} distributorCode
+   */
+  exports.prototype['distributorCode'] = undefined;
+  /**
+   * The GUID associated with the account ID.
+   * @member {String} accountIdGuid
+   */
+  exports.prototype['accountIdGuid'] = undefined;
+  /**
+   * Specifies the ISO currency code for the account.
+   * @member {String} currencyCode
+   */
+  exports.prototype['currencyCode'] = undefined;
+  /**
+   *  A complex element that contains up to four Question/Answer pairs for forgotten password information for a user.
+   * @member {String} forgottenPasswordQuestionsCount
+   */
+  exports.prototype['forgottenPasswordQuestionsCount'] = undefined;
+  /**
+   * 
+   * @member {String} paymentMethod
+   */
+  exports.prototype['paymentMethod'] = undefined;
+  /**
+   * 
+   * @member {String} seatsAllowed
+   */
+  exports.prototype['seatsAllowed'] = undefined;
+  /**
+   * 
+   * @member {String} seatsInUse
+   */
+  exports.prototype['seatsInUse'] = undefined;
+  /**
+   * 
+   * @member {String} createdDate
+   */
+  exports.prototype['createdDate'] = undefined;
+  /**
+   * 
+   * @member {String} isDowngrade
+   */
+  exports.prototype['isDowngrade'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} billingProfile
+   */
+  exports.prototype['billingProfile'] = undefined;
+  /**
+   * 
+   * @member {String} status21CFRPart11
+   */
+  exports.prototype['status21CFRPart11'] = undefined;
+  /**
+   * When set to **true**, the transaction rooms feature exposed through the Workspaces API is enabled.
+   * @member {String} allowTransactionRooms
+   */
+  exports.prototype['allowTransactionRooms'] = undefined;
+
+
+
+  return exports;
 }));
+
+

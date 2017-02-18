@@ -1,446 +1,248 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './Recipients'], factory);
+    define(['ApiClient', 'model/Recipients'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./Recipients'));
+    module.exports = factory(require('../ApiClient'), require('./Recipients'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.Recipients);
+    root.Docusign.FolderItemV2 = factory(root.Docusign.ApiClient, root.Docusign.Recipients);
   }
-}(this, function(module, Recipients) {
+}(this, function(ApiClient, Recipients) {
   'use strict';
 
-  
-  
 
-  
-  var FolderItemV2 = function FolderItemV2() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.ownerName) {
-        self.ownerName = data.ownerName;
-      }
-      
-      if (data.envelopeId) {
-        self.envelopeId = data.envelopeId;
-      }
-      
-      if (data.envelopeUri) {
-        self.envelopeUri = data.envelopeUri;
-      }
-      
-      if (data.status) {
-        self.status = data.status;
-      }
-      
-      if (data.lastModifiedDateTime) {
-        self.lastModifiedDateTime = data.lastModifiedDateTime;
-      }
-      
-      if (data.senderUserId) {
-        self.senderUserId = data.senderUserId;
-      }
-      
-      if (data.senderName) {
-        self.senderName = data.senderName;
-      }
-      
-      if (data.senderEmail) {
-        self.senderEmail = data.senderEmail;
-      }
-      
-      if (data.senderCompany) {
-        self.senderCompany = data.senderCompany;
-      }
-      
-      if (data.createdDateTime) {
-        self.createdDateTime = data.createdDateTime;
-      }
-      
-      if (data.sentDateTime) {
-        self.sentDateTime = data.sentDateTime;
-      }
-      
-      if (data.completedDateTime) {
-        self.completedDateTime = data.completedDateTime;
-      }
-      
-      if (data.subject) {
-        self.subject = data.subject;
-      }
-      
-      if (data.expireDateTime) {
-        self.expireDateTime = data.expireDateTime;
-      }
-      
-      if (data.folderId) {
-        self.folderId = data.folderId;
-      }
-      
-      if (data.folderUri) {
-        self.folderUri = data.folderUri;
-      }
-      
-      if (data.recipients) {
-        self.recipients = new data.recipients.constructor();
-        self.recipients.constructFromObject(data.recipients);
-      }
-      
-      if (data.recipientsUri) {
-        self.recipientsUri = data.recipientsUri;
-      }
-      
-      if (data.is21CFRPart11) {
-        self.is21CFRPart11 = data.is21CFRPart11;
-      }
-      
-      if (data.isUniversalSignatureEnvelope) {
-        self.isUniversalSignatureEnvelope = data.isUniversalSignatureEnvelope;
-      }
-      
-    }
 
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getOwnerName = function() {
-      return self.ownerName;
-    }
+  /**
+   * The FolderItemV2 model module.
+   * @module model/FolderItemV2
+   * @version 3.0.0
+   */
 
-    /**
-     * set 
-     * @param {String} ownerName
-     **/
-    self.setOwnerName = function (ownerName) {
-      self.ownerName = ownerName;
-    }
-    
-    /**
-     * get The envelope ID of the envelope status that failed to post.
-     * @return {String}
-     **/
-    self.getEnvelopeId = function() {
-      return self.envelopeId;
-    }
+  /**
+   * Constructs a new <code>FolderItemV2</code>.
+   * @alias module:model/FolderItemV2
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set The envelope ID of the envelope status that failed to post.
-     * @param {String} envelopeId
-     **/
-    self.setEnvelopeId = function (envelopeId) {
-      self.envelopeId = envelopeId;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * @return {String}
-     **/
-    self.getEnvelopeUri = function() {
-      return self.envelopeUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
-     * @param {String} envelopeUri
-     **/
-    self.setEnvelopeUri = function (envelopeUri) {
-      self.envelopeUri = envelopeUri;
-    }
-    
-    /**
-     * get Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * @return {String}
-     **/
-    self.getStatus = function() {
-      return self.status;
-    }
 
-    /**
-     * set Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * @param {String} status
-     **/
-    self.setStatus = function (status) {
-      self.status = status;
-    }
-    
-    /**
-     * get The date and time the item was last modified.
-     * @return {String}
-     **/
-    self.getLastModifiedDateTime = function() {
-      return self.lastModifiedDateTime;
-    }
 
-    /**
-     * set The date and time the item was last modified.
-     * @param {String} lastModifiedDateTime
-     **/
-    self.setLastModifiedDateTime = function (lastModifiedDateTime) {
-      self.lastModifiedDateTime = lastModifiedDateTime;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSenderUserId = function() {
-      return self.senderUserId;
-    }
 
-    /**
-     * set 
-     * @param {String} senderUserId
-     **/
-    self.setSenderUserId = function (senderUserId) {
-      self.senderUserId = senderUserId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSenderName = function() {
-      return self.senderName;
-    }
 
-    /**
-     * set 
-     * @param {String} senderName
-     **/
-    self.setSenderName = function (senderName) {
-      self.senderName = senderName;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSenderEmail = function() {
-      return self.senderEmail;
-    }
 
-    /**
-     * set 
-     * @param {String} senderEmail
-     **/
-    self.setSenderEmail = function (senderEmail) {
-      self.senderEmail = senderEmail;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSenderCompany = function() {
-      return self.senderCompany;
-    }
 
-    /**
-     * set 
-     * @param {String} senderCompany
-     **/
-    self.setSenderCompany = function (senderCompany) {
-      self.senderCompany = senderCompany;
-    }
-    
-    /**
-     * get Indicates the date and time the item was created.
-     * @return {String}
-     **/
-    self.getCreatedDateTime = function() {
-      return self.createdDateTime;
-    }
 
-    /**
-     * set Indicates the date and time the item was created.
-     * @param {String} createdDateTime
-     **/
-    self.setCreatedDateTime = function (createdDateTime) {
-      self.createdDateTime = createdDateTime;
-    }
-    
-    /**
-     * get The date and time the envelope was sent.
-     * @return {String}
-     **/
-    self.getSentDateTime = function() {
-      return self.sentDateTime;
-    }
 
-    /**
-     * set The date and time the envelope was sent.
-     * @param {String} sentDateTime
-     **/
-    self.setSentDateTime = function (sentDateTime) {
-      self.sentDateTime = sentDateTime;
-    }
-    
-    /**
-     * get Specifies the date and time this item was completed.
-     * @return {String}
-     **/
-    self.getCompletedDateTime = function() {
-      return self.completedDateTime;
-    }
 
-    /**
-     * set Specifies the date and time this item was completed.
-     * @param {String} completedDateTime
-     **/
-    self.setCompletedDateTime = function (completedDateTime) {
-      self.completedDateTime = completedDateTime;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSubject = function() {
-      return self.subject;
-    }
 
-    /**
-     * set 
-     * @param {String} subject
-     **/
-    self.setSubject = function (subject) {
-      self.subject = subject;
-    }
-    
-    /**
-     * get The date and time the envelope is set to expire.
-     * @return {String}
-     **/
-    self.getExpireDateTime = function() {
-      return self.expireDateTime;
-    }
 
-    /**
-     * set The date and time the envelope is set to expire.
-     * @param {String} expireDateTime
-     **/
-    self.setExpireDateTime = function (expireDateTime) {
-      self.expireDateTime = expireDateTime;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getFolderId = function() {
-      return self.folderId;
-    }
 
-    /**
-     * set 
-     * @param {String} folderId
-     **/
-    self.setFolderId = function (folderId) {
-      self.folderId = folderId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getFolderUri = function() {
-      return self.folderUri;
-    }
 
-    /**
-     * set 
-     * @param {String} folderUri
-     **/
-    self.setFolderUri = function (folderUri) {
-      self.folderUri = folderUri;
-    }
-    
-    /**
-     * @return {Recipients}
-     **/
-    self.getRecipients = function() {
-      return self.recipients;
-    }
 
-    /**
-     * @param {Recipients} recipients
-     **/
-    self.setRecipients = function (recipients) {
-      self.recipients = recipients;
-    }
-    
-    /**
-     * get Contains a URI for an endpoint that you can use to retrieve the recipients.
-     * @return {String}
-     **/
-    self.getRecipientsUri = function() {
-      return self.recipientsUri;
-    }
 
-    /**
-     * set Contains a URI for an endpoint that you can use to retrieve the recipients.
-     * @param {String} recipientsUri
-     **/
-    self.setRecipientsUri = function (recipientsUri) {
-      self.recipientsUri = recipientsUri;
-    }
-    
-    /**
-     * get When set to **true**, indicates that this module is enabled on the account.
-     * @return {String}
-     **/
-    self.getIs21CFRPart11 = function() {
-      return self.is21CFRPart11;
-    }
 
-    /**
-     * set When set to **true**, indicates that this module is enabled on the account.
-     * @param {String} is21CFRPart11
-     **/
-    self.setIs21CFRPart11 = function (is21CFRPart11) {
-      self.is21CFRPart11 = is21CFRPart11;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getIsUniversalSignatureEnvelope = function() {
-      return self.isUniversalSignatureEnvelope;
-    }
 
-    /**
-     * set 
-     * @param {String} isUniversalSignatureEnvelope
-     **/
-    self.setIsUniversalSignatureEnvelope = function (isUniversalSignatureEnvelope) {
-      self.isUniversalSignatureEnvelope = isUniversalSignatureEnvelope;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.FolderItemV2 = FolderItemV2;
+  /**
+   * Constructs a <code>FolderItemV2</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/FolderItemV2} obj Optional instance to populate.
+   * @return {module:model/FolderItemV2} The populated <code>FolderItemV2</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('ownerName')) {
+        obj['ownerName'] = ApiClient.convertToType(data['ownerName'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeId')) {
+        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeUri')) {
+        obj['envelopeUri'] = ApiClient.convertToType(data['envelopeUri'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('lastModifiedDateTime')) {
+        obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('senderUserId')) {
+        obj['senderUserId'] = ApiClient.convertToType(data['senderUserId'], 'String');
+      }
+      if (data.hasOwnProperty('senderName')) {
+        obj['senderName'] = ApiClient.convertToType(data['senderName'], 'String');
+      }
+      if (data.hasOwnProperty('senderEmail')) {
+        obj['senderEmail'] = ApiClient.convertToType(data['senderEmail'], 'String');
+      }
+      if (data.hasOwnProperty('senderCompany')) {
+        obj['senderCompany'] = ApiClient.convertToType(data['senderCompany'], 'String');
+      }
+      if (data.hasOwnProperty('createdDateTime')) {
+        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('sentDateTime')) {
+        obj['sentDateTime'] = ApiClient.convertToType(data['sentDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('completedDateTime')) {
+        obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('subject')) {
+        obj['subject'] = ApiClient.convertToType(data['subject'], 'String');
+      }
+      if (data.hasOwnProperty('expireDateTime')) {
+        obj['expireDateTime'] = ApiClient.convertToType(data['expireDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('folderId')) {
+        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+      }
+      if (data.hasOwnProperty('folderUri')) {
+        obj['folderUri'] = ApiClient.convertToType(data['folderUri'], 'String');
+      }
+      if (data.hasOwnProperty('recipients')) {
+        obj['recipients'] = Recipients.constructFromObject(data['recipients']);
+      }
+      if (data.hasOwnProperty('recipientsUri')) {
+        obj['recipientsUri'] = ApiClient.convertToType(data['recipientsUri'], 'String');
+      }
+      if (data.hasOwnProperty('is21CFRPart11')) {
+        obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
+      }
+      if (data.hasOwnProperty('isUniversalSignatureEnvelope')) {
+        obj['isUniversalSignatureEnvelope'] = ApiClient.convertToType(data['isUniversalSignatureEnvelope'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return FolderItemV2;
-  
-  
+  /**
+   * 
+   * @member {String} ownerName
+   */
+  exports.prototype['ownerName'] = undefined;
+  /**
+   * The envelope ID of the envelope status that failed to post.
+   * @member {String} envelopeId
+   */
+  exports.prototype['envelopeId'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
+   * @member {String} envelopeUri
+   */
+  exports.prototype['envelopeUri'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * The date and time the item was last modified.
+   * @member {String} lastModifiedDateTime
+   */
+  exports.prototype['lastModifiedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} senderUserId
+   */
+  exports.prototype['senderUserId'] = undefined;
+  /**
+   * 
+   * @member {String} senderName
+   */
+  exports.prototype['senderName'] = undefined;
+  /**
+   * 
+   * @member {String} senderEmail
+   */
+  exports.prototype['senderEmail'] = undefined;
+  /**
+   * 
+   * @member {String} senderCompany
+   */
+  exports.prototype['senderCompany'] = undefined;
+  /**
+   * Indicates the date and time the item was created.
+   * @member {String} createdDateTime
+   */
+  exports.prototype['createdDateTime'] = undefined;
+  /**
+   * The date and time the envelope was sent.
+   * @member {String} sentDateTime
+   */
+  exports.prototype['sentDateTime'] = undefined;
+  /**
+   * Specifies the date and time this item was completed.
+   * @member {String} completedDateTime
+   */
+  exports.prototype['completedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} subject
+   */
+  exports.prototype['subject'] = undefined;
+  /**
+   * The date and time the envelope is set to expire.
+   * @member {String} expireDateTime
+   */
+  exports.prototype['expireDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} folderId
+   */
+  exports.prototype['folderId'] = undefined;
+  /**
+   * 
+   * @member {String} folderUri
+   */
+  exports.prototype['folderUri'] = undefined;
+  /**
+   * @member {module:model/Recipients} recipients
+   */
+  exports.prototype['recipients'] = undefined;
+  /**
+   * Contains a URI for an endpoint that you can use to retrieve the recipients.
+   * @member {String} recipientsUri
+   */
+  exports.prototype['recipientsUri'] = undefined;
+  /**
+   * When set to **true**, indicates that this module is enabled on the account.
+   * @member {String} is21CFRPart11
+   */
+  exports.prototype['is21CFRPart11'] = undefined;
+  /**
+   * 
+   * @member {String} isUniversalSignatureEnvelope
+   */
+  exports.prototype['isUniversalSignatureEnvelope'] = undefined;
+
+
+
+  return exports;
 }));
+
+

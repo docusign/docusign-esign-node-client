@@ -1,125 +1,103 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './Expirations', './Reminders'], factory);
+    define(['ApiClient', 'model/Expirations', 'model/Reminders'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./Expirations'), require('./Reminders'));
+    module.exports = factory(require('../ApiClient'), require('./Expirations'), require('./Reminders'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.Expirations, root.Docusign.Reminders);
+    root.Docusign.TemplateNotificationRequest = factory(root.Docusign.ApiClient, root.Docusign.Expirations, root.Docusign.Reminders);
   }
-}(this, function(module, Expirations, Reminders) {
+}(this, function(ApiClient, Expirations, Reminders) {
   'use strict';
 
-  
-  
 
-  
-  var TemplateNotificationRequest = function TemplateNotificationRequest() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.password) {
-        self.password = data.password;
-      }
-      
-      if (data.useAccountDefaults) {
-        self.useAccountDefaults = data.useAccountDefaults;
-      }
-      
-      if (data.reminders) {
-        self.reminders = new data.reminders.constructor();
-        self.reminders.constructFromObject(data.reminders);
-      }
-      
-      if (data.expirations) {
-        self.expirations = new data.expirations.constructor();
-        self.expirations.constructFromObject(data.expirations);
-      }
-      
-    }
 
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getPassword = function() {
-      return self.password;
-    }
+  /**
+   * The TemplateNotificationRequest model module.
+   * @module model/TemplateNotificationRequest
+   * @version 3.0.0
+   */
 
-    /**
-     * set 
-     * @param {String} password
-     **/
-    self.setPassword = function (password) {
-      self.password = password;
-    }
-    
-    /**
-     * get When set to **true**, the account default notification settings are used for the envelope.
-     * @return {String}
-     **/
-    self.getUseAccountDefaults = function() {
-      return self.useAccountDefaults;
-    }
+  /**
+   * Constructs a new <code>TemplateNotificationRequest</code>.
+   * @alias module:model/TemplateNotificationRequest
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set When set to **true**, the account default notification settings are used for the envelope.
-     * @param {String} useAccountDefaults
-     **/
-    self.setUseAccountDefaults = function (useAccountDefaults) {
-      self.useAccountDefaults = useAccountDefaults;
-    }
-    
-    /**
-     * @return {Reminders}
-     **/
-    self.getReminders = function() {
-      return self.reminders;
-    }
 
-    /**
-     * @param {Reminders} reminders
-     **/
-    self.setReminders = function (reminders) {
-      self.reminders = reminders;
-    }
-    
-    /**
-     * @return {Expirations}
-     **/
-    self.getExpirations = function() {
-      return self.expirations;
-    }
 
-    /**
-     * @param {Expirations} expirations
-     **/
-    self.setExpirations = function (expirations) {
-      self.expirations = expirations;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.TemplateNotificationRequest = TemplateNotificationRequest;
+  /**
+   * Constructs a <code>TemplateNotificationRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/TemplateNotificationRequest} obj Optional instance to populate.
+   * @return {module:model/TemplateNotificationRequest} The populated <code>TemplateNotificationRequest</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('useAccountDefaults')) {
+        obj['useAccountDefaults'] = ApiClient.convertToType(data['useAccountDefaults'], 'String');
+      }
+      if (data.hasOwnProperty('reminders')) {
+        obj['reminders'] = Reminders.constructFromObject(data['reminders']);
+      }
+      if (data.hasOwnProperty('expirations')) {
+        obj['expirations'] = Expirations.constructFromObject(data['expirations']);
+      }
+    }
+    return obj;
   }
 
-  return TemplateNotificationRequest;
-  
-  
+  /**
+   * 
+   * @member {String} password
+   */
+  exports.prototype['password'] = undefined;
+  /**
+   * When set to **true**, the account default notification settings are used for the envelope.
+   * @member {String} useAccountDefaults
+   */
+  exports.prototype['useAccountDefaults'] = undefined;
+  /**
+   * @member {module:model/Reminders} reminders
+   */
+  exports.prototype['reminders'] = undefined;
+  /**
+   * @member {module:model/Expirations} expirations
+   */
+  exports.prototype['expirations'] = undefined;
+
+
+
+  return exports;
 }));
+
+

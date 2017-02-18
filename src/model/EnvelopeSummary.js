@@ -1,127 +1,105 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.EnvelopeSummary = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var EnvelopeSummary = function EnvelopeSummary() { 
-    var self = this;
-    
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.envelopeId) {
-        self.envelopeId = data.envelopeId;
-      }
-      
-      if (data.uri) {
-        self.uri = data.uri;
-      }
-      
-      if (data.statusDateTime) {
-        self.statusDateTime = data.statusDateTime;
-      }
-      
-      if (data.status) {
-        self.status = data.status;
-      }
-      
-    }
 
-    
-    /**
-     * get The envelope ID of the envelope status that failed to post.
-     * @return {String}
-     **/
-    self.getEnvelopeId = function() {
-      return self.envelopeId;
-    }
+  /**
+   * The EnvelopeSummary model module.
+   * @module model/EnvelopeSummary
+   * @version 3.0.0
+   */
 
-    /**
-     * set The envelope ID of the envelope status that failed to post.
-     * @param {String} envelopeId
-     **/
-    self.setEnvelopeId = function (envelopeId) {
-      self.envelopeId = envelopeId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUri = function() {
-      return self.uri;
-    }
+  /**
+   * Constructs a new <code>EnvelopeSummary</code>.
+   * @alias module:model/EnvelopeSummary
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    /**
-     * set 
-     * @param {String} uri
-     **/
-    self.setUri = function (uri) {
-      self.uri = uri;
-    }
-    
-    /**
-     * get The DateTime that the envelope changed status (i.e. was created or sent.)
-     * @return {String}
-     **/
-    self.getStatusDateTime = function() {
-      return self.statusDateTime;
-    }
 
-    /**
-     * set The DateTime that the envelope changed status (i.e. was created or sent.)
-     * @param {String} statusDateTime
-     **/
-    self.setStatusDateTime = function (statusDateTime) {
-      self.statusDateTime = statusDateTime;
-    }
-    
-    /**
-     * get Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * @return {String}
-     **/
-    self.getStatus = function() {
-      return self.status;
-    }
 
-    /**
-     * set Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * @param {String} status
-     **/
-    self.setStatus = function (status) {
-      self.status = status;
-    }
-    
 
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
+
   };
 
-  if (module) {
-    module.EnvelopeSummary = EnvelopeSummary;
+  /**
+   * Constructs a <code>EnvelopeSummary</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/EnvelopeSummary} obj Optional instance to populate.
+   * @return {module:model/EnvelopeSummary} The populated <code>EnvelopeSummary</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('envelopeId')) {
+        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+      if (data.hasOwnProperty('statusDateTime')) {
+        obj['statusDateTime'] = ApiClient.convertToType(data['statusDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return EnvelopeSummary;
-  
-  
+  /**
+   * The envelope ID of the envelope status that failed to post.
+   * @member {String} envelopeId
+   */
+  exports.prototype['envelopeId'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
+  /**
+   * The DateTime that the envelope changed status (i.e. was created or sent.)
+   * @member {String} statusDateTime
+   */
+  exports.prototype['statusDateTime'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+
+
+
+  return exports;
 }));
+
+
