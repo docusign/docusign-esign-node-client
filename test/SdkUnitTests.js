@@ -33,7 +33,16 @@ describe('SDK Unit Tests:', function () {
         // list of user account(s)
         // note that a given user may be a member of multiple accounts
         var loginAccounts = loginInfo.loginAccounts;
-        accountId = loginAccounts[0].accountId;
+        console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
+        var loginAccount = loginAccounts[0];
+        accountId = loginAccount.accountId;
+        var baseUrl = loginAccount.baseUrl;
+        var accountDomain = baseUrl.split('/v2');
+
+        // below code required for production, no effect in demo (same domain)
+        apiClient.setBasePath(accountDomain[0]);
+        docusign.Configuration.default.setDefaultApiClient(apiClient);
+
         console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
         done();
       }
