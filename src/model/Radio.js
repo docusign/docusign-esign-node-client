@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Radio model module.
    * @module model/Radio
@@ -42,22 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

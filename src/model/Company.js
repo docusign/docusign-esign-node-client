@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Company model module.
    * @module model/Company
@@ -42,43 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

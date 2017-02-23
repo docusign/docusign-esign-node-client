@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The InitialHere model module.
    * @module model/InitialHere
@@ -42,31 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

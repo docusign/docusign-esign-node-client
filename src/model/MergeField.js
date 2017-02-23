@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The MergeField model module.
    * @module model/MergeField
@@ -43,10 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
 
 
   };

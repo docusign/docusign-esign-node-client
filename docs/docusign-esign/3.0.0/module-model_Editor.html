@@ -1,0 +1,3236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>module:model/Editor - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-api_AccountsApi.html">api/AccountsApi</a><ul class='methods'><li data-type='method'><a href="module-api_AccountsApi.html#getAccountInformation">getAccountInformation</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSettings">listSettings</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSharedAccess">listSharedAccess</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listUnsupportedFileTypes">listUnsupportedFileTypes</a></li><li data-type='method'><a href="module-api_AccountsApi.html#updateSettings">updateSettings</a></li></ul></li><li><a href="module-api_AuthenticationApi.html">api/AuthenticationApi</a><ul class='methods'><li data-type='method'><a href="module-api_AuthenticationApi.html#login">login</a></li></ul></li><li><a href="module-api_CustomTabsApi.html">api/CustomTabsApi</a><ul class='methods'><li data-type='method'><a href="module-api_CustomTabsApi.html#_delete">_delete</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#create">create</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#get">get</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#list">list</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#update">update</a></li></ul></li><li><a href="module-api_DiagnosticsApi.html">api/DiagnosticsApi</a><ul class='methods'><li data-type='method'><a href="module-api_DiagnosticsApi.html#deleteRequestLogs">deleteRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLog">getRequestLog</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLogSettings">getRequestLogSettings</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getResources">getResources</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getService">getService</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#listRequestLogs">listRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#updateRequestLogSettings">updateRequestLogSettings</a></li></ul></li><li><a href="module-api_EnvelopesApi.html">api/EnvelopesApi</a><ul class='methods'><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplate">applyTemplate</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplateToDocument">applyTemplateToDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createConsoleView">createConsoleView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCorrectView">createCorrectView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEditView">createEditView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEmailSettings">createEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEnvelope">createEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createLock">createLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipient">createRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipientView">createRecipientView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createSenderView">createSenderView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createViewLink">createViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteEmailSettings">deleteEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteLock">deleteLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTemplatesFromDocument">deleteTemplatesFromDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteViewLink">deleteViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEmailSettings">getEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEnvelope">getEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listAuditEvents">listAuditEvents</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatus">listStatus</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatusChanges">listStatusChanges</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplatesForDocument">listTemplatesForDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#update">update</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateEmailSettings">updateEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateLock">updateLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a><ul class='methods'><li data-type='method'><a href="module-api_FoldersApi.html#list">list</a></li><li data-type='method'><a href="module-api_FoldersApi.html#listItems">listItems</a></li><li data-type='method'><a href="module-api_FoldersApi.html#moveEnvelopes">moveEnvelopes</a></li><li data-type='method'><a href="module-api_FoldersApi.html#search">search</a></li></ul></li><li><a href="module-api_TemplatesApi.html">api/TemplatesApi</a><ul class='methods'><li data-type='method'><a href="module-api_TemplatesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createRecipients">createRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTemplate">createTemplate</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteGroupShare">deleteGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#get">get</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#update">update</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateGroupShare">updateGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateNotificationSettings">updateNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_UsersApi.html">api/UsersApi</a><ul class='methods'><li data-type='method'><a href="module-api_UsersApi.html#getSettings">getSettings</a></li></ul></li><li><a href="module-ApiClient.html">ApiClient</a><ul class='methods'><li data-type='method'><a href="module-ApiClient.html#.constructFromObject">constructFromObject</a></li><li data-type='method'><a href="module-ApiClient.html#.convertToType">convertToType</a></li><li data-type='method'><a href="module-ApiClient.html#.parseDate">parseDate</a></li><li data-type='method'><a href="module-ApiClient.html#addDefaultHeader">addDefaultHeader</a></li><li data-type='method'><a href="module-ApiClient.html#applyAuthToRequest">applyAuthToRequest</a></li><li data-type='method'><a href="module-ApiClient.html#buildCollectionParam">buildCollectionParam</a></li><li data-type='method'><a href="module-ApiClient.html#buildUrl">buildUrl</a></li><li data-type='method'><a href="module-ApiClient.html#callApi">callApi</a></li><li data-type='method'><a href="module-ApiClient.html#deserialize">deserialize</a></li><li data-type='method'><a href="module-ApiClient.html#isFileParam">isFileParam</a></li><li data-type='method'><a href="module-ApiClient.html#isJsonMime">isJsonMime</a></li><li data-type='method'><a href="module-ApiClient.html#jsonPreferredMime">jsonPreferredMime</a></li><li data-type='method'><a href="module-ApiClient.html#normalizeParams">normalizeParams</a></li><li data-type='method'><a href="module-ApiClient.html#paramToString">paramToString</a></li><li data-type='method'><a href="module-ApiClient.html#setBasePath">setBasePath</a></li></ul></li><li><a href="module-model_AccountInformation.html">model/AccountInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSettingsInformation.html">model/AccountSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSharedAccess.html">model/AccountSharedAccess</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSharedAccess.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformation.html">model/AddressInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformationInput.html">model/AddressInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Agent.html">model/Agent</a><ul class='methods'><li data-type='method'><a href="module-model_Agent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLog.html">model/ApiRequestLog</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLog.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLogsResult.html">model/ApiRequestLogsResult</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLogsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Approve.html">model/Approve</a><ul class='methods'><li data-type='method'><a href="module-model_Approve.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Attachment.html">model/Attachment</a><ul class='methods'><li data-type='method'><a href="module-model_Attachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AuthenticationStatus.html">model/AuthenticationStatus</a><ul class='methods'><li data-type='method'><a href="module-model_AuthenticationStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BccEmailAddress.html">model/BccEmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_BccEmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelope.html">model/BulkEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelopeStatus.html">model/BulkEnvelopeStatus</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelopeStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CarbonCopy.html">model/CarbonCopy</a><ul class='methods'><li data-type='method'><a href="module-model_CarbonCopy.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CertifiedDelivery.html">model/CertifiedDelivery</a><ul class='methods'><li data-type='method'><a href="module-model_CertifiedDelivery.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Checkbox.html">model/Checkbox</a><ul class='methods'><li data-type='method'><a href="module-model_Checkbox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Company.html">model/Company</a><ul class='methods'><li data-type='method'><a href="module-model_Company.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CompositeTemplate.html">model/CompositeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_CompositeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ConsoleViewRequest.html">model/ConsoleViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ConsoleViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CorrectViewRequest.html">model/CorrectViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_CorrectViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFields.html">model/CustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldsEnvelope.html">model/CustomFieldsEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldsEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldV2.html">model/CustomFieldV2</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DateSigned.html">model/DateSigned</a><ul class='methods'><li data-type='method'><a href="module-model_DateSigned.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Decline.html">model/Decline</a><ul class='methods'><li data-type='method'><a href="module-model_Decline.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DiagnosticsSettingsInformation.html">model/DiagnosticsSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DiagnosticsSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DobInformationInput.html">model/DobInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_DobInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Document.html">model/Document</a><ul class='methods'><li data-type='method'><a href="module-model_Document.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentFieldsInformation.html">model/DocumentFieldsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentFieldsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplate.html">model/DocumentTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplateList.html">model/DocumentTemplateList</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplateList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Editor.html">model/Editor</a><ul class='methods'><li data-type='method'><a href="module-model_Editor.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Email.html">model/Email</a><ul class='methods'><li data-type='method'><a href="module-model_Email.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailAddress.html">model/EmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_EmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailSettings.html">model/EmailSettings</a><ul class='methods'><li data-type='method'><a href="module-model_EmailSettings.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Envelope.html">model/Envelope</a><ul class='methods'><li data-type='method'><a href="module-model_Envelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEvent.html">model/EnvelopeAuditEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEventResponse.html">model/EnvelopeAuditEventResponse</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEventResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDefinition.html">model/EnvelopeDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocument.html">model/EnvelopeDocument</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocument.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocumentsResult.html">model/EnvelopeDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeEvent.html">model/EnvelopeEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeId.html">model/EnvelopeId</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeId.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeIdsRequest.html">model/EnvelopeIdsRequest</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeIdsRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopesInformation.html">model/EnvelopesInformation</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopesInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeSummary.html">model/EnvelopeSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplate.html">model/EnvelopeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateDefinition.html">model/EnvelopeTemplateDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResult.html">model/EnvelopeTemplateResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResults.html">model/EnvelopeTemplateResults</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResults.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTransactionStatus.html">model/EnvelopeTransactionStatus</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTransactionStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeUpdateSummary.html">model/EnvelopeUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ErrorDetails.html">model/ErrorDetails</a><ul class='methods'><li data-type='method'><a href="module-model_ErrorDetails.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventNotification.html">model/EventNotification</a><ul class='methods'><li data-type='method'><a href="module-model_EventNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventResult.html">model/EventResult</a><ul class='methods'><li data-type='method'><a href="module-model_EventResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Expirations.html">model/Expirations</a><ul class='methods'><li data-type='method'><a href="module-model_Expirations.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileType.html">model/FileType</a><ul class='methods'><li data-type='method'><a href="module-model_FileType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileTypeList.html">model/FileTypeList</a><ul class='methods'><li data-type='method'><a href="module-model_FileTypeList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Filter.html">model/Filter</a><ul class='methods'><li data-type='method'><a href="module-model_Filter.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FirstName.html">model/FirstName</a><ul class='methods'><li data-type='method'><a href="module-model_FirstName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Folder.html">model/Folder</a><ul class='methods'><li data-type='method'><a href="module-model_Folder.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItem.html">model/FolderItem</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemResponse.html">model/FolderItemResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemsResponse.html">model/FolderItemsResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemsResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemV2.html">model/FolderItemV2</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersRequest.html">model/FoldersRequest</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersResponse.html">model/FoldersResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FormulaTab.html">model/FormulaTab</a><ul class='methods'><li data-type='method'><a href="module-model_FormulaTab.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FullName.html">model/FullName</a><ul class='methods'><li data-type='method'><a href="module-model_FullName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Group.html">model/Group</a><ul class='methods'><li data-type='method'><a href="module-model_Group.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_GroupInformation.html">model/GroupInformation</a><ul class='methods'><li data-type='method'><a href="module-model_GroupInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_IdCheckInformationInput.html">model/IdCheckInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_IdCheckInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InitialHere.html">model/InitialHere</a><ul class='methods'><li data-type='method'><a href="module-model_InitialHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InlineTemplate.html">model/InlineTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_InlineTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InPersonSigner.html">model/InPersonSigner</a><ul class='methods'><li data-type='method'><a href="module-model_InPersonSigner.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Intermediary.html">model/Intermediary</a><ul class='methods'><li data-type='method'><a href="module-model_Intermediary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LastName.html">model/LastName</a><ul class='methods'><li data-type='method'><a href="module-model_LastName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_List.html">model/List</a><ul class='methods'><li data-type='method'><a href="module-model_List.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListCustomField.html">model/ListCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_ListCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListItem.html">model/ListItem</a><ul class='methods'><li data-type='method'><a href="module-model_ListItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockInformation.html">model/LockInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LockInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockRequest.html">model/LockRequest</a><ul class='methods'><li data-type='method'><a href="module-model_LockRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginAccount.html">model/LoginAccount</a><ul class='methods'><li data-type='method'><a href="module-model_LoginAccount.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginInformation.html">model/LoginInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LoginInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MatchBox.html">model/MatchBox</a><ul class='methods'><li data-type='method'><a href="module-model_MatchBox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MemberSharedItems.html">model/MemberSharedItems</a><ul class='methods'><li data-type='method'><a href="module-model_MemberSharedItems.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MergeField.html">model/MergeField</a><ul class='methods'><li data-type='method'><a href="module-model_MergeField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelDate.html">model/ModelDate</a><ul class='methods'><li data-type='method'><a href="module-model_ModelDate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelNumber.html">model/ModelNumber</a><ul class='methods'><li data-type='method'><a href="module-model_ModelNumber.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_NameValue.html">model/NameValue</a><ul class='methods'><li data-type='method'><a href="module-model_NameValue.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Note.html">model/Note</a><ul class='methods'><li data-type='method'><a href="module-model_Note.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Notification.html">model/Notification</a><ul class='methods'><li data-type='method'><a href="module-model_Notification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_OfflineAttributes.html">model/OfflineAttributes</a><ul class='methods'><li data-type='method'><a href="module-model_OfflineAttributes.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_PageRequest.html">model/PageRequest</a><ul class='methods'><li data-type='method'><a href="module-model_PageRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Radio.html">model/Radio</a><ul class='methods'><li data-type='method'><a href="module-model_Radio.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RadioGroup.html">model/RadioGroup</a><ul class='methods'><li data-type='method'><a href="module-model_RadioGroup.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEmailNotification.html">model/RecipientEmailNotification</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEmailNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEvent.html">model/RecipientEvent</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientPhoneAuthentication.html">model/RecipientPhoneAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientPhoneAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Recipients.html">model/Recipients</a><ul class='methods'><li data-type='method'><a href="module-model_Recipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSAMLAuthentication.html">model/RecipientSAMLAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSAMLAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSignatureInformation.html">model/RecipientSignatureInformation</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSignatureInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSMSAuthentication.html">model/RecipientSMSAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSMSAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientsUpdateSummary.html">model/RecipientsUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientsUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientUpdateResponse.html">model/RecipientUpdateResponse</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientUpdateResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientViewRequest.html">model/RecipientViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Reminders.html">model/Reminders</a><ul class='methods'><li data-type='method'><a href="module-model_Reminders.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ResourceInformation.html">model/ResourceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ResourceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ReturnUrlRequest.html">model/ReturnUrlRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ReturnUrlRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SamlAssertionAttribute.html">model/SamlAssertionAttribute</a><ul class='methods'><li data-type='method'><a href="module-model_SamlAssertionAttribute.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SenderEmailNotifications.html">model/SenderEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SenderEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServerTemplate.html">model/ServerTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_ServerTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceInformation.html">model/ServiceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceVersion.html">model/ServiceVersion</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceVersion.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SharedItem.html">model/SharedItem</a><ul class='methods'><li data-type='method'><a href="module-model_SharedItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignatureType.html">model/SignatureType</a><ul class='methods'><li data-type='method'><a href="module-model_SignatureType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Signer.html">model/Signer</a><ul class='methods'><li data-type='method'><a href="module-model_Signer.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerAttachment.html">model/SignerAttachment</a><ul class='methods'><li data-type='method'><a href="module-model_SignerAttachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerEmailNotifications.html">model/SignerEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SignerEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignHere.html">model/SignHere</a><ul class='methods'><li data-type='method'><a href="module-model_SignHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SocialAuthentication.html">model/SocialAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_SocialAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn.html">model/Ssn</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn4InformationInput.html">model/Ssn4InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn4InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn9InformationInput.html">model/Ssn9InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn9InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadata.html">model/TabMetadata</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadata.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadataList.html">model/TabMetadataList</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadataList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Tabs.html">model/Tabs</a><ul class='methods'><li data-type='method'><a href="module-model_Tabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateCustomFields.html">model/TemplateCustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateCustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateDocumentsResult.html">model/TemplateDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateInformation.html">model/TemplateInformation</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateMatch.html">model/TemplateMatch</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateMatch.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateNotificationRequest.html">model/TemplateNotificationRequest</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateNotificationRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRecipients.html">model/TemplateRecipients</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRecipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRole.html">model/TemplateRole</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRole.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateSummary.html">model/TemplateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateTabs.html">model/TemplateTabs</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateTabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateUpdateSummary.html">model/TemplateUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Text.html">model/Text</a><ul class='methods'><li data-type='method'><a href="module-model_Text.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TextCustomField.html">model/TextCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_TextCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Title.html">model/Title</a><ul class='methods'><li data-type='method'><a href="module-model_Title.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserInfo.html">model/UserInfo</a><ul class='methods'><li data-type='method'><a href="module-model_UserInfo.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserSettingsInformation.html">model/UserSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_UserSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewLinkRequest.html">model/ViewLinkRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ViewLinkRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewUrl.html">model/ViewUrl</a><ul class='methods'><li data-type='method'><a href="module-model_ViewUrl.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Zip.html">model/Zip</a><ul class='methods'><li data-type='method'><a href="module-model_Zip.html#.constructFromObject">constructFromObject</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-api_AccountsApi.html">api/AccountsApi</a><ul class='methods'><li data-type='method'><a href="module-api_AccountsApi.html#getAccountInformation">getAccountInformation</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSettings">listSettings</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSharedAccess">listSharedAccess</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listUnsupportedFileTypes">listUnsupportedFileTypes</a></li><li data-type='method'><a href="module-api_AccountsApi.html#updateSettings">updateSettings</a></li></ul></li><li><a href="module-api_AuthenticationApi.html">api/AuthenticationApi</a><ul class='methods'><li data-type='method'><a href="module-api_AuthenticationApi.html#login">login</a></li></ul></li><li><a href="module-api_CustomTabsApi.html">api/CustomTabsApi</a><ul class='methods'><li data-type='method'><a href="module-api_CustomTabsApi.html#_delete">_delete</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#create">create</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#get">get</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#list">list</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#update">update</a></li></ul></li><li><a href="module-api_DiagnosticsApi.html">api/DiagnosticsApi</a><ul class='methods'><li data-type='method'><a href="module-api_DiagnosticsApi.html#deleteRequestLogs">deleteRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLog">getRequestLog</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLogSettings">getRequestLogSettings</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getResources">getResources</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getService">getService</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#listRequestLogs">listRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#updateRequestLogSettings">updateRequestLogSettings</a></li></ul></li><li><a href="module-api_EnvelopesApi.html">api/EnvelopesApi</a><ul class='methods'><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplate">applyTemplate</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplateToDocument">applyTemplateToDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createConsoleView">createConsoleView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCorrectView">createCorrectView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEditView">createEditView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEmailSettings">createEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEnvelope">createEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createLock">createLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipient">createRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipientView">createRecipientView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createSenderView">createSenderView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createViewLink">createViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteEmailSettings">deleteEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteLock">deleteLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTemplatesFromDocument">deleteTemplatesFromDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteViewLink">deleteViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEmailSettings">getEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEnvelope">getEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listAuditEvents">listAuditEvents</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatus">listStatus</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatusChanges">listStatusChanges</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplatesForDocument">listTemplatesForDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#update">update</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateEmailSettings">updateEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateLock">updateLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a><ul class='methods'><li data-type='method'><a href="module-api_FoldersApi.html#list">list</a></li><li data-type='method'><a href="module-api_FoldersApi.html#listItems">listItems</a></li><li data-type='method'><a href="module-api_FoldersApi.html#moveEnvelopes">moveEnvelopes</a></li><li data-type='method'><a href="module-api_FoldersApi.html#search">search</a></li></ul></li><li><a href="module-api_TemplatesApi.html">api/TemplatesApi</a><ul class='methods'><li data-type='method'><a href="module-api_TemplatesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createRecipients">createRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTemplate">createTemplate</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteGroupShare">deleteGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#get">get</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#update">update</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateGroupShare">updateGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateNotificationSettings">updateNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_UsersApi.html">api/UsersApi</a><ul class='methods'><li data-type='method'><a href="module-api_UsersApi.html#getSettings">getSettings</a></li></ul></li><li><a href="module-ApiClient.html">ApiClient</a><ul class='methods'><li data-type='method'><a href="module-ApiClient.html#.constructFromObject">constructFromObject</a></li><li data-type='method'><a href="module-ApiClient.html#.convertToType">convertToType</a></li><li data-type='method'><a href="module-ApiClient.html#.parseDate">parseDate</a></li><li data-type='method'><a href="module-ApiClient.html#addDefaultHeader">addDefaultHeader</a></li><li data-type='method'><a href="module-ApiClient.html#applyAuthToRequest">applyAuthToRequest</a></li><li data-type='method'><a href="module-ApiClient.html#buildCollectionParam">buildCollectionParam</a></li><li data-type='method'><a href="module-ApiClient.html#buildUrl">buildUrl</a></li><li data-type='method'><a href="module-ApiClient.html#callApi">callApi</a></li><li data-type='method'><a href="module-ApiClient.html#deserialize">deserialize</a></li><li data-type='method'><a href="module-ApiClient.html#isFileParam">isFileParam</a></li><li data-type='method'><a href="module-ApiClient.html#isJsonMime">isJsonMime</a></li><li data-type='method'><a href="module-ApiClient.html#jsonPreferredMime">jsonPreferredMime</a></li><li data-type='method'><a href="module-ApiClient.html#normalizeParams">normalizeParams</a></li><li data-type='method'><a href="module-ApiClient.html#paramToString">paramToString</a></li><li data-type='method'><a href="module-ApiClient.html#setBasePath">setBasePath</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-model_AccountInformation.html">model/AccountInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSettingsInformation.html">model/AccountSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSharedAccess.html">model/AccountSharedAccess</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSharedAccess.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformation.html">model/AddressInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformationInput.html">model/AddressInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Agent.html">model/Agent</a><ul class='methods'><li data-type='method'><a href="module-model_Agent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLog.html">model/ApiRequestLog</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLog.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLogsResult.html">model/ApiRequestLogsResult</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLogsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Approve.html">model/Approve</a><ul class='methods'><li data-type='method'><a href="module-model_Approve.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Attachment.html">model/Attachment</a><ul class='methods'><li data-type='method'><a href="module-model_Attachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AuthenticationStatus.html">model/AuthenticationStatus</a><ul class='methods'><li data-type='method'><a href="module-model_AuthenticationStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BccEmailAddress.html">model/BccEmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_BccEmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelope.html">model/BulkEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelopeStatus.html">model/BulkEnvelopeStatus</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelopeStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CarbonCopy.html">model/CarbonCopy</a><ul class='methods'><li data-type='method'><a href="module-model_CarbonCopy.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CertifiedDelivery.html">model/CertifiedDelivery</a><ul class='methods'><li data-type='method'><a href="module-model_CertifiedDelivery.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Checkbox.html">model/Checkbox</a><ul class='methods'><li data-type='method'><a href="module-model_Checkbox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Company.html">model/Company</a><ul class='methods'><li data-type='method'><a href="module-model_Company.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CompositeTemplate.html">model/CompositeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_CompositeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ConsoleViewRequest.html">model/ConsoleViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ConsoleViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CorrectViewRequest.html">model/CorrectViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_CorrectViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFields.html">model/CustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldsEnvelope.html">model/CustomFieldsEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldsEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldV2.html">model/CustomFieldV2</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DateSigned.html">model/DateSigned</a><ul class='methods'><li data-type='method'><a href="module-model_DateSigned.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Decline.html">model/Decline</a><ul class='methods'><li data-type='method'><a href="module-model_Decline.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DiagnosticsSettingsInformation.html">model/DiagnosticsSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DiagnosticsSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DobInformationInput.html">model/DobInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_DobInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Document.html">model/Document</a><ul class='methods'><li data-type='method'><a href="module-model_Document.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentFieldsInformation.html">model/DocumentFieldsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentFieldsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplate.html">model/DocumentTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplateList.html">model/DocumentTemplateList</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplateList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Editor.html">model/Editor</a><ul class='methods'><li data-type='method'><a href="module-model_Editor.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Email.html">model/Email</a><ul class='methods'><li data-type='method'><a href="module-model_Email.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailAddress.html">model/EmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_EmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailSettings.html">model/EmailSettings</a><ul class='methods'><li data-type='method'><a href="module-model_EmailSettings.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Envelope.html">model/Envelope</a><ul class='methods'><li data-type='method'><a href="module-model_Envelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEvent.html">model/EnvelopeAuditEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEventResponse.html">model/EnvelopeAuditEventResponse</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEventResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDefinition.html">model/EnvelopeDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocument.html">model/EnvelopeDocument</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocument.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocumentsResult.html">model/EnvelopeDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeEvent.html">model/EnvelopeEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeId.html">model/EnvelopeId</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeId.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeIdsRequest.html">model/EnvelopeIdsRequest</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeIdsRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopesInformation.html">model/EnvelopesInformation</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopesInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeSummary.html">model/EnvelopeSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplate.html">model/EnvelopeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateDefinition.html">model/EnvelopeTemplateDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResult.html">model/EnvelopeTemplateResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResults.html">model/EnvelopeTemplateResults</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResults.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTransactionStatus.html">model/EnvelopeTransactionStatus</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTransactionStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeUpdateSummary.html">model/EnvelopeUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ErrorDetails.html">model/ErrorDetails</a><ul class='methods'><li data-type='method'><a href="module-model_ErrorDetails.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventNotification.html">model/EventNotification</a><ul class='methods'><li data-type='method'><a href="module-model_EventNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventResult.html">model/EventResult</a><ul class='methods'><li data-type='method'><a href="module-model_EventResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Expirations.html">model/Expirations</a><ul class='methods'><li data-type='method'><a href="module-model_Expirations.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileType.html">model/FileType</a><ul class='methods'><li data-type='method'><a href="module-model_FileType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileTypeList.html">model/FileTypeList</a><ul class='methods'><li data-type='method'><a href="module-model_FileTypeList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Filter.html">model/Filter</a><ul class='methods'><li data-type='method'><a href="module-model_Filter.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FirstName.html">model/FirstName</a><ul class='methods'><li data-type='method'><a href="module-model_FirstName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Folder.html">model/Folder</a><ul class='methods'><li data-type='method'><a href="module-model_Folder.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItem.html">model/FolderItem</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemResponse.html">model/FolderItemResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemsResponse.html">model/FolderItemsResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemsResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemV2.html">model/FolderItemV2</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersRequest.html">model/FoldersRequest</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersResponse.html">model/FoldersResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FormulaTab.html">model/FormulaTab</a><ul class='methods'><li data-type='method'><a href="module-model_FormulaTab.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FullName.html">model/FullName</a><ul class='methods'><li data-type='method'><a href="module-model_FullName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Group.html">model/Group</a><ul class='methods'><li data-type='method'><a href="module-model_Group.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_GroupInformation.html">model/GroupInformation</a><ul class='methods'><li data-type='method'><a href="module-model_GroupInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_IdCheckInformationInput.html">model/IdCheckInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_IdCheckInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InitialHere.html">model/InitialHere</a><ul class='methods'><li data-type='method'><a href="module-model_InitialHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InlineTemplate.html">model/InlineTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_InlineTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InPersonSigner.html">model/InPersonSigner</a><ul class='methods'><li data-type='method'><a href="module-model_InPersonSigner.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Intermediary.html">model/Intermediary</a><ul class='methods'><li data-type='method'><a href="module-model_Intermediary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LastName.html">model/LastName</a><ul class='methods'><li data-type='method'><a href="module-model_LastName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_List.html">model/List</a><ul class='methods'><li data-type='method'><a href="module-model_List.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListCustomField.html">model/ListCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_ListCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListItem.html">model/ListItem</a><ul class='methods'><li data-type='method'><a href="module-model_ListItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockInformation.html">model/LockInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LockInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockRequest.html">model/LockRequest</a><ul class='methods'><li data-type='method'><a href="module-model_LockRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginAccount.html">model/LoginAccount</a><ul class='methods'><li data-type='method'><a href="module-model_LoginAccount.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginInformation.html">model/LoginInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LoginInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MatchBox.html">model/MatchBox</a><ul class='methods'><li data-type='method'><a href="module-model_MatchBox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MemberSharedItems.html">model/MemberSharedItems</a><ul class='methods'><li data-type='method'><a href="module-model_MemberSharedItems.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MergeField.html">model/MergeField</a><ul class='methods'><li data-type='method'><a href="module-model_MergeField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelDate.html">model/ModelDate</a><ul class='methods'><li data-type='method'><a href="module-model_ModelDate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelNumber.html">model/ModelNumber</a><ul class='methods'><li data-type='method'><a href="module-model_ModelNumber.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_NameValue.html">model/NameValue</a><ul class='methods'><li data-type='method'><a href="module-model_NameValue.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Note.html">model/Note</a><ul class='methods'><li data-type='method'><a href="module-model_Note.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Notification.html">model/Notification</a><ul class='methods'><li data-type='method'><a href="module-model_Notification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_OfflineAttributes.html">model/OfflineAttributes</a><ul class='methods'><li data-type='method'><a href="module-model_OfflineAttributes.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_PageRequest.html">model/PageRequest</a><ul class='methods'><li data-type='method'><a href="module-model_PageRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Radio.html">model/Radio</a><ul class='methods'><li data-type='method'><a href="module-model_Radio.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RadioGroup.html">model/RadioGroup</a><ul class='methods'><li data-type='method'><a href="module-model_RadioGroup.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEmailNotification.html">model/RecipientEmailNotification</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEmailNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEvent.html">model/RecipientEvent</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientPhoneAuthentication.html">model/RecipientPhoneAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientPhoneAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Recipients.html">model/Recipients</a><ul class='methods'><li data-type='method'><a href="module-model_Recipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSAMLAuthentication.html">model/RecipientSAMLAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSAMLAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSignatureInformation.html">model/RecipientSignatureInformation</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSignatureInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSMSAuthentication.html">model/RecipientSMSAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSMSAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientsUpdateSummary.html">model/RecipientsUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientsUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientUpdateResponse.html">model/RecipientUpdateResponse</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientUpdateResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientViewRequest.html">model/RecipientViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Reminders.html">model/Reminders</a><ul class='methods'><li data-type='method'><a href="module-model_Reminders.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ResourceInformation.html">model/ResourceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ResourceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ReturnUrlRequest.html">model/ReturnUrlRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ReturnUrlRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SamlAssertionAttribute.html">model/SamlAssertionAttribute</a><ul class='methods'><li data-type='method'><a href="module-model_SamlAssertionAttribute.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SenderEmailNotifications.html">model/SenderEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SenderEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServerTemplate.html">model/ServerTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_ServerTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceInformation.html">model/ServiceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceVersion.html">model/ServiceVersion</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceVersion.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SharedItem.html">model/SharedItem</a><ul class='methods'><li data-type='method'><a href="module-model_SharedItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignatureType.html">model/SignatureType</a><ul class='methods'><li data-type='method'><a href="module-model_SignatureType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Signer.html">model/Signer</a><ul class='methods'><li data-type='method'><a href="module-model_Signer.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerAttachment.html">model/SignerAttachment</a><ul class='methods'><li data-type='method'><a href="module-model_SignerAttachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerEmailNotifications.html">model/SignerEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SignerEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignHere.html">model/SignHere</a><ul class='methods'><li data-type='method'><a href="module-model_SignHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SocialAuthentication.html">model/SocialAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_SocialAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn.html">model/Ssn</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn4InformationInput.html">model/Ssn4InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn4InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn9InformationInput.html">model/Ssn9InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn9InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadata.html">model/TabMetadata</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadata.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadataList.html">model/TabMetadataList</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadataList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Tabs.html">model/Tabs</a><ul class='methods'><li data-type='method'><a href="module-model_Tabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateCustomFields.html">model/TemplateCustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateCustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateDocumentsResult.html">model/TemplateDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateInformation.html">model/TemplateInformation</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateMatch.html">model/TemplateMatch</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateMatch.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateNotificationRequest.html">model/TemplateNotificationRequest</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateNotificationRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRecipients.html">model/TemplateRecipients</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRecipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRole.html">model/TemplateRole</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRole.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateSummary.html">model/TemplateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateTabs.html">model/TemplateTabs</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateTabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateUpdateSummary.html">model/TemplateUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Text.html">model/Text</a><ul class='methods'><li data-type='method'><a href="module-model_Text.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TextCustomField.html">model/TextCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_TextCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Title.html">model/Title</a><ul class='methods'><li data-type='method'><a href="module-model_Title.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserInfo.html">model/UserInfo</a><ul class='methods'><li data-type='method'><a href="module-model_UserInfo.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserSettingsInformation.html">model/UserSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_UserSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewLinkRequest.html">model/ViewLinkRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ViewLinkRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewUrl.html">model/ViewUrl</a><ul class='methods'><li data-type='method'><a href="module-model_ViewUrl.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Zip.html">model/Zip</a><ul class='methods'><li data-type='method'><a href="module-model_Zip.html#.constructFromObject">constructFromObject</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">module:model/Editor</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        module:model/Editor
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    <h4 class="name" id="module:model/Editor"><span class="type-signature"></span>new module:model/Editor<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Constructs a new <code>Editor</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~accessCode"><span class="type-signature">(inner) </span>accessCode<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line222">line 222</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and must conform to account’s access code format setting.  If blank, but the signer <code>accessCode</code> property is set in the envelope, then that value is used.  If blank and the signer <code>accessCode</code> property is not set, then access code is not required.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~addAccessCodeToEmail"><span class="type-signature">(inner) </span>addAccessCodeToEmail<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line227">line 227</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>This Optional attribute indicates that the access code will be added to the email sent to the recipient; this nullifies the Security measure of Access Code on the recipient.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~clientUserId"><span class="type-signature">(inner) </span>clientUserId<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line264">line 264</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Specifies whether the recipient is embedded or remote.   If the <code>clientUserId</code> property is not null then the recipient is embedded. Note that if the <code>ClientUserId</code> property is set and either <code>SignerMustHaveAccount</code> or <code>SignerMustLoginToSign</code> property of the account settings is set to  <strong>true</strong>, an error is generated on sending.ng.   Maximum length: 100 characters.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~customFields"><span class="type-signature">(inner) </span>customFields<span class="type-signature"> :Array.&lt;String></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line274">line 274</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;String></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~declinedDateTime"><span class="type-signature">(inner) </span>declinedDateTime<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line318">line 318</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The date and time the recipient declined the document.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~declinedReason"><span class="type-signature">(inner) </span>declinedReason<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line328">line 328</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The reason the recipient declined the document.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~deliveredDateTime"><span class="type-signature">(inner) </span>deliveredDateTime<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line313">line 313</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Reserved: For DocuSign use only.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~deliveryMethod"><span class="type-signature">(inner) </span>deliveryMethod<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line333">line 333</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Reserved: For DocuSign use only.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~email"><span class="type-signature">(inner) </span>email<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line187">line 187</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Email id of the recipient. Notification of the document to sign is sent to this email id.   Maximum length: 100 characters.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~emailNotification"><span class="type-signature">(inner) </span>emailNotification<span class="type-signature"> :<a href="module-model_RecipientEmailNotification.html">module:model/RecipientEmailNotification</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line353">line 353</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="module-model_RecipientEmailNotification.html">module:model/RecipientEmailNotification</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~emailRecipientPostSigningURL"><span class="type-signature">(inner) </span>emailRecipientPostSigningURL<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line192">line 192</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~embeddedRecipientStartURL"><span class="type-signature">(inner) </span>embeddedRecipientStartURL<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line269">line 269</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Specifies a sender provided valid URL string for redirecting an embedded recipient. When using this option, the embedded recipient still receives an email from DocuSign, just as a remote recipient would. When the document link in the email is clicked the recipient is redirected, through DocuSign, to the supplied URL to complete their actions. When routing to the URL, the sender’s system (the server responding to the URL) must request a recipient token to launch a signing session.   If set to <code>SIGN_AT_DOCUSIGN</code>, the recipient is directed to an embedded signing or viewing process directly at DocuSign. The signing or viewing action is initiated by the DocuSign system and the transaction activity and Certificate of Completion records will reflect this. In all other ways the process is identical to an embedded signing or viewing operation that is launched by any partner.  It is important to remember that in a typical embedded workflow the authentication of an embedded recipient is the responsibility of the sending application, DocuSign expects that senders will follow their own process for establishing the recipient’s identity. In this workflow the recipient goes through the sending application before the embedded signing or viewing process in initiated. However, when the sending application sets <code>EmbeddedRecipientStartURL=SIGN_AT_DOCUSIGN</code>, the recipient goes directly to the embedded signing or viewing process bypassing the sending application and any authentication steps the sending application would use. In this case, DocuSign recommends that you use one of the normal DocuSign authentication features (Access Code, Phone Authentication, SMS Authentication, etc.) to verify the identity of the recipient.  If the <code>clientUserId</code> property is NOT set, and the <code>embeddedRecipientStartURL</code> is set, DocuSign will ignore the redirect URL and launch the standard signing process for the email recipient. Information can be appended to the embedded recipient start URL using merge fields. The available merge fields items are: envelopeId, recipientId, recipientName, recipientEmail, and customFields. The <code>customFields</code> property must be set fort the recipient or envelope. The merge fields are enclosed in double brackets.   <em>Example</em>:   <code>http://senderHost/[[mergeField1]]/ beginSigningSession? [[mergeField2]]&amp;[[mergeField3]]</code></p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~errorDetails"><span class="type-signature">(inner) </span>errorDetails<span class="type-signature"> :<a href="module-model_ErrorDetails.html">module:model/ErrorDetails</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line362">line 362</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="module-model_ErrorDetails.html">module:model/ErrorDetails</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~faxNumber"><span class="type-signature">(inner) </span>faxNumber<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line338">line 338</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Reserved:</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~idCheckConfigurationName"><span class="type-signature">(inner) </span>idCheckConfigurationName<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line237">line 237</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  <em>Example</em>: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the <code>smsAuthentication</code> node.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~idCheckInformationInput"><span class="type-signature">(inner) </span>idCheckInformationInput<span class="type-signature"> :<a href="module-model_IdCheckInformationInput.html">module:model/IdCheckInformationInput</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line284">line 284</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="module-model_IdCheckInformationInput.html">module:model/IdCheckInformationInput</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~inheritEmailNotificationConfiguration"><span class="type-signature">(inner) </span>inheritEmailNotificationConfiguration<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line357">line 357</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>When set to <strong>true</strong> and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~name"><span class="type-signature">(inner) </span>name<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line182">line 182</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>legal name of the recipient.  Maximum Length: 100 characters.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~note"><span class="type-signature">(inner) </span>note<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line293">line 293</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~phoneAuthentication"><span class="type-signature">(inner) </span>phoneAuthentication<span class="type-signature"> :<a href="module-model_RecipientPhoneAuthentication.html">module:model/RecipientPhoneAuthentication</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line247">line 247</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="module-model_RecipientPhoneAuthentication.html">module:model/RecipientPhoneAuthentication</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~recipientAttachments"><span class="type-signature">(inner) </span>recipientAttachments<span class="type-signature"> :Array.&lt;<a href="module-model_Attachment.html">module:model/Attachment</a>></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line288">line 288</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Reserved:</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="module-model_Attachment.html">module:model/Attachment</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~recipientAuthenticationStatus"><span class="type-signature">(inner) </span>recipientAuthenticationStatus<span class="type-signature"> :<a href="module-model_AuthenticationStatus.html">module:model/AuthenticationStatus</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line366">line 366</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="module-model_AuthenticationStatus.html">module:model/AuthenticationStatus</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~recipientId"><span class="type-signature">(inner) </span>recipientId<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line212">line 212</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~recipientIdGuid"><span class="type-signature">(inner) </span>recipientIdGuid<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line217">line 217</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~requireIdLookup"><span class="type-signature">(inner) </span>requireIdLookup<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line232">line 232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>When set to <strong>true</strong>, the recipient is required to use the specified ID check method (including Phone and SMS authentication) to validate their identity.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~roleName"><span class="type-signature">(inner) </span>roleName<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line298">line 298</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~routingOrder"><span class="type-signature">(inner) </span>routingOrder<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line279">line 279</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Specifies the routing order of the recipient in the envelope.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~samlAuthentication"><span class="type-signature">(inner) </span>samlAuthentication<span class="type-signature"> :<a href="module-model_RecipientSAMLAuthentication.html">module:model/RecipientSAMLAuthentication</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line251">line 251</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="module-model_RecipientSAMLAuthentication.html">module:model/RecipientSAMLAuthentication</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~sentDateTime"><span class="type-signature">(inner) </span>sentDateTime<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line323">line 323</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The date and time the envelope was sent.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~signedDateTime"><span class="type-signature">(inner) </span>signedDateTime<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line308">line 308</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Reserved: For DocuSign use only.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~signingGroupId"><span class="type-signature">(inner) </span>signingGroupId<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line197">line 197</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>When set to <strong>true</strong> and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~signingGroupName"><span class="type-signature">(inner) </span>signingGroupName<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line202">line 202</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The display name for the signing group.   Maximum Length: 100 characters.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~signingGroupUsers"><span class="type-signature">(inner) </span>signingGroupUsers<span class="type-signature"> :Array.&lt;<a href="module-model_UserInfo.html">module:model/UserInfo</a>></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line207">line 207</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>A complex type that contains information about users in the signing group.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="module-model_UserInfo.html">module:model/UserInfo</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~smsAuthentication"><span class="type-signature">(inner) </span>smsAuthentication<span class="type-signature"> :<a href="module-model_RecipientSMSAuthentication.html">module:model/RecipientSMSAuthentication</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line255">line 255</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="module-model_RecipientSMSAuthentication.html">module:model/RecipientSMSAuthentication</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~socialAuthentications"><span class="type-signature">(inner) </span>socialAuthentications<span class="type-signature"> :Array.&lt;<a href="module-model_SocialAuthentication.html">module:model/SocialAuthentication</a>></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line242">line 242</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Lists the social ID type that can be used for recipient authentication.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="module-model_SocialAuthentication.html">module:model/SocialAuthentication</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~status"><span class="type-signature">(inner) </span>status<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line303">line 303</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates the envelope status. Valid values are:  <em> sent - The envelope is sent to the recipients.  </em> created - The envelope is saved as a draft and can be modified and sent later.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~templateLocked"><span class="type-signature">(inner) </span>templateLocked<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line343">line 343</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>When set to <strong>true</strong>, the sender cannot change any attributes of the recipient. Used only when working with template recipients.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~templateRequired"><span class="type-signature">(inner) </span>templateRequired<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line348">line 348</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>When set to <strong>true</strong>, the sender may not remove the recipient. Used only when working with template recipients.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~totalTabCount"><span class="type-signature">(inner) </span>totalTabCount<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line370">line 370</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~userId"><span class="type-signature">(inner) </span>userId<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line259">line 259</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".constructFromObject"><span class="type-signature">(static) </span>constructFromObject<span class="signature">(data, obj)</span><span class="type-signature"> &rarr; {<a href="module-model_Editor.html">module:model/Editor</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="model_Editor.js.html">model/Editor.js</a>, <a href="model_Editor.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Constructs a <code>Editor</code> from a plain JavaScript object, optionally creating a new instance.
+Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The plain JavaScript object bearing properties of interest.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-model_Editor.html">module:model/Editor</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional instance to populate.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The populated <code>Editor</code> instance.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-model_Editor.html">module:model/Editor</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Wed Feb 22 2017 21:17:35 GMT-0800 (PST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

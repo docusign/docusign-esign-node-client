@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The IdCheckInformationInput model module.
    * @module model/IdCheckInformationInput
@@ -42,9 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

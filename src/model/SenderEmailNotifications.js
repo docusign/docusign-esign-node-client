@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The SenderEmailNotifications model module.
    * @module model/SenderEmailNotifications
@@ -42,12 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
 
 
   };

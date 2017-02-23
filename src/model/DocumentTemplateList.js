@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The DocumentTemplateList model module.
    * @module model/DocumentTemplateList

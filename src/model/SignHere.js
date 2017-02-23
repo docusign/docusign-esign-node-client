@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The SignHere model module.
    * @module model/SignHere
@@ -42,31 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The FirstName model module.
    * @module model/FirstName
@@ -42,35 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

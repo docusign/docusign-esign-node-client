@@ -21,7 +21,7 @@ apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
 describe('SDK Unit Tests:', function () {
   it('login', function (done) {
     var authApi = new docusign.AuthenticationApi(apiClient);
-    var loginOps = new authApi.LoginOptions();
+    var loginOps = {};
     loginOps.apiPassword = 'true';
     loginOps.includeAccountIdGuid = 'true';
     authApi.login(loginOps, function (error, loginInfo, response) {

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The UserSettingsInformation model module.
    * @module model/UserSettingsInformation
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

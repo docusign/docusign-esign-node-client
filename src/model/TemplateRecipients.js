@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateRecipients model module.
    * @module model/TemplateRecipients
@@ -42,15 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
 
 
   };

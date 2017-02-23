@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Attachment model module.
    * @module model/Attachment
@@ -43,7 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

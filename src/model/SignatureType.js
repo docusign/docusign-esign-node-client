@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The SignatureType model module.
    * @module model/SignatureType
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

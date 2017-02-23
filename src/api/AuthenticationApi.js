@@ -40,7 +40,7 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || ApiClient.instance || Configuration.default.getDefaultApiClient();
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 	  
 	this.setApiClient = function(apiClient) {
 	  this.apiClient = apiClient;
@@ -50,49 +50,6 @@
 	  return this.apiClient;
 	};
 
-
-	/**
-	 * Gets login information for a specified user.
-   * Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.    The &#x60;baseUrl&#x60; property, returned in the response, is used in all future API calls as the base of the request URL. The &#x60;baseUrl&#x60; property contains the DocuSign server, the API version, and the &#x60;accountId&#x60; property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
-	*/
-	this.LoginOptions = function () {
-	  var includeAccountIdGuid = null;
-	  var loginSettings = null;
-	  var apiPassword = null;
-	  
-	  /*
-	   * When set to **true**, shows the account ID GUID in the response.
-	   */
-	  this.setIncludeAccountIdGuid = function(includeAccountIdGuid) {
-	    this.includeAccountIdGuid = includeAccountIdGuid;
-	  }
-	
-	  this.getIncludeAccountIdGuid = function() {
-	    return this.includeAccountIdGuid;
-	  }
-
-	  /*
-	   * Determines whether login settings are returned in the response.  Valid Values:  * all -  All the login settings are returned.  * none - no login settings are returned.
-	   */
-	  this.setLoginSettings = function(loginSettings) {
-	    this.loginSettings = loginSettings;
-	  }
-	
-	  this.getLoginSettings = function() {
-	    return this.loginSettings;
-	  }
-
-	  /*
-	   * When set to **true**, shows the account API password in the response.
-	   */
-	  this.setApiPassword = function(apiPassword) {
-	    this.apiPassword = apiPassword;
-	  }
-	
-	  this.getApiPassword = function() {
-	    return this.apiPassword;
-	  }
-	}
 
     /**
      * Callback function to receive the result of the login operation.

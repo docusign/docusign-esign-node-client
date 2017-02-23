@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The GroupInformation model module.
    * @module model/GroupInformation
@@ -42,12 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
 
 
   };

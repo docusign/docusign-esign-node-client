@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The CertifiedDelivery model module.
    * @module model/CertifiedDelivery
@@ -42,46 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

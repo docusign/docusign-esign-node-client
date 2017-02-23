@@ -40,7 +40,7 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || ApiClient.instance || Configuration.default.getDefaultApiClient();
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 	  
 	this.setApiClient = function(apiClient) {
 	  this.apiClient = apiClient;

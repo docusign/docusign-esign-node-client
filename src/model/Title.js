@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Title model module.
    * @module model/Title
@@ -42,43 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

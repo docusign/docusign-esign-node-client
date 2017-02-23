@@ -40,7 +40,7 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || ApiClient.instance || Configuration.default.getDefaultApiClient();
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 	  
 	this.setApiClient = function(apiClient) {
 	  this.apiClient = apiClient;
@@ -251,22 +251,6 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
-
-	/**
-	 * Gets the API request logging log files.
-   * Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
-	*/
-	this.ListRequestLogsOptions = function () {
-	  var encoding = null;
-	  
-	  this.setEncoding = function(encoding) {
-	    this.encoding = encoding;
-	  }
-	
-	  this.getEncoding = function() {
-	    return this.encoding;
-	  }
-	}
 
     /**
      * Callback function to receive the result of the listRequestLogs operation.

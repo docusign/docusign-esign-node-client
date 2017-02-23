@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ErrorDetails model module.
    * @module model/ErrorDetails
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>api/TemplatesApi.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-api_AccountsApi.html">api/AccountsApi</a><ul class='methods'><li data-type='method'><a href="module-api_AccountsApi.html#getAccountInformation">getAccountInformation</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSettings">listSettings</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSharedAccess">listSharedAccess</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listUnsupportedFileTypes">listUnsupportedFileTypes</a></li><li data-type='method'><a href="module-api_AccountsApi.html#updateSettings">updateSettings</a></li></ul></li><li><a href="module-api_AuthenticationApi.html">api/AuthenticationApi</a><ul class='methods'><li data-type='method'><a href="module-api_AuthenticationApi.html#login">login</a></li></ul></li><li><a href="module-api_CustomTabsApi.html">api/CustomTabsApi</a><ul class='methods'><li data-type='method'><a href="module-api_CustomTabsApi.html#_delete">_delete</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#create">create</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#get">get</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#list">list</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#update">update</a></li></ul></li><li><a href="module-api_DiagnosticsApi.html">api/DiagnosticsApi</a><ul class='methods'><li data-type='method'><a href="module-api_DiagnosticsApi.html#deleteRequestLogs">deleteRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLog">getRequestLog</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLogSettings">getRequestLogSettings</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getResources">getResources</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getService">getService</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#listRequestLogs">listRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#updateRequestLogSettings">updateRequestLogSettings</a></li></ul></li><li><a href="module-api_EnvelopesApi.html">api/EnvelopesApi</a><ul class='methods'><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplate">applyTemplate</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplateToDocument">applyTemplateToDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createConsoleView">createConsoleView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCorrectView">createCorrectView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEditView">createEditView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEmailSettings">createEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEnvelope">createEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createLock">createLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipient">createRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipientView">createRecipientView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createSenderView">createSenderView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createViewLink">createViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteEmailSettings">deleteEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteLock">deleteLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTemplatesFromDocument">deleteTemplatesFromDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteViewLink">deleteViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEmailSettings">getEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEnvelope">getEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listAuditEvents">listAuditEvents</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatus">listStatus</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatusChanges">listStatusChanges</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplatesForDocument">listTemplatesForDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#update">update</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateEmailSettings">updateEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateLock">updateLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a><ul class='methods'><li data-type='method'><a href="module-api_FoldersApi.html#list">list</a></li><li data-type='method'><a href="module-api_FoldersApi.html#listItems">listItems</a></li><li data-type='method'><a href="module-api_FoldersApi.html#moveEnvelopes">moveEnvelopes</a></li><li data-type='method'><a href="module-api_FoldersApi.html#search">search</a></li></ul></li><li><a href="module-api_TemplatesApi.html">api/TemplatesApi</a><ul class='methods'><li data-type='method'><a href="module-api_TemplatesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createRecipients">createRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTemplate">createTemplate</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteGroupShare">deleteGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#get">get</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#update">update</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateGroupShare">updateGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateNotificationSettings">updateNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_UsersApi.html">api/UsersApi</a><ul class='methods'><li data-type='method'><a href="module-api_UsersApi.html#getSettings">getSettings</a></li></ul></li><li><a href="module-ApiClient.html">ApiClient</a><ul class='methods'><li data-type='method'><a href="module-ApiClient.html#.constructFromObject">constructFromObject</a></li><li data-type='method'><a href="module-ApiClient.html#.convertToType">convertToType</a></li><li data-type='method'><a href="module-ApiClient.html#.parseDate">parseDate</a></li><li data-type='method'><a href="module-ApiClient.html#addDefaultHeader">addDefaultHeader</a></li><li data-type='method'><a href="module-ApiClient.html#applyAuthToRequest">applyAuthToRequest</a></li><li data-type='method'><a href="module-ApiClient.html#buildCollectionParam">buildCollectionParam</a></li><li data-type='method'><a href="module-ApiClient.html#buildUrl">buildUrl</a></li><li data-type='method'><a href="module-ApiClient.html#callApi">callApi</a></li><li data-type='method'><a href="module-ApiClient.html#deserialize">deserialize</a></li><li data-type='method'><a href="module-ApiClient.html#isFileParam">isFileParam</a></li><li data-type='method'><a href="module-ApiClient.html#isJsonMime">isJsonMime</a></li><li data-type='method'><a href="module-ApiClient.html#jsonPreferredMime">jsonPreferredMime</a></li><li data-type='method'><a href="module-ApiClient.html#normalizeParams">normalizeParams</a></li><li data-type='method'><a href="module-ApiClient.html#paramToString">paramToString</a></li><li data-type='method'><a href="module-ApiClient.html#setBasePath">setBasePath</a></li></ul></li><li><a href="module-model_AccountInformation.html">model/AccountInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSettingsInformation.html">model/AccountSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSharedAccess.html">model/AccountSharedAccess</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSharedAccess.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformation.html">model/AddressInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformationInput.html">model/AddressInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Agent.html">model/Agent</a><ul class='methods'><li data-type='method'><a href="module-model_Agent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLog.html">model/ApiRequestLog</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLog.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLogsResult.html">model/ApiRequestLogsResult</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLogsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Approve.html">model/Approve</a><ul class='methods'><li data-type='method'><a href="module-model_Approve.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Attachment.html">model/Attachment</a><ul class='methods'><li data-type='method'><a href="module-model_Attachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AuthenticationStatus.html">model/AuthenticationStatus</a><ul class='methods'><li data-type='method'><a href="module-model_AuthenticationStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BccEmailAddress.html">model/BccEmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_BccEmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelope.html">model/BulkEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelopeStatus.html">model/BulkEnvelopeStatus</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelopeStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CarbonCopy.html">model/CarbonCopy</a><ul class='methods'><li data-type='method'><a href="module-model_CarbonCopy.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CertifiedDelivery.html">model/CertifiedDelivery</a><ul class='methods'><li data-type='method'><a href="module-model_CertifiedDelivery.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Checkbox.html">model/Checkbox</a><ul class='methods'><li data-type='method'><a href="module-model_Checkbox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Company.html">model/Company</a><ul class='methods'><li data-type='method'><a href="module-model_Company.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CompositeTemplate.html">model/CompositeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_CompositeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ConsoleViewRequest.html">model/ConsoleViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ConsoleViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CorrectViewRequest.html">model/CorrectViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_CorrectViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFields.html">model/CustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldsEnvelope.html">model/CustomFieldsEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldsEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldV2.html">model/CustomFieldV2</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DateSigned.html">model/DateSigned</a><ul class='methods'><li data-type='method'><a href="module-model_DateSigned.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Decline.html">model/Decline</a><ul class='methods'><li data-type='method'><a href="module-model_Decline.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DiagnosticsSettingsInformation.html">model/DiagnosticsSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DiagnosticsSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DobInformationInput.html">model/DobInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_DobInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Document.html">model/Document</a><ul class='methods'><li data-type='method'><a href="module-model_Document.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentFieldsInformation.html">model/DocumentFieldsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentFieldsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplate.html">model/DocumentTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplateList.html">model/DocumentTemplateList</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplateList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Editor.html">model/Editor</a><ul class='methods'><li data-type='method'><a href="module-model_Editor.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Email.html">model/Email</a><ul class='methods'><li data-type='method'><a href="module-model_Email.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailAddress.html">model/EmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_EmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailSettings.html">model/EmailSettings</a><ul class='methods'><li data-type='method'><a href="module-model_EmailSettings.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Envelope.html">model/Envelope</a><ul class='methods'><li data-type='method'><a href="module-model_Envelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEvent.html">model/EnvelopeAuditEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEventResponse.html">model/EnvelopeAuditEventResponse</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEventResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDefinition.html">model/EnvelopeDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocument.html">model/EnvelopeDocument</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocument.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocumentsResult.html">model/EnvelopeDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeEvent.html">model/EnvelopeEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeId.html">model/EnvelopeId</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeId.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeIdsRequest.html">model/EnvelopeIdsRequest</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeIdsRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopesInformation.html">model/EnvelopesInformation</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopesInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeSummary.html">model/EnvelopeSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplate.html">model/EnvelopeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateDefinition.html">model/EnvelopeTemplateDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResult.html">model/EnvelopeTemplateResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResults.html">model/EnvelopeTemplateResults</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResults.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTransactionStatus.html">model/EnvelopeTransactionStatus</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTransactionStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeUpdateSummary.html">model/EnvelopeUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ErrorDetails.html">model/ErrorDetails</a><ul class='methods'><li data-type='method'><a href="module-model_ErrorDetails.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventNotification.html">model/EventNotification</a><ul class='methods'><li data-type='method'><a href="module-model_EventNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventResult.html">model/EventResult</a><ul class='methods'><li data-type='method'><a href="module-model_EventResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Expirations.html">model/Expirations</a><ul class='methods'><li data-type='method'><a href="module-model_Expirations.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileType.html">model/FileType</a><ul class='methods'><li data-type='method'><a href="module-model_FileType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileTypeList.html">model/FileTypeList</a><ul class='methods'><li data-type='method'><a href="module-model_FileTypeList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Filter.html">model/Filter</a><ul class='methods'><li data-type='method'><a href="module-model_Filter.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FirstName.html">model/FirstName</a><ul class='methods'><li data-type='method'><a href="module-model_FirstName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Folder.html">model/Folder</a><ul class='methods'><li data-type='method'><a href="module-model_Folder.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItem.html">model/FolderItem</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemResponse.html">model/FolderItemResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemsResponse.html">model/FolderItemsResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemsResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemV2.html">model/FolderItemV2</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersRequest.html">model/FoldersRequest</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersResponse.html">model/FoldersResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FormulaTab.html">model/FormulaTab</a><ul class='methods'><li data-type='method'><a href="module-model_FormulaTab.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FullName.html">model/FullName</a><ul class='methods'><li data-type='method'><a href="module-model_FullName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Group.html">model/Group</a><ul class='methods'><li data-type='method'><a href="module-model_Group.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_GroupInformation.html">model/GroupInformation</a><ul class='methods'><li data-type='method'><a href="module-model_GroupInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_IdCheckInformationInput.html">model/IdCheckInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_IdCheckInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InitialHere.html">model/InitialHere</a><ul class='methods'><li data-type='method'><a href="module-model_InitialHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InlineTemplate.html">model/InlineTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_InlineTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InPersonSigner.html">model/InPersonSigner</a><ul class='methods'><li data-type='method'><a href="module-model_InPersonSigner.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Intermediary.html">model/Intermediary</a><ul class='methods'><li data-type='method'><a href="module-model_Intermediary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LastName.html">model/LastName</a><ul class='methods'><li data-type='method'><a href="module-model_LastName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_List.html">model/List</a><ul class='methods'><li data-type='method'><a href="module-model_List.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListCustomField.html">model/ListCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_ListCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListItem.html">model/ListItem</a><ul class='methods'><li data-type='method'><a href="module-model_ListItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockInformation.html">model/LockInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LockInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockRequest.html">model/LockRequest</a><ul class='methods'><li data-type='method'><a href="module-model_LockRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginAccount.html">model/LoginAccount</a><ul class='methods'><li data-type='method'><a href="module-model_LoginAccount.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginInformation.html">model/LoginInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LoginInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MatchBox.html">model/MatchBox</a><ul class='methods'><li data-type='method'><a href="module-model_MatchBox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MemberSharedItems.html">model/MemberSharedItems</a><ul class='methods'><li data-type='method'><a href="module-model_MemberSharedItems.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MergeField.html">model/MergeField</a><ul class='methods'><li data-type='method'><a href="module-model_MergeField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelDate.html">model/ModelDate</a><ul class='methods'><li data-type='method'><a href="module-model_ModelDate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelNumber.html">model/ModelNumber</a><ul class='methods'><li data-type='method'><a href="module-model_ModelNumber.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_NameValue.html">model/NameValue</a><ul class='methods'><li data-type='method'><a href="module-model_NameValue.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Note.html">model/Note</a><ul class='methods'><li data-type='method'><a href="module-model_Note.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Notification.html">model/Notification</a><ul class='methods'><li data-type='method'><a href="module-model_Notification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_OfflineAttributes.html">model/OfflineAttributes</a><ul class='methods'><li data-type='method'><a href="module-model_OfflineAttributes.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_PageRequest.html">model/PageRequest</a><ul class='methods'><li data-type='method'><a href="module-model_PageRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Radio.html">model/Radio</a><ul class='methods'><li data-type='method'><a href="module-model_Radio.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RadioGroup.html">model/RadioGroup</a><ul class='methods'><li data-type='method'><a href="module-model_RadioGroup.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEmailNotification.html">model/RecipientEmailNotification</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEmailNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEvent.html">model/RecipientEvent</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientPhoneAuthentication.html">model/RecipientPhoneAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientPhoneAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Recipients.html">model/Recipients</a><ul class='methods'><li data-type='method'><a href="module-model_Recipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSAMLAuthentication.html">model/RecipientSAMLAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSAMLAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSignatureInformation.html">model/RecipientSignatureInformation</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSignatureInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSMSAuthentication.html">model/RecipientSMSAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSMSAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientsUpdateSummary.html">model/RecipientsUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientsUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientUpdateResponse.html">model/RecipientUpdateResponse</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientUpdateResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientViewRequest.html">model/RecipientViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Reminders.html">model/Reminders</a><ul class='methods'><li data-type='method'><a href="module-model_Reminders.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ResourceInformation.html">model/ResourceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ResourceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ReturnUrlRequest.html">model/ReturnUrlRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ReturnUrlRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SamlAssertionAttribute.html">model/SamlAssertionAttribute</a><ul class='methods'><li data-type='method'><a href="module-model_SamlAssertionAttribute.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SenderEmailNotifications.html">model/SenderEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SenderEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServerTemplate.html">model/ServerTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_ServerTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceInformation.html">model/ServiceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceVersion.html">model/ServiceVersion</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceVersion.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SharedItem.html">model/SharedItem</a><ul class='methods'><li data-type='method'><a href="module-model_SharedItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignatureType.html">model/SignatureType</a><ul class='methods'><li data-type='method'><a href="module-model_SignatureType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Signer.html">model/Signer</a><ul class='methods'><li data-type='method'><a href="module-model_Signer.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerAttachment.html">model/SignerAttachment</a><ul class='methods'><li data-type='method'><a href="module-model_SignerAttachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerEmailNotifications.html">model/SignerEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SignerEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignHere.html">model/SignHere</a><ul class='methods'><li data-type='method'><a href="module-model_SignHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SocialAuthentication.html">model/SocialAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_SocialAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn.html">model/Ssn</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn4InformationInput.html">model/Ssn4InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn4InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn9InformationInput.html">model/Ssn9InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn9InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadata.html">model/TabMetadata</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadata.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadataList.html">model/TabMetadataList</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadataList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Tabs.html">model/Tabs</a><ul class='methods'><li data-type='method'><a href="module-model_Tabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateCustomFields.html">model/TemplateCustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateCustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateDocumentsResult.html">model/TemplateDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateInformation.html">model/TemplateInformation</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateMatch.html">model/TemplateMatch</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateMatch.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateNotificationRequest.html">model/TemplateNotificationRequest</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateNotificationRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRecipients.html">model/TemplateRecipients</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRecipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRole.html">model/TemplateRole</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRole.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateSummary.html">model/TemplateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateTabs.html">model/TemplateTabs</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateTabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateUpdateSummary.html">model/TemplateUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Text.html">model/Text</a><ul class='methods'><li data-type='method'><a href="module-model_Text.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TextCustomField.html">model/TextCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_TextCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Title.html">model/Title</a><ul class='methods'><li data-type='method'><a href="module-model_Title.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserInfo.html">model/UserInfo</a><ul class='methods'><li data-type='method'><a href="module-model_UserInfo.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserSettingsInformation.html">model/UserSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_UserSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewLinkRequest.html">model/ViewLinkRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ViewLinkRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewUrl.html">model/ViewUrl</a><ul class='methods'><li data-type='method'><a href="module-model_ViewUrl.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Zip.html">model/Zip</a><ul class='methods'><li data-type='method'><a href="module-model_Zip.html#.constructFromObject">constructFromObject</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-api_AccountsApi.html">api/AccountsApi</a><ul class='methods'><li data-type='method'><a href="module-api_AccountsApi.html#getAccountInformation">getAccountInformation</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSettings">listSettings</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listSharedAccess">listSharedAccess</a></li><li data-type='method'><a href="module-api_AccountsApi.html#listUnsupportedFileTypes">listUnsupportedFileTypes</a></li><li data-type='method'><a href="module-api_AccountsApi.html#updateSettings">updateSettings</a></li></ul></li><li><a href="module-api_AuthenticationApi.html">api/AuthenticationApi</a><ul class='methods'><li data-type='method'><a href="module-api_AuthenticationApi.html#login">login</a></li></ul></li><li><a href="module-api_CustomTabsApi.html">api/CustomTabsApi</a><ul class='methods'><li data-type='method'><a href="module-api_CustomTabsApi.html#_delete">_delete</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#create">create</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#get">get</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#list">list</a></li><li data-type='method'><a href="module-api_CustomTabsApi.html#update">update</a></li></ul></li><li><a href="module-api_DiagnosticsApi.html">api/DiagnosticsApi</a><ul class='methods'><li data-type='method'><a href="module-api_DiagnosticsApi.html#deleteRequestLogs">deleteRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLog">getRequestLog</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getRequestLogSettings">getRequestLogSettings</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getResources">getResources</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#getService">getService</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#listRequestLogs">listRequestLogs</a></li><li data-type='method'><a href="module-api_DiagnosticsApi.html#updateRequestLogSettings">updateRequestLogSettings</a></li></ul></li><li><a href="module-api_EnvelopesApi.html">api/EnvelopesApi</a><ul class='methods'><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplate">applyTemplate</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#applyTemplateToDocument">applyTemplateToDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createConsoleView">createConsoleView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCorrectView">createCorrectView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEditView">createEditView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEmailSettings">createEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createEnvelope">createEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createLock">createLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipient">createRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createRecipientView">createRecipientView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createSenderView">createSenderView</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#createViewLink">createViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteEmailSettings">deleteEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteLock">deleteLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteTemplatesFromDocument">deleteTemplatesFromDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#deleteViewLink">deleteViewLink</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEmailSettings">getEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getEnvelope">getEnvelope</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listAuditEvents">listAuditEvents</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatus">listStatus</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listStatusChanges">listStatusChanges</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#listTemplatesForDocument">listTemplatesForDocument</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#update">update</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateEmailSettings">updateEmailSettings</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateLock">updateLock</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_EnvelopesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a><ul class='methods'><li data-type='method'><a href="module-api_FoldersApi.html#list">list</a></li><li data-type='method'><a href="module-api_FoldersApi.html#listItems">listItems</a></li><li data-type='method'><a href="module-api_FoldersApi.html#moveEnvelopes">moveEnvelopes</a></li><li data-type='method'><a href="module-api_FoldersApi.html#search">search</a></li></ul></li><li><a href="module-api_TemplatesApi.html">api/TemplatesApi</a><ul class='methods'><li data-type='method'><a href="module-api_TemplatesApi.html#createCustomFields">createCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createDocumentFields">createDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createRecipients">createRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTabs">createTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#createTemplate">createTemplate</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteCustomFields">deleteCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentFields">deleteDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocumentPage">deleteDocumentPage</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteDocuments">deleteDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteGroupShare">deleteGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipient">deleteRecipient</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteRecipients">deleteRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#deleteTabs">deleteTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#get">get</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getDocument">getDocument</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getLock">getLock</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#getNotificationSettings">getNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listCustomFields">listCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocumentFields">listDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listDocuments">listDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listRecipients">listRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTabs">listTabs</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#listTemplates">listTemplates</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#update">update</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateCustomFields">updateCustomFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocumentFields">updateDocumentFields</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateDocuments">updateDocuments</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateGroupShare">updateGroupShare</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateNotificationSettings">updateNotificationSettings</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateRecipients">updateRecipients</a></li><li data-type='method'><a href="module-api_TemplatesApi.html#updateTabs">updateTabs</a></li></ul></li><li><a href="module-api_UsersApi.html">api/UsersApi</a><ul class='methods'><li data-type='method'><a href="module-api_UsersApi.html#getSettings">getSettings</a></li></ul></li><li><a href="module-ApiClient.html">ApiClient</a><ul class='methods'><li data-type='method'><a href="module-ApiClient.html#.constructFromObject">constructFromObject</a></li><li data-type='method'><a href="module-ApiClient.html#.convertToType">convertToType</a></li><li data-type='method'><a href="module-ApiClient.html#.parseDate">parseDate</a></li><li data-type='method'><a href="module-ApiClient.html#addDefaultHeader">addDefaultHeader</a></li><li data-type='method'><a href="module-ApiClient.html#applyAuthToRequest">applyAuthToRequest</a></li><li data-type='method'><a href="module-ApiClient.html#buildCollectionParam">buildCollectionParam</a></li><li data-type='method'><a href="module-ApiClient.html#buildUrl">buildUrl</a></li><li data-type='method'><a href="module-ApiClient.html#callApi">callApi</a></li><li data-type='method'><a href="module-ApiClient.html#deserialize">deserialize</a></li><li data-type='method'><a href="module-ApiClient.html#isFileParam">isFileParam</a></li><li data-type='method'><a href="module-ApiClient.html#isJsonMime">isJsonMime</a></li><li data-type='method'><a href="module-ApiClient.html#jsonPreferredMime">jsonPreferredMime</a></li><li data-type='method'><a href="module-ApiClient.html#normalizeParams">normalizeParams</a></li><li data-type='method'><a href="module-ApiClient.html#paramToString">paramToString</a></li><li data-type='method'><a href="module-ApiClient.html#setBasePath">setBasePath</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-model_AccountInformation.html">model/AccountInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSettingsInformation.html">model/AccountSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AccountSharedAccess.html">model/AccountSharedAccess</a><ul class='methods'><li data-type='method'><a href="module-model_AccountSharedAccess.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformation.html">model/AddressInformation</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AddressInformationInput.html">model/AddressInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_AddressInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Agent.html">model/Agent</a><ul class='methods'><li data-type='method'><a href="module-model_Agent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLog.html">model/ApiRequestLog</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLog.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ApiRequestLogsResult.html">model/ApiRequestLogsResult</a><ul class='methods'><li data-type='method'><a href="module-model_ApiRequestLogsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Approve.html">model/Approve</a><ul class='methods'><li data-type='method'><a href="module-model_Approve.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Attachment.html">model/Attachment</a><ul class='methods'><li data-type='method'><a href="module-model_Attachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AuthenticationStatus.html">model/AuthenticationStatus</a><ul class='methods'><li data-type='method'><a href="module-model_AuthenticationStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BccEmailAddress.html">model/BccEmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_BccEmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelope.html">model/BulkEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_BulkEnvelopeStatus.html">model/BulkEnvelopeStatus</a><ul class='methods'><li data-type='method'><a href="module-model_BulkEnvelopeStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CarbonCopy.html">model/CarbonCopy</a><ul class='methods'><li data-type='method'><a href="module-model_CarbonCopy.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CertifiedDelivery.html">model/CertifiedDelivery</a><ul class='methods'><li data-type='method'><a href="module-model_CertifiedDelivery.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Checkbox.html">model/Checkbox</a><ul class='methods'><li data-type='method'><a href="module-model_Checkbox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Company.html">model/Company</a><ul class='methods'><li data-type='method'><a href="module-model_Company.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CompositeTemplate.html">model/CompositeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_CompositeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ConsoleViewRequest.html">model/ConsoleViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ConsoleViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CorrectViewRequest.html">model/CorrectViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_CorrectViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFields.html">model/CustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldsEnvelope.html">model/CustomFieldsEnvelope</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldsEnvelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CustomFieldV2.html">model/CustomFieldV2</a><ul class='methods'><li data-type='method'><a href="module-model_CustomFieldV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DateSigned.html">model/DateSigned</a><ul class='methods'><li data-type='method'><a href="module-model_DateSigned.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Decline.html">model/Decline</a><ul class='methods'><li data-type='method'><a href="module-model_Decline.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DiagnosticsSettingsInformation.html">model/DiagnosticsSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DiagnosticsSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DobInformationInput.html">model/DobInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_DobInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Document.html">model/Document</a><ul class='methods'><li data-type='method'><a href="module-model_Document.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentFieldsInformation.html">model/DocumentFieldsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentFieldsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplate.html">model/DocumentTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DocumentTemplateList.html">model/DocumentTemplateList</a><ul class='methods'><li data-type='method'><a href="module-model_DocumentTemplateList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Editor.html">model/Editor</a><ul class='methods'><li data-type='method'><a href="module-model_Editor.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Email.html">model/Email</a><ul class='methods'><li data-type='method'><a href="module-model_Email.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailAddress.html">model/EmailAddress</a><ul class='methods'><li data-type='method'><a href="module-model_EmailAddress.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EmailSettings.html">model/EmailSettings</a><ul class='methods'><li data-type='method'><a href="module-model_EmailSettings.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Envelope.html">model/Envelope</a><ul class='methods'><li data-type='method'><a href="module-model_Envelope.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEvent.html">model/EnvelopeAuditEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeAuditEventResponse.html">model/EnvelopeAuditEventResponse</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeAuditEventResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDefinition.html">model/EnvelopeDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocument.html">model/EnvelopeDocument</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocument.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeDocumentsResult.html">model/EnvelopeDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeEvent.html">model/EnvelopeEvent</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeId.html">model/EnvelopeId</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeId.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeIdsRequest.html">model/EnvelopeIdsRequest</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeIdsRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopesInformation.html">model/EnvelopesInformation</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopesInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeSummary.html">model/EnvelopeSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplate.html">model/EnvelopeTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateDefinition.html">model/EnvelopeTemplateDefinition</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateDefinition.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResult.html">model/EnvelopeTemplateResult</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTemplateResults.html">model/EnvelopeTemplateResults</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTemplateResults.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeTransactionStatus.html">model/EnvelopeTransactionStatus</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeTransactionStatus.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EnvelopeUpdateSummary.html">model/EnvelopeUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_EnvelopeUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ErrorDetails.html">model/ErrorDetails</a><ul class='methods'><li data-type='method'><a href="module-model_ErrorDetails.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventNotification.html">model/EventNotification</a><ul class='methods'><li data-type='method'><a href="module-model_EventNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_EventResult.html">model/EventResult</a><ul class='methods'><li data-type='method'><a href="module-model_EventResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Expirations.html">model/Expirations</a><ul class='methods'><li data-type='method'><a href="module-model_Expirations.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileType.html">model/FileType</a><ul class='methods'><li data-type='method'><a href="module-model_FileType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FileTypeList.html">model/FileTypeList</a><ul class='methods'><li data-type='method'><a href="module-model_FileTypeList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Filter.html">model/Filter</a><ul class='methods'><li data-type='method'><a href="module-model_Filter.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FirstName.html">model/FirstName</a><ul class='methods'><li data-type='method'><a href="module-model_FirstName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Folder.html">model/Folder</a><ul class='methods'><li data-type='method'><a href="module-model_Folder.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItem.html">model/FolderItem</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemResponse.html">model/FolderItemResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemsResponse.html">model/FolderItemsResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemsResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FolderItemV2.html">model/FolderItemV2</a><ul class='methods'><li data-type='method'><a href="module-model_FolderItemV2.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersRequest.html">model/FoldersRequest</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FoldersResponse.html">model/FoldersResponse</a><ul class='methods'><li data-type='method'><a href="module-model_FoldersResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FormulaTab.html">model/FormulaTab</a><ul class='methods'><li data-type='method'><a href="module-model_FormulaTab.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_FullName.html">model/FullName</a><ul class='methods'><li data-type='method'><a href="module-model_FullName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Group.html">model/Group</a><ul class='methods'><li data-type='method'><a href="module-model_Group.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_GroupInformation.html">model/GroupInformation</a><ul class='methods'><li data-type='method'><a href="module-model_GroupInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_IdCheckInformationInput.html">model/IdCheckInformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_IdCheckInformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InitialHere.html">model/InitialHere</a><ul class='methods'><li data-type='method'><a href="module-model_InitialHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InlineTemplate.html">model/InlineTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_InlineTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_InPersonSigner.html">model/InPersonSigner</a><ul class='methods'><li data-type='method'><a href="module-model_InPersonSigner.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Intermediary.html">model/Intermediary</a><ul class='methods'><li data-type='method'><a href="module-model_Intermediary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LastName.html">model/LastName</a><ul class='methods'><li data-type='method'><a href="module-model_LastName.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_List.html">model/List</a><ul class='methods'><li data-type='method'><a href="module-model_List.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListCustomField.html">model/ListCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_ListCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ListItem.html">model/ListItem</a><ul class='methods'><li data-type='method'><a href="module-model_ListItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockInformation.html">model/LockInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LockInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LockRequest.html">model/LockRequest</a><ul class='methods'><li data-type='method'><a href="module-model_LockRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginAccount.html">model/LoginAccount</a><ul class='methods'><li data-type='method'><a href="module-model_LoginAccount.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_LoginInformation.html">model/LoginInformation</a><ul class='methods'><li data-type='method'><a href="module-model_LoginInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MatchBox.html">model/MatchBox</a><ul class='methods'><li data-type='method'><a href="module-model_MatchBox.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MemberSharedItems.html">model/MemberSharedItems</a><ul class='methods'><li data-type='method'><a href="module-model_MemberSharedItems.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_MergeField.html">model/MergeField</a><ul class='methods'><li data-type='method'><a href="module-model_MergeField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelDate.html">model/ModelDate</a><ul class='methods'><li data-type='method'><a href="module-model_ModelDate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ModelNumber.html">model/ModelNumber</a><ul class='methods'><li data-type='method'><a href="module-model_ModelNumber.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_NameValue.html">model/NameValue</a><ul class='methods'><li data-type='method'><a href="module-model_NameValue.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Note.html">model/Note</a><ul class='methods'><li data-type='method'><a href="module-model_Note.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Notification.html">model/Notification</a><ul class='methods'><li data-type='method'><a href="module-model_Notification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_OfflineAttributes.html">model/OfflineAttributes</a><ul class='methods'><li data-type='method'><a href="module-model_OfflineAttributes.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_PageRequest.html">model/PageRequest</a><ul class='methods'><li data-type='method'><a href="module-model_PageRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Radio.html">model/Radio</a><ul class='methods'><li data-type='method'><a href="module-model_Radio.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RadioGroup.html">model/RadioGroup</a><ul class='methods'><li data-type='method'><a href="module-model_RadioGroup.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEmailNotification.html">model/RecipientEmailNotification</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEmailNotification.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientEvent.html">model/RecipientEvent</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientEvent.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientPhoneAuthentication.html">model/RecipientPhoneAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientPhoneAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Recipients.html">model/Recipients</a><ul class='methods'><li data-type='method'><a href="module-model_Recipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSAMLAuthentication.html">model/RecipientSAMLAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSAMLAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSignatureInformation.html">model/RecipientSignatureInformation</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSignatureInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientSMSAuthentication.html">model/RecipientSMSAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientSMSAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientsUpdateSummary.html">model/RecipientsUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientsUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientUpdateResponse.html">model/RecipientUpdateResponse</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientUpdateResponse.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RecipientViewRequest.html">model/RecipientViewRequest</a><ul class='methods'><li data-type='method'><a href="module-model_RecipientViewRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Reminders.html">model/Reminders</a><ul class='methods'><li data-type='method'><a href="module-model_Reminders.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ResourceInformation.html">model/ResourceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ResourceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ReturnUrlRequest.html">model/ReturnUrlRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ReturnUrlRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SamlAssertionAttribute.html">model/SamlAssertionAttribute</a><ul class='methods'><li data-type='method'><a href="module-model_SamlAssertionAttribute.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SenderEmailNotifications.html">model/SenderEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SenderEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServerTemplate.html">model/ServerTemplate</a><ul class='methods'><li data-type='method'><a href="module-model_ServerTemplate.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceInformation.html">model/ServiceInformation</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ServiceVersion.html">model/ServiceVersion</a><ul class='methods'><li data-type='method'><a href="module-model_ServiceVersion.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SharedItem.html">model/SharedItem</a><ul class='methods'><li data-type='method'><a href="module-model_SharedItem.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignatureType.html">model/SignatureType</a><ul class='methods'><li data-type='method'><a href="module-model_SignatureType.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Signer.html">model/Signer</a><ul class='methods'><li data-type='method'><a href="module-model_Signer.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerAttachment.html">model/SignerAttachment</a><ul class='methods'><li data-type='method'><a href="module-model_SignerAttachment.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignerEmailNotifications.html">model/SignerEmailNotifications</a><ul class='methods'><li data-type='method'><a href="module-model_SignerEmailNotifications.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SignHere.html">model/SignHere</a><ul class='methods'><li data-type='method'><a href="module-model_SignHere.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_SocialAuthentication.html">model/SocialAuthentication</a><ul class='methods'><li data-type='method'><a href="module-model_SocialAuthentication.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn.html">model/Ssn</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn4InformationInput.html">model/Ssn4InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn4InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Ssn9InformationInput.html">model/Ssn9InformationInput</a><ul class='methods'><li data-type='method'><a href="module-model_Ssn9InformationInput.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadata.html">model/TabMetadata</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadata.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TabMetadataList.html">model/TabMetadataList</a><ul class='methods'><li data-type='method'><a href="module-model_TabMetadataList.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Tabs.html">model/Tabs</a><ul class='methods'><li data-type='method'><a href="module-model_Tabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateCustomFields.html">model/TemplateCustomFields</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateCustomFields.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateDocumentsResult.html">model/TemplateDocumentsResult</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateDocumentsResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateInformation.html">model/TemplateInformation</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateMatch.html">model/TemplateMatch</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateMatch.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateNotificationRequest.html">model/TemplateNotificationRequest</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateNotificationRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRecipients.html">model/TemplateRecipients</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRecipients.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateRole.html">model/TemplateRole</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateRole.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateSummary.html">model/TemplateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateTabs.html">model/TemplateTabs</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateTabs.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TemplateUpdateSummary.html">model/TemplateUpdateSummary</a><ul class='methods'><li data-type='method'><a href="module-model_TemplateUpdateSummary.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Text.html">model/Text</a><ul class='methods'><li data-type='method'><a href="module-model_Text.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_TextCustomField.html">model/TextCustomField</a><ul class='methods'><li data-type='method'><a href="module-model_TextCustomField.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Title.html">model/Title</a><ul class='methods'><li data-type='method'><a href="module-model_Title.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserInfo.html">model/UserInfo</a><ul class='methods'><li data-type='method'><a href="module-model_UserInfo.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserSettingsInformation.html">model/UserSettingsInformation</a><ul class='methods'><li data-type='method'><a href="module-model_UserSettingsInformation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewLinkRequest.html">model/ViewLinkRequest</a><ul class='methods'><li data-type='method'><a href="module-model_ViewLinkRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_ViewUrl.html">model/ViewUrl</a><ul class='methods'><li data-type='method'><a href="module-model_ViewUrl.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Zip.html">model/Zip</a><ul class='methods'><li data-type='method'><a href="module-model_Zip.html#.constructFromObject">constructFromObject</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">api/TemplatesApi.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
+(function(root, factory) {
+  if (typeof define === 'function' &amp;&amp; define.amd) {
+    // AMD. Register as an anonymous module.
+	define(['Configuration', 'ApiClient', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/EnvelopeDefinition', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/Notification', 'model/PageRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary'], factory);
+  } else if (typeof module === 'object' &amp;&amp; module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/Notification'), require('../model/PageRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.Docusign) {
+      root.Docusign = {};
+    }
+    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PageRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary);
+  }
+}(this, function(Configuration, ApiClient, CustomFields, DocumentFieldsInformation, EnvelopeDefinition, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, Notification, PageRequest, Recipients, RecipientsUpdateSummary, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary) {
+  'use strict';
+
+  /**
+   * Templates service.
+   * @module api/TemplatesApi
+   * @version 3.0.0
+   */
+
+  /**
+   * Constructs a new TemplatesApi. 
+   * @alias module:api/TemplatesApi
+   * @class
+   * @param {module:ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
+	  
+	this.setApiClient = function(apiClient) {
+	  this.apiClient = apiClient;
+	};
+
+	this.getApiClient = function() {
+	  return this.apiClient;
+	};
+
+
+    /**
+     * Callback function to receive the result of the createCustomFields operation.
+     * @callback module:api/TemplatesApi~createCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CustomFields} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates custom document fields in an existing template document.
+     * Creates custom document fields in an existing template document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateCustomFields} opts.templateCustomFields TBD Description
+     * @param {module:api/TemplatesApi~createCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CustomFields}
+     */
+    this.createCustomFields = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateCustomFields'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createCustomFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling createCustomFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CustomFields;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createDocumentFields operation.
+     * @callback module:api/TemplatesApi~createDocumentFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates custom document fields in an existing template document.
+     * Creates custom document fields in an existing template document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DocumentFieldsInformation} opts.documentFieldsInformation TBD Description
+     * @param {module:api/TemplatesApi~createDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentFieldsInformation}
+     */
+    this.createDocumentFields = function(accountId, templateId, documentId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['documentFieldsInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createDocumentFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling createDocumentFields");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling createDocumentFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentFieldsInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createRecipients operation.
+     * @callback module:api/TemplatesApi~createRecipientsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Recipients} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Adds tabs for a recipient.
+     * Adds one or more recipients to a template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateRecipients} opts.templateRecipients TBD Description
+     * @param {module:api/TemplatesApi~createRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Recipients}
+     */
+    this.createRecipients = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateRecipients'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createRecipients");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling createRecipients");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Recipients;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createTabs operation.
+     * @callback module:api/TemplatesApi~createTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Adds tabs for a recipient.
+     * Adds one or more tabs for a recipient.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} recipientId The ID of the recipient being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateTabs} opts.templateTabs TBD Description
+     * @param {module:api/TemplatesApi~createTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.createTabs = function(accountId, templateId, recipientId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateTabs'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling createTabs");
+      }
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId == undefined || recipientId == null) {
+        throw new Error("Missing the required parameter 'recipientId' when calling createTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'recipientId': recipientId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createTemplate operation.
+     * @callback module:api/TemplatesApi~createTemplateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TemplateSummary} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates an envelope from a template.
+     * Creates a template definition using a multipart request.  ###Template Email Subject Merge Fields  Call this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient’s role name, are added to the &amp;#x60;emailSubject&amp;#x60; property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient. #### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  To add a recipient’s name in the subject line add the following text in the &amp;#x60;emailSubject&amp;#x60; property when creating the template or when sending an envelope from a template:  [[&amp;lt;roleName&amp;gt;_UserName]]  Example:  &amp;#x60;\&amp;quot;emailSubject\&amp;quot;:\&amp;quot;[[Signer 1_UserName]], Please sign this NDA\&amp;quot;,&amp;#x60;  To add a recipient’s email address in the subject line add the following text in the &amp;#x60;emailSubject&amp;#x60; property when creating the template or when sending an envelope from a template:  [[&amp;lt;roleName&amp;gt;_Email]]  Example:  &amp;#x60;\&amp;quot;emailSubject\&amp;quot;:\&amp;quot;[[Signer 1_Email]], Please sign this NDA\&amp;quot;,&amp;#x60;   In both cases the &amp;lt;roleName&amp;gt; is the recipient&amp;#39;s contents of the &amp;#x60;roleName&amp;#x60; property in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&amp;lt;roleName&amp;gt;_UserName]] or [[&amp;lt;roleName&amp;gt;_Email]] is shown in the email subject.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/EnvelopeTemplate} opts.envelopeTemplate TBD Description
+     * @param {module:api/TemplatesApi~createTemplateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TemplateSummary}
+     */
+    this.createTemplate = function(accountId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['envelopeTemplate'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createTemplate");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TemplateSummary;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteCustomFields operation.
+     * @callback module:api/TemplatesApi~deleteCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CustomFields} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes envelope custom fields in a template.
+     * Deletes envelope custom fields in a template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateCustomFields} opts.templateCustomFields TBD Description
+     * @param {module:api/TemplatesApi~deleteCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CustomFields}
+     */
+    this.deleteCustomFields = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateCustomFields'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteCustomFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteCustomFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CustomFields;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteDocumentFields operation.
+     * @callback module:api/TemplatesApi~deleteDocumentFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes custom document fields from an existing template document.
+     * Deletes custom document fields from an existing template document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DocumentFieldsInformation} opts.documentFieldsInformation TBD Description
+     * @param {module:api/TemplatesApi~deleteDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentFieldsInformation}
+     */
+    this.deleteDocumentFields = function(accountId, templateId, documentId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['documentFieldsInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteDocumentFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteDocumentFields");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentFieldsInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteDocumentPage operation.
+     * @callback module:api/TemplatesApi~deleteDocumentPageCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes a page from a document in an template.
+     * Deletes a page from a document in a template based on the page number.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {String} pageNumber The page number being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PageRequest} opts.pageRequest TBD Description
+     * @param {module:api/TemplatesApi~deleteDocumentPageCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteDocumentPage = function(accountId, templateId, documentId, pageNumber, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['pageRequest'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteDocumentPage");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteDocumentPage");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentPage");
+      }
+
+      // verify the required parameter 'pageNumber' is set
+      if (pageNumber == undefined || pageNumber == null) {
+        throw new Error("Missing the required parameter 'pageNumber' when calling deleteDocumentPage");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId,
+        'pageNumber': pageNumber
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteDocuments operation.
+     * @callback module:api/TemplatesApi~deleteDocumentsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes documents from a template.
+     * Deletes one or more documents from an existing template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition TBD Description
+     * @param {module:api/TemplatesApi~deleteDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TemplateDocumentsResult}
+     */
+    this.deleteDocuments = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['envelopeDefinition'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteDocuments");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteDocuments");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TemplateDocumentsResult;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteGroupShare operation.
+     * @callback module:api/TemplatesApi~deleteGroupShareCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GroupInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Removes a member group&amp;#39;s sharing permissions for a template.
+     * Removes a member group&amp;#39;s sharing permissions for a specified template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} templatePart Currently, the only defined part is **groups**.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/GroupInformation} opts.groupInformation TBD Description
+     * @param {module:api/TemplatesApi~deleteGroupShareCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GroupInformation}
+     */
+    this.deleteGroupShare = function(accountId, templateId, templatePart, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['groupInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteGroupShare");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteGroupShare");
+      }
+
+      // verify the required parameter 'templatePart' is set
+      if (templatePart == undefined || templatePart == null) {
+        throw new Error("Missing the required parameter 'templatePart' when calling deleteGroupShare");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'templatePart': templatePart
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = GroupInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/{templatePart}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteRecipient operation.
+     * @callback module:api/TemplatesApi~deleteRecipientCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Recipients} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes the specified recipient file from a template.
+     * Deletes the specified recipient file from the specified template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} recipientId The ID of the recipient being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateRecipients} opts.templateRecipients TBD Description
+     * @param {module:api/TemplatesApi~deleteRecipientCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Recipients}
+     */
+    this.deleteRecipient = function(accountId, templateId, recipientId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateRecipients'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteRecipient");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteRecipient");
+      }
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId == undefined || recipientId == null) {
+        throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipient");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'recipientId': recipientId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Recipients;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteRecipients operation.
+     * @callback module:api/TemplatesApi~deleteRecipientsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Recipients} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes recipients from a template.
+     * Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the &amp;#x60;recipientId&amp;#x60; being used as the key for deleting recipients.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateRecipients} opts.templateRecipients TBD Description
+     * @param {module:api/TemplatesApi~deleteRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Recipients}
+     */
+    this.deleteRecipients = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateRecipients'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteRecipients");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteRecipients");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Recipients;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteTabs operation.
+     * @callback module:api/TemplatesApi~deleteTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes the tabs associated with a recipient in a template.
+     * Deletes one or more tabs associated with a recipient in a template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} recipientId The ID of the recipient being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateTabs} opts.templateTabs TBD Description
+     * @param {module:api/TemplatesApi~deleteTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.deleteTabs = function(accountId, templateId, recipientId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateTabs'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteTabs");
+      }
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId == undefined || recipientId == null) {
+        throw new Error("Missing the required parameter 'recipientId' when calling deleteTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'recipientId': recipientId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the get operation.
+     * @callback module:api/TemplatesApi~getCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EnvelopeTemplate} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets a list of templates for a specified account.
+     * Retrieves the definition of the specified template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EnvelopeTemplate}
+     */
+    this.get = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling get");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling get");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = EnvelopeTemplate;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDocument operation.
+     * @callback module:api/TemplatesApi~getDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets PDF documents from a template.
+     * Retrieves one or more PDF documents from the specified template.  You can specify the ID of the document to retrieve or can specify &amp;#x60;combined&amp;#x60; to retrieve all documents in the template as one pdf.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {module:api/TemplatesApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.getDocument = function(accountId, templateId, documentId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getDocument");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getDocument");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getDocument");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/pdf'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getLock operation.
+     * @callback module:api/TemplatesApi~getLockCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LockInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets template lock information.
+     * Retrieves general information about the template lock.  If the call is made by the user who has the lock and the request has the same integrator key as original, then the &amp;#x60;X-DocuSign-Edit&amp;#x60; header  field and additional lock information is included in the response. This allows users to recover a lost editing session token and the &amp;#x60;X-DocuSign-Edit&amp;#x60; header.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~getLockCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LockInformation}
+     */
+    this.getLock = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getLock");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getLock");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LockInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/lock', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getNotificationSettings operation.
+     * @callback module:api/TemplatesApi~getNotificationSettingsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Notification} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets template notification information.
+     * Retrieves the envelope notification, reminders and expirations, information for an existing template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~getNotificationSettingsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Notification}
+     */
+    this.getNotificationSettings = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getNotificationSettings");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getNotificationSettings");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Notification;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/notification', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listCustomFields operation.
+     * @callback module:api/TemplatesApi~listCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CustomFields} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets the custom document fields from a template.
+     * Retrieves the custom document field information from an existing template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~listCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CustomFields}
+     */
+    this.listCustomFields = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listCustomFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling listCustomFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CustomFields;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listDocumentFields operation.
+     * @callback module:api/TemplatesApi~listDocumentFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets the custom document fields for a an existing template document.
+     * Retrieves the custom document fields for an existing template document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {module:api/TemplatesApi~listDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentFieldsInformation}
+     */
+    this.listDocumentFields = function(accountId, templateId, documentId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listDocumentFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling listDocumentFields");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling listDocumentFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentFieldsInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listDocuments operation.
+     * @callback module:api/TemplatesApi~listDocumentsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets a list of documents associated with a template.
+     * Retrieves a list of documents associated with the specified template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TemplateDocumentsResult}
+     */
+    this.listDocuments = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listDocuments");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling listDocuments");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TemplateDocumentsResult;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listRecipients operation.
+     * @callback module:api/TemplatesApi~listRecipientsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Recipients} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets recipient information from a template.
+     * Retrieves the information for all recipients in the specified template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~listRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Recipients}
+     */
+    this.listRecipients = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listRecipients");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling listRecipients");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Recipients;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listTabs operation.
+     * @callback module:api/TemplatesApi~listTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets the tabs information for a signer or sign-in-person recipient in a template.
+     * Gets the tabs information for a signer or sign-in-person recipient in a template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} recipientId The ID of the recipient being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Tabs} opts.tabs TBD Description
+     * @param {module:api/TemplatesApi~listTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.listTabs = function(accountId, templateId, recipientId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['tabs'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling listTabs");
+      }
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId == undefined || recipientId == null) {
+        throw new Error("Missing the required parameter 'recipientId' when calling listTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'recipientId': recipientId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the listTemplates operation.
+     * @callback module:api/TemplatesApi~listTemplatesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EnvelopeTemplateResults} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets the definition of a template.
+     * Retrieves the list of templates for the specified account. The request can be limited to a specific folder.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/TemplatesApi~listTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EnvelopeTemplateResults}
+     */
+    this.listTemplates = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listTemplates");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = EnvelopeTemplateResults;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the update operation.
+     * @callback module:api/TemplatesApi~updateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TemplateUpdateSummary} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates an existing template.
+     * Updates an existing template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/EnvelopeTemplate} opts.envelopeTemplate TBD Description
+     * @param {module:api/TemplatesApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TemplateUpdateSummary}
+     */
+    this.update = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['envelopeTemplate'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling update");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling update");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TemplateUpdateSummary;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateCustomFields operation.
+     * @callback module:api/TemplatesApi~updateCustomFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CustomFields} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates envelope custom fields in a template.
+     * Updates the custom fields in a template.  Each custom field used in a template must have a unique name.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateCustomFields} opts.templateCustomFields TBD Description
+     * @param {module:api/TemplatesApi~updateCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CustomFields}
+     */
+    this.updateCustomFields = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateCustomFields'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateCustomFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateCustomFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CustomFields;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateDocumentFields operation.
+     * @callback module:api/TemplatesApi~updateDocumentFieldsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates existing custom document fields in an existing template document.
+     * Updates existing custom document fields in an existing template document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DocumentFieldsInformation} opts.documentFieldsInformation TBD Description
+     * @param {module:api/TemplatesApi~updateDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentFieldsInformation}
+     */
+    this.updateDocumentFields = function(accountId, templateId, documentId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['documentFieldsInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateDocumentFields");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateDocumentFields");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling updateDocumentFields");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentFieldsInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateDocuments operation.
+     * @callback module:api/TemplatesApi~updateDocumentsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Adds documents to a template document.
+     * Adds one or more documents to an existing template document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition TBD Description
+     * @param {module:api/TemplatesApi~updateDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TemplateDocumentsResult}
+     */
+    this.updateDocuments = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['envelopeDefinition'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateDocuments");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateDocuments");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TemplateDocumentsResult;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateGroupShare operation.
+     * @callback module:api/TemplatesApi~updateGroupShareCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GroupInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Shares a template with a group
+     * Shares a template with the specified members group.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} templatePart Currently, the only defined part is **groups**.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/GroupInformation} opts.groupInformation TBD Description
+     * @param {module:api/TemplatesApi~updateGroupShareCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GroupInformation}
+     */
+    this.updateGroupShare = function(accountId, templateId, templatePart, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['groupInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateGroupShare");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateGroupShare");
+      }
+
+      // verify the required parameter 'templatePart' is set
+      if (templatePart == undefined || templatePart == null) {
+        throw new Error("Missing the required parameter 'templatePart' when calling updateGroupShare");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'templatePart': templatePart
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = GroupInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/{templatePart}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateNotificationSettings operation.
+     * @callback module:api/TemplatesApi~updateNotificationSettingsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Notification} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates the notification  structure for an existing template.
+     * Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateNotificationRequest} opts.templateNotificationRequest TBD Description
+     * @param {module:api/TemplatesApi~updateNotificationSettingsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Notification}
+     */
+    this.updateNotificationSettings = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateNotificationRequest'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateNotificationSettings");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateNotificationSettings");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Notification;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/notification', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateRecipients operation.
+     * @callback module:api/TemplatesApi~updateRecipientsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/RecipientsUpdateSummary} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates recipients in a template.
+     * Updates recipients in a template.   You can edit the following properties: &amp;#x60;email&amp;#x60;, &amp;#x60;userName&amp;#x60;, &amp;#x60;routingOrder&amp;#x60;, &amp;#x60;faxNumber&amp;#x60;, &amp;#x60;deliveryMethod&amp;#x60;, &amp;#x60;accessCode&amp;#x60;, and &amp;#x60;requireIdLookup&amp;#x60;.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateRecipients} opts.templateRecipients TBD Description
+     * @param {module:api/TemplatesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/RecipientsUpdateSummary}
+     */
+    this.updateRecipients = function(accountId, templateId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateRecipients'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateRecipients");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateRecipients");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = RecipientsUpdateSummary;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateTabs operation.
+     * @callback module:api/TemplatesApi~updateTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates the tabs for a recipient.
+     * Updates one or more tabs for a recipient in a template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} recipientId The ID of the recipient being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateTabs} opts.templateTabs TBD Description
+     * @param {module:api/TemplatesApi~updateTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.updateTabs = function(accountId, templateId, recipientId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['templateTabs'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateTabs");
+      }
+
+      // verify the required parameter 'recipientId' is set
+      if (recipientId == undefined || recipientId == null) {
+        throw new Error("Missing the required parameter 'recipientId' when calling updateTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'recipientId': recipientId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+  };
+
+  return exports;
+}));
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Wed Feb 22 2017 21:17:32 GMT-0800 (PST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

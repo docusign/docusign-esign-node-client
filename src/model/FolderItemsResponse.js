@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The FolderItemsResponse model module.
    * @module model/FolderItemsResponse
@@ -42,12 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
 
 
   };

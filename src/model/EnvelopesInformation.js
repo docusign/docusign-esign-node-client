@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EnvelopesInformation model module.
    * @module model/EnvelopesInformation
@@ -42,13 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
 
 
   };

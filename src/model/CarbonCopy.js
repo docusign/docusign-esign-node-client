@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The CarbonCopy model module.
    * @module model/CarbonCopy
@@ -42,46 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

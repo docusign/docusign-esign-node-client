@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The FormulaTab model module.
    * @module model/FormulaTab
@@ -42,51 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

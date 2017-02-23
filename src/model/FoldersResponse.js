@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The FoldersResponse model module.
    * @module model/FoldersResponse

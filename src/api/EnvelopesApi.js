@@ -40,7 +40,7 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || ApiClient.instance || Configuration.default.getDefaultApiClient();
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 	  
 	this.setApiClient = function(apiClient) {
 	  this.apiClient = apiClient;
@@ -505,43 +505,6 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
-
-	/**
-	 * Creates an envelope.
-   * Creates an envelope.   Using this function you can: * Create an envelope and send it. * Create an envelope from an existing template and send it.  In either case, you can choose to save the envelope as a draft envelope instead of sending it by setting the &#x60;status&#x60; property in the request to &#x60;created&#x60; instead of &#x60;sent&#x60;.  ### Send an Envelope or Create a Draft Envelope  This is a multi-part/form request.  Envelope Event Notification: &#x60;eventNotification&#x60; is an optional property that specifies a set of envelope and recipient status codes, a URL, and some other options. When the envelope or recipient status changes to one of the specified status codes, DocuSign sends a message containing the updated status to the specified URL.  #### Note: DocuSign Connect must be enabled to use &#x60;eventNotification&#x60;, but Connect does not need to be configured for the account since the configuration is done for each envelope.  ### Send an Envelope from a Template  When you create an envelope using a &#x60;templateId&#x60;, the &#x60;recipients&#x60; structure is used to assign recipients to template roles via the &#x60;roleName&#x60; property, override recipient settings that have been specified in the template and set values for tab fields that were defined in the template.  When a template is added or applied to an envelope and the template has a locked email subject and message, that subject and message is used for the envelope and cannot be changed even if another locked template is subsequently added or applied to the envelope. If an email subject or message is entered before adding or applying a locked template, the email subject and message is overwritten with the email subject and message from the locked template.  **Composite Templates**:  You can add Composite Templates structure to the  to create envelopes from a combination of DocuSign templates and PDF forms. The basic envelope remains the same, while the Composite Template adds new document and template overlays into the envelope. There can be any number of Composite Template structures in the envelope.  Each Composite Template consists of server templates, inline templates, PDF Metadata templates, and documents.  * Composite Template ID is an optional element used to identify the composite template. It is used as a reference when adding document object information. If used, the document content-disposition must include the &#x60;compositeTemplateId&#x60; to which the document should be added. If &#x60;compositeTemplateId&#x60; is not specified in the content-disposition, the document is applied based on the &#x60;documentId&#x60; only. If no document object is specified, the composite template inherits the first document. * Server Templates are server-side templates stored on the DocuSign server. If supplied they are overlaid into the envelope in the order of their Sequence value. * Inline Templates provide the container to pass inline XML properties. Inline templates allow you to add documents and, for PDF documents, transform the PDF fields into DocuSign tabs. If inline templates are supplied, they are overlaid into the envelope in the order of their Sequence value. * PDF Metadata Templates provide a container to embed design-time template information into a PDF document. DocuSign uses this information when processing the Envelope. This convention allows the document to carry the signing instructions with it, so that less information needs to be provided at run-time through an inline template or synchronized with an external structure like a server template. PDF Metadata templates are stored in the Metadata layer of a PDF in accordance with Acrobat&#39;s XMP specification. DocuSign will only find PDF Metadata templates inside documents passed in the Document object (see below). If supplied the PDF meta data template will be overlaid into the envelope in the order of their Sequence value. * Document objects are optional structures that provide a container to pass in a document or form. If this object is not passed, the composite template inherits the first document it finds from some other server template or inline template, starting with the lowest sequence value (discussed below).  If there are multiple composite templates, the document content-disposition can include the &#x60;compositeTemplateId&#x60; to which the document should be added. Using the &#x60;compositeTemplateId&#x60; sets which documents are associated with particular composite templates. An example of this usage is:  &#x60;&#x60;&#x60;    --5cd3320a-5aac-4453-b3a4-cbb52a4cba5d     Content-Type: application/pdf     Content-Disposition: file; filename&#x3D;\&quot;eula.pdf\&quot;; documentId&#x3D;1; compositeTemplateId&#x3D;\&quot;1\&quot;     Content-Transfer-Encoding: base64 &#x60;&#x60;&#x60;  Acrobat form objects are only extrapolated from the document object. DocuSign does not derive Acrobat form properties from server templates or inline templates. To instruct DocuSign to extrapolate objects from the Acrobat form, set &#x60;transformPdfFields&#x60; to \&quot;true\&quot; for the document. See the Transform PDF Fields section for more information about how fields are transformed into DocuSign tabs.  *Sequence*  Each type of template has a sequence property, which enables the templates to be over-laid in a particular order. This is significant because \&quot;last-out\&quot; wins in cases of the same property being specified in multiple places in the method schema.  **Merge Recipient Roles for Draft Envelopes**  When an envelope with multiple templates is sent, the recipients from the templates are merged according to template roles and empty recipients are removed. When creating an envelope with multiple templates, but not sending it (keeping it in a created state), duplicate recipients are not merged, which could cause leave duplicate recipients in the envelope.  To prevent this, the query parameter &#x60;merge_roles_on_draft&#x60; should be added when posting a draft envelope (status&#x3D;created) with multiple templates. Doing this will merge template roles and remove empty recipients.  #### Note: DocuSign recommends that the merge roles query parameter be used anytime you are creating an envelope with multiple templates and keeping it in draft (created) status.  **Template Email Subject Merge Fields**  This provides the ability to insert recipient name and email address merge fields into the email subject line when creating or sending from a template.  The merge fields, based on the recipient’s &#x60;roleName&#x60;, are added to the &#x60;emailSubject&#x60; when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.  Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.  If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.  * To add a recipient’s name in the subject line add the following text in the &#x60;emailSubject&#x60; when creating the template or when sending an envelope from a template:     [[&lt;roleName&gt;_UserName]]     Example:     &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_UserName]], Please sign this NDA\&quot;,&#x60;  * To add a recipient’s email address in the subject line add the following text in the emailSubject when creating the template or when sending an envelope from a template:     [[&lt;roleName&gt;_Email]]     Example:     &#x60;\&quot;emailSubject\&quot;:\&quot;[[Signer 1_Email]], Please sign this NDA\&quot;,&#x60;  In both cases the &lt;roleName&gt; is the recipient’s &#x60;roleName&#x60; in the template.  For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[&lt;roleName&gt;_UserName]] or [[&lt;roleName&gt;_Email]] is shown in the email subject.  *Rules for determining the &#x60;brandId&#x60; used in an envelope*  The following rules are used to determine the &#x60;brandId&#x60; used in an envelope:  * If a &#x60;brandId&#x60; is specified in the envelope/template and that brandId is available to the account, that brand is used in the envelope. * If more than one template is used in an envelope and more than one &#x60;brandId&#x60; is specified, the first &#x60;brandId&#x60; specified is used throughout the envelope. * In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account’s default signing brand is used. * For envelopes that do not meet any of the previous rules, the account&#39;s default signing brand is used in the envelope.  ### Important: The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, use a Carbon Copies or Certified Deliveries Recipient Type.
-	*/
-	this.CreateEnvelopeOptions = function () {
-	  var completedDocumentsOnly = null;
-	  var mergeRolesOnDraft = null;
-	  var cdseMode = null;
-	  
-	  this.setCompletedDocumentsOnly = function(completedDocumentsOnly) {
-	    this.completedDocumentsOnly = completedDocumentsOnly;
-	  }
-	
-	  this.getCompletedDocumentsOnly = function() {
-	    return this.completedDocumentsOnly;
-	  }
-
-	  /*
-	   * When set to **true**, merges template roles and remove empty recipients when you create an envelope with multiple templates.
-	   */
-	  this.setMergeRolesOnDraft = function(mergeRolesOnDraft) {
-	    this.mergeRolesOnDraft = mergeRolesOnDraft;
-	  }
-	
-	  this.getMergeRolesOnDraft = function() {
-	    return this.mergeRolesOnDraft;
-	  }
-
-	  this.setCdseMode = function(cdseMode) {
-	    this.cdseMode = cdseMode;
-	  }
-	
-	  this.getCdseMode = function() {
-	    return this.cdseMode;
-	  }
-	}
 
     /**
      * Callback function to receive the result of the createEnvelope operation.
@@ -1698,22 +1661,6 @@
       );
     }
 
-	/**
-	 * Gets the status of a envelope.
-   * Retrieves the overall status for the specified envelope.
-	*/
-	this.GetEnvelopeOptions = function () {
-	  var include = null;
-	  
-	  this.setInclude = function(include) {
-	    this.include = include;
-	  }
-	
-	  this.getInclude = function() {
-	    return this.include;
-	  }
-	}
-
     /**
      * Callback function to receive the result of the getEnvelope operation.
      * @callback module:api/EnvelopesApi~getEnvelopeCallback
@@ -2198,250 +2145,6 @@
       );
     }
 
-	/**
-	 * Gets status changes for one or more envelopes.
-   * Retrieves envelope status changes for all envelopes. You can modify the information returned by adding query strings to limit the request to check between certain dates and times, or for certain envelopes, or for certain status codes. It is recommended that you use one or more of the query strings in order to limit the size of the response.  ### Important: Unless you are requesting the status for specific envelopes (using the &#x60;envelopeIds&#x60; or &#x60;transactionIds&#x60; properties), you must add a set the &#x60;from_date&#x60; property in the request.  Getting envelope status using &#x60;transactionIds&#x60; is useful for offline signing situations where it can be used determine if an envelope was created or not, for the cases where a network connection was lost, before the envelope status could be returned.  ### Request Envelope Status Notes ###  The REST API GET /envelopes call uses certain filters to find results. In some cases requests are check for \&quot;any status change\&quot; instead of the just the single status requested. In these cases, more envelopes might be returned by the request than otherwise would be. For example, for a request with the begin date is set to Jan 1st, an end date set to Jan 7th and the status qualifier (&#x60;from_to_status&#x60;) set to &#x60;Delivered&#x60; &amp;mdash; the response set might contain envelopes that were created during that time period, but not delivered during the time period.  To avoid unnecessary database queries, the DocuSign system checks requests to ensure that the added filters will not result in a zero-size response before acting on the request. The following table shows the valid envelope statuses (in the Valid Current Statuses column) for the status qualifiers in the request. If the status and status qualifiers in the API request do not contain any of the values shown in the valid current statuses column, then an empty list is returned.  For example, a request with a status qualifier (from_to_status) of &#x60;Delivered&#x60; and a status of \&quot;&#x60;Created&#x60;,&#x60;Sent&#x60;\&quot;, DocuSign will always return an empty list. This is because the request essentially translates to: find the envelopes that were delivered between the begin and end dates that have a current status of &#x60;Created&#x60; or &#x60;Sent&#x60;, and since an envelope that has been delivered can never have a status of &#x60;Created&#x60; or &#x60;Sent&#x60;, a zero-size response would be generated. In this case, DocuSign does not run the request, but just returns the empty list.  Client applications should check that the statuses they are requesting make sense for a given status qualifier.
-	*/
-	this.ListStatusChangesOptions = function () {
-	  var intersectingFolderIds = null;
-	  var envelopeIds = null;
-	  var exclude = null;
-	  var folderIds = null;
-	  var folderTypes = null;
-	  var fromDate = null;
-	  var fromToStatus = null;
-	  var include = null;
-	  var email = null;
-	  var order = null;
-	  var orderBy = null;
-	  var userId = null;
-	  var powerformids = null;
-	  var searchText = null;
-	  var startPosition = null;
-	  var status = null;
-	  var customField = null;
-	  var transactionIds = null;
-	  var userFilter = null;
-	  var userName = null;
-	  var toDate = null;
-	  var acStatus = null;
-	  var block = null;
-	  var count = null;
-	  
-	  this.setIntersectingFolderIds = function(intersectingFolderIds) {
-	    this.intersectingFolderIds = intersectingFolderIds;
-	  }
-	
-	  this.getIntersectingFolderIds = function() {
-	    return this.intersectingFolderIds;
-	  }
-
-	  this.setEnvelopeIds = function(envelopeIds) {
-	    this.envelopeIds = envelopeIds;
-	  }
-	
-	  this.getEnvelopeIds = function() {
-	    return this.envelopeIds;
-	  }
-
-	  this.setExclude = function(exclude) {
-	    this.exclude = exclude;
-	  }
-	
-	  this.getExclude = function() {
-	    return this.exclude;
-	  }
-
-	  this.setFolderIds = function(folderIds) {
-	    this.folderIds = folderIds;
-	  }
-	
-	  this.getFolderIds = function() {
-	    return this.folderIds;
-	  }
-
-	  this.setFolderTypes = function(folderTypes) {
-	    this.folderTypes = folderTypes;
-	  }
-	
-	  this.getFolderTypes = function() {
-	    return this.folderTypes;
-	  }
-
-	  /*
-	   * The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.  This is required unless &#39;envelopeId&#39;s are used.
-	   */
-	  this.setFromDate = function(fromDate) {
-	    this.fromDate = fromDate;
-	  }
-	
-	  this.getFromDate = function() {
-	    return this.fromDate;
-	  }
-
-	  /*
-	   * This is the status type checked for in the &#x60;from_date&#x60;/&#x60;to_date&#x60; period. If &#x60;changed&#x60; is specified, then envelopes that changed status during the period are found. If for example, &#x60;created&#x60; is specified, then envelopes created during the period are found. Default is &#x60;changed&#x60;.   Possible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
-	   */
-	  this.setFromToStatus = function(fromToStatus) {
-	    this.fromToStatus = fromToStatus;
-	  }
-	
-	  this.getFromToStatus = function() {
-	    return this.fromToStatus;
-	  }
-
-	  this.setInclude = function(include) {
-	    this.include = include;
-	  }
-	
-	  this.getInclude = function() {
-	    return this.include;
-	  }
-
-	  this.setEmail = function(email) {
-	    this.email = email;
-	  }
-	
-	  this.getEmail = function() {
-	    return this.email;
-	  }
-
-	  this.setOrder = function(order) {
-	    this.order = order;
-	  }
-	
-	  this.getOrder = function() {
-	    return this.order;
-	  }
-
-	  this.setOrderBy = function(orderBy) {
-	    this.orderBy = orderBy;
-	  }
-	
-	  this.getOrderBy = function() {
-	    return this.orderBy;
-	  }
-
-	  this.setUserId = function(userId) {
-	    this.userId = userId;
-	  }
-	
-	  this.getUserId = function() {
-	    return this.userId;
-	  }
-
-	  this.setPowerformids = function(powerformids) {
-	    this.powerformids = powerformids;
-	  }
-	
-	  this.getPowerformids = function() {
-	    return this.powerformids;
-	  }
-
-	  this.setSearchText = function(searchText) {
-	    this.searchText = searchText;
-	  }
-	
-	  this.getSearchText = function() {
-	    return this.searchText;
-	  }
-
-	  this.setStartPosition = function(startPosition) {
-	    this.startPosition = startPosition;
-	  }
-	
-	  this.getStartPosition = function() {
-	    return this.startPosition;
-	  }
-
-	  /*
-	   * The list of current statuses to include in the response. By default, all envelopes found are returned. If values are specified, then of the envelopes found, only those with the current status specified are returned in the results.   Possible values are: Voided, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
-	   */
-	  this.setStatus = function(status) {
-	    this.status = status;
-	  }
-	
-	  this.getStatus = function() {
-	    return this.status;
-	  }
-
-	  /*
-	   * This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding &#39;%&#39; (percent sign) around the custom field query value.   Example 1: If you have an envelope custom field called \&quot;Region\&quot; and you want to search for all envelopes where the value is \&quot;West\&quot; you would use the query: &#x60;?custom_field&#x3D;Region&#x3D;West&#x60;.   Example 2: To search for envelopes where the &#x60;ApplicationID&#x60; custom field has the value or partial value of \&quot;DocuSign\&quot; in field, the query would be: &#x60;?custom_field&#x3D;ApplicationId&#x3D;%DocuSign%&#x60; This would find envelopes where the custom field value is \&quot;DocuSign for Salesforce\&quot; or \&quot;DocuSign envelope.\&quot;  
-	   */
-	  this.setCustomField = function(customField) {
-	    this.customField = customField;
-	  }
-	
-	  this.getCustomField = function() {
-	    return this.customField;
-	  }
-
-	  /*
-	   * If included in the query string, this is a comma separated list of envelope &#x60;transactionId&#x60;s.   If included in the &#x60;request_body&#x60;, this is a list of envelope &#x60;transactionId&#x60;s.   #### Note: &#x60;transactionId&#x60;s are only valid in the DocuSign system for seven days. 
-	   */
-	  this.setTransactionIds = function(transactionIds) {
-	    this.transactionIds = transactionIds;
-	  }
-	
-	  this.getTransactionIds = function() {
-	    return this.transactionIds;
-	  }
-
-	  this.setUserFilter = function(userFilter) {
-	    this.userFilter = userFilter;
-	  }
-	
-	  this.getUserFilter = function() {
-	    return this.userFilter;
-	  }
-
-	  this.setUserName = function(userName) {
-	    this.userName = userName;
-	  }
-	
-	  this.getUserName = function() {
-	    return this.userName;
-	  }
-
-	  /*
-	   * Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the &#x60;to_date&#x60;. 
-	   */
-	  this.setToDate = function(toDate) {
-	    this.toDate = toDate;
-	  }
-	
-	  this.getToDate = function() {
-	    return this.toDate;
-	  }
-
-	  /*
-	   * Specifies the Authoritative Copy Status for the envelopes. The possible values are: Unknown, Original, Transferred, AuthoritativeCopy, AuthoritativeCopyExportPending, AuthoritativeCopyExported, DepositPending, Deposited, DepositedEO, or DepositFailed.
-	   */
-	  this.setAcStatus = function(acStatus) {
-	    this.acStatus = acStatus;
-	  }
-	
-	  this.getAcStatus = function() {
-	    return this.acStatus;
-	  }
-
-	  this.setBlock = function(block) {
-	    this.block = block;
-	  }
-	
-	  this.getBlock = function() {
-	    return this.block;
-	  }
-
-	  this.setCount = function(count) {
-	    this.count = count;
-	  }
-	
-	  this.getCount = function() {
-	    return this.count;
-	  }
-	}
-
     /**
      * Callback function to receive the result of the listStatusChanges operation.
      * @callback module:api/EnvelopesApi~listStatusChangesCallback
@@ -2710,25 +2413,6 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
-
-	/**
-	 * Send Draft Envelope/Void Envelope/Move/Purge Envelope/Modify draft
-   * The Put Envelopes endpoint provides the following functionality:  * Sends the specified single draft envelope. Add {\&quot;status\&quot;:\&quot;sent\&quot;} to the request body to send the envelope.  * Voids the specified in-process envelope. Add {\&quot;status\&quot;:\&quot;voided\&quot;, \&quot;voidedReason\&quot;:\&quot;The reason for voiding the envelope\&quot;} to the request body to void the envelope.  * Replaces the current email subject and message for a draft envelope. Add {\&quot;emailSubject\&quot;:\&quot;subject\&quot;,  \&quot;emailBlurb\&quot;:\&quot;message\&quot;}  to the request body to modify the subject and message.  * Place the envelope documents and envelope metadata in a purge queue so that this information is removed from the DocuSign system. Add {\&quot;purgeState\&quot;:\&quot;purge type\&quot;} to the request body.  *Additional information on purging documents*  The purge request can only be used for completed envelopes that are not marked as the authoritative copy. The requesting user must have permission to purge documents and must be the sender (the requesting user can act as the sender using Send On Behalf Of).  #### Note: If you have set the Document Retention policy on your account, envelope documents are automatically placed in the purge queue and the warning emails are sent at the end of the retention period.  #### Note: You can set the Document Retention policy in the Classic DocuSign Experience by specifying the number of days to retain documents.  #### Note: Setting a Document Retention policy is the same as setting a schedule for purging documents.  When the purge request is initiated the envelope documents, or documents and envelope metadata, are placed in a purge queue for deletion in 14 days. A warning email notification is sent to the sender and recipients associated with the envelope, notifying them that the envelope documents will be deleted in 14 days and providing a link to the documents. A second email is sent 7 days later with the same message. At the end of the 14-day period, the envelope documents are deleted from the system.  If &#x60;purgeState&#x3D;\&quot;documents_queued\&quot;&#x60; is used in the request, then only the documents are deleted and any corresponding attachments and tabs remain in the DocuSign system. If &#x60;purgeState&#x3D; \&quot;documents_and_metadata_queued\&quot;&#x60; is used in the request, then the documents, attachments, and tabs are deleted.
-	*/
-	this.UpdateOptions = function () {
-	  var resendEnvelope = null;
-	  
-	  /*
-	   * When set to **true**, sends the specified envelope again.
-	   */
-	  this.setResendEnvelope = function(resendEnvelope) {
-	    this.resendEnvelope = resendEnvelope;
-	  }
-	
-	  this.getResendEnvelope = function() {
-	    return this.resendEnvelope;
-	  }
-	}
 
     /**
      * Callback function to receive the result of the update operation.

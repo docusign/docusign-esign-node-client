@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Document model module.
    * @module model/Document
@@ -42,19 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

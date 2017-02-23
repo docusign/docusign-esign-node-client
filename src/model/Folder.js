@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Folder model module.
    * @module model/Folder
@@ -42,17 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Checkbox model module.
    * @module model/Checkbox
@@ -42,34 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

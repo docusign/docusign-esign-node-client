@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The CustomFieldV2 model module.
    * @module model/CustomFieldV2
@@ -42,12 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientPhoneAuthentication model module.
    * @module model/RecipientPhoneAuthentication
@@ -42,9 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Ssn model module.
    * @module model/Ssn
@@ -42,49 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

@@ -6,11 +6,11 @@
 [![bitHound Overall Score][bitHound-image]][bitHound-url]
 [![Dependency Status] [david-image]][david-url]
 
-> [NPM module](https://www.npmjs.com/package/docusign-esign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
+[NPM module](https://www.npmjs.com/package/docusign-esign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
 [Documentation about the DocuSign API](https://www.docusign.com/developer-center)
 
-[Documentation about this package](http://docusign.github.io/docusign-node-client)
+[Documentation about this package](http://docusign.github.io/docusign-node-client/module-index.html)
 <!---
 [Changelog](./CHANGELOG.md)
 commented out
@@ -22,7 +22,7 @@ You can sign up for a free [developer sandbox](https://www.docusign.com/develope
 Requirements
 ============
 
-Node 0.10 or later.
+Node 2.1.16 or later.
 
 Installation
 ============
@@ -37,7 +37,7 @@ Alternatively you can just copy the source code directly into your project.
 
 This client has the following external dependencies:
 
-* superagent 1.7.1
+* superagent@1.7.1
 
 Usage
 =====
@@ -180,7 +180,12 @@ The url for the Userinfo method is account-d.docusign.com for the demo/developer
 Testing
 =======
 
-Unit tests are available in the [Test](./test) folder.
+Unit tests are available in the [Test](https://github.com/docusign/docusign-node-client/tree/master/test) folder.
+
+Contributing
+============
+
+This SDK is auto-generated from OpenAPI specification file. For that reason, we actually do NOT accept pull requests. If you find a bug or have an idea that you want to see in the SDK, please open a new [issue](https://github.com/docusign/docusign-node-client/issues/new).
 
 Support
 =======
@@ -192,10 +197,6 @@ License
 
 The DocuSign Node Client is licensed under the following [License](LICENSE).
 
-Notes
-=======
-
-This version of the client library does not implement all of the DocuSign REST API methods. The current client omits methods in the Accounts, Billing, Cloud Storage, Connect, Groups (Branding), and Templates (Bulk Recipients) categories. The client's methods support the core set of use cases that most integrations will encounter. For a complete list of omitted endpoints, see [Omitted Endpoints](./omitted_endpoints.md).
 
 [npm-image]: https://img.shields.io/npm/v/docusign-esign.svg?style=flat
 [npm-url]: https://npmjs.org/package/docusign-esign

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ListCustomField model module.
    * @module model/ListCustomField
@@ -42,13 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
 
 
   };

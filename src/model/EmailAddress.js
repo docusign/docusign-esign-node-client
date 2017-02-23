@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EmailAddress model module.
    * @module model/EmailAddress
@@ -42,35 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The PageRequest model module.
    * @module model/PageRequest
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

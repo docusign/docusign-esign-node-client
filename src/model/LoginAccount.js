@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The LoginAccount model module.
    * @module model/LoginAccount
@@ -42,16 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
 
 
   };

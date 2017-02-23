@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EnvelopeTemplateResults model module.
    * @module model/EnvelopeTemplateResults
@@ -42,13 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
 
 
   };

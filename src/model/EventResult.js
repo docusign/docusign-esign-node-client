@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EventResult model module.
    * @module model/EventResult
@@ -42,9 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

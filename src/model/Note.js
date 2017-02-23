@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Note model module.
    * @module model/Note
@@ -42,39 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

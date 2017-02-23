@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The DateSigned model module.
    * @module model/DateSigned
@@ -42,36 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

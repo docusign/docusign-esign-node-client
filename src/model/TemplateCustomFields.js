@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateCustomFields model module.
    * @module model/TemplateCustomFields
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientSAMLAuthentication model module.
    * @module model/RecipientSAMLAuthentication

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ServiceVersion model module.
    * @module model/ServiceVersion
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

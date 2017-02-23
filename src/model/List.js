@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The List model module.
    * @module model/List
@@ -42,43 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

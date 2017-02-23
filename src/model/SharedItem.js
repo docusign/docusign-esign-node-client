@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The SharedItem model module.
    * @module model/SharedItem
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TabMetadata model module.
    * @module model/TabMetadata
@@ -42,43 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

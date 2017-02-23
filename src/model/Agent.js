@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Agent model module.
    * @module model/Agent
@@ -43,46 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

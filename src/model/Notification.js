@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Notification model module.
    * @module model/Notification
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ReturnUrlRequest model module.
    * @module model/ReturnUrlRequest

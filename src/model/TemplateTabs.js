@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateTabs model module.
    * @module model/TemplateTabs
@@ -42,29 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

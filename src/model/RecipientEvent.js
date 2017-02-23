@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientEvent model module.
    * @module model/RecipientEvent
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

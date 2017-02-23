@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ModelDate model module.
    * @module model/ModelDate
@@ -42,49 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

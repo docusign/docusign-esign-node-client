@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The AddressInformation model module.
    * @module model/AddressInformation
@@ -43,13 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
 
 
   };

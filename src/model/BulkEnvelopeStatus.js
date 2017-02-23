@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The BulkEnvelopeStatus model module.
    * @module model/BulkEnvelopeStatus
@@ -42,19 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

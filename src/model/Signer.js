@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Signer model module.
    * @module model/Signer
@@ -42,57 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };
