@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EventNotification model module.
    * @module model/EventNotification
@@ -42,20 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

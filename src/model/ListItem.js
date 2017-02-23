@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ListItem model module.
    * @module model/ListItem
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

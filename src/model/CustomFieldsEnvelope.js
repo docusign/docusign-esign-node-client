@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The CustomFieldsEnvelope model module.
    * @module model/CustomFieldsEnvelope
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

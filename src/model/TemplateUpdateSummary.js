@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateUpdateSummary model module.
    * @module model/TemplateUpdateSummary
@@ -42,9 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

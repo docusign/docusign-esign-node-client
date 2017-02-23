@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ApiRequestLogsResult model module.
    * @module model/ApiRequestLogsResult

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The AddressInformationInput model module.
    * @module model/AddressInformationInput
@@ -43,8 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Group model module.
    * @module model/Group
@@ -42,11 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
 
 
   };

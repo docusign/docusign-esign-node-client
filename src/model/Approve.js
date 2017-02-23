@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Approve model module.
    * @module model/Approve
@@ -42,37 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientViewRequest model module.
    * @module model/RecipientViewRequest
@@ -42,17 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

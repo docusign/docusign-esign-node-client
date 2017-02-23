@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EnvelopeDefinition model module.
    * @module model/EnvelopeDefinition
@@ -42,56 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

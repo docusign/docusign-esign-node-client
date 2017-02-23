@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The CompositeTemplate model module.
    * @module model/CompositeTemplate
@@ -42,10 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
 
 
   };

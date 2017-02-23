@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The FileType model module.
    * @module model/FileType
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

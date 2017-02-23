@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateNotificationRequest model module.
    * @module model/TemplateNotificationRequest
@@ -42,9 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

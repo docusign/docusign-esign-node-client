@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EnvelopeSummary model module.
    * @module model/EnvelopeSummary
@@ -42,9 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

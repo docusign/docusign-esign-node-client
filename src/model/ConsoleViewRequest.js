@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ConsoleViewRequest model module.
    * @module model/ConsoleViewRequest
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

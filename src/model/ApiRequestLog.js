@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ApiRequestLog model module.
    * @module model/ApiRequestLog
@@ -43,9 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Reminders model module.
    * @module model/Reminders
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

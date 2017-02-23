@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateDocumentsResult model module.
    * @module model/TemplateDocumentsResult
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

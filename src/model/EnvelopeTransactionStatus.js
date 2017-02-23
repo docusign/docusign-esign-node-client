@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EnvelopeTransactionStatus model module.
    * @module model/EnvelopeTransactionStatus
@@ -42,9 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };

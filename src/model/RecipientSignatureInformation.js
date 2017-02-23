@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientSignatureInformation model module.
    * @module model/RecipientSignatureInformation
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The AccountSharedAccess model module.
    * @module model/AccountSharedAccess
@@ -43,14 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
 
 
   };

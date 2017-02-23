@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ServerTemplate model module.
    * @module model/ServerTemplate
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

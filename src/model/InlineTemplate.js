@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The InlineTemplate model module.
    * @module model/InlineTemplate
@@ -42,10 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
 
 
   };

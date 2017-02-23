@@ -40,7 +40,7 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || ApiClient.instance || Configuration.default.getDefaultApiClient();
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 	  
 	this.setApiClient = function(apiClient) {
 	  this.apiClient = apiClient;
@@ -204,25 +204,6 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
-
-	/**
-	 * Gets a list of all account tabs.
-   * Retrieves a list of all tabs associated with the account.
-	*/
-	this.ListOptions = function () {
-	  var customTabOnly = null;
-	  
-	  /*
-	   * When set to **true**, only custom tabs are returned in the response. 
-	   */
-	  this.setCustomTabOnly = function(customTabOnly) {
-	    this.customTabOnly = customTabOnly;
-	  }
-	
-	  this.getCustomTabOnly = function() {
-	    return this.customTabOnly;
-	  }
-	}
 
     /**
      * Callback function to receive the result of the list operation.

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The DobInformationInput model module.
    * @module model/DobInformationInput
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

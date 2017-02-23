@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ServiceInformation model module.
    * @module model/ServiceInformation
@@ -42,11 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
 
 
   };

@@ -40,7 +40,7 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || ApiClient.instance || Configuration.default.getDefaultApiClient();
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 	  
 	this.setApiClient = function(apiClient) {
 	  this.apiClient = apiClient;
@@ -205,109 +205,6 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
-
-	/**
-	 * Gets a list of envelopes in folders matching the specified criteria.
-   * Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
-	*/
-	this.SearchOptions = function () {
-	  var toDate = null;
-	  var order = null;
-	  var includeRecipients = null;
-	  var all = null;
-	  var orderBy = null;
-	  var startPosition = null;
-	  var count = null;
-	  var fromDate = null;
-	  
-	  /*
-	   * Specifies the end of the date range to return.
-	   */
-	  this.setToDate = function(toDate) {
-	    this.toDate = toDate;
-	  }
-	
-	  this.getToDate = function() {
-	    return this.toDate;
-	  }
-
-	  /*
-	   * Specifies the order in which the list is returned. Valid values are: &#x60;asc&#x60; for ascending order, and &#x60;desc&#x60; for descending order.
-	   */
-	  this.setOrder = function(order) {
-	    this.order = order;
-	  }
-	
-	  this.getOrder = function() {
-	    return this.order;
-	  }
-
-	  /*
-	   * When set to **true**, the recipient information is returned in the response.
-	   */
-	  this.setIncludeRecipients = function(includeRecipients) {
-	    this.includeRecipients = includeRecipients;
-	  }
-	
-	  this.getIncludeRecipients = function() {
-	    return this.includeRecipients;
-	  }
-
-	  /*
-	   * Specifies that all envelopes that match the criteria are returned.
-	   */
-	  this.setAll = function(all) {
-	    this.all = all;
-	  }
-	
-	  this.getAll = function() {
-	    return this.all;
-	  }
-
-	  /*
-	   * Specifies the property used to sort the list. Valid values are: &#x60;action_required&#x60;, &#x60;created&#x60;, &#x60;completed&#x60;, &#x60;sent&#x60;, &#x60;signer_list&#x60;, &#x60;status&#x60;, or &#x60;subject&#x60;.
-	   */
-	  this.setOrderBy = function(orderBy) {
-	    this.orderBy = orderBy;
-	  }
-	
-	  this.getOrderBy = function() {
-	    return this.orderBy;
-	  }
-
-	  /*
-	   * Specifies the the starting location in the result set of the items that are returned.
-	   */
-	  this.setStartPosition = function(startPosition) {
-	    this.startPosition = startPosition;
-	  }
-	
-	  this.getStartPosition = function() {
-	    return this.startPosition;
-	  }
-
-	  /*
-	   * Specifies the number of records returned in the cache. The number must be greater than 0 and less than or equal to 100.
-	   */
-	  this.setCount = function(count) {
-	    this.count = count;
-	  }
-	
-	  this.getCount = function() {
-	    return this.count;
-	  }
-
-	  /*
-	   * Specifies the start of the date range to return. If no value is provided, the default search is the previous 30 days.
-	   */
-	  this.setFromDate = function(fromDate) {
-	    this.fromDate = fromDate;
-	  }
-	
-	  this.getFromDate = function() {
-	    return this.fromDate;
-	  }
-	}
 
     /**
      * Callback function to receive the result of the search operation.

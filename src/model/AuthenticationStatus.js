@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The AuthenticationStatus model module.
    * @module model/AuthenticationStatus
@@ -43,22 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

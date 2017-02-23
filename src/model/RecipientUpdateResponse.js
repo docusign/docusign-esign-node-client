@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientUpdateResponse model module.
    * @module model/RecipientUpdateResponse
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

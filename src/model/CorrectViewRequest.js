@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The CorrectViewRequest model module.
    * @module model/CorrectViewRequest
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

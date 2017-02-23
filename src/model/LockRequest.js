@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The LockRequest model module.
    * @module model/LockRequest
@@ -42,10 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
 
 
   };

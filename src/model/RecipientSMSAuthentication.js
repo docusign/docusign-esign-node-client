@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientSMSAuthentication model module.
    * @module model/RecipientSMSAuthentication

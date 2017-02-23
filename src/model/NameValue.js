@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The NameValue model module.
    * @module model/NameValue
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

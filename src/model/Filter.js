@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Filter model module.
    * @module model/Filter
@@ -42,16 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
 
 
   };

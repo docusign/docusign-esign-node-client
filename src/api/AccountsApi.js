@@ -40,7 +40,7 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || ApiClient.instance || Configuration.default.getDefaultApiClient();
+	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 	  
 	this.setApiClient = function(apiClient) {
 	  this.apiClient = apiClient;
@@ -50,34 +50,6 @@
 	  return this.apiClient;
 	};
 
-
-	/**
-	 * Retrieves the account information for the specified account.
-   * Retrieves the account information for the specified account.  **Response** The &#x60;canUpgrade&#x60; property contains is a Boolean that indicates whether the account can be upgraded through the API. 
-	*/
-	this.GetAccountInformationOptions = function () {
-	  var op = null;
-	  var includeAccountSettings = null;
-	  
-	  this.setOp = function(op) {
-	    this.op = op;
-	  }
-	
-	  this.getOp = function() {
-	    return this.op;
-	  }
-
-	  /*
-	   * When set to **true**, includes the account settings for the account in the response.
-	   */
-	  this.setIncludeAccountSettings = function(includeAccountSettings) {
-	    this.includeAccountSettings = includeAccountSettings;
-	  }
-	
-	  this.getIncludeAccountSettings = function() {
-	    return this.includeAccountSettings;
-	  }
-	}
 
     /**
      * Callback function to receive the result of the getAccountInformation operation.

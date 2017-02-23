@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateRole model module.
    * @module model/TemplateRole
@@ -42,17 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

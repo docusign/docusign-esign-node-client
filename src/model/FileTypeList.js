@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The FileTypeList model module.
    * @module model/FileTypeList

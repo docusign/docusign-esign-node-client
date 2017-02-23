@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The MatchBox model module.
    * @module model/MatchBox
@@ -42,10 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
 
 
   };

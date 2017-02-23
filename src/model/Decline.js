@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Decline model module.
    * @module model/Decline
@@ -42,38 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

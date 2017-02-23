@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Intermediary model module.
    * @module model/Intermediary
@@ -42,46 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The LockInformation model module.
    * @module model/LockInformation
@@ -42,13 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
 
 
   };

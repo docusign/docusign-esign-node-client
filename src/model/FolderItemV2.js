@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The FolderItemV2 model module.
    * @module model/FolderItemV2
@@ -42,25 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The AccountSettingsInformation model module.
    * @module model/AccountSettingsInformation

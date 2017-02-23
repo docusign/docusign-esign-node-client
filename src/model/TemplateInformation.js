@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateInformation model module.
    * @module model/TemplateInformation

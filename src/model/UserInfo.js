@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The UserInfo model module.
    * @module model/UserInfo
@@ -42,12 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
 
 
   };

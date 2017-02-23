@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RadioGroup model module.
    * @module model/RadioGroup
@@ -42,14 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
 
 
   };

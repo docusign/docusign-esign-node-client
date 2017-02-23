@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Editor model module.
    * @module model/Editor
@@ -42,45 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

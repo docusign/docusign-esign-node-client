@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Ssn4InformationInput model module.
    * @module model/Ssn4InformationInput
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ResourceInformation model module.
    * @module model/ResourceInformation

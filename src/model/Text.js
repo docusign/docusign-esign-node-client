@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Text model module.
    * @module model/Text
@@ -42,52 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

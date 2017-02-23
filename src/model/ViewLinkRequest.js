@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ViewLinkRequest model module.
    * @module model/ViewLinkRequest
@@ -42,7 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

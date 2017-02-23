@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The SamlAssertionAttribute model module.
    * @module model/SamlAssertionAttribute
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

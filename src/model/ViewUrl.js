@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The ViewUrl model module.
    * @module model/ViewUrl

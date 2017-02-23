@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The OfflineAttributes model module.
    * @module model/OfflineAttributes
@@ -42,11 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
 
 
   };

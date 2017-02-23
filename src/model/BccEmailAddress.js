@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The BccEmailAddress model module.
    * @module model/BccEmailAddress
@@ -43,7 +41,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
   };

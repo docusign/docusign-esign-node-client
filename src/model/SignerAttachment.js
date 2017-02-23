@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The SignerAttachment model module.
    * @module model/SignerAttachment
@@ -42,31 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

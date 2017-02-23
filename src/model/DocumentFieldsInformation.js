@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The DocumentFieldsInformation model module.
    * @module model/DocumentFieldsInformation

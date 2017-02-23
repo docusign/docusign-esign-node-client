@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TabMetadataList model module.
    * @module model/TabMetadataList

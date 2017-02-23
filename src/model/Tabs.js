@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Tabs model module.
    * @module model/Tabs
@@ -42,29 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

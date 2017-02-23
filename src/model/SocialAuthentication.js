@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The SocialAuthentication model module.
    * @module model/SocialAuthentication

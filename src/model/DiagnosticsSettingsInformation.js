@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The DiagnosticsSettingsInformation model module.
    * @module model/DiagnosticsSettingsInformation
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EmailSettings model module.
    * @module model/EmailSettings
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

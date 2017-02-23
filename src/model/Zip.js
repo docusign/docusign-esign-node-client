@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Zip model module.
    * @module model/Zip
@@ -42,50 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

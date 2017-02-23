@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The RecipientsUpdateSummary model module.
    * @module model/RecipientsUpdateSummary

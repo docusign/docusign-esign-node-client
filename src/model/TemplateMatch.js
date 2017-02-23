@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The TemplateMatch model module.
    * @module model/TemplateMatch
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };

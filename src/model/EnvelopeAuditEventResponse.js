@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The EnvelopeAuditEventResponse model module.
    * @module model/EnvelopeAuditEventResponse

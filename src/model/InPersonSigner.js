@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The InPersonSigner model module.
    * @module model/InPersonSigner
@@ -42,55 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   };

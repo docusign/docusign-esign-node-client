@@ -27,8 +27,6 @@
   'use strict';
 
 
-
-
   /**
    * The Expirations model module.
    * @module model/Expirations
@@ -42,8 +40,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
   };
