@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>SignerEmailNotifications</code>.
+   * An array of email notifications that specifies the email the user receives when they are a sender. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account sender email notification settings when the user is created.
    * @alias module:model/SignerEmailNotifications
    * @class
    */
@@ -55,11 +56,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('envelopeActivation')) {
-        obj['envelopeActivation'] = ApiClient.convertToType(data['envelopeActivation'], 'String');
-      }
-      if (data.hasOwnProperty('envelopeComplete')) {
-        obj['envelopeComplete'] = ApiClient.convertToType(data['envelopeComplete'], 'String');
+      if (data.hasOwnProperty('agentNotification')) {
+        obj['agentNotification'] = ApiClient.convertToType(data['agentNotification'], 'String');
       }
       if (data.hasOwnProperty('carbonCopyNotification')) {
         obj['carbonCopyNotification'] = ApiClient.convertToType(data['carbonCopyNotification'], 'String');
@@ -67,47 +65,48 @@
       if (data.hasOwnProperty('certifiedDeliveryNotification')) {
         obj['certifiedDeliveryNotification'] = ApiClient.convertToType(data['certifiedDeliveryNotification'], 'String');
       }
+      if (data.hasOwnProperty('documentMarkupActivation')) {
+        obj['documentMarkupActivation'] = ApiClient.convertToType(data['documentMarkupActivation'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeActivation')) {
+        obj['envelopeActivation'] = ApiClient.convertToType(data['envelopeActivation'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeComplete')) {
+        obj['envelopeComplete'] = ApiClient.convertToType(data['envelopeComplete'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeCorrected')) {
+        obj['envelopeCorrected'] = ApiClient.convertToType(data['envelopeCorrected'], 'String');
+      }
       if (data.hasOwnProperty('envelopeDeclined')) {
         obj['envelopeDeclined'] = ApiClient.convertToType(data['envelopeDeclined'], 'String');
       }
       if (data.hasOwnProperty('envelopeVoided')) {
         obj['envelopeVoided'] = ApiClient.convertToType(data['envelopeVoided'], 'String');
       }
-      if (data.hasOwnProperty('envelopeCorrected')) {
-        obj['envelopeCorrected'] = ApiClient.convertToType(data['envelopeCorrected'], 'String');
+      if (data.hasOwnProperty('faxReceived')) {
+        obj['faxReceived'] = ApiClient.convertToType(data['faxReceived'], 'String');
       }
-      if (data.hasOwnProperty('reassignedSigner')) {
-        obj['reassignedSigner'] = ApiClient.convertToType(data['reassignedSigner'], 'String');
+      if (data.hasOwnProperty('offlineSigningFailed')) {
+        obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
       }
       if (data.hasOwnProperty('purgeDocuments')) {
         obj['purgeDocuments'] = ApiClient.convertToType(data['purgeDocuments'], 'String');
       }
-      if (data.hasOwnProperty('faxReceived')) {
-        obj['faxReceived'] = ApiClient.convertToType(data['faxReceived'], 'String');
+      if (data.hasOwnProperty('reassignedSigner')) {
+        obj['reassignedSigner'] = ApiClient.convertToType(data['reassignedSigner'], 'String');
       }
-      if (data.hasOwnProperty('documentMarkupActivation')) {
-        obj['documentMarkupActivation'] = ApiClient.convertToType(data['documentMarkupActivation'], 'String');
-      }
-      if (data.hasOwnProperty('agentNotification')) {
-        obj['agentNotification'] = ApiClient.convertToType(data['agentNotification'], 'String');
-      }
-      if (data.hasOwnProperty('offlineSigningFailed')) {
-        obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
+      if (data.hasOwnProperty('whenSigningGroupMember')) {
+        obj['whenSigningGroupMember'] = ApiClient.convertToType(data['whenSigningGroupMember'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * When set to **true**, the user receives notification that the envelope has been activated.
-   * @member {String} envelopeActivation
+   * When set to **true**, the user receives agent notification emails.
+   * @member {String} agentNotification
    */
-  exports.prototype['envelopeActivation'] = undefined;
-  /**
-   * When set to **true**, the user receives notification that the envelope has been completed.
-   * @member {String} envelopeComplete
-   */
-  exports.prototype['envelopeComplete'] = undefined;
+  exports.prototype['agentNotification'] = undefined;
   /**
    * When set to **true**, the user receives notifications of carbon copy deliveries.
    * @member {String} carbonCopyNotification
@@ -119,6 +118,26 @@
    */
   exports.prototype['certifiedDeliveryNotification'] = undefined;
   /**
+   * When set to **true**, the user receives notification that document markup has been activated.
+   * @member {String} documentMarkupActivation
+   */
+  exports.prototype['documentMarkupActivation'] = undefined;
+  /**
+   * When set to **true**, the user receives notification that the envelope has been activated.
+   * @member {String} envelopeActivation
+   */
+  exports.prototype['envelopeActivation'] = undefined;
+  /**
+   * When set to **true**, the user receives notification that the envelope has been completed.
+   * @member {String} envelopeComplete
+   */
+  exports.prototype['envelopeComplete'] = undefined;
+  /**
+   * When set to **true**, the user receives notification that the envelope has been corrected.
+   * @member {String} envelopeCorrected
+   */
+  exports.prototype['envelopeCorrected'] = undefined;
+  /**
    * When set to **true**, the user receives notification that the envelope has been declined.
    * @member {String} envelopeDeclined
    */
@@ -129,40 +148,30 @@
    */
   exports.prototype['envelopeVoided'] = undefined;
   /**
-   * When set to **true**, the user receives notification that the envelope has been corrected.
-   * @member {String} envelopeCorrected
+   * Reserved:
+   * @member {String} faxReceived
    */
-  exports.prototype['envelopeCorrected'] = undefined;
+  exports.prototype['faxReceived'] = undefined;
   /**
-   * When set to **true**, the user receives notification that the envelope has been reassigned.
-   * @member {String} reassignedSigner
+   * When set to **true**, the user receives notification if the offline signing failed.
+   * @member {String} offlineSigningFailed
    */
-  exports.prototype['reassignedSigner'] = undefined;
+  exports.prototype['offlineSigningFailed'] = undefined;
   /**
    * When set to **true**, the user receives notification of document purges.
    * @member {String} purgeDocuments
    */
   exports.prototype['purgeDocuments'] = undefined;
   /**
-   * Reserved:
-   * @member {String} faxReceived
+   * When set to **true**, the user receives notification that the envelope has been reassigned.
+   * @member {String} reassignedSigner
    */
-  exports.prototype['faxReceived'] = undefined;
+  exports.prototype['reassignedSigner'] = undefined;
   /**
-   * When set to **true**, the user receives notification that document markup has been activated.
-   * @member {String} documentMarkupActivation
+   * 
+   * @member {String} whenSigningGroupMember
    */
-  exports.prototype['documentMarkupActivation'] = undefined;
-  /**
-   * When set to **true**, the user receives agent notification emails.
-   * @member {String} agentNotification
-   */
-  exports.prototype['agentNotification'] = undefined;
-  /**
-   * When set to **true**, the user receives notification if the offline signing failed.
-   * @member {String} offlineSigningFailed
-   */
-  exports.prototype['offlineSigningFailed'] = undefined;
+  exports.prototype['whenSigningGroupMember'] = undefined;
 
 
 

@@ -55,17 +55,23 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('pageNumber')) {
-        obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
+      if (data.hasOwnProperty('anchorCaseSensitive')) {
+        obj['anchorCaseSensitive'] = ApiClient.convertToType(data['anchorCaseSensitive'], 'String');
       }
-      if (data.hasOwnProperty('xPosition')) {
-        obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'String');
+      if (data.hasOwnProperty('anchorHorizontalAlignment')) {
+        obj['anchorHorizontalAlignment'] = ApiClient.convertToType(data['anchorHorizontalAlignment'], 'String');
       }
-      if (data.hasOwnProperty('yPosition')) {
-        obj['yPosition'] = ApiClient.convertToType(data['yPosition'], 'String');
+      if (data.hasOwnProperty('anchorIgnoreIfNotPresent')) {
+        obj['anchorIgnoreIfNotPresent'] = ApiClient.convertToType(data['anchorIgnoreIfNotPresent'], 'String');
+      }
+      if (data.hasOwnProperty('anchorMatchWholeWord')) {
+        obj['anchorMatchWholeWord'] = ApiClient.convertToType(data['anchorMatchWholeWord'], 'String');
       }
       if (data.hasOwnProperty('anchorString')) {
         obj['anchorString'] = ApiClient.convertToType(data['anchorString'], 'String');
+      }
+      if (data.hasOwnProperty('anchorUnits')) {
+        obj['anchorUnits'] = ApiClient.convertToType(data['anchorUnits'], 'String');
       }
       if (data.hasOwnProperty('anchorXOffset')) {
         obj['anchorXOffset'] = ApiClient.convertToType(data['anchorXOffset'], 'String');
@@ -73,23 +79,17 @@
       if (data.hasOwnProperty('anchorYOffset')) {
         obj['anchorYOffset'] = ApiClient.convertToType(data['anchorYOffset'], 'String');
       }
-      if (data.hasOwnProperty('anchorUnits')) {
-        obj['anchorUnits'] = ApiClient.convertToType(data['anchorUnits'], 'String');
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
-      if (data.hasOwnProperty('anchorIgnoreIfNotPresent')) {
-        obj['anchorIgnoreIfNotPresent'] = ApiClient.convertToType(data['anchorIgnoreIfNotPresent'], 'String');
+      if (data.hasOwnProperty('locked')) {
+        obj['locked'] = ApiClient.convertToType(data['locked'], 'String');
       }
-      if (data.hasOwnProperty('anchorCaseSensitive')) {
-        obj['anchorCaseSensitive'] = ApiClient.convertToType(data['anchorCaseSensitive'], 'String');
+      if (data.hasOwnProperty('pageNumber')) {
+        obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
       }
-      if (data.hasOwnProperty('anchorMatchWholeWord')) {
-        obj['anchorMatchWholeWord'] = ApiClient.convertToType(data['anchorMatchWholeWord'], 'String');
-      }
-      if (data.hasOwnProperty('anchorHorizontalAlignment')) {
-        obj['anchorHorizontalAlignment'] = ApiClient.convertToType(data['anchorHorizontalAlignment'], 'String');
-      }
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      if (data.hasOwnProperty('required')) {
+        obj['required'] = ApiClient.convertToType(data['required'], 'String');
       }
       if (data.hasOwnProperty('selected')) {
         obj['selected'] = ApiClient.convertToType(data['selected'], 'String');
@@ -97,39 +97,52 @@
       if (data.hasOwnProperty('tabId')) {
         obj['tabId'] = ApiClient.convertToType(data['tabId'], 'String');
       }
-      if (data.hasOwnProperty('required')) {
-        obj['required'] = ApiClient.convertToType(data['required'], 'String');
+      if (data.hasOwnProperty('tabOrder')) {
+        obj['tabOrder'] = ApiClient.convertToType(data['tabOrder'], 'String');
       }
-      if (data.hasOwnProperty('locked')) {
-        obj['locked'] = ApiClient.convertToType(data['locked'], 'String');
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('xPosition')) {
+        obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'String');
+      }
+      if (data.hasOwnProperty('yPosition')) {
+        obj['yPosition'] = ApiClient.convertToType(data['yPosition'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Specifies the page number on which the tab is located.
-   * @member {String} pageNumber
+   * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
+   * @member {String} anchorCaseSensitive
    */
-  exports.prototype['pageNumber'] = undefined;
+  exports.prototype['anchorCaseSensitive'] = undefined;
   /**
-   * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
-   * @member {String} xPosition
+   * Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**.
+   * @member {String} anchorHorizontalAlignment
    */
-  exports.prototype['xPosition'] = undefined;
+  exports.prototype['anchorHorizontalAlignment'] = undefined;
   /**
-   * This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
-   * @member {String} yPosition
+   * When set to **true**, this tab is ignored if anchorString is not found in the document.
+   * @member {String} anchorIgnoreIfNotPresent
    */
-  exports.prototype['yPosition'] = undefined;
+  exports.prototype['anchorIgnoreIfNotPresent'] = undefined;
+  /**
+   * When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**.
+   * @member {String} anchorMatchWholeWord
+   */
+  exports.prototype['anchorMatchWholeWord'] = undefined;
   /**
    * Anchor text information for a radio button.
    * @member {String} anchorString
    */
   exports.prototype['anchorString'] = undefined;
+  /**
+   * Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
+   * @member {String} anchorUnits
+   */
+  exports.prototype['anchorUnits'] = undefined;
   /**
    * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
    * @member {String} anchorXOffset
@@ -141,35 +154,24 @@
    */
   exports.prototype['anchorYOffset'] = undefined;
   /**
-   * Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
-   * @member {String} anchorUnits
+   * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['anchorUnits'] = undefined;
+  exports.prototype['errorDetails'] = undefined;
   /**
-   * When set to **true**, this tab is ignored if anchorString is not found in the document.
-   * @member {String} anchorIgnoreIfNotPresent
+   * When set to **true**, the signer cannot change the data of the custom tab.
+   * @member {String} locked
    */
-  exports.prototype['anchorIgnoreIfNotPresent'] = undefined;
+  exports.prototype['locked'] = undefined;
   /**
-   * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
-   * @member {String} anchorCaseSensitive
+   * Specifies the page number on which the tab is located.
+   * @member {String} pageNumber
    */
-  exports.prototype['anchorCaseSensitive'] = undefined;
+  exports.prototype['pageNumber'] = undefined;
   /**
-   * When set to **true**, the anchor string in this tab matches whole words only (strings embedded in other strings are ignored.) The default value is **true**.
-   * @member {String} anchorMatchWholeWord
+   * When set to **true**, the signer is required to fill out this tab
+   * @member {String} required
    */
-  exports.prototype['anchorMatchWholeWord'] = undefined;
-  /**
-   * Specifies the alignment of anchor tabs with anchor strings. Possible values are **left** or **right**. The default value is **left**.
-   * @member {String} anchorHorizontalAlignment
-   */
-  exports.prototype['anchorHorizontalAlignment'] = undefined;
-  /**
-   * Specifies the value of the tab. 
-   * @member {String} value
-   */
-  exports.prototype['value'] = undefined;
+  exports.prototype['required'] = undefined;
   /**
    * When set to **true**, the radio button is selected.
    * @member {String} selected
@@ -181,19 +183,25 @@
    */
   exports.prototype['tabId'] = undefined;
   /**
-   * When set to **true**, the signer is required to fill out this tab
-   * @member {String} required
+   * 
+   * @member {String} tabOrder
    */
-  exports.prototype['required'] = undefined;
+  exports.prototype['tabOrder'] = undefined;
   /**
-   * When set to **true**, the signer cannot change the data of the custom tab.
-   * @member {String} locked
+   * Specifies the value of the tab. 
+   * @member {String} value
    */
-  exports.prototype['locked'] = undefined;
+  exports.prototype['value'] = undefined;
   /**
-   * @member {module:model/ErrorDetails} errorDetails
+   * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
+   * @member {String} xPosition
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['xPosition'] = undefined;
+  /**
+   * This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
+   * @member {String} yPosition
+   */
+  exports.prototype['yPosition'] = undefined;
 
 
 

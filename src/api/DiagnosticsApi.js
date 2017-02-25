@@ -40,15 +40,16 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
-	  
-	this.setApiClient = function(apiClient) {
-	  this.apiClient = apiClient;
-	};
+    this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-	this.getApiClient = function() {
-	  return this.apiClient;
-	};
+
+    this.setApiClient = function(apiClient) {
+      this.apiClient = apiClient;
+    };
+
+    this.getApiClient = function() {
+      return this.apiClient;
+    };
 
 
     /**
@@ -87,7 +88,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the getRequestLog operation.
@@ -99,7 +100,13 @@
 
     /**
      * Gets a request logging log file.
-     * Retrieves information for a single log entry.  **Request** The &#x60;requestLogfId&#x60; property can be retrieved by getting the list of log entries. The Content-Transfer-Encoding header can be set to base64 to retrieve the API request/response as base 64 string. Otherwise the bytes of the request/response are returned.  **Response** If the Content-Transfer-Encoding header was set to base64, the log is returned as a base64 string.
+     * Retrieves information for a single log entry.
+
+**Request**
+The `requestLogfId` property can be retrieved by getting the list of log entries. The Content-Transfer-Encoding header can be set to base64 to retrieve the API request/response as base 64 string. Otherwise the bytes of the request/response are returned.
+
+**Response**
+If the Content-Transfer-Encoding header was set to base64, the log is returned as a base64 string.
      * @param {String} requestLogId 
      * @param {module:api/DiagnosticsApi~getRequestLogCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -133,7 +140,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the getRequestLogSettings operation.
@@ -145,7 +152,10 @@
 
     /**
      * Gets the API request logging settings.
-     * Retrieves the current API request logging setting for the user and remaining log entries.  **Response** The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
+     * Retrieves the current API request logging setting for the user and remaining log entries.
+
+**Response**
+The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
      * @param {module:api/DiagnosticsApi~getRequestLogSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DiagnosticsSettingsInformation}
      */
@@ -172,7 +182,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the getResources operation.
@@ -184,7 +194,15 @@
 
     /**
      * Lists resources for REST version specified
-     * Retrieves the base resources available for the DocuSign REST APIs.  You do not need an integrator key to view the REST API versions and resources.  Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.  To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.  Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
+     * Retrieves the base resources available for the DocuSign REST APIs.
+
+You do not need an integrator key to view the REST API versions and resources.
+
+Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.
+
+To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.
+
+Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
      * @param {module:api/DiagnosticsApi~getResourcesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResourceInformation}
      */
@@ -211,7 +229,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the getService operation.
@@ -223,7 +241,12 @@
 
     /**
      * Retrieves the available REST API versions.
-     * Retrieves the available REST API versions.  DocuSign Production system: https://www.docusign.net/restapi/service_information DocuSign Demo system: https://demo.docusign.net/restapi/service_information  You do not need an integrator key to view the REST API versions and resources.
+     * Retrieves the available REST API versions.
+
+DocuSign Production system: https://www.docusign.net/restapi/service_information
+DocuSign Demo system: https://demo.docusign.net/restapi/service_information
+
+You do not need an integrator key to view the REST API versions and resources.
      * @param {module:api/DiagnosticsApi~getServiceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ServiceInformation}
      */
@@ -250,7 +273,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the listRequestLogs operation.
@@ -262,7 +285,11 @@
 
     /**
      * Gets the API request logging log files.
-     * Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.  If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.  If the Accept header is set to &#x60;application/json&#x60; or &#x60;application/xml&#x60;, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
+     * Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.
+
+If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.
+
+If the Accept header is set to `application/json` or `application/xml`, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
      * @param {Object} opts Optional parameters
      * @param {String} opts.encoding 
      * @param {module:api/DiagnosticsApi~listRequestLogsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -293,7 +320,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the updateRequestLogSettings operation.
@@ -305,9 +332,18 @@
 
     /**
      * Enables or disables API request logging for troubleshooting.
-     * Enables or disables API request logging for troubleshooting.  When enabled (&#x60;apiRequestLogging&#x60; is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.  You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.  Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.  #### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged. 
+     * Enables or disables API request logging for troubleshooting.
+
+When enabled (`apiRequestLogging` is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.
+
+You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.
+
+Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.
+
+###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn't logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged.
+
      * @param {Object} opts Optional parameters
-     * @param {module:model/DiagnosticsSettingsInformation} opts.diagnosticsSettingsInformation TBD Description
+     * @param {module:model/DiagnosticsSettingsInformation} opts.diagnosticsSettingsInformation 
      * @param {module:api/DiagnosticsApi~updateRequestLogSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DiagnosticsSettingsInformation}
      */
@@ -335,7 +371,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
   };
 
   return exports;

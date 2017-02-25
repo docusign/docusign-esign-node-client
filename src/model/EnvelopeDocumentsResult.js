@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
-      }
       if (data.hasOwnProperty('envelopeDocuments')) {
         obj['envelopeDocuments'] = ApiClient.convertToType(data['envelopeDocuments'], [EnvelopeDocument]);
+      }
+      if (data.hasOwnProperty('envelopeId')) {
+        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The envelope ID of the envelope status that failed to post.
-   * @member {String} envelopeId
-   */
-  exports.prototype['envelopeId'] = undefined;
-  /**
    * 
    * @member {Array.<module:model/EnvelopeDocument>} envelopeDocuments
    */
   exports.prototype['envelopeDocuments'] = undefined;
+  /**
+   * The envelope ID of the envelope status that failed to post.
+   * @member {String} envelopeId
+   */
+  exports.prototype['envelopeId'] = undefined;
 
 
 

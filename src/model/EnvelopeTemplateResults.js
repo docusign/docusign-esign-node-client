@@ -55,20 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('envelopeTemplates')) {
-        obj['envelopeTemplates'] = ApiClient.convertToType(data['envelopeTemplates'], [EnvelopeTemplateResult]);
-      }
-      if (data.hasOwnProperty('resultSetSize')) {
-        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
-      }
-      if (data.hasOwnProperty('startPosition')) {
-        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
-      }
       if (data.hasOwnProperty('endPosition')) {
         obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
       }
-      if (data.hasOwnProperty('totalSetSize')) {
-        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
+      if (data.hasOwnProperty('envelopeTemplates')) {
+        obj['envelopeTemplates'] = ApiClient.convertToType(data['envelopeTemplates'], [EnvelopeTemplateResult]);
+      }
+      if (data.hasOwnProperty('folders')) {
+        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
       }
       if (data.hasOwnProperty('nextUri')) {
         obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
@@ -76,38 +70,34 @@
       if (data.hasOwnProperty('previousUri')) {
         obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
       }
-      if (data.hasOwnProperty('folders')) {
-        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
+      if (data.hasOwnProperty('resultSetSize')) {
+        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
+      }
+      if (data.hasOwnProperty('startPosition')) {
+        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+      }
+      if (data.hasOwnProperty('totalSetSize')) {
+        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The list of requested templates.
-   * @member {Array.<module:model/EnvelopeTemplateResult>} envelopeTemplates
-   */
-  exports.prototype['envelopeTemplates'] = undefined;
-  /**
-   * The number of results returned in this response. 
-   * @member {String} resultSetSize
-   */
-  exports.prototype['resultSetSize'] = undefined;
-  /**
-   * Starting position of the current result set.
-   * @member {String} startPosition
-   */
-  exports.prototype['startPosition'] = undefined;
-  /**
    * The last position in the result set. 
    * @member {String} endPosition
    */
   exports.prototype['endPosition'] = undefined;
   /**
-   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-   * @member {String} totalSetSize
+   * The list of requested templates.
+   * @member {Array.<module:model/EnvelopeTemplateResult>} envelopeTemplates
    */
-  exports.prototype['totalSetSize'] = undefined;
+  exports.prototype['envelopeTemplates'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Folder>} folders
+   */
+  exports.prototype['folders'] = undefined;
   /**
    * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
    * @member {String} nextUri
@@ -119,10 +109,20 @@
    */
   exports.prototype['previousUri'] = undefined;
   /**
-   * 
-   * @member {Array.<module:model/Folder>} folders
+   * The number of results returned in this response. 
+   * @member {String} resultSetSize
    */
-  exports.prototype['folders'] = undefined;
+  exports.prototype['resultSetSize'] = undefined;
+  /**
+   * Starting position of the current result set.
+   * @member {String} startPosition
+   */
+  exports.prototype['startPosition'] = undefined;
+  /**
+   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
+   * @member {String} totalSetSize
+   */
+  exports.prototype['totalSetSize'] = undefined;
 
 
 

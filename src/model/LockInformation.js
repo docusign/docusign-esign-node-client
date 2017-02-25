@@ -55,17 +55,23 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('lockedByUser')) {
-        obj['lockedByUser'] = UserInfo.constructFromObject(data['lockedByUser']);
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('lockDurationInSeconds')) {
+        obj['lockDurationInSeconds'] = ApiClient.convertToType(data['lockDurationInSeconds'], 'String');
       }
       if (data.hasOwnProperty('lockedByApp')) {
         obj['lockedByApp'] = ApiClient.convertToType(data['lockedByApp'], 'String');
       }
+      if (data.hasOwnProperty('lockedByUser')) {
+        obj['lockedByUser'] = UserInfo.constructFromObject(data['lockedByUser']);
+      }
       if (data.hasOwnProperty('lockedUntilDateTime')) {
         obj['lockedUntilDateTime'] = ApiClient.convertToType(data['lockedUntilDateTime'], 'String');
       }
-      if (data.hasOwnProperty('lockDurationInSeconds')) {
-        obj['lockDurationInSeconds'] = ApiClient.convertToType(data['lockDurationInSeconds'], 'String');
+      if (data.hasOwnProperty('lockToken')) {
+        obj['lockToken'] = ApiClient.convertToType(data['lockToken'], 'String');
       }
       if (data.hasOwnProperty('lockType')) {
         obj['lockType'] = ApiClient.convertToType(data['lockType'], 'String');
@@ -73,37 +79,40 @@
       if (data.hasOwnProperty('useScratchPad')) {
         obj['useScratchPad'] = ApiClient.convertToType(data['useScratchPad'], 'String');
       }
-      if (data.hasOwnProperty('lockToken')) {
-        obj['lockToken'] = ApiClient.convertToType(data['lockToken'], 'String');
-      }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
-      }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/UserInfo} lockedByUser
+   * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['lockedByUser'] = undefined;
-  /**
-   * Specifies the friendly name of  the application that is locking the envelope.
-   * @member {String} lockedByApp
-   */
-  exports.prototype['lockedByApp'] = undefined;
-  /**
-   * 
-   * @member {String} lockedUntilDateTime
-   */
-  exports.prototype['lockedUntilDateTime'] = undefined;
+  exports.prototype['errorDetails'] = undefined;
   /**
    * Sets the time, in seconds, until the lock expires when there is no activity on the envelope.  If no value is entered, then the default value of 300 seconds is used. The maximum value is 1,800 seconds.  The lock duration can be extended. 
    * @member {String} lockDurationInSeconds
    */
   exports.prototype['lockDurationInSeconds'] = undefined;
   /**
-   * 
+   * Specifies the friendly name of  the application that is locking the envelope.
+   * @member {String} lockedByApp
+   */
+  exports.prototype['lockedByApp'] = undefined;
+  /**
+   * @member {module:model/UserInfo} lockedByUser
+   */
+  exports.prototype['lockedByUser'] = undefined;
+  /**
+   * The datetime until the envelope lock expires.
+   * @member {String} lockedUntilDateTime
+   */
+  exports.prototype['lockedUntilDateTime'] = undefined;
+  /**
+   * A unique identifier provided to the owner of the envelope lock.   Used to prove ownership of the lock.
+   * @member {String} lockToken
+   */
+  exports.prototype['lockToken'] = undefined;
+  /**
+   * The type of envelope lock.  Currently \"edit\" is the only supported type.
    * @member {String} lockType
    */
   exports.prototype['lockType'] = undefined;
@@ -112,15 +121,6 @@
    * @member {String} useScratchPad
    */
   exports.prototype['useScratchPad'] = undefined;
-  /**
-   * 
-   * @member {String} lockToken
-   */
-  exports.prototype['lockToken'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
 
 
 

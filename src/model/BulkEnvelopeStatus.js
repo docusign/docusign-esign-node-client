@@ -55,38 +55,23 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('batchId')) {
+        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      }
       if (data.hasOwnProperty('batchSize')) {
         obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'String');
       }
-      if (data.hasOwnProperty('batchId')) {
-        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      if (data.hasOwnProperty('bulkEnvelopes')) {
+        obj['bulkEnvelopes'] = ApiClient.convertToType(data['bulkEnvelopes'], [BulkEnvelope]);
       }
       if (data.hasOwnProperty('bulkEnvelopesBatchUri')) {
         obj['bulkEnvelopesBatchUri'] = ApiClient.convertToType(data['bulkEnvelopesBatchUri'], 'String');
       }
-      if (data.hasOwnProperty('failed')) {
-        obj['failed'] = ApiClient.convertToType(data['failed'], 'String');
-      }
-      if (data.hasOwnProperty('queued')) {
-        obj['queued'] = ApiClient.convertToType(data['queued'], 'String');
-      }
-      if (data.hasOwnProperty('sent')) {
-        obj['sent'] = ApiClient.convertToType(data['sent'], 'String');
-      }
-      if (data.hasOwnProperty('submittedDate')) {
-        obj['submittedDate'] = ApiClient.convertToType(data['submittedDate'], 'String');
-      }
-      if (data.hasOwnProperty('resultSetSize')) {
-        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
-      }
-      if (data.hasOwnProperty('startPosition')) {
-        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
-      }
       if (data.hasOwnProperty('endPosition')) {
         obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
       }
-      if (data.hasOwnProperty('totalSetSize')) {
-        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
+      if (data.hasOwnProperty('failed')) {
+        obj['failed'] = ApiClient.convertToType(data['failed'], 'String');
       }
       if (data.hasOwnProperty('nextUri')) {
         obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
@@ -94,68 +79,58 @@
       if (data.hasOwnProperty('previousUri')) {
         obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
       }
-      if (data.hasOwnProperty('bulkEnvelopes')) {
-        obj['bulkEnvelopes'] = ApiClient.convertToType(data['bulkEnvelopes'], [BulkEnvelope]);
+      if (data.hasOwnProperty('queued')) {
+        obj['queued'] = ApiClient.convertToType(data['queued'], 'String');
+      }
+      if (data.hasOwnProperty('resultSetSize')) {
+        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
+      }
+      if (data.hasOwnProperty('sent')) {
+        obj['sent'] = ApiClient.convertToType(data['sent'], 'String');
+      }
+      if (data.hasOwnProperty('startPosition')) {
+        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+      }
+      if (data.hasOwnProperty('submittedDate')) {
+        obj['submittedDate'] = ApiClient.convertToType(data['submittedDate'], 'String');
+      }
+      if (data.hasOwnProperty('totalSetSize')) {
+        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * Specifies an identifier which can be used to retrieve a more detailed status of individual bulk recipient batches.
+   * @member {String} batchId
+   */
+  exports.prototype['batchId'] = undefined;
+  /**
    * The number of items returned in this response.
    * @member {String} batchSize
    */
   exports.prototype['batchSize'] = undefined;
   /**
-   * Specifies an identifier which can be used to retrieve a more detailed status of individual bulk recipient batches.
-   * @member {String} batchId
+   * Reserved: TBD
+   * @member {Array.<module:model/BulkEnvelope>} bulkEnvelopes
    */
-  exports.prototype['batchId'] = undefined;
+  exports.prototype['bulkEnvelopes'] = undefined;
   /**
    * Reserved: TBD
    * @member {String} bulkEnvelopesBatchUri
    */
   exports.prototype['bulkEnvelopesBatchUri'] = undefined;
   /**
-   * The number of entries with a status of failed. 
-   * @member {String} failed
-   */
-  exports.prototype['failed'] = undefined;
-  /**
-   * The number of entries with a status of queued. 
-   * @member {String} queued
-   */
-  exports.prototype['queued'] = undefined;
-  /**
-   * The number of entries with a status of sent.
-   * @member {String} sent
-   */
-  exports.prototype['sent'] = undefined;
-  /**
-   * 
-   * @member {String} submittedDate
-   */
-  exports.prototype['submittedDate'] = undefined;
-  /**
-   * The number of results returned in this response. 
-   * @member {String} resultSetSize
-   */
-  exports.prototype['resultSetSize'] = undefined;
-  /**
-   * Starting position of the current result set.
-   * @member {String} startPosition
-   */
-  exports.prototype['startPosition'] = undefined;
-  /**
    * The last position in the result set. 
    * @member {String} endPosition
    */
   exports.prototype['endPosition'] = undefined;
   /**
-   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-   * @member {String} totalSetSize
+   * The number of entries with a status of failed. 
+   * @member {String} failed
    */
-  exports.prototype['totalSetSize'] = undefined;
+  exports.prototype['failed'] = undefined;
   /**
    * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
    * @member {String} nextUri
@@ -167,10 +142,35 @@
    */
   exports.prototype['previousUri'] = undefined;
   /**
-   * Reserved: TBD
-   * @member {Array.<module:model/BulkEnvelope>} bulkEnvelopes
+   * The number of entries with a status of queued. 
+   * @member {String} queued
    */
-  exports.prototype['bulkEnvelopes'] = undefined;
+  exports.prototype['queued'] = undefined;
+  /**
+   * The number of results returned in this response. 
+   * @member {String} resultSetSize
+   */
+  exports.prototype['resultSetSize'] = undefined;
+  /**
+   * The number of entries with a status of sent.
+   * @member {String} sent
+   */
+  exports.prototype['sent'] = undefined;
+  /**
+   * Starting position of the current result set.
+   * @member {String} startPosition
+   */
+  exports.prototype['startPosition'] = undefined;
+  /**
+   * 
+   * @member {String} submittedDate
+   */
+  exports.prototype['submittedDate'] = undefined;
+  /**
+   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
+   * @member {String} totalSetSize
+   */
+  exports.prototype['totalSetSize'] = undefined;
 
 
 

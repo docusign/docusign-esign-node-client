@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ssn9')) {
-        obj['ssn9'] = ApiClient.convertToType(data['ssn9'], 'String');
-      }
       if (data.hasOwnProperty('displayLevelCode')) {
         obj['displayLevelCode'] = ApiClient.convertToType(data['displayLevelCode'], 'String');
+      }
+      if (data.hasOwnProperty('ssn9')) {
+        obj['ssn9'] = ApiClient.convertToType(data['ssn9'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   *  The recipient's Social Security Number(SSN).
-   * @member {String} ssn9
-   */
-  exports.prototype['ssn9'] = undefined;
-  /**
    * Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay
    * @member {String} displayLevelCode
    */
   exports.prototype['displayLevelCode'] = undefined;
+  /**
+   *  The recipient's Social Security Number(SSN).
+   * @member {String} ssn9
+   */
+  exports.prototype['ssn9'] = undefined;
 
 
 

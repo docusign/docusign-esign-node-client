@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>RecipientSAMLAuthentication</code>.
+   * Contains the name/value pair information for the SAML assertion attributes:  * name - The name of the SAML assertion attribute. * value - The value associated with the named SAML assertion attribute.   Your account must be set up to use SSO to use this.
    * @alias module:model/RecipientSAMLAuthentication
    * @class
    */

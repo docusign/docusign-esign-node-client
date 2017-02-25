@@ -58,14 +58,14 @@
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
       }
-      if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
       if (data.hasOwnProperty('statusDateTime')) {
         obj['statusDateTime'] = ApiClient.convertToType(data['statusDateTime'], 'String');
       }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
       }
     }
     return obj;
@@ -77,20 +77,20 @@
    */
   exports.prototype['envelopeId'] = undefined;
   /**
-   * 
-   * @member {String} uri
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
    */
-  exports.prototype['uri'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
    * The DateTime that the envelope changed status (i.e. was created or sent.)
    * @member {String} statusDateTime
    */
   exports.prototype['statusDateTime'] = undefined;
   /**
-   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
-   * @member {String} status
+   * 
+   * @member {String} uri
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype['uri'] = undefined;
 
 
 

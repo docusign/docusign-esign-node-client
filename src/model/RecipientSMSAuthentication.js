@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>RecipientSMSAuthentication</code>.
+   * Contains the element senderProvidedNumbers which is an Array  of phone numbers the recipient can use for SMS text authentication.
    * @alias module:model/RecipientSMSAuthentication
    * @class
    */

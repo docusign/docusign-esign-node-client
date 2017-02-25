@@ -55,8 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('height')) {
+        obj['height'] = ApiClient.convertToType(data['height'], 'Number');
+      }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'Number');
+      }
+      if (data.hasOwnProperty('width')) {
+        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
       }
       if (data.hasOwnProperty('xPosition')) {
         obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'Number');
@@ -64,21 +70,25 @@
       if (data.hasOwnProperty('yPosition')) {
         obj['yPosition'] = ApiClient.convertToType(data['yPosition'], 'Number');
       }
-      if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
-      }
-      if (data.hasOwnProperty('height')) {
-        obj['height'] = ApiClient.convertToType(data['height'], 'Number');
-      }
     }
     return obj;
   }
 
   /**
+   * Height of the tab in pixels.
+   * @member {Number} height
+   */
+  exports.prototype['height'] = undefined;
+  /**
    * Specifies the page number on which the tab is located.
    * @member {Number} pageNumber
    */
   exports.prototype['pageNumber'] = undefined;
+  /**
+   * Width of the tab in pixels.
+   * @member {Number} width
+   */
+  exports.prototype['width'] = undefined;
   /**
    * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {Number} xPosition
@@ -89,16 +99,6 @@
    * @member {Number} yPosition
    */
   exports.prototype['yPosition'] = undefined;
-  /**
-   * Width of the tab in pixels.
-   * @member {Number} width
-   */
-  exports.prototype['width'] = undefined;
-  /**
-   * Height of the tab in pixels.
-   * @member {Number} height
-   */
-  exports.prototype['height'] = undefined;
 
 
 

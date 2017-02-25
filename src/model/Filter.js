@@ -61,17 +61,20 @@
       if (data.hasOwnProperty('expires')) {
         obj['expires'] = ApiClient.convertToType(data['expires'], 'String');
       }
-      if (data.hasOwnProperty('isTemplate')) {
-        obj['isTemplate'] = ApiClient.convertToType(data['isTemplate'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('folderIds')) {
+        obj['folderIds'] = ApiClient.convertToType(data['folderIds'], 'String');
       }
       if (data.hasOwnProperty('fromDateTime')) {
         obj['fromDateTime'] = ApiClient.convertToType(data['fromDateTime'], 'String');
       }
-      if (data.hasOwnProperty('toDateTime')) {
-        obj['toDateTime'] = ApiClient.convertToType(data['toDateTime'], 'String');
+      if (data.hasOwnProperty('isTemplate')) {
+        obj['isTemplate'] = ApiClient.convertToType(data['isTemplate'], 'String');
+      }
+      if (data.hasOwnProperty('order')) {
+        obj['order'] = ApiClient.convertToType(data['order'], 'String');
+      }
+      if (data.hasOwnProperty('orderBy')) {
+        obj['orderBy'] = ApiClient.convertToType(data['orderBy'], 'String');
       }
       if (data.hasOwnProperty('searchTarget')) {
         obj['searchTarget'] = ApiClient.convertToType(data['searchTarget'], 'String');
@@ -79,14 +82,11 @@
       if (data.hasOwnProperty('searchText')) {
         obj['searchText'] = ApiClient.convertToType(data['searchText'], 'String');
       }
-      if (data.hasOwnProperty('folderIds')) {
-        obj['folderIds'] = ApiClient.convertToType(data['folderIds'], 'String');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('orderBy')) {
-        obj['orderBy'] = ApiClient.convertToType(data['orderBy'], 'String');
-      }
-      if (data.hasOwnProperty('order')) {
-        obj['order'] = ApiClient.convertToType(data['order'], 'String');
+      if (data.hasOwnProperty('toDateTime')) {
+        obj['toDateTime'] = ApiClient.convertToType(data['toDateTime'], 'String');
       }
     }
     return obj;
@@ -104,24 +104,29 @@
   exports.prototype['expires'] = undefined;
   /**
    * 
-   * @member {String} isTemplate
+   * @member {String} folderIds
    */
-  exports.prototype['isTemplate'] = undefined;
-  /**
-   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
+  exports.prototype['folderIds'] = undefined;
   /**
    * 
    * @member {String} fromDateTime
    */
   exports.prototype['fromDateTime'] = undefined;
   /**
-   * Must be set to \"bearer\".
-   * @member {String} toDateTime
+   * 
+   * @member {String} isTemplate
    */
-  exports.prototype['toDateTime'] = undefined;
+  exports.prototype['isTemplate'] = undefined;
+  /**
+   * 
+   * @member {String} order
+   */
+  exports.prototype['order'] = undefined;
+  /**
+   * 
+   * @member {String} orderBy
+   */
+  exports.prototype['orderBy'] = undefined;
   /**
    * 
    * @member {String} searchTarget
@@ -133,20 +138,15 @@
    */
   exports.prototype['searchText'] = undefined;
   /**
-   * 
-   * @member {String} folderIds
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
    */
-  exports.prototype['folderIds'] = undefined;
+  exports.prototype['status'] = undefined;
   /**
-   * 
-   * @member {String} orderBy
+   * Must be set to \"bearer\".
+   * @member {String} toDateTime
    */
-  exports.prototype['orderBy'] = undefined;
-  /**
-   * 
-   * @member {String} order
-   */
-  exports.prototype['order'] = undefined;
+  exports.prototype['toDateTime'] = undefined;
 
 
 

@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('textCustomFields')) {
-        obj['textCustomFields'] = ApiClient.convertToType(data['textCustomFields'], [TextCustomField]);
-      }
       if (data.hasOwnProperty('listCustomFields')) {
         obj['listCustomFields'] = ApiClient.convertToType(data['listCustomFields'], [ListCustomField]);
+      }
+      if (data.hasOwnProperty('textCustomFields')) {
+        obj['textCustomFields'] = ApiClient.convertToType(data['textCustomFields'], [TextCustomField]);
       }
     }
     return obj;
   }
 
   /**
-   * An array of text custom fields.
-   * @member {Array.<module:model/TextCustomField>} textCustomFields
-   */
-  exports.prototype['textCustomFields'] = undefined;
-  /**
    * An array of list custom fields.
    * @member {Array.<module:model/ListCustomField>} listCustomFields
    */
   exports.prototype['listCustomFields'] = undefined;
+  /**
+   * An array of text custom fields.
+   * @member {Array.<module:model/TextCustomField>} textCustomFields
+   */
+  exports.prototype['textCustomFields'] = undefined;
 
 
 

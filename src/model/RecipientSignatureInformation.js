@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>RecipientSignatureInformation</code>.
+   * Allows the sender to pre-specify the signature name, signature initials and signature font used in the signature stamp for the recipient.  Used only with recipient types In Person Signers and Signers.
    * @alias module:model/RecipientSignatureInformation
    * @class
    */
@@ -55,34 +56,34 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('signatureName')) {
-        obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
+      if (data.hasOwnProperty('fontStyle')) {
+        obj['fontStyle'] = ApiClient.convertToType(data['fontStyle'], 'String');
       }
       if (data.hasOwnProperty('signatureInitials')) {
         obj['signatureInitials'] = ApiClient.convertToType(data['signatureInitials'], 'String');
       }
-      if (data.hasOwnProperty('fontStyle')) {
-        obj['fontStyle'] = ApiClient.convertToType(data['fontStyle'], 'String');
+      if (data.hasOwnProperty('signatureName')) {
+        obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Specifies the user signature name.
-   * @member {String} signatureName
+   * 
+   * @member {String} fontStyle
    */
-  exports.prototype['signatureName'] = undefined;
+  exports.prototype['fontStyle'] = undefined;
   /**
    * 
    * @member {String} signatureInitials
    */
   exports.prototype['signatureInitials'] = undefined;
   /**
-   * 
-   * @member {String} fontStyle
+   * Specifies the user signature name.
+   * @member {String} signatureName
    */
-  exports.prototype['fontStyle'] = undefined;
+  exports.prototype['signatureName'] = undefined;
 
 
 

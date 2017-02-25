@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/NameValue', 'model/SenderEmailNotifications', 'model/SignerEmailNotifications'], factory);
+    define(['ApiClient', 'model/NameValue', 'model/SenderEmailNotifications', 'model/SignerEmailNotifications', 'model/UserAccountManagementGranularInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./NameValue'), require('./SenderEmailNotifications'), require('./SignerEmailNotifications'));
+    module.exports = factory(require('../ApiClient'), require('./NameValue'), require('./SenderEmailNotifications'), require('./SignerEmailNotifications'), require('./UserAccountManagementGranularInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.UserSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.NameValue, root.Docusign.SenderEmailNotifications, root.Docusign.SignerEmailNotifications);
+    root.Docusign.UserSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.NameValue, root.Docusign.SenderEmailNotifications, root.Docusign.SignerEmailNotifications, root.Docusign.UserAccountManagementGranularInformation);
   }
-}(this, function(ApiClient, NameValue, SenderEmailNotifications, SignerEmailNotifications) {
+}(this, function(ApiClient, NameValue, SenderEmailNotifications, SignerEmailNotifications, UserAccountManagementGranularInformation) {
   'use strict';
 
 
@@ -55,32 +55,39 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('userSettings')) {
-        obj['userSettings'] = ApiClient.convertToType(data['userSettings'], [NameValue]);
+      if (data.hasOwnProperty('accountManagementGranular')) {
+        obj['accountManagementGranular'] = UserAccountManagementGranularInformation.constructFromObject(data['accountManagementGranular']);
+      }
+      if (data.hasOwnProperty('senderEmailNotifications')) {
+        obj['senderEmailNotifications'] = SenderEmailNotifications.constructFromObject(data['senderEmailNotifications']);
       }
       if (data.hasOwnProperty('signerEmailNotifications')) {
         obj['signerEmailNotifications'] = SignerEmailNotifications.constructFromObject(data['signerEmailNotifications']);
       }
-      if (data.hasOwnProperty('senderEmailNotifications')) {
-        obj['senderEmailNotifications'] = SenderEmailNotifications.constructFromObject(data['senderEmailNotifications']);
+      if (data.hasOwnProperty('userSettings')) {
+        obj['userSettings'] = ApiClient.convertToType(data['userSettings'], [NameValue]);
       }
     }
     return obj;
   }
 
   /**
-   * 
-   * @member {Array.<module:model/NameValue>} userSettings
+   * @member {module:model/UserAccountManagementGranularInformation} accountManagementGranular
    */
-  exports.prototype['userSettings'] = undefined;
+  exports.prototype['accountManagementGranular'] = undefined;
+  /**
+   * @member {module:model/SenderEmailNotifications} senderEmailNotifications
+   */
+  exports.prototype['senderEmailNotifications'] = undefined;
   /**
    * @member {module:model/SignerEmailNotifications} signerEmailNotifications
    */
   exports.prototype['signerEmailNotifications'] = undefined;
   /**
-   * @member {module:model/SenderEmailNotifications} senderEmailNotifications
+   * 
+   * @member {Array.<module:model/NameValue>} userSettings
    */
-  exports.prototype['senderEmailNotifications'] = undefined;
+  exports.prototype['userSettings'] = undefined;
 
 
 

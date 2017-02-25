@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BulkEnvelopeStatus', 'model/ErrorDetails', 'model/LockInformation'], factory);
+    define(['ApiClient', 'model/BulkEnvelopeStatus', 'model/ErrorDetails', 'model/ListCustomField', 'model/LockInformation', 'model/RecipientUpdateResponse', 'model/Tabs', 'model/TextCustomField'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BulkEnvelopeStatus'), require('./ErrorDetails'), require('./LockInformation'));
+    module.exports = factory(require('../ApiClient'), require('./BulkEnvelopeStatus'), require('./ErrorDetails'), require('./ListCustomField'), require('./LockInformation'), require('./RecipientUpdateResponse'), require('./Tabs'), require('./TextCustomField'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateUpdateSummary = factory(root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.ErrorDetails, root.Docusign.LockInformation);
+    root.Docusign.TemplateUpdateSummary = factory(root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.ErrorDetails, root.Docusign.ListCustomField, root.Docusign.LockInformation, root.Docusign.RecipientUpdateResponse, root.Docusign.Tabs, root.Docusign.TextCustomField);
   }
-}(this, function(ApiClient, BulkEnvelopeStatus, ErrorDetails, LockInformation) {
+}(this, function(ApiClient, BulkEnvelopeStatus, ErrorDetails, ListCustomField, LockInformation, RecipientUpdateResponse, Tabs, TextCustomField) {
   'use strict';
 
 
@@ -55,39 +55,70 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('bulkEnvelopeStatus')) {
+        obj['bulkEnvelopeStatus'] = BulkEnvelopeStatus.constructFromObject(data['bulkEnvelopeStatus']);
+      }
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
       }
-      if (data.hasOwnProperty('bulkEnvelopeStatus')) {
-        obj['bulkEnvelopeStatus'] = BulkEnvelopeStatus.constructFromObject(data['bulkEnvelopeStatus']);
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('listCustomFieldUpdateResults')) {
+        obj['listCustomFieldUpdateResults'] = ApiClient.convertToType(data['listCustomFieldUpdateResults'], [ListCustomField]);
       }
       if (data.hasOwnProperty('lockInformation')) {
         obj['lockInformation'] = LockInformation.constructFromObject(data['lockInformation']);
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('recipientUpdateResults')) {
+        obj['recipientUpdateResults'] = ApiClient.convertToType(data['recipientUpdateResults'], [RecipientUpdateResponse]);
+      }
+      if (data.hasOwnProperty('tabUpdateResults')) {
+        obj['tabUpdateResults'] = Tabs.constructFromObject(data['tabUpdateResults']);
+      }
+      if (data.hasOwnProperty('textCustomFieldUpdateResults')) {
+        obj['textCustomFieldUpdateResults'] = ApiClient.convertToType(data['textCustomFieldUpdateResults'], [TextCustomField]);
       }
     }
     return obj;
   }
 
   /**
+   * @member {module:model/BulkEnvelopeStatus} bulkEnvelopeStatus
+   */
+  exports.prototype['bulkEnvelopeStatus'] = undefined;
+  /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
   exports.prototype['envelopeId'] = undefined;
   /**
-   * @member {module:model/BulkEnvelopeStatus} bulkEnvelopeStatus
+   * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['bulkEnvelopeStatus'] = undefined;
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/ListCustomField>} listCustomFieldUpdateResults
+   */
+  exports.prototype['listCustomFieldUpdateResults'] = undefined;
   /**
    * @member {module:model/LockInformation} lockInformation
    */
   exports.prototype['lockInformation'] = undefined;
   /**
-   * @member {module:model/ErrorDetails} errorDetails
+   * 
+   * @member {Array.<module:model/RecipientUpdateResponse>} recipientUpdateResults
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['recipientUpdateResults'] = undefined;
+  /**
+   * @member {module:model/Tabs} tabUpdateResults
+   */
+  exports.prototype['tabUpdateResults'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/TextCustomField>} textCustomFieldUpdateResults
+   */
+  exports.prototype['textCustomFieldUpdateResults'] = undefined;
 
 
 

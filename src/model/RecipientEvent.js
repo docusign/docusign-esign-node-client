@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('recipientEventStatusCode')) {
-        obj['recipientEventStatusCode'] = ApiClient.convertToType(data['recipientEventStatusCode'], 'String');
-      }
       if (data.hasOwnProperty('includeDocuments')) {
         obj['includeDocuments'] = ApiClient.convertToType(data['includeDocuments'], 'String');
+      }
+      if (data.hasOwnProperty('recipientEventStatusCode')) {
+        obj['recipientEventStatusCode'] = ApiClient.convertToType(data['recipientEventStatusCode'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
-   * @member {String} recipientEventStatusCode
-   */
-  exports.prototype['recipientEventStatusCode'] = undefined;
-  /**
    * When set to **true**, the PDF documents are included in the message along with the updated XML. 
    * @member {String} includeDocuments
    */
   exports.prototype['includeDocuments'] = undefined;
+  /**
+   * The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
+   * @member {String} recipientEventStatusCode
+   */
+  exports.prototype['recipientEventStatusCode'] = undefined;
 
 
 

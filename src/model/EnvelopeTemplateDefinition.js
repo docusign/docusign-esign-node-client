@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>EnvelopeTemplateDefinition</code>.
+   * A complex element containing the following information:  templateId: Unique identifier of the template. If this is not provided, DocuSign will generate a value.   name: Name of the template. Maximum length: 100 characters.  shared: When set to **true**, the template is shared with the Everyone group in the account. If false, the template is only shared with the Administrator group.  password: Password, if the template is locked.  description: Description of the template. Maximum Length: 500 characters.  pageCount: Number of document pages in the template.  folderName: The name of the folder the template is located in.  folderId: The ID for the folder.  owner: The userName, email, userId, userType, and userStatus for the template owner.
    * @alias module:model/EnvelopeTemplateDefinition
    * @class
    */
@@ -55,23 +56,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
-      }
-      if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
-      }
-      if (data.hasOwnProperty('newPassword')) {
-        obj['newPassword'] = ApiClient.convertToType(data['newPassword'], 'String');
-      }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('folderId')) {
+        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+      }
+      if (data.hasOwnProperty('folderName')) {
+        obj['folderName'] = ApiClient.convertToType(data['folderName'], 'String');
+      }
+      if (data.hasOwnProperty('folderUri')) {
+        obj['folderUri'] = ApiClient.convertToType(data['folderUri'], 'String');
       }
       if (data.hasOwnProperty('lastModified')) {
         obj['lastModified'] = ApiClient.convertToType(data['lastModified'], 'String');
@@ -79,61 +74,57 @@
       if (data.hasOwnProperty('lastModifiedBy')) {
         obj['lastModifiedBy'] = UserInfo.constructFromObject(data['lastModifiedBy']);
       }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('newPassword')) {
+        obj['newPassword'] = ApiClient.convertToType(data['newPassword'], 'String');
+      }
+      if (data.hasOwnProperty('owner')) {
+        obj['owner'] = UserInfo.constructFromObject(data['owner']);
+      }
       if (data.hasOwnProperty('pageCount')) {
         obj['pageCount'] = ApiClient.convertToType(data['pageCount'], 'Number');
-      }
-      if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
-      }
-      if (data.hasOwnProperty('folderName')) {
-        obj['folderName'] = ApiClient.convertToType(data['folderName'], 'String');
-      }
-      if (data.hasOwnProperty('folderId')) {
-        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
-      }
-      if (data.hasOwnProperty('folderUri')) {
-        obj['folderUri'] = ApiClient.convertToType(data['folderUri'], 'String');
       }
       if (data.hasOwnProperty('parentFolderUri')) {
         obj['parentFolderUri'] = ApiClient.convertToType(data['parentFolderUri'], 'String');
       }
-      if (data.hasOwnProperty('owner')) {
-        obj['owner'] = UserInfo.constructFromObject(data['owner']);
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('shared')) {
+        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
-   * @member {String} templateId
-   */
-  exports.prototype['templateId'] = undefined;
-  /**
-   * 
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * When set to **true**, this custom tab is shared.
-   * @member {String} shared
-   */
-  exports.prototype['shared'] = undefined;
-  /**
-   * 
-   * @member {String} password
-   */
-  exports.prototype['password'] = undefined;
-  /**
-   * 
-   * @member {String} newPassword
-   */
-  exports.prototype['newPassword'] = undefined;
-  /**
    * 
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
+  /**
+   * The ID for the folder.
+   * @member {String} folderId
+   */
+  exports.prototype['folderId'] = undefined;
+  /**
+   *  The name of the folder in which the template is located.
+   * @member {String} folderName
+   */
+  exports.prototype['folderName'] = undefined;
+  /**
+   * The URI of the folder.
+   * @member {String} folderUri
+   */
+  exports.prototype['folderUri'] = undefined;
   /**
    * 
    * @member {String} lastModified
@@ -144,39 +135,49 @@
    */
   exports.prototype['lastModifiedBy'] = undefined;
   /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} newPassword
+   */
+  exports.prototype['newPassword'] = undefined;
+  /**
+   * @member {module:model/UserInfo} owner
+   */
+  exports.prototype['owner'] = undefined;
+  /**
    * An integer value specifying the number of document pages in the template. Omit this property if not submitting a page count.
    * @member {Number} pageCount
    */
   exports.prototype['pageCount'] = undefined;
   /**
    * 
-   * @member {String} uri
-   */
-  exports.prototype['uri'] = undefined;
-  /**
-   *  The name of the folder in which the template is located.
-   * @member {String} folderName
-   */
-  exports.prototype['folderName'] = undefined;
-  /**
-   * The ID for the folder.
-   * @member {String} folderId
-   */
-  exports.prototype['folderId'] = undefined;
-  /**
-   * The URI of the folder.
-   * @member {String} folderUri
-   */
-  exports.prototype['folderUri'] = undefined;
-  /**
-   * 
    * @member {String} parentFolderUri
    */
   exports.prototype['parentFolderUri'] = undefined;
   /**
-   * @member {module:model/UserInfo} owner
+   * 
+   * @member {String} password
    */
-  exports.prototype['owner'] = undefined;
+  exports.prototype['password'] = undefined;
+  /**
+   * When set to **true**, this custom tab is shared.
+   * @member {String} shared
+   */
+  exports.prototype['shared'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
 
 
 

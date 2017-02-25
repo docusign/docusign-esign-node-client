@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/SignatureType'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/NameValue', 'model/SignatureType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./SignatureType'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./NameValue'), require('./SignatureType'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeDocument = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.SignatureType);
+    root.Docusign.EnvelopeDocument = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.NameValue, root.Docusign.SignatureType);
   }
-}(this, function(ApiClient, ErrorDetails, SignatureType) {
+}(this, function(ApiClient, ErrorDetails, NameValue, SignatureType) {
   'use strict';
 
 
@@ -55,17 +55,35 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('attachmentTabId')) {
+        obj['attachmentTabId'] = ApiClient.convertToType(data['attachmentTabId'], 'String');
+      }
+      if (data.hasOwnProperty('availableDocumentTypes')) {
+        obj['availableDocumentTypes'] = ApiClient.convertToType(data['availableDocumentTypes'], [SignatureType]);
+      }
+      if (data.hasOwnProperty('containsPdfFormFields')) {
+        obj['containsPdfFormFields'] = ApiClient.convertToType(data['containsPdfFormFields'], 'String');
+      }
+      if (data.hasOwnProperty('display')) {
+        obj['display'] = ApiClient.convertToType(data['display'], 'String');
+      }
+      if (data.hasOwnProperty('documentFields')) {
+        obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
+      }
+      if (data.hasOwnProperty('documentGroup')) {
+        obj['documentGroup'] = ApiClient.convertToType(data['documentGroup'], 'String');
+      }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
       }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('includeInDownload')) {
+        obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
       }
       if (data.hasOwnProperty('order')) {
         obj['order'] = ApiClient.convertToType(data['order'], 'String');
@@ -73,39 +91,74 @@
       if (data.hasOwnProperty('pages')) {
         obj['pages'] = ApiClient.convertToType(data['pages'], 'String');
       }
-      if (data.hasOwnProperty('containsPdfFormFields')) {
-        obj['containsPdfFormFields'] = ApiClient.convertToType(data['containsPdfFormFields'], 'String');
+      if (data.hasOwnProperty('signerMustAcknowledge')) {
+        obj['signerMustAcknowledge'] = ApiClient.convertToType(data['signerMustAcknowledge'], 'String');
       }
-      if (data.hasOwnProperty('availableDocumentTypes')) {
-        obj['availableDocumentTypes'] = ApiClient.convertToType(data['availableDocumentTypes'], [SignatureType]);
+      if (data.hasOwnProperty('templateLocked')) {
+        obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('templateRequired')) {
+        obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * 
+   * @member {String} attachmentTabId
+   */
+  exports.prototype['attachmentTabId'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/SignatureType>} availableDocumentTypes
+   */
+  exports.prototype['availableDocumentTypes'] = undefined;
+  /**
+   * 
+   * @member {String} containsPdfFormFields
+   */
+  exports.prototype['containsPdfFormFields'] = undefined;
+  /**
+   * 
+   * @member {String} display
+   */
+  exports.prototype['display'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/NameValue>} documentFields
+   */
+  exports.prototype['documentFields'] = undefined;
+  /**
+   * 
+   * @member {String} documentGroup
+   */
+  exports.prototype['documentGroup'] = undefined;
+  /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
   exports.prototype['documentId'] = undefined;
   /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} includeInDownload
+   */
+  exports.prototype['includeInDownload'] = undefined;
+  /**
    * 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
-  /**
-   * 
-   * @member {String} type
-   */
-  exports.prototype['type'] = undefined;
-  /**
-   * 
-   * @member {String} uri
-   */
-  exports.prototype['uri'] = undefined;
   /**
    * 
    * @member {String} order
@@ -118,18 +171,29 @@
   exports.prototype['pages'] = undefined;
   /**
    * 
-   * @member {String} containsPdfFormFields
+   * @member {String} signerMustAcknowledge
    */
-  exports.prototype['containsPdfFormFields'] = undefined;
+  exports.prototype['signerMustAcknowledge'] = undefined;
+  /**
+   * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
+   * @member {String} templateLocked
+   */
+  exports.prototype['templateLocked'] = undefined;
+  /**
+   * When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
+   * @member {String} templateRequired
+   */
+  exports.prototype['templateRequired'] = undefined;
   /**
    * 
-   * @member {Array.<module:model/SignatureType>} availableDocumentTypes
+   * @member {String} type
    */
-  exports.prototype['availableDocumentTypes'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * @member {module:model/ErrorDetails} errorDetails
+   * 
+   * @member {String} uri
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['uri'] = undefined;
 
 
 

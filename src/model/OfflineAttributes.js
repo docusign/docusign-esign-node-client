@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>OfflineAttributes</code>.
+   * Reserved for DocuSign use.
    * @alias module:model/OfflineAttributes
    * @class
    */
@@ -55,20 +56,20 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('deviceName')) {
-        obj['deviceName'] = ApiClient.convertToType(data['deviceName'], 'String');
+      if (data.hasOwnProperty('accountEsignId')) {
+        obj['accountEsignId'] = ApiClient.convertToType(data['accountEsignId'], 'String');
       }
       if (data.hasOwnProperty('deviceModel')) {
         obj['deviceModel'] = ApiClient.convertToType(data['deviceModel'], 'String');
+      }
+      if (data.hasOwnProperty('deviceName')) {
+        obj['deviceName'] = ApiClient.convertToType(data['deviceName'], 'String');
       }
       if (data.hasOwnProperty('gpsLatitude')) {
         obj['gpsLatitude'] = ApiClient.convertToType(data['gpsLatitude'], 'String');
       }
       if (data.hasOwnProperty('gpsLongitude')) {
         obj['gpsLongitude'] = ApiClient.convertToType(data['gpsLongitude'], 'String');
-      }
-      if (data.hasOwnProperty('accountEsignId')) {
-        obj['accountEsignId'] = ApiClient.convertToType(data['accountEsignId'], 'String');
       }
       if (data.hasOwnProperty('offlineSigningHash')) {
         obj['offlineSigningHash'] = ApiClient.convertToType(data['offlineSigningHash'], 'String');
@@ -78,15 +79,20 @@
   }
 
   /**
-   * A string containing information about the type of device used for offline signing.
-   * @member {String} deviceName
+   * A GUID identifying the account associated with the consumer disclosure
+   * @member {String} accountEsignId
    */
-  exports.prototype['deviceName'] = undefined;
+  exports.prototype['accountEsignId'] = undefined;
   /**
    * A string containing information about the model of the device used for offline signing.
    * @member {String} deviceModel
    */
   exports.prototype['deviceModel'] = undefined;
+  /**
+   * A string containing information about the type of device used for offline signing.
+   * @member {String} deviceName
+   */
+  exports.prototype['deviceName'] = undefined;
   /**
    * A string containing the latitude of the device location at the time of signing.
    * @member {String} gpsLatitude
@@ -97,11 +103,6 @@
    * @member {String} gpsLongitude
    */
   exports.prototype['gpsLongitude'] = undefined;
-  /**
-   * A GUID identifying the account associated with the consumer disclosure
-   * @member {String} accountEsignId
-   */
-  exports.prototype['accountEsignId'] = undefined;
   /**
    * 
    * @member {String} offlineSigningHash

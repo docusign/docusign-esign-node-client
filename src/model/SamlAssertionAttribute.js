@@ -55,33 +55,41 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('originalValue')) {
+        obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
+      }
       if (data.hasOwnProperty('value')) {
         obj['value'] = ApiClient.convertToType(data['value'], 'String');
-      }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
     }
     return obj;
   }
 
   /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
    * 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
+   * The initial value of the tab when it was sent to the recipient. 
+   * @member {String} originalValue
+   */
+  exports.prototype['originalValue'] = undefined;
+  /**
    * The value associated with the named SAML assertion attribute
    * @member {String} value
    */
   exports.prototype['value'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
 
 
 

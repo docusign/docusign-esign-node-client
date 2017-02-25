@@ -55,19 +55,24 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('selected')) {
+        obj['selected'] = ApiClient.convertToType(data['selected'], 'String');
+      }
       if (data.hasOwnProperty('text')) {
         obj['text'] = ApiClient.convertToType(data['text'], 'String');
       }
       if (data.hasOwnProperty('value')) {
         obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
-      if (data.hasOwnProperty('selected')) {
-        obj['selected'] = ApiClient.convertToType(data['selected'], 'String');
-      }
     }
     return obj;
   }
 
+  /**
+   * When set to **true**, indicates that this item is the default selection shown to a signer.   Only one selection can be set as the default.
+   * @member {String} selected
+   */
+  exports.prototype['selected'] = undefined;
   /**
    * Specifies the text that is shown in the dropdown list. 
    * @member {String} text
@@ -78,11 +83,6 @@
    * @member {String} value
    */
   exports.prototype['value'] = undefined;
-  /**
-   * When set to **true**, indicates that this item is the default selection shown to a signer.   Only one selection can be set as the default.
-   * @member {String} selected
-   */
-  exports.prototype['selected'] = undefined;
 
 
 

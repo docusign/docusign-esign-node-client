@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('suppressNavigation')) {
-        obj['suppressNavigation'] = ApiClient.convertToType(data['suppressNavigation'], 'String');
-      }
       if (data.hasOwnProperty('returnUrl')) {
         obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
+      }
+      if (data.hasOwnProperty('suppressNavigation')) {
+        obj['suppressNavigation'] = ApiClient.convertToType(data['suppressNavigation'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * The url used after correct/send view session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your app. The event parameters returned are:   * send (user corrected and sent the envelope) * save (user saved the envelope) * cancel (user canceled the transaction.) * error (there was an error when performing the correct or send) * sessionEnd (the session ended before the user completed a different action)  ###### Note: Include https:// in the URL or the redirect might not succeed on some browsers. 
+   * @member {String} returnUrl
+   */
+  exports.prototype['returnUrl'] = undefined;
+  /**
    * Specifies whether the window is displayed with or without dressing.
    * @member {String} suppressNavigation
    */
   exports.prototype['suppressNavigation'] = undefined;
-  /**
-   * Specifies the return point after correcting the envelope. DocuSign returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are:   * send (user corrects and sends the envelope) * save (user saves the envelope) * cancel (user cancels the transaction.) * error (there is an error when performing the correct or send) * sessionEnd (the session ends before the user completes another action)  ## Important: You must include HTTPS:// in the URL or the redirect might be blocked by some browsers. 
-   * @member {String} returnUrl
-   */
-  exports.prototype['returnUrl'] = undefined;
 
 
 

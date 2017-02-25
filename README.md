@@ -22,7 +22,7 @@ You can sign up for a free [developer sandbox](https://www.docusign.com/develope
 Requirements
 ============
 
-Node 2.1.16 or later.
+Node 2.2.1 or later.
 
 Installation
 ============
@@ -294,7 +294,7 @@ Unit tests are available in the [Test](https://github.com/docusign/docusign-node
 Contributing
 ============
 
-This SDK is auto-generated from OpenAPI specification file. For that reason, we actually do NOT accept pull requests. If you find a bug or have an idea that you want to see in the SDK, please open a new [issue](https://github.com/docusign/docusign-node-client/issues/new).
+**This SDK is auto-generated from OpenAPI specification file. For that reason, we actually do NOT accept pull requests. If you find a bug or have an idea that you want to see in the SDK, please open a new [issue](https://github.com/docusign/docusign-node-client/issues/new).**
 
 Support
 =======

@@ -40,15 +40,16 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
-	  
-	this.setApiClient = function(apiClient) {
-	  this.apiClient = apiClient;
-	};
+    this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-	this.getApiClient = function() {
-	  return this.apiClient;
-	};
+
+    this.setApiClient = function(apiClient) {
+      this.apiClient = apiClient;
+    };
+
+    this.getApiClient = function() {
+      return this.apiClient;
+    };
 
 
     /**
@@ -101,7 +102,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the create operation.
@@ -113,10 +114,12 @@
 
     /**
      * Creates a custom tab.
-     * Creates a tab with pre-defined properties, such as a text tab with a certain font type and validation pattern. Users can access the custom tabs when sending documents through the DocuSign web application.  Custom tabs can be created for approve, checkbox, company, date, date signed, decline, email, email address, envelope ID, first name, formula, full name, initial here, last name, list, note, number, radio, sign here, signer attachment, SSN, text, title, and zip tabs.
+     * Creates a tab with pre-defined properties, such as a text tab with a certain font type and validation pattern. Users can access the custom tabs when sending documents through the DocuSign web application.
+
+Custom tabs can be created for approve, checkbox, company, date, date signed, decline, email, email address, envelope ID, first name, formula, full name, initial here, last name, list, note, number, radio, sign here, signer attachment, SSN, text, title, and zip tabs.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} opts Optional parameters
-     * @param {module:model/TabMetadata} opts.tabMetadata TBD Description
+     * @param {module:model/TabMetadata} opts.tabMetadata 
      * @param {module:api/CustomTabsApi~createCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadata}
      */
@@ -150,7 +153,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the get operation.
@@ -203,7 +206,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the list operation.
@@ -253,7 +256,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the update operation.
@@ -269,7 +272,7 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} customTabId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/TabMetadata} opts.tabMetadata TBD Description
+     * @param {module:model/TabMetadata} opts.tabMetadata 
      * @param {module:api/CustomTabsApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadata}
      */
@@ -309,7 +312,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
   };
 
   return exports;

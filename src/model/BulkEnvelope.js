@@ -55,11 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('transactionId')) {
-        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
+      if (data.hasOwnProperty('bulkRecipientRow')) {
+        obj['bulkRecipientRow'] = ApiClient.convertToType(data['bulkRecipientRow'], 'String');
       }
-      if (data.hasOwnProperty('submittedDateTime')) {
-        obj['submittedDateTime'] = ApiClient.convertToType(data['submittedDateTime'], 'String');
+      if (data.hasOwnProperty('bulkStatus')) {
+        obj['bulkStatus'] = ApiClient.convertToType(data['bulkStatus'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
@@ -67,35 +70,37 @@
       if (data.hasOwnProperty('envelopeUri')) {
         obj['envelopeUri'] = ApiClient.convertToType(data['envelopeUri'], 'String');
       }
-      if (data.hasOwnProperty('bulkRecipientRow')) {
-        obj['bulkRecipientRow'] = ApiClient.convertToType(data['bulkRecipientRow'], 'String');
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('submittedDateTime')) {
+        obj['submittedDateTime'] = ApiClient.convertToType(data['submittedDateTime'], 'String');
       }
-      if (data.hasOwnProperty('bulkStatus')) {
-        obj['bulkStatus'] = ApiClient.convertToType(data['bulkStatus'], 'String');
-      }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('transactionId')) {
+        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
-   * @member {String} transactionId
+   * Reserved: TBD
+   * @member {String} bulkRecipientRow
    */
-  exports.prototype['transactionId'] = undefined;
+  exports.prototype['bulkRecipientRow'] = undefined;
+  /**
+   * Indicates the status of the bulk send operation. Returned values can be: * queued * processing * sent * failed
+   * @member {String} bulkStatus
+   */
+  exports.prototype['bulkStatus'] = undefined;
   /**
    * 
-   * @member {String} submittedDateTime
+   * @member {String} email
    */
-  exports.prototype['submittedDateTime'] = undefined;
+  exports.prototype['email'] = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
@@ -107,10 +112,9 @@
    */
   exports.prototype['envelopeUri'] = undefined;
   /**
-   * Reserved: TBD
-   * @member {String} bulkRecipientRow
+   * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['bulkRecipientRow'] = undefined;
+  exports.prototype['errorDetails'] = undefined;
   /**
    * 
    * @member {String} name
@@ -118,18 +122,14 @@
   exports.prototype['name'] = undefined;
   /**
    * 
-   * @member {String} email
+   * @member {String} submittedDateTime
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['submittedDateTime'] = undefined;
   /**
-   * Indicates the status of the bulk send operation. Returned values can be: * queued * processing * sent * failed
-   * @member {String} bulkStatus
+   *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
+   * @member {String} transactionId
    */
-  exports.prototype['bulkStatus'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['transactionId'] = undefined;
 
 
 

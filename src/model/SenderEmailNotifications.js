@@ -55,11 +55,20 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('changedSigner')) {
+        obj['changedSigner'] = ApiClient.convertToType(data['changedSigner'], 'String');
+      }
+      if (data.hasOwnProperty('deliveryFailed')) {
+        obj['deliveryFailed'] = ApiClient.convertToType(data['deliveryFailed'], 'String');
+      }
       if (data.hasOwnProperty('envelopeComplete')) {
         obj['envelopeComplete'] = ApiClient.convertToType(data['envelopeComplete'], 'String');
       }
-      if (data.hasOwnProperty('changedSigner')) {
-        obj['changedSigner'] = ApiClient.convertToType(data['changedSigner'], 'String');
+      if (data.hasOwnProperty('offlineSigningFailed')) {
+        obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
+      }
+      if (data.hasOwnProperty('recipientViewed')) {
+        obj['recipientViewed'] = ApiClient.convertToType(data['recipientViewed'], 'String');
       }
       if (data.hasOwnProperty('senderEnvelopeDeclined')) {
         obj['senderEnvelopeDeclined'] = ApiClient.convertToType(data['senderEnvelopeDeclined'], 'String');
@@ -67,29 +76,35 @@
       if (data.hasOwnProperty('withdrawnConsent')) {
         obj['withdrawnConsent'] = ApiClient.convertToType(data['withdrawnConsent'], 'String');
       }
-      if (data.hasOwnProperty('recipientViewed')) {
-        obj['recipientViewed'] = ApiClient.convertToType(data['recipientViewed'], 'String');
-      }
-      if (data.hasOwnProperty('deliveryFailed')) {
-        obj['deliveryFailed'] = ApiClient.convertToType(data['deliveryFailed'], 'String');
-      }
-      if (data.hasOwnProperty('offlineSigningFailed')) {
-        obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
-      }
     }
     return obj;
   }
 
+  /**
+   * When set to **true**, the sender receives notification if the signer changes.
+   * @member {String} changedSigner
+   */
+  exports.prototype['changedSigner'] = undefined;
+  /**
+   * When set to **true**, the sender receives notification if the delivery of the envelope fails.
+   * @member {String} deliveryFailed
+   */
+  exports.prototype['deliveryFailed'] = undefined;
   /**
    * When set to **true**, the user receives notification that the envelope has been completed.
    * @member {String} envelopeComplete
    */
   exports.prototype['envelopeComplete'] = undefined;
   /**
-   * When set to **true**, the sender receives notification if the signer changes.
-   * @member {String} changedSigner
+   * When set to **true**, the user receives notification if the offline signing failed.
+   * @member {String} offlineSigningFailed
    */
-  exports.prototype['changedSigner'] = undefined;
+  exports.prototype['offlineSigningFailed'] = undefined;
+  /**
+   * When set to **true**, the sender receives notification that the recipient viewed the enveloper.
+   * @member {String} recipientViewed
+   */
+  exports.prototype['recipientViewed'] = undefined;
   /**
    * 
    * @member {String} senderEnvelopeDeclined
@@ -100,21 +115,6 @@
    * @member {String} withdrawnConsent
    */
   exports.prototype['withdrawnConsent'] = undefined;
-  /**
-   * When set to **true**, the sender receives notification that the recipient viewed the enveloper.
-   * @member {String} recipientViewed
-   */
-  exports.prototype['recipientViewed'] = undefined;
-  /**
-   * When set to **true**, the sender receives notification if the delivery of the envelope fails.
-   * @member {String} deliveryFailed
-   */
-  exports.prototype['deliveryFailed'] = undefined;
-  /**
-   * When set to **true**, the user receives notification if the offline signing failed.
-   * @member {String} offlineSigningFailed
-   */
-  exports.prototype['offlineSigningFailed'] = undefined;
 
 
 

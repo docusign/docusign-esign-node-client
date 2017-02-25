@@ -55,40 +55,40 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('expirations')) {
+        obj['expirations'] = Expirations.constructFromObject(data['expirations']);
+      }
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
-      }
-      if (data.hasOwnProperty('useAccountDefaults')) {
-        obj['useAccountDefaults'] = ApiClient.convertToType(data['useAccountDefaults'], 'String');
       }
       if (data.hasOwnProperty('reminders')) {
         obj['reminders'] = Reminders.constructFromObject(data['reminders']);
       }
-      if (data.hasOwnProperty('expirations')) {
-        obj['expirations'] = Expirations.constructFromObject(data['expirations']);
+      if (data.hasOwnProperty('useAccountDefaults')) {
+        obj['useAccountDefaults'] = ApiClient.convertToType(data['useAccountDefaults'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * @member {module:model/Expirations} expirations
+   */
+  exports.prototype['expirations'] = undefined;
+  /**
    * 
    * @member {String} password
    */
   exports.prototype['password'] = undefined;
   /**
-   * When set to **true**, the account default notification settings are used for the envelope.
-   * @member {String} useAccountDefaults
-   */
-  exports.prototype['useAccountDefaults'] = undefined;
-  /**
    * @member {module:model/Reminders} reminders
    */
   exports.prototype['reminders'] = undefined;
   /**
-   * @member {module:model/Expirations} expirations
+   * When set to **true**, the account default notification settings are used for the envelope.
+   * @member {String} useAccountDefaults
    */
-  exports.prototype['expirations'] = undefined;
+  exports.prototype['useAccountDefaults'] = undefined;
 
 
 
