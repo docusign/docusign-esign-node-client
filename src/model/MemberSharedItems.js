@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/SharedItem', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/SharedItem', 'model/TemplateSharedItem', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./SharedItem'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./SharedItem'), require('./TemplateSharedItem'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.MemberSharedItems = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.SharedItem, root.Docusign.UserInfo);
+    root.Docusign.MemberSharedItems = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.SharedItem, root.Docusign.TemplateSharedItem, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, ErrorDetails, SharedItem, UserInfo) {
+}(this, function(ApiClient, ErrorDetails, SharedItem, TemplateSharedItem, UserInfo) {
   'use strict';
 
 
@@ -55,23 +55,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('user')) {
-        obj['user'] = UserInfo.constructFromObject(data['user']);
-      }
       if (data.hasOwnProperty('envelopes')) {
         obj['envelopes'] = ApiClient.convertToType(data['envelopes'], [SharedItem]);
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('templates')) {
+        obj['templates'] = ApiClient.convertToType(data['templates'], [TemplateSharedItem]);
+      }
+      if (data.hasOwnProperty('user')) {
+        obj['user'] = UserInfo.constructFromObject(data['user']);
+      }
     }
     return obj;
   }
 
-  /**
-   * @member {module:model/UserInfo} user
-   */
-  exports.prototype['user'] = undefined;
   /**
    * 
    * @member {Array.<module:model/SharedItem>} envelopes
@@ -81,6 +80,15 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/TemplateSharedItem>} templates
+   */
+  exports.prototype['templates'] = undefined;
+  /**
+   * @member {module:model/UserInfo} user
+   */
+  exports.prototype['user'] = undefined;
 
 
 

@@ -58,8 +58,8 @@
       if (data.hasOwnProperty('compositeTemplateId')) {
         obj['compositeTemplateId'] = ApiClient.convertToType(data['compositeTemplateId'], 'String');
       }
-      if (data.hasOwnProperty('serverTemplates')) {
-        obj['serverTemplates'] = ApiClient.convertToType(data['serverTemplates'], [ServerTemplate]);
+      if (data.hasOwnProperty('document')) {
+        obj['document'] = Document.constructFromObject(data['document']);
       }
       if (data.hasOwnProperty('inlineTemplates')) {
         obj['inlineTemplates'] = ApiClient.convertToType(data['inlineTemplates'], [InlineTemplate]);
@@ -67,23 +67,22 @@
       if (data.hasOwnProperty('pdfMetaDataTemplateSequence')) {
         obj['pdfMetaDataTemplateSequence'] = ApiClient.convertToType(data['pdfMetaDataTemplateSequence'], 'String');
       }
-      if (data.hasOwnProperty('document')) {
-        obj['document'] = Document.constructFromObject(data['document']);
+      if (data.hasOwnProperty('serverTemplates')) {
+        obj['serverTemplates'] = ApiClient.convertToType(data['serverTemplates'], [ServerTemplate]);
       }
     }
     return obj;
   }
 
   /**
-   * Specifies the identify the composite template. It is used as a reference when adding document object information. If used, the document content-disposition must include the composite template ID to which the document should be added. If composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
+   * The identify of this composite template. It is used as a reference when adding document object information. If used, the document’s `content-disposition` must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
    * @member {String} compositeTemplateId
    */
   exports.prototype['compositeTemplateId'] = undefined;
   /**
-   * 0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value
-   * @member {Array.<module:model/ServerTemplate>} serverTemplates
+   * @member {module:model/Document} document
    */
-  exports.prototype['serverTemplates'] = undefined;
+  exports.prototype['document'] = undefined;
   /**
    *  Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.
    * @member {Array.<module:model/InlineTemplate>} inlineTemplates
@@ -95,9 +94,10 @@
    */
   exports.prototype['pdfMetaDataTemplateSequence'] = undefined;
   /**
-   * @member {module:model/Document} document
+   * 0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value
+   * @member {Array.<module:model/ServerTemplate>} serverTemplates
    */
-  exports.prototype['document'] = undefined;
+  exports.prototype['serverTemplates'] = undefined;
 
 
 

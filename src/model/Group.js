@@ -55,28 +55,32 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
       if (data.hasOwnProperty('groupId')) {
         obj['groupId'] = ApiClient.convertToType(data['groupId'], 'String');
       }
       if (data.hasOwnProperty('groupName')) {
         obj['groupName'] = ApiClient.convertToType(data['groupName'], 'String');
       }
-      if (data.hasOwnProperty('permissionProfileId')) {
-        obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
-      }
       if (data.hasOwnProperty('groupType')) {
         obj['groupType'] = ApiClient.convertToType(data['groupType'], 'String');
       }
+      if (data.hasOwnProperty('permissionProfileId')) {
+        obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
+      }
       if (data.hasOwnProperty('users')) {
         obj['users'] = ApiClient.convertToType(data['users'], [UserInfo]);
-      }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
     }
     return obj;
   }
 
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
   /**
    * The DocuSign group ID for the group.
    * @member {String} groupId
@@ -88,24 +92,20 @@
    */
   exports.prototype['groupName'] = undefined;
   /**
-   * The ID of the permission profile associated with the group.
-   * @member {String} permissionProfileId
-   */
-  exports.prototype['permissionProfileId'] = undefined;
-  /**
    * The group type.
    * @member {String} groupType
    */
   exports.prototype['groupType'] = undefined;
   /**
+   * The ID of the permission profile associated with the group.
+   * @member {String} permissionProfileId
+   */
+  exports.prototype['permissionProfileId'] = undefined;
+  /**
    * 
    * @member {Array.<module:model/UserInfo>} users
    */
   exports.prototype['users'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
 
 
 

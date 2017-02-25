@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('loginAccounts')) {
-        obj['loginAccounts'] = ApiClient.convertToType(data['loginAccounts'], [LoginAccount]);
-      }
       if (data.hasOwnProperty('apiPassword')) {
         obj['apiPassword'] = ApiClient.convertToType(data['apiPassword'], 'String');
+      }
+      if (data.hasOwnProperty('loginAccounts')) {
+        obj['loginAccounts'] = ApiClient.convertToType(data['loginAccounts'], [LoginAccount]);
       }
     }
     return obj;
   }
 
   /**
-   * The list of accounts that authenticating user is a member of.
-   * @member {Array.<module:model/LoginAccount>} loginAccounts
-   */
-  exports.prototype['loginAccounts'] = undefined;
-  /**
    * Contains a token that can be used for authentication in API calls instead of using the user name and password. Only returned if the `api_password=true` query string is added to the URL.
    * @member {String} apiPassword
    */
   exports.prototype['apiPassword'] = undefined;
+  /**
+   * The list of accounts that authenticating user is a member of.
+   * @member {Array.<module:model/LoginAccount>} loginAccounts
+   */
+  exports.prototype['loginAccounts'] = undefined;
 
 
 

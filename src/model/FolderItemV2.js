@@ -55,44 +55,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ownerName')) {
-        obj['ownerName'] = ApiClient.convertToType(data['ownerName'], 'String');
+      if (data.hasOwnProperty('completedDateTime')) {
+        obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('createdDateTime')) {
+        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
       }
       if (data.hasOwnProperty('envelopeUri')) {
         obj['envelopeUri'] = ApiClient.convertToType(data['envelopeUri'], 'String');
-      }
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('lastModifiedDateTime')) {
-        obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('senderUserId')) {
-        obj['senderUserId'] = ApiClient.convertToType(data['senderUserId'], 'String');
-      }
-      if (data.hasOwnProperty('senderName')) {
-        obj['senderName'] = ApiClient.convertToType(data['senderName'], 'String');
-      }
-      if (data.hasOwnProperty('senderEmail')) {
-        obj['senderEmail'] = ApiClient.convertToType(data['senderEmail'], 'String');
-      }
-      if (data.hasOwnProperty('senderCompany')) {
-        obj['senderCompany'] = ApiClient.convertToType(data['senderCompany'], 'String');
-      }
-      if (data.hasOwnProperty('createdDateTime')) {
-        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('sentDateTime')) {
-        obj['sentDateTime'] = ApiClient.convertToType(data['sentDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('completedDateTime')) {
-        obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('subject')) {
-        obj['subject'] = ApiClient.convertToType(data['subject'], 'String');
       }
       if (data.hasOwnProperty('expireDateTime')) {
         obj['expireDateTime'] = ApiClient.convertToType(data['expireDateTime'], 'String');
@@ -103,27 +76,59 @@
       if (data.hasOwnProperty('folderUri')) {
         obj['folderUri'] = ApiClient.convertToType(data['folderUri'], 'String');
       }
+      if (data.hasOwnProperty('is21CFRPart11')) {
+        obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
+      }
+      if (data.hasOwnProperty('isSignatureProviderEnvelope')) {
+        obj['isSignatureProviderEnvelope'] = ApiClient.convertToType(data['isSignatureProviderEnvelope'], 'String');
+      }
+      if (data.hasOwnProperty('lastModifiedDateTime')) {
+        obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('ownerName')) {
+        obj['ownerName'] = ApiClient.convertToType(data['ownerName'], 'String');
+      }
       if (data.hasOwnProperty('recipients')) {
         obj['recipients'] = Recipients.constructFromObject(data['recipients']);
       }
       if (data.hasOwnProperty('recipientsUri')) {
         obj['recipientsUri'] = ApiClient.convertToType(data['recipientsUri'], 'String');
       }
-      if (data.hasOwnProperty('is21CFRPart11')) {
-        obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
+      if (data.hasOwnProperty('senderCompany')) {
+        obj['senderCompany'] = ApiClient.convertToType(data['senderCompany'], 'String');
       }
-      if (data.hasOwnProperty('isUniversalSignatureEnvelope')) {
-        obj['isUniversalSignatureEnvelope'] = ApiClient.convertToType(data['isUniversalSignatureEnvelope'], 'String');
+      if (data.hasOwnProperty('senderEmail')) {
+        obj['senderEmail'] = ApiClient.convertToType(data['senderEmail'], 'String');
+      }
+      if (data.hasOwnProperty('senderName')) {
+        obj['senderName'] = ApiClient.convertToType(data['senderName'], 'String');
+      }
+      if (data.hasOwnProperty('senderUserId')) {
+        obj['senderUserId'] = ApiClient.convertToType(data['senderUserId'], 'String');
+      }
+      if (data.hasOwnProperty('sentDateTime')) {
+        obj['sentDateTime'] = ApiClient.convertToType(data['sentDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('subject')) {
+        obj['subject'] = ApiClient.convertToType(data['subject'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * 
-   * @member {String} ownerName
+   * Specifies the date and time this item was completed.
+   * @member {String} completedDateTime
    */
-  exports.prototype['ownerName'] = undefined;
+  exports.prototype['completedDateTime'] = undefined;
+  /**
+   * Indicates the date and time the item was created.
+   * @member {String} createdDateTime
+   */
+  exports.prototype['createdDateTime'] = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
@@ -134,56 +139,6 @@
    * @member {String} envelopeUri
    */
   exports.prototype['envelopeUri'] = undefined;
-  /**
-   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * The date and time the item was last modified.
-   * @member {String} lastModifiedDateTime
-   */
-  exports.prototype['lastModifiedDateTime'] = undefined;
-  /**
-   * 
-   * @member {String} senderUserId
-   */
-  exports.prototype['senderUserId'] = undefined;
-  /**
-   * 
-   * @member {String} senderName
-   */
-  exports.prototype['senderName'] = undefined;
-  /**
-   * 
-   * @member {String} senderEmail
-   */
-  exports.prototype['senderEmail'] = undefined;
-  /**
-   * 
-   * @member {String} senderCompany
-   */
-  exports.prototype['senderCompany'] = undefined;
-  /**
-   * Indicates the date and time the item was created.
-   * @member {String} createdDateTime
-   */
-  exports.prototype['createdDateTime'] = undefined;
-  /**
-   * The date and time the envelope was sent.
-   * @member {String} sentDateTime
-   */
-  exports.prototype['sentDateTime'] = undefined;
-  /**
-   * Specifies the date and time this item was completed.
-   * @member {String} completedDateTime
-   */
-  exports.prototype['completedDateTime'] = undefined;
-  /**
-   * 
-   * @member {String} subject
-   */
-  exports.prototype['subject'] = undefined;
   /**
    * The date and time the envelope is set to expire.
    * @member {String} expireDateTime
@@ -200,6 +155,26 @@
    */
   exports.prototype['folderUri'] = undefined;
   /**
+   * When set to **true**, indicates that this module is enabled on the account.
+   * @member {String} is21CFRPart11
+   */
+  exports.prototype['is21CFRPart11'] = undefined;
+  /**
+   * 
+   * @member {String} isSignatureProviderEnvelope
+   */
+  exports.prototype['isSignatureProviderEnvelope'] = undefined;
+  /**
+   * The date and time the item was last modified.
+   * @member {String} lastModifiedDateTime
+   */
+  exports.prototype['lastModifiedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} ownerName
+   */
+  exports.prototype['ownerName'] = undefined;
+  /**
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;
@@ -209,15 +184,40 @@
    */
   exports.prototype['recipientsUri'] = undefined;
   /**
-   * When set to **true**, indicates that this module is enabled on the account.
-   * @member {String} is21CFRPart11
+   * 
+   * @member {String} senderCompany
    */
-  exports.prototype['is21CFRPart11'] = undefined;
+  exports.prototype['senderCompany'] = undefined;
   /**
    * 
-   * @member {String} isUniversalSignatureEnvelope
+   * @member {String} senderEmail
    */
-  exports.prototype['isUniversalSignatureEnvelope'] = undefined;
+  exports.prototype['senderEmail'] = undefined;
+  /**
+   * 
+   * @member {String} senderName
+   */
+  exports.prototype['senderName'] = undefined;
+  /**
+   * 
+   * @member {String} senderUserId
+   */
+  exports.prototype['senderUserId'] = undefined;
+  /**
+   * The date and time the envelope was sent.
+   * @member {String} sentDateTime
+   */
+  exports.prototype['sentDateTime'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * 
+   * @member {String} subject
+   */
+  exports.prototype['subject'] = undefined;
 
 
 

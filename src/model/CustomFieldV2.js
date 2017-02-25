@@ -55,31 +55,40 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('fieldId')) {
-        obj['fieldId'] = ApiClient.convertToType(data['fieldId'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('show')) {
-        obj['show'] = ApiClient.convertToType(data['show'], 'String');
-      }
-      if (data.hasOwnProperty('required')) {
-        obj['required'] = ApiClient.convertToType(data['required'], 'String');
-      }
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
-      }
       if (data.hasOwnProperty('configurationType')) {
         obj['configurationType'] = ApiClient.convertToType(data['configurationType'], 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('fieldId')) {
+        obj['fieldId'] = ApiClient.convertToType(data['fieldId'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('required')) {
+        obj['required'] = ApiClient.convertToType(data['required'], 'String');
+      }
+      if (data.hasOwnProperty('show')) {
+        obj['show'] = ApiClient.convertToType(data['show'], 'String');
+      }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
+   * @member {String} configurationType
+   */
+  exports.prototype['configurationType'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
   /**
    * 
    * @member {String} fieldId
@@ -91,29 +100,20 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * 
-   * @member {String} show
-   */
-  exports.prototype['show'] = undefined;
-  /**
    * When set to **true**, the signer is required to fill out this tab
    * @member {String} required
    */
   exports.prototype['required'] = undefined;
   /**
+   * 
+   * @member {String} show
+   */
+  exports.prototype['show'] = undefined;
+  /**
    * The value of the custom field.
    * @member {String} value
    */
   exports.prototype['value'] = undefined;
-  /**
-   * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
-   * @member {String} configurationType
-   */
-  exports.prototype['configurationType'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
 
 
 

@@ -40,15 +40,16 @@
    * default to {@link module:ApiClient#instance} if unspecified.
    */
   var exports = function(apiClient) {
-	this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
-	  
-	this.setApiClient = function(apiClient) {
-	  this.apiClient = apiClient;
-	};
+    this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-	this.getApiClient = function() {
-	  return this.apiClient;
-	};
+
+    this.setApiClient = function(apiClient) {
+      this.apiClient = apiClient;
+    };
+
+    this.getApiClient = function() {
+      return this.apiClient;
+    };
 
 
     /**
@@ -61,12 +62,19 @@
 
     /**
      * Gets a list of the folders for the account.
-     * Retrieves a list of the folders for the account, including the folder hierarchy. You can specify whether to return just the template folder or template folder and normal folders by setting the &#x60;template&#x60; query string parameter.
+     * Retrieves a list of the folders for the account, including the folder hierarchy. You can specify whether to return just the template folder or template folder and normal folders by setting the `template` query string parameter.
      * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.include 
+     * @param {String} opts.includeItems 
+     * @param {String} opts.startPosition 
+     * @param {String} opts.template Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
+     * @param {String} opts.userFilter 
      * @param {module:api/FoldersApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FoldersResponse}
      */
-    this.list = function(accountId, callback) {
+    this.list = function(accountId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -79,6 +87,11 @@
         'accountId': accountId
       };
       var queryParams = {
+        'include': opts['include'],
+        'include_items': opts['includeItems'],
+        'start_position': opts['startPosition'],
+        'template': opts['template'],
+        'user_filter': opts['userFilter']
       };
       var headerParams = {
       };
@@ -95,7 +108,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the listItems operation.
@@ -110,10 +123,20 @@
      * Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} folderId The ID of the folder being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.fromDate  Only return items on or after this date. If no value is provided, the default search is the previous 30 days. 
+     * @param {String} opts.includeItems 
+     * @param {String} opts.ownerEmail  The email of the folder owner. 
+     * @param {String} opts.ownerName  The name of the folder owner. 
+     * @param {String} opts.searchText  The search text used to search the items of the envelope. The search looks at recipient names and emails, envelope custom fields, sender name, and subject. 
+     * @param {String} opts.startPosition The position of the folder items to return. This is used for repeated calls, when the number of envelopes returned is too much for one return (calls return 100 envelopes at a time). The default value is 0.
+     * @param {String} opts.status The current status of the envelope. If no value is provided, the default search is all/any status.
+     * @param {String} opts.toDate Only return items up to this date. If no value is provided, the default search is to the current date.
      * @param {module:api/FoldersApi~listItemsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FolderItemsResponse}
      */
-    this.listItems = function(accountId, folderId, callback) {
+    this.listItems = function(accountId, folderId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -132,6 +155,14 @@
         'folderId': folderId
       };
       var queryParams = {
+        'from_date': opts['fromDate'],
+        'include_items': opts['includeItems'],
+        'owner_email': opts['ownerEmail'],
+        'owner_name': opts['ownerName'],
+        'search_text': opts['searchText'],
+        'start_position': opts['startPosition'],
+        'status': opts['status'],
+        'to_date': opts['toDate']
       };
       var headerParams = {
       };
@@ -148,7 +179,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the moveEnvelopes operation.
@@ -160,11 +191,11 @@
 
     /**
      * Moves an envelope from its current folder to the specified folder.
-     * Moves an envelope from its current folder to the specified folder.  #### Note: You can use this endpoint to delete envelopes by specifying &#x60;recyclebin&#39; in the &#x60;folderId&#x60; parameter of the endpoint. Placing an in process envelope (envelope status of &#x60;sent&#x60; or &#x60;delivered&#x60;) in the recycle bin voids the envelope. You can also use this endpoint to delete templates by specifying a template ID instead of an envelope ID in the &#39;envelopeIds&#39; property and specifying &#x60;recyclebin&#x60; in the &#x60;folderId&#x60; parameter. 
+     * Moves envelopes to the specified folder.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} folderId The ID of the folder being accessed.
      * @param {Object} opts Optional parameters
-     * @param {module:model/FoldersRequest} opts.foldersRequest TBD Description
+     * @param {module:model/FoldersRequest} opts.foldersRequest 
      * @param {module:api/FoldersApi~moveEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FoldersResponse}
      */
@@ -204,7 +235,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
 
     /**
      * Callback function to receive the result of the search operation.
@@ -216,18 +247,20 @@
 
     /**
      * Gets a list of envelopes in folders matching the specified criteria.
-     * Retrieves a list of envelopes that match the criteria specified in the query.  If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
+     * Retrieves a list of envelopes that match the criteria specified in the query.
+
+If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} searchFolderId Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.toDate Specifies the end of the date range to return.
-     * @param {String} opts.order Specifies the order in which the list is returned. Valid values are: &#x60;asc&#x60; for ascending order, and &#x60;desc&#x60; for descending order.
-     * @param {String} opts.includeRecipients When set to **true**, the recipient information is returned in the response.
      * @param {String} opts.all Specifies that all envelopes that match the criteria are returned.
-     * @param {String} opts.orderBy Specifies the property used to sort the list. Valid values are: &#x60;action_required&#x60;, &#x60;created&#x60;, &#x60;completed&#x60;, &#x60;sent&#x60;, &#x60;signer_list&#x60;, &#x60;status&#x60;, or &#x60;subject&#x60;.
-     * @param {String} opts.startPosition Specifies the the starting location in the result set of the items that are returned.
      * @param {String} opts.count Specifies the number of records returned in the cache. The number must be greater than 0 and less than or equal to 100.
      * @param {String} opts.fromDate Specifies the start of the date range to return. If no value is provided, the default search is the previous 30 days.
+     * @param {String} opts.includeRecipients When set to **true**, the recipient information is returned in the response.
+     * @param {String} opts.order Specifies the order in which the list is returned. Valid values are: &#x60;asc&#x60; for ascending order, and &#x60;desc&#x60; for descending order.
+     * @param {String} opts.orderBy Specifies the property used to sort the list. Valid values are: &#x60;action_required&#x60;, &#x60;created&#x60;, &#x60;completed&#x60;, &#x60;sent&#x60;, &#x60;signer_list&#x60;, &#x60;status&#x60;, or &#x60;subject&#x60;.
+     * @param {String} opts.startPosition Specifies the the starting location in the result set of the items that are returned.
+     * @param {String} opts.toDate Specifies the end of the date range to return.
      * @param {module:api/FoldersApi~searchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FolderItemResponse}
      */
@@ -251,14 +284,14 @@
         'searchFolderId': searchFolderId
       };
       var queryParams = {
-        'to_date': opts['toDate'],
-        'order': opts['order'],
-        'include_recipients': opts['includeRecipients'],
         'all': opts['all'],
+        'count': opts['count'],
+        'from_date': opts['fromDate'],
+        'include_recipients': opts['includeRecipients'],
+        'order': opts['order'],
         'order_by': opts['orderBy'],
         'start_position': opts['startPosition'],
-        'count': opts['count'],
-        'from_date': opts['fromDate']
+        'to_date': opts['toDate']
       };
       var headerParams = {
       };
@@ -275,7 +308,7 @@
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
-    }
+    };
   };
 
   return exports;

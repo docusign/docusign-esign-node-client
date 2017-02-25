@@ -56,34 +56,59 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('city')) {
+        obj['city'] = ApiClient.convertToType(data['city'], 'String');
+      }
+      if (data.hasOwnProperty('country')) {
+        obj['country'] = ApiClient.convertToType(data['country'], 'String');
+      }
+      if (data.hasOwnProperty('fax')) {
+        obj['fax'] = ApiClient.convertToType(data['fax'], 'String');
+      }
+      if (data.hasOwnProperty('phone')) {
+        obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
+      }
+      if (data.hasOwnProperty('state')) {
+        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
       if (data.hasOwnProperty('street1')) {
         obj['street1'] = ApiClient.convertToType(data['street1'], 'String');
       }
       if (data.hasOwnProperty('street2')) {
         obj['street2'] = ApiClient.convertToType(data['street2'], 'String');
       }
-      if (data.hasOwnProperty('city')) {
-        obj['city'] = ApiClient.convertToType(data['city'], 'String');
-      }
-      if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
-      }
       if (data.hasOwnProperty('zip')) {
         obj['zip'] = ApiClient.convertToType(data['zip'], 'String');
-      }
-      if (data.hasOwnProperty('phone')) {
-        obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
-      }
-      if (data.hasOwnProperty('fax')) {
-        obj['fax'] = ApiClient.convertToType(data['fax'], 'String');
-      }
-      if (data.hasOwnProperty('country')) {
-        obj['country'] = ApiClient.convertToType(data['country'], 'String');
       }
     }
     return obj;
   }
 
+  /**
+   * The city associated with the address.
+   * @member {String} city
+   */
+  exports.prototype['city'] = undefined;
+  /**
+   * Specifies the country associated with the address.
+   * @member {String} country
+   */
+  exports.prototype['country'] = undefined;
+  /**
+   * A Fax number associated with the address if one is available.
+   * @member {String} fax
+   */
+  exports.prototype['fax'] = undefined;
+  /**
+   * A phone number associated with the address.
+   * @member {String} phone
+   */
+  exports.prototype['phone'] = undefined;
+  /**
+   * The state or province associated with the address.
+   * @member {String} state
+   */
+  exports.prototype['state'] = undefined;
   /**
    * The first line of the address.
    * @member {String} street1
@@ -95,35 +120,10 @@
    */
   exports.prototype['street2'] = undefined;
   /**
-   * The city associated with the address.
-   * @member {String} city
-   */
-  exports.prototype['city'] = undefined;
-  /**
-   * The state or province associated with the address.
-   * @member {String} state
-   */
-  exports.prototype['state'] = undefined;
-  /**
    * The zip or postal code associated with the address.
    * @member {String} zip
    */
   exports.prototype['zip'] = undefined;
-  /**
-   * A phone number associated with the address.
-   * @member {String} phone
-   */
-  exports.prototype['phone'] = undefined;
-  /**
-   * A Fax number associated with the address if one is available.
-   * @member {String} fax
-   */
-  exports.prototype['fax'] = undefined;
-  /**
-   * Specifies the country associated with the address.
-   * @member {String} country
-   */
-  exports.prototype['country'] = undefined;
 
 
 

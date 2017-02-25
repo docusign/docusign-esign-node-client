@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>Notification</code>.
+   * A complex element that specifies the notification options for the envelope. It consists of:  * useAccountDefaults - When set to **true**, the account default notification settings are used for the envelope.  * reminders - A complex element that specifies reminder settings for the envelope. It consists of:      * reminderEnabled - When set to **true**, a reminder message is sent to the recipient.    * reminderDelay - An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient.     * reminderFrequency - An interger that sets the interval, in days, between reminder emails.   * expirations - A complex element that specifies the expiration settings for the envelope. It consists of:     * expireEnabled - When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used.     * expireAfter - An integer that sets the number of days the envelope is active.    * expireWarn - An integer that sets the number of days before envelope expiration that an expiration warning email is sent to the recipient. If set to 0 (zero), no warning email is sent.
    * @alias module:model/Notification
    * @class
    */
@@ -55,32 +56,32 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('useAccountDefaults')) {
-        obj['useAccountDefaults'] = ApiClient.convertToType(data['useAccountDefaults'], 'String');
+      if (data.hasOwnProperty('expirations')) {
+        obj['expirations'] = Expirations.constructFromObject(data['expirations']);
       }
       if (data.hasOwnProperty('reminders')) {
         obj['reminders'] = Reminders.constructFromObject(data['reminders']);
       }
-      if (data.hasOwnProperty('expirations')) {
-        obj['expirations'] = Expirations.constructFromObject(data['expirations']);
+      if (data.hasOwnProperty('useAccountDefaults')) {
+        obj['useAccountDefaults'] = ApiClient.convertToType(data['useAccountDefaults'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * When set to **true**, the account default notification settings are used for the envelope.
-   * @member {String} useAccountDefaults
+   * @member {module:model/Expirations} expirations
    */
-  exports.prototype['useAccountDefaults'] = undefined;
+  exports.prototype['expirations'] = undefined;
   /**
    * @member {module:model/Reminders} reminders
    */
   exports.prototype['reminders'] = undefined;
   /**
-   * @member {module:model/Expirations} expirations
+   * When set to **true**, the account default notification settings are used for the envelope.
+   * @member {String} useAccountDefaults
    */
-  exports.prototype['expirations'] = undefined;
+  exports.prototype['useAccountDefaults'] = undefined;
 
 
 

@@ -56,32 +56,22 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      if (data.hasOwnProperty('createdDateTime')) {
+        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
-      if (data.hasOwnProperty('createdDateTime')) {
-        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
-      }
       if (data.hasOwnProperty('requestLogId')) {
         obj['requestLogId'] = ApiClient.convertToType(data['requestLogId'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
     }
     return obj;
   }
 
-  /**
-   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
-   * @member {String} status
-   */
-  exports.prototype['status'] = undefined;
-  /**
-   * 
-   * @member {String} description
-   */
-  exports.prototype['description'] = undefined;
   /**
    * Indicates the date and time the item was created.
    * @member {String} createdDateTime
@@ -89,9 +79,19 @@
   exports.prototype['createdDateTime'] = undefined;
   /**
    * 
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
+  /**
+   * 
    * @member {String} requestLogId
    */
   exports.prototype['requestLogId'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
 
 
 

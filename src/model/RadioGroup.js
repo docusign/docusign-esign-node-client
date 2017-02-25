@@ -55,17 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
-      }
-      if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
-      }
       if (data.hasOwnProperty('conditionalParentLabel')) {
         obj['conditionalParentLabel'] = ApiClient.convertToType(data['conditionalParentLabel'], 'String');
       }
       if (data.hasOwnProperty('conditionalParentValue')) {
         obj['conditionalParentValue'] = ApiClient.convertToType(data['conditionalParentValue'], 'String');
+      }
+      if (data.hasOwnProperty('documentId')) {
+        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
       }
       if (data.hasOwnProperty('groupName')) {
         obj['groupName'] = ApiClient.convertToType(data['groupName'], 'String');
@@ -73,29 +70,22 @@
       if (data.hasOwnProperty('radios')) {
         obj['radios'] = ApiClient.convertToType(data['radios'], [Radio]);
       }
-      if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+      if (data.hasOwnProperty('recipientId')) {
+        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+      }
+      if (data.hasOwnProperty('requireAll')) {
+        obj['requireAll'] = ApiClient.convertToType(data['requireAll'], 'String');
       }
       if (data.hasOwnProperty('requireInitialOnSharedChange')) {
         obj['requireInitialOnSharedChange'] = ApiClient.convertToType(data['requireInitialOnSharedChange'], 'String');
       }
-      if (data.hasOwnProperty('requireAll')) {
-        obj['requireAll'] = ApiClient.convertToType(data['requireAll'], 'String');
+      if (data.hasOwnProperty('shared')) {
+        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
     }
     return obj;
   }
 
-  /**
-   * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-   * @member {String} documentId
-   */
-  exports.prototype['documentId'] = undefined;
-  /**
-   * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-   * @member {String} recipientId
-   */
-  exports.prototype['recipientId'] = undefined;
   /**
    * For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
    * @member {String} conditionalParentLabel
@@ -107,6 +97,11 @@
    */
   exports.prototype['conditionalParentValue'] = undefined;
   /**
+   * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
+   * @member {String} documentId
+   */
+  exports.prototype['documentId'] = undefined;
+  /**
    * The name of the group.
    * @member {String} groupName
    */
@@ -117,20 +112,25 @@
    */
   exports.prototype['radios'] = undefined;
   /**
-   * When set to **true**, this custom tab is shared.
-   * @member {String} shared
+   * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
+   * @member {String} recipientId
    */
-  exports.prototype['shared'] = undefined;
+  exports.prototype['recipientId'] = undefined;
+  /**
+   * When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
+   * @member {String} requireAll
+   */
+  exports.prototype['requireAll'] = undefined;
   /**
    * Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
    * @member {String} requireInitialOnSharedChange
    */
   exports.prototype['requireInitialOnSharedChange'] = undefined;
   /**
-   * When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
-   * @member {String} requireAll
+   * When set to **true**, this custom tab is shared.
+   * @member {String} shared
    */
-  exports.prototype['requireAll'] = undefined;
+  exports.prototype['shared'] = undefined;
 
 
 

@@ -56,11 +56,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      if (data.hasOwnProperty('accessControl')) {
+        obj['accessControl'] = ApiClient.convertToType(data['accessControl'], 'String');
+      }
+      if (data.hasOwnProperty('attachmentId')) {
+        obj['attachmentId'] = ApiClient.convertToType(data['attachmentId'], 'String');
       }
       if (data.hasOwnProperty('attachmentType')) {
         obj['attachmentType'] = ApiClient.convertToType(data['attachmentType'], 'String');
+      }
+      if (data.hasOwnProperty('data')) {
+        obj['data'] = ApiClient.convertToType(data['data'], 'String');
+      }
+      if (data.hasOwnProperty('label')) {
+        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('remoteUrl')) {
+        obj['remoteUrl'] = ApiClient.convertToType(data['remoteUrl'], 'String');
       }
     }
     return obj;
@@ -68,14 +83,39 @@
 
   /**
    * 
-   * @member {String} label
+   * @member {String} accessControl
    */
-  exports.prototype['label'] = undefined;
+  exports.prototype['accessControl'] = undefined;
+  /**
+   * 
+   * @member {String} attachmentId
+   */
+  exports.prototype['attachmentId'] = undefined;
   /**
    * Specifies the type of the attachment for the recipient.
    * @member {String} attachmentType
    */
   exports.prototype['attachmentType'] = undefined;
+  /**
+   * 
+   * @member {String} data
+   */
+  exports.prototype['data'] = undefined;
+  /**
+   * 
+   * @member {String} label
+   */
+  exports.prototype['label'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} remoteUrl
+   */
+  exports.prototype['remoteUrl'] = undefined;
 
 
 

@@ -55,24 +55,19 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ssn4')) {
-        obj['ssn4'] = ApiClient.convertToType(data['ssn4'], 'String');
-      }
       if (data.hasOwnProperty('displayLevelCode')) {
         obj['displayLevelCode'] = ApiClient.convertToType(data['displayLevelCode'], 'String');
       }
       if (data.hasOwnProperty('receiveInResponse')) {
         obj['receiveInResponse'] = ApiClient.convertToType(data['receiveInResponse'], 'String');
       }
+      if (data.hasOwnProperty('ssn4')) {
+        obj['ssn4'] = ApiClient.convertToType(data['ssn4'], 'String');
+      }
     }
     return obj;
   }
 
-  /**
-   * The last four digits of the recipient's Social Security Number (SSN).
-   * @member {String} ssn4
-   */
-  exports.prototype['ssn4'] = undefined;
   /**
    * Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay
    * @member {String} displayLevelCode
@@ -83,6 +78,11 @@
    * @member {String} receiveInResponse
    */
   exports.prototype['receiveInResponse'] = undefined;
+  /**
+   * The last four digits of the recipient's Social Security Number (SSN).
+   * @member {String} ssn4
+   */
+  exports.prototype['ssn4'] = undefined;
 
 
 

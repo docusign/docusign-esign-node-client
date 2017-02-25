@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
-      }
       if (data.hasOwnProperty('templateDocuments')) {
         obj['templateDocuments'] = ApiClient.convertToType(data['templateDocuments'], [EnvelopeDocument]);
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
-   * @member {String} templateId
-   */
-  exports.prototype['templateId'] = undefined;
-  /**
    * 
    * @member {Array.<module:model/EnvelopeDocument>} templateDocuments
    */
   exports.prototype['templateDocuments'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
 
 
 

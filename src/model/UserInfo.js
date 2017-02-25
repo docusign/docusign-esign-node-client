@@ -55,26 +55,35 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      if (data.hasOwnProperty('activationAccessCode')) {
+        obj['activationAccessCode'] = ApiClient.convertToType(data['activationAccessCode'], 'String');
       }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
-      if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
-      if (data.hasOwnProperty('userType')) {
-        obj['userType'] = ApiClient.convertToType(data['userType'], 'String');
+      if (data.hasOwnProperty('loginStatus')) {
+        obj['loginStatus'] = ApiClient.convertToType(data['loginStatus'], 'String');
       }
-      if (data.hasOwnProperty('userStatus')) {
-        obj['userStatus'] = ApiClient.convertToType(data['userStatus'], 'String');
+      if (data.hasOwnProperty('sendActivationEmail')) {
+        obj['sendActivationEmail'] = ApiClient.convertToType(data['sendActivationEmail'], 'String');
       }
       if (data.hasOwnProperty('uri')) {
         obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('userId')) {
+        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      }
+      if (data.hasOwnProperty('userName')) {
+        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      }
+      if (data.hasOwnProperty('userStatus')) {
+        obj['userStatus'] = ApiClient.convertToType(data['userStatus'], 'String');
+      }
+      if (data.hasOwnProperty('userType')) {
+        obj['userType'] = ApiClient.convertToType(data['userType'], 'String');
       }
     }
     return obj;
@@ -82,14 +91,33 @@
 
   /**
    * 
-   * @member {String} userName
+   * @member {String} activationAccessCode
    */
-  exports.prototype['userName'] = undefined;
+  exports.prototype['activationAccessCode'] = undefined;
   /**
    * 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} loginStatus
+   */
+  exports.prototype['loginStatus'] = undefined;
+  /**
+   * 
+   * @member {String} sendActivationEmail
+   */
+  exports.prototype['sendActivationEmail'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
   /**
    * 
    * @member {String} userId
@@ -97,9 +125,9 @@
   exports.prototype['userId'] = undefined;
   /**
    * 
-   * @member {String} userType
+   * @member {String} userName
    */
-  exports.prototype['userType'] = undefined;
+  exports.prototype['userName'] = undefined;
   /**
    * 
    * @member {String} userStatus
@@ -107,13 +135,9 @@
   exports.prototype['userStatus'] = undefined;
   /**
    * 
-   * @member {String} uri
+   * @member {String} userType
    */
-  exports.prototype['uri'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['userType'] = undefined;
 
 
 

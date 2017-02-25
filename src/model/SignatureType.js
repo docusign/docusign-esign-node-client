@@ -55,11 +55,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
       if (data.hasOwnProperty('isDefault')) {
         obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
     }
     return obj;
@@ -67,14 +67,14 @@
 
   /**
    * 
-   * @member {String} type
-   */
-  exports.prototype['type'] = undefined;
-  /**
-   * 
    * @member {String} isDefault
    */
   exports.prototype['isDefault'] = undefined;
+  /**
+   * 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
 
 
 

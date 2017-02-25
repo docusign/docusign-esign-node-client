@@ -1,0 +1,132 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['ApiClient', 'model/NameValue'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'), require('./NameValue'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.Docusign) {
+      root.Docusign = {};
+    }
+    root.Docusign.RecipientFormData = factory(root.Docusign.ApiClient, root.Docusign.NameValue);
+  }
+}(this, function(ApiClient, NameValue) {
+  'use strict';
+
+
+  /**
+   * The RecipientFormData model module.
+   * @module model/RecipientFormData
+   * @version 3.0.0
+   */
+
+  /**
+   * Constructs a new <code>RecipientFormData</code>.
+   * @alias module:model/RecipientFormData
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
+
+
+  };
+
+  /**
+   * Constructs a <code>RecipientFormData</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/RecipientFormData} obj Optional instance to populate.
+   * @return {module:model/RecipientFormData} The populated <code>RecipientFormData</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('declinedTime')) {
+        obj['declinedTime'] = ApiClient.convertToType(data['declinedTime'], 'String');
+      }
+      if (data.hasOwnProperty('deliveredTime')) {
+        obj['deliveredTime'] = ApiClient.convertToType(data['deliveredTime'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('formData')) {
+        obj['formData'] = ApiClient.convertToType(data['formData'], [NameValue]);
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('recipientId')) {
+        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+      }
+      if (data.hasOwnProperty('sentTime')) {
+        obj['sentTime'] = ApiClient.convertToType(data['sentTime'], 'String');
+      }
+      if (data.hasOwnProperty('signedTime')) {
+        obj['signedTime'] = ApiClient.convertToType(data['signedTime'], 'String');
+      }
+    }
+    return obj;
+  }
+
+  /**
+   * 
+   * @member {String} declinedTime
+   */
+  exports.prototype['declinedTime'] = undefined;
+  /**
+   * 
+   * @member {String} deliveredTime
+   */
+  exports.prototype['deliveredTime'] = undefined;
+  /**
+   * 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/NameValue>} formData
+   */
+  exports.prototype['formData'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
+   * @member {String} recipientId
+   */
+  exports.prototype['recipientId'] = undefined;
+  /**
+   * 
+   * @member {String} sentTime
+   */
+  exports.prototype['sentTime'] = undefined;
+  /**
+   * 
+   * @member {String} signedTime
+   */
+  exports.prototype['signedTime'] = undefined;
+
+
+
+  return exports;
+}));
+
+

@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>DobInformationInput</code>.
+   * Complex type containing:  * dateOfBirth * displayLevelCode * receiveInResponse
    * @alias module:model/DobInformationInput
    * @class
    */

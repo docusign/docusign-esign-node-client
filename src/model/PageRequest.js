@@ -55,26 +55,26 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('rotate')) {
-        obj['rotate'] = ApiClient.convertToType(data['rotate'], 'String');
-      }
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('rotate')) {
+        obj['rotate'] = ApiClient.convertToType(data['rotate'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Sets the direction the page image is rotated. The possible settings are: left or right
-   * @member {String} rotate
-   */
-  exports.prototype['rotate'] = undefined;
-  /**
    * 
    * @member {String} password
    */
   exports.prototype['password'] = undefined;
+  /**
+   * Sets the direction the page image is rotated. The possible settings are: left or right
+   * @member {String} rotate
+   */
+  exports.prototype['rotate'] = undefined;
 
 
 

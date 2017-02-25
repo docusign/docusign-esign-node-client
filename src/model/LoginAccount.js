@@ -55,9 +55,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
       if (data.hasOwnProperty('accountId')) {
         obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
       }
@@ -67,20 +64,11 @@
       if (data.hasOwnProperty('baseUrl')) {
         obj['baseUrl'] = ApiClient.convertToType(data['baseUrl'], 'String');
       }
-      if (data.hasOwnProperty('isDefault')) {
-        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
-      }
-      if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
-      }
-      if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
-      }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
-      if (data.hasOwnProperty('siteDescription')) {
-        obj['siteDescription'] = ApiClient.convertToType(data['siteDescription'], 'String');
+      if (data.hasOwnProperty('isDefault')) {
+        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
       }
       if (data.hasOwnProperty('loginAccountSettings')) {
         obj['loginAccountSettings'] = ApiClient.convertToType(data['loginAccountSettings'], [NameValue]);
@@ -88,15 +76,22 @@
       if (data.hasOwnProperty('loginUserSettings')) {
         obj['loginUserSettings'] = ApiClient.convertToType(data['loginUserSettings'], [NameValue]);
       }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('siteDescription')) {
+        obj['siteDescription'] = ApiClient.convertToType(data['siteDescription'], 'String');
+      }
+      if (data.hasOwnProperty('userId')) {
+        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      }
+      if (data.hasOwnProperty('userName')) {
+        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      }
     }
     return obj;
   }
 
-  /**
-   * The name associated with the account.
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
   /**
    * The account ID associated with the envelope.
    * @member {String} accountId
@@ -113,30 +108,15 @@
    */
   exports.prototype['baseUrl'] = undefined;
   /**
-   * This value is true if this is the default account for the user, otherwise false is returned.
-   * @member {String} isDefault
-   */
-  exports.prototype['isDefault'] = undefined;
-  /**
-   * The name of this user as defined by the account.
-   * @member {String} userName
-   */
-  exports.prototype['userName'] = undefined;
-  /**
-   * 
-   * @member {String} userId
-   */
-  exports.prototype['userId'] = undefined;
-  /**
-   * 
+   * The email address for the user.
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
   /**
-   * An optional descirption of the site that hosts the account.
-   * @member {String} siteDescription
+   * This value is true if this is the default account for the user, otherwise false is returned.
+   * @member {String} isDefault
    */
-  exports.prototype['siteDescription'] = undefined;
+  exports.prototype['isDefault'] = undefined;
   /**
    * A list of settings on the acccount that indicate what features are available.
    * @member {Array.<module:model/NameValue>} loginAccountSettings
@@ -147,6 +127,26 @@
    * @member {Array.<module:model/NameValue>} loginUserSettings
    */
   exports.prototype['loginUserSettings'] = undefined;
+  /**
+   * The name associated with the account.
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * An optional descirption of the site that hosts the account.
+   * @member {String} siteDescription
+   */
+  exports.prototype['siteDescription'] = undefined;
+  /**
+   * 
+   * @member {String} userId
+   */
+  exports.prototype['userId'] = undefined;
+  /**
+   * The name of this user as defined by the account.
+   * @member {String} userName
+   */
+  exports.prototype['userName'] = undefined;
 
 
 

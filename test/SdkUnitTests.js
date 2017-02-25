@@ -399,7 +399,7 @@ describe('SDK Unit Tests:', function () {
 
       if (envelopeSummary) {
         console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-        envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', function (err, pdfBytes, response) {
+        envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', null, function (err, pdfBytes, response) {
           if (err) {
             return done(err);
           }
@@ -428,7 +428,7 @@ describe('SDK Unit Tests:', function () {
   it('listDocuments', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.listDocuments(accountId, envelopeId, function (error, docsList, response) {
+    envelopesApi.listDocuments(accountId, envelopeId, null, function (error, docsList, response) {
       if (error) {
         return done(error);
       }
@@ -525,7 +525,7 @@ describe('SDK Unit Tests:', function () {
 
           if (envelopeSummary) {
             console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-            envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', function (error, pdfBytes, response) {
+            envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', null, function (error, pdfBytes, response) {
               if (error) {
                 return done(error);
               }

@@ -55,41 +55,41 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('transactionId')) {
-        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
-      }
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('transactionId')) {
+        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
-   * @member {String} transactionId
-   */
-  exports.prototype['transactionId'] = undefined;
-  /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
   exports.prototype['envelopeId'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
-   * @member {module:model/ErrorDetails} errorDetails
+   *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
+   * @member {String} transactionId
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['transactionId'] = undefined;
 
 
 

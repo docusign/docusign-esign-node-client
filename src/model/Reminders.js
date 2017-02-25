@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>Reminders</code>.
+   * A complex element that specifies reminder settings for the envelope
    * @alias module:model/Reminders
    * @class
    */
@@ -55,11 +56,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('reminderEnabled')) {
-        obj['reminderEnabled'] = ApiClient.convertToType(data['reminderEnabled'], 'String');
-      }
       if (data.hasOwnProperty('reminderDelay')) {
         obj['reminderDelay'] = ApiClient.convertToType(data['reminderDelay'], 'String');
+      }
+      if (data.hasOwnProperty('reminderEnabled')) {
+        obj['reminderEnabled'] = ApiClient.convertToType(data['reminderEnabled'], 'String');
       }
       if (data.hasOwnProperty('reminderFrequency')) {
         obj['reminderFrequency'] = ApiClient.convertToType(data['reminderFrequency'], 'String');
@@ -69,15 +70,15 @@
   }
 
   /**
-   * When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used.
-   * @member {String} reminderEnabled
-   */
-  exports.prototype['reminderEnabled'] = undefined;
-  /**
    * An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient.
    * @member {String} reminderDelay
    */
   exports.prototype['reminderDelay'] = undefined;
+  /**
+   * When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used.
+   * @member {String} reminderEnabled
+   */
+  exports.prototype['reminderEnabled'] = undefined;
   /**
    * An interger that sets the interval, in days, between reminder emails.
    * @member {String} reminderFrequency

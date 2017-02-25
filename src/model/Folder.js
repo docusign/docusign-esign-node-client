@@ -55,8 +55,20 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ownerUserName')) {
-        obj['ownerUserName'] = ApiClient.convertToType(data['ownerUserName'], 'String');
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('filter')) {
+        obj['filter'] = Filter.constructFromObject(data['filter']);
+      }
+      if (data.hasOwnProperty('folderId')) {
+        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+      }
+      if (data.hasOwnProperty('folders')) {
+        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('ownerEmail')) {
         obj['ownerEmail'] = ApiClient.convertToType(data['ownerEmail'], 'String');
@@ -64,14 +76,8 @@
       if (data.hasOwnProperty('ownerUserId')) {
         obj['ownerUserId'] = ApiClient.convertToType(data['ownerUserId'], 'String');
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      if (data.hasOwnProperty('ownerUserName')) {
+        obj['ownerUserName'] = ApiClient.convertToType(data['ownerUserName'], 'String');
       }
       if (data.hasOwnProperty('parentFolderId')) {
         obj['parentFolderId'] = ApiClient.convertToType(data['parentFolderId'], 'String');
@@ -79,27 +85,39 @@
       if (data.hasOwnProperty('parentFolderUri')) {
         obj['parentFolderUri'] = ApiClient.convertToType(data['parentFolderUri'], 'String');
       }
-      if (data.hasOwnProperty('folderId')) {
-        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
-      }
-      if (data.hasOwnProperty('folders')) {
-        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
-      }
-      if (data.hasOwnProperty('filter')) {
-        obj['filter'] = Filter.constructFromObject(data['filter']);
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * 
-   * @member {String} ownerUserName
+   * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['ownerUserName'] = undefined;
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * @member {module:model/Filter} filter
+   */
+  exports.prototype['filter'] = undefined;
+  /**
+   * 
+   * @member {String} folderId
+   */
+  exports.prototype['folderId'] = undefined;
+  /**
+   * A collection of folder objects returned in a response.
+   * @member {Array.<module:model/Folder>} folders
+   */
+  exports.prototype['folders'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
   /**
    * 
    * @member {String} ownerEmail
@@ -112,19 +130,9 @@
   exports.prototype['ownerUserId'] = undefined;
   /**
    * 
-   * @member {String} type
+   * @member {String} ownerUserName
    */
-  exports.prototype['type'] = undefined;
-  /**
-   * 
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * 
-   * @member {String} uri
-   */
-  exports.prototype['uri'] = undefined;
+  exports.prototype['ownerUserName'] = undefined;
   /**
    * 
    * @member {String} parentFolderId
@@ -137,22 +145,14 @@
   exports.prototype['parentFolderUri'] = undefined;
   /**
    * 
-   * @member {String} folderId
+   * @member {String} type
    */
-  exports.prototype['folderId'] = undefined;
+  exports.prototype['type'] = undefined;
   /**
-   * @member {module:model/ErrorDetails} errorDetails
+   * 
+   * @member {String} uri
    */
-  exports.prototype['errorDetails'] = undefined;
-  /**
-   * A collection of folder objects returned in a response.
-   * @member {Array.<module:model/Folder>} folders
-   */
-  exports.prototype['folders'] = undefined;
-  /**
-   * @member {module:model/Filter} filter
-   */
-  exports.prototype['filter'] = undefined;
+  exports.prototype['uri'] = undefined;
 
 
 

@@ -55,17 +55,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('signers')) {
-        obj['signers'] = ApiClient.convertToType(data['signers'], [Signer]);
-      }
       if (data.hasOwnProperty('agents')) {
         obj['agents'] = ApiClient.convertToType(data['agents'], [Agent]);
-      }
-      if (data.hasOwnProperty('editors')) {
-        obj['editors'] = ApiClient.convertToType(data['editors'], [Editor]);
-      }
-      if (data.hasOwnProperty('intermediaries')) {
-        obj['intermediaries'] = ApiClient.convertToType(data['intermediaries'], [Intermediary]);
       }
       if (data.hasOwnProperty('carbonCopies')) {
         obj['carbonCopies'] = ApiClient.convertToType(data['carbonCopies'], [CarbonCopy]);
@@ -73,42 +64,36 @@
       if (data.hasOwnProperty('certifiedDeliveries')) {
         obj['certifiedDeliveries'] = ApiClient.convertToType(data['certifiedDeliveries'], [CertifiedDelivery]);
       }
+      if (data.hasOwnProperty('currentRoutingOrder')) {
+        obj['currentRoutingOrder'] = ApiClient.convertToType(data['currentRoutingOrder'], 'String');
+      }
+      if (data.hasOwnProperty('editors')) {
+        obj['editors'] = ApiClient.convertToType(data['editors'], [Editor]);
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
       if (data.hasOwnProperty('inPersonSigners')) {
         obj['inPersonSigners'] = ApiClient.convertToType(data['inPersonSigners'], [InPersonSigner]);
+      }
+      if (data.hasOwnProperty('intermediaries')) {
+        obj['intermediaries'] = ApiClient.convertToType(data['intermediaries'], [Intermediary]);
       }
       if (data.hasOwnProperty('recipientCount')) {
         obj['recipientCount'] = ApiClient.convertToType(data['recipientCount'], 'String');
       }
-      if (data.hasOwnProperty('currentRoutingOrder')) {
-        obj['currentRoutingOrder'] = ApiClient.convertToType(data['currentRoutingOrder'], 'String');
-      }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('signers')) {
+        obj['signers'] = ApiClient.convertToType(data['signers'], [Signer]);
       }
     }
     return obj;
   }
 
   /**
-   * A complex type containing information about the Signer recipient.
-   * @member {Array.<module:model/Signer>} signers
-   */
-  exports.prototype['signers'] = undefined;
-  /**
    * A complex type defining the management and access rights of a recipient assigned assigned as an agent on the document.
    * @member {Array.<module:model/Agent>} agents
    */
   exports.prototype['agents'] = undefined;
-  /**
-   * 
-   * @member {Array.<module:model/Editor>} editors
-   */
-  exports.prototype['editors'] = undefined;
-  /**
-   * Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added).
-   * @member {Array.<module:model/Intermediary>} intermediaries
-   */
-  exports.prototype['intermediaries'] = undefined;
   /**
    * A complex type containing information about recipients who should receive a copy of the envelope, but does not need to sign it.
    * @member {Array.<module:model/CarbonCopy>} carbonCopies
@@ -120,24 +105,39 @@
    */
   exports.prototype['certifiedDeliveries'] = undefined;
   /**
+   * 
+   * @member {String} currentRoutingOrder
+   */
+  exports.prototype['currentRoutingOrder'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Editor>} editors
+   */
+  exports.prototype['editors'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
    * Specifies a signer that is in the same physical location as a DocuSign user who will act as a Signing Host for the transaction. The recipient added is the Signing Host and new separate Signer Name field appears after Sign in person is selected.
    * @member {Array.<module:model/InPersonSigner>} inPersonSigners
    */
   exports.prototype['inPersonSigners'] = undefined;
+  /**
+   * Identifies a recipient that can, but is not required to, add name and email information for recipients at the same or subsequent level in the routing order (until subsequent Agents, Editors or Intermediaries recipient types are added).
+   * @member {Array.<module:model/Intermediary>} intermediaries
+   */
+  exports.prototype['intermediaries'] = undefined;
   /**
    * The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message.
    * @member {String} recipientCount
    */
   exports.prototype['recipientCount'] = undefined;
   /**
-   * 
-   * @member {String} currentRoutingOrder
+   * A complex type containing information about the Signer recipient.
+   * @member {Array.<module:model/Signer>} signers
    */
-  exports.prototype['currentRoutingOrder'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['signers'] = undefined;
 
 
 

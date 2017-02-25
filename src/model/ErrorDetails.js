@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>ErrorDetails</code>.
+   * This object describes errors that occur. It is only valid for responses, and ignored in requests.
    * @alias module:model/ErrorDetails
    * @class
    */

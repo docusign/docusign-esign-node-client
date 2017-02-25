@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>EmailSettings</code>.
+   * A complex element that allows  the sender to override some envelope email setting information. This can be used to override the Reply To email address and name associated with the envelope and to override the BCC email addresses to which an envelope is sent.   When the emailSettings information is used for an envelope, it only applies to that envelope.   **IMPORTANT**: The emailSettings information is not returned in the GET for envelope status. Use GET /email_settings to return information about the emailSettings.   EmailSettings consists of:   * replyEmailAddressOverride - The Reply To email used for the envelope. DocuSign will verify that a correct email format is used, but does not verify that the email is active. Maximum Length: 100 characters. * replyEmailNameOverride - The name associated with the Reply To email address. Maximum Length: 100 characters. * bccEmailAddresses - An array of up to five email addresses to which the envelope is sent to as a BCC email. Only users with canManageAccount setting set to true can use this option.  DocuSign verifies that the email format is correct, but does not verify that the email is active. Using this overrides the BCC for Email Archive information setting for this envelope. Maximum Length: 100 characters. *Example*: if your account has BCC for Email Archive set up for the email address ‘archive@mycompany.com’ and you send an envelope using the BCC Email Override to send a BCC email to ‘salesarchive@mycompany.com’, then a copy of the envelope is only sent to the ‘salesarchive@mycompany.com’ email address.
    * @alias module:model/EmailSettings
    * @class
    */
@@ -55,19 +56,24 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('bccEmailAddresses')) {
+        obj['bccEmailAddresses'] = ApiClient.convertToType(data['bccEmailAddresses'], [BccEmailAddress]);
+      }
       if (data.hasOwnProperty('replyEmailAddressOverride')) {
         obj['replyEmailAddressOverride'] = ApiClient.convertToType(data['replyEmailAddressOverride'], 'String');
       }
       if (data.hasOwnProperty('replyEmailNameOverride')) {
         obj['replyEmailNameOverride'] = ApiClient.convertToType(data['replyEmailNameOverride'], 'String');
       }
-      if (data.hasOwnProperty('bccEmailAddresses')) {
-        obj['bccEmailAddresses'] = ApiClient.convertToType(data['bccEmailAddresses'], [BccEmailAddress]);
-      }
     }
     return obj;
   }
 
+  /**
+   * A list of email addresses that receive a copy of all email communications for an envelope. You can use this for archiving purposes.
+   * @member {Array.<module:model/BccEmailAddress>} bccEmailAddresses
+   */
+  exports.prototype['bccEmailAddresses'] = undefined;
   /**
    * 
    * @member {String} replyEmailAddressOverride
@@ -78,11 +84,6 @@
    * @member {String} replyEmailNameOverride
    */
   exports.prototype['replyEmailNameOverride'] = undefined;
-  /**
-   * A list of email addresses that receive a copy of all email communications for an envelope. You can use this for archiving purposes.
-   * @member {Array.<module:model/BccEmailAddress>} bccEmailAddresses
-   */
-  exports.prototype['bccEmailAddresses'] = undefined;
 
 
 

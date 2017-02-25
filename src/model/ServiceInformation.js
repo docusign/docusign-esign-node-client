@@ -55,38 +55,28 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('serviceVersions')) {
-        obj['serviceVersions'] = ApiClient.convertToType(data['serviceVersions'], [ServiceVersion]);
-      }
-      if (data.hasOwnProperty('buildVersion')) {
-        obj['buildVersion'] = ApiClient.convertToType(data['buildVersion'], 'String');
-      }
       if (data.hasOwnProperty('buildBranch')) {
         obj['buildBranch'] = ApiClient.convertToType(data['buildBranch'], 'String');
-      }
-      if (data.hasOwnProperty('buildSHA')) {
-        obj['buildSHA'] = ApiClient.convertToType(data['buildSHA'], 'String');
       }
       if (data.hasOwnProperty('buildBranchDeployedDateTime')) {
         obj['buildBranchDeployedDateTime'] = ApiClient.convertToType(data['buildBranchDeployedDateTime'], 'String');
       }
+      if (data.hasOwnProperty('buildSHA')) {
+        obj['buildSHA'] = ApiClient.convertToType(data['buildSHA'], 'String');
+      }
+      if (data.hasOwnProperty('buildVersion')) {
+        obj['buildVersion'] = ApiClient.convertToType(data['buildVersion'], 'String');
+      }
       if (data.hasOwnProperty('linkedSites')) {
         obj['linkedSites'] = ApiClient.convertToType(data['linkedSites'], ['String']);
+      }
+      if (data.hasOwnProperty('serviceVersions')) {
+        obj['serviceVersions'] = ApiClient.convertToType(data['serviceVersions'], [ServiceVersion]);
       }
     }
     return obj;
   }
 
-  /**
-   * 
-   * @member {Array.<module:model/ServiceVersion>} serviceVersions
-   */
-  exports.prototype['serviceVersions'] = undefined;
-  /**
-   * Reserved: TBD
-   * @member {String} buildVersion
-   */
-  exports.prototype['buildVersion'] = undefined;
   /**
    * Reserved: TBD
    * @member {String} buildBranch
@@ -94,19 +84,29 @@
   exports.prototype['buildBranch'] = undefined;
   /**
    * Reserved: TBD
+   * @member {String} buildBranchDeployedDateTime
+   */
+  exports.prototype['buildBranchDeployedDateTime'] = undefined;
+  /**
+   * Reserved: TBD
    * @member {String} buildSHA
    */
   exports.prototype['buildSHA'] = undefined;
   /**
    * Reserved: TBD
-   * @member {String} buildBranchDeployedDateTime
+   * @member {String} buildVersion
    */
-  exports.prototype['buildBranchDeployedDateTime'] = undefined;
+  exports.prototype['buildVersion'] = undefined;
   /**
    * 
    * @member {Array.<String>} linkedSites
    */
   exports.prototype['linkedSites'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/ServiceVersion>} serviceVersions
+   */
+  exports.prototype['serviceVersions'] = undefined;
 
 
 

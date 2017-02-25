@@ -56,25 +56,30 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('allowSenderToEdit')) {
+        obj['allowSenderToEdit'] = ApiClient.convertToType(data['allowSenderToEdit'], 'String');
+      }
       if (data.hasOwnProperty('configurationType')) {
         obj['configurationType'] = ApiClient.convertToType(data['configurationType'], 'String');
       }
       if (data.hasOwnProperty('path')) {
         obj['path'] = ApiClient.convertToType(data['path'], 'String');
       }
-      if (data.hasOwnProperty('writeBack')) {
-        obj['writeBack'] = ApiClient.convertToType(data['writeBack'], 'String');
-      }
-      if (data.hasOwnProperty('allowSenderToEdit')) {
-        obj['allowSenderToEdit'] = ApiClient.convertToType(data['allowSenderToEdit'], 'String');
-      }
       if (data.hasOwnProperty('row')) {
         obj['row'] = ApiClient.convertToType(data['row'], 'String');
+      }
+      if (data.hasOwnProperty('writeBack')) {
+        obj['writeBack'] = ApiClient.convertToType(data['writeBack'], 'String');
       }
     }
     return obj;
   }
 
+  /**
+   * When set to **true**, the sender can modify the value of the custom tab during the sending process.
+   * @member {String} allowSenderToEdit
+   */
+  exports.prototype['allowSenderToEdit'] = undefined;
   /**
    * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
    * @member {String} configurationType
@@ -86,20 +91,15 @@
    */
   exports.prototype['path'] = undefined;
   /**
-   * When wet to true, the information entered in the tab automatically updates the related Salesforce data when an envelope is completed.
-   * @member {String} writeBack
-   */
-  exports.prototype['writeBack'] = undefined;
-  /**
-   * When set to **true**, the sender can modify the value of the custom tab during the sending process.
-   * @member {String} allowSenderToEdit
-   */
-  exports.prototype['allowSenderToEdit'] = undefined;
-  /**
    * Specifies the row number in a Salesforce table that the merge field value corresponds to.
    * @member {String} row
    */
   exports.prototype['row'] = undefined;
+  /**
+   * When wet to true, the information entered in the tab automatically updates the related Salesforce data when an envelope is completed.
+   * @member {String} writeBack
+   */
+  exports.prototype['writeBack'] = undefined;
 
 
 

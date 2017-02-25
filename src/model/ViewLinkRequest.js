@@ -55,11 +55,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('returnUrl')) {
-        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
-      }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('returnUrl')) {
+        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
       }
     }
     return obj;
@@ -67,14 +67,14 @@
 
   /**
    * 
-   * @member {String} returnUrl
-   */
-  exports.prototype['returnUrl'] = undefined;
-  /**
-   * 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
+  /**
+   * 
+   * @member {String} returnUrl
+   */
+  exports.prototype['returnUrl'] = undefined;
 
 
 

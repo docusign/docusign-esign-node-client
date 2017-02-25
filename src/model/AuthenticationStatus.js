@@ -59,26 +59,11 @@
       if (data.hasOwnProperty('accessCodeResult')) {
         obj['accessCodeResult'] = EventResult.constructFromObject(data['accessCodeResult']);
       }
-      if (data.hasOwnProperty('phoneAuthResult')) {
-        obj['phoneAuthResult'] = EventResult.constructFromObject(data['phoneAuthResult']);
-      }
-      if (data.hasOwnProperty('idLookupResult')) {
-        obj['idLookupResult'] = EventResult.constructFromObject(data['idLookupResult']);
-      }
-      if (data.hasOwnProperty('idQuestionsResult')) {
-        obj['idQuestionsResult'] = EventResult.constructFromObject(data['idQuestionsResult']);
-      }
       if (data.hasOwnProperty('ageVerifyResult')) {
         obj['ageVerifyResult'] = EventResult.constructFromObject(data['ageVerifyResult']);
       }
-      if (data.hasOwnProperty('sTANPinResult')) {
-        obj['sTANPinResult'] = EventResult.constructFromObject(data['sTANPinResult']);
-      }
-      if (data.hasOwnProperty('ofacResult')) {
-        obj['ofacResult'] = EventResult.constructFromObject(data['ofacResult']);
-      }
-      if (data.hasOwnProperty('liveIDResult')) {
-        obj['liveIDResult'] = EventResult.constructFromObject(data['liveIDResult']);
+      if (data.hasOwnProperty('anySocialIDResult')) {
+        obj['anySocialIDResult'] = EventResult.constructFromObject(data['anySocialIDResult']);
       }
       if (data.hasOwnProperty('facebookResult')) {
         obj['facebookResult'] = EventResult.constructFromObject(data['facebookResult']);
@@ -86,26 +71,41 @@
       if (data.hasOwnProperty('googleResult')) {
         obj['googleResult'] = EventResult.constructFromObject(data['googleResult']);
       }
+      if (data.hasOwnProperty('idLookupResult')) {
+        obj['idLookupResult'] = EventResult.constructFromObject(data['idLookupResult']);
+      }
+      if (data.hasOwnProperty('idQuestionsResult')) {
+        obj['idQuestionsResult'] = EventResult.constructFromObject(data['idQuestionsResult']);
+      }
       if (data.hasOwnProperty('linkedinResult')) {
         obj['linkedinResult'] = EventResult.constructFromObject(data['linkedinResult']);
       }
-      if (data.hasOwnProperty('salesforceResult')) {
-        obj['salesforceResult'] = EventResult.constructFromObject(data['salesforceResult']);
+      if (data.hasOwnProperty('liveIDResult')) {
+        obj['liveIDResult'] = EventResult.constructFromObject(data['liveIDResult']);
       }
-      if (data.hasOwnProperty('twitterResult')) {
-        obj['twitterResult'] = EventResult.constructFromObject(data['twitterResult']);
+      if (data.hasOwnProperty('ofacResult')) {
+        obj['ofacResult'] = EventResult.constructFromObject(data['ofacResult']);
       }
       if (data.hasOwnProperty('openIDResult')) {
         obj['openIDResult'] = EventResult.constructFromObject(data['openIDResult']);
       }
-      if (data.hasOwnProperty('anySocialIDResult')) {
-        obj['anySocialIDResult'] = EventResult.constructFromObject(data['anySocialIDResult']);
+      if (data.hasOwnProperty('phoneAuthResult')) {
+        obj['phoneAuthResult'] = EventResult.constructFromObject(data['phoneAuthResult']);
       }
-      if (data.hasOwnProperty('yahooResult')) {
-        obj['yahooResult'] = EventResult.constructFromObject(data['yahooResult']);
+      if (data.hasOwnProperty('salesforceResult')) {
+        obj['salesforceResult'] = EventResult.constructFromObject(data['salesforceResult']);
       }
       if (data.hasOwnProperty('smsAuthResult')) {
         obj['smsAuthResult'] = EventResult.constructFromObject(data['smsAuthResult']);
+      }
+      if (data.hasOwnProperty('sTANPinResult')) {
+        obj['sTANPinResult'] = EventResult.constructFromObject(data['sTANPinResult']);
+      }
+      if (data.hasOwnProperty('twitterResult')) {
+        obj['twitterResult'] = EventResult.constructFromObject(data['twitterResult']);
+      }
+      if (data.hasOwnProperty('yahooResult')) {
+        obj['yahooResult'] = EventResult.constructFromObject(data['yahooResult']);
       }
     }
     return obj;
@@ -116,33 +116,13 @@
    */
   exports.prototype['accessCodeResult'] = undefined;
   /**
-   * @member {module:model/EventResult} phoneAuthResult
-   */
-  exports.prototype['phoneAuthResult'] = undefined;
-  /**
-   * @member {module:model/EventResult} idLookupResult
-   */
-  exports.prototype['idLookupResult'] = undefined;
-  /**
-   * @member {module:model/EventResult} idQuestionsResult
-   */
-  exports.prototype['idQuestionsResult'] = undefined;
-  /**
    * @member {module:model/EventResult} ageVerifyResult
    */
   exports.prototype['ageVerifyResult'] = undefined;
   /**
-   * @member {module:model/EventResult} sTANPinResult
+   * @member {module:model/EventResult} anySocialIDResult
    */
-  exports.prototype['sTANPinResult'] = undefined;
-  /**
-   * @member {module:model/EventResult} ofacResult
-   */
-  exports.prototype['ofacResult'] = undefined;
-  /**
-   * @member {module:model/EventResult} liveIDResult
-   */
-  exports.prototype['liveIDResult'] = undefined;
+  exports.prototype['anySocialIDResult'] = undefined;
   /**
    * @member {module:model/EventResult} facebookResult
    */
@@ -152,33 +132,53 @@
    */
   exports.prototype['googleResult'] = undefined;
   /**
+   * @member {module:model/EventResult} idLookupResult
+   */
+  exports.prototype['idLookupResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} idQuestionsResult
+   */
+  exports.prototype['idQuestionsResult'] = undefined;
+  /**
    * @member {module:model/EventResult} linkedinResult
    */
   exports.prototype['linkedinResult'] = undefined;
   /**
-   * @member {module:model/EventResult} salesforceResult
+   * @member {module:model/EventResult} liveIDResult
    */
-  exports.prototype['salesforceResult'] = undefined;
+  exports.prototype['liveIDResult'] = undefined;
   /**
-   * @member {module:model/EventResult} twitterResult
+   * @member {module:model/EventResult} ofacResult
    */
-  exports.prototype['twitterResult'] = undefined;
+  exports.prototype['ofacResult'] = undefined;
   /**
    * @member {module:model/EventResult} openIDResult
    */
   exports.prototype['openIDResult'] = undefined;
   /**
-   * @member {module:model/EventResult} anySocialIDResult
+   * @member {module:model/EventResult} phoneAuthResult
    */
-  exports.prototype['anySocialIDResult'] = undefined;
+  exports.prototype['phoneAuthResult'] = undefined;
   /**
-   * @member {module:model/EventResult} yahooResult
+   * @member {module:model/EventResult} salesforceResult
    */
-  exports.prototype['yahooResult'] = undefined;
+  exports.prototype['salesforceResult'] = undefined;
   /**
    * @member {module:model/EventResult} smsAuthResult
    */
   exports.prototype['smsAuthResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} sTANPinResult
+   */
+  exports.prototype['sTANPinResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} twitterResult
+   */
+  exports.prototype['twitterResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} yahooResult
+   */
+  exports.prototype['yahooResult'] = undefined;
 
 
 

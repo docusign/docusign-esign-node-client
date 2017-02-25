@@ -55,49 +55,49 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('documentEndPage')) {
+        obj['documentEndPage'] = ApiClient.convertToType(data['documentEndPage'], 'String');
+      }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
-      }
-      if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
       if (data.hasOwnProperty('documentStartPage')) {
         obj['documentStartPage'] = ApiClient.convertToType(data['documentStartPage'], 'String');
       }
-      if (data.hasOwnProperty('documentEndPage')) {
-        obj['documentEndPage'] = ApiClient.convertToType(data['documentEndPage'], 'String');
-      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * 
+   * @member {String} documentEndPage
+   */
+  exports.prototype['documentEndPage'] = undefined;
+  /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
   exports.prototype['documentId'] = undefined;
-  /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
-   * @member {String} templateId
-   */
-  exports.prototype['templateId'] = undefined;
   /**
    * 
    * @member {String} documentStartPage
    */
   exports.prototype['documentStartPage'] = undefined;
   /**
-   * 
-   * @member {String} documentEndPage
-   */
-  exports.prototype['documentEndPage'] = undefined;
-  /**
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
 
 
 

@@ -55,32 +55,32 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('user')) {
-        obj['user'] = UserInfo.constructFromObject(data['user']);
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('user')) {
+        obj['user'] = UserInfo.constructFromObject(data['user']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/UserInfo} user
+   * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['user'] = undefined;
+  exports.prototype['errorDetails'] = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
    */
   exports.prototype['shared'] = undefined;
   /**
-   * @member {module:model/ErrorDetails} errorDetails
+   * @member {module:model/UserInfo} user
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['user'] = undefined;
 
 
 

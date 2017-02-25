@@ -55,14 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('matchPercentage')) {
-        obj['matchPercentage'] = ApiClient.convertToType(data['matchPercentage'], 'String');
+      if (data.hasOwnProperty('documentEndPage')) {
+        obj['documentEndPage'] = ApiClient.convertToType(data['documentEndPage'], 'String');
       }
       if (data.hasOwnProperty('documentStartPage')) {
         obj['documentStartPage'] = ApiClient.convertToType(data['documentStartPage'], 'String');
       }
-      if (data.hasOwnProperty('documentEndPage')) {
-        obj['documentEndPage'] = ApiClient.convertToType(data['documentEndPage'], 'String');
+      if (data.hasOwnProperty('matchPercentage')) {
+        obj['matchPercentage'] = ApiClient.convertToType(data['matchPercentage'], 'String');
       }
     }
     return obj;
@@ -70,9 +70,9 @@
 
   /**
    * 
-   * @member {String} matchPercentage
+   * @member {String} documentEndPage
    */
-  exports.prototype['matchPercentage'] = undefined;
+  exports.prototype['documentEndPage'] = undefined;
   /**
    * 
    * @member {String} documentStartPage
@@ -80,9 +80,9 @@
   exports.prototype['documentStartPage'] = undefined;
   /**
    * 
-   * @member {String} documentEndPage
+   * @member {String} matchPercentage
    */
-  exports.prototype['documentEndPage'] = undefined;
+  exports.prototype['matchPercentage'] = undefined;
 
 
 

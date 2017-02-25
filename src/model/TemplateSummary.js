@@ -55,11 +55,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('applied')) {
+        obj['applied'] = ApiClient.convertToType(data['applied'], 'String');
       }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
@@ -67,8 +64,11 @@
       if (data.hasOwnProperty('documentName')) {
         obj['documentName'] = ApiClient.convertToType(data['documentName'], 'String');
       }
-      if (data.hasOwnProperty('applied')) {
-        obj['applied'] = ApiClient.convertToType(data['applied'], 'String');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
       if (data.hasOwnProperty('templateMatch')) {
         obj['templateMatch'] = TemplateMatch.constructFromObject(data['templateMatch']);
@@ -81,15 +81,10 @@
   }
 
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
-   * @member {String} templateId
+   * Reserved: TBD
+   * @member {String} applied
    */
-  exports.prototype['templateId'] = undefined;
-  /**
-   * 
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
+  exports.prototype['applied'] = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
@@ -101,10 +96,15 @@
    */
   exports.prototype['documentName'] = undefined;
   /**
-   * Reserved: TBD
-   * @member {String} applied
+   * 
+   * @member {String} name
    */
-  exports.prototype['applied'] = undefined;
+  exports.prototype['name'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
   /**
    * @member {module:model/TemplateMatch} templateMatch
    */

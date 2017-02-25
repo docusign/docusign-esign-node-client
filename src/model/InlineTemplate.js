@@ -55,47 +55,47 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('sequence')) {
-        obj['sequence'] = ApiClient.convertToType(data['sequence'], 'String');
-      }
-      if (data.hasOwnProperty('envelope')) {
-        obj['envelope'] = Envelope.constructFromObject(data['envelope']);
+      if (data.hasOwnProperty('customFields')) {
+        obj['customFields'] = CustomFields.constructFromObject(data['customFields']);
       }
       if (data.hasOwnProperty('documents')) {
         obj['documents'] = ApiClient.convertToType(data['documents'], [Document]);
       }
+      if (data.hasOwnProperty('envelope')) {
+        obj['envelope'] = Envelope.constructFromObject(data['envelope']);
+      }
       if (data.hasOwnProperty('recipients')) {
         obj['recipients'] = Recipients.constructFromObject(data['recipients']);
       }
-      if (data.hasOwnProperty('customFields')) {
-        obj['customFields'] = CustomFields.constructFromObject(data['customFields']);
+      if (data.hasOwnProperty('sequence')) {
+        obj['sequence'] = ApiClient.convertToType(data['sequence'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Specifies the order in which templates are overlaid.
-   * @member {String} sequence
+   * @member {module:model/CustomFields} customFields
    */
-  exports.prototype['sequence'] = undefined;
-  /**
-   * @member {module:model/Envelope} envelope
-   */
-  exports.prototype['envelope'] = undefined;
+  exports.prototype['customFields'] = undefined;
   /**
    * Complex element contains the details on the documents in the envelope.
    * @member {Array.<module:model/Document>} documents
    */
   exports.prototype['documents'] = undefined;
   /**
+   * @member {module:model/Envelope} envelope
+   */
+  exports.prototype['envelope'] = undefined;
+  /**
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;
   /**
-   * @member {module:model/CustomFields} customFields
+   * Specifies the order in which templates are overlaid.
+   * @member {String} sequence
    */
-  exports.prototype['customFields'] = undefined;
+  exports.prototype['sequence'] = undefined;
 
 
 

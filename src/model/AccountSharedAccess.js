@@ -56,17 +56,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('resultSetSize')) {
-        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
-      }
-      if (data.hasOwnProperty('totalSetSize')) {
-        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
-      }
-      if (data.hasOwnProperty('startPosition')) {
-        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+      if (data.hasOwnProperty('accountId')) {
+        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
       }
       if (data.hasOwnProperty('endPosition')) {
         obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('nextUri')) {
         obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
@@ -74,39 +71,36 @@
       if (data.hasOwnProperty('previousUri')) {
         obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
       }
-      if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
+      if (data.hasOwnProperty('resultSetSize')) {
+        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
       }
       if (data.hasOwnProperty('sharedAccess')) {
         obj['sharedAccess'] = ApiClient.convertToType(data['sharedAccess'], [MemberSharedItems]);
       }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      if (data.hasOwnProperty('startPosition')) {
+        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+      }
+      if (data.hasOwnProperty('totalSetSize')) {
+        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * The number of results returned in this response. 
-   * @member {String} resultSetSize
+   * The account ID associated with the envelope.
+   * @member {String} accountId
    */
-  exports.prototype['resultSetSize'] = undefined;
-  /**
-   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-   * @member {String} totalSetSize
-   */
-  exports.prototype['totalSetSize'] = undefined;
-  /**
-   * Starting position of the current result set.
-   * @member {String} startPosition
-   */
-  exports.prototype['startPosition'] = undefined;
+  exports.prototype['accountId'] = undefined;
   /**
    * The last position in the result set. 
    * @member {String} endPosition
    */
   exports.prototype['endPosition'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
   /**
    * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
    * @member {String} nextUri
@@ -118,19 +112,25 @@
    */
   exports.prototype['previousUri'] = undefined;
   /**
-   * The account ID associated with the envelope.
-   * @member {String} accountId
+   * The number of results returned in this response. 
+   * @member {String} resultSetSize
    */
-  exports.prototype['accountId'] = undefined;
+  exports.prototype['resultSetSize'] = undefined;
   /**
    * A complex type containing the shared access information to an envelope for the users specified in the request.
    * @member {Array.<module:model/MemberSharedItems>} sharedAccess
    */
   exports.prototype['sharedAccess'] = undefined;
   /**
-   * @member {module:model/ErrorDetails} errorDetails
+   * Starting position of the current result set.
+   * @member {String} startPosition
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype['startPosition'] = undefined;
+  /**
+   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
+   * @member {String} totalSetSize
+   */
+  exports.prototype['totalSetSize'] = undefined;
 
 
 

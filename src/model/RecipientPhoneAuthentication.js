@@ -35,6 +35,7 @@
 
   /**
    * Constructs a new <code>RecipientPhoneAuthentication</code>.
+   * A complex type that Contains the elements:  * recipMayProvideNumber - Boolean. When set to **true**, the recipient can use whatever phone number they choose. * senderProvidedNumbers - ArrayOfString.  A list of phone numbers the recipient can use. * recordVoicePrint - Reserved. * validateRecipProvidedNumber - Reserved.
    * @alias module:model/RecipientPhoneAuthentication
    * @class
    */
@@ -58,14 +59,14 @@
       if (data.hasOwnProperty('recipMayProvideNumber')) {
         obj['recipMayProvideNumber'] = ApiClient.convertToType(data['recipMayProvideNumber'], 'String');
       }
-      if (data.hasOwnProperty('validateRecipProvidedNumber')) {
-        obj['validateRecipProvidedNumber'] = ApiClient.convertToType(data['validateRecipProvidedNumber'], 'String');
-      }
       if (data.hasOwnProperty('recordVoicePrint')) {
         obj['recordVoicePrint'] = ApiClient.convertToType(data['recordVoicePrint'], 'String');
       }
       if (data.hasOwnProperty('senderProvidedNumbers')) {
         obj['senderProvidedNumbers'] = ApiClient.convertToType(data['senderProvidedNumbers'], ['String']);
+      }
+      if (data.hasOwnProperty('validateRecipProvidedNumber')) {
+        obj['validateRecipProvidedNumber'] = ApiClient.convertToType(data['validateRecipProvidedNumber'], 'String');
       }
     }
     return obj;
@@ -77,11 +78,6 @@
    */
   exports.prototype['recipMayProvideNumber'] = undefined;
   /**
-   *  Reserved.
-   * @member {String} validateRecipProvidedNumber
-   */
-  exports.prototype['validateRecipProvidedNumber'] = undefined;
-  /**
    * Reserved.
    * @member {String} recordVoicePrint
    */
@@ -91,6 +87,11 @@
    * @member {Array.<String>} senderProvidedNumbers
    */
   exports.prototype['senderProvidedNumbers'] = undefined;
+  /**
+   *  Reserved.
+   * @member {String} validateRecipProvidedNumber
+   */
+  exports.prototype['validateRecipProvidedNumber'] = undefined;
 
 
 
