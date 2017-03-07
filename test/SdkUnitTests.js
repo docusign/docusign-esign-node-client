@@ -583,4 +583,19 @@ describe('SDK Unit Tests:', function () {
       }
     });
   });
+
+  it('getTemplate', function (done) {
+    var templatesApi = new docusign.TemplatesApi(apiClient);
+
+    templatesApi.get(accountId, TemplateId, null, function (error, envelopeTemplate, response) {
+      if (error) {
+        return done(error);
+      }
+
+      if (envelopeTemplate) {
+        console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplate));
+        done();
+      }
+    });
+  });
 });
