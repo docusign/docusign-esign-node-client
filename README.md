@@ -10,7 +10,7 @@
 
 [Documentation about the DocuSign API](https://www.docusign.com/developer-center)
 
-[Documentation about this package](http://docusign.github.io/docusign-node-client/docusign-esign/3.0.0/module-index.html)
+[Documentation about this package](http://docusign.github.io/docusign-node-client)
 <!---
 [Changelog](./CHANGELOG.md)
 commented out
