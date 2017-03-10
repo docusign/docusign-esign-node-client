@@ -1,0 +1,335 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['ApiClient', 'model/AddressInformationV2', 'model/ErrorDetails', 'model/ForgottenPasswordInformation', 'model/Group', 'model/NameValue', 'model/UserAccountManagementGranularInformation'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'), require('./AddressInformationV2'), require('./ErrorDetails'), require('./ForgottenPasswordInformation'), require('./Group'), require('./NameValue'), require('./UserAccountManagementGranularInformation'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.Docusign) {
+      root.Docusign = {};
+    }
+    root.Docusign.UserInformation = factory(root.Docusign.ApiClient, root.Docusign.AddressInformationV2, root.Docusign.ErrorDetails, root.Docusign.ForgottenPasswordInformation, root.Docusign.Group, root.Docusign.NameValue, root.Docusign.UserAccountManagementGranularInformation);
+  }
+}(this, function(ApiClient, AddressInformationV2, ErrorDetails, ForgottenPasswordInformation, Group, NameValue, UserAccountManagementGranularInformation) {
+  'use strict';
+
+
+  /**
+   * The UserInformation model module.
+   * @module model/UserInformation
+   * @version 3.0.0
+   */
+
+  /**
+   * Constructs a new <code>UserInformation</code>.
+   * @alias module:model/UserInformation
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
+
+
+  };
+
+  /**
+   * Constructs a <code>UserInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/UserInformation} obj Optional instance to populate.
+   * @return {module:model/UserInformation} The populated <code>UserInformation</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('accountManagementGranular')) {
+        obj['accountManagementGranular'] = UserAccountManagementGranularInformation.constructFromObject(data['accountManagementGranular']);
+      }
+      if (data.hasOwnProperty('activationAccessCode')) {
+        obj['activationAccessCode'] = ApiClient.convertToType(data['activationAccessCode'], 'String');
+      }
+      if (data.hasOwnProperty('createdDateTime')) {
+        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('customSettings')) {
+        obj['customSettings'] = ApiClient.convertToType(data['customSettings'], [NameValue]);
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('enableConnectForUser')) {
+        obj['enableConnectForUser'] = ApiClient.convertToType(data['enableConnectForUser'], 'String');
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('firstName')) {
+        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+      }
+      if (data.hasOwnProperty('forgottenPasswordInfo')) {
+        obj['forgottenPasswordInfo'] = ForgottenPasswordInformation.constructFromObject(data['forgottenPasswordInfo']);
+      }
+      if (data.hasOwnProperty('groupList')) {
+        obj['groupList'] = ApiClient.convertToType(data['groupList'], [Group]);
+      }
+      if (data.hasOwnProperty('homeAddress')) {
+        obj['homeAddress'] = AddressInformationV2.constructFromObject(data['homeAddress']);
+      }
+      if (data.hasOwnProperty('initialsImageUri')) {
+        obj['initialsImageUri'] = ApiClient.convertToType(data['initialsImageUri'], 'String');
+      }
+      if (data.hasOwnProperty('isAdmin')) {
+        obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'String');
+      }
+      if (data.hasOwnProperty('lastLogin')) {
+        obj['lastLogin'] = ApiClient.convertToType(data['lastLogin'], 'String');
+      }
+      if (data.hasOwnProperty('lastName')) {
+        obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+      }
+      if (data.hasOwnProperty('loginStatus')) {
+        obj['loginStatus'] = ApiClient.convertToType(data['loginStatus'], 'String');
+      }
+      if (data.hasOwnProperty('middleName')) {
+        obj['middleName'] = ApiClient.convertToType(data['middleName'], 'String');
+      }
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('passwordExpiration')) {
+        obj['passwordExpiration'] = ApiClient.convertToType(data['passwordExpiration'], 'String');
+      }
+      if (data.hasOwnProperty('permissionProfileId')) {
+        obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
+      }
+      if (data.hasOwnProperty('permissionProfileName')) {
+        obj['permissionProfileName'] = ApiClient.convertToType(data['permissionProfileName'], 'String');
+      }
+      if (data.hasOwnProperty('profileImageUri')) {
+        obj['profileImageUri'] = ApiClient.convertToType(data['profileImageUri'], 'String');
+      }
+      if (data.hasOwnProperty('sendActivationOnInvalidLogin')) {
+        obj['sendActivationOnInvalidLogin'] = ApiClient.convertToType(data['sendActivationOnInvalidLogin'], 'String');
+      }
+      if (data.hasOwnProperty('signatureImageUri')) {
+        obj['signatureImageUri'] = ApiClient.convertToType(data['signatureImageUri'], 'String');
+      }
+      if (data.hasOwnProperty('suffixName')) {
+        obj['suffixName'] = ApiClient.convertToType(data['suffixName'], 'String');
+      }
+      if (data.hasOwnProperty('title')) {
+        obj['title'] = ApiClient.convertToType(data['title'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+      if (data.hasOwnProperty('userId')) {
+        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      }
+      if (data.hasOwnProperty('userName')) {
+        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      }
+      if (data.hasOwnProperty('userProfileLastModifiedDate')) {
+        obj['userProfileLastModifiedDate'] = ApiClient.convertToType(data['userProfileLastModifiedDate'], 'String');
+      }
+      if (data.hasOwnProperty('userSettings')) {
+        obj['userSettings'] = ApiClient.convertToType(data['userSettings'], [NameValue]);
+      }
+      if (data.hasOwnProperty('userStatus')) {
+        obj['userStatus'] = ApiClient.convertToType(data['userStatus'], 'String');
+      }
+      if (data.hasOwnProperty('userType')) {
+        obj['userType'] = ApiClient.convertToType(data['userType'], 'String');
+      }
+      if (data.hasOwnProperty('workAddress')) {
+        obj['workAddress'] = AddressInformationV2.constructFromObject(data['workAddress']);
+      }
+    }
+    return obj;
+  }
+
+  /**
+   * @member {module:model/UserAccountManagementGranularInformation} accountManagementGranular
+   */
+  exports.prototype['accountManagementGranular'] = undefined;
+  /**
+   * The activation code the new user must enter when activating their account.
+   * @member {String} activationAccessCode
+   */
+  exports.prototype['activationAccessCode'] = undefined;
+  /**
+   * Indicates the date and time the item was created.
+   * @member {String} createdDateTime
+   */
+  exports.prototype['createdDateTime'] = undefined;
+  /**
+   * The name/value pair information for the user custom setting.
+   * @member {Array.<module:model/NameValue>} customSettings
+   */
+  exports.prototype['customSettings'] = undefined;
+  /**
+   * 
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
+   * Specifies whether the user is enabled for updates from DocuSign Connect. Valid values: true or false.
+   * @member {String} enableConnectForUser
+   */
+  exports.prototype['enableConnectForUser'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * The user’s first name.  Maximum Length: 50 characters.
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
+  /**
+   * @member {module:model/ForgottenPasswordInformation} forgottenPasswordInfo
+   */
+  exports.prototype['forgottenPasswordInfo'] = undefined;
+  /**
+   * A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId – The DocuSign group ID for the group. * groupName – The name of the group * permissionProfileId – The ID of the permission profile associated with the group. * groupType – The group type. 
+   * @member {Array.<module:model/Group>} groupList
+   */
+  exports.prototype['groupList'] = undefined;
+  /**
+   * @member {module:model/AddressInformationV2} homeAddress
+   */
+  exports.prototype['homeAddress'] = undefined;
+  /**
+   * Contains the URI for an endpoint that you can use to retrieve the initials image.
+   * @member {String} initialsImageUri
+   */
+  exports.prototype['initialsImageUri'] = undefined;
+  /**
+   * Determines if the feature set is actively set as part of the plan.
+   * @member {String} isAdmin
+   */
+  exports.prototype['isAdmin'] = undefined;
+  /**
+   * Shows the date-time when the user last logged on to the system.
+   * @member {String} lastLogin
+   */
+  exports.prototype['lastLogin'] = undefined;
+  /**
+   * The user’s last name.  Maximum Length: 50 characters.
+   * @member {String} lastName
+   */
+  exports.prototype['lastName'] = undefined;
+  /**
+   * Shows the current status of the user’s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
+   * @member {String} loginStatus
+   */
+  exports.prototype['loginStatus'] = undefined;
+  /**
+   * The user’s middle name.  Maximum Length: 50 characters.
+   * @member {String} middleName
+   */
+  exports.prototype['middleName'] = undefined;
+  /**
+   * 
+   * @member {String} password
+   */
+  exports.prototype['password'] = undefined;
+  /**
+   * 
+   * @member {String} passwordExpiration
+   */
+  exports.prototype['passwordExpiration'] = undefined;
+  /**
+   * 
+   * @member {String} permissionProfileId
+   */
+  exports.prototype['permissionProfileId'] = undefined;
+  /**
+   * 
+   * @member {String} permissionProfileName
+   */
+  exports.prototype['permissionProfileName'] = undefined;
+  /**
+   * 
+   * @member {String} profileImageUri
+   */
+  exports.prototype['profileImageUri'] = undefined;
+  /**
+   * When set to **true**, specifies that an additional activation email is sent to the user if they fail a log on before activating their account. 
+   * @member {String} sendActivationOnInvalidLogin
+   */
+  exports.prototype['sendActivationOnInvalidLogin'] = undefined;
+  /**
+   * Contains the URI for an endpoint that you can use to retrieve the signature image.
+   * @member {String} signatureImageUri
+   */
+  exports.prototype['signatureImageUri'] = undefined;
+  /**
+   * The suffix for the user's name.   Maximum Length: 50 characters. 
+   * @member {String} suffixName
+   */
+  exports.prototype['suffixName'] = undefined;
+  /**
+   * The title of the user.
+   * @member {String} title
+   */
+  exports.prototype['title'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
+  /**
+   * 
+   * @member {String} userId
+   */
+  exports.prototype['userId'] = undefined;
+  /**
+   * 
+   * @member {String} userName
+   */
+  exports.prototype['userName'] = undefined;
+  /**
+   * 
+   * @member {String} userProfileLastModifiedDate
+   */
+  exports.prototype['userProfileLastModifiedDate'] = undefined;
+  /**
+   *  The name/value pair information for user settings. These determine the actions that a user can take in the account. The `[ML:userSettings]` are listed and described below.
+   * @member {Array.<module:model/NameValue>} userSettings
+   */
+  exports.prototype['userSettings'] = undefined;
+  /**
+   * 
+   * @member {String} userStatus
+   */
+  exports.prototype['userStatus'] = undefined;
+  /**
+   * 
+   * @member {String} userType
+   */
+  exports.prototype['userType'] = undefined;
+  /**
+   * @member {module:model/AddressInformationV2} workAddress
+   */
+  exports.prototype['workAddress'] = undefined;
+
+
+
+  return exports;
+}));
+
+

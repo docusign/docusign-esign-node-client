@@ -1,333 +1,180 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './BulkEnvelope'], factory);
+    define(['ApiClient', 'model/BulkEnvelope'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./BulkEnvelope'));
+    module.exports = factory(require('../ApiClient'), require('./BulkEnvelope'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.BulkEnvelope);
+    root.Docusign.BulkEnvelopeStatus = factory(root.Docusign.ApiClient, root.Docusign.BulkEnvelope);
   }
-}(this, function(module, BulkEnvelope) {
+}(this, function(ApiClient, BulkEnvelope) {
   'use strict';
 
-  
-  
 
-  
-  var BulkEnvelopeStatus = function BulkEnvelopeStatus() { 
-    var self = this;
-    
-    /**
-     * Reserved: TBD
-     * datatype: Array
-     **/
-    self.bulkEnvelopes = [];
-    
+  /**
+   * The BulkEnvelopeStatus model module.
+   * @module model/BulkEnvelopeStatus
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.batchSize) {
-        self.batchSize = data.batchSize;
-      }
-      
-      if (data.batchId) {
-        self.batchId = data.batchId;
-      }
-      
-      if (data.bulkEnvelopesBatchUri) {
-        self.bulkEnvelopesBatchUri = data.bulkEnvelopesBatchUri;
-      }
-      
-      if (data.failed) {
-        self.failed = data.failed;
-      }
-      
-      if (data.queued) {
-        self.queued = data.queued;
-      }
-      
-      if (data.sent) {
-        self.sent = data.sent;
-      }
-      
-      if (data.submittedDate) {
-        self.submittedDate = data.submittedDate;
-      }
-      
-      if (data.resultSetSize) {
-        self.resultSetSize = data.resultSetSize;
-      }
-      
-      if (data.startPosition) {
-        self.startPosition = data.startPosition;
-      }
-      
-      if (data.endPosition) {
-        self.endPosition = data.endPosition;
-      }
-      
-      if (data.totalSetSize) {
-        self.totalSetSize = data.totalSetSize;
-      }
-      
-      if (data.nextUri) {
-        self.nextUri = data.nextUri;
-      }
-      
-      if (data.previousUri) {
-        self.previousUri = data.previousUri;
-      }
-      
-      if (data.bulkEnvelopes) {
-        self.bulkEnvelopes = data.bulkEnvelopes;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>BulkEnvelopeStatus</code>.
+   * @alias module:model/BulkEnvelopeStatus
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get The number of items returned in this response.
-     * @return {String}
-     **/
-    self.getBatchSize = function() {
-      return self.batchSize;
-    }
 
-    /**
-     * set The number of items returned in this response.
-     * @param {String} batchSize
-     **/
-    self.setBatchSize = function (batchSize) {
-      self.batchSize = batchSize;
-    }
-    
-    /**
-     * get Specifies an identifier which can be used to retrieve a more detailed status of individual bulk recipient batches.
-     * @return {String}
-     **/
-    self.getBatchId = function() {
-      return self.batchId;
-    }
-
-    /**
-     * set Specifies an identifier which can be used to retrieve a more detailed status of individual bulk recipient batches.
-     * @param {String} batchId
-     **/
-    self.setBatchId = function (batchId) {
-      self.batchId = batchId;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getBulkEnvelopesBatchUri = function() {
-      return self.bulkEnvelopesBatchUri;
-    }
-
-    /**
-     * set Reserved: TBD
-     * @param {String} bulkEnvelopesBatchUri
-     **/
-    self.setBulkEnvelopesBatchUri = function (bulkEnvelopesBatchUri) {
-      self.bulkEnvelopesBatchUri = bulkEnvelopesBatchUri;
-    }
-    
-    /**
-     * get The number of entries with a status of failed.
-     * @return {String}
-     **/
-    self.getFailed = function() {
-      return self.failed;
-    }
-
-    /**
-     * set The number of entries with a status of failed.
-     * @param {String} failed
-     **/
-    self.setFailed = function (failed) {
-      self.failed = failed;
-    }
-    
-    /**
-     * get The number of entries with a status of queued.
-     * @return {String}
-     **/
-    self.getQueued = function() {
-      return self.queued;
-    }
-
-    /**
-     * set The number of entries with a status of queued.
-     * @param {String} queued
-     **/
-    self.setQueued = function (queued) {
-      self.queued = queued;
-    }
-    
-    /**
-     * get The number of entries with a status of sent.
-     * @return {String}
-     **/
-    self.getSent = function() {
-      return self.sent;
-    }
-
-    /**
-     * set The number of entries with a status of sent.
-     * @param {String} sent
-     **/
-    self.setSent = function (sent) {
-      self.sent = sent;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSubmittedDate = function() {
-      return self.submittedDate;
-    }
-
-    /**
-     * set 
-     * @param {String} submittedDate
-     **/
-    self.setSubmittedDate = function (submittedDate) {
-      self.submittedDate = submittedDate;
-    }
-    
-    /**
-     * get The number of results returned in this response.
-     * @return {String}
-     **/
-    self.getResultSetSize = function() {
-      return self.resultSetSize;
-    }
-
-    /**
-     * set The number of results returned in this response.
-     * @param {String} resultSetSize
-     **/
-    self.setResultSetSize = function (resultSetSize) {
-      self.resultSetSize = resultSetSize;
-    }
-    
-    /**
-     * get Starting position of the current result set.
-     * @return {String}
-     **/
-    self.getStartPosition = function() {
-      return self.startPosition;
-    }
-
-    /**
-     * set Starting position of the current result set.
-     * @param {String} startPosition
-     **/
-    self.setStartPosition = function (startPosition) {
-      self.startPosition = startPosition;
-    }
-    
-    /**
-     * get The last position in the result set.
-     * @return {String}
-     **/
-    self.getEndPosition = function() {
-      return self.endPosition;
-    }
-
-    /**
-     * set The last position in the result set.
-     * @param {String} endPosition
-     **/
-    self.setEndPosition = function (endPosition) {
-      self.endPosition = endPosition;
-    }
-    
-    /**
-     * get The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-     * @return {String}
-     **/
-    self.getTotalSetSize = function() {
-      return self.totalSetSize;
-    }
-
-    /**
-     * set The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-     * @param {String} totalSetSize
-     **/
-    self.setTotalSetSize = function (totalSetSize) {
-      self.totalSetSize = totalSetSize;
-    }
-    
-    /**
-     * get The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * @return {String}
-     **/
-    self.getNextUri = function() {
-      return self.nextUri;
-    }
-
-    /**
-     * set The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * @param {String} nextUri
-     **/
-    self.setNextUri = function (nextUri) {
-      self.nextUri = nextUri;
-    }
-    
-    /**
-     * get The postal code for the billing address.
-     * @return {String}
-     **/
-    self.getPreviousUri = function() {
-      return self.previousUri;
-    }
-
-    /**
-     * set The postal code for the billing address.
-     * @param {String} previousUri
-     **/
-    self.setPreviousUri = function (previousUri) {
-      self.previousUri = previousUri;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {Array}
-     **/
-    self.getBulkEnvelopes = function() {
-      return self.bulkEnvelopes;
-    }
-
-    /**
-     * set Reserved: TBD
-     * @param {Array} bulkEnvelopes
-     **/
-    self.setBulkEnvelopes = function (bulkEnvelopes) {
-      self.bulkEnvelopes = bulkEnvelopes;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.BulkEnvelopeStatus = BulkEnvelopeStatus;
+  /**
+   * Constructs a <code>BulkEnvelopeStatus</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/BulkEnvelopeStatus} obj Optional instance to populate.
+   * @return {module:model/BulkEnvelopeStatus} The populated <code>BulkEnvelopeStatus</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('batchId')) {
+        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+      }
+      if (data.hasOwnProperty('batchSize')) {
+        obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'String');
+      }
+      if (data.hasOwnProperty('bulkEnvelopes')) {
+        obj['bulkEnvelopes'] = ApiClient.convertToType(data['bulkEnvelopes'], [BulkEnvelope]);
+      }
+      if (data.hasOwnProperty('bulkEnvelopesBatchUri')) {
+        obj['bulkEnvelopesBatchUri'] = ApiClient.convertToType(data['bulkEnvelopesBatchUri'], 'String');
+      }
+      if (data.hasOwnProperty('endPosition')) {
+        obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
+      }
+      if (data.hasOwnProperty('failed')) {
+        obj['failed'] = ApiClient.convertToType(data['failed'], 'String');
+      }
+      if (data.hasOwnProperty('nextUri')) {
+        obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
+      }
+      if (data.hasOwnProperty('previousUri')) {
+        obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
+      }
+      if (data.hasOwnProperty('queued')) {
+        obj['queued'] = ApiClient.convertToType(data['queued'], 'String');
+      }
+      if (data.hasOwnProperty('resultSetSize')) {
+        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
+      }
+      if (data.hasOwnProperty('sent')) {
+        obj['sent'] = ApiClient.convertToType(data['sent'], 'String');
+      }
+      if (data.hasOwnProperty('startPosition')) {
+        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+      }
+      if (data.hasOwnProperty('submittedDate')) {
+        obj['submittedDate'] = ApiClient.convertToType(data['submittedDate'], 'String');
+      }
+      if (data.hasOwnProperty('totalSetSize')) {
+        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return BulkEnvelopeStatus;
-  
-  
+  /**
+   * Specifies an identifier which can be used to retrieve a more detailed status of individual bulk recipient batches.
+   * @member {String} batchId
+   */
+  exports.prototype['batchId'] = undefined;
+  /**
+   * The number of items returned in this response.
+   * @member {String} batchSize
+   */
+  exports.prototype['batchSize'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {Array.<module:model/BulkEnvelope>} bulkEnvelopes
+   */
+  exports.prototype['bulkEnvelopes'] = undefined;
+  /**
+   * Reserved: TBD
+   * @member {String} bulkEnvelopesBatchUri
+   */
+  exports.prototype['bulkEnvelopesBatchUri'] = undefined;
+  /**
+   * The last position in the result set. 
+   * @member {String} endPosition
+   */
+  exports.prototype['endPosition'] = undefined;
+  /**
+   * The number of entries with a status of failed. 
+   * @member {String} failed
+   */
+  exports.prototype['failed'] = undefined;
+  /**
+   * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
+   * @member {String} nextUri
+   */
+  exports.prototype['nextUri'] = undefined;
+  /**
+   * The postal code for the billing address.
+   * @member {String} previousUri
+   */
+  exports.prototype['previousUri'] = undefined;
+  /**
+   * The number of entries with a status of queued. 
+   * @member {String} queued
+   */
+  exports.prototype['queued'] = undefined;
+  /**
+   * The number of results returned in this response. 
+   * @member {String} resultSetSize
+   */
+  exports.prototype['resultSetSize'] = undefined;
+  /**
+   * The number of entries with a status of sent.
+   * @member {String} sent
+   */
+  exports.prototype['sent'] = undefined;
+  /**
+   * Starting position of the current result set.
+   * @member {String} startPosition
+   */
+  exports.prototype['startPosition'] = undefined;
+  /**
+   * 
+   * @member {String} submittedDate
+   */
+  exports.prototype['submittedDate'] = undefined;
+  /**
+   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
+   * @member {String} totalSetSize
+   */
+  exports.prototype['totalSetSize'] = undefined;
+
+
+
+  return exports;
 }));
+
+

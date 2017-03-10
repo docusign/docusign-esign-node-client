@@ -1,87 +1,84 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.Ssn9InformationInput = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var Ssn9InformationInput = function Ssn9InformationInput() { 
-    var self = this;
-    
+  /**
+   * The Ssn9InformationInput model module.
+   * @module model/Ssn9InformationInput
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.ssn9) {
-        self.ssn9 = data.ssn9;
-      }
-      
-      if (data.displayLevelCode) {
-        self.displayLevelCode = data.displayLevelCode;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>Ssn9InformationInput</code>.
+   * @alias module:model/Ssn9InformationInput
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get The recipient's Social Security Number(SSN).
-     * @return {String}
-     **/
-    self.getSsn9 = function() {
-      return self.ssn9;
-    }
 
-    /**
-     * set The recipient's Social Security Number(SSN).
-     * @param {String} ssn9
-     **/
-    self.setSsn9 = function (ssn9) {
-      self.ssn9 = ssn9;
-    }
-    
-    /**
-     * get Specifies the display level for the recipient. \nValid values are: \n\n* ReadOnly\n* Editable\n* DoNotDisplay
-     * @return {String}
-     **/
-    self.getDisplayLevelCode = function() {
-      return self.displayLevelCode;
-    }
-
-    /**
-     * set Specifies the display level for the recipient. \nValid values are: \n\n* ReadOnly\n* Editable\n* DoNotDisplay
-     * @param {String} displayLevelCode
-     **/
-    self.setDisplayLevelCode = function (displayLevelCode) {
-      self.displayLevelCode = displayLevelCode;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.Ssn9InformationInput = Ssn9InformationInput;
+  /**
+   * Constructs a <code>Ssn9InformationInput</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/Ssn9InformationInput} obj Optional instance to populate.
+   * @return {module:model/Ssn9InformationInput} The populated <code>Ssn9InformationInput</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('displayLevelCode')) {
+        obj['displayLevelCode'] = ApiClient.convertToType(data['displayLevelCode'], 'String');
+      }
+      if (data.hasOwnProperty('ssn9')) {
+        obj['ssn9'] = ApiClient.convertToType(data['ssn9'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return Ssn9InformationInput;
-  
-  
+  /**
+   * Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay
+   * @member {String} displayLevelCode
+   */
+  exports.prototype['displayLevelCode'] = undefined;
+  /**
+   *  The recipient's Social Security Number(SSN).
+   * @member {String} ssn9
+   */
+  exports.prototype['ssn9'] = undefined;
+
+
+
+  return exports;
 }));
+
+

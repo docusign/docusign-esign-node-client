@@ -1,344 +1,319 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../Configuration', '../ApiClient', '../model/ErrorDetails', '../model/TabMetadataList', '../model/TabMetadata'], factory);
+	define(['Configuration', 'ApiClient', 'model/ErrorDetails', 'model/TabMetadata', 'model/TabMetadataList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'), require('../model/TabMetadataList'), require('../model/TabMetadata'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'), require('../model/TabMetadata'), require('../model/TabMetadataList'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.CustomTabsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.TabMetadataList, root.Docusign.TabMetadata);
+    root.Docusign.CustomTabsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.TabMetadata, root.Docusign.TabMetadataList);
   }
-}(this, function(Configuration, ApiClient, ErrorDetails, TabMetadataList, TabMetadata) {
+}(this, function(Configuration, ApiClient, ErrorDetails, TabMetadata, TabMetadataList) {
   'use strict';
 
-  var CustomTabsApi = function CustomTabsApi(apiClient) {
-    this.apiClient = apiClient || Configuration.default.getDefaultApiClient();
+  /**
+   * CustomTabs service.
+   * @module api/CustomTabsApi
+   * @version 3.0.0
+   */
 
-    var self = this;
-    
-    
-    self.setApiClient = function(apiClient) {
+  /**
+   * Constructs a new CustomTabsApi. 
+   * @alias module:api/CustomTabsApi
+   * @class
+   * @param {module:ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
+
+
+    this.setApiClient = function(apiClient) {
       this.apiClient = apiClient;
-    }
-    
-    self.getApiClient = function() {
+    };
+
+    this.getApiClient = function() {
       return this.apiClient;
-    }
-    
-    
-    /// <summary>
-    /// Gets a list of all account tabs. Retrieves a list of all tabs associated with the account.
-    /// </summary>
-    self.ListOptions = function () {
-      
-      var customTabOnly = null;
-      
-      
-      /*
-       * When set to **true**, only custom tabs are returned in the response.
-       */
-      this.setCustomTabOnly = function(customTabOnly) {
-        this.customTabOnly = customTabOnly;
-      }
-	
-      this.getCustomTabOnly = function() {
-        return this.customTabOnly;
-      }
-      
-    }
-    
-    
+    };
+
+
     /**
-     * Gets a list of all account tabs.
-     * Retrieves a list of all tabs associated with the account.
-     * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {CustomTabsApi.ListOptions} options: Options for modifying the method behavior.
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: TabMetadataList
+     * Callback function to receive the result of the _delete operation.
+     * @callback module:api/CustomTabsApi~_deleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    self.list = function(accountId, options, callback) {
-      var postBody = null;
-      
-      // verify the required parameter 'accountId' is set
-      if (accountId == null) {
-        throw "Missing the required parameter 'accountId' when calling list";
-      }
-      
 
-      
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'custom_tab_only': options.customTabOnly
-        };
-      }
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new TabMetadataList();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    
-    /**
-     * Creates a custom tab.
-     * Creates a tab with pre-defined properties, such as a text tab with a certain font type and validation pattern. Users can access the custom tabs when sending documents through the DocuSign web application.\n\nCustom tabs can be created for approve, checkbox, company, date, date signed, decline, email, email address, envelope ID, first name, formula, full name, initial here, last name, list, note, number, radio, sign here, signer attachment, SSN, text, title, and zip tabs.
-     * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {TabMetadata} tabMetadata: TBD Description
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: TabMetadata
-     */
-    self.create = function(accountId, tabMetadata, callback) {
-      var postBody = tabMetadata;
-      
-      // verify the required parameter 'accountId' is set
-      if (accountId == null) {
-        throw "Missing the required parameter 'accountId' when calling create";
-      }
-      
-
-      
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {};
-      
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new TabMetadata();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    
-    /**
-     * Gets custom tab information.
-     * Retrieves information about the requested custom tab on the specified account.
-     * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {String} customTabId: 
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: TabMetadata
-     */
-    self.get = function(accountId, customTabId, callback) {
-      var postBody = null;
-      
-      // verify the required parameter 'accountId' is set
-      if (accountId == null) {
-        throw "Missing the required parameter 'accountId' when calling get";
-      }
-      
-      // verify the required parameter 'customTabId' is set
-      if (customTabId == null) {
-        throw "Missing the required parameter 'customTabId' when calling get";
-      }
-      
-
-      
-      var pathParams = {
-        'accountId': accountId,
-        'customTabId': customTabId
-      };
-      var queryParams = {};
-      
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new TabMetadata();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    
-    /**
-     * Updates custom tab information.
-     * Updates the information in a custom tab for the specified account.
-     * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {String} customTabId: 
-     * @param {TabMetadata} tabMetadata: TBD Description
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: TabMetadata
-     */
-    self.update = function(accountId, customTabId, tabMetadata, callback) {
-      var postBody = tabMetadata;
-      
-      // verify the required parameter 'accountId' is set
-      if (accountId == null) {
-        throw "Missing the required parameter 'accountId' when calling update";
-      }
-      
-      // verify the required parameter 'customTabId' is set
-      if (customTabId == null) {
-        throw "Missing the required parameter 'customTabId' when calling update";
-      }
-      
-
-      
-      var pathParams = {
-        'accountId': accountId,
-        'customTabId': customTabId
-      };
-      var queryParams = {};
-      
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new TabMetadata();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    
     /**
      * Deletes custom tab information.
      * Deletes the custom from the specified account.
-     * @param {String} accountId: The external account number (int) or account ID Guid.
-     * @param {String} customTabId: 
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} customTabId 
+     * @param {module:api/CustomTabsApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    self.delete = function(accountId, customTabId, callback) {
+    this._delete = function(accountId, customTabId, callback) {
       var postBody = null;
-      
-      // verify the required parameter 'accountId' is set
-      if (accountId == null) {
-        throw "Missing the required parameter 'accountId' when calling delete";
-      }
-      
-      // verify the required parameter 'customTabId' is set
-      if (customTabId == null) {
-        throw "Missing the required parameter 'customTabId' when calling delete";
-      }
-      
 
-      
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling _delete");
+      }
+
+      // verify the required parameter 'customTabId' is set
+      if (customTabId == undefined || customTabId == null) {
+        throw new Error("Missing the required parameter 'customTabId' when calling _delete");
+      }
+
+
       var pathParams = {
         'accountId': accountId,
         'customTabId': customTabId
       };
-      var queryParams = {};
-      
+      var queryParams = {
+      };
       var headerParams = {
       };
       var formParams = {
       };
 
+      var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          callback(error, data, response);
-        };
-      }
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
+        authNames, contentTypes, accepts, returnType, callback
       );
-      
-    }
-    
-    
+    };
+
+    /**
+     * Callback function to receive the result of the create operation.
+     * @callback module:api/CustomTabsApi~createCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TabMetadata} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates a custom tab.
+     * Creates a tab with pre-defined properties, such as a text tab with a certain font type and validation pattern. Users can access the custom tabs when sending documents through the DocuSign web application.
+
+Custom tabs can be created for approve, checkbox, company, date, date signed, decline, email, email address, envelope ID, first name, formula, full name, initial here, last name, list, note, number, radio, sign here, signer attachment, SSN, text, title, and zip tabs.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TabMetadata} opts.tabMetadata 
+     * @param {module:api/CustomTabsApi~createCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TabMetadata}
+     */
+    this.create = function(accountId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['tabMetadata'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling create");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TabMetadata;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/tab_definitions', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the get operation.
+     * @callback module:api/CustomTabsApi~getCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TabMetadata} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets custom tab information.
+     * Retrieves information about the requested custom tab on the specified account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} customTabId 
+     * @param {module:api/CustomTabsApi~getCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TabMetadata}
+     */
+    this.get = function(accountId, customTabId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling get");
+      }
+
+      // verify the required parameter 'customTabId' is set
+      if (customTabId == undefined || customTabId == null) {
+        throw new Error("Missing the required parameter 'customTabId' when calling get");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'customTabId': customTabId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TabMetadata;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the list operation.
+     * @callback module:api/CustomTabsApi~listCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TabMetadataList} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets a list of all account tabs.
+     * Retrieves a list of all tabs associated with the account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.customTabOnly When set to **true**, only custom tabs are returned in the response. 
+     * @param {module:api/CustomTabsApi~listCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TabMetadataList}
+     */
+    this.list = function(accountId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling list");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+        'custom_tab_only': opts['customTabOnly']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TabMetadataList;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/tab_definitions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the update operation.
+     * @callback module:api/CustomTabsApi~updateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TabMetadata} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates custom tab information.  
+     * Updates the information in a custom tab for the specified account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} customTabId 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TabMetadata} opts.tabMetadata 
+     * @param {module:api/CustomTabsApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TabMetadata}
+     */
+    this.update = function(accountId, customTabId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['tabMetadata'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling update");
+      }
+
+      // verify the required parameter 'customTabId' is set
+      if (customTabId == undefined || customTabId == null) {
+        throw new Error("Missing the required parameter 'customTabId' when calling update");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'customTabId': customTabId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TabMetadata;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
   };
 
-  return CustomTabsApi;
+  return exports;
 }));

@@ -1,291 +1,162 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails', './Filter', './Folder'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/Filter', 'model/Folder'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'), require('./Filter'), require('./Folder'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./Filter'), require('./Folder'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.Filter, root.Docusign.Folder);
+    root.Docusign.Folder = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.Filter, root.Docusign.Folder);
   }
-}(this, function(module, ErrorDetails, Filter, Folder) {
+}(this, function(ApiClient, ErrorDetails, Filter, Folder) {
   'use strict';
 
-  
-  
 
-  
-  var Folder = function Folder() { 
-    var self = this;
-    
-    /**
-     * A collection of folder objects returned in a response.
-     * datatype: Array
-     **/
-    self.folders = [];
-    
+  /**
+   * The Folder model module.
+   * @module model/Folder
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.ownerUserName) {
-        self.ownerUserName = data.ownerUserName;
-      }
-      
-      if (data.ownerEmail) {
-        self.ownerEmail = data.ownerEmail;
-      }
-      
-      if (data.ownerUserId) {
-        self.ownerUserId = data.ownerUserId;
-      }
-      
-      if (data.type) {
-        self.type = data.type;
-      }
-      
-      if (data.name) {
-        self.name = data.name;
-      }
-      
-      if (data.uri) {
-        self.uri = data.uri;
-      }
-      
-      if (data.parentFolderId) {
-        self.parentFolderId = data.parentFolderId;
-      }
-      
-      if (data.parentFolderUri) {
-        self.parentFolderUri = data.parentFolderUri;
-      }
-      
-      if (data.folderId) {
-        self.folderId = data.folderId;
-      }
-      
-      if (data.errorDetails) {
-        self.errorDetails = new data.errorDetails.constructor();
-        self.errorDetails.constructFromObject(data.errorDetails);
-      }
-      
-      if (data.folders) {
-        self.folders = data.folders;
-      }
-      
-      if (data.filter) {
-        self.filter = new data.filter.constructor();
-        self.filter.constructFromObject(data.filter);
-      }
-      
-    }
+  /**
+   * Constructs a new <code>Folder</code>.
+   * @alias module:model/Folder
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getOwnerUserName = function() {
-      return self.ownerUserName;
-    }
 
-    /**
-     * set 
-     * @param {String} ownerUserName
-     **/
-    self.setOwnerUserName = function (ownerUserName) {
-      self.ownerUserName = ownerUserName;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getOwnerEmail = function() {
-      return self.ownerEmail;
-    }
-
-    /**
-     * set 
-     * @param {String} ownerEmail
-     **/
-    self.setOwnerEmail = function (ownerEmail) {
-      self.ownerEmail = ownerEmail;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getOwnerUserId = function() {
-      return self.ownerUserId;
-    }
-
-    /**
-     * set 
-     * @param {String} ownerUserId
-     **/
-    self.setOwnerUserId = function (ownerUserId) {
-      self.ownerUserId = ownerUserId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getType = function() {
-      return self.type;
-    }
-
-    /**
-     * set 
-     * @param {String} type
-     **/
-    self.setType = function (type) {
-      self.type = type;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getName = function() {
-      return self.name;
-    }
-
-    /**
-     * set 
-     * @param {String} name
-     **/
-    self.setName = function (name) {
-      self.name = name;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUri = function() {
-      return self.uri;
-    }
-
-    /**
-     * set 
-     * @param {String} uri
-     **/
-    self.setUri = function (uri) {
-      self.uri = uri;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getParentFolderId = function() {
-      return self.parentFolderId;
-    }
-
-    /**
-     * set 
-     * @param {String} parentFolderId
-     **/
-    self.setParentFolderId = function (parentFolderId) {
-      self.parentFolderId = parentFolderId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getParentFolderUri = function() {
-      return self.parentFolderUri;
-    }
-
-    /**
-     * set 
-     * @param {String} parentFolderUri
-     **/
-    self.setParentFolderUri = function (parentFolderUri) {
-      self.parentFolderUri = parentFolderUri;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getFolderId = function() {
-      return self.folderId;
-    }
-
-    /**
-     * set 
-     * @param {String} folderId
-     **/
-    self.setFolderId = function (folderId) {
-      self.folderId = folderId;
-    }
-    
-    /**
-     * @return {ErrorDetails}
-     **/
-    self.getErrorDetails = function() {
-      return self.errorDetails;
-    }
-
-    /**
-     * @param {ErrorDetails} errorDetails
-     **/
-    self.setErrorDetails = function (errorDetails) {
-      self.errorDetails = errorDetails;
-    }
-    
-    /**
-     * get A collection of folder objects returned in a response.
-     * @return {Array}
-     **/
-    self.getFolders = function() {
-      return self.folders;
-    }
-
-    /**
-     * set A collection of folder objects returned in a response.
-     * @param {Array} folders
-     **/
-    self.setFolders = function (folders) {
-      self.folders = folders;
-    }
-    
-    /**
-     * @return {Filter}
-     **/
-    self.getFilter = function() {
-      return self.filter;
-    }
-
-    /**
-     * @param {Filter} filter
-     **/
-    self.setFilter = function (filter) {
-      self.filter = filter;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.Folder = Folder;
+  /**
+   * Constructs a <code>Folder</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/Folder} obj Optional instance to populate.
+   * @return {module:model/Folder} The populated <code>Folder</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('filter')) {
+        obj['filter'] = Filter.constructFromObject(data['filter']);
+      }
+      if (data.hasOwnProperty('folderId')) {
+        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+      }
+      if (data.hasOwnProperty('folders')) {
+        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('ownerEmail')) {
+        obj['ownerEmail'] = ApiClient.convertToType(data['ownerEmail'], 'String');
+      }
+      if (data.hasOwnProperty('ownerUserId')) {
+        obj['ownerUserId'] = ApiClient.convertToType(data['ownerUserId'], 'String');
+      }
+      if (data.hasOwnProperty('ownerUserName')) {
+        obj['ownerUserName'] = ApiClient.convertToType(data['ownerUserName'], 'String');
+      }
+      if (data.hasOwnProperty('parentFolderId')) {
+        obj['parentFolderId'] = ApiClient.convertToType(data['parentFolderId'], 'String');
+      }
+      if (data.hasOwnProperty('parentFolderUri')) {
+        obj['parentFolderUri'] = ApiClient.convertToType(data['parentFolderUri'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return Folder;
-  
-  
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * @member {module:model/Filter} filter
+   */
+  exports.prototype['filter'] = undefined;
+  /**
+   * 
+   * @member {String} folderId
+   */
+  exports.prototype['folderId'] = undefined;
+  /**
+   * A collection of folder objects returned in a response.
+   * @member {Array.<module:model/Folder>} folders
+   */
+  exports.prototype['folders'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} ownerEmail
+   */
+  exports.prototype['ownerEmail'] = undefined;
+  /**
+   * 
+   * @member {String} ownerUserId
+   */
+  exports.prototype['ownerUserId'] = undefined;
+  /**
+   * 
+   * @member {String} ownerUserName
+   */
+  exports.prototype['ownerUserName'] = undefined;
+  /**
+   * 
+   * @member {String} parentFolderId
+   */
+  exports.prototype['parentFolderId'] = undefined;
+  /**
+   * 
+   * @member {String} parentFolderUri
+   */
+  exports.prototype['parentFolderUri'] = undefined;
+  /**
+   * 
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
+
+
+
+  return exports;
 }));
+
+

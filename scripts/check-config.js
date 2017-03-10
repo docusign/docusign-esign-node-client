@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');
 
-var configPath = path.resolve('../config.json');
+var configPath = path.resolve('./test-config.json');
 
 fs.stat(configPath, function statCallback (err, stats) {
   if (err) {

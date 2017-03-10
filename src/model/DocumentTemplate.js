@@ -1,146 +1,107 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails'], factory);
+    define(['ApiClient', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails);
+    root.Docusign.DocumentTemplate = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(module, ErrorDetails) {
+}(this, function(ApiClient, ErrorDetails) {
   'use strict';
 
-  
-  
 
-  
-  var DocumentTemplate = function DocumentTemplate() { 
-    var self = this;
-    
+  /**
+   * The DocumentTemplate model module.
+   * @module model/DocumentTemplate
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.documentId) {
-        self.documentId = data.documentId;
-      }
-      
-      if (data.templateId) {
-        self.templateId = data.templateId;
-      }
-      
-      if (data.documentStartPage) {
-        self.documentStartPage = data.documentStartPage;
-      }
-      
-      if (data.documentEndPage) {
-        self.documentEndPage = data.documentEndPage;
-      }
-      
-      if (data.errorDetails) {
-        self.errorDetails = new data.errorDetails.constructor();
-        self.errorDetails.constructFromObject(data.errorDetails);
-      }
-      
-    }
+  /**
+   * Constructs a new <code>DocumentTemplate</code>.
+   * @alias module:model/DocumentTemplate
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * @return {String}
-     **/
-    self.getDocumentId = function() {
-      return self.documentId;
-    }
 
-    /**
-     * set Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * @param {String} documentId
-     **/
-    self.setDocumentId = function (documentId) {
-      self.documentId = documentId;
-    }
-    
-    /**
-     * get The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * @return {String}
-     **/
-    self.getTemplateId = function() {
-      return self.templateId;
-    }
-
-    /**
-     * set The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * @param {String} templateId
-     **/
-    self.setTemplateId = function (templateId) {
-      self.templateId = templateId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDocumentStartPage = function() {
-      return self.documentStartPage;
-    }
-
-    /**
-     * set 
-     * @param {String} documentStartPage
-     **/
-    self.setDocumentStartPage = function (documentStartPage) {
-      self.documentStartPage = documentStartPage;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDocumentEndPage = function() {
-      return self.documentEndPage;
-    }
-
-    /**
-     * set 
-     * @param {String} documentEndPage
-     **/
-    self.setDocumentEndPage = function (documentEndPage) {
-      self.documentEndPage = documentEndPage;
-    }
-    
-    /**
-     * @return {ErrorDetails}
-     **/
-    self.getErrorDetails = function() {
-      return self.errorDetails;
-    }
-
-    /**
-     * @param {ErrorDetails} errorDetails
-     **/
-    self.setErrorDetails = function (errorDetails) {
-      self.errorDetails = errorDetails;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.DocumentTemplate = DocumentTemplate;
+  /**
+   * Constructs a <code>DocumentTemplate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/DocumentTemplate} obj Optional instance to populate.
+   * @return {module:model/DocumentTemplate} The populated <code>DocumentTemplate</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('documentEndPage')) {
+        obj['documentEndPage'] = ApiClient.convertToType(data['documentEndPage'], 'String');
+      }
+      if (data.hasOwnProperty('documentId')) {
+        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+      }
+      if (data.hasOwnProperty('documentStartPage')) {
+        obj['documentStartPage'] = ApiClient.convertToType(data['documentStartPage'], 'String');
+      }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return DocumentTemplate;
-  
-  
+  /**
+   * 
+   * @member {String} documentEndPage
+   */
+  exports.prototype['documentEndPage'] = undefined;
+  /**
+   * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
+   * @member {String} documentId
+   */
+  exports.prototype['documentId'] = undefined;
+  /**
+   * 
+   * @member {String} documentStartPage
+   */
+  exports.prototype['documentStartPage'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
+
+
+
+  return exports;
 }));
+
+

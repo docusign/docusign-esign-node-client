@@ -1,345 +1,187 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './UserInfo'], factory);
+    define(['ApiClient', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.UserInfo);
+    root.Docusign.EnvelopeTemplateDefinition = factory(root.Docusign.ApiClient, root.Docusign.UserInfo);
   }
-}(this, function(module, UserInfo) {
+}(this, function(ApiClient, UserInfo) {
   'use strict';
 
-  
-  
 
-  
-  var EnvelopeTemplateDefinition = function EnvelopeTemplateDefinition() { 
-    var self = this;
-    
+  /**
+   * The EnvelopeTemplateDefinition model module.
+   * @module model/EnvelopeTemplateDefinition
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.templateId) {
-        self.templateId = data.templateId;
-      }
-      
-      if (data.name) {
-        self.name = data.name;
-      }
-      
-      if (data.shared) {
-        self.shared = data.shared;
-      }
-      
-      if (data.password) {
-        self.password = data.password;
-      }
-      
-      if (data.newPassword) {
-        self.newPassword = data.newPassword;
-      }
-      
-      if (data.description) {
-        self.description = data.description;
-      }
-      
-      if (data.lastModified) {
-        self.lastModified = data.lastModified;
-      }
-      
-      if (data.lastModifiedBy) {
-        self.lastModifiedBy = new data.lastModifiedBy.constructor();
-        self.lastModifiedBy.constructFromObject(data.lastModifiedBy);
-      }
-      
-      if (data.pageCount) {
-        self.pageCount = data.pageCount;
-      }
-      
-      if (data.uri) {
-        self.uri = data.uri;
-      }
-      
-      if (data.folderName) {
-        self.folderName = data.folderName;
-      }
-      
-      if (data.folderId) {
-        self.folderId = data.folderId;
-      }
-      
-      if (data.folderUri) {
-        self.folderUri = data.folderUri;
-      }
-      
-      if (data.parentFolderUri) {
-        self.parentFolderUri = data.parentFolderUri;
-      }
-      
-      if (data.owner) {
-        self.owner = new data.owner.constructor();
-        self.owner.constructFromObject(data.owner);
-      }
-      
-    }
+  /**
+   * Constructs a new <code>EnvelopeTemplateDefinition</code>.
+   * A complex element containing the following information:  templateId: Unique identifier of the template. If this is not provided, DocuSign will generate a value.   name: Name of the template. Maximum length: 100 characters.  shared: When set to **true**, the template is shared with the Everyone group in the account. If false, the template is only shared with the Administrator group.  password: Password, if the template is locked.  description: Description of the template. Maximum Length: 500 characters.  pageCount: Number of document pages in the template.  folderName: The name of the folder the template is located in.  folderId: The ID for the folder.  owner: The userName, email, userId, userType, and userStatus for the template owner.
+   * @alias module:model/EnvelopeTemplateDefinition
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * @return {String}
-     **/
-    self.getTemplateId = function() {
-      return self.templateId;
-    }
 
-    /**
-     * set The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * @param {String} templateId
-     **/
-    self.setTemplateId = function (templateId) {
-      self.templateId = templateId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getName = function() {
-      return self.name;
-    }
-
-    /**
-     * set 
-     * @param {String} name
-     **/
-    self.setName = function (name) {
-      self.name = name;
-    }
-    
-    /**
-     * get When set to **true**, this custom tab is shared.
-     * @return {String}
-     **/
-    self.getShared = function() {
-      return self.shared;
-    }
-
-    /**
-     * set When set to **true**, this custom tab is shared.
-     * @param {String} shared
-     **/
-    self.setShared = function (shared) {
-      self.shared = shared;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getPassword = function() {
-      return self.password;
-    }
-
-    /**
-     * set 
-     * @param {String} password
-     **/
-    self.setPassword = function (password) {
-      self.password = password;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getNewPassword = function() {
-      return self.newPassword;
-    }
-
-    /**
-     * set 
-     * @param {String} newPassword
-     **/
-    self.setNewPassword = function (newPassword) {
-      self.newPassword = newPassword;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDescription = function() {
-      return self.description;
-    }
-
-    /**
-     * set 
-     * @param {String} description
-     **/
-    self.setDescription = function (description) {
-      self.description = description;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getLastModified = function() {
-      return self.lastModified;
-    }
-
-    /**
-     * set 
-     * @param {String} lastModified
-     **/
-    self.setLastModified = function (lastModified) {
-      self.lastModified = lastModified;
-    }
-    
-    /**
-     * @return {UserInfo}
-     **/
-    self.getLastModifiedBy = function() {
-      return self.lastModifiedBy;
-    }
-
-    /**
-     * @param {UserInfo} lastModifiedBy
-     **/
-    self.setLastModifiedBy = function (lastModifiedBy) {
-      self.lastModifiedBy = lastModifiedBy;
-    }
-    
-    /**
-     * get An integer value specifying the number of document pages in the template. Omit this property if not submitting a page count.
-     * @return {Integer}
-     **/
-    self.getPageCount = function() {
-      return self.pageCount;
-    }
-
-    /**
-     * set An integer value specifying the number of document pages in the template. Omit this property if not submitting a page count.
-     * @param {Integer} pageCount
-     **/
-    self.setPageCount = function (pageCount) {
-      self.pageCount = pageCount;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUri = function() {
-      return self.uri;
-    }
-
-    /**
-     * set 
-     * @param {String} uri
-     **/
-    self.setUri = function (uri) {
-      self.uri = uri;
-    }
-    
-    /**
-     * get The name of the folder in which the template is located.
-     * @return {String}
-     **/
-    self.getFolderName = function() {
-      return self.folderName;
-    }
-
-    /**
-     * set The name of the folder in which the template is located.
-     * @param {String} folderName
-     **/
-    self.setFolderName = function (folderName) {
-      self.folderName = folderName;
-    }
-    
-    /**
-     * get The ID for the folder.
-     * @return {String}
-     **/
-    self.getFolderId = function() {
-      return self.folderId;
-    }
-
-    /**
-     * set The ID for the folder.
-     * @param {String} folderId
-     **/
-    self.setFolderId = function (folderId) {
-      self.folderId = folderId;
-    }
-    
-    /**
-     * get The URI of the folder.
-     * @return {String}
-     **/
-    self.getFolderUri = function() {
-      return self.folderUri;
-    }
-
-    /**
-     * set The URI of the folder.
-     * @param {String} folderUri
-     **/
-    self.setFolderUri = function (folderUri) {
-      self.folderUri = folderUri;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getParentFolderUri = function() {
-      return self.parentFolderUri;
-    }
-
-    /**
-     * set 
-     * @param {String} parentFolderUri
-     **/
-    self.setParentFolderUri = function (parentFolderUri) {
-      self.parentFolderUri = parentFolderUri;
-    }
-    
-    /**
-     * @return {UserInfo}
-     **/
-    self.getOwner = function() {
-      return self.owner;
-    }
-
-    /**
-     * @param {UserInfo} owner
-     **/
-    self.setOwner = function (owner) {
-      self.owner = owner;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.EnvelopeTemplateDefinition = EnvelopeTemplateDefinition;
+  /**
+   * Constructs a <code>EnvelopeTemplateDefinition</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/EnvelopeTemplateDefinition} obj Optional instance to populate.
+   * @return {module:model/EnvelopeTemplateDefinition} The populated <code>EnvelopeTemplateDefinition</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('folderId')) {
+        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+      }
+      if (data.hasOwnProperty('folderName')) {
+        obj['folderName'] = ApiClient.convertToType(data['folderName'], 'String');
+      }
+      if (data.hasOwnProperty('folderUri')) {
+        obj['folderUri'] = ApiClient.convertToType(data['folderUri'], 'String');
+      }
+      if (data.hasOwnProperty('lastModified')) {
+        obj['lastModified'] = ApiClient.convertToType(data['lastModified'], 'String');
+      }
+      if (data.hasOwnProperty('lastModifiedBy')) {
+        obj['lastModifiedBy'] = UserInfo.constructFromObject(data['lastModifiedBy']);
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('newPassword')) {
+        obj['newPassword'] = ApiClient.convertToType(data['newPassword'], 'String');
+      }
+      if (data.hasOwnProperty('owner')) {
+        obj['owner'] = UserInfo.constructFromObject(data['owner']);
+      }
+      if (data.hasOwnProperty('pageCount')) {
+        obj['pageCount'] = ApiClient.convertToType(data['pageCount'], 'Number');
+      }
+      if (data.hasOwnProperty('parentFolderUri')) {
+        obj['parentFolderUri'] = ApiClient.convertToType(data['parentFolderUri'], 'String');
+      }
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('shared')) {
+        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return EnvelopeTemplateDefinition;
-  
-  
+  /**
+   * 
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
+  /**
+   * The ID for the folder.
+   * @member {String} folderId
+   */
+  exports.prototype['folderId'] = undefined;
+  /**
+   *  The name of the folder in which the template is located.
+   * @member {String} folderName
+   */
+  exports.prototype['folderName'] = undefined;
+  /**
+   * The URI of the folder.
+   * @member {String} folderUri
+   */
+  exports.prototype['folderUri'] = undefined;
+  /**
+   * 
+   * @member {String} lastModified
+   */
+  exports.prototype['lastModified'] = undefined;
+  /**
+   * @member {module:model/UserInfo} lastModifiedBy
+   */
+  exports.prototype['lastModifiedBy'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} newPassword
+   */
+  exports.prototype['newPassword'] = undefined;
+  /**
+   * @member {module:model/UserInfo} owner
+   */
+  exports.prototype['owner'] = undefined;
+  /**
+   * An integer value specifying the number of document pages in the template. Omit this property if not submitting a page count.
+   * @member {Number} pageCount
+   */
+  exports.prototype['pageCount'] = undefined;
+  /**
+   * 
+   * @member {String} parentFolderUri
+   */
+  exports.prototype['parentFolderUri'] = undefined;
+  /**
+   * 
+   * @member {String} password
+   */
+  exports.prototype['password'] = undefined;
+  /**
+   * When set to **true**, this custom tab is shared.
+   * @member {String} shared
+   */
+  exports.prototype['shared'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
+
+
+
+  return exports;
 }));
+
+

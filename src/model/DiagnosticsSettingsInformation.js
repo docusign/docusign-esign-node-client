@@ -1,107 +1,92 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.DiagnosticsSettingsInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var DiagnosticsSettingsInformation = function DiagnosticsSettingsInformation() { 
-    var self = this;
-    
+  /**
+   * The DiagnosticsSettingsInformation model module.
+   * @module model/DiagnosticsSettingsInformation
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.apiRequestLogging) {
-        self.apiRequestLogging = data.apiRequestLogging;
-      }
-      
-      if (data.apiRequestLogMaxEntries) {
-        self.apiRequestLogMaxEntries = data.apiRequestLogMaxEntries;
-      }
-      
-      if (data.apiRequestLogRemainingEntries) {
-        self.apiRequestLogRemainingEntries = data.apiRequestLogRemainingEntries;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>DiagnosticsSettingsInformation</code>.
+   * @alias module:model/DiagnosticsSettingsInformation
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get When set to **true**, enables API request logging for the user.
-     * @return {String}
-     **/
-    self.getApiRequestLogging = function() {
-      return self.apiRequestLogging;
-    }
 
-    /**
-     * set When set to **true**, enables API request logging for the user.
-     * @param {String} apiRequestLogging
-     **/
-    self.setApiRequestLogging = function (apiRequestLogging) {
-      self.apiRequestLogging = apiRequestLogging;
-    }
-    
-    /**
-     * get Specifies the maximum number of API requests to log.
-     * @return {String}
-     **/
-    self.getApiRequestLogMaxEntries = function() {
-      return self.apiRequestLogMaxEntries;
-    }
-
-    /**
-     * set Specifies the maximum number of API requests to log.
-     * @param {String} apiRequestLogMaxEntries
-     **/
-    self.setApiRequestLogMaxEntries = function (apiRequestLogMaxEntries) {
-      self.apiRequestLogMaxEntries = apiRequestLogMaxEntries;
-    }
-    
-    /**
-     * get Indicates the remaining number of API requests that can be logged.
-     * @return {String}
-     **/
-    self.getApiRequestLogRemainingEntries = function() {
-      return self.apiRequestLogRemainingEntries;
-    }
-
-    /**
-     * set Indicates the remaining number of API requests that can be logged.
-     * @param {String} apiRequestLogRemainingEntries
-     **/
-    self.setApiRequestLogRemainingEntries = function (apiRequestLogRemainingEntries) {
-      self.apiRequestLogRemainingEntries = apiRequestLogRemainingEntries;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.DiagnosticsSettingsInformation = DiagnosticsSettingsInformation;
+  /**
+   * Constructs a <code>DiagnosticsSettingsInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/DiagnosticsSettingsInformation} obj Optional instance to populate.
+   * @return {module:model/DiagnosticsSettingsInformation} The populated <code>DiagnosticsSettingsInformation</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('apiRequestLogging')) {
+        obj['apiRequestLogging'] = ApiClient.convertToType(data['apiRequestLogging'], 'String');
+      }
+      if (data.hasOwnProperty('apiRequestLogMaxEntries')) {
+        obj['apiRequestLogMaxEntries'] = ApiClient.convertToType(data['apiRequestLogMaxEntries'], 'String');
+      }
+      if (data.hasOwnProperty('apiRequestLogRemainingEntries')) {
+        obj['apiRequestLogRemainingEntries'] = ApiClient.convertToType(data['apiRequestLogRemainingEntries'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return DiagnosticsSettingsInformation;
-  
-  
+  /**
+   *  When set to **true**, enables API request logging for the user. 
+   * @member {String} apiRequestLogging
+   */
+  exports.prototype['apiRequestLogging'] = undefined;
+  /**
+   * Specifies the maximum number of API requests to log.
+   * @member {String} apiRequestLogMaxEntries
+   */
+  exports.prototype['apiRequestLogMaxEntries'] = undefined;
+  /**
+   * Indicates the remaining number of API requests that can be logged.
+   * @member {String} apiRequestLogRemainingEntries
+   */
+  exports.prototype['apiRequestLogRemainingEntries'] = undefined;
+
+
+
+  return exports;
 }));
+
+

@@ -1,186 +1,123 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './TemplateMatch'], factory);
+    define(['ApiClient', 'model/TemplateMatch'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./TemplateMatch'));
+    module.exports = factory(require('../ApiClient'), require('./TemplateMatch'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.TemplateMatch);
+    root.Docusign.TemplateSummary = factory(root.Docusign.ApiClient, root.Docusign.TemplateMatch);
   }
-}(this, function(module, TemplateMatch) {
+}(this, function(ApiClient, TemplateMatch) {
   'use strict';
 
-  
-  
 
-  
-  var TemplateSummary = function TemplateSummary() { 
-    var self = this;
-    
+  /**
+   * The TemplateSummary model module.
+   * @module model/TemplateSummary
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.templateId) {
-        self.templateId = data.templateId;
-      }
-      
-      if (data.name) {
-        self.name = data.name;
-      }
-      
-      if (data.documentId) {
-        self.documentId = data.documentId;
-      }
-      
-      if (data.documentName) {
-        self.documentName = data.documentName;
-      }
-      
-      if (data.applied) {
-        self.applied = data.applied;
-      }
-      
-      if (data.templateMatch) {
-        self.templateMatch = new data.templateMatch.constructor();
-        self.templateMatch.constructFromObject(data.templateMatch);
-      }
-      
-      if (data.uri) {
-        self.uri = data.uri;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>TemplateSummary</code>.
+   * @alias module:model/TemplateSummary
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * @return {String}
-     **/
-    self.getTemplateId = function() {
-      return self.templateId;
-    }
 
-    /**
-     * set The unique identifier of the template. If this is not provided, DocuSign will generate a value.
-     * @param {String} templateId
-     **/
-    self.setTemplateId = function (templateId) {
-      self.templateId = templateId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getName = function() {
-      return self.name;
-    }
-
-    /**
-     * set 
-     * @param {String} name
-     **/
-    self.setName = function (name) {
-      self.name = name;
-    }
-    
-    /**
-     * get Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * @return {String}
-     **/
-    self.getDocumentId = function() {
-      return self.documentId;
-    }
-
-    /**
-     * set Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * @param {String} documentId
-     **/
-    self.setDocumentId = function (documentId) {
-      self.documentId = documentId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getDocumentName = function() {
-      return self.documentName;
-    }
-
-    /**
-     * set 
-     * @param {String} documentName
-     **/
-    self.setDocumentName = function (documentName) {
-      self.documentName = documentName;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getApplied = function() {
-      return self.applied;
-    }
-
-    /**
-     * set Reserved: TBD
-     * @param {String} applied
-     **/
-    self.setApplied = function (applied) {
-      self.applied = applied;
-    }
-    
-    /**
-     * @return {TemplateMatch}
-     **/
-    self.getTemplateMatch = function() {
-      return self.templateMatch;
-    }
-
-    /**
-     * @param {TemplateMatch} templateMatch
-     **/
-    self.setTemplateMatch = function (templateMatch) {
-      self.templateMatch = templateMatch;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUri = function() {
-      return self.uri;
-    }
-
-    /**
-     * set 
-     * @param {String} uri
-     **/
-    self.setUri = function (uri) {
-      self.uri = uri;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.TemplateSummary = TemplateSummary;
+  /**
+   * Constructs a <code>TemplateSummary</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/TemplateSummary} obj Optional instance to populate.
+   * @return {module:model/TemplateSummary} The populated <code>TemplateSummary</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('applied')) {
+        obj['applied'] = ApiClient.convertToType(data['applied'], 'String');
+      }
+      if (data.hasOwnProperty('documentId')) {
+        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+      }
+      if (data.hasOwnProperty('documentName')) {
+        obj['documentName'] = ApiClient.convertToType(data['documentName'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+      }
+      if (data.hasOwnProperty('templateMatch')) {
+        obj['templateMatch'] = TemplateMatch.constructFromObject(data['templateMatch']);
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return TemplateSummary;
-  
-  
+  /**
+   * Reserved: TBD
+   * @member {String} applied
+   */
+  exports.prototype['applied'] = undefined;
+  /**
+   * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
+   * @member {String} documentId
+   */
+  exports.prototype['documentId'] = undefined;
+  /**
+   * 
+   * @member {String} documentName
+   */
+  exports.prototype['documentName'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
+  /**
+   * @member {module:model/TemplateMatch} templateMatch
+   */
+  exports.prototype['templateMatch'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
+
+
+
+  return exports;
 }));
+
+

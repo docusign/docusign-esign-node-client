@@ -1,193 +1,124 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './FolderItemV2'], factory);
+    define(['ApiClient', 'model/FolderItemV2'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./FolderItemV2'));
+    module.exports = factory(require('../ApiClient'), require('./FolderItemV2'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.FolderItemV2);
+    root.Docusign.FolderItemResponse = factory(root.Docusign.ApiClient, root.Docusign.FolderItemV2);
   }
-}(this, function(module, FolderItemV2) {
+}(this, function(ApiClient, FolderItemV2) {
   'use strict';
 
-  
-  
 
-  
-  var FolderItemResponse = function FolderItemResponse() { 
-    var self = this;
-    
-    /**
-     * A list of the envelopes in the specified folder or folders.
-     * datatype: Array
-     **/
-    self.folderItems = [];
-    
+  /**
+   * The FolderItemResponse model module.
+   * @module model/FolderItemResponse
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.resultSetSize) {
-        self.resultSetSize = data.resultSetSize;
-      }
-      
-      if (data.startPosition) {
-        self.startPosition = data.startPosition;
-      }
-      
-      if (data.endPosition) {
-        self.endPosition = data.endPosition;
-      }
-      
-      if (data.totalRows) {
-        self.totalRows = data.totalRows;
-      }
-      
-      if (data.nextUri) {
-        self.nextUri = data.nextUri;
-      }
-      
-      if (data.previousUri) {
-        self.previousUri = data.previousUri;
-      }
-      
-      if (data.folderItems) {
-        self.folderItems = data.folderItems;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>FolderItemResponse</code>.
+   * @alias module:model/FolderItemResponse
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get The number of results returned in this response.
-     * @return {String}
-     **/
-    self.getResultSetSize = function() {
-      return self.resultSetSize;
-    }
 
-    /**
-     * set The number of results returned in this response.
-     * @param {String} resultSetSize
-     **/
-    self.setResultSetSize = function (resultSetSize) {
-      self.resultSetSize = resultSetSize;
-    }
-    
-    /**
-     * get Starting position of the current result set.
-     * @return {String}
-     **/
-    self.getStartPosition = function() {
-      return self.startPosition;
-    }
-
-    /**
-     * set Starting position of the current result set.
-     * @param {String} startPosition
-     **/
-    self.setStartPosition = function (startPosition) {
-      self.startPosition = startPosition;
-    }
-    
-    /**
-     * get The last position in the result set.
-     * @return {String}
-     **/
-    self.getEndPosition = function() {
-      return self.endPosition;
-    }
-
-    /**
-     * set The last position in the result set.
-     * @param {String} endPosition
-     **/
-    self.setEndPosition = function (endPosition) {
-      self.endPosition = endPosition;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getTotalRows = function() {
-      return self.totalRows;
-    }
-
-    /**
-     * set 
-     * @param {String} totalRows
-     **/
-    self.setTotalRows = function (totalRows) {
-      self.totalRows = totalRows;
-    }
-    
-    /**
-     * get The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * @return {String}
-     **/
-    self.getNextUri = function() {
-      return self.nextUri;
-    }
-
-    /**
-     * set The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * @param {String} nextUri
-     **/
-    self.setNextUri = function (nextUri) {
-      self.nextUri = nextUri;
-    }
-    
-    /**
-     * get The postal code for the billing address.
-     * @return {String}
-     **/
-    self.getPreviousUri = function() {
-      return self.previousUri;
-    }
-
-    /**
-     * set The postal code for the billing address.
-     * @param {String} previousUri
-     **/
-    self.setPreviousUri = function (previousUri) {
-      self.previousUri = previousUri;
-    }
-    
-    /**
-     * get A list of the envelopes in the specified folder or folders.
-     * @return {Array}
-     **/
-    self.getFolderItems = function() {
-      return self.folderItems;
-    }
-
-    /**
-     * set A list of the envelopes in the specified folder or folders.
-     * @param {Array} folderItems
-     **/
-    self.setFolderItems = function (folderItems) {
-      self.folderItems = folderItems;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.FolderItemResponse = FolderItemResponse;
+  /**
+   * Constructs a <code>FolderItemResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/FolderItemResponse} obj Optional instance to populate.
+   * @return {module:model/FolderItemResponse} The populated <code>FolderItemResponse</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('endPosition')) {
+        obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
+      }
+      if (data.hasOwnProperty('folderItems')) {
+        obj['folderItems'] = ApiClient.convertToType(data['folderItems'], [FolderItemV2]);
+      }
+      if (data.hasOwnProperty('nextUri')) {
+        obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
+      }
+      if (data.hasOwnProperty('previousUri')) {
+        obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
+      }
+      if (data.hasOwnProperty('resultSetSize')) {
+        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
+      }
+      if (data.hasOwnProperty('startPosition')) {
+        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+      }
+      if (data.hasOwnProperty('totalRows')) {
+        obj['totalRows'] = ApiClient.convertToType(data['totalRows'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return FolderItemResponse;
-  
-  
+  /**
+   * The last position in the result set. 
+   * @member {String} endPosition
+   */
+  exports.prototype['endPosition'] = undefined;
+  /**
+   * A list of the envelopes in the specified folder or folders. 
+   * @member {Array.<module:model/FolderItemV2>} folderItems
+   */
+  exports.prototype['folderItems'] = undefined;
+  /**
+   * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
+   * @member {String} nextUri
+   */
+  exports.prototype['nextUri'] = undefined;
+  /**
+   * The postal code for the billing address.
+   * @member {String} previousUri
+   */
+  exports.prototype['previousUri'] = undefined;
+  /**
+   * The number of results returned in this response. 
+   * @member {String} resultSetSize
+   */
+  exports.prototype['resultSetSize'] = undefined;
+  /**
+   * Starting position of the current result set.
+   * @member {String} startPosition
+   */
+  exports.prototype['startPosition'] = undefined;
+  /**
+   * 
+   * @member {String} totalRows
+   */
+  exports.prototype['totalRows'] = undefined;
+
+
+
+  return exports;
 }));
+
+

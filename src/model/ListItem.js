@@ -1,107 +1,92 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.ListItem = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var ListItem = function ListItem() { 
-    var self = this;
-    
+  /**
+   * The ListItem model module.
+   * @module model/ListItem
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.text) {
-        self.text = data.text;
-      }
-      
-      if (data.value) {
-        self.value = data.value;
-      }
-      
-      if (data.selected) {
-        self.selected = data.selected;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>ListItem</code>.
+   * @alias module:model/ListItem
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get Specifies the text that is shown in the dropdown list.
-     * @return {String}
-     **/
-    self.getText = function() {
-      return self.text;
-    }
 
-    /**
-     * set Specifies the text that is shown in the dropdown list.
-     * @param {String} text
-     **/
-    self.setText = function (text) {
-      self.text = text;
-    }
-    
-    /**
-     * get Specifies the value that is used when the list item is selected.
-     * @return {String}
-     **/
-    self.getValue = function() {
-      return self.value;
-    }
-
-    /**
-     * set Specifies the value that is used when the list item is selected.
-     * @param {String} value
-     **/
-    self.setValue = function (value) {
-      self.value = value;
-    }
-    
-    /**
-     * get When set to **true**, indicates that this item is the default selection shown to a signer. \n\nOnly one selection can be set as the default.
-     * @return {String}
-     **/
-    self.getSelected = function() {
-      return self.selected;
-    }
-
-    /**
-     * set When set to **true**, indicates that this item is the default selection shown to a signer. \n\nOnly one selection can be set as the default.
-     * @param {String} selected
-     **/
-    self.setSelected = function (selected) {
-      self.selected = selected;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.ListItem = ListItem;
+  /**
+   * Constructs a <code>ListItem</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/ListItem} obj Optional instance to populate.
+   * @return {module:model/ListItem} The populated <code>ListItem</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('selected')) {
+        obj['selected'] = ApiClient.convertToType(data['selected'], 'String');
+      }
+      if (data.hasOwnProperty('text')) {
+        obj['text'] = ApiClient.convertToType(data['text'], 'String');
+      }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return ListItem;
-  
-  
+  /**
+   * When set to **true**, indicates that this item is the default selection shown to a signer.   Only one selection can be set as the default.
+   * @member {String} selected
+   */
+  exports.prototype['selected'] = undefined;
+  /**
+   * Specifies the text that is shown in the dropdown list. 
+   * @member {String} text
+   */
+  exports.prototype['text'] = undefined;
+  /**
+   * Specifies the value that is used when the list item is selected.
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
+
+
+
+  return exports;
 }));
+
+
