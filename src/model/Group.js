@@ -1,172 +1,115 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ErrorDetails', './UserInfo'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ErrorDetails'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ErrorDetails, root.Docusign.UserInfo);
+    root.Docusign.Group = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.UserInfo);
   }
-}(this, function(module, ErrorDetails, UserInfo) {
+}(this, function(ApiClient, ErrorDetails, UserInfo) {
   'use strict';
 
-  
-  
 
-  
-  var Group = function Group() { 
-    var self = this;
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.users = [];
-    
+  /**
+   * The Group model module.
+   * @module model/Group
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.groupId) {
-        self.groupId = data.groupId;
-      }
-      
-      if (data.groupName) {
-        self.groupName = data.groupName;
-      }
-      
-      if (data.permissionProfileId) {
-        self.permissionProfileId = data.permissionProfileId;
-      }
-      
-      if (data.groupType) {
-        self.groupType = data.groupType;
-      }
-      
-      if (data.users) {
-        self.users = data.users;
-      }
-      
-      if (data.errorDetails) {
-        self.errorDetails = new data.errorDetails.constructor();
-        self.errorDetails.constructFromObject(data.errorDetails);
-      }
-      
-    }
+  /**
+   * Constructs a new <code>Group</code>.
+   * @alias module:model/Group
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get The DocuSign group ID for the group.
-     * @return {String}
-     **/
-    self.getGroupId = function() {
-      return self.groupId;
-    }
 
-    /**
-     * set The DocuSign group ID for the group.
-     * @param {String} groupId
-     **/
-    self.setGroupId = function (groupId) {
-      self.groupId = groupId;
-    }
-    
-    /**
-     * get The name of the group.
-     * @return {String}
-     **/
-    self.getGroupName = function() {
-      return self.groupName;
-    }
-
-    /**
-     * set The name of the group.
-     * @param {String} groupName
-     **/
-    self.setGroupName = function (groupName) {
-      self.groupName = groupName;
-    }
-    
-    /**
-     * get The ID of the permission profile associated with the group.
-     * @return {String}
-     **/
-    self.getPermissionProfileId = function() {
-      return self.permissionProfileId;
-    }
-
-    /**
-     * set The ID of the permission profile associated with the group.
-     * @param {String} permissionProfileId
-     **/
-    self.setPermissionProfileId = function (permissionProfileId) {
-      self.permissionProfileId = permissionProfileId;
-    }
-    
-    /**
-     * get The group type.
-     * @return {String}
-     **/
-    self.getGroupType = function() {
-      return self.groupType;
-    }
-
-    /**
-     * set The group type.
-     * @param {String} groupType
-     **/
-    self.setGroupType = function (groupType) {
-      self.groupType = groupType;
-    }
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
-    self.getUsers = function() {
-      return self.users;
-    }
-
-    /**
-     * set 
-     * @param {Array} users
-     **/
-    self.setUsers = function (users) {
-      self.users = users;
-    }
-    
-    /**
-     * @return {ErrorDetails}
-     **/
-    self.getErrorDetails = function() {
-      return self.errorDetails;
-    }
-
-    /**
-     * @param {ErrorDetails} errorDetails
-     **/
-    self.setErrorDetails = function (errorDetails) {
-      self.errorDetails = errorDetails;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.Group = Group;
+  /**
+   * Constructs a <code>Group</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/Group} obj Optional instance to populate.
+   * @return {module:model/Group} The populated <code>Group</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('groupId')) {
+        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'String');
+      }
+      if (data.hasOwnProperty('groupName')) {
+        obj['groupName'] = ApiClient.convertToType(data['groupName'], 'String');
+      }
+      if (data.hasOwnProperty('groupType')) {
+        obj['groupType'] = ApiClient.convertToType(data['groupType'], 'String');
+      }
+      if (data.hasOwnProperty('permissionProfileId')) {
+        obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
+      }
+      if (data.hasOwnProperty('users')) {
+        obj['users'] = ApiClient.convertToType(data['users'], [UserInfo]);
+      }
+    }
+    return obj;
   }
 
-  return Group;
-  
-  
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
+  /**
+   * The DocuSign group ID for the group.
+   * @member {String} groupId
+   */
+  exports.prototype['groupId'] = undefined;
+  /**
+   * The name of the group.
+   * @member {String} groupName
+   */
+  exports.prototype['groupName'] = undefined;
+  /**
+   * The group type.
+   * @member {String} groupType
+   */
+  exports.prototype['groupType'] = undefined;
+  /**
+   * The ID of the permission profile associated with the group.
+   * @member {String} permissionProfileId
+   */
+  exports.prototype['permissionProfileId'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/UserInfo>} users
+   */
+  exports.prototype['users'] = undefined;
+
+
+
+  return exports;
 }));
+
+

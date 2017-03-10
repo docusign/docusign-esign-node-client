@@ -1,339 +1,228 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './MatchBox', './NameValue'], factory);
+    define(['ApiClient', 'model/MatchBox', 'model/NameValue'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./MatchBox'), require('./NameValue'));
+    module.exports = factory(require('../ApiClient'), require('./MatchBox'), require('./NameValue'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.MatchBox, root.Docusign.NameValue);
+    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.MatchBox, root.Docusign.NameValue);
   }
-}(this, function(module, MatchBox, NameValue) {
+}(this, function(ApiClient, MatchBox, NameValue) {
   'use strict';
 
-  
-  
 
-  
-  var Document = function Document() { 
-    var self = this;
-    
-    /**
-     * Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template. \n\nA matchbox consists of 5 elements:\n\n* pageNumber - The document page number  on which the matchbox will appear. \n* xPosition - The x position of the matchbox on a page. \n* yPosition - The y position of the matchbox on a page.\n* width - The width of the matchbox. \n* height - The height of the matchbox.
-     * datatype: Array
-     **/
-    self.matchBoxes = [];
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.documentFields = [];
-    
+  /**
+   * The Document model module.
+   * @module model/Document
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.documentId) {
-        self.documentId = data.documentId;
-      }
-      
-      if (data.uri) {
-        self.uri = data.uri;
-      }
-      
-      if (data.remoteUrl) {
-        self.remoteUrl = data.remoteUrl;
-      }
-      
-      if (data.name) {
-        self.name = data.name;
-      }
-      
-      if (data.password) {
-        self.password = data.password;
-      }
-      
-      if (data.transformPdfFields) {
-        self.transformPdfFields = data.transformPdfFields;
-      }
-      
-      if (data.fileExtension) {
-        self.fileExtension = data.fileExtension;
-      }
-      
-      if (data.matchBoxes) {
-        self.matchBoxes = data.matchBoxes;
-      }
-      
-      if (data.order) {
-        self.order = data.order;
-      }
-      
-      if (data.pages) {
-        self.pages = data.pages;
-      }
-      
-      if (data.documentFields) {
-        self.documentFields = data.documentFields;
-      }
-      
-      if (data.encryptedWithKeyManager) {
-        self.encryptedWithKeyManager = data.encryptedWithKeyManager;
-      }
-      
-      if (data.documentBase64) {
-        self.documentBase64 = data.documentBase64;
-      }
-      
-      if (data.applyAnchorTabs) {
-        self.applyAnchorTabs = data.applyAnchorTabs;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>Document</code>.
+   * @alias module:model/Document
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * @return {String}
-     **/
-    self.getDocumentId = function() {
-      return self.documentId;
-    }
 
-    /**
-     * set Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-     * @param {String} documentId
-     **/
-    self.setDocumentId = function (documentId) {
-      self.documentId = documentId;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getUri = function() {
-      return self.uri;
-    }
-
-    /**
-     * set 
-     * @param {String} uri
-     **/
-    self.setUri = function (uri) {
-      self.uri = uri;
-    }
-    
-    /**
-     * get The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}].
-     * @return {String}
-     **/
-    self.getRemoteUrl = function() {
-      return self.remoteUrl;
-    }
-
-    /**
-     * set The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}].
-     * @param {String} remoteUrl
-     **/
-    self.setRemoteUrl = function (remoteUrl) {
-      self.remoteUrl = remoteUrl;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getName = function() {
-      return self.name;
-    }
-
-    /**
-     * set 
-     * @param {String} name
-     **/
-    self.setName = function (name) {
-      self.name = name;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getPassword = function() {
-      return self.password;
-    }
-
-    /**
-     * set 
-     * @param {String} password
-     **/
-    self.setPassword = function (password) {
-      self.password = password;
-    }
-    
-    /**
-     * get When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs.
-     * @return {String}
-     **/
-    self.getTransformPdfFields = function() {
-      return self.transformPdfFields;
-    }
-
-    /**
-     * set When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs.
-     * @param {String} transformPdfFields
-     **/
-    self.setTransformPdfFields = function (transformPdfFields) {
-      self.transformPdfFields = transformPdfFields;
-    }
-    
-    /**
-     * get The file extension type of the document. If the document is not a PDF it is converted to a PDF.
-     * @return {String}
-     **/
-    self.getFileExtension = function() {
-      return self.fileExtension;
-    }
-
-    /**
-     * set The file extension type of the document. If the document is not a PDF it is converted to a PDF.
-     * @param {String} fileExtension
-     **/
-    self.setFileExtension = function (fileExtension) {
-      self.fileExtension = fileExtension;
-    }
-    
-    /**
-     * get Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template. \n\nA matchbox consists of 5 elements:\n\n* pageNumber - The document page number  on which the matchbox will appear. \n* xPosition - The x position of the matchbox on a page. \n* yPosition - The y position of the matchbox on a page.\n* width - The width of the matchbox. \n* height - The height of the matchbox.
-     * @return {Array}
-     **/
-    self.getMatchBoxes = function() {
-      return self.matchBoxes;
-    }
-
-    /**
-     * set Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template. \n\nA matchbox consists of 5 elements:\n\n* pageNumber - The document page number  on which the matchbox will appear. \n* xPosition - The x position of the matchbox on a page. \n* yPosition - The y position of the matchbox on a page.\n* width - The width of the matchbox. \n* height - The height of the matchbox.
-     * @param {Array} matchBoxes
-     **/
-    self.setMatchBoxes = function (matchBoxes) {
-      self.matchBoxes = matchBoxes;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getOrder = function() {
-      return self.order;
-    }
-
-    /**
-     * set 
-     * @param {String} order
-     **/
-    self.setOrder = function (order) {
-      self.order = order;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getPages = function() {
-      return self.pages;
-    }
-
-    /**
-     * set 
-     * @param {String} pages
-     **/
-    self.setPages = function (pages) {
-      self.pages = pages;
-    }
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
-    self.getDocumentFields = function() {
-      return self.documentFields;
-    }
-
-    /**
-     * set 
-     * @param {Array} documentFields
-     **/
-    self.setDocumentFields = function (documentFields) {
-      self.documentFields = documentFields;
-    }
-    
-    /**
-     * get When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.
-     * @return {String}
-     **/
-    self.getEncryptedWithKeyManager = function() {
-      return self.encryptedWithKeyManager;
-    }
-
-    /**
-     * set When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.
-     * @param {String} encryptedWithKeyManager
-     **/
-    self.setEncryptedWithKeyManager = function (encryptedWithKeyManager) {
-      self.encryptedWithKeyManager = encryptedWithKeyManager;
-    }
-    
-    /**
-     * get The document byte stream. This allows putting a base64 version of document bytes into an envelope.
-     * @return {String}
-     **/
-    self.getDocumentBase64 = function() {
-      return self.documentBase64;
-    }
-
-    /**
-     * set The document byte stream. This allows putting a base64 version of document bytes into an envelope.
-     * @param {String} documentBase64
-     **/
-    self.setDocumentBase64 = function (documentBase64) {
-      self.documentBase64 = documentBase64;
-    }
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getApplyAnchorTabs = function() {
-      return self.applyAnchorTabs;
-    }
-
-    /**
-     * set Reserved: TBD
-     * @param {String} applyAnchorTabs
-     **/
-    self.setApplyAnchorTabs = function (applyAnchorTabs) {
-      self.applyAnchorTabs = applyAnchorTabs;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.Document = Document;
+  /**
+   * Constructs a <code>Document</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/Document} obj Optional instance to populate.
+   * @return {module:model/Document} The populated <code>Document</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('applyAnchorTabs')) {
+        obj['applyAnchorTabs'] = ApiClient.convertToType(data['applyAnchorTabs'], 'String');
+      }
+      if (data.hasOwnProperty('display')) {
+        obj['display'] = ApiClient.convertToType(data['display'], 'String');
+      }
+      if (data.hasOwnProperty('documentBase64')) {
+        obj['documentBase64'] = ApiClient.convertToType(data['documentBase64'], 'String');
+      }
+      if (data.hasOwnProperty('documentFields')) {
+        obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
+      }
+      if (data.hasOwnProperty('documentGroup')) {
+        obj['documentGroup'] = ApiClient.convertToType(data['documentGroup'], 'String');
+      }
+      if (data.hasOwnProperty('documentId')) {
+        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+      }
+      if (data.hasOwnProperty('encryptedWithKeyManager')) {
+        obj['encryptedWithKeyManager'] = ApiClient.convertToType(data['encryptedWithKeyManager'], 'String');
+      }
+      if (data.hasOwnProperty('fileExtension')) {
+        obj['fileExtension'] = ApiClient.convertToType(data['fileExtension'], 'String');
+      }
+      if (data.hasOwnProperty('includeInDownload')) {
+        obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
+      }
+      if (data.hasOwnProperty('matchBoxes')) {
+        obj['matchBoxes'] = ApiClient.convertToType(data['matchBoxes'], [MatchBox]);
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('order')) {
+        obj['order'] = ApiClient.convertToType(data['order'], 'String');
+      }
+      if (data.hasOwnProperty('pages')) {
+        obj['pages'] = ApiClient.convertToType(data['pages'], 'String');
+      }
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('remoteUrl')) {
+        obj['remoteUrl'] = ApiClient.convertToType(data['remoteUrl'], 'String');
+      }
+      if (data.hasOwnProperty('signerMustAcknowledge')) {
+        obj['signerMustAcknowledge'] = ApiClient.convertToType(data['signerMustAcknowledge'], 'String');
+      }
+      if (data.hasOwnProperty('templateLocked')) {
+        obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
+      }
+      if (data.hasOwnProperty('templateRequired')) {
+        obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
+      }
+      if (data.hasOwnProperty('transformPdfFields')) {
+        obj['transformPdfFields'] = ApiClient.convertToType(data['transformPdfFields'], 'String');
+      }
+      if (data.hasOwnProperty('uri')) {
+        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return Document;
-  
-  
+  /**
+   * Reserved: TBD
+   * @member {String} applyAnchorTabs
+   */
+  exports.prototype['applyAnchorTabs'] = undefined;
+  /**
+   * 
+   * @member {String} display
+   */
+  exports.prototype['display'] = undefined;
+  /**
+   * The document’s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
+   * @member {String} documentBase64
+   */
+  exports.prototype['documentBase64'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/NameValue>} documentFields
+   */
+  exports.prototype['documentFields'] = undefined;
+  /**
+   * 
+   * @member {String} documentGroup
+   */
+  exports.prototype['documentGroup'] = undefined;
+  /**
+   * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
+   * @member {String} documentId
+   */
+  exports.prototype['documentId'] = undefined;
+  /**
+   * When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  
+   * @member {String} encryptedWithKeyManager
+   */
+  exports.prototype['encryptedWithKeyManager'] = undefined;
+  /**
+   * The file extension type of the document. If the document is not a PDF it is converted to a PDF.  
+   * @member {String} fileExtension
+   */
+  exports.prototype['fileExtension'] = undefined;
+  /**
+   * 
+   * @member {String} includeInDownload
+   */
+  exports.prototype['includeInDownload'] = undefined;
+  /**
+   * Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
+   * @member {Array.<module:model/MatchBox>} matchBoxes
+   */
+  exports.prototype['matchBoxes'] = undefined;
+  /**
+   * 
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} order
+   */
+  exports.prototype['order'] = undefined;
+  /**
+   * 
+   * @member {String} pages
+   */
+  exports.prototype['pages'] = undefined;
+  /**
+   * 
+   * @member {String} password
+   */
+  exports.prototype['password'] = undefined;
+  /**
+   * The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. 
+   * @member {String} remoteUrl
+   */
+  exports.prototype['remoteUrl'] = undefined;
+  /**
+   * 
+   * @member {String} signerMustAcknowledge
+   */
+  exports.prototype['signerMustAcknowledge'] = undefined;
+  /**
+   * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
+   * @member {String} templateLocked
+   */
+  exports.prototype['templateLocked'] = undefined;
+  /**
+   * When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
+   * @member {String} templateRequired
+   */
+  exports.prototype['templateRequired'] = undefined;
+  /**
+   * When set to **true**, PDF form field data is transformed into document tab values when the PDF form field name matches the DocuSign custom tab tabLabel. The resulting PDF form data is also returned in the PDF meta data when requesting the document PDF. See the [ML:Transform PDF Fields] section for more information about how fields are transformed into DocuSign tabs. 
+   * @member {String} transformPdfFields
+   */
+  exports.prototype['transformPdfFields'] = undefined;
+  /**
+   * 
+   * @member {String} uri
+   */
+  exports.prototype['uri'] = undefined;
+
+
+
+  return exports;
 }));
+
+

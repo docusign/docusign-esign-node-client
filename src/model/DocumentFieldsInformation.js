@@ -1,73 +1,76 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './NameValue'], factory);
+    define(['ApiClient', 'model/NameValue'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./NameValue'));
+    module.exports = factory(require('../ApiClient'), require('./NameValue'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.NameValue);
+    root.Docusign.DocumentFieldsInformation = factory(root.Docusign.ApiClient, root.Docusign.NameValue);
   }
-}(this, function(module, NameValue) {
+}(this, function(ApiClient, NameValue) {
   'use strict';
 
-  
-  
 
-  
-  var DocumentFieldsInformation = function DocumentFieldsInformation() { 
-    var self = this;
-    
-    /**
-     * The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements: \n\n* name – A string that can be a maximum of 50 characters. \n* value – A string that can be a maximum of 200 characters.\n\n*IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.
-     * datatype: Array
-     **/
-    self.documentFields = [];
-    
+  /**
+   * The DocumentFieldsInformation model module.
+   * @module model/DocumentFieldsInformation
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.documentFields) {
-        self.documentFields = data.documentFields;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>DocumentFieldsInformation</code>.
+   * @alias module:model/DocumentFieldsInformation
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements: \n\n* name – A string that can be a maximum of 50 characters. \n* value – A string that can be a maximum of 200 characters.\n\n*IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.
-     * @return {Array}
-     **/
-    self.getDocumentFields = function() {
-      return self.documentFields;
-    }
 
-    /**
-     * set The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements: \n\n* name – A string that can be a maximum of 50 characters. \n* value – A string that can be a maximum of 200 characters.\n\n*IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.
-     * @param {Array} documentFields
-     **/
-    self.setDocumentFields = function (documentFields) {
-      self.documentFields = documentFields;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.DocumentFieldsInformation = DocumentFieldsInformation;
+  /**
+   * Constructs a <code>DocumentFieldsInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/DocumentFieldsInformation} obj Optional instance to populate.
+   * @return {module:model/DocumentFieldsInformation} The populated <code>DocumentFieldsInformation</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('documentFields')) {
+        obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
+      }
+    }
+    return obj;
   }
 
-  return DocumentFieldsInformation;
-  
-  
+  /**
+   * The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name – A string that can be a maximum of 50 characters.  * value – A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  
+   * @member {Array.<module:model/NameValue>} documentFields
+   */
+  exports.prototype['documentFields'] = undefined;
+
+
+
+  return exports;
 }));
+
+

@@ -1,67 +1,76 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.SocialAuthentication = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var SocialAuthentication = function SocialAuthentication() { 
-    var self = this;
-    
+  /**
+   * The SocialAuthentication model module.
+   * @module model/SocialAuthentication
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.authentication) {
-        self.authentication = data.authentication;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>SocialAuthentication</code>.
+   * @alias module:model/SocialAuthentication
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get Reserved: TBD
-     * @return {String}
-     **/
-    self.getAuthentication = function() {
-      return self.authentication;
-    }
 
-    /**
-     * set Reserved: TBD
-     * @param {String} authentication
-     **/
-    self.setAuthentication = function (authentication) {
-      self.authentication = authentication;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.SocialAuthentication = SocialAuthentication;
+  /**
+   * Constructs a <code>SocialAuthentication</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/SocialAuthentication} obj Optional instance to populate.
+   * @return {module:model/SocialAuthentication} The populated <code>SocialAuthentication</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('authentication')) {
+        obj['authentication'] = ApiClient.convertToType(data['authentication'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return SocialAuthentication;
-  
-  
+  /**
+   * Reserved: TBD
+   * @member {String} authentication
+   */
+  exports.prototype['authentication'] = undefined;
+
+
+
+  return exports;
 }));
+
+

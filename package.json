@@ -1,6 +1,6 @@
 {
   "name": "docusign-esign",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "DocuSign Node.js API client.",
   "license": "MIT",
   "main": "src/index.js",
@@ -25,17 +25,17 @@
     "PDF"
   ],
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=2.2.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/docusign/docusign-node-client.git"
   },
   "scripts": {
-    "docs": "npm run update-docs && git add doc/ && git commit -m 'update docs' && npm run push-docs",
-    "push-docs": "git subtree push --prefix doc origin gh-pages",
-    "update-docs": "jsdoc -d doc -r src/index.js src/ApiClient.js src/Configuration.js README.md",
-    "//check-config": "./scripts/check-config.js",
+    "docs": "npm run update-docs && git add docs/ && git commit -m 'update docs' && npm run push-docs",
+    "push-docs": "git subtree push --prefix docs origin gh-pages",
+    "update-docs": "./node_modules/.bin/jsdoc -c .jsdoc.json",
+    "check-config": "./scripts/check-config.js",
     "test": "semistandard && ./node_modules/mocha/bin/mocha test/SdkUnitTests"
   },
   "semistandard": {
@@ -45,7 +45,7 @@
     ],
     "ignore": [
       "/src",
-      "/doc",
+      "/docs",
       "/scripts"
     ]
   },
@@ -53,9 +53,10 @@
     "superagent": "1.7.1"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
+    "docdash": "0.4.0",
+    "expect.js": "~0.3.1",
     "jsdoc": "3.3.2",
-    "semistandard": "^8.0.0",
-    "expect.js": "~0.3.1"
+    "mocha": "~2.3.4",
+    "semistandard": "^8.0.0"
   }
 }

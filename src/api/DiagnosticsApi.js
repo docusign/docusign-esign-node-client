@@ -1,377 +1,378 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['../Configuration', '../ApiClient', '../model/ServiceInformation', '../model/ErrorDetails', '../model/ResourceInformation', '../model/ApiRequestLogsResult', '../model/DiagnosticsSettingsInformation'], factory);
+	define(['Configuration', 'ApiClient', 'model/ApiRequestLogsResult', 'model/DiagnosticsSettingsInformation', 'model/ErrorDetails', 'model/ResourceInformation', 'model/ServiceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ServiceInformation'), require('../model/ErrorDetails'), require('../model/ResourceInformation'), require('../model/ApiRequestLogsResult'), require('../model/DiagnosticsSettingsInformation'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ApiRequestLogsResult'), require('../model/DiagnosticsSettingsInformation'), require('../model/ErrorDetails'), require('../model/ResourceInformation'), require('../model/ServiceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DiagnosticsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ServiceInformation, root.Docusign.ErrorDetails, root.Docusign.ResourceInformation, root.Docusign.ApiRequestLogsResult, root.Docusign.DiagnosticsSettingsInformation);
+    root.Docusign.DiagnosticsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ApiRequestLogsResult, root.Docusign.DiagnosticsSettingsInformation, root.Docusign.ErrorDetails, root.Docusign.ResourceInformation, root.Docusign.ServiceInformation);
   }
-}(this, function(Configuration, ApiClient, ServiceInformation, ErrorDetails, ResourceInformation, ApiRequestLogsResult, DiagnosticsSettingsInformation) {
+}(this, function(Configuration, ApiClient, ApiRequestLogsResult, DiagnosticsSettingsInformation, ErrorDetails, ResourceInformation, ServiceInformation) {
   'use strict';
 
-  var DiagnosticsApi = function DiagnosticsApi(apiClient) {
-    this.apiClient = apiClient || Configuration.default.getDefaultApiClient();
+  /**
+   * Diagnostics service.
+   * @module api/DiagnosticsApi
+   * @version 3.0.0
+   */
 
-    var self = this;
-    
-    
-    self.setApiClient = function(apiClient) {
+  /**
+   * Constructs a new DiagnosticsApi. 
+   * @alias module:api/DiagnosticsApi
+   * @class
+   * @param {module:ApiClient} apiClient Optional API client implementation to use,
+   * default to {@link module:ApiClient#instance} if unspecified.
+   */
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
+
+
+    this.setApiClient = function(apiClient) {
       this.apiClient = apiClient;
-    }
-    
-    self.getApiClient = function() {
+    };
+
+    this.getApiClient = function() {
       return this.apiClient;
-    }
-    
-    
-    
+    };
+
+
     /**
-     * Retrieves the available REST API versions.
-     * Retrieves the available REST API versions.\n\nDocuSign Production system: https://www.docusign.net/restapi/service_information\nDocuSign Demo system: https://demo.docusign.net/restapi/service_information\n\nYou do not need an integrator key to view the REST API versions and resources.
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: ServiceInformation
+     * Callback function to receive the result of the deleteRequestLogs operation.
+     * @callback module:api/DiagnosticsApi~deleteRequestLogsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    self.getService = function(callback) {
-      var postBody = null;
-      
 
-      
-      var pathParams = {
-      };
-      var queryParams = {};
-      
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new ServiceInformation();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/service_information', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    
-    /**
-     * Lists resources for REST version specified
-     * Retrieves the base resources available for the DocuSign REST APIs.\n\nYou do not need an integrator key to view the REST API versions and resources.\n\nExample: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.\n\nTo view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.\n\nExample: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: ResourceInformation
-     */
-    self.getResources = function(callback) {
-      var postBody = null;
-      
-
-      
-      var pathParams = {
-      };
-      var queryParams = {};
-      
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new ResourceInformation();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/v2', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    /// <summary>
-    /// Gets the API request logging log files. Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.\n\nIf the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.\n\nIf the Accept header is set to `application/json` or `application/xml`, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below.
-    /// </summary>
-    self.ListRequestLogsOptions = function () {
-      
-      var encoding = null;
-      
-      
-      this.setEncoding = function(encoding) {
-        this.encoding = encoding;
-      }
-	
-      this.getEncoding = function() {
-        return this.encoding;
-      }
-      
-    }
-    
-    
-    /**
-     * Gets the API request logging log files.
-     * Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.\n\nIf the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.\n\nIf the Accept header is set to `application/json` or `application/xml`, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below.
-     * @param {DiagnosticsApi.ListRequestLogsOptions} options: Options for modifying the method behavior.
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: ApiRequestLogsResult
-     */
-    self.listRequestLogs = function(options, callback) {
-      var postBody = null;
-      
-
-      
-      var pathParams = {
-      };
-      var queryParams = {};
-      if (options != null) {
-        queryParams = {
-          'encoding': options.encoding
-        };
-      }
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var contentTypes = [];
-      var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new ApiRequestLogsResult();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
-
-      return this.apiClient.callApi(
-        '/v2/diagnostics/request_logs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
-      );
-      
-    }
-    
-    
-    
     /**
      * Deletes the request log files.
      * Deletes the request log files.
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-
+     * @param {module:api/DiagnosticsApi~deleteRequestLogsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    self.deleteRequestLogs = function(callback) {
+    this.deleteRequestLogs = function(callback) {
       var postBody = null;
-      
 
-      
+
       var pathParams = {
       };
-      var queryParams = {};
-      
+      var queryParams = {
+      };
       var headerParams = {
       };
       var formParams = {
       };
 
+      var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          callback(error, data, response);
-        };
-      }
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/v2/diagnostics/request_logs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
+        authNames, contentTypes, accepts, returnType, callback
       );
-      
-    }
-    
-    
-    
+    };
+
+    /**
+     * Callback function to receive the result of the getRequestLog operation.
+     * @callback module:api/DiagnosticsApi~getRequestLogCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
     /**
      * Gets a request logging log file.
-     * Retrieves information for a single log entry.\n\n**Request**\nThe `requestLogfId` property can be retrieved by getting the list of log entries. The Content-Transfer-Encoding header can be set to base64 to retrieve the API request/response as base 64 string. Otherwise the bytes of the request/response are returned.\n\n**Response**\nIf the Content-Transfer-Encoding header was set to base64, the log is returned as a base64 string.
-     * @param {String} requestLogId: 
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: File
-     */
-    self.getRequestLog = function(requestLogId, callback) {
-      var postBody = null;
-      
-      // verify the required parameter 'requestLogId' is set
-      if (requestLogId == null) {
-        throw "Missing the required parameter 'requestLogId' when calling getRequestLog";
-      }
-      
+     * Retrieves information for a single log entry.
 
-      
+**Request**
+The `requestLogfId` property can be retrieved by getting the list of log entries. The Content-Transfer-Encoding header can be set to base64 to retrieve the API request/response as base 64 string. Otherwise the bytes of the request/response are returned.
+
+**Response**
+If the Content-Transfer-Encoding header was set to base64, the log is returned as a base64 string.
+     * @param {String} requestLogId 
+     * @param {module:api/DiagnosticsApi~getRequestLogCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.getRequestLog = function(requestLogId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'requestLogId' is set
+      if (requestLogId == undefined || requestLogId == null) {
+        throw new Error("Missing the required parameter 'requestLogId' when calling getRequestLog");
+      }
+
+
       var pathParams = {
         'requestLogId': requestLogId
       };
-      var queryParams = {};
-      
+      var queryParams = {
+      };
       var headerParams = {
       };
       var formParams = {
       };
 
+      var authNames = [];
       var contentTypes = [];
       var accepts = ['text/plain'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          callback(error, data, response);
-        };
-      }
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/v2/diagnostics/request_logs/{requestLogId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
+        authNames, contentTypes, accepts, returnType, callback
       );
-      
-    }
-    
-    
-    
+    };
+
+    /**
+     * Callback function to receive the result of the getRequestLogSettings operation.
+     * @callback module:api/DiagnosticsApi~getRequestLogSettingsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DiagnosticsSettingsInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
     /**
      * Gets the API request logging settings.
-     * Retrieves the current API request logging setting for the user and remaining log entries.\n\n**Response**\nThe response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: DiagnosticsSettingsInformation
-     */
-    self.getRequestLogSettings = function(callback) {
-      var postBody = null;
-      
+     * Retrieves the current API request logging setting for the user and remaining log entries.
 
-      
+**Response**
+The response includes the current API request logging setting for the user, along with the maximum log entries and remaining log entries.
+     * @param {module:api/DiagnosticsApi~getRequestLogSettingsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DiagnosticsSettingsInformation}
+     */
+    this.getRequestLogSettings = function(callback) {
+      var postBody = null;
+
+
       var pathParams = {
       };
-      var queryParams = {};
-      
+      var queryParams = {
+      };
       var headerParams = {
       };
       var formParams = {
       };
 
+      var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new DiagnosticsSettingsInformation();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
+      var returnType = DiagnosticsSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2/diagnostics/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
+        authNames, contentTypes, accepts, returnType, callback
       );
-      
-    }
-    
-    
-    
-    /**
-     * Enables or disables API request logging for troubleshooting.
-     * Enables or disables API request logging for troubleshooting.\n\nWhen enabled (`apiRequestLogging` is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.\n\nYou can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.\n\nPrivate information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.\n\n#### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn&#39;t logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged.
-     * @param {DiagnosticsSettingsInformation} diagnosticsSettingsInformation: TBD Description
-     * @param {function} callback: the callback function, accepting three arguments: error, data, response
-     *   data is of type: DiagnosticsSettingsInformation
-     */
-    self.updateRequestLogSettings = function(diagnosticsSettingsInformation, callback) {
-      var postBody = diagnosticsSettingsInformation;
-      
+    };
 
-      
+    /**
+     * Callback function to receive the result of the getResources operation.
+     * @callback module:api/DiagnosticsApi~getResourcesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResourceInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Lists resources for REST version specified
+     * Retrieves the base resources available for the DocuSign REST APIs.
+
+You do not need an integrator key to view the REST API versions and resources.
+
+Example: https://demo.docusign.net/restapi/v2 lists all of the base resources available in version 2 of the REST API on the DocuSign Demo system.
+
+To view descriptions and samples of the service operations for all versions, remove the version number and add /help to the URL.
+
+Example: https://demo.docusign.net/restapi/help lists the REST API operations on the DocuSign Demo system with XML and JSON request and response samples.
+     * @param {module:api/DiagnosticsApi~getResourcesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResourceInformation}
+     */
+    this.getResources = function(callback) {
+      var postBody = null;
+
+
       var pathParams = {
       };
-      var queryParams = {};
-      
+      var queryParams = {
+      };
       var headerParams = {
       };
       var formParams = {
       };
 
+      var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
+      var returnType = ResourceInformation;
 
-      var handleResponse = null;
-      if (callback) {
-        handleResponse = function(error, data, response) {
-          if (!error && data) {
-            var result = new DiagnosticsSettingsInformation();
-            result.constructFromObject(data);
-            callback(error, result, response);
-          } else {
-            callback(error, data, response);
-          }
-        };
-      }
+      return this.apiClient.callApi(
+        '/v2', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getService operation.
+     * @callback module:api/DiagnosticsApi~getServiceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ServiceInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieves the available REST API versions.
+     * Retrieves the available REST API versions.
+
+DocuSign Production system: https://www.docusign.net/restapi/service_information
+DocuSign Demo system: https://demo.docusign.net/restapi/service_information
+
+You do not need an integrator key to view the REST API versions and resources.
+     * @param {module:api/DiagnosticsApi~getServiceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ServiceInformation}
+     */
+    this.getService = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ServiceInformation;
+
+      return this.apiClient.callApi(
+        '/service_information', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the listRequestLogs operation.
+     * @callback module:api/DiagnosticsApi~listRequestLogsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ApiRequestLogsResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets the API request logging log files.
+     * Retrieves a list of log entries as a JSON or xml object or as a zip file containing the entries.
+
+If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.
+
+If the Accept header is set to `application/json` or `application/xml`, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.encoding 
+     * @param {module:api/DiagnosticsApi~listRequestLogsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ApiRequestLogsResult}
+     */
+    this.listRequestLogs = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'encoding': opts['encoding']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ApiRequestLogsResult;
+
+      return this.apiClient.callApi(
+        '/v2/diagnostics/request_logs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the updateRequestLogSettings operation.
+     * @callback module:api/DiagnosticsApi~updateRequestLogSettingsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DiagnosticsSettingsInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Enables or disables API request logging for troubleshooting.
+     * Enables or disables API request logging for troubleshooting.
+
+When enabled (`apiRequestLogging` is set to true), REST API requests and responses for the user are added to a log. A log can have up to 50 requests/responses and the current number of log entries can be determined by getting the settings. Logging is automatically disabled when the log limit of 50 is reached.
+
+You can call [ML:GetRequestLog] or [ML:GetRequestLogs] to download the log files (individually or as a zip file). Call [ML:DeleteRequestLogs] to clear the log by deleting current entries.
+
+Private information, such as passwords and integrator key information, which is normally located in the call header is omitted from the request/response log.
+
+###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn't logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged.
+
+     * @param {Object} opts Optional parameters
+     * @param {module:model/DiagnosticsSettingsInformation} opts.diagnosticsSettingsInformation 
+     * @param {module:api/DiagnosticsApi~updateRequestLogSettingsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DiagnosticsSettingsInformation}
+     */
+    this.updateRequestLogSettings = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['diagnosticsSettingsInformation'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DiagnosticsSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2/diagnostics/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        contentTypes, accepts, handleResponse
+        authNames, contentTypes, accepts, returnType, callback
       );
-      
-    }
-    
-    
+    };
   };
 
-  return DiagnosticsApi;
+  return exports;
 }));

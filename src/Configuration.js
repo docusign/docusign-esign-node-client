@@ -34,14 +34,14 @@
    */
   Configuration.prototype.getDefaultApiClient = function getDefaultApiClient() {
     return this.defaultApiClient;
-   }
+  };
 
   /**
    * Sets the default API client.
    */  
   Configuration.prototype.setDefaultApiClient = function setDefaultApiClient(defaultApiClient) {
     this.defaultApiClient = defaultApiClient;
-  }
+  };
 
   Configuration.default = new Configuration();
 

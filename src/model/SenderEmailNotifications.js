@@ -1,187 +1,124 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.SenderEmailNotifications = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var SenderEmailNotifications = function SenderEmailNotifications() { 
-    var self = this;
-    
+  /**
+   * The SenderEmailNotifications model module.
+   * @module model/SenderEmailNotifications
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.envelopeComplete) {
-        self.envelopeComplete = data.envelopeComplete;
-      }
-      
-      if (data.changedSigner) {
-        self.changedSigner = data.changedSigner;
-      }
-      
-      if (data.senderEnvelopeDeclined) {
-        self.senderEnvelopeDeclined = data.senderEnvelopeDeclined;
-      }
-      
-      if (data.withdrawnConsent) {
-        self.withdrawnConsent = data.withdrawnConsent;
-      }
-      
-      if (data.recipientViewed) {
-        self.recipientViewed = data.recipientViewed;
-      }
-      
-      if (data.deliveryFailed) {
-        self.deliveryFailed = data.deliveryFailed;
-      }
-      
-      if (data.offlineSigningFailed) {
-        self.offlineSigningFailed = data.offlineSigningFailed;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>SenderEmailNotifications</code>.
+   * @alias module:model/SenderEmailNotifications
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get When set to **true**, the user receives notification that the envelope has been completed.
-     * @return {String}
-     **/
-    self.getEnvelopeComplete = function() {
-      return self.envelopeComplete;
-    }
 
-    /**
-     * set When set to **true**, the user receives notification that the envelope has been completed.
-     * @param {String} envelopeComplete
-     **/
-    self.setEnvelopeComplete = function (envelopeComplete) {
-      self.envelopeComplete = envelopeComplete;
-    }
-    
-    /**
-     * get When set to **true**, the sender receives notification if the signer changes.
-     * @return {String}
-     **/
-    self.getChangedSigner = function() {
-      return self.changedSigner;
-    }
-
-    /**
-     * set When set to **true**, the sender receives notification if the signer changes.
-     * @param {String} changedSigner
-     **/
-    self.setChangedSigner = function (changedSigner) {
-      self.changedSigner = changedSigner;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSenderEnvelopeDeclined = function() {
-      return self.senderEnvelopeDeclined;
-    }
-
-    /**
-     * set 
-     * @param {String} senderEnvelopeDeclined
-     **/
-    self.setSenderEnvelopeDeclined = function (senderEnvelopeDeclined) {
-      self.senderEnvelopeDeclined = senderEnvelopeDeclined;
-    }
-    
-    /**
-     * get When set to **true**, the user receives notification if consent is withdrawn.
-     * @return {String}
-     **/
-    self.getWithdrawnConsent = function() {
-      return self.withdrawnConsent;
-    }
-
-    /**
-     * set When set to **true**, the user receives notification if consent is withdrawn.
-     * @param {String} withdrawnConsent
-     **/
-    self.setWithdrawnConsent = function (withdrawnConsent) {
-      self.withdrawnConsent = withdrawnConsent;
-    }
-    
-    /**
-     * get When set to **true**, the sender receives notification that the recipient viewed the enveloper.
-     * @return {String}
-     **/
-    self.getRecipientViewed = function() {
-      return self.recipientViewed;
-    }
-
-    /**
-     * set When set to **true**, the sender receives notification that the recipient viewed the enveloper.
-     * @param {String} recipientViewed
-     **/
-    self.setRecipientViewed = function (recipientViewed) {
-      self.recipientViewed = recipientViewed;
-    }
-    
-    /**
-     * get When set to **true**, the sender receives notification if the delivery of the envelope fails.
-     * @return {String}
-     **/
-    self.getDeliveryFailed = function() {
-      return self.deliveryFailed;
-    }
-
-    /**
-     * set When set to **true**, the sender receives notification if the delivery of the envelope fails.
-     * @param {String} deliveryFailed
-     **/
-    self.setDeliveryFailed = function (deliveryFailed) {
-      self.deliveryFailed = deliveryFailed;
-    }
-    
-    /**
-     * get When set to **true**, the user receives notification if the offline signing failed.
-     * @return {String}
-     **/
-    self.getOfflineSigningFailed = function() {
-      return self.offlineSigningFailed;
-    }
-
-    /**
-     * set When set to **true**, the user receives notification if the offline signing failed.
-     * @param {String} offlineSigningFailed
-     **/
-    self.setOfflineSigningFailed = function (offlineSigningFailed) {
-      self.offlineSigningFailed = offlineSigningFailed;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.SenderEmailNotifications = SenderEmailNotifications;
+  /**
+   * Constructs a <code>SenderEmailNotifications</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/SenderEmailNotifications} obj Optional instance to populate.
+   * @return {module:model/SenderEmailNotifications} The populated <code>SenderEmailNotifications</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('changedSigner')) {
+        obj['changedSigner'] = ApiClient.convertToType(data['changedSigner'], 'String');
+      }
+      if (data.hasOwnProperty('deliveryFailed')) {
+        obj['deliveryFailed'] = ApiClient.convertToType(data['deliveryFailed'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeComplete')) {
+        obj['envelopeComplete'] = ApiClient.convertToType(data['envelopeComplete'], 'String');
+      }
+      if (data.hasOwnProperty('offlineSigningFailed')) {
+        obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
+      }
+      if (data.hasOwnProperty('recipientViewed')) {
+        obj['recipientViewed'] = ApiClient.convertToType(data['recipientViewed'], 'String');
+      }
+      if (data.hasOwnProperty('senderEnvelopeDeclined')) {
+        obj['senderEnvelopeDeclined'] = ApiClient.convertToType(data['senderEnvelopeDeclined'], 'String');
+      }
+      if (data.hasOwnProperty('withdrawnConsent')) {
+        obj['withdrawnConsent'] = ApiClient.convertToType(data['withdrawnConsent'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return SenderEmailNotifications;
-  
-  
+  /**
+   * When set to **true**, the sender receives notification if the signer changes.
+   * @member {String} changedSigner
+   */
+  exports.prototype['changedSigner'] = undefined;
+  /**
+   * When set to **true**, the sender receives notification if the delivery of the envelope fails.
+   * @member {String} deliveryFailed
+   */
+  exports.prototype['deliveryFailed'] = undefined;
+  /**
+   * When set to **true**, the user receives notification that the envelope has been completed.
+   * @member {String} envelopeComplete
+   */
+  exports.prototype['envelopeComplete'] = undefined;
+  /**
+   * When set to **true**, the user receives notification if the offline signing failed.
+   * @member {String} offlineSigningFailed
+   */
+  exports.prototype['offlineSigningFailed'] = undefined;
+  /**
+   * When set to **true**, the sender receives notification that the recipient viewed the enveloper.
+   * @member {String} recipientViewed
+   */
+  exports.prototype['recipientViewed'] = undefined;
+  /**
+   * 
+   * @member {String} senderEnvelopeDeclined
+   */
+  exports.prototype['senderEnvelopeDeclined'] = undefined;
+  /**
+   * When set to **true**, the user receives notification if consent is withdrawn.
+   * @member {String} withdrawnConsent
+   */
+  exports.prototype['withdrawnConsent'] = undefined;
+
+
+
+  return exports;
 }));
+
+

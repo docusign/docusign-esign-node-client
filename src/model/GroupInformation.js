@@ -1,193 +1,124 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './Group'], factory);
+    define(['ApiClient', 'model/Group'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./Group'));
+    module.exports = factory(require('../ApiClient'), require('./Group'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.Group);
+    root.Docusign.GroupInformation = factory(root.Docusign.ApiClient, root.Docusign.Group);
   }
-}(this, function(module, Group) {
+}(this, function(ApiClient, Group) {
   'use strict';
 
-  
-  
 
-  
-  var GroupInformation = function GroupInformation() { 
-    var self = this;
-    
-    /**
-     * A collection group objects containing information about the groups returned.
-     * datatype: Array
-     **/
-    self.groups = [];
-    
+  /**
+   * The GroupInformation model module.
+   * @module model/GroupInformation
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.groups) {
-        self.groups = data.groups;
-      }
-      
-      if (data.resultSetSize) {
-        self.resultSetSize = data.resultSetSize;
-      }
-      
-      if (data.totalSetSize) {
-        self.totalSetSize = data.totalSetSize;
-      }
-      
-      if (data.startPosition) {
-        self.startPosition = data.startPosition;
-      }
-      
-      if (data.endPosition) {
-        self.endPosition = data.endPosition;
-      }
-      
-      if (data.nextUri) {
-        self.nextUri = data.nextUri;
-      }
-      
-      if (data.previousUri) {
-        self.previousUri = data.previousUri;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>GroupInformation</code>.
+   * @alias module:model/GroupInformation
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get A collection group objects containing information about the groups returned.
-     * @return {Array}
-     **/
-    self.getGroups = function() {
-      return self.groups;
-    }
 
-    /**
-     * set A collection group objects containing information about the groups returned.
-     * @param {Array} groups
-     **/
-    self.setGroups = function (groups) {
-      self.groups = groups;
-    }
-    
-    /**
-     * get The number of results returned in this response.
-     * @return {String}
-     **/
-    self.getResultSetSize = function() {
-      return self.resultSetSize;
-    }
-
-    /**
-     * set The number of results returned in this response.
-     * @param {String} resultSetSize
-     **/
-    self.setResultSetSize = function (resultSetSize) {
-      self.resultSetSize = resultSetSize;
-    }
-    
-    /**
-     * get The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-     * @return {String}
-     **/
-    self.getTotalSetSize = function() {
-      return self.totalSetSize;
-    }
-
-    /**
-     * set The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-     * @param {String} totalSetSize
-     **/
-    self.setTotalSetSize = function (totalSetSize) {
-      self.totalSetSize = totalSetSize;
-    }
-    
-    /**
-     * get Starting position of the current result set.
-     * @return {String}
-     **/
-    self.getStartPosition = function() {
-      return self.startPosition;
-    }
-
-    /**
-     * set Starting position of the current result set.
-     * @param {String} startPosition
-     **/
-    self.setStartPosition = function (startPosition) {
-      self.startPosition = startPosition;
-    }
-    
-    /**
-     * get The last position in the result set.
-     * @return {String}
-     **/
-    self.getEndPosition = function() {
-      return self.endPosition;
-    }
-
-    /**
-     * set The last position in the result set.
-     * @param {String} endPosition
-     **/
-    self.setEndPosition = function (endPosition) {
-      self.endPosition = endPosition;
-    }
-    
-    /**
-     * get The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * @return {String}
-     **/
-    self.getNextUri = function() {
-      return self.nextUri;
-    }
-
-    /**
-     * set The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
-     * @param {String} nextUri
-     **/
-    self.setNextUri = function (nextUri) {
-      self.nextUri = nextUri;
-    }
-    
-    /**
-     * get The postal code for the billing address.
-     * @return {String}
-     **/
-    self.getPreviousUri = function() {
-      return self.previousUri;
-    }
-
-    /**
-     * set The postal code for the billing address.
-     * @param {String} previousUri
-     **/
-    self.setPreviousUri = function (previousUri) {
-      self.previousUri = previousUri;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.GroupInformation = GroupInformation;
+  /**
+   * Constructs a <code>GroupInformation</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/GroupInformation} obj Optional instance to populate.
+   * @return {module:model/GroupInformation} The populated <code>GroupInformation</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('endPosition')) {
+        obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
+      }
+      if (data.hasOwnProperty('groups')) {
+        obj['groups'] = ApiClient.convertToType(data['groups'], [Group]);
+      }
+      if (data.hasOwnProperty('nextUri')) {
+        obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
+      }
+      if (data.hasOwnProperty('previousUri')) {
+        obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
+      }
+      if (data.hasOwnProperty('resultSetSize')) {
+        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
+      }
+      if (data.hasOwnProperty('startPosition')) {
+        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+      }
+      if (data.hasOwnProperty('totalSetSize')) {
+        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return GroupInformation;
-  
-  
+  /**
+   * The last position in the result set. 
+   * @member {String} endPosition
+   */
+  exports.prototype['endPosition'] = undefined;
+  /**
+   * A collection group objects containing information about the groups returned.
+   * @member {Array.<module:model/Group>} groups
+   */
+  exports.prototype['groups'] = undefined;
+  /**
+   * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
+   * @member {String} nextUri
+   */
+  exports.prototype['nextUri'] = undefined;
+  /**
+   * The postal code for the billing address.
+   * @member {String} previousUri
+   */
+  exports.prototype['previousUri'] = undefined;
+  /**
+   * The number of results returned in this response. 
+   * @member {String} resultSetSize
+   */
+  exports.prototype['resultSetSize'] = undefined;
+  /**
+   * Starting position of the current result set.
+   * @member {String} startPosition
+   */
+  exports.prototype['startPosition'] = undefined;
+  /**
+   * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
+   * @member {String} totalSetSize
+   */
+  exports.prototype['totalSetSize'] = undefined;
+
+
+
+  return exports;
 }));
+
+

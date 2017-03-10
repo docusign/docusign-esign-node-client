@@ -1,267 +1,156 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined);
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign);
+    root.Docusign.Filter = factory(root.Docusign.ApiClient);
   }
-}(this, function(module) {
+}(this, function(ApiClient) {
   'use strict';
 
-  
-  
 
-  
-  var Filter = function Filter() { 
-    var self = this;
-    
+  /**
+   * The Filter model module.
+   * @module model/Filter
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.actionRequired) {
-        self.actionRequired = data.actionRequired;
-      }
-      
-      if (data.expires) {
-        self.expires = data.expires;
-      }
-      
-      if (data.isTemplate) {
-        self.isTemplate = data.isTemplate;
-      }
-      
-      if (data.status) {
-        self.status = data.status;
-      }
-      
-      if (data.fromDateTime) {
-        self.fromDateTime = data.fromDateTime;
-      }
-      
-      if (data.toDateTime) {
-        self.toDateTime = data.toDateTime;
-      }
-      
-      if (data.searchTarget) {
-        self.searchTarget = data.searchTarget;
-      }
-      
-      if (data.searchText) {
-        self.searchText = data.searchText;
-      }
-      
-      if (data.folderIds) {
-        self.folderIds = data.folderIds;
-      }
-      
-      if (data.orderBy) {
-        self.orderBy = data.orderBy;
-      }
-      
-      if (data.order) {
-        self.order = data.order;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>Filter</code>.
+   * @alias module:model/Filter
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get Access token information.
-     * @return {String}
-     **/
-    self.getActionRequired = function() {
-      return self.actionRequired;
-    }
 
-    /**
-     * set Access token information.
-     * @param {String} actionRequired
-     **/
-    self.setActionRequired = function (actionRequired) {
-      self.actionRequired = actionRequired;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getExpires = function() {
-      return self.expires;
-    }
-
-    /**
-     * set 
-     * @param {String} expires
-     **/
-    self.setExpires = function (expires) {
-      self.expires = expires;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getIsTemplate = function() {
-      return self.isTemplate;
-    }
-
-    /**
-     * set 
-     * @param {String} isTemplate
-     **/
-    self.setIsTemplate = function (isTemplate) {
-      self.isTemplate = isTemplate;
-    }
-    
-    /**
-     * get Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * @return {String}
-     **/
-    self.getStatus = function() {
-      return self.status;
-    }
-
-    /**
-     * set Indicates the envelope status. Valid values are:\n\n* sent - The envelope is sent to the recipients. \n* created - The envelope is saved as a draft and can be modified and sent later.
-     * @param {String} status
-     **/
-    self.setStatus = function (status) {
-      self.status = status;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getFromDateTime = function() {
-      return self.fromDateTime;
-    }
-
-    /**
-     * set 
-     * @param {String} fromDateTime
-     **/
-    self.setFromDateTime = function (fromDateTime) {
-      self.fromDateTime = fromDateTime;
-    }
-    
-    /**
-     * get Must be set to \"bearer\".
-     * @return {String}
-     **/
-    self.getToDateTime = function() {
-      return self.toDateTime;
-    }
-
-    /**
-     * set Must be set to \"bearer\".
-     * @param {String} toDateTime
-     **/
-    self.setToDateTime = function (toDateTime) {
-      self.toDateTime = toDateTime;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSearchTarget = function() {
-      return self.searchTarget;
-    }
-
-    /**
-     * set 
-     * @param {String} searchTarget
-     **/
-    self.setSearchTarget = function (searchTarget) {
-      self.searchTarget = searchTarget;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getSearchText = function() {
-      return self.searchText;
-    }
-
-    /**
-     * set 
-     * @param {String} searchText
-     **/
-    self.setSearchText = function (searchText) {
-      self.searchText = searchText;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getFolderIds = function() {
-      return self.folderIds;
-    }
-
-    /**
-     * set 
-     * @param {String} folderIds
-     **/
-    self.setFolderIds = function (folderIds) {
-      self.folderIds = folderIds;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getOrderBy = function() {
-      return self.orderBy;
-    }
-
-    /**
-     * set 
-     * @param {String} orderBy
-     **/
-    self.setOrderBy = function (orderBy) {
-      self.orderBy = orderBy;
-    }
-    
-    /**
-     * get 
-     * @return {String}
-     **/
-    self.getOrder = function() {
-      return self.order;
-    }
-
-    /**
-     * set 
-     * @param {String} order
-     **/
-    self.setOrder = function (order) {
-      self.order = order;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.Filter = Filter;
+  /**
+   * Constructs a <code>Filter</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/Filter} obj Optional instance to populate.
+   * @return {module:model/Filter} The populated <code>Filter</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('actionRequired')) {
+        obj['actionRequired'] = ApiClient.convertToType(data['actionRequired'], 'String');
+      }
+      if (data.hasOwnProperty('expires')) {
+        obj['expires'] = ApiClient.convertToType(data['expires'], 'String');
+      }
+      if (data.hasOwnProperty('folderIds')) {
+        obj['folderIds'] = ApiClient.convertToType(data['folderIds'], 'String');
+      }
+      if (data.hasOwnProperty('fromDateTime')) {
+        obj['fromDateTime'] = ApiClient.convertToType(data['fromDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('isTemplate')) {
+        obj['isTemplate'] = ApiClient.convertToType(data['isTemplate'], 'String');
+      }
+      if (data.hasOwnProperty('order')) {
+        obj['order'] = ApiClient.convertToType(data['order'], 'String');
+      }
+      if (data.hasOwnProperty('orderBy')) {
+        obj['orderBy'] = ApiClient.convertToType(data['orderBy'], 'String');
+      }
+      if (data.hasOwnProperty('searchTarget')) {
+        obj['searchTarget'] = ApiClient.convertToType(data['searchTarget'], 'String');
+      }
+      if (data.hasOwnProperty('searchText')) {
+        obj['searchText'] = ApiClient.convertToType(data['searchText'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
+      if (data.hasOwnProperty('toDateTime')) {
+        obj['toDateTime'] = ApiClient.convertToType(data['toDateTime'], 'String');
+      }
+    }
+    return obj;
   }
 
-  return Filter;
-  
-  
+  /**
+   * Access token information.
+   * @member {String} actionRequired
+   */
+  exports.prototype['actionRequired'] = undefined;
+  /**
+   * 
+   * @member {String} expires
+   */
+  exports.prototype['expires'] = undefined;
+  /**
+   * 
+   * @member {String} folderIds
+   */
+  exports.prototype['folderIds'] = undefined;
+  /**
+   * 
+   * @member {String} fromDateTime
+   */
+  exports.prototype['fromDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} isTemplate
+   */
+  exports.prototype['isTemplate'] = undefined;
+  /**
+   * 
+   * @member {String} order
+   */
+  exports.prototype['order'] = undefined;
+  /**
+   * 
+   * @member {String} orderBy
+   */
+  exports.prototype['orderBy'] = undefined;
+  /**
+   * 
+   * @member {String} searchTarget
+   */
+  exports.prototype['searchTarget'] = undefined;
+  /**
+   * 
+   * @member {String} searchText
+   */
+  exports.prototype['searchText'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
+  /**
+   * Must be set to \"bearer\".
+   * @member {String} toDateTime
+   */
+  exports.prototype['toDateTime'] = undefined;
+
+
+
+  return exports;
 }));
+
+

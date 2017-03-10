@@ -1,73 +1,76 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './DocumentTemplate'], factory);
+    define(['ApiClient', 'model/DocumentTemplate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./DocumentTemplate'));
+    module.exports = factory(require('../ApiClient'), require('./DocumentTemplate'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.DocumentTemplate);
+    root.Docusign.DocumentTemplateList = factory(root.Docusign.ApiClient, root.Docusign.DocumentTemplate);
   }
-}(this, function(module, DocumentTemplate) {
+}(this, function(ApiClient, DocumentTemplate) {
   'use strict';
 
-  
-  
 
-  
-  var DocumentTemplateList = function DocumentTemplateList() { 
-    var self = this;
-    
-    /**
-     * 
-     * datatype: Array
-     **/
-    self.documentTemplates = [];
-    
+  /**
+   * The DocumentTemplateList model module.
+   * @module model/DocumentTemplateList
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.documentTemplates) {
-        self.documentTemplates = data.documentTemplates;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>DocumentTemplateList</code>.
+   * @alias module:model/DocumentTemplateList
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get 
-     * @return {Array}
-     **/
-    self.getDocumentTemplates = function() {
-      return self.documentTemplates;
-    }
 
-    /**
-     * set 
-     * @param {Array} documentTemplates
-     **/
-    self.setDocumentTemplates = function (documentTemplates) {
-      self.documentTemplates = documentTemplates;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.DocumentTemplateList = DocumentTemplateList;
+  /**
+   * Constructs a <code>DocumentTemplateList</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/DocumentTemplateList} obj Optional instance to populate.
+   * @return {module:model/DocumentTemplateList} The populated <code>DocumentTemplateList</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('documentTemplates')) {
+        obj['documentTemplates'] = ApiClient.convertToType(data['documentTemplates'], [DocumentTemplate]);
+      }
+    }
+    return obj;
   }
 
-  return DocumentTemplateList;
-  
-  
+  /**
+   * 
+   * @member {Array.<module:model/DocumentTemplate>} documentTemplates
+   */
+  exports.prototype['documentTemplates'] = undefined;
+
+
+
+  return exports;
 }));
+
+

@@ -1,99 +1,85 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './ListCustomField', './TextCustomField'], factory);
+    define(['ApiClient', 'model/ListCustomField', 'model/TextCustomField'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./ListCustomField'), require('./TextCustomField'));
+    module.exports = factory(require('../ApiClient'), require('./ListCustomField'), require('./TextCustomField'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.ListCustomField, root.Docusign.TextCustomField);
+    root.Docusign.CustomFields = factory(root.Docusign.ApiClient, root.Docusign.ListCustomField, root.Docusign.TextCustomField);
   }
-}(this, function(module, ListCustomField, TextCustomField) {
+}(this, function(ApiClient, ListCustomField, TextCustomField) {
   'use strict';
 
-  
-  
 
-  
-  var CustomFields = function CustomFields() { 
-    var self = this;
-    
-    /**
-     * An array of text custom fields.
-     * datatype: Array
-     **/
-    self.textCustomFields = [];
-    
-    /**
-     * An array of list custom fields.
-     * datatype: Array
-     **/
-    self.listCustomFields = [];
-    
+  /**
+   * The CustomFields model module.
+   * @module model/CustomFields
+   * @version 3.0.0
+   */
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.textCustomFields) {
-        self.textCustomFields = data.textCustomFields;
-      }
-      
-      if (data.listCustomFields) {
-        self.listCustomFields = data.listCustomFields;
-      }
-      
-    }
+  /**
+   * Constructs a new <code>CustomFields</code>.
+   * Contains information about custom fields.
+   * @alias module:model/CustomFields
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    
-    /**
-     * get An array of text custom fields.
-     * @return {Array}
-     **/
-    self.getTextCustomFields = function() {
-      return self.textCustomFields;
-    }
 
-    /**
-     * set An array of text custom fields.
-     * @param {Array} textCustomFields
-     **/
-    self.setTextCustomFields = function (textCustomFields) {
-      self.textCustomFields = textCustomFields;
-    }
-    
-    /**
-     * get An array of list custom fields.
-     * @return {Array}
-     **/
-    self.getListCustomFields = function() {
-      return self.listCustomFields;
-    }
-
-    /**
-     * set An array of list custom fields.
-     * @param {Array} listCustomFields
-     **/
-    self.setListCustomFields = function (listCustomFields) {
-      self.listCustomFields = listCustomFields;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.CustomFields = CustomFields;
+  /**
+   * Constructs a <code>CustomFields</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/CustomFields} obj Optional instance to populate.
+   * @return {module:model/CustomFields} The populated <code>CustomFields</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('listCustomFields')) {
+        obj['listCustomFields'] = ApiClient.convertToType(data['listCustomFields'], [ListCustomField]);
+      }
+      if (data.hasOwnProperty('textCustomFields')) {
+        obj['textCustomFields'] = ApiClient.convertToType(data['textCustomFields'], [TextCustomField]);
+      }
+    }
+    return obj;
   }
 
-  return CustomFields;
-  
-  
+  /**
+   * An array of list custom fields.
+   * @member {Array.<module:model/ListCustomField>} listCustomFields
+   */
+  exports.prototype['listCustomFields'] = undefined;
+  /**
+   * An array of text custom fields.
+   * @member {Array.<module:model/TextCustomField>} textCustomFields
+   */
+  exports.prototype['textCustomFields'] = undefined;
+
+
+
+  return exports;
 }));
+
+

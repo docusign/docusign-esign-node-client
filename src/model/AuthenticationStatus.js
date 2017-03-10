@@ -1,372 +1,188 @@
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define([undefined, './EventResult'], factory);
+    define(['ApiClient', 'model/EventResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(undefined, require('./EventResult'));
+    module.exports = factory(require('../ApiClient'), require('./EventResult'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    factory(root.Docusign, root.Docusign.EventResult);
+    root.Docusign.AuthenticationStatus = factory(root.Docusign.ApiClient, root.Docusign.EventResult);
   }
-}(this, function(module, EventResult) {
+}(this, function(ApiClient, EventResult) {
   'use strict';
 
-  
-  
 
   /**
+   * The AuthenticationStatus model module.
+   * @module model/AuthenticationStatus
+   * @version 3.0.0
+   */
+
+  /**
+   * Constructs a new <code>AuthenticationStatus</code>.
    * Contains information about the authentication status.
-   **/
-  var AuthenticationStatus = function AuthenticationStatus() { 
-    var self = this;
-    
+   * @alias module:model/AuthenticationStatus
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
 
-    self.constructFromObject = function(data) {
-      if (!data) {
-        return;
-      }
-      
-      if (data.accessCodeResult) {
-        self.accessCodeResult = new data.accessCodeResult.constructor();
-        self.accessCodeResult.constructFromObject(data.accessCodeResult);
-      }
-      
-      if (data.phoneAuthResult) {
-        self.phoneAuthResult = new data.phoneAuthResult.constructor();
-        self.phoneAuthResult.constructFromObject(data.phoneAuthResult);
-      }
-      
-      if (data.idLookupResult) {
-        self.idLookupResult = new data.idLookupResult.constructor();
-        self.idLookupResult.constructFromObject(data.idLookupResult);
-      }
-      
-      if (data.idQuestionsResult) {
-        self.idQuestionsResult = new data.idQuestionsResult.constructor();
-        self.idQuestionsResult.constructFromObject(data.idQuestionsResult);
-      }
-      
-      if (data.ageVerifyResult) {
-        self.ageVerifyResult = new data.ageVerifyResult.constructor();
-        self.ageVerifyResult.constructFromObject(data.ageVerifyResult);
-      }
-      
-      if (data.sTANPinResult) {
-        self.sTANPinResult = new data.sTANPinResult.constructor();
-        self.sTANPinResult.constructFromObject(data.sTANPinResult);
-      }
-      
-      if (data.ofacResult) {
-        self.ofacResult = new data.ofacResult.constructor();
-        self.ofacResult.constructFromObject(data.ofacResult);
-      }
-      
-      if (data.liveIDResult) {
-        self.liveIDResult = new data.liveIDResult.constructor();
-        self.liveIDResult.constructFromObject(data.liveIDResult);
-      }
-      
-      if (data.facebookResult) {
-        self.facebookResult = new data.facebookResult.constructor();
-        self.facebookResult.constructFromObject(data.facebookResult);
-      }
-      
-      if (data.googleResult) {
-        self.googleResult = new data.googleResult.constructor();
-        self.googleResult.constructFromObject(data.googleResult);
-      }
-      
-      if (data.linkedinResult) {
-        self.linkedinResult = new data.linkedinResult.constructor();
-        self.linkedinResult.constructFromObject(data.linkedinResult);
-      }
-      
-      if (data.salesforceResult) {
-        self.salesforceResult = new data.salesforceResult.constructor();
-        self.salesforceResult.constructFromObject(data.salesforceResult);
-      }
-      
-      if (data.twitterResult) {
-        self.twitterResult = new data.twitterResult.constructor();
-        self.twitterResult.constructFromObject(data.twitterResult);
-      }
-      
-      if (data.openIDResult) {
-        self.openIDResult = new data.openIDResult.constructor();
-        self.openIDResult.constructFromObject(data.openIDResult);
-      }
-      
-      if (data.anySocialIDResult) {
-        self.anySocialIDResult = new data.anySocialIDResult.constructor();
-        self.anySocialIDResult.constructFromObject(data.anySocialIDResult);
-      }
-      
-      if (data.yahooResult) {
-        self.yahooResult = new data.yahooResult.constructor();
-        self.yahooResult.constructFromObject(data.yahooResult);
-      }
-      
-      if (data.smsAuthResult) {
-        self.smsAuthResult = new data.smsAuthResult.constructor();
-        self.smsAuthResult.constructFromObject(data.smsAuthResult);
-      }
-      
-    }
 
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getAccessCodeResult = function() {
-      return self.accessCodeResult;
-    }
-
-    /**
-     * @param {EventResult} accessCodeResult
-     **/
-    self.setAccessCodeResult = function (accessCodeResult) {
-      self.accessCodeResult = accessCodeResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getPhoneAuthResult = function() {
-      return self.phoneAuthResult;
-    }
-
-    /**
-     * @param {EventResult} phoneAuthResult
-     **/
-    self.setPhoneAuthResult = function (phoneAuthResult) {
-      self.phoneAuthResult = phoneAuthResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getIdLookupResult = function() {
-      return self.idLookupResult;
-    }
-
-    /**
-     * @param {EventResult} idLookupResult
-     **/
-    self.setIdLookupResult = function (idLookupResult) {
-      self.idLookupResult = idLookupResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getIdQuestionsResult = function() {
-      return self.idQuestionsResult;
-    }
-
-    /**
-     * @param {EventResult} idQuestionsResult
-     **/
-    self.setIdQuestionsResult = function (idQuestionsResult) {
-      self.idQuestionsResult = idQuestionsResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getAgeVerifyResult = function() {
-      return self.ageVerifyResult;
-    }
-
-    /**
-     * @param {EventResult} ageVerifyResult
-     **/
-    self.setAgeVerifyResult = function (ageVerifyResult) {
-      self.ageVerifyResult = ageVerifyResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getSTANPinResult = function() {
-      return self.sTANPinResult;
-    }
-
-    /**
-     * @param {EventResult} sTANPinResult
-     **/
-    self.setSTANPinResult = function (sTANPinResult) {
-      self.sTANPinResult = sTANPinResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getOfacResult = function() {
-      return self.ofacResult;
-    }
-
-    /**
-     * @param {EventResult} ofacResult
-     **/
-    self.setOfacResult = function (ofacResult) {
-      self.ofacResult = ofacResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getLiveIDResult = function() {
-      return self.liveIDResult;
-    }
-
-    /**
-     * @param {EventResult} liveIDResult
-     **/
-    self.setLiveIDResult = function (liveIDResult) {
-      self.liveIDResult = liveIDResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getFacebookResult = function() {
-      return self.facebookResult;
-    }
-
-    /**
-     * @param {EventResult} facebookResult
-     **/
-    self.setFacebookResult = function (facebookResult) {
-      self.facebookResult = facebookResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getGoogleResult = function() {
-      return self.googleResult;
-    }
-
-    /**
-     * @param {EventResult} googleResult
-     **/
-    self.setGoogleResult = function (googleResult) {
-      self.googleResult = googleResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getLinkedinResult = function() {
-      return self.linkedinResult;
-    }
-
-    /**
-     * @param {EventResult} linkedinResult
-     **/
-    self.setLinkedinResult = function (linkedinResult) {
-      self.linkedinResult = linkedinResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getSalesforceResult = function() {
-      return self.salesforceResult;
-    }
-
-    /**
-     * @param {EventResult} salesforceResult
-     **/
-    self.setSalesforceResult = function (salesforceResult) {
-      self.salesforceResult = salesforceResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getTwitterResult = function() {
-      return self.twitterResult;
-    }
-
-    /**
-     * @param {EventResult} twitterResult
-     **/
-    self.setTwitterResult = function (twitterResult) {
-      self.twitterResult = twitterResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getOpenIDResult = function() {
-      return self.openIDResult;
-    }
-
-    /**
-     * @param {EventResult} openIDResult
-     **/
-    self.setOpenIDResult = function (openIDResult) {
-      self.openIDResult = openIDResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getAnySocialIDResult = function() {
-      return self.anySocialIDResult;
-    }
-
-    /**
-     * @param {EventResult} anySocialIDResult
-     **/
-    self.setAnySocialIDResult = function (anySocialIDResult) {
-      self.anySocialIDResult = anySocialIDResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getYahooResult = function() {
-      return self.yahooResult;
-    }
-
-    /**
-     * @param {EventResult} yahooResult
-     **/
-    self.setYahooResult = function (yahooResult) {
-      self.yahooResult = yahooResult;
-    }
-    
-    /**
-     * @return {EventResult}
-     **/
-    self.getSmsAuthResult = function() {
-      return self.smsAuthResult;
-    }
-
-    /**
-     * @param {EventResult} smsAuthResult
-     **/
-    self.setSmsAuthResult = function (smsAuthResult) {
-      self.smsAuthResult = smsAuthResult;
-    }
-    
-
-    self.toJson = function () {
-      return JSON.stringify(self);
-    }
   };
 
-  if (module) {
-    module.AuthenticationStatus = AuthenticationStatus;
+  /**
+   * Constructs a <code>AuthenticationStatus</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/AuthenticationStatus} obj Optional instance to populate.
+   * @return {module:model/AuthenticationStatus} The populated <code>AuthenticationStatus</code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('accessCodeResult')) {
+        obj['accessCodeResult'] = EventResult.constructFromObject(data['accessCodeResult']);
+      }
+      if (data.hasOwnProperty('ageVerifyResult')) {
+        obj['ageVerifyResult'] = EventResult.constructFromObject(data['ageVerifyResult']);
+      }
+      if (data.hasOwnProperty('anySocialIDResult')) {
+        obj['anySocialIDResult'] = EventResult.constructFromObject(data['anySocialIDResult']);
+      }
+      if (data.hasOwnProperty('facebookResult')) {
+        obj['facebookResult'] = EventResult.constructFromObject(data['facebookResult']);
+      }
+      if (data.hasOwnProperty('googleResult')) {
+        obj['googleResult'] = EventResult.constructFromObject(data['googleResult']);
+      }
+      if (data.hasOwnProperty('idLookupResult')) {
+        obj['idLookupResult'] = EventResult.constructFromObject(data['idLookupResult']);
+      }
+      if (data.hasOwnProperty('idQuestionsResult')) {
+        obj['idQuestionsResult'] = EventResult.constructFromObject(data['idQuestionsResult']);
+      }
+      if (data.hasOwnProperty('linkedinResult')) {
+        obj['linkedinResult'] = EventResult.constructFromObject(data['linkedinResult']);
+      }
+      if (data.hasOwnProperty('liveIDResult')) {
+        obj['liveIDResult'] = EventResult.constructFromObject(data['liveIDResult']);
+      }
+      if (data.hasOwnProperty('ofacResult')) {
+        obj['ofacResult'] = EventResult.constructFromObject(data['ofacResult']);
+      }
+      if (data.hasOwnProperty('openIDResult')) {
+        obj['openIDResult'] = EventResult.constructFromObject(data['openIDResult']);
+      }
+      if (data.hasOwnProperty('phoneAuthResult')) {
+        obj['phoneAuthResult'] = EventResult.constructFromObject(data['phoneAuthResult']);
+      }
+      if (data.hasOwnProperty('salesforceResult')) {
+        obj['salesforceResult'] = EventResult.constructFromObject(data['salesforceResult']);
+      }
+      if (data.hasOwnProperty('smsAuthResult')) {
+        obj['smsAuthResult'] = EventResult.constructFromObject(data['smsAuthResult']);
+      }
+      if (data.hasOwnProperty('sTANPinResult')) {
+        obj['sTANPinResult'] = EventResult.constructFromObject(data['sTANPinResult']);
+      }
+      if (data.hasOwnProperty('twitterResult')) {
+        obj['twitterResult'] = EventResult.constructFromObject(data['twitterResult']);
+      }
+      if (data.hasOwnProperty('yahooResult')) {
+        obj['yahooResult'] = EventResult.constructFromObject(data['yahooResult']);
+      }
+    }
+    return obj;
   }
 
-  return AuthenticationStatus;
-  
-  
+  /**
+   * @member {module:model/EventResult} accessCodeResult
+   */
+  exports.prototype['accessCodeResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} ageVerifyResult
+   */
+  exports.prototype['ageVerifyResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} anySocialIDResult
+   */
+  exports.prototype['anySocialIDResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} facebookResult
+   */
+  exports.prototype['facebookResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} googleResult
+   */
+  exports.prototype['googleResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} idLookupResult
+   */
+  exports.prototype['idLookupResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} idQuestionsResult
+   */
+  exports.prototype['idQuestionsResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} linkedinResult
+   */
+  exports.prototype['linkedinResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} liveIDResult
+   */
+  exports.prototype['liveIDResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} ofacResult
+   */
+  exports.prototype['ofacResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} openIDResult
+   */
+  exports.prototype['openIDResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} phoneAuthResult
+   */
+  exports.prototype['phoneAuthResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} salesforceResult
+   */
+  exports.prototype['salesforceResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} smsAuthResult
+   */
+  exports.prototype['smsAuthResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} sTANPinResult
+   */
+  exports.prototype['sTANPinResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} twitterResult
+   */
+  exports.prototype['twitterResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} yahooResult
+   */
+  exports.prototype['yahooResult'] = undefined;
+
+
+
+  return exports;
 }));
+
+
