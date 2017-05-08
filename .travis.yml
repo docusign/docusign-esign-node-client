@@ -10,8 +10,6 @@ notifications:
     on_failure: change
 
 node_js:
-  - "2.2"
-  - "3"
   - "4"
   - "5"
   - "6"
