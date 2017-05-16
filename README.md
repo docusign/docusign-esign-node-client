@@ -17,7 +17,6 @@ commented out
 
 You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center).
 
-============
 Requirements
 ============
 
