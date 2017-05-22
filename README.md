@@ -304,6 +304,15 @@ License
 
 The DocuSign Node Client is licensed under the following [License](LICENSE).
 
+Sample App
+=======
+
+Check out the LoanCo sample app - an open source app that showcases the Node.js SDK and demonstrates several common DocuSign workflows and features:
+
+https://loancosample.docusign.com/
+
+![LoanCo Sample Application](loanco.png)
+
 
 [npm-image]: https://img.shields.io/npm/v/docusign-esign.svg?style=flat
 [npm-url]: https://npmjs.org/package/docusign-esign
