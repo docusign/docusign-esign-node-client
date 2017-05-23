@@ -262,6 +262,18 @@ async.waterfall([
 
 See [CoreRecipes.js](./test/Recipes/CoreRecipes.js) for more examples.
 
+Sample App
+=======
+
+Check out the LoanCo sample app - an open source app that showcases the Node.js SDK and demonstrates several common DocuSign workflows and features:
+
+Run the app:  https://loancosample.docusign.com/
+
+Get the code:  https://github.com/docusign/sample-app-loanco-nodejs
+
+![LoanCo Sample Application](loanco.png)
+
+
 # Authentication
 
 ## Service Integrations that use Legacy Header Authentication
@@ -303,17 +315,6 @@ License
 =======
 
 The DocuSign Node Client is licensed under the following [License](LICENSE).
-
-Sample App
-=======
-
-Check out the LoanCo sample app - an open source app that showcases the Node.js SDK and demonstrates several common DocuSign workflows and features:
-
-Run the app:  https://loancosample.docusign.com/
-
-Get the code:  https://github.com/DocuSign/loanco-sample-app-nodejs 
-
-![LoanCo Sample Application](loanco.png)
 
 
 [npm-image]: https://img.shields.io/npm/v/docusign-esign.svg?style=flat
