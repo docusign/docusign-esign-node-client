@@ -16,14 +16,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-var host_url = 'http://' + host + ':' + port;
+var hostUrl = 'http://' + host + ':' + port;
 
 // Configure Passport
 passport.use(new docusign.OAuthClient({
   sandbox: true,
   clientID: 'ae30ea4e-XXXX-XXXX-XXXX-Xcb57d2dc4df',
   clientSecret: 'b4dccdbe-XXXX-XXXX-XXXX-X2f0f7448f8f',
-  callbackURL: host_url + '/auth/callback'
+  callbackURL: hostUrl + '/auth/callback'
 },
   function (accessToken, refreshToken, user, done) {
     // Here we're just assigning the tokens to the user profile object but we
