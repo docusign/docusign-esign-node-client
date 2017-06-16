@@ -20,11 +20,11 @@ var host_url = 'http://' + host + ':' + port;
 
 // Configure Passport
 passport.use(new docusign.OAuthClient({
-    sandbox: true,
-    clientID: 'ae30ea4e-XXXX-XXXX-XXXX-Xcb57d2dc4df',
-    clientSecret: 'b4dccdbe-XXXX-XXXX-XXXX-X2f0f7448f8f',
-    callbackURL: host_url + '/auth/callback'
-  },
+  sandbox: true,
+  clientID: 'ae30ea4e-XXXX-XXXX-XXXX-Xcb57d2dc4df',
+  clientSecret: 'b4dccdbe-XXXX-XXXX-XXXX-X2f0f7448f8f',
+  callbackURL: host_url + '/auth/callback'
+},
   function (accessToken, refreshToken, user, done) {
     // Here we're just assigning the tokens to the user profile object but we
     // could be using session storage or any other form of transient-ish storage
@@ -44,7 +44,7 @@ app.get('/auth/callback', function (req, res) {
       return res.send(err);
     }
     if (!user) {
-      return res.redirect('/auth')
+      return res.redirect('/auth');
     }
 
     // getting the API client ready
@@ -69,7 +69,6 @@ app.get('/auth/callback', function (req, res) {
         // note that a given user may be a member of multiple accounts
         var loginAccounts = loginInfo.loginAccounts;
         var loginAccount = loginAccounts[0];
-        accountId = loginAccount.accountId;
         var baseUrl = loginAccount.baseUrl;
         var accountDomain = baseUrl.split('/v2');
 
@@ -81,14 +80,12 @@ app.get('/auth/callback', function (req, res) {
         return res.send(loginAccounts);
       }
     });
-
   })(req, res);
 });
 
-
 app.listen(port, host, function (err) {
   if (err) {
-    throw err
+    throw err;
   }
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
