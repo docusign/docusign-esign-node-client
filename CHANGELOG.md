@@ -6,6 +6,10 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 ## [Unreleased]
 More information later on.
 
+## [3.1.0] - 2017-06-17
+### Added
+- Added support for DocuSign OAuth
+
 ## [3.0.0] - 2017-03-10
 ### BREAKING
 - The SDK now supports the**Full and latest DocuSign API support**(17.1.00.00). NO MORE OMITTED ENDPOINTS.
