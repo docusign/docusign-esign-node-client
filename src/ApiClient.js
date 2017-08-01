@@ -84,17 +84,17 @@
      */
     this.cache = true;
   };
-  
+
   /**
    * Sets the API endpoint base URL.
-   */  
+   */
   exports.prototype.setBasePath = function setBasePath(basePath) {
     this.basePath = basePath;
   };
 
   /**
    * Adds request headers to the API client. Useful for Authentication.
-   */  
+   */
   exports.prototype.addDefaultHeader = function addDefaultHeader(header, value) {
     this.defaultHeaders[header] = value;
   };
@@ -426,7 +426,7 @@
     if (accept) {
       request.accept(accept);
     }
-    
+
     var data;
     if (request.header['Accept'] === 'application/pdf') {
         request.buffer();
@@ -554,6 +554,68 @@
           obj[k] = exports.convertToType(data[k], itemType);
       }
     }
+  };
+
+  /**
+   * Helper method to build the OAuth JWT grant uri (used once to get a user consent for impersonation)
+   * @param clientId OAuth2 client ID
+   * @param redirectURI OAuth2 redirect uri
+   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
+   * 			  and account.docusign.com for the production platform)
+   * @returns {string} the OAuth JWT grant uri as a String
+   */
+  exports.prototype.getJWTUri = function(clientId, redirectURI, oAuthBasePath) {
+    return "https://" + oAuthBasePath + "/oauth/auth" + "?" +
+      "response_type=code&" +
+      "client_id=" + encodeURIComponent(clientId) + "&" +
+      "scope=" + encodeURIComponent("signature+impersonation") + "&" +
+      "redirect_uri=" + encodeURIComponent(redirectURI);
+  };
+
+  /**
+   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
+   * @param privateKeyFilename the filename of the RSA private key
+   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
+   *   			and account.docusign.com for the production platform)
+   * @param clientId DocuSign OAuth Client Id (AKA Integrator Key)
+   * @param userId DocuSign user Id to be impersonated (This is a UUID)
+   * @param expiresIn in seconds for the token time-to-live
+   * @param callback the callback function.
+   */
+  exports.prototype.configureJWTAuthorizationFlow = function(privateKeyFilename, oAuthBasePath, clientId, userId, expiresIn, callback) {
+    var _this = this;
+    var jwt = require('jsonwebtoken')
+      , fs  = require('fs')
+      , private_key = fs.readFileSync(privateKeyFilename)
+      , now         = Math.floor(Date.now() / 1000)
+      , later       = now + expiresIn;
+
+    var jwt_payload = {
+      iss: clientId,
+      sub: userId,
+      aud: oAuthBasePath,
+      iat: now,
+      exp: later,
+      scope: "signature"
+    };
+
+    var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
+
+    superagent('post', 'https://' + oAuthBasePath + '/oauth/token')
+      .timeout(this.timeout)
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .send({
+        'assertion': assertion,
+        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+      })
+      .end(function(err, res) {
+        if (callback) {
+          if (!err && res.body && res.body.access_token) {
+            _this.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+          }
+          callback(err, res);
+        }
+      });
   };
 
   /**
