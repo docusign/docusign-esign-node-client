@@ -6,9 +6,13 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 ## [Unreleased]
 More information later on.
 
+## [3.2.0] - 2017-08-01
+### Added
+- Support for DocuSign JWT OAuth for service integration (2-legged authentication)
+ 
 ## [3.1.0] - 2017-06-17
 ### Added
-- Added support for DocuSign OAuth
+- Support for DocuSign OAuth
 
 ## [3.0.0] - 2017-03-10
 ### BREAKING

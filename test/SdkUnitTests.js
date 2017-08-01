@@ -1,9 +1,9 @@
 var assert = require('assert');
 var docusign = require('../src/index');
 var config = require('../test-config.json');
+var path = require('path');
 
 var UserName = config.email;
-var Password = config.password;
 var IntegratorKey = config.integratorKey;
 var TemplateId = config.templateId;
 
@@ -12,13 +12,27 @@ var BaseUrl = 'https://demo.docusign.net/restapi';
 var SignTest1File = 'docs/SignTest1.pdf';
 var accountId = '';
 var envelopeId = '';
-var creds = '{"Username":"' + UserName + '","Password":"' + Password + '","IntegratorKey":"' + IntegratorKey + '"}';
+var UserId = config.userId;
+var OAuthBaseUrl = 'account-d.docusign.com';
+var RedirectURI = 'https://www.docusign.com/api';
+var privateKeyFilename = 'keys/docusign_private_key.txt';
 
-var apiClient = new docusign.ApiClient();
-apiClient.setBasePath(BaseUrl);
-apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
+describe('SDK Unit Tests:', function (done) {
+  var apiClient = new docusign.ApiClient();
+  before(function (done) {
+    apiClient.setBasePath(BaseUrl);
+    // IMPORTANT NOTE:
+    // the first time you ask for a JWT access token, you should grant access by making the following call
+    // get DocuSign OAuth authorization url:
+    var oauthLoginUrl = apiClient.getJWTUri(IntegratorKey, RedirectURI, OAuthBaseUrl);
+    // open DocuSign OAuth authorization url in the browser, login and grant access
+    console.log(oauthLoginUrl);
+    // END OF NOTE
 
-describe('SDK Unit Tests:', function () {
+    // configure the ApiClient to asynchronously get an access to token and store it
+    apiClient.configureJWTAuthorizationFlow(path.resolve(__dirname, privateKeyFilename), OAuthBaseUrl, IntegratorKey, UserId, 3600, done);
+  });
+
   it('login', function (done) {
     var authApi = new docusign.AuthenticationApi(apiClient);
     var loginOps = {};
@@ -53,7 +67,6 @@ describe('SDK Unit Tests:', function () {
     var fileBytes = null;
     try {
       var fs = require('fs');
-      var path = require('path');
       // read file from a local directory
       fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
     } catch (ex) {
@@ -167,7 +180,6 @@ describe('SDK Unit Tests:', function () {
     var fileBytes = null;
     try {
       var fs = require('fs');
-      var path = require('path');
       // read file from a local directory
       fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
     } catch (ex) {
@@ -260,7 +272,6 @@ describe('SDK Unit Tests:', function () {
     var fileBytes = null;
     try {
       var fs = require('fs');
-      var path = require('path');
       // read file from a local directory
       fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
     } catch (ex) {
@@ -331,7 +342,6 @@ describe('SDK Unit Tests:', function () {
     var fileBytes = null;
     try {
       var fs = require('fs');
-      var path = require('path');
       // read file from a local directory
       fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
     } catch (ex) {
@@ -407,7 +417,6 @@ describe('SDK Unit Tests:', function () {
           if (pdfBytes) {
             try {
               var fs = require('fs');
-              var path = require('path');
               // download the document pdf
               var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
               var tempFile = path.resolve(__dirname, filename);
@@ -445,7 +454,6 @@ describe('SDK Unit Tests:', function () {
     var fileBytes = null;
     try {
       var fs = require('fs');
-      var path = require('path');
       // read file from a local directory
       fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
     } catch (ex) {
@@ -533,7 +541,6 @@ describe('SDK Unit Tests:', function () {
               if (pdfBytes) {
                 try {
                   var fs = require('fs');
-                  var path = require('path');
                   // download the document pdf
                   var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
                   var tempFile = path.resolve(__dirname, filename);
@@ -560,7 +567,6 @@ describe('SDK Unit Tests:', function () {
                       if (diagBytes) {
                         try {
                           var fs = require('fs');
-                          var path = require('path');
                           // download the document pdf
                           var filename = requestLogId + '.txt';
                           var tempFile = path.resolve(__dirname, filename);
