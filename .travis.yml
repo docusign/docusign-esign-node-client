@@ -1,5 +1,9 @@
 sudo: false
 
+branches:
+  only: 
+    - master
+
 language: node_js
 
 notifications:
