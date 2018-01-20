@@ -35,8 +35,9 @@ Alternatively you can just copy the source code directly into your project.
 #### Dependencies
 
 This client has the following external dependencies:
-
-* superagent@1.7.1
+* jsonwebtoken@7.4.1
+* passport-oauth2@1.4.0
+* superagent@3.8.2
 
 Usage
 =====
