@@ -568,7 +568,7 @@
     return "https://" + oAuthBasePath + "/oauth/auth" + "?" +
       "response_type=code&" +
       "client_id=" + encodeURIComponent(clientId) + "&" +
-      "scope=" + encodeURIComponent("signature+impersonation") + "&" +
+      "scope=" + encodeURIComponent("signature impersonation") + "&" +
       "redirect_uri=" + encodeURIComponent(redirectURI);
   };
 
