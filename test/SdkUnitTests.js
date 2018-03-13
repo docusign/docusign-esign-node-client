@@ -81,7 +81,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // add a document to the envelope
     var doc = new docusign.Document();
-    var base64Doc = new Buffer(fileBytes).toString('base64');
+    var base64Doc = Buffer.from(fileBytes).toString('base64');
     doc.documentBase64 = base64Doc;
     doc.name = 'TestFile.pdf';
     doc.documentId = '1';
@@ -194,7 +194,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // add a document to the envelope
     var doc = new docusign.Document();
-    var base64Doc = new Buffer(fileBytes).toString('base64');
+    var base64Doc = Buffer.from(fileBytes).toString('base64');
     doc.documentBase64 = base64Doc;
     doc.name = 'TestFile.pdf';
     doc.documentId = '1';
@@ -286,7 +286,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // add a document to the envelope
     var doc = new docusign.Document();
-    var base64Doc = new Buffer(fileBytes).toString('base64');
+    var base64Doc = Buffer.from(fileBytes).toString('base64');
     doc.documentBase64 = base64Doc;
     doc.name = 'TestFile.pdf';
     doc.documentId = '1';
@@ -356,7 +356,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // add a document to the envelope
     var doc = new docusign.Document();
-    var base64Doc = new Buffer(fileBytes).toString('base64');
+    var base64Doc = Buffer.from(fileBytes).toString('base64');
     doc.documentBase64 = base64Doc;
     doc.name = 'TestFile.pdf';
     doc.documentId = '1';
@@ -420,7 +420,7 @@ describe('SDK Unit Tests:', function (done) {
               // download the document pdf
               var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
               var tempFile = path.resolve(__dirname, filename);
-              fs.writeFile(tempFile, new Buffer(pdfBytes, 'binary'), function (err) {
+              fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                 if (err) console.log('Error: ' + err);
               });
               console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
@@ -468,7 +468,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // add a document to the envelope
     var doc = new docusign.Document();
-    var base64Doc = new Buffer(fileBytes).toString('base64');
+    var base64Doc = Buffer.from(fileBytes).toString('base64');
     doc.documentBase64 = base64Doc;
     doc.name = 'TestFile.pdf';
     doc.documentId = '1';
@@ -544,7 +544,7 @@ describe('SDK Unit Tests:', function (done) {
                   // download the document pdf
                   var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
                   var tempFile = path.resolve(__dirname, filename);
-                  fs.writeFile(tempFile, new Buffer(pdfBytes, 'binary'), function (err) {
+                  fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                     if (err) console.log('Error: ' + err);
                   });
                   console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
