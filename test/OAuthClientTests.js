@@ -25,21 +25,21 @@ passport.use(new docusign.OAuthClient({
   clientSecret: 'b4dccdbe-xxxx-xxxx-xxxx-b2f0f7448f8f',
   callbackURL: hostUrl + '/auth/callback'
 },
-  function (accessToken, refreshToken, user, done) {
-    // Here we're just assigning the tokens to the user profile object but we
-    // could be using session storage or any other form of transient-ish storage
-    user.accessToken = accessToken;
-    user.refreshToken = refreshToken;
-    return done(null, user);
-  }
+function (accessToken, refreshToken, user, done) {
+  // Here we're just assigning the tokens to the user profile object but we
+  // could be using session storage or any other form of transient-ish storage
+  user.accessToken = accessToken;
+  user.refreshToken = refreshToken;
+  return done(null, user);
+}
 ));
 
 app.get('/auth', function (req, res) {
-  passport.authenticate('docusign'/*, {state: 'optional state'}*/)(req, res);
+  passport.authenticate('docusign'/*, {state: 'optional state'} */)(req, res);
 });
 
 app.get('/auth/callback', function (req, res) {
-  passport.authenticate('docusign'/*, {state: 'optional state'}*/, function (err, user) {
+  passport.authenticate('docusign'/*, {state: 'optional state'} */, function (err, user) {
     if (err) {
       return res.send(err);
     }
