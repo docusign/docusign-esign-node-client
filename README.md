@@ -8,7 +8,7 @@
 
 [NPM module](https://www.npmjs.com/package/docusign-esign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
 
-[Documentation about the DocuSign API](https://www.docusign.com/developer-center)
+[Documentation about the DocuSign API](https://developers.docusign.com/)
 
 [Documentation about this package](http://docusign.github.io/docusign-node-client)
 <!---
@@ -16,7 +16,7 @@
 commented out
 -->
 
-You can sign up for a free [developer sandbox](https://www.docusign.com/developer-center).
+You can sign up for a free [developer sandbox](https://developers.docusign.com/).
 
 Requirements
 ============
