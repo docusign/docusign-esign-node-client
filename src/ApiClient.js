@@ -504,7 +504,6 @@
           return data;
         } else if (typeof type === 'function') {
           // for model type like: User
-          console.log(type.constructFromObject)
           return type.constructFromObject(data);
         } else if (Array.isArray(type)) {
           // for array type like: ['String']
