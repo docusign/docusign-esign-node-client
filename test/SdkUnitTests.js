@@ -6,10 +6,10 @@ var path = require('path');
 var superagent = require('superagent');
 
 var UserName = config.email;
-var IntegratorKey = config.integratorKey;
-var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
-var IntegratorKeyImplicit = config.integratorKeyImplicit;
-var ClientSecret = config.clientSecret;
+//var IntegratorKey = config.integratorKey;
+//var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
+//var IntegratorKeyImplicit = config.integratorKeyImplicit;
+//var ClientSecret = config.clientSecret;
 var TemplateId = config.templateId;
 
 // for production environment update to "www.docusign.net/restapi"
@@ -58,13 +58,13 @@ describe('SDK Unit Tests:', function (done) {
    */
 
   it('should be able to log in with authorization code grant', function (done) {
-    var responseType = apiClient.OAuth.ResponseType.CODE, // Here we specify a response type of code, retrieving a single use auth code to be used to request a token
+    /*var responseType = apiClient.OAuth.ResponseType.CODE, // Here we specify a response type of code, retrieving a single use auth code to be used to request a token
       scopes = [apiClient.OAuth.Scope.EXTENDED],
-      randomState = '*^.$DGj*)+}Jk', // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
+      randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
       authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);// get DocuSign OAuth authorization url
 
     // Open DocuSign OAuth login in a browser, res being your node.js response object.
-    /* res.redirect(authUri);
+     res.redirect(authUri);
 
     // IMPORTANT: after the login, DocuSign will send back a fresh
     // authorization code as a query param of the redirect URI.
@@ -101,13 +101,13 @@ describe('SDK Unit Tests:', function (done) {
   });
 
   it('should be able to log in with implicit grant', function (done) {
-    var responseType = apiClient.OAuth.ResponseType.TOKEN, // Here we specify a response type of 'token', retrieving our oauth token directly
+    /*var responseType = apiClient.OAuth.ResponseType.TOKEN, // Here we specify a response type of 'token', retrieving our oauth token directly
       scopes = [apiClient.OAuth.Scope.EXTENDED],
-      randomState = '*^.$DGj*)+}Jk', // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
-      authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
+      randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
+      //authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
 
     // Open DocuSign OAuth login in a browser, res being your node.js response object.
-    /* res.redirect(authUri);
+      res.redirect(authUri);
 
     // IMPORTANT: after the login, DocuSign will send back a new
     // access token in the hash fragment of the redirect URI.
