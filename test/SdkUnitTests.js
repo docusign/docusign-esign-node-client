@@ -709,9 +709,6 @@ describe('SDK Unit Tests:', function (done) {
 
   it('getTemplate', function (done) {
     var templatesApi = new docusign.TemplatesApi(apiClient);
-    console.log(accountId)
-    console.log(TemplateId)
-    console.log(apiClient)
     templatesApi.get(accountId, TemplateId, null, function (error, envelopeTemplate, response) {
 
       if (error) {
