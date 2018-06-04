@@ -1,92 +1,94 @@
 const express = require('express');
-const passport = require('passport');
-var session = require('express-session');
-var docusign = require('../src/index');
+const docusign = require('../src/index');
+const apiClient = new docusign.ApiClient();
 
 const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || 'localhost';
 
-app.use(session({
-  secret: 'secret token',
-  resave: true,
-  saveUninitialized: true
-}));
+const integratorKey = 'ae30ea4e-XXXX-XXXX-XXXX-Xcb57d2dc4df'; // An IK for a non-mobile docusign account
+const integratorKeyImplicit = '68c1711f-XXXX-XXXX-XXXX-X49b4211d831'; // an IK with mobile selected in Docusign admin
+const clientSecret = 'b4dccdbe-XXXX-XXXX-XXXX-X2f0f7448f8f';
+const redirectUri = 'http://localhost:3000/auth';
+const basePath = 'https://demo.docusign.net/restapi';
 
-app.use(passport.initialize());
-app.use(passport.session());
+const responseTypeCode = apiClient.OAuth.ResponseType.CODE; // Response type of code, to be used for the Auth code grant
+const responseTypeToken = apiClient.OAuth.ResponseType.TOKEN; // Response type of token, to be used for implicit grant
+const scopes = [apiClient.OAuth.Scope.EXTENDED];
+const randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
 
-var hostUrl = 'http://' + host + ':' + port;
+apiClient.setBasePath(basePath);
 
-// Configure Passport
-passport.use(new docusign.OAuthClient({
-  sandbox: true,
-  clientID: 'ae30ea4e-XXXX-XXXX-XXXX-Xcb57d2dc4df',
-  clientSecret: 'b4dccdbe-XXXX-XXXX-XXXX-X2f0f7448f8f',
-  callbackURL: hostUrl + '/auth/callback'
-},
-  function (accessToken, refreshToken, user, done) {
-    // Here we're just assigning the tokens to the user profile object but we
-    // could be using session storage or any other form of transient-ish storage
-    user.accessToken = accessToken;
-    user.refreshToken = refreshToken;
-    return done(null, user);
-  }
-));
+// Auth Code Grant
+/*
+app.get('/', function (req, res) {
+    const authUri = apiClient.getAuthorizationUri(integratorKey, scopes, redirectUri, responseTypeCode, randomState);//get DocuSign OAuth authorization url
+     //Open DocuSign OAuth login in a browser, res being your node.js response object.
+    res.redirect(authUri);
+});
 
 app.get('/auth', function (req, res) {
-  passport.authenticate('docusign'/*, {state: 'optional state'}*/)(req, res);
-});
+  // IMPORTANT: after the login, DocuSign will send back a fresh
+  // authorization code as a query param of the redirect URI.
+  // You should set up a route that handles the redirect call to get
+  // that code and pass it to token endpoint as shown in the next
+  // lines:
+  apiClient.generateAccessToken(integratorKey, clientSecret, req.query.code, function (err, oAuthToken) {
 
-app.get('/auth/callback', function (req, res) {
-  passport.authenticate('docusign'/*, {state: 'optional state'}*/, function (err, user) {
-    if (err) {
-      return res.send(err);
-    }
-    if (!user) {
-      return res.redirect('/auth');
-    }
+    console.log(oAuthToken);
 
-    // getting the API client ready
-    var apiClient = new docusign.ApiClient();
-    // for production environment update to "www.docusign.net/restapi"
-    var BaseUrl = 'https://demo.docusign.net/restapi';
-    apiClient.setBasePath(BaseUrl);
-    apiClient.addDefaultHeader('Authorization', 'Bearer ' + user.accessToken);
-
-    // creating an instance of the authentication API
-    var authApi = new docusign.AuthenticationApi(apiClient);
-    var loginOps = {};
-    loginOps.apiPassword = 'true';
-    loginOps.includeAccountIdGuid = 'true';
-    // making login call. we could also use DocuSign OAuth userinfo call
-    authApi.login(loginOps, function (error, loginInfo, response) {
-      if (error) {
-        return res.send(error);
-      }
-      if (loginInfo) {
-        // list of user account(s)
-        // note that a given user may be a member of multiple accounts
-        var loginAccounts = loginInfo.loginAccounts;
-        var loginAccount = loginAccounts[0];
-        var baseUrl = loginAccount.baseUrl;
-        var accountDomain = baseUrl.split('/v2');
-
-        // below code required for production, no effect in demo (same domain)
-        apiClient.setBasePath(accountDomain[0]);
-        docusign.Configuration.default.setDefaultApiClient(apiClient);
-
-        // return the list of accounts to the browser
-        return res.send(loginAccounts);
-      }
+    apiClient.getUserInfo(oAuthToken.accessToken, function (err, userInfo) {
+      console.log("UserInfo: " + userInfo);
+      // parse first account's baseUrl
+      // below code required for production, no effect in demo (same
+      // domain)
+      apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
+      res.send(userInfo);
     });
-  })(req, res);
+  });
 });
+*/
+
+// Implicit Grant
+/*
+app.get('/', function (req, res) {
+    const authUri = apiClient.getAuthorizationUri(integratorKeyImplicit, scopes, redirectUri, responseTypeToken, randomState);//get DocuSign OAuth authorization url
+     //Open DocuSign OAuth login in a browser, res being your node.js response object.
+    res.redirect(authUri);
+});
+
+app.get('/auth', function (req,res) {
+  // IMPORTANT: after the login, DocuSign will send back a new
+  // access token in the hash fragment of the redirect URI.
+  // You should set up a client-side handler that handles window.location change to get
+  // that token and pass it to the ApiClient object as shown in the next
+  // lines:
+  res.send();
+});
+
+app.get('/auth/:accessToken', function (req, res) {
+  // This a sample endpoint to allow you to pass in the previously received accesstoken to log in via getUserInfo
+  // ex: http://localhost:3000/auth#access_token=<token>&expires_in=<expiresIn>&token_type=<tokenType>&state=<randomState>
+  // ex: http://localhost:3000/auth/<token>
+
+  const accessToken = req.params.accessToken;
+
+  apiClient.getUserInfo(accessToken, function (err, userInfo) {
+    if (err)
+      console.log(err)
+
+    console.log("UserInfo: " + userInfo);
+    // parse first account's baseUrl
+    // below code required for production, no effect in demo (same
+    // domain)
+    apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
+    res.send(userInfo);
+  });
+});
+*/
 
 app.listen(port, host, function (err) {
-  if (err) {
-    throw err;
-  }
+  if (err) { throw err; }
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
 });

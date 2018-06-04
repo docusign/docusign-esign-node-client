@@ -1,10 +1,15 @@
-var assert = require('assert');
 var docusign = require('../src/index');
 var config = require('../test-config.json');
+
+var assert = require('assert');
 var path = require('path');
+var superagent = require('superagent');
 
 var UserName = config.email;
 var IntegratorKey = config.integratorKey;
+var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
+var IntegratorKeyImplicit = config.integratorKeyImplicit;
+var ClientSecret = config.clientSecret;
 var TemplateId = config.templateId;
 
 // for production environment update to "www.docusign.net/restapi"
@@ -30,40 +35,152 @@ describe('SDK Unit Tests:', function (done) {
     // END OF NOTE
 
     // configure the ApiClient to asynchronously get an access to token and store it
-    apiClient.configureJWTAuthorizationFlow(path.resolve(__dirname, privateKeyFilename), OAuthBaseUrl, IntegratorKey, UserId, 3600, done);
-  });
+    apiClient.configureJWTAuthorizationFlow(path.resolve(__dirname, privateKeyFilename), OAuthBaseUrl, IntegratorKey, UserId, 3600, function (err, res) {
+      if (!err && res.body && res.body.access_token) {
+        apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
+          accountId = userInfo.accounts[0].accountId;
+          var baseUri = userInfo.accounts[0].baseUri;
+          var accountDomain = baseUri.split('/v2');
+          // below code required for production, no effect in demo (same domain)
+          apiClient.setBasePath(accountDomain[0] + "/restapi");
+          console.log('LoginInformation: ' + JSON.stringify(userInfo.accounts));
 
-  it('login', function (done) {
-    var authApi = new docusign.AuthenticationApi(apiClient);
-    var loginOps = {};
-    loginOps.apiPassword = 'true';
-    loginOps.includeAccountIdGuid = 'true';
-    authApi.login(loginOps, function (error, loginInfo, response) {
-      if (error) {
-        return done(error);
-      }
-
-      if (loginInfo) {
-        // list of user account(s)
-        // note that a given user may be a member of multiple accounts
-        var loginAccounts = loginInfo.loginAccounts;
-        console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
-        var loginAccount = loginAccounts[0];
-        accountId = loginAccount.accountId;
-        var baseUrl = loginAccount.baseUrl;
-        var accountDomain = baseUrl.split('/v2');
-
-        // below code required for production, no effect in demo (same domain)
-        apiClient.setBasePath(accountDomain[0]);
-        docusign.Configuration.default.setDefaultApiClient(apiClient);
-
-        console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
-        done();
+          done();
+        });
       }
     });
   });
 
+  /**
+   *
+   * New OAuth Methods Tests Start
+   *
+   */
+
+  it('should be able to log in with authorization code grant', function (done) {
+    var responseType = apiClient.OAuth.ResponseType.CODE, // Here we specify a response type of code, retrieving a single use auth code to be used to request a token
+      scopes = [apiClient.OAuth.Scope.EXTENDED],
+      randomState = '*^.$DGj*)+}Jk', // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
+      authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);// get DocuSign OAuth authorization url
+
+    // Open DocuSign OAuth login in a browser, res being your node.js response object.
+    /* res.redirect(authUri);
+
+    // IMPORTANT: after the login, DocuSign will send back a fresh
+    // authorization code as a query param of the redirect URI.
+    // You should set up a route that handles the redirect call to get
+    // that code and pass it to token endpoint as shown in the next
+    // lines:
+    //var code = '<once_you_get_the_auth_code_put_it_here>';
+    var code = '<once_you_get_the_oauth_code_put_it_here>'
+    apiClient.generateAccessToken(IntegratorKeyAuthCode, ClientSecret, code, function(err, oAuthToken){
+      assert.equal(err, undefined);
+      assert.notEqual(oAuthToken, undefined);
+      assert.notEqual(oAuthToken.accessToken, undefined);
+      assert.ok(oAuthToken.expiresIn > 0);
+
+      console.log(oAuthToken);
+
+      apiClient.getUserInfo(oAuthToken.accessToken, function(err, userInfo){
+        assert.equal(err, undefined);
+        assert.notEqual(userInfo, undefined);
+        assert.notEqual(userInfo.accounts, undefined);
+        assert.ok(userInfo.accounts.length > 0);
+
+        console.log("UserInfo: " + userInfo);
+        // parse first account's baseUrl
+        // below code required for production, no effect in demo (same
+        // domain)
+        apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
+        done();
+
+      });
+    }); */
+
+    done(); // You will want to comment this line when uncommenting line 80
+  });
+
+  it('should be able to log in with implicit grant', function (done) {
+    var responseType = apiClient.OAuth.ResponseType.TOKEN, // Here we specify a response type of 'token', retrieving our oauth token directly
+      scopes = [apiClient.OAuth.Scope.EXTENDED],
+      randomState = '*^.$DGj*)+}Jk', // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
+      authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
+
+    // Open DocuSign OAuth login in a browser, res being your node.js response object.
+    /* res.redirect(authUri);
+
+    // IMPORTANT: after the login, DocuSign will send back a new
+    // access token in the hash fragment of the redirect URI.
+    // You should set up a client-side handler that handles window.location change to get
+    // that token and pass it to the ApiClient object as shown in the next
+    // lines:
+
+    var token = '<once_you_get_the_oauth_token_put_it_here>';
+    // now that the API client has an OAuth token, let's use it in all
+    // DocuSign APIs
+
+    apiClient.getUserInfo(token, function(err, userInfo){
+      assert.equal(err, undefined);
+      assert.notEqual(userInfo, null);
+      assert.notEqual(userInfo.accounts, null);
+      assert.ok(userInfo.accounts.length > 0);
+
+      console.log("UserInfo: " + userInfo);
+      // parse first account's baseUrl
+      // below code required for production, no effect in demo (same
+      // domain)
+      apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
+      done();
+
+    });
+    */
+
+    done(); // You will want to comment this line when uncommenting line 118
+  });
+
+  it('should return a properly formatted authorization uri', function (done) {
+    var responseType = apiClient.OAuth.ResponseType.CODE,
+      scopes = [apiClient.OAuth.Scope.EXTENDED],
+      randomState = '*^.$DGj*)+}Jk',
+      formattedScopes = scopes.join(encodeURI(' ')),
+      authUri,
+      correctAuthUri;
+
+    authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    correctAuthUri = 'https://' +
+      OAuthBaseUrl +
+      '/oauth/auth' +
+      '?response_type=' + responseType +
+      '&scope=' + formattedScopes +
+      '&client_id=' + IntegratorKeyAuthCode +
+      '&redirect_uri=' + encodeURIComponent(RedirectURI) +
+      (randomState ? '&state=' + randomState : '');
+
+    assert.equal(authUri, correctAuthUri);
+    done();
+  });
+
+  it('should return an authorization uri to a valid page', function (done) {
+    var responseType = apiClient.OAuth.ResponseType.CODE,
+      scopes = [apiClient.OAuth.Scope.EXTENDED],
+      randomState = '*^.$DGj*)+}Jk',
+      authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+
+    superagent.get(authUri)
+      .end(function (err, res) {
+        assert.equal(res.statusCode, 200);
+        done();
+      });
+  });
+
+  /**
+   *
+   * New Oauth Methods Tests End
+   *
+   */
+
   it('requestASignature', function (done) {
+
     var fileBytes = null;
     try {
       var fs = require('fs');
@@ -121,7 +238,6 @@ describe('SDK Unit Tests:', function (done) {
     envDef.status = 'sent';
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
-
     envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
@@ -576,6 +692,7 @@ describe('SDK Unit Tests:', function (done) {
                           console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
                           done();
                         } catch (ex) {
+                          return done(ex)
                           console.log('Exception: ' + ex);
                         }
                       }
@@ -592,8 +709,11 @@ describe('SDK Unit Tests:', function (done) {
 
   it('getTemplate', function (done) {
     var templatesApi = new docusign.TemplatesApi(apiClient);
-
+    console.log(accountId)
+    console.log(TemplateId)
+    console.log(apiClient)
     templatesApi.get(accountId, TemplateId, null, function (error, envelopeTemplate, response) {
+
       if (error) {
         return done(error);
       }
