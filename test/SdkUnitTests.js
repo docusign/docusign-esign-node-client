@@ -6,10 +6,10 @@ var path = require('path');
 var superagent = require('superagent');
 
 var UserName = config.email;
-//var IntegratorKey = config.integratorKey;
-//var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
-//var IntegratorKeyImplicit = config.integratorKeyImplicit;
-//var ClientSecret = config.clientSecret;
+// var IntegratorKey = config.integratorKey;
+// var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
+// var IntegratorKeyImplicit = config.integratorKeyImplicit;
+// var ClientSecret = config.clientSecret;
 var TemplateId = config.templateId;
 
 // for production environment update to "www.docusign.net/restapi"
@@ -71,7 +71,6 @@ describe('SDK Unit Tests:', function (done) {
     // You should set up a route that handles the redirect call to get
     // that code and pass it to token endpoint as shown in the next
     // lines:
-    //var code = '<once_you_get_the_auth_code_put_it_here>';
     var code = '<once_you_get_the_oauth_code_put_it_here>'
     apiClient.generateAccessToken(IntegratorKeyAuthCode, ClientSecret, code, function(err, oAuthToken){
       assert.equal(err, undefined);
@@ -104,7 +103,7 @@ describe('SDK Unit Tests:', function (done) {
     /*var responseType = apiClient.OAuth.ResponseType.TOKEN, // Here we specify a response type of 'token', retrieving our oauth token directly
       scopes = [apiClient.OAuth.Scope.EXTENDED],
       randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
-      //authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
+      // authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
 
     // Open DocuSign OAuth login in a browser, res being your node.js response object.
       res.redirect(authUri);

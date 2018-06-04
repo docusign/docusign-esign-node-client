@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const docusign = require('../src/index');
 const apiClient = new docusign.ApiClient();
 
@@ -18,7 +18,7 @@ const scopes = [apiClient.OAuth.Scope.EXTENDED];
 const randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
 
 apiClient.setBasePath(basePath);
-
+*/
 // Auth Code Grant
 /*
 app.get('/', function (req, res) {
