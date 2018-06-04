@@ -85,7 +85,7 @@ var RequestSignatureOnDocument = function () {
 
       // add a document to the envelope
       var doc = new docusign.Document();
-      var base64Doc = new Buffer(fileBytes).toString('base64');
+      var base64Doc = Buffer.from(fileBytes).toString('base64');
       doc.setDocumentBase64(base64Doc);
       doc.setName('TestFile.pdf'); // can be different from actual file name
       doc.setDocumentId('1');
@@ -528,7 +528,7 @@ var GetEnvelopeDocuments = function () {
             // download the document pdf
             var filename = accountId + '_' + envelopeId + '_' + documentId + '.pdf';
             var tempFile = path.resolve(__dirname, filename);
-            fs.writeFile(tempFile, new Buffer(document, 'binary'), function (err) {
+            fs.writeFile(tempFile, Buffer.from(document, 'binary'), function (err) {
               if (err) console.log('Error: ' + err);
             });
             console.log('Document ' + documentId + ' from envelope ' + envelopeId + ' has been downloaded to ' + tempFile);
@@ -613,7 +613,7 @@ var EmbeddedSending = function () {
 
       // add a document to the envelope
       var doc = new docusign.Document();
-      var base64Doc = new Buffer(fileBytes).toString('base64');
+      var base64Doc = Buffer.from(fileBytes).toString('base64');
       doc.setDocumentBase64(base64Doc);
       doc.setName('TestFile.pdf'); // can be different from actual file name
       doc.setDocumentId('1');
@@ -777,7 +777,7 @@ var EmbeddedSigning = function () {
 
       // add a document to the envelope
       var doc = new docusign.Document();
-      var base64Doc = new Buffer(fileBytes).toString('base64');
+      var base64Doc = Buffer.from(fileBytes).toString('base64');
       doc.setDocumentBase64(base64Doc);
       doc.setName('TestFile.pdf'); // can be different from actual file name
       doc.setDocumentId('1');
