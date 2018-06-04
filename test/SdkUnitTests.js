@@ -38,9 +38,9 @@ describe('SDK Unit Tests:', function (done) {
     apiClient.configureJWTAuthorizationFlow(path.resolve(__dirname, privateKeyFilename), OAuthBaseUrl, IntegratorKey, UserId, 3600, function (err, res) {
       if (!err && res.body && res.body.access_token) {
         apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
-          if (err)
+          if (err) {
             return done(err);
-          
+          }
           accountId = userInfo.accounts[0].accountId;
           var baseUri = userInfo.accounts[0].baseUri;
           var accountDomain = baseUri.split('/v2');
