@@ -168,7 +168,7 @@ app.listen(port, host, function(err) {
 });
     
 ```
-
+#### Using DocuSign passport-based Oauth Client for Express	
 
 ```javascript
 const express = require('express');
