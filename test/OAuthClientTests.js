@@ -1,9 +1,9 @@
-/*const express = require('express');
+/*
+const express = require('express');
 const docusign = require('../src/index');
 const apiClient = new docusign.ApiClient();
-
-const app = express();
 */
+const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || 'localhost';
 /*
