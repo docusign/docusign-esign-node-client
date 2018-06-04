@@ -84,17 +84,17 @@
      */
     this.cache = true;
   };
-
+  
   /**
    * Sets the API endpoint base URL.
-   */
+   */  
   exports.prototype.setBasePath = function setBasePath(basePath) {
     this.basePath = basePath;
   };
 
   /**
    * Adds request headers to the API client. Useful for Authentication.
-   */
+   */  
   exports.prototype.addDefaultHeader = function addDefaultHeader(header, value) {
     this.defaultHeaders[header] = value;
   };
@@ -176,9 +176,9 @@
   exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
     if (typeof window === 'undefined' &&
-      typeof require === 'function' &&
-      require('fs') &&
-      param instanceof require('fs').ReadStream) {
+        typeof require === 'function' &&
+        require('fs') &&
+        param instanceof require('fs').ReadStream) {
       return true;
     }
     // Buffer in Node.js
@@ -372,8 +372,8 @@
    * @returns {Object} The SuperAgent request object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-                                               queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-                                               returnType, callback) {
+      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+      returnType, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
@@ -384,7 +384,7 @@
 
     // set query parameters
     if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-      queryParams['_'] = new Date().getTime();
+        queryParams['_'] = new Date().getTime();
     }
     request.query(this.normalizeParams(queryParams));
 
@@ -426,13 +426,13 @@
     if (accept) {
       request.accept(accept);
     }
-
+    
     var data;
     if (request.header['Accept'] === 'application/pdf') {
-      request.buffer();
-      data = '';
+        request.buffer();
+        data = '';
     } else {
-      data = '';
+        data = '';
     }
 
     if (request.header['Accept'] === 'application/pdf') {
@@ -504,6 +504,7 @@
           return data;
         } else if (typeof type === 'function') {
           // for model type like: User
+          console.log(type.constructFromObject)
           return type.constructFromObject(data);
         } else if (Array.isArray(type)) {
           // for array type like: ['String']
@@ -618,7 +619,120 @@
       });
   };
 
+  exports.prototype.getOauthBasePath = function(){
+    return (this.basePath == null || this.basePath.startsWith("https://demo") || this.basePath.startsWith("http://demo")) ?
+      "account-d.docusign.com" : "account.docusign.com";
+  };
+
+  exports.prototype.hasNoInvalidScopes = function(scopes) {
+    var validScopes = require('./oauth/Scope');
+
+    return (
+      Array.isArray(scopes)
+      && scopes.length > 0
+      && scopes.every(function(scope){
+        return Object.keys(validScopes).some(function(key){
+          return validScopes[key] === scope;
+        })
+      })
+    );
+  };
+
   /**
+   * Helper method to configure the OAuth accessCode/implicit flow parameters
+   * @param clientId OAuth2 client ID: Identifies the client making the request.
+   * Client applications may be scoped to a limited set of system access.
+   * @param scopes the list of requested scopes.
+   * @param redirectUri this determines where to deliver the response containing the authorization code or access token.
+   * @param responseType determines the response type of the authorization request.
+   * <br><i>Note</i>: these response types are mutually exclusive for a client application.
+   * A public/native client application may only request a response type of "token";
+   * a private/trusted client application may only request a response type of "code".
+   * @param state Allows for arbitrary state that may be useful to your application.
+   * The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.
+   */
+  exports.prototype.getAuthorizationUri = function(clientId, scopes, redirectUri, responseType, state) {
+    if (!clientId) throw new Error('Error clientId is required');
+    if (!scopes) throw new Error('Error scopes is required');
+    if (!scopes) throw new Error('Error scopes is required');
+    if (!this.hasNoInvalidScopes(scopes)) throw new Error('Error invalid scope detected');
+    if (!redirectUri) throw new Error('Error redirectUri is required');
+    if (!responseType) throw new Error('Error responseType is required');
+
+    var formattedScopes = scopes.join(encodeURI(' '));
+
+    return  "https://" +
+      this.getOauthBasePath() +
+      "/oauth/auth"+
+      "?response_type=" + responseType +
+      "&scope=" + formattedScopes +
+      "&client_id="+ clientId +
+      "&redirect_uri=" + encodeURIComponent(redirectUri) +
+      (state ? "&state=" + state : '');
+  };
+
+  /**
+   * @param clientId OAuth2 client ID: Identifies the client making the request.
+   * Client applications may be scoped to a limited set of system access.
+   * @param clientSecret the secret key you generated when you set up the integration in DocuSign Admin console.
+   * @param code The authorization code that you received from the <i>getAuthorizationUri</i> callback.
+   * @return OAuthToken object.xx
+   */
+  exports.prototype.generateAccessToken = function(clientId, clientSecret, code, callback) {
+    if (!clientId) return callback('Error clientId is required', null);
+    if (!clientSecret) return callback('Error clientSecret is required', null);
+    if (!code) return callback('Error code is required', null);
+
+    var clientString = clientId + ":" + clientSecret,
+      postData = {
+        "grant_type": "authorization_code",
+        code: code,
+      },
+      headers = {
+        "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
+      }
+
+    superagent.post("https://" + this.getOauthBasePath() + "/oauth/token")
+      .send(postData)
+      .set(headers)
+      .type("application/x-www-form-urlencoded")
+      .end(function(err, res){
+        var OAuthToken;
+        if (err){
+          return callback(err, res);
+        } else {
+          OAuthToken = require('./OAuth').OAuthToken;
+          return callback(err, OAuthToken.constructFromObject(res.body))
+        }
+      });
+  };
+
+  /**
+   * @param accessToken the bearer token to use to authenticate for this call.
+   * @return OAuth UserInfo model
+   */
+  exports.prototype.getUserInfo = function(accessToken, callback) {
+    if(!accessToken) return callback('Error accessToken is required',null);
+
+    var headers = {
+      "Authorization": "Bearer " + accessToken,
+    }
+
+    superagent.get("https://" + this.getOauthBasePath() + "/oauth/userinfo")
+      .set(headers)
+      .end(function(err, res){
+        var UserInfo;
+        if (err){
+          return callback(err, res);
+        } else {
+          UserInfo = require('./OAuth').UserInfo;
+          return callback(err, UserInfo.constructFromObject(res.body))
+        }
+      });
+  };
+
+  exports.prototype.OAuth = require('./OAuth');
+  /**x
    * The default API client implementation.
    * @type {module:ApiClient}
    */
