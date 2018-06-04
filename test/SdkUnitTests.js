@@ -59,10 +59,10 @@ describe('SDK Unit Tests:', function (done) {
 
   it('should be able to log in with authorization code grant', function (done) {
     /*
-    var responseType = apiClient.OAuth.ResponseType.CODE, // Here we specify a response type of code, retrieving a single use auth code to be used to request a token
-      scopes = [apiClient.OAuth.Scope.EXTENDED],
-      randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
-      authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);// get DocuSign OAuth authorization url
+    var responseType = apiClient.OAuth.ResponseType.CODE; // Here we specify a response type of code, retrieving a single use auth code to be used to request a token
+    var scopes = [apiClient.OAuth.Scope.EXTENDED];
+    var randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
+    var authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);// get DocuSign OAuth authorization url
 
     // Open DocuSign OAuth login in a browser, res being your node.js response object.
      res.redirect(authUri);
@@ -102,10 +102,10 @@ describe('SDK Unit Tests:', function (done) {
 
   it('should be able to log in with implicit grant', function (done) {
     /*
-    var responseType = apiClient.OAuth.ResponseType.TOKEN, // Here we specify a response type of 'token', retrieving our oauth token directly
-      scopes = [apiClient.OAuth.Scope.EXTENDED],
-      randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
-      authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
+    var responseType = apiClient.OAuth.ResponseType.TOKEN; // Here we specify a response type of 'token', retrieving our oauth token directly
+    var scopes = [apiClient.OAuth.Scope.EXTENDED];
+    var randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
+    var authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
 
     // Open DocuSign OAuth login in a browser, res being your node.js response object.
       res.redirect(authUri);
@@ -140,12 +140,12 @@ describe('SDK Unit Tests:', function (done) {
   });
 
   it('should return a properly formatted authorization uri', function (done) {
-    var responseType = apiClient.OAuth.ResponseType.CODE,
-      scopes = [apiClient.OAuth.Scope.EXTENDED],
-      randomState = '*^.$DGj*)+}Jk',
-      formattedScopes = scopes.join(encodeURI(' ')),
-      authUri,
-      correctAuthUri;
+    var responseType = apiClient.OAuth.ResponseType.CODE;
+    var scopes = [apiClient.OAuth.Scope.EXTENDED];
+    var randomState = '*^.$DGj*)+}Jk';
+    var formattedScopes = scopes.join(encodeURI(' '));
+    var authUri;
+    var correctAuthUri;
 
     authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
     correctAuthUri = 'https://' +
@@ -162,10 +162,10 @@ describe('SDK Unit Tests:', function (done) {
   });
 
   it('should return an authorization uri to a valid page', function (done) {
-    var responseType = apiClient.OAuth.ResponseType.CODE,
-      scopes = [apiClient.OAuth.Scope.EXTENDED],
-      randomState = '*^.$DGj*)+}Jk',
-      authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    var responseType = apiClient.OAuth.ResponseType.CODE;
+    var scopes = [apiClient.OAuth.Scope.EXTENDED];
+    var randomState = '*^.$DGj*)+}Jk';
+    var authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
 
     superagent.get(authUri)
       .end(function (err, res) {
@@ -182,7 +182,6 @@ describe('SDK Unit Tests:', function (done) {
    */
 
   it('requestASignature', function (done) {
-
     var fileBytes = null;
     try {
       var fs = require('fs');
