@@ -6,8 +6,8 @@ var path = require('path');
 var superagent = require('superagent');
 
 var UserName = config.email;
-// var IntegratorKey = config.integratorKey;
-// var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
+var IntegratorKey = config.integratorKey;
+var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
 // var IntegratorKeyImplicit = config.integratorKeyImplicit;
 // var ClientSecret = config.clientSecret;
 var TemplateId = config.templateId;
@@ -167,6 +167,7 @@ describe('SDK Unit Tests:', function (done) {
 
     superagent.get(authUri)
       .end(function (err, res) {
+        assert.equal(err, undefined);
         assert.equal(res.statusCode, 200);
         done();
       });
@@ -691,7 +692,7 @@ describe('SDK Unit Tests:', function (done) {
                           console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
                           done();
                         } catch (ex) {
-                          return done(ex)
+                          return done(ex);
                           console.log('Exception: ' + ex);
                         }
                       }
