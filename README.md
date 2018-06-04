@@ -102,9 +102,9 @@ app.listen(port, host, function (err) {
 });
 
 ```
-uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
-
 #### OAuth Implicit Grant
+
+uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
 ```javascript
 
 const express = require('express');
