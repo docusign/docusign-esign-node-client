@@ -45,7 +45,7 @@ Usage
 To initialize the client, make the Login API Call and send a template for signature:
 ### SDK version 3.x.x
 
-### OAuth Authorization Code Grant
+#### OAuth Authorization Code Grant
 uncomment auth code grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
 ```javascript
 const express = require('express');
