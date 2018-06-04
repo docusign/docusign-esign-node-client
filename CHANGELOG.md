@@ -3,8 +3,10 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [Unreleased]
-More information later on.
+## [3.3.0] - 2018-06-04
+### Added
+- Support for OAuth Implicit Grant.
+- Support for OAuth Get Use Info.
 
 ## [3.2.0] - 2017-08-01
 ### Added
