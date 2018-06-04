@@ -103,7 +103,6 @@ app.listen(port, host, function (err) {
 
 ```
 #### OAuth Implicit Grant
-
 uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
 ```javascript
 
@@ -169,7 +168,6 @@ app.listen(port, host, function(err) {
     
 ```
 #### Using JSON Web Token Bearer Grant
-
 ```javascript
 var docusign = require('docusign-esign');
 var async = require('async');
@@ -272,7 +270,6 @@ async.waterfall([
 ```
 
 ### SDK version 2.x.x using 2-legged authentication only
-Run this script using node command
 ```javascript
 var docusign = require('docusign-esign');
 var async = require('async');
