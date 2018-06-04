@@ -1,8 +1,8 @@
 /*
-const express = require('express');
 const docusign = require('../src/index');
 const apiClient = new docusign.ApiClient();
 */
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || 'localhost';
