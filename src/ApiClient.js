@@ -176,9 +176,9 @@
   exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
     if (typeof window === 'undefined' &&
-        typeof require === 'function' &&
-        require('fs') &&
-        param instanceof require('fs').ReadStream) {
+      typeof require === 'function' &&
+      require('fs') &&
+      param instanceof require('fs').ReadStream) {
       return true;
     }
     // Buffer in Node.js
@@ -372,8 +372,8 @@
    * @returns {Object} The SuperAgent request object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-      returnType, callback) {
+                                               queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+                                               returnType, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
@@ -384,7 +384,7 @@
 
     // set query parameters
     if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-        queryParams['_'] = new Date().getTime();
+      queryParams['_'] = new Date().getTime();
     }
     request.query(this.normalizeParams(queryParams));
 
@@ -429,10 +429,10 @@
 
     var data;
     if (request.header['Accept'] === 'application/pdf') {
-        request.buffer();
-        data = '';
+      request.buffer();
+      data = '';
     } else {
-        data = '';
+      data = '';
     }
 
     if (request.header['Accept'] === 'application/pdf') {
@@ -616,94 +616,6 @@
           callback(err, res);
         }
       });
-  };
-
-  exports.getOauthBasePath = function (){
-    return (this.basePath == null || this.basePath.startsWith("https://demo") || this.basePath.startsWith("http://demo")) ?
-          "account-d.docusign.com" : "account.docusign.com";
-  };
-
-  /**
-    * Helper method to configure the OAuth accessCode/implicit flow parameters
-    * @param clientId OAuth2 client ID: Identifies the client making the request.
-    * Client applications may be scoped to a limited set of system access.
-    * @param scopes the list of requested scopes.
-    * @param redirectUri this determines where to deliver the response containing the authorization code or access token.
-    * @param responseType determines the response type of the authorization request.
-    * <br><i>Note</i>: these response types are mutually exclusive for a client application.
-    * A public/native client application may only request a response type of "token";
-    * a private/trusted client application may only request a response type of "code".
-    * @param state Allows for arbitrary state that may be useful to your application.
-    * The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.
-    */
-  exports.getAuthorizationUri = function(clientId, scopes, redirectUri, responseType, state) {
-    var formattedScopes = scopes.join(encodeURI(' '));
-
-    return  "https://" +
-      this.getOauthBasePath() +
-      "/oauth/auth"+
-      "?response_type=" + responseType +
-      "&scope=" + formattedScopes +
-      "&client_id="+ clientId +
-      "&redirect_uri=" + encodeURIComponent(redirectUri) +
-      (state ? "&state=" + state : '');
-  };
-
-  /**
-   * @param clientId OAuth2 client ID: Identifies the client making the request.
-   * Client applications may be scoped to a limited set of system access.
-   * @param clientSecret the secret key you generated when you set up the integration in DocuSign Admin console.
-   * @param code The authorization code that you received from the <i>getAuthorizationUri</i> callback.
-   * @return OAuthToken object.
-   */
-  exports.generateAccessToken = function(clientId, clientSecret, code) {
-    var self = this;
-
-    return new Promise(function (resolve, reject){
-      var clientString = clientId + ":" + clientSecret,
-        postData = {
-          "grant_type": "authorization_code",
-          code: code,
-        },
-        headers = {
-          "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
-        }
-
-      superagent.post("https://" + self.getOauthBasePath() + "/oauth/token")
-        .send(postData)
-        .set(headers)
-        .type("application/x-www-form-urlencoded")
-        .end(function(err, response){
-          if (response.statusCode === 200) {
-            resolve(response.body.access_token);
-          } else {
-            reject(err)
-          }
-        });
-    });
-  };
-
-  /**
-   * @param accessToken the bearer token to use to authenticate for this call.
-   * @return OAuth UserInfo model
-   */
-  exports.getUserInfo = function(accessToken) {
-    var self = this;
-
-    return new Promise(function(resolve, reject) {
-      var headers = {
-        "Authorization": "Bearer " + accessToken,
-      }
-
-      superagent.get("https://" + self.getOauthBasePath() + "/oauth/userinfo")
-        .set(headers)
-        .end(function (err, response) {
-          if (response.statusCode === 200)
-            resolve(response.body);
-          else
-            reject(err);
-        });
-    });
   };
 
   /**
