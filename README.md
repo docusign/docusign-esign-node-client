@@ -168,9 +168,8 @@ app.listen(port, host, function(err) {
 });
     
 ```
+#### Using JSON Web Token Bearer Grant
 
-#### Using 2-legged authentication
-Run this script using node command
 ```javascript
 var docusign = require('docusign-esign');
 var async = require('async');
