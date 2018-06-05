@@ -49,7 +49,7 @@ To initialize the client, make the Login API Call and send a template for signat
 uncomment auth code grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
 ```javascript
 const express = require('express');
-const docusign = require('../src/index');
+const docusign = require('docusign-esign');
 const apiClient = new docusign.ApiClient();
 
 const app = express();
@@ -107,7 +107,7 @@ uncomment implicit grant section in test/OAuthClientTests.js, run it and then op
 ```javascript
 
 const express = require('express');
-const docusign = require('../src/index');
+const docusign = require('docusign-esign');
 const apiClient = new docusign.ApiClient();
 
 const app = express();
