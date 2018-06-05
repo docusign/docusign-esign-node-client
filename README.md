@@ -3,7 +3,6 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
-[![bitHound Overall Score][bitHound-image]][bitHound-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 
 [NPM module](https://www.npmjs.com/package/docusign-esign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
@@ -442,7 +441,5 @@ The DocuSign Node Client is licensed under the following [License](LICENSE).
 [downloads-url]: https://npmjs.org/package/docusign-esign
 [travis-image]: https://img.shields.io/travis/docusign/docusign-node-client.svg?style=flat
 [travis-url]: https://travis-ci.org/docusign/docusign-node-client
-[bitHound-image]: https://www.bithound.io/github/docusign/docusign-node-client/badges/score.svg
-[bitHound-url]: https://www.bithound.io/github/docusign/docusign-node-client
 [coveralls-image]: https://coveralls.io/repos/github/docusign/DocuSign-Node-Client/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/docusign/DocuSign-Node-Client?branch=master
