@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [Unreleased]
+More information later on.
+ 
+## [4.0.0] - 2018-06-06
+### BREAKING
+- This update has some breaking changes as certain api calls no longer accept query parameters. 
+- Due to this, their respective SDK method signatures of changed
+For example:
+  - EnvelopesApi.listDocuments(accountId, envelopeId, opts, callback) 
+  - has changed to:
+  - EnvelopesApi.listDocuments(accountId, envelopeId, callback) 
+
+### Changed
+- Updated the package with the latest API release.
+
 ## [3.3.0] - 2018-06-04
 ### Added
 - Support for OAuth Implicit Grant.
