@@ -138,8 +138,8 @@
 
       var pathParams = {
         'accountId': accountId,
-        'folderId': folderId,
-        'workspaceId': workspaceId
+        'workspaceId': workspaceId,
+        'folderId': folderId
       };
       var queryParams = {
       };
@@ -252,8 +252,8 @@
 
       var pathParams = {
         'accountId': accountId,
-        'folderId': folderId,
-        'workspaceId': workspaceId
+        'workspaceId': workspaceId,
+        'folderId': folderId
       };
       var queryParams = {
       };
@@ -374,9 +374,9 @@
 
       var pathParams = {
         'accountId': accountId,
-        'fileId': fileId,
+        'workspaceId': workspaceId,
         'folderId': folderId,
-        'workspaceId': workspaceId
+        'fileId': fileId
       };
       var queryParams = {
         'is_download': opts['isDownload'],
@@ -450,9 +450,9 @@
 
       var pathParams = {
         'accountId': accountId,
-        'fileId': fileId,
+        'workspaceId': workspaceId,
         'folderId': folderId,
-        'workspaceId': workspaceId
+        'fileId': fileId
       };
       var queryParams = {
         'count': opts['count'],
@@ -525,8 +525,8 @@
 
       var pathParams = {
         'accountId': accountId,
-        'folderId': folderId,
-        'workspaceId': workspaceId
+        'workspaceId': workspaceId,
+        'folderId': folderId
       };
       var queryParams = {
         'count': opts['count'],
@@ -700,9 +700,9 @@
 
       var pathParams = {
         'accountId': accountId,
-        'fileId': fileId,
+        'workspaceId': workspaceId,
         'folderId': folderId,
-        'workspaceId': workspaceId
+        'fileId': fileId
       };
       var queryParams = {
       };

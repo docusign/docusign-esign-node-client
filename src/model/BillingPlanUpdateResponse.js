@@ -56,6 +56,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accountPaymentMethod')) {
+        obj['accountPaymentMethod'] = ApiClient.convertToType(data['accountPaymentMethod'], 'String');
+      }
       if (data.hasOwnProperty('billingPlanPreview')) {
         obj['billingPlanPreview'] = BillingPlanPreview.constructFromObject(data['billingPlanPreview']);
       }
@@ -81,6 +84,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} accountPaymentMethod
+   */
+  exports.prototype['accountPaymentMethod'] = undefined;
   /**
    * @member {module:model/BillingPlanPreview} billingPlanPreview
    */

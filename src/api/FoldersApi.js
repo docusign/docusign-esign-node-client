@@ -66,7 +66,6 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} opts Optional parameters
      * @param {String} opts.include 
-     * @param {String} opts.includeItems 
      * @param {String} opts.startPosition 
      * @param {String} opts.template Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
      * @param {String} opts.userFilter 
@@ -88,7 +87,6 @@
       };
       var queryParams = {
         'include': opts['include'],
-        'include_items': opts['includeItems'],
         'start_position': opts['startPosition'],
         'template': opts['template'],
         'user_filter': opts['userFilter']
@@ -125,7 +123,6 @@
      * @param {String} folderId The ID of the folder being accessed.
      * @param {Object} opts Optional parameters
      * @param {String} opts.fromDate  Only return items on or after this date. If no value is provided, the default search is the previous 30 days. 
-     * @param {String} opts.includeItems 
      * @param {String} opts.ownerEmail  The email of the folder owner. 
      * @param {String} opts.ownerName  The name of the folder owner. 
      * @param {String} opts.searchText  The search text used to search the items of the envelope. The search looks at recipient names and emails, envelope custom fields, sender name, and subject. 
@@ -156,7 +153,6 @@
       };
       var queryParams = {
         'from_date': opts['fromDate'],
-        'include_items': opts['includeItems'],
         'owner_email': opts['ownerEmail'],
         'owner_name': opts['ownerName'],
         'search_text': opts['searchText'],

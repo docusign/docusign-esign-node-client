@@ -180,12 +180,12 @@
    */
   exports.prototype['anchorUnits'] = undefined;
   /**
-   * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorXOffset
    */
   exports.prototype['anchorXOffset'] = undefined;
   /**
-   * Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorYOffset
    */
   exports.prototype['anchorYOffset'] = undefined;

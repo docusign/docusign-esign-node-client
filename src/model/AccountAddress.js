@@ -127,7 +127,7 @@
    */
   exports.prototype['fax'] = undefined;
   /**
-   * The user’s first name.  Maximum Length: 50 characters.
+   * The user's first name.  Maximum Length: 50 characters.
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;

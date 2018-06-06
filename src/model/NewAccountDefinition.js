@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountAddress', 'model/CreditCardInformation', 'model/NameValue', 'model/PlanInformation', 'model/ReferralInformation', 'model/SocialAccountInformation', 'model/UserInformation'], factory);
+    define(['ApiClient', 'model/AccountAddress', 'model/CreditCardInformation', 'model/NameValue', 'model/PaymentProcessorInformation', 'model/PlanInformation', 'model/ReferralInformation', 'model/SocialAccountInformation', 'model/UserInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./CreditCardInformation'), require('./NameValue'), require('./PlanInformation'), require('./ReferralInformation'), require('./SocialAccountInformation'), require('./UserInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./CreditCardInformation'), require('./NameValue'), require('./PaymentProcessorInformation'), require('./PlanInformation'), require('./ReferralInformation'), require('./SocialAccountInformation'), require('./UserInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.NewAccountDefinition = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.CreditCardInformation, root.Docusign.NameValue, root.Docusign.PlanInformation, root.Docusign.ReferralInformation, root.Docusign.SocialAccountInformation, root.Docusign.UserInformation);
+    root.Docusign.NewAccountDefinition = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.CreditCardInformation, root.Docusign.NameValue, root.Docusign.PaymentProcessorInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation, root.Docusign.SocialAccountInformation, root.Docusign.UserInformation);
   }
-}(this, function(ApiClient, AccountAddress, CreditCardInformation, NameValue, PlanInformation, ReferralInformation, SocialAccountInformation, UserInformation) {
+}(this, function(ApiClient, AccountAddress, CreditCardInformation, NameValue, PaymentProcessorInformation, PlanInformation, ReferralInformation, SocialAccountInformation, UserInformation) {
   'use strict';
 
 
@@ -76,6 +76,9 @@
       if (data.hasOwnProperty('initialUser')) {
         obj['initialUser'] = UserInformation.constructFromObject(data['initialUser']);
       }
+      if (data.hasOwnProperty('PaymentProcessorInformation')) {
+        obj['PaymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['PaymentProcessorInformation']);
+      }
       if (data.hasOwnProperty('planInformation')) {
         obj['planInformation'] = PlanInformation.constructFromObject(data['planInformation']);
       }
@@ -121,6 +124,10 @@
    * @member {module:model/UserInformation} initialUser
    */
   exports.prototype['initialUser'] = undefined;
+  /**
+   * @member {module:model/PaymentProcessorInformation} PaymentProcessorInformation
+   */
+  exports.prototype['PaymentProcessorInformation'] = undefined;
   /**
    * @member {module:model/PlanInformation} planInformation
    */

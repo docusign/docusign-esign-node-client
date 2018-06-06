@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountInformation', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProviders', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomFields', 'model/ENoteConfiguration', 'model/ErrorDetails', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/PostTransactionsRequest', 'model/PostTransactionsResponse', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/TabAccountSettings'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProviders', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/ErrorDetails', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/PostTransactionsRequest', 'model/PostTransactionsResponse', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountInformation'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/ErrorDetails'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/PostTransactionsRequest'), require('../model/PostTransactionsResponse'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/TabAccountSettings'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/ErrorDetails'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/PostTransactionsRequest'), require('../model/PostTransactionsResponse'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountInformation, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.ErrorDetails, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.PostTransactionsRequest, root.Docusign.PostTransactionsResponse, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.TabAccountSettings);
+    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.ErrorDetails, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.PostTransactionsRequest, root.Docusign.PostTransactionsResponse, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
   }
-}(this, function(Configuration, ApiClient, AccountInformation, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomFields, ENoteConfiguration, ErrorDetails, FileTypeList, NewAccountDefinition, NewAccountSummary, PermissionProfile, PermissionProfileInformation, PostTransactionsRequest, PostTransactionsResponse, ProvisioningInformation, RecipientNamesResponse, TabAccountSettings) {
+}(this, function(Configuration, ApiClient, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, ErrorDetails, FileTypeList, NewAccountDefinition, NewAccountSummary, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, PostTransactionsRequest, PostTransactionsResponse, ProvisioningInformation, RecipientNamesResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
   'use strict';
 
   /**
@@ -198,6 +198,56 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/brands', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the createCustomField operation.
+     * @callback module:api/AccountsApi~createCustomFieldCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CustomFields} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates an acount custom field.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.applyToTemplates 
+     * @param {module:model/CustomField} opts.customField 
+     * @param {module:api/AccountsApi~createCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CustomFields}
+     */
+    this.createCustomField = function(accountId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['customField'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createCustomField");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+        'apply_to_templates': opts['applyToTemplates']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CustomFields;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/custom_fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -516,6 +566,61 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
+     * Callback function to receive the result of the deleteCustomField operation.
+     * @callback module:api/AccountsApi~deleteCustomFieldCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete an existing account custom field.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} customFieldId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.applyToTemplates 
+     * @param {module:api/AccountsApi~deleteCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteCustomField = function(accountId, customFieldId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteCustomField");
+      }
+
+      // verify the required parameter 'customFieldId' is set
+      if (customFieldId == undefined || customFieldId == null) {
+        throw new Error("Missing the required parameter 'customFieldId' when calling deleteCustomField");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'customFieldId': customFieldId
+      };
+      var queryParams = {
+        'apply_to_templates': opts['applyToTemplates']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/custom_fields/{customFieldId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * Callback function to receive the result of the deleteENoteConfiguration operation.
      * @callback module:api/AccountsApi~deleteENoteConfigurationCallback
      * @param {String} error Error message, if any.
@@ -709,6 +814,51 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
+     * Callback function to receive the result of the getAllPaymentGatewayAccounts operation.
+     * @callback module:api/AccountsApi~getAllPaymentGatewayAccountsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentGatewayAccountsInfo} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get all payment gateway account for the provided accountId
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/AccountsApi~getAllPaymentGatewayAccountsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentGatewayAccountsInfo}
+     */
+    this.getAllPaymentGatewayAccounts = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAllPaymentGatewayAccounts");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = PaymentGatewayAccountsInfo;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/payment_gateway_accounts', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * Callback function to receive the result of the getBillingCharges operation.
      * @callback module:api/AccountsApi~getBillingChargesCallback
      * @param {String} error Error message, if any.
@@ -813,6 +963,57 @@ Privileges required: account administrator
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/brands/{brandId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getBrandExportFile operation.
+     * @callback module:api/AccountsApi~getBrandExportFileCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Export a specific brand.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} brandId The unique identifier of a brand.
+     * @param {module:api/AccountsApi~getBrandExportFileCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getBrandExportFile = function(accountId, brandId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getBrandExportFile");
+      }
+
+      // verify the required parameter 'brandId' is set
+      if (brandId == undefined || brandId == null) {
+        throw new Error("Missing the required parameter 'brandId' when calling getBrandExportFile");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'brandId': brandId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/brands/{brandId}/file', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1004,7 +1205,7 @@ Privileges required: account administrator
      * Gets the Electronic Record and Signature Disclosure.
      * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to �browser� to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/AccountsApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
@@ -1141,6 +1342,89 @@ Privileges required: account administrator
     };
 
     /**
+     * Callback function to receive the result of the getPasswordRules operation.
+     * @callback module:api/AccountsApi~getPasswordRulesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the password rules
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/AccountsApi~getPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountPasswordRules}
+     */
+    this.getPasswordRules = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getPasswordRules");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountPasswordRules;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/settings/password_rules', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getPasswordRules_0 operation.
+     * @callback module:api/AccountsApi~getPasswordRules_0Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserPasswordRules} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get membership account password rules
+     * @param {module:api/AccountsApi~getPasswordRules_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserPasswordRules}
+     */
+    this.getPasswordRules_0 = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserPasswordRules;
+
+      return this.apiClient.callApi(
+        '/v2/current_user/password_rules', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * Callback function to receive the result of the getPermissionProfile operation.
      * @callback module:api/AccountsApi~getPermissionProfileCallback
      * @param {String} error Error message, if any.
@@ -1230,6 +1514,144 @@ Privileges required: account administrator
 
       return this.apiClient.callApi(
         '/v2/accounts/provisioning', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getSupportedLanguages operation.
+     * @callback module:api/AccountsApi~getSupportedLanguagesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/SupportedLanguages} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gets list of supported languages for recipient language setting.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/AccountsApi~getSupportedLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/SupportedLanguages}
+     */
+    this.getSupportedLanguages = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getSupportedLanguages");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = SupportedLanguages;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/supported_languages', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getWatermark operation.
+     * @callback module:api/AccountsApi~getWatermarkCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Watermark} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get watermark information.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/AccountsApi~getWatermarkCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Watermark}
+     */
+    this.getWatermark = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getWatermark");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Watermark;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/watermark', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getWatermarkPreview operation.
+     * @callback module:api/AccountsApi~getWatermarkPreviewCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Watermark} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get watermark preview.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Watermark} opts.watermark 
+     * @param {module:api/AccountsApi~getWatermarkPreviewCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Watermark}
+     */
+    this.getWatermarkPreview = function(accountId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['watermark'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getWatermarkPreview");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Watermark;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/watermark/preview', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1502,7 +1924,7 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} opts.envelopesNotSharedUserStatus 
      * @param {String} opts.folderIds 
      * @param {String} opts.itemType Specifies the type of shared item being requested. The accepted values are: -envelopes: returns information about envelope sharing between users.
-     * @param {String} opts.searchText This can be used to filter user names in the response. The wild-card ‘*’ (asterisk) can be used around the string.
+     * @param {String} opts.searchText This can be used to filter user names in the response. The wild-card &#39;*&#39; (asterisk) can be used around the string.
      * @param {String} opts.shared Specifies which users should be included in the response. Multiple values can be used in the query by using a comma separated list of shared values. If the requestor does not have account administrator privileges, the shared_to value is used. Requestors that do not have account administrator privileges can only use the shared_to, any other setting will result in an error. The accepted values are:  -not_shared: Returns account users that the specified item type is not being shared with and that are not sharing the specified item type with the user.  User X (Share) X Account user  -shared_to: Returns account users that the specified item type is not being shared with and who are sharing the specified item type with the user (only shared to the user).  User X (Share) Account user  -shared_from: Returns account users that the specified item type is being shared with and who are not sharing the specified item type with the user (only shared from the user).  User (Share) &gt;&gt; Account user  -shared_to_and_from: Returns account users that the specified item type is being shared with and who are sharing the specified item type with the user.  User &lt;&lt; (Share) &gt;&gt; Account user
      * @param {String} opts.startPosition If the response set exceeds Count, this can be used to specify that the method should return users starting at the specified index. The first index is 0, and should be used in the first GET call. Typically this number is a multiple of Count. If no value is specified, this defaults to be 0. 
      * @param {String} opts.userIds A comma separated list of userIds for whom the shared item information is being requested. 
@@ -1861,6 +2283,120 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
+     * Callback function to receive the result of the updateConsumerDisclosure operation.
+     * @callback module:api/AccountsApi~updateConsumerDisclosureCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update Consumer Disclosure.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.includeMetadata 
+     * @param {module:model/ConsumerDisclosure} opts.consumerDisclosure 
+     * @param {module:api/AccountsApi~updateConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ConsumerDisclosure}
+     */
+    this.updateConsumerDisclosure = function(accountId, langCode, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['consumerDisclosure'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateConsumerDisclosure");
+      }
+
+      // verify the required parameter 'langCode' is set
+      if (langCode == undefined || langCode == null) {
+        throw new Error("Missing the required parameter 'langCode' when calling updateConsumerDisclosure");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'langCode': langCode
+      };
+      var queryParams = {
+        'include_metadata': opts['includeMetadata']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ConsumerDisclosure;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/consumer_disclosure/{langCode}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the updateCustomField operation.
+     * @callback module:api/AccountsApi~updateCustomFieldCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CustomFields} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates an existing account custom field.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} customFieldId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.applyToTemplates 
+     * @param {module:model/CustomField} opts.customField 
+     * @param {module:api/AccountsApi~updateCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CustomFields}
+     */
+    this.updateCustomField = function(accountId, customFieldId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['customField'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateCustomField");
+      }
+
+      // verify the required parameter 'customFieldId' is set
+      if (customFieldId == undefined || customFieldId == null) {
+        throw new Error("Missing the required parameter 'customFieldId' when calling updateCustomField");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'customFieldId': customFieldId
+      };
+      var queryParams = {
+        'apply_to_templates': opts['applyToTemplates']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CustomFields;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/custom_fields/{customFieldId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * Callback function to receive the result of the updateENoteConfiguration operation.
      * @callback module:api/AccountsApi~updateENoteConfigurationCallback
      * @param {String} error Error message, if any.
@@ -1903,6 +2439,54 @@ Users with account administration privileges can retrieve shared access informat
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/settings/enote_configuration', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the updatePasswordRules operation.
+     * @callback module:api/AccountsApi~updatePasswordRulesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update the password rules
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/AccountPasswordRules} opts.accountPasswordRules 
+     * @param {module:api/AccountsApi~updatePasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountPasswordRules}
+     */
+    this.updatePasswordRules = function(accountId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['accountPasswordRules'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updatePasswordRules");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountPasswordRules;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/settings/password_rules', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2061,6 +2645,54 @@ Users with account administration privileges can retrieve shared access informat
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/shared_access', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the updateWatermark operation.
+     * @callback module:api/AccountsApi~updateWatermarkCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Watermark} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update watermark information.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Watermark} opts.watermark 
+     * @param {module:api/AccountsApi~updateWatermarkCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Watermark}
+     */
+    this.updateWatermark = function(accountId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['watermark'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateWatermark");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Watermark;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/watermark', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

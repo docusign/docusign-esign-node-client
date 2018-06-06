@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails'], factory);
+    define(['ApiClient', 'model/DateStampProperties', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'), require('./DateStampProperties'), require('./ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.UserSignature = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
+    root.Docusign.UserSignature = factory(root.Docusign.ApiClient, root.Docusign.DateStampProperties, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
+}(this, function(ApiClient, DateStampProperties, ErrorDetails) {
   'use strict';
 
 
@@ -61,8 +61,17 @@
       if (data.hasOwnProperty('createdDateTime')) {
         obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
       }
+      if (data.hasOwnProperty('dateStampProperties')) {
+        obj['dateStampProperties'] = DateStampProperties.constructFromObject(data['dateStampProperties']);
+      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('externalID')) {
+        obj['externalID'] = ApiClient.convertToType(data['externalID'], 'String');
+      }
+      if (data.hasOwnProperty('imageType')) {
+        obj['imageType'] = ApiClient.convertToType(data['imageType'], 'String');
       }
       if (data.hasOwnProperty('initials150ImageId')) {
         obj['initials150ImageId'] = ApiClient.convertToType(data['initials150ImageId'], 'String');
@@ -72,6 +81,9 @@
       }
       if (data.hasOwnProperty('isDefault')) {
         obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+      }
+      if (data.hasOwnProperty('phoneticName')) {
+        obj['phoneticName'] = ApiClient.convertToType(data['phoneticName'], 'String');
       }
       if (data.hasOwnProperty('signature150ImageId')) {
         obj['signature150ImageId'] = ApiClient.convertToType(data['signature150ImageId'], 'String');
@@ -94,6 +106,18 @@
       if (data.hasOwnProperty('signatureType')) {
         obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
       }
+      if (data.hasOwnProperty('stampFormat')) {
+        obj['stampFormat'] = ApiClient.convertToType(data['stampFormat'], 'String');
+      }
+      if (data.hasOwnProperty('stampImageUri')) {
+        obj['stampImageUri'] = ApiClient.convertToType(data['stampImageUri'], 'String');
+      }
+      if (data.hasOwnProperty('stampSizeMM')) {
+        obj['stampSizeMM'] = ApiClient.convertToType(data['stampSizeMM'], 'String');
+      }
+      if (data.hasOwnProperty('stampType')) {
+        obj['stampType'] = ApiClient.convertToType(data['stampType'], 'String');
+      }
     }
     return obj;
   }
@@ -109,9 +133,23 @@
    */
   exports.prototype['createdDateTime'] = undefined;
   /**
+   * @member {module:model/DateStampProperties} dateStampProperties
+   */
+  exports.prototype['dateStampProperties'] = undefined;
+  /**
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} externalID
+   */
+  exports.prototype['externalID'] = undefined;
+  /**
+   * 
+   * @member {String} imageType
+   */
+  exports.prototype['imageType'] = undefined;
   /**
    * 
    * @member {String} initials150ImageId
@@ -127,6 +165,11 @@
    * @member {String} isDefault
    */
   exports.prototype['isDefault'] = undefined;
+  /**
+   * 
+   * @member {String} phoneticName
+   */
+  exports.prototype['phoneticName'] = undefined;
   /**
    * 
    * @member {String} signature150ImageId
@@ -162,6 +205,26 @@
    * @member {String} signatureType
    */
   exports.prototype['signatureType'] = undefined;
+  /**
+   * 
+   * @member {String} stampFormat
+   */
+  exports.prototype['stampFormat'] = undefined;
+  /**
+   * 
+   * @member {String} stampImageUri
+   */
+  exports.prototype['stampImageUri'] = undefined;
+  /**
+   * 
+   * @member {String} stampSizeMM
+   */
+  exports.prototype['stampSizeMM'] = undefined;
+  /**
+   * 
+   * @member {String} stampType
+   */
+  exports.prototype['stampType'] = undefined;
 
 
 

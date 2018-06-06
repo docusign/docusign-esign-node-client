@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('createdBy')) {
+        obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
+      }
       if (data.hasOwnProperty('createdDateTime')) {
         obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
       }
@@ -131,6 +134,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} createdBy
+   */
+  exports.prototype['createdBy'] = undefined;
   /**
    * Indicates the date and time the item was created.
    * @member {String} createdDateTime

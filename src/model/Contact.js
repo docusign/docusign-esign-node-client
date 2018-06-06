@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails'], factory);
+    define(['ApiClient', 'model/ContactPhoneNumber', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'), require('./ContactPhoneNumber'), require('./ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Contact = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
+    root.Docusign.Contact = factory(root.Docusign.ApiClient, root.Docusign.ContactPhoneNumber, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
+}(this, function(ApiClient, ContactPhoneNumber, ErrorDetails) {
   'use strict';
 
 
@@ -58,6 +58,9 @@
       if (data.hasOwnProperty('contactId')) {
         obj['contactId'] = ApiClient.convertToType(data['contactId'], 'String');
       }
+      if (data.hasOwnProperty('contactPhoneNumbers')) {
+        obj['contactPhoneNumbers'] = ApiClient.convertToType(data['contactPhoneNumbers'], [ContactPhoneNumber]);
+      }
       if (data.hasOwnProperty('contactUri')) {
         obj['contactUri'] = ApiClient.convertToType(data['contactUri'], 'String');
       }
@@ -91,6 +94,11 @@
    * @member {String} contactId
    */
   exports.prototype['contactId'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/ContactPhoneNumber>} contactPhoneNumbers
+   */
+  exports.prototype['contactPhoneNumbers'] = undefined;
   /**
    * 
    * @member {String} contactUri

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/DocumentFieldsInformation', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopeSummary', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewLinkRequest', 'model/ViewUrl'], factory);
+	define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/DocumentFieldsInformation', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopeSummary', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewLinkRequest', 'model/ViewUrl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/Attachment'), require('../model/ChunkedUploadRequest'), require('../model/ChunkedUploadResponse'), require('../model/ConsoleViewRequest'), require('../model/ConsumerDisclosure'), require('../model/CorrectViewRequest'), require('../model/CustomFields'), require('../model/CustomFieldsEnvelope'), require('../model/DocumentFieldsInformation'), require('../model/DocumentTemplateList'), require('../model/DocumentVisibilityList'), require('../model/EmailSettings'), require('../model/Envelope'), require('../model/EnvelopeAttachmentsRequest'), require('../model/EnvelopeAttachmentsResult'), require('../model/EnvelopeAuditEventResponse'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocumentsResult'), require('../model/EnvelopeFormData'), require('../model/EnvelopeIdsRequest'), require('../model/EnvelopeNotificationRequest'), require('../model/EnvelopeSummary'), require('../model/EnvelopeUpdateSummary'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageRequest'), require('../model/RecipientViewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateDocumentVisibilityList'), require('../model/TemplateInformation'), require('../model/UserSignature'), require('../model/ViewLinkRequest'), require('../model/ViewUrl'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/Attachment'), require('../model/ChunkedUploadRequest'), require('../model/ChunkedUploadResponse'), require('../model/ConsoleViewRequest'), require('../model/ConsumerDisclosure'), require('../model/CorrectViewRequest'), require('../model/CustomFields'), require('../model/CustomFieldsEnvelope'), require('../model/DocumentFieldsInformation'), require('../model/DocumentTemplateList'), require('../model/DocumentVisibilityList'), require('../model/EmailSettings'), require('../model/Envelope'), require('../model/EnvelopeAttachmentsRequest'), require('../model/EnvelopeAttachmentsResult'), require('../model/EnvelopeAuditEventResponse'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocumentsResult'), require('../model/EnvelopeFormData'), require('../model/EnvelopeIdsRequest'), require('../model/EnvelopeNotificationRequest'), require('../model/EnvelopeSummary'), require('../model/EnvelopeUpdateSummary'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientViewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateDocumentVisibilityList'), require('../model/TemplateInformation'), require('../model/UserSignature'), require('../model/ViewLinkRequest'), require('../model/ViewUrl'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.ChunkedUploadRequest, root.Docusign.ChunkedUploadResponse, root.Docusign.ConsoleViewRequest, root.Docusign.ConsumerDisclosure, root.Docusign.CorrectViewRequest, root.Docusign.CustomFields, root.Docusign.CustomFieldsEnvelope, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentTemplateList, root.Docusign.DocumentVisibilityList, root.Docusign.EmailSettings, root.Docusign.Envelope, root.Docusign.EnvelopeAttachmentsRequest, root.Docusign.EnvelopeAttachmentsResult, root.Docusign.EnvelopeAuditEventResponse, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocumentsResult, root.Docusign.EnvelopeFormData, root.Docusign.EnvelopeIdsRequest, root.Docusign.EnvelopeNotificationRequest, root.Docusign.EnvelopeSummary, root.Docusign.EnvelopeUpdateSummary, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageRequest, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateDocumentVisibilityList, root.Docusign.TemplateInformation, root.Docusign.UserSignature, root.Docusign.ViewLinkRequest, root.Docusign.ViewUrl);
+    root.Docusign.EnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.ChunkedUploadRequest, root.Docusign.ChunkedUploadResponse, root.Docusign.ConsoleViewRequest, root.Docusign.ConsumerDisclosure, root.Docusign.CorrectViewRequest, root.Docusign.CustomFields, root.Docusign.CustomFieldsEnvelope, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentTemplateList, root.Docusign.DocumentVisibilityList, root.Docusign.EmailSettings, root.Docusign.Envelope, root.Docusign.EnvelopeAttachmentsRequest, root.Docusign.EnvelopeAttachmentsResult, root.Docusign.EnvelopeAuditEventResponse, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocumentsResult, root.Docusign.EnvelopeFormData, root.Docusign.EnvelopeIdsRequest, root.Docusign.EnvelopeNotificationRequest, root.Docusign.EnvelopeSummary, root.Docusign.EnvelopeUpdateSummary, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateDocumentVisibilityList, root.Docusign.TemplateInformation, root.Docusign.UserSignature, root.Docusign.ViewLinkRequest, root.Docusign.ViewUrl);
   }
-}(this, function(Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, DocumentFieldsInformation, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopeSummary, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, LockInformation, LockRequest, Notification, PageRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewLinkRequest, ViewUrl) {
+}(this, function(Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, DocumentFieldsInformation, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopeSummary, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewLinkRequest, ViewUrl) {
   'use strict';
 
   /**
@@ -149,8 +149,8 @@
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -425,8 +425,8 @@ Each custom field used in an envelope must have a unique name.
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -581,14 +581,14 @@ Using this function you can:
 * Create an envelope and send it.
 * Create an envelope from an existing template and send it.
 
-In either case, you can choose to save the envelope as a draft envelope instead of sending it by setting the request’s `status` property to `created` instead of `sent`.
+In either case, you can choose to save the envelope as a draft envelope instead of sending it by setting the request's `status` property to `created` instead of `sent`.
 
 ## Sending Envelopes
 
 Documents can be included with the Envelopes::create call itself or a template can include documents. Documents can be added by using a multi-part/form request or by using the `documentBase64` field of the [`document` object](#/definitions/document)
 
 ### Recipient Types
-An [`envelopeDefinition` object](#/definitions/envelopeDefinition) is used as the method’s body. Envelope recipients can be defined in the envelope or in templates. The `envelopeDefinition` object’s `recipients` field is an [`EnvelopeRecipients` resource object](#/definitions/EnvelopeRecipients). It includes arrays of the seven types of recipients defined by DocuSign:
+An [`envelopeDefinition` object](#/definitions/envelopeDefinition) is used as the method's body. Envelope recipients can be defined in the envelope or in templates. The `envelopeDefinition` object's `recipients` field is an [`EnvelopeRecipients` resource object](#/definitions/EnvelopeRecipients). It includes arrays of the seven types of recipients defined by DocuSign:
 
 Recipient type | Object definition
 -------------- | -----------------
@@ -596,7 +596,7 @@ agent (can add name and email information for later recipients/signers) | [`agen
 carbon copy (receives a copy of the documents) | [`carbonCopy`](#/definitions/carbonCopy)
 certified delivery  (receives a copy of the documents and must acknowledge receipt) | [`certifiedDelivery`](#/definitions/certifiedDelivery)
 editor (can change recipients and document fields for later recipients/signers) | [`editor`](#/definitions/editor)
-in-person signer (“hosts” someone who signs in-person) | [`inPersonSigner`](#/definitions/inPersonSigner)
+in-person signer ("hosts" someone who signs in-person) | [`inPersonSigner`](#/definitions/inPersonSigner)
 intermediary (can add name and email information for some later recipients/signers.) | [`intermediary`](#/definitions/intermediary)
 signer (signs and/or updates document fields) | [`signer`](#/definitions/signer)
 
@@ -610,7 +610,7 @@ Defining tabs: the `inPersonSigner`, and `signer` recipient objects include a `t
 ## Using Templates
 Envelopes use specific people or groups as recipients. Templates can specify a role, eg `account_manager.` When a template is used in an envelope, the roles must be replaced with specific people or groups.
 
-When you create an envelope using a `templateId`, the different recipient type objects within the [`EnvelopeRecipients` object](#/definitions/EnvelopeRecipients) are used to assign recipients to the template’s roles via the `roleName` property. The recipient objects can also override settings that were specified in the template, and set values for tab fields that were defined in the template.
+When you create an envelope using a `templateId`, the different recipient type objects within the [`EnvelopeRecipients` object](#/definitions/EnvelopeRecipients) are used to assign recipients to the template's roles via the `roleName` property. The recipient objects can also override settings that were specified in the template, and set values for tab fields that were defined in the template.
 
 ### Message Lock
 When a template is added or applied to an envelope and the template has a locked email subject and message, that subject and message are used for the envelope and cannot be changed even if another locked template is subsequently added or applied to the envelope. The field `messageLock` is used to lock the email subject and message.
@@ -618,7 +618,7 @@ When a template is added or applied to an envelope and the template has a locked
 If an email subject or message is entered before adding or applying a template with `messageLock` **true**, the email subject and message is overwritten with the locked email subject and message from the template.
 
 ## Envelope Status
-The status of sent envelopes can be determined through the DocuSign webhook system or by polling. Webhooks are highly recommended: they provide your application with the quickest updates when an envelope’s status changes. DocuSign limits polling to once every 15 minutes or less frequently.
+The status of sent envelopes can be determined through the DocuSign webhook system or by polling. Webhooks are highly recommended: they provide your application with the quickest updates when an envelope's status changes. DocuSign limits polling to once every 15 minutes or less frequently.
 
 When a webhook is used, DocuSign calls your application, via the URL you provide, with a notification XML message. 
 
@@ -633,7 +633,7 @@ The Envelopes::create method includes an optional [eventNotification object](#de
 ### Connect Webhooks
 Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc. 
 
-Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting “Go to Admin” from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.
+Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting "Go to Admin" from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.
 
 Connect is available for some DocuSign account types. Please contact DocuSign Sales for more information.
 
@@ -659,7 +659,7 @@ PDF Form objects are only transformed from the document object. DocuSign does no
 Each Composite Template adds a new document and templates overlay into the envelope. For each Composite Template these rules are applied:
 
 * Templates are overlaid in the order of their Sequence value.
-* If Document is not passed into the Composite Template’s `document` field, the *first* template’s document (based on the template’s Sequence value) is used.
+* If Document is not passed into the Composite Template's `document` field, the *first* template's document (based on the template's Sequence value) is used.
 * Last in wins in all cases except for the document (i.e. envelope information, recipient information, secure field information). There is no special casing.
 
 For example, if you want higher security on a tab, then that needs to be specified in a later template (by sequence number) then where the tab is included. If you want higher security on a role recipient, then it needs to be in a later template then where that role recipient is specified.
@@ -676,7 +676,7 @@ For example, if you have a simple inline template with only one tab in it with a
 
 * The defaultRecipient field enables you to specify which recipient the generated tabs from a PDF form are mapped to. You can also set PDF form generated tabs to a recipient other than the DefaultRecipient by specifying the mapping of the tab label that is created to one of the template recipients.
 
-* You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with “\*” and then the system matches tabs that start with the label.
+* You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with "\*" and then the system matches tabs that start with the label.
 
 * If no DefaultRecipient is specified, tabs must be explicitly mapped to recipients in order to be generated from the form. Unmapped form objects will not be generated into their DocuSign equivalents. (In the case of Signature/Initials, the tabs will be disregarded entirely; in the case of pdf text fields, the field data will be flattened on the Envelope document, but there will not be a corresponding DocuSign data tab.)
 
@@ -724,20 +724,20 @@ DocuSignSignerAttachmentOptional or eSignSignerAttachmentOptional | Optional Sig
 
 Any other PDF Form Text Field will be transformed to a DocuSign data (text) tab.
 
-PDF Form Field Names that include “DocuSignIgnoreTransform” or “eSignIgnoreTransform” will not be transformed.
+PDF Form Field Names that include "DocuSignIgnoreTransform" or "eSignIgnoreTransform" will not be transformed.
 
 PDF Form Date fields will be transformed to Date Signed fields if their name includes DocuSignDateSigned or eSignDateSigned.
 
 ## Template Email Subject Merge Fields
 This feature enables you to insert recipient name and email address merge fields into the email subject line when creating or sending from a template.
 
-The merge fields, based on the recipient’s `roleName`, are added to the `emailSubject` when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.
+The merge fields, based on the recipient's `roleName`, are added to the `emailSubject` when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.
 
 Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.
 
 If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.
 
-* To add a recipient’s name in the subject line add the following text in the `emailSubject` when creating the template or when sending an envelope from a template:
+* To add a recipient's name in the subject line add the following text in the `emailSubject` when creating the template or when sending an envelope from a template:
 
    [[<roleName>_UserName]]
 
@@ -745,7 +745,7 @@ If merging the recipient information into the subject line causes the subject li
 
    `"emailSubject":"[[Signer 1_UserName]], Please sign this NDA",`
 
-* To add a recipient’s email address in the subject line add the following text in the emailSubject when creating the template or when sending an envelope from a template:
+* To add a recipient's email address in the subject line add the following text in the emailSubject when creating the template or when sending an envelope from a template:
 
    [[<roleName>_Email]]
 
@@ -753,7 +753,7 @@ If merging the recipient information into the subject line causes the subject li
 
    `"emailSubject":"[[Signer 1_Email]], Please sign this NDA",`
 
-In both cases the <roleName> is the recipient’s `roleName` in the template.
+In both cases the <roleName> is the recipient's `roleName` in the template.
 
 For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[<roleName>_UserName]] or [[<roleName>_Email]] is shown in the email subject.
 
@@ -762,11 +762,11 @@ The following rules are used to determine the `brandId` used in an envelope:
 
 * If a `brandId` is specified in the envelope/template and that brandId is available to the account, that brand is used in the envelope.
 * If more than one template is used in an envelope and more than one `brandId` is specified, the first `brandId` specified is used throughout the envelope.
-* In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account’s default signing brand is used.
-* For envelopes that do not meet any of the previous criteria, the account’s default signing brand is used for the envelope.
+* In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account's default signing brand is used.
+* For envelopes that do not meet any of the previous criteria, the account's default signing brand is used for the envelope.
 
 ## BCC Email address feature 
-The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, don’t use the BCC Email field. Use a Carbon Copy or Certified Delivery Recipient type.
+The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, don't use the BCC Email field. Use a Carbon Copy or Certified Delivery Recipient type.
 
 ## Merge Recipient Roles for Draft Envelopes
 When an envelope with multiple templates is sent, the recipients from the templates are merged according to the template roles, and empty recipients are removed. When creating an envelope with multiple templates, but not sending it (keeping it in a created state), duplicate recipients are not merged, which could cause leave duplicate recipients in the envelope.
@@ -777,6 +777,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} opts Optional parameters
      * @param {String} opts.cdseMode 
+     * @param {String} opts.changeRoutingOrder 
      * @param {String} opts.completedDocumentsOnly If set to true then we want to set the sourceEnvelopeId to indicate that this is a\&quot;forward\&quot; envelope action
      * @param {String} opts.mergeRolesOnDraft When set to **true**, merges template roles and remove empty recipients when you create an envelope with multiple templates.
      * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition 
@@ -798,6 +799,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       };
       var queryParams = {
         'cdse_mode': opts['cdseMode'],
+        'change_routing_order': opts['changeRoutingOrder'],
         'completed_documents_only': opts['completedDocumentsOnly'],
         'merge_roles_on_draft': opts['mergeRolesOnDraft']
       };
@@ -892,7 +894,7 @@ For an in process envelope, one that has been sent and has not been completed or
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.resendEnvelope When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope’s next recipient.
+     * @param {String} opts.resendEnvelope When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope&#39;s next recipient.
      * @param {module:model/Recipients} opts.recipients 
      * @param {module:api/EnvelopesApi~createRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
@@ -1379,8 +1381,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -1444,8 +1446,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
         'envelopeId': envelopeId,
+        'documentId': documentId,
         'pageNumber': pageNumber
       };
       var queryParams = {
@@ -1853,8 +1855,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
         'envelopeId': envelopeId,
+        'documentId': documentId,
         'templateId': templateId
       };
       var queryParams = {
@@ -1964,8 +1966,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
       var pathParams = {
         'accountId': accountId,
-        'attachmentId': attachmentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'attachmentId': attachmentId
       };
       var queryParams = {
       };
@@ -2108,7 +2110,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to �browser� to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} opts Optional parameters
      * @param {String} opts.langCode2 
      * @param {module:api/EnvelopesApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -2142,8 +2144,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var pathParams = {
         'accountId': accountId,
         'envelopeId': envelopeId,
-        'langCode': langCode,
-        'recipientId': recipientId
+        'recipientId': recipientId,
+        'langCode': langCode
       };
       var queryParams = {
         'langCode': opts['langCode2']
@@ -2281,8 +2283,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
         'certificate': opts['certificate'],
@@ -2360,8 +2362,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
         'envelopeId': envelopeId,
+        'documentId': documentId,
         'pageNumber': pageNumber
       };
       var queryParams = {
@@ -2382,6 +2384,69 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getDocumentTabs operation.
+     * @callback module:api/EnvelopesApi~getDocumentTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns tabs on the document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.pageNumbers 
+     * @param {module:api/EnvelopesApi~getDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.getDocumentTabs = function(accountId, envelopeId, documentId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getDocumentTabs");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getDocumentTabs");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getDocumentTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'documentId': documentId
+      };
+      var queryParams = {
+        'page_numbers': opts['pageNumbers']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2654,6 +2719,147 @@ If the call is made by the locked by user and the request has the same integrato
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/envelopes/{envelopeId}/notification', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getPageTabs operation.
+     * @callback module:api/EnvelopesApi~getPageTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns tabs on the specified page.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {String} pageNumber The page number being accessed.
+     * @param {module:api/EnvelopesApi~getPageTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.getPageTabs = function(accountId, envelopeId, documentId, pageNumber, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getPageTabs");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getPageTabs");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getPageTabs");
+      }
+
+      // verify the required parameter 'pageNumber' is set
+      if (pageNumber == undefined || pageNumber == null) {
+        throw new Error("Missing the required parameter 'pageNumber' when calling getPageTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'documentId': documentId,
+        'pageNumber': pageNumber
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/tabs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getPages operation.
+     * @callback module:api/EnvelopesApi~getPagesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PageImages} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns document page image(s) based on input.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.count 
+     * @param {String} opts.dpi 
+     * @param {String} opts.maxHeight 
+     * @param {String} opts.maxWidth 
+     * @param {String} opts.nocache 
+     * @param {String} opts.showChanges 
+     * @param {String} opts.startPosition 
+     * @param {module:api/EnvelopesApi~getPagesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PageImages}
+     */
+    this.getPages = function(accountId, envelopeId, documentId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getPages");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getPages");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getPages");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'documentId': documentId
+      };
+      var queryParams = {
+        'count': opts['count'],
+        'dpi': opts['dpi'],
+        'max_height': opts['maxHeight'],
+        'max_width': opts['maxWidth'],
+        'nocache': opts['nocache'],
+        'show_changes': opts['showChanges'],
+        'start_position': opts['startPosition']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = PageImages;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2959,8 +3165,8 @@ Older envelopes might only have chromed images. If getting the non-chromed image
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };
@@ -3127,8 +3333,8 @@ There are two types of envelope custom fields, text, and list. A text custom fie
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -3162,13 +3368,10 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * Retrieves a list of documents associated with the specified envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeMetadata 
      * @param {module:api/EnvelopesApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocumentsResult}
      */
-    this.listDocuments = function(accountId, envelopeId, opts, callback) {
-      opts = opts || {};
+    this.listDocuments = function(accountId, envelopeId, callback) {
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -3187,7 +3390,6 @@ There are two types of envelope custom fields, text, and list. A text custom fie
         'envelopeId': envelopeId
       };
       var queryParams = {
-        'include_metadata': opts['includeMetadata']
       };
       var headerParams = {
       };
@@ -3224,7 +3426,6 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
      * @param {Object} opts Optional parameters
      * @param {String} opts.includeAnchorTabLocations  When set to **true** and &#x60;include_tabs&#x60; is set to **true**, all tabs with anchor tab properties are included in the response. 
      * @param {String} opts.includeExtended  When set to **true**, the extended properties are included in the response. 
-     * @param {String} opts.includeMetadata 
      * @param {String} opts.includeTabs When set to **true**, the tab information associated with the recipient is included in the response.
      * @param {module:api/EnvelopesApi~listRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
@@ -3251,7 +3452,6 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
       var queryParams = {
         'include_anchor_tab_locations': opts['includeAnchorTabLocations'],
         'include_extended': opts['includeExtended'],
-        'include_metadata': opts['includeMetadata'],
         'include_tabs': opts['includeTabs']
       };
       var headerParams = {
@@ -3361,23 +3561,12 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} opts.customField This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding &#39;%&#39; (percent sign) around the custom field query value.   Example 1: If you have an envelope custom field called \&quot;Region\&quot; and you want to search for all envelopes where the value is \&quot;West\&quot; you would use the query: &#x60;?custom_field&#x3D;Region&#x3D;West&#x60;.   Example 2: To search for envelopes where the &#x60;ApplicationID&#x60; custom field has the value or partial value of \&quot;DocuSign\&quot; in field, the query would be: &#x60;?custom_field&#x3D;ApplicationId&#x3D;%DocuSign%&#x60; This would find envelopes where the custom field value is \&quot;DocuSign for Salesforce\&quot; or \&quot;DocuSign envelope.\&quot;  
      * @param {String} opts.email 
      * @param {String} opts.envelopeIds 
-     * @param {String} opts.exclude 
-     * @param {String} opts.folderIds 
-     * @param {String} opts.folderTypes 
      * @param {String} opts.fromDate The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.  This is required unless &#39;envelopeId&#39;s are used.
      * @param {String} opts.fromToStatus This is the status type checked for in the &#x60;from_date&#x60;/&#x60;to_date&#x60; period. If &#x60;changed&#x60; is specified, then envelopes that changed status during the period are found. If for example, &#x60;created&#x60; is specified, then envelopes created during the period are found. Default is &#x60;changed&#x60;.   Possible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
-     * @param {String} opts.include 
-     * @param {String} opts.intersectingFolderIds 
-     * @param {String} opts.order 
-     * @param {String} opts.orderBy 
-     * @param {String} opts.powerformids 
-     * @param {String} opts.searchText 
      * @param {String} opts.startPosition 
      * @param {String} opts.status The list of current statuses to include in the response. By default, all envelopes found are returned. If values are specified, then of the envelopes found, only those with the current status specified are returned in the results.   Possible values are: Voided, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
      * @param {String} opts.toDate Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the &#x60;to_date&#x60;. 
      * @param {String} opts.transactionIds If included in the query string, this is a comma separated list of envelope &#x60;transactionId&#x60;s.   If included in the &#x60;request_body&#x60;, this is a list of envelope &#x60;transactionId&#x60;s.   ###### Note: &#x60;transactionId&#x60;s are only valid in the DocuSign system for seven days. 
-     * @param {String} opts.userFilter 
-     * @param {String} opts.userId 
      * @param {String} opts.userName 
      * @param {module:api/EnvelopesApi~listStatusChangesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopesInformation}
@@ -3402,23 +3591,12 @@ Client applications should check that the statuses they are requesting make sens
         'custom_field': opts['customField'],
         'email': opts['email'],
         'envelope_ids': opts['envelopeIds'],
-        'exclude': opts['exclude'],
-        'folder_ids': opts['folderIds'],
-        'folder_types': opts['folderTypes'],
         'from_date': opts['fromDate'],
         'from_to_status': opts['fromToStatus'],
-        'include': opts['include'],
-        'intersecting_folder_ids': opts['intersectingFolderIds'],
-        'order': opts['order'],
-        'order_by': opts['orderBy'],
-        'powerformids': opts['powerformids'],
-        'search_text': opts['searchText'],
         'start_position': opts['startPosition'],
         'status': opts['status'],
         'to_date': opts['toDate'],
         'transaction_ids': opts['transactionIds'],
-        'user_filter': opts['userFilter'],
-        'user_id': opts['userId'],
         'user_name': opts['userName']
       };
       var headerParams = {
@@ -3519,7 +3697,7 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.include The possible values are:  matching_applied – This returns template matching information for the template.
+     * @param {String} opts.include The possible values are:  matching_applied - This returns template matching information for the template.
      * @param {module:api/EnvelopesApi~listTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateInformation}
      */
@@ -3603,8 +3781,8 @@ Client applications should check that the statuses they are requesting make sens
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
         'include': opts['include']
@@ -3666,8 +3844,8 @@ Client applications should check that the statuses they are requesting make sens
 
       var pathParams = {
         'accountId': accountId,
-        'attachmentId': attachmentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'attachmentId': attachmentId
       };
       var queryParams = {
       };
@@ -3789,8 +3967,8 @@ Client applications should check that the statuses they are requesting make sens
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
         'envelopeId': envelopeId,
+        'documentId': documentId,
         'pageNumber': pageNumber
       };
       var queryParams = {
@@ -3906,19 +4084,16 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
 
     /**
      * Integrity-Check and Commit a ChunkedUpload, readying it for use elsewhere.
-     * @param {String} action 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} chunkedUploadId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.action 
      * @param {module:api/EnvelopesApi~updateChunkedUploadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ChunkedUploadResponse}
      */
-    this.updateChunkedUpload = function(action, accountId, chunkedUploadId, callback) {
+    this.updateChunkedUpload = function(accountId, chunkedUploadId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
-
-      // verify the required parameter 'action' is set
-      if (action == undefined || action == null) {
-        throw new Error("Missing the required parameter 'action' when calling updateChunkedUpload");
-      }
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -3936,7 +4111,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
         'chunkedUploadId': chunkedUploadId
       };
       var queryParams = {
-        'action': action
+        'action': opts['action']
       };
       var headerParams = {
       };
@@ -4116,8 +4291,8 @@ Each custom field used in an envelope must have a unique name.
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
         'apply_document_fields': opts['applyDocumentFields']
@@ -4180,8 +4355,8 @@ Each custom field used in an envelope must have a unique name.
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'envelopeId': envelopeId
+        'envelopeId': envelopeId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -4217,6 +4392,7 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} opts Optional parameters
      * @param {String} opts.applyDocumentFields When true, Document fields can be added or modified while adding or modifying envelope documents.
+     * @param {String} opts.persistTabs 
      * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition 
      * @param {module:api/EnvelopesApi~updateDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocumentsResult}
@@ -4241,7 +4417,8 @@ Each custom field used in an envelope must have a unique name.
         'envelopeId': envelopeId
       };
       var queryParams = {
-        'apply_document_fields': opts['applyDocumentFields']
+        'apply_document_fields': opts['applyDocumentFields'],
+        'persist_tabs': opts['persistTabs']
       };
       var headerParams = {
       };
@@ -4633,7 +4810,7 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.resendEnvelope When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope’s next recipient.
+     * @param {String} opts.resendEnvelope When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope&#39;s next recipient.
      * @param {module:model/Recipients} opts.recipients 
      * @param {module:api/EnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RecipientsUpdateSummary}
@@ -4835,8 +5012,8 @@ If you send information for a recipient that does not already exist in a draft e
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };

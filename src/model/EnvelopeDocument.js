@@ -58,6 +58,9 @@
       if (data.hasOwnProperty('attachmentTabId')) {
         obj['attachmentTabId'] = ApiClient.convertToType(data['attachmentTabId'], 'String');
       }
+      if (data.hasOwnProperty('authoritativeCopy')) {
+        obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'String');
+      }
       if (data.hasOwnProperty('availableDocumentTypes')) {
         obj['availableDocumentTypes'] = ApiClient.convertToType(data['availableDocumentTypes'], [SignatureType]);
       }
@@ -94,12 +97,6 @@
       if (data.hasOwnProperty('signerMustAcknowledge')) {
         obj['signerMustAcknowledge'] = ApiClient.convertToType(data['signerMustAcknowledge'], 'String');
       }
-      if (data.hasOwnProperty('templateLocked')) {
-        obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
-      }
-      if (data.hasOwnProperty('templateRequired')) {
-        obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
-      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
@@ -115,6 +112,11 @@
    * @member {String} attachmentTabId
    */
   exports.prototype['attachmentTabId'] = undefined;
+  /**
+   * Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+   * @member {String} authoritativeCopy
+   */
+  exports.prototype['authoritativeCopy'] = undefined;
   /**
    * 
    * @member {Array.<module:model/SignatureType>} availableDocumentTypes
@@ -174,16 +176,6 @@
    * @member {String} signerMustAcknowledge
    */
   exports.prototype['signerMustAcknowledge'] = undefined;
-  /**
-   * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
-   * @member {String} templateLocked
-   */
-  exports.prototype['templateLocked'] = undefined;
-  /**
-   * When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
-   * @member {String} templateRequired
-   */
-  exports.prototype['templateRequired'] = undefined;
   /**
    * 
    * @member {String} type

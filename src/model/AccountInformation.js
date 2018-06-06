@@ -113,6 +113,9 @@
       if (data.hasOwnProperty('envelopeUnitPrice')) {
         obj['envelopeUnitPrice'] = ApiClient.convertToType(data['envelopeUnitPrice'], 'String');
       }
+      if (data.hasOwnProperty('externalAccountId')) {
+        obj['externalAccountId'] = ApiClient.convertToType(data['externalAccountId'], 'String');
+      }
       if (data.hasOwnProperty('forgottenPasswordQuestionsCount')) {
         obj['forgottenPasswordQuestionsCount'] = ApiClient.convertToType(data['forgottenPasswordQuestionsCount'], 'String');
       }
@@ -248,6 +251,11 @@
    * @member {String} envelopeUnitPrice
    */
   exports.prototype['envelopeUnitPrice'] = undefined;
+  /**
+   * 
+   * @member {String} externalAccountId
+   */
+  exports.prototype['externalAccountId'] = undefined;
   /**
    *  A complex element that contains up to four Question/Answer pairs for forgotten password information for a user.
    * @member {String} forgottenPasswordQuestionsCount

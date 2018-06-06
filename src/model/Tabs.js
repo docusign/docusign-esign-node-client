@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/Company', 'model/DateSigned', 'model/Decline', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/Note', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/Ssn', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
+    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/Company', 'model/DateSigned', 'model/Decline', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/Notarize', 'model/Note', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/Ssn', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./Note'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./Ssn'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
+    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./Notarize'), require('./Note'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./Ssn'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Tabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.Note, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.Ssn, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
+    root.Docusign.Tabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.Notarize, root.Docusign.Note, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.Ssn, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
   }
-}(this, function(ApiClient, Approve, Checkbox, Company, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, Note, RadioGroup, SignHere, SignerAttachment, Ssn, Text, Title, View, Zip) {
+}(this, function(ApiClient, Approve, Checkbox, Company, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, Notarize, Note, RadioGroup, SignHere, SignerAttachment, Ssn, Text, Title, View, Zip) {
   'use strict';
 
 
@@ -100,6 +100,9 @@
       if (data.hasOwnProperty('listTabs')) {
         obj['listTabs'] = ApiClient.convertToType(data['listTabs'], [Array]);
       }
+      if (data.hasOwnProperty('notarizeTabs')) {
+        obj['notarizeTabs'] = ApiClient.convertToType(data['notarizeTabs'], [Notarize]);
+      }
       if (data.hasOwnProperty('noteTabs')) {
         obj['noteTabs'] = ApiClient.convertToType(data['noteTabs'], [Note]);
       }
@@ -165,7 +168,7 @@
    */
   exports.prototype['declineTabs'] = undefined;
   /**
-   * Specifies a location on the document where you want where you want the recipient’s email, as entered in the recipient information, to display.
+   * Specifies a location on the document where you want where you want the recipient's email, as entered in the recipient information, to display.
    * @member {Array.<module:model/EmailAddress>} emailAddressTabs
    */
   exports.prototype['emailAddressTabs'] = undefined;
@@ -200,7 +203,7 @@
    */
   exports.prototype['initialHereTabs'] = undefined;
   /**
-   * Specifies a tag on a document where you want the recipient’s last name to appear. This tag takes the recipient’s name, as entered in the recipient information, splits it into sections based on spaces and uses the last section as the last name.
+   * Specifies a tag on a document where you want the recipient's last name to appear. This tag takes the recipient's name, as entered in the recipient information, splits it into sections based on spaces and uses the last section as the last name.
    * @member {Array.<module:model/LastName>} lastNameTabs
    */
   exports.prototype['lastNameTabs'] = undefined;
@@ -209,6 +212,11 @@
    * @member {Array.<module:model/Array>} listTabs
    */
   exports.prototype['listTabs'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Notarize>} notarizeTabs
+   */
+  exports.prototype['notarizeTabs'] = undefined;
   /**
    * Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient.
    * @member {Array.<module:model/Note>} noteTabs
