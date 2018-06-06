@@ -171,7 +171,7 @@
    */
   exports.prototype['soapNameSpace'] = undefined;
   /**
-   * Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless `useSoapInterface` property is set to **true**.
+   * Specifies the endpoint to which envelope updates are sent. Updates are sent as XML unless `useSoapInterface` property is set to **true**.
    * @member {String} url
    */
   exports.prototype['url'] = undefined;

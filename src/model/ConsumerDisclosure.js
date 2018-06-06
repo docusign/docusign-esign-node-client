@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/SettingsMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./SettingsMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConsumerDisclosure = factory(root.Docusign.ApiClient);
+    root.Docusign.ConsumerDisclosure = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, SettingsMetadata) {
   'use strict';
 
 
@@ -60,6 +60,9 @@
       }
       if (data.hasOwnProperty('allowCDWithdraw')) {
         obj['allowCDWithdraw'] = ApiClient.convertToType(data['allowCDWithdraw'], 'String');
+      }
+      if (data.hasOwnProperty('allowCDWithdrawMetadata')) {
+        obj['allowCDWithdrawMetadata'] = SettingsMetadata.constructFromObject(data['allowCDWithdrawMetadata']);
       }
       if (data.hasOwnProperty('changeEmail')) {
         obj['changeEmail'] = ApiClient.convertToType(data['changeEmail'], 'String');
@@ -108,6 +111,9 @@
       }
       if (data.hasOwnProperty('useConsumerDisclosureWithinAccount')) {
         obj['useConsumerDisclosureWithinAccount'] = ApiClient.convertToType(data['useConsumerDisclosureWithinAccount'], 'String');
+      }
+      if (data.hasOwnProperty('useConsumerDisclosureWithinAccountMetadata')) {
+        obj['useConsumerDisclosureWithinAccountMetadata'] = SettingsMetadata.constructFromObject(data['useConsumerDisclosureWithinAccountMetadata']);
       }
       if (data.hasOwnProperty('withdrawAddressLine1')) {
         obj['withdrawAddressLine1'] = ApiClient.convertToType(data['withdrawAddressLine1'], 'String');
@@ -159,6 +165,10 @@
    * @member {String} allowCDWithdraw
    */
   exports.prototype['allowCDWithdraw'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowCDWithdrawMetadata
+   */
+  exports.prototype['allowCDWithdrawMetadata'] = undefined;
   /**
    * 
    * @member {String} changeEmail
@@ -239,6 +249,10 @@
    * @member {String} useConsumerDisclosureWithinAccount
    */
   exports.prototype['useConsumerDisclosureWithinAccount'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} useConsumerDisclosureWithinAccountMetadata
+   */
+  exports.prototype['useConsumerDisclosureWithinAccountMetadata'] = undefined;
   /**
    * Contains the first address line of the postal address to which a customer can send a consent withdrawal notification.  Maximum length: 100 characters. 
    * @member {String} withdrawAddressLine1

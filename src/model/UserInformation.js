@@ -94,6 +94,9 @@
       if (data.hasOwnProperty('isAdmin')) {
         obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'String');
       }
+      if (data.hasOwnProperty('jobTitle')) {
+        obj['jobTitle'] = ApiClient.convertToType(data['jobTitle'], 'String');
+      }
       if (data.hasOwnProperty('lastLogin')) {
         obj['lastLogin'] = ApiClient.convertToType(data['lastLogin'], 'String');
       }
@@ -120,6 +123,9 @@
       }
       if (data.hasOwnProperty('profileImageUri')) {
         obj['profileImageUri'] = ApiClient.convertToType(data['profileImageUri'], 'String');
+      }
+      if (data.hasOwnProperty('sendActivationEmail')) {
+        obj['sendActivationEmail'] = ApiClient.convertToType(data['sendActivationEmail'], 'String');
       }
       if (data.hasOwnProperty('sendActivationOnInvalidLogin')) {
         obj['sendActivationOnInvalidLogin'] = ApiClient.convertToType(data['sendActivationOnInvalidLogin'], 'String');
@@ -195,7 +201,7 @@
    */
   exports.prototype['errorDetails'] = undefined;
   /**
-   * The user’s first name.  Maximum Length: 50 characters.
+   * The user's first name.  Maximum Length: 50 characters.
    * @member {String} firstName
    */
   exports.prototype['firstName'] = undefined;
@@ -204,7 +210,7 @@
    */
   exports.prototype['forgottenPasswordInfo'] = undefined;
   /**
-   * A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId – The DocuSign group ID for the group. * groupName – The name of the group * permissionProfileId – The ID of the permission profile associated with the group. * groupType – The group type. 
+   * A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. 
    * @member {Array.<module:model/Group>} groupList
    */
   exports.prototype['groupList'] = undefined;
@@ -223,22 +229,27 @@
    */
   exports.prototype['isAdmin'] = undefined;
   /**
+   * 
+   * @member {String} jobTitle
+   */
+  exports.prototype['jobTitle'] = undefined;
+  /**
    * Shows the date-time when the user last logged on to the system.
    * @member {String} lastLogin
    */
   exports.prototype['lastLogin'] = undefined;
   /**
-   * The user’s last name.  Maximum Length: 50 characters.
+   * The user's last name.  Maximum Length: 50 characters.
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
   /**
-   * Shows the current status of the user’s password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
+   * Shows the current status of the user's password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
    * @member {String} loginStatus
    */
   exports.prototype['loginStatus'] = undefined;
   /**
-   * The user’s middle name.  Maximum Length: 50 characters.
+   * The user's middle name.  Maximum Length: 50 characters.
    * @member {String} middleName
    */
   exports.prototype['middleName'] = undefined;
@@ -267,6 +278,11 @@
    * @member {String} profileImageUri
    */
   exports.prototype['profileImageUri'] = undefined;
+  /**
+   * 
+   * @member {String} sendActivationEmail
+   */
+  exports.prototype['sendActivationEmail'] = undefined;
   /**
    * When set to **true**, specifies that an additional activation email is sent to the user if they fail a log on before activating their account. 
    * @member {String} sendActivationOnInvalidLogin

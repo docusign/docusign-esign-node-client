@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('sealDocumentsWithTabsOnly')) {
+        obj['sealDocumentsWithTabsOnly'] = ApiClient.convertToType(data['sealDocumentsWithTabsOnly'], 'String');
+      }
+      if (data.hasOwnProperty('sealName')) {
+        obj['sealName'] = ApiClient.convertToType(data['sealName'], 'String');
+      }
       if (data.hasOwnProperty('signatureProviderName')) {
         obj['signatureProviderName'] = ApiClient.convertToType(data['signatureProviderName'], 'String');
       }
@@ -65,6 +71,16 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} sealDocumentsWithTabsOnly
+   */
+  exports.prototype['sealDocumentsWithTabsOnly'] = undefined;
+  /**
+   * 
+   * @member {String} sealName
+   */
+  exports.prototype['sealName'] = undefined;
   /**
    * 
    * @member {String} signatureProviderName

@@ -129,7 +129,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * @param {String} batchId 
      * @param {Object} opts Optional parameters
      * @param {String} opts.count Specifies the number of entries to return.
-     * @param {String} opts.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;”failed,queued”)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent – This only returns entries with a sent status.  
+     * @param {String} opts.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
      * @param {String} opts.startPosition Specifies the location in the list of envelopes from which to start.
      * @param {module:api/BulkEnvelopesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopeStatus}

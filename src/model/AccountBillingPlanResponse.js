@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountAddress', 'model/AccountBillingPlan', 'model/BillingPlan', 'model/CreditCardInformation', 'model/ReferralInformation'], factory);
+    define(['ApiClient', 'model/AccountAddress', 'model/AccountBillingPlan', 'model/BillingPlan', 'model/CreditCardInformation', 'model/PaymentProcessorInformation', 'model/ReferralInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AccountBillingPlan'), require('./BillingPlan'), require('./CreditCardInformation'), require('./ReferralInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AccountBillingPlan'), require('./BillingPlan'), require('./CreditCardInformation'), require('./PaymentProcessorInformation'), require('./ReferralInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountBillingPlanResponse = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AccountBillingPlan, root.Docusign.BillingPlan, root.Docusign.CreditCardInformation, root.Docusign.ReferralInformation);
+    root.Docusign.AccountBillingPlanResponse = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AccountBillingPlan, root.Docusign.BillingPlan, root.Docusign.CreditCardInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.ReferralInformation);
   }
-}(this, function(ApiClient, AccountAddress, AccountBillingPlan, BillingPlan, CreditCardInformation, ReferralInformation) {
+}(this, function(ApiClient, AccountAddress, AccountBillingPlan, BillingPlan, CreditCardInformation, PaymentProcessorInformation, ReferralInformation) {
   'use strict';
 
 
@@ -68,6 +68,9 @@
       if (data.hasOwnProperty('creditCardInformation')) {
         obj['creditCardInformation'] = CreditCardInformation.constructFromObject(data['creditCardInformation']);
       }
+      if (data.hasOwnProperty('paymentProcessorInformation')) {
+        obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
+      }
       if (data.hasOwnProperty('referralInformation')) {
         obj['referralInformation'] = ReferralInformation.constructFromObject(data['referralInformation']);
       }
@@ -95,6 +98,10 @@
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
   exports.prototype['creditCardInformation'] = undefined;
+  /**
+   * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
+   */
+  exports.prototype['paymentProcessorInformation'] = undefined;
   /**
    * @member {module:model/ReferralInformation} referralInformation
    */

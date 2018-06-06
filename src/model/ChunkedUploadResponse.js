@@ -73,6 +73,12 @@
       if (data.hasOwnProperty('expirationDateTime')) {
         obj['expirationDateTime'] = ApiClient.convertToType(data['expirationDateTime'], 'String');
       }
+      if (data.hasOwnProperty('maxChunkedUploadParts')) {
+        obj['maxChunkedUploadParts'] = ApiClient.convertToType(data['maxChunkedUploadParts'], 'String');
+      }
+      if (data.hasOwnProperty('maxTotalSize')) {
+        obj['maxTotalSize'] = ApiClient.convertToType(data['maxTotalSize'], 'String');
+      }
       if (data.hasOwnProperty('totalSize')) {
         obj['totalSize'] = ApiClient.convertToType(data['totalSize'], 'String');
       }
@@ -110,6 +116,16 @@
    * @member {String} expirationDateTime
    */
   exports.prototype['expirationDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} maxChunkedUploadParts
+   */
+  exports.prototype['maxChunkedUploadParts'] = undefined;
+  /**
+   * 
+   * @member {String} maxTotalSize
+   */
+  exports.prototype['maxTotalSize'] = undefined;
   /**
    * 
    * @member {String} totalSize

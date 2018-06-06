@@ -391,7 +391,6 @@ Groups can be used to help manage users by associating users with a group. You c
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} opts Optional parameters
      * @param {String} opts.count Number of records to return. The number must be greater than 1 and less than or equal to 100.
-     * @param {String} opts.groupName Filters the groups returned by the group name or a sub-string of group name.
      * @param {String} opts.groupType 
      * @param {String} opts.searchText 
      * @param {String} opts.startPosition Starting value for the list.
@@ -413,7 +412,6 @@ Groups can be used to help manage users by associating users with a group. You c
       };
       var queryParams = {
         'count': opts['count'],
-        'group_name': opts['groupName'],
         'group_type': opts['groupType'],
         'search_text': opts['searchText'],
         'start_position': opts['startPosition']

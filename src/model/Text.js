@@ -234,12 +234,12 @@
    */
   exports.prototype['anchorUnits'] = undefined;
   /**
-   * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorXOffset
    */
   exports.prototype['anchorXOffset'] = undefined;
   /**
-   * Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorYOffset
    */
   exports.prototype['anchorYOffset'] = undefined;
@@ -417,7 +417,7 @@
    */
   exports.prototype['validationMessage'] = undefined;
   /**
-   * A regular expressionn used to validate input for the tab.
+   * A regular expression used to validate input for the tab.
    * @member {String} validationPattern
    */
   exports.prototype['validationPattern'] = undefined;

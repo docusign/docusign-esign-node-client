@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
+	define(['Configuration', 'ApiClient', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkRecipientsRequest'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/ViewUrl'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkRecipientsRequest'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/ViewUrl'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkRecipientsRequest, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.ViewUrl);
+    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkRecipientsRequest, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.ViewUrl);
   }
-}(this, function(Configuration, ApiClient, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, CustomFields, DocumentFieldsInformation, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) {
+}(this, function(Configuration, ApiClient, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, CustomFields, DocumentFieldsInformation, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) {
   'use strict';
 
   /**
@@ -149,8 +149,8 @@
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'templateId': templateId
+        'templateId': templateId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -383,8 +383,8 @@
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };
@@ -421,12 +421,12 @@
 
 Call this endpoint to insert a recipient name and email address merge fields into the email subject line when creating or sending from a template.
 
-The merge fields, based on the recipient’s role name, are added to the `emailSubject` property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.
+The merge fields, based on the recipient's role name, are added to the `emailSubject` property when the template is created or when the template is used to create an envelope. After a template sender adds the name and email information for the recipient and sends the envelope, the recipient information is automatically merged into the appropriate fields in the email subject line.
 
 Both the sender and the recipients will see the information in the email subject line for any emails associated with the template. This provides an easy way for senders to organize their envelope emails without having to open an envelope to check the recipient.
 ###### Note: If merging the recipient information into the subject line causes the subject line to exceed 100 characters, then any characters over the 100 character limit are not included in the subject line. For cases where the recipient name or email is expected to be long, you should consider placing the merge field at the start of the email subject.
 
-To add a recipient’s name in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:
+To add a recipient's name in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:
 
 [[<roleName>_UserName]]
 
@@ -434,7 +434,7 @@ Example:
 
 `"emailSubject":"[[Signer 1_UserName]], Please sign this NDA",`
 
-To add a recipient’s email address in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:
+To add a recipient's email address in the subject line add the following text in the `emailSubject` property when creating the template or when sending an envelope from a template:
 
 [[<roleName>_Email]]
 
@@ -522,8 +522,8 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };
@@ -641,8 +641,8 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'templateId': templateId
+        'templateId': templateId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -709,9 +709,9 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
       var pathParams = {
         'accountId': accountId,
+        'templateId': templateId,
         'documentId': documentId,
-        'pageNumber': pageNumber,
-        'templateId': templateId
+        'pageNumber': pageNumber
       };
       var queryParams = {
       };
@@ -948,8 +948,8 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };
@@ -1067,8 +1067,8 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };
@@ -1190,8 +1190,8 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'templateId': templateId
+        'templateId': templateId,
+        'documentId': documentId
       };
       var queryParams = {
         'encrypt': opts['encrypt'],
@@ -1264,9 +1264,9 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
 
       var pathParams = {
         'accountId': accountId,
+        'templateId': templateId,
         'documentId': documentId,
-        'pageNumber': pageNumber,
-        'templateId': templateId
+        'pageNumber': pageNumber
       };
       var queryParams = {
         'dpi': opts['dpi'],
@@ -1286,6 +1286,69 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getDocumentTabs operation.
+     * @callback module:api/TemplatesApi~getDocumentTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns tabs on the document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.pageNumbers 
+     * @param {module:api/TemplatesApi~getDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.getDocumentTabs = function(accountId, templateId, documentId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getDocumentTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getDocumentTabs");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getDocumentTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+        'page_numbers': opts['pageNumbers']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1400,6 +1463,147 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
+     * Callback function to receive the result of the getPageTabs operation.
+     * @callback module:api/TemplatesApi~getPageTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns tabs on the specified page.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {String} pageNumber The page number being accessed.
+     * @param {module:api/TemplatesApi~getPageTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.getPageTabs = function(accountId, templateId, documentId, pageNumber, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getPageTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getPageTabs");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getPageTabs");
+      }
+
+      // verify the required parameter 'pageNumber' is set
+      if (pageNumber == undefined || pageNumber == null) {
+        throw new Error("Missing the required parameter 'pageNumber' when calling getPageTabs");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId,
+        'pageNumber': pageNumber
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the getPages operation.
+     * @callback module:api/TemplatesApi~getPagesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PageImages} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns document page image(s) based on input.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.count 
+     * @param {String} opts.dpi 
+     * @param {String} opts.maxHeight 
+     * @param {String} opts.maxWidth 
+     * @param {String} opts.nocache 
+     * @param {String} opts.showChanges 
+     * @param {String} opts.startPosition 
+     * @param {module:api/TemplatesApi~getPagesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PageImages}
+     */
+    this.getPages = function(accountId, templateId, documentId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getPages");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getPages");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getPages");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+        'count': opts['count'],
+        'dpi': opts['dpi'],
+        'max_height': opts['maxHeight'],
+        'max_width': opts['maxWidth'],
+        'nocache': opts['nocache'],
+        'show_changes': opts['showChanges'],
+        'start_position': opts['startPosition']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = PageImages;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * Callback function to receive the result of the listBulkRecipients operation.
      * @callback module:api/TemplatesApi~listBulkRecipientsCallback
      * @param {String} error Error message, if any.
@@ -1441,8 +1645,8 @@ If the call is made by the user who has the lock and the request has the same in
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
         'include_tabs': opts['includeTabs'],
@@ -1556,8 +1760,8 @@ If the call is made by the user who has the lock and the request has the same in
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'templateId': templateId
+        'templateId': templateId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -1734,8 +1938,8 @@ If the call is made by the user who has the lock and the request has the same in
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
         'include_anchor_tab_locations': opts['includeAnchorTabLocations'],
@@ -1776,16 +1980,18 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} opts.folderIds A comma separated list of folder ID GUIDs.
      * @param {String} opts.fromDate Start of the search date range. Only returns templates created on or after this date/time. If no value is specified, there is no limit on the earliest date created.
      * @param {String} opts.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
+     * @param {String} opts.modifiedFromDate 
+     * @param {String} opts.modifiedToDate 
      * @param {String} opts.order Sets the direction order used to sort the list. Valid values are: -asc &#x3D; ascending sort order (a to z)  -desc &#x3D; descending sort order (z to a)
      * @param {String} opts.orderBy Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used.
      * @param {String} opts.searchText The search text used to search the names of templates.
-     * @param {String} opts.shared 
      * @param {String} opts.sharedByMe If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected.
      * @param {String} opts.startPosition The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero).
      * @param {String} opts.toDate End of the search date range. Only returns templates created up to this date/time. If no value is provided, this defaults to the current date.
      * @param {String} opts.usedFromDate Start of the search date range. Only returns templates used or edited on or after this date/time. If no value is specified, there is no limit on the earliest date used.
      * @param {String} opts.usedToDate End of the search date range. Only returns templates used or edited up to this date/time. If no value is provided, this defaults to the current date.
      * @param {String} opts.userFilter Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user.
+     * @param {String} opts.userId 
      * @param {module:api/TemplatesApi~listTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTemplateResults}
      */
@@ -1808,16 +2014,18 @@ If the call is made by the user who has the lock and the request has the same in
         'folder_ids': opts['folderIds'],
         'from_date': opts['fromDate'],
         'include': opts['include'],
+        'modified_from_date': opts['modifiedFromDate'],
+        'modified_to_date': opts['modifiedToDate'],
         'order': opts['order'],
         'order_by': opts['orderBy'],
         'search_text': opts['searchText'],
-        'shared': opts['shared'],
         'shared_by_me': opts['sharedByMe'],
         'start_position': opts['startPosition'],
         'to_date': opts['toDate'],
         'used_from_date': opts['usedFromDate'],
         'used_to_date': opts['usedToDate'],
-        'user_filter': opts['userFilter']
+        'user_filter': opts['userFilter'],
+        'user_id': opts['userId']
       };
       var headerParams = {
       };
@@ -1882,9 +2090,9 @@ If the call is made by the user who has the lock and the request has the same in
 
       var pathParams = {
         'accountId': accountId,
+        'templateId': templateId,
         'documentId': documentId,
-        'pageNumber': pageNumber,
-        'templateId': templateId
+        'pageNumber': pageNumber
       };
       var queryParams = {
       };
@@ -2004,8 +2212,8 @@ The REST API does not support modifying individual rows or values in the bulk re
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };
@@ -2127,8 +2335,8 @@ Each custom field used in a template must have a unique name.
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'templateId': templateId
+        'templateId': templateId,
+        'documentId': documentId
       };
       var queryParams = {
         'apply_document_fields': opts['applyDocumentFields'],
@@ -2192,8 +2400,8 @@ Each custom field used in a template must have a unique name.
 
       var pathParams = {
         'accountId': accountId,
-        'documentId': documentId,
-        'templateId': templateId
+        'templateId': templateId,
+        'documentId': documentId
       };
       var queryParams = {
       };
@@ -2229,6 +2437,7 @@ Each custom field used in a template must have a unique name.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} opts Optional parameters
      * @param {String} opts.applyDocumentFields 
+     * @param {String} opts.persistTabs 
      * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition 
      * @param {module:api/TemplatesApi~updateDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
@@ -2253,7 +2462,8 @@ Each custom field used in a template must have a unique name.
         'templateId': templateId
       };
       var queryParams = {
-        'apply_document_fields': opts['applyDocumentFields']
+        'apply_document_fields': opts['applyDocumentFields'],
+        'persist_tabs': opts['persistTabs']
       };
       var headerParams = {
       };
@@ -2548,8 +2758,8 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
 
       var pathParams = {
         'accountId': accountId,
-        'recipientId': recipientId,
-        'templateId': templateId
+        'templateId': templateId,
+        'recipientId': recipientId
       };
       var queryParams = {
       };
