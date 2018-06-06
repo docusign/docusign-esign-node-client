@@ -56,6 +56,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('created')) {
+        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+      }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
@@ -105,6 +108,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} created
+   */
+  exports.prototype['created'] = undefined;
   /**
    * 
    * @member {String} description

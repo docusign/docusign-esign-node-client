@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/MergeField'], factory);
+    define(['ApiClient', 'model/MergeField', 'model/PropertyMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./MergeField'));
+    module.exports = factory(require('../ApiClient'), require('./MergeField'), require('./PropertyMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TabMetadata = factory(root.Docusign.ApiClient, root.Docusign.MergeField);
+    root.Docusign.TabMetadata = factory(root.Docusign.ApiClient, root.Docusign.MergeField, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient, MergeField) {
+}(this, function(ApiClient, MergeField, PropertyMetadata) {
   'use strict';
 
 
@@ -154,6 +154,12 @@
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
+      if (data.hasOwnProperty('stampType')) {
+        obj['stampType'] = ApiClient.convertToType(data['stampType'], 'String');
+      }
+      if (data.hasOwnProperty('stampTypeMetadata')) {
+        obj['stampTypeMetadata'] = PropertyMetadata.constructFromObject(data['stampTypeMetadata']);
+      }
       if (data.hasOwnProperty('tabLabel')) {
         obj['tabLabel'] = ApiClient.convertToType(data['tabLabel'], 'String');
       }
@@ -207,12 +213,12 @@
    */
   exports.prototype['anchorUnits'] = undefined;
   /**
-   * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorXOffset
    */
   exports.prototype['anchorXOffset'] = undefined;
   /**
-   * Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorYOffset
    */
   exports.prototype['anchorYOffset'] = undefined;
@@ -341,6 +347,15 @@
    */
   exports.prototype['shared'] = undefined;
   /**
+   * 
+   * @member {String} stampType
+   */
+  exports.prototype['stampType'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} stampTypeMetadata
+   */
+  exports.prototype['stampTypeMetadata'] = undefined;
+  /**
    * The label string associated with the tab.
    * @member {String} tabLabel
    */
@@ -361,7 +376,7 @@
    */
   exports.prototype['validationMessage'] = undefined;
   /**
-   * A regular expressionn used to validate input for the tab.
+   * A regular expression used to validate input for the tab.
    * @member {String} validationPattern
    */
   exports.prototype['validationPattern'] = undefined;

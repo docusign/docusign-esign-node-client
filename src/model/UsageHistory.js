@@ -35,7 +35,7 @@
 
   /**
    * Constructs a new <code>UsageHistory</code>.
-   * A complex element consisting of:   * lastSentDateTime – the date and time the user last sent an envelope.  * lastSignedDateTime – the date and time the user last signed an envelope. * sentCount – the number of envelopes the user has sent. * signedCount – the number of envelopes the user has signed.
+   * A complex element consisting of:   * lastSentDateTime - the date and time the user last sent an envelope.  * lastSignedDateTime - the date and time the user last signed an envelope. * sentCount - the number of envelopes the user has sent. * signedCount - the number of envelopes the user has signed.
    * @alias module:model/UsageHistory
    * @class
    */

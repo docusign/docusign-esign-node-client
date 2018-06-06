@@ -264,6 +264,7 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} powerFormId 
      * @param {Object} opts Optional parameters
+     * @param {String} opts.dataLayout 
      * @param {String} opts.fromDate 
      * @param {String} opts.toDate 
      * @param {module:api/PowerFormsApi~getPowerFormDataCallback} callback The callback function, accepting three arguments: error, data, response
@@ -289,6 +290,7 @@
         'powerFormId': powerFormId
       };
       var queryParams = {
+        'data_layout': opts['dataLayout'],
         'from_date': opts['fromDate'],
         'to_date': opts['toDate']
       };

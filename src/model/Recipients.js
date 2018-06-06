@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Agent', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Editor', 'model/ErrorDetails', 'model/InPersonSigner', 'model/Intermediary', 'model/Signer'], factory);
+    define(['ApiClient', 'model/Agent', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Editor', 'model/ErrorDetails', 'model/InPersonSigner', 'model/Intermediary', 'model/SealSign', 'model/Signer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Agent'), require('./CarbonCopy'), require('./CertifiedDelivery'), require('./Editor'), require('./ErrorDetails'), require('./InPersonSigner'), require('./Intermediary'), require('./Signer'));
+    module.exports = factory(require('../ApiClient'), require('./Agent'), require('./CarbonCopy'), require('./CertifiedDelivery'), require('./Editor'), require('./ErrorDetails'), require('./InPersonSigner'), require('./Intermediary'), require('./SealSign'), require('./Signer'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Recipients = factory(root.Docusign.ApiClient, root.Docusign.Agent, root.Docusign.CarbonCopy, root.Docusign.CertifiedDelivery, root.Docusign.Editor, root.Docusign.ErrorDetails, root.Docusign.InPersonSigner, root.Docusign.Intermediary, root.Docusign.Signer);
+    root.Docusign.Recipients = factory(root.Docusign.ApiClient, root.Docusign.Agent, root.Docusign.CarbonCopy, root.Docusign.CertifiedDelivery, root.Docusign.Editor, root.Docusign.ErrorDetails, root.Docusign.InPersonSigner, root.Docusign.Intermediary, root.Docusign.SealSign, root.Docusign.Signer);
   }
-}(this, function(ApiClient, Agent, CarbonCopy, CertifiedDelivery, Editor, ErrorDetails, InPersonSigner, Intermediary, Signer) {
+}(this, function(ApiClient, Agent, CarbonCopy, CertifiedDelivery, Editor, ErrorDetails, InPersonSigner, Intermediary, SealSign, Signer) {
   'use strict';
 
 
@@ -83,6 +83,9 @@
       if (data.hasOwnProperty('recipientCount')) {
         obj['recipientCount'] = ApiClient.convertToType(data['recipientCount'], 'String');
       }
+      if (data.hasOwnProperty('seals')) {
+        obj['seals'] = ApiClient.convertToType(data['seals'], [SealSign]);
+      }
       if (data.hasOwnProperty('signers')) {
         obj['signers'] = ApiClient.convertToType(data['signers'], [Signer]);
       }
@@ -134,6 +137,11 @@
    * @member {String} recipientCount
    */
   exports.prototype['recipientCount'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/SealSign>} seals
+   */
+  exports.prototype['seals'] = undefined;
   /**
    * A complex type containing information about the Signer recipient.
    * @member {Array.<module:model/Signer>} signers

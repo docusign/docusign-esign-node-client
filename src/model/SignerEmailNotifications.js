@@ -65,6 +65,12 @@
       if (data.hasOwnProperty('certifiedDeliveryNotification')) {
         obj['certifiedDeliveryNotification'] = ApiClient.convertToType(data['certifiedDeliveryNotification'], 'String');
       }
+      if (data.hasOwnProperty('commentsOnlyPrivateAndMention')) {
+        obj['commentsOnlyPrivateAndMention'] = ApiClient.convertToType(data['commentsOnlyPrivateAndMention'], 'String');
+      }
+      if (data.hasOwnProperty('commentsReceiveAll')) {
+        obj['commentsReceiveAll'] = ApiClient.convertToType(data['commentsReceiveAll'], 'String');
+      }
       if (data.hasOwnProperty('documentMarkupActivation')) {
         obj['documentMarkupActivation'] = ApiClient.convertToType(data['documentMarkupActivation'], 'String');
       }
@@ -117,6 +123,16 @@
    * @member {String} certifiedDeliveryNotification
    */
   exports.prototype['certifiedDeliveryNotification'] = undefined;
+  /**
+   * 
+   * @member {String} commentsOnlyPrivateAndMention
+   */
+  exports.prototype['commentsOnlyPrivateAndMention'] = undefined;
+  /**
+   * 
+   * @member {String} commentsReceiveAll
+   */
+  exports.prototype['commentsReceiveAll'] = undefined;
   /**
    * When set to **true**, the user receives notification that document markup has been activated.
    * @member {String} documentMarkupActivation

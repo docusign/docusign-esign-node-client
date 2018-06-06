@@ -121,6 +121,18 @@
       if (data.hasOwnProperty('allowEnvelopeSendingMetadata')) {
         obj['allowEnvelopeSendingMetadata'] = SettingsMetadata.constructFromObject(data['allowEnvelopeSendingMetadata']);
       }
+      if (data.hasOwnProperty('allowESealRecipients')) {
+        obj['allowESealRecipients'] = ApiClient.convertToType(data['allowESealRecipients'], 'String');
+      }
+      if (data.hasOwnProperty('allowESealRecipientsMetadata')) {
+        obj['allowESealRecipientsMetadata'] = SettingsMetadata.constructFromObject(data['allowESealRecipientsMetadata']);
+      }
+      if (data.hasOwnProperty('allowPowerFormsAdminToAccessAllPowerFormEnvelopes')) {
+        obj['allowPowerFormsAdminToAccessAllPowerFormEnvelopes'] = ApiClient.convertToType(data['allowPowerFormsAdminToAccessAllPowerFormEnvelopes'], 'String');
+      }
+      if (data.hasOwnProperty('allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata')) {
+        obj['allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata'] = SettingsMetadata.constructFromObject(data['allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata']);
+      }
       if (data.hasOwnProperty('allowSendersToSetRecipientEmailLanguage')) {
         obj['allowSendersToSetRecipientEmailLanguage'] = ApiClient.convertToType(data['allowSendersToSetRecipientEmailLanguage'], 'String');
       }
@@ -350,6 +362,24 @@
    * @member {module:model/SettingsMetadata} allowEnvelopeSendingMetadata
    */
   exports.prototype['allowEnvelopeSendingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowESealRecipients
+   */
+  exports.prototype['allowESealRecipients'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowESealRecipientsMetadata
+   */
+  exports.prototype['allowESealRecipientsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowPowerFormsAdminToAccessAllPowerFormEnvelopes
+   */
+  exports.prototype['allowPowerFormsAdminToAccessAllPowerFormEnvelopes'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata
+   */
+  exports.prototype['allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata'] = undefined;
   /**
    * 
    * @member {String} allowSendersToSetRecipientEmailLanguage
