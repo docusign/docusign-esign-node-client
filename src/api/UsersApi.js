@@ -67,6 +67,7 @@
 The response returns whether the API execution was successful (200 - OK) or  if it failed. The response contains a user structure similar to the request and includes the user changes. If an error occurred during the DELETE operation for any of the users, the response for that user contains an `errorDetails` node with `errorCode` and `message` properties.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} opts Optional parameters
+     * @param {String} opts._delete 
      * @param {module:model/UserInfoList} opts.userInfoList 
      * @param {module:api/UsersApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UsersResponse}
@@ -85,6 +86,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
         'accountId': accountId
       };
       var queryParams = {
+        'delete': opts['_delete']
       };
       var headerParams = {
       };
@@ -489,8 +491,8 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
       var pathParams = {
         'accountId': accountId,
-        'signatureId': signatureId,
-        'userId': userId
+        'userId': userId,
+        'signatureId': signatureId
       };
       var queryParams = {
       };
@@ -563,9 +565,9 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
       var pathParams = {
         'accountId': accountId,
-        'imageType': imageType,
+        'userId': userId,
         'signatureId': signatureId,
-        'userId': userId
+        'imageType': imageType
       };
       var queryParams = {
       };
@@ -914,8 +916,8 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
       var pathParams = {
         'accountId': accountId,
-        'signatureId': signatureId,
-        'userId': userId
+        'userId': userId,
+        'signatureId': signatureId
       };
       var queryParams = {
       };
@@ -991,9 +993,9 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
       var pathParams = {
         'accountId': accountId,
-        'imageType': imageType,
+        'userId': userId,
         'signatureId': signatureId,
-        'userId': userId
+        'imageType': imageType
       };
       var queryParams = {
         'include_chrome': opts['includeChrome']
@@ -1035,7 +1037,6 @@ The response returns the list of users for the account along with the informatio
      * @param {String} opts.email 
      * @param {String} opts.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
      * @param {String} opts.groupId Filters user records returned by one or more group Id&#39;s.
-     * @param {String} opts.includeUsersettingsForCsv 
      * @param {String} opts.loginStatus 
      * @param {String} opts.notGroupId 
      * @param {String} opts.startPosition Starting value for the list. 
@@ -1063,7 +1064,6 @@ The response returns the list of users for the account along with the informatio
         'email': opts['email'],
         'email_substring': opts['emailSubstring'],
         'group_id': opts['groupId'],
-        'include_usersettings_for_csv': opts['includeUsersettingsForCsv'],
         'login_status': opts['loginStatus'],
         'not_group_id': opts['notGroupId'],
         'start_position': opts['startPosition'],
@@ -1173,10 +1173,13 @@ The `signatureId` parameter accepts a signature ID or a signature name. DocuSign
 For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.stampType 
      * @param {module:api/UsersApi~listSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignaturesInformation}
      */
-    this.listSignatures = function(accountId, userId, callback) {
+    this.listSignatures = function(accountId, userId, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1195,6 +1198,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         'userId': userId
       };
       var queryParams = {
+        'stamp_type': opts['stampType']
       };
       var headerParams = {
       };
@@ -1601,8 +1605,8 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
       var pathParams = {
         'accountId': accountId,
-        'signatureId': signatureId,
-        'userId': userId
+        'userId': userId,
+        'signatureId': signatureId
       };
       var queryParams = {
         'close_existing_signature': opts['closeExistingSignature']
@@ -1675,9 +1679,9 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
       var pathParams = {
         'accountId': accountId,
-        'imageType': imageType,
+        'userId': userId,
         'signatureId': signatureId,
-        'userId': userId
+        'imageType': imageType
       };
       var queryParams = {
       };
@@ -1693,6 +1697,61 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * Callback function to receive the result of the updateSignatures operation.
+     * @callback module:api/UsersApi~updateSignaturesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserSignaturesInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Adds/updates a user signature.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/UserSignaturesInformation} opts.userSignaturesInformation 
+     * @param {module:api/UsersApi~updateSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserSignaturesInformation}
+     */
+    this.updateSignatures = function(accountId, userId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['userSignaturesInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateSignatures");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId == undefined || userId == null) {
+        throw new Error("Missing the required parameter 'userId' when calling updateSignatures");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserSignaturesInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/users/{userId}/signatures', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

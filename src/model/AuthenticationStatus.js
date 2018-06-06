@@ -95,6 +95,9 @@
       if (data.hasOwnProperty('salesforceResult')) {
         obj['salesforceResult'] = EventResult.constructFromObject(data['salesforceResult']);
       }
+      if (data.hasOwnProperty('signatureProviderResult')) {
+        obj['signatureProviderResult'] = EventResult.constructFromObject(data['signatureProviderResult']);
+      }
       if (data.hasOwnProperty('smsAuthResult')) {
         obj['smsAuthResult'] = EventResult.constructFromObject(data['smsAuthResult']);
       }
@@ -163,6 +166,10 @@
    * @member {module:model/EventResult} salesforceResult
    */
   exports.prototype['salesforceResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} signatureProviderResult
+   */
+  exports.prototype['signatureProviderResult'] = undefined;
   /**
    * @member {module:model/EventResult} smsAuthResult
    */

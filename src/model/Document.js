@@ -58,6 +58,9 @@
       if (data.hasOwnProperty('applyAnchorTabs')) {
         obj['applyAnchorTabs'] = ApiClient.convertToType(data['applyAnchorTabs'], 'String');
       }
+      if (data.hasOwnProperty('authoritativeCopy')) {
+        obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'Boolean');
+      }
       if (data.hasOwnProperty('display')) {
         obj['display'] = ApiClient.convertToType(data['display'], 'String');
       }
@@ -78,6 +81,9 @@
       }
       if (data.hasOwnProperty('fileExtension')) {
         obj['fileExtension'] = ApiClient.convertToType(data['fileExtension'], 'String');
+      }
+      if (data.hasOwnProperty('fileFormatHint')) {
+        obj['fileFormatHint'] = ApiClient.convertToType(data['fileFormatHint'], 'String');
       }
       if (data.hasOwnProperty('includeInDownload')) {
         obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
@@ -125,12 +131,17 @@
    */
   exports.prototype['applyAnchorTabs'] = undefined;
   /**
+   * Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+   * @member {Boolean} authoritativeCopy
+   */
+  exports.prototype['authoritativeCopy'] = undefined;
+  /**
    * 
    * @member {String} display
    */
   exports.prototype['display'] = undefined;
   /**
-   * The document’s bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
+   * The document's bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
    * @member {String} documentBase64
    */
   exports.prototype['documentBase64'] = undefined;
@@ -159,6 +170,11 @@
    * @member {String} fileExtension
    */
   exports.prototype['fileExtension'] = undefined;
+  /**
+   * 
+   * @member {String} fileFormatHint
+   */
+  exports.prototype['fileFormatHint'] = undefined;
   /**
    * 
    * @member {String} includeInDownload

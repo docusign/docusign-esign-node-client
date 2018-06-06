@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountAddress', 'model/AppStoreReceipt', 'model/CreditCardInformation', 'model/PlanInformation', 'model/ReferralInformation'], factory);
+    define(['ApiClient', 'model/AccountAddress', 'model/AppStoreReceipt', 'model/CreditCardInformation', 'model/PaymentProcessorInformation', 'model/PlanInformation', 'model/ReferralInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AppStoreReceipt'), require('./CreditCardInformation'), require('./PlanInformation'), require('./ReferralInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AppStoreReceipt'), require('./CreditCardInformation'), require('./PaymentProcessorInformation'), require('./PlanInformation'), require('./ReferralInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BillingPlanInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AppStoreReceipt, root.Docusign.CreditCardInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation);
+    root.Docusign.BillingPlanInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AppStoreReceipt, root.Docusign.CreditCardInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation);
   }
-}(this, function(ApiClient, AccountAddress, AppStoreReceipt, CreditCardInformation, PlanInformation, ReferralInformation) {
+}(this, function(ApiClient, AccountAddress, AppStoreReceipt, CreditCardInformation, PaymentProcessorInformation, PlanInformation, ReferralInformation) {
   'use strict';
 
 
@@ -75,6 +75,9 @@
       }
       if (data.hasOwnProperty('incrementalSeats')) {
         obj['incrementalSeats'] = ApiClient.convertToType(data['incrementalSeats'], 'String');
+      }
+      if (data.hasOwnProperty('paymentProcessorInformation')) {
+        obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
       }
       if (data.hasOwnProperty('planInformation')) {
         obj['planInformation'] = PlanInformation.constructFromObject(data['planInformation']);
@@ -136,6 +139,10 @@
    * @member {String} incrementalSeats
    */
   exports.prototype['incrementalSeats'] = undefined;
+  /**
+   * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
+   */
+  exports.prototype['paymentProcessorInformation'] = undefined;
   /**
    * @member {module:model/PlanInformation} planInformation
    */

@@ -82,6 +82,12 @@
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
+      if (data.hasOwnProperty('templateLocked')) {
+        obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
+      }
+      if (data.hasOwnProperty('templateRequired')) {
+        obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
+      }
     }
     return obj;
   }
@@ -131,6 +137,16 @@
    * @member {String} shared
    */
   exports.prototype['shared'] = undefined;
+  /**
+   * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
+   * @member {String} templateLocked
+   */
+  exports.prototype['templateLocked'] = undefined;
+  /**
+   * When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
+   * @member {String} templateRequired
+   */
+  exports.prototype['templateRequired'] = undefined;
 
 
 

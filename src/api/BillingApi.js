@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountBillingPlanResponse', 'model/BillingInvoice', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlanInformation', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/ErrorDetails', 'model/PurchasedEnvelopesInformation'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountBillingPlanResponse', 'model/BillingInvoice', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlanInformation', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/CreditCardInformation', 'model/ErrorDetails', 'model/PurchasedEnvelopesInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountBillingPlanResponse'), require('../model/BillingInvoice'), require('../model/BillingInvoicesResponse'), require('../model/BillingInvoicesSummary'), require('../model/BillingPaymentItem'), require('../model/BillingPaymentRequest'), require('../model/BillingPaymentResponse'), require('../model/BillingPaymentsResponse'), require('../model/BillingPlanInformation'), require('../model/BillingPlanResponse'), require('../model/BillingPlanUpdateResponse'), require('../model/BillingPlansResponse'), require('../model/ErrorDetails'), require('../model/PurchasedEnvelopesInformation'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountBillingPlanResponse'), require('../model/BillingInvoice'), require('../model/BillingInvoicesResponse'), require('../model/BillingInvoicesSummary'), require('../model/BillingPaymentItem'), require('../model/BillingPaymentRequest'), require('../model/BillingPaymentResponse'), require('../model/BillingPaymentsResponse'), require('../model/BillingPlanInformation'), require('../model/BillingPlanResponse'), require('../model/BillingPlanUpdateResponse'), require('../model/BillingPlansResponse'), require('../model/CreditCardInformation'), require('../model/ErrorDetails'), require('../model/PurchasedEnvelopesInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BillingApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountBillingPlanResponse, root.Docusign.BillingInvoice, root.Docusign.BillingInvoicesResponse, root.Docusign.BillingInvoicesSummary, root.Docusign.BillingPaymentItem, root.Docusign.BillingPaymentRequest, root.Docusign.BillingPaymentResponse, root.Docusign.BillingPaymentsResponse, root.Docusign.BillingPlanInformation, root.Docusign.BillingPlanResponse, root.Docusign.BillingPlanUpdateResponse, root.Docusign.BillingPlansResponse, root.Docusign.ErrorDetails, root.Docusign.PurchasedEnvelopesInformation);
+    root.Docusign.BillingApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountBillingPlanResponse, root.Docusign.BillingInvoice, root.Docusign.BillingInvoicesResponse, root.Docusign.BillingInvoicesSummary, root.Docusign.BillingPaymentItem, root.Docusign.BillingPaymentRequest, root.Docusign.BillingPaymentResponse, root.Docusign.BillingPaymentsResponse, root.Docusign.BillingPlanInformation, root.Docusign.BillingPlanResponse, root.Docusign.BillingPlanUpdateResponse, root.Docusign.BillingPlansResponse, root.Docusign.CreditCardInformation, root.Docusign.ErrorDetails, root.Docusign.PurchasedEnvelopesInformation);
   }
-}(this, function(Configuration, ApiClient, AccountBillingPlanResponse, BillingInvoice, BillingInvoicesResponse, BillingInvoicesSummary, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlanInformation, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, ErrorDetails, PurchasedEnvelopesInformation) {
+}(this, function(Configuration, ApiClient, AccountBillingPlanResponse, BillingInvoice, BillingInvoicesResponse, BillingInvoicesSummary, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlanInformation, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, CreditCardInformation, ErrorDetails, PurchasedEnvelopesInformation) {
   'use strict';
 
   /**
@@ -99,6 +99,51 @@
     };
 
     /**
+     * Callback function to receive the result of the getCreditCardInfo operation.
+     * @callback module:api/BillingApi~getCreditCardInfoCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CreditCardInformation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get metadata for a given credit card.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/BillingApi~getCreditCardInfoCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CreditCardInformation}
+     */
+    this.getCreditCardInfo = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getCreditCardInfo");
+      }
+
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CreditCardInformation;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/billing_plan/credit_card', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * Callback function to receive the result of the getInvoice operation.
      * @callback module:api/BillingApi~getInvoiceCallback
      * @param {String} error Error message, if any.
@@ -114,14 +159,14 @@
 
 Privileges required: account administrator
 
-The response returns a list of charges and information about the charges. Quantities are usually shown as ‘unlimited’ or an integer. Amounts are shown in the currency set for the account.
+The response returns a list of charges and information about the charges. Quantities are usually shown as 'unlimited' or an integer. Amounts are shown in the currency set for the account.
 
 **Response**
 The following table provides a description of the different `chargeName` property values. The information will grow as more chargeable items are added to the system.
 
 | chargeName | Description |
 | --- | --- |
-| id_check | ID Check Charge |
+| id_check | IDÂ Check Charge |
 | in_person_signing | In Person Signing charge |
 | envelopes Included | Sent Envelopes for the account |
 | age_verify | Age verification check |

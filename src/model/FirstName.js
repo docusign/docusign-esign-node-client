@@ -142,6 +142,9 @@
       if (data.hasOwnProperty('underline')) {
         obj['underline'] = ApiClient.convertToType(data['underline'], 'String');
       }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
       if (data.hasOwnProperty('xPosition')) {
         obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'String');
       }
@@ -183,12 +186,12 @@
    */
   exports.prototype['anchorUnits'] = undefined;
   /**
-   * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorXOffset
    */
   exports.prototype['anchorXOffset'] = undefined;
   /**
-   * Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorYOffset
    */
   exports.prototype['anchorYOffset'] = undefined;
@@ -295,6 +298,11 @@
    * @member {String} underline
    */
   exports.prototype['underline'] = undefined;
+  /**
+   * Specifies the value of the tab. 
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
   /**
    * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {String} xPosition

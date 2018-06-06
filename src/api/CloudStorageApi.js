@@ -148,8 +148,8 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
 
       var pathParams = {
         'accountId': accountId,
-        'serviceId': serviceId,
-        'userId': userId
+        'userId': userId,
+        'serviceId': serviceId
       };
       var queryParams = {
       };
@@ -269,8 +269,8 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
 
       var pathParams = {
         'accountId': accountId,
-        'serviceId': serviceId,
-        'userId': userId
+        'userId': userId,
+        'serviceId': serviceId
       };
       var queryParams = {
         'redirectUrl': opts['redirectUrl']
@@ -346,9 +346,9 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
 
       var pathParams = {
         'accountId': accountId,
-        'folderId': folderId,
+        'userId': userId,
         'serviceId': serviceId,
-        'userId': userId
+        'folderId': folderId
       };
       var queryParams = {
         'cloud_storage_folder_path': opts['cloudStorageFolderPath'],
@@ -423,8 +423,8 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
 
       var pathParams = {
         'accountId': accountId,
-        'serviceId': serviceId,
-        'userId': userId
+        'userId': userId,
+        'serviceId': serviceId
       };
       var queryParams = {
         'cloud_storage_folder_path': opts['cloudStorageFolderPath'],

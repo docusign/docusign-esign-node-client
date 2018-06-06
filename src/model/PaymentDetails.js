@@ -55,11 +55,23 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('allowedPaymentMethods')) {
+        obj['allowedPaymentMethods'] = ApiClient.convertToType(data['allowedPaymentMethods'], ['String']);
+      }
+      if (data.hasOwnProperty('chargeId')) {
+        obj['chargeId'] = ApiClient.convertToType(data['chargeId'], 'String');
+      }
       if (data.hasOwnProperty('currencyCode')) {
         obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
       }
       if (data.hasOwnProperty('gatewayAccountId')) {
         obj['gatewayAccountId'] = ApiClient.convertToType(data['gatewayAccountId'], 'String');
+      }
+      if (data.hasOwnProperty('gatewayDisplayName')) {
+        obj['gatewayDisplayName'] = ApiClient.convertToType(data['gatewayDisplayName'], 'String');
+      }
+      if (data.hasOwnProperty('gatewayName')) {
+        obj['gatewayName'] = ApiClient.convertToType(data['gatewayName'], 'String');
       }
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [PaymentLineItem]);
@@ -76,6 +88,16 @@
 
   /**
    * 
+   * @member {Array.<String>} allowedPaymentMethods
+   */
+  exports.prototype['allowedPaymentMethods'] = undefined;
+  /**
+   * 
+   * @member {String} chargeId
+   */
+  exports.prototype['chargeId'] = undefined;
+  /**
+   * 
    * @member {String} currencyCode
    */
   exports.prototype['currencyCode'] = undefined;
@@ -84,6 +106,16 @@
    * @member {String} gatewayAccountId
    */
   exports.prototype['gatewayAccountId'] = undefined;
+  /**
+   * 
+   * @member {String} gatewayDisplayName
+   */
+  exports.prototype['gatewayDisplayName'] = undefined;
+  /**
+   * 
+   * @member {String} gatewayName
+   */
+  exports.prototype['gatewayName'] = undefined;
   /**
    * 
    * @member {Array.<module:model/PaymentLineItem>} lineItems

@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('allowReassign')) {
         obj['allowReassign'] = ApiClient.convertToType(data['allowReassign'], 'String');
       }
+      if (data.hasOwnProperty('allowViewHistory')) {
+        obj['allowViewHistory'] = ApiClient.convertToType(data['allowViewHistory'], 'String');
+      }
       if (data.hasOwnProperty('asynchronous')) {
         obj['asynchronous'] = ApiClient.convertToType(data['asynchronous'], 'String');
       }
@@ -69,6 +72,9 @@
       }
       if (data.hasOwnProperty('authoritativeCopy')) {
         obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'String');
+      }
+      if (data.hasOwnProperty('authoritativeCopyDefault')) {
+        obj['authoritativeCopyDefault'] = ApiClient.convertToType(data['authoritativeCopyDefault'], 'String');
       }
       if (data.hasOwnProperty('autoNavigation')) {
         obj['autoNavigation'] = ApiClient.convertToType(data['autoNavigation'], 'String');
@@ -178,6 +184,9 @@
       if (data.hasOwnProperty('sentDateTime')) {
         obj['sentDateTime'] = ApiClient.convertToType(data['sentDateTime'], 'String');
       }
+      if (data.hasOwnProperty('signerCanSignOnMobile')) {
+        obj['signerCanSignOnMobile'] = ApiClient.convertToType(data['signerCanSignOnMobile'], 'String');
+      }
       if (data.hasOwnProperty('signingLocation')) {
         obj['signingLocation'] = ApiClient.convertToType(data['signingLocation'], 'String');
       }
@@ -217,6 +226,11 @@
    */
   exports.prototype['allowReassign'] = undefined;
   /**
+   * 
+   * @member {String} allowViewHistory
+   */
+  exports.prototype['allowViewHistory'] = undefined;
+  /**
    * When set to **true**, the envelope is queued for processing and the value of the `status` property is set to 'Processing'. Additionally, get status calls return 'Processing' until completed.
    * @member {String} asynchronous
    */
@@ -231,6 +245,11 @@
    * @member {String} authoritativeCopy
    */
   exports.prototype['authoritativeCopy'] = undefined;
+  /**
+   * 
+   * @member {String} authoritativeCopyDefault
+   */
+  exports.prototype['authoritativeCopyDefault'] = undefined;
   /**
    * 
    * @member {String} autoNavigation
@@ -406,6 +425,11 @@
    */
   exports.prototype['sentDateTime'] = undefined;
   /**
+   * 
+   * @member {String} signerCanSignOnMobile
+   */
+  exports.prototype['signerCanSignOnMobile'] = undefined;
+  /**
    * Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
    * @member {String} signingLocation
    */
@@ -431,7 +455,7 @@
    */
   exports.prototype['transactionId'] = undefined;
   /**
-   * When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
+   * When set to **true**, the disclosure is shown to recipients in accordance with the account's Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
    * @member {String} useDisclosure
    */
   exports.prototype['useDisclosure'] = undefined;

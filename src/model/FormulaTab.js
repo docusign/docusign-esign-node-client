@@ -115,6 +115,9 @@
       if (data.hasOwnProperty('formula')) {
         obj['formula'] = ApiClient.convertToType(data['formula'], 'String');
       }
+      if (data.hasOwnProperty('hidden')) {
+        obj['hidden'] = ApiClient.convertToType(data['hidden'], 'String');
+      }
       if (data.hasOwnProperty('isPaymentAmount')) {
         obj['isPaymentAmount'] = ApiClient.convertToType(data['isPaymentAmount'], 'String');
       }
@@ -237,12 +240,12 @@
    */
   exports.prototype['anchorUnits'] = undefined;
   /**
-   * Specifies the X axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the X axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorXOffset
    */
   exports.prototype['anchorXOffset'] = undefined;
   /**
-   * Specifies the Y axis location of the tab, in achorUnits, relative to the anchorString.
+   * Specifies the Y axis location of the tab, in anchorUnits, relative to the anchorString.
    * @member {String} anchorYOffset
    */
   exports.prototype['anchorYOffset'] = undefined;
@@ -305,6 +308,11 @@
    * @member {String} formula
    */
   exports.prototype['formula'] = undefined;
+  /**
+   * 
+   * @member {String} hidden
+   */
+  exports.prototype['hidden'] = undefined;
   /**
    * When set to **true**, sets this as a payment tab. Can only be used with Text, Number, Formula, or List tabs. The value of the tab must be a number. 
    * @member {String} isPaymentAmount
@@ -424,7 +432,7 @@
    */
   exports.prototype['validationMessage'] = undefined;
   /**
-   * A regular expressionn used to validate input for the tab.
+   * A regular expression used to validate input for the tab.
    * @member {String} validationPattern
    */
   exports.prototype['validationPattern'] = undefined;

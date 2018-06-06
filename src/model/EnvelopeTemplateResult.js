@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('allowReassign')) {
         obj['allowReassign'] = ApiClient.convertToType(data['allowReassign'], 'String');
       }
+      if (data.hasOwnProperty('allowViewHistory')) {
+        obj['allowViewHistory'] = ApiClient.convertToType(data['allowViewHistory'], 'String');
+      }
       if (data.hasOwnProperty('asynchronous')) {
         obj['asynchronous'] = ApiClient.convertToType(data['asynchronous'], 'String');
       }
@@ -69,6 +72,9 @@
       }
       if (data.hasOwnProperty('authoritativeCopy')) {
         obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'String');
+      }
+      if (data.hasOwnProperty('authoritativeCopyDefault')) {
+        obj['authoritativeCopyDefault'] = ApiClient.convertToType(data['authoritativeCopyDefault'], 'String');
       }
       if (data.hasOwnProperty('autoNavigation')) {
         obj['autoNavigation'] = ApiClient.convertToType(data['autoNavigation'], 'String');
@@ -84,6 +90,9 @@
       }
       if (data.hasOwnProperty('completedDateTime')) {
         obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('created')) {
+        obj['created'] = ApiClient.convertToType(data['created'], 'String');
       }
       if (data.hasOwnProperty('createdDateTime')) {
         obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
@@ -208,6 +217,9 @@
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
+      if (data.hasOwnProperty('signerCanSignOnMobile')) {
+        obj['signerCanSignOnMobile'] = ApiClient.convertToType(data['signerCanSignOnMobile'], 'String');
+      }
       if (data.hasOwnProperty('signingLocation')) {
         obj['signingLocation'] = ApiClient.convertToType(data['signingLocation'], 'String');
       }
@@ -253,6 +265,11 @@
    */
   exports.prototype['allowReassign'] = undefined;
   /**
+   * 
+   * @member {String} allowViewHistory
+   */
+  exports.prototype['allowViewHistory'] = undefined;
+  /**
    * When set to **true**, the envelope is queued for processing and the value of the `status` property is set to 'Processing'. Additionally, get status calls return 'Processing' until completed.
    * @member {String} asynchronous
    */
@@ -267,6 +284,11 @@
    * @member {String} authoritativeCopy
    */
   exports.prototype['authoritativeCopy'] = undefined;
+  /**
+   * 
+   * @member {String} authoritativeCopyDefault
+   */
+  exports.prototype['authoritativeCopyDefault'] = undefined;
   /**
    * 
    * @member {String} autoNavigation
@@ -292,6 +314,11 @@
    * @member {String} completedDateTime
    */
   exports.prototype['completedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} created
+   */
+  exports.prototype['created'] = undefined;
   /**
    * Indicates the date and time the item was created.
    * @member {String} createdDateTime
@@ -492,6 +519,11 @@
    */
   exports.prototype['shared'] = undefined;
   /**
+   * 
+   * @member {String} signerCanSignOnMobile
+   */
+  exports.prototype['signerCanSignOnMobile'] = undefined;
+  /**
    * Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
    * @member {String} signingLocation
    */
@@ -527,7 +559,7 @@
    */
   exports.prototype['uri'] = undefined;
   /**
-   * When set to **true**, the disclosure is shown to recipients in accordance with the account’s Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
+   * When set to **true**, the disclosure is shown to recipients in accordance with the account's Electronic Record and Signature Disclosure frequency setting. When set to **false**, the Electronic Record and Signature Disclosure is not shown to any envelope recipients.   If the `useDisclosure` property is not set, then the account's normal disclosure setting is used and the value of the `useDisclosure` property is not returned in responses when getting envelope information.
    * @member {String} useDisclosure
    */
   exports.prototype['useDisclosure'] = undefined;

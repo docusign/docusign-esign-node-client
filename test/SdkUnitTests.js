@@ -557,7 +557,7 @@ describe('SDK Unit Tests:', function (done) {
   it('listDocuments', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.listDocuments(accountId, envelopeId, null, function (error, docsList, response) {
+    envelopesApi.listDocuments(accountId, envelopeId, function (error, docsList, response) {
       if (error) {
         return done(error);
       }

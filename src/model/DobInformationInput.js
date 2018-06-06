@@ -70,7 +70,7 @@
   }
 
   /**
-   * Specifies the recipient’s date, month, and year of birth.
+   * Specifies the recipient's date, month, and year of birth.
    * @member {String} dateOfBirth
    */
   exports.prototype['dateOfBirth'] = undefined;
