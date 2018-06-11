@@ -17,34 +17,30 @@ commented out
 
 You can sign up for a free [developer sandbox](https://developers.docusign.com/).
 
-Requirements
-============
+## Requirements
 
 Node 4 or later.
 
-Installation
-============
+## Installation via the NPM Package Manager
 
-### NPM Package Manager
+`npm install docusign-esign --save` 
 
-Install the client locally:  `npm install docusign-esign --save --save-exact` (note you may have to use `sudo` based on your permissions)
-
-Alternatively you can just copy the source code directly into your project.
-
-#### Dependencies
+## Dependencies
 
 This client has the following external dependencies:
 * jsonwebtoken@8.2.0
 * passport-oauth2@1.4.0
 * superagent@3.8.2
 
-Usage
-=====
+# Usage
 
-To initialize the client, make the Login API Call and send a template for signature:
-### SDK version 3.x.x
+## OAuth Authorization Code Grant
 
-#### OAuth Authorization Code Grant
+See the [Node.JS OAuth Authorization Code Grant flow](https://github.com/docusign/docusign-code-examples/tree/master/node)
+example for Node.JS 8.10 or later. It also shows how to use the SDK with promises instead of callback functions.
+
+The following example uses callback functions.
+
 uncomment auth code grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
 ```javascript
 const express = require('express');
@@ -99,74 +95,15 @@ app.listen(port, host, function (err) {
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
 });
-
 ```
-#### OAuth Implicit Grant
-uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
-```javascript
 
-const express = require('express');
-const docusign = require('docusign-esign');
-const apiClient = new docusign.ApiClient();
+## OAuth JSON Web Token (JWT) Grant
 
-const app = express();
-const port = process.env.PORT || 3000;
-const host = process.env.HOST || 'localhost';
+See the [Node.JS Service Integration](https://github.com/docusign/eg-01-node-jwt) example for Node 8.10 or later.
+It uses the OAuth JWT Grant flow. It also demonstrates how to use the SDK with promises.
 
-const integratorKey = '68c1711f-xxxx-xxxx-xxxx-b49b4211d831'; // An IK for a mobile docusign account
-const redirectUri = 'http://localhost:3000/auth';
-const basePath = 'https://demo.docusign.net/restapi';
+The following example can be used with an older version of Node.JS.
 
-const responseType = apiClient.OAuth.ResponseType.TOKEN; // Response type of token, to be used for implicit grant
-const scopes = [apiClient.OAuth.Scope.EXTENDED];
-const randomState = "*^.$DGj*)+}Jk"; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
-
-apiClient.setBasePath(basePath);
-
-app.get('/', function (req, res) {
-    const authUri = apiClient.getAuthorizationUri(integratorKey, scopes, redirectUri, responseType, randomState);//get DocuSign OAuth authorization url
-     //Open DocuSign OAuth login in a browser, res being your node.js response object.
-    res.redirect(authUri);
-});
-
-app.get('/auth', function (req,res) {
-  // IMPORTANT: after the login, DocuSign will send back a new
-  // access token in the hash fragment of the redirect URI.
-  // You should set up a client-side handler that handles window.location change to get
-  // that token and pass it to the ApiClient object as shown in the next
-  // lines:
-  res.send();
-});
-
-app.get('/auth/:accessToken', function (req, res) {
-  // This a sample endpoint to allow you to pass in the previously recEIved accesstoken to log in via getUserInfo
-  // ex: http://localhost:3000/auth#access_token=<token>&expires_in=<expiresIn>&token_type=<tokenType>&state=<randomState>
-  // ex: http://localhost:3000/auth/<token>
-
-  const accessToken = req.params.accessToken;
-
-  apiClient.getUserInfo(accessToken, function (err, userInfo) {
-    if (err)
-      console.log(err)
-
-    console.log("UserInfo: " + userInfo);
-    // parse first account's baseUrl
-    // below code required for production, no effect in demo (same
-    // domain)
-    apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
-    res.send(userInfo);
-  });
-});
-
-app.listen(port, host, function(err) {
-  if (err)
-    throw err;
-
-  console.log('Your server is running on http://' + host + ':' + port + '.');
-});
-    
-```
-#### Using JSON Web Token Bearer Grant
 ```javascript
 var docusign = require('docusign-esign');
 var async = require('async');
@@ -268,151 +205,102 @@ async.waterfall([
 });
 ```
 
-### SDK version 2.x.x using 2-legged authentication only
-```javascript
-var docusign = require('docusign-esign');
-var async = require('async');
-
-var integratorKey = '***';                    // Integrator Key associated with your DocuSign Integration
-var email = 'YOUR_EMAIL';                     // Email for your DocuSign Account
-var password = 'YOUR_PASSWORD';               // Password for your DocuSign Account
-var docusignEnv = 'demo';                     // DocuSign Environment generally demo for testing purposes
-var fullName = 'Joan Jett';                   // Recipient's Full Name
-var recipientEmail = 'joan.jett@example.com'; // Recipient's Email
-var templateId = '***';                       // ID of the Template you want to create the Envelope with
-var templateRoleName = '***';                 // Role Name of the Template
-
-var baseUrl = 'https://' + docusignEnv + '.docusign.net/restapi';
-
-// initialize the api client
-var apiClient = new docusign.ApiClient();
-apiClient.setBasePath(baseUrl);
-
-// create JSON formatted auth header
-var creds = JSON.stringify({
-  Username: email,
-  Password: password,
-  IntegratorKey: integratorKey
-});
-apiClient.addDefaultHeader('X-DocuSign-Authentication', creds);
-
-// assign api client to the Configuration object
-docusign.Configuration.default.setDefaultApiClient(apiClient);
-
-async.waterfall([
-  function login (next) {
-    // login call available off the AuthenticationApi
-    var authApi = new docusign.AuthenticationApi();
-
-    // login has some optional parameters we can set
-    var loginOps = new authApi.LoginOptions();
-    loginOps.setApiPassword('true');
-    loginOps.setIncludeAccountIdGuid('true');
-    authApi.login(loginOps, function (err, loginInfo, response) {
-      if (err) {
-        return next(err);
-      }
-      if (loginInfo) {
-        // list of user account(s)
-        // note that a given user may be a member of multiple accounts
-        var loginAccounts = loginInfo.getLoginAccounts();
-        console.log('LoginInformation: ' + JSON.stringify(loginAccounts));
-        var loginAccount = loginAccounts[0];
-        var accountId = loginAccount.accountId;
-        var baseUrl = loginAccount.baseUrl;
-        var accountDomain = baseUrl.split("/v2");
-
-        // below code required for production, no effect in demo (same domain)
-        apiClient.setBasePath(accountDomain[0]);
-        docusign.Configuration.default.setDefaultApiClient(apiClient);
-        next(null, loginAccount);
-      }
-    });
-  },
-
-  function sendTemplate (loginAccount, next) {
-    // create a new envelope object that we will manage the signature request through
-    var envDef = new docusign.EnvelopeDefinition();
-    envDef.setEmailSubject('Please sign this document sent from Node SDK');
-    envDef.setTemplateId(templateId);
-
-    // create a template role with a valid templateId and roleName and assign signer info
-    var tRole = new docusign.TemplateRole();
-    tRole.setRoleName(templateRoleName);
-    tRole.setName(fullName);
-    tRole.setEmail(recipientEmail);
-
-    // create a list of template roles and add our newly created role
-    var templateRolesList = [];
-    templateRolesList.push(tRole);
-
-    // assign template role(s) to the envelope
-    envDef.setTemplateRoles(templateRolesList);
-
-    // send the envelope by setting |status| to 'sent'. To save as a draft set to 'created'
-    envDef.setStatus('sent');
-
-    // use the |accountId| we retrieved through the Login API to create the Envelope
-    var accountId = loginAccount.accountId;
-
-    // instantiate a new EnvelopesApi object
-    var envelopesApi = new docusign.EnvelopesApi();
-
-    // call the createEnvelope() API
-    envelopesApi.createEnvelope(accountId, envDef, null, function (err, envelopeSummary, response) {
-      if (err) {
-        return next(err);
-      }
-      console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-      next(null);
-    });
-  }
-
-], function end (error) {
-  if (error) {
-    console.log('Error: ', error);
-    process.exit(1);
-  }
-  process.exit();
-});
 
 ```
+#### OAuth Implicit Grant
+uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
+```javascript
 
-See [CoreRecipes.js](./test/Recipes/CoreRecipes.js) for more examples.
+const express = require('express');
+const docusign = require('docusign-esign');
+const apiClient = new docusign.ApiClient();
 
-Sample App
-=======
+const app = express();
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || 'localhost';
 
-Check out the LoanCo sample app - an open source app that showcases the Node.js SDK and demonstrates several common DocuSign workflows and features:
+const integratorKey = '68c1711f-xxxx-xxxx-xxxx-b49b4211d831'; // An IK for a mobile docusign account
+const redirectUri = 'http://localhost:3000/auth';
+const basePath = 'https://demo.docusign.net/restapi';
 
-Run the app:  https://loancosample.docusign.com/
+const responseType = apiClient.OAuth.ResponseType.TOKEN; // Response type of token, to be used for implicit grant
+const scopes = [apiClient.OAuth.Scope.EXTENDED];
+const randomState = "*^.$DGj*)+}Jk"; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
 
-Get the code:  https://github.com/docusign/sample-app-loanco-nodejs
+apiClient.setBasePath(basePath);
 
-![LoanCo Sample Application](loanco.png)
+app.get('/', function (req, res) {
+    const authUri = apiClient.getAuthorizationUri(integratorKey, scopes, redirectUri, responseType, randomState);//get DocuSign OAuth authorization url
+     //Open DocuSign OAuth login in a browser, res being your node.js response object.
+    res.redirect(authUri);
+});
 
+app.get('/auth', function (req,res) {
+  // IMPORTANT: after the login, DocuSign will send back a new
+  // access token in the hash fragment of the redirect URI.
+  // You should set up a client-side handler that handles window.location change to get
+  // that token and pass it to the ApiClient object as shown in the next
+  // lines:
+  res.send();
+});
 
-# Authentication
+app.get('/auth/:accessToken', function (req, res) {
+  // This a sample endpoint to allow you to pass in the previously recEIved accesstoken to log in via getUserInfo
+  // ex: http://localhost:3000/auth#access_token=<token>&expires_in=<expiresIn>&token_type=<tokenType>&state=<randomState>
+  // ex: http://localhost:3000/auth/<token>
 
-## Service Integrations that use Legacy Header Authentication
+  const accessToken = req.params.accessToken;
 
-([Legacy Header Authentication](https://docs.docusign.com/esign/guide/authentication/legacy_auth.html) uses the X-DocuSign-Authentication header.)
+  apiClient.getUserInfo(accessToken, function (err, userInfo) {
+    if (err)
+      console.log(err)
 
-1. Use the [Authentication: login method](https://docs.docusign.com/esign/restapi/Authentication/Authentication/login/) to retrieve the account number **and the baseUrl** for the account.
-The url for the login method is www.docusign.net for production and demo.docusign.net for the developer sandbox.
-The `baseUrl` field is part of the `loginAccount` object. See the [docs and the loginAccount object](https://docs.docusign.com/esign/restapi/Authentication/Authentication/login/#/definitions/loginAccount)
-2. The baseUrl for the selected account, in production, will start with na1, na2, na3, eu1, or something else. Use the baseUrl that is returned to create the *basePath* (see the next step.) Use the basePath for all of your subsequent API calls.
-3. As returned by login method, the baseUrl includes the API version and account id. Split the string to obtain the *basePath*, just the server name and api name. Eg, you will receive `https://na1.docusign.net/restapi/v2/accounts/123123123`. You want just `https://na1.docusign.net/restapi` 
-4. Instantiate the SDK using the basePath. Eg `ApiClient apiClient = new ApiClient(basePath);`
-5. Set the authentication header as shown in the examples by using `Configuration.Default.AddDefaultHeader`
+    console.log("UserInfo: " + userInfo);
+    // parse first account's baseUrl
+    // below code required for production, no effect in demo (same
+    // domain)
+    apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
+    res.send(userInfo);
+  });
+});
 
-## User Applications that use OAuth Authentication
-1. After obtaining a Bearer token, call the [OAuth: Userinfo method](https://docs.docusign.com/esign/guide/authentication/userinfo.html). Obtain the selected account's `base_uri` (server name) field.
-The url for the Userinfo method is account-d.docusign.com for the demo/developer environment, and account.docusign.com for the production environment.
-1. Combine the base_uri with "/restapi" to create the basePath. The base_uri will start with na1, na2, na3, eu1, or something else. Use the basePath for your subsequent API calls.
-4. Instantiate the SDK using the basePath. Eg `ApiClient apiClient = new ApiClient(basePath);`
-5. Create the `authentication_value` by combining the `token_type` and `access_token` fields you receive from either an [Authorization Code Grant](https://docs.docusign.com/esign/guide/authentication/oa2_auth_code.html) or [Implicit Grant](https://docs.docusign.com/esign/guide/authentication/oa2_implicit.html) OAuth flow. 
-5. Set the authentication header by using `Configuration.Default.AddDefaultHeader('Authorization', authentication_value)`
+app.listen(port, host, function(err) {
+  if (err)
+    throw err;
+
+  console.log('Your server is running on http://' + host + ':' + port + '.');
+});
+    
+```
+
+# The basePath
+
+This section applies to applications which use OAuth for authentication with DocuSign.
+
+The SDK must be configured to use the correct `basePath` for the accredited user's DocuSign account.
+
+To determine the user's basePath:
+
+1. After obtaining a Bearer token, call the 
+   [OAuth::userInfo endpoint](https://developers.docusign.com/esign-rest-api/guides/authentication/user-info-endpoints).
+
+   The `getUserInfo` method can be used to call the OAuth::userInfo endpoint. See the file 
+   [ApiClient.js](https://github.com/docusign/docusign-node-client/blob/master/src/ApiClient.js), line 713.
+
+   Use the results to choose the account. One of the user's accounts is their default account.
+   The method's results include the selected account's `base_uri` field.
+
+   Note: The host for the OAuth::userInfo method is `account-d.docusign.com` for the demo/developer environment, 
+   and `account.docusign.com` for the production environments.
+1. Combine the base_uri with "/restapi" to create the basePath. 
+   Use the basePath for your subsequent API calls for the account id. 
+
+   You can and should cache the basePath for at least the user's session with your application. It changes very infrequently.
+1. Instantiate the SDK using the basePath. Eg `ApiClient apiClient = new ApiClient(basePath);`
+1. Create the `authentication_value` by combining the `token_type` and `access_token` fields you 
+   receive from a DocuSign OAuth flow. 
+   See the [authentication guide.](https://developers.docusign.com/esign-rest-api/guides/authentication) 
+1. Set the SDK's authentication header by using `Configuration.Default.AddDefaultHeader('Authorization', authentication_value)`
 
 Testing
 =======
@@ -432,8 +320,7 @@ Feel free to log issues against this client through GitHub.  We also have an act
 License
 =======
 
-The DocuSign Node Client is licensed under the following [License](LICENSE).
-
+The DocuSign Node Client is licensed under the MIT [License](LICENSE).
 
 [npm-image]: https://img.shields.io/npm/v/docusign-esign.svg?style=flat
 [npm-url]: https://npmjs.org/package/docusign-esign
