@@ -1,4 +1,4 @@
-# The Official DocuSign Node Client 
+# The Official DocuSign Node Client
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
@@ -23,7 +23,7 @@ Node 4 or later.
 
 ## Installation via the NPM Package Manager
 
-`npm install docusign-esign --save` 
+`npm install docusign-esign --save`
 
 ## Dependencies
 
@@ -205,10 +205,9 @@ async.waterfall([
 });
 ```
 
-
-```
 #### OAuth Implicit Grant
 uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
+
 ```javascript
 
 const express = require('express');
@@ -270,7 +269,7 @@ app.listen(port, host, function(err) {
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
 });
-    
+
 ```
 
 # The basePath
@@ -281,25 +280,25 @@ The SDK must be configured to use the correct `basePath` for the accredited user
 
 To determine the user's basePath:
 
-1. After obtaining a Bearer token, call the 
+1. After obtaining a Bearer token, call the
    [OAuth::userInfo endpoint](https://developers.docusign.com/esign-rest-api/guides/authentication/user-info-endpoints).
 
-   The `getUserInfo` method can be used to call the OAuth::userInfo endpoint. See the file 
+   The `getUserInfo` method can be used to call the OAuth::userInfo endpoint. See the file
    [ApiClient.js](https://github.com/docusign/docusign-node-client/blob/master/src/ApiClient.js), line 713.
 
    Use the results to choose the account. One of the user's accounts is their default account.
    The method's results include the selected account's `base_uri` field.
 
-   Note: The host for the OAuth::userInfo method is `account-d.docusign.com` for the demo/developer environment, 
+   Note: The host for the OAuth::userInfo method is `account-d.docusign.com` for the demo/developer environment,
    and `account.docusign.com` for the production environments.
-1. Combine the base_uri with "/restapi" to create the basePath. 
-   Use the basePath for your subsequent API calls for the account id. 
+1. Combine the base_uri with "/restapi" to create the basePath.
+   Use the basePath for your subsequent API calls for the account id.
 
    You can and should cache the basePath for at least the user's session with your application. It changes very infrequently.
 1. Instantiate the SDK using the basePath. Eg `ApiClient apiClient = new ApiClient(basePath);`
-1. Create the `authentication_value` by combining the `token_type` and `access_token` fields you 
-   receive from a DocuSign OAuth flow. 
-   See the [authentication guide.](https://developers.docusign.com/esign-rest-api/guides/authentication) 
+1. Create the `authentication_value` by combining the `token_type` and `access_token` fields you
+   receive from a DocuSign OAuth flow.
+   See the [authentication guide.](https://developers.docusign.com/esign-rest-api/guides/authentication)
 1. Set the SDK's authentication header by using `Configuration.Default.AddDefaultHeader('Authorization', authentication_value)`
 
 Testing
