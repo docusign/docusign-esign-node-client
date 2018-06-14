@@ -110,19 +110,17 @@ var async = require('async');
 var path = require('path');
 
 var integratorKey = '***';                    // Integrator Key associated with your DocuSign Integration
-var email = 'YOUR_EMAIL';                     // Email for your DocuSign Account
-var password = 'YOUR_PASSWORD';               // Password for your DocuSign Account
+var userId = 'YOUR_USER_ID';                  // API Username for your DocuSign Account (use the GUID not the email address)
 var docusignEnv = 'demo';                     // DocuSign Environment generally demo for testing purposes
 var fullName = 'Joan Jett';                   // Recipient's Full Name
 var recipientEmail = 'joan.jett@example.com'; // Recipient's Email
 var templateId = '***';                       // ID of the Template you want to create the Envelope with
-var templateRoleName = '***';                 // Role Name of the Template
+var templateRoleName = '***';                 // Role name of the Recipient for the Template
 
 var baseUrl = 'https://' + docusignEnv + '.docusign.net/restapi';
-var userId = 'YOUR_USER_ID';
 var oAuthBaseUrl = 'account-d.docusign.com'; // use account.docusign.com for Live/Production
 var redirectURI = 'https://www.docusign.com/api';
-var privateKeyFilename = 'keys/docusign_private_key.txt';
+var privateKeyFilename = 'keys/docusign_private_key.txt'; //path to the file storing the private key from the RSA Keypair associated to the Integrator Key
 
 var apiClient = new docusign.ApiClient();
 
