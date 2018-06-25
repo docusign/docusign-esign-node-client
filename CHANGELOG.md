@@ -8,8 +8,8 @@ More information later on.
  
  ## [4.0.1] - 2018-06-06
 ### Fixed
-- Issues [`#101`](https://github.com/docusign/DocuSign-Node-Client/issues/101) and  [`#66`](https://github.com/docusign/DocuSign-Node-Client/issues/66)
- - list tabs now maps to an array of List instead of array of Array
+- Issues [`#101`](https://github.com/docusign/DocuSign-Node-Client/issues/101) and [`#66`](https://github.com/docusign/DocuSign-Node-Client/issues/66)
+- listTabs now maps to an array of List instead of array of Array
  
 ## [4.0.0] - 2018-06-06
 ### BREAKING
