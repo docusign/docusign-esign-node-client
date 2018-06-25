@@ -6,7 +6,7 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 ## [Unreleased]
 More information later on.
  
- ## [4.0.1] - 2018-06-06
+ ## [4.0.1] - 2018-06-25
 ### Fixed
 - Issues [`#101`](https://github.com/docusign/DocuSign-Node-Client/issues/101) and [`#66`](https://github.com/docusign/DocuSign-Node-Client/issues/66)
 - listTabs now maps to an array of List instead of array of Array
