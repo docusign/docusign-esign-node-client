@@ -72,6 +72,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * data is of type: {@link module:model/BulkRecipientsUpdateResponse}
      */
     this.deleteRecipients = function(accountId, envelopeId, recipientId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -136,6 +137,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      */
     this.get = function(accountId, batchId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -197,6 +199,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      */
     this.getRecipients = function(accountId, envelopeId, recipientId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -264,6 +267,7 @@ The response returns information about the envelopes sent with bulk recipient ba
      */
     this.list = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -320,6 +324,7 @@ The REST API does not support modifying individual rows or values in the bulk re
      */
     this.updateRecipients = function(accountId, envelopeId, recipientId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['bulkRecipientsRequest'];
 
       // verify the required parameter 'accountId' is set

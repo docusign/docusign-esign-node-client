@@ -71,6 +71,7 @@
      */
     this.createWorkspace = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['workspace'];
 
       // verify the required parameter 'accountId' is set
@@ -118,6 +119,7 @@
      * data is of type: {@link module:model/WorkspaceItem}
      */
     this.createWorkspaceFile = function(accountId, workspaceId, folderId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -177,6 +179,7 @@
      * data is of type: {@link module:model/Workspace}
      */
     this.deleteWorkspace = function(accountId, workspaceId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -232,6 +235,7 @@
      */
     this.deleteWorkspaceFolderItems = function(accountId, workspaceId, folderId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['workspaceItemList'];
 
       // verify the required parameter 'accountId' is set
@@ -291,6 +295,7 @@
      * data is of type: {@link module:model/Workspace}
      */
     this.getWorkspace = function(accountId, workspaceId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -349,6 +354,7 @@
      */
     this.getWorkspaceFile = function(accountId, workspaceId, folderId, fileId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -425,6 +431,7 @@
      */
     this.listWorkspaceFilePages = function(accountId, workspaceId, folderId, fileId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -505,6 +512,7 @@
      */
     this.listWorkspaceFolderItems = function(accountId, workspaceId, folderId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -570,6 +578,7 @@
      * data is of type: {@link module:model/WorkspaceList}
      */
     this.listWorkspaces = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -620,6 +629,7 @@
      */
     this.updateWorkspace = function(accountId, workspaceId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['workspace'];
 
       // verify the required parameter 'accountId' is set
@@ -675,6 +685,7 @@
      * data is of type: {@link module:model/WorkspaceItem}
      */
     this.updateWorkspaceFile = function(accountId, workspaceId, folderId, fileId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set

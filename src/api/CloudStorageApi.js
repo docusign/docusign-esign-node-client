@@ -72,6 +72,7 @@
      */
     this.createProvider = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['cloudStorageProviders'];
 
       // verify the required parameter 'accountId' is set
@@ -128,6 +129,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
      * data is of type: {@link module:model/CloudStorageProviders}
      */
     this.deleteProvider = function(accountId, userId, serviceId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -190,6 +192,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
      */
     this.deleteProviders = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['cloudStorageProviders'];
 
       // verify the required parameter 'accountId' is set
@@ -249,6 +252,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
      */
     this.getProvider = function(accountId, userId, serviceId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -321,6 +325,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
      */
     this.list = function(accountId, userId, serviceId, folderId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -403,6 +408,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
      */
     this.listFolders = function(accountId, userId, serviceId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -473,6 +479,7 @@ The {serviceId} parameter can be either the service name or serviceId.
      */
     this.listProviders = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set

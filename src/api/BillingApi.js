@@ -68,6 +68,7 @@
      * data is of type: {@link module:model/BillingPlanResponse}
      */
     this.getBillingPlan = function(billingPlanId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'billingPlanId' is set
@@ -113,6 +114,7 @@
      * data is of type: {@link module:model/CreditCardInformation}
      */
     this.getCreditCardInfo = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -193,6 +195,7 @@ The following table provides a description of the different `chargeName` propert
      * data is of type: {@link module:model/BillingInvoice}
      */
     this.getInvoice = function(accountId, invoiceId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -248,6 +251,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/BillingPaymentItem}
      */
     this.getPayment = function(accountId, paymentId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -313,6 +317,7 @@ The response returns the billing plan information, including the currency code, 
      */
     this.getPlan = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -361,6 +366,7 @@ The response returns the billing plan information, including the currency code, 
      * data is of type: {@link module:model/BillingPlansResponse}
      */
     this.listBillingPlans = function(callback) {
+
       var postBody = null;
 
 
@@ -407,6 +413,7 @@ Privileges required: account administrator
      */
     this.listInvoices = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -457,6 +464,7 @@ Privileges Required: account administrator
      * data is of type: {@link module:model/BillingInvoicesSummary}
      */
     this.listInvoicesPastDue = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -509,6 +517,7 @@ Privileges required: account administrator
      */
     this.listPayments = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -566,6 +575,7 @@ Privileges required: account administrator
      */
     this.makePayment = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['billingPaymentRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -614,6 +624,7 @@ Privileges required: account administrator
      */
     this.purchaseEnvelopes = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['purchasedEnvelopesInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -664,6 +675,7 @@ Privileges required: account administrator
      */
     this.updatePlan = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['billingPlanInformation'];
 
       // verify the required parameter 'accountId' is set

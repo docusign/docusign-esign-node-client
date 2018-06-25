@@ -98,7 +98,7 @@
         obj['lastNameTabs'] = ApiClient.convertToType(data['lastNameTabs'], [LastName]);
       }
       if (data.hasOwnProperty('listTabs')) {
-        obj['listTabs'] = ApiClient.convertToType(data['listTabs'], [Array]);
+        obj['listTabs'] = ApiClient.convertToType(data['listTabs'], [List]);
       }
       if (data.hasOwnProperty('notarizeTabs')) {
         obj['notarizeTabs'] = ApiClient.convertToType(data['notarizeTabs'], [Notarize]);
@@ -209,7 +209,7 @@
   exports.prototype['lastNameTabs'] = undefined;
   /**
    * Specify this tag to give your recipient a list of options, presented as a drop-down list, from which they can select.
-   * @member {Array.<module:model/Array>} listTabs
+   * @member {Array.<module:model/List>} listTabs
    */
   exports.prototype['listTabs'] = undefined;
   /**
