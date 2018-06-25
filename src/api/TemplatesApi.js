@@ -72,7 +72,6 @@
      */
     this.createCustomFields = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
@@ -130,7 +129,6 @@
      */
     this.createDocumentFields = function(accountId, templateId, documentId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -192,7 +190,6 @@
      */
     this.createEditView = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['returnUrlRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -251,7 +248,6 @@
      */
     this.createLock = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['lockRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -309,7 +305,6 @@
      */
     this.createRecipients = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
@@ -368,7 +363,6 @@
      */
     this.createTabs = function(accountId, templateId, recipientId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateTabs'];
 
       // verify the required parameter 'accountId' is set
@@ -460,7 +454,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.createTemplate = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['envelopeTemplate'];
 
       // verify the required parameter 'accountId' is set
@@ -509,7 +502,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * data is of type: {@link module:model/BulkRecipientsUpdateResponse}
      */
     this.deleteBulkRecipients = function(accountId, templateId, recipientId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -572,7 +564,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteCustomFields = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
@@ -630,7 +621,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteDocumentFields = function(accountId, templateId, documentId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -694,7 +684,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteDocumentPage = function(accountId, templateId, documentId, pageNumber, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['pageRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -763,7 +752,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteDocuments = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
@@ -821,7 +809,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteGroupShare = function(accountId, templateId, templatePart, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['groupInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -884,7 +871,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteLock = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['lockRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -942,7 +928,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteRecipient = function(accountId, templateId, recipientId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
@@ -1005,7 +990,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteRecipients = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
@@ -1063,7 +1047,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.deleteTabs = function(accountId, templateId, recipientId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateTabs'];
 
       // verify the required parameter 'accountId' is set
@@ -1126,7 +1109,6 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
     this.get = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1188,7 +1170,6 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      */
     this.getDocument = function(accountId, templateId, documentId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1258,7 +1239,6 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      */
     this.getDocumentPageImage = function(accountId, templateId, documentId, pageNumber, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1331,7 +1311,6 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      */
     this.getDocumentTabs = function(accountId, templateId, documentId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1394,7 +1373,6 @@ If the call is made by the user who has the lock and the request has the same in
      * data is of type: {@link module:model/LockInformation}
      */
     this.getLock = function(accountId, templateId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1448,7 +1426,6 @@ If the call is made by the user who has the lock and the request has the same in
      * data is of type: {@link module:model/Notification}
      */
     this.getNotificationSettings = function(accountId, templateId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1503,7 +1480,6 @@ If the call is made by the user who has the lock and the request has the same in
      * data is of type: {@link module:model/Tabs}
      */
     this.getPageTabs = function(accountId, templateId, documentId, pageNumber, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1578,7 +1554,6 @@ If the call is made by the user who has the lock and the request has the same in
      */
     this.getPages = function(accountId, templateId, documentId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1650,7 +1625,6 @@ If the call is made by the user who has the lock and the request has the same in
      */
     this.listBulkRecipients = function(accountId, templateId, recipientId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1712,7 +1686,6 @@ If the call is made by the user who has the lock and the request has the same in
      * data is of type: {@link module:model/CustomFields}
      */
     this.listCustomFields = function(accountId, templateId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1767,7 +1740,6 @@ If the call is made by the user who has the lock and the request has the same in
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
     this.listDocumentFields = function(accountId, templateId, documentId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1827,7 +1799,6 @@ If the call is made by the user who has the lock and the request has the same in
      * data is of type: {@link module:model/TemplateDocumentsResult}
      */
     this.listDocuments = function(accountId, templateId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1886,7 +1857,6 @@ If the call is made by the user who has the lock and the request has the same in
      */
     this.listRecipients = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1948,7 +1918,6 @@ If the call is made by the user who has the lock and the request has the same in
      */
     this.listTabs = function(accountId, templateId, recipientId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2028,7 +1997,6 @@ If the call is made by the user who has the lock and the request has the same in
      */
     this.listTemplates = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2097,7 +2065,6 @@ If the call is made by the user who has the lock and the request has the same in
      */
     this.rotateDocumentPage = function(accountId, templateId, documentId, pageNumber, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['pageRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -2166,7 +2133,6 @@ If the call is made by the user who has the lock and the request has the same in
      */
     this.update = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['envelopeTemplate'];
 
       // verify the required parameter 'accountId' is set
@@ -2226,7 +2192,6 @@ The REST API does not support modifying individual rows or values in the bulk re
      */
     this.updateBulkRecipients = function(accountId, templateId, recipientId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['bulkRecipientsRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -2291,7 +2256,6 @@ Each custom field used in a template must have a unique name.
      */
     this.updateCustomFields = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
@@ -2351,7 +2315,6 @@ Each custom field used in a template must have a unique name.
      */
     this.updateDocument = function(accountId, templateId, documentId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
@@ -2417,7 +2380,6 @@ Each custom field used in a template must have a unique name.
      */
     this.updateDocumentFields = function(accountId, templateId, documentId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -2482,7 +2444,6 @@ Each custom field used in a template must have a unique name.
      */
     this.updateDocuments = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
@@ -2542,7 +2503,6 @@ Each custom field used in a template must have a unique name.
      */
     this.updateGroupShare = function(accountId, templateId, templatePart, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['groupInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -2605,7 +2565,6 @@ Each custom field used in a template must have a unique name.
      */
     this.updateLock = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['lockRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -2662,7 +2621,6 @@ Each custom field used in a template must have a unique name.
      */
     this.updateNotificationSettings = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateNotificationRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -2722,7 +2680,6 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
      */
     this.updateRecipients = function(accountId, templateId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
@@ -2781,7 +2738,6 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
      */
     this.updateTabs = function(accountId, templateId, recipientId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['templateTabs'];
 
       // verify the required parameter 'accountId' is set

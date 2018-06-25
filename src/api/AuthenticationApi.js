@@ -71,7 +71,6 @@
      */
     this.deleteSocialLogin = function(accountId, userId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['socialAccountInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -123,7 +122,6 @@
      * data is of type: {@link module:model/OauthAccess}
      */
     this.getOAuthToken = function(callback) {
-
       var postBody = null;
 
 
@@ -165,7 +163,6 @@
      * data is of type: {@link module:model/UserSocialIdResult}
      */
     this.listSocialLogins = function(accountId, userId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -225,7 +222,6 @@ The `baseUrl` property, returned in the response, is used in all future API call
      */
     this.login = function(opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
 
@@ -268,7 +264,6 @@ The `baseUrl` property, returned in the response, is used in all future API call
      * @param {module:api/AuthenticationApi~revokeOAuthTokenCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.revokeOAuthToken = function(callback) {
-
       var postBody = null;
 
 
@@ -311,7 +306,6 @@ The `baseUrl` property, returned in the response, is used in all future API call
      */
     this.updatePassword = function(loginPart, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['userPasswordInformation'];
 
       // verify the required parameter 'loginPart' is set
@@ -361,7 +355,6 @@ The `baseUrl` property, returned in the response, is used in all future API call
      */
     this.updateSocialLogin = function(accountId, userId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['socialAccountInformation'];
 
       // verify the required parameter 'accountId' is set

@@ -74,7 +74,6 @@
      */
     this.list = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -135,7 +134,6 @@
      */
     this.listItems = function(accountId, folderId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -199,7 +197,6 @@
      */
     this.moveEnvelopes = function(accountId, folderId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['foldersRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -265,7 +262,6 @@ If the user ID of the user making the call is the same as the user ID for any re
      */
     this.search = function(accountId, searchFolderId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
