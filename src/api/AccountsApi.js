@@ -67,6 +67,7 @@
      * @param {module:api/AccountsApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this._delete = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -125,6 +126,7 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
      */
     this.create = function(opts, callback) {
       opts = opts || {};
+
       var postBody = opts['newAccountDefinition'];
 
 
@@ -173,6 +175,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
     this.createBrand = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['brand'];
 
       // verify the required parameter 'accountId' is set
@@ -222,6 +225,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
     this.createCustomField = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['customField'];
 
       // verify the required parameter 'accountId' is set
@@ -271,6 +275,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
     this.createEMortgageTransaction = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['postTransactionsRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -320,6 +325,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
     this.createPermissionProfile = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['permissionProfile'];
 
       // verify the required parameter 'accountId' is set
@@ -366,6 +372,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {module:api/AccountsApi~deleteBrandCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteBrand = function(accountId, brandId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -418,6 +425,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {module:api/AccountsApi~deleteBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteBrandLogoByType = function(accountId, brandId, logoType, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -479,6 +487,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
     this.deleteBrands = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -529,6 +538,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
     this.deleteCaptiveRecipient = function(accountId, recipientPart, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['captiveRecipientInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -583,6 +593,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
     this.deleteCustomField = function(accountId, customFieldId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -634,6 +645,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {module:api/AccountsApi~deleteENoteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteENoteConfiguration = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -679,6 +691,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {module:api/AccountsApi~deletePermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deletePermissionProfile = function(accountId, permissionProfileId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -737,6 +750,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      */
     this.getAccountInformation = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -783,6 +797,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * data is of type: {@link module:model/TabAccountSettings}
      */
     this.getAccountTabSettings = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -828,6 +843,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * data is of type: {@link module:model/PaymentGatewayAccountsInfo}
      */
     this.getAllPaymentGatewayAccounts = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -879,6 +895,7 @@ Privileges required: account administrator
      */
     this.getBillingCharges = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -930,6 +947,7 @@ Privileges required: account administrator
      */
     this.getBrand = function(accountId, brandId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -983,6 +1001,7 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getBrandExportFileCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.getBrandExportFile = function(accountId, brandId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1035,6 +1054,7 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.getBrandLogoByType = function(accountId, brandId, logoType, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1093,6 +1113,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/BrandResourcesList}
      */
     this.getBrandResources = function(accountId, brandId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1149,6 +1170,7 @@ Privileges required: account administrator
      */
     this.getBrandResourcesByContentType = function(accountId, brandId, resourceContentType, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1210,6 +1232,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
     this.getConsumerDisclosure = function(accountId, langCode, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1265,6 +1288,7 @@ Privileges required: account administrator
      */
     this.getConsumerDisclosureDefault = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1311,6 +1335,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/ENoteConfiguration}
      */
     this.getENoteConfiguration = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1356,6 +1381,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/AccountPasswordRules}
      */
     this.getPasswordRules = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1400,6 +1426,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/UserPasswordRules}
      */
     this.getPasswordRules_0 = function(callback) {
+
       var postBody = null;
 
 
@@ -1443,6 +1470,7 @@ Privileges required: account administrator
      */
     this.getPermissionProfile = function(accountId, permissionProfileId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1495,6 +1523,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/ProvisioningInformation}
      */
     this.getProvisioning = function(callback) {
+
       var postBody = null;
 
 
@@ -1534,6 +1563,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/SupportedLanguages}
      */
     this.getSupportedLanguages = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1579,6 +1609,7 @@ Privileges required: account administrator
      * data is of type: {@link module:model/Watermark}
      */
     this.getWatermark = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1627,6 +1658,7 @@ Privileges required: account administrator
      */
     this.getWatermarkPreview = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['watermark'];
 
       // verify the required parameter 'accountId' is set
@@ -1677,6 +1709,7 @@ Privileges required: account administrator
      */
     this.listBrands = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1727,6 +1760,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * data is of type: {@link module:model/CustomFields}
      */
     this.listCustomFields = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1778,6 +1812,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
      */
     this.listPermissions = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1828,6 +1863,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
      */
     this.listRecipientNamesByEmail = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1875,6 +1911,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
      * data is of type: {@link module:model/AccountSettingsInformation}
      */
     this.listSettings = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1933,6 +1970,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.listSharedAccess = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1986,6 +2024,7 @@ Users with account administration privileges can retrieve shared access informat
      * data is of type: {@link module:model/AccountSignatureProviders}
      */
     this.listSignatureProviders = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2032,6 +2071,7 @@ Users with account administration privileges can retrieve shared access informat
      * data is of type: {@link module:model/FileTypeList}
      */
     this.listUnsupportedFileTypes = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2080,6 +2120,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateAccountTabSettings = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['tabAccountSettings'];
 
       // verify the required parameter 'accountId' is set
@@ -2129,6 +2170,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateBrand = function(accountId, brandId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['brand'];
 
       // verify the required parameter 'accountId' is set
@@ -2181,6 +2223,7 @@ Users with account administration privileges can retrieve shared access informat
      * @param {module:api/AccountsApi~updateBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.updateBrandLogoByType = function(accountId, brandId, logoType, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2240,6 +2283,7 @@ Users with account administration privileges can retrieve shared access informat
      * data is of type: {@link module:model/BrandResources}
      */
     this.updateBrandResourcesByContentType = function(accountId, brandId, resourceContentType, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2302,6 +2346,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateConsumerDisclosure = function(accountId, langCode, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['consumerDisclosure'];
 
       // verify the required parameter 'accountId' is set
@@ -2359,6 +2404,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateCustomField = function(accountId, customFieldId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['customField'];
 
       // verify the required parameter 'accountId' is set
@@ -2414,6 +2460,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateENoteConfiguration = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['eNoteConfiguration'];
 
       // verify the required parameter 'accountId' is set
@@ -2462,6 +2509,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updatePasswordRules = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['accountPasswordRules'];
 
       // verify the required parameter 'accountId' is set
@@ -2512,6 +2560,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updatePermissionProfile = function(accountId, permissionProfileId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['permissionProfile'];
 
       // verify the required parameter 'accountId' is set
@@ -2567,6 +2616,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateSettings = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['accountSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -2618,6 +2668,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateSharedAccess = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['accountSharedAccess'];
 
       // verify the required parameter 'accountId' is set
@@ -2668,6 +2719,7 @@ Users with account administration privileges can retrieve shared access informat
      */
     this.updateWatermark = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['watermark'];
 
       // verify the required parameter 'accountId' is set

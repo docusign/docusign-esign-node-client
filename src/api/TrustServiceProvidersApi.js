@@ -69,6 +69,7 @@
      */
     this.completeSignHash = function(opts, callback) {
       opts = opts || {};
+
       var postBody = opts['completeSignRequest'];
 
 
@@ -108,6 +109,7 @@
      * data is of type: {@link module:model/AccountSeals}
      */
     this.getSealProviders = function(accountId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -152,6 +154,7 @@
      * data is of type: {@link module:model/UserInfoResponse}
      */
     this.getUserInfo = function(callback) {
+
       var postBody = null;
 
 
@@ -192,6 +195,7 @@
      */
     this.healthCheck = function(opts, callback) {
       opts = opts || {};
+
       var postBody = opts['tspHealthCheckRequest'];
 
 
@@ -233,6 +237,7 @@
      */
     this.signHashSessionInfo = function(opts, callback) {
       opts = opts || {};
+
       var postBody = opts['signSessionInfoRequest'];
 
 
@@ -274,6 +279,7 @@
      */
     this.updateTransaction = function(opts, callback) {
       opts = opts || {};
+
       var postBody = opts['updateTransactionRequest'];
 
 

@@ -73,6 +73,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.createGroups = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['groupInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -123,6 +124,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.deleteBrands = function(accountId, groupId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -180,6 +182,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.deleteGroupUsers = function(accountId, groupId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userInfoList'];
 
       // verify the required parameter 'accountId' is set
@@ -235,6 +238,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.deleteGroups = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['groupInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -282,6 +286,7 @@ Groups can be used to help manage users by associating users with a group. You c
      * data is of type: {@link module:model/BrandsResponse}
      */
     this.getBrands = function(accountId, groupId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -339,6 +344,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.listGroupUsers = function(accountId, groupId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -399,6 +405,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.listGroups = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -453,6 +460,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.updateBrands = function(accountId, groupId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -509,6 +517,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.updateGroupUsers = function(accountId, groupId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userInfoList'];
 
       // verify the required parameter 'accountId' is set
@@ -564,6 +573,7 @@ Groups can be used to help manage users by associating users with a group. You c
      */
     this.updateGroups = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['groupInformation'];
 
       // verify the required parameter 'accountId' is set

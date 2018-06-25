@@ -71,6 +71,7 @@
      */
     this.listNotaryJournals = function(opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
 

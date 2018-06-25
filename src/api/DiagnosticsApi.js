@@ -66,6 +66,7 @@
      * @param {module:api/DiagnosticsApi~deleteRequestLogsCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteRequestLogs = function(callback) {
+
       var postBody = null;
 
 
@@ -112,6 +113,7 @@ If the Content-Transfer-Encoding header was set to base64, the log is returned a
      * data is of type: {@link Object}
      */
     this.getRequestLog = function(requestLogId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'requestLogId' is set
@@ -160,6 +162,7 @@ The response includes the current API request logging setting for the user, alon
      * data is of type: {@link module:model/DiagnosticsSettingsInformation}
      */
     this.getRequestLogSettings = function(callback) {
+
       var postBody = null;
 
 
@@ -207,6 +210,7 @@ Example: https://demo.docusign.net/restapi/help lists the REST API operations on
      * data is of type: {@link module:model/ResourceInformation}
      */
     this.getResources = function(callback) {
+
       var postBody = null;
 
 
@@ -251,6 +255,7 @@ You do not need an integrator key to view the REST API versions and resources.
      * data is of type: {@link module:model/ServiceInformation}
      */
     this.getService = function(callback) {
+
       var postBody = null;
 
 
@@ -297,6 +302,7 @@ If the Accept header is set to `application/json` or `application/xml`, the resp
      */
     this.listRequestLogs = function(opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
 
@@ -349,6 +355,7 @@ Private information, such as passwords and integrator key information, which is 
      */
     this.updateRequestLogSettings = function(opts, callback) {
       opts = opts || {};
+
       var postBody = opts['diagnosticsSettingsInformation'];
 
 

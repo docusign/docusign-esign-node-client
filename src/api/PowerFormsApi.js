@@ -70,6 +70,7 @@
      */
     this.createPowerForm = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['powerForm'];
 
       // verify the required parameter 'accountId' is set
@@ -115,6 +116,7 @@
      * @param {module:api/PowerFormsApi~deletePowerFormCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deletePowerForm = function(accountId, powerFormId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -169,6 +171,7 @@
      */
     this.deletePowerForms = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['powerFormsRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -215,6 +218,7 @@
      * data is of type: {@link module:model/PowerForm}
      */
     this.getPowerForm = function(accountId, powerFormId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -272,6 +276,7 @@
      */
     this.getPowerFormData = function(accountId, powerFormId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -329,6 +334,7 @@
      */
     this.listPowerFormSenders = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -381,6 +387,7 @@
      */
     this.listPowerForms = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -434,6 +441,7 @@
      */
     this.updatePowerForm = function(accountId, powerFormId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['powerForm'];
 
       // verify the required parameter 'accountId' is set

@@ -77,6 +77,7 @@ Signing groups can be used by any account user.
      */
     this.createList = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -126,6 +127,7 @@ Signing groups can be used by any account user.
      */
     this.deleteList = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -176,6 +178,7 @@ Signing groups can be used by any account user.
      */
     this.deleteUsers = function(accountId, signingGroupId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['signingGroupUsers'];
 
       // verify the required parameter 'accountId' is set
@@ -229,6 +232,7 @@ Signing groups can be used by any account user.
      * data is of type: {@link module:model/SigningGroup}
      */
     this.get = function(accountId, signingGroupId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -285,6 +289,7 @@ Signing groups can be used by any account user.
      */
     this.list = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -334,6 +339,7 @@ Signing groups can be used by any account user.
      * data is of type: {@link module:model/SigningGroupUsers}
      */
     this.listUsers = function(accountId, signingGroupId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -390,6 +396,7 @@ Signing groups can be used by any account user.
      */
     this.update = function(accountId, signingGroupId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['signingGroup'];
 
       // verify the required parameter 'accountId' is set
@@ -445,6 +452,7 @@ Signing groups can be used by any account user.
      */
     this.updateList = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -495,6 +503,7 @@ Signing groups can be used by any account user.
      */
     this.updateUsers = function(accountId, signingGroupId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['signingGroupUsers'];
 
       // verify the required parameter 'accountId' is set

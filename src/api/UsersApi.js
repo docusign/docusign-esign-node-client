@@ -74,6 +74,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
      */
     this._delete = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userInfoList'];
 
       // verify the required parameter 'accountId' is set
@@ -124,6 +125,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
      */
     this.create = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['newUsersDefinition'];
 
       // verify the required parameter 'accountId' is set
@@ -192,6 +194,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
      */
     this.createSignatures = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userSignaturesInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -244,6 +247,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
     this.deleteContactWithId = function(accountId, contactId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -298,6 +302,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
      */
     this.deleteContacts = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -358,6 +363,7 @@ If the extra header information is not included, only the custom user settings t
      */
     this.deleteCustomSettings = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['customSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -412,6 +418,7 @@ The userId parameter specified in the endpoint must match the authenticated user
      * @param {module:api/UsersApi~deleteProfileImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteProfileImage = function(accountId, userId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -471,6 +478,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {module:api/UsersApi~deleteSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteSignature = function(accountId, userId, signatureId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -540,6 +548,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * data is of type: {@link module:model/UserSignature}
      */
     this.deleteSignatureImage = function(accountId, userId, signatureId, imageType, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -604,6 +613,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * data is of type: {@link module:model/ContactGetResponse}
      */
     this.getContactById = function(accountId, contactId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -663,6 +673,7 @@ To return additional user information that details the last login date, login st
      */
     this.getInformation = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -720,6 +731,7 @@ The userId parameter specified in the endpoint must match the authenticated user
      * data is of type: {@link module:model/UserProfile}
      */
     this.getProfile = function(accountId, userId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -780,6 +792,7 @@ If successful, the response returns a 200 - OK and the user profile image.
      */
     this.getProfileImage = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -836,6 +849,7 @@ The response returns the account setting name/value information and the email no
      * data is of type: {@link module:model/UserSettingsInformation}
      */
     this.getSettings = function(accountId, userId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -896,6 +910,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * data is of type: {@link module:model/UserSignature}
      */
     this.getSignature = function(accountId, userId, signatureId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -968,6 +983,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.getSignatureImage = function(accountId, userId, signatureId, imageType, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1047,6 +1063,7 @@ The response returns the list of users for the account along with the informatio
      */
     this.list = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1118,6 +1135,7 @@ If the extra header information is not included, only the custom user settings t
      * data is of type: {@link module:model/CustomSettingsInformation}
      */
     this.listCustomSettings = function(accountId, userId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1180,6 +1198,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.listSignatures = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1235,6 +1254,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.postContacts = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -1283,6 +1303,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.putContacts = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
@@ -1353,6 +1374,7 @@ Grouping custom user settings is not required and if the extra header informatio
      */
     this.updateCustomSettings = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['customSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -1410,6 +1432,7 @@ You can also change a user's name by changing the information in the `userDetail
      */
     this.updateProfile = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userProfile'];
 
       // verify the required parameter 'accountId' is set
@@ -1464,6 +1487,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
      * @param {module:api/UsersApi~updateProfileImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.updateProfileImage = function(accountId, userId, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1519,6 +1543,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
      */
     this.updateSettings = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -1585,6 +1610,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.updateSignature = function(accountId, userId, signatureId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userSignatureDefinition'];
 
       // verify the required parameter 'accountId' is set
@@ -1654,6 +1680,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * data is of type: {@link module:model/UserSignature}
      */
     this.updateSignatureImage = function(accountId, userId, signatureId, imageType, callback) {
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1721,6 +1748,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.updateSignatures = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userSignaturesInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -1776,6 +1804,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.updateUser = function(accountId, userId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -1830,6 +1859,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
     this.updateUsers = function(accountId, opts, callback) {
       opts = opts || {};
+
       var postBody = opts['userInformationList'];
 
       // verify the required parameter 'accountId' is set
