@@ -73,7 +73,6 @@
      */
     this.createConfiguration = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['connectCustomConfiguration'];
 
       // verify the required parameter 'accountId' is set
@@ -125,7 +124,6 @@
      * @param {module:api/ConnectApi~deleteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteConfiguration = function(accountId, connectId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -178,7 +176,6 @@
      * @param {module:api/ConnectApi~deleteEventFailureLogCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteEventFailureLog = function(accountId, failureId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -232,7 +229,6 @@
      * @param {module:api/ConnectApi~deleteEventLogCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteEventLog = function(accountId, logId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -286,7 +282,6 @@
      * @param {module:api/ConnectApi~deleteEventLogsCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.deleteEventLogs = function(accountId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -336,7 +331,6 @@
      */
     this.deleteMobileNotifiers = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['mobileNotifierConfigurationInformation'];
 
       // verify the required parameter 'accountId' is set
@@ -387,7 +381,6 @@
      * data is of type: {@link module:model/ConnectConfigResults}
      */
     this.getConfiguration = function(accountId, connectId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -446,7 +439,6 @@
      */
     this.getEventLog = function(accountId, logId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -502,7 +494,6 @@
      * data is of type: {@link module:model/ConnectConfigResults}
      */
     this.listConfigurations = function(accountId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -553,7 +544,6 @@
      */
     this.listEventFailureLogs = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -608,7 +598,6 @@
      */
     this.listEventLogs = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -657,7 +646,6 @@
      * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
      */
     this.listMobileNotifiers = function(accountId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -704,7 +692,6 @@
      * data is of type: {@link module:model/ResourceInformation}
      */
     this.listTests = function(accountId, connectId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -766,7 +753,6 @@
      */
     this.listUsers = function(accountId, connectId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -826,7 +812,6 @@
      * data is of type: {@link module:model/ConnectFailureResults}
      */
     this.retryEventForEnvelope = function(accountId, envelopeId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -882,7 +867,6 @@
      */
     this.retryEventForEnvelopes = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['connectFailureFilter'];
 
       // verify the required parameter 'accountId' is set
@@ -934,7 +918,6 @@
      */
     this.updateConfiguration = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['connectCustomConfiguration'];
 
       // verify the required parameter 'accountId' is set
@@ -984,7 +967,6 @@
      */
     this.updateMobileNotifiers = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['mobileNotifierConfigurationInformation'];
 
       // verify the required parameter 'accountId' is set

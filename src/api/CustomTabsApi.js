@@ -68,7 +68,6 @@
      * @param {module:api/CustomTabsApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this._delete = function(accountId, customTabId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -126,7 +125,6 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      */
     this.create = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['tabMetadata'];
 
       // verify the required parameter 'accountId' is set
@@ -174,7 +172,6 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      * data is of type: {@link module:model/TabMetadata}
      */
     this.get = function(accountId, customTabId, callback) {
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -230,7 +227,6 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      */
     this.list = function(accountId, opts, callback) {
       opts = opts || {};
-
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -282,7 +278,6 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      */
     this.update = function(accountId, customTabId, opts, callback) {
       opts = opts || {};
-
       var postBody = opts['tabMetadata'];
 
       // verify the required parameter 'accountId' is set
