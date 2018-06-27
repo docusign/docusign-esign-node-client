@@ -210,7 +210,6 @@ async.waterfall([
 uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
 
 ```javascript
-
 const express = require('express');
 const docusign = require('docusign-esign');
 const apiClient = new docusign.ApiClient();
