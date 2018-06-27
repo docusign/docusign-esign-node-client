@@ -251,7 +251,7 @@ app.get('/auth/:accessToken', function (req, res) {
 
   const accessToken = req.params.accessToken;
   
-  //IMPORTANT: In order to access the other api families, you will need to add this auth header to your apiClient
+  //IMPORTANT: In order to access the other api families, you will need to add this auth header to your apiClient.
   apiClient.addDefaultHeader('Authorization', 'Bearer ' + accessToken);
   
   apiClient.getUserInfo(accessToken, function (err, userInfo) {
