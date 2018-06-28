@@ -75,8 +75,11 @@ app.get('/auth', function (req, res) {
   // that code and pass it to token endpoint as shown in the next
   // lines:
   apiClient.generateAccessToken(integratorKey, clientSecret, req.query.code, function (err, oAuthToken) {
-
+    
     console.log(oAuthToken);
+    
+    //IMPORTANT: In order to access the other api families, you will need to add this auth header to your apiClient.
+    apiClient.addDefaultHeader('Authorization', 'Bearer ' + oAuthToken.accessToken);
 
     apiClient.getUserInfo(oAuthToken.accessToken, function (err, userInfo) {
       console.log("UserInfo: " + userInfo);
@@ -207,7 +210,6 @@ async.waterfall([
 uncomment implicit grant section in test/OAuthClientTests.js, run it and then open http://localhost:3000.
 
 ```javascript
-
 const express = require('express');
 const docusign = require('docusign-esign');
 const apiClient = new docusign.ApiClient();
@@ -247,7 +249,10 @@ app.get('/auth/:accessToken', function (req, res) {
   // ex: http://localhost:3000/auth/<token>
 
   const accessToken = req.params.accessToken;
-
+  
+  //IMPORTANT: In order to access the other api families, you will need to add this auth header to your apiClient.
+  apiClient.addDefaultHeader('Authorization', 'Bearer ' + accessToken);
+  
   apiClient.getUserInfo(accessToken, function (err, userInfo) {
     if (err)
       console.log(err)
@@ -267,7 +272,6 @@ app.listen(port, host, function(err) {
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
 });
-
 ```
 
 # The basePath
