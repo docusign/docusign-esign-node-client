@@ -272,7 +272,6 @@ app.listen(port, host, function(err) {
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
 });
-
 ```
 
 # The basePath
