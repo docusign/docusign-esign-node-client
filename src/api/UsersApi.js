@@ -66,27 +66,39 @@
 
 The response returns whether the API execution was successful (200 - OK) or  if it failed. The response contains a user structure similar to the request and includes the user changes. If an error occurred during the DELETE operation for any of the users, the response for that user contains an `errorDetails` node with `errorCode` and `message` properties.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts._delete 
-     * @param {module:model/UserInfoList} opts.userInfoList 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback._delete 
+     * @param {module:model/UserInfoList} optsOrCallback.userInfoList 
      * @param {module:api/UsersApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UsersResponse}
      */
-    this._delete = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userInfoList'];
+    this._delete = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userInfoList'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling _delete");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'delete': opts['_delete']
+        'delete': optsOrCallback['_delete']
       };
       var headerParams = {
       };
@@ -117,20 +129,32 @@ The response returns whether the API execution was successful (200 - OK) or  if 
      * Adds news user to the specified account.
      * Adds new users to your account. Set the `userSettings` property in the request to specify the actions the users can perform on the account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/NewUsersDefinition} opts.newUsersDefinition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/NewUsersDefinition} optsOrCallback.newUsersDefinition 
      * @param {module:api/UsersApi~createCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NewUsersSummary}
      */
-    this.create = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['newUsersDefinition'];
+    this.create = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['newUsersDefinition'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling create");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -185,14 +209,20 @@ The Content-Transfer-Encoding: base64 header, set in the header for the part con
 If successful, 200-OK is returned, and a JSON structure containing the signature information is provided, note that the signatureId can change with each API POST, PUT, or DELETE since the changes to the signature structure cause the current signature to be closed, and a new signature record to be created.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserSignaturesInformation} opts.userSignaturesInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserSignaturesInformation} optsOrCallback.userSignaturesInformation 
      * @param {module:api/UsersApi~createSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignaturesInformation}
      */
-    this.createSignatures = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userSignaturesInformation'];
+    this.createSignatures = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userSignaturesInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -204,6 +234,12 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
         throw new Error("Missing the required parameter 'userId' when calling createSignatures");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -256,6 +292,12 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
         throw new Error("Missing the required parameter 'contactId' when calling deleteContactWithId");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -291,20 +333,32 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
     /**
      * Delete contacts associated with an account for the DocuSign service.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ContactModRequest} opts.contactModRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
      * @param {module:api/UsersApi~deleteContactsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
-    this.deleteContacts = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['contactModRequest'];
+    this.deleteContacts = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteContacts");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -351,14 +405,20 @@ Where the `group_name` is your designated name for the group of customer user se
 If the extra header information is not included, only the custom user settings that were added without a group are deleted.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CustomSettingsInformation} opts.customSettingsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/CustomSettingsInformation} optsOrCallback.customSettingsInformation 
      * @param {module:api/UsersApi~deleteCustomSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomSettingsInformation}
      */
-    this.deleteCustomSettings = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['customSettingsInformation'];
+    this.deleteCustomSettings = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['customSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -370,6 +430,12 @@ If the extra header information is not included, only the custom user settings t
         throw new Error("Missing the required parameter 'userId' when calling deleteCustomSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -424,6 +490,12 @@ The userId parameter specified in the endpoint must match the authenticated user
         throw new Error("Missing the required parameter 'userId' when calling deleteProfileImage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -488,6 +560,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'signatureId' when calling deleteSignature");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -562,6 +640,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'imageType' when calling deleteSignatureImage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -616,6 +700,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'contactId' when calling getContactById");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -655,14 +745,20 @@ For example encode "Bob Smith" as "Bob%20Smith".
 To return additional user information that details the last login date, login status, and the user's password expiration date, set the optional `additional_info` query string parameter to **true**.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
-     * @param {String} opts.email 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
+     * @param {String} optsOrCallback.email 
      * @param {module:api/UsersApi~getInformationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformation}
      */
-    this.getInformation = function(accountId, userId, opts, callback) {
-      opts = opts || {};
+    this.getInformation = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -675,14 +771,20 @@ To return additional user information that details the last login date, login st
         throw new Error("Missing the required parameter 'userId' when calling getInformation");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'userId': userId
       };
       var queryParams = {
-        'additional_info': opts['additionalInfo'],
-        'email': opts['email']
+        'additional_info': optsOrCallback['additionalInfo'],
+        'email': optsOrCallback['email']
       };
       var headerParams = {
       };
@@ -732,6 +834,12 @@ The userId parameter specified in the endpoint must match the authenticated user
         throw new Error("Missing the required parameter 'userId' when calling getProfile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -773,13 +881,19 @@ The userId parameter specified in the endpoint must match the authenticated user
 If successful, the response returns a 200 - OK and the user profile image.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.encoding 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.encoding 
      * @param {module:api/UsersApi~getProfileImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getProfileImage = function(accountId, userId, opts, callback) {
-      opts = opts || {};
+    this.getProfileImage = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -792,13 +906,19 @@ If successful, the response returns a 200 - OK and the user profile image.
         throw new Error("Missing the required parameter 'userId' when calling getProfileImage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'userId': userId
       };
       var queryParams = {
-        'encoding': opts['encoding']
+        'encoding': optsOrCallback['encoding']
       };
       var headerParams = {
       };
@@ -848,6 +968,12 @@ The response returns the account setting name/value information and the email no
         throw new Error("Missing the required parameter 'userId' when calling getSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -913,6 +1039,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'signatureId' when calling getSignature");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -961,13 +1093,19 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeChrome 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeChrome 
      * @param {module:api/UsersApi~getSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getSignatureImage = function(accountId, userId, signatureId, imageType, opts, callback) {
-      opts = opts || {};
+    this.getSignatureImage = function(accountId, userId, signatureId, imageType, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -990,6 +1128,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'imageType' when calling getSignatureImage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -998,7 +1142,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         'imageType': imageType
       };
       var queryParams = {
-        'include_chrome': opts['includeChrome']
+        'include_chrome': optsOrCallback['includeChrome']
       };
       var headerParams = {
       };
@@ -1031,22 +1175,28 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
 The response returns the list of users for the account along with the information about the result set. If the `additional_info` query was added to the endpoint and set to **true**, the full user information is returned for each user
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
-     * @param {String} opts.count Number of records to return. The number must be greater than 0 and less than or equal to 100. 
-     * @param {String} opts.email 
-     * @param {String} opts.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
-     * @param {String} opts.groupId Filters user records returned by one or more group Id&#39;s.
-     * @param {String} opts.loginStatus 
-     * @param {String} opts.notGroupId 
-     * @param {String} opts.startPosition Starting value for the list. 
-     * @param {String} opts.status 
-     * @param {String} opts.userNameSubstring Filters the user records returned by the user name or a sub-string of user name.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
+     * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 0 and less than or equal to 100. 
+     * @param {String} optsOrCallback.email 
+     * @param {String} optsOrCallback.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
+     * @param {String} optsOrCallback.groupId Filters user records returned by one or more group Id&#39;s.
+     * @param {String} optsOrCallback.loginStatus 
+     * @param {String} optsOrCallback.notGroupId 
+     * @param {String} optsOrCallback.startPosition Starting value for the list. 
+     * @param {String} optsOrCallback.status 
+     * @param {String} optsOrCallback.userNameSubstring Filters the user records returned by the user name or a sub-string of user name.
      * @param {module:api/UsersApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformationList}
      */
-    this.list = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.list = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1054,21 +1204,27 @@ The response returns the list of users for the account along with the informatio
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'additional_info': opts['additionalInfo'],
-        'count': opts['count'],
-        'email': opts['email'],
-        'email_substring': opts['emailSubstring'],
-        'group_id': opts['groupId'],
-        'login_status': opts['loginStatus'],
-        'not_group_id': opts['notGroupId'],
-        'start_position': opts['startPosition'],
-        'status': opts['status'],
-        'user_name_substring': opts['userNameSubstring']
+        'additional_info': optsOrCallback['additionalInfo'],
+        'count': optsOrCallback['count'],
+        'email': optsOrCallback['email'],
+        'email_substring': optsOrCallback['emailSubstring'],
+        'group_id': optsOrCallback['groupId'],
+        'login_status': optsOrCallback['loginStatus'],
+        'not_group_id': optsOrCallback['notGroupId'],
+        'start_position': optsOrCallback['startPosition'],
+        'status': optsOrCallback['status'],
+        'user_name_substring': optsOrCallback['userNameSubstring']
       };
       var headerParams = {
       };
@@ -1130,6 +1286,12 @@ If the extra header information is not included, only the custom user settings t
         throw new Error("Missing the required parameter 'userId' when calling listCustomSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1173,13 +1335,19 @@ The `signatureId` parameter accepts a signature ID or a signature name. DocuSign
 For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.stampType 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.stampType 
      * @param {module:api/UsersApi~listSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignaturesInformation}
      */
-    this.listSignatures = function(accountId, userId, opts, callback) {
-      opts = opts || {};
+    this.listSignatures = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1192,13 +1360,19 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'userId' when calling listSignatures");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'userId': userId
       };
       var queryParams = {
-        'stamp_type': opts['stampType']
+        'stamp_type': optsOrCallback['stampType']
       };
       var headerParams = {
       };
@@ -1228,20 +1402,32 @@ For example encode "Bob Smith" as "Bob%20Smith".
     /**
      * Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ContactModRequest} opts.contactModRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
      * @param {module:api/UsersApi~postContactsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
-    this.postContacts = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['contactModRequest'];
+    this.postContacts = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling postContacts");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1276,20 +1462,32 @@ For example encode "Bob Smith" as "Bob%20Smith".
     /**
      * Replaces contacts associated with an account for the DocuSign service.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ContactModRequest} opts.contactModRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
      * @param {module:api/UsersApi~putContactsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
-    this.putContacts = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['contactModRequest'];
+    this.putContacts = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling putContacts");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1346,14 +1544,20 @@ When getting or deleting grouped custom user settings, you must include the extr
 Grouping custom user settings is not required and if the extra header information is not included, the custom user settings are added normally and can be retrieved or deleted without including the additional header.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CustomSettingsInformation} opts.customSettingsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/CustomSettingsInformation} optsOrCallback.customSettingsInformation 
      * @param {module:api/UsersApi~updateCustomSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomSettingsInformation}
      */
-    this.updateCustomSettings = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['customSettingsInformation'];
+    this.updateCustomSettings = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['customSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1365,6 +1569,12 @@ Grouping custom user settings is not required and if the extra header informatio
         throw new Error("Missing the required parameter 'userId' when calling updateCustomSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1404,13 +1614,19 @@ Grouping custom user settings is not required and if the extra header informatio
 You can also change a user's name by changing the information in the `userDetails` property. When changing a user's name, you can either change the information in the `userName` property OR change the information in `firstName`, `middleName`, `lastName, suffixName`, and `title` properties. Changes to `firstName`, `middleName`, `lastName`, `suffixName`, and `title` properties take precedence over changes to the `userName` property.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserProfile} opts.userProfile 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserProfile} optsOrCallback.userProfile 
      * @param {module:api/UsersApi~updateProfileCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateProfile = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userProfile'];
+    this.updateProfile = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userProfile'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1422,6 +1638,12 @@ You can also change a user's name by changing the information in the `userDetail
         throw new Error("Missing the required parameter 'userId' when calling updateProfile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1476,6 +1698,12 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
         throw new Error("Missing the required parameter 'userId' when calling updateProfileImage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1513,13 +1741,19 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
      * Updates the account settings list and email notification types for the specified user.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserSettingsInformation} opts.userSettingsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserSettingsInformation} optsOrCallback.userSettingsInformation 
      * @param {module:api/UsersApi~updateSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateSettings = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userSettingsInformation'];
+    this.updateSettings = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1531,6 +1765,12 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
         throw new Error("Missing the required parameter 'userId' when calling updateSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1577,15 +1817,21 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {String} signatureId The ID of the signature being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.closeExistingSignature When set to **true**, closes the current signature.
-     * @param {module:model/UserSignatureDefinition} opts.userSignatureDefinition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.closeExistingSignature When set to **true**, closes the current signature.
+     * @param {module:model/UserSignatureDefinition} optsOrCallback.userSignatureDefinition 
      * @param {module:api/UsersApi~updateSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.updateSignature = function(accountId, userId, signatureId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userSignatureDefinition'];
+    this.updateSignature = function(accountId, userId, signatureId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userSignatureDefinition'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1602,6 +1848,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'signatureId' when calling updateSignature");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1609,7 +1861,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         'signatureId': signatureId
       };
       var queryParams = {
-        'close_existing_signature': opts['closeExistingSignature']
+        'close_existing_signature': optsOrCallback['closeExistingSignature']
       };
       var headerParams = {
       };
@@ -1676,6 +1928,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'imageType' when calling updateSignatureImage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1714,14 +1972,20 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * Adds/updates a user signature.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserSignaturesInformation} opts.userSignaturesInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserSignaturesInformation} optsOrCallback.userSignaturesInformation 
      * @param {module:api/UsersApi~updateSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignaturesInformation}
      */
-    this.updateSignatures = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userSignaturesInformation'];
+    this.updateSignatures = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userSignaturesInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1733,6 +1997,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'userId' when calling updateSignatures");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1769,14 +2039,20 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * Updates the specified user information.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserInformation} opts.userInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserInformation} optsOrCallback.userInformation 
      * @param {module:api/UsersApi~updateUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformation}
      */
-    this.updateUser = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userInformation'];
+    this.updateUser = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1788,6 +2064,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'userId' when calling updateUser");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1823,20 +2105,32 @@ For example encode "Bob Smith" as "Bob%20Smith".
     /**
      * Change one or more user in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserInformationList} opts.userInformationList 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserInformationList} optsOrCallback.userInformationList 
      * @param {module:api/UsersApi~updateUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformationList}
      */
-    this.updateUsers = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userInformationList'];
+    this.updateUsers = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userInformationList'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId

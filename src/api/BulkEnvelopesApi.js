@@ -89,6 +89,12 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
         throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -127,15 +133,21 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * Retrieves the status information of a single bulk recipient batch. A bulk recipient batch is the set of envelopes sent from a single bulk recipient file. 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} batchId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count Specifies the number of entries to return.
-     * @param {String} opts.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
-     * @param {String} opts.startPosition Specifies the location in the list of envelopes from which to start.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count Specifies the number of entries to return.
+     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
+     * @param {String} optsOrCallback.startPosition Specifies the location in the list of envelopes from which to start.
      * @param {module:api/BulkEnvelopesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopeStatus}
      */
-    this.get = function(accountId, batchId, opts, callback) {
-      opts = opts || {};
+    this.get = function(accountId, batchId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -148,15 +160,21 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
         throw new Error("Missing the required parameter 'batchId' when calling get");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'batchId': batchId
       };
       var queryParams = {
-        'count': opts['count'],
-        'include': opts['include'],
-        'start_position': opts['startPosition']
+        'count': optsOrCallback['count'],
+        'include': optsOrCallback['include'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -189,14 +207,20 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeTabs 
-     * @param {String} opts.startPosition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeTabs 
+     * @param {String} optsOrCallback.startPosition 
      * @param {module:api/BulkEnvelopesApi~getRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsResponse}
      */
-    this.getRecipients = function(accountId, envelopeId, recipientId, opts, callback) {
-      opts = opts || {};
+    this.getRecipients = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -214,6 +238,12 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -221,8 +251,8 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
         'recipientId': recipientId
       };
       var queryParams = {
-        'include_tabs': opts['includeTabs'],
-        'start_position': opts['startPosition']
+        'include_tabs': optsOrCallback['includeTabs'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -255,15 +285,21 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
 
 The response returns information about the envelopes sent with bulk recipient batches, including the `batchId` property, which can be used to retrieve a more detailed status of individual bulk recipient batches.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count The number of results to return. This can be 1 to 20.
-     * @param {String} opts.include 
-     * @param {String} opts.startPosition The position of the bulk envelope items in the response. This is used for repeated calls, when the number of bulk envelopes returned is too large for one return. The default value is 0.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count The number of results to return. This can be 1 to 20.
+     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.startPosition The position of the bulk envelope items in the response. This is used for repeated calls, when the number of bulk envelopes returned is too large for one return. The default value is 0.
      * @param {module:api/BulkEnvelopesApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopesResponse}
      */
-    this.list = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.list = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -271,14 +307,20 @@ The response returns information about the envelopes sent with bulk recipient ba
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'count': opts['count'],
-        'include': opts['include'],
-        'start_position': opts['startPosition']
+        'count': optsOrCallback['count'],
+        'include': optsOrCallback['include'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -313,14 +355,20 @@ The REST API does not support modifying individual rows or values in the bulk re
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/BulkRecipientsRequest} opts.bulkRecipientsRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/BulkRecipientsRequest} optsOrCallback.bulkRecipientsRequest 
      * @param {module:api/BulkEnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsSummaryResponse}
      */
-    this.updateRecipients = function(accountId, envelopeId, recipientId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['bulkRecipientsRequest'];
+    this.updateRecipients = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['bulkRecipientsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -337,6 +385,12 @@ The REST API does not support modifying individual rows or values in the bulk re
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,

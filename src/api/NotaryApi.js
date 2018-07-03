@@ -62,24 +62,36 @@
 
     /**
      * Get notary jurisdictions for a user
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count 
-     * @param {String} opts.searchText 
-     * @param {String} opts.startPosition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.searchText 
+     * @param {String} optsOrCallback.startPosition 
      * @param {module:api/NotaryApi~listNotaryJournalsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NotaryJournalList}
      */
-    this.listNotaryJournals = function(opts, callback) {
-      opts = opts || {};
+    this.listNotaryJournals = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
       var queryParams = {
-        'count': opts['count'],
-        'search_text': opts['searchText'],
-        'start_position': opts['startPosition']
+        'count': optsOrCallback['count'],
+        'search_text': optsOrCallback['searchText'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
