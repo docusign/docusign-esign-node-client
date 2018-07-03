@@ -64,16 +64,22 @@
      * Gets a list of the folders for the account.
      * Retrieves a list of the folders for the account, including the folder hierarchy. You can specify whether to return just the template folder or template folder and normal folders by setting the `template` query string parameter.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.include 
-     * @param {String} opts.startPosition 
-     * @param {String} opts.template Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
-     * @param {String} opts.userFilter 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.template Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
+     * @param {String} optsOrCallback.userFilter 
      * @param {module:api/FoldersApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FoldersResponse}
      */
-    this.list = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.list = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -81,15 +87,21 @@
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'include': opts['include'],
-        'start_position': opts['startPosition'],
-        'template': opts['template'],
-        'user_filter': opts['userFilter']
+        'include': optsOrCallback['include'],
+        'start_position': optsOrCallback['startPosition'],
+        'template': optsOrCallback['template'],
+        'user_filter': optsOrCallback['userFilter']
       };
       var headerParams = {
       };
@@ -121,19 +133,25 @@
      * Retrieves a list of the envelopes in the specified folder. You can narrow the query by specifying search criteria in the query string parameters.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} folderId The ID of the folder being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.fromDate  Only return items on or after this date. If no value is provided, the default search is the previous 30 days. 
-     * @param {String} opts.ownerEmail  The email of the folder owner. 
-     * @param {String} opts.ownerName  The name of the folder owner. 
-     * @param {String} opts.searchText  The search text used to search the items of the envelope. The search looks at recipient names and emails, envelope custom fields, sender name, and subject. 
-     * @param {String} opts.startPosition The position of the folder items to return. This is used for repeated calls, when the number of envelopes returned is too much for one return (calls return 100 envelopes at a time). The default value is 0.
-     * @param {String} opts.status The current status of the envelope. If no value is provided, the default search is all/any status.
-     * @param {String} opts.toDate Only return items up to this date. If no value is provided, the default search is to the current date.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.fromDate  Only return items on or after this date. If no value is provided, the default search is the previous 30 days. 
+     * @param {String} optsOrCallback.ownerEmail  The email of the folder owner. 
+     * @param {String} optsOrCallback.ownerName  The name of the folder owner. 
+     * @param {String} optsOrCallback.searchText  The search text used to search the items of the envelope. The search looks at recipient names and emails, envelope custom fields, sender name, and subject. 
+     * @param {String} optsOrCallback.startPosition The position of the folder items to return. This is used for repeated calls, when the number of envelopes returned is too much for one return (calls return 100 envelopes at a time). The default value is 0.
+     * @param {String} optsOrCallback.status The current status of the envelope. If no value is provided, the default search is all/any status.
+     * @param {String} optsOrCallback.toDate Only return items up to this date. If no value is provided, the default search is to the current date.
      * @param {module:api/FoldersApi~listItemsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FolderItemsResponse}
      */
-    this.listItems = function(accountId, folderId, opts, callback) {
-      opts = opts || {};
+    this.listItems = function(accountId, folderId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -146,19 +164,25 @@
         throw new Error("Missing the required parameter 'folderId' when calling listItems");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'folderId': folderId
       };
       var queryParams = {
-        'from_date': opts['fromDate'],
-        'owner_email': opts['ownerEmail'],
-        'owner_name': opts['ownerName'],
-        'search_text': opts['searchText'],
-        'start_position': opts['startPosition'],
-        'status': opts['status'],
-        'to_date': opts['toDate']
+        'from_date': optsOrCallback['fromDate'],
+        'owner_email': optsOrCallback['ownerEmail'],
+        'owner_name': optsOrCallback['ownerName'],
+        'search_text': optsOrCallback['searchText'],
+        'start_position': optsOrCallback['startPosition'],
+        'status': optsOrCallback['status'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };
@@ -190,14 +214,20 @@
      * Moves envelopes to the specified folder.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} folderId The ID of the folder being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/FoldersRequest} opts.foldersRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/FoldersRequest} optsOrCallback.foldersRequest 
      * @param {module:api/FoldersApi~moveEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FoldersResponse}
      */
-    this.moveEnvelopes = function(accountId, folderId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['foldersRequest'];
+    this.moveEnvelopes = function(accountId, folderId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['foldersRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -209,6 +239,12 @@
         throw new Error("Missing the required parameter 'folderId' when calling moveEnvelopes");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -248,20 +284,26 @@
 If the user ID of the user making the call is the same as the user ID for any returned recipient, then the userId property is added to the returned information for those recipients.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} searchFolderId Specifies the envelope group that is searched by the request. These are logical groupings, not actual folder names. Valid values are: drafts, awaiting_my_signature, completed, out_for_signature.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.all Specifies that all envelopes that match the criteria are returned.
-     * @param {String} opts.count Specifies the number of records returned in the cache. The number must be greater than 0 and less than or equal to 100.
-     * @param {String} opts.fromDate Specifies the start of the date range to return. If no value is provided, the default search is the previous 30 days.
-     * @param {String} opts.includeRecipients When set to **true**, the recipient information is returned in the response.
-     * @param {String} opts.order Specifies the order in which the list is returned. Valid values are: &#x60;asc&#x60; for ascending order, and &#x60;desc&#x60; for descending order.
-     * @param {String} opts.orderBy Specifies the property used to sort the list. Valid values are: &#x60;action_required&#x60;, &#x60;created&#x60;, &#x60;completed&#x60;, &#x60;sent&#x60;, &#x60;signer_list&#x60;, &#x60;status&#x60;, or &#x60;subject&#x60;.
-     * @param {String} opts.startPosition Specifies the the starting location in the result set of the items that are returned.
-     * @param {String} opts.toDate Specifies the end of the date range to return.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.all Specifies that all envelopes that match the criteria are returned.
+     * @param {String} optsOrCallback.count Specifies the number of records returned in the cache. The number must be greater than 0 and less than or equal to 100.
+     * @param {String} optsOrCallback.fromDate Specifies the start of the date range to return. If no value is provided, the default search is the previous 30 days.
+     * @param {String} optsOrCallback.includeRecipients When set to **true**, the recipient information is returned in the response.
+     * @param {String} optsOrCallback.order Specifies the order in which the list is returned. Valid values are: &#x60;asc&#x60; for ascending order, and &#x60;desc&#x60; for descending order.
+     * @param {String} optsOrCallback.orderBy Specifies the property used to sort the list. Valid values are: &#x60;action_required&#x60;, &#x60;created&#x60;, &#x60;completed&#x60;, &#x60;sent&#x60;, &#x60;signer_list&#x60;, &#x60;status&#x60;, or &#x60;subject&#x60;.
+     * @param {String} optsOrCallback.startPosition Specifies the the starting location in the result set of the items that are returned.
+     * @param {String} optsOrCallback.toDate Specifies the end of the date range to return.
      * @param {module:api/FoldersApi~searchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FolderItemResponse}
      */
-    this.search = function(accountId, searchFolderId, opts, callback) {
-      opts = opts || {};
+    this.search = function(accountId, searchFolderId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -274,20 +316,26 @@ If the user ID of the user making the call is the same as the user ID for any re
         throw new Error("Missing the required parameter 'searchFolderId' when calling search");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'searchFolderId': searchFolderId
       };
       var queryParams = {
-        'all': opts['all'],
-        'count': opts['count'],
-        'from_date': opts['fromDate'],
-        'include_recipients': opts['includeRecipients'],
-        'order': opts['order'],
-        'order_by': opts['orderBy'],
-        'start_position': opts['startPosition'],
-        'to_date': opts['toDate']
+        'all': optsOrCallback['all'],
+        'count': optsOrCallback['count'],
+        'from_date': optsOrCallback['fromDate'],
+        'include_recipients': optsOrCallback['includeRecipients'],
+        'order': optsOrCallback['order'],
+        'order_by': optsOrCallback['orderBy'],
+        'start_position': optsOrCallback['startPosition'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };

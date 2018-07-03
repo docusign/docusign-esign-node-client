@@ -70,20 +70,32 @@ An account can have a maximum of 50 signing groups. Each signing group can have 
  
 Signing groups can be used by any account user.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SigningGroupInformation} opts.signingGroupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SigningGroupInformation} optsOrCallback.signingGroupInformation 
      * @param {module:api/SigningGroupsApi~createListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SigningGroupInformation}
      */
-    this.createList = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['signingGroupInformation'];
+    this.createList = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createList");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -119,20 +131,32 @@ Signing groups can be used by any account user.
      * Deletes one or more signing groups.
      * Deletes one or more signing groups in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SigningGroupInformation} opts.signingGroupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SigningGroupInformation} optsOrCallback.signingGroupInformation 
      * @param {module:api/SigningGroupsApi~deleteListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SigningGroupInformation}
      */
-    this.deleteList = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['signingGroupInformation'];
+    this.deleteList = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteList");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -169,14 +193,20 @@ Signing groups can be used by any account user.
      * Deletes  one or more members from the specified signing group. 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signingGroupId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SigningGroupUsers} opts.signingGroupUsers 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SigningGroupUsers} optsOrCallback.signingGroupUsers 
      * @param {module:api/SigningGroupsApi~deleteUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SigningGroupUsers}
      */
-    this.deleteUsers = function(accountId, signingGroupId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['signingGroupUsers'];
+    this.deleteUsers = function(accountId, signingGroupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['signingGroupUsers'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -188,6 +218,12 @@ Signing groups can be used by any account user.
         throw new Error("Missing the required parameter 'signingGroupId' when calling deleteUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -241,6 +277,12 @@ Signing groups can be used by any account user.
         throw new Error("Missing the required parameter 'signingGroupId' when calling get");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -277,14 +319,20 @@ Signing groups can be used by any account user.
      * Gets a list of the Signing Groups in an account.
      * Retrieves a list of all signing groups in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.groupType 
-     * @param {String} opts.includeUsers When set to **true**, the response includes the signing group members. 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.groupType 
+     * @param {String} optsOrCallback.includeUsers When set to **true**, the response includes the signing group members. 
      * @param {module:api/SigningGroupsApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SigningGroupInformation}
      */
-    this.list = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.list = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -292,13 +340,19 @@ Signing groups can be used by any account user.
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'group_type': opts['groupType'],
-        'include_users': opts['includeUsers']
+        'group_type': optsOrCallback['groupType'],
+        'include_users': optsOrCallback['includeUsers']
       };
       var headerParams = {
       };
@@ -346,6 +400,12 @@ Signing groups can be used by any account user.
         throw new Error("Missing the required parameter 'signingGroupId' when calling listUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -383,14 +443,20 @@ Signing groups can be used by any account user.
      * Updates signing group name and member information. You can also add new members to the signing group. A signing group can have a maximum of 50 members. 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signingGroupId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SigningGroup} opts.signingGroup 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SigningGroup} optsOrCallback.signingGroup 
      * @param {module:api/SigningGroupsApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SigningGroup}
      */
-    this.update = function(accountId, signingGroupId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['signingGroup'];
+    this.update = function(accountId, signingGroupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['signingGroup'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -402,6 +468,12 @@ Signing groups can be used by any account user.
         throw new Error("Missing the required parameter 'signingGroupId' when calling update");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -438,20 +510,32 @@ Signing groups can be used by any account user.
      * Updates signing group names.
      * Updates the name of one or more existing signing groups. 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SigningGroupInformation} opts.signingGroupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SigningGroupInformation} optsOrCallback.signingGroupInformation 
      * @param {module:api/SigningGroupsApi~updateListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SigningGroupInformation}
      */
-    this.updateList = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['signingGroupInformation'];
+    this.updateList = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateList");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -488,14 +572,20 @@ Signing groups can be used by any account user.
      * Adds one or more new members to a signing group. A signing group can have a maximum of 50 members. 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signingGroupId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SigningGroupUsers} opts.signingGroupUsers 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SigningGroupUsers} optsOrCallback.signingGroupUsers 
      * @param {module:api/SigningGroupsApi~updateUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SigningGroupUsers}
      */
-    this.updateUsers = function(accountId, signingGroupId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['signingGroupUsers'];
+    this.updateUsers = function(accountId, signingGroupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['signingGroupUsers'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -507,6 +597,12 @@ Signing groups can be used by any account user.
         throw new Error("Missing the required parameter 'signingGroupId' when calling updateUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,

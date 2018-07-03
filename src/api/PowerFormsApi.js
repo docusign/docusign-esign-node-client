@@ -63,20 +63,32 @@
     /**
      * Creates a new PowerForm.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PowerForm} opts.powerForm 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/PowerForm} optsOrCallback.powerForm 
      * @param {module:api/PowerFormsApi~createPowerFormCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerForm}
      */
-    this.createPowerForm = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['powerForm'];
+    this.createPowerForm = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['powerForm'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createPowerForm");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -127,6 +139,12 @@
         throw new Error("Missing the required parameter 'powerFormId' when calling deletePowerForm");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -162,20 +180,32 @@
     /**
      * Deletes one or more PowerForms
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PowerFormsRequest} opts.powerFormsRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/PowerFormsRequest} optsOrCallback.powerFormsRequest 
      * @param {module:api/PowerFormsApi~deletePowerFormsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerFormsResponse}
      */
-    this.deletePowerForms = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['powerFormsRequest'];
+    this.deletePowerForms = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['powerFormsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling deletePowerForms");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -227,6 +257,12 @@
         throw new Error("Missing the required parameter 'powerFormId' when calling getPowerForm");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -263,15 +299,21 @@
      * Returns the form data associated with the usage of a PowerForm.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} powerFormId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.dataLayout 
-     * @param {String} opts.fromDate 
-     * @param {String} opts.toDate 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.dataLayout 
+     * @param {String} optsOrCallback.fromDate 
+     * @param {String} optsOrCallback.toDate 
      * @param {module:api/PowerFormsApi~getPowerFormDataCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerFormsFormDataResponse}
      */
-    this.getPowerFormData = function(accountId, powerFormId, opts, callback) {
-      opts = opts || {};
+    this.getPowerFormData = function(accountId, powerFormId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -284,15 +326,21 @@
         throw new Error("Missing the required parameter 'powerFormId' when calling getPowerFormData");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'powerFormId': powerFormId
       };
       var queryParams = {
-        'data_layout': opts['dataLayout'],
-        'from_date': opts['fromDate'],
-        'to_date': opts['toDate']
+        'data_layout': optsOrCallback['dataLayout'],
+        'from_date': optsOrCallback['fromDate'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };
@@ -322,13 +370,19 @@
     /**
      * Returns the list of PowerForms available to the user.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.startPosition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.startPosition 
      * @param {module:api/PowerFormsApi~listPowerFormSendersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerFormSendersResponse}
      */
-    this.listPowerFormSenders = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listPowerFormSenders = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -336,12 +390,18 @@
         throw new Error("Missing the required parameter 'accountId' when calling listPowerFormSenders");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'start_position': opts['startPosition']
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -371,16 +431,22 @@
     /**
      * Returns the list of PowerForms available to the user.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.fromDate 
-     * @param {String} opts.order 
-     * @param {String} opts.orderBy 
-     * @param {String} opts.toDate 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.fromDate 
+     * @param {String} optsOrCallback.order 
+     * @param {String} optsOrCallback.orderBy 
+     * @param {String} optsOrCallback.toDate 
      * @param {module:api/PowerFormsApi~listPowerFormsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerFormsResponse}
      */
-    this.listPowerForms = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listPowerForms = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -388,15 +454,21 @@
         throw new Error("Missing the required parameter 'accountId' when calling listPowerForms");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'from_date': opts['fromDate'],
-        'order': opts['order'],
-        'order_by': opts['orderBy'],
-        'to_date': opts['toDate']
+        'from_date': optsOrCallback['fromDate'],
+        'order': optsOrCallback['order'],
+        'order_by': optsOrCallback['orderBy'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };
@@ -427,14 +499,20 @@
      * Creates a new PowerForm.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} powerFormId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PowerForm} opts.powerForm 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/PowerForm} optsOrCallback.powerForm 
      * @param {module:api/PowerFormsApi~updatePowerFormCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerForm}
      */
-    this.updatePowerForm = function(accountId, powerFormId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['powerForm'];
+    this.updatePowerForm = function(accountId, powerFormId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['powerForm'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -446,6 +524,12 @@
         throw new Error("Missing the required parameter 'powerFormId' when calling updatePowerForm");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,

@@ -66,20 +66,32 @@
 
 Groups can be used to help manage users by associating users with a group. You can associate a group with a Permission Profile, which sets the user permissions for users in that group without having to set the `userSettings` property for each user. You are not required to set Permission Profiles for a group, but it makes it easier to manage user permissions for a large number of users. You can also use groups with template sharing to limit user access to templates.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/GroupInformation} opts.groupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/GroupInformation} optsOrCallback.groupInformation 
      * @param {module:api/GroupsApi~createGroupsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.createGroups = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['groupInformation'];
+    this.createGroups = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createGroups");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -116,14 +128,20 @@ Groups can be used to help manage users by associating users with a group. You c
      * Deletes brand information from the requested group.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} groupId The ID of the group being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/BrandsRequest} opts.brandsRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/BrandsRequest} optsOrCallback.brandsRequest 
      * @param {module:api/GroupsApi~deleteBrandsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.deleteBrands = function(accountId, groupId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['brandsRequest'];
+    this.deleteBrands = function(accountId, groupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -135,6 +153,12 @@ Groups can be used to help manage users by associating users with a group. You c
         throw new Error("Missing the required parameter 'groupId' when calling deleteBrands");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -173,14 +197,20 @@ Groups can be used to help manage users by associating users with a group. You c
 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} groupId The ID of the group being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserInfoList} opts.userInfoList 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserInfoList} optsOrCallback.userInfoList 
      * @param {module:api/GroupsApi~deleteGroupUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UsersResponse}
      */
-    this.deleteGroupUsers = function(accountId, groupId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userInfoList'];
+    this.deleteGroupUsers = function(accountId, groupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userInfoList'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -192,6 +222,12 @@ Groups can be used to help manage users by associating users with a group. You c
         throw new Error("Missing the required parameter 'groupId' when calling deleteGroupUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -228,20 +264,32 @@ Groups can be used to help manage users by associating users with a group. You c
      * Deletes an existing user group.
      * Deletes an existing user group.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/GroupInformation} opts.groupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/GroupInformation} optsOrCallback.groupInformation 
      * @param {module:api/GroupsApi~deleteGroupsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.deleteGroups = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['groupInformation'];
+    this.deleteGroups = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteGroups");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -294,6 +342,12 @@ Groups can be used to help manage users by associating users with a group. You c
         throw new Error("Missing the required parameter 'groupId' when calling getBrands");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -331,14 +385,20 @@ Groups can be used to help manage users by associating users with a group. You c
      * Retrieves a list of users in a group.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} groupId The ID of the group being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count Number of records to return. The number must be greater than 1 and less than or equal to 100. 
-     * @param {String} opts.startPosition Starting value for the list.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 1 and less than or equal to 100. 
+     * @param {String} optsOrCallback.startPosition Starting value for the list.
      * @param {module:api/GroupsApi~listGroupUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UsersResponse}
      */
-    this.listGroupUsers = function(accountId, groupId, opts, callback) {
-      opts = opts || {};
+    this.listGroupUsers = function(accountId, groupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -351,14 +411,20 @@ Groups can be used to help manage users by associating users with a group. You c
         throw new Error("Missing the required parameter 'groupId' when calling listGroupUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'groupId': groupId
       };
       var queryParams = {
-        'count': opts['count'],
-        'start_position': opts['startPosition']
+        'count': optsOrCallback['count'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -389,16 +455,22 @@ Groups can be used to help manage users by associating users with a group. You c
      * Gets information about groups associated with the account.
      * Retrieves information about groups associated with the account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count Number of records to return. The number must be greater than 1 and less than or equal to 100.
-     * @param {String} opts.groupType 
-     * @param {String} opts.searchText 
-     * @param {String} opts.startPosition Starting value for the list.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 1 and less than or equal to 100.
+     * @param {String} optsOrCallback.groupType 
+     * @param {String} optsOrCallback.searchText 
+     * @param {String} optsOrCallback.startPosition Starting value for the list.
      * @param {module:api/GroupsApi~listGroupsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.listGroups = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listGroups = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -406,15 +478,21 @@ Groups can be used to help manage users by associating users with a group. You c
         throw new Error("Missing the required parameter 'accountId' when calling listGroups");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'count': opts['count'],
-        'group_type': opts['groupType'],
-        'search_text': opts['searchText'],
-        'start_position': opts['startPosition']
+        'count': optsOrCallback['count'],
+        'group_type': optsOrCallback['groupType'],
+        'search_text': optsOrCallback['searchText'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -446,14 +524,20 @@ Groups can be used to help manage users by associating users with a group. You c
      * Adds group brand ID information to a group.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} groupId The ID of the group being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/BrandsRequest} opts.brandsRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/BrandsRequest} optsOrCallback.brandsRequest 
      * @param {module:api/GroupsApi~updateBrandsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.updateBrands = function(accountId, groupId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['brandsRequest'];
+    this.updateBrands = function(accountId, groupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -465,6 +549,12 @@ Groups can be used to help manage users by associating users with a group. You c
         throw new Error("Missing the required parameter 'groupId' when calling updateBrands");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -502,14 +592,20 @@ Groups can be used to help manage users by associating users with a group. You c
      * Adds one or more users to an existing group.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} groupId The ID of the group being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserInfoList} opts.userInfoList 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserInfoList} optsOrCallback.userInfoList 
      * @param {module:api/GroupsApi~updateGroupUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UsersResponse}
      */
-    this.updateGroupUsers = function(accountId, groupId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userInfoList'];
+    this.updateGroupUsers = function(accountId, groupId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userInfoList'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -521,6 +617,12 @@ Groups can be used to help manage users by associating users with a group. You c
         throw new Error("Missing the required parameter 'groupId' when calling updateGroupUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -557,20 +659,32 @@ Groups can be used to help manage users by associating users with a group. You c
      * Updates the group information for a group.
      * Updates the group name and modifies, or sets, the permission profile for the group.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/GroupInformation} opts.groupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/GroupInformation} optsOrCallback.groupInformation 
      * @param {module:api/GroupsApi~updateGroupsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.updateGroups = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['groupInformation'];
+    this.updateGroups = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateGroups");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId

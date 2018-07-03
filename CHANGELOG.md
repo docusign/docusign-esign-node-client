@@ -1,12 +1,14 @@
-# Change Log
-All notable changes to this project will be documented in this file.
+# DocuSign Node Client Changelog
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [Unreleased]
-More information later on.
+## [v4.0.2] - eSignature API v18.1.02 - 7/3/2018
+### Changed
+- All SDK methods have been updated such that the `opts` parameter may now contain the callback, making the other opts parameters optional, and it has been renamed `optsOrCallback`. 
+This resolves the breaking change for applications upgrading from version 3.X.X to 4.X.X.
+- The OAuth authorization code grant and implicit grant code examples in the readme.md file have been updated to use the addDefaultHeader method. Each API client needs this header to access DocuSign APIs.
  
- ## [4.0.1] - 2018-06-25
+## [4.0.1] - 2018-06-25
 ### Fixed
 - Issues [`#101`](https://github.com/docusign/DocuSign-Node-Client/issues/101) and [`#66`](https://github.com/docusign/DocuSign-Node-Client/issues/66)
 - listTabs now maps to an array of List instead of array of Array

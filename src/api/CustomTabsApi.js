@@ -80,6 +80,12 @@
         throw new Error("Missing the required parameter 'customTabId' when calling _delete");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -118,20 +124,32 @@
 
 Custom tabs can be created for approve, checkbox, company, date, date signed, decline, email, email address, envelope ID, first name, formula, full name, initial here, last name, list, note, number, radio, sign here, signer attachment, SSN, text, title, and zip tabs.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TabMetadata} opts.tabMetadata 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TabMetadata} optsOrCallback.tabMetadata 
      * @param {module:api/CustomTabsApi~createCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadata}
      */
-    this.create = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['tabMetadata'];
+    this.create = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['tabMetadata'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling create");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -184,6 +202,12 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         throw new Error("Missing the required parameter 'customTabId' when calling get");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -220,13 +244,19 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      * Gets a list of all account tabs.
      * Retrieves a list of all tabs associated with the account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.customTabOnly When set to **true**, only custom tabs are returned in the response. 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.customTabOnly When set to **true**, only custom tabs are returned in the response. 
      * @param {module:api/CustomTabsApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadataList}
      */
-    this.list = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.list = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -234,12 +264,18 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'custom_tab_only': opts['customTabOnly']
+        'custom_tab_only': optsOrCallback['customTabOnly']
       };
       var headerParams = {
       };
@@ -271,14 +307,20 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      * Updates the information in a custom tab for the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} customTabId 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TabMetadata} opts.tabMetadata 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TabMetadata} optsOrCallback.tabMetadata 
      * @param {module:api/CustomTabsApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadata}
      */
-    this.update = function(accountId, customTabId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['tabMetadata'];
+    this.update = function(accountId, customTabId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['tabMetadata'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -290,6 +332,12 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         throw new Error("Missing the required parameter 'customTabId' when calling update");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,

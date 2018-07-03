@@ -64,20 +64,32 @@
      * Create a Workspace
      * Creates a new workspace.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Workspace} opts.workspace 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/Workspace} optsOrCallback.workspace 
      * @param {module:api/WorkspacesApi~createWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workspace}
      */
-    this.createWorkspace = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['workspace'];
+    this.createWorkspace = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['workspace'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createWorkspace");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -135,6 +147,12 @@
         throw new Error("Missing the required parameter 'folderId' when calling createWorkspaceFile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -189,6 +207,12 @@
         throw new Error("Missing the required parameter 'workspaceId' when calling deleteWorkspace");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -226,13 +250,19 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {String} folderId The ID of the folder being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/WorkspaceItemList} opts.workspaceItemList 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/WorkspaceItemList} optsOrCallback.workspaceItemList 
      * @param {module:api/WorkspacesApi~deleteWorkspaceFolderItemsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteWorkspaceFolderItems = function(accountId, workspaceId, folderId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['workspaceItemList'];
+    this.deleteWorkspaceFolderItems = function(accountId, workspaceId, folderId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['workspaceItemList'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -249,6 +279,12 @@
         throw new Error("Missing the required parameter 'folderId' when calling deleteWorkspaceFolderItems");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -303,6 +339,12 @@
         throw new Error("Missing the required parameter 'workspaceId' when calling getWorkspace");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -342,13 +384,19 @@
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {String} folderId The ID of the folder being accessed.
      * @param {String} fileId Specifies the room file ID GUID.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.isDownload When set to **true**, the Content-Disposition header is set in the response. The value of the header provides the filename of the file. Default is **false**.
-     * @param {String} opts.pdfVersion When set to **true** the file returned as a PDF.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.isDownload When set to **true**, the Content-Disposition header is set in the response. The value of the header provides the filename of the file. Default is **false**.
+     * @param {String} optsOrCallback.pdfVersion When set to **true** the file returned as a PDF.
      * @param {module:api/WorkspacesApi~getWorkspaceFileCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getWorkspaceFile = function(accountId, workspaceId, folderId, fileId, opts, callback) {
-      opts = opts || {};
+    this.getWorkspaceFile = function(accountId, workspaceId, folderId, fileId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -371,6 +419,12 @@
         throw new Error("Missing the required parameter 'fileId' when calling getWorkspaceFile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -379,8 +433,8 @@
         'fileId': fileId
       };
       var queryParams = {
-        'is_download': opts['isDownload'],
-        'pdf_version': opts['pdfVersion']
+        'is_download': optsOrCallback['isDownload'],
+        'pdf_version': optsOrCallback['pdfVersion']
       };
       var headerParams = {
       };
@@ -414,17 +468,23 @@
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {String} folderId The ID of the folder being accessed.
      * @param {String} fileId Specifies the room file ID GUID.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count The maximum number of results to be returned by this request.
-     * @param {String} opts.dpi Number of dots per inch for the resulting image. The default if not used is 94. The range is 1-310.
-     * @param {String} opts.maxHeight Sets the maximum height (in pixels) of the returned image.
-     * @param {String} opts.maxWidth Sets the maximum width (in pixels) of the returned image.
-     * @param {String} opts.startPosition The position within the total result set from which to start returning values. The value **thumbnail** may be used to return the page image.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count The maximum number of results to be returned by this request.
+     * @param {String} optsOrCallback.dpi Number of dots per inch for the resulting image. The default if not used is 94. The range is 1-310.
+     * @param {String} optsOrCallback.maxHeight Sets the maximum height (in pixels) of the returned image.
+     * @param {String} optsOrCallback.maxWidth Sets the maximum width (in pixels) of the returned image.
+     * @param {String} optsOrCallback.startPosition The position within the total result set from which to start returning values. The value **thumbnail** may be used to return the page image.
      * @param {module:api/WorkspacesApi~listWorkspaceFilePagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PageImages}
      */
-    this.listWorkspaceFilePages = function(accountId, workspaceId, folderId, fileId, opts, callback) {
-      opts = opts || {};
+    this.listWorkspaceFilePages = function(accountId, workspaceId, folderId, fileId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -447,6 +507,12 @@
         throw new Error("Missing the required parameter 'fileId' when calling listWorkspaceFilePages");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -455,11 +521,11 @@
         'fileId': fileId
       };
       var queryParams = {
-        'count': opts['count'],
-        'dpi': opts['dpi'],
-        'max_height': opts['maxHeight'],
-        'max_width': opts['maxWidth'],
-        'start_position': opts['startPosition']
+        'count': optsOrCallback['count'],
+        'dpi': optsOrCallback['dpi'],
+        'max_height': optsOrCallback['maxHeight'],
+        'max_width': optsOrCallback['maxWidth'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -492,19 +558,25 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {String} folderId The ID of the folder being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count The maximum number of results to be returned by this request.
-     * @param {String} opts.includeFiles When set to **true**, file information is returned in the response along with folder information. The default is **false**.
-     * @param {String} opts.includeSubFolders When set to **true**, information about the sub-folders of the current folder is returned. The default is **false**.
-     * @param {String} opts.includeThumbnails When set to **true**, thumbnails are returned as part of the response.  The default is **false**.
-     * @param {String} opts.includeUserDetail Set to **true** to return extended details about the user. The default is **false**.
-     * @param {String} opts.startPosition The position within the total result set from which to start returning values.
-     * @param {String} opts.workspaceUserId If set, then the results are filtered to those associated with the specified userId.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count The maximum number of results to be returned by this request.
+     * @param {String} optsOrCallback.includeFiles When set to **true**, file information is returned in the response along with folder information. The default is **false**.
+     * @param {String} optsOrCallback.includeSubFolders When set to **true**, information about the sub-folders of the current folder is returned. The default is **false**.
+     * @param {String} optsOrCallback.includeThumbnails When set to **true**, thumbnails are returned as part of the response.  The default is **false**.
+     * @param {String} optsOrCallback.includeUserDetail Set to **true** to return extended details about the user. The default is **false**.
+     * @param {String} optsOrCallback.startPosition The position within the total result set from which to start returning values.
+     * @param {String} optsOrCallback.workspaceUserId If set, then the results are filtered to those associated with the specified userId.
      * @param {module:api/WorkspacesApi~listWorkspaceFolderItemsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WorkspaceFolderContents}
      */
-    this.listWorkspaceFolderItems = function(accountId, workspaceId, folderId, opts, callback) {
-      opts = opts || {};
+    this.listWorkspaceFolderItems = function(accountId, workspaceId, folderId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -522,6 +594,12 @@
         throw new Error("Missing the required parameter 'folderId' when calling listWorkspaceFolderItems");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -529,13 +607,13 @@
         'folderId': folderId
       };
       var queryParams = {
-        'count': opts['count'],
-        'include_files': opts['includeFiles'],
-        'include_sub_folders': opts['includeSubFolders'],
-        'include_thumbnails': opts['includeThumbnails'],
-        'include_user_detail': opts['includeUserDetail'],
-        'start_position': opts['startPosition'],
-        'workspace_user_id': opts['workspaceUserId']
+        'count': optsOrCallback['count'],
+        'include_files': optsOrCallback['includeFiles'],
+        'include_sub_folders': optsOrCallback['includeSubFolders'],
+        'include_thumbnails': optsOrCallback['includeThumbnails'],
+        'include_user_detail': optsOrCallback['includeUserDetail'],
+        'start_position': optsOrCallback['startPosition'],
+        'workspace_user_id': optsOrCallback['workspaceUserId']
       };
       var headerParams = {
       };
@@ -577,6 +655,12 @@
         throw new Error("Missing the required parameter 'accountId' when calling listWorkspaces");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -613,14 +697,20 @@
      * Updates information about a specific workspace.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} workspaceId Specifies the workspace ID GUID.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Workspace} opts.workspace 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/Workspace} optsOrCallback.workspace 
      * @param {module:api/WorkspacesApi~updateWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workspace}
      */
-    this.updateWorkspace = function(accountId, workspaceId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['workspace'];
+    this.updateWorkspace = function(accountId, workspaceId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['workspace'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -632,6 +722,12 @@
         throw new Error("Missing the required parameter 'workspaceId' when calling updateWorkspace");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -697,6 +793,12 @@
         throw new Error("Missing the required parameter 'fileId' when calling updateWorkspaceFile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,

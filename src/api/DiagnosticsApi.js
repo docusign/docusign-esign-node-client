@@ -68,6 +68,12 @@
     this.deleteRequestLogs = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -119,6 +125,12 @@ If the Content-Transfer-Encoding header was set to base64, the log is returned a
         throw new Error("Missing the required parameter 'requestLogId' when calling getRequestLog");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'requestLogId': requestLogId
@@ -162,6 +174,12 @@ The response includes the current API request logging setting for the user, alon
     this.getRequestLogSettings = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -209,6 +227,12 @@ Example: https://demo.docusign.net/restapi/help lists the REST API operations on
     this.getResources = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -253,6 +277,12 @@ You do not need an integrator key to view the REST API versions and resources.
     this.getService = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -290,20 +320,32 @@ You do not need an integrator key to view the REST API versions and resources.
 If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.
 
 If the Accept header is set to `application/json` or `application/xml`, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.encoding 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.encoding 
      * @param {module:api/DiagnosticsApi~listRequestLogsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiRequestLogsResult}
      */
-    this.listRequestLogs = function(opts, callback) {
-      opts = opts || {};
+    this.listRequestLogs = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
       var queryParams = {
-        'encoding': opts['encoding']
+        'encoding': optsOrCallback['encoding']
       };
       var headerParams = {
       };
@@ -342,15 +384,27 @@ Private information, such as passwords and integrator key information, which is 
 
 ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn't logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged.
 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/DiagnosticsSettingsInformation} opts.diagnosticsSettingsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/DiagnosticsSettingsInformation} optsOrCallback.diagnosticsSettingsInformation 
      * @param {module:api/DiagnosticsApi~updateRequestLogSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DiagnosticsSettingsInformation}
      */
-    this.updateRequestLogSettings = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['diagnosticsSettingsInformation'];
+    this.updateRequestLogSettings = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
 
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['diagnosticsSettingsInformation'];
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
