@@ -65,13 +65,19 @@
      * Deletes a social account from a use's account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SocialAccountInformation} opts.socialAccountInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SocialAccountInformation} optsOrCallback.socialAccountInformation 
      * @param {module:api/AuthenticationApi~deleteSocialLoginCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteSocialLogin = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['socialAccountInformation'];
+    this.deleteSocialLogin = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['socialAccountInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -83,6 +89,12 @@
         throw new Error("Missing the required parameter 'userId' when calling deleteSocialLogin");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -124,6 +136,12 @@
     this.getOAuthToken = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -175,6 +193,12 @@
         throw new Error("Missing the required parameter 'userId' when calling listSocialLogins");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -212,26 +236,38 @@
      * Retrieves login information for a specified user. Each account that is associated with the login credentials is listed. You can use the returned information to determine whether a user is authenticated and select an account to use in future operations.  
 
 The `baseUrl` property, returned in the response, is used in all future API calls as the base of the request URL. The `baseUrl` property contains the DocuSign server, the API version, and the `accountId` property that is used for the login. This request uses your DocuSign credentials to retrieve the account information.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.apiPassword When set to **true**, shows the account API password in the response.
-     * @param {String} opts.embedAccountIdGuid 
-     * @param {String} opts.includeAccountIdGuid When set to **true**, shows the account ID GUID in the response.
-     * @param {String} opts.loginSettings Determines whether login settings are returned in the response.  Valid Values:  * all -  All the login settings are returned.  * none - no login settings are returned.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.apiPassword When set to **true**, shows the account API password in the response.
+     * @param {String} optsOrCallback.embedAccountIdGuid 
+     * @param {String} optsOrCallback.includeAccountIdGuid When set to **true**, shows the account ID GUID in the response.
+     * @param {String} optsOrCallback.loginSettings Determines whether login settings are returned in the response.  Valid Values:  * all -  All the login settings are returned.  * none - no login settings are returned.
      * @param {module:api/AuthenticationApi~loginCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LoginInformation}
      */
-    this.login = function(opts, callback) {
-      opts = opts || {};
+    this.login = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
       var queryParams = {
-        'api_password': opts['apiPassword'],
-        'embed_account_id_guid': opts['embedAccountIdGuid'],
-        'include_account_id_guid': opts['includeAccountIdGuid'],
-        'login_settings': opts['loginSettings']
+        'api_password': optsOrCallback['apiPassword'],
+        'embed_account_id_guid': optsOrCallback['embedAccountIdGuid'],
+        'include_account_id_guid': optsOrCallback['includeAccountIdGuid'],
+        'login_settings': optsOrCallback['loginSettings']
       };
       var headerParams = {
       };
@@ -266,6 +302,12 @@ The `baseUrl` property, returned in the response, is used in all future API call
     this.revokeOAuthToken = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -300,19 +342,31 @@ The `baseUrl` property, returned in the response, is used in all future API call
      * Updates the password for a specified user.
      * Updates the password for a specified user.
      * @param {String} loginPart Currently, only the value **password** is supported.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserPasswordInformation} opts.userPasswordInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserPasswordInformation} optsOrCallback.userPasswordInformation 
      * @param {module:api/AuthenticationApi~updatePasswordCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updatePassword = function(loginPart, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['userPasswordInformation'];
+    this.updatePassword = function(loginPart, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userPasswordInformation'];
 
       // verify the required parameter 'loginPart' is set
       if (loginPart == undefined || loginPart == null) {
         throw new Error("Missing the required parameter 'loginPart' when calling updatePassword");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'loginPart': loginPart
@@ -349,13 +403,19 @@ The `baseUrl` property, returned in the response, is used in all future API call
      * Adds a new social account to a user's account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SocialAccountInformation} opts.socialAccountInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SocialAccountInformation} optsOrCallback.socialAccountInformation 
      * @param {module:api/AuthenticationApi~updateSocialLoginCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateSocialLogin = function(accountId, userId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['socialAccountInformation'];
+    this.updateSocialLogin = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['socialAccountInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -367,6 +427,12 @@ The `baseUrl` property, returned in the response, is used in all future API call
         throw new Error("Missing the required parameter 'userId' when calling updateSocialLogin");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,

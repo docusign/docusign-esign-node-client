@@ -66,20 +66,32 @@
 
 ###### Note: Connect must be enabled for your account to use this function. This cannot be used to set up Connect configurations for Salesforce or eOriginal.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ConnectCustomConfiguration} opts.connectCustomConfiguration 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ConnectCustomConfiguration} optsOrCallback.connectCustomConfiguration 
      * @param {module:api/ConnectApi~createConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectCustomConfiguration}
      */
-    this.createConfiguration = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['connectCustomConfiguration'];
+    this.createConfiguration = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['connectCustomConfiguration'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createConfiguration");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -136,6 +148,12 @@
         throw new Error("Missing the required parameter 'connectId' when calling deleteConfiguration");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -188,6 +206,12 @@
         throw new Error("Missing the required parameter 'failureId' when calling deleteEventFailureLog");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -241,6 +265,12 @@
         throw new Error("Missing the required parameter 'logId' when calling deleteEventLog");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -289,6 +319,12 @@
         throw new Error("Missing the required parameter 'accountId' when calling deleteEventLogs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -324,20 +360,32 @@
      * Reserved
      * Reserved:
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MobileNotifierConfigurationInformation} opts.mobileNotifierConfigurationInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation 
      * @param {module:api/ConnectApi~deleteMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
      */
-    this.deleteMobileNotifiers = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['mobileNotifierConfigurationInformation'];
+    this.deleteMobileNotifiers = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteMobileNotifiers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -393,6 +441,12 @@
         throw new Error("Missing the required parameter 'connectId' when calling getConfiguration");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -432,13 +486,19 @@
 ###### Note: The `enableLog` setting in the Connect configuration must be set to true to enable logging. If logging is not enabled, then no log entries are recorded. 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} logId The ID of the connect log entry
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.additionalInfo When true, the connectDebugLog information is included in the response.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.additionalInfo When true, the connectDebugLog information is included in the response.
      * @param {module:api/ConnectApi~getEventLogCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectLog}
      */
-    this.getEventLog = function(accountId, logId, opts, callback) {
-      opts = opts || {};
+    this.getEventLog = function(accountId, logId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -451,13 +511,19 @@
         throw new Error("Missing the required parameter 'logId' when calling getEventLog");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'logId': logId
       };
       var queryParams = {
-        'additional_info': opts['additionalInfo']
+        'additional_info': optsOrCallback['additionalInfo']
       };
       var headerParams = {
       };
@@ -501,6 +567,12 @@
         throw new Error("Missing the required parameter 'accountId' when calling listConfigurations");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -536,14 +608,20 @@
      * Gets the Connect failure log information.
      * Retrieves the Connect Failure Log information. It can be used to determine which envelopes failed to post, so a republish request can be created.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.fromDate 
-     * @param {String} opts.toDate 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.fromDate 
+     * @param {String} optsOrCallback.toDate 
      * @param {module:api/ConnectApi~listEventFailureLogsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectLogs}
      */
-    this.listEventFailureLogs = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listEventFailureLogs = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -551,13 +629,19 @@
         throw new Error("Missing the required parameter 'accountId' when calling listEventFailureLogs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'from_date': opts['fromDate'],
-        'to_date': opts['toDate']
+        'from_date': optsOrCallback['fromDate'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };
@@ -590,14 +674,20 @@
 
 ###### Note: The `enableLog` setting in the Connect configuration must be set to true to enable logging. If logging is not enabled, then no log entries are recorded. 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.fromDate 
-     * @param {String} opts.toDate 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.fromDate 
+     * @param {String} optsOrCallback.toDate 
      * @param {module:api/ConnectApi~listEventLogsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectLogs}
      */
-    this.listEventLogs = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listEventLogs = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -605,13 +695,19 @@
         throw new Error("Missing the required parameter 'accountId' when calling listEventLogs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'from_date': opts['fromDate'],
-        'to_date': opts['toDate']
+        'from_date': optsOrCallback['fromDate'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };
@@ -653,6 +749,12 @@
         throw new Error("Missing the required parameter 'accountId' when calling listMobileNotifiers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -704,6 +806,12 @@
         throw new Error("Missing the required parameter 'connectId' when calling listTests");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -741,18 +849,24 @@
      * Returns users from the configured Connect service.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} connectId The ID of the custom Connect configuration being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count 
-     * @param {String} opts.emailSubstring 
-     * @param {String} opts.listIncludedUsers 
-     * @param {String} opts.startPosition 
-     * @param {String} opts.status 
-     * @param {String} opts.userNameSubstring 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.emailSubstring 
+     * @param {String} optsOrCallback.listIncludedUsers 
+     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.status 
+     * @param {String} optsOrCallback.userNameSubstring 
      * @param {module:api/ConnectApi~listUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/IntegratedUserInfoList}
      */
-    this.listUsers = function(accountId, connectId, opts, callback) {
-      opts = opts || {};
+    this.listUsers = function(accountId, connectId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -765,18 +879,24 @@
         throw new Error("Missing the required parameter 'connectId' when calling listUsers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'connectId': connectId
       };
       var queryParams = {
-        'count': opts['count'],
-        'email_substring': opts['emailSubstring'],
-        'list_included_users': opts['listIncludedUsers'],
-        'start_position': opts['startPosition'],
-        'status': opts['status'],
-        'user_name_substring': opts['userNameSubstring']
+        'count': optsOrCallback['count'],
+        'email_substring': optsOrCallback['emailSubstring'],
+        'list_included_users': optsOrCallback['listIncludedUsers'],
+        'start_position': optsOrCallback['startPosition'],
+        'status': optsOrCallback['status'],
+        'user_name_substring': optsOrCallback['userNameSubstring']
       };
       var headerParams = {
       };
@@ -824,6 +944,12 @@
         throw new Error("Missing the required parameter 'envelopeId' when calling retryEventForEnvelope");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -860,20 +986,32 @@
      * Republishes Connect information for multiple envelopes.
      * Republishes Connect information for the  specified set of envelopes. The primary use is to republish Connect post failures by including envelope IDs for the envelopes that failed to post in the request. The list of envelope IDs that failed to post correctly can be retrieved by calling to [ML:GetConnectLog] retrieve the failure log.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ConnectFailureFilter} opts.connectFailureFilter 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ConnectFailureFilter} optsOrCallback.connectFailureFilter 
      * @param {module:api/ConnectApi~retryEventForEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectFailureResults}
      */
-    this.retryEventForEnvelopes = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['connectFailureFilter'];
+    this.retryEventForEnvelopes = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['connectFailureFilter'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling retryEventForEnvelopes");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -911,20 +1049,32 @@
 
 ###### Note: Connect must be enabled for your account to use this function. This cannot be used to update Connect configurations for Box, eOriginal, or Salesforce.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ConnectCustomConfiguration} opts.connectCustomConfiguration 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ConnectCustomConfiguration} optsOrCallback.connectCustomConfiguration 
      * @param {module:api/ConnectApi~updateConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectCustomConfiguration}
      */
-    this.updateConfiguration = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['connectCustomConfiguration'];
+    this.updateConfiguration = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['connectCustomConfiguration'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateConfiguration");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -960,20 +1110,32 @@
      * Reserved
      * Reserved:
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MobileNotifierConfigurationInformation} opts.mobileNotifierConfigurationInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation 
      * @param {module:api/ConnectApi~updateMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
      */
-    this.updateMobileNotifiers = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['mobileNotifierConfigurationInformation'];
+    this.updateMobileNotifiers = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateMobileNotifiers");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId

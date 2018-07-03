@@ -65,14 +65,20 @@
      * Creates custom document fields in an existing template document.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateCustomFields} opts.templateCustomFields 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields 
      * @param {module:api/TemplatesApi~createCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.createCustomFields = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateCustomFields'];
+    this.createCustomFields = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -84,6 +90,12 @@
         throw new Error("Missing the required parameter 'templateId' when calling createCustomFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -122,14 +134,20 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/DocumentFieldsInformation} opts.documentFieldsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
      * @param {module:api/TemplatesApi~createDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.createDocumentFields = function(accountId, templateId, documentId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['documentFieldsInformation'];
+    this.createDocumentFields = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -146,6 +164,12 @@
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -183,14 +207,20 @@
      * Provides a URL to start an edit view of the Template UI
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ReturnUrlRequest} opts.returnUrlRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ReturnUrlRequest} optsOrCallback.returnUrlRequest 
      * @param {module:api/TemplatesApi~createEditViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createEditView = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['returnUrlRequest'];
+    this.createEditView = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['returnUrlRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -202,6 +232,12 @@
         throw new Error("Missing the required parameter 'templateId' when calling createEditView");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -241,14 +277,20 @@
 ###### Note: Users must have envelope locking capability enabled to use this function (the userSetting property `canLockEnvelopes` must be set to **true** for the user).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/LockRequest} opts.lockRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
      * @param {module:api/TemplatesApi~createLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.createLock = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['lockRequest'];
+    this.createLock = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -260,6 +302,12 @@
         throw new Error("Missing the required parameter 'templateId' when calling createLock");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -297,15 +345,21 @@
      * Adds one or more recipients to a template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.resendEnvelope 
-     * @param {module:model/TemplateRecipients} opts.templateRecipients 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.resendEnvelope 
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
      * @param {module:api/TemplatesApi~createRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.createRecipients = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateRecipients'];
+    this.createRecipients = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -317,13 +371,19 @@
         throw new Error("Missing the required parameter 'templateId' when calling createRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'templateId': templateId
       };
       var queryParams = {
-        'resend_envelope': opts['resendEnvelope']
+        'resend_envelope': optsOrCallback['resendEnvelope']
       };
       var headerParams = {
       };
@@ -356,14 +416,20 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateTabs} opts.templateTabs 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
      * @param {module:api/TemplatesApi~createTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.createTabs = function(accountId, templateId, recipientId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateTabs'];
+    this.createTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateTabs'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -380,6 +446,12 @@
         throw new Error("Missing the required parameter 'recipientId' when calling createTabs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -447,20 +519,32 @@ In both cases the <roleName> is the recipient's contents of the `roleName` prope
 
 For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[<roleName>_UserName]] or [[<roleName>_Email]] is shown in the email subject.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/EnvelopeTemplate} opts.envelopeTemplate 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/EnvelopeTemplate} optsOrCallback.envelopeTemplate 
      * @param {module:api/TemplatesApi~createTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateSummary}
      */
-    this.createTemplate = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['envelopeTemplate'];
+    this.createTemplate = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['envelopeTemplate'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createTemplate");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -519,6 +603,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'recipientId' when calling deleteBulkRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -557,14 +647,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * Deletes envelope custom fields in a template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateCustomFields} opts.templateCustomFields 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields 
      * @param {module:api/TemplatesApi~deleteCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.deleteCustomFields = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateCustomFields'];
+    this.deleteCustomFields = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -576,6 +672,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteCustomFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -614,14 +716,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/DocumentFieldsInformation} opts.documentFieldsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
      * @param {module:api/TemplatesApi~deleteDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.deleteDocumentFields = function(accountId, templateId, documentId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['documentFieldsInformation'];
+    this.deleteDocumentFields = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -638,6 +746,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -678,13 +792,19 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {String} pageNumber The page number being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PageRequest} opts.pageRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/PageRequest} optsOrCallback.pageRequest 
      * @param {module:api/TemplatesApi~deleteDocumentPageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteDocumentPage = function(accountId, templateId, documentId, pageNumber, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['pageRequest'];
+    this.deleteDocumentPage = function(accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['pageRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -706,6 +826,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'pageNumber' when calling deleteDocumentPage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -745,14 +871,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * Deletes one or more documents from an existing template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
      * @param {module:api/TemplatesApi~deleteDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
      */
-    this.deleteDocuments = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['envelopeDefinition'];
+    this.deleteDocuments = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -764,6 +896,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteDocuments");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -802,14 +940,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} templatePart Currently, the only defined part is **groups**.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/GroupInformation} opts.groupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/GroupInformation} optsOrCallback.groupInformation 
      * @param {module:api/TemplatesApi~deleteGroupShareCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.deleteGroupShare = function(accountId, templateId, templatePart, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['groupInformation'];
+    this.deleteGroupShare = function(accountId, templateId, templatePart, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -826,6 +970,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templatePart' when calling deleteGroupShare");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -864,14 +1014,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * Deletes the lock from the specified template. The `X-DocuSign-Edit` header must be included in the request.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/LockRequest} opts.lockRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
      * @param {module:api/TemplatesApi~deleteLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.deleteLock = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['lockRequest'];
+    this.deleteLock = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -883,6 +1039,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteLock");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -921,14 +1083,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateRecipients} opts.templateRecipients 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
      * @param {module:api/TemplatesApi~deleteRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.deleteRecipient = function(accountId, templateId, recipientId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateRecipients'];
+    this.deleteRecipient = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -945,6 +1113,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipient");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -983,14 +1157,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * Deletes one or more recipients from a template. Recipients to be deleted are listed in the request, with the `recipientId` being used as the key for deleting recipients.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateRecipients} opts.templateRecipients 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
      * @param {module:api/TemplatesApi~deleteRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.deleteRecipients = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateRecipients'];
+    this.deleteRecipients = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1002,6 +1182,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1040,14 +1226,20 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateTabs} opts.templateTabs 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
      * @param {module:api/TemplatesApi~deleteTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.deleteTabs = function(accountId, templateId, recipientId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateTabs'];
+    this.deleteTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateTabs'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -1064,6 +1256,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'recipientId' when calling deleteTabs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1102,13 +1300,19 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * Retrieves the definition of the specified template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.include 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.include 
      * @param {module:api/TemplatesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTemplate}
      */
-    this.get = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
+    this.get = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1121,13 +1325,19 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling get");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'templateId': templateId
       };
       var queryParams = {
-        'include': opts['include']
+        'include': optsOrCallback['include']
       };
       var headerParams = {
       };
@@ -1162,14 +1372,20 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.encrypt 
-     * @param {String} opts.showChanges 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.encrypt 
+     * @param {String} optsOrCallback.showChanges 
      * @param {module:api/TemplatesApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getDocument = function(accountId, templateId, documentId, opts, callback) {
-      opts = opts || {};
+    this.getDocument = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1187,6 +1403,12 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         throw new Error("Missing the required parameter 'documentId' when calling getDocument");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1194,8 +1416,8 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         'documentId': documentId
       };
       var queryParams = {
-        'encrypt': opts['encrypt'],
-        'show_changes': opts['showChanges']
+        'encrypt': optsOrCallback['encrypt'],
+        'show_changes': optsOrCallback['showChanges']
       };
       var headerParams = {
       };
@@ -1229,16 +1451,22 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {String} pageNumber The page number being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.dpi 
-     * @param {String} opts.maxHeight 
-     * @param {String} opts.maxWidth 
-     * @param {String} opts.showChanges 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.dpi 
+     * @param {String} optsOrCallback.maxHeight 
+     * @param {String} optsOrCallback.maxWidth 
+     * @param {String} optsOrCallback.showChanges 
      * @param {module:api/TemplatesApi~getDocumentPageImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getDocumentPageImage = function(accountId, templateId, documentId, pageNumber, opts, callback) {
-      opts = opts || {};
+    this.getDocumentPageImage = function(accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1261,6 +1489,12 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         throw new Error("Missing the required parameter 'pageNumber' when calling getDocumentPageImage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1269,10 +1503,10 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         'pageNumber': pageNumber
       };
       var queryParams = {
-        'dpi': opts['dpi'],
-        'max_height': opts['maxHeight'],
-        'max_width': opts['maxWidth'],
-        'show_changes': opts['showChanges']
+        'dpi': optsOrCallback['dpi'],
+        'max_height': optsOrCallback['maxHeight'],
+        'max_width': optsOrCallback['maxWidth'],
+        'show_changes': optsOrCallback['showChanges']
       };
       var headerParams = {
       };
@@ -1304,13 +1538,19 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.pageNumbers 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.pageNumbers 
      * @param {module:api/TemplatesApi~getDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.getDocumentTabs = function(accountId, templateId, documentId, opts, callback) {
-      opts = opts || {};
+    this.getDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1328,6 +1568,12 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         throw new Error("Missing the required parameter 'documentId' when calling getDocumentTabs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1335,7 +1581,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         'documentId': documentId
       };
       var queryParams = {
-        'page_numbers': opts['pageNumbers']
+        'page_numbers': optsOrCallback['pageNumbers']
       };
       var headerParams = {
       };
@@ -1385,6 +1631,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling getLock");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1438,6 +1690,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling getNotificationSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1502,6 +1760,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'pageNumber' when calling getPageTabs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1541,19 +1805,25 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count 
-     * @param {String} opts.dpi 
-     * @param {String} opts.maxHeight 
-     * @param {String} opts.maxWidth 
-     * @param {String} opts.nocache 
-     * @param {String} opts.showChanges 
-     * @param {String} opts.startPosition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.dpi 
+     * @param {String} optsOrCallback.maxHeight 
+     * @param {String} optsOrCallback.maxWidth 
+     * @param {String} optsOrCallback.nocache 
+     * @param {String} optsOrCallback.showChanges 
+     * @param {String} optsOrCallback.startPosition 
      * @param {module:api/TemplatesApi~getPagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PageImages}
      */
-    this.getPages = function(accountId, templateId, documentId, opts, callback) {
-      opts = opts || {};
+    this.getPages = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1571,6 +1841,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'documentId' when calling getPages");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1578,13 +1854,13 @@ If the call is made by the user who has the lock and the request has the same in
         'documentId': documentId
       };
       var queryParams = {
-        'count': opts['count'],
-        'dpi': opts['dpi'],
-        'max_height': opts['maxHeight'],
-        'max_width': opts['maxWidth'],
-        'nocache': opts['nocache'],
-        'show_changes': opts['showChanges'],
-        'start_position': opts['startPosition']
+        'count': optsOrCallback['count'],
+        'dpi': optsOrCallback['dpi'],
+        'max_height': optsOrCallback['maxHeight'],
+        'max_width': optsOrCallback['maxWidth'],
+        'nocache': optsOrCallback['nocache'],
+        'show_changes': optsOrCallback['showChanges'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -1617,14 +1893,20 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeTabs 
-     * @param {String} opts.startPosition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeTabs 
+     * @param {String} optsOrCallback.startPosition 
      * @param {module:api/TemplatesApi~listBulkRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsResponse}
      */
-    this.listBulkRecipients = function(accountId, templateId, recipientId, opts, callback) {
-      opts = opts || {};
+    this.listBulkRecipients = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1642,6 +1924,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'recipientId' when calling listBulkRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1649,8 +1937,8 @@ If the call is made by the user who has the lock and the request has the same in
         'recipientId': recipientId
       };
       var queryParams = {
-        'include_tabs': opts['includeTabs'],
-        'start_position': opts['startPosition']
+        'include_tabs': optsOrCallback['includeTabs'],
+        'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {
       };
@@ -1698,6 +1986,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling listCustomFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1757,6 +2051,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'documentId' when calling listDocumentFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1811,6 +2111,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling listDocuments");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1848,15 +2154,21 @@ If the call is made by the user who has the lock and the request has the same in
      * Retrieves the information for all recipients in the specified template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeAnchorTabLocations  When set to **true** and &#x60;include_tabs&#x60; is set to **true**, all tabs with anchor tab properties are included in the response. 
-     * @param {String} opts.includeExtended  When set to **true**, the extended properties are included in the response. 
-     * @param {String} opts.includeTabs When set to **true**, the tab information associated with the recipient is included in the response.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and &#x60;include_tabs&#x60; is set to **true**, all tabs with anchor tab properties are included in the response. 
+     * @param {String} optsOrCallback.includeExtended  When set to **true**, the extended properties are included in the response. 
+     * @param {String} optsOrCallback.includeTabs When set to **true**, the tab information associated with the recipient is included in the response.
      * @param {module:api/TemplatesApi~listRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.listRecipients = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
+    this.listRecipients = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1869,15 +2181,21 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling listRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'templateId': templateId
       };
       var queryParams = {
-        'include_anchor_tab_locations': opts['includeAnchorTabLocations'],
-        'include_extended': opts['includeExtended'],
-        'include_tabs': opts['includeTabs']
+        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations'],
+        'include_extended': optsOrCallback['includeExtended'],
+        'include_tabs': optsOrCallback['includeTabs']
       };
       var headerParams = {
       };
@@ -1910,14 +2228,20 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeAnchorTabLocations When set to **true**, all tabs with anchor tab properties are included in the response. 
-     * @param {String} opts.includeMetadata 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeAnchorTabLocations When set to **true**, all tabs with anchor tab properties are included in the response. 
+     * @param {String} optsOrCallback.includeMetadata 
      * @param {module:api/TemplatesApi~listTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.listTabs = function(accountId, templateId, recipientId, opts, callback) {
-      opts = opts || {};
+    this.listTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1935,6 +2259,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'recipientId' when calling listTabs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1942,8 +2272,8 @@ If the call is made by the user who has the lock and the request has the same in
         'recipientId': recipientId
       };
       var queryParams = {
-        'include_anchor_tab_locations': opts['includeAnchorTabLocations'],
-        'include_metadata': opts['includeMetadata']
+        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations'],
+        'include_metadata': optsOrCallback['includeMetadata']
       };
       var headerParams = {
       };
@@ -1974,29 +2304,35 @@ If the call is made by the user who has the lock and the request has the same in
      * Gets the definition of a template.
      * Retrieves the list of templates for the specified account. The request can be limited to a specific folder.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count Number of records to return in the cache.
-     * @param {String} opts.folder The query value can be a folder name or folder ID. The response will only return templates in the specified folder.
-     * @param {String} opts.folderIds A comma separated list of folder ID GUIDs.
-     * @param {String} opts.fromDate Start of the search date range. Only returns templates created on or after this date/time. If no value is specified, there is no limit on the earliest date created.
-     * @param {String} opts.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
-     * @param {String} opts.modifiedFromDate 
-     * @param {String} opts.modifiedToDate 
-     * @param {String} opts.order Sets the direction order used to sort the list. Valid values are: -asc &#x3D; ascending sort order (a to z)  -desc &#x3D; descending sort order (z to a)
-     * @param {String} opts.orderBy Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used.
-     * @param {String} opts.searchText The search text used to search the names of templates.
-     * @param {String} opts.sharedByMe If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected.
-     * @param {String} opts.startPosition The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero).
-     * @param {String} opts.toDate End of the search date range. Only returns templates created up to this date/time. If no value is provided, this defaults to the current date.
-     * @param {String} opts.usedFromDate Start of the search date range. Only returns templates used or edited on or after this date/time. If no value is specified, there is no limit on the earliest date used.
-     * @param {String} opts.usedToDate End of the search date range. Only returns templates used or edited up to this date/time. If no value is provided, this defaults to the current date.
-     * @param {String} opts.userFilter Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user.
-     * @param {String} opts.userId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count Number of records to return in the cache.
+     * @param {String} optsOrCallback.folder The query value can be a folder name or folder ID. The response will only return templates in the specified folder.
+     * @param {String} optsOrCallback.folderIds A comma separated list of folder ID GUIDs.
+     * @param {String} optsOrCallback.fromDate Start of the search date range. Only returns templates created on or after this date/time. If no value is specified, there is no limit on the earliest date created.
+     * @param {String} optsOrCallback.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
+     * @param {String} optsOrCallback.modifiedFromDate 
+     * @param {String} optsOrCallback.modifiedToDate 
+     * @param {String} optsOrCallback.order Sets the direction order used to sort the list. Valid values are: -asc &#x3D; ascending sort order (a to z)  -desc &#x3D; descending sort order (z to a)
+     * @param {String} optsOrCallback.orderBy Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used.
+     * @param {String} optsOrCallback.searchText The search text used to search the names of templates.
+     * @param {String} optsOrCallback.sharedByMe If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected.
+     * @param {String} optsOrCallback.startPosition The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero).
+     * @param {String} optsOrCallback.toDate End of the search date range. Only returns templates created up to this date/time. If no value is provided, this defaults to the current date.
+     * @param {String} optsOrCallback.usedFromDate Start of the search date range. Only returns templates used or edited on or after this date/time. If no value is specified, there is no limit on the earliest date used.
+     * @param {String} optsOrCallback.usedToDate End of the search date range. Only returns templates used or edited up to this date/time. If no value is provided, this defaults to the current date.
+     * @param {String} optsOrCallback.userFilter Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user.
+     * @param {String} optsOrCallback.userId 
      * @param {module:api/TemplatesApi~listTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTemplateResults}
      */
-    this.listTemplates = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listTemplates = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2004,28 +2340,34 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'accountId' when calling listTemplates");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'count': opts['count'],
-        'folder': opts['folder'],
-        'folder_ids': opts['folderIds'],
-        'from_date': opts['fromDate'],
-        'include': opts['include'],
-        'modified_from_date': opts['modifiedFromDate'],
-        'modified_to_date': opts['modifiedToDate'],
-        'order': opts['order'],
-        'order_by': opts['orderBy'],
-        'search_text': opts['searchText'],
-        'shared_by_me': opts['sharedByMe'],
-        'start_position': opts['startPosition'],
-        'to_date': opts['toDate'],
-        'used_from_date': opts['usedFromDate'],
-        'used_to_date': opts['usedToDate'],
-        'user_filter': opts['userFilter'],
-        'user_id': opts['userId']
+        'count': optsOrCallback['count'],
+        'folder': optsOrCallback['folder'],
+        'folder_ids': optsOrCallback['folderIds'],
+        'from_date': optsOrCallback['fromDate'],
+        'include': optsOrCallback['include'],
+        'modified_from_date': optsOrCallback['modifiedFromDate'],
+        'modified_to_date': optsOrCallback['modifiedToDate'],
+        'order': optsOrCallback['order'],
+        'order_by': optsOrCallback['orderBy'],
+        'search_text': optsOrCallback['searchText'],
+        'shared_by_me': optsOrCallback['sharedByMe'],
+        'start_position': optsOrCallback['startPosition'],
+        'to_date': optsOrCallback['toDate'],
+        'used_from_date': optsOrCallback['usedFromDate'],
+        'used_to_date': optsOrCallback['usedToDate'],
+        'user_filter': optsOrCallback['userFilter'],
+        'user_id': optsOrCallback['userId']
       };
       var headerParams = {
       };
@@ -2059,13 +2401,19 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {String} pageNumber The page number being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PageRequest} opts.pageRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/PageRequest} optsOrCallback.pageRequest 
      * @param {module:api/TemplatesApi~rotateDocumentPageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.rotateDocumentPage = function(accountId, templateId, documentId, pageNumber, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['pageRequest'];
+    this.rotateDocumentPage = function(accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['pageRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2087,6 +2435,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'pageNumber' when calling rotateDocumentPage");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2126,14 +2480,20 @@ If the call is made by the user who has the lock and the request has the same in
      * Updates an existing template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/EnvelopeTemplate} opts.envelopeTemplate 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/EnvelopeTemplate} optsOrCallback.envelopeTemplate 
      * @param {module:api/TemplatesApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateUpdateSummary}
      */
-    this.update = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['envelopeTemplate'];
+    this.update = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['envelopeTemplate'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2145,6 +2505,12 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling update");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2185,14 +2551,20 @@ The REST API does not support modifying individual rows or values in the bulk re
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/BulkRecipientsRequest} opts.bulkRecipientsRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/BulkRecipientsRequest} optsOrCallback.bulkRecipientsRequest 
      * @param {module:api/TemplatesApi~updateBulkRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsSummaryResponse}
      */
-    this.updateBulkRecipients = function(accountId, templateId, recipientId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['bulkRecipientsRequest'];
+    this.updateBulkRecipients = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['bulkRecipientsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2209,6 +2581,12 @@ The REST API does not support modifying individual rows or values in the bulk re
         throw new Error("Missing the required parameter 'recipientId' when calling updateBulkRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2249,14 +2627,20 @@ The REST API does not support modifying individual rows or values in the bulk re
 Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateCustomFields} opts.templateCustomFields 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields 
      * @param {module:api/TemplatesApi~updateCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.updateCustomFields = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateCustomFields'];
+    this.updateCustomFields = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2268,6 +2652,12 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateCustomFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2306,16 +2696,22 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applyDocumentFields 
-     * @param {String} opts.isEnvelopeDefinition 
-     * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.applyDocumentFields 
+     * @param {String} optsOrCallback.isEnvelopeDefinition 
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
      * @param {module:api/TemplatesApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocument}
      */
-    this.updateDocument = function(accountId, templateId, documentId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['envelopeDefinition'];
+    this.updateDocument = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2332,6 +2728,12 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocument");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2339,8 +2741,8 @@ Each custom field used in a template must have a unique name.
         'documentId': documentId
       };
       var queryParams = {
-        'apply_document_fields': opts['applyDocumentFields'],
-        'is_envelope_definition': opts['isEnvelopeDefinition']
+        'apply_document_fields': optsOrCallback['applyDocumentFields'],
+        'is_envelope_definition': optsOrCallback['isEnvelopeDefinition']
       };
       var headerParams = {
       };
@@ -2373,14 +2775,20 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/DocumentFieldsInformation} opts.documentFieldsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
      * @param {module:api/TemplatesApi~updateDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.updateDocumentFields = function(accountId, templateId, documentId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['documentFieldsInformation'];
+    this.updateDocumentFields = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2397,6 +2805,12 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocumentFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2435,16 +2849,22 @@ Each custom field used in a template must have a unique name.
      * Adds one or more documents to an existing template document.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applyDocumentFields 
-     * @param {String} opts.persistTabs 
-     * @param {module:model/EnvelopeDefinition} opts.envelopeDefinition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.applyDocumentFields 
+     * @param {String} optsOrCallback.persistTabs 
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
      * @param {module:api/TemplatesApi~updateDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
      */
-    this.updateDocuments = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['envelopeDefinition'];
+    this.updateDocuments = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2456,14 +2876,20 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateDocuments");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'templateId': templateId
       };
       var queryParams = {
-        'apply_document_fields': opts['applyDocumentFields'],
-        'persist_tabs': opts['persistTabs']
+        'apply_document_fields': optsOrCallback['applyDocumentFields'],
+        'persist_tabs': optsOrCallback['persistTabs']
       };
       var headerParams = {
       };
@@ -2496,14 +2922,20 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} templatePart Currently, the only defined part is **groups**.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/GroupInformation} opts.groupInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/GroupInformation} optsOrCallback.groupInformation 
      * @param {module:api/TemplatesApi~updateGroupShareCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.updateGroupShare = function(accountId, templateId, templatePart, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['groupInformation'];
+    this.updateGroupShare = function(accountId, templateId, templatePart, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2520,6 +2952,12 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templatePart' when calling updateGroupShare");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2558,14 +2996,20 @@ Each custom field used in a template must have a unique name.
      * Updates the lock duration time or update the `lockedByApp` property information for the specified template. The user and integrator key must match the user specified by the `lockByUser` property and integrator key information and the `X-DocuSign-Edit` header must be included or an error will be generated.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/LockRequest} opts.lockRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
      * @param {module:api/TemplatesApi~updateLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.updateLock = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['lockRequest'];
+    this.updateLock = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2577,6 +3021,12 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateLock");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2614,14 +3064,20 @@ Each custom field used in a template must have a unique name.
      * Updates the notification structure for an existing template. Use this endpoint to set reminder and expiration notifications.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateNotificationRequest} opts.templateNotificationRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateNotificationRequest} optsOrCallback.templateNotificationRequest 
      * @param {module:api/TemplatesApi~updateNotificationSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notification}
      */
-    this.updateNotificationSettings = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateNotificationRequest'];
+    this.updateNotificationSettings = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateNotificationRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2633,6 +3089,12 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateNotificationSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2672,15 +3134,21 @@ Each custom field used in a template must have a unique name.
 You can edit the following properties: `email`, `userName`, `routingOrder`, `faxNumber`, `deliveryMethod`, `accessCode`, and `requireIdLookup`.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.resendEnvelope 
-     * @param {module:model/TemplateRecipients} opts.templateRecipients 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.resendEnvelope 
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
      * @param {module:api/TemplatesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RecipientsUpdateSummary}
      */
-    this.updateRecipients = function(accountId, templateId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateRecipients'];
+    this.updateRecipients = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2692,13 +3160,19 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         throw new Error("Missing the required parameter 'templateId' when calling updateRecipients");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'templateId': templateId
       };
       var queryParams = {
-        'resend_envelope': opts['resendEnvelope']
+        'resend_envelope': optsOrCallback['resendEnvelope']
       };
       var headerParams = {
       };
@@ -2731,14 +3205,20 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateTabs} opts.templateTabs 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
      * @param {module:api/TemplatesApi~updateTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.updateTabs = function(accountId, templateId, recipientId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['templateTabs'];
+    this.updateTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateTabs'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2755,6 +3235,12 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         throw new Error("Missing the required parameter 'recipientId' when calling updateTabs");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
