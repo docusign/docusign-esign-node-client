@@ -75,6 +75,12 @@
         throw new Error("Missing the required parameter 'billingPlanId' when calling getBillingPlan");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'billingPlanId': billingPlanId
@@ -120,6 +126,12 @@
         throw new Error("Missing the required parameter 'accountId' when calling getCreditCardInfo");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -205,6 +217,12 @@ The following table provides a description of the different `chargeName` propert
         throw new Error("Missing the required parameter 'invoiceId' when calling getInvoice");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -260,6 +278,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'paymentId' when calling getPayment");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -304,15 +328,21 @@ The response returns the billing plan information, including the currency code, 
 
 ###### Note: When credit card number information is shown, a mask is applied to the response so that only the last 4 digits of the card number are visible. 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeCreditCardInformation When set to **true**, excludes credit card information from the response.
-     * @param {String} opts.includeMetadata When set to **true**, the &#x60;canUpgrade&#x60; and &#x60;renewalStatus&#x60; properities are included the response and an array of &#x60;supportedCountries&#x60; property is added to the &#x60;billingAddress&#x60; information. 
-     * @param {String} opts.includeSuccessorPlans When set to **true**, excludes successor information from the response.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeCreditCardInformation When set to **true**, excludes credit card information from the response.
+     * @param {String} optsOrCallback.includeMetadata When set to **true**, the &#x60;canUpgrade&#x60; and &#x60;renewalStatus&#x60; properities are included the response and an array of &#x60;supportedCountries&#x60; property is added to the &#x60;billingAddress&#x60; information. 
+     * @param {String} optsOrCallback.includeSuccessorPlans When set to **true**, excludes successor information from the response.
      * @param {module:api/BillingApi~getPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountBillingPlanResponse}
      */
-    this.getPlan = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.getPlan = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -320,14 +350,20 @@ The response returns the billing plan information, including the currency code, 
         throw new Error("Missing the required parameter 'accountId' when calling getPlan");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'include_credit_card_information': opts['includeCreditCardInformation'],
-        'include_metadata': opts['includeMetadata'],
-        'include_successor_plans': opts['includeSuccessorPlans']
+        'include_credit_card_information': optsOrCallback['includeCreditCardInformation'],
+        'include_metadata': optsOrCallback['includeMetadata'],
+        'include_successor_plans': optsOrCallback['includeSuccessorPlans']
       };
       var headerParams = {
       };
@@ -363,6 +399,12 @@ The response returns the billing plan information, including the currency code, 
     this.listBillingPlans = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -399,14 +441,20 @@ The response returns the billing plan information, including the currency code, 
 
 Privileges required: account administrator 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.fromDate Specifies the date/time of the earliest invoice in the account to retrieve.
-     * @param {String} opts.toDate Specifies the date/time of the latest invoice in the account to retrieve.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.fromDate Specifies the date/time of the earliest invoice in the account to retrieve.
+     * @param {String} optsOrCallback.toDate Specifies the date/time of the latest invoice in the account to retrieve.
      * @param {module:api/BillingApi~listInvoicesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingInvoicesResponse}
      */
-    this.listInvoices = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listInvoices = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -414,13 +462,19 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling listInvoices");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'from_date': opts['fromDate'],
-        'to_date': opts['toDate']
+        'from_date': optsOrCallback['fromDate'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };
@@ -464,6 +518,12 @@ Privileges Required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling listInvoicesPastDue");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -501,14 +561,20 @@ Privileges Required: account administrator
 
 Privileges required: account administrator 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.fromDate Specifies the date/time of the earliest payment in the account to retrieve.
-     * @param {String} opts.toDate Specifies the date/time of the latest payment in the account to retrieve.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.fromDate Specifies the date/time of the earliest payment in the account to retrieve.
+     * @param {String} optsOrCallback.toDate Specifies the date/time of the latest payment in the account to retrieve.
      * @param {module:api/BillingApi~listPaymentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPaymentsResponse}
      */
-    this.listPayments = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listPayments = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -516,13 +582,19 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling listPayments");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'from_date': opts['fromDate'],
-        'to_date': opts['toDate']
+        'from_date': optsOrCallback['fromDate'],
+        'to_date': optsOrCallback['toDate']
       };
       var headerParams = {
       };
@@ -559,20 +631,32 @@ The response returns information for a single payment, if a payment ID was used 
 
 Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/BillingPaymentRequest} opts.billingPaymentRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/BillingPaymentRequest} optsOrCallback.billingPaymentRequest 
      * @param {module:api/BillingApi~makePaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPaymentResponse}
      */
-    this.makePayment = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['billingPaymentRequest'];
+    this.makePayment = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['billingPaymentRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling makePayment");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -608,19 +692,31 @@ Privileges required: account administrator
      * Reserverd: Purchase additional envelopes.
      * Reserved: At this time, this endpoint is limited to DocuSign internal use only. Completes the purchase of envelopes for your account. The actual purchase is done as part of an internal workflow interaction with an envelope vendor.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PurchasedEnvelopesInformation} opts.purchasedEnvelopesInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/PurchasedEnvelopesInformation} optsOrCallback.purchasedEnvelopesInformation 
      * @param {module:api/BillingApi~purchaseEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.purchaseEnvelopes = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['purchasedEnvelopesInformation'];
+    this.purchaseEnvelopes = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['purchasedEnvelopesInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling purchaseEnvelopes");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -656,27 +752,39 @@ Privileges required: account administrator
      * Updates the account billing plan.
      * Updates the billing plan information, billing address, and credit card information for the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.previewBillingPlan When set to **true**, updates the account using a preview billing plan.
-     * @param {module:model/BillingPlanInformation} opts.billingPlanInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.previewBillingPlan When set to **true**, updates the account using a preview billing plan.
+     * @param {module:model/BillingPlanInformation} optsOrCallback.billingPlanInformation 
      * @param {module:api/BillingApi~updatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPlanUpdateResponse}
      */
-    this.updatePlan = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['billingPlanInformation'];
+    this.updatePlan = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['billingPlanInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePlan");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'preview_billing_plan': opts['previewBillingPlan']
+        'preview_billing_plan': optsOrCallback['previewBillingPlan']
       };
       var headerParams = {
       };

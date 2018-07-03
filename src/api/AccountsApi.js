@@ -74,6 +74,12 @@
         throw new Error("Missing the required parameter 'accountId' when calling _delete");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -117,21 +123,33 @@ Response
 The response returns the new account ID, password and the default user information for each newly created account.
 
 A 201 code is returned if the call succeeded.  While the call may have succeed, some of the individual account requests may have failed. In the case of failures to create the account,  an `errorDetails` node is added in the response to each specific request that failed.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.previewBillingPlan When set to **true**, creates the account using a preview billing plan.
-     * @param {module:model/NewAccountDefinition} opts.newAccountDefinition 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.previewBillingPlan When set to **true**, creates the account using a preview billing plan.
+     * @param {module:model/NewAccountDefinition} optsOrCallback.newAccountDefinition 
      * @param {module:api/AccountsApi~createCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NewAccountSummary}
      */
-    this.create = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['newAccountDefinition'];
+    this.create = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
 
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['newAccountDefinition'];
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
       var queryParams = {
-        'preview_billing_plan': opts['previewBillingPlan']
+        'preview_billing_plan': optsOrCallback['previewBillingPlan']
       };
       var headerParams = {
       };
@@ -166,20 +184,32 @@ An error is returned if `brandId` property for a brand profile is already set fo
 
 When brand profile files are being uploaded, they must be combined into one zip file and the `Content-Type` must be `application/zip`.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Brand} opts.brand 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/Brand} optsOrCallback.brand 
      * @param {module:api/AccountsApi~createBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.createBrand = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['brand'];
+    this.createBrand = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['brand'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBrand");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -214,27 +244,39 @@ When brand profile files are being uploaded, they must be combined into one zip 
     /**
      * Creates an acount custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applyToTemplates 
-     * @param {module:model/CustomField} opts.customField 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.applyToTemplates 
+     * @param {module:model/CustomField} optsOrCallback.customField 
      * @param {module:api/AccountsApi~createCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.createCustomField = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['customField'];
+    this.createCustomField = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['customField'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createCustomField");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'apply_to_templates': opts['applyToTemplates']
+        'apply_to_templates': optsOrCallback['applyToTemplates']
       };
       var headerParams = {
       };
@@ -264,20 +306,32 @@ When brand profile files are being uploaded, they must be combined into one zip 
     /**
      * Starts a new eMortgage Transaction
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/PostTransactionsRequest} opts.postTransactionsRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/PostTransactionsRequest} optsOrCallback.postTransactionsRequest 
      * @param {module:api/AccountsApi~createEMortgageTransactionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PostTransactionsResponse}
      */
-    this.createEMortgageTransaction = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['postTransactionsRequest'];
+    this.createEMortgageTransaction = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['postTransactionsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEMortgageTransaction");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -312,27 +366,39 @@ When brand profile files are being uploaded, they must be combined into one zip 
     /**
      * Creates a new permission profile in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.include 
-     * @param {module:model/PermissionProfile} opts.permissionProfile 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.include 
+     * @param {module:model/PermissionProfile} optsOrCallback.permissionProfile 
      * @param {module:api/AccountsApi~createPermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfile}
      */
-    this.createPermissionProfile = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['permissionProfile'];
+    this.createPermissionProfile = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['permissionProfile'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling createPermissionProfile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'include': opts['include']
+        'include': optsOrCallback['include']
       };
       var headerParams = {
       };
@@ -378,6 +444,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'brandId' when calling deleteBrand");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -435,6 +507,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'logoType' when calling deleteBrandLogoByType");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -472,20 +550,32 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Deletes one or more brand profiles.
      * Deletes one or more brand profiles from an account. The Account Branding feature (accountSettings properties `canSelfBrandSend` and `canSelfBrandSend`) must be set to **true** to use this call.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/BrandsRequest} opts.brandsRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/BrandsRequest} optsOrCallback.brandsRequest 
      * @param {module:api/AccountsApi~deleteBrandsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.deleteBrands = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['brandsRequest'];
+    this.deleteBrands = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBrands");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -522,14 +612,20 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Deletes the signature for one or more captive recipient records; it is primarily used for testing. This provides a way to reset the signature associated with a client user ID so that a new signature can be created the next time the client user ID is used.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} recipientPart 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CaptiveRecipientInformation} opts.captiveRecipientInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/CaptiveRecipientInformation} optsOrCallback.captiveRecipientInformation 
      * @param {module:api/AccountsApi~deleteCaptiveRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CaptiveRecipientInformation}
      */
-    this.deleteCaptiveRecipient = function(accountId, recipientPart, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['captiveRecipientInformation'];
+    this.deleteCaptiveRecipient = function(accountId, recipientPart, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['captiveRecipientInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -541,6 +637,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'recipientPart' when calling deleteCaptiveRecipient");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -577,12 +679,18 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Delete an existing account custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} customFieldId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applyToTemplates 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.applyToTemplates 
      * @param {module:api/AccountsApi~deleteCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCustomField = function(accountId, customFieldId, opts, callback) {
-      opts = opts || {};
+    this.deleteCustomField = function(accountId, customFieldId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -595,13 +703,19 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'customFieldId' when calling deleteCustomField");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'customFieldId': customFieldId
       };
       var queryParams = {
-        'apply_to_templates': opts['applyToTemplates']
+        'apply_to_templates': optsOrCallback['applyToTemplates']
       };
       var headerParams = {
       };
@@ -641,6 +755,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'accountId' when calling deleteENoteConfiguration");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -691,6 +811,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'permissionProfileId' when calling deletePermissionProfile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -730,13 +856,19 @@ When brand profile files are being uploaded, they must be combined into one zip 
 **Response**
 The `canUpgrade` property contains is a Boolean that indicates whether the account can be upgraded through the API. 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeAccountSettings When set to **true**, includes the account settings for the account in the response.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeAccountSettings When set to **true**, includes the account settings for the account in the response.
      * @param {module:api/AccountsApi~getAccountInformationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountInformation}
      */
-    this.getAccountInformation = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.getAccountInformation = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -744,12 +876,18 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         throw new Error("Missing the required parameter 'accountId' when calling getAccountInformation");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'include_account_settings': opts['includeAccountSettings']
+        'include_account_settings': optsOrCallback['includeAccountSettings']
       };
       var headerParams = {
       };
@@ -790,6 +928,12 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         throw new Error("Missing the required parameter 'accountId' when calling getAccountTabSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -835,6 +979,12 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         throw new Error("Missing the required parameter 'accountId' when calling getAllPaymentGatewayAccounts");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -872,13 +1022,19 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
 Privileges required: account administrator 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeCharges Specifies which billing charges to return. Valid values are:  * envelopes * seats 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeCharges Specifies which billing charges to return. Valid values are:  * envelopes * seats 
      * @param {module:api/AccountsApi~getBillingChargesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingChargeResponse}
      */
-    this.getBillingCharges = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.getBillingCharges = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -886,12 +1042,18 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling getBillingCharges");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'include_charges': opts['includeCharges']
+        'include_charges': optsOrCallback['includeCharges']
       };
       var headerParams = {
       };
@@ -922,14 +1084,20 @@ Privileges required: account administrator
      * Get information for a specific brand.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeExternalReferences 
-     * @param {String} opts.includeLogos 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeExternalReferences 
+     * @param {String} optsOrCallback.includeLogos 
      * @param {module:api/AccountsApi~getBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Brand}
      */
-    this.getBrand = function(accountId, brandId, opts, callback) {
-      opts = opts || {};
+    this.getBrand = function(accountId, brandId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -942,14 +1110,20 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'brandId' when calling getBrand");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'brandId': brandId
       };
       var queryParams = {
-        'include_external_references': opts['includeExternalReferences'],
-        'include_logos': opts['includeLogos']
+        'include_external_references': optsOrCallback['includeExternalReferences'],
+        'include_logos': optsOrCallback['includeLogos']
       };
       var headerParams = {
       };
@@ -995,6 +1169,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'brandId' when calling getBrandExportFile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1052,6 +1232,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'logoType' when calling getBrandLogoByType");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1105,6 +1291,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'brandId' when calling getBrandResources");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1142,13 +1334,19 @@ Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {String} resourceContentType 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.langcode 
-     * @param {String} opts.returnMaster 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.langcode 
+     * @param {String} optsOrCallback.returnMaster 
      * @param {module:api/AccountsApi~getBrandResourcesByContentTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getBrandResourcesByContentType = function(accountId, brandId, resourceContentType, opts, callback) {
-      opts = opts || {};
+    this.getBrandResourcesByContentType = function(accountId, brandId, resourceContentType, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1166,6 +1364,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'resourceContentType' when calling getBrandResourcesByContentType");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1173,8 +1377,8 @@ Privileges required: account administrator
         'resourceContentType': resourceContentType
       };
       var queryParams = {
-        'langcode': opts['langcode'],
-        'return_master': opts['returnMaster']
+        'langcode': optsOrCallback['langcode'],
+        'return_master': optsOrCallback['returnMaster']
       };
       var headerParams = {
       };
@@ -1222,6 +1426,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'langCode' when calling getConsumerDisclosure");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -1258,13 +1468,19 @@ Privileges required: account administrator
      * Gets the Electronic Record and Signature Disclosure for the account.
      * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account. You can use an optional query string to set the language for the disclosure.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.langCode Specifies the language used in the response. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).  Additionally, the value can be set to &#x60;browser&#x60; to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.langCode Specifies the language used in the response. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).  Additionally, the value can be set to &#x60;browser&#x60; to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
      * @param {module:api/AccountsApi~getConsumerDisclosureDefaultCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
-    this.getConsumerDisclosureDefault = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.getConsumerDisclosureDefault = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1272,12 +1488,18 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling getConsumerDisclosureDefault");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'langCode': opts['langCode']
+        'langCode': optsOrCallback['langCode']
       };
       var headerParams = {
       };
@@ -1318,6 +1540,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling getENoteConfiguration");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1363,6 +1591,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling getPasswordRules");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1402,6 +1636,12 @@ Privileges required: account administrator
     this.getPasswordRules_0 = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -1436,13 +1676,19 @@ Privileges required: account administrator
      * Returns a permissions profile in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} permissionProfileId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.include 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.include 
      * @param {module:api/AccountsApi~getPermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfile}
      */
-    this.getPermissionProfile = function(accountId, permissionProfileId, opts, callback) {
-      opts = opts || {};
+    this.getPermissionProfile = function(accountId, permissionProfileId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1455,13 +1701,19 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'permissionProfileId' when calling getPermissionProfile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'permissionProfileId': permissionProfileId
       };
       var queryParams = {
-        'include': opts['include']
+        'include': optsOrCallback['include']
       };
       var headerParams = {
       };
@@ -1497,6 +1749,12 @@ Privileges required: account administrator
     this.getProvisioning = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -1541,6 +1799,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling getSupportedLanguages");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1586,6 +1850,12 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling getWatermark");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1620,20 +1890,32 @@ Privileges required: account administrator
     /**
      * Get watermark preview.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Watermark} opts.watermark 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/Watermark} optsOrCallback.watermark 
      * @param {module:api/AccountsApi~getWatermarkPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Watermark}
      */
-    this.getWatermarkPreview = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['watermark'];
+    this.getWatermarkPreview = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['watermark'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling getWatermarkPreview");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1669,14 +1951,20 @@ Privileges required: account administrator
      * Gets a list of brand profiles.
      * Retrieves the list of brand profiles associated with the account and the default brand profiles. The Account Branding feature (accountSettings properties `canSelfBrandSend` and `canSelfBrandSend`)  must be set to **true** for the account to use this call.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.excludeDistributorBrand When set to **true**, excludes distributor brand information from the response set.
-     * @param {String} opts.includeLogos When set to **true**, returns the logos associated with the brand.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.excludeDistributorBrand When set to **true**, excludes distributor brand information from the response set.
+     * @param {String} optsOrCallback.includeLogos When set to **true**, returns the logos associated with the brand.
      * @param {module:api/AccountsApi~listBrandsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.listBrands = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listBrands = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1684,13 +1972,19 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'accountId' when calling listBrands");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'exclude_distributor_brand': opts['excludeDistributorBrand'],
-        'include_logos': opts['includeLogos']
+        'exclude_distributor_brand': optsOrCallback['excludeDistributorBrand'],
+        'include_logos': optsOrCallback['includeLogos']
       };
       var headerParams = {
       };
@@ -1734,6 +2028,12 @@ There are two types of envelope custom fields, text, and list. A text custom fie
         throw new Error("Missing the required parameter 'accountId' when calling listCustomFields");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1771,13 +2071,19 @@ There are two types of envelope custom fields, text, and list. A text custom fie
 
 Currently, Permission Profiles can only be created and modified in the DocuSign console.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.include 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.include 
      * @param {module:api/AccountsApi~listPermissionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfileInformation}
      */
-    this.listPermissions = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listPermissions = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1785,12 +2091,18 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
         throw new Error("Missing the required parameter 'accountId' when calling listPermissions");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'include': opts['include']
+        'include': optsOrCallback['include']
       };
       var headerParams = {
       };
@@ -1821,13 +2133,19 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
      * Gets recipient names associated with an email address.
      * Retrieves a list of recipients in the specified account that are associated with a email address supplied in the query string.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.email The email address for the user
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.email The email address for the user
      * @param {module:api/AccountsApi~listRecipientNamesByEmailCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RecipientNamesResponse}
      */
-    this.listRecipientNamesByEmail = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listRecipientNamesByEmail = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1835,12 +2153,18 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
         throw new Error("Missing the required parameter 'accountId' when calling listRecipientNamesByEmail");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'email': opts['email']
+        'email': optsOrCallback['email']
       };
       var headerParams = {
       };
@@ -1882,6 +2206,12 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
         throw new Error("Missing the required parameter 'accountId' when calling listSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -1919,20 +2249,26 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
 
 Users with account administration privileges can retrieve shared access information for all account users. Users without account administrator privileges can only retrieve shared access information for themselves and the returned information is limited to the retrieving the status of all members of the account that are sharing their folders to the user. This is equivalent to setting the shared=shared_from.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.count Specifies maximum number of results included in the response. If no value is specified, this defaults to 1000.
-     * @param {String} opts.envelopesNotSharedUserStatus 
-     * @param {String} opts.folderIds 
-     * @param {String} opts.itemType Specifies the type of shared item being requested. The accepted values are: -envelopes: returns information about envelope sharing between users.
-     * @param {String} opts.searchText This can be used to filter user names in the response. The wild-card &#39;*&#39; (asterisk) can be used around the string.
-     * @param {String} opts.shared Specifies which users should be included in the response. Multiple values can be used in the query by using a comma separated list of shared values. If the requestor does not have account administrator privileges, the shared_to value is used. Requestors that do not have account administrator privileges can only use the shared_to, any other setting will result in an error. The accepted values are:  -not_shared: Returns account users that the specified item type is not being shared with and that are not sharing the specified item type with the user.  User X (Share) X Account user  -shared_to: Returns account users that the specified item type is not being shared with and who are sharing the specified item type with the user (only shared to the user).  User X (Share) Account user  -shared_from: Returns account users that the specified item type is being shared with and who are not sharing the specified item type with the user (only shared from the user).  User (Share) &gt;&gt; Account user  -shared_to_and_from: Returns account users that the specified item type is being shared with and who are sharing the specified item type with the user.  User &lt;&lt; (Share) &gt;&gt; Account user
-     * @param {String} opts.startPosition If the response set exceeds Count, this can be used to specify that the method should return users starting at the specified index. The first index is 0, and should be used in the first GET call. Typically this number is a multiple of Count. If no value is specified, this defaults to be 0. 
-     * @param {String} opts.userIds A comma separated list of userIds for whom the shared item information is being requested. 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count Specifies maximum number of results included in the response. If no value is specified, this defaults to 1000.
+     * @param {String} optsOrCallback.envelopesNotSharedUserStatus 
+     * @param {String} optsOrCallback.folderIds 
+     * @param {String} optsOrCallback.itemType Specifies the type of shared item being requested. The accepted values are: -envelopes: returns information about envelope sharing between users.
+     * @param {String} optsOrCallback.searchText This can be used to filter user names in the response. The wild-card &#39;*&#39; (asterisk) can be used around the string.
+     * @param {String} optsOrCallback.shared Specifies which users should be included in the response. Multiple values can be used in the query by using a comma separated list of shared values. If the requestor does not have account administrator privileges, the shared_to value is used. Requestors that do not have account administrator privileges can only use the shared_to, any other setting will result in an error. The accepted values are:  -not_shared: Returns account users that the specified item type is not being shared with and that are not sharing the specified item type with the user.  User X (Share) X Account user  -shared_to: Returns account users that the specified item type is not being shared with and who are sharing the specified item type with the user (only shared to the user).  User X (Share) Account user  -shared_from: Returns account users that the specified item type is being shared with and who are not sharing the specified item type with the user (only shared from the user).  User (Share) &gt;&gt; Account user  -shared_to_and_from: Returns account users that the specified item type is being shared with and who are sharing the specified item type with the user.  User &lt;&lt; (Share) &gt;&gt; Account user
+     * @param {String} optsOrCallback.startPosition If the response set exceeds Count, this can be used to specify that the method should return users starting at the specified index. The first index is 0, and should be used in the first GET call. Typically this number is a multiple of Count. If no value is specified, this defaults to be 0. 
+     * @param {String} optsOrCallback.userIds A comma separated list of userIds for whom the shared item information is being requested. 
      * @param {module:api/AccountsApi~listSharedAccessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSharedAccess}
      */
-    this.listSharedAccess = function(accountId, opts, callback) {
-      opts = opts || {};
+    this.listSharedAccess = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1940,19 +2276,25 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'accountId' when calling listSharedAccess");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'count': opts['count'],
-        'envelopes_not_shared_user_status': opts['envelopesNotSharedUserStatus'],
-        'folder_ids': opts['folderIds'],
-        'item_type': opts['itemType'],
-        'search_text': opts['searchText'],
-        'shared': opts['shared'],
-        'start_position': opts['startPosition'],
-        'user_ids': opts['userIds']
+        'count': optsOrCallback['count'],
+        'envelopes_not_shared_user_status': optsOrCallback['envelopesNotSharedUserStatus'],
+        'folder_ids': optsOrCallback['folderIds'],
+        'item_type': optsOrCallback['itemType'],
+        'search_text': optsOrCallback['searchText'],
+        'shared': optsOrCallback['shared'],
+        'start_position': optsOrCallback['startPosition'],
+        'user_ids': optsOrCallback['userIds']
       };
       var headerParams = {
       };
@@ -1993,6 +2335,12 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'accountId' when calling listSignatureProviders");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -2039,6 +2387,12 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'accountId' when calling listUnsupportedFileTypes");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -2073,20 +2427,32 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Modifies tab settings for specified account
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TabAccountSettings} opts.tabAccountSettings 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TabAccountSettings} optsOrCallback.tabAccountSettings 
      * @param {module:api/AccountsApi~updateAccountTabSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabAccountSettings}
      */
-    this.updateAccountTabSettings = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['tabAccountSettings'];
+    this.updateAccountTabSettings = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['tabAccountSettings'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateAccountTabSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -2122,14 +2488,20 @@ Users with account administration privileges can retrieve shared access informat
      * Updates an existing brand.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Brand} opts.brand 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/Brand} optsOrCallback.brand 
      * @param {module:api/AccountsApi~updateBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Brand}
      */
-    this.updateBrand = function(accountId, brandId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['brand'];
+    this.updateBrand = function(accountId, brandId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['brand'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2141,6 +2513,12 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'brandId' when calling updateBrand");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2198,6 +2576,12 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'logoType' when calling updateBrandLogoByType");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2257,6 +2641,12 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'resourceContentType' when calling updateBrandResourcesByContentType");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
@@ -2294,15 +2684,21 @@ Users with account administration privileges can retrieve shared access informat
      * Update Consumer Disclosure.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.includeMetadata 
-     * @param {module:model/ConsumerDisclosure} opts.consumerDisclosure 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeMetadata 
+     * @param {module:model/ConsumerDisclosure} optsOrCallback.consumerDisclosure 
      * @param {module:api/AccountsApi~updateConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
-    this.updateConsumerDisclosure = function(accountId, langCode, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['consumerDisclosure'];
+    this.updateConsumerDisclosure = function(accountId, langCode, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['consumerDisclosure'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2314,13 +2710,19 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'langCode' when calling updateConsumerDisclosure");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'langCode': langCode
       };
       var queryParams = {
-        'include_metadata': opts['includeMetadata']
+        'include_metadata': optsOrCallback['includeMetadata']
       };
       var headerParams = {
       };
@@ -2351,15 +2753,21 @@ Users with account administration privileges can retrieve shared access informat
      * Updates an existing account custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} customFieldId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.applyToTemplates 
-     * @param {module:model/CustomField} opts.customField 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.applyToTemplates 
+     * @param {module:model/CustomField} optsOrCallback.customField 
      * @param {module:api/AccountsApi~updateCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.updateCustomField = function(accountId, customFieldId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['customField'];
+    this.updateCustomField = function(accountId, customFieldId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['customField'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2371,13 +2779,19 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'customFieldId' when calling updateCustomField");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'customFieldId': customFieldId
       };
       var queryParams = {
-        'apply_to_templates': opts['applyToTemplates']
+        'apply_to_templates': optsOrCallback['applyToTemplates']
       };
       var headerParams = {
       };
@@ -2407,20 +2821,32 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Updates configuration information for the eNote eOriginal integration.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/ENoteConfiguration} opts.eNoteConfiguration 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ENoteConfiguration} optsOrCallback.eNoteConfiguration 
      * @param {module:api/AccountsApi~updateENoteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ENoteConfiguration}
      */
-    this.updateENoteConfiguration = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['eNoteConfiguration'];
+    this.updateENoteConfiguration = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['eNoteConfiguration'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateENoteConfiguration");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -2455,20 +2881,32 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Update the password rules
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/AccountPasswordRules} opts.accountPasswordRules 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules 
      * @param {module:api/AccountsApi~updatePasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountPasswordRules}
      */
-    this.updatePasswordRules = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['accountPasswordRules'];
+    this.updatePasswordRules = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountPasswordRules'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePasswordRules");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -2504,15 +2942,21 @@ Users with account administration privileges can retrieve shared access informat
      * Updates a permission profile within the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} permissionProfileId 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.include 
-     * @param {module:model/PermissionProfile} opts.permissionProfile 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.include 
+     * @param {module:model/PermissionProfile} optsOrCallback.permissionProfile 
      * @param {module:api/AccountsApi~updatePermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfile}
      */
-    this.updatePermissionProfile = function(accountId, permissionProfileId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['permissionProfile'];
+    this.updatePermissionProfile = function(accountId, permissionProfileId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['permissionProfile'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2524,13 +2968,19 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'permissionProfileId' when calling updatePermissionProfile");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId,
         'permissionProfileId': permissionProfileId
       };
       var queryParams = {
-        'include': opts['include']
+        'include': optsOrCallback['include']
       };
       var headerParams = {
       };
@@ -2561,19 +3011,31 @@ Users with account administration privileges can retrieve shared access informat
      * Updates the account settings for an account.
      * Updates the account settings for the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/AccountSettingsInformation} opts.accountSettingsInformation 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/AccountSettingsInformation} optsOrCallback.accountSettingsInformation 
      * @param {module:api/AccountsApi~updateSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateSettings = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['accountSettingsInformation'];
+    this.updateSettings = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSettings");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -2609,29 +3071,41 @@ Users with account administration privileges can retrieve shared access informat
      * Reserved: Sets the shared access information for users.
      * Reserved: Sets the shared access information for one or more users.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.itemType 
-     * @param {String} opts.userIds 
-     * @param {module:model/AccountSharedAccess} opts.accountSharedAccess 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.itemType 
+     * @param {String} optsOrCallback.userIds 
+     * @param {module:model/AccountSharedAccess} optsOrCallback.accountSharedAccess 
      * @param {module:api/AccountsApi~updateSharedAccessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSharedAccess}
      */
-    this.updateSharedAccess = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['accountSharedAccess'];
+    this.updateSharedAccess = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountSharedAccess'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSharedAccess");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
       };
       var queryParams = {
-        'item_type': opts['itemType'],
-        'user_ids': opts['userIds']
+        'item_type': optsOrCallback['itemType'],
+        'user_ids': optsOrCallback['userIds']
       };
       var headerParams = {
       };
@@ -2661,20 +3135,32 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Update watermark information.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Watermark} opts.watermark 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/Watermark} optsOrCallback.watermark 
      * @param {module:api/AccountsApi~updateWatermarkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Watermark}
      */
-    this.updateWatermark = function(accountId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['watermark'];
+    this.updateWatermark = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['watermark'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateWatermark");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId

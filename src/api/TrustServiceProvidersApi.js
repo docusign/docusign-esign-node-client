@@ -62,15 +62,27 @@
 
     /**
      * Complete Sign Hash
-     * @param {Object} opts Optional parameters
-     * @param {module:model/CompleteSignRequest} opts.completeSignRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/CompleteSignRequest} optsOrCallback.completeSignRequest 
      * @param {module:api/TrustServiceProvidersApi~completeSignHashCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompleteSignHashResponse}
      */
-    this.completeSignHash = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['completeSignRequest'];
+    this.completeSignHash = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
 
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['completeSignRequest'];
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -115,6 +127,12 @@
         throw new Error("Missing the required parameter 'accountId' when calling getSealProviders");
       }
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
         'accountId': accountId
@@ -154,6 +172,12 @@
     this.getUserInfo = function(callback) {
       var postBody = null;
 
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -186,14 +210,26 @@
 
     /**
      * Report status from the TSP to DocuSign
-     * @param {Object} opts Optional parameters
-     * @param {module:model/TspHealthCheckRequest} opts.tspHealthCheckRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TspHealthCheckRequest} optsOrCallback.tspHealthCheckRequest 
      * @param {module:api/TrustServiceProvidersApi~healthCheckCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.healthCheck = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['tspHealthCheckRequest'];
+    this.healthCheck = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
 
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['tspHealthCheckRequest'];
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -226,15 +262,27 @@
 
     /**
      * Get Signature Session Info To Sign Document Hash
-     * @param {Object} opts Optional parameters
-     * @param {module:model/SignSessionInfoRequest} opts.signSessionInfoRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/SignSessionInfoRequest} optsOrCallback.signSessionInfoRequest 
      * @param {module:api/TrustServiceProvidersApi~signHashSessionInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SignHashSessionInfoResponse}
      */
-    this.signHashSessionInfo = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['signSessionInfoRequest'];
+    this.signHashSessionInfo = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
 
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['signSessionInfoRequest'];
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };
@@ -267,15 +315,27 @@
 
     /**
      * Report an error from the tsp to docusign
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UpdateTransactionRequest} opts.updateTransactionRequest 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UpdateTransactionRequest} optsOrCallback.updateTransactionRequest 
      * @param {module:api/TrustServiceProvidersApi~updateTransactionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UpdateTransactionResponse}
      */
-    this.updateTransaction = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['updateTransactionRequest'];
+    this.updateTransaction = function(optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
 
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['updateTransactionRequest'];
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
 
       var pathParams = {
       };

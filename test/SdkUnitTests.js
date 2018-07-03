@@ -556,18 +556,31 @@ describe('SDK Unit Tests:', function (done) {
 
   it('listDocuments', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
-
-    envelopesApi.listDocuments(accountId, envelopeId, function (error, docsList, response) {
+    console.log(JSON.stringify(envelopesApi));
+    envelopesApi.listDocuments(accountId, envelopeId, null, function (error, docsList, response) {
+      console.log('back');
       if (error) {
+        console.log(error);
         return done(error);
       }
 
       if (docsList) {
         assert.equal(envelopeId, docsList.envelopeId);
         console.log('EnvelopeDocumentsResult: ' + JSON.stringify(docsList));
-        done();
-      } else {
-        return done(response);
+
+        envelopesApi.listDocuments(accountId, envelopeId, function (error, docsListNoOpt, response) {
+          console.log('back');
+          if (error) {
+            console.log(error);
+            return done(error);
+          }
+
+          if (docsListNoOpt) {
+            assert.equal(envelopeId, docsListNoOpt.envelopeId);
+            assert.equal(JSON.stringify(docsList), JSON.stringify(docsListNoOpt));
+            done();
+          }
+        });
       }
     });
   });
@@ -808,6 +821,7 @@ describe('SDK Unit Tests:', function (done) {
       console.log(e);
     }
   });
+
   it('getTemplate', function (done) {
     var templatesApi = new docusign.TemplatesApi(apiClient);
     templatesApi.get(accountId, TemplateId, null, function (error, envelopeTemplate, response) {
@@ -817,7 +831,17 @@ describe('SDK Unit Tests:', function (done) {
 
       if (envelopeTemplate) {
         console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplate));
-        done();
+        templatesApi.get(accountId, TemplateId, function (error, envelopeTemplateNoOpts, response) {
+          if (error) {
+            return done(error);
+          }
+
+          if (envelopeTemplateNoOpts) {
+            console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplateNoOpts));
+            assert.equal(envelopeTemplateNoOpts.envelopeTemplate);
+            done();
+          }
+        });
       }
     });
   });
