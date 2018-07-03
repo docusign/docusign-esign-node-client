@@ -8,7 +8,7 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 This resolves the breaking change for applications upgrading from version 3.X.X to 4.X.X.
 - The OAuth authorization code grant and implicit grant code examples in the readme.md file have been updated to use the addDefaultHeader method. Each API client needs this header to access DocuSign APIs.
  
- ## [4.0.1] - 2018-06-25
+## [4.0.1] - 2018-06-25
 ### Fixed
 - Issues [`#101`](https://github.com/docusign/DocuSign-Node-Client/issues/101) and [`#66`](https://github.com/docusign/DocuSign-Node-Client/issues/66)
 - listTabs now maps to an array of List instead of array of Array
