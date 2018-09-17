@@ -55,6 +55,18 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('canManageAccountSecuritySettings')) {
+        obj['canManageAccountSecuritySettings'] = ApiClient.convertToType(data['canManageAccountSecuritySettings'], 'String');
+      }
+      if (data.hasOwnProperty('canManageAccountSecuritySettingsMetadata')) {
+        obj['canManageAccountSecuritySettingsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAccountSecuritySettingsMetadata']);
+      }
+      if (data.hasOwnProperty('canManageAccountSettings')) {
+        obj['canManageAccountSettings'] = ApiClient.convertToType(data['canManageAccountSettings'], 'String');
+      }
+      if (data.hasOwnProperty('canManageAccountSettingsMetadata')) {
+        obj['canManageAccountSettingsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAccountSettingsMetadata']);
+      }
       if (data.hasOwnProperty('canManageAdmins')) {
         obj['canManageAdmins'] = ApiClient.convertToType(data['canManageAdmins'], 'String');
       }
@@ -67,11 +79,23 @@
       if (data.hasOwnProperty('canManageGroupsMetadata')) {
         obj['canManageGroupsMetadata'] = SettingsMetadata.constructFromObject(data['canManageGroupsMetadata']);
       }
+      if (data.hasOwnProperty('canManageReporting')) {
+        obj['canManageReporting'] = ApiClient.convertToType(data['canManageReporting'], 'String');
+      }
+      if (data.hasOwnProperty('canManageReportingMetadata')) {
+        obj['canManageReportingMetadata'] = SettingsMetadata.constructFromObject(data['canManageReportingMetadata']);
+      }
       if (data.hasOwnProperty('canManageSharing')) {
         obj['canManageSharing'] = ApiClient.convertToType(data['canManageSharing'], 'String');
       }
       if (data.hasOwnProperty('canManageSharingMetadata')) {
         obj['canManageSharingMetadata'] = SettingsMetadata.constructFromObject(data['canManageSharingMetadata']);
+      }
+      if (data.hasOwnProperty('canManageSigningGroups')) {
+        obj['canManageSigningGroups'] = ApiClient.convertToType(data['canManageSigningGroups'], 'String');
+      }
+      if (data.hasOwnProperty('canManageSigningGroupsMetadata')) {
+        obj['canManageSigningGroupsMetadata'] = SettingsMetadata.constructFromObject(data['canManageSigningGroupsMetadata']);
       }
       if (data.hasOwnProperty('canManageUsers')) {
         obj['canManageUsers'] = ApiClient.convertToType(data['canManageUsers'], 'String');
@@ -83,6 +107,24 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} canManageAccountSecuritySettings
+   */
+  exports.prototype['canManageAccountSecuritySettings'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageAccountSecuritySettingsMetadata
+   */
+  exports.prototype['canManageAccountSecuritySettingsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageAccountSettings
+   */
+  exports.prototype['canManageAccountSettings'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageAccountSettingsMetadata
+   */
+  exports.prototype['canManageAccountSettingsMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageAdmins
@@ -103,6 +145,15 @@
   exports.prototype['canManageGroupsMetadata'] = undefined;
   /**
    * 
+   * @member {String} canManageReporting
+   */
+  exports.prototype['canManageReporting'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageReportingMetadata
+   */
+  exports.prototype['canManageReportingMetadata'] = undefined;
+  /**
+   * 
    * @member {String} canManageSharing
    */
   exports.prototype['canManageSharing'] = undefined;
@@ -110,6 +161,15 @@
    * @member {module:model/SettingsMetadata} canManageSharingMetadata
    */
   exports.prototype['canManageSharingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageSigningGroups
+   */
+  exports.prototype['canManageSigningGroups'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageSigningGroupsMetadata
+   */
+  exports.prototype['canManageSigningGroupsMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageUsers
