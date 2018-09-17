@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('correlationId')) {
+        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
+      }
       if (data.hasOwnProperty('documentUpdateInfos')) {
         obj['documentUpdateInfos'] = ApiClient.convertToType(data['documentUpdateInfos'], [DocumentUpdateInfo]);
       }
@@ -68,6 +71,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} correlationId
+   */
+  exports.prototype['correlationId'] = undefined;
   /**
    * 
    * @member {Array.<module:model/DocumentUpdateInfo>} documentUpdateInfos

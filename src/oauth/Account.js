@@ -4,7 +4,7 @@
     define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Organization'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
@@ -34,7 +34,9 @@
   };
 
   exports.constructFromObject = function (data, obj){
-    var ApiClient = require('../ApiClient')
+    var ApiClient = require('../ApiClient');
+    var Organization = require('./Organization');
+
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('account_id')) {
@@ -48,6 +50,9 @@
       }
       if (data.hasOwnProperty('base_uri')) {
         obj['baseUri'] = ApiClient.convertToType(data['base_uri'], 'String');
+      }
+      if(data.hasOwnProperty('organization')) {
+        obj['organization'] = ApiClient.convertToType(data['organization'], Organization)
       }
     }
     return obj;
@@ -71,6 +76,10 @@
    * @member {String} baseUri
    */
   exports.prototype['baseUri'] = undefined;
+  /**
+   * @member {Organization} organization
+   */
+  exports.prototype['organization'] = undefined;
 
 
   return exports;
