@@ -28,7 +28,7 @@ For example:
 ## [3.3.0] - 2018-06-04
 ### Added
 - Support for OAuth Implicit Grant.
-- Support for OAuth Get Use Info.
+- Support for OAuth Get User Info.
 
 ## [3.2.0] - 2017-08-01
 ### Added
