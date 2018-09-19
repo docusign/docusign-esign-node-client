@@ -30,15 +30,15 @@ For example:
 - Support for OAuth Implicit Grant.
 - Support for OAuth Get Use Info.
 
-## [3.2.0] - 2017-08-01
+## [3.2.0] - 2018-08-01
 ### Added
 - Support for DocuSign JWT OAuth for service integration (2-legged authentication)
  
-## [3.1.0] - 2017-06-17
+## [3.1.0] - 2018-06-17
 ### Added
 - Support for DocuSign OAuth
 
-## [3.0.0] - 2017-03-10
+## [3.0.0] - 2018-03-10
 ### BREAKING
 - The SDK now supports the**Full and latest DocuSign API support**(17.1.00.00). NO MORE OMITTED ENDPOINTS.
 - **Getter and setter methods of all models' fields were removed.** Direct access to models' fields is now required. See the code snippet in README.md and test/SdkUnitTests.js for example.
