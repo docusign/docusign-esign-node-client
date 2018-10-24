@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('activationAccessCode')) {
         obj['activationAccessCode'] = ApiClient.convertToType(data['activationAccessCode'], 'String');
       }
+      if (data.hasOwnProperty('countryCode')) {
+        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
+      }
       if (data.hasOwnProperty('createdDateTime')) {
         obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
       }
@@ -133,6 +136,9 @@
       if (data.hasOwnProperty('signatureImageUri')) {
         obj['signatureImageUri'] = ApiClient.convertToType(data['signatureImageUri'], 'String');
       }
+      if (data.hasOwnProperty('subscribe')) {
+        obj['subscribe'] = ApiClient.convertToType(data['subscribe'], 'String');
+      }
       if (data.hasOwnProperty('suffixName')) {
         obj['suffixName'] = ApiClient.convertToType(data['suffixName'], 'String');
       }
@@ -176,6 +182,11 @@
    * @member {String} activationAccessCode
    */
   exports.prototype['activationAccessCode'] = undefined;
+  /**
+   * 
+   * @member {String} countryCode
+   */
+  exports.prototype['countryCode'] = undefined;
   /**
    * Indicates the date and time the item was created.
    * @member {String} createdDateTime
@@ -293,6 +304,11 @@
    * @member {String} signatureImageUri
    */
   exports.prototype['signatureImageUri'] = undefined;
+  /**
+   * 
+   * @member {String} subscribe
+   */
+  exports.prototype['subscribe'] = undefined;
   /**
    * The suffix for the user's name.   Maximum Length: 50 characters. 
    * @member {String} suffixName

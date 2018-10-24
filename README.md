@@ -109,53 +109,70 @@ The following example can be used with an older version of Node.JS.
 
 ```javascript
 var docusign = require('docusign-esign');
+var oAuth = docusign.ApiClient.OAuth;
+var restApi = docusign.ApiClient.RestApi;
 var async = require('async');
 var path = require('path');
 
 var integratorKey = '***';                    // Integrator Key associated with your DocuSign Integration
 var userId = 'YOUR_USER_ID';                  // API Username for your DocuSign Account (use the GUID not the email address)
-var docusignEnv = 'demo';                     // DocuSign Environment generally demo for testing purposes
 var fullName = 'Joan Jett';                   // Recipient's Full Name
 var recipientEmail = 'joan.jett@example.com'; // Recipient's Email
 var templateId = '***';                       // ID of the Template you want to create the Envelope with
 var templateRoleName = '***';                 // Role name of the Recipient for the Template
 
-var baseUrl = 'https://' + docusignEnv + '.docusign.net/restapi';
-var oAuthBaseUrl = 'account-d.docusign.com'; // use account.docusign.com for Live/Production
+var expiresIn = 3600; // Number of seconds until the JWT assertion is invalid
+var basePath = restApi.BasePath.DEMO;
+var oAuthBasePath = oAuth.BasePath.DEMO;
 var redirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt'; //path to the file storing the private key from the RSA Keypair associated to the Integrator Key
 
-var apiClient = new docusign.ApiClient();
-
+var apiClient = new docusign.ApiClient({
+    basePath: basePath,
+    oAuthBasePath: oAuthBasePath
+});
+var scopes = [
+    oAuth.Scope.IMPERSONATION,
+    oAuth.Scope.SIGNATURE
+];
+  
 async.waterfall([
   function initApiClient (next) {
-    apiClient.setBasePath(baseUrl);
+    
     // assign the api client to the Configuration object
     docusign.Configuration.default.setDefaultApiClient(apiClient);
 
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
     // get DocuSign OAuth authorization url:
-    var oauthLoginUrl = apiClient.getJWTUri(integratorKey, redirectURI, oAuthBaseUrl);
+    var oauthLoginUrl = apiClient.getJWTUri(integratorKey, redirectURI, oAuthBasePath);
     // open DocuSign OAuth authorization url in the browser, login and grant access
     console.log(oauthLoginUrl);
     // END OF NOTE
 
     // configure the ApiClient to asynchronously get an access to token and store it
 
-    apiClient.configureJWTAuthorizationFlow(path.resolve(__dirname, privateKeyFilename), oAuthBaseUrl, integratorKey, userId, 3600, function (err, res) {
-      if (!err && res.body && res.body.access_token) {
-        apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
-          accountId = userInfo.accounts[0].accountId;
-          var baseUri = userInfo.accounts[0].baseUri;
-          var accountDomain = baseUri.split('/v2');
-          // below code required for production, no effect in demo (same domain)
-          apiClient.setBasePath(accountDomain[0] + "/restapi");
-          console.log('LoginInformation: ' + JSON.stringify(userInfo.accounts));
-
-          next(null, userInfo.accounts[0]);
-        });
+    var fs = require('fs');
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
+    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, res) {
+      var baseUri,
+        accountDomain;
+      if (err) {
+        return next(err);
       }
+      apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+
+      apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
+        if (err) {
+          return next(err);
+        }
+        accountId = userInfo.accounts[0].accountId;
+        baseUri = userInfo.accounts[0].baseUri;
+        accountDomain = baseUri.split('/v2');
+        apiClient.setBasePath(accountDomain[0] + '/restapi');
+        console.log('LoginInformation: ' + JSON.stringify(userInfo));
+        return next(null, userInfo.accounts[0]);
+      });
     });
   },
 
