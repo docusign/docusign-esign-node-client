@@ -755,7 +755,7 @@
   };
 
   /**
-   * @deprecated
+   * @deprecated since version 4.1.0
    * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
    * @param privateKeyFilename the filename of the RSA private key
    * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
@@ -766,6 +766,7 @@
    * @param callback the callback function.
    */
   exports.prototype.configureJWTAuthorizationFlow = function(privateKeyFilename, oAuthBasePath, clientId, userId, expiresIn, callback) {
+    console.warn('configureJWTAuthorizationFlow is a deprecated function! Please use requestJWTUserToken()')
     var _this = this;
     var jwt = require('jsonwebtoken')
       , fs  = require('fs')
