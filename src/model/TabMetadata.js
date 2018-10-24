@@ -145,6 +145,15 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('paymentItemCode')) {
+        obj['paymentItemCode'] = ApiClient.convertToType(data['paymentItemCode'], 'String');
+      }
+      if (data.hasOwnProperty('paymentItemDescription')) {
+        obj['paymentItemDescription'] = ApiClient.convertToType(data['paymentItemDescription'], 'String');
+      }
+      if (data.hasOwnProperty('paymentItemName')) {
+        obj['paymentItemName'] = ApiClient.convertToType(data['paymentItemName'], 'String');
+      }
       if (data.hasOwnProperty('required')) {
         obj['required'] = ApiClient.convertToType(data['required'], 'String');
       }
@@ -331,6 +340,21 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} paymentItemCode
+   */
+  exports.prototype['paymentItemCode'] = undefined;
+  /**
+   * 
+   * @member {String} paymentItemDescription
+   */
+  exports.prototype['paymentItemDescription'] = undefined;
+  /**
+   * 
+   * @member {String} paymentItemName
+   */
+  exports.prototype['paymentItemName'] = undefined;
   /**
    * When set to **true**, the signer is required to fill out this tab
    * @member {String} required

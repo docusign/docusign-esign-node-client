@@ -61,6 +61,12 @@
       if (data.hasOwnProperty('addAccessCodeToEmail')) {
         obj['addAccessCodeToEmail'] = ApiClient.convertToType(data['addAccessCodeToEmail'], 'String');
       }
+      if (data.hasOwnProperty('agentCanEditEmail')) {
+        obj['agentCanEditEmail'] = ApiClient.convertToType(data['agentCanEditEmail'], 'String');
+      }
+      if (data.hasOwnProperty('agentCanEditName')) {
+        obj['agentCanEditName'] = ApiClient.convertToType(data['agentCanEditName'], 'String');
+      }
       if (data.hasOwnProperty('clientUserId')) {
         obj['clientUserId'] = ApiClient.convertToType(data['clientUserId'], 'String');
       }
@@ -195,6 +201,16 @@
    * @member {String} addAccessCodeToEmail
    */
   exports.prototype['addAccessCodeToEmail'] = undefined;
+  /**
+   * 
+   * @member {String} agentCanEditEmail
+   */
+  exports.prototype['agentCanEditEmail'] = undefined;
+  /**
+   * 
+   * @member {String} agentCanEditName
+   */
+  exports.prototype['agentCanEditName'] = undefined;
   /**
    * Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
    * @member {String} clientUserId

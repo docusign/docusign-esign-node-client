@@ -2,6 +2,20 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v4.1.0] - eSignature API v18.3.00 - 9/13/2018
+### Changed
+- The `getOAuthBasePath()` method is now an accessor function for the new `oAuthBasePath` property, rather than being derived from `basePath`.
+- Updated the swagger spec to version 18.3.00.00
+### Added
+-	Created a new `ApiClient` property, `oAuthBasePath`. This property is retrieved using `getOAuthBasePath()` and set by **setOAuthBasePath()**. DCM-2834
+-	Created a new `docusign.ApiClient.OAuth.BasePath` collection that holds base path data for the following environments: `STAGE, DEMO, PRODUCTION`.
+-	Created a new `docusign.ApiClient.RestApi.BasePath` collection that holds rest API base paths for the following environments: `STAGE, DEMO, PRODUCTION`.	These recorded path values can be accessed using an instantiated `docusign.apiClient` object.
+-	Added an `opts` parameter that allows you to specify parameter values when instantiating an `apiClient`. The `opts` parameter currently supports passing in `basePath` and `oAuthBasePath` values. If not set during instantiation of an `apiClient`, they default to their production values.
+- An	`Organization` value has been added to the account model. DCM-2710
+### Deprecated
+- The `configureJWTAuthorizationFlow` method is now deprecated. Please use `requestJWTUserToken` instead, which takes the private key as byte array or a Stream. DCM-2765
+
+
 ## [v4.0.2] - eSignature API v18.1.02 - 7/3/2018
 ### Changed
 - All SDK methods have been updated such that the `opts` parameter may now contain the callback, making the other opts parameters optional, and it has been renamed `optsOrCallback`. 

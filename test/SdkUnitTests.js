@@ -1,65 +1,122 @@
 var docusign = require('../src/index');
+var oAuth = docusign.ApiClient.OAuth;
+var restApi = docusign.ApiClient.RestApi;
 var config = require('../test-config.json');
-
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
 
-var UserName = config.email;
-var IntegratorKey = config.integratorKey;
-var IntegratorKeyAuthCode = config.integratorKeyAuthCode;
+var userName = config.email;
+var integratorKey = config.integratorKey;
+var integratorKeyAuthCode = config.integratorKeyAuthCode;
 // var IntegratorKeyImplicit = config.integratorKeyImplicit;
-// var ClientSecret = config.clientSecret;
-var TemplateId = config.templateId;
+// var ClientSecret = config.clientSecr
+var templateId = config.templateId;
 
 // for production environment update to "www.docusign.net/restapi"
-var BaseUrl = 'https://demo.docusign.net/restapi';
+var basePath = restApi.BasePath.DEMO;
+var oAuthBasePath = oAuth.BasePath.DEMO;
+
 var SignTest1File = 'docs/SignTest1.pdf';
 var accountId = '';
 var envelopeId = '';
-var UserId = config.userId;
-var OAuthBaseUrl = 'account-d.docusign.com';
+var userId = config.userId;
 var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
+var expiresIn = 3600;
 
 describe('SDK Unit Tests:', function (done) {
-  var apiClient = new docusign.ApiClient();
+  var apiClient = new docusign.ApiClient({
+    basePath: basePath,
+    oAuthBasePath: oAuthBasePath
+  });
+  var scopes = [
+    oAuth.Scope.IMPERSONATION,
+    oAuth.Scope.SIGNATURE
+  ];
+
   before(function (done) {
-    apiClient.setBasePath(BaseUrl);
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
     // get DocuSign OAuth authorization url:
-    var oauthLoginUrl = apiClient.getJWTUri(IntegratorKey, RedirectURI, OAuthBaseUrl);
+    var oauthLoginUrl = apiClient.getJWTUri(integratorKey, RedirectURI, oAuthBasePath);
     // open DocuSign OAuth authorization url in the browser, login and grant access
     console.log(oauthLoginUrl);
     // END OF NOTE
-
-    // configure the ApiClient to asynchronously get an access to token and store it
-    apiClient.configureJWTAuthorizationFlow(path.resolve(__dirname, privateKeyFilename), OAuthBaseUrl, IntegratorKey, UserId, 3600, function (err, res) {
-      if (!err && res.body && res.body.access_token) {
-        apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
-          if (err) {
-            return done(err);
-          }
-          accountId = userInfo.accounts[0].accountId;
-          var baseUri = userInfo.accounts[0].baseUri;
-          var accountDomain = baseUri.split('/v2');
-          // below code required for production, no effect in demo (same domain)
-          apiClient.setBasePath(accountDomain[0] + '/restapi');
-          console.log('LoginInformation: ' + JSON.stringify(userInfo.accounts));
-
-          done();
-        });
+    var fs = require('fs');
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
+    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, res) {
+      var baseUri,
+        accountDomain;
+      if (err) {
+        return done(err);
       }
+      apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+
+      apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
+        if (err) {
+          return done(err);
+        }
+        accountId = userInfo.accounts[0].accountId;
+        baseUri = userInfo.accounts[0].baseUri;
+        accountDomain = baseUri.split('/v2');
+        apiClient.setBasePath(accountDomain[0] + '/restapi');
+        console.log('LoginInformation: ' + JSON.stringify(userInfo));
+        return done();
+      });
     });
   });
+  it('oAuthBasePAth should update whenever BasePath does and match the environment', function (done) {
+    var apiClient = new docusign.ApiClient({
+      basePath: restApi.BasePath.DEMO
+    });
+    assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.DEMO);
+    assert.notEqual(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
 
+    apiClient.setBasePath(restApi.BasePath.STAGE);
+    assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.STAGE);
+
+    apiClient.setBasePath(restApi.BasePath.PRODUCTION);
+    assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
+
+    apiClient.setBasePath(restApi.BasePath.DEMO);
+    assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.DEMO);
+
+    return done();
+  });
   /**
    *
    * New OAuth Methods Tests Start
    *
    */
+  it('should be able to request a JWT user token', function (done) {
+    var fs = require('fs');
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
+    try {
+      apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, response) {
+        if (err) {
+          return done(err);
+        }
+        assert.ok(response.body.access_token);
+        done();
+      });
+    } catch (err) {
+      return done(err);
+    }
+  });
 
+  it('should be able to request a JWT application token', function (done) {
+    var fs = require('fs');
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
+
+    apiClient.requestJWTApplicationToken(integratorKey, scopes, privateKeyFile, expiresIn, function (err, response) {
+      if (err) {
+        return done(err);
+      }
+      assert.ok(response.body.access_token);
+      done();
+    });
+  });
   it('should be able to log in with authorization code grant', function (done) {
     /*
     var responseType = apiClient.OAuth.ResponseType.CODE; // Here we specify a response type of code, retrieving a single use auth code to be used to request a token
@@ -91,7 +148,7 @@ describe('SDK Unit Tests:', function (done) {
         assert.ok(userInfo.accounts.length > 0);
 
         console.log("UserInfo: " + userInfo);
-        // parse first account's baseUrl
+        // parse first account's basePath
         // below code required for production, no effect in demo (same
         // domain)
         apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
@@ -130,7 +187,7 @@ describe('SDK Unit Tests:', function (done) {
       assert.ok(userInfo.accounts.length > 0);
 
       console.log("UserInfo: " + userInfo);
-      // parse first account's baseUrl
+      // parse first account's basePath
       // below code required for production, no effect in demo (same
       // domain)
       apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
@@ -149,14 +206,13 @@ describe('SDK Unit Tests:', function (done) {
     var formattedScopes = scopes.join(encodeURI(' '));
     var authUri;
     var correctAuthUri;
-
-    authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
     correctAuthUri = 'https://' +
-      OAuthBaseUrl +
+      oAuthBasePath +
       '/oauth/auth' +
       '?response_type=' + responseType +
       '&scope=' + formattedScopes +
-      '&client_id=' + IntegratorKeyAuthCode +
+      '&client_id=' + integratorKeyAuthCode +
       '&redirect_uri=' + encodeURIComponent(RedirectURI) +
       (randomState ? '&state=' + randomState : '');
 
@@ -168,7 +224,7 @@ describe('SDK Unit Tests:', function (done) {
     var responseType = apiClient.OAuth.ResponseType.CODE;
     var scopes = [apiClient.OAuth.Scope.EXTENDED];
     var randomState = '*^.$DGj*)+}Jk';
-    var authUri = apiClient.getAuthorizationUri(IntegratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    var authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
 
     superagent.get(authUri)
       .end(function (err, res) {
@@ -213,7 +269,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = UserName;
+    signer.email = userName;
     signer.name = 'Pat Developer';
     signer.recipientId = '1';
 
@@ -242,6 +298,7 @@ describe('SDK Unit Tests:', function (done) {
     envDef.status = 'sent';
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
+
     envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
@@ -264,13 +321,13 @@ describe('SDK Unit Tests:', function (done) {
     envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // / assign template information including ID and role(s)
-    envDef.templateId = TemplateId;
+    envDef.templateId = templateId;
 
     // create a template role with a valid templateId and roleName and assign signer info
     var tRole = new docusign.TemplateRole();
     tRole.roleName = templateRoleName;
     tRole.name = 'Pat Developer';
-    tRole.email = UserName;
+    tRole.email = userName;
 
     // create a list of template roles and add our newly created role
     var templateRolesList = [];
@@ -325,7 +382,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = UserName;
+    signer.email = userName;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -373,7 +430,7 @@ describe('SDK Unit Tests:', function (done) {
         recipientView.clientUserId = clientUserId;
         recipientView.authenticationMethod = 'email';
         recipientView.userName = name;
-        recipientView.email = UserName;
+        recipientView.email = userName;
         envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, {'recipientViewRequest': recipientView}, function (error, viewUrl, response) {
           if (error) {
             return done(error);
@@ -487,7 +544,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = UserName;
+    signer.email = userName;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -529,7 +586,7 @@ describe('SDK Unit Tests:', function (done) {
 
       if (envelopeSummary) {
         console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-        envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', null, function (err, pdfBytes, response) {
+        envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', function (err, pdfBytes, response) {
           if (err) {
             return done(err);
           }
@@ -553,25 +610,19 @@ describe('SDK Unit Tests:', function (done) {
       }
     });
   });
-
   it('listDocuments', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
-    console.log(JSON.stringify(envelopesApi));
-    envelopesApi.listDocuments(accountId, envelopeId, null, function (error, docsList, response) {
-      console.log('back');
+
+    envelopesApi.listDocuments(accountId, envelopeId, function (error, docsList, response) {
       if (error) {
-        console.log(error);
         return done(error);
       }
-
       if (docsList) {
         assert.equal(envelopeId, docsList.envelopeId);
         console.log('EnvelopeDocumentsResult: ' + JSON.stringify(docsList));
 
         envelopesApi.listDocuments(accountId, envelopeId, function (error, docsListNoOpt, response) {
-          console.log('back');
           if (error) {
-            console.log(error);
             return done(error);
           }
 
@@ -614,7 +665,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = UserName;
+    signer.email = userName;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -725,113 +776,16 @@ describe('SDK Unit Tests:', function (done) {
     });
   });
 
-  it('should listRecipients with list tabs attached', function (done) {
-    var fileBytes = null;
-    try {
-      var fs = require('fs');
-      // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
-    } catch (ex) {
-      // handle error
-      console.log('Exception: ' + ex);
-      return done(ex);
-    }
-    var envDef = new docusign.EnvelopeDefinition();
-    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
-    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
-
-    var doc = new docusign.Document();
-
-    var base64Doc = Buffer.from(fileBytes).toString('base64');
-    doc.documentBase64 = base64Doc;
-    doc.name = '..TestFile.pdf';
-    doc.documentId = '1';
-
-    var docs = [];
-    docs.push(doc);
-    envDef.documents = docs;
-
-    var envelopesApi = new docusign.EnvelopesApi(apiClient);
-    // call the listRecipients() API
-
-    try {
-      // Add a recipient to sign the document
-      var signer = new docusign.Signer();
-      signer.email = UserName;
-      signer.name = 'Pat Developer';
-      signer.recipientId = '1';
-
-      var signHere = new docusign.SignHere();
-      signHere.documentId = '1';
-      signHere.pageNumber = '1';
-      signHere.recipientId = '1';
-      signHere.xPosition = '100';
-      signHere.yPosition = '100';
-
-      var listItem = new docusign.ListItem();
-      listItem.selected = 'true';
-      listItem.name = 'listItemName';
-      listItem.value = 'listItemvalue';
-
-      var list = new docusign.List();
-      list.documentId = '1';
-      list.pageNumber = '1';
-      list.recipientId = '1';
-      list.xPosition = '100';
-      list.yPosition = '100';
-      list.listItems = [];
-      list.listItems.push(listItem);
-
-      var listTabs = [];
-      listTabs.push(list);
-
-      var tabs = new docusign.Tabs();
-      tabs.listTabs = listTabs;
-      signer.tabs = tabs;
-
-      // Above causes issue
-      envDef.recipients = new docusign.Recipients();
-      envDef.recipients.signers = [];
-      envDef.recipients.signers.push(signer);
-
-      envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary) {
-        if (error) {
-          console.log(error);
-          return done(error);
-        }
-
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          envelopeId = envelopeSummary.envelopeId;
-          envelopesApi.listRecipients(accountId, envelopeId, {includeTabs: 'true'}, function (error, recips) {
-            if (error) {
-              console.log('Error: ' + error);
-              return done(error);
-            }
-
-            if (recips) {
-              console.log('Recipients: ' + JSON.stringify(recips));
-              assert.equal(recips.signers[0].tabs.hasOwnProperty('listTabs'), true);
-              done();
-            }
-          });
-        }
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  });
-
   it('getTemplate', function (done) {
     var templatesApi = new docusign.TemplatesApi(apiClient);
-    templatesApi.get(accountId, TemplateId, null, function (error, envelopeTemplate, response) {
+    templatesApi.get(accountId, templateId, null, function (error, envelopeTemplate, response) {
       if (error) {
         return done(error);
       }
 
       if (envelopeTemplate) {
         console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplate));
-        templatesApi.get(accountId, TemplateId, function (error, envelopeTemplateNoOpts, response) {
+        templatesApi.get(accountId, templateId, function (error, envelopeTemplateNoOpts, response) {
           if (error) {
             return done(error);
           }

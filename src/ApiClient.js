@@ -21,11 +21,10 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ApiClient = factory(root.superagent);
+    root.Docusign.ApiClient = factory(root.superagent, opts);
   }
-}(this, function(superagent) {
+}(this, function(superagent, opts) {
   'use strict';
-
   var removeNulls = function(obj) {
     var isArray = obj instanceof Array;
     for (var k in obj) {
@@ -34,6 +33,58 @@
       if (obj[k] instanceof Array && obj[k].length === 0) delete obj[k];
     }
     return obj;
+  };
+
+  var generateAndSignJWTAssertion = function(clientId, scopes, privateKey, oAuthBasePath, expiresIn, userId) {
+    if(typeof expiresIn !== 'number' || expiresIn < 0)
+      throw new Error("Invalid expires in param detected");
+
+    var MILLESECONDS_PER_SECOND = 1000,
+      JWT_SIGNING_ALGO = "RS256",
+      now = Math.floor(Date.now() / MILLESECONDS_PER_SECOND),
+      later = now + expiresIn,
+      jwt = require('jsonwebtoken'),
+      parsedScopes = Array.isArray(scopes) ? scopes.join(' ') : scopes;
+
+    var jwtPayload = {
+      iss: clientId,
+      aud: oAuthBasePath,
+      iat: now,
+      exp: later,
+      scope: parsedScopes,
+    };
+
+    /** optional parameters  **/
+    if(userId) {
+      jwtPayload.sub = userId;
+    }
+    return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
+  };
+
+  var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
+    superagent.post("https://" + oAuthBasePath + "/oauth/token")
+      .timeout(exports.prototype.timeout)
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .send({
+        'assertion': assertion,
+        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+      })
+      .end(callback);
+  };
+  
+  var deriveOAuthBasePathFromRestBasePath = function(basePath) {
+    if (basePath == null) {
+      return exports.prototype.OAuth.BasePath.PRODUCTION;
+    }
+    if (basePath.includes('https://stage')) {
+      return exports.prototype.OAuth.BasePath.STAGE;
+    }
+    if (basePath.includes('https://demo')) {
+      return exports.prototype.OAuth.BasePath.DEMO;
+    }
+    if (basePath.includes('https://docusign')) {
+      return exports.prototype.OAuth.BasePath.PRODUCTION;
+    }
   };
 
   /**
@@ -48,19 +99,35 @@
    * @alias module:ApiClient
    * @class
    */
-  var exports = function() {
+  var exports = function(opts) {
+  var defaults = {
+    basePath: 'https://www.docusign.net/restapi'.replace(/\/+$/, ''),
+    oAuthBasePath: require('./OAuth').BasePath.PRODUCTION,
+  };
+
+  opts = Object.assign({},defaults, opts);
+  opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
+
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
      * @default https://www.docusign.net/restapi
      */
-    this.basePath = 'https://www.docusign.net/restapi'.replace(/\/+$/, '');
+    this.basePath = opts.basePath;
+
+    /**
+ * The base URL against which to resolve every authentication API call's (relative) path.
+ * @type {String}
+ * @default https://www.docusign.net/restapi
+ */
+    this.oAuthBasePath = opts.oAuthBasePath;
 
     /**
      * The authentication methods to be included for all API calls.
      * @type {Array.<String>}
      */
     this.authentications = {
+      'docusignAccessCode': {type: 'oauth2'}
     };
     /**
      * The default HTTP headers to be included for all API calls.
@@ -84,12 +151,34 @@
      */
     this.cache = true;
   };
-  
+
+    /**
+ * Gets the API endpoint base URL.
+ */
+    exports.prototype.getBasePath = function getBasePath() {
+    return this.basePath;
+  };
+
   /**
    * Sets the API endpoint base URL.
    */  
   exports.prototype.setBasePath = function setBasePath(basePath) {
     this.basePath = basePath;
+    this.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(basePath);
+  };
+
+    /**
+ * Gets the authentication server endpoint base URL.
+ */
+    exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
+    return this.oAuthBasePath;
+  };
+
+  /**
+   * Sets the authentication server endpoint base URL.
+   */
+  exports.prototype.setOAuthBasePath = function setOAuthBasePath(oAuthBasePath) {
+    this.oAuthBasePath = oAuthBasePath;
   };
 
   /**
@@ -557,87 +646,6 @@
   };
 
   /**
-   * Helper method to build the OAuth JWT grant uri (used once to get a user consent for impersonation)
-   * @param clientId OAuth2 client ID
-   * @param redirectURI OAuth2 redirect uri
-   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
-   * 			  and account.docusign.com for the production platform)
-   * @returns {string} the OAuth JWT grant uri as a String
-   */
-  exports.prototype.getJWTUri = function(clientId, redirectURI, oAuthBasePath) {
-    return "https://" + oAuthBasePath + "/oauth/auth" + "?" +
-      "response_type=code&" +
-      "client_id=" + encodeURIComponent(clientId) + "&" +
-      "scope=" + encodeURIComponent("signature impersonation") + "&" +
-      "redirect_uri=" + encodeURIComponent(redirectURI);
-  };
-
-  /**
-   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
-   * @param privateKeyFilename the filename of the RSA private key
-   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
-   *   			and account.docusign.com for the production platform)
-   * @param clientId DocuSign OAuth Client Id (AKA Integrator Key)
-   * @param userId DocuSign user Id to be impersonated (This is a UUID)
-   * @param expiresIn in seconds for the token time-to-live
-   * @param callback the callback function.
-   */
-  exports.prototype.configureJWTAuthorizationFlow = function(privateKeyFilename, oAuthBasePath, clientId, userId, expiresIn, callback) {
-    var _this = this;
-    var jwt = require('jsonwebtoken')
-      , fs  = require('fs')
-      , private_key = fs.readFileSync(privateKeyFilename)
-      , now         = Math.floor(Date.now() / 1000)
-      , later       = now + expiresIn;
-
-    var jwt_payload = {
-      iss: clientId,
-      sub: userId,
-      aud: oAuthBasePath,
-      iat: now,
-      exp: later,
-      scope: "signature"
-    };
-
-    var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
-
-    superagent('post', 'https://' + oAuthBasePath + '/oauth/token')
-      .timeout(this.timeout)
-      .set('Content-Type', 'application/x-www-form-urlencoded')
-      .send({
-        'assertion': assertion,
-        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
-      })
-      .end(function(err, res) {
-        if (callback) {
-          if (!err && res.body && res.body.access_token) {
-            _this.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
-          }
-          callback(err, res);
-        }
-      });
-  };
-
-  exports.prototype.getOauthBasePath = function(){
-    return (this.basePath == null || this.basePath.startsWith("https://demo") || this.basePath.startsWith("http://demo")) ?
-      "account-d.docusign.com" : "account.docusign.com";
-  };
-
-  exports.prototype.hasNoInvalidScopes = function(scopes) {
-    var validScopes = require('./oauth/Scope');
-
-    return (
-      Array.isArray(scopes)
-      && scopes.length > 0
-      && scopes.every(function(scope){
-        return Object.keys(validScopes).some(function(key){
-          return validScopes[key] === scope;
-        })
-      })
-    );
-  };
-
-  /**
    * Helper method to configure the OAuth accessCode/implicit flow parameters
    * @param clientId OAuth2 client ID: Identifies the client making the request.
    * Client applications may be scoped to a limited set of system access.
@@ -659,9 +667,8 @@
     if (!responseType) throw new Error('Error responseType is required');
 
     var formattedScopes = scopes.join(encodeURI(' '));
-
     return  "https://" +
-      this.getOauthBasePath() +
+      this.getOAuthBasePath() +
       "/oauth/auth"+
       "?response_type=" + responseType +
       "&scope=" + formattedScopes +
@@ -691,7 +698,7 @@
         "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
       }
 
-    superagent.post("https://" + this.getOauthBasePath() + "/oauth/token")
+    superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
       .send(postData)
       .set(headers)
       .type("application/x-www-form-urlencoded")
@@ -706,6 +713,7 @@
       });
   };
 
+
   /**
    * @param accessToken the bearer token to use to authenticate for this call.
    * @return OAuth UserInfo model
@@ -717,7 +725,7 @@
       "Authorization": "Bearer " + accessToken,
     }
 
-    superagent.get("https://" + this.getOauthBasePath() + "/oauth/userinfo")
+    superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo")
       .set(headers)
       .end(function(err, res){
         var UserInfo;
@@ -725,17 +733,113 @@
           return callback(err, res);
         } else {
           UserInfo = require('./OAuth').UserInfo;
-          return callback(err, UserInfo.constructFromObject(res.body))
+          return callback(err, UserInfo.constructFromObject(res.body));
         }
       });
   };
 
+  /**
+   * Helper method to build the OAuth JWT grant uri (used once to get a user consent for impersonation)
+   * @param clientId OAuth2 client ID
+   * @param redirectURI OAuth2 redirect uri
+   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
+   * 			  and account.docusign.com for the production platform)
+   * @returns {string} the OAuth JWT grant uri as a String
+   */
+  exports.prototype.getJWTUri = function(clientId, redirectURI, oAuthBasePath) {
+    return "https://" + oAuthBasePath + "/oauth/auth" + "?" +
+      "response_type=code&" +
+      "client_id=" + encodeURIComponent(clientId) + "&" +
+      "scope=" + encodeURIComponent("signature impersonation") + "&" +
+      "redirect_uri=" + encodeURIComponent(redirectURI);
+  };
+
+  /**
+   * @deprecated since version 4.1.0
+   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
+   * @param privateKeyFilename the filename of the RSA private key
+   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
+   *   			and account.docusign.com for the production platform)
+   * @param clientId DocuSign OAuth Client Id (AKA Integrator Key)
+   * @param userId DocuSign user Id to be impersonated (This is a UUID)
+   * @param expiresIn in seconds for the token time-to-live
+   * @param callback the callback function.
+   */
+  exports.prototype.configureJWTAuthorizationFlow = function(privateKeyFilename, oAuthBasePath, clientId, userId, expiresIn, callback) {
+    console.warn('configureJWTAuthorizationFlow is a deprecated function! Please use requestJWTUserToken()')
+    var _this = this;
+    var jwt = require('jsonwebtoken')
+      , fs  = require('fs')
+      , private_key = fs.readFileSync(privateKeyFilename)
+      , now         = Math.floor(Date.now() / 1000)
+      , later       = now + expiresIn;
+
+    var jwt_payload = {
+      iss: clientId,
+      sub: userId,
+      aud: oAuthBasePath,
+      iat: now,
+      exp: later,
+      scope: "signature"
+    };
+
+    var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
+
+    superagent('post', 'https://' + this.getOAuthBasePath() + '/oauth/token')
+      .timeout(this.timeout)
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .send({
+        'assertion': assertion,
+        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+      })
+      .end(function(err, res) {
+        if (callback) {
+          if (!err && res.body && res.body.access_token) {
+            _this.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+          }
+          callback(err, res);
+        }
+      });
+  };
+
+  exports.prototype.hasNoInvalidScopes = function(scopes) {
+    var validScopes = require('./oauth/Scope');
+
+    return (
+      Array.isArray(scopes)
+      && scopes.length > 0
+      && scopes.every(function(scope){
+        return Object.keys(validScopes).some(function(key){
+          return validScopes[key] === scope;
+        })
+      })
+    );
+  };
+
+  exports.prototype.requestJWTUserToken = function(clientId, userId, scopes, rsaPrivateKey, expiresIn, callback) {
+    var privateKey = rsaPrivateKey,
+      assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn, userId);
+
+    sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
+  };
+
+  exports.prototype.requestJWTApplicationToken = function(clientId, scopes, rsaPrivateKey, expiresIn, callback) {
+    var privateKey = rsaPrivateKey,
+      assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn);
+
+    sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
+  };
+
   exports.prototype.OAuth = require('./OAuth');
-  /**x
+  exports.prototype.RestApi = require('./RestApi');
+  /**
    * The default API client implementation.
    * @type {module:ApiClient}
    */
-  exports.instance = new exports();
+  exports.instance = new exports(opts);
 
   return exports;
 }));
+
+module.exports.OAuth = require('./OAuth');
+module.exports.RestApi = require('./RestApi');
