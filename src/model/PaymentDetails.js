@@ -76,6 +76,9 @@
       if (data.hasOwnProperty('lineItems')) {
         obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [PaymentLineItem]);
       }
+      if (data.hasOwnProperty('paymentOption')) {
+        obj['paymentOption'] = ApiClient.convertToType(data['paymentOption'], 'String');
+      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
@@ -121,6 +124,11 @@
    * @member {Array.<module:model/PaymentLineItem>} lineItems
    */
   exports.prototype['lineItems'] = undefined;
+  /**
+   * 
+   * @member {String} paymentOption
+   */
+  exports.prototype['paymentOption'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status

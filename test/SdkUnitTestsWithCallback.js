@@ -5,7 +5,6 @@ var config = require('../test-config.json');
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
-var csvStringify = require('csv-stringify');
 
 var userName = config.email;
 var integratorKey = config.integratorKey;
@@ -26,7 +25,7 @@ var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
 
-describe('SDK Unit Tests:', function (done) {
+describe('SDK Unit Tests With Callbacks:', function (done) {
   var apiClient = new docusign.ApiClient({
     basePath: basePath,
     oAuthBasePath: oAuthBasePath
@@ -46,31 +45,26 @@ describe('SDK Unit Tests:', function (done) {
     // END OF NOTE
     var fs = require('fs');
     var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
-    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn)
-      .then(function (res) {
-        var baseUri,
-          accountDomain;
-        apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, res) {
+      var baseUri,
+        accountDomain;
+      if (err) {
+        return done(err);
+      }
+      apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
 
-        console.log(apiClient.getUserInfo(res.body.access_token));
-        apiClient.getUserInfo(res.body.access_token)
-          .then(function (userInfo) {
-            accountId = userInfo.accounts[0].accountId;
-            baseUri = userInfo.accounts[0].baseUri;
-            accountDomain = baseUri.split('/v2');
-            apiClient.setBasePath(accountDomain[0] + '/restapi');
-            console.log('LoginInformation: ' + JSON.stringify(userInfo));
-            done();
-          })
-          .catch(function (error) {
-            if (error) {
-              return done(error);
-            }
-          });
-      })
-      .catch(function (err) {
-        if (err) { return done(err); }
+      apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
+        if (err) {
+          return done(err);
+        }
+        accountId = userInfo.accounts[0].accountId;
+        baseUri = userInfo.accounts[0].baseUri;
+        accountDomain = baseUri.split('/v2');
+        apiClient.setBasePath(accountDomain[0] + '/restapi');
+        console.log('LoginInformation: ' + JSON.stringify(userInfo));
+        return done();
       });
+    });
   });
   it('oAuthBasePAth should update whenever BasePath does and match the environment', function (done) {
     var apiClient = new docusign.ApiClient({
@@ -98,27 +92,30 @@ describe('SDK Unit Tests:', function (done) {
   it('should be able to request a JWT user token', function (done) {
     var fs = require('fs');
     var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
-    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn)
-      .then(function (response) {
+    try {
+      apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, response) {
+        if (err) {
+          return done(err);
+        }
         assert.ok(response.body.access_token);
         done();
-      })
-      .catch(function (err) {
-        return done(err);
       });
+    } catch (err) {
+      return done(err);
+    }
   });
 
   it('should be able to request a JWT application token', function (done) {
     var fs = require('fs');
     var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
 
-    apiClient.requestJWTApplicationToken(integratorKey, scopes, privateKeyFile, expiresIn)
-      .then(function (response) {
-        assert.ok(response.body.access_token);
-        done();
-      }).catch(function (err) {
+    apiClient.requestJWTApplicationToken(integratorKey, scopes, privateKeyFile, expiresIn, function (err, response) {
+      if (err) {
         return done(err);
-      });
+      }
+      assert.ok(response.body.access_token);
+      done();
+    });
   });
   it('should be able to log in with authorization code grant', function (done) {
     /*
@@ -136,38 +133,29 @@ describe('SDK Unit Tests:', function (done) {
     // that code and pass it to token endpoint as shown in the next
     // lines:
     var code = '<once_you_get_the_oauth_code_put_it_here>'
-    apiClient.generateAccessToken(IntegratorKeyAuthCode, ClientSecret, code)
-      .then(function(oAuthToken){
+    apiClient.generateAccessToken(IntegratorKeyAuthCode, ClientSecret, code, function(err, oAuthToken){
+      assert.equal(err, undefined);
+      assert.notEqual(oAuthToken, undefined);
+      assert.notEqual(oAuthToken.accessToken, undefined);
+      assert.ok(oAuthToken.expiresIn > 0);
+
+      console.log(oAuthToken);
+
+      apiClient.getUserInfo(oAuthToken.accessToken, function(err, userInfo){
         assert.equal(err, undefined);
-        assert.notEqual(oAuthToken, undefined);
-        assert.notEqual(oAuthToken.accessToken, undefined);
-        assert.ok(oAuthToken.expiresIn > 0);
+        assert.notEqual(userInfo, undefined);
+        assert.notEqual(userInfo.accounts, undefined);
+        assert.ok(userInfo.accounts.length > 0);
 
-        console.log(oAuthToken);
+        console.log("UserInfo: " + userInfo);
+        // parse first account's basePath
+        // below code required for production, no effect in demo (same
+        // domain)
+        apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
+        done();
 
-        apiClient.getUserInfo(oAuthToken.accessToken)
-          .then(function(userInfo){
-            assert.equal(err, undefined);
-            assert.notEqual(userInfo, undefined);
-            assert.notEqual(userInfo.accounts, undefined);
-            assert.ok(userInfo.accounts.length > 0);
-
-            console.log("UserInfo: " + userInfo);
-            // parse first account's basePath
-            // below code required for production, no effect in demo (same
-            // domain)
-            apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
-            return done(oAuthToken)
-
-          })
-          .catch(function(err){
-            return done(err);
-          });
-      })
-      .catch(function(err){
-        return done(err);
       });
-    */
+    }); */
 
     done(); // You will want to comment this line when uncommenting line 80
   });
@@ -192,25 +180,22 @@ describe('SDK Unit Tests:', function (done) {
     // now that the API client has an OAuth token, let's use it in all
     // DocuSign APIs
 
-   apiClient.getUserInfo(token)
-     .then(function(userInfo){
-       assert.equal(err, undefined);
-       assert.notEqual(userInfo, undefined);
-       assert.notEqual(userInfo.accounts, undefined);
-       assert.ok(userInfo.accounts.length > 0);
+    apiClient.getUserInfo(token, function(err, userInfo){
+      assert.equal(err, undefined);
+      assert.notEqual(userInfo, null);
+      assert.notEqual(userInfo.accounts, null);
+      assert.ok(userInfo.accounts.length > 0);
 
-       console.log("UserInfo: " + userInfo);
-       // parse first account's basePath
-       // below code required for production, no effect in demo (same
-       // domain)
-       apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
-       return done(userInfo)
+      console.log("UserInfo: " + userInfo);
+      // parse first account's basePath
+      // below code required for production, no effect in demo (same
+      // domain)
+      apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
+      done();
 
-     })
-     .catch(function(err){
-       return done(err);
-     });
+    });
     */
+
     done(); // You will want to comment this line when uncommenting line 118
   });
 
@@ -314,106 +299,19 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
-      .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          envelopeId = envelopeSummary.envelopeId;
-          done();
-        }
-      })
-      .catch(function (error) {
-        if (error) { done(error); }
-      });
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+      if (error) {
+        return done(error);
+      }
+
+      if (envelopeSummary) {
+        console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+        envelopeId = envelopeSummary.envelopeId;
+        done();
+      }
+    });
   });
-  it('bulkEnvelope update recipients', function (done) {
-    var bulkEnvelopesApi = new docusign.BulkEnvelopesApi(apiClient);
-    var bulkRecipients = [ {'name': 'test User1', 'email': 'test1@mailinator.com'}, {'name': 'test User2', email: 'test2@mailinator.com'}, {name: 'test User3', email: 'test3@mailinator.com'} ];
-    var fileBytes = null;
-    try {
-      var fs = require('fs');
-      // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
-    } catch (ex) {
-      // handle error
-      console.log('Exception: ' + ex);
-    }
 
-    // create an envelope to be signed
-    var envDef = new docusign.EnvelopeDefinition();
-    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
-    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
-
-    // add a document to the envelope
-    var doc = new docusign.Document();
-    var base64Doc = Buffer.from(fileBytes).toString('base64');
-    doc.documentBase64 = base64Doc;
-    doc.name = 'TestFile.pdf';
-    doc.documentId = '1';
-
-    var docs = [];
-    docs.push(doc);
-    envDef.documents = docs;
-
-    // Add a recipient to sign the document
-    var signer = new docusign.Signer();
-    signer.email = userName;
-    signer.name = 'Pat Developer';
-    signer.recipientId = '1';
-
-    // create a signHere tab somewhere on the document for the signer to sign
-    // default unit of measurement is pixels, can be mms, cms, inches also
-    var signHere = new docusign.SignHere();
-    signHere.documentId = '1';
-    signHere.pageNumber = '1';
-    signHere.recipientId = '1';
-    signHere.xPosition = '100';
-    signHere.yPosition = '100';
-
-    // can have multiple tabs, so need to add to envelope as a single element list
-    var signHereTabs = [];
-    signHereTabs.push(signHere);
-    var tabs = new docusign.Tabs();
-    tabs.signHereTabs = signHereTabs;
-    signer.tabs = tabs;
-
-    // Above causes issue
-    envDef.recipients = new docusign.Recipients();
-    envDef.recipients.signers = [];
-    envDef.recipients.signers.push(signer);
-
-    // send the envelope (otherwise it will be "created" in the Draft folder
-
-    var envelopesApi = new docusign.EnvelopesApi(apiClient);
-
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
-      .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          envelopeId = envelopeSummary.envelopeId;
-
-          csvStringify(bulkRecipients, {header: true}, function (err, bulkRecipientsRequest) {
-            if (err) {
-              return done(err);
-            }
-            bulkEnvelopesApi.updateRecipients(accountId, envelopeId, '1', { bulkRecipientsRequest: bulkRecipientsRequest })
-              .then(function (data) {
-                assert.equal(data.bulkRecipientsCount, bulkRecipients.length);
-                done();
-              })
-              .catch(function (err) {
-                console.log(err);
-                done(err);
-              });
-          });
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
-  });
   it('requestSignatureFromTemplate', function (done) {
     var templateRoleName = 'Needs to sign';
 
@@ -443,18 +341,16 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
-      .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          done();
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+      if (error) {
+        return done(error);
+      }
+
+      if (envelopeSummary) {
+        console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+        done();
+      }
+    });
   });
 
   it('embeddedSigning', function (done) {
@@ -521,36 +417,32 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
-      .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          var returnUrl = 'http://www.docusign.com/developer-center';
-          var recipientView = new docusign.RecipientViewRequest();
-          recipientView.returnUrl = returnUrl;
-          recipientView.clientUserId = clientUserId;
-          recipientView.authenticationMethod = 'email';
-          recipientView.userName = name;
-          recipientView.email = userName;
-          envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, {'recipientViewRequest': recipientView})
-            .then(function (viewUrl) {
-              if (viewUrl) {
-                console.log('ViewUrl is ' + JSON.stringify(viewUrl));
-                done();
-              }
-            })
-            .catch(function (error) {
-              if (error) {
-                return done(error);
-              }
-            });
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+      if (error) {
+        return done(error);
+      }
+
+      if (envelopeSummary) {
+        console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+        var returnUrl = 'http://www.docusign.com/developer-center';
+        var recipientView = new docusign.RecipientViewRequest();
+        recipientView.returnUrl = returnUrl;
+        recipientView.clientUserId = clientUserId;
+        recipientView.authenticationMethod = 'email';
+        recipientView.userName = name;
+        recipientView.email = userName;
+        envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, {'recipientViewRequest': recipientView}, function (error, viewUrl, response) {
+          if (error) {
+            return done(error);
+          }
+
+          if (viewUrl) {
+            console.log('ViewUrl is ' + JSON.stringify(viewUrl));
+            done();
+          }
+        });
+      }
+    });
   });
 
   it('createTemplate', function (done) {
@@ -611,18 +503,16 @@ describe('SDK Unit Tests:', function (done) {
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, {'envelopeTemplate': templateDef})
-      .then(function (templateSummary) {
-        if (templateSummary) {
-          console.log('TemplateSummary: ' + JSON.stringify(templateSummary));
-          done();
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
+    templatesApi.createTemplate(accountId, {'envelopeTemplate': templateDef}, function (error, templateSummary, response) {
+      if (error) {
+        return done(error);
+      }
+
+      if (templateSummary) {
+        console.log('TemplateSummary: ' + JSON.stringify(templateSummary));
+        done();
+      }
+    });
   });
 
   it('downLoadEnvelopeDocuments', function (done) {
@@ -689,99 +579,63 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
-      .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined')
-            .then(function (pdfBytes) {
-              if (pdfBytes) {
-                try {
-                  var fs = require('fs');
-                  // download the document pdf
-                  var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
-                  var tempFile = path.resolve(__dirname, filename);
-                  fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
-                    if (err) console.log('Error: ' + err);
-                  });
-                  console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
-                  done();
-                } catch (ex) {
-                  console.log('Exception: ' + ex);
-                }
-              }
-            })
-            .catch(function (error) {
-              if (error) {
-                return done(error);
-              }
-            });
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+      if (error) {
+        return done(error);
+      }
+
+      if (envelopeSummary) {
+        console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+        envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', function (err, pdfBytes, response) {
+          if (err) {
+            return done(err);
+          }
+
+          if (pdfBytes) {
+            try {
+              var fs = require('fs');
+              // download the document pdf
+              var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+              var tempFile = path.resolve(__dirname, filename);
+              fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
+                if (err) console.log('Error: ' + err);
+              });
+              console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
+              done();
+            } catch (ex) {
+              console.log('Exception: ' + ex);
+            }
+          }
+        });
+      }
+    });
   });
   it('listDocuments', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.listDocuments(accountId, envelopeId)
-      .then(function (docsList) {
-        if (docsList) {
-          assert.equal(envelopeId, docsList.envelopeId);
-          console.log('EnvelopeDocumentsResult: ' + JSON.stringify(docsList));
+    envelopesApi.listDocuments(accountId, envelopeId, function (error, docsList, response) {
+      if (error) {
+        return done(error);
+      }
+      if (docsList) {
+        assert.equal(envelopeId, docsList.envelopeId);
+        console.log('EnvelopeDocumentsResult: ' + JSON.stringify(docsList));
 
-          envelopesApi.listDocuments(accountId, envelopeId)
-            .then(function (docsListNoOpt) {
-              if (docsListNoOpt) {
-                assert.equal(envelopeId, docsListNoOpt.envelopeId);
-                assert.equal(JSON.stringify(docsList), JSON.stringify(docsListNoOpt));
-                return done();
-              }
-            })
-            .catch(function (error) {
-              if (error) {
-                return done(error);
-              }
-            });
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
+        envelopesApi.listDocuments(accountId, envelopeId, function (error, docsListNoOpt, response) {
+          if (error) {
+            return done(error);
+          }
+
+          if (docsListNoOpt) {
+            assert.equal(envelopeId, docsListNoOpt.envelopeId);
+            assert.equal(JSON.stringify(docsList), JSON.stringify(docsListNoOpt));
+            done();
+          }
+        });
+      }
+    });
   });
-  it('listStatusBody', function (done) {
-    var envelopesApi = new docusign.EnvelopesApi(apiClient);
-    var envelopeIdsRequest = new docusign.EnvelopeIdsRequest();
-    envelopeIdsRequest.envelopeIds = [envelopeId];
-    envelopesApi.listStatus(accountId, { envelopeIdsRequest: envelopeIdsRequest, envelopeIds: 'request_body' })
-      .then(function (data) {
-        assert.notEqual(data.envelopes, undefined);
-        assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
-        assert.notEqual(data.envelopes[0].statusChangedDateTime, undefined);
-        done();
-      })
-      .catch(function (error) {
-        return done(error);
-      });
-  });
-  it('listStatusQuery', function (done) {
-    var envelopesApi = new docusign.EnvelopesApi(apiClient);
-    envelopesApi.listStatusChanges(accountId, { envelopeIds: envelopeId })
-      .then(function (data) {
-        assert.notEqual(data.envelopes, undefined);
-        assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
-        assert.notEqual(data.envelopes[0].statusChangedDateTime, undefined);
-        done();
-      })
-      .catch(function (error) {
-        return done(error);
-      });
-  });
+
   it('getDiagnosticLogs', function (done) {
     var fileBytes = null;
     try {
@@ -848,116 +702,101 @@ describe('SDK Unit Tests:', function (done) {
 
     var diagSettings = new docusign.DiagnosticsSettingsInformation();
     diagSettings.apiRequestLogging = 'true';
-    diagApi.updateRequestLogSettings({'diagnosticsSettingsInformation': diagSettings})
-      .then(function (diagnosticsSettingsInformation) {
-        if (diagnosticsSettingsInformation) {
-          console.log('DiagnosticsSettingsInformation: ' + JSON.stringify(diagnosticsSettingsInformation));
+    diagApi.updateRequestLogSettings({'diagnosticsSettingsInformation': diagSettings}, function (error, diagnosticsSettingsInformation, response) {
+      if (error) {
+        return done(error);
+      }
 
-          var envelopesApi = new docusign.EnvelopesApi(apiClient);
+      if (diagnosticsSettingsInformation) {
+        console.log('DiagnosticsSettingsInformation: ' + JSON.stringify(diagnosticsSettingsInformation));
 
-          envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
-            .then(function (envelopeSummary) {
-              if (envelopeSummary) {
-                console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-                envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined')
-                  .then(function (pdfBytes) {
-                    if (pdfBytes) {
-                      try {
-                        var fs = require('fs');
-                        // download the document pdf
-                        var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
-                        var tempFile = path.resolve(__dirname, filename);
-                        fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
-                          if (err) console.log('Error: ' + err);
-                        });
-                        console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
-                      } catch (ex) {
-                        console.log('Exception: ' + ex);
-                      }
-                      diagApi.listRequestLogs()
-                        .then(function (logsList) {
-                          if (logsList) {
-                            var requestLogId = logsList.apiRequestLogs[0].requestLogId;
-                            console.log(requestLogId);
-                            diagApi.getRequestLog(requestLogId)
-                              .then(function (diagBytes) {
-                                if (diagBytes) {
-                                  try {
-                                    var fs = require('fs');
-                                    // download the document pdf
-                                    var filename = requestLogId + '.txt';
-                                    var tempFile = path.resolve(__dirname, filename);
-                                    fs.writeFile(tempFile, diagBytes, function (err) {
-                                      if (err) console.log('Error: ' + err);
-                                    });
-                                    console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
-                                    done();
-                                  } catch (ex) {
-                                    console.log('Exception: ' + ex);
-                                    done(ex);
-                                  }
-                                }
-                              })
-                              .catch(function (error) {
-                                if (error) {
-                                  return done(error);
-                                }
-                              });
-                          }
-                        })
-                        .catch(function (error) {
-                          if (error) {
-                            return done(error);
-                          }
-                        });
-                    }
-                  })
-                  .catch(function (error) {
-                    if (error) {
-                      return done(error);
-                    }
-                  });
-              }
-            })
-            .catch(function (error) {
+        var envelopesApi = new docusign.EnvelopesApi(apiClient);
+
+        envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+          if (error) {
+            return done(error);
+          }
+
+          if (envelopeSummary) {
+            console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+            envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', null, function (error, pdfBytes, response) {
               if (error) {
                 return done(error);
               }
+
+              if (pdfBytes) {
+                try {
+                  var fs = require('fs');
+                  // download the document pdf
+                  var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+                  var tempFile = path.resolve(__dirname, filename);
+                  fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
+                    if (err) console.log('Error: ' + err);
+                  });
+                  console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
+                } catch (ex) {
+                  console.log('Exception: ' + ex);
+                }
+                diagApi.listRequestLogs(null, function (error, logsList, response) {
+                  if (error) {
+                    return done(error);
+                  }
+
+                  if (logsList) {
+                    var requestLogId = logsList.apiRequestLogs[0].requestLogId;
+                    console.log(requestLogId);
+                    diagApi.getRequestLog(requestLogId, function (error, diagBytes, response) {
+                      if (error) {
+                        return done(error);
+                      }
+
+                      if (diagBytes) {
+                        try {
+                          var fs = require('fs');
+                          // download the document pdf
+                          var filename = requestLogId + '.txt';
+                          var tempFile = path.resolve(__dirname, filename);
+                          fs.writeFile(tempFile, diagBytes, function (err) {
+                            if (err) console.log('Error: ' + err);
+                          });
+                          console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
+                          done();
+                        } catch (ex) {
+                          console.log('Exception: ' + ex);
+                        }
+                      }
+                    });
+                  }
+                });
+              }
             });
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
+          }
+        });
+      }
+    });
   });
 
   it('getTemplate', function (done) {
     var templatesApi = new docusign.TemplatesApi(apiClient);
-    templatesApi.get(accountId, templateId)
-      .then(function (envelopeTemplate) {
-        if (envelopeTemplate) {
-          console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplate));
-          templatesApi.get(accountId, templateId)
-            .then(function (envelopeTemplateNoOpts) {
-              if (envelopeTemplateNoOpts) {
-                console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplateNoOpts));
-                assert.equal(envelopeTemplateNoOpts.envelopeTemplate);
-                done();
-              }
-            })
-            .catch(function (error) {
-              if (error) {
-                return done(error);
-              }
-            });
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
+    templatesApi.get(accountId, templateId, null, function (error, envelopeTemplate, response) {
+      if (error) {
+        return done(error);
+      }
+
+      if (envelopeTemplate) {
+        console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplate));
+        templatesApi.get(accountId, templateId, function (error, envelopeTemplateNoOpts, response) {
+          if (error) {
+            return done(error);
+          }
+
+          if (envelopeTemplateNoOpts) {
+            console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplateNoOpts));
+            assert.equal(envelopeTemplateNoOpts.envelopeTemplate);
+            done();
+          }
+        });
+      }
+    });
   });
 });

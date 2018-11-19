@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the deleteRecipients operation.
+     * (Optional)Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~deleteRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsUpdateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -121,11 +121,11 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * Callback function to receive the result of the get operation.
+     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkEnvelopeStatus} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -194,11 +194,11 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * Callback function to receive the result of the getRecipients operation.
+     * (Optional)Callback function to receive the result of the getRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~getRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -272,11 +272,11 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * Callback function to receive the result of the list operation.
+     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkEnvelopesResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -340,11 +340,11 @@ The response returns information about the envelopes sent with bulk recipient ba
     };
 
     /**
-     * Callback function to receive the result of the updateRecipients operation.
+     * (Optional)Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~updateRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsSummaryResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -405,7 +405,7 @@ The REST API does not support modifying individual rows or values in the bulk re
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['text/csv'];
       var accepts = ['application/json'];
       var returnType = BulkRecipientsSummaryResponse;
 

@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the deleteSocialLogin operation.
+     * (Optional)Callback function to receive the result of the deleteSocialLogin operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~deleteSocialLoginCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -120,11 +120,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getOAuthToken operation.
+     * (Optional)Callback function to receive the result of the getOAuthToken operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~getOAuthTokenCallback
      * @param {String} error Error message, if any.
      * @param {module:model/OauthAccess} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -165,11 +165,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listSocialLogins operation.
+     * (Optional)Callback function to receive the result of the listSocialLogins operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~listSocialLoginsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSocialIdResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -224,11 +224,11 @@
     };
 
     /**
-     * Callback function to receive the result of the login operation.
+     * (Optional)Callback function to receive the result of the login operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~loginCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LoginInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -287,11 +287,11 @@ The `baseUrl` property, returned in the response, is used in all future API call
     };
 
     /**
-     * Callback function to receive the result of the revokeOAuthToken operation.
+     * (Optional)Callback function to receive the result of the revokeOAuthToken operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~revokeOAuthTokenCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -331,11 +331,11 @@ The `baseUrl` property, returned in the response, is used in all future API call
     };
 
     /**
-     * Callback function to receive the result of the updatePassword operation.
+     * (Optional)Callback function to receive the result of the updatePassword operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~updatePasswordCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -391,11 +391,11 @@ The `baseUrl` property, returned in the response, is used in all future API call
     };
 
     /**
-     * Callback function to receive the result of the updateSocialLogin operation.
+     * (Optional)Callback function to receive the result of the updateSocialLogin operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~updateSocialLoginCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

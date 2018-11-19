@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
+	define(['Configuration', 'ApiClient', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkRecipientsRequest'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitions'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/ViewUrl'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkRecipientsRequest'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/ViewUrl'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkRecipientsRequest, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitions, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.ViewUrl);
+    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkRecipientsRequest, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.ViewUrl);
   }
-}(this, function(Configuration, ApiClient, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) {
+}(this, function(Configuration, ApiClient, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) {
   'use strict';
 
   /**
@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the createCustomFields operation.
+     * (Optional)Callback function to receive the result of the createCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -121,11 +121,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createDocumentFields operation.
+     * (Optional)Callback function to receive the result of the createDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -196,11 +196,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createEditView operation.
+     * (Optional)Callback function to receive the result of the createEditView operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createEditViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -263,11 +263,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createLock operation.
+     * (Optional)Callback function to receive the result of the createLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -333,11 +333,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createRecipients operation.
+     * (Optional)Callback function to receive the result of the createRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -403,11 +403,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createTabs operation.
+     * (Optional)Callback function to receive the result of the createTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -478,11 +478,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createTemplate operation.
+     * (Optional)Callback function to receive the result of the createTemplate operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTemplateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -569,15 +569,15 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the createTemplateDocumentResponsiveHtmlPreview operation.
+     * (Optional)Callback function to receive the result of the createTemplateDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTemplateDocumentResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
-     * Get Responsive HTML Preview for a document in a template.
+     * Post Responsive HTML Preview for a document in a template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -643,11 +643,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the createTemplateResponsiveHtmlPreview operation.
+     * (Optional)Callback function to receive the result of the createTemplateResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTemplateResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -710,11 +710,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteBulkRecipients operation.
+     * (Optional)Callback function to receive the result of the deleteBulkRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteBulkRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsUpdateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -776,11 +776,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteCustomFields operation.
+     * (Optional)Callback function to receive the result of the deleteCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -844,11 +844,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteDocumentFields operation.
+     * (Optional)Callback function to receive the result of the deleteDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -919,11 +919,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteDocumentPage operation.
+     * (Optional)Callback function to receive the result of the deleteDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1000,11 +1000,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteDocuments operation.
+     * (Optional)Callback function to receive the result of the deleteDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1068,11 +1068,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteGroupShare operation.
+     * (Optional)Callback function to receive the result of the deleteGroupShare operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteGroupShareCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1143,11 +1143,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteLock operation.
+     * (Optional)Callback function to receive the result of the deleteLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1211,11 +1211,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteRecipient operation.
+     * (Optional)Callback function to receive the result of the deleteRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1286,11 +1286,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteRecipients operation.
+     * (Optional)Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1354,11 +1354,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the deleteTabs operation.
+     * (Optional)Callback function to receive the result of the deleteTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1429,11 +1429,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the get operation.
+     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTemplate} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1498,11 +1498,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * Callback function to receive the result of the getDocument operation.
+     * (Optional)Callback function to receive the result of the getDocument operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getDocumentCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1578,11 +1578,11 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
     };
 
     /**
-     * Callback function to receive the result of the getDocumentPageImage operation.
+     * (Optional)Callback function to receive the result of the getDocumentPageImage operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getDocumentPageImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1667,11 +1667,11 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
     };
 
     /**
-     * Callback function to receive the result of the getDocumentTabs operation.
+     * (Optional)Callback function to receive the result of the getDocumentTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getDocumentTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1742,11 +1742,11 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
     };
 
     /**
-     * Callback function to receive the result of the getLock operation.
+     * (Optional)Callback function to receive the result of the getLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1803,11 +1803,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the getNotificationSettings operation.
+     * (Optional)Callback function to receive the result of the getNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1862,11 +1862,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the getPageTabs operation.
+     * (Optional)Callback function to receive the result of the getPageTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getPageTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1934,11 +1934,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the getPages operation.
+     * (Optional)Callback function to receive the result of the getPages operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getPagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PageImages} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2021,11 +2021,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the listBulkRecipients operation.
+     * (Optional)Callback function to receive the result of the listBulkRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listBulkRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2099,11 +2099,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the listCustomFields operation.
+     * (Optional)Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2158,11 +2158,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the listDocumentFields operation.
+     * (Optional)Callback function to receive the result of the listDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2224,11 +2224,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the listDocuments operation.
+     * (Optional)Callback function to receive the result of the listDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2283,11 +2283,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the listRecipients operation.
+     * (Optional)Callback function to receive the result of the listRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2356,11 +2356,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the listTabs operation.
+     * (Optional)Callback function to receive the result of the listTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2434,11 +2434,134 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the listTemplates operation.
+     * (Optional)Callback function to receive the result of the listTemplateDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~listTemplateDocumentResponsiveHtmlPreviewCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {module:api/TemplatesApi~listTemplateDocumentResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.listTemplateDocumentResponsiveHtmlPreview = function(accountId, templateId, documentId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listTemplateDocumentResponsiveHtmlPreview");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling listTemplateDocumentResponsiveHtmlPreview");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling listTemplateDocumentResponsiveHtmlPreview");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the listTemplateResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~listTemplateResponsiveHtmlPreviewCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for the template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~listTemplateResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.listTemplateResponsiveHtmlPreview = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listTemplateResponsiveHtmlPreview");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling listTemplateResponsiveHtmlPreview");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/responsive_html_preview', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the listTemplates operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listTemplatesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTemplateResults} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2528,11 +2651,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the rotateDocumentPage operation.
+     * (Optional)Callback function to receive the result of the rotateDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~rotateDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2609,11 +2732,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the update operation.
+     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateUpdateSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2677,11 +2800,11 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * Callback function to receive the result of the updateBulkRecipients operation.
+     * (Optional)Callback function to receive the result of the updateBulkRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateBulkRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsSummaryResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2754,11 +2877,11 @@ The REST API does not support modifying individual rows or values in the bulk re
     };
 
     /**
-     * Callback function to receive the result of the updateCustomFields operation.
+     * (Optional)Callback function to receive the result of the updateCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2824,11 +2947,11 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateDocument operation.
+     * (Optional)Callback function to receive the result of the updateDocument operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateDocumentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocument} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2903,11 +3026,11 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateDocumentFields operation.
+     * (Optional)Callback function to receive the result of the updateDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2978,11 +3101,11 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateDocuments operation.
+     * (Optional)Callback function to receive the result of the updateDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3050,11 +3173,11 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateGroupShare operation.
+     * (Optional)Callback function to receive the result of the updateGroupShare operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateGroupShareCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3125,11 +3248,11 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateLock operation.
+     * (Optional)Callback function to receive the result of the updateLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3193,11 +3316,11 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateNotificationSettings operation.
+     * (Optional)Callback function to receive the result of the updateNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3261,11 +3384,11 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateRecipients operation.
+     * (Optional)Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/RecipientsUpdateSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3333,11 +3456,11 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
     };
 
     /**
-     * Callback function to receive the result of the updateTabs operation.
+     * (Optional)Callback function to receive the result of the updateTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

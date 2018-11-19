@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProviders', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/ErrorDetails', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/PostTransactionsRequest', 'model/PostTransactionsResponse', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProviders', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/ErrorDetails', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/ErrorDetails'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/PostTransactionsRequest'), require('../model/PostTransactionsResponse'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/ErrorDetails'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.ErrorDetails, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.PostTransactionsRequest, root.Docusign.PostTransactionsResponse, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
+    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.ErrorDetails, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
   }
-}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, ErrorDetails, FileTypeList, NewAccountDefinition, NewAccountSummary, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, PostTransactionsRequest, PostTransactionsResponse, ProvisioningInformation, RecipientNamesResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
+}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, ErrorDetails, FileTypeList, NewAccountDefinition, NewAccountSummary, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
   'use strict';
 
   /**
@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the _delete operation.
+     * (Optional)Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~_deleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -104,11 +104,11 @@
     };
 
     /**
-     * Callback function to receive the result of the create operation.
+     * (Optional)Callback function to receive the result of the create operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NewAccountSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -169,11 +169,11 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
     };
 
     /**
-     * Callback function to receive the result of the createBrand operation.
+     * (Optional)Callback function to receive the result of the createBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createBrandCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -234,11 +234,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the createCustomField operation.
+     * (Optional)Callback function to receive the result of the createCustomField operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createCustomFieldCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -296,71 +296,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the createEMortgageTransaction operation.
-     * @callback module:api/AccountsApi~createEMortgageTransactionCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PostTransactionsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Starts a new eMortgage Transaction
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/PostTransactionsRequest} optsOrCallback.postTransactionsRequest 
-     * @param {module:api/AccountsApi~createEMortgageTransactionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PostTransactionsResponse}
-     */
-    this.createEMortgageTransaction = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['postTransactionsRequest'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling createEMortgageTransaction");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PostTransactionsResponse;
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/eMortgage/transactions', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * Callback function to receive the result of the createPermissionProfile operation.
+     * (Optional)Callback function to receive the result of the createPermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createPermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfile} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -418,11 +358,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the deleteBrand operation.
+     * (Optional)Callback function to receive the result of the deleteBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteBrandCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -475,11 +415,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the deleteBrandLogoByType operation.
+     * (Optional)Callback function to receive the result of the deleteBrandLogoByType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteBrandLogoByTypeCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -539,11 +479,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the deleteBrands operation.
+     * (Optional)Callback function to receive the result of the deleteBrands operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -600,11 +540,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the deleteCaptiveRecipient operation.
+     * (Optional)Callback function to receive the result of the deleteCaptiveRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteCaptiveRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CaptiveRecipientInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -668,11 +608,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the deleteCustomField operation.
+     * (Optional)Callback function to receive the result of the deleteCustomField operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteCustomFieldCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -735,11 +675,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the deleteENoteConfiguration operation.
+     * (Optional)Callback function to receive the result of the deleteENoteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteENoteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -785,11 +725,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the deletePermissionProfile operation.
+     * (Optional)Callback function to receive the result of the deletePermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deletePermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -842,11 +782,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the getAccountIdentityVerification operation.
+     * (Optional)Callback function to receive the result of the getAccountIdentityVerification operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountIdentityVerificationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountIdentityVerificationResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -893,11 +833,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * Callback function to receive the result of the getAccountInformation operation.
+     * (Optional)Callback function to receive the result of the getAccountInformation operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountInformationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -958,11 +898,62 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
-     * Callback function to receive the result of the getAccountTabSettings operation.
+     * (Optional)Callback function to receive the result of the getAccountPasswordRules operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getAccountPasswordRulesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the password rules
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/AccountsApi~getAccountPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountPasswordRules}
+     */
+    this.getAccountPasswordRules = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAccountPasswordRules");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountPasswordRules;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/settings/password_rules', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the getAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountTabSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabAccountSettings} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1009,11 +1000,11 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
-     * Callback function to receive the result of the getAllPaymentGatewayAccounts operation.
+     * (Optional)Callback function to receive the result of the getAllPaymentGatewayAccounts operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAllPaymentGatewayAccountsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaymentGatewayAccountsInfo} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1060,11 +1051,11 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
-     * Callback function to receive the result of the getBillingCharges operation.
+     * (Optional)Callback function to receive the result of the getBillingCharges operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBillingChargesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingChargeResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1124,11 +1115,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getBrand operation.
+     * (Optional)Callback function to receive the result of the getBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Brand} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1194,11 +1185,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getBrandExportFile operation.
+     * (Optional)Callback function to receive the result of the getBrandExportFile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandExportFileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1251,11 +1242,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getBrandLogoByType operation.
+     * (Optional)Callback function to receive the result of the getBrandLogoByType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandLogoByTypeCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1264,6 +1255,7 @@ Privileges required: account administrator
      * @param {String} brandId The unique identifier of a brand.
      * @param {String} logoType One of **Primary**, **Secondary** or **Email**.
      * @param {module:api/AccountsApi~getBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
      */
     this.getBrandLogoByType = function(accountId, brandId, logoType, callback) {
       var postBody = null;
@@ -1304,8 +1296,8 @@ Privileges required: account administrator
 
       var authNames = [];
       var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      var accepts = ['image/png'];
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'GET',
@@ -1315,11 +1307,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getBrandResources operation.
+     * (Optional)Callback function to receive the result of the getBrandResources operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandResourcesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandResourcesList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1373,11 +1365,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getBrandResourcesByContentType operation.
+     * (Optional)Callback function to receive the result of the getBrandResourcesByContentType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandResourcesByContentTypeCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1449,11 +1441,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getConsumerDisclosure operation.
+     * (Optional)Callback function to receive the result of the getConsumerDisclosure operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getConsumerDisclosureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1508,11 +1500,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getConsumerDisclosureDefault operation.
+     * (Optional)Callback function to receive the result of the getConsumerDisclosureDefault operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getConsumerDisclosureDefaultCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1570,11 +1562,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getENoteConfiguration operation.
+     * (Optional)Callback function to receive the result of the getENoteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getENoteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ENoteConfiguration} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1621,70 +1613,19 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getPasswordRules operation.
+     * (Optional)Callback function to receive the result of the getPasswordRules operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getPasswordRulesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get the password rules
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/AccountsApi~getPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AccountPasswordRules}
-     */
-    this.getPasswordRules = function(accountId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getPasswordRules");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountPasswordRules;
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/settings/password_rules', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * Callback function to receive the result of the getPasswordRules_0 operation.
-     * @callback module:api/AccountsApi~getPasswordRules_0Callback
-     * @param {String} error Error message, if any.
      * @param {module:model/UserPasswordRules} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
      * Get membership account password rules
-     * @param {module:api/AccountsApi~getPasswordRules_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/AccountsApi~getPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserPasswordRules}
      */
-    this.getPasswordRules_0 = function(callback) {
+    this.getPasswordRules = function(callback) {
       var postBody = null;
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -1716,11 +1657,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getPermissionProfile operation.
+     * (Optional)Callback function to receive the result of the getPermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getPermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfile} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1784,11 +1725,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getProvisioning operation.
+     * (Optional)Callback function to receive the result of the getProvisioning operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getProvisioningCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ProvisioningInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1829,11 +1770,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getSupportedLanguages operation.
+     * (Optional)Callback function to receive the result of the getSupportedLanguages operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getSupportedLanguagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SupportedLanguages} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1880,11 +1821,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getWatermark operation.
+     * (Optional)Callback function to receive the result of the getWatermark operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getWatermarkCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Watermark} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1931,11 +1872,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getWatermarkPreview operation.
+     * (Optional)Callback function to receive the result of the getWatermarkPreview operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getWatermarkPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Watermark} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1991,11 +1932,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the listBrands operation.
+     * (Optional)Callback function to receive the result of the listBrands operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2055,11 +1996,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the listCustomFields operation.
+     * (Optional)Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2109,11 +2050,11 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * Callback function to receive the result of the listPermissions operation.
+     * (Optional)Callback function to receive the result of the listPermissions operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listPermissionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfileInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2173,11 +2114,11 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
     };
 
     /**
-     * Callback function to receive the result of the listRecipientNamesByEmail operation.
+     * (Optional)Callback function to receive the result of the listRecipientNamesByEmail operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listRecipientNamesByEmailCallback
      * @param {String} error Error message, if any.
      * @param {module:model/RecipientNamesResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2235,11 +2176,11 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
     };
 
     /**
-     * Callback function to receive the result of the listSettings operation.
+     * (Optional)Callback function to receive the result of the listSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSettingsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2287,11 +2228,11 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
     };
 
     /**
-     * Callback function to receive the result of the listSharedAccess operation.
+     * (Optional)Callback function to receive the result of the listSharedAccess operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listSharedAccessCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSharedAccess} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2365,11 +2306,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the listSignatureProviders operation.
+     * (Optional)Callback function to receive the result of the listSignatureProviders operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listSignatureProvidersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSignatureProviders} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2416,11 +2357,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the listUnsupportedFileTypes operation.
+     * (Optional)Callback function to receive the result of the listUnsupportedFileTypes operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listUnsupportedFileTypesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FileTypeList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2468,11 +2409,71 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateAccountTabSettings operation.
+     * (Optional)Callback function to receive the result of the updateAccountPasswordRules operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~updateAccountPasswordRulesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Update the password rules
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules 
+     * @param {module:api/AccountsApi~updateAccountPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountPasswordRules}
+     */
+    this.updateAccountPasswordRules = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountPasswordRules'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateAccountPasswordRules");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountPasswordRules;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/settings/password_rules', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the updateAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateAccountTabSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabAccountSettings} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2528,11 +2529,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateBrand operation.
+     * (Optional)Callback function to receive the result of the updateBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateBrandCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Brand} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2595,11 +2596,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateBrandLogoByType operation.
+     * (Optional)Callback function to receive the result of the updateBrandLogoByType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateBrandLogoByTypeCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2659,11 +2660,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateBrandResourcesByContentType operation.
+     * (Optional)Callback function to receive the result of the updateBrandResourcesByContentType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateBrandResourcesByContentTypeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandResources} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2724,11 +2725,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateConsumerDisclosure operation.
+     * (Optional)Callback function to receive the result of the updateConsumerDisclosure operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateConsumerDisclosureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2793,11 +2794,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateCustomField operation.
+     * (Optional)Callback function to receive the result of the updateCustomField operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateCustomFieldCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2862,11 +2863,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateENoteConfiguration operation.
+     * (Optional)Callback function to receive the result of the updateENoteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateENoteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ENoteConfiguration} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2922,71 +2923,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updatePasswordRules operation.
-     * @callback module:api/AccountsApi~updatePasswordRulesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Update the password rules
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules 
-     * @param {module:api/AccountsApi~updatePasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AccountPasswordRules}
-     */
-    this.updatePasswordRules = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['accountPasswordRules'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updatePasswordRules");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountPasswordRules;
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/settings/password_rules', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * Callback function to receive the result of the updatePermissionProfile operation.
+     * (Optional)Callback function to receive the result of the updatePermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updatePermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfile} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3051,11 +2992,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateSettings operation.
+     * (Optional)Callback function to receive the result of the updateSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateSettingsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3111,11 +3052,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateSharedAccess operation.
+     * (Optional)Callback function to receive the result of the updateSharedAccess operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateSharedAccessCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSharedAccess} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3176,11 +3117,11 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * Callback function to receive the result of the updateWatermark operation.
+     * (Optional)Callback function to receive the result of the updateWatermark operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateWatermarkCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Watermark} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

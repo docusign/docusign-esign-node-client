@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the createProvider operation.
+     * (Optional)Callback function to receive the result of the createProvider operation. If none specified a Promise will be returned.
      * @callback module:api/CloudStorageApi~createProviderCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CloudStorageProviders} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -121,11 +121,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteProvider operation.
+     * (Optional)Callback function to receive the result of the deleteProvider operation. If none specified a Promise will be returned.
      * @callback module:api/CloudStorageApi~deleteProviderCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CloudStorageProviders} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -189,11 +189,11 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
     };
 
     /**
-     * Callback function to receive the result of the deleteProviders operation.
+     * (Optional)Callback function to receive the result of the deleteProviders operation. If none specified a Promise will be returned.
      * @callback module:api/CloudStorageApi~deleteProvidersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CloudStorageProviders} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -257,11 +257,11 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
     };
 
     /**
-     * Callback function to receive the result of the getProvider operation.
+     * (Optional)Callback function to receive the result of the getProvider operation. If none specified a Promise will be returned.
      * @callback module:api/CloudStorageApi~getProviderCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CloudStorageProviders} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -335,11 +335,11 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
     };
 
     /**
-     * Callback function to receive the result of the list operation.
+     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/CloudStorageApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ExternalFolder} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -430,11 +430,11 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
     };
 
     /**
-     * Callback function to receive the result of the listFolders operation.
+     * (Optional)Callback function to receive the result of the listFolders operation. If none specified a Promise will be returned.
      * @callback module:api/CloudStorageApi~listFoldersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ExternalFolder} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -518,11 +518,11 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
     };
 
     /**
-     * Callback function to receive the result of the listProviders operation.
+     * (Optional)Callback function to receive the result of the listProviders operation. If none specified a Promise will be returned.
      * @callback module:api/CloudStorageApi~listProvidersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CloudStorageProviders} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

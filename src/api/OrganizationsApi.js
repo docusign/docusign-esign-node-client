@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the getAccountSettingsExport operation.
+     * (Optional)Callback function to receive the result of the getAccountSettingsExport operation. If none specified a Promise will be returned.
      * @callback module:api/OrganizationsApi~getAccountSettingsExportCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -110,11 +110,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getUserListExport operation.
+     * (Optional)Callback function to receive the result of the getUserListExport operation. If none specified a Promise will be returned.
      * @callback module:api/OrganizationsApi~getUserListExportCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
