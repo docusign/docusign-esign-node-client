@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitions', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopeSummary', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewLinkRequest', 'model/ViewUrl'], factory);
+	define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopeSummary', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewLinkRequest', 'model/ViewUrl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/Attachment'), require('../model/ChunkedUploadRequest'), require('../model/ChunkedUploadResponse'), require('../model/ConsoleViewRequest'), require('../model/ConsumerDisclosure'), require('../model/CorrectViewRequest'), require('../model/CustomFields'), require('../model/CustomFieldsEnvelope'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitions'), require('../model/DocumentTemplateList'), require('../model/DocumentVisibilityList'), require('../model/EmailSettings'), require('../model/Envelope'), require('../model/EnvelopeAttachmentsRequest'), require('../model/EnvelopeAttachmentsResult'), require('../model/EnvelopeAuditEventResponse'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocumentsResult'), require('../model/EnvelopeFormData'), require('../model/EnvelopeIdsRequest'), require('../model/EnvelopeNotificationRequest'), require('../model/EnvelopeSummary'), require('../model/EnvelopeUpdateSummary'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientViewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateDocumentVisibilityList'), require('../model/TemplateInformation'), require('../model/UserSignature'), require('../model/ViewLinkRequest'), require('../model/ViewUrl'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/Attachment'), require('../model/ChunkedUploadRequest'), require('../model/ChunkedUploadResponse'), require('../model/ConsoleViewRequest'), require('../model/ConsumerDisclosure'), require('../model/CorrectViewRequest'), require('../model/CustomFields'), require('../model/CustomFieldsEnvelope'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/DocumentTemplateList'), require('../model/DocumentVisibilityList'), require('../model/EmailSettings'), require('../model/Envelope'), require('../model/EnvelopeAttachmentsRequest'), require('../model/EnvelopeAttachmentsResult'), require('../model/EnvelopeAuditEventResponse'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocumentsResult'), require('../model/EnvelopeFormData'), require('../model/EnvelopeIdsRequest'), require('../model/EnvelopeNotificationRequest'), require('../model/EnvelopeSummary'), require('../model/EnvelopeUpdateSummary'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientViewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateDocumentVisibilityList'), require('../model/TemplateInformation'), require('../model/UserSignature'), require('../model/ViewLinkRequest'), require('../model/ViewUrl'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.ChunkedUploadRequest, root.Docusign.ChunkedUploadResponse, root.Docusign.ConsoleViewRequest, root.Docusign.ConsumerDisclosure, root.Docusign.CorrectViewRequest, root.Docusign.CustomFields, root.Docusign.CustomFieldsEnvelope, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitions, root.Docusign.DocumentTemplateList, root.Docusign.DocumentVisibilityList, root.Docusign.EmailSettings, root.Docusign.Envelope, root.Docusign.EnvelopeAttachmentsRequest, root.Docusign.EnvelopeAttachmentsResult, root.Docusign.EnvelopeAuditEventResponse, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocumentsResult, root.Docusign.EnvelopeFormData, root.Docusign.EnvelopeIdsRequest, root.Docusign.EnvelopeNotificationRequest, root.Docusign.EnvelopeSummary, root.Docusign.EnvelopeUpdateSummary, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateDocumentVisibilityList, root.Docusign.TemplateInformation, root.Docusign.UserSignature, root.Docusign.ViewLinkRequest, root.Docusign.ViewUrl);
+    root.Docusign.EnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.ChunkedUploadRequest, root.Docusign.ChunkedUploadResponse, root.Docusign.ConsoleViewRequest, root.Docusign.ConsumerDisclosure, root.Docusign.CorrectViewRequest, root.Docusign.CustomFields, root.Docusign.CustomFieldsEnvelope, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.DocumentTemplateList, root.Docusign.DocumentVisibilityList, root.Docusign.EmailSettings, root.Docusign.Envelope, root.Docusign.EnvelopeAttachmentsRequest, root.Docusign.EnvelopeAttachmentsResult, root.Docusign.EnvelopeAuditEventResponse, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocumentsResult, root.Docusign.EnvelopeFormData, root.Docusign.EnvelopeIdsRequest, root.Docusign.EnvelopeNotificationRequest, root.Docusign.EnvelopeSummary, root.Docusign.EnvelopeUpdateSummary, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateDocumentVisibilityList, root.Docusign.TemplateInformation, root.Docusign.UserSignature, root.Docusign.ViewLinkRequest, root.Docusign.ViewUrl);
   }
-}(this, function(Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitions, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopeSummary, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewLinkRequest, ViewUrl) {
+}(this, function(Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopeSummary, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewLinkRequest, ViewUrl) {
   'use strict';
 
   /**
@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the applyTemplate operation.
+     * (Optional)Callback function to receive the result of the applyTemplate operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~applyTemplateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentTemplateList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -121,11 +121,11 @@
     };
 
     /**
-     * Callback function to receive the result of the applyTemplateToDocument operation.
+     * (Optional)Callback function to receive the result of the applyTemplateToDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~applyTemplateToDocumentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentTemplateList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -196,11 +196,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createChunkedUpload operation.
+     * (Optional)Callback function to receive the result of the createChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -256,11 +256,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createConsoleView operation.
+     * (Optional)Callback function to receive the result of the createConsoleView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createConsoleViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -317,11 +317,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createCorrectView operation.
+     * (Optional)Callback function to receive the result of the createCorrectView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createCorrectViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -387,11 +387,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the createCustomFields operation.
+     * (Optional)Callback function to receive the result of the createCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -457,11 +457,11 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the createDocumentFields operation.
+     * (Optional)Callback function to receive the result of the createDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -532,11 +532,11 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the createDocumentResponsiveHtmlPreview operation.
+     * (Optional)Callback function to receive the result of the createDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createDocumentResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -606,11 +606,11 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the createEditView operation.
+     * (Optional)Callback function to receive the result of the createEditView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEditViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -678,11 +678,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the createEmailSettings operation.
+     * (Optional)Callback function to receive the result of the createEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -748,11 +748,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the createEnvelope operation.
+     * (Optional)Callback function to receive the result of the createEnvelope operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEnvelopeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -962,7 +962,6 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} optsOrCallback.changeRoutingOrder 
      * @param {String} optsOrCallback.completedDocumentsOnly If set to true then we want to set the sourceEnvelopeId to indicate that this is a\&quot;forward\&quot; envelope action
      * @param {String} optsOrCallback.mergeRolesOnDraft When set to **true**, merges template roles and remove empty recipients when you create an envelope with multiple templates.
-     * @param {String} optsOrCallback.preserveTemplateRecipientids 
      * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
      * @param {module:api/EnvelopesApi~createEnvelopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeSummary}
@@ -996,8 +995,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         'cdse_mode': optsOrCallback['cdseMode'],
         'change_routing_order': optsOrCallback['changeRoutingOrder'],
         'completed_documents_only': optsOrCallback['completedDocumentsOnly'],
-        'merge_roles_on_draft': optsOrCallback['mergeRolesOnDraft'],
-        'preserve_template_recipientids': optsOrCallback['preserveTemplateRecipientids']
+        'merge_roles_on_draft': optsOrCallback['mergeRolesOnDraft']
       };
       var headerParams = {
       };
@@ -1017,11 +1015,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * Callback function to receive the result of the createEnvelopeRecipientSharedView operation.
+     * (Optional)Callback function to receive the result of the createEnvelopeRecipientSharedView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEnvelopeRecipientSharedViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1084,11 +1082,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * Callback function to receive the result of the createLock operation.
+     * (Optional)Callback function to receive the result of the createLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1154,11 +1152,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * Callback function to receive the result of the createRecipient operation.
+     * (Optional)Callback function to receive the result of the createRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1226,11 +1224,11 @@ For an in process envelope, one that has been sent and has not been completed or
     };
 
     /**
-     * Callback function to receive the result of the createRecipientView operation.
+     * (Optional)Callback function to receive the result of the createRecipientView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createRecipientViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1298,11 +1296,11 @@ An entry is added into the Security Level section of the DocuSign Certificate of
     };
 
     /**
-     * Callback function to receive the result of the createResponsiveHtmlPreview operation.
+     * (Optional)Callback function to receive the result of the createResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1365,11 +1363,11 @@ An entry is added into the Security Level section of the DocuSign Certificate of
     };
 
     /**
-     * Callback function to receive the result of the createSenderView operation.
+     * (Optional)Callback function to receive the result of the createSenderView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createSenderViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1437,11 +1435,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the createTabs operation.
+     * (Optional)Callback function to receive the result of the createTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1512,11 +1510,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the createViewLink operation.
+     * (Optional)Callback function to receive the result of the createViewLink operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createViewLinkCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1580,11 +1578,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteAttachments operation.
+     * (Optional)Callback function to receive the result of the deleteAttachments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteAttachmentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1647,11 +1645,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteChunkedUpload operation.
+     * (Optional)Callback function to receive the result of the deleteChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1705,11 +1703,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteCustomFields operation.
+     * (Optional)Callback function to receive the result of the deleteCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1773,11 +1771,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteDocumentFields operation.
+     * (Optional)Callback function to receive the result of the deleteDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1848,11 +1846,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteDocumentPage operation.
+     * (Optional)Callback function to receive the result of the deleteDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1920,11 +1918,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteDocuments operation.
+     * (Optional)Callback function to receive the result of the deleteDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocumentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1988,11 +1986,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteEmailSettings operation.
+     * (Optional)Callback function to receive the result of the deleteEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2047,11 +2045,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteLock operation.
+     * (Optional)Callback function to receive the result of the deleteLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2106,11 +2104,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteRecipient operation.
+     * (Optional)Callback function to receive the result of the deleteRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2172,11 +2170,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * Callback function to receive the result of the deleteRecipients operation.
+     * (Optional)Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2242,11 +2240,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the deleteTabs operation.
+     * (Optional)Callback function to receive the result of the deleteTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2317,11 +2315,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the deleteTemplatesFromDocument operation.
+     * (Optional)Callback function to receive the result of the deleteTemplatesFromDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteTemplatesFromDocumentCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2389,11 +2387,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the deleteViewLink operation.
+     * (Optional)Callback function to receive the result of the deleteViewLink operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteViewLinkCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2447,11 +2445,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the getAttachment operation.
+     * (Optional)Callback function to receive the result of the getAttachment operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getAttachmentCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2511,11 +2509,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the getAttachments operation.
+     * (Optional)Callback function to receive the result of the getAttachments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getAttachmentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2569,11 +2567,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the getChunkedUpload operation.
+     * (Optional)Callback function to receive the result of the getChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2637,11 +2635,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the getCommentsTranscript operation.
+     * (Optional)Callback function to receive the result of the getCommentsTranscript operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getCommentsTranscriptCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2705,11 +2703,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the getConsumerDisclosure operation.
+     * (Optional)Callback function to receive the result of the getConsumerDisclosure operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getConsumerDisclosureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2788,11 +2786,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the getConsumerDisclosureDefault operation.
+     * (Optional)Callback function to receive the result of the getConsumerDisclosureDefault operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getConsumerDisclosureDefaultCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2864,11 +2862,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * Callback function to receive the result of the getDocument operation.
+     * (Optional)Callback function to receive the result of the getDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getDocumentCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2957,11 +2955,11 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * Callback function to receive the result of the getDocumentPageImage operation.
+     * (Optional)Callback function to receive the result of the getDocumentPageImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getDocumentPageImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3046,11 +3044,11 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * Callback function to receive the result of the getDocumentTabs operation.
+     * (Optional)Callback function to receive the result of the getDocumentTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getDocumentTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3121,11 +3119,11 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * Callback function to receive the result of the getEmailSettings operation.
+     * (Optional)Callback function to receive the result of the getEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3180,11 +3178,11 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * Callback function to receive the result of the getEnvelope operation.
+     * (Optional)Callback function to receive the result of the getEnvelope operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEnvelopeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Envelope} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3251,11 +3249,134 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * Callback function to receive the result of the getFormData operation.
+     * (Optional)Callback function to receive the result of the getEnvelopeDocumentHtmlDefinitions operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getEnvelopeDocumentHtmlDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for a given document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {module:api/EnvelopesApi~getEnvelopeDocumentHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.getEnvelopeDocumentHtmlDefinitions = function(accountId, envelopeId, documentId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeDocumentHtmlDefinitions");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeDocumentHtmlDefinitions");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getEnvelopeDocumentHtmlDefinitions");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/html_definitions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the getEnvelopeHtmlDefinitions operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getEnvelopeHtmlDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for the envelope.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {module:api/EnvelopesApi~getEnvelopeHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.getEnvelopeHtmlDefinitions = function(accountId, envelopeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeHtmlDefinitions");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeHtmlDefinitions");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/html_definitions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the getFormData operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getFormDataCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeFormData} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3309,11 +3430,11 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * Callback function to receive the result of the getLock operation.
+     * (Optional)Callback function to receive the result of the getLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3370,11 +3491,11 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * Callback function to receive the result of the getNotificationSettings operation.
+     * (Optional)Callback function to receive the result of the getNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3429,11 +3550,11 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * Callback function to receive the result of the getPageTabs operation.
+     * (Optional)Callback function to receive the result of the getPageTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getPageTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3501,11 +3622,11 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * Callback function to receive the result of the getPages operation.
+     * (Optional)Callback function to receive the result of the getPages operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getPagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PageImages} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3588,11 +3709,11 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * Callback function to receive the result of the getRecipientDocumentVisibility operation.
+     * (Optional)Callback function to receive the result of the getRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3653,11 +3774,11 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * Callback function to receive the result of the getRecipientInitialsImage operation.
+     * (Optional)Callback function to receive the result of the getRecipientInitialsImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientInitialsImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3737,11 +3858,11 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
     };
 
     /**
-     * Callback function to receive the result of the getRecipientSignature operation.
+     * (Optional)Callback function to receive the result of the getRecipientSignature operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientSignatureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3803,11 +3924,11 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
     };
 
     /**
-     * Callback function to receive the result of the getRecipientSignatureImage operation.
+     * (Optional)Callback function to receive the result of the getRecipientSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3887,11 +4008,11 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
-     * Callback function to receive the result of the getTemplateRecipientDocumentVisibility operation.
+     * (Optional)Callback function to receive the result of the getTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getTemplateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -3952,11 +4073,11 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
-     * Callback function to receive the result of the listAuditEvents operation.
+     * (Optional)Callback function to receive the result of the listAuditEvents operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listAuditEventsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAuditEventResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4011,11 +4132,11 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
-     * Callback function to receive the result of the listCustomFields operation.
+     * (Optional)Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFieldsEnvelope} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4072,11 +4193,11 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * Callback function to receive the result of the listDocumentFields operation.
+     * (Optional)Callback function to receive the result of the listDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4138,11 +4259,76 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * Callback function to receive the result of the listDocuments operation.
+     * (Optional)Callback function to receive the result of the listDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~listDocumentResponsiveHtmlPreviewCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for a given document.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {module:api/EnvelopesApi~listDocumentResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.listDocumentResponsiveHtmlPreview = function(accountId, envelopeId, documentId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listDocumentResponsiveHtmlPreview");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling listDocumentResponsiveHtmlPreview");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling listDocumentResponsiveHtmlPreview");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html_preview', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the listDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocumentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4197,11 +4383,11 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * Callback function to receive the result of the listRecipients operation.
+     * (Optional)Callback function to receive the result of the listRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4272,11 +4458,69 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
     };
 
     /**
-     * Callback function to receive the result of the listStatus operation.
+     * (Optional)Callback function to receive the result of the listResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~listResponsiveHtmlPreviewCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for the envelope.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {module:api/EnvelopesApi~listResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.listResponsiveHtmlPreview = function(accountId, envelopeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listResponsiveHtmlPreview");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling listResponsiveHtmlPreview");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/responsive_html_preview', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the listStatus operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listStatusCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopesInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4284,10 +4528,18 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
      * Retrieves the envelope status for the specified envelopes.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.acStatus 
+     * @param {String} optsOrCallback.block 
+     * @param {String} optsOrCallback.count 
      * @param {String} optsOrCallback.email 
+     * @param {String} optsOrCallback.envelopeIds 
      * @param {String} optsOrCallback.fromDate 
+     * @param {String} optsOrCallback.fromToStatus 
      * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.status 
      * @param {String} optsOrCallback.toDate 
+     * @param {String} optsOrCallback.transactionIds 
+     * @param {String} optsOrCallback.userName 
      * @param {module:model/EnvelopeIdsRequest} optsOrCallback.envelopeIdsRequest 
      * @param {module:api/EnvelopesApi~listStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopesInformation}
@@ -4318,10 +4570,18 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
         'accountId': accountId
       };
       var queryParams = {
+        'ac_status': optsOrCallback['acStatus'],
+        'block': optsOrCallback['block'],
+        'count': optsOrCallback['count'],
         'email': optsOrCallback['email'],
+        'envelope_ids': optsOrCallback['envelopeIds'],
         'from_date': optsOrCallback['fromDate'],
+        'from_to_status': optsOrCallback['fromToStatus'],
         'start_position': optsOrCallback['startPosition'],
-        'to_date': optsOrCallback['toDate']
+        'status': optsOrCallback['status'],
+        'to_date': optsOrCallback['toDate'],
+        'transaction_ids': optsOrCallback['transactionIds'],
+        'user_name': optsOrCallback['userName']
       };
       var headerParams = {
       };
@@ -4341,11 +4601,11 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
     };
 
     /**
-     * Callback function to receive the result of the listStatusChanges operation.
+     * (Optional)Callback function to receive the result of the listStatusChanges operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listStatusChangesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopesInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4441,11 +4701,11 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * Callback function to receive the result of the listTabs operation.
+     * (Optional)Callback function to receive the result of the listTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4519,11 +4779,11 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * Callback function to receive the result of the listTemplates operation.
+     * (Optional)Callback function to receive the result of the listTemplates operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listTemplatesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4589,11 +4849,11 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * Callback function to receive the result of the listTemplatesForDocument operation.
+     * (Optional)Callback function to receive the result of the listTemplatesForDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listTemplatesForDocumentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4665,11 +4925,11 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * Callback function to receive the result of the putAttachment operation.
+     * (Optional)Callback function to receive the result of the putAttachment operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~putAttachmentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4739,11 +4999,11 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * Callback function to receive the result of the putAttachments operation.
+     * (Optional)Callback function to receive the result of the putAttachments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~putAttachmentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4806,11 +5066,11 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * Callback function to receive the result of the rotateDocumentPage operation.
+     * (Optional)Callback function to receive the result of the rotateDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~rotateDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4887,11 +5147,11 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * Callback function to receive the result of the update operation.
+     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeUpdateSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -4983,11 +5243,11 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     };
 
     /**
-     * Callback function to receive the result of the updateChunkedUpload operation.
+     * (Optional)Callback function to receive the result of the updateChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5051,11 +5311,11 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     };
 
     /**
-     * Callback function to receive the result of the updateChunkedUploadPart operation.
+     * (Optional)Callback function to receive the result of the updateChunkedUploadPart operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateChunkedUploadPartCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5125,11 +5385,11 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     };
 
     /**
-     * Callback function to receive the result of the updateCustomFields operation.
+     * (Optional)Callback function to receive the result of the updateCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5196,11 +5456,11 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateDocument operation.
+     * (Optional)Callback function to receive the result of the updateDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateDocumentCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5271,11 +5531,11 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateDocumentFields operation.
+     * (Optional)Callback function to receive the result of the updateDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5346,11 +5606,11 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateDocuments operation.
+     * (Optional)Callback function to receive the result of the updateDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocumentsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5418,11 +5678,11 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * Callback function to receive the result of the updateEmailSettings operation.
+     * (Optional)Callback function to receive the result of the updateEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5488,11 +5748,11 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * Callback function to receive the result of the updateLock operation.
+     * (Optional)Callback function to receive the result of the updateLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5556,11 +5816,11 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * Callback function to receive the result of the updateNotificationSettings operation.
+     * (Optional)Callback function to receive the result of the updateNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5623,11 +5883,11 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * Callback function to receive the result of the updateRecipientDocumentVisibility operation.
+     * (Optional)Callback function to receive the result of the updateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5697,11 +5957,11 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * Callback function to receive the result of the updateRecipientInitialsImage operation.
+     * (Optional)Callback function to receive the result of the updateRecipientInitialsImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientInitialsImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5764,11 +6024,11 @@ For the Authentication/Authorization for this call, the credentials must match t
     };
 
     /**
-     * Callback function to receive the result of the updateRecipientSignatureImage operation.
+     * (Optional)Callback function to receive the result of the updateRecipientSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5831,11 +6091,11 @@ For the Authentication/Authorization for this call, the credentials must match t
     };
 
     /**
-     * Callback function to receive the result of the updateRecipients operation.
+     * (Optional)Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/RecipientsUpdateSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5909,11 +6169,11 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * Callback function to receive the result of the updateRecipientsDocumentVisibility operation.
+     * (Optional)Callback function to receive the result of the updateRecipientsDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientsDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -5976,11 +6236,11 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * Callback function to receive the result of the updateTabs operation.
+     * (Optional)Callback function to receive the result of the updateTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -6051,11 +6311,11 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * Callback function to receive the result of the updateTemplateRecipientDocumentVisibility operation.
+     * (Optional)Callback function to receive the result of the updateTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTemplateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentVisibilityList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -6125,11 +6385,11 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * Callback function to receive the result of the updateTemplateRecipientsDocumentVisibility operation.
+     * (Optional)Callback function to receive the result of the updateTemplateRecipientsDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTemplateRecipientsDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentVisibilityList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

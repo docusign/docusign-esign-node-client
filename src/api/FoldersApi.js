@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the list operation.
+     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FoldersResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -121,11 +121,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listItems operation.
+     * (Optional)Callback function to receive the result of the listItems operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~listItemsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FolderItemsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -202,11 +202,11 @@
     };
 
     /**
-     * Callback function to receive the result of the moveEnvelopes operation.
+     * (Optional)Callback function to receive the result of the moveEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~moveEnvelopesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FoldersResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -270,11 +270,11 @@
     };
 
     /**
-     * Callback function to receive the result of the search operation.
+     * (Optional)Callback function to receive the result of the search operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~searchCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FolderItemResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

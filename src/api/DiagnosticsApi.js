@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the deleteRequestLogs operation.
+     * (Optional)Callback function to receive the result of the deleteRequestLogs operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~deleteRequestLogsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -97,11 +97,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getRequestLog operation.
+     * (Optional)Callback function to receive the result of the getRequestLog operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getRequestLogCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -155,11 +155,11 @@ If the Content-Transfer-Encoding header was set to base64, the log is returned a
     };
 
     /**
-     * Callback function to receive the result of the getRequestLogSettings operation.
+     * (Optional)Callback function to receive the result of the getRequestLogSettings operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getRequestLogSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DiagnosticsSettingsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -203,11 +203,11 @@ The response includes the current API request logging setting for the user, alon
     };
 
     /**
-     * Callback function to receive the result of the getResources operation.
+     * (Optional)Callback function to receive the result of the getResources operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getResourcesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ResourceInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -256,11 +256,11 @@ Example: https://demo.docusign.net/restapi/help lists the REST API operations on
     };
 
     /**
-     * Callback function to receive the result of the getService operation.
+     * (Optional)Callback function to receive the result of the getService operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getServiceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ServiceInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -306,11 +306,11 @@ You do not need an integrator key to view the REST API versions and resources.
     };
 
     /**
-     * Callback function to receive the result of the listRequestLogs operation.
+     * (Optional)Callback function to receive the result of the listRequestLogs operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~listRequestLogsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiRequestLogsResult} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -365,11 +365,11 @@ If the Accept header is set to `application/json` or `application/xml`, the resp
     };
 
     /**
-     * Callback function to receive the result of the updateRequestLogSettings operation.
+     * (Optional)Callback function to receive the result of the updateRequestLogSettings operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~updateRequestLogSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DiagnosticsSettingsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

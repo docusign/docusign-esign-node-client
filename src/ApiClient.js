@@ -25,6 +25,7 @@
   }
 }(this, function(superagent, opts) {
   'use strict';
+
   var removeNulls = function(obj) {
     var isArray = obj instanceof Array;
     for (var k in obj) {
@@ -62,16 +63,29 @@
   };
 
   var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
-    superagent.post("https://" + oAuthBasePath + "/oauth/token")
+    var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
       .timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .send({
         'assertion': assertion,
         'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+      });
+
+    if (!callback){
+      return new Promise(function(resolve, reject){
+        request.end(function(err, data){
+          if (err){
+            reject(err);
+          } else {
+            resolve(data);
+          }
+        })
       })
-      .end(callback);
+    } else {
+      request.end(callback);
+    }
   };
-  
+
   var deriveOAuthBasePathFromRestBasePath = function(basePath) {
     if (basePath == null) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
@@ -100,13 +114,13 @@
    * @class
    */
   var exports = function(opts) {
-  var defaults = {
-    basePath: 'https://www.docusign.net/restapi'.replace(/\/+$/, ''),
-    oAuthBasePath: require('./OAuth').BasePath.PRODUCTION,
-  };
+    var defaults = {
+      basePath: 'https://www.docusign.net/restapi'.replace(/\/+$/, ''),
+      oAuthBasePath: require('./Oauth').BasePath.PRODUCTION,
+    };
 
-  opts = Object.assign({},defaults, opts);
-  opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
+    opts = Object.assign({},defaults, opts);
+    opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
 
     /**
      * The base URL against which to resolve every API call's (relative) path.
@@ -116,10 +130,10 @@
     this.basePath = opts.basePath;
 
     /**
- * The base URL against which to resolve every authentication API call's (relative) path.
- * @type {String}
- * @default https://www.docusign.net/restapi
- */
+     * The base URL against which to resolve every authentication API call's (relative) path.
+     * @type {String}
+     * @default https://www.docusign.net/restapi
+     */
     this.oAuthBasePath = opts.oAuthBasePath;
 
     /**
@@ -152,25 +166,25 @@
     this.cache = true;
   };
 
-    /**
- * Gets the API endpoint base URL.
- */
-    exports.prototype.getBasePath = function getBasePath() {
+  /**
+   * Gets the API endpoint base URL.
+   */
+  exports.prototype.getBasePath = function getBasePath() {
     return this.basePath;
   };
 
   /**
    * Sets the API endpoint base URL.
-   */  
+   */
   exports.prototype.setBasePath = function setBasePath(basePath) {
     this.basePath = basePath;
     this.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(basePath);
   };
 
-    /**
- * Gets the authentication server endpoint base URL.
- */
-    exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
+  /**
+   * Gets the authentication server endpoint base URL.
+   */
+  exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
     return this.oAuthBasePath;
   };
 
@@ -183,7 +197,7 @@
 
   /**
    * Adds request headers to the API client. Useful for Authentication.
-   */  
+   */
   exports.prototype.addDefaultHeader = function addDefaultHeader(header, value) {
     this.defaultHeaders[header] = value;
   };
@@ -265,9 +279,9 @@
   exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
     if (typeof window === 'undefined' &&
-        typeof require === 'function' &&
-        require('fs') &&
-        param instanceof require('fs').ReadStream) {
+      typeof require === 'function' &&
+      require('fs') &&
+      param instanceof require('fs').ReadStream) {
       return true;
     }
     // Buffer in Node.js
@@ -436,7 +450,7 @@
   };
 
   /**
-   * Callback function to receive the result of the operation.
+   * (Optional)Callback function to receive the result of the <operationId> operation. If none specified a Promise will be returned.
    * @callback module:ApiClient~callApiCallback
    * @param {String} error Error message, if any.
    * @param data The data returned by the service call.
@@ -457,12 +471,12 @@
    * @param {Array.<String>} accepts An array of acceptable response MIME types.
    * @param {(String|Array|ObjectFunction)} returnType The required type to return; can be a string for simple types or the
    * constructor for a complex type.
-   * @param {module:ApiClient~callApiCallback} callback The callback function.
-   * @returns {Object} The SuperAgent request object.
+   * @param {module:ApiClient~callApiCallback} callback The callback function. If this is left undefined, this method will return a promise instead.
+   * @returns {Object} The SuperAgent request object if a callback is specified, else {Promise} A {@link https://www.promisejs.org/|Promise} object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-      returnType, callback) {
+                                               queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+                                               returnType, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
@@ -473,7 +487,7 @@
 
     // set query parameters
     if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-        queryParams['_'] = new Date().getTime();
+      queryParams['_'] = new Date().getTime();
     }
     request.query(this.normalizeParams(queryParams));
 
@@ -515,13 +529,13 @@
     if (accept) {
       request.accept(accept);
     }
-    
+
     var data;
     if (request.header['Accept'] === 'application/pdf') {
-        request.buffer();
-        data = '';
+      request.buffer();
+      data = '';
     } else {
-        data = '';
+      data = '';
     }
 
     if (request.header['Accept'] === 'application/pdf') {
@@ -540,9 +554,24 @@
     }
 
 
-    request.end(function(error, response) {
-      if (callback) {
-        var data = null;
+    var data = null;
+    if (!callback) {
+      return new Promise(function(resolve, reject){
+        request.end(function(error, data) {
+          if (error) {
+            reject(error);
+          } else {
+            try {
+              data = _this.deserialize(data, returnType);
+              resolve(data);
+            } catch(error) {
+              reject(error);
+            }
+          }
+        })
+      });
+    } else {
+      request.end(function(error, response) {
         if (!error) {
           try {
             data = _this.deserialize(response, returnType);
@@ -551,10 +580,9 @@
           }
         }
         callback(error, data, response);
-      }
-    });
-
-    return request;
+      });
+      return request;
+    }
   };
 
   /**
@@ -685,9 +713,9 @@
    * @return OAuthToken object.xx
    */
   exports.prototype.generateAccessToken = function(clientId, clientSecret, code, callback) {
-    if (!clientId) return callback('Error clientId is required', null);
-    if (!clientSecret) return callback('Error clientSecret is required', null);
-    if (!code) return callback('Error code is required', null);
+    if (!clientId) throw new Error('Error clientId is required', null);
+    if (!clientSecret) throw new Error('Error clientSecret is required', null);
+    if (!code) throw new Error('Error code is required', null);
 
     var clientString = clientId + ":" + clientSecret,
       postData = {
@@ -696,46 +724,78 @@
       },
       headers = {
         "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
-      }
+      },
+      OAuthToken = require('./OAuth').OAuthToken,
+      request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
+        .send(postData)
+        .set(headers)
+        .type("application/x-www-form-urlencoded");
 
-    superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
-      .send(postData)
-      .set(headers)
-      .type("application/x-www-form-urlencoded")
-      .end(function(err, res){
+    if (!callback) {
+      return new Promise(function (resolve, reject) {
+        request.end(function (err, res) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(OAuthToken.constructFromObject(res.body))
+          }
+        });
+      });
+    } else {
+      request.end(function (err, res) {
         var OAuthToken;
-        if (err){
+        if (err) {
           return callback(err, res);
         } else {
           OAuthToken = require('./OAuth').OAuthToken;
           return callback(err, OAuthToken.constructFromObject(res.body))
         }
       });
+    }
   };
-
 
   /**
    * @param accessToken the bearer token to use to authenticate for this call.
    * @return OAuth UserInfo model
    */
   exports.prototype.getUserInfo = function(accessToken, callback) {
-    if(!accessToken) return callback('Error accessToken is required',null);
+    if(!accessToken) throw new Error('Error accessToken is required',null);
 
     var headers = {
       "Authorization": "Bearer " + accessToken,
     }
 
-    superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo")
-      .set(headers)
-      .end(function(err, res){
-        var UserInfo;
-        if (err){
+    var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
+    var UserInfo = require('./OAuth').UserInfo;
+
+    if(!callback) {
+      try {
+        return new Promise(function (resolve, reject) {
+          request.end(function (err, res) {
+            if (err) {
+              reject(err);
+            } else {
+              try {
+                resolve(UserInfo.constructFromObject(res.body));
+              } catch (error) {
+                reject(error);
+              }
+            }
+          });
+        });
+      } catch (err) {
+        console.log(err)
+        throw(err)
+      }
+    } else {
+      request.end(function (err, res) {
+        if (err) {
           return callback(err, res);
         } else {
-          UserInfo = require('./OAuth').UserInfo;
           return callback(err, UserInfo.constructFromObject(res.body));
         }
       });
+    }
   };
 
   /**
@@ -820,14 +880,14 @@
     var privateKey = rsaPrivateKey,
       assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn, userId);
 
-    sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
+    return sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
   };
 
   exports.prototype.requestJWTApplicationToken = function(clientId, scopes, rsaPrivateKey, expiresIn, callback) {
     var privateKey = rsaPrivateKey,
       assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn);
 
-    sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
+    return sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
   };
 
   exports.prototype.OAuth = require('./OAuth');

@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the _delete operation.
+     * (Optional)Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~_deleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -111,11 +111,11 @@
     };
 
     /**
-     * Callback function to receive the result of the create operation.
+     * (Optional)Callback function to receive the result of the create operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~createCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadata} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -174,11 +174,11 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
     };
 
     /**
-     * Callback function to receive the result of the get operation.
+     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadata} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -233,11 +233,11 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
     };
 
     /**
-     * Callback function to receive the result of the list operation.
+     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadataList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -295,11 +295,11 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
     };
 
     /**
-     * Callback function to receive the result of the update operation.
+     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadata} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

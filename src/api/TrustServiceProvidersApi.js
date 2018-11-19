@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the completeSignHash operation.
+     * (Optional)Callback function to receive the result of the completeSignHash operation. If none specified a Promise will be returned.
      * @callback module:api/TrustServiceProvidersApi~completeSignHashCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CompleteSignHashResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -106,11 +106,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getSealProviders operation.
+     * (Optional)Callback function to receive the result of the getSealProviders operation. If none specified a Promise will be returned.
      * @callback module:api/TrustServiceProvidersApi~getSealProvidersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSeals} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -157,11 +157,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getUserInfo operation.
+     * (Optional)Callback function to receive the result of the getUserInfo operation. If none specified a Promise will be returned.
      * @callback module:api/TrustServiceProvidersApi~getUserInfoCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInfoResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -201,11 +201,11 @@
     };
 
     /**
-     * Callback function to receive the result of the healthCheck operation.
+     * (Optional)Callback function to receive the result of the healthCheck operation. If none specified a Promise will be returned.
      * @callback module:api/TrustServiceProvidersApi~healthCheckCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -253,11 +253,11 @@
     };
 
     /**
-     * Callback function to receive the result of the signHashSessionInfo operation.
+     * (Optional)Callback function to receive the result of the signHashSessionInfo operation. If none specified a Promise will be returned.
      * @callback module:api/TrustServiceProvidersApi~signHashSessionInfoCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SignHashSessionInfoResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -306,11 +306,11 @@
     };
 
     /**
-     * Callback function to receive the result of the updateTransaction operation.
+     * (Optional)Callback function to receive the result of the updateTransaction operation. If none specified a Promise will be returned.
      * @callback module:api/TrustServiceProvidersApi~updateTransactionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UpdateTransactionResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
