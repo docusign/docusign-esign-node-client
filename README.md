@@ -33,6 +33,7 @@ This client has the following external dependencies:
 * superagent@3.8.2
 
 # Usage
+As of version 4.2.0, Promise support has been added.
 
 ## OAuth Authorization Code Grant
 

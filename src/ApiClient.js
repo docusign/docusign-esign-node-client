@@ -116,7 +116,7 @@
   var exports = function(opts) {
     var defaults = {
       basePath: 'https://www.docusign.net/restapi'.replace(/\/+$/, ''),
-      oAuthBasePath: require('./Oauth').BasePath.PRODUCTION,
+      oAuthBasePath: require('./OAuth').BasePath.PRODUCTION,
     };
 
     opts = Object.assign({},defaults, opts);
