@@ -6,6 +6,7 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 ### Fixed
 -	Fixed a problem with the BulkEnvelopesApi.UpdateRecipients() method that could cause it to return a "Value cannot be null.\r\nParameter name: stream" error rather than add bulk recipients to an envelope. (DCM-2957)
 -	Fixed a problem with the EnvelopesApi.listStatus methods that could cause them to ignore sets of envelope IDs passed in to get statuses for specific envelopes. (DCM-2956)
+-	Fixes a a typo in a an ApiClient dependency "Oauth.js" to "OAuth.js". (DCM-3021)
 ### Changed
 -	The SDK now supports version 18.3.02 of the DocuSign eSignature API.
 ### Added
