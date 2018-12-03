@@ -33,6 +33,7 @@ This client has the following external dependencies:
 * superagent@3.8.2
 
 # Usage
+As of version 4.2.0, Promise support has been added.
 
 ## OAuth Authorization Code Grant
 
@@ -74,27 +75,37 @@ app.get('/auth', function (req, res) {
   // You should set up a route that handles the redirect call to get
   // that code and pass it to token endpoint as shown in the next
   // lines:
-  apiClient.generateAccessToken(integratorKey, clientSecret, req.query.code, function (err, oAuthToken) {
+  apiClient.generateAccessToken(integratorKey, clientSecret, req.query.code)
+  .then(function (oAuthToken) {
     
     console.log(oAuthToken);
     
     //IMPORTANT: In order to access the other api families, you will need to add this auth header to your apiClient.
     apiClient.addDefaultHeader('Authorization', 'Bearer ' + oAuthToken.accessToken);
 
-    apiClient.getUserInfo(oAuthToken.accessToken, function (err, userInfo) {
+    apiClient.getUserInfo(oAuthToken.accessToken)
+    .then(function (userInfo) {
       console.log("UserInfo: " + userInfo);
       // parse first account's baseUrl
       // below code required for production, no effect in demo (same
       // domain)
       apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
       res.send(userInfo);
-    });
-  });
+    })
+    .catch(function (error) { 
+      if(error)
+        throw error;
+     });
+  })
+  .catch(function (error) { 
+     if(error)
+       throw error;
+   });
 });
 
-app.listen(port, host, function (err) {
-  if (err)
-    throw err;
+app.listen(port, host, function (error) {
+  if (error)
+    throw error;
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
 });
@@ -138,7 +149,6 @@ var scopes = [
   
 async.waterfall([
   function initApiClient (next) {
-    
     // assign the api client to the Configuration object
     docusign.Configuration.default.setDefaultApiClient(apiClient);
 
@@ -154,26 +164,33 @@ async.waterfall([
 
     var fs = require('fs');
     var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
-    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, res) {
-      var baseUri,
-        accountDomain;
-      if (err) {
-        return next(err);
-      }
-      apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn)
+      .then(function (res) {
+        var baseUri,
+          accountDomain;
 
-      apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
-        if (err) {
-          return next(err);
+        apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+
+        apiClient.getUserInfo(res.body.access_token)
+          .then(function (userInfo) {
+            accountId = userInfo.accounts[0].accountId;
+            baseUri = userInfo.accounts[0].baseUri;
+            accountDomain = baseUri.split('/v2');
+            apiClient.setBasePath(accountDomain[0] + '/restapi');
+            console.log('LoginInformation: ' + JSON.stringify(userInfo));
+            return next(null, userInfo.accounts[0]);
+          })
+          .catch(function(error){
+            if (error) {
+              return next(error);
+            }
+          });
+      })
+      .catch(function(error) {
+        if (error) {
+          return next(error);
         }
-        accountId = userInfo.accounts[0].accountId;
-        baseUri = userInfo.accounts[0].baseUri;
-        accountDomain = baseUri.split('/v2');
-        apiClient.setBasePath(accountDomain[0] + '/restapi');
-        console.log('LoginInformation: ' + JSON.stringify(userInfo));
-        return next(null, userInfo.accounts[0]);
       });
-    });
   },
 
   function sendTemplate (loginAccount, next) {
@@ -205,13 +222,16 @@ async.waterfall([
     var envelopesApi = new docusign.EnvelopesApi();
 
     // call the createEnvelope() API
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (err, envelopeSummary, response) {
-      if (err) {
-        return next(err);
-      }
-      console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-      next(null);
-    });
+    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
+      .then(function(envelopeSummary) {
+        console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+        return next(null);
+      })
+      .catch(function (error){
+        if (error) {
+          return next(error);
+        }
+      });
   }
 
 ], function end (error) {
@@ -270,22 +290,25 @@ app.get('/auth/:accessToken', function (req, res) {
   //IMPORTANT: In order to access the other api families, you will need to add this auth header to your apiClient.
   apiClient.addDefaultHeader('Authorization', 'Bearer ' + accessToken);
   
-  apiClient.getUserInfo(accessToken, function (err, userInfo) {
-    if (err)
-      console.log(err)
-
+  apiClient.getUserInfo(accessToken)
+  .then(function (userInfo) {
     console.log("UserInfo: " + userInfo);
     // parse first account's baseUrl
     // below code required for production, no effect in demo (same
     // domain)
     apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
     res.send(userInfo);
-  });
+  })
+  .catch(function (error) { 
+    if (error)
+      console.log(error)
+      throw error;
+   });
 });
 
-app.listen(port, host, function(err) {
-  if (err)
-    throw err;
+app.listen(port, host, function(error) {
+  if (error)
+    throw error;
 
   console.log('Your server is running on http://' + host + ':' + port + '.');
 });

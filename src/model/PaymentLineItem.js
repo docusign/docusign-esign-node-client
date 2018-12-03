@@ -58,6 +58,9 @@
       if (data.hasOwnProperty('amountReference')) {
         obj['amountReference'] = ApiClient.convertToType(data['amountReference'], 'String');
       }
+      if (data.hasOwnProperty('customMessage')) {
+        obj['customMessage'] = ApiClient.convertToType(data['customMessage'], 'String');
+      }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
@@ -76,6 +79,11 @@
    * @member {String} amountReference
    */
   exports.prototype['amountReference'] = undefined;
+  /**
+   * 
+   * @member {String} customMessage
+   */
+  exports.prototype['customMessage'] = undefined;
   /**
    * 
    * @member {String} description

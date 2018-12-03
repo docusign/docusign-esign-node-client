@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the createGroups operation.
+     * (Optional)Callback function to receive the result of the createGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~createGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -116,11 +116,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the deleteBrands operation.
+     * (Optional)Callback function to receive the result of the deleteBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~deleteBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -184,11 +184,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the deleteGroupUsers operation.
+     * (Optional)Callback function to receive the result of the deleteGroupUsers operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~deleteGroupUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -253,11 +253,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the deleteGroups operation.
+     * (Optional)Callback function to receive the result of the deleteGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~deleteGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -314,11 +314,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the getBrands operation.
+     * (Optional)Callback function to receive the result of the getBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~getBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -373,11 +373,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the listGroupUsers operation.
+     * (Optional)Callback function to receive the result of the listGroupUsers operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~listGroupUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -444,11 +444,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the listGroups operation.
+     * (Optional)Callback function to receive the result of the listGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~listGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -512,11 +512,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the updateBrands operation.
+     * (Optional)Callback function to receive the result of the updateBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~updateBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -580,11 +580,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the updateGroupUsers operation.
+     * (Optional)Callback function to receive the result of the updateGroupUsers operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~updateGroupUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -648,11 +648,11 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * Callback function to receive the result of the updateGroups operation.
+     * (Optional)Callback function to receive the result of the updateGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~updateGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

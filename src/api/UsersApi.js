@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the _delete operation.
+     * (Optional)Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~_deleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -118,11 +118,11 @@ The response returns whether the API execution was successful (200 - OK) or  if 
     };
 
     /**
-     * Callback function to receive the result of the create operation.
+     * (Optional)Callback function to receive the result of the create operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~createCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NewUsersSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -179,11 +179,11 @@ The response returns whether the API execution was successful (200 - OK) or  if 
     };
 
     /**
-     * Callback function to receive the result of the createSignatures operation.
+     * (Optional)Callback function to receive the result of the createSignatures operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~createSignaturesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignaturesInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -265,11 +265,11 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
     };
 
     /**
-     * Callback function to receive the result of the deleteContactWithId operation.
+     * (Optional)Callback function to receive the result of the deleteContactWithId operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteContactWithIdCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -323,11 +323,11 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
     };
 
     /**
-     * Callback function to receive the result of the deleteContacts operation.
+     * (Optional)Callback function to receive the result of the deleteContacts operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteContactsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -383,11 +383,11 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
     };
 
     /**
-     * Callback function to receive the result of the deleteCustomSettings operation.
+     * (Optional)Callback function to receive the result of the deleteCustomSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteCustomSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomSettingsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -461,11 +461,11 @@ If the extra header information is not included, only the custom user settings t
     };
 
     /**
-     * Callback function to receive the result of the deleteProfileImage operation.
+     * (Optional)Callback function to receive the result of the deleteProfileImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteProfileImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -521,11 +521,11 @@ The userId parameter specified in the endpoint must match the authenticated user
     };
 
     /**
-     * Callback function to receive the result of the deleteSignature operation.
+     * (Optional)Callback function to receive the result of the deleteSignature operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteSignatureCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -592,11 +592,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the deleteSignatureImage operation.
+     * (Optional)Callback function to receive the result of the deleteSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -673,11 +673,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the getContactById operation.
+     * (Optional)Callback function to receive the result of the getContactById operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getContactByIdCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactGetResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -731,11 +731,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the getInformation operation.
+     * (Optional)Callback function to receive the result of the getInformation operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getInformationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -804,11 +804,11 @@ To return additional user information that details the last login date, login st
     };
 
     /**
-     * Callback function to receive the result of the getProfile operation.
+     * (Optional)Callback function to receive the result of the getProfile operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserProfile} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -865,11 +865,11 @@ The userId parameter specified in the endpoint must match the authenticated user
     };
 
     /**
-     * Callback function to receive the result of the getProfileImage operation.
+     * (Optional)Callback function to receive the result of the getProfileImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getProfileImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -938,11 +938,11 @@ If successful, the response returns a 200 - OK and the user profile image.
     };
 
     /**
-     * Callback function to receive the result of the getSettings operation.
+     * (Optional)Callback function to receive the result of the getSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSettingsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -999,11 +999,11 @@ The response returns the account setting name/value information and the email no
     };
 
     /**
-     * Callback function to receive the result of the getSignature operation.
+     * (Optional)Callback function to receive the result of the getSignature operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getSignatureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1071,11 +1071,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the getSignatureImage operation.
+     * (Optional)Callback function to receive the result of the getSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1162,11 +1162,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the list operation.
+     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformationList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1244,11 +1244,11 @@ The response returns the list of users for the account along with the informatio
     };
 
     /**
-     * Callback function to receive the result of the listCustomSettings operation.
+     * (Optional)Callback function to receive the result of the listCustomSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~listCustomSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomSettingsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1317,11 +1317,11 @@ If the extra header information is not included, only the custom user settings t
     };
 
     /**
-     * Callback function to receive the result of the listSignatures operation.
+     * (Optional)Callback function to receive the result of the listSignatures operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~listSignaturesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignaturesInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1392,11 +1392,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the postContacts operation.
+     * (Optional)Callback function to receive the result of the postContacts operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~postContactsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1452,11 +1452,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the putContacts operation.
+     * (Optional)Callback function to receive the result of the putContacts operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~putContactsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1512,11 +1512,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the updateCustomSettings operation.
+     * (Optional)Callback function to receive the result of the updateCustomSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateCustomSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomSettingsInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1600,11 +1600,11 @@ Grouping custom user settings is not required and if the extra header informatio
     };
 
     /**
-     * Callback function to receive the result of the updateProfile operation.
+     * (Optional)Callback function to receive the result of the updateProfile operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateProfileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1669,11 +1669,11 @@ You can also change a user's name by changing the information in the `userDetail
     };
 
     /**
-     * Callback function to receive the result of the updateProfileImage operation.
+     * (Optional)Callback function to receive the result of the updateProfileImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateProfileImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1729,11 +1729,11 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
     };
 
     /**
-     * Callback function to receive the result of the updateSettings operation.
+     * (Optional)Callback function to receive the result of the updateSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSettingsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1796,11 +1796,11 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
     };
 
     /**
-     * Callback function to receive the result of the updateSignature operation.
+     * (Optional)Callback function to receive the result of the updateSignature operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSignatureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1881,11 +1881,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the updateSignatureImage operation.
+     * (Optional)Callback function to receive the result of the updateSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1961,11 +1961,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the updateSignatures operation.
+     * (Optional)Callback function to receive the result of the updateSignatures operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSignaturesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignaturesInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2028,11 +2028,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the updateUser operation.
+     * (Optional)Callback function to receive the result of the updateUser operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateUserCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -2095,11 +2095,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * Callback function to receive the result of the updateUsers operation.
+     * (Optional)Callback function to receive the result of the updateUsers operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformationList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
