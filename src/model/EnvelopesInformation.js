@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('continuationToken')) {
+        obj['continuationToken'] = ApiClient.convertToType(data['continuationToken'], 'String');
+      }
       if (data.hasOwnProperty('endPosition')) {
         obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
       }
@@ -63,6 +66,9 @@
       }
       if (data.hasOwnProperty('envelopeTransactionStatuses')) {
         obj['envelopeTransactionStatuses'] = ApiClient.convertToType(data['envelopeTransactionStatuses'], [EnvelopeTransactionStatus]);
+      }
+      if (data.hasOwnProperty('lastQueriedDateTime')) {
+        obj['lastQueriedDateTime'] = ApiClient.convertToType(data['lastQueriedDateTime'], 'String');
       }
       if (data.hasOwnProperty('nextUri')) {
         obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
@@ -84,6 +90,11 @@
   }
 
   /**
+   * 
+   * @member {String} continuationToken
+   */
+  exports.prototype['continuationToken'] = undefined;
+  /**
    * The last position in the result set. 
    * @member {String} endPosition
    */
@@ -98,6 +109,11 @@
    * @member {Array.<module:model/EnvelopeTransactionStatus>} envelopeTransactionStatuses
    */
   exports.prototype['envelopeTransactionStatuses'] = undefined;
+  /**
+   * 
+   * @member {String} lastQueriedDateTime
+   */
+  exports.prototype['lastQueriedDateTime'] = undefined;
   /**
    * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
    * @member {String} nextUri

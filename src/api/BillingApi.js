@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the getBillingPlan operation.
+     * (Optional)Callback function to receive the result of the getBillingPlan operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getBillingPlanCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPlanResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -105,11 +105,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getCreditCardInfo operation.
+     * (Optional)Callback function to receive the result of the getCreditCardInfo operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getCreditCardInfoCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CreditCardInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -156,11 +156,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getInvoice operation.
+     * (Optional)Callback function to receive the result of the getInvoice operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getInvoiceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingInvoice} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -178,7 +178,7 @@ The following table provides a description of the different `chargeName` propert
 
 | chargeName | Description |
 | --- | --- |
-| id_check | IDÂ Check Charge |
+| id_check | IDÂ Check Charge |
 | in_person_signing | In Person Signing charge |
 | envelopes Included | Sent Envelopes for the account |
 | age_verify | Age verification check |
@@ -248,11 +248,11 @@ The following table provides a description of the different `chargeName` propert
     };
 
     /**
-     * Callback function to receive the result of the getPayment operation.
+     * (Optional)Callback function to receive the result of the getPayment operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getPaymentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPaymentItem} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -309,11 +309,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the getPlan operation.
+     * (Optional)Callback function to receive the result of the getPlan operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getPlanCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountBillingPlanResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -383,11 +383,11 @@ The response returns the billing plan information, including the currency code, 
     };
 
     /**
-     * Callback function to receive the result of the listBillingPlans operation.
+     * (Optional)Callback function to receive the result of the listBillingPlans operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listBillingPlansCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPlansResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -428,11 +428,11 @@ The response returns the billing plan information, including the currency code, 
     };
 
     /**
-     * Callback function to receive the result of the listInvoices operation.
+     * (Optional)Callback function to receive the result of the listInvoices operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listInvoicesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingInvoicesResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -494,11 +494,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the listInvoicesPastDue operation.
+     * (Optional)Callback function to receive the result of the listInvoicesPastDue operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listInvoicesPastDueCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingInvoicesSummary} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -548,11 +548,11 @@ Privileges Required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the listPayments operation.
+     * (Optional)Callback function to receive the result of the listPayments operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listPaymentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPaymentsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -614,11 +614,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the makePayment operation.
+     * (Optional)Callback function to receive the result of the makePayment operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~makePaymentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPaymentResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -681,11 +681,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the purchaseEnvelopes operation.
+     * (Optional)Callback function to receive the result of the purchaseEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~purchaseEnvelopesCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -741,11 +741,11 @@ Privileges required: account administrator
     };
 
     /**
-     * Callback function to receive the result of the updatePlan operation.
+     * (Optional)Callback function to receive the result of the updatePlan operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~updatePlanCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPlanUpdateResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

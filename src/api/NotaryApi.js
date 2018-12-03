@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the listNotaryJournals operation.
+     * (Optional)Callback function to receive the result of the listNotaryJournals operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~listNotaryJournalsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NotaryJournalList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

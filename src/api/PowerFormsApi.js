@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the createPowerForm operation.
+     * (Optional)Callback function to receive the result of the createPowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~createPowerFormCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerForm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -113,11 +113,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deletePowerForm operation.
+     * (Optional)Callback function to receive the result of the deletePowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~deletePowerFormCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -170,11 +170,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deletePowerForms operation.
+     * (Optional)Callback function to receive the result of the deletePowerForms operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~deletePowerFormsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -230,11 +230,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getPowerForm operation.
+     * (Optional)Callback function to receive the result of the getPowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~getPowerFormCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerForm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -288,11 +288,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getPowerFormData operation.
+     * (Optional)Callback function to receive the result of the getPowerFormData operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~getPowerFormDataCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormsFormDataResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -360,11 +360,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listPowerFormSenders operation.
+     * (Optional)Callback function to receive the result of the listPowerFormSenders operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~listPowerFormSendersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormSendersResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -421,11 +421,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listPowerForms operation.
+     * (Optional)Callback function to receive the result of the listPowerForms operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~listPowerFormsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -488,11 +488,11 @@
     };
 
     /**
-     * Callback function to receive the result of the updatePowerForm operation.
+     * (Optional)Callback function to receive the result of the updatePowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~updatePowerFormCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerForm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

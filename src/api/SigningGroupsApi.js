@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the createList operation.
+     * (Optional)Callback function to receive the result of the createList operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~createListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -120,11 +120,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the deleteList operation.
+     * (Optional)Callback function to receive the result of the deleteList operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~deleteListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -181,11 +181,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the deleteUsers operation.
+     * (Optional)Callback function to receive the result of the deleteUsers operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~deleteUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupUsers} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -249,11 +249,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the get operation.
+     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroup} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -308,11 +308,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the list operation.
+     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -372,11 +372,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the listUsers operation.
+     * (Optional)Callback function to receive the result of the listUsers operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~listUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupUsers} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -431,11 +431,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the update operation.
+     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroup} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -499,11 +499,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the updateList operation.
+     * (Optional)Callback function to receive the result of the updateList operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~updateListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -560,11 +560,11 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * Callback function to receive the result of the updateUsers operation.
+     * (Optional)Callback function to receive the result of the updateUsers operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~updateUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupUsers} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

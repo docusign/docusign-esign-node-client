@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the createConfiguration operation.
+     * (Optional)Callback function to receive the result of the createConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~createConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectCustomConfiguration} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -116,11 +116,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteConfiguration operation.
+     * (Optional)Callback function to receive the result of the deleteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -179,11 +179,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteEventFailureLog operation.
+     * (Optional)Callback function to receive the result of the deleteEventFailureLog operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteEventFailureLogCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -237,11 +237,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteEventLog operation.
+     * (Optional)Callback function to receive the result of the deleteEventLog operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteEventLogCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -296,11 +296,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteEventLogs operation.
+     * (Optional)Callback function to receive the result of the deleteEventLogs operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteEventLogsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -349,11 +349,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteMobileNotifiers operation.
+     * (Optional)Callback function to receive the result of the deleteMobileNotifiers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteMobileNotifiersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -410,11 +410,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getConfiguration operation.
+     * (Optional)Callback function to receive the result of the getConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~getConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectConfigResults} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -472,11 +472,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getEventLog operation.
+     * (Optional)Callback function to receive the result of the getEventLog operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~getEventLogCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectLog} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -543,11 +543,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listConfigurations operation.
+     * (Optional)Callback function to receive the result of the listConfigurations operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listConfigurationsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectConfigResults} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -597,11 +597,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listEventFailureLogs operation.
+     * (Optional)Callback function to receive the result of the listEventFailureLogs operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listEventFailureLogsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectLogs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -661,11 +661,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listEventLogs operation.
+     * (Optional)Callback function to receive the result of the listEventLogs operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listEventLogsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectLogs} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -727,11 +727,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listMobileNotifiers operation.
+     * (Optional)Callback function to receive the result of the listMobileNotifiers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listMobileNotifiersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -779,11 +779,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listTests operation.
+     * (Optional)Callback function to receive the result of the listTests operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listTestsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ResourceInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -837,11 +837,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listUsers operation.
+     * (Optional)Callback function to receive the result of the listUsers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/IntegratedUserInfoList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -916,11 +916,11 @@
     };
 
     /**
-     * Callback function to receive the result of the retryEventForEnvelope operation.
+     * (Optional)Callback function to receive the result of the retryEventForEnvelope operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~retryEventForEnvelopeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectFailureResults} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -975,11 +975,11 @@
     };
 
     /**
-     * Callback function to receive the result of the retryEventForEnvelopes operation.
+     * (Optional)Callback function to receive the result of the retryEventForEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~retryEventForEnvelopesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectFailureResults} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1036,11 +1036,11 @@
     };
 
     /**
-     * Callback function to receive the result of the updateConfiguration operation.
+     * (Optional)Callback function to receive the result of the updateConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~updateConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectCustomConfiguration} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -1099,11 +1099,11 @@
     };
 
     /**
-     * Callback function to receive the result of the updateMobileNotifiers operation.
+     * (Optional)Callback function to receive the result of the updateMobileNotifiers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~updateMobileNotifiersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**

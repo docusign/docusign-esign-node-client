@@ -2,6 +2,16 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+##[v4.2.0] eSignature API v18.3.02
+### Fixed
+-	Fixed a problem with the BulkEnvelopesApi.UpdateRecipients() method that could cause it to return a "Value cannot be null.\r\nParameter name: stream" error rather than add bulk recipients to an envelope. (DCM-2957)
+-	Fixed a problem with the EnvelopesApi.listStatus methods that could cause them to ignore sets of envelope IDs passed in to get statuses for specific envelopes. (DCM-2956)
+-	Fixes a a typo in a an ApiClient dependency "Oauth.js" to "OAuth.js". (DCM-3021)
+### Changed
+-	The SDK now supports version 18.3.02 of the DocuSign eSignature API.
+### Added
+-	Node SDK methods have been updated to use a promise pattern. The methods will return promise objects, which represent the eventual completed output of the method, unless a specific callback is provided in the method call. (DCM-2204)
+
 ## [v4.1.0] - eSignature API v18.3.00 - 9/13/2018
 ### Changed
 - The `getOAuthBasePath()` method is now an accessor function for the new `oAuthBasePath` property, rather than being derived from `basePath`.
@@ -14,7 +24,6 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 - An	`Organization` value has been added to the account model. DCM-2710
 ### Deprecated
 - The `configureJWTAuthorizationFlow` method is now deprecated. Please use `requestJWTUserToken` instead, which takes the private key as byte array or a Stream. DCM-2765
-
 
 ## [v4.0.2] - eSignature API v18.1.02 - 7/3/2018
 ### Changed
@@ -42,7 +51,7 @@ For example:
 ## [3.3.0] - 2018-06-04
 ### Added
 - Support for OAuth Implicit Grant.
-- Support for OAuth Get User Info.
+- Support for OAuth Get Use Info.
 
 ## [3.2.0] - 2017-08-01
 ### Added

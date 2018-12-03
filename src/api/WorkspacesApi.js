@@ -53,11 +53,11 @@
 
 
     /**
-     * Callback function to receive the result of the createWorkspace operation.
+     * (Optional)Callback function to receive the result of the createWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~createWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -114,11 +114,11 @@
     };
 
     /**
-     * Callback function to receive the result of the createWorkspaceFile operation.
+     * (Optional)Callback function to receive the result of the createWorkspaceFile operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~createWorkspaceFileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceItem} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -179,11 +179,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteWorkspace operation.
+     * (Optional)Callback function to receive the result of the deleteWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~deleteWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -238,11 +238,11 @@
     };
 
     /**
-     * Callback function to receive the result of the deleteWorkspaceFolderItems operation.
+     * (Optional)Callback function to receive the result of the deleteWorkspaceFolderItems operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~deleteWorkspaceFolderItemsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -311,11 +311,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getWorkspace operation.
+     * (Optional)Callback function to receive the result of the getWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~getWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -370,11 +370,11 @@
     };
 
     /**
-     * Callback function to receive the result of the getWorkspaceFile operation.
+     * (Optional)Callback function to receive the result of the getWorkspaceFile operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~getWorkspaceFileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -454,11 +454,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listWorkspaceFilePages operation.
+     * (Optional)Callback function to receive the result of the listWorkspaceFilePages operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~listWorkspaceFilePagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PageImages} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -545,11 +545,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listWorkspaceFolderItems operation.
+     * (Optional)Callback function to receive the result of the listWorkspaceFolderItems operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~listWorkspaceFolderItemsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceFolderContents} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -633,11 +633,11 @@
     };
 
     /**
-     * Callback function to receive the result of the listWorkspaces operation.
+     * (Optional)Callback function to receive the result of the listWorkspaces operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~listWorkspacesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceList} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -685,11 +685,11 @@
     };
 
     /**
-     * Callback function to receive the result of the updateWorkspace operation.
+     * (Optional)Callback function to receive the result of the updateWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~updateWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
@@ -753,11 +753,11 @@
     };
 
     /**
-     * Callback function to receive the result of the updateWorkspaceFile operation.
+     * (Optional)Callback function to receive the result of the updateWorkspaceFile operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~updateWorkspaceFileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceItem} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
