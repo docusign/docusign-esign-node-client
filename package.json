@@ -36,7 +36,7 @@
     "push-docs": "git subtree push --prefix docs origin gh-pages",
     "update-docs": "./node_modules/.bin/jsdoc -c .jsdoc.json",
     "check-config": "./scripts/check-config.js",
-    "test": "semistandard && ./node_modules/mocha/bin/mocha test/SdkUnitTests test/SdkUnitTestsWithCallback"
+    "test": "semistandard && ./node_modules/mocha/bin/mocha --reporter mocha-junit-reporter test/SdkUnitTests test/SdkUnitTestsWithCallback"
   },
   "semistandard": {
     "globals": [
