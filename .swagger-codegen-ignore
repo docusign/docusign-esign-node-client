@@ -37,3 +37,7 @@ mocha.opts
 # Specific src and test files
 docs/*.md
 test/*/*.spec.js
+src/OAuth.js
+src/RestApi.js
+src/ApiClient.js
+src/oauth/
