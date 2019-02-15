@@ -130,6 +130,9 @@
       if (data.hasOwnProperty('templateRequired')) {
         obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
       }
+      if (data.hasOwnProperty('tooltip')) {
+        obj['tooltip'] = ApiClient.convertToType(data['tooltip'], 'String');
+      }
       if (data.hasOwnProperty('xPosition')) {
         obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'String');
       }
@@ -263,6 +266,11 @@
    * @member {String} templateRequired
    */
   exports.prototype['templateRequired'] = undefined;
+  /**
+   * 
+   * @member {String} tooltip
+   */
+  exports.prototype['tooltip'] = undefined;
   /**
    * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {String} xPosition
