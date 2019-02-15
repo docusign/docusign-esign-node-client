@@ -157,6 +157,9 @@
       if (data.hasOwnProperty('templateRequired')) {
         obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
       }
+      if (data.hasOwnProperty('tooltip')) {
+        obj['tooltip'] = ApiClient.convertToType(data['tooltip'], 'String');
+      }
       if (data.hasOwnProperty('underline')) {
         obj['underline'] = ApiClient.convertToType(data['underline'], 'String');
       }
@@ -344,6 +347,11 @@
    * @member {String} templateRequired
    */
   exports.prototype['templateRequired'] = undefined;
+  /**
+   * 
+   * @member {String} tooltip
+   */
+  exports.prototype['tooltip'] = undefined;
   /**
    * When set to **true**, the information in the tab is underlined.
    * @member {String} underline
