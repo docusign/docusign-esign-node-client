@@ -6,6 +6,7 @@ var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
 var csvStringify = require('csv-stringify');
+var fs = require('fs');
 
 var userName = config.email;
 var integratorKey = config.integratorKey;
@@ -19,6 +20,7 @@ var basePath = restApi.BasePath.DEMO;
 var oAuthBasePath = oAuth.BasePath.DEMO;
 
 var SignTest1File = 'docs/SignTest1.pdf';
+var brandLogoPath = 'img/docusign-lgo.png';
 var accountId = '';
 var envelopeId = '';
 var userId = config.userId;
@@ -958,6 +960,29 @@ describe('SDK Unit Tests:', function (done) {
         if (error) {
           return done(error);
         }
+      });
+  });
+
+  it('update primary account brandlogo', function (done) {
+    var accountsApi = new docusign.AccountsApi(apiClient);
+    accountsApi.listBrands(accountId, {includeLogos: true})
+      .then(function (brandsData) {
+        var currentBrand = brandsData.brands[0];
+        var newLogoBytes = fs.readFileSync(path.resolve(__dirname, brandLogoPath));
+        accountsApi.deleteBrandLogoByType(accountId, currentBrand.brandId, 'Primary')
+          .then(function () {
+            accountsApi.updateBrandLogoByType(newLogoBytes, accountId, currentBrand.brandId, 'Primary')
+              .then(function () {
+                accountsApi.getBrandLogoByType(accountId, currentBrand.brandId, 'Primary')
+                  .then(function (brandLogo) {
+                    assert.notEqual(brandLogo, undefined);
+                    done();
+                  });
+              });
+          })
+          .catch(function (error) {
+            return done(error);
+          });
       });
   });
 });
