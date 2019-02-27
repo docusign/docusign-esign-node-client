@@ -12,29 +12,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountSeals', 'model/ErrorDetails'], factory);
+	define(['Configuration', 'ApiClient', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountSeals'), require('../model/ErrorDetails'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TrustServiceProvidersApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountSeals, root.Docusign.ErrorDetails);
+    root.Docusign.CommentsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(Configuration, ApiClient, AccountSeals, ErrorDetails) {
+}(this, function(Configuration, ApiClient, ErrorDetails) {
   'use strict';
 
   /**
-   * TrustServiceProviders service.
-   * @module api/TrustServiceProvidersApi
+   * Comments service.
+   * @module api/CommentsApi
    * @version 3.0.0
    */
 
   /**
-   * Constructs a new TrustServiceProvidersApi. 
-   * @alias module:api/TrustServiceProvidersApi
+   * Constructs a new CommentsApi. 
+   * @alias module:api/CommentsApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -53,25 +53,40 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the getSealProviders operation. If none specified a Promise will be returned.
-     * @callback module:api/TrustServiceProvidersApi~getSealProvidersCallback
+     * (Optional)Callback function to receive the result of the getCommentsTranscript operation. If none specified a Promise will be returned.
+     * @callback module:api/CommentsApi~getCommentsTranscriptCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/AccountSeals} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
-     * Returns Account available seals for specified account.
+     * Gets comment transcript for envelope and user
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/TrustServiceProvidersApi~getSealProvidersCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AccountSeals}
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.encoding 
+     * @param {module:api/CommentsApi~getCommentsTranscriptCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
      */
-    this.getSealProviders = function(accountId, callback) {
+    this.getCommentsTranscript = function(accountId, envelopeId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getSealProviders");
+        throw new Error("Missing the required parameter 'accountId' when calling getCommentsTranscript");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId == undefined || envelopeId == null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getCommentsTranscript");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -82,9 +97,11 @@
       }
 
       var pathParams = {
-        'accountId': accountId
+        'accountId': accountId,
+        'envelopeId': envelopeId
       };
       var queryParams = {
+        'encoding': optsOrCallback['encoding']
       };
       var headerParams = {
       };
@@ -93,11 +110,11 @@
 
       var authNames = [];
       var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSeals;
+      var accepts = ['application/pdf'];
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/seals', 'GET',
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/comments/transcript', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

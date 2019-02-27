@@ -2021,6 +2021,129 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
+     * (Optional)Callback function to receive the result of the getTemplateDocumentHtmlDefinitions operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~getTemplateDocumentHtmlDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {module:api/TemplatesApi~getTemplateDocumentHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.getTemplateDocumentHtmlDefinitions = function(accountId, templateId, documentId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getTemplateDocumentHtmlDefinitions");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getTemplateDocumentHtmlDefinitions");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getTemplateDocumentHtmlDefinitions");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/html_definitions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the getTemplateHtmlDefinitions operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~getTemplateHtmlDefinitionsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the Original HTML Definition used to generate the Responsive HTML for the template.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~getTemplateHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.getTemplateHtmlDefinitions = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getTemplateHtmlDefinitions");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getTemplateHtmlDefinitions");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/templates/{templateId}/html_definitions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional)Callback function to receive the result of the listBulkRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listBulkRecipientsCallback
      * @param {String} error Error message, if any.
@@ -2428,129 +2551,6 @@ If the call is made by the user who has the lock and the request has the same in
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional)Callback function to receive the result of the listTemplateDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
-     * @callback module:api/TemplatesApi~listTemplateDocumentResponsiveHtmlPreviewCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} templateId The ID of the template being accessed.
-     * @param {String} documentId The ID of the document being accessed.
-     * @param {module:api/TemplatesApi~listTemplateDocumentResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
-     */
-    this.listTemplateDocumentResponsiveHtmlPreview = function(accountId, templateId, documentId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling listTemplateDocumentResponsiveHtmlPreview");
-      }
-
-      // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
-        throw new Error("Missing the required parameter 'templateId' when calling listTemplateDocumentResponsiveHtmlPreview");
-      }
-
-      // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
-        throw new Error("Missing the required parameter 'documentId' when calling listTemplateDocumentResponsiveHtmlPreview");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitionOriginals;
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional)Callback function to receive the result of the listTemplateResponsiveHtmlPreview operation. If none specified a Promise will be returned.
-     * @callback module:api/TemplatesApi~listTemplateResponsiveHtmlPreviewCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Get the Original HTML Definition used to generate the Responsive HTML for the template.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} templateId The ID of the template being accessed.
-     * @param {module:api/TemplatesApi~listTemplateResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
-     */
-    this.listTemplateResponsiveHtmlPreview = function(accountId, templateId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling listTemplateResponsiveHtmlPreview");
-      }
-
-      // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
-        throw new Error("Missing the required parameter 'templateId' when calling listTemplateResponsiveHtmlPreview");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitionOriginals;
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/responsive_html_preview', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

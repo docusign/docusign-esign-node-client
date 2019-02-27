@@ -898,57 +898,6 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAccountPasswordRules operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~getAccountPasswordRulesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Get the password rules
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/AccountsApi~getAccountPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AccountPasswordRules}
-     */
-    this.getAccountPasswordRules = function(accountId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getAccountPasswordRules");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountPasswordRules;
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/settings/password_rules', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
      * (Optional)Callback function to receive the result of the getAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountTabSettingsCallback
      * @param {String} error Error message, if any.
@@ -1452,7 +1401,7 @@ Privileges required: account administrator
      * Gets the Electronic Record and Signature Disclosure.
      * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/AccountsApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
@@ -1616,16 +1565,67 @@ Privileges required: account administrator
      * (Optional)Callback function to receive the result of the getPasswordRules operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getPasswordRulesCallback
      * @param {String} error Error message, if any.
+     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the password rules
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/AccountsApi~getPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountPasswordRules}
+     */
+    this.getPasswordRules = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getPasswordRules");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountPasswordRules;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/settings/password_rules', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the getPasswordRules_0 operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getPasswordRules_0Callback
+     * @param {String} error Error message, if any.
      * @param {module:model/UserPasswordRules} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
      * Get membership account password rules
-     * @param {module:api/AccountsApi~getPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/AccountsApi~getPasswordRules_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserPasswordRules}
      */
-    this.getPasswordRules = function(callback) {
+    this.getPasswordRules_0 = function(callback) {
       var postBody = null;
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -2409,66 +2409,6 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateAccountPasswordRules operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~updateAccountPasswordRulesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Update the password rules
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules 
-     * @param {module:api/AccountsApi~updateAccountPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AccountPasswordRules}
-     */
-    this.updateAccountPasswordRules = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['accountPasswordRules'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateAccountPasswordRules");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountPasswordRules;
-
-      return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/settings/password_rules', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
      * (Optional)Callback function to receive the result of the updateAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateAccountTabSettingsCallback
      * @param {String} error Error message, if any.
@@ -2605,13 +2545,19 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Put one branding logo.
+     * @param {String} logoFileBytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {String} logoType One of **Primary**, **Secondary** or **Email**.
      * @param {module:api/AccountsApi~updateBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateBrandLogoByType = function(accountId, brandId, logoType, callback) {
-      var postBody = null;
+    this.updateBrandLogoByType = function(logoFileBytes, accountId, brandId, logoType, callback) {
+      var postBody = logoFileBytes;
+
+      // verify the required parameter 'logoFileBytes' is set
+      if (logoFileBytes == undefined || logoFileBytes == null) {
+        throw new Error("Missing the required parameter 'logoFileBytes' when calling updateBrandLogoByType");
+      }
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -2648,7 +2594,7 @@ Users with account administration privileges can retrieve shared access informat
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['image/png'];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -2735,7 +2681,7 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Update Consumer Disclosure.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeMetadata 
      * @param {module:model/ConsumerDisclosure} optsOrCallback.consumerDisclosure 
@@ -2917,6 +2863,66 @@ Users with account administration privileges can retrieve shared access informat
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/settings/enote_configuration', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the updatePasswordRules operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~updatePasswordRulesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountPasswordRules} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Update the password rules
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules 
+     * @param {module:api/AccountsApi~updatePasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountPasswordRules}
+     */
+    this.updatePasswordRules = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountPasswordRules'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updatePasswordRules");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountPasswordRules;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/settings/password_rules', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

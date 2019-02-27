@@ -2,6 +2,13 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+##[v4.2.2] eSignature API v18.4.02
+### Added
+- Support for the **latest DocuSign API** (18.4.02.00).
+
+### Updated
+- updateBrandLogoByType, which enables you to upload a brand logo.
+
 ##[v4.2.0] eSignature API v18.3.02
 ### Fixed
 -	Fixed a problem with the BulkEnvelopesApi.UpdateRecipients() method that could cause it to return a "Value cannot be null.\r\nParameter name: stream" error rather than add bulk recipients to an envelope. (DCM-2957)

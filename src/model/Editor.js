@@ -100,6 +100,12 @@
       if (data.hasOwnProperty('faxNumber')) {
         obj['faxNumber'] = ApiClient.convertToType(data['faxNumber'], 'String');
       }
+      if (data.hasOwnProperty('firstName')) {
+        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+      }
+      if (data.hasOwnProperty('fullName')) {
+        obj['fullName'] = ApiClient.convertToType(data['fullName'], 'String');
+      }
       if (data.hasOwnProperty('idCheckConfigurationName')) {
         obj['idCheckConfigurationName'] = ApiClient.convertToType(data['idCheckConfigurationName'], 'String');
       }
@@ -108,6 +114,9 @@
       }
       if (data.hasOwnProperty('inheritEmailNotificationConfiguration')) {
         obj['inheritEmailNotificationConfiguration'] = ApiClient.convertToType(data['inheritEmailNotificationConfiguration'], 'String');
+      }
+      if (data.hasOwnProperty('lastName')) {
+        obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -256,6 +265,16 @@
    */
   exports.prototype['faxNumber'] = undefined;
   /**
+   * The user's first name.  Maximum Length: 50 characters.
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
+  /**
+   * 
+   * @member {String} fullName
+   */
+  exports.prototype['fullName'] = undefined;
+  /**
    * Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
    * @member {String} idCheckConfigurationName
    */
@@ -269,6 +288,11 @@
    * @member {String} inheritEmailNotificationConfiguration
    */
   exports.prototype['inheritEmailNotificationConfiguration'] = undefined;
+  /**
+   * 
+   * @member {String} lastName
+   */
+  exports.prototype['lastName'] = undefined;
   /**
    * legal name of the recipient.  Maximum Length: 100 characters.
    * @member {String} name
