@@ -5,7 +5,9 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 ##[v4.2.2] eSignature API v18.4.02
 ### Added
 - Support for the **latest DocuSign API** (18.4.02.00).
-- A new function, updateBrandLogoByType, which enables you to upload a brand logo.
+
+### Updated
+- updateBrandLogoByType, which enables you to upload a brand logo.
 
 ##[v4.2.0] eSignature API v18.3.02
 ### Fixed
