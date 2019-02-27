@@ -1717,7 +1717,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['image/gif'];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -1949,7 +1949,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['image/gif'];
       var accepts = ['application/json'];
       var returnType = UserSignature;
 

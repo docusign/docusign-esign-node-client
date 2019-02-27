@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/MatchBox', 'model/NameValue'], factory);
+    define(['ApiClient', 'model/DocumentHtmlDefinition', 'model/MatchBox', 'model/NameValue'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./MatchBox'), require('./NameValue'));
+    module.exports = factory(require('../ApiClient'), require('./DocumentHtmlDefinition'), require('./MatchBox'), require('./NameValue'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.MatchBox, root.Docusign.NameValue);
+    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinition, root.Docusign.MatchBox, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, MatchBox, NameValue) {
+}(this, function(ApiClient, DocumentHtmlDefinition, MatchBox, NameValue) {
   'use strict';
 
 
@@ -84,6 +84,9 @@
       }
       if (data.hasOwnProperty('fileFormatHint')) {
         obj['fileFormatHint'] = ApiClient.convertToType(data['fileFormatHint'], 'String');
+      }
+      if (data.hasOwnProperty('htmlDefinition')) {
+        obj['htmlDefinition'] = DocumentHtmlDefinition.constructFromObject(data['htmlDefinition']);
       }
       if (data.hasOwnProperty('includeInDownload')) {
         obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
@@ -175,6 +178,10 @@
    * @member {String} fileFormatHint
    */
   exports.prototype['fileFormatHint'] = undefined;
+  /**
+   * @member {module:model/DocumentHtmlDefinition} htmlDefinition
+   */
+  exports.prototype['htmlDefinition'] = undefined;
   /**
    * 
    * @member {String} includeInDownload

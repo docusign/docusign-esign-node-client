@@ -88,6 +88,9 @@
       if (data.hasOwnProperty('templateRequired')) {
         obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
       }
+      if (data.hasOwnProperty('tooltip')) {
+        obj['tooltip'] = ApiClient.convertToType(data['tooltip'], 'String');
+      }
     }
     return obj;
   }
@@ -147,6 +150,11 @@
    * @member {String} templateRequired
    */
   exports.prototype['templateRequired'] = undefined;
+  /**
+   * 
+   * @member {String} tooltip
+   */
+  exports.prototype['tooltip'] = undefined;
 
 
 

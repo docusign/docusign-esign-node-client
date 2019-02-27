@@ -160,6 +160,9 @@
       if (data.hasOwnProperty('scaleValue')) {
         obj['scaleValue'] = ApiClient.convertToType(data['scaleValue'], 'String');
       }
+      if (data.hasOwnProperty('selected')) {
+        obj['selected'] = ApiClient.convertToType(data['selected'], 'String');
+      }
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
@@ -365,6 +368,11 @@
    * @member {String} scaleValue
    */
   exports.prototype['scaleValue'] = undefined;
+  /**
+   * 
+   * @member {String} selected
+   */
+  exports.prototype['selected'] = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
