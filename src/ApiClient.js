@@ -96,7 +96,7 @@
     if (basePath.includes('https://demo')) {
       return exports.prototype.OAuth.BasePath.DEMO;
     }
-    if (basePath.includes('https://docusign')) {
+    if (basePath.includes('https://www.docusign')) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
   };

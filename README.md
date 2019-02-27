@@ -15,7 +15,7 @@
 commented out
 -->
 
-You can sign up for a free [developer sandbox](https://developers.docusign.com/).
+You can sign up for a free [developer sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16534).
 
 ## Requirements
 
