@@ -24,7 +24,7 @@ commented out
 
 - Node 4+
 
-Note:
+## Note:
 
 This open-source SDK is provided for cases where you would like to make additional changes that the SDK does not provide out-of-the-box. If you simply want to use the SDK with any of the examples shown in the [Developer Center](https://developers.docusign.com/esign-rest-api/code-examples), follow the installation instructions below.
 
