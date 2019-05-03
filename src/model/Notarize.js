@@ -112,6 +112,9 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
+      if (data.hasOwnProperty('tabGroupLabels')) {
+        obj['tabGroupLabels'] = ApiClient.convertToType(data['tabGroupLabels'], ['String']);
+      }
       if (data.hasOwnProperty('tabId')) {
         obj['tabId'] = ApiClient.convertToType(data['tabId'], 'String');
       }
@@ -230,6 +233,11 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} tabGroupLabels
+   */
+  exports.prototype['tabGroupLabels'] = undefined;
   /**
    * The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
    * @member {String} tabId

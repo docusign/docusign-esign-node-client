@@ -88,6 +88,9 @@
       if (data.hasOwnProperty('includeEnvelopeVoidReason')) {
         obj['includeEnvelopeVoidReason'] = ApiClient.convertToType(data['includeEnvelopeVoidReason'], 'String');
       }
+      if (data.hasOwnProperty('includeHMAC')) {
+        obj['includeHMAC'] = ApiClient.convertToType(data['includeHMAC'], 'String');
+      }
       if (data.hasOwnProperty('includeSenderAccountasCustomField')) {
         obj['includeSenderAccountasCustomField'] = ApiClient.convertToType(data['includeSenderAccountasCustomField'], 'String');
       }
@@ -177,6 +180,11 @@
    * @member {String} includeEnvelopeVoidReason
    */
   exports.prototype['includeEnvelopeVoidReason'] = undefined;
+  /**
+   * 
+   * @member {String} includeHMAC
+   */
+  exports.prototype['includeHMAC'] = undefined;
   /**
    * When set to **true**, Connect will include the sender account as Custom Field in the data.
    * @member {String} includeSenderAccountasCustomField

@@ -66,6 +66,8 @@
     var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
       .timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('Cache-Control', 'no-store')
+      .set('Pragma', 'no-cache')
       .send({
         'assertion': assertion,
         'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
@@ -99,6 +101,7 @@
     if (basePath.includes('https://www.docusign')) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
+    return exports.prototype.OAuth.BasePath.PRODUCTION;
   };
 
   /**
@@ -724,6 +727,8 @@
       },
       headers = {
         "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
+        "Cache-Control": "no-store",
+        "Pragma": "no-cache"
       },
       OAuthToken = require('./OAuth').OAuthToken,
       request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
@@ -763,6 +768,8 @@
 
     var headers = {
       "Authorization": "Bearer " + accessToken,
+      "Cache-Control": "no-store",
+      "Pragma": "no-cache"
     }
 
     var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
@@ -848,6 +855,8 @@
     superagent('post', 'https://' + this.getOAuthBasePath() + '/oauth/token')
       .timeout(this.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('Cache-Control', 'no-store')
+      .set('Pragma', 'no-cache')
       .send({
         'assertion': assertion,
         'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
