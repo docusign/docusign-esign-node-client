@@ -44,6 +44,7 @@ This client has the following external dependencies:
 ### Minimum:
 
 - DocuSign-eSign
+- Superagent 3.8.2
 
 ### Optional:
 
@@ -51,7 +52,6 @@ This client has the following external dependencies:
 - Jsonwebtoken v8.2.0
 - Passport-oauth2
 - Path
-- Superagent 3.8.2
 
 ## Code Examples
 
