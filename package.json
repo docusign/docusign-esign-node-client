@@ -52,7 +52,6 @@
   },
   "dependencies": {
     "csv-stringify": "^1.0.0",
-    "express": "^4.16.4",
     "jsonwebtoken": "8.2.0",
     "passport-oauth2": "1.4.0",
     "superagent": "3.8.2"
