@@ -2,13 +2,21 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-##[v4.2.2] eSignature API v18.4.02
+## [v4.3.0] - eSignature API v19.1.02
+### Changed
+- The SDK now supports version 19.1.02 of the DocuSign eSignature API.
+- SDK Release Version updated.
 ### Added
-- Support for the **latest DocuSign API** (18.4.02.00).
-
-### Updated
-- updateBrandLogoByType, which enables you to upload a brand logo.
-
+- Support of proxied requests. New constructor opts param, *proxy*. (DCM-2979)
+- Cache-control and Pragma headers to the oAuth calls. (DCM-2244)
+- *tabGroupLabels* field to all Tabs models
+- Witnesses field to all Recipients models
+- Models for Smart Sections feature
+- Initial support of HMAC to DocuSign Connect
+### Fixed
+- A bug where API response for 'moveEnvelopes' was improperly documented as a non-undefined value. (DCM-3085)
+- A bug where dateTabs and numberTabs were not being able to be initialized by the docusign.Tabs object. (DCM-3226)
+ 
 ##[v4.2.0] eSignature API v18.3.02
 ### Fixed
 -	Fixed a problem with the BulkEnvelopesApi.UpdateRecipients() method that could cause it to return a "Value cannot be null.\r\nParameter name: stream" error rather than add bulk recipients to an envelope. (DCM-2957)

@@ -985,4 +985,90 @@ describe('SDK Unit Tests:', function (done) {
           });
       });
   });
+
+  it('create template with date and number tabs', function (done) {
+    var fileBytes = null;
+    try {
+      var fs = require('fs');
+      // read file from a local directory
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+    } catch (ex) {
+      // handle error
+      console.log('Exception: ' + ex);
+    }
+
+    // create an envelope to be signed
+    var templateDef = new docusign.EnvelopeTemplate();
+    templateDef.emailSubject = 'Please Sign my Node SDK Envelope containing DateTabs and NumberTabs';
+    templateDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
+
+    // add a document to the envelope
+    var doc = new docusign.Document();
+    var base64Doc = Buffer.from(fileBytes).toString('base64');
+    doc.documentBase64 = base64Doc;
+    doc.name = 'TestFile.pdf';
+    doc.documentId = '1';
+
+    var docs = [];
+    docs.push(doc);
+    templateDef.documents = docs;
+
+    // Add a recipient to sign the document
+    var signer = new docusign.Signer();
+    signer.roleName = 'Signer1';
+    signer.recipientId = '1';
+
+    var dateTab = new docusign.ModelDate();
+    dateTab.documentId = '1';
+    dateTab.pageNumber = '1';
+    dateTab.recipientId = '1';
+    dateTab.initialValue = '12/12/2000';
+    dateTab.width = 42;
+    dateTab.xPosition = '241';
+    dateTab.yPosition = '445';
+
+    var numberTab = new docusign.ModelNumber();
+    numberTab.documentId = '1';
+    numberTab.pageNumber = '1';
+    numberTab.recipientId = '1';
+    numberTab.width = 42;
+    numberTab.value = '42';
+    numberTab.xPosition = '271';
+    numberTab.yPosition = '383';
+    // can have multiple tabs, so need to add to envelope as a single element list
+    var numberTabs = [];
+    var dateTabs = [];
+    numberTabs.push(numberTab);
+    dateTabs.push(dateTab);
+
+    var tabs = new docusign.Tabs();
+    tabs.numberTabs = numberTabs;
+    tabs.dateTabs = dateTabs;
+    signer.tabs = tabs;
+
+    // Above causes issue
+    templateDef.recipients = new docusign.Recipients();
+    templateDef.recipients.signers = [];
+    templateDef.recipients.signers.push(signer);
+
+    var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
+    envTemplateDef.name = 'myTemplate ModelNumber';
+    templateDef.envelopeTemplateDefinition = envTemplateDef;
+
+    var templatesApi = new docusign.TemplatesApi(apiClient);
+
+    templatesApi.createTemplate(accountId, {'envelopeTemplate': templateDef})
+      .then(function (templateSummary) {
+        if (templateSummary) {
+          console.log('TemplateSummary Number: ' + JSON.stringify(templateSummary));
+          done();
+        }
+      })
+      .catch(function (error) {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
+  });
 });
