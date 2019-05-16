@@ -205,7 +205,7 @@
      * (Optional)Callback function to receive the result of the moveEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~moveEnvelopesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/FoldersResponse} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
@@ -217,7 +217,6 @@
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/FoldersRequest} optsOrCallback.foldersRequest 
      * @param {module:api/FoldersApi~moveEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FoldersResponse}
      */
     this.moveEnvelopes = function(accountId, folderId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
@@ -260,7 +259,7 @@
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = FoldersResponse;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/folders/{folderId}', 'PUT',

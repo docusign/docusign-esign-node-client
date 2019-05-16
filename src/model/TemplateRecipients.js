@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Agent', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Editor', 'model/ErrorDetails', 'model/InPersonSigner', 'model/Intermediary', 'model/SealSign', 'model/Signer'], factory);
+    define(['ApiClient', 'model/Agent', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Editor', 'model/ErrorDetails', 'model/InPersonSigner', 'model/Intermediary', 'model/SealSign', 'model/Signer', 'model/Witness'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Agent'), require('./CarbonCopy'), require('./CertifiedDelivery'), require('./Editor'), require('./ErrorDetails'), require('./InPersonSigner'), require('./Intermediary'), require('./SealSign'), require('./Signer'));
+    module.exports = factory(require('../ApiClient'), require('./Agent'), require('./CarbonCopy'), require('./CertifiedDelivery'), require('./Editor'), require('./ErrorDetails'), require('./InPersonSigner'), require('./Intermediary'), require('./SealSign'), require('./Signer'), require('./Witness'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateRecipients = factory(root.Docusign.ApiClient, root.Docusign.Agent, root.Docusign.CarbonCopy, root.Docusign.CertifiedDelivery, root.Docusign.Editor, root.Docusign.ErrorDetails, root.Docusign.InPersonSigner, root.Docusign.Intermediary, root.Docusign.SealSign, root.Docusign.Signer);
+    root.Docusign.TemplateRecipients = factory(root.Docusign.ApiClient, root.Docusign.Agent, root.Docusign.CarbonCopy, root.Docusign.CertifiedDelivery, root.Docusign.Editor, root.Docusign.ErrorDetails, root.Docusign.InPersonSigner, root.Docusign.Intermediary, root.Docusign.SealSign, root.Docusign.Signer, root.Docusign.Witness);
   }
-}(this, function(ApiClient, Agent, CarbonCopy, CertifiedDelivery, Editor, ErrorDetails, InPersonSigner, Intermediary, SealSign, Signer) {
+}(this, function(ApiClient, Agent, CarbonCopy, CertifiedDelivery, Editor, ErrorDetails, InPersonSigner, Intermediary, SealSign, Signer, Witness) {
   'use strict';
 
 
@@ -88,6 +88,9 @@
       if (data.hasOwnProperty('signers')) {
         obj['signers'] = ApiClient.convertToType(data['signers'], [Signer]);
       }
+      if (data.hasOwnProperty('witnesses')) {
+        obj['witnesses'] = ApiClient.convertToType(data['witnesses'], [Witness]);
+      }
     }
     return obj;
   }
@@ -146,6 +149,11 @@
    * @member {Array.<module:model/Signer>} signers
    */
   exports.prototype['signers'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Witness>} witnesses
+   */
+  exports.prototype['witnesses'] = undefined;
 
 
 

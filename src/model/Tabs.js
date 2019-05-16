@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/Company', 'model/DateSigned', 'model/Decline', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/Notarize', 'model/Note', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/Ssn', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
+    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/Company', 'model/DateSigned', 'model/Decline', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/ModelDate', 'model/ModelNumber', 'model/Notarize', 'model/Note', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/SmartSection', 'model/Ssn', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./Notarize'), require('./Note'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./Ssn'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
+    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./ModelDate'), require('./ModelNumber'), require('./Notarize'), require('./Note'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./SmartSection'), require('./Ssn'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Tabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.Notarize, root.Docusign.Note, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.Ssn, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
+    root.Docusign.Tabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.ModelDate, root.Docusign.ModelNumber, root.Docusign.Notarize, root.Docusign.Note, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.SmartSection, root.Docusign.Ssn, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
   }
-}(this, function(ApiClient, Approve, Checkbox, Company, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, Notarize, Note, RadioGroup, SignHere, SignerAttachment, Ssn, Text, Title, View, Zip) {
+}(this, function(ApiClient, Approve, Checkbox, Company, DateSigned, Decline, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, ModelDate, ModelNumber, Notarize, Note, RadioGroup, SignHere, SignerAttachment, SmartSection, Ssn, Text, Title, View, Zip) {
   'use strict';
 
 
@@ -68,7 +68,7 @@
         obj['dateSignedTabs'] = ApiClient.convertToType(data['dateSignedTabs'], [DateSigned]);
       }
       if (data.hasOwnProperty('dateTabs')) {
-        obj['dateTabs'] = ApiClient.convertToType(data['dateTabs'], ['Date']);
+        obj['dateTabs'] = ApiClient.convertToType(data['dateTabs'], [ModelDate]);
       }
       if (data.hasOwnProperty('declineTabs')) {
         obj['declineTabs'] = ApiClient.convertToType(data['declineTabs'], [Decline]);
@@ -107,7 +107,7 @@
         obj['noteTabs'] = ApiClient.convertToType(data['noteTabs'], [Note]);
       }
       if (data.hasOwnProperty('numberTabs')) {
-        obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], ['Number']);
+        obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], [ModelNumber]);
       }
       if (data.hasOwnProperty('radioGroupTabs')) {
         obj['radioGroupTabs'] = ApiClient.convertToType(data['radioGroupTabs'], [RadioGroup]);
@@ -117,6 +117,9 @@
       }
       if (data.hasOwnProperty('signHereTabs')) {
         obj['signHereTabs'] = ApiClient.convertToType(data['signHereTabs'], [SignHere]);
+      }
+      if (data.hasOwnProperty('smartSectionTabs')) {
+        obj['smartSectionTabs'] = ApiClient.convertToType(data['smartSectionTabs'], [SmartSection]);
       }
       if (data.hasOwnProperty('ssnTabs')) {
         obj['ssnTabs'] = ApiClient.convertToType(data['ssnTabs'], [Ssn]);
@@ -159,7 +162,7 @@
   exports.prototype['dateSignedTabs'] = undefined;
   /**
    * Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained.   If you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format.
-   * @member {Array.<Date>} dateTabs
+   * @member {Array.<module:model/ModelDate>} dateTabs
    */
   exports.prototype['dateTabs'] = undefined;
   /**
@@ -224,7 +227,7 @@
   exports.prototype['noteTabs'] = undefined;
   /**
    * Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. 
-   * @member {Array.<Number>} numberTabs
+   * @member {Array.<module:model/ModelNumber>} numberTabs
    */
   exports.prototype['numberTabs'] = undefined;
   /**
@@ -242,6 +245,11 @@
    * @member {Array.<module:model/SignHere>} signHereTabs
    */
   exports.prototype['signHereTabs'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/SmartSection>} smartSectionTabs
+   */
+  exports.prototype['smartSectionTabs'] = undefined;
   /**
    * Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
    * @member {Array.<module:model/Ssn>} ssnTabs

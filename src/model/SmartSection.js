@@ -12,30 +12,30 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField', 'model/SmartSectionAnchorPosition', 'model/SmartSectionDisplaySettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'), require('./SmartSectionAnchorPosition'), require('./SmartSectionDisplaySettings'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ModelDate = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField);
+    root.Docusign.SmartSection = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.SmartSectionAnchorPosition, root.Docusign.SmartSectionDisplaySettings);
   }
-}(this, function(ApiClient, ErrorDetails, MergeField) {
+}(this, function(ApiClient, ErrorDetails, MergeField, SmartSectionAnchorPosition, SmartSectionDisplaySettings) {
   'use strict';
 
 
   /**
-   * The ModelDate model module.
-   * @module model/ModelDate
+   * The SmartSection model module.
+   * @module model/SmartSection
    * @version 3.0.0
    */
 
   /**
-   * Constructs a new <code>ModelDate</code>.
-   * @alias module:model/ModelDate
+   * Constructs a new <code>SmartSection</code>.
+   * @alias module:model/SmartSection
    * @class
    */
   var exports = function() {
@@ -45,11 +45,11 @@
   };
 
   /**
-   * Constructs a <code>ModelDate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>SmartSection</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ModelDate} obj Optional instance to populate.
-   * @return {module:model/ModelDate} The populated <code>ModelDate</code> instance.
+   * @param {module:model/SmartSection} obj Optional instance to populate.
+   * @return {module:model/SmartSection} The populated <code>SmartSection</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -79,11 +79,8 @@
       if (data.hasOwnProperty('anchorYOffset')) {
         obj['anchorYOffset'] = ApiClient.convertToType(data['anchorYOffset'], 'String');
       }
-      if (data.hasOwnProperty('bold')) {
-        obj['bold'] = ApiClient.convertToType(data['bold'], 'String');
-      }
-      if (data.hasOwnProperty('concealValueOnDocument')) {
-        obj['concealValueOnDocument'] = ApiClient.convertToType(data['concealValueOnDocument'], 'String');
+      if (data.hasOwnProperty('caseSensitive')) {
+        obj['caseSensitive'] = ApiClient.convertToType(data['caseSensitive'], 'Boolean');
       }
       if (data.hasOwnProperty('conditionalParentLabel')) {
         obj['conditionalParentLabel'] = ApiClient.convertToType(data['conditionalParentLabel'], 'String');
@@ -94,41 +91,23 @@
       if (data.hasOwnProperty('customTabId')) {
         obj['customTabId'] = ApiClient.convertToType(data['customTabId'], 'String');
       }
-      if (data.hasOwnProperty('disableAutoSize')) {
-        obj['disableAutoSize'] = ApiClient.convertToType(data['disableAutoSize'], 'String');
+      if (data.hasOwnProperty('displaySettings')) {
+        obj['displaySettings'] = SmartSectionDisplaySettings.constructFromObject(data['displaySettings']);
       }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
       }
+      if (data.hasOwnProperty('endAnchor')) {
+        obj['endAnchor'] = ApiClient.convertToType(data['endAnchor'], 'String');
+      }
+      if (data.hasOwnProperty('endPosition')) {
+        obj['endPosition'] = SmartSectionAnchorPosition.constructFromObject(data['endPosition']);
+      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
-      if (data.hasOwnProperty('font')) {
-        obj['font'] = ApiClient.convertToType(data['font'], 'String');
-      }
-      if (data.hasOwnProperty('fontColor')) {
-        obj['fontColor'] = ApiClient.convertToType(data['fontColor'], 'String');
-      }
-      if (data.hasOwnProperty('fontSize')) {
-        obj['fontSize'] = ApiClient.convertToType(data['fontSize'], 'String');
-      }
-      if (data.hasOwnProperty('italic')) {
-        obj['italic'] = ApiClient.convertToType(data['italic'], 'String');
-      }
-      if (data.hasOwnProperty('locked')) {
-        obj['locked'] = ApiClient.convertToType(data['locked'], 'String');
-      }
-      if (data.hasOwnProperty('maxLength')) {
-        obj['maxLength'] = ApiClient.convertToType(data['maxLength'], 'Number');
-      }
       if (data.hasOwnProperty('mergeField')) {
         obj['mergeField'] = MergeField.constructFromObject(data['mergeField']);
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('originalValue')) {
-        obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
       }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
@@ -136,20 +115,17 @@
       if (data.hasOwnProperty('recipientId')) {
         obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
       }
-      if (data.hasOwnProperty('requireAll')) {
-        obj['requireAll'] = ApiClient.convertToType(data['requireAll'], 'String');
+      if (data.hasOwnProperty('removeEndAnchor')) {
+        obj['removeEndAnchor'] = ApiClient.convertToType(data['removeEndAnchor'], 'Boolean');
       }
-      if (data.hasOwnProperty('required')) {
-        obj['required'] = ApiClient.convertToType(data['required'], 'String');
+      if (data.hasOwnProperty('removeStartAnchor')) {
+        obj['removeStartAnchor'] = ApiClient.convertToType(data['removeStartAnchor'], 'Boolean');
       }
-      if (data.hasOwnProperty('requireInitialOnSharedChange')) {
-        obj['requireInitialOnSharedChange'] = ApiClient.convertToType(data['requireInitialOnSharedChange'], 'String');
+      if (data.hasOwnProperty('startAnchor')) {
+        obj['startAnchor'] = ApiClient.convertToType(data['startAnchor'], 'String');
       }
-      if (data.hasOwnProperty('senderRequired')) {
-        obj['senderRequired'] = ApiClient.convertToType(data['senderRequired'], 'String');
-      }
-      if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+      if (data.hasOwnProperty('startPosition')) {
+        obj['startPosition'] = SmartSectionAnchorPosition.constructFromObject(data['startPosition']);
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -159,9 +135,6 @@
       }
       if (data.hasOwnProperty('tabId')) {
         obj['tabId'] = ApiClient.convertToType(data['tabId'], 'String');
-      }
-      if (data.hasOwnProperty('tabLabel')) {
-        obj['tabLabel'] = ApiClient.convertToType(data['tabLabel'], 'String');
       }
       if (data.hasOwnProperty('tabOrder')) {
         obj['tabOrder'] = ApiClient.convertToType(data['tabOrder'], 'String');
@@ -174,21 +147,6 @@
       }
       if (data.hasOwnProperty('tooltip')) {
         obj['tooltip'] = ApiClient.convertToType(data['tooltip'], 'String');
-      }
-      if (data.hasOwnProperty('underline')) {
-        obj['underline'] = ApiClient.convertToType(data['underline'], 'String');
-      }
-      if (data.hasOwnProperty('validationMessage')) {
-        obj['validationMessage'] = ApiClient.convertToType(data['validationMessage'], 'String');
-      }
-      if (data.hasOwnProperty('validationPattern')) {
-        obj['validationPattern'] = ApiClient.convertToType(data['validationPattern'], 'String');
-      }
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
-      }
-      if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
       }
       if (data.hasOwnProperty('xPosition')) {
         obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'String');
@@ -241,15 +199,10 @@
    */
   exports.prototype['anchorYOffset'] = undefined;
   /**
-   * When set to **true**, the information in the tab is bold.
-   * @member {String} bold
+   * 
+   * @member {Boolean} caseSensitive
    */
-  exports.prototype['bold'] = undefined;
-  /**
-   * When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
-   * @member {String} concealValueOnDocument
-   */
-  exports.prototype['concealValueOnDocument'] = undefined;
+  exports.prototype['caseSensitive'] = undefined;
   /**
    * For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
    * @member {String} conditionalParentLabel
@@ -266,63 +219,31 @@
    */
   exports.prototype['customTabId'] = undefined;
   /**
-   * When set to **true**, disables the auto sizing of single line text boxes in the signing screen when the signer enters data. If disabled users will only be able enter as much data as the text box can hold. By default this is false. This property only affects single line text boxes.
-   * @member {String} disableAutoSize
+   * @member {module:model/SmartSectionDisplaySettings} displaySettings
    */
-  exports.prototype['disableAutoSize'] = undefined;
+  exports.prototype['displaySettings'] = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
   exports.prototype['documentId'] = undefined;
   /**
+   * 
+   * @member {String} endAnchor
+   */
+  exports.prototype['endAnchor'] = undefined;
+  /**
+   * @member {module:model/SmartSectionAnchorPosition} endPosition
+   */
+  exports.prototype['endPosition'] = undefined;
+  /**
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
   /**
-   * The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
-   * @member {String} font
-   */
-  exports.prototype['font'] = undefined;
-  /**
-   * The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
-   * @member {String} fontColor
-   */
-  exports.prototype['fontColor'] = undefined;
-  /**
-   * The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
-   * @member {String} fontSize
-   */
-  exports.prototype['fontSize'] = undefined;
-  /**
-   * When set to **true**, the information in the tab is italic.
-   * @member {String} italic
-   */
-  exports.prototype['italic'] = undefined;
-  /**
-   * When set to **true**, the signer cannot change the data of the custom tab.
-   * @member {String} locked
-   */
-  exports.prototype['locked'] = undefined;
-  /**
-   * An optional value that describes the maximum length of the property when the property is a string.
-   * @member {Number} maxLength
-   */
-  exports.prototype['maxLength'] = undefined;
-  /**
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
-  /**
-   * 
-   * @member {String} name
-   */
-  exports.prototype['name'] = undefined;
-  /**
-   * The initial value of the tab when it was sent to the recipient. 
-   * @member {String} originalValue
-   */
-  exports.prototype['originalValue'] = undefined;
   /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber
@@ -334,30 +255,24 @@
    */
   exports.prototype['recipientId'] = undefined;
   /**
-   * When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
-   * @member {String} requireAll
+   * 
+   * @member {Boolean} removeEndAnchor
    */
-  exports.prototype['requireAll'] = undefined;
+  exports.prototype['removeEndAnchor'] = undefined;
   /**
-   * When set to **true**, the signer is required to fill out this tab
-   * @member {String} required
+   * 
+   * @member {Boolean} removeStartAnchor
    */
-  exports.prototype['required'] = undefined;
+  exports.prototype['removeStartAnchor'] = undefined;
   /**
-   * Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
-   * @member {String} requireInitialOnSharedChange
+   * 
+   * @member {String} startAnchor
    */
-  exports.prototype['requireInitialOnSharedChange'] = undefined;
+  exports.prototype['startAnchor'] = undefined;
   /**
-   * When set to **true**, the sender must populate the tab before an envelope can be sent using the template.   This value tab can only be changed by modifying (PUT) the template.   Tabs with a `senderRequired` value of true cannot be deleted from an envelope.
-   * @member {String} senderRequired
+   * @member {module:model/SmartSectionAnchorPosition} startPosition
    */
-  exports.prototype['senderRequired'] = undefined;
-  /**
-   * When set to **true**, this custom tab is shared.
-   * @member {String} shared
-   */
-  exports.prototype['shared'] = undefined;
+  exports.prototype['startPosition'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
@@ -373,11 +288,6 @@
    * @member {String} tabId
    */
   exports.prototype['tabId'] = undefined;
-  /**
-   * The label string associated with the tab.
-   * @member {String} tabLabel
-   */
-  exports.prototype['tabLabel'] = undefined;
   /**
    * 
    * @member {String} tabOrder
@@ -398,31 +308,6 @@
    * @member {String} tooltip
    */
   exports.prototype['tooltip'] = undefined;
-  /**
-   * When set to **true**, the information in the tab is underlined.
-   * @member {String} underline
-   */
-  exports.prototype['underline'] = undefined;
-  /**
-   * The message displayed if the custom tab fails input validation (either custom of embedded).
-   * @member {String} validationMessage
-   */
-  exports.prototype['validationMessage'] = undefined;
-  /**
-   * A regular expression used to validate input for the tab.
-   * @member {String} validationPattern
-   */
-  exports.prototype['validationPattern'] = undefined;
-  /**
-   * Specifies the value of the tab. 
-   * @member {String} value
-   */
-  exports.prototype['value'] = undefined;
-  /**
-   * Width of the tab in pixels.
-   * @member {Number} width
-   */
-  exports.prototype['width'] = undefined;
   /**
    * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {String} xPosition
