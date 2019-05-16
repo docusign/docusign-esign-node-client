@@ -7,7 +7,6 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 - The SDK now supports version 19.1.02 of the DocuSign eSignature API.
 - SDK Release Version updated.
 ### Added
-- Support of proxied requests. New constructor opts param, *proxy*. (DCM-2979)
 - Cache-control and Pragma headers to the oAuth calls. (DCM-2244)
 - *tabGroupLabels* field to all Tabs models
 - Witnesses field to all Recipients models
