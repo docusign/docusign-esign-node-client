@@ -2,6 +2,10 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v4.3.1] - eSignature API v19.1.02
+### Updated 
+- Bump js-yaml from 3.12.1 to 3.13.1 #133
+
 ## [v4.3.0] - eSignature API v19.1.02
 ### Changed
 - The SDK now supports version 19.1.02 of the DocuSign eSignature API.
