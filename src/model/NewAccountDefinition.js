@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountAddress', 'model/CreditCardInformation', 'model/NameValue', 'model/PaymentProcessorInformation', 'model/PlanInformation', 'model/ReferralInformation', 'model/SocialAccountInformation', 'model/UserInformation'], factory);
+    define(['ApiClient', 'model/AccountAddress', 'model/AccountSettingsInformation', 'model/CreditCardInformation', 'model/DirectDebitProcessorInformation', 'model/PaymentProcessorInformation', 'model/PlanInformation', 'model/ReferralInformation', 'model/SocialAccountInformation', 'model/UserInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./CreditCardInformation'), require('./NameValue'), require('./PaymentProcessorInformation'), require('./PlanInformation'), require('./ReferralInformation'), require('./SocialAccountInformation'), require('./UserInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AccountSettingsInformation'), require('./CreditCardInformation'), require('./DirectDebitProcessorInformation'), require('./PaymentProcessorInformation'), require('./PlanInformation'), require('./ReferralInformation'), require('./SocialAccountInformation'), require('./UserInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.NewAccountDefinition = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.CreditCardInformation, root.Docusign.NameValue, root.Docusign.PaymentProcessorInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation, root.Docusign.SocialAccountInformation, root.Docusign.UserInformation);
+    root.Docusign.NewAccountDefinition = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AccountSettingsInformation, root.Docusign.CreditCardInformation, root.Docusign.DirectDebitProcessorInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation, root.Docusign.SocialAccountInformation, root.Docusign.UserInformation);
   }
-}(this, function(ApiClient, AccountAddress, CreditCardInformation, NameValue, PaymentProcessorInformation, PlanInformation, ReferralInformation, SocialAccountInformation, UserInformation) {
+}(this, function(ApiClient, AccountAddress, AccountSettingsInformation, CreditCardInformation, DirectDebitProcessorInformation, PaymentProcessorInformation, PlanInformation, ReferralInformation, SocialAccountInformation, UserInformation) {
   'use strict';
 
 
@@ -59,13 +59,16 @@
         obj['accountName'] = ApiClient.convertToType(data['accountName'], 'String');
       }
       if (data.hasOwnProperty('accountSettings')) {
-        obj['accountSettings'] = ApiClient.convertToType(data['accountSettings'], [NameValue]);
+        obj['accountSettings'] = AccountSettingsInformation.constructFromObject(data['accountSettings']);
       }
       if (data.hasOwnProperty('addressInformation')) {
         obj['addressInformation'] = AccountAddress.constructFromObject(data['addressInformation']);
       }
       if (data.hasOwnProperty('creditCardInformation')) {
         obj['creditCardInformation'] = CreditCardInformation.constructFromObject(data['creditCardInformation']);
+      }
+      if (data.hasOwnProperty('directDebitProcessorInformation')) {
+        obj['directDebitProcessorInformation'] = DirectDebitProcessorInformation.constructFromObject(data['directDebitProcessorInformation']);
       }
       if (data.hasOwnProperty('distributorCode')) {
         obj['distributorCode'] = ApiClient.convertToType(data['distributorCode'], 'String');
@@ -76,8 +79,11 @@
       if (data.hasOwnProperty('initialUser')) {
         obj['initialUser'] = UserInformation.constructFromObject(data['initialUser']);
       }
-      if (data.hasOwnProperty('PaymentProcessorInformation')) {
-        obj['PaymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['PaymentProcessorInformation']);
+      if (data.hasOwnProperty('paymentMethod')) {
+        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+      }
+      if (data.hasOwnProperty('paymentProcessorInformation')) {
+        obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
       }
       if (data.hasOwnProperty('planInformation')) {
         obj['planInformation'] = PlanInformation.constructFromObject(data['planInformation']);
@@ -98,8 +104,7 @@
    */
   exports.prototype['accountName'] = undefined;
   /**
-   * The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden.
-   * @member {Array.<module:model/NameValue>} accountSettings
+   * @member {module:model/AccountSettingsInformation} accountSettings
    */
   exports.prototype['accountSettings'] = undefined;
   /**
@@ -110,6 +115,10 @@
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
   exports.prototype['creditCardInformation'] = undefined;
+  /**
+   * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
+   */
+  exports.prototype['directDebitProcessorInformation'] = undefined;
   /**
    * The code that identifies the billing plan groups and plans for the new account.
    * @member {String} distributorCode
@@ -125,9 +134,14 @@
    */
   exports.prototype['initialUser'] = undefined;
   /**
-   * @member {module:model/PaymentProcessorInformation} PaymentProcessorInformation
+   * 
+   * @member {String} paymentMethod
    */
-  exports.prototype['PaymentProcessorInformation'] = undefined;
+  exports.prototype['paymentMethod'] = undefined;
+  /**
+   * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
+   */
+  exports.prototype['paymentProcessorInformation'] = undefined;
   /**
    * @member {module:model/PlanInformation} planInformation
    */

@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DocumentHtmlDefinition', 'model/MatchBox', 'model/NameValue'], factory);
+    define(['ApiClient', 'model/DocumentHtmlDefinition', 'model/MatchBox', 'model/NameValue', 'model/PageSize', 'model/Tabs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DocumentHtmlDefinition'), require('./MatchBox'), require('./NameValue'));
+    module.exports = factory(require('../ApiClient'), require('./DocumentHtmlDefinition'), require('./MatchBox'), require('./NameValue'), require('./PageSize'), require('./Tabs'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinition, root.Docusign.MatchBox, root.Docusign.NameValue);
+    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinition, root.Docusign.MatchBox, root.Docusign.NameValue, root.Docusign.PageSize, root.Docusign.Tabs);
   }
-}(this, function(ApiClient, DocumentHtmlDefinition, MatchBox, NameValue) {
+}(this, function(ApiClient, DocumentHtmlDefinition, MatchBox, NameValue, PageSize, Tabs) {
   'use strict';
 
 
@@ -57,9 +57,6 @@
 
       if (data.hasOwnProperty('applyAnchorTabs')) {
         obj['applyAnchorTabs'] = ApiClient.convertToType(data['applyAnchorTabs'], 'String');
-      }
-      if (data.hasOwnProperty('authoritativeCopy')) {
-        obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'Boolean');
       }
       if (data.hasOwnProperty('display')) {
         obj['display'] = ApiClient.convertToType(data['display'], 'String');
@@ -100,17 +97,29 @@
       if (data.hasOwnProperty('order')) {
         obj['order'] = ApiClient.convertToType(data['order'], 'String');
       }
+      if (data.hasOwnProperty('pageCount')) {
+        obj['pageCount'] = ApiClient.convertToType(data['pageCount'], 'String');
+      }
       if (data.hasOwnProperty('pages')) {
         obj['pages'] = ApiClient.convertToType(data['pages'], 'String');
       }
+      if (data.hasOwnProperty('pageSizes')) {
+        obj['pageSizes'] = ApiClient.convertToType(data['pageSizes'], [PageSize]);
+      }
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
+      if (data.hasOwnProperty('pdfFormFieldOption')) {
+        obj['pdfFormFieldOption'] = ApiClient.convertToType(data['pdfFormFieldOption'], 'String');
       }
       if (data.hasOwnProperty('remoteUrl')) {
         obj['remoteUrl'] = ApiClient.convertToType(data['remoteUrl'], 'String');
       }
       if (data.hasOwnProperty('signerMustAcknowledge')) {
         obj['signerMustAcknowledge'] = ApiClient.convertToType(data['signerMustAcknowledge'], 'String');
+      }
+      if (data.hasOwnProperty('tabs')) {
+        obj['tabs'] = Tabs.constructFromObject(data['tabs']);
       }
       if (data.hasOwnProperty('templateLocked')) {
         obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
@@ -133,11 +142,6 @@
    * @member {String} applyAnchorTabs
    */
   exports.prototype['applyAnchorTabs'] = undefined;
-  /**
-   * Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
-   * @member {Boolean} authoritativeCopy
-   */
-  exports.prototype['authoritativeCopy'] = undefined;
   /**
    * 
    * @member {String} display
@@ -204,14 +208,29 @@
   exports.prototype['order'] = undefined;
   /**
    * 
+   * @member {String} pageCount
+   */
+  exports.prototype['pageCount'] = undefined;
+  /**
+   * 
    * @member {String} pages
    */
   exports.prototype['pages'] = undefined;
   /**
    * 
+   * @member {Array.<module:model/PageSize>} pageSizes
+   */
+  exports.prototype['pageSizes'] = undefined;
+  /**
+   * 
    * @member {String} password
    */
   exports.prototype['password'] = undefined;
+  /**
+   * 
+   * @member {String} pdfFormFieldOption
+   */
+  exports.prototype['pdfFormFieldOption'] = undefined;
   /**
    * The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. 
    * @member {String} remoteUrl
@@ -222,6 +241,10 @@
    * @member {String} signerMustAcknowledge
    */
   exports.prototype['signerMustAcknowledge'] = undefined;
+  /**
+   * @member {module:model/Tabs} tabs
+   */
+  exports.prototype['tabs'] = undefined;
   /**
    * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
    * @member {String} templateLocked

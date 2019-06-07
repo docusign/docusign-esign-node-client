@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -66,6 +66,7 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.includeItems 
      * @param {String} optsOrCallback.startPosition 
      * @param {String} optsOrCallback.template Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
      * @param {String} optsOrCallback.userFilter 
@@ -99,6 +100,7 @@
       };
       var queryParams = {
         'include': optsOrCallback['include'],
+        'include_items': optsOrCallback['includeItems'],
         'start_position': optsOrCallback['startPosition'],
         'template': optsOrCallback['template'],
         'user_filter': optsOrCallback['userFilter']
@@ -114,7 +116,7 @@
       var returnType = FoldersResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/folders', 'GET',
+        '/v2.1/accounts/{accountId}/folders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -135,6 +137,7 @@
      * @param {String} folderId The ID of the folder being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.fromDate  Only return items on or after this date. If no value is provided, the default search is the previous 30 days. 
+     * @param {String} optsOrCallback.includeItems 
      * @param {String} optsOrCallback.ownerEmail  The email of the folder owner. 
      * @param {String} optsOrCallback.ownerName  The name of the folder owner. 
      * @param {String} optsOrCallback.searchText  The search text used to search the items of the envelope. The search looks at recipient names and emails, envelope custom fields, sender name, and subject. 
@@ -177,6 +180,7 @@
       };
       var queryParams = {
         'from_date': optsOrCallback['fromDate'],
+        'include_items': optsOrCallback['includeItems'],
         'owner_email': optsOrCallback['ownerEmail'],
         'owner_name': optsOrCallback['ownerName'],
         'search_text': optsOrCallback['searchText'],
@@ -195,7 +199,7 @@
       var returnType = FolderItemsResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/folders/{folderId}', 'GET',
+        '/v2.1/accounts/{accountId}/folders/{folderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -205,7 +209,7 @@
      * (Optional)Callback function to receive the result of the moveEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~moveEnvelopesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/FoldersResponse} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
@@ -217,6 +221,7 @@
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/FoldersRequest} optsOrCallback.foldersRequest 
      * @param {module:api/FoldersApi~moveEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/FoldersResponse}
      */
     this.moveEnvelopes = function(accountId, folderId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
@@ -259,10 +264,10 @@
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = FoldersResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/folders/{folderId}', 'PUT',
+        '/v2.1/accounts/{accountId}/folders/{folderId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -347,7 +352,7 @@ If the user ID of the user making the call is the same as the user ID for any re
       var returnType = FolderItemResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/search_folders/{searchFolderId}', 'GET',
+        '/v2.1/accounts/{accountId}/search_folders/{searchFolderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

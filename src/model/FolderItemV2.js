@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -79,12 +79,6 @@
       if (data.hasOwnProperty('is21CFRPart11')) {
         obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
       }
-      if (data.hasOwnProperty('isSignatureProviderEnvelope')) {
-        obj['isSignatureProviderEnvelope'] = ApiClient.convertToType(data['isSignatureProviderEnvelope'], 'String');
-      }
-      if (data.hasOwnProperty('lastModifiedDateTime')) {
-        obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
-      }
       if (data.hasOwnProperty('ownerName')) {
         obj['ownerName'] = ApiClient.convertToType(data['ownerName'], 'String');
       }
@@ -114,6 +108,12 @@
       }
       if (data.hasOwnProperty('subject')) {
         obj['subject'] = ApiClient.convertToType(data['subject'], 'String');
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+      }
+      if (data.hasOwnProperty('templateUri')) {
+        obj['templateUri'] = ApiClient.convertToType(data['templateUri'], 'String');
       }
     }
     return obj;
@@ -159,16 +159,6 @@
    * @member {String} is21CFRPart11
    */
   exports.prototype['is21CFRPart11'] = undefined;
-  /**
-   * 
-   * @member {String} isSignatureProviderEnvelope
-   */
-  exports.prototype['isSignatureProviderEnvelope'] = undefined;
-  /**
-   * The date and time the item was last modified.
-   * @member {String} lastModifiedDateTime
-   */
-  exports.prototype['lastModifiedDateTime'] = undefined;
   /**
    * 
    * @member {String} ownerName
@@ -218,6 +208,16 @@
    * @member {String} subject
    */
   exports.prototype['subject'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
+  /**
+   * 
+   * @member {String} templateUri
+   */
+  exports.prototype['templateUri'] = undefined;
 
 
 

@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -90,7 +90,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/diagnostics/request_logs', 'DELETE',
+        '/v2.1/diagnostics/request_logs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -148,7 +148,7 @@ If the Content-Transfer-Encoding header was set to base64, the log is returned a
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/v2/diagnostics/request_logs/{requestLogId}', 'GET',
+        '/v2.1/diagnostics/request_logs/{requestLogId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -196,7 +196,7 @@ The response includes the current API request logging setting for the user, alon
       var returnType = DiagnosticsSettingsInformation;
 
       return this.apiClient.callApi(
-        '/v2/diagnostics/settings', 'GET',
+        '/v2.1/diagnostics/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -249,7 +249,7 @@ Example: https://demo.docusign.net/restapi/help lists the REST API operations on
       var returnType = ResourceInformation;
 
       return this.apiClient.callApi(
-        '/v2', 'GET',
+        '/v2.1', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -358,7 +358,7 @@ If the Accept header is set to `application/json` or `application/xml`, the resp
       var returnType = ApiRequestLogsResult;
 
       return this.apiClient.callApi(
-        '/v2/diagnostics/request_logs', 'GET',
+        '/v2.1/diagnostics/request_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -421,7 +421,7 @@ Private information, such as passwords and integrator key information, which is 
       var returnType = DiagnosticsSettingsInformation;
 
       return this.apiClient.callApi(
-        '/v2/diagnostics/settings', 'PUT',
+        '/v2.1/diagnostics/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

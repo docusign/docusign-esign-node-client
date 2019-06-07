@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -98,7 +98,7 @@
       var returnType = BillingPlanResponse;
 
       return this.apiClient.callApi(
-        '/v2/billing_plans/{billingPlanId}', 'GET',
+        '/v2.1/billing_plans/{billingPlanId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -149,7 +149,7 @@
       var returnType = CreditCardInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_plan/credit_card', 'GET',
+        '/v2.1/accounts/{accountId}/billing_plan/credit_card', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -241,7 +241,7 @@ The following table provides a description of the different `chargeName` propert
       var returnType = BillingInvoice;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_invoices/{invoiceId}', 'GET',
+        '/v2.1/accounts/{accountId}/billing_invoices/{invoiceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -302,7 +302,7 @@ Privileges required: account administrator
       var returnType = BillingPaymentItem;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_payments/{paymentId}', 'GET',
+        '/v2.1/accounts/{accountId}/billing_payments/{paymentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -376,7 +376,7 @@ The response returns the billing plan information, including the currency code, 
       var returnType = AccountBillingPlanResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_plan', 'GET',
+        '/v2.1/accounts/{accountId}/billing_plan', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -421,7 +421,7 @@ The response returns the billing plan information, including the currency code, 
       var returnType = BillingPlansResponse;
 
       return this.apiClient.callApi(
-        '/v2/billing_plans', 'GET',
+        '/v2.1/billing_plans', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -487,7 +487,7 @@ Privileges required: account administrator
       var returnType = BillingInvoicesResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_invoices', 'GET',
+        '/v2.1/accounts/{accountId}/billing_invoices', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -541,7 +541,7 @@ Privileges Required: account administrator
       var returnType = BillingInvoicesSummary;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_invoices_past_due', 'GET',
+        '/v2.1/accounts/{accountId}/billing_invoices_past_due', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -607,7 +607,7 @@ Privileges required: account administrator
       var returnType = BillingPaymentsResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_payments', 'GET',
+        '/v2.1/accounts/{accountId}/billing_payments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -674,7 +674,7 @@ Privileges required: account administrator
       var returnType = BillingPaymentResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_payments', 'POST',
+        '/v2.1/accounts/{accountId}/billing_payments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -734,7 +734,7 @@ Privileges required: account administrator
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_plan/purchased_envelopes', 'PUT',
+        '/v2.1/accounts/{accountId}/billing_plan/purchased_envelopes', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -797,7 +797,7 @@ Privileges required: account administrator
       var returnType = BillingPlanUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/billing_plan', 'PUT',
+        '/v2.1/accounts/{accountId}/billing_plan', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
