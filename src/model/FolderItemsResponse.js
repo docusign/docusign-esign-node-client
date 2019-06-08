@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/FolderItem'], factory);
+    define(['ApiClient', 'model/EnvelopeSummary', 'model/Folder'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./FolderItem'));
+    module.exports = factory(require('../ApiClient'), require('./EnvelopeSummary'), require('./Folder'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.FolderItemsResponse = factory(root.Docusign.ApiClient, root.Docusign.FolderItem);
+    root.Docusign.FolderItemsResponse = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeSummary, root.Docusign.Folder);
   }
-}(this, function(ApiClient, FolderItem) {
+}(this, function(ApiClient, EnvelopeSummary, Folder) {
   'use strict';
 
 
@@ -58,8 +58,11 @@
       if (data.hasOwnProperty('endPosition')) {
         obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
       }
-      if (data.hasOwnProperty('folderItems')) {
-        obj['folderItems'] = ApiClient.convertToType(data['folderItems'], [FolderItem]);
+      if (data.hasOwnProperty('envelopes')) {
+        obj['envelopes'] = ApiClient.convertToType(data['envelopes'], [EnvelopeSummary]);
+      }
+      if (data.hasOwnProperty('folders')) {
+        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
       }
       if (data.hasOwnProperty('nextUri')) {
         obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
@@ -86,10 +89,15 @@
    */
   exports.prototype['endPosition'] = undefined;
   /**
-   * A list of the envelopes in the specified folder or folders. 
-   * @member {Array.<module:model/FolderItem>} folderItems
+   * 
+   * @member {Array.<module:model/EnvelopeSummary>} envelopes
    */
-  exports.prototype['folderItems'] = undefined;
+  exports.prototype['envelopes'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Folder>} folders
+   */
+  exports.prototype['folders'] = undefined;
   /**
    * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
    * @member {String} nextUri

@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -61,14 +61,23 @@
       if (data.hasOwnProperty('createdDateTime')) {
         obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
       }
+      if (data.hasOwnProperty('customField')) {
+        obj['customField'] = ApiClient.convertToType(data['customField'], 'String');
+      }
       if (data.hasOwnProperty('dateStampProperties')) {
         obj['dateStampProperties'] = DateStampProperties.constructFromObject(data['dateStampProperties']);
+      }
+      if (data.hasOwnProperty('disallowUserResizeStamp')) {
+        obj['disallowUserResizeStamp'] = ApiClient.convertToType(data['disallowUserResizeStamp'], 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('externalID')) {
         obj['externalID'] = ApiClient.convertToType(data['externalID'], 'String');
+      }
+      if (data.hasOwnProperty('imageBase64')) {
+        obj['imageBase64'] = ApiClient.convertToType(data['imageBase64'], 'String');
       }
       if (data.hasOwnProperty('imageType')) {
         obj['imageType'] = ApiClient.convertToType(data['imageType'], 'String');
@@ -81,6 +90,18 @@
       }
       if (data.hasOwnProperty('isDefault')) {
         obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+      }
+      if (data.hasOwnProperty('lastModifiedDateTime')) {
+        obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('nrdsId')) {
+        obj['nrdsId'] = ApiClient.convertToType(data['nrdsId'], 'String');
+      }
+      if (data.hasOwnProperty('nrdsLastName')) {
+        obj['nrdsLastName'] = ApiClient.convertToType(data['nrdsLastName'], 'String');
+      }
+      if (data.hasOwnProperty('nrdsStatus')) {
+        obj['nrdsStatus'] = ApiClient.convertToType(data['nrdsStatus'], 'String');
       }
       if (data.hasOwnProperty('phoneticName')) {
         obj['phoneticName'] = ApiClient.convertToType(data['phoneticName'], 'String');
@@ -102,6 +123,9 @@
       }
       if (data.hasOwnProperty('signatureName')) {
         obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
+      }
+      if (data.hasOwnProperty('signatureRights')) {
+        obj['signatureRights'] = ApiClient.convertToType(data['signatureRights'], 'String');
       }
       if (data.hasOwnProperty('signatureType')) {
         obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
@@ -133,9 +157,19 @@
    */
   exports.prototype['createdDateTime'] = undefined;
   /**
+   * 
+   * @member {String} customField
+   */
+  exports.prototype['customField'] = undefined;
+  /**
    * @member {module:model/DateStampProperties} dateStampProperties
    */
   exports.prototype['dateStampProperties'] = undefined;
+  /**
+   * 
+   * @member {String} disallowUserResizeStamp
+   */
+  exports.prototype['disallowUserResizeStamp'] = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
@@ -145,6 +179,11 @@
    * @member {String} externalID
    */
   exports.prototype['externalID'] = undefined;
+  /**
+   * 
+   * @member {String} imageBase64
+   */
+  exports.prototype['imageBase64'] = undefined;
   /**
    * 
    * @member {String} imageType
@@ -165,6 +204,26 @@
    * @member {String} isDefault
    */
   exports.prototype['isDefault'] = undefined;
+  /**
+   * The date and time the item was last modified.
+   * @member {String} lastModifiedDateTime
+   */
+  exports.prototype['lastModifiedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} nrdsId
+   */
+  exports.prototype['nrdsId'] = undefined;
+  /**
+   * 
+   * @member {String} nrdsLastName
+   */
+  exports.prototype['nrdsLastName'] = undefined;
+  /**
+   * 
+   * @member {String} nrdsStatus
+   */
+  exports.prototype['nrdsStatus'] = undefined;
   /**
    * 
    * @member {String} phoneticName
@@ -200,6 +259,11 @@
    * @member {String} signatureName
    */
   exports.prototype['signatureName'] = undefined;
+  /**
+   * 
+   * @member {String} signatureRights
+   */
+  exports.prototype['signatureRights'] = undefined;
   /**
    * 
    * @member {String} signatureType

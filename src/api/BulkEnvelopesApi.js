@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -114,7 +114,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var returnType = BulkRecipientsUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -135,7 +135,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * @param {String} batchId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Specifies the number of entries to return.
-     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;Ã¢â¬Âfailed,queuedÃ¢â¬Â)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent Ã¢â¬â This only returns entries with a sent status.  
+     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
      * @param {String} optsOrCallback.startPosition Specifies the location in the list of envelopes from which to start.
      * @param {module:api/BulkEnvelopesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopeStatus}
@@ -187,7 +187,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var returnType = BulkEnvelopeStatus;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/bulk_envelopes/{batchId}', 'GET',
+        '/v2.1/accounts/{accountId}/bulk_envelopes/{batchId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -265,7 +265,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var returnType = BulkRecipientsResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'GET',
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -333,7 +333,7 @@ The response returns information about the envelopes sent with bulk recipient ba
       var returnType = BulkEnvelopesResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/bulk_envelopes', 'GET',
+        '/v2.1/accounts/{accountId}/bulk_envelopes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -410,7 +410,7 @@ The REST API does not support modifying individual rows or values in the bulk re
       var returnType = BulkRecipientsSummaryResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'PUT',
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

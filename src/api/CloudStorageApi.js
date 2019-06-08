@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -114,7 +114,7 @@
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/users/{userId}/cloud_storage', 'POST',
+        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -182,7 +182,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'DELETE',
+        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -250,7 +250,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/users/{userId}/cloud_storage', 'DELETE',
+        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -328,7 +328,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'GET',
+        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -353,6 +353,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
      * @param {String} folderId The ID of the folder being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.cloudStorageFolderPath 
+     * @param {String} optsOrCallback.cloudStorageFolderidPlain 
      * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25. 
      * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc &#x3D; ascending sort order * desc &#x3D; descending sort order 
      * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
@@ -406,6 +407,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
       };
       var queryParams = {
         'cloud_storage_folder_path': optsOrCallback['cloudStorageFolderPath'],
+        'cloud_storage_folderid_plain': optsOrCallback['cloudStorageFolderidPlain'],
         'count': optsOrCallback['count'],
         'order': optsOrCallback['order'],
         'order_by': optsOrCallback['orderBy'],
@@ -423,7 +425,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
       var returnType = ExternalFolder;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}', 'GET',
+        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -511,7 +513,7 @@ Valid values are the service name (&quot;Box&quot;) or the numerical serviceId (
       var returnType = ExternalFolder;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders', 'GET',
+        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -582,7 +584,7 @@ The {serviceId} parameter can be either the service name or serviceId.
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/users/{userId}/cloud_storage', 'GET',
+        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RecipientSignatureProviderOptions'], factory);
+    define(['ApiClient', 'model/PropertyMetadata', 'model/RecipientSignatureProviderOptions'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RecipientSignatureProviderOptions'));
+    module.exports = factory(require('../ApiClient'), require('./PropertyMetadata'), require('./RecipientSignatureProviderOptions'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.RecipientSignatureProvider = factory(root.Docusign.ApiClient, root.Docusign.RecipientSignatureProviderOptions);
+    root.Docusign.RecipientSignatureProvider = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata, root.Docusign.RecipientSignatureProviderOptions);
   }
-}(this, function(ApiClient, RecipientSignatureProviderOptions) {
+}(this, function(ApiClient, PropertyMetadata, RecipientSignatureProviderOptions) {
   'use strict';
 
 
@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('signatureProviderName')) {
         obj['signatureProviderName'] = ApiClient.convertToType(data['signatureProviderName'], 'String');
       }
+      if (data.hasOwnProperty('signatureProviderNameMetadata')) {
+        obj['signatureProviderNameMetadata'] = PropertyMetadata.constructFromObject(data['signatureProviderNameMetadata']);
+      }
       if (data.hasOwnProperty('signatureProviderOptions')) {
         obj['signatureProviderOptions'] = RecipientSignatureProviderOptions.constructFromObject(data['signatureProviderOptions']);
       }
@@ -86,6 +89,10 @@
    * @member {String} signatureProviderName
    */
   exports.prototype['signatureProviderName'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} signatureProviderNameMetadata
+   */
+  exports.prototype['signatureProviderNameMetadata'] = undefined;
   /**
    * @member {module:model/RecipientSignatureProviderOptions} signatureProviderOptions
    */

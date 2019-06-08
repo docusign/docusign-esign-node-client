@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddressInformationV2', 'model/ErrorDetails', 'model/ForgottenPasswordInformation', 'model/Group', 'model/NameValue', 'model/UserAccountManagementGranularInformation'], factory);
+    define(['ApiClient', 'model/AddressInformation', 'model/ConnectUserObject', 'model/ErrorDetails', 'model/ForgottenPasswordInformation', 'model/Group', 'model/NameValue', 'model/UserSettingsInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AddressInformationV2'), require('./ErrorDetails'), require('./ForgottenPasswordInformation'), require('./Group'), require('./NameValue'), require('./UserAccountManagementGranularInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AddressInformation'), require('./ConnectUserObject'), require('./ErrorDetails'), require('./ForgottenPasswordInformation'), require('./Group'), require('./NameValue'), require('./UserSettingsInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.UserInformation = factory(root.Docusign.ApiClient, root.Docusign.AddressInformationV2, root.Docusign.ErrorDetails, root.Docusign.ForgottenPasswordInformation, root.Docusign.Group, root.Docusign.NameValue, root.Docusign.UserAccountManagementGranularInformation);
+    root.Docusign.UserInformation = factory(root.Docusign.ApiClient, root.Docusign.AddressInformation, root.Docusign.ConnectUserObject, root.Docusign.ErrorDetails, root.Docusign.ForgottenPasswordInformation, root.Docusign.Group, root.Docusign.NameValue, root.Docusign.UserSettingsInformation);
   }
-}(this, function(ApiClient, AddressInformationV2, ErrorDetails, ForgottenPasswordInformation, Group, NameValue, UserAccountManagementGranularInformation) {
+}(this, function(ApiClient, AddressInformation, ConnectUserObject, ErrorDetails, ForgottenPasswordInformation, Group, NameValue, UserSettingsInformation) {
   'use strict';
 
 
@@ -55,11 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('accountManagementGranular')) {
-        obj['accountManagementGranular'] = UserAccountManagementGranularInformation.constructFromObject(data['accountManagementGranular']);
-      }
       if (data.hasOwnProperty('activationAccessCode')) {
         obj['activationAccessCode'] = ApiClient.convertToType(data['activationAccessCode'], 'String');
+      }
+      if (data.hasOwnProperty('company')) {
+        obj['company'] = ApiClient.convertToType(data['company'], 'String');
+      }
+      if (data.hasOwnProperty('connectConfigurations')) {
+        obj['connectConfigurations'] = ApiClient.convertToType(data['connectConfigurations'], [ConnectUserObject]);
       }
       if (data.hasOwnProperty('countryCode')) {
         obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
@@ -69,6 +72,9 @@
       }
       if (data.hasOwnProperty('customSettings')) {
         obj['customSettings'] = ApiClient.convertToType(data['customSettings'], [NameValue]);
+      }
+      if (data.hasOwnProperty('defaultAccountId')) {
+        obj['defaultAccountId'] = ApiClient.convertToType(data['defaultAccountId'], 'String');
       }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -89,13 +95,16 @@
         obj['groupList'] = ApiClient.convertToType(data['groupList'], [Group]);
       }
       if (data.hasOwnProperty('homeAddress')) {
-        obj['homeAddress'] = AddressInformationV2.constructFromObject(data['homeAddress']);
+        obj['homeAddress'] = AddressInformation.constructFromObject(data['homeAddress']);
       }
       if (data.hasOwnProperty('initialsImageUri')) {
         obj['initialsImageUri'] = ApiClient.convertToType(data['initialsImageUri'], 'String');
       }
       if (data.hasOwnProperty('isAdmin')) {
         obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'String');
+      }
+      if (data.hasOwnProperty('isNAREnabled')) {
+        obj['isNAREnabled'] = ApiClient.convertToType(data['isNAREnabled'], 'String');
       }
       if (data.hasOwnProperty('jobTitle')) {
         obj['jobTitle'] = ApiClient.convertToType(data['jobTitle'], 'String');
@@ -148,6 +157,9 @@
       if (data.hasOwnProperty('uri')) {
         obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
       }
+      if (data.hasOwnProperty('userAddedToAccountDateTime')) {
+        obj['userAddedToAccountDateTime'] = ApiClient.convertToType(data['userAddedToAccountDateTime'], 'String');
+      }
       if (data.hasOwnProperty('userId')) {
         obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
       }
@@ -158,7 +170,7 @@
         obj['userProfileLastModifiedDate'] = ApiClient.convertToType(data['userProfileLastModifiedDate'], 'String');
       }
       if (data.hasOwnProperty('userSettings')) {
-        obj['userSettings'] = ApiClient.convertToType(data['userSettings'], [NameValue]);
+        obj['userSettings'] = UserSettingsInformation.constructFromObject(data['userSettings']);
       }
       if (data.hasOwnProperty('userStatus')) {
         obj['userStatus'] = ApiClient.convertToType(data['userStatus'], 'String');
@@ -167,21 +179,27 @@
         obj['userType'] = ApiClient.convertToType(data['userType'], 'String');
       }
       if (data.hasOwnProperty('workAddress')) {
-        obj['workAddress'] = AddressInformationV2.constructFromObject(data['workAddress']);
+        obj['workAddress'] = AddressInformation.constructFromObject(data['workAddress']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/UserAccountManagementGranularInformation} accountManagementGranular
-   */
-  exports.prototype['accountManagementGranular'] = undefined;
-  /**
    * The activation code the new user must enter when activating their account.
    * @member {String} activationAccessCode
    */
   exports.prototype['activationAccessCode'] = undefined;
+  /**
+   * 
+   * @member {String} company
+   */
+  exports.prototype['company'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/ConnectUserObject>} connectConfigurations
+   */
+  exports.prototype['connectConfigurations'] = undefined;
   /**
    * 
    * @member {String} countryCode
@@ -197,6 +215,11 @@
    * @member {Array.<module:model/NameValue>} customSettings
    */
   exports.prototype['customSettings'] = undefined;
+  /**
+   * 
+   * @member {String} defaultAccountId
+   */
+  exports.prototype['defaultAccountId'] = undefined;
   /**
    * 
    * @member {String} email
@@ -226,7 +249,7 @@
    */
   exports.prototype['groupList'] = undefined;
   /**
-   * @member {module:model/AddressInformationV2} homeAddress
+   * @member {module:model/AddressInformation} homeAddress
    */
   exports.prototype['homeAddress'] = undefined;
   /**
@@ -239,6 +262,11 @@
    * @member {String} isAdmin
    */
   exports.prototype['isAdmin'] = undefined;
+  /**
+   * 
+   * @member {String} isNAREnabled
+   */
+  exports.prototype['isNAREnabled'] = undefined;
   /**
    * 
    * @member {String} jobTitle
@@ -326,6 +354,11 @@
   exports.prototype['uri'] = undefined;
   /**
    * 
+   * @member {String} userAddedToAccountDateTime
+   */
+  exports.prototype['userAddedToAccountDateTime'] = undefined;
+  /**
+   * 
    * @member {String} userId
    */
   exports.prototype['userId'] = undefined;
@@ -340,8 +373,7 @@
    */
   exports.prototype['userProfileLastModifiedDate'] = undefined;
   /**
-   *  The name/value pair information for user settings. These determine the actions that a user can take in the account. The `[ML:userSettings]` are listed and described below.
-   * @member {Array.<module:model/NameValue>} userSettings
+   * @member {module:model/UserSettingsInformation} userSettings
    */
   exports.prototype['userSettings'] = undefined;
   /**
@@ -355,7 +387,7 @@
    */
   exports.prototype['userType'] = undefined;
   /**
-   * @member {module:model/AddressInformationV2} workAddress
+   * @member {module:model/AddressInformation} workAddress
    */
   exports.prototype['workAddress'] = undefined;
 

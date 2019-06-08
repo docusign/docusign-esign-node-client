@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -66,7 +66,7 @@
         obj['lastTimestamp'] = ApiClient.convertToType(data['lastTimestamp'], 'String');
       }
       if (data.hasOwnProperty('totalCount')) {
-        obj['totalCount'] = ApiClient.convertToType(data['totalCount'], 'Number');
+        obj['totalCount'] = ApiClient.convertToType(data['totalCount'], 'String');
       }
     }
     return obj;
@@ -89,7 +89,7 @@
   exports.prototype['lastTimestamp'] = undefined;
   /**
    * The number of times the authentication method was used. 
-   * @member {Number} totalCount
+   * @member {String} totalCount
    */
   exports.prototype['totalCount'] = undefined;
 

@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/PropertyMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./PropertyMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.RecipientPhoneAuthentication = factory(root.Docusign.ApiClient);
+    root.Docusign.RecipientPhoneAuthentication = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, PropertyMetadata) {
   'use strict';
 
 
@@ -59,14 +59,26 @@
       if (data.hasOwnProperty('recipMayProvideNumber')) {
         obj['recipMayProvideNumber'] = ApiClient.convertToType(data['recipMayProvideNumber'], 'String');
       }
+      if (data.hasOwnProperty('recipMayProvideNumberMetadata')) {
+        obj['recipMayProvideNumberMetadata'] = PropertyMetadata.constructFromObject(data['recipMayProvideNumberMetadata']);
+      }
       if (data.hasOwnProperty('recordVoicePrint')) {
         obj['recordVoicePrint'] = ApiClient.convertToType(data['recordVoicePrint'], 'String');
+      }
+      if (data.hasOwnProperty('recordVoicePrintMetadata')) {
+        obj['recordVoicePrintMetadata'] = PropertyMetadata.constructFromObject(data['recordVoicePrintMetadata']);
       }
       if (data.hasOwnProperty('senderProvidedNumbers')) {
         obj['senderProvidedNumbers'] = ApiClient.convertToType(data['senderProvidedNumbers'], ['String']);
       }
+      if (data.hasOwnProperty('senderProvidedNumbersMetadata')) {
+        obj['senderProvidedNumbersMetadata'] = PropertyMetadata.constructFromObject(data['senderProvidedNumbersMetadata']);
+      }
       if (data.hasOwnProperty('validateRecipProvidedNumber')) {
         obj['validateRecipProvidedNumber'] = ApiClient.convertToType(data['validateRecipProvidedNumber'], 'String');
+      }
+      if (data.hasOwnProperty('validateRecipProvidedNumberMetadata')) {
+        obj['validateRecipProvidedNumberMetadata'] = PropertyMetadata.constructFromObject(data['validateRecipProvidedNumberMetadata']);
       }
     }
     return obj;
@@ -78,20 +90,36 @@
    */
   exports.prototype['recipMayProvideNumber'] = undefined;
   /**
+   * @member {module:model/PropertyMetadata} recipMayProvideNumberMetadata
+   */
+  exports.prototype['recipMayProvideNumberMetadata'] = undefined;
+  /**
    * Reserved.
    * @member {String} recordVoicePrint
    */
   exports.prototype['recordVoicePrint'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} recordVoicePrintMetadata
+   */
+  exports.prototype['recordVoicePrintMetadata'] = undefined;
   /**
    * An Array containing a list of phone numbers the recipient may use for SMS text authentication. 
    * @member {Array.<String>} senderProvidedNumbers
    */
   exports.prototype['senderProvidedNumbers'] = undefined;
   /**
+   * @member {module:model/PropertyMetadata} senderProvidedNumbersMetadata
+   */
+  exports.prototype['senderProvidedNumbersMetadata'] = undefined;
+  /**
    *  Reserved.
    * @member {String} validateRecipProvidedNumber
    */
   exports.prototype['validateRecipProvidedNumber'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} validateRecipProvidedNumberMetadata
+   */
+  exports.prototype['validateRecipProvidedNumberMetadata'] = undefined;
 
 
 

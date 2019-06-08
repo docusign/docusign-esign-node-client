@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -109,7 +109,7 @@
       var returnType = ConnectCustomConfiguration;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect', 'POST',
+        '/v2.1/accounts/{accountId}/connect', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -172,7 +172,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/{connectId}', 'DELETE',
+        '/v2.1/accounts/{accountId}/connect/{connectId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -230,7 +230,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/failures/{failureId}', 'DELETE',
+        '/v2.1/accounts/{accountId}/connect/failures/{failureId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -289,7 +289,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/logs/{logId}', 'DELETE',
+        '/v2.1/accounts/{accountId}/connect/logs/{logId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -342,7 +342,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/logs', 'DELETE',
+        '/v2.1/accounts/{accountId}/connect/logs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -404,7 +404,7 @@
       var returnType = ConnectConfigResults;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/{connectId}', 'GET',
+        '/v2.1/accounts/{accountId}/connect/{connectId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -475,7 +475,7 @@
       var returnType = ConnectLog;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/logs/{logId}', 'GET',
+        '/v2.1/accounts/{accountId}/connect/logs/{logId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -529,7 +529,7 @@
       var returnType = ConnectConfigResults;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect', 'GET',
+        '/v2.1/accounts/{accountId}/connect', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -593,7 +593,7 @@
       var returnType = ConnectLogs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/failures', 'GET',
+        '/v2.1/accounts/{accountId}/connect/failures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -659,7 +659,7 @@
       var returnType = ConnectLogs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/logs', 'GET',
+        '/v2.1/accounts/{accountId}/connect/logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -738,7 +738,7 @@
       var returnType = IntegratedUserInfoList;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/{connectId}/users', 'GET',
+        '/v2.1/accounts/{accountId}/connect/{connectId}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -797,7 +797,7 @@
       var returnType = ConnectFailureResults;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/envelopes/{envelopeId}/retry_queue', 'PUT',
+        '/v2.1/accounts/{accountId}/connect/envelopes/{envelopeId}/retry_queue', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -858,7 +858,7 @@
       var returnType = ConnectFailureResults;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect/envelopes/retry_queue', 'PUT',
+        '/v2.1/accounts/{accountId}/connect/envelopes/retry_queue', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -921,7 +921,7 @@
       var returnType = ConnectCustomConfiguration;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/connect', 'PUT',
+        '/v2.1/accounts/{accountId}/connect', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

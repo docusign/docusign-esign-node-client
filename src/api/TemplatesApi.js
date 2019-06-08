@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -114,7 +114,7 @@
       var returnType = CustomFields;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -189,7 +189,7 @@
       var returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -256,7 +256,7 @@
       var returnType = ViewUrl;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/views/edit', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/views/edit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -326,7 +326,7 @@
       var returnType = LockInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/lock', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -396,7 +396,7 @@
       var returnType = Recipients;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -471,7 +471,7 @@
       var returnType = Tabs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -562,7 +562,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = TemplateSummary;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates', 'POST',
+        '/v2.1/accounts/{accountId}/templates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -636,7 +636,81 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = DocumentHtmlDefinitions;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the createTemplateDocumentTabs operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~createTemplateDocumentTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Adds the tabs to a tempate
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:api/TemplatesApi~createTemplateDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.createTemplateDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateTabs'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createTemplateDocumentTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling createTemplateDocumentTabs");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling createTemplateDocumentTabs");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -703,7 +777,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = DocumentHtmlDefinitions;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/responsive_html_preview', 'POST',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/responsive_html_preview', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -769,7 +843,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = BulkRecipientsUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -837,7 +911,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = CustomFields;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -912,7 +986,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -993,7 +1067,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1061,7 +1135,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = TemplateDocumentsResult;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1136,7 +1210,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = GroupInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/{templatePart}', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1204,7 +1278,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = LockInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/lock', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1279,7 +1353,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = Recipients;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1347,7 +1421,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = Recipients;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1422,7 +1496,81 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = Tabs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'DELETE',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the deleteTemplateDocumentTabs operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~deleteTemplateDocumentTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes tabs from an envelope document
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:api/TemplatesApi~deleteTemplateDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.deleteTemplateDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateTabs'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteTemplateDocumentTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteTemplateDocumentTabs");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling deleteTemplateDocumentTabs");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1491,7 +1639,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var returnType = EnvelopeTemplate;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1571,7 +1719,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1660,7 +1808,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1735,7 +1883,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var returnType = Tabs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1796,7 +1944,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = LockInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/lock', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1855,7 +2003,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = Notification;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/notification', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/notification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1927,7 +2075,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = Tabs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2014,7 +2162,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = PageImages;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2079,7 +2227,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = DocumentHtmlDefinitionOriginals;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/html_definitions', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/html_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2137,7 +2285,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = DocumentHtmlDefinitionOriginals;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/html_definitions', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/html_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2215,7 +2363,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = BulkRecipientsResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2274,7 +2422,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = CustomFields;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2340,7 +2488,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2359,10 +2507,19 @@ If the call is made by the user who has the lock and the request has the same in
      * Retrieves a list of documents associated with the specified template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeTabs 
      * @param {module:api/TemplatesApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
      */
-    this.listDocuments = function(accountId, templateId, callback) {
+    this.listDocuments = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -2387,6 +2544,7 @@ If the call is made by the user who has the lock and the request has the same in
         'templateId': templateId
       };
       var queryParams = {
+        'include_tabs': optsOrCallback['includeTabs']
       };
       var headerParams = {
       };
@@ -2399,7 +2557,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = TemplateDocumentsResult;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2472,7 +2630,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = Recipients;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2550,7 +2708,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = Tabs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'GET',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2570,17 +2728,22 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Number of records to return in the cache.
-     * @param {String} optsOrCallback.folder The query value can be a folder name or folder ID. The response will only return templates in the specified folder.
+     * @param {String} optsOrCallback.createdFromDate 
+     * @param {String} optsOrCallback.createdToDate 
      * @param {String} optsOrCallback.folderIds A comma separated list of folder ID GUIDs.
+     * @param {String} optsOrCallback.folderTypes 
      * @param {String} optsOrCallback.fromDate Start of the search date range. Only returns templates created on or after this date/time. If no value is specified, there is no limit on the earliest date created.
      * @param {String} optsOrCallback.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
+     * @param {String} optsOrCallback.isDownload 
      * @param {String} optsOrCallback.modifiedFromDate 
      * @param {String} optsOrCallback.modifiedToDate 
      * @param {String} optsOrCallback.order Sets the direction order used to sort the list. Valid values are: -asc &#x3D; ascending sort order (a to z)  -desc &#x3D; descending sort order (z to a)
      * @param {String} optsOrCallback.orderBy Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used.
+     * @param {String} optsOrCallback.searchFields 
      * @param {String} optsOrCallback.searchText The search text used to search the names of templates.
      * @param {String} optsOrCallback.sharedByMe If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected.
      * @param {String} optsOrCallback.startPosition The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero).
+     * @param {String} optsOrCallback.templateIds 
      * @param {String} optsOrCallback.toDate End of the search date range. Only returns templates created up to this date/time. If no value is provided, this defaults to the current date.
      * @param {String} optsOrCallback.usedFromDate Start of the search date range. Only returns templates used or edited on or after this date/time. If no value is specified, there is no limit on the earliest date used.
      * @param {String} optsOrCallback.usedToDate End of the search date range. Only returns templates used or edited up to this date/time. If no value is provided, this defaults to the current date.
@@ -2616,17 +2779,22 @@ If the call is made by the user who has the lock and the request has the same in
       };
       var queryParams = {
         'count': optsOrCallback['count'],
-        'folder': optsOrCallback['folder'],
+        'created_from_date': optsOrCallback['createdFromDate'],
+        'created_to_date': optsOrCallback['createdToDate'],
         'folder_ids': optsOrCallback['folderIds'],
+        'folder_types': optsOrCallback['folderTypes'],
         'from_date': optsOrCallback['fromDate'],
         'include': optsOrCallback['include'],
+        'is_download': optsOrCallback['isDownload'],
         'modified_from_date': optsOrCallback['modifiedFromDate'],
         'modified_to_date': optsOrCallback['modifiedToDate'],
         'order': optsOrCallback['order'],
         'order_by': optsOrCallback['orderBy'],
+        'search_fields': optsOrCallback['searchFields'],
         'search_text': optsOrCallback['searchText'],
         'shared_by_me': optsOrCallback['sharedByMe'],
         'start_position': optsOrCallback['startPosition'],
+        'template_ids': optsOrCallback['templateIds'],
         'to_date': optsOrCallback['toDate'],
         'used_from_date': optsOrCallback['usedFromDate'],
         'used_to_date': optsOrCallback['usedToDate'],
@@ -2644,7 +2812,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = EnvelopeTemplateResults;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates', 'GET',
+        '/v2.1/accounts/{accountId}/templates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2725,7 +2893,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2793,7 +2961,7 @@ If the call is made by the user who has the lock and the request has the same in
       var returnType = TemplateUpdateSummary;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2870,7 +3038,7 @@ The REST API does not support modifying individual rows or values in the bulk re
       var returnType = BulkRecipientsSummaryResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2940,7 +3108,7 @@ Each custom field used in a template must have a unique name.
       var returnType = CustomFields;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/custom_fields', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2961,7 +3129,6 @@ Each custom field used in a template must have a unique name.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.applyDocumentFields 
      * @param {String} optsOrCallback.isEnvelopeDefinition 
      * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
      * @param {module:api/TemplatesApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3005,7 +3172,6 @@ Each custom field used in a template must have a unique name.
         'documentId': documentId
       };
       var queryParams = {
-        'apply_document_fields': optsOrCallback['applyDocumentFields'],
         'is_envelope_definition': optsOrCallback['isEnvelopeDefinition']
       };
       var headerParams = {
@@ -3019,7 +3185,7 @@ Each custom field used in a template must have a unique name.
       var returnType = EnvelopeDocument;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3094,7 +3260,7 @@ Each custom field used in a template must have a unique name.
       var returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3114,8 +3280,6 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.applyDocumentFields 
-     * @param {String} optsOrCallback.persistTabs 
      * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
      * @param {module:api/TemplatesApi~updateDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
@@ -3152,8 +3316,6 @@ Each custom field used in a template must have a unique name.
         'templateId': templateId
       };
       var queryParams = {
-        'apply_document_fields': optsOrCallback['applyDocumentFields'],
-        'persist_tabs': optsOrCallback['persistTabs']
       };
       var headerParams = {
       };
@@ -3166,7 +3328,7 @@ Each custom field used in a template must have a unique name.
       var returnType = TemplateDocumentsResult;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/documents', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3241,7 +3403,7 @@ Each custom field used in a template must have a unique name.
       var returnType = GroupInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/{templatePart}', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3309,7 +3471,7 @@ Each custom field used in a template must have a unique name.
       var returnType = LockInformation;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/lock', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3377,7 +3539,7 @@ Each custom field used in a template must have a unique name.
       var returnType = Notification;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/notification', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/notification', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3449,7 +3611,7 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
       var returnType = RecipientsUpdateSummary;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3524,7 +3686,81 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
       var returnType = Tabs;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'PUT',
+        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the updateTemplateDocumentTabs operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~updateTemplateDocumentTabsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Tabs} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the tabs for a template
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} documentId The ID of the document being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:api/TemplatesApi~updateTemplateDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Tabs}
+     */
+    this.updateTemplateDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['templateTabs'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateTemplateDocumentTabs");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId == undefined || templateId == null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateTemplateDocumentTabs");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId == undefined || documentId == null) {
+        throw new Error("Missing the required parameter 'documentId' when calling updateTemplateDocumentTabs");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'documentId': documentId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Tabs;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Folder'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Folder'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.FoldersRequest = factory(root.Docusign.ApiClient);
+    root.Docusign.FoldersRequest = factory(root.Docusign.ApiClient, root.Docusign.Folder);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Folder) {
   'use strict';
 
 
@@ -58,6 +58,9 @@
       if (data.hasOwnProperty('envelopeIds')) {
         obj['envelopeIds'] = ApiClient.convertToType(data['envelopeIds'], ['String']);
       }
+      if (data.hasOwnProperty('folders')) {
+        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
+      }
       if (data.hasOwnProperty('fromFolderId')) {
         obj['fromFolderId'] = ApiClient.convertToType(data['fromFolderId'], 'String');
       }
@@ -70,6 +73,11 @@
    * @member {Array.<String>} envelopeIds
    */
   exports.prototype['envelopeIds'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Folder>} folders
+   */
+  exports.prototype['folders'] = undefined;
   /**
    *  The folder ID the envelope is being moved from.
    * @member {String} fromFolderId
