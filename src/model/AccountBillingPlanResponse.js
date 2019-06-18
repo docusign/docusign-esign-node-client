@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountAddress', 'model/AccountBillingPlan', 'model/BillingPlan', 'model/CreditCardInformation', 'model/PaymentProcessorInformation', 'model/ReferralInformation'], factory);
+    define(['ApiClient', 'model/AccountAddress', 'model/AccountBillingPlan', 'model/BillingPlan', 'model/CreditCardInformation', 'model/DirectDebitProcessorInformation', 'model/PaymentProcessorInformation', 'model/ReferralInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AccountBillingPlan'), require('./BillingPlan'), require('./CreditCardInformation'), require('./PaymentProcessorInformation'), require('./ReferralInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AccountBillingPlan'), require('./BillingPlan'), require('./CreditCardInformation'), require('./DirectDebitProcessorInformation'), require('./PaymentProcessorInformation'), require('./ReferralInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountBillingPlanResponse = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AccountBillingPlan, root.Docusign.BillingPlan, root.Docusign.CreditCardInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.ReferralInformation);
+    root.Docusign.AccountBillingPlanResponse = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AccountBillingPlan, root.Docusign.BillingPlan, root.Docusign.CreditCardInformation, root.Docusign.DirectDebitProcessorInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.ReferralInformation);
   }
-}(this, function(ApiClient, AccountAddress, AccountBillingPlan, BillingPlan, CreditCardInformation, PaymentProcessorInformation, ReferralInformation) {
+}(this, function(ApiClient, AccountAddress, AccountBillingPlan, BillingPlan, CreditCardInformation, DirectDebitProcessorInformation, PaymentProcessorInformation, ReferralInformation) {
   'use strict';
 
 
@@ -68,6 +68,12 @@
       if (data.hasOwnProperty('creditCardInformation')) {
         obj['creditCardInformation'] = CreditCardInformation.constructFromObject(data['creditCardInformation']);
       }
+      if (data.hasOwnProperty('directDebitProcessorInformation')) {
+        obj['directDebitProcessorInformation'] = DirectDebitProcessorInformation.constructFromObject(data['directDebitProcessorInformation']);
+      }
+      if (data.hasOwnProperty('paymentMethod')) {
+        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+      }
       if (data.hasOwnProperty('paymentProcessorInformation')) {
         obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
       }
@@ -98,6 +104,15 @@
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
   exports.prototype['creditCardInformation'] = undefined;
+  /**
+   * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
+   */
+  exports.prototype['directDebitProcessorInformation'] = undefined;
+  /**
+   * 
+   * @member {String} paymentMethod
+   */
+  exports.prototype['paymentMethod'] = undefined;
   /**
    * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
    */

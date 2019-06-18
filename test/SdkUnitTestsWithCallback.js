@@ -457,9 +457,9 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     }
 
     // create an envelope to be signed
-    var templateDef = new docusign.EnvelopeTemplate();
-    templateDef.emailSubject = 'Please Sign my Node SDK Envelope';
-    templateDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
+    var template = new docusign.EnvelopeTemplate();
+    template.emailSubject = 'Please Sign my Node SDK Envelope';
+    template.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // add a document to the envelope
     var doc = new docusign.Document();
@@ -470,7 +470,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var docs = [];
     docs.push(doc);
-    templateDef.documents = docs;
+    template.documents = docs;
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
@@ -493,17 +493,17 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     signer.tabs = tabs;
 
     // Above causes issue
-    templateDef.recipients = new docusign.Recipients();
-    templateDef.recipients.signers = [];
-    templateDef.recipients.signers.push(signer);
+    template.recipients = new docusign.Recipients();
+    template.recipients.signers = [];
+    template.recipients.signers.push(signer);
 
-    var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
-    envTemplateDef.name = 'myTemplate';
-    templateDef.envelopeTemplateDefinition = envTemplateDef;
+    var envTemplate = new docusign.EnvelopeTemplate();
+    envTemplate.name = 'myTemplate';
+    template.envelopeTemplate = envTemplate;
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, {'envelopeTemplate': templateDef}, function (error, templateSummary, response) {
+    templatesApi.createTemplate(accountId, {'envelopeTemplate': template}, function (error, templateSummary, response) {
       if (error) {
         return done(error);
       }

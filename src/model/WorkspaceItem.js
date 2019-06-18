@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/WorkspaceUser', 'model/WorkspaceUserAuthorization'], factory);
+    define(['ApiClient', 'model/Page', 'model/WorkspaceUser', 'model/WorkspaceUserAuthorization'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./WorkspaceUser'), require('./WorkspaceUserAuthorization'));
+    module.exports = factory(require('../ApiClient'), require('./Page'), require('./WorkspaceUser'), require('./WorkspaceUserAuthorization'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.WorkspaceItem = factory(root.Docusign.ApiClient, root.Docusign.WorkspaceUser, root.Docusign.WorkspaceUserAuthorization);
+    root.Docusign.WorkspaceItem = factory(root.Docusign.ApiClient, root.Docusign.Page, root.Docusign.WorkspaceUser, root.Docusign.WorkspaceUserAuthorization);
   }
-}(this, function(ApiClient, WorkspaceUser, WorkspaceUserAuthorization) {
+}(this, function(ApiClient, Page, WorkspaceUser, WorkspaceUserAuthorization) {
   'use strict';
 
 
@@ -107,11 +107,26 @@
       if (data.hasOwnProperty('parentFolderUri')) {
         obj['parentFolderUri'] = ApiClient.convertToType(data['parentFolderUri'], 'String');
       }
+      if (data.hasOwnProperty('sha256')) {
+        obj['sha256'] = ApiClient.convertToType(data['sha256'], 'String');
+      }
+      if (data.hasOwnProperty('thumbHeight')) {
+        obj['thumbHeight'] = ApiClient.convertToType(data['thumbHeight'], 'String');
+      }
+      if (data.hasOwnProperty('thumbnail')) {
+        obj['thumbnail'] = Page.constructFromObject(data['thumbnail']);
+      }
+      if (data.hasOwnProperty('thumbWidth')) {
+        obj['thumbWidth'] = ApiClient.convertToType(data['thumbWidth'], 'String');
+      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('uri')) {
         obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+      }
+      if (data.hasOwnProperty('userAuthorization')) {
+        obj['userAuthorization'] = WorkspaceUserAuthorization.constructFromObject(data['userAuthorization']);
       }
     }
     return obj;
@@ -200,6 +215,25 @@
    */
   exports.prototype['parentFolderUri'] = undefined;
   /**
+   * 
+   * @member {String} sha256
+   */
+  exports.prototype['sha256'] = undefined;
+  /**
+   * 
+   * @member {String} thumbHeight
+   */
+  exports.prototype['thumbHeight'] = undefined;
+  /**
+   * @member {module:model/Page} thumbnail
+   */
+  exports.prototype['thumbnail'] = undefined;
+  /**
+   * 
+   * @member {String} thumbWidth
+   */
+  exports.prototype['thumbWidth'] = undefined;
+  /**
    * The type of the workspace item. Valid values are file, folder.
    * @member {String} type
    */
@@ -209,6 +243,10 @@
    * @member {String} uri
    */
   exports.prototype['uri'] = undefined;
+  /**
+   * @member {module:model/WorkspaceUserAuthorization} userAuthorization
+   */
+  exports.prototype['userAuthorization'] = undefined;
 
 
 

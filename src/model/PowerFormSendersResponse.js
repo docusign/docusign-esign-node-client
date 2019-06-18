@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -56,7 +56,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('endPosition')) {
-        obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
+        obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'Number');
       }
       if (data.hasOwnProperty('nextUri')) {
         obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
@@ -68,13 +68,13 @@
         obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
       }
       if (data.hasOwnProperty('resultSetSize')) {
-        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
+        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'Number');
       }
       if (data.hasOwnProperty('startPosition')) {
-        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'Number');
       }
       if (data.hasOwnProperty('totalSetSize')) {
-        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
+        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'Number');
       }
     }
     return obj;
@@ -82,7 +82,7 @@
 
   /**
    * The last position in the result set. 
-   * @member {String} endPosition
+   * @member {Number} endPosition
    */
   exports.prototype['endPosition'] = undefined;
   /**
@@ -102,17 +102,17 @@
   exports.prototype['previousUri'] = undefined;
   /**
    * The number of results returned in this response. 
-   * @member {String} resultSetSize
+   * @member {Number} resultSetSize
    */
   exports.prototype['resultSetSize'] = undefined;
   /**
    * Starting position of the current result set.
-   * @member {String} startPosition
+   * @member {Number} startPosition
    */
   exports.prototype['startPosition'] = undefined;
   /**
    * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
-   * @member {String} totalSetSize
+   * @member {Number} totalSetSize
    */
   exports.prototype['totalSetSize'] = undefined;
 

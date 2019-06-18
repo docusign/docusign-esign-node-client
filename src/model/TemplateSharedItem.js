@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('owner')) {
         obj['owner'] = UserInfo.constructFromObject(data['owner']);
       }
+      if (data.hasOwnProperty('password')) {
+        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+      }
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
@@ -88,6 +91,11 @@
    * @member {module:model/UserInfo} owner
    */
   exports.prototype['owner'] = undefined;
+  /**
+   * 
+   * @member {String} password
+   */
+  exports.prototype['password'] = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared

@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -76,8 +76,8 @@
       if (data.hasOwnProperty('checkboxTabsEnabled')) {
         obj['checkboxTabsEnabled'] = ApiClient.convertToType(data['checkboxTabsEnabled'], 'String');
       }
-      if (data.hasOwnProperty('checkboxTabsMetadata')) {
-        obj['checkboxTabsMetadata'] = SettingsMetadata.constructFromObject(data['checkboxTabsMetadata']);
+      if (data.hasOwnProperty('checkBoxTabsMetadata')) {
+        obj['checkBoxTabsMetadata'] = SettingsMetadata.constructFromObject(data['checkBoxTabsMetadata']);
       }
       if (data.hasOwnProperty('dataFieldRegexEnabled')) {
         obj['dataFieldRegexEnabled'] = ApiClient.convertToType(data['dataFieldRegexEnabled'], 'String');
@@ -206,9 +206,9 @@
    */
   exports.prototype['checkboxTabsEnabled'] = undefined;
   /**
-   * @member {module:model/SettingsMetadata} checkboxTabsMetadata
+   * @member {module:model/SettingsMetadata} checkBoxTabsMetadata
    */
-  exports.prototype['checkboxTabsMetadata'] = undefined;
+  exports.prototype['checkBoxTabsMetadata'] = undefined;
   /**
    * 
    * @member {String} dataFieldRegexEnabled

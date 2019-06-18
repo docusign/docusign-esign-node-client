@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddressInformationV2', 'model/AuthenticationMethod', 'model/UsageHistory', 'model/UserInformation'], factory);
+    define(['ApiClient', 'model/AddressInformation', 'model/AuthenticationMethod', 'model/UsageHistory', 'model/UserInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AddressInformationV2'), require('./AuthenticationMethod'), require('./UsageHistory'), require('./UserInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AddressInformation'), require('./AuthenticationMethod'), require('./UsageHistory'), require('./UserInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.UserProfile = factory(root.Docusign.ApiClient, root.Docusign.AddressInformationV2, root.Docusign.AuthenticationMethod, root.Docusign.UsageHistory, root.Docusign.UserInformation);
+    root.Docusign.UserProfile = factory(root.Docusign.ApiClient, root.Docusign.AddressInformation, root.Docusign.AuthenticationMethod, root.Docusign.UsageHistory, root.Docusign.UserInformation);
   }
-}(this, function(ApiClient, AddressInformationV2, AuthenticationMethod, UsageHistory, UserInformation) {
+}(this, function(ApiClient, AddressInformation, AuthenticationMethod, UsageHistory, UserInformation) {
   'use strict';
 
 
@@ -56,7 +56,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('address')) {
-        obj['address'] = AddressInformationV2.constructFromObject(data['address']);
+        obj['address'] = AddressInformation.constructFromObject(data['address']);
       }
       if (data.hasOwnProperty('authenticationMethods')) {
         obj['authenticationMethods'] = ApiClient.convertToType(data['authenticationMethods'], [AuthenticationMethod]);
@@ -96,7 +96,7 @@
   }
 
   /**
-   * @member {module:model/AddressInformationV2} address
+   * @member {module:model/AddressInformation} address
    */
   exports.prototype['address'] = undefined;
   /**

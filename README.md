@@ -15,8 +15,10 @@
 commented out
 -->
 
-## Requirements
 
+<p><h3>&#x26A0;&#xFE0F; The current release is <code>the first version to use <a href=“https://developers.docusign.com/esign-rest-api“>eSignature API v2.1</a></code>. The GA version will be released soon.</h3></p><p><h3>All previous releases use eSignature API v2 and they no longer will be actively maintained.</p>
+
+## Requirements
 - Node 4
 - Free [Developer Sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 

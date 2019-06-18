@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -106,7 +106,7 @@
       var returnType = PowerForm;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms', 'POST',
+        '/v2.1/accounts/{accountId}/powerforms', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -163,7 +163,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms/{powerFormId}', 'DELETE',
+        '/v2.1/accounts/{accountId}/powerforms/{powerFormId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -223,7 +223,7 @@
       var returnType = PowerFormsResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms', 'DELETE',
+        '/v2.1/accounts/{accountId}/powerforms', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -281,7 +281,7 @@
       var returnType = PowerForm;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms/{powerFormId}', 'GET',
+        '/v2.1/accounts/{accountId}/powerforms/{powerFormId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -353,7 +353,7 @@
       var returnType = PowerFormsFormDataResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms/{powerFormId}/form_data', 'GET',
+        '/v2.1/accounts/{accountId}/powerforms/{powerFormId}/form_data', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -414,7 +414,7 @@
       var returnType = PowerFormSendersResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms/senders', 'GET',
+        '/v2.1/accounts/{accountId}/powerforms/senders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -481,7 +481,7 @@
       var returnType = PowerFormsResponse;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms', 'GET',
+        '/v2.1/accounts/{accountId}/powerforms', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -548,7 +548,7 @@
       var returnType = PowerForm;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/powerforms/{powerFormId}', 'PUT',
+        '/v2.1/accounts/{accountId}/powerforms/{powerFormId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

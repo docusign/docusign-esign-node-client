@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -104,7 +104,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'DELETE',
+        '/v2.1/accounts/{accountId}/tab_definitions/{customTabId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -167,7 +167,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var returnType = TabMetadata;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions', 'POST',
+        '/v2.1/accounts/{accountId}/tab_definitions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -226,7 +226,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var returnType = TabMetadata;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'GET',
+        '/v2.1/accounts/{accountId}/tab_definitions/{customTabId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -288,7 +288,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var returnType = TabMetadataList;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions', 'GET',
+        '/v2.1/accounts/{accountId}/tab_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -356,7 +356,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var returnType = TabMetadata;
 
       return this.apiClient.callApi(
-        '/v2/accounts/{accountId}/tab_definitions/{customTabId}', 'PUT',
+        '/v2.1/accounts/{accountId}/tab_definitions/{customTabId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
