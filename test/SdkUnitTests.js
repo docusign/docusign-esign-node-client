@@ -7,7 +7,6 @@ try {
 } catch (err) {
   console.error(err);
 }
-console.log(config.templateId);
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
