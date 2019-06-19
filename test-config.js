@@ -2,7 +2,7 @@ module.exports = {
   integratorKey: process.env.INTEGRATOR_KEY_JWT,
   apiEnv: 'demo',
   debug: false,
-  "email": "node_sdk@mailinator.com",
+  email: 'node_sdk@mailinator.com',
   userId: process.env.USER_ID,
   templateId: process.env.TEMPLATE_ID,
   templateRole: 'bob',
