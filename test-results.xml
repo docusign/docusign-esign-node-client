@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.017" tests="34" failures="2">
+  <testsuite name="Root Suite" timestamp="2019-06-19T07:12:57" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="SDK Unit Tests:" timestamp="2019-06-19T07:12:57" tests="19" file="/Users/alex.cooper/dev/docusign-node-client/test/SdkUnitTests.js" failures="1" time="0.016">
+    <testcase name="SDK Unit Tests: &quot;before all&quot; hook" time="0.016" classname="&quot;before all&quot; hook">
+      <failure message="error:0906D06C:PEM routines:PEM_read_bio:no start line" type="Error"><![CDATA[Error: error:0906D06C:PEM routines:PEM_read_bio:no start line
+    at Sign.sign (crypto.js:331:26)
+    at Object.sign (node_modules/jwa/index.js:76:45)
+    at Object.jwsSign [as sign] (node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (node_modules/jsonwebtoken/sign.js:189:16)
+    at generateAndSignJWTAssertion (src/ApiClient.js:62:16)
+    at exports.requestJWTUserToken (src/ApiClient.js:890:19)
+    at Context.<anonymous> (test/SdkUnitTests.js:74:15)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="SDK Unit Tests With Callbacks:" timestamp="2019-06-19T07:12:57" tests="15" file="/Users/alex.cooper/dev/docusign-node-client/test/SdkUnitTestsWithCallback.js" failures="1" time="0.001">
+    <testcase name="SDK Unit Tests With Callbacks: &quot;before all&quot; hook" time="0.001" classname="&quot;before all&quot; hook">
+      <failure message="error:0906D06C:PEM routines:PEM_read_bio:no start line" type="Error"><![CDATA[Error: error:0906D06C:PEM routines:PEM_read_bio:no start line
+    at Sign.sign (crypto.js:331:26)
+    at Object.sign (node_modules/jwa/index.js:76:45)
+    at Object.jwsSign [as sign] (node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (node_modules/jsonwebtoken/sign.js:189:16)
+    at generateAndSignJWTAssertion (src/ApiClient.js:62:16)
+    at exports.requestJWTUserToken (src/ApiClient.js:890:19)
+    at Context.<anonymous> (test/SdkUnitTestsWithCallback.js:48:15)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
