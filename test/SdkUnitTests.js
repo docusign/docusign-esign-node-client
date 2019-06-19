@@ -15,6 +15,7 @@ var csvStringify = require('csv-stringify');
 var fs = require('fs');
 
 var userName = config.email;
+var privateKey = config.privateKey;
 var integratorKey = config.integratorKey;
 var integratorKeyAuthCode = config.integratorKeyAuthCode;
 // var IntegratorKeyImplicit = config.integratorKeyImplicit;
@@ -33,6 +34,10 @@ var userId = config.userId;
 var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
+
+if (privateKey) {
+  fs.writeFileSync('keys/' + privateKeyFilename, privateKey);
+}
 
 describe('SDK Unit Tests:', function (done) {
   var apiClient = new docusign.ApiClient({

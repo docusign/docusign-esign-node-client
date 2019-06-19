@@ -9,5 +9,6 @@ module.exports = {
   integratorKeyAuthCode: process.env.INTEGRATOR_KEY_AUTH_CODE,
   integratorKeyImplicit: process.env.INTEGRATOR_KEY_IMPLICIT,
   clientSecret: process.env.CLIENT_SECRET,
-  brandId: process.env.BRAND_ID
+  brandId: process.env.BRAND_ID,
+  privateKey: process.env.privateKey
 };
