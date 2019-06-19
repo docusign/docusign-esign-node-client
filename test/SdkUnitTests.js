@@ -15,6 +15,7 @@ var csvStringify = require('csv-stringify');
 var fs = require('fs');
 
 var userName = config.email;
+var brandId = config.brandId;
 var integratorKey = config.integratorKey;
 var integratorKeyAuthCode = config.integratorKeyAuthCode;
 // var IntegratorKeyImplicit = config.integratorKeyImplicit;

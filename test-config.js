@@ -8,5 +8,6 @@ module.exports = {
   templateRole: 'bob',
   integratorKeyAuthCode: process.env.INTEGRATOR_KEY_AUTH_CODE,
   integratorKeyImplicit: process.env.INTEGRATOR_KEY_IMPLICIT,
-  clientSecret: process.env.CLIENT_SECRET
+  clientSecret: process.env.CLIENT_SECRET,
+  brandId: process.env.BRAND_ID
 };
