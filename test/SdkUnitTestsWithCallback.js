@@ -1,14 +1,18 @@
 var docusign = require('../src/index');
 var oAuth = docusign.ApiClient.OAuth;
 var restApi = docusign.ApiClient.RestApi;
-var config = require('../test-config.json');
+var config = require('../test-config');
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
+var fs = require('fs');
+var Buffer = require('safe-buffer').Buffer;
 
 var userName = config.email;
 var integratorKey = config.integratorKey;
 var integratorKeyAuthCode = config.integratorKeyAuthCode;
+var privateKey = config.privateKey;
+
 // var IntegratorKeyImplicit = config.integratorKeyImplicit;
 // var ClientSecret = config.clientSecr
 var templateId = config.templateId;
@@ -24,6 +28,24 @@ var userId = config.userId;
 var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
+
+try {
+  if (privateKey) {
+    var buf;
+    if (typeof Buffer.from === 'function') {
+      // Node 5.10+
+      buf = Buffer.from(privateKey, 'base64'); // Ta-da
+    } else {
+      // older Node versions, now deprecated
+      buf = new Buffer(privateKey, 'base64'); // Ta-da
+    }
+
+    var text = buf.toString('ascii');
+    fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
+  }
+} catch (ex) {
+  console.error(ex);
+}
 
 describe('SDK Unit Tests With Callbacks:', function (done) {
   var apiClient = new docusign.ApiClient({
