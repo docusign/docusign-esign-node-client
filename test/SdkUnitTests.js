@@ -3,7 +3,7 @@ var oAuth = docusign.ApiClient.OAuth;
 var restApi = docusign.ApiClient.RestApi;
 var config;
 try {
-  config = require('../test-config.json');
+  config = require('../test-config');
 } catch (err) {
   console.error(err);
 }
