@@ -12,7 +12,8 @@ var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
 var csvStringify = require('csv-stringify');
-var Buffer = require('safe-buffer').Buffer;
+
+var Buffer = global.Buffer.from ? Buffer : require('safe-buffer').Buffer;
 var fs = require('fs');
 
 var userName = config.email;
