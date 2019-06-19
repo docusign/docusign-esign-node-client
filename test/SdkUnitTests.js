@@ -36,22 +36,19 @@ var userId = config.userId;
 var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
-try {
-  if (privateKey) {
-    var buf;
-    if (typeof Buffer.from === 'function') {
-      // Node 5.10+
-      buf = Buffer.from(privateKey, 'base64'); // Ta-da
-    } else {
-      // older Node versions, now deprecated
-      buf = new Buffer(privateKey, 'base64'); // Ta-da
-    }
 
-    var text = buf.toString('ascii');
-    fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
+if (privateKey) {
+  var buf;
+  if (typeof Buffer.from === 'function') {
+    // Node 5.10+
+    buf = Buffer.from(privateKey, 'base64'); // Ta-da
+  } else {
+    // older Node versions, now deprecated
+    buf = new Buffer(privateKey, 'base64'); // Ta-da
   }
-} catch (ex) {
-  console.error(ex);
+
+  var text = buf.toString('ascii');
+  fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
 }
 
 describe('SDK Unit Tests:', function (done) {
