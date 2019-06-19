@@ -36,7 +36,10 @@ var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
 
 if (privateKey) {
-  fs.writeFileSync('keys/' + privateKeyFilename, privateKey);
+  var data = privateKey;
+  var buff = new Buffer(data, 'base64');
+  var text = buff.toString('ascii');
+  fs.writeFileSync('keys/' + privateKeyFilename, text);
 }
 
 describe('SDK Unit Tests:', function (done) {
