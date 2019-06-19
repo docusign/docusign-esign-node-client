@@ -1,11 +1,9 @@
 module.exports = {
-  integratorKey: process.env.INTEGRATOR_KEY,
+  integratorKey: process.env.INTEGRATOR_KEY_JWT,
   apiEnv: 'demo',
   debug: false,
-  email: 'node_sdk@mailinator.com',
-  noSigEmail: 'no_sig@mailinator.com',
+  email: process.env.EMAIL,
   userId: process.env.USER_ID,
-  noSigUserId: process.env.NO_SIG_USER,
   templateId: process.env.TEMPLATE_ID,
   templateRole: 'bob',
   integratorKeyAuthCode: process.env.INTEGRATOR_KEY_AUTH_CODE,
