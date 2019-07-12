@@ -2,6 +2,10 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v5.0.2] - 2019-07-12
+### Security
+- [CVE-2019-10744](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10744).
+
 ## [v5.0.1] - 2019-06-25
 ### Removed
 - Removed hardcoded test config values from test cases. Config values are now being read from env variables.
