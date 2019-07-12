@@ -4,7 +4,7 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 
 ## [v5.0.2] - 2019-07-12
 ### Security
-- [CVE-2019-12086](https://nvd.nist.gov/vuln/detail/CVE-2019-12086).
+- [CVE-2018-3721](https://www.cvedetails.com/cve/CVE-2018-3721/).
 
 ## [v5.0.1] - 2019-06-25
 ### Removed
