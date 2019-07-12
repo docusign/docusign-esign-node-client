@@ -4,7 +4,7 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 
 ## [v5.0.2] - 2019-07-12
 ### Security
-- [CVE-2019-10744](https://www.cvedetails.com/cve/CVE-2019-10744/).
+- [CVE-2019-10744](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10744).
 
 ## [v5.0.1] - 2019-06-25
 ### Removed
