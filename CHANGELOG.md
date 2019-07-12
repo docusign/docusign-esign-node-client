@@ -3,8 +3,8 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 ## [v5.0.2] - 2019-07-12
-### Updated
-- Security updates
+### Security
+- [CVE-2019-12086](https://nvd.nist.gov/vuln/detail/CVE-2019-12086).
 
 ## [v5.0.1] - 2019-06-25
 ### Removed
