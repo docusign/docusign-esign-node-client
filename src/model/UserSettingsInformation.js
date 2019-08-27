@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('adminOnlyMetadata')) {
         obj['adminOnlyMetadata'] = SettingsMetadata.constructFromObject(data['adminOnlyMetadata']);
       }
+      if (data.hasOwnProperty('allowAutoTagging')) {
+        obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
+      }
       if (data.hasOwnProperty('allowEnvelopeTransferTo')) {
         obj['allowEnvelopeTransferTo'] = ApiClient.convertToType(data['allowEnvelopeTransferTo'], 'String');
       }
@@ -181,6 +184,12 @@
       if (data.hasOwnProperty('canUseScratchpadMetadata')) {
         obj['canUseScratchpadMetadata'] = SettingsMetadata.constructFromObject(data['canUseScratchpadMetadata']);
       }
+      if (data.hasOwnProperty('canUseSmartContracts')) {
+        obj['canUseSmartContracts'] = ApiClient.convertToType(data['canUseSmartContracts'], 'String');
+      }
+      if (data.hasOwnProperty('canUseSmartContractsMetadata')) {
+        obj['canUseSmartContractsMetadata'] = SettingsMetadata.constructFromObject(data['canUseSmartContractsMetadata']);
+      }
       if (data.hasOwnProperty('disableDocumentUpload')) {
         obj['disableDocumentUpload'] = ApiClient.convertToType(data['disableDocumentUpload'], 'String');
       }
@@ -246,6 +255,12 @@
       }
       if (data.hasOwnProperty('localePolicy')) {
         obj['localePolicy'] = LocalePolicy.constructFromObject(data['localePolicy']);
+      }
+      if (data.hasOwnProperty('manageClickwrapsMode')) {
+        obj['manageClickwrapsMode'] = ApiClient.convertToType(data['manageClickwrapsMode'], 'String');
+      }
+      if (data.hasOwnProperty('manageClickwrapsModeMetadata')) {
+        obj['manageClickwrapsModeMetadata'] = SettingsMetadata.constructFromObject(data['manageClickwrapsModeMetadata']);
       }
       if (data.hasOwnProperty('modifiedBy')) {
         obj['modifiedBy'] = ApiClient.convertToType(data['modifiedBy'], 'String');
@@ -414,6 +429,11 @@
    * @member {module:model/SettingsMetadata} adminOnlyMetadata
    */
   exports.prototype['adminOnlyMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowAutoTagging
+   */
+  exports.prototype['allowAutoTagging'] = undefined;
   /**
    * 
    * @member {String} allowEnvelopeTransferTo
@@ -592,6 +612,15 @@
   exports.prototype['canUseScratchpadMetadata'] = undefined;
   /**
    * 
+   * @member {String} canUseSmartContracts
+   */
+  exports.prototype['canUseSmartContracts'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canUseSmartContractsMetadata
+   */
+  exports.prototype['canUseSmartContractsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} disableDocumentUpload
    */
   exports.prototype['disableDocumentUpload'] = undefined;
@@ -689,6 +718,15 @@
    * @member {module:model/LocalePolicy} localePolicy
    */
   exports.prototype['localePolicy'] = undefined;
+  /**
+   * 
+   * @member {String} manageClickwrapsMode
+   */
+  exports.prototype['manageClickwrapsMode'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} manageClickwrapsModeMetadata
+   */
+  exports.prototype['manageClickwrapsModeMetadata'] = undefined;
   /**
    * 
    * @member {String} modifiedBy

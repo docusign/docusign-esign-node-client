@@ -238,6 +238,9 @@
       if (data.hasOwnProperty('statusCode')) {
         obj['statusCode'] = ApiClient.convertToType(data['statusCode'], 'String');
       }
+      if (data.hasOwnProperty('suppressEmails')) {
+        obj['suppressEmails'] = ApiClient.convertToType(data['suppressEmails'], 'String');
+      }
       if (data.hasOwnProperty('templateLocked')) {
         obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
       }
@@ -539,6 +542,11 @@
    * @member {String} statusCode
    */
   exports.prototype['statusCode'] = undefined;
+  /**
+   * 
+   * @member {String} suppressEmails
+   */
+  exports.prototype['suppressEmails'] = undefined;
   /**
    * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
    * @member {String} templateLocked
