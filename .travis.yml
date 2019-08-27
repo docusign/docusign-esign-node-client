@@ -3,6 +3,7 @@ sudo: false
 branches:
   only: 
     - master
+    - APIv2-master
 
 language: node_js
 
