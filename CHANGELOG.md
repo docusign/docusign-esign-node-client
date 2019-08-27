@@ -2,9 +2,14 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [v4.3.0] - eSignature API v19.1.02
+## [v4.4.0] - eSignature API v2-19.2.02
 ### Changed
-- The SDK now supports version 19.1.02 of the DocuSign eSignature API.
+- The SDK now supports version 19.2.02 of the DocuSign eSignature v2 API.
+- SDK Release Version updated.
+
+## [v4.3.0] - eSignature API v2-19.1.02
+### Changed
+- The SDK now supports version 19.1.02 of the DocuSign eSignature v2 API.
 - SDK Release Version updated.
 ### Added
 - Cache-control and Pragma headers to the oAuth calls. (DCM-2244)

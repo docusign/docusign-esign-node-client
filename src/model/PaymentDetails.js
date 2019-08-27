@@ -64,6 +64,15 @@
       if (data.hasOwnProperty('currencyCode')) {
         obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
       }
+      if (data.hasOwnProperty('customerId')) {
+        obj['customerId'] = ApiClient.convertToType(data['customerId'], 'String');
+      }
+      if (data.hasOwnProperty('customMetadata')) {
+        obj['customMetadata'] = ApiClient.convertToType(data['customMetadata'], 'String');
+      }
+      if (data.hasOwnProperty('customMetadataRequired')) {
+        obj['customMetadataRequired'] = ApiClient.convertToType(data['customMetadataRequired'], 'Boolean');
+      }
       if (data.hasOwnProperty('gatewayAccountId')) {
         obj['gatewayAccountId'] = ApiClient.convertToType(data['gatewayAccountId'], 'String');
       }
@@ -78,6 +87,9 @@
       }
       if (data.hasOwnProperty('paymentOption')) {
         obj['paymentOption'] = ApiClient.convertToType(data['paymentOption'], 'String');
+      }
+      if (data.hasOwnProperty('paymentSourceId')) {
+        obj['paymentSourceId'] = ApiClient.convertToType(data['paymentSourceId'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -106,6 +118,21 @@
   exports.prototype['currencyCode'] = undefined;
   /**
    * 
+   * @member {String} customerId
+   */
+  exports.prototype['customerId'] = undefined;
+  /**
+   * 
+   * @member {String} customMetadata
+   */
+  exports.prototype['customMetadata'] = undefined;
+  /**
+   * 
+   * @member {Boolean} customMetadataRequired
+   */
+  exports.prototype['customMetadataRequired'] = undefined;
+  /**
+   * 
    * @member {String} gatewayAccountId
    */
   exports.prototype['gatewayAccountId'] = undefined;
@@ -129,6 +156,11 @@
    * @member {String} paymentOption
    */
   exports.prototype['paymentOption'] = undefined;
+  /**
+   * 
+   * @member {String} paymentSourceId
+   */
+  exports.prototype['paymentSourceId'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status

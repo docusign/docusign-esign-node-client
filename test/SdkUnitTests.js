@@ -1,14 +1,22 @@
 var docusign = require('../src/index');
 var oAuth = docusign.ApiClient.OAuth;
 var restApi = docusign.ApiClient.RestApi;
-var config = require('../test-config.json');
+var config;
+try {
+  config = require('../test-config');
+} catch (err) {
+  console.error(err);
+}
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
 var csvStringify = require('csv-stringify');
+
+var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 var fs = require('fs');
 
 var userName = config.email;
+var privateKey = config.privateKey;
 var integratorKey = config.integratorKey;
 var integratorKeyAuthCode = config.integratorKeyAuthCode;
 // var IntegratorKeyImplicit = config.integratorKeyImplicit;
@@ -27,6 +35,21 @@ var userId = config.userId;
 var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
+var isV2 = docusign.EnvelopeTemplate;
+
+if (privateKey) {
+  var buf;
+  if (typeof Buffer.from === 'function') {
+    // Node 5.10+
+    buf = Buffer.from(privateKey, 'base64'); // Ta-da
+  } else {
+    // older Node versions, now deprecated
+    buf = new Buffer(privateKey, 'base64'); // Ta-da
+  }
+
+  var text = buf.toString('ascii');
+  fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
+}
 
 describe('SDK Unit Tests:', function (done) {
   var apiClient = new docusign.ApiClient({
@@ -54,14 +77,14 @@ describe('SDK Unit Tests:', function (done) {
           accountDomain;
         apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
 
-        console.log(apiClient.getUserInfo(res.body.access_token));
+        // console.log(apiClient.getUserInfo(res.body.access_token));
         apiClient.getUserInfo(res.body.access_token)
           .then(function (userInfo) {
             accountId = userInfo.accounts[0].accountId;
             baseUri = userInfo.accounts[0].baseUri;
             accountDomain = baseUri.split('/v2');
             apiClient.setBasePath(accountDomain[0] + '/restapi');
-            console.log('LoginInformation: ' + JSON.stringify(userInfo));
+            // console.log('LoginInformation: ' + JSON.stringify(userInfo));
             done();
           })
           .catch(function (error) {
@@ -71,7 +94,9 @@ describe('SDK Unit Tests:', function (done) {
           });
       })
       .catch(function (err) {
-        if (err) { return done(err); }
+        if (err) {
+          return done(err);
+        }
       });
   });
   it('oAuthBasePAth should update whenever BasePath does and match the environment', function (done) {
@@ -318,19 +343,29 @@ describe('SDK Unit Tests:', function (done) {
 
     envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
       .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          envelopeId = envelopeSummary.envelopeId;
-          done();
-        }
+        // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+        assert.equal(envelopeSummary && Object.keys(envelopeSummary).length > 0, true);
+        envelopeId = envelopeSummary.envelopeId;
+        envelopesApi.updateRecipients(accountId, envelopeId, {'recipients': envDef.recipients})
+          .then(function (data) {
+            done();
+          })
+          .catch(function (error) {
+            return done(error);
+          });
       })
       .catch(function (error) {
-        if (error) { done(error); }
+        if (error) {
+          return done(error);
+        }
       });
   });
   it('bulkEnvelope update recipients', function (done) {
     var bulkEnvelopesApi = new docusign.BulkEnvelopesApi(apiClient);
-    var bulkRecipients = [ {'name': 'test User1', 'email': 'test1@mailinator.com'}, {'name': 'test User2', email: 'test2@mailinator.com'}, {name: 'test User3', email: 'test3@mailinator.com'} ];
+    var bulkRecipients = [{'name': 'test User1', 'email': 'test1@mailinator.com'}, {
+      'name': 'test User2',
+      email: 'test2@mailinator.com'
+    }, {name: 'test User3', email: 'test3@mailinator.com'}];
     var fileBytes = null;
     try {
       var fs = require('fs');
@@ -338,7 +373,7 @@ describe('SDK Unit Tests:', function (done) {
       fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
     } catch (ex) {
       // handle error
-      console.log('Exception: ' + ex);
+      // console.log('Exception: ' + ex);
     }
 
     // create an envelope to be signed
@@ -393,12 +428,19 @@ describe('SDK Unit Tests:', function (done) {
         if (envelopeSummary) {
           console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
           envelopeId = envelopeSummary.envelopeId;
-
+          console.log('starwars');
+          console.log(bulkRecipients);
           csvStringify(bulkRecipients, {header: true}, function (err, bulkRecipientsRequest) {
             if (err) {
               return done(err);
             }
-            bulkEnvelopesApi.updateRecipients(accountId, envelopeId, '1', { bulkRecipientsRequest: bulkRecipientsRequest })
+            console.log('starwars2');
+
+            console.log(bulkRecipientsRequest);
+            var byteArray = Buffer.from(bulkRecipientsRequest);
+            console.log(byteArray);
+
+            bulkEnvelopesApi.updateRecipients(byteArray, accountId, envelopeId, '1')
               .then(function (data) {
                 assert.equal(data.bulkRecipientsCount, bulkRecipients.length);
                 done();
@@ -447,10 +489,9 @@ describe('SDK Unit Tests:', function (done) {
 
     envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
       .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          done();
-        }
+        // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+        assert.notEqual(envelopeSummary, {});
+        done();
       })
       .catch(function (error) {
         if (error) {
@@ -526,7 +567,7 @@ describe('SDK Unit Tests:', function (done) {
     envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef})
       .then(function (envelopeSummary) {
         if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+          // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
           var returnUrl = 'http://www.docusign.com/developer-center';
           var recipientView = new docusign.RecipientViewRequest();
           recipientView.returnUrl = returnUrl;
@@ -567,9 +608,9 @@ describe('SDK Unit Tests:', function (done) {
     }
 
     // create an envelope to be signed
-    var templateDef = new docusign.EnvelopeTemplate();
-    templateDef.emailSubject = 'Please Sign my Node SDK Envelope';
-    templateDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
+    var template = new docusign.EnvelopeTemplate();
+    template.emailSubject = 'Please Sign my Node SDK Envelope';
+    template.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // add a document to the envelope
     var doc = new docusign.Document();
@@ -580,7 +621,7 @@ describe('SDK Unit Tests:', function (done) {
 
     var docs = [];
     docs.push(doc);
-    templateDef.documents = docs;
+    template.documents = docs;
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
@@ -603,20 +644,25 @@ describe('SDK Unit Tests:', function (done) {
     signer.tabs = tabs;
 
     // Above causes issue
-    templateDef.recipients = new docusign.Recipients();
-    templateDef.recipients.signers = [];
-    templateDef.recipients.signers.push(signer);
+    template.recipients = new docusign.Recipients();
+    template.recipients.signers = [];
+    template.recipients.signers.push(signer);
 
-    var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
-    envTemplateDef.name = 'myTemplate';
-    templateDef.envelopeTemplateDefinition = envTemplateDef;
+    if (!isV2) {
+      var envTemplate = new docusign.EnvelopeTemplate();
+      envTemplate.name = 'myTemplate';
+      template.envelopeTemplate = envTemplate;
+    } else {
+      var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
+      envTemplateDef.name = 'myTemplate';
+      template.envelopeTemplateDefinition = envTemplateDef;
+    }
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, {'envelopeTemplate': templateDef})
+    templatesApi.createTemplate(accountId, {'envelopeTemplate': template})
       .then(function (templateSummary) {
         if (templateSummary) {
-          console.log('TemplateSummary: ' + JSON.stringify(templateSummary));
           done();
         }
       })
@@ -760,7 +806,7 @@ describe('SDK Unit Tests:', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
     var envelopeIdsRequest = new docusign.EnvelopeIdsRequest();
     envelopeIdsRequest.envelopeIds = [envelopeId];
-    envelopesApi.listStatus(accountId, { envelopeIdsRequest: envelopeIdsRequest, envelopeIds: 'request_body' })
+    envelopesApi.listStatus(accountId, {envelopeIdsRequest: envelopeIdsRequest, envelopeIds: 'request_body'})
       .then(function (data) {
         assert.notEqual(data.envelopes, undefined);
         assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
@@ -773,7 +819,7 @@ describe('SDK Unit Tests:', function (done) {
   });
   it('listStatusQuery', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
-    envelopesApi.listStatusChanges(accountId, { envelopeIds: envelopeId })
+    envelopesApi.listStatusChanges(accountId, {envelopeIds: envelopeId})
       .then(function (data) {
         assert.notEqual(data.envelopes, undefined);
         assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
@@ -985,7 +1031,6 @@ describe('SDK Unit Tests:', function (done) {
           });
       });
   });
-
   it('create template with date and number tabs', function (done) {
     var fileBytes = null;
     try {
@@ -998,9 +1043,9 @@ describe('SDK Unit Tests:', function (done) {
     }
 
     // create an envelope to be signed
-    var templateDef = new docusign.EnvelopeTemplate();
-    templateDef.emailSubject = 'Please Sign my Node SDK Envelope containing DateTabs and NumberTabs';
-    templateDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
+    var template = new docusign.EnvelopeTemplate();
+    template.emailSubject = 'Please Sign my Node SDK Envelope containing DateTabs and NumberTabs';
+    template.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // add a document to the envelope
     var doc = new docusign.Document();
@@ -1011,7 +1056,7 @@ describe('SDK Unit Tests:', function (done) {
 
     var docs = [];
     docs.push(doc);
-    templateDef.documents = docs;
+    template.documents = docs;
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
@@ -1047,20 +1092,26 @@ describe('SDK Unit Tests:', function (done) {
     signer.tabs = tabs;
 
     // Above causes issue
-    templateDef.recipients = new docusign.Recipients();
-    templateDef.recipients.signers = [];
-    templateDef.recipients.signers.push(signer);
+    template.recipients = new docusign.Recipients();
+    template.recipients.signers = [];
+    template.recipients.signers.push(signer);
 
-    var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
-    envTemplateDef.name = 'myTemplate ModelNumber';
-    templateDef.envelopeTemplateDefinition = envTemplateDef;
+    if (!isV2) {
+      var envTemplate = new docusign.EnvelopeTemplate();
+      envTemplate.name = 'myTemplate';
+      template.envelopeTemplate = envTemplate;
+    } else {
+      var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
+      envTemplateDef.name = 'myTemplate';
+      template.envelopeTemplateDefinition = envTemplateDef;
+    }
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, {'envelopeTemplate': templateDef})
+    templatesApi.createTemplate(accountId, {'envelopeTemplate': template})
       .then(function (templateSummary) {
         if (templateSummary) {
-          console.log('TemplateSummary Number: ' + JSON.stringify(templateSummary));
+          // console.log('TemplateSummary Number: ' + JSON.stringify(templateSummary));
           done();
         }
       })

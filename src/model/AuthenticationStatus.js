@@ -71,6 +71,9 @@
       if (data.hasOwnProperty('googleResult')) {
         obj['googleResult'] = EventResult.constructFromObject(data['googleResult']);
       }
+      if (data.hasOwnProperty('identityVerificationResult')) {
+        obj['identityVerificationResult'] = EventResult.constructFromObject(data['identityVerificationResult']);
+      }
       if (data.hasOwnProperty('idLookupResult')) {
         obj['idLookupResult'] = EventResult.constructFromObject(data['idLookupResult']);
       }
@@ -134,6 +137,10 @@
    * @member {module:model/EventResult} googleResult
    */
   exports.prototype['googleResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} identityVerificationResult
+   */
+  exports.prototype['identityVerificationResult'] = undefined;
   /**
    * @member {module:model/EventResult} idLookupResult
    */

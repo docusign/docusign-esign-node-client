@@ -778,7 +778,7 @@ agent (can add name and email information for later recipients/signers) | [`agen
 carbon copy (receives a copy of the documents) | [`carbonCopy`](#/definitions/carbonCopy)
 certified delivery  (receives a copy of the documents and must acknowledge receipt) | [`certifiedDelivery`](#/definitions/certifiedDelivery)
 editor (can change recipients and document fields for later recipients/signers) | [`editor`](#/definitions/editor)
-in-person signer ("hosts" someone who signs in-person) | [`inPersonSigner`](#/definitions/inPersonSigner)
+in-person signer (ÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂhostsÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂ someone who signs in-person) | [`inPersonSigner`](#/definitions/inPersonSigner)
 intermediary (can add name and email information for some later recipients/signers.) | [`intermediary`](#/definitions/intermediary)
 signer (signs and/or updates document fields) | [`signer`](#/definitions/signer)
 
@@ -815,7 +815,7 @@ The Envelopes::create method includes an optional [eventNotification object](#de
 ### Connect Webhooks
 Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc. 
 
-Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting "Go to Admin" from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.
+Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting ÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂGo to AdminÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂ from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.
 
 Connect is available for some DocuSign account types. Please contact DocuSign Sales for more information.
 
@@ -858,7 +858,7 @@ For example, if you have a simple inline template with only one tab in it with a
 
 * The defaultRecipient field enables you to specify which recipient the generated tabs from a PDF form are mapped to. You can also set PDF form generated tabs to a recipient other than the DefaultRecipient by specifying the mapping of the tab label that is created to one of the template recipients.
 
-* You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with "\*" and then the system matches tabs that start with the label.
+* You can use tabLabel wild carding to map a series of tabs from the PDF form. To use this you must end a tab label with ÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂ\*ÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂ and then the system matches tabs that start with the label.
 
 * If no DefaultRecipient is specified, tabs must be explicitly mapped to recipients in order to be generated from the form. Unmapped form objects will not be generated into their DocuSign equivalents. (In the case of Signature/Initials, the tabs will be disregarded entirely; in the case of pdf text fields, the field data will be flattened on the Envelope document, but there will not be a corresponding DocuSign data tab.)
 
@@ -906,7 +906,7 @@ DocuSignSignerAttachmentOptional or eSignSignerAttachmentOptional | Optional Sig
 
 Any other PDF Form Text Field will be transformed to a DocuSign data (text) tab.
 
-PDF Form Field Names that include "DocuSignIgnoreTransform" or "eSignIgnoreTransform" will not be transformed.
+PDF Form Field Names that include ÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂDocuSignIgnoreTransformÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂ or ÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂeSignIgnoreTransformÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂ will not be transformed.
 
 PDF Form Date fields will be transformed to Date Signed fields if their name includes DocuSignDateSigned or eSignDateSigned.
 
@@ -962,6 +962,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} optsOrCallback.changeRoutingOrder 
      * @param {String} optsOrCallback.completedDocumentsOnly If set to true then we want to set the sourceEnvelopeId to indicate that this is a\&quot;forward\&quot; envelope action
      * @param {String} optsOrCallback.mergeRolesOnDraft When set to **true**, merges template roles and remove empty recipients when you create an envelope with multiple templates.
+     * @param {String} optsOrCallback.tabLabelExactMatches 
      * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
      * @param {module:api/EnvelopesApi~createEnvelopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeSummary}
@@ -995,7 +996,8 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         'cdse_mode': optsOrCallback['cdseMode'],
         'change_routing_order': optsOrCallback['changeRoutingOrder'],
         'completed_documents_only': optsOrCallback['completedDocumentsOnly'],
-        'merge_roles_on_draft': optsOrCallback['mergeRolesOnDraft']
+        'merge_roles_on_draft': optsOrCallback['mergeRolesOnDraft'],
+        'tab_label_exact_matches': optsOrCallback['tabLabelExactMatches']
       };
       var headerParams = {
       };
@@ -4476,7 +4478,7 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include The possible values are:  matching_applied - This returns template matching information for the template.
+     * @param {String} optsOrCallback.include The possible values are:  matching_applied Ã¢â¬â This returns template matching information for the template.
      * @param {module:api/EnvelopesApi~listTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateInformation}
      */

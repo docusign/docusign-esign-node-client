@@ -121,6 +121,9 @@
       if (data.hasOwnProperty('deliveredDateTime')) {
         obj['deliveredDateTime'] = ApiClient.convertToType(data['deliveredDateTime'], 'String');
       }
+      if (data.hasOwnProperty('disableResponsiveDocument')) {
+        obj['disableResponsiveDocument'] = ApiClient.convertToType(data['disableResponsiveDocument'], 'String');
+      }
       if (data.hasOwnProperty('documents')) {
         obj['documents'] = ApiClient.convertToType(data['documents'], [Document]);
       }
@@ -345,6 +348,11 @@
    * @member {String} deliveredDateTime
    */
   exports.prototype['deliveredDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} disableResponsiveDocument
+   */
+  exports.prototype['disableResponsiveDocument'] = undefined;
   /**
    * Complex element contains the details on the documents in the envelope.
    * @member {Array.<module:model/Document>} documents

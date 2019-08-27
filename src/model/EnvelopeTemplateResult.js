@@ -115,6 +115,9 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
+      if (data.hasOwnProperty('disableResponsiveDocument')) {
+        obj['disableResponsiveDocument'] = ApiClient.convertToType(data['disableResponsiveDocument'], 'String');
+      }
       if (data.hasOwnProperty('documents')) {
         obj['documents'] = ApiClient.convertToType(data['documents'], [Document]);
       }
@@ -353,6 +356,11 @@
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
+  /**
+   * 
+   * @member {String} disableResponsiveDocument
+   */
+  exports.prototype['disableResponsiveDocument'] = undefined;
   /**
    * Complex element contains the details on the documents in the envelope.
    * @member {Array.<module:model/Document>} documents

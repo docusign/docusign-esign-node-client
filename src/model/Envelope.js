@@ -109,6 +109,9 @@
       if (data.hasOwnProperty('deliveredDateTime')) {
         obj['deliveredDateTime'] = ApiClient.convertToType(data['deliveredDateTime'], 'String');
       }
+      if (data.hasOwnProperty('disableResponsiveDocument')) {
+        obj['disableResponsiveDocument'] = ApiClient.convertToType(data['disableResponsiveDocument'], 'String');
+      }
       if (data.hasOwnProperty('documentsCombinedUri')) {
         obj['documentsCombinedUri'] = ApiClient.convertToType(data['documentsCombinedUri'], 'String');
       }
@@ -298,6 +301,11 @@
    * @member {String} deliveredDateTime
    */
   exports.prototype['deliveredDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} disableResponsiveDocument
+   */
+  exports.prototype['disableResponsiveDocument'] = undefined;
   /**
    * 
    * @member {String} documentsCombinedUri

@@ -85,6 +85,12 @@
       if (data.hasOwnProperty('allowApiSequentialSigningMetadata')) {
         obj['allowApiSequentialSigningMetadata'] = SettingsMetadata.constructFromObject(data['allowApiSequentialSigningMetadata']);
       }
+      if (data.hasOwnProperty('allowAutoTagging')) {
+        obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
+      }
+      if (data.hasOwnProperty('allowAutoTaggingMetadata')) {
+        obj['allowAutoTaggingMetadata'] = SettingsMetadata.constructFromObject(data['allowAutoTaggingMetadata']);
+      }
       if (data.hasOwnProperty('allowBulkSending')) {
         obj['allowBulkSending'] = ApiClient.convertToType(data['allowBulkSending'], 'String');
       }
@@ -308,6 +314,15 @@
    * @member {module:model/SettingsMetadata} allowApiSequentialSigningMetadata
    */
   exports.prototype['allowApiSequentialSigningMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowAutoTagging
+   */
+  exports.prototype['allowAutoTagging'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowAutoTaggingMetadata
+   */
+  exports.prototype['allowAutoTaggingMetadata'] = undefined;
   /**
    * 
    * @member {String} allowBulkSending
