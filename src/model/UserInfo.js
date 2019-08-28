@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -55,12 +55,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
-      }
-      if (data.hasOwnProperty('accountName')) {
-        obj['accountName'] = ApiClient.convertToType(data['accountName'], 'String');
-      }
       if (data.hasOwnProperty('activationAccessCode')) {
         obj['activationAccessCode'] = ApiClient.convertToType(data['activationAccessCode'], 'String');
       }
@@ -72,9 +66,6 @@
       }
       if (data.hasOwnProperty('loginStatus')) {
         obj['loginStatus'] = ApiClient.convertToType(data['loginStatus'], 'String');
-      }
-      if (data.hasOwnProperty('membershipId')) {
-        obj['membershipId'] = ApiClient.convertToType(data['membershipId'], 'String');
       }
       if (data.hasOwnProperty('sendActivationEmail')) {
         obj['sendActivationEmail'] = ApiClient.convertToType(data['sendActivationEmail'], 'String');
@@ -99,16 +90,6 @@
   }
 
   /**
-   * The account ID associated with the envelope.
-   * @member {String} accountId
-   */
-  exports.prototype['accountId'] = undefined;
-  /**
-   * 
-   * @member {String} accountName
-   */
-  exports.prototype['accountName'] = undefined;
-  /**
    * 
    * @member {String} activationAccessCode
    */
@@ -127,11 +108,6 @@
    * @member {String} loginStatus
    */
   exports.prototype['loginStatus'] = undefined;
-  /**
-   * 
-   * @member {String} membershipId
-   */
-  exports.prototype['membershipId'] = undefined;
   /**
    * 
    * @member {String} sendActivationEmail

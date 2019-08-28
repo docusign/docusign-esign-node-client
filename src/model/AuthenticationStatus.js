@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -71,6 +71,9 @@
       if (data.hasOwnProperty('googleResult')) {
         obj['googleResult'] = EventResult.constructFromObject(data['googleResult']);
       }
+      if (data.hasOwnProperty('identityVerificationResult')) {
+        obj['identityVerificationResult'] = EventResult.constructFromObject(data['identityVerificationResult']);
+      }
       if (data.hasOwnProperty('idLookupResult')) {
         obj['idLookupResult'] = EventResult.constructFromObject(data['idLookupResult']);
       }
@@ -134,6 +137,10 @@
    * @member {module:model/EventResult} googleResult
    */
   exports.prototype['googleResult'] = undefined;
+  /**
+   * @member {module:model/EventResult} identityVerificationResult
+   */
+  exports.prototype['identityVerificationResult'] = undefined;
   /**
    * @member {module:model/EventResult} idLookupResult
    */

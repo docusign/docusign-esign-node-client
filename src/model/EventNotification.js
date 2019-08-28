@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -74,6 +74,9 @@
       if (data.hasOwnProperty('includeEnvelopeVoidReason')) {
         obj['includeEnvelopeVoidReason'] = ApiClient.convertToType(data['includeEnvelopeVoidReason'], 'String');
       }
+      if (data.hasOwnProperty('includeHMAC')) {
+        obj['includeHMAC'] = ApiClient.convertToType(data['includeHMAC'], 'String');
+      }
       if (data.hasOwnProperty('includeSenderAccountAsCustomField')) {
         obj['includeSenderAccountAsCustomField'] = ApiClient.convertToType(data['includeSenderAccountAsCustomField'], 'String');
       }
@@ -135,6 +138,11 @@
    * @member {String} includeEnvelopeVoidReason
    */
   exports.prototype['includeEnvelopeVoidReason'] = undefined;
+  /**
+   * 
+   * @member {String} includeHMAC
+   */
+  exports.prototype['includeHMAC'] = undefined;
   /**
    * When set to **true**, the sender account ID is included as a envelope custom field in the data. 
    * @member {String} includeSenderAccountAsCustomField

@@ -13,17 +13,18 @@
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['superagent'], factory);
+    define(['superagent-proxy'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superagent'));
+    module.exports = factory(require('superagent'), require('superagent-proxy'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ApiClient = factory(root.superagent, opts);
+    root.Docusign.ApiClient = factory(root.superagent, root.superagentProxy, opts);
   }
-}(this, function(superagent, opts) {
+}(this, function(superagent, superagentProxy, opts) {
   'use strict';
 
   var removeNulls = function(obj) {
@@ -62,9 +63,14 @@
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
 
-  var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
-    var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
-      .timeout(exports.prototype.timeout)
+  var sendJWTTokenRequest = function (assertion, oAuthBasePath, proxy, callback) {
+    var request = superagentProxy(superagent)
+      .post("https://" + oAuthBasePath + "/oauth/token");
+
+    if (proxy)
+      request.proxy(proxy)
+
+    request.timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
       .set('Pragma', 'no-cache')
@@ -124,6 +130,16 @@
 
     opts = Object.assign({},defaults, opts);
     opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
+
+
+
+    /**
+     * The full URI for the desired proxy.
+     * A complete list of supported proxies can be found here: https://www.npmjs.com/package/proxy-agent.
+     * @type {String}
+     * @default undefined
+     */
+    this.proxy = opts.proxy;
 
     /**
      * The base URL against which to resolve every API call's (relative) path.
@@ -483,7 +499,12 @@
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
-    var request = superagent(httpMethod, url);
+    var request = superagentProxy(superagent(httpMethod, url));
+
+    //apply proxy if specified
+    if(this.proxy) {
+      request.proxy(this.proxy);
+    }
 
     // apply authentications
     this.applyAuthToRequest(request, authNames);
@@ -772,7 +793,12 @@
       "Pragma": "no-cache"
     }
 
-    var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
+    var request = superagentProxy(superagent).get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
+
+    if (this.proxy) {
+      request.proxy(this.proxy);
+    }
+
     var UserInfo = require('./OAuth').UserInfo;
 
     if(!callback) {
@@ -889,14 +915,14 @@
     var privateKey = rsaPrivateKey,
       assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn, userId);
 
-    return sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
+    return sendJWTTokenRequest(assertion, this.oAuthBasePath, this.proxy, callback);
   };
 
   exports.prototype.requestJWTApplicationToken = function(clientId, scopes, rsaPrivateKey, expiresIn, callback) {
     var privateKey = rsaPrivateKey,
       assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn);
 
-    return sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
+    return sendJWTTokenRequest(assertion, this.oAuthBasePath, this.proxy, callback);
   };
 
   exports.prototype.OAuth = require('./OAuth');

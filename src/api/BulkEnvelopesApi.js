@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkEnvelopeStatus', 'model/BulkEnvelopesResponse', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/ErrorDetails'], factory);
+	define(['Configuration', 'ApiClient', 'model/BulkEnvelopeStatus', 'model/BulkEnvelopesResponse', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkEnvelopeStatus'), require('../model/BulkEnvelopesResponse'), require('../model/BulkRecipientsRequest'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/ErrorDetails'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkEnvelopeStatus'), require('../model/BulkEnvelopesResponse'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BulkEnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.BulkEnvelopesResponse, root.Docusign.BulkRecipientsRequest, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.ErrorDetails);
+    root.Docusign.BulkEnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.BulkEnvelopesResponse, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.ErrorDetails);
   }
-}(this, function(Configuration, ApiClient, BulkEnvelopeStatus, BulkEnvelopesResponse, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, ErrorDetails) {
+}(this, function(Configuration, ApiClient, BulkEnvelopeStatus, BulkEnvelopesResponse, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, ErrorDetails) {
   'use strict';
 
   /**
@@ -114,7 +114,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var returnType = BulkRecipientsUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -135,7 +135,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * @param {String} batchId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Specifies the number of entries to return.
-     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
+     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;Ã¢â¬Âfailed,queuedÃ¢â¬Â)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent Ã¢â¬â This only returns entries with a sent status.  
      * @param {String} optsOrCallback.startPosition Specifies the location in the list of envelopes from which to start.
      * @param {module:api/BulkEnvelopesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopeStatus}
@@ -187,7 +187,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var returnType = BulkEnvelopeStatus;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/bulk_envelopes/{batchId}', 'GET',
+        '/v2/accounts/{accountId}/bulk_envelopes/{batchId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -265,7 +265,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var returnType = BulkRecipientsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'GET',
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -333,7 +333,7 @@ The response returns information about the envelopes sent with bulk recipient ba
       var returnType = BulkEnvelopesResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/bulk_envelopes', 'GET',
+        '/v2/accounts/{accountId}/bulk_envelopes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -352,23 +352,20 @@ The response returns information about the envelopes sent with bulk recipient ba
      * Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).
 
 The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
+     * @param {String} bulkRecipientsRequest 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
-     * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BulkRecipientsRequest} optsOrCallback.bulkRecipientsRequest 
+     * @param {String} envelopeId The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec 
+     * @param {String} recipientId The &#x60;recipientId&#x60; used when the envelope or template was created.
      * @param {module:api/BulkEnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsSummaryResponse}
      */
-    this.updateRecipients = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
+    this.updateRecipients = function(bulkRecipientsRequest, accountId, envelopeId, recipientId, callback) {
+      var postBody = bulkRecipientsRequest;
 
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
+      // verify the required parameter 'bulkRecipientsRequest' is set
+      if (bulkRecipientsRequest == undefined || bulkRecipientsRequest == null) {
+        throw new Error("Missing the required parameter 'bulkRecipientsRequest' when calling updateRecipients");
       }
-
-      var postBody = optsOrCallback['bulkRecipientsRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -410,7 +407,7 @@ The REST API does not support modifying individual rows or values in the bulk re
       var returnType = BulkRecipientsSummaryResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'PUT',
+        '/v2/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/bulk_recipients', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

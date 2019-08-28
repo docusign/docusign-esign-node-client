@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -111,7 +111,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
       var returnType = UsersResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users', 'DELETE',
+        '/v2/accounts/{accountId}/users', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -172,7 +172,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
       var returnType = NewUsersSummary;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users', 'POST',
+        '/v2/accounts/{accountId}/users', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -258,7 +258,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var returnType = UserSignaturesInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures', 'POST',
+        '/v2/accounts/{accountId}/users/{userId}/signatures', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -316,7 +316,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/contacts/{contactId}', 'DELETE',
+        '/v2/accounts/{accountId}/contacts/{contactId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -376,7 +376,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/contacts', 'DELETE',
+        '/v2/accounts/{accountId}/contacts', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -454,7 +454,7 @@ If the extra header information is not included, only the custom user settings t
       var returnType = CustomSettingsInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/custom_settings', 'DELETE',
+        '/v2/accounts/{accountId}/users/{userId}/custom_settings', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -514,7 +514,7 @@ The userId parameter specified in the endpoint must match the authenticated user
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/profile/image', 'DELETE',
+        '/v2/accounts/{accountId}/users/{userId}/profile/image', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -585,7 +585,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'DELETE',
+        '/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -666,7 +666,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserSignature;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'DELETE',
+        '/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -684,19 +684,10 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * Gets a particular contact associated with the user&#39;s account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} contactId The unique identifier of a person in the contacts address book.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.cloudProvider 
      * @param {module:api/UsersApi~getContactByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactGetResponse}
      */
-    this.getContactById = function(accountId, contactId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
+    this.getContactById = function(accountId, contactId, callback) {
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -721,7 +712,6 @@ For example encode "Bob Smith" as "Bob%20Smith".
         'contactId': contactId
       };
       var queryParams = {
-        'cloud_provider': optsOrCallback['cloudProvider']
       };
       var headerParams = {
       };
@@ -734,7 +724,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = ContactGetResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/contacts/{contactId}', 'GET',
+        '/v2/accounts/{accountId}/contacts/{contactId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -807,7 +797,7 @@ To return additional user information that details the last login date, login st
       var returnType = UserInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -868,7 +858,7 @@ The userId parameter specified in the endpoint must match the authenticated user
       var returnType = UserProfile;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/profile', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/profile', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -941,7 +931,7 @@ If successful, the response returns a 200 - OK and the user profile image.
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/profile/image', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/profile/image', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1002,7 +992,7 @@ The response returns the account setting name/value information and the email no
       var returnType = UserSettingsInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/settings', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1074,7 +1064,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserSignature;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1165,7 +1155,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1191,7 +1181,6 @@ The response returns the list of users for the account along with the informatio
      * @param {String} optsOrCallback.email 
      * @param {String} optsOrCallback.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
      * @param {String} optsOrCallback.groupId Filters user records returned by one or more group Id&#39;s.
-     * @param {String} optsOrCallback.includeUsersettingsForCsv 
      * @param {String} optsOrCallback.loginStatus 
      * @param {String} optsOrCallback.notGroupId 
      * @param {String} optsOrCallback.startPosition Starting value for the list. 
@@ -1231,7 +1220,6 @@ The response returns the list of users for the account along with the informatio
         'email': optsOrCallback['email'],
         'email_substring': optsOrCallback['emailSubstring'],
         'group_id': optsOrCallback['groupId'],
-        'include_usersettings_for_csv': optsOrCallback['includeUsersettingsForCsv'],
         'login_status': optsOrCallback['loginStatus'],
         'not_group_id': optsOrCallback['notGroupId'],
         'start_position': optsOrCallback['startPosition'],
@@ -1249,7 +1237,7 @@ The response returns the list of users for the account along with the informatio
       var returnType = UserInformationList;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users', 'GET',
+        '/v2/accounts/{accountId}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1322,7 +1310,7 @@ If the extra header information is not included, only the custom user settings t
       var returnType = CustomSettingsInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/custom_settings', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/custom_settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1397,7 +1385,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserSignaturesInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/signatures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1457,7 +1445,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/contacts', 'POST',
+        '/v2/accounts/{accountId}/contacts', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1517,7 +1505,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/contacts', 'PUT',
+        '/v2/accounts/{accountId}/contacts', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1605,7 +1593,7 @@ Grouping custom user settings is not required and if the extra header informatio
       var returnType = CustomSettingsInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/custom_settings', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/custom_settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1674,7 +1662,7 @@ You can also change a user's name by changing the information in the `userDetail
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/profile', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/profile', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1734,7 +1722,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/profile/image', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/profile/image', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1801,7 +1789,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/settings', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1886,7 +1874,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserSignature;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1914,19 +1902,10 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.transparentPng 
      * @param {module:api/UsersApi~updateSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.updateSignatureImage = function(accountId, userId, signatureId, imageType, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
+    this.updateSignatureImage = function(accountId, userId, signatureId, imageType, callback) {
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -1963,7 +1942,6 @@ For example encode "Bob Smith" as "Bob%20Smith".
         'imageType': imageType
       };
       var queryParams = {
-        'transparent_png': optsOrCallback['transparentPng']
       };
       var headerParams = {
       };
@@ -1976,7 +1954,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserSignature;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2043,7 +2021,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserSignaturesInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/signatures', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/signatures', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2110,7 +2088,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2170,7 +2148,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var returnType = UserInformationList;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users', 'PUT',
+        '/v2/accounts/{accountId}/users', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

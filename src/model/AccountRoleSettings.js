@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -84,6 +84,12 @@
       }
       if (data.hasOwnProperty('allowApiSequentialSigningMetadata')) {
         obj['allowApiSequentialSigningMetadata'] = SettingsMetadata.constructFromObject(data['allowApiSequentialSigningMetadata']);
+      }
+      if (data.hasOwnProperty('allowAutoTagging')) {
+        obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
+      }
+      if (data.hasOwnProperty('allowAutoTaggingMetadata')) {
+        obj['allowAutoTaggingMetadata'] = SettingsMetadata.constructFromObject(data['allowAutoTaggingMetadata']);
       }
       if (data.hasOwnProperty('allowBulkSending')) {
         obj['allowBulkSending'] = ApiClient.convertToType(data['allowBulkSending'], 'String');
@@ -223,9 +229,6 @@
       if (data.hasOwnProperty('receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata')) {
         obj['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata'] = SettingsMetadata.constructFromObject(data['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata']);
       }
-      if (data.hasOwnProperty('signingUiVersionMetadata')) {
-        obj['signingUiVersionMetadata'] = SettingsMetadata.constructFromObject(data['signingUiVersionMetadata']);
-      }
       if (data.hasOwnProperty('supplementalDocumentsMustAccept')) {
         obj['supplementalDocumentsMustAccept'] = ApiClient.convertToType(data['supplementalDocumentsMustAccept'], 'String');
       }
@@ -311,6 +314,15 @@
    * @member {module:model/SettingsMetadata} allowApiSequentialSigningMetadata
    */
   exports.prototype['allowApiSequentialSigningMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowAutoTagging
+   */
+  exports.prototype['allowAutoTagging'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowAutoTaggingMetadata
+   */
+  exports.prototype['allowAutoTaggingMetadata'] = undefined;
   /**
    * 
    * @member {String} allowBulkSending
@@ -518,10 +530,6 @@
    * @member {module:model/SettingsMetadata} receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata
    */
   exports.prototype['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} signingUiVersionMetadata
-   */
-  exports.prototype['signingUiVersionMetadata'] = undefined;
   /**
    * 
    * @member {String} supplementalDocumentsMustAccept

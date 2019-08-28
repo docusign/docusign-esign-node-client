@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -35,7 +35,7 @@
 
   /**
    * Constructs a new <code>UsageHistory</code>.
-   * A complex element consisting of:   * lastSentDateTime - the date and time the user last sent an envelope.  * lastSignedDateTime - the date and time the user last signed an envelope. * sentCount - the number of envelopes the user has sent. * signedCount - the number of envelopes the user has signed.
+   * A complex element consisting of:   * lastSentDateTime Ã¢â¬â the date and time the user last sent an envelope.  * lastSignedDateTime Ã¢â¬â the date and time the user last signed an envelope. * sentCount Ã¢â¬â the number of envelopes the user has sent. * signedCount Ã¢â¬â the number of envelopes the user has signed.
    * @alias module:model/UsageHistory
    * @class
    */
@@ -63,10 +63,10 @@
         obj['lastSignedDateTime'] = ApiClient.convertToType(data['lastSignedDateTime'], 'String');
       }
       if (data.hasOwnProperty('sentCount')) {
-        obj['sentCount'] = ApiClient.convertToType(data['sentCount'], 'String');
+        obj['sentCount'] = ApiClient.convertToType(data['sentCount'], 'Number');
       }
       if (data.hasOwnProperty('signedCount')) {
-        obj['signedCount'] = ApiClient.convertToType(data['signedCount'], 'String');
+        obj['signedCount'] = ApiClient.convertToType(data['signedCount'], 'Number');
       }
     }
     return obj;
@@ -84,12 +84,12 @@
   exports.prototype['lastSignedDateTime'] = undefined;
   /**
    * The number of envelopes the user has sent. 
-   * @member {String} sentCount
+   * @member {Number} sentCount
    */
   exports.prototype['sentCount'] = undefined;
   /**
    * The number of envelopes the user has signed. 
-   * @member {String} signedCount
+   * @member {Number} signedCount
    */
   exports.prototype['signedCount'] = undefined;
 
