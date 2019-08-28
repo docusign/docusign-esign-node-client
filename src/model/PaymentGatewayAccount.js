@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('allowCustomMetadata')) {
+        obj['allowCustomMetadata'] = ApiClient.convertToType(data['allowCustomMetadata'], 'Boolean');
+      }
       if (data.hasOwnProperty('config')) {
         obj['config'] = PaymentGatewayAccountSetting.constructFromObject(data['config']);
       }
@@ -95,6 +98,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {Boolean} allowCustomMetadata
+   */
+  exports.prototype['allowCustomMetadata'] = undefined;
   /**
    * @member {module:model/PaymentGatewayAccountSetting} config
    */

@@ -244,7 +244,7 @@
    */
   exports.prototype['forgottenPasswordInfo'] = undefined;
   /**
-   * A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId - The DocuSign group ID for the group. * groupName - The name of the group * permissionProfileId - The ID of the permission profile associated with the group. * groupType - The group type. 
+   * A list of the group information for groups to add the user to. Group information can be found by calling [ML:GET group information]. The only required parameter is groupId.   The parameters are:  * groupId Ã¢â¬â The DocuSign group ID for the group. * groupName Ã¢â¬â The name of the group * permissionProfileId Ã¢â¬â The ID of the permission profile associated with the group. * groupType Ã¢â¬â The group type. 
    * @member {Array.<module:model/Group>} groupList
    */
   exports.prototype['groupList'] = undefined;

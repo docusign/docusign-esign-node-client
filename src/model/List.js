@@ -211,6 +211,9 @@
       if (data.hasOwnProperty('mergeField')) {
         obj['mergeField'] = MergeField.constructFromObject(data['mergeField']);
       }
+      if (data.hasOwnProperty('mergeFieldXml')) {
+        obj['mergeFieldXml'] = ApiClient.convertToType(data['mergeFieldXml'], 'String');
+      }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
       }
@@ -580,6 +583,11 @@
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
+  /**
+   * 
+   * @member {String} mergeFieldXml
+   */
+  exports.prototype['mergeFieldXml'] = undefined;
   /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber

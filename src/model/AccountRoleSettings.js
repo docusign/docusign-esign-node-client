@@ -85,6 +85,12 @@
       if (data.hasOwnProperty('allowApiSequentialSigningMetadata')) {
         obj['allowApiSequentialSigningMetadata'] = SettingsMetadata.constructFromObject(data['allowApiSequentialSigningMetadata']);
       }
+      if (data.hasOwnProperty('allowAutoTagging')) {
+        obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
+      }
+      if (data.hasOwnProperty('allowAutoTaggingMetadata')) {
+        obj['allowAutoTaggingMetadata'] = SettingsMetadata.constructFromObject(data['allowAutoTaggingMetadata']);
+      }
       if (data.hasOwnProperty('allowBulkSending')) {
         obj['allowBulkSending'] = ApiClient.convertToType(data['allowBulkSending'], 'String');
       }
@@ -102,6 +108,12 @@
       }
       if (data.hasOwnProperty('allowedAddressBookAccessMetadata')) {
         obj['allowedAddressBookAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedAddressBookAccessMetadata']);
+      }
+      if (data.hasOwnProperty('allowedClickwrapsAccess')) {
+        obj['allowedClickwrapsAccess'] = ApiClient.convertToType(data['allowedClickwrapsAccess'], 'String');
+      }
+      if (data.hasOwnProperty('allowedClickwrapsAccessMetadata')) {
+        obj['allowedClickwrapsAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedClickwrapsAccessMetadata']);
       }
       if (data.hasOwnProperty('allowedTemplateAccess')) {
         obj['allowedTemplateAccess'] = ApiClient.convertToType(data['allowedTemplateAccess'], 'String');
@@ -313,6 +325,15 @@
   exports.prototype['allowApiSequentialSigningMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowAutoTagging
+   */
+  exports.prototype['allowAutoTagging'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowAutoTaggingMetadata
+   */
+  exports.prototype['allowAutoTaggingMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowBulkSending
    */
   exports.prototype['allowBulkSending'] = undefined;
@@ -338,6 +359,15 @@
    * @member {module:model/SettingsMetadata} allowedAddressBookAccessMetadata
    */
   exports.prototype['allowedAddressBookAccessMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowedClickwrapsAccess
+   */
+  exports.prototype['allowedClickwrapsAccess'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowedClickwrapsAccessMetadata
+   */
+  exports.prototype['allowedClickwrapsAccessMetadata'] = undefined;
   /**
    * 
    * @member {String} allowedTemplateAccess

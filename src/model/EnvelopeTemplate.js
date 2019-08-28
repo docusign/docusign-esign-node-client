@@ -190,6 +190,9 @@
       if (data.hasOwnProperty('externalEnvelopeId')) {
         obj['externalEnvelopeId'] = ApiClient.convertToType(data['externalEnvelopeId'], 'String');
       }
+      if (data.hasOwnProperty('favoritedByMe')) {
+        obj['favoritedByMe'] = ApiClient.convertToType(data['favoritedByMe'], 'String');
+      }
       if (data.hasOwnProperty('folderId')) {
         obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
       }
@@ -569,6 +572,11 @@
    * @member {String} externalEnvelopeId
    */
   exports.prototype['externalEnvelopeId'] = undefined;
+  /**
+   * 
+   * @member {String} favoritedByMe
+   */
+  exports.prototype['favoritedByMe'] = undefined;
   /**
    * 
    * @member {String} folderId

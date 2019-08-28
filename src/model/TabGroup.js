@@ -181,6 +181,9 @@
       if (data.hasOwnProperty('mergeField')) {
         obj['mergeField'] = MergeField.constructFromObject(data['mergeField']);
       }
+      if (data.hasOwnProperty('mergeFieldXml')) {
+        obj['mergeFieldXml'] = ApiClient.convertToType(data['mergeFieldXml'], 'String');
+      }
       if (data.hasOwnProperty('minimumRequired')) {
         obj['minimumRequired'] = ApiClient.convertToType(data['minimumRequired'], 'String');
       }
@@ -475,6 +478,11 @@
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
+  /**
+   * 
+   * @member {String} mergeFieldXml
+   */
+  exports.prototype['mergeFieldXml'] = undefined;
   /**
    * 
    * @member {String} minimumRequired

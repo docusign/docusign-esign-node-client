@@ -107,6 +107,9 @@
       if (data.hasOwnProperty('docuSignLandingUrl')) {
         obj['docuSignLandingUrl'] = ApiClient.convertToType(data['docuSignLandingUrl'], 'String');
       }
+      if (data.hasOwnProperty('dssValues')) {
+        obj['dssValues'] = ApiClient.convertToType(data['dssValues'], {'String': 'String'});
+      }
       if (data.hasOwnProperty('envelopeSendingBlocked')) {
         obj['envelopeSendingBlocked'] = ApiClient.convertToType(data['envelopeSendingBlocked'], 'String');
       }
@@ -243,6 +246,11 @@
    * @member {String} docuSignLandingUrl
    */
   exports.prototype['docuSignLandingUrl'] = undefined;
+  /**
+   * 
+   * @member {Object.<String, String>} dssValues
+   */
+  exports.prototype['dssValues'] = undefined;
   /**
    * 
    * @member {String} envelopeSendingBlocked

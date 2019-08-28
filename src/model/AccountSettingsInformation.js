@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccessCodeFormat', 'model/AccountIdentityVerificationWorkflow', 'model/AccountNotification', 'model/AddressInformation', 'model/ExternalDocumentSources', 'model/IdCheckConfiguration', 'model/SettingsMetadata', 'model/TabAccountSettings'], factory);
+    define(['ApiClient', 'model/AccessCodeFormat', 'model/AccountIdentityVerificationWorkflow', 'model/AccountNotification', 'model/AccountUISettings', 'model/AddressInformation', 'model/ExternalDocumentSources', 'model/IdCheckConfiguration', 'model/SettingsMetadata', 'model/TabAccountSettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccessCodeFormat'), require('./AccountIdentityVerificationWorkflow'), require('./AccountNotification'), require('./AddressInformation'), require('./ExternalDocumentSources'), require('./IdCheckConfiguration'), require('./SettingsMetadata'), require('./TabAccountSettings'));
+    module.exports = factory(require('../ApiClient'), require('./AccessCodeFormat'), require('./AccountIdentityVerificationWorkflow'), require('./AccountNotification'), require('./AccountUISettings'), require('./AddressInformation'), require('./ExternalDocumentSources'), require('./IdCheckConfiguration'), require('./SettingsMetadata'), require('./TabAccountSettings'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.AccessCodeFormat, root.Docusign.AccountIdentityVerificationWorkflow, root.Docusign.AccountNotification, root.Docusign.AddressInformation, root.Docusign.ExternalDocumentSources, root.Docusign.IdCheckConfiguration, root.Docusign.SettingsMetadata, root.Docusign.TabAccountSettings);
+    root.Docusign.AccountSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.AccessCodeFormat, root.Docusign.AccountIdentityVerificationWorkflow, root.Docusign.AccountNotification, root.Docusign.AccountUISettings, root.Docusign.AddressInformation, root.Docusign.ExternalDocumentSources, root.Docusign.IdCheckConfiguration, root.Docusign.SettingsMetadata, root.Docusign.TabAccountSettings);
   }
-}(this, function(ApiClient, AccessCodeFormat, AccountIdentityVerificationWorkflow, AccountNotification, AddressInformation, ExternalDocumentSources, IdCheckConfiguration, SettingsMetadata, TabAccountSettings) {
+}(this, function(ApiClient, AccessCodeFormat, AccountIdentityVerificationWorkflow, AccountNotification, AccountUISettings, AddressInformation, ExternalDocumentSources, IdCheckConfiguration, SettingsMetadata, TabAccountSettings) {
   'use strict';
 
 
@@ -74,6 +74,9 @@
       if (data.hasOwnProperty('accountNotification')) {
         obj['accountNotification'] = AccountNotification.constructFromObject(data['accountNotification']);
       }
+      if (data.hasOwnProperty('accountUISettings')) {
+        obj['accountUISettings'] = AccountUISettings.constructFromObject(data['accountUISettings']);
+      }
       if (data.hasOwnProperty('adoptSigConfig')) {
         obj['adoptSigConfig'] = ApiClient.convertToType(data['adoptSigConfig'], 'String');
       }
@@ -104,17 +107,35 @@
       if (data.hasOwnProperty('allowAccountMemberNameChangeMetadata')) {
         obj['allowAccountMemberNameChangeMetadata'] = SettingsMetadata.constructFromObject(data['allowAccountMemberNameChangeMetadata']);
       }
+      if (data.hasOwnProperty('allowAdvancedRecipientRoutingConditional')) {
+        obj['allowAdvancedRecipientRoutingConditional'] = ApiClient.convertToType(data['allowAdvancedRecipientRoutingConditional'], 'String');
+      }
+      if (data.hasOwnProperty('allowAdvancedRecipientRoutingConditionalMetadata')) {
+        obj['allowAdvancedRecipientRoutingConditionalMetadata'] = SettingsMetadata.constructFromObject(data['allowAdvancedRecipientRoutingConditionalMetadata']);
+      }
       if (data.hasOwnProperty('allowAgentNameEmailEdit')) {
         obj['allowAgentNameEmailEdit'] = ApiClient.convertToType(data['allowAgentNameEmailEdit'], 'String');
       }
       if (data.hasOwnProperty('allowAgentNameEmailEditMetadata')) {
         obj['allowAgentNameEmailEditMetadata'] = SettingsMetadata.constructFromObject(data['allowAgentNameEmailEditMetadata']);
       }
+      if (data.hasOwnProperty('allowAgreementActions')) {
+        obj['allowAgreementActions'] = ApiClient.convertToType(data['allowAgreementActions'], 'String');
+      }
+      if (data.hasOwnProperty('allowAgreementActionsMetadata')) {
+        obj['allowAgreementActionsMetadata'] = SettingsMetadata.constructFromObject(data['allowAgreementActionsMetadata']);
+      }
       if (data.hasOwnProperty('allowAutoNavSettings')) {
         obj['allowAutoNavSettings'] = ApiClient.convertToType(data['allowAutoNavSettings'], 'String');
       }
       if (data.hasOwnProperty('allowAutoNavSettingsMetadata')) {
         obj['allowAutoNavSettingsMetadata'] = SettingsMetadata.constructFromObject(data['allowAutoNavSettingsMetadata']);
+      }
+      if (data.hasOwnProperty('allowAutoTagging')) {
+        obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
+      }
+      if (data.hasOwnProperty('allowAutoTaggingMetadata')) {
+        obj['allowAutoTaggingMetadata'] = SettingsMetadata.constructFromObject(data['allowAutoTaggingMetadata']);
       }
       if (data.hasOwnProperty('allowBulkSend')) {
         obj['allowBulkSend'] = ApiClient.convertToType(data['allowBulkSend'], 'String');
@@ -232,6 +253,18 @@
       }
       if (data.hasOwnProperty('allowExternalSignaturePadMetadata')) {
         obj['allowExternalSignaturePadMetadata'] = SettingsMetadata.constructFromObject(data['allowExternalSignaturePadMetadata']);
+      }
+      if (data.hasOwnProperty('allowIDVLevel1')) {
+        obj['allowIDVLevel1'] = ApiClient.convertToType(data['allowIDVLevel1'], 'String');
+      }
+      if (data.hasOwnProperty('allowIDVLevel1Metadata')) {
+        obj['allowIDVLevel1Metadata'] = SettingsMetadata.constructFromObject(data['allowIDVLevel1Metadata']);
+      }
+      if (data.hasOwnProperty('allowIDVPlatform')) {
+        obj['allowIDVPlatform'] = ApiClient.convertToType(data['allowIDVPlatform'], 'String');
+      }
+      if (data.hasOwnProperty('allowIDVPlatformMetadata')) {
+        obj['allowIDVPlatformMetadata'] = SettingsMetadata.constructFromObject(data['allowIDVPlatformMetadata']);
       }
       if (data.hasOwnProperty('allowInPerson')) {
         obj['allowInPerson'] = ApiClient.convertToType(data['allowInPerson'], 'String');
@@ -520,6 +553,12 @@
       }
       if (data.hasOwnProperty('cfrUseWideImageMetadata')) {
         obj['cfrUseWideImageMetadata'] = SettingsMetadata.constructFromObject(data['cfrUseWideImageMetadata']);
+      }
+      if (data.hasOwnProperty('checkForMultipleAdminsOnAccount')) {
+        obj['checkForMultipleAdminsOnAccount'] = ApiClient.convertToType(data['checkForMultipleAdminsOnAccount'], 'String');
+      }
+      if (data.hasOwnProperty('checkForMultipleAdminsOnAccountMetadata')) {
+        obj['checkForMultipleAdminsOnAccountMetadata'] = SettingsMetadata.constructFromObject(data['checkForMultipleAdminsOnAccountMetadata']);
       }
       if (data.hasOwnProperty('chromeSignatureEnabled')) {
         obj['chromeSignatureEnabled'] = ApiClient.convertToType(data['chromeSignatureEnabled'], 'String');
@@ -845,6 +884,12 @@
       if (data.hasOwnProperty('enableSignWithNotaryMetadata')) {
         obj['enableSignWithNotaryMetadata'] = SettingsMetadata.constructFromObject(data['enableSignWithNotaryMetadata']);
       }
+      if (data.hasOwnProperty('enableSmartContracts')) {
+        obj['enableSmartContracts'] = ApiClient.convertToType(data['enableSmartContracts'], 'String');
+      }
+      if (data.hasOwnProperty('enableSmartContractsMetadata')) {
+        obj['enableSmartContractsMetadata'] = SettingsMetadata.constructFromObject(data['enableSmartContractsMetadata']);
+      }
       if (data.hasOwnProperty('enableSMSAuthentication')) {
         obj['enableSMSAuthentication'] = ApiClient.convertToType(data['enableSMSAuthentication'], 'String');
       }
@@ -931,6 +976,12 @@
       }
       if (data.hasOwnProperty('faxOutEnabledMetadata')) {
         obj['faxOutEnabledMetadata'] = SettingsMetadata.constructFromObject(data['faxOutEnabledMetadata']);
+      }
+      if (data.hasOwnProperty('guidedFormsHtmlAllowed')) {
+        obj['guidedFormsHtmlAllowed'] = ApiClient.convertToType(data['guidedFormsHtmlAllowed'], 'String');
+      }
+      if (data.hasOwnProperty('guidedFormsHtmlAllowedMetadata')) {
+        obj['guidedFormsHtmlAllowedMetadata'] = SettingsMetadata.constructFromObject(data['guidedFormsHtmlAllowedMetadata']);
       }
       if (data.hasOwnProperty('hideAccountAddressInCoC')) {
         obj['hideAccountAddressInCoC'] = ApiClient.convertToType(data['hideAccountAddressInCoC'], 'String');
@@ -1186,6 +1237,12 @@
       }
       if (data.hasOwnProperty('showCompleteDialogInEmbeddedSessionMetadata')) {
         obj['showCompleteDialogInEmbeddedSessionMetadata'] = SettingsMetadata.constructFromObject(data['showCompleteDialogInEmbeddedSessionMetadata']);
+      }
+      if (data.hasOwnProperty('showConditionalRoutingOnSend')) {
+        obj['showConditionalRoutingOnSend'] = ApiClient.convertToType(data['showConditionalRoutingOnSend'], 'String');
+      }
+      if (data.hasOwnProperty('showConditionalRoutingOnSendMetadata')) {
+        obj['showConditionalRoutingOnSendMetadata'] = SettingsMetadata.constructFromObject(data['showConditionalRoutingOnSendMetadata']);
       }
       if (data.hasOwnProperty('showInitialConditionalFields')) {
         obj['showInitialConditionalFields'] = ApiClient.convertToType(data['showInitialConditionalFields'], 'String');
@@ -1506,6 +1563,10 @@
    */
   exports.prototype['accountNotification'] = undefined;
   /**
+   * @member {module:model/AccountUISettings} accountUISettings
+   */
+  exports.prototype['accountUISettings'] = undefined;
+  /**
    * 
    * @member {String} adoptSigConfig
    */
@@ -1552,6 +1613,15 @@
   exports.prototype['allowAccountMemberNameChangeMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowAdvancedRecipientRoutingConditional
+   */
+  exports.prototype['allowAdvancedRecipientRoutingConditional'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowAdvancedRecipientRoutingConditionalMetadata
+   */
+  exports.prototype['allowAdvancedRecipientRoutingConditionalMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowAgentNameEmailEdit
    */
   exports.prototype['allowAgentNameEmailEdit'] = undefined;
@@ -1561,6 +1631,15 @@
   exports.prototype['allowAgentNameEmailEditMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowAgreementActions
+   */
+  exports.prototype['allowAgreementActions'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowAgreementActionsMetadata
+   */
+  exports.prototype['allowAgreementActionsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowAutoNavSettings
    */
   exports.prototype['allowAutoNavSettings'] = undefined;
@@ -1568,6 +1647,15 @@
    * @member {module:model/SettingsMetadata} allowAutoNavSettingsMetadata
    */
   exports.prototype['allowAutoNavSettingsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowAutoTagging
+   */
+  exports.prototype['allowAutoTagging'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowAutoTaggingMetadata
+   */
+  exports.prototype['allowAutoTaggingMetadata'] = undefined;
   /**
    * 
    * @member {String} allowBulkSend
@@ -1746,6 +1834,24 @@
   exports.prototype['allowExternalSignaturePadMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowIDVLevel1
+   */
+  exports.prototype['allowIDVLevel1'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowIDVLevel1Metadata
+   */
+  exports.prototype['allowIDVLevel1Metadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowIDVPlatform
+   */
+  exports.prototype['allowIDVPlatform'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowIDVPlatformMetadata
+   */
+  exports.prototype['allowIDVPlatformMetadata'] = undefined;
+  /**
+   * When set to **true**, the account allows In Person Signing.  Permission required: SysAdmin
    * @member {String} allowInPerson
    */
   exports.prototype['allowInPerson'] = undefined;
@@ -1817,7 +1923,7 @@
    */
   exports.prototype['allowNonUSPhoneAuthMetadata'] = undefined;
   /**
-   * 
+   * When set to **true**, the account can use Offline Signing and envelopes signed using offline signing on mobile devices are synchronized with this account. This option and the `inSessionEnabled` property must both be set to **true** for a caller to use offline signing.  Permission required: Admin
    * @member {String} allowOfflineSigning
    */
   exports.prototype['allowOfflineSigning'] = undefined;
@@ -1826,7 +1932,7 @@
    */
   exports.prototype['allowOfflineSigningMetadata'] = undefined;
   /**
-   * 
+   * When set to **true**, senders are allowed to use the OpenTrust digital signatures.  Permission required: Admin
    * @member {String} allowOpenTrustSignerCertificate
    */
   exports.prototype['allowOpenTrustSignerCertificate'] = undefined;
@@ -1907,7 +2013,7 @@
    */
   exports.prototype['allowResourceFileBrandingMetadata'] = undefined;
   /**
-   * 
+   * When set to **true**, senders are allowed to use the SAFE BioPharma digital signatures.  Permission required: Admin
    * @member {String} allowSafeBioPharmaSignerCertificate
    */
   exports.prototype['allowSafeBioPharmaSignerCertificate'] = undefined;
@@ -1952,7 +2058,7 @@
    */
   exports.prototype['allowServerTemplatesMetadata'] = undefined;
   /**
-   * 
+   * When set to **true**, the account allows users to share custom tags (fields).  #### Note: This setting is only shown when getting account settings. It cannot be modified.  Permission required: Admin
    * @member {String} allowSharedTabs
    */
   exports.prototype['allowSharedTabs'] = undefined;
@@ -1979,7 +2085,7 @@
    */
   exports.prototype['allowSignDocumentFromHomePageMetadata'] = undefined;
   /**
-   * 
+   * When set to **true**, the account allows signers to reassign an envelope.  Permission required: Admin
    * @member {String} allowSignerReassign
    */
   exports.prototype['allowSignerReassign'] = undefined;
@@ -2070,7 +2176,7 @@
    */
   exports.prototype['anchorTagVersionedPlacementMetadataEnabled'] = undefined;
   /**
-   * 
+   * When set to **true**, envelope documents are included as a PDF file attachment for signing completed emails.  Permission required: Admin
    * @member {String} attachCompletedEnvelope
    */
   exports.prototype['attachCompletedEnvelope'] = undefined;
@@ -2088,7 +2194,7 @@
    */
   exports.prototype['authenticationCheckMetadata'] = undefined;
   /**
-   * 
+   * Specifies the auto-navigation rule for the account.   Enumeration values are: Off, RequiredFields, RequiredAndBlankFields, AllFields, PageThenRequiredFields, PageThenRequiredAndBlankFields, PageThenAllFields.  Permission required: Admin
    * @member {String} autoNavRule
    */
   exports.prototype['autoNavRule'] = undefined;
@@ -2176,6 +2282,15 @@
    * @member {module:model/SettingsMetadata} cfrUseWideImageMetadata
    */
   exports.prototype['cfrUseWideImageMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} checkForMultipleAdminsOnAccount
+   */
+  exports.prototype['checkForMultipleAdminsOnAccount'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} checkForMultipleAdminsOnAccountMetadata
+   */
+  exports.prototype['checkForMultipleAdminsOnAccountMetadata'] = undefined;
   /**
    * 
    * @member {String} chromeSignatureEnabled
@@ -2307,7 +2422,7 @@
    */
   exports.prototype['disableStyleSignatureMetadata'] = undefined;
   /**
-   * 
+   * When set to **true**, signers cannot use the upload signature/initials image option when signing a document.  Permission required: Admin
    * @member {String} disableUploadSignature
    */
   exports.prototype['disableUploadSignature'] = undefined;
@@ -2664,6 +2779,15 @@
   exports.prototype['enableSignWithNotaryMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableSmartContracts
+   */
+  exports.prototype['enableSmartContracts'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableSmartContractsMetadata
+   */
+  exports.prototype['enableSmartContractsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableSMSAuthentication
    */
   exports.prototype['enableSMSAuthentication'] = undefined;
@@ -2792,6 +2916,15 @@
    * @member {module:model/SettingsMetadata} faxOutEnabledMetadata
    */
   exports.prototype['faxOutEnabledMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} guidedFormsHtmlAllowed
+   */
+  exports.prototype['guidedFormsHtmlAllowed'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} guidedFormsHtmlAllowedMetadata
+   */
+  exports.prototype['guidedFormsHtmlAllowedMetadata'] = undefined;
   /**
    * 
    * @member {String} hideAccountAddressInCoC
@@ -3178,6 +3311,15 @@
    * @member {module:model/SettingsMetadata} showCompleteDialogInEmbeddedSessionMetadata
    */
   exports.prototype['showCompleteDialogInEmbeddedSessionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} showConditionalRoutingOnSend
+   */
+  exports.prototype['showConditionalRoutingOnSend'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} showConditionalRoutingOnSendMetadata
+   */
+  exports.prototype['showConditionalRoutingOnSendMetadata'] = undefined;
   /**
    * 
    * @member {String} showInitialConditionalFields

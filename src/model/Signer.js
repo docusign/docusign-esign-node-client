@@ -238,6 +238,9 @@
       if (data.hasOwnProperty('requireSignOnPaper')) {
         obj['requireSignOnPaper'] = ApiClient.convertToType(data['requireSignOnPaper'], 'String');
       }
+      if (data.hasOwnProperty('requireUploadSignature')) {
+        obj['requireUploadSignature'] = ApiClient.convertToType(data['requireUploadSignature'], 'String');
+      }
       if (data.hasOwnProperty('roleName')) {
         obj['roleName'] = ApiClient.convertToType(data['roleName'], 'String');
       }
@@ -285,6 +288,9 @@
       }
       if (data.hasOwnProperty('statusCode')) {
         obj['statusCode'] = ApiClient.convertToType(data['statusCode'], 'String');
+      }
+      if (data.hasOwnProperty('suppressEmails')) {
+        obj['suppressEmails'] = ApiClient.convertToType(data['suppressEmails'], 'String');
       }
       if (data.hasOwnProperty('tabs')) {
         obj['tabs'] = Tabs.constructFromObject(data['tabs']);
@@ -581,7 +587,7 @@
    */
   exports.prototype['requireIdLookupMetadata'] = undefined;
   /**
-   * Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express - Requires a DocuSign Express certificate. * safe - Requires a SAFE-BioPharma certificate. * open_trust - Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
+   * Sets the type of signer certificate required for signing. If left blank, no certificate is required. Only one type of certificate can be set for a signer. The possible values are:  * docusign_express Ã¢â¬â Requires a DocuSign Express certificate. * safe Ã¢â¬â Requires a SAFE-BioPharma certificate. * open_trust Ã¢â¬â Requires an OpenTrust certificate.   **Important**: There are certain rules and restrictions that must be followed when requiring OpenTrust digital signatures. See [ML:OpenTrust Rules and Restrictions] for more information.   
    * @member {String} requireSignerCertificate
    */
   exports.prototype['requireSignerCertificate'] = undefined;
@@ -590,6 +596,11 @@
    * @member {String} requireSignOnPaper
    */
   exports.prototype['requireSignOnPaper'] = undefined;
+  /**
+   * 
+   * @member {String} requireUploadSignature
+   */
+  exports.prototype['requireUploadSignature'] = undefined;
   /**
    * Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.
    * @member {String} roleName
@@ -665,6 +676,11 @@
    * @member {String} statusCode
    */
   exports.prototype['statusCode'] = undefined;
+  /**
+   * 
+   * @member {String} suppressEmails
+   */
+  exports.prototype['suppressEmails'] = undefined;
   /**
    * @member {module:model/Tabs} tabs
    */

@@ -214,6 +214,9 @@
       if (data.hasOwnProperty('statusCode')) {
         obj['statusCode'] = ApiClient.convertToType(data['statusCode'], 'String');
       }
+      if (data.hasOwnProperty('suppressEmails')) {
+        obj['suppressEmails'] = ApiClient.convertToType(data['suppressEmails'], 'String');
+      }
       if (data.hasOwnProperty('tabs')) {
         obj['tabs'] = Tabs.constructFromObject(data['tabs']);
       }
@@ -481,6 +484,11 @@
    * @member {String} statusCode
    */
   exports.prototype['statusCode'] = undefined;
+  /**
+   * 
+   * @member {String} suppressEmails
+   */
+  exports.prototype['suppressEmails'] = undefined;
   /**
    * @member {module:model/Tabs} tabs
    */

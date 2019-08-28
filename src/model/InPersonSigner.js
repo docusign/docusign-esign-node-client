@@ -223,6 +223,9 @@
       if (data.hasOwnProperty('requireSignOnPaper')) {
         obj['requireSignOnPaper'] = ApiClient.convertToType(data['requireSignOnPaper'], 'String');
       }
+      if (data.hasOwnProperty('requireUploadSignature')) {
+        obj['requireUploadSignature'] = ApiClient.convertToType(data['requireUploadSignature'], 'String');
+      }
       if (data.hasOwnProperty('roleName')) {
         obj['roleName'] = ApiClient.convertToType(data['roleName'], 'String');
       }
@@ -294,6 +297,9 @@
       }
       if (data.hasOwnProperty('statusCode')) {
         obj['statusCode'] = ApiClient.convertToType(data['statusCode'], 'String');
+      }
+      if (data.hasOwnProperty('suppressEmails')) {
+        obj['suppressEmails'] = ApiClient.convertToType(data['suppressEmails'], 'String');
       }
       if (data.hasOwnProperty('tabs')) {
         obj['tabs'] = Tabs.constructFromObject(data['tabs']);
@@ -576,6 +582,11 @@
    */
   exports.prototype['requireSignOnPaper'] = undefined;
   /**
+   * 
+   * @member {String} requireUploadSignature
+   */
+  exports.prototype['requireUploadSignature'] = undefined;
+  /**
    * Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.
    * @member {String} roleName
    */
@@ -686,6 +697,11 @@
    * @member {String} statusCode
    */
   exports.prototype['statusCode'] = undefined;
+  /**
+   * 
+   * @member {String} suppressEmails
+   */
+  exports.prototype['suppressEmails'] = undefined;
   /**
    * @member {module:model/Tabs} tabs
    */
