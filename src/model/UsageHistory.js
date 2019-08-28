@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -63,10 +63,10 @@
         obj['lastSignedDateTime'] = ApiClient.convertToType(data['lastSignedDateTime'], 'String');
       }
       if (data.hasOwnProperty('sentCount')) {
-        obj['sentCount'] = ApiClient.convertToType(data['sentCount'], 'Number');
+        obj['sentCount'] = ApiClient.convertToType(data['sentCount'], 'String');
       }
       if (data.hasOwnProperty('signedCount')) {
-        obj['signedCount'] = ApiClient.convertToType(data['signedCount'], 'Number');
+        obj['signedCount'] = ApiClient.convertToType(data['signedCount'], 'String');
       }
     }
     return obj;
@@ -84,12 +84,12 @@
   exports.prototype['lastSignedDateTime'] = undefined;
   /**
    * The number of envelopes the user has sent. 
-   * @member {Number} sentCount
+   * @member {String} sentCount
    */
   exports.prototype['sentCount'] = undefined;
   /**
    * The number of envelopes the user has signed. 
-   * @member {Number} signedCount
+   * @member {String} signedCount
    */
   exports.prototype['signedCount'] = undefined;
 

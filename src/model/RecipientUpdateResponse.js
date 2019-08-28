@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -55,11 +55,17 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('combined')) {
+        obj['combined'] = ApiClient.convertToType(data['combined'], 'String');
+      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('recipientId')) {
         obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+      }
+      if (data.hasOwnProperty('recipientIdGuid')) {
+        obj['recipientIdGuid'] = ApiClient.convertToType(data['recipientIdGuid'], 'String');
       }
       if (data.hasOwnProperty('tabs')) {
         obj['tabs'] = Tabs.constructFromObject(data['tabs']);
@@ -69,6 +75,11 @@
   }
 
   /**
+   * 
+   * @member {String} combined
+   */
+  exports.prototype['combined'] = undefined;
+  /**
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -77,6 +88,11 @@
    * @member {String} recipientId
    */
   exports.prototype['recipientId'] = undefined;
+  /**
+   * 
+   * @member {String} recipientIdGuid
+   */
+  exports.prototype['recipientIdGuid'] = undefined;
   /**
    * @member {module:model/Tabs} tabs
    */

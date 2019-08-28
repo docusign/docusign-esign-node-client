@@ -2,6 +2,19 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v5.1.0-Proxy] - eSignature API v2.1-19.2.02
+### BREAKING
+- node support removed for node versions 4,5,6 for compatibility purposes with superagent-proxy.
+### Changed
+- The SDK now supports version 19.2.02 of the DocuSign eSignature API.
+- SDK Release Version updated.
+### Added
+- Proxy support has been added. 
+
+### Changed
+- The SDK now supports version 19.2.02 of the DocuSign eSignature API.
+- SDK Release Version updated.
+
 ## [v5.0.2] - 2019-07-12
 ### Security
 - [CVE-2019-10744](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10744).

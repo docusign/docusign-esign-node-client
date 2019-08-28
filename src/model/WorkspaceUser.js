@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -77,6 +77,12 @@
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('invitationEmailBlurb')) {
+        obj['invitationEmailBlurb'] = ApiClient.convertToType(data['invitationEmailBlurb'], 'String');
+      }
+      if (data.hasOwnProperty('invitationEmailSubject')) {
+        obj['invitationEmailSubject'] = ApiClient.convertToType(data['invitationEmailSubject'], 'String');
+      }
       if (data.hasOwnProperty('lastModified')) {
         obj['lastModified'] = ApiClient.convertToType(data['lastModified'], 'String');
       }
@@ -103,6 +109,9 @@
       }
       if (data.hasOwnProperty('workspaceUserId')) {
         obj['workspaceUserId'] = ApiClient.convertToType(data['workspaceUserId'], 'String');
+      }
+      if (data.hasOwnProperty('workspaceUserUri')) {
+        obj['workspaceUserUri'] = ApiClient.convertToType(data['workspaceUserUri'], 'String');
       }
     }
     return obj;
@@ -142,6 +151,16 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} invitationEmailBlurb
+   */
+  exports.prototype['invitationEmailBlurb'] = undefined;
+  /**
+   * 
+   * @member {String} invitationEmailSubject
+   */
+  exports.prototype['invitationEmailSubject'] = undefined;
   /**
    * Utc date and time the comment was last updated (can only be done by creator.)
    * @member {String} lastModified
@@ -187,6 +206,11 @@
    * @member {String} workspaceUserId
    */
   exports.prototype['workspaceUserId'] = undefined;
+  /**
+   * 
+   * @member {String} workspaceUserUri
+   */
+  exports.prototype['workspaceUserUri'] = undefined;
 
 
 

@@ -5,14 +5,10 @@ var config = require('../test-config');
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
-var fs = require('fs');
-var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 
 var userName = config.email;
 var integratorKey = config.integratorKey;
 var integratorKeyAuthCode = config.integratorKeyAuthCode;
-var privateKey = config.privateKey;
-
 // var IntegratorKeyImplicit = config.integratorKeyImplicit;
 // var ClientSecret = config.clientSecr
 var templateId = config.templateId;
@@ -28,20 +24,7 @@ var userId = config.userId;
 var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
-
-if (privateKey) {
-  var buf;
-  if (typeof Buffer.from === 'function') {
-    // Node 5.10+
-    buf = Buffer.from(privateKey, 'base64'); // Ta-da
-  } else {
-    // older Node versions, now deprecated
-    buf = new Buffer(privateKey, 'base64'); // Ta-da
-  }
-
-  var text = buf.toString('ascii');
-  fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
-}
+var isV2 = docusign.EnvelopeTemplate;
 
 describe('SDK Unit Tests With Callbacks:', function (done) {
   var apiClient = new docusign.ApiClient({
@@ -515,9 +498,15 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     template.recipients.signers = [];
     template.recipients.signers.push(signer);
 
-    var envTemplate = new docusign.EnvelopeTemplate();
-    envTemplate.name = 'myTemplate';
-    template.envelopeTemplate = envTemplate;
+    if (!isV2) {
+      var envTemplate = new docusign.EnvelopeTemplate();
+      envTemplate.name = 'myTemplate';
+      template.envelopeTemplate = envTemplate;
+    } else {
+      var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
+      envTemplateDef.name = 'myTemplate';
+      template.envelopeTemplateDefinition = envTemplateDef;
+    }
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 

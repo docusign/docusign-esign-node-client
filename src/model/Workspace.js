@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/WorkspaceUser'], factory);
+    define(['ApiClient', 'model/WorkspaceSettings', 'model/WorkspaceUser'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./WorkspaceUser'));
+    module.exports = factory(require('../ApiClient'), require('./WorkspaceSettings'), require('./WorkspaceUser'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Workspace = factory(root.Docusign.ApiClient, root.Docusign.WorkspaceUser);
+    root.Docusign.Workspace = factory(root.Docusign.ApiClient, root.Docusign.WorkspaceSettings, root.Docusign.WorkspaceUser);
   }
-}(this, function(ApiClient, WorkspaceUser) {
+}(this, function(ApiClient, WorkspaceSettings, WorkspaceUser) {
   'use strict';
 
 
@@ -59,6 +59,9 @@
       if (data.hasOwnProperty('billableAccountId')) {
         obj['billableAccountId'] = ApiClient.convertToType(data['billableAccountId'], 'String');
       }
+      if (data.hasOwnProperty('callerInformation')) {
+        obj['callerInformation'] = WorkspaceUser.constructFromObject(data['callerInformation']);
+      }
       if (data.hasOwnProperty('created')) {
         obj['created'] = ApiClient.convertToType(data['created'], 'String');
       }
@@ -70,6 +73,9 @@
       }
       if (data.hasOwnProperty('lastModifiedByInformation')) {
         obj['lastModifiedByInformation'] = WorkspaceUser.constructFromObject(data['lastModifiedByInformation']);
+      }
+      if (data.hasOwnProperty('settings')) {
+        obj['settings'] = WorkspaceSettings.constructFromObject(data['settings']);
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -99,6 +105,10 @@
    */
   exports.prototype['billableAccountId'] = undefined;
   /**
+   * @member {module:model/WorkspaceUser} callerInformation
+   */
+  exports.prototype['callerInformation'] = undefined;
+  /**
    * 
    * @member {String} created
    */
@@ -116,6 +126,10 @@
    * @member {module:model/WorkspaceUser} lastModifiedByInformation
    */
   exports.prototype['lastModifiedByInformation'] = undefined;
+  /**
+   * @member {module:model/WorkspaceSettings} settings
+   */
+  exports.prototype['settings'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status

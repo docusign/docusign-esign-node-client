@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TemplateMatch'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/TemplateMatch'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TemplateMatch'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./TemplateMatch'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateSummary = factory(root.Docusign.ApiClient, root.Docusign.TemplateMatch);
+    root.Docusign.TemplateSummary = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.TemplateMatch);
   }
-}(this, function(ApiClient, TemplateMatch) {
+}(this, function(ApiClient, ErrorDetails, TemplateMatch) {
   'use strict';
 
 
@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('documentName')) {
         obj['documentName'] = ApiClient.convertToType(data['documentName'], 'String');
       }
+      if (data.hasOwnProperty('errorDetails')) {
+        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -95,6 +98,10 @@
    * @member {String} documentName
    */
   exports.prototype['documentName'] = undefined;
+  /**
+   * @member {module:model/ErrorDetails} errorDetails
+   */
+  exports.prototype['errorDetails'] = undefined;
   /**
    * 
    * @member {String} name

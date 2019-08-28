@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -73,6 +73,9 @@
       if (data.hasOwnProperty('offlineSigningFailed')) {
         obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
       }
+      if (data.hasOwnProperty('purgeDocuments')) {
+        obj['purgeDocuments'] = ApiClient.convertToType(data['purgeDocuments'], 'String');
+      }
       if (data.hasOwnProperty('recipientViewed')) {
         obj['recipientViewed'] = ApiClient.convertToType(data['recipientViewed'], 'String');
       }
@@ -116,6 +119,11 @@
    * @member {String} offlineSigningFailed
    */
   exports.prototype['offlineSigningFailed'] = undefined;
+  /**
+   * 
+   * @member {String} purgeDocuments
+   */
+  exports.prototype['purgeDocuments'] = undefined;
   /**
    * When set to **true**, the sender receives notification that the recipient viewed the enveloper.
    * @member {String} recipientViewed

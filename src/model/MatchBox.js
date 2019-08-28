@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -56,19 +56,19 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('height')) {
-        obj['height'] = ApiClient.convertToType(data['height'], 'Number');
+        obj['height'] = ApiClient.convertToType(data['height'], 'String');
       }
       if (data.hasOwnProperty('pageNumber')) {
-        obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'Number');
+        obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
       }
       if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
+        obj['width'] = ApiClient.convertToType(data['width'], 'String');
       }
       if (data.hasOwnProperty('xPosition')) {
-        obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'Number');
+        obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'String');
       }
       if (data.hasOwnProperty('yPosition')) {
-        obj['yPosition'] = ApiClient.convertToType(data['yPosition'], 'Number');
+        obj['yPosition'] = ApiClient.convertToType(data['yPosition'], 'String');
       }
     }
     return obj;
@@ -76,27 +76,27 @@
 
   /**
    * Height of the tab in pixels.
-   * @member {Number} height
+   * @member {String} height
    */
   exports.prototype['height'] = undefined;
   /**
    * Specifies the page number on which the tab is located.
-   * @member {Number} pageNumber
+   * @member {String} pageNumber
    */
   exports.prototype['pageNumber'] = undefined;
   /**
    * Width of the tab in pixels.
-   * @member {Number} width
+   * @member {String} width
    */
   exports.prototype['width'] = undefined;
   /**
    * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
-   * @member {Number} xPosition
+   * @member {String} xPosition
    */
   exports.prototype['xPosition'] = undefined;
   /**
    * This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
-   * @member {Number} yPosition
+   * @member {String} yPosition
    */
   exports.prototype['yPosition'] = undefined;
 

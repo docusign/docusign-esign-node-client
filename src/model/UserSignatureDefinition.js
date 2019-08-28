@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/DateStampProperties'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./DateStampProperties'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.UserSignatureDefinition = factory(root.Docusign.ApiClient);
+    root.Docusign.UserSignatureDefinition = factory(root.Docusign.ApiClient, root.Docusign.DateStampProperties);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, DateStampProperties) {
   'use strict';
 
 
@@ -55,6 +55,30 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('dateStampProperties')) {
+        obj['dateStampProperties'] = DateStampProperties.constructFromObject(data['dateStampProperties']);
+      }
+      if (data.hasOwnProperty('disallowUserResizeStamp')) {
+        obj['disallowUserResizeStamp'] = ApiClient.convertToType(data['disallowUserResizeStamp'], 'String');
+      }
+      if (data.hasOwnProperty('externalID')) {
+        obj['externalID'] = ApiClient.convertToType(data['externalID'], 'String');
+      }
+      if (data.hasOwnProperty('imageType')) {
+        obj['imageType'] = ApiClient.convertToType(data['imageType'], 'String');
+      }
+      if (data.hasOwnProperty('isDefault')) {
+        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+      }
+      if (data.hasOwnProperty('nrdsId')) {
+        obj['nrdsId'] = ApiClient.convertToType(data['nrdsId'], 'String');
+      }
+      if (data.hasOwnProperty('nrdsLastName')) {
+        obj['nrdsLastName'] = ApiClient.convertToType(data['nrdsLastName'], 'String');
+      }
+      if (data.hasOwnProperty('phoneticName')) {
+        obj['phoneticName'] = ApiClient.convertToType(data['phoneticName'], 'String');
+      }
       if (data.hasOwnProperty('signatureFont')) {
         obj['signatureFont'] = ApiClient.convertToType(data['signatureFont'], 'String');
       }
@@ -67,10 +91,55 @@
       if (data.hasOwnProperty('signatureName')) {
         obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
       }
+      if (data.hasOwnProperty('stampFormat')) {
+        obj['stampFormat'] = ApiClient.convertToType(data['stampFormat'], 'String');
+      }
+      if (data.hasOwnProperty('stampSizeMM')) {
+        obj['stampSizeMM'] = ApiClient.convertToType(data['stampSizeMM'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * @member {module:model/DateStampProperties} dateStampProperties
+   */
+  exports.prototype['dateStampProperties'] = undefined;
+  /**
+   * 
+   * @member {String} disallowUserResizeStamp
+   */
+  exports.prototype['disallowUserResizeStamp'] = undefined;
+  /**
+   * 
+   * @member {String} externalID
+   */
+  exports.prototype['externalID'] = undefined;
+  /**
+   * 
+   * @member {String} imageType
+   */
+  exports.prototype['imageType'] = undefined;
+  /**
+   * 
+   * @member {String} isDefault
+   */
+  exports.prototype['isDefault'] = undefined;
+  /**
+   * 
+   * @member {String} nrdsId
+   */
+  exports.prototype['nrdsId'] = undefined;
+  /**
+   * 
+   * @member {String} nrdsLastName
+   */
+  exports.prototype['nrdsLastName'] = undefined;
+  /**
+   * 
+   * @member {String} phoneticName
+   */
+  exports.prototype['phoneticName'] = undefined;
   /**
    * 
    * @member {String} signatureFont
@@ -91,6 +160,16 @@
    * @member {String} signatureName
    */
   exports.prototype['signatureName'] = undefined;
+  /**
+   * 
+   * @member {String} stampFormat
+   */
+  exports.prototype['stampFormat'] = undefined;
+  /**
+   * 
+   * @member {String} stampSizeMM
+   */
+  exports.prototype['stampSizeMM'] = undefined;
 
 
 

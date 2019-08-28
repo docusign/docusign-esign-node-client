@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EnvelopeTemplateResult', 'model/Folder'], factory);
+    define(['ApiClient', 'model/EnvelopeTemplate', 'model/Folder'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EnvelopeTemplateResult'), require('./Folder'));
+    module.exports = factory(require('../ApiClient'), require('./EnvelopeTemplate'), require('./Folder'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeTemplateResults = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeTemplateResult, root.Docusign.Folder);
+    root.Docusign.EnvelopeTemplateResults = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeTemplate, root.Docusign.Folder);
   }
-}(this, function(ApiClient, EnvelopeTemplateResult, Folder) {
+}(this, function(ApiClient, EnvelopeTemplate, Folder) {
   'use strict';
 
 
@@ -59,7 +59,7 @@
         obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
       }
       if (data.hasOwnProperty('envelopeTemplates')) {
-        obj['envelopeTemplates'] = ApiClient.convertToType(data['envelopeTemplates'], [EnvelopeTemplateResult]);
+        obj['envelopeTemplates'] = ApiClient.convertToType(data['envelopeTemplates'], [EnvelopeTemplate]);
       }
       if (data.hasOwnProperty('folders')) {
         obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
@@ -90,7 +90,7 @@
   exports.prototype['endPosition'] = undefined;
   /**
    * The list of requested templates.
-   * @member {Array.<module:model/EnvelopeTemplateResult>} envelopeTemplates
+   * @member {Array.<module:model/EnvelopeTemplate>} envelopeTemplates
    */
   exports.prototype['envelopeTemplates'] = undefined;
   /**

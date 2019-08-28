@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountAddress', 'model/AppStoreReceipt', 'model/CreditCardInformation', 'model/PaymentProcessorInformation', 'model/PlanInformation', 'model/ReferralInformation'], factory);
+    define(['ApiClient', 'model/AccountAddress', 'model/AppStoreReceipt', 'model/CreditCardInformation', 'model/DirectDebitProcessorInformation', 'model/PaymentProcessorInformation', 'model/PlanInformation', 'model/ReferralInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AppStoreReceipt'), require('./CreditCardInformation'), require('./PaymentProcessorInformation'), require('./PlanInformation'), require('./ReferralInformation'));
+    module.exports = factory(require('../ApiClient'), require('./AccountAddress'), require('./AppStoreReceipt'), require('./CreditCardInformation'), require('./DirectDebitProcessorInformation'), require('./PaymentProcessorInformation'), require('./PlanInformation'), require('./ReferralInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BillingPlanInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AppStoreReceipt, root.Docusign.CreditCardInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation);
+    root.Docusign.BillingPlanInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AppStoreReceipt, root.Docusign.CreditCardInformation, root.Docusign.DirectDebitProcessorInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation);
   }
-}(this, function(ApiClient, AccountAddress, AppStoreReceipt, CreditCardInformation, PaymentProcessorInformation, PlanInformation, ReferralInformation) {
+}(this, function(ApiClient, AccountAddress, AppStoreReceipt, CreditCardInformation, DirectDebitProcessorInformation, PaymentProcessorInformation, PlanInformation, ReferralInformation) {
   'use strict';
 
 
@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('creditCardInformation')) {
         obj['creditCardInformation'] = CreditCardInformation.constructFromObject(data['creditCardInformation']);
       }
+      if (data.hasOwnProperty('directDebitProcessorInformation')) {
+        obj['directDebitProcessorInformation'] = DirectDebitProcessorInformation.constructFromObject(data['directDebitProcessorInformation']);
+      }
       if (data.hasOwnProperty('downgradeReason')) {
         obj['downgradeReason'] = ApiClient.convertToType(data['downgradeReason'], 'String');
       }
@@ -75,6 +78,9 @@
       }
       if (data.hasOwnProperty('incrementalSeats')) {
         obj['incrementalSeats'] = ApiClient.convertToType(data['incrementalSeats'], 'String');
+      }
+      if (data.hasOwnProperty('paymentMethod')) {
+        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
       }
       if (data.hasOwnProperty('paymentProcessorInformation')) {
         obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
@@ -120,6 +126,10 @@
    */
   exports.prototype['creditCardInformation'] = undefined;
   /**
+   * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
+   */
+  exports.prototype['directDebitProcessorInformation'] = undefined;
+  /**
    * 
    * @member {String} downgradeReason
    */
@@ -139,6 +149,11 @@
    * @member {String} incrementalSeats
    */
   exports.prototype['incrementalSeats'] = undefined;
+  /**
+   * 
+   * @member {String} paymentMethod
+   */
+  exports.prototype['paymentMethod'] = undefined;
   /**
    * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
    */
