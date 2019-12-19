@@ -73,6 +73,9 @@
       if (data.hasOwnProperty('distributorPassword')) {
         obj['distributorPassword'] = ApiClient.convertToType(data['distributorPassword'], 'String');
       }
+      if (data.hasOwnProperty('envelopePartitionId')) {
+        obj['envelopePartitionId'] = ApiClient.convertToType(data['envelopePartitionId'], 'String');
+      }
       if (data.hasOwnProperty('initialUser')) {
         obj['initialUser'] = UserInformation.constructFromObject(data['initialUser']);
       }
@@ -120,6 +123,11 @@
    * @member {String} distributorPassword
    */
   exports.prototype['distributorPassword'] = undefined;
+  /**
+   * 
+   * @member {String} envelopePartitionId
+   */
+  exports.prototype['envelopePartitionId'] = undefined;
   /**
    * @member {module:model/UserInformation} initialUser
    */

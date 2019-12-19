@@ -97,6 +97,9 @@
       if (data.hasOwnProperty('signerMustAcknowledge')) {
         obj['signerMustAcknowledge'] = ApiClient.convertToType(data['signerMustAcknowledge'], 'String');
       }
+      if (data.hasOwnProperty('sizeBytes')) {
+        obj['sizeBytes'] = ApiClient.convertToType(data['sizeBytes'], 'String');
+      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
@@ -176,6 +179,11 @@
    * @member {String} signerMustAcknowledge
    */
   exports.prototype['signerMustAcknowledge'] = undefined;
+  /**
+   * 
+   * @member {String} sizeBytes
+   */
+  exports.prototype['sizeBytes'] = undefined;
   /**
    * 
    * @member {String} type

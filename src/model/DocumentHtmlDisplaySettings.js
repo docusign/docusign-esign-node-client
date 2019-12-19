@@ -82,6 +82,9 @@
       if (data.hasOwnProperty('labelWhenOpened')) {
         obj['labelWhenOpened'] = ApiClient.convertToType(data['labelWhenOpened'], 'String');
       }
+      if (data.hasOwnProperty('preLabel')) {
+        obj['preLabel'] = ApiClient.convertToType(data['preLabel'], 'String');
+      }
       if (data.hasOwnProperty('scrollToTopWhenOpened')) {
         obj['scrollToTopWhenOpened'] = ApiClient.convertToType(data['scrollToTopWhenOpened'], 'Boolean');
       }
@@ -136,6 +139,11 @@
    * @member {String} labelWhenOpened
    */
   exports.prototype['labelWhenOpened'] = undefined;
+  /**
+   * 
+   * @member {String} preLabel
+   */
+  exports.prototype['preLabel'] = undefined;
   /**
    * 
    * @member {Boolean} scrollToTopWhenOpened
