@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharacters')) {
+        obj['anchorAllowWhiteSpaceInCharacters'] = ApiClient.convertToType(data['anchorAllowWhiteSpaceInCharacters'], 'String');
+      }
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharactersMetadata')) {
+        obj['anchorAllowWhiteSpaceInCharactersMetadata'] = PropertyMetadata.constructFromObject(data['anchorAllowWhiteSpaceInCharactersMetadata']);
+      }
       if (data.hasOwnProperty('anchorCaseSensitive')) {
         obj['anchorCaseSensitive'] = ApiClient.convertToType(data['anchorCaseSensitive'], 'String');
       }
@@ -212,6 +218,15 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} anchorAllowWhiteSpaceInCharacters
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharacters'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} anchorAllowWhiteSpaceInCharactersMetadata
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharactersMetadata'] = undefined;
   /**
    * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
    * @member {String} anchorCaseSensitive

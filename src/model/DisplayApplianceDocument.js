@@ -55,8 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('attachmentDate')) {
+        obj['attachmentDate'] = ApiClient.convertToType(data['attachmentDate'], 'String');
+      }
       if (data.hasOwnProperty('attachmentDescription')) {
         obj['attachmentDescription'] = ApiClient.convertToType(data['attachmentDescription'], 'String');
+      }
+      if (data.hasOwnProperty('copyPDFId')) {
+        obj['copyPDFId'] = ApiClient.convertToType(data['copyPDFId'], 'String');
       }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
@@ -76,8 +82,20 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('originalPDFId')) {
+        obj['originalPDFId'] = ApiClient.convertToType(data['originalPDFId'], 'String');
+      }
       if (data.hasOwnProperty('pages')) {
-        obj['pages'] = ApiClient.convertToType(data['pages'], 'Number');
+        obj['pages'] = ApiClient.convertToType(data['pages'], 'String');
+      }
+      if (data.hasOwnProperty('rowState')) {
+        obj['rowState'] = ApiClient.convertToType(data['rowState'], 'String');
+      }
+      if (data.hasOwnProperty('sequence')) {
+        obj['sequence'] = ApiClient.convertToType(data['sequence'], 'String');
+      }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
     }
     return obj;
@@ -85,9 +103,19 @@
 
   /**
    * 
+   * @member {String} attachmentDate
+   */
+  exports.prototype['attachmentDate'] = undefined;
+  /**
+   * 
    * @member {String} attachmentDescription
    */
   exports.prototype['attachmentDescription'] = undefined;
+  /**
+   * 
+   * @member {String} copyPDFId
+   */
+  exports.prototype['copyPDFId'] = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
@@ -120,9 +148,29 @@
   exports.prototype['name'] = undefined;
   /**
    * 
-   * @member {Number} pages
+   * @member {String} originalPDFId
+   */
+  exports.prototype['originalPDFId'] = undefined;
+  /**
+   * 
+   * @member {String} pages
    */
   exports.prototype['pages'] = undefined;
+  /**
+   * 
+   * @member {String} rowState
+   */
+  exports.prototype['rowState'] = undefined;
+  /**
+   * 
+   * @member {String} sequence
+   */
+  exports.prototype['sequence'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
 
 
 

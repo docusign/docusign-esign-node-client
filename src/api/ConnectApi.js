@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedUserInfoList'], factory);
+	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation', 'model/ResourceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedUserInfoList'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'), require('../model/ResourceInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedUserInfoList);
+    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation, root.Docusign.ResourceInformation);
   }
-}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedUserInfoList) {
+}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedUserInfoList, MobileNotifierConfigurationInformation, ResourceInformation) {
   'use strict';
 
   /**
@@ -116,6 +116,56 @@
     };
 
     /**
+     * (Optional)Callback function to receive the result of the createConnectSecret operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~createConnectSecretCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Generates a new connect HMAC Secret.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~createConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.createConnectSecret = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createConnectSecret");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/secret', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional)Callback function to receive the result of the deleteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteConfigurationCallback
      * @param {String} error Error message, if any.
@@ -173,6 +223,63 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the deleteConnectSecret operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~deleteConnectSecretCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Delete the connect HMAC Secret for AccountID
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} keyId 
+     * @param {module:api/ConnectApi~deleteConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteConnectSecret = function(accountId, keyId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteConnectSecret");
+      }
+
+      // verify the required parameter 'keyId' is set
+      if (keyId == undefined || keyId == null) {
+        throw new Error("Missing the required parameter 'keyId' when calling deleteConnectSecret");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'keyId': keyId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/secret/{keyId}/delete', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -349,6 +456,117 @@
     };
 
     /**
+     * (Optional)Callback function to receive the result of the deleteMobileNotifiers operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~deleteMobileNotifiersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Reserved
+     * Reserved:
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation 
+     * @param {module:api/ConnectApi~deleteMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
+     */
+    this.deleteMobileNotifiers = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteMobileNotifiers");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = MobileNotifierConfigurationInformation;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/mobile_notifiers', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the generateConnectSecret operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~generateConnectSecretCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Generates a new connect HMAC Secret.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~generateConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.generateConnectSecret = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling generateConnectSecret");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/secret', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional)Callback function to receive the result of the getConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~getConfigurationCallback
      * @param {String} error Error message, if any.
@@ -405,6 +623,56 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the getConnectSecrets operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~getConnectSecretsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the connect HMAC Secrets for AccountID
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~getConnectSecretsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getConnectSecrets = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getConnectSecrets");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/secrets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -660,6 +928,116 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/logs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the listMobileNotifiers operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~listMobileNotifiersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Reserved
+     * Reserved:
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~listMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
+     */
+    this.listMobileNotifiers = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listMobileNotifiers");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = MobileNotifierConfigurationInformation;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/mobile_notifiers', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the listTests operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~listTestsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ResourceInformation} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Test connect configuration.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} connectId The ID of the custom Connect configuration being accessed.
+     * @param {module:api/ConnectApi~listTestsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ResourceInformation}
+     */
+    this.listTests = function(accountId, connectId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling listTests");
+      }
+
+      // verify the required parameter 'connectId' is set
+      if (connectId == undefined || connectId == null) {
+        throw new Error("Missing the required parameter 'connectId' when calling listTests");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'connectId': connectId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ResourceInformation;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/{connectId}/tests', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -922,6 +1300,67 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional)Callback function to receive the result of the updateMobileNotifiers operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~updateMobileNotifiersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Reserved
+     * Reserved:
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation 
+     * @param {module:api/ConnectApi~updateMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
+     */
+    this.updateMobileNotifiers = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId == undefined || accountId == null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateMobileNotifiers");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = MobileNotifierConfigurationInformation;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/mobile_notifiers', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

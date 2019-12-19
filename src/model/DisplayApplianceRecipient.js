@@ -61,11 +61,20 @@
       if (data.hasOwnProperty('company')) {
         obj['company'] = ApiClient.convertToType(data['company'], 'String');
       }
+      if (data.hasOwnProperty('customField2')) {
+        obj['customField2'] = ApiClient.convertToType(data['customField2'], 'String');
+      }
       if (data.hasOwnProperty('digitalSignatureBase64')) {
         obj['digitalSignatureBase64'] = ApiClient.convertToType(data['digitalSignatureBase64'], 'String');
       }
+      if (data.hasOwnProperty('digitalSignaturesPending')) {
+        obj['digitalSignaturesPending'] = ApiClient.convertToType(data['digitalSignaturesPending'], 'String');
+      }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('firstName')) {
+        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
       }
       if (data.hasOwnProperty('fullName')) {
         obj['fullName'] = ApiClient.convertToType(data['fullName'], 'String');
@@ -78,6 +87,15 @@
       }
       if (data.hasOwnProperty('isNotary')) {
         obj['isNotary'] = ApiClient.convertToType(data['isNotary'], 'Boolean');
+      }
+      if (data.hasOwnProperty('isNotaryTransaction')) {
+        obj['isNotaryTransaction'] = ApiClient.convertToType(data['isNotaryTransaction'], 'Boolean');
+      }
+      if (data.hasOwnProperty('jobTitle')) {
+        obj['jobTitle'] = ApiClient.convertToType(data['jobTitle'], 'String');
+      }
+      if (data.hasOwnProperty('lastName')) {
+        obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
       }
       if (data.hasOwnProperty('notarySealBase64')) {
         obj['notarySealBase64'] = ApiClient.convertToType(data['notarySealBase64'], 'String');
@@ -100,11 +118,17 @@
       if (data.hasOwnProperty('recipientType')) {
         obj['recipientType'] = ApiClient.convertToType(data['recipientType'], 'String');
       }
+      if (data.hasOwnProperty('requireSignerCertificate')) {
+        obj['requireSignerCertificate'] = ApiClient.convertToType(data['requireSignerCertificate'], 'String');
+      }
       if (data.hasOwnProperty('rowState')) {
         obj['rowState'] = ApiClient.convertToType(data['rowState'], 'String');
       }
       if (data.hasOwnProperty('signatureBase64')) {
         obj['signatureBase64'] = ApiClient.convertToType(data['signatureBase64'], 'String');
+      }
+      if (data.hasOwnProperty('signatureImageId')) {
+        obj['signatureImageId'] = ApiClient.convertToType(data['signatureImageId'], 'String');
       }
       if (data.hasOwnProperty('signed')) {
         obj['signed'] = ApiClient.convertToType(data['signed'], 'Boolean');
@@ -114,6 +138,9 @@
       }
       if (data.hasOwnProperty('signerAttachmentBase64')) {
         obj['signerAttachmentBase64'] = ApiClient.convertToType(data['signerAttachmentBase64'], 'String');
+      }
+      if (data.hasOwnProperty('userId')) {
+        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
       }
       if (data.hasOwnProperty('userName')) {
         obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
@@ -134,14 +161,29 @@
   exports.prototype['company'] = undefined;
   /**
    * 
+   * @member {String} customField2
+   */
+  exports.prototype['customField2'] = undefined;
+  /**
+   * 
    * @member {String} digitalSignatureBase64
    */
   exports.prototype['digitalSignatureBase64'] = undefined;
   /**
    * 
+   * @member {String} digitalSignaturesPending
+   */
+  exports.prototype['digitalSignaturesPending'] = undefined;
+  /**
+   * 
    * @member {String} email
    */
   exports.prototype['email'] = undefined;
+  /**
+   * The user's first name.  Maximum Length: 50 characters.
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
   /**
    * 
    * @member {String} fullName
@@ -162,6 +204,21 @@
    * @member {Boolean} isNotary
    */
   exports.prototype['isNotary'] = undefined;
+  /**
+   * 
+   * @member {Boolean} isNotaryTransaction
+   */
+  exports.prototype['isNotaryTransaction'] = undefined;
+  /**
+   * 
+   * @member {String} jobTitle
+   */
+  exports.prototype['jobTitle'] = undefined;
+  /**
+   * 
+   * @member {String} lastName
+   */
+  exports.prototype['lastName'] = undefined;
   /**
    * 
    * @member {String} notarySealBase64
@@ -199,6 +256,11 @@
   exports.prototype['recipientType'] = undefined;
   /**
    * 
+   * @member {String} requireSignerCertificate
+   */
+  exports.prototype['requireSignerCertificate'] = undefined;
+  /**
+   * 
    * @member {String} rowState
    */
   exports.prototype['rowState'] = undefined;
@@ -207,6 +269,11 @@
    * @member {String} signatureBase64
    */
   exports.prototype['signatureBase64'] = undefined;
+  /**
+   * 
+   * @member {String} signatureImageId
+   */
+  exports.prototype['signatureImageId'] = undefined;
   /**
    * 
    * @member {Boolean} signed
@@ -222,6 +289,11 @@
    * @member {String} signerAttachmentBase64
    */
   exports.prototype['signerAttachmentBase64'] = undefined;
+  /**
+   * 
+   * @member {String} userId
+   */
+  exports.prototype['userId'] = undefined;
   /**
    * 
    * @member {String} userName

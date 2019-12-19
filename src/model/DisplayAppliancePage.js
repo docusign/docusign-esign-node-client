@@ -55,11 +55,11 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('docName')) {
+        obj['docName'] = ApiClient.convertToType(data['docName'], 'String');
+      }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
-      }
-      if (data.hasOwnProperty('documentName')) {
-        obj['documentName'] = ApiClient.convertToType(data['documentName'], 'String');
       }
       if (data.hasOwnProperty('externalDocumentId')) {
         obj['externalDocumentId'] = ApiClient.convertToType(data['externalDocumentId'], 'String');
@@ -90,15 +90,15 @@
   }
 
   /**
+   * 
+   * @member {String} docName
+   */
+  exports.prototype['docName'] = undefined;
+  /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
   exports.prototype['documentId'] = undefined;
-  /**
-   * 
-   * @member {String} documentName
-   */
-  exports.prototype['documentName'] = undefined;
   /**
    * 
    * @member {String} externalDocumentId

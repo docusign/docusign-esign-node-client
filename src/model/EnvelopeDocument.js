@@ -118,6 +118,9 @@
       if (data.hasOwnProperty('signerMustAcknowledgeMetadata')) {
         obj['signerMustAcknowledgeMetadata'] = PropertyMetadata.constructFromObject(data['signerMustAcknowledgeMetadata']);
       }
+      if (data.hasOwnProperty('sizeBytes')) {
+        obj['sizeBytes'] = ApiClient.convertToType(data['sizeBytes'], 'String');
+      }
       if (data.hasOwnProperty('templateLocked')) {
         obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
       }
@@ -233,6 +236,11 @@
    * @member {module:model/PropertyMetadata} signerMustAcknowledgeMetadata
    */
   exports.prototype['signerMustAcknowledgeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} sizeBytes
+   */
+  exports.prototype['sizeBytes'] = undefined;
   /**
    * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
    * @member {String} templateLocked
