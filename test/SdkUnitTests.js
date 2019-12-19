@@ -427,13 +427,11 @@ describe('SDK Unit Tests:', function (done) {
         if (envelopeSummary) {
           console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
           envelopeId = envelopeSummary.envelopeId;
-          console.log('starwars');
           console.log(bulkRecipients);
           csvStringify(bulkRecipients, {header: true}, function (err, bulkRecipientsRequest) {
             if (err) {
               return done(err);
             }
-            console.log('starwars2');
 
             console.log(bulkRecipientsRequest);
             var byteArray = Buffer.from(bulkRecipientsRequest);
