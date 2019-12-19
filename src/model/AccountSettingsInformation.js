@@ -314,6 +314,12 @@
       if (data.hasOwnProperty('allowNonUSPhoneAuthMetadata')) {
         obj['allowNonUSPhoneAuthMetadata'] = SettingsMetadata.constructFromObject(data['allowNonUSPhoneAuthMetadata']);
       }
+      if (data.hasOwnProperty('allowOcrOfEnvelopeDocuments')) {
+        obj['allowOcrOfEnvelopeDocuments'] = ApiClient.convertToType(data['allowOcrOfEnvelopeDocuments'], 'String');
+      }
+      if (data.hasOwnProperty('allowOcrOfEnvelopeDocumentsMetadata')) {
+        obj['allowOcrOfEnvelopeDocumentsMetadata'] = SettingsMetadata.constructFromObject(data['allowOcrOfEnvelopeDocumentsMetadata']);
+      }
       if (data.hasOwnProperty('allowOfflineSigning')) {
         obj['allowOfflineSigning'] = ApiClient.convertToType(data['allowOfflineSigning'], 'String');
       }
@@ -403,6 +409,12 @@
       }
       if (data.hasOwnProperty('allowServerTemplatesMetadata')) {
         obj['allowServerTemplatesMetadata'] = SettingsMetadata.constructFromObject(data['allowServerTemplatesMetadata']);
+      }
+      if (data.hasOwnProperty('allowSetEmbeddedRecipientStartURL')) {
+        obj['allowSetEmbeddedRecipientStartURL'] = ApiClient.convertToType(data['allowSetEmbeddedRecipientStartURL'], 'String');
+      }
+      if (data.hasOwnProperty('allowSetEmbeddedRecipientStartURLMetadata')) {
+        obj['allowSetEmbeddedRecipientStartURLMetadata'] = SettingsMetadata.constructFromObject(data['allowSetEmbeddedRecipientStartURLMetadata']);
       }
       if (data.hasOwnProperty('allowSharedTabs')) {
         obj['allowSharedTabs'] = ApiClient.convertToType(data['allowSharedTabs'], 'String');
@@ -527,6 +539,12 @@
       if (data.hasOwnProperty('bulkSend')) {
         obj['bulkSend'] = ApiClient.convertToType(data['bulkSend'], 'String');
       }
+      if (data.hasOwnProperty('bulkSendMaxCopiesInBatch')) {
+        obj['bulkSendMaxCopiesInBatch'] = ApiClient.convertToType(data['bulkSendMaxCopiesInBatch'], 'String');
+      }
+      if (data.hasOwnProperty('bulkSendMaxUnprocessedEnvelopesCount')) {
+        obj['bulkSendMaxUnprocessedEnvelopesCount'] = ApiClient.convertToType(data['bulkSendMaxUnprocessedEnvelopesCount'], 'String');
+      }
       if (data.hasOwnProperty('bulkSendMetadata')) {
         obj['bulkSendMetadata'] = SettingsMetadata.constructFromObject(data['bulkSendMetadata']);
       }
@@ -541,6 +559,12 @@
       }
       if (data.hasOwnProperty('canSelfBrandSignMetadata')) {
         obj['canSelfBrandSignMetadata'] = SettingsMetadata.constructFromObject(data['canSelfBrandSignMetadata']);
+      }
+      if (data.hasOwnProperty('canUseSalesforceOAuth')) {
+        obj['canUseSalesforceOAuth'] = ApiClient.convertToType(data['canUseSalesforceOAuth'], 'String');
+      }
+      if (data.hasOwnProperty('canUseSalesforceOAuthMetadata')) {
+        obj['canUseSalesforceOAuthMetadata'] = SettingsMetadata.constructFromObject(data['canUseSalesforceOAuthMetadata']);
       }
       if (data.hasOwnProperty('captureVoiceRecording')) {
         obj['captureVoiceRecording'] = ApiClient.convertToType(data['captureVoiceRecording'], 'String');
@@ -751,6 +775,12 @@
       }
       if (data.hasOwnProperty('enableEnvelopeStampingByDSAdminMetadata')) {
         obj['enableEnvelopeStampingByDSAdminMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeStampingByDSAdminMetadata']);
+      }
+      if (data.hasOwnProperty('enableInBrowserEditor')) {
+        obj['enableInBrowserEditor'] = ApiClient.convertToType(data['enableInBrowserEditor'], 'String');
+      }
+      if (data.hasOwnProperty('enableInBrowserEditorMetadata')) {
+        obj['enableInBrowserEditorMetadata'] = SettingsMetadata.constructFromObject(data['enableInBrowserEditorMetadata']);
       }
       if (data.hasOwnProperty('enablePaymentProcessing')) {
         obj['enablePaymentProcessing'] = ApiClient.convertToType(data['enablePaymentProcessing'], 'String');
@@ -1460,6 +1490,12 @@
       if (data.hasOwnProperty('useDocuSignExpressSignerCertificateMetadata')) {
         obj['useDocuSignExpressSignerCertificateMetadata'] = SettingsMetadata.constructFromObject(data['useDocuSignExpressSignerCertificateMetadata']);
       }
+      if (data.hasOwnProperty('useMultiAppGroupsData')) {
+        obj['useMultiAppGroupsData'] = ApiClient.convertToType(data['useMultiAppGroupsData'], 'String');
+      }
+      if (data.hasOwnProperty('useMultiAppGroupsDataMetadata')) {
+        obj['useMultiAppGroupsDataMetadata'] = SettingsMetadata.constructFromObject(data['useMultiAppGroupsDataMetadata']);
+      }
       if (data.hasOwnProperty('useNewBlobForPdf')) {
         obj['useNewBlobForPdf'] = ApiClient.convertToType(data['useNewBlobForPdf'], 'String');
       }
@@ -1851,7 +1887,7 @@
    */
   exports.prototype['allowIDVPlatformMetadata'] = undefined;
   /**
-   * When set to **true**, the account allows In Person Signing.  Permission required: SysAdmin
+   * 
    * @member {String} allowInPerson
    */
   exports.prototype['allowInPerson'] = undefined;
@@ -1923,7 +1959,16 @@
    */
   exports.prototype['allowNonUSPhoneAuthMetadata'] = undefined;
   /**
-   * When set to **true**, the account can use Offline Signing and envelopes signed using offline signing on mobile devices are synchronized with this account. This option and the `inSessionEnabled` property must both be set to **true** for a caller to use offline signing.  Permission required: Admin
+   * 
+   * @member {String} allowOcrOfEnvelopeDocuments
+   */
+  exports.prototype['allowOcrOfEnvelopeDocuments'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowOcrOfEnvelopeDocumentsMetadata
+   */
+  exports.prototype['allowOcrOfEnvelopeDocumentsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowOfflineSigning
    */
   exports.prototype['allowOfflineSigning'] = undefined;
@@ -1932,7 +1977,7 @@
    */
   exports.prototype['allowOfflineSigningMetadata'] = undefined;
   /**
-   * When set to **true**, senders are allowed to use the OpenTrust digital signatures.  Permission required: Admin
+   * 
    * @member {String} allowOpenTrustSignerCertificate
    */
   exports.prototype['allowOpenTrustSignerCertificate'] = undefined;
@@ -2013,7 +2058,7 @@
    */
   exports.prototype['allowResourceFileBrandingMetadata'] = undefined;
   /**
-   * When set to **true**, senders are allowed to use the SAFE BioPharma digital signatures.  Permission required: Admin
+   * 
    * @member {String} allowSafeBioPharmaSignerCertificate
    */
   exports.prototype['allowSafeBioPharmaSignerCertificate'] = undefined;
@@ -2058,7 +2103,16 @@
    */
   exports.prototype['allowServerTemplatesMetadata'] = undefined;
   /**
-   * When set to **true**, the account allows users to share custom tags (fields).  #### Note: This setting is only shown when getting account settings. It cannot be modified.  Permission required: Admin
+   * 
+   * @member {String} allowSetEmbeddedRecipientStartURL
+   */
+  exports.prototype['allowSetEmbeddedRecipientStartURL'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowSetEmbeddedRecipientStartURLMetadata
+   */
+  exports.prototype['allowSetEmbeddedRecipientStartURLMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowSharedTabs
    */
   exports.prototype['allowSharedTabs'] = undefined;
@@ -2085,7 +2139,7 @@
    */
   exports.prototype['allowSignDocumentFromHomePageMetadata'] = undefined;
   /**
-   * When set to **true**, the account allows signers to reassign an envelope.  Permission required: Admin
+   * 
    * @member {String} allowSignerReassign
    */
   exports.prototype['allowSignerReassign'] = undefined;
@@ -2176,7 +2230,7 @@
    */
   exports.prototype['anchorTagVersionedPlacementMetadataEnabled'] = undefined;
   /**
-   * When set to **true**, envelope documents are included as a PDF file attachment for signing completed emails.  Permission required: Admin
+   * 
    * @member {String} attachCompletedEnvelope
    */
   exports.prototype['attachCompletedEnvelope'] = undefined;
@@ -2194,7 +2248,7 @@
    */
   exports.prototype['authenticationCheckMetadata'] = undefined;
   /**
-   * Specifies the auto-navigation rule for the account.   Enumeration values are: Off, RequiredFields, RequiredAndBlankFields, AllFields, PageThenRequiredFields, PageThenRequiredAndBlankFields, PageThenAllFields.  Permission required: Admin
+   * 
    * @member {String} autoNavRule
    */
   exports.prototype['autoNavRule'] = undefined;
@@ -2243,6 +2297,16 @@
    */
   exports.prototype['bulkSend'] = undefined;
   /**
+   * 
+   * @member {String} bulkSendMaxCopiesInBatch
+   */
+  exports.prototype['bulkSendMaxCopiesInBatch'] = undefined;
+  /**
+   * 
+   * @member {String} bulkSendMaxUnprocessedEnvelopesCount
+   */
+  exports.prototype['bulkSendMaxUnprocessedEnvelopesCount'] = undefined;
+  /**
    * @member {module:model/SettingsMetadata} bulkSendMetadata
    */
   exports.prototype['bulkSendMetadata'] = undefined;
@@ -2264,6 +2328,15 @@
    * @member {module:model/SettingsMetadata} canSelfBrandSignMetadata
    */
   exports.prototype['canSelfBrandSignMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canUseSalesforceOAuth
+   */
+  exports.prototype['canUseSalesforceOAuth'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canUseSalesforceOAuthMetadata
+   */
+  exports.prototype['canUseSalesforceOAuthMetadata'] = undefined;
   /**
    * 
    * @member {String} captureVoiceRecording
@@ -2422,7 +2495,7 @@
    */
   exports.prototype['disableStyleSignatureMetadata'] = undefined;
   /**
-   * When set to **true**, signers cannot use the upload signature/initials image option when signing a document.  Permission required: Admin
+   * 
    * @member {String} disableUploadSignature
    */
   exports.prototype['disableUploadSignature'] = undefined;
@@ -2579,6 +2652,15 @@
    * @member {module:model/SettingsMetadata} enableEnvelopeStampingByDSAdminMetadata
    */
   exports.prototype['enableEnvelopeStampingByDSAdminMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableInBrowserEditor
+   */
+  exports.prototype['enableInBrowserEditor'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableInBrowserEditorMetadata
+   */
+  exports.prototype['enableInBrowserEditorMetadata'] = undefined;
   /**
    * 
    * @member {String} enablePaymentProcessing
@@ -3644,6 +3726,15 @@
    * @member {module:model/SettingsMetadata} useDocuSignExpressSignerCertificateMetadata
    */
   exports.prototype['useDocuSignExpressSignerCertificateMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} useMultiAppGroupsData
+   */
+  exports.prototype['useMultiAppGroupsData'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} useMultiAppGroupsDataMetadata
+   */
+  exports.prototype['useMultiAppGroupsDataMetadata'] = undefined;
   /**
    * 
    * @member {String} useNewBlobForPdf

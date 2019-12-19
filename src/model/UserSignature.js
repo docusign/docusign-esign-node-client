@@ -142,6 +142,9 @@
       if (data.hasOwnProperty('stampType')) {
         obj['stampType'] = ApiClient.convertToType(data['stampType'], 'String');
       }
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+      }
     }
     return obj;
   }
@@ -289,6 +292,11 @@
    * @member {String} stampType
    */
   exports.prototype['stampType'] = undefined;
+  /**
+   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
+   * @member {String} status
+   */
+  exports.prototype['status'] = undefined;
 
 
 

@@ -79,8 +79,14 @@
       if (data.hasOwnProperty('pageCount')) {
         obj['pageCount'] = ApiClient.convertToType(data['pageCount'], 'Number');
       }
+      if (data.hasOwnProperty('pdf')) {
+        obj['pdf'] = ApiClient.convertToType(data['pdf'], 'String');
+      }
       if (data.hasOwnProperty('pdfType')) {
         obj['pdfType'] = ApiClient.convertToType(data['pdfType'], 'String');
+      }
+      if (data.hasOwnProperty('sequence')) {
+        obj['sequence'] = ApiClient.convertToType(data['sequence'], 'String');
       }
     }
     return obj;
@@ -127,9 +133,19 @@
   exports.prototype['pageCount'] = undefined;
   /**
    * 
+   * @member {String} pdf
+   */
+  exports.prototype['pdf'] = undefined;
+  /**
+   * 
    * @member {String} pdfType
    */
   exports.prototype['pdfType'] = undefined;
+  /**
+   * 
+   * @member {String} sequence
+   */
+  exports.prototype['sequence'] = undefined;
 
 
 

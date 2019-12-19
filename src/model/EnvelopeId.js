@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/LocalePolicyTab', 'model/MergeField', 'model/PropertyMetadata'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/LocalePolicyTab', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./LocalePolicyTab'), require('./MergeField'), require('./PropertyMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./LocalePolicyTab'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeId = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PropertyMetadata);
+    root.Docusign.EnvelopeId = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation);
   }
-}(this, function(ApiClient, ErrorDetails, LocalePolicyTab, MergeField, PropertyMetadata) {
+}(this, function(ApiClient, ErrorDetails, LocalePolicyTab, MergeField, PropertyMetadata, SmartContractInformation) {
   'use strict';
 
 
@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharacters')) {
+        obj['anchorAllowWhiteSpaceInCharacters'] = ApiClient.convertToType(data['anchorAllowWhiteSpaceInCharacters'], 'String');
+      }
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharactersMetadata')) {
+        obj['anchorAllowWhiteSpaceInCharactersMetadata'] = PropertyMetadata.constructFromObject(data['anchorAllowWhiteSpaceInCharactersMetadata']);
+      }
       if (data.hasOwnProperty('anchorCaseSensitive')) {
         obj['anchorCaseSensitive'] = ApiClient.convertToType(data['anchorCaseSensitive'], 'String');
       }
@@ -223,6 +229,9 @@
       if (data.hasOwnProperty('recipientIdMetadata')) {
         obj['recipientIdMetadata'] = PropertyMetadata.constructFromObject(data['recipientIdMetadata']);
       }
+      if (data.hasOwnProperty('smartContractInformation')) {
+        obj['smartContractInformation'] = SmartContractInformation.constructFromObject(data['smartContractInformation']);
+      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
@@ -305,6 +314,15 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} anchorAllowWhiteSpaceInCharacters
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharacters'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} anchorAllowWhiteSpaceInCharactersMetadata
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharactersMetadata'] = undefined;
   /**
    * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
    * @member {String} anchorCaseSensitive
@@ -556,6 +574,10 @@
    * @member {module:model/PropertyMetadata} recipientIdMetadata
    */
   exports.prototype['recipientIdMetadata'] = undefined;
+  /**
+   * @member {module:model/SmartContractInformation} smartContractInformation
+   */
+  exports.prototype['smartContractInformation'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status

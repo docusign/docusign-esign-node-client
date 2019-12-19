@@ -88,6 +88,9 @@
       if (data.hasOwnProperty('deliveryMethodMetadata')) {
         obj['deliveryMethodMetadata'] = PropertyMetadata.constructFromObject(data['deliveryMethodMetadata']);
       }
+      if (data.hasOwnProperty('designatorId')) {
+        obj['designatorId'] = ApiClient.convertToType(data['designatorId'], 'String');
+      }
       if (data.hasOwnProperty('documentVisibility')) {
         obj['documentVisibility'] = ApiClient.convertToType(data['documentVisibility'], [DocumentVisibility]);
       }
@@ -289,6 +292,11 @@
    * @member {module:model/PropertyMetadata} deliveryMethodMetadata
    */
   exports.prototype['deliveryMethodMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} designatorId
+   */
+  exports.prototype['designatorId'] = undefined;
   /**
    * 
    * @member {Array.<module:model/DocumentVisibility>} documentVisibility

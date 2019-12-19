@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartSectionAnchorPosition', 'model/SmartSectionDisplaySettings'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation', 'model/SmartSectionAnchorPosition', 'model/SmartSectionDisplaySettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartSectionAnchorPosition'), require('./SmartSectionDisplaySettings'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'), require('./SmartSectionAnchorPosition'), require('./SmartSectionDisplaySettings'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.SmartSection = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartSectionAnchorPosition, root.Docusign.SmartSectionDisplaySettings);
+    root.Docusign.SmartSection = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation, root.Docusign.SmartSectionAnchorPosition, root.Docusign.SmartSectionDisplaySettings);
   }
-}(this, function(ApiClient, ErrorDetails, MergeField, PropertyMetadata, SmartSectionAnchorPosition, SmartSectionDisplaySettings) {
+}(this, function(ApiClient, ErrorDetails, MergeField, PropertyMetadata, SmartContractInformation, SmartSectionAnchorPosition, SmartSectionDisplaySettings) {
   'use strict';
 
 
@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharacters')) {
+        obj['anchorAllowWhiteSpaceInCharacters'] = ApiClient.convertToType(data['anchorAllowWhiteSpaceInCharacters'], 'String');
+      }
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharactersMetadata')) {
+        obj['anchorAllowWhiteSpaceInCharactersMetadata'] = PropertyMetadata.constructFromObject(data['anchorAllowWhiteSpaceInCharactersMetadata']);
+      }
       if (data.hasOwnProperty('anchorCaseSensitive')) {
         obj['anchorCaseSensitive'] = ApiClient.convertToType(data['anchorCaseSensitive'], 'String');
       }
@@ -220,6 +226,9 @@
       if (data.hasOwnProperty('sharedMetadata')) {
         obj['sharedMetadata'] = PropertyMetadata.constructFromObject(data['sharedMetadata']);
       }
+      if (data.hasOwnProperty('smartContractInformation')) {
+        obj['smartContractInformation'] = SmartContractInformation.constructFromObject(data['smartContractInformation']);
+      }
       if (data.hasOwnProperty('startAnchor')) {
         obj['startAnchor'] = ApiClient.convertToType(data['startAnchor'], 'String');
       }
@@ -299,6 +308,15 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} anchorAllowWhiteSpaceInCharacters
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharacters'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} anchorAllowWhiteSpaceInCharactersMetadata
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharactersMetadata'] = undefined;
   /**
    * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
    * @member {String} anchorCaseSensitive
@@ -547,6 +565,10 @@
    * @member {module:model/PropertyMetadata} sharedMetadata
    */
   exports.prototype['sharedMetadata'] = undefined;
+  /**
+   * @member {module:model/SmartContractInformation} smartContractInformation
+   */
+  exports.prototype['smartContractInformation'] = undefined;
   /**
    * 
    * @member {String} startAnchor

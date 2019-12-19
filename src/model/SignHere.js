@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField', 'model/PropertyMetadata'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation', 'model/Stamp'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'), require('./PropertyMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'), require('./Stamp'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.SignHere = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.PropertyMetadata);
+    root.Docusign.SignHere = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation, root.Docusign.Stamp);
   }
-}(this, function(ApiClient, ErrorDetails, MergeField, PropertyMetadata) {
+}(this, function(ApiClient, ErrorDetails, MergeField, PropertyMetadata, SmartContractInformation, Stamp) {
   'use strict';
 
 
@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharacters')) {
+        obj['anchorAllowWhiteSpaceInCharacters'] = ApiClient.convertToType(data['anchorAllowWhiteSpaceInCharacters'], 'String');
+      }
+      if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharactersMetadata')) {
+        obj['anchorAllowWhiteSpaceInCharactersMetadata'] = PropertyMetadata.constructFromObject(data['anchorAllowWhiteSpaceInCharactersMetadata']);
+      }
       if (data.hasOwnProperty('anchorCaseSensitive')) {
         obj['anchorCaseSensitive'] = ApiClient.convertToType(data['anchorCaseSensitive'], 'String');
       }
@@ -205,6 +211,12 @@
       if (data.hasOwnProperty('scaleValueMetadata')) {
         obj['scaleValueMetadata'] = PropertyMetadata.constructFromObject(data['scaleValueMetadata']);
       }
+      if (data.hasOwnProperty('smartContractInformation')) {
+        obj['smartContractInformation'] = SmartContractInformation.constructFromObject(data['smartContractInformation']);
+      }
+      if (data.hasOwnProperty('stamp')) {
+        obj['stamp'] = Stamp.constructFromObject(data['stamp']);
+      }
       if (data.hasOwnProperty('stampType')) {
         obj['stampType'] = ApiClient.convertToType(data['stampType'], 'String');
       }
@@ -287,6 +299,15 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} anchorAllowWhiteSpaceInCharacters
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharacters'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} anchorAllowWhiteSpaceInCharactersMetadata
+   */
+  exports.prototype['anchorAllowWhiteSpaceInCharactersMetadata'] = undefined;
   /**
    * When set to **true**, the anchor string does not consider case when matching strings in the document. The default value is **true**.
    * @member {String} anchorCaseSensitive
@@ -512,6 +533,14 @@
    * @member {module:model/PropertyMetadata} scaleValueMetadata
    */
   exports.prototype['scaleValueMetadata'] = undefined;
+  /**
+   * @member {module:model/SmartContractInformation} smartContractInformation
+   */
+  exports.prototype['smartContractInformation'] = undefined;
+  /**
+   * @member {module:model/Stamp} stamp
+   */
+  exports.prototype['stamp'] = undefined;
   /**
    * 
    * @member {String} stampType

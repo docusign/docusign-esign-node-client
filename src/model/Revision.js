@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/SignatureProperties'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./SignatureProperties'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Revision = factory(root.Docusign.ApiClient);
+    root.Docusign.Revision = factory(root.Docusign.ApiClient, root.Docusign.SignatureProperties);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, SignatureProperties) {
   'use strict';
 
 
@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('maxSignatureLength')) {
         obj['maxSignatureLength'] = ApiClient.convertToType(data['maxSignatureLength'], 'String');
       }
+      if (data.hasOwnProperty('signatureProperties')) {
+        obj['signatureProperties'] = SignatureProperties.constructFromObject(data['signatureProperties']);
+      }
       if (data.hasOwnProperty('signatureType')) {
         obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
       }
@@ -89,6 +92,10 @@
    * @member {String} maxSignatureLength
    */
   exports.prototype['maxSignatureLength'] = undefined;
+  /**
+   * @member {module:model/SignatureProperties} signatureProperties
+   */
+  exports.prototype['signatureProperties'] = undefined;
   /**
    * 
    * @member {String} signatureType

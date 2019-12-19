@@ -307,9 +307,6 @@
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
-      if (data.hasOwnProperty('sharedWithMe')) {
-        obj['sharedWithMe'] = ApiClient.convertToType(data['sharedWithMe'], 'String');
-      }
       if (data.hasOwnProperty('signerCanSignOnMobile')) {
         obj['signerCanSignOnMobile'] = ApiClient.convertToType(data['signerCanSignOnMobile'], 'String');
       }
@@ -760,11 +757,6 @@
    * @member {String} shared
    */
   exports.prototype['shared'] = undefined;
-  /**
-   * 
-   * @member {String} sharedWithMe
-   */
-  exports.prototype['sharedWithMe'] = undefined;
   /**
    * 
    * @member {String} signerCanSignOnMobile
