@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -103,7 +103,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}', 'DELETE',
+        '/v2/organization_reporting/{organizationId}/reports/{reportCorrelationId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -160,7 +160,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/organization_exports/{organizationId}/account_settings/{resultId}', 'GET',
+        '/v2/organization_exports/{organizationId}/account_settings/{resultId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -217,7 +217,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}', 'GET',
+        '/v2/organization_reporting/{organizationId}/reports/{reportCorrelationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -274,7 +274,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/organization_exports/{organizationId}/user_list/{resultId}', 'GET',
+        '/v2/organization_exports/{organizationId}/user_list/{resultId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

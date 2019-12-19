@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -99,7 +99,7 @@
       var returnType = CompleteSignHashResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/signature/completesignhash', 'POST',
+        '/v2/signature/completesignhash', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -143,7 +143,7 @@
       var returnType = UserInfoResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/signature/userInfo', 'GET',
+        '/v2/signature/userInfo', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -195,7 +195,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/signature/healthcheck', 'POST',
+        '/v2/signature/healthcheck', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -248,7 +248,7 @@
       var returnType = SignHashSessionInfoResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/signature/signhashsessioninfo', 'POST',
+        '/v2/signature/signhashsessioninfo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -301,7 +301,7 @@
       var returnType = UpdateTransactionResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/signature/updatetransaction', 'POST',
+        '/v2/signature/updatetransaction', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

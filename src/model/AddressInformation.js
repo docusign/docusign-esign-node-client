@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -56,12 +56,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('address1')) {
-        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
-      }
-      if (data.hasOwnProperty('address2')) {
-        obj['address2'] = ApiClient.convertToType(data['address2'], 'String');
-      }
       if (data.hasOwnProperty('city')) {
         obj['city'] = ApiClient.convertToType(data['city'], 'String');
       }
@@ -74,26 +68,22 @@
       if (data.hasOwnProperty('phone')) {
         obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
       }
-      if (data.hasOwnProperty('postalCode')) {
-        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+      if (data.hasOwnProperty('state')) {
+        obj['state'] = ApiClient.convertToType(data['state'], 'String');
       }
-      if (data.hasOwnProperty('stateOrProvince')) {
-        obj['stateOrProvince'] = ApiClient.convertToType(data['stateOrProvince'], 'String');
+      if (data.hasOwnProperty('street1')) {
+        obj['street1'] = ApiClient.convertToType(data['street1'], 'String');
+      }
+      if (data.hasOwnProperty('street2')) {
+        obj['street2'] = ApiClient.convertToType(data['street2'], 'String');
+      }
+      if (data.hasOwnProperty('zip')) {
+        obj['zip'] = ApiClient.convertToType(data['zip'], 'String');
       }
     }
     return obj;
   }
 
-  /**
-   * First Line of the address. Maximum length: 100 characters.
-   * @member {String} address1
-   */
-  exports.prototype['address1'] = undefined;
-  /**
-   * Second Line of the address. Maximum length: 100 characters.
-   * @member {String} address2
-   */
-  exports.prototype['address2'] = undefined;
   /**
    * The city associated with the address.
    * @member {String} city
@@ -115,15 +105,25 @@
    */
   exports.prototype['phone'] = undefined;
   /**
-   * 
-   * @member {String} postalCode
+   * The state or province associated with the address.
+   * @member {String} state
    */
-  exports.prototype['postalCode'] = undefined;
+  exports.prototype['state'] = undefined;
   /**
-   * 
-   * @member {String} stateOrProvince
+   * The first line of the address.
+   * @member {String} street1
    */
-  exports.prototype['stateOrProvince'] = undefined;
+  exports.prototype['street1'] = undefined;
+  /**
+   * The second line of the address (optional).
+   * @member {String} street2
+   */
+  exports.prototype['street2'] = undefined;
+  /**
+   * The zip or postal code associated with the address.
+   * @member {String} zip
+   */
+  exports.prototype['zip'] = undefined;
 
 
 

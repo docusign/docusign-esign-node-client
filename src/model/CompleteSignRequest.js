@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -55,17 +55,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('certificate')) {
-        obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
-      }
       if (data.hasOwnProperty('correlationId')) {
         obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
       }
       if (data.hasOwnProperty('documentUpdateInfos')) {
         obj['documentUpdateInfos'] = ApiClient.convertToType(data['documentUpdateInfos'], [DocumentUpdateInfo]);
-      }
-      if (data.hasOwnProperty('maxSignatureLength')) {
-        obj['maxSignatureLength'] = ApiClient.convertToType(data['maxSignatureLength'], 'String');
       }
       if (data.hasOwnProperty('signingLocation')) {
         obj['signingLocation'] = ApiClient.convertToType(data['signingLocation'], 'String');
@@ -79,11 +73,6 @@
 
   /**
    * 
-   * @member {String} certificate
-   */
-  exports.prototype['certificate'] = undefined;
-  /**
-   * 
    * @member {String} correlationId
    */
   exports.prototype['correlationId'] = undefined;
@@ -92,11 +81,6 @@
    * @member {Array.<module:model/DocumentUpdateInfo>} documentUpdateInfos
    */
   exports.prototype['documentUpdateInfos'] = undefined;
-  /**
-   * 
-   * @member {String} maxSignatureLength
-   */
-  exports.prototype['maxSignatureLength'] = undefined;
   /**
    * Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
    * @member {String} signingLocation

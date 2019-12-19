@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -55,12 +55,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('cloudProvider')) {
-        obj['cloudProvider'] = ApiClient.convertToType(data['cloudProvider'], 'String');
-      }
-      if (data.hasOwnProperty('cloudProviderContainerId')) {
-        obj['cloudProviderContainerId'] = ApiClient.convertToType(data['cloudProviderContainerId'], 'String');
-      }
       if (data.hasOwnProperty('contactId')) {
         obj['contactId'] = ApiClient.convertToType(data['contactId'], 'String');
       }
@@ -75,9 +69,6 @@
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
-      }
-      if (data.hasOwnProperty('isOwner')) {
-        obj['isOwner'] = ApiClient.convertToType(data['isOwner'], 'Boolean');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -98,16 +89,6 @@
     return obj;
   }
 
-  /**
-   * 
-   * @member {String} cloudProvider
-   */
-  exports.prototype['cloudProvider'] = undefined;
-  /**
-   * 
-   * @member {String} cloudProviderContainerId
-   */
-  exports.prototype['cloudProviderContainerId'] = undefined;
   /**
    * 
    * @member {String} contactId
@@ -132,11 +113,6 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
-  /**
-   * 
-   * @member {Boolean} isOwner
-   */
-  exports.prototype['isOwner'] = undefined;
   /**
    * 
    * @member {String} name

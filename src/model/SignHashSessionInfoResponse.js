@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Seal', 'model/Sender', 'model/SignHashDocument', 'model/User'], factory);
+    define(['ApiClient', 'model/Seal', 'model/SignHashDocument', 'model/User'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Seal'), require('./Sender'), require('./SignHashDocument'), require('./User'));
+    module.exports = factory(require('../ApiClient'), require('./Seal'), require('./SignHashDocument'), require('./User'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.SignHashSessionInfoResponse = factory(root.Docusign.ApiClient, root.Docusign.Seal, root.Docusign.Sender, root.Docusign.SignHashDocument, root.Docusign.User);
+    root.Docusign.SignHashSessionInfoResponse = factory(root.Docusign.ApiClient, root.Docusign.Seal, root.Docusign.SignHashDocument, root.Docusign.User);
   }
-}(this, function(ApiClient, Seal, Sender, SignHashDocument, User) {
+}(this, function(ApiClient, Seal, SignHashDocument, User) {
   'use strict';
 
 
@@ -68,13 +68,10 @@
         obj['redirectionUrl'] = ApiClient.convertToType(data['redirectionUrl'], 'String');
       }
       if (data.hasOwnProperty('remainingSignatureRequests')) {
-        obj['remainingSignatureRequests'] = ApiClient.convertToType(data['remainingSignatureRequests'], 'Number');
+        obj['remainingSignatureRequests'] = ApiClient.convertToType(data['remainingSignatureRequests'], 'String');
       }
       if (data.hasOwnProperty('seal')) {
         obj['seal'] = Seal.constructFromObject(data['seal']);
-      }
-      if (data.hasOwnProperty('sender')) {
-        obj['sender'] = Sender.constructFromObject(data['sender']);
       }
       if (data.hasOwnProperty('user')) {
         obj['user'] = User.constructFromObject(data['user']);
@@ -105,17 +102,13 @@
   exports.prototype['redirectionUrl'] = undefined;
   /**
    * 
-   * @member {Number} remainingSignatureRequests
+   * @member {String} remainingSignatureRequests
    */
   exports.prototype['remainingSignatureRequests'] = undefined;
   /**
    * @member {module:model/Seal} seal
    */
   exports.prototype['seal'] = undefined;
-  /**
-   * @member {module:model/Sender} sender
-   */
-  exports.prototype['sender'] = undefined;
   /**
    * @member {module:model/User} user
    */

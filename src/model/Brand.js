@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -61,17 +61,11 @@
       if (data.hasOwnProperty('brandId')) {
         obj['brandId'] = ApiClient.convertToType(data['brandId'], 'String');
       }
-      if (data.hasOwnProperty('brandLanguages')) {
-        obj['brandLanguages'] = ApiClient.convertToType(data['brandLanguages'], ['String']);
-      }
       if (data.hasOwnProperty('brandName')) {
         obj['brandName'] = ApiClient.convertToType(data['brandName'], 'String');
       }
       if (data.hasOwnProperty('colors')) {
         obj['colors'] = ApiClient.convertToType(data['colors'], [NameValue]);
-      }
-      if (data.hasOwnProperty('defaultBrandLanguage')) {
-        obj['defaultBrandLanguage'] = ApiClient.convertToType(data['defaultBrandLanguage'], 'String');
       }
       if (data.hasOwnProperty('emailContent')) {
         obj['emailContent'] = ApiClient.convertToType(data['emailContent'], [BrandEmailContent]);
@@ -80,13 +74,13 @@
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('isOverridingCompanyName')) {
-        obj['isOverridingCompanyName'] = ApiClient.convertToType(data['isOverridingCompanyName'], 'Boolean');
+        obj['isOverridingCompanyName'] = ApiClient.convertToType(data['isOverridingCompanyName'], 'String');
       }
       if (data.hasOwnProperty('isSendingDefault')) {
-        obj['isSendingDefault'] = ApiClient.convertToType(data['isSendingDefault'], 'Boolean');
+        obj['isSendingDefault'] = ApiClient.convertToType(data['isSendingDefault'], 'String');
       }
       if (data.hasOwnProperty('isSigningDefault')) {
-        obj['isSigningDefault'] = ApiClient.convertToType(data['isSigningDefault'], 'Boolean');
+        obj['isSigningDefault'] = ApiClient.convertToType(data['isSigningDefault'], 'String');
       }
       if (data.hasOwnProperty('landingPages')) {
         obj['landingPages'] = ApiClient.convertToType(data['landingPages'], [NameValue]);
@@ -115,11 +109,6 @@
    */
   exports.prototype['brandId'] = undefined;
   /**
-   * 
-   * @member {Array.<String>} brandLanguages
-   */
-  exports.prototype['brandLanguages'] = undefined;
-  /**
    * The name of the brand.
    * @member {String} brandName
    */
@@ -131,11 +120,6 @@
   exports.prototype['colors'] = undefined;
   /**
    * 
-   * @member {String} defaultBrandLanguage
-   */
-  exports.prototype['defaultBrandLanguage'] = undefined;
-  /**
-   * 
    * @member {Array.<module:model/BrandEmailContent>} emailContent
    */
   exports.prototype['emailContent'] = undefined;
@@ -145,17 +129,17 @@
   exports.prototype['errorDetails'] = undefined;
   /**
    * 
-   * @member {Boolean} isOverridingCompanyName
+   * @member {String} isOverridingCompanyName
    */
   exports.prototype['isOverridingCompanyName'] = undefined;
   /**
    * 
-   * @member {Boolean} isSendingDefault
+   * @member {String} isSendingDefault
    */
   exports.prototype['isSendingDefault'] = undefined;
   /**
    * 
-   * @member {Boolean} isSigningDefault
+   * @member {String} isSigningDefault
    */
   exports.prototype['isSigningDefault'] = undefined;
   /**

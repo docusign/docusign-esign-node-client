@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/FormDataItem'], factory);
+    define(['ApiClient', 'model/NameValue'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./FormDataItem'));
+    module.exports = factory(require('../ApiClient'), require('./NameValue'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.RecipientFormData = factory(root.Docusign.ApiClient, root.Docusign.FormDataItem);
+    root.Docusign.RecipientFormData = factory(root.Docusign.ApiClient, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, FormDataItem) {
+}(this, function(ApiClient, NameValue) {
   'use strict';
 
 
@@ -55,17 +55,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('DeclinedTime')) {
-        obj['DeclinedTime'] = ApiClient.convertToType(data['DeclinedTime'], 'String');
+      if (data.hasOwnProperty('declinedTime')) {
+        obj['declinedTime'] = ApiClient.convertToType(data['declinedTime'], 'String');
       }
-      if (data.hasOwnProperty('DeliveredTime')) {
-        obj['DeliveredTime'] = ApiClient.convertToType(data['DeliveredTime'], 'String');
+      if (data.hasOwnProperty('deliveredTime')) {
+        obj['deliveredTime'] = ApiClient.convertToType(data['deliveredTime'], 'String');
       }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
       if (data.hasOwnProperty('formData')) {
-        obj['formData'] = ApiClient.convertToType(data['formData'], [FormDataItem]);
+        obj['formData'] = ApiClient.convertToType(data['formData'], [NameValue]);
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -73,11 +73,11 @@
       if (data.hasOwnProperty('recipientId')) {
         obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
       }
-      if (data.hasOwnProperty('SentTime')) {
-        obj['SentTime'] = ApiClient.convertToType(data['SentTime'], 'String');
+      if (data.hasOwnProperty('sentTime')) {
+        obj['sentTime'] = ApiClient.convertToType(data['sentTime'], 'String');
       }
-      if (data.hasOwnProperty('SignedTime')) {
-        obj['SignedTime'] = ApiClient.convertToType(data['SignedTime'], 'String');
+      if (data.hasOwnProperty('signedTime')) {
+        obj['signedTime'] = ApiClient.convertToType(data['signedTime'], 'String');
       }
     }
     return obj;
@@ -85,14 +85,14 @@
 
   /**
    * 
-   * @member {String} DeclinedTime
+   * @member {String} declinedTime
    */
-  exports.prototype['DeclinedTime'] = undefined;
+  exports.prototype['declinedTime'] = undefined;
   /**
    * 
-   * @member {String} DeliveredTime
+   * @member {String} deliveredTime
    */
-  exports.prototype['DeliveredTime'] = undefined;
+  exports.prototype['deliveredTime'] = undefined;
   /**
    * 
    * @member {String} email
@@ -100,7 +100,7 @@
   exports.prototype['email'] = undefined;
   /**
    * 
-   * @member {Array.<module:model/FormDataItem>} formData
+   * @member {Array.<module:model/NameValue>} formData
    */
   exports.prototype['formData'] = undefined;
   /**
@@ -115,14 +115,14 @@
   exports.prototype['recipientId'] = undefined;
   /**
    * 
-   * @member {String} SentTime
+   * @member {String} sentTime
    */
-  exports.prototype['SentTime'] = undefined;
+  exports.prototype['sentTime'] = undefined;
   /**
    * 
-   * @member {String} SignedTime
+   * @member {String} signedTime
    */
-  exports.prototype['SignedTime'] = undefined;
+  exports.prototype['signedTime'] = undefined;
 
 
 

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DisplayApplianceCustomField', 'model/DisplayApplianceDocument', 'model/DisplayApplianceDocumentPage', 'model/DisplayApplianceEnvelope', 'model/DisplayAppliancePage', 'model/DisplayApplianceRecipient'], factory);
+    define(['ApiClient', 'model/DisplayApplianceDocument', 'model/DisplayApplianceDocumentPage', 'model/DisplayApplianceEnvelope', 'model/DisplayAppliancePage', 'model/DisplayApplianceRecipient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DisplayApplianceCustomField'), require('./DisplayApplianceDocument'), require('./DisplayApplianceDocumentPage'), require('./DisplayApplianceEnvelope'), require('./DisplayAppliancePage'), require('./DisplayApplianceRecipient'));
+    module.exports = factory(require('../ApiClient'), require('./DisplayApplianceDocument'), require('./DisplayApplianceDocumentPage'), require('./DisplayApplianceEnvelope'), require('./DisplayAppliancePage'), require('./DisplayApplianceRecipient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DisplayApplianceInfo = factory(root.Docusign.ApiClient, root.Docusign.DisplayApplianceCustomField, root.Docusign.DisplayApplianceDocument, root.Docusign.DisplayApplianceDocumentPage, root.Docusign.DisplayApplianceEnvelope, root.Docusign.DisplayAppliancePage, root.Docusign.DisplayApplianceRecipient);
+    root.Docusign.DisplayApplianceInfo = factory(root.Docusign.ApiClient, root.Docusign.DisplayApplianceDocument, root.Docusign.DisplayApplianceDocumentPage, root.Docusign.DisplayApplianceEnvelope, root.Docusign.DisplayAppliancePage, root.Docusign.DisplayApplianceRecipient);
   }
-}(this, function(ApiClient, DisplayApplianceCustomField, DisplayApplianceDocument, DisplayApplianceDocumentPage, DisplayApplianceEnvelope, DisplayAppliancePage, DisplayApplianceRecipient) {
+}(this, function(ApiClient, DisplayApplianceDocument, DisplayApplianceDocumentPage, DisplayApplianceEnvelope, DisplayAppliancePage, DisplayApplianceRecipient) {
   'use strict';
 
 
@@ -55,35 +55,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('cultureName')) {
-        obj['cultureName'] = ApiClient.convertToType(data['cultureName'], 'String');
-      }
-      if (data.hasOwnProperty('customFields')) {
-        obj['customFields'] = ApiClient.convertToType(data['customFields'], [DisplayApplianceCustomField]);
-      }
-      if (data.hasOwnProperty('dateSigned')) {
-        obj['dateSigned'] = ApiClient.convertToType(data['dateSigned'], 'String');
-      }
       if (data.hasOwnProperty('documentData')) {
         obj['documentData'] = ApiClient.convertToType(data['documentData'], [DisplayApplianceDocument]);
       }
       if (data.hasOwnProperty('documentPages')) {
         obj['documentPages'] = ApiClient.convertToType(data['documentPages'], [DisplayApplianceDocumentPage]);
       }
-      if (data.hasOwnProperty('dynamicSystemSettings')) {
-        obj['dynamicSystemSettings'] = ApiClient.convertToType(data['dynamicSystemSettings'], {'String': Object});
-      }
       if (data.hasOwnProperty('envelopeData')) {
         obj['envelopeData'] = DisplayApplianceEnvelope.constructFromObject(data['envelopeData']);
-      }
-      if (data.hasOwnProperty('image')) {
-        obj['image'] = ApiClient.convertToType(data['image'], 'String');
-      }
-      if (data.hasOwnProperty('isNonDisplayApplianceTemplate')) {
-        obj['isNonDisplayApplianceTemplate'] = ApiClient.convertToType(data['isNonDisplayApplianceTemplate'], 'Boolean');
-      }
-      if (data.hasOwnProperty('localePolicy')) {
-        obj['localePolicy'] = ApiClient.convertToType(data['localePolicy'], {'String': 'String'});
       }
       if (data.hasOwnProperty('pageData')) {
         obj['pageData'] = ApiClient.convertToType(data['pageData'], [DisplayAppliancePage]);
@@ -91,31 +70,10 @@
       if (data.hasOwnProperty('recipientData')) {
         obj['recipientData'] = ApiClient.convertToType(data['recipientData'], [DisplayApplianceRecipient]);
       }
-      if (data.hasOwnProperty('translateHeight')) {
-        obj['translateHeight'] = ApiClient.convertToType(data['translateHeight'], 'Boolean');
-      }
-      if (data.hasOwnProperty('updateTabModule')) {
-        obj['updateTabModule'] = ApiClient.convertToType(data['updateTabModule'], 'Boolean');
-      }
     }
     return obj;
   }
 
-  /**
-   * 
-   * @member {String} cultureName
-   */
-  exports.prototype['cultureName'] = undefined;
-  /**
-   * An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
-   * @member {Array.<module:model/DisplayApplianceCustomField>} customFields
-   */
-  exports.prototype['customFields'] = undefined;
-  /**
-   * 
-   * @member {String} dateSigned
-   */
-  exports.prototype['dateSigned'] = undefined;
   /**
    * 
    * @member {Array.<module:model/DisplayApplianceDocument>} documentData
@@ -127,29 +85,9 @@
    */
   exports.prototype['documentPages'] = undefined;
   /**
-   * 
-   * @member {Object.<String, Object>} dynamicSystemSettings
-   */
-  exports.prototype['dynamicSystemSettings'] = undefined;
-  /**
    * @member {module:model/DisplayApplianceEnvelope} envelopeData
    */
   exports.prototype['envelopeData'] = undefined;
-  /**
-   * 
-   * @member {String} image
-   */
-  exports.prototype['image'] = undefined;
-  /**
-   * 
-   * @member {Boolean} isNonDisplayApplianceTemplate
-   */
-  exports.prototype['isNonDisplayApplianceTemplate'] = undefined;
-  /**
-   * 
-   * @member {Object.<String, String>} localePolicy
-   */
-  exports.prototype['localePolicy'] = undefined;
   /**
    * 
    * @member {Array.<module:model/DisplayAppliancePage>} pageData
@@ -160,16 +98,6 @@
    * @member {Array.<module:model/DisplayApplianceRecipient>} recipientData
    */
   exports.prototype['recipientData'] = undefined;
-  /**
-   * 
-   * @member {Boolean} translateHeight
-   */
-  exports.prototype['translateHeight'] = undefined;
-  /**
-   * 
-   * @member {Boolean} updateTabModule
-   */
-  exports.prototype['updateTabModule'] = undefined;
 
 
 
