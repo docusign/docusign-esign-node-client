@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DisplayApplianceCustomField', 'model/DisplayApplianceDocument', 'model/DisplayApplianceDocumentPage', 'model/DisplayApplianceEnvelope', 'model/DisplayAppliancePage', 'model/DisplayApplianceRecipient', 'model/ModelObject'], factory);
+    define(['ApiClient', 'model/DisplayApplianceCustomField', 'model/DisplayApplianceDocument', 'model/DisplayApplianceDocumentPage', 'model/DisplayApplianceEnvelope', 'model/DisplayAppliancePage', 'model/DisplayApplianceRecipient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DisplayApplianceCustomField'), require('./DisplayApplianceDocument'), require('./DisplayApplianceDocumentPage'), require('./DisplayApplianceEnvelope'), require('./DisplayAppliancePage'), require('./DisplayApplianceRecipient'), require('./ModelObject'));
+    module.exports = factory(require('../ApiClient'), require('./DisplayApplianceCustomField'), require('./DisplayApplianceDocument'), require('./DisplayApplianceDocumentPage'), require('./DisplayApplianceEnvelope'), require('./DisplayAppliancePage'), require('./DisplayApplianceRecipient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DisplayApplianceInfo = factory(root.Docusign.ApiClient, root.Docusign.DisplayApplianceCustomField, root.Docusign.DisplayApplianceDocument, root.Docusign.DisplayApplianceDocumentPage, root.Docusign.DisplayApplianceEnvelope, root.Docusign.DisplayAppliancePage, root.Docusign.DisplayApplianceRecipient, root.Docusign.ModelObject);
+    root.Docusign.DisplayApplianceInfo = factory(root.Docusign.ApiClient, root.Docusign.DisplayApplianceCustomField, root.Docusign.DisplayApplianceDocument, root.Docusign.DisplayApplianceDocumentPage, root.Docusign.DisplayApplianceEnvelope, root.Docusign.DisplayAppliancePage, root.Docusign.DisplayApplianceRecipient);
   }
-}(this, function(ApiClient, DisplayApplianceCustomField, DisplayApplianceDocument, DisplayApplianceDocumentPage, DisplayApplianceEnvelope, DisplayAppliancePage, DisplayApplianceRecipient, ModelObject) {
+}(this, function(ApiClient, DisplayApplianceCustomField, DisplayApplianceDocument, DisplayApplianceDocumentPage, DisplayApplianceEnvelope, DisplayAppliancePage, DisplayApplianceRecipient) {
   'use strict';
 
 
@@ -71,7 +71,7 @@
         obj['documentPages'] = ApiClient.convertToType(data['documentPages'], [DisplayApplianceDocumentPage]);
       }
       if (data.hasOwnProperty('dynamicSystemSettings')) {
-        obj['dynamicSystemSettings'] = ApiClient.convertToType(data['dynamicSystemSettings'], {'String': ModelObject});
+        obj['dynamicSystemSettings'] = ApiClient.convertToType(data['dynamicSystemSettings'], {'String': Object});
       }
       if (data.hasOwnProperty('envelopeData')) {
         obj['envelopeData'] = DisplayApplianceEnvelope.constructFromObject(data['envelopeData']);
@@ -128,7 +128,7 @@
   exports.prototype['documentPages'] = undefined;
   /**
    * 
-   * @member {Object.<String, module:model/ModelObject>} dynamicSystemSettings
+   * @member {Object.<String, Object>} dynamicSystemSettings
    */
   exports.prototype['dynamicSystemSettings'] = undefined;
   /**
