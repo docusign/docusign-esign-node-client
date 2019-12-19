@@ -30,5 +30,5 @@ cache:
   directories:
     - "node_modules"
 
-after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
+after_script: "npm install coveralls@2 && coveralls"
 
