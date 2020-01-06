@@ -103,6 +103,9 @@
       if (data.hasOwnProperty('designatorId')) {
         obj['designatorId'] = ApiClient.convertToType(data['designatorId'], 'String');
       }
+      if (data.hasOwnProperty('designatorIdGuid')) {
+        obj['designatorIdGuid'] = ApiClient.convertToType(data['designatorIdGuid'], 'String');
+      }
       if (data.hasOwnProperty('documentVisibility')) {
         obj['documentVisibility'] = ApiClient.convertToType(data['documentVisibility'], [DocumentVisibility]);
       }
@@ -401,6 +404,11 @@
    * @member {String} designatorId
    */
   exports.prototype['designatorId'] = undefined;
+  /**
+   * 
+   * @member {String} designatorIdGuid
+   */
+  exports.prototype['designatorIdGuid'] = undefined;
   /**
    * 
    * @member {Array.<module:model/DocumentVisibility>} documentVisibility

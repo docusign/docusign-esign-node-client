@@ -55,9 +55,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
-      }
       if (data.hasOwnProperty('addDemoStamp')) {
         obj['addDemoStamp'] = ApiClient.convertToType(data['addDemoStamp'], 'Boolean');
       }
@@ -67,14 +64,8 @@
       if (data.hasOwnProperty('burnDefaultTabData')) {
         obj['burnDefaultTabData'] = ApiClient.convertToType(data['burnDefaultTabData'], 'Boolean');
       }
-      if (data.hasOwnProperty('companyName')) {
-        obj['companyName'] = ApiClient.convertToType(data['companyName'], 'String');
-      }
       if (data.hasOwnProperty('convertPdfFields')) {
         obj['convertPdfFields'] = ApiClient.convertToType(data['convertPdfFields'], 'Boolean');
-      }
-      if (data.hasOwnProperty('customFieldVersion')) {
-        obj['customFieldVersion'] = ApiClient.convertToType(data['customFieldVersion'], 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
@@ -100,9 +91,6 @@
       if (data.hasOwnProperty('showEnvelopeChanges')) {
         obj['showEnvelopeChanges'] = ApiClient.convertToType(data['showEnvelopeChanges'], 'Boolean');
       }
-      if (data.hasOwnProperty('signingLocation')) {
-        obj['signingLocation'] = ApiClient.convertToType(data['signingLocation'], 'String');
-      }
       if (data.hasOwnProperty('signOnline')) {
         obj['signOnline'] = ApiClient.convertToType(data['signOnline'], 'Boolean');
       }
@@ -116,11 +104,6 @@
     return obj;
   }
 
-  /**
-   * The account ID associated with the envelope.
-   * @member {String} accountId
-   */
-  exports.prototype['accountId'] = undefined;
   /**
    * 
    * @member {Boolean} addDemoStamp
@@ -138,19 +121,9 @@
   exports.prototype['burnDefaultTabData'] = undefined;
   /**
    * 
-   * @member {String} companyName
-   */
-  exports.prototype['companyName'] = undefined;
-  /**
-   * 
    * @member {Boolean} convertPdfFields
    */
   exports.prototype['convertPdfFields'] = undefined;
-  /**
-   * 
-   * @member {String} customFieldVersion
-   */
-  exports.prototype['customFieldVersion'] = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
@@ -191,11 +164,6 @@
    * @member {Boolean} showEnvelopeChanges
    */
   exports.prototype['showEnvelopeChanges'] = undefined;
-  /**
-   * Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
-   * @member {String} signingLocation
-   */
-  exports.prototype['signingLocation'] = undefined;
   /**
    * 
    * @member {Boolean} signOnline
