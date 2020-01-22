@@ -121,17 +121,17 @@
       if (data.hasOwnProperty('requiresAcknowledgement')) {
         obj['requiresAcknowledgement'] = ApiClient.convertToType(data['requiresAcknowledgement'], 'String');
       }
-      if (data.hasOwnProperty('salesforceAccessToken')) {
-        obj['salesforceAccessToken'] = ApiClient.convertToType(data['salesforceAccessToken'], 'String');
-      }
       if (data.hasOwnProperty('salesforceApiVersion')) {
         obj['salesforceApiVersion'] = ApiClient.convertToType(data['salesforceApiVersion'], 'String');
       }
+      if (data.hasOwnProperty('salesforceAuthcode')) {
+        obj['salesforceAuthcode'] = ApiClient.convertToType(data['salesforceAuthcode'], 'String');
+      }
+      if (data.hasOwnProperty('salesforceCallBackUrl')) {
+        obj['salesforceCallBackUrl'] = ApiClient.convertToType(data['salesforceCallBackUrl'], 'String');
+      }
       if (data.hasOwnProperty('salesforceDocumentsAsContentFiles')) {
         obj['salesforceDocumentsAsContentFiles'] = ApiClient.convertToType(data['salesforceDocumentsAsContentFiles'], 'String');
-      }
-      if (data.hasOwnProperty('salesforceRefreshToken')) {
-        obj['salesforceRefreshToken'] = ApiClient.convertToType(data['salesforceRefreshToken'], 'String');
       }
       if (data.hasOwnProperty('senderOverride')) {
         obj['senderOverride'] = ApiClient.convertToType(data['senderOverride'], 'String');
@@ -276,24 +276,24 @@
   exports.prototype['requiresAcknowledgement'] = undefined;
   /**
    * 
-   * @member {String} salesforceAccessToken
-   */
-  exports.prototype['salesforceAccessToken'] = undefined;
-  /**
-   * 
    * @member {String} salesforceApiVersion
    */
   exports.prototype['salesforceApiVersion'] = undefined;
   /**
    * 
+   * @member {String} salesforceAuthcode
+   */
+  exports.prototype['salesforceAuthcode'] = undefined;
+  /**
+   * 
+   * @member {String} salesforceCallBackUrl
+   */
+  exports.prototype['salesforceCallBackUrl'] = undefined;
+  /**
+   * 
    * @member {String} salesforceDocumentsAsContentFiles
    */
   exports.prototype['salesforceDocumentsAsContentFiles'] = undefined;
-  /**
-   * 
-   * @member {String} salesforceRefreshToken
-   */
-  exports.prototype['salesforceRefreshToken'] = undefined;
   /**
    * 
    * @member {String} senderOverride
