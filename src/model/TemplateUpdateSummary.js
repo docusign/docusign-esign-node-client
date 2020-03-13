@@ -30,7 +30,7 @@
   /**
    * The TemplateUpdateSummary model module.
    * @module model/TemplateUpdateSummary
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The MemberSharedItems model module.
    * @module model/MemberSharedItems
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

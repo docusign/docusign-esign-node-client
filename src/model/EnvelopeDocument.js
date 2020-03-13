@@ -30,7 +30,7 @@
   /**
    * The EnvelopeDocument model module.
    * @module model/EnvelopeDocument
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -81,9 +81,6 @@
       }
       if (data.hasOwnProperty('documentFields')) {
         obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
-      }
-      if (data.hasOwnProperty('documentGroup')) {
-        obj['documentGroup'] = ApiClient.convertToType(data['documentGroup'], 'String');
       }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
@@ -180,11 +177,6 @@
    * @member {Array.<module:model/NameValue>} documentFields
    */
   exports.prototype['documentFields'] = undefined;
-  /**
-   * 
-   * @member {String} documentGroup
-   */
-  exports.prototype['documentGroup'] = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId

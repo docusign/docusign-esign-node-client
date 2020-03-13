@@ -30,7 +30,7 @@
   /**
    * The Witness model module.
    * @module model/Witness
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -69,6 +69,9 @@
       }
       if (data.hasOwnProperty('agentCanEditName')) {
         obj['agentCanEditName'] = ApiClient.convertToType(data['agentCanEditName'], 'String');
+      }
+      if (data.hasOwnProperty('allowSystemOverrideForLockedRecipient')) {
+        obj['allowSystemOverrideForLockedRecipient'] = ApiClient.convertToType(data['allowSystemOverrideForLockedRecipient'], 'String');
       }
       if (data.hasOwnProperty('autoNavigation')) {
         obj['autoNavigation'] = ApiClient.convertToType(data['autoNavigation'], 'String');
@@ -350,6 +353,11 @@
    * @member {String} agentCanEditName
    */
   exports.prototype['agentCanEditName'] = undefined;
+  /**
+   * 
+   * @member {String} allowSystemOverrideForLockedRecipient
+   */
+  exports.prototype['allowSystemOverrideForLockedRecipient'] = undefined;
   /**
    * 
    * @member {String} autoNavigation

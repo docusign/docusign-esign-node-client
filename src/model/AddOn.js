@@ -30,7 +30,7 @@
   /**
    * The AddOn model module.
    * @module model/AddOn
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

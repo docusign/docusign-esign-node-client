@@ -30,7 +30,7 @@
   /**
    * The EmailSettings model module.
    * @module model/EmailSettings
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

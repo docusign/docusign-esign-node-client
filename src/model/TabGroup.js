@@ -30,7 +30,7 @@
   /**
    * The TabGroup model module.
    * @module model/TabGroup
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

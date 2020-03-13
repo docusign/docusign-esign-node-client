@@ -30,7 +30,7 @@
   /**
    * The AccountSettingsInformation model module.
    * @module model/AccountSettingsInformation
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -470,6 +470,12 @@
       if (data.hasOwnProperty('allowSignNowMetadata')) {
         obj['allowSignNowMetadata'] = ApiClient.convertToType(data['allowSignNowMetadata'], 'String');
       }
+      if (data.hasOwnProperty('allowSMSDelivery')) {
+        obj['allowSMSDelivery'] = ApiClient.convertToType(data['allowSMSDelivery'], 'String');
+      }
+      if (data.hasOwnProperty('allowSMSDeliveryMetadata')) {
+        obj['allowSMSDeliveryMetadata'] = SettingsMetadata.constructFromObject(data['allowSMSDeliveryMetadata']);
+      }
       if (data.hasOwnProperty('allowSocialIdLogin')) {
         obj['allowSocialIdLogin'] = ApiClient.convertToType(data['allowSocialIdLogin'], 'String');
       }
@@ -481,6 +487,18 @@
       }
       if (data.hasOwnProperty('allowSupplementalDocumentsMetadata')) {
         obj['allowSupplementalDocumentsMetadata'] = SettingsMetadata.constructFromObject(data['allowSupplementalDocumentsMetadata']);
+      }
+      if (data.hasOwnProperty('allowUsersToAccessDirectory')) {
+        obj['allowUsersToAccessDirectory'] = ApiClient.convertToType(data['allowUsersToAccessDirectory'], 'String');
+      }
+      if (data.hasOwnProperty('allowUsersToAccessDirectoryMetadata')) {
+        obj['allowUsersToAccessDirectoryMetadata'] = SettingsMetadata.constructFromObject(data['allowUsersToAccessDirectoryMetadata']);
+      }
+      if (data.hasOwnProperty('allowValueInsights')) {
+        obj['allowValueInsights'] = ApiClient.convertToType(data['allowValueInsights'], 'String');
+      }
+      if (data.hasOwnProperty('allowValueInsightsMetadata')) {
+        obj['allowValueInsightsMetadata'] = SettingsMetadata.constructFromObject(data['allowValueInsightsMetadata']);
       }
       if (data.hasOwnProperty('anchorPopulationScope')) {
         obj['anchorPopulationScope'] = ApiClient.convertToType(data['anchorPopulationScope'], 'String');
@@ -752,6 +770,12 @@
       if (data.hasOwnProperty('enableClickwrapsMetadata')) {
         obj['enableClickwrapsMetadata'] = SettingsMetadata.constructFromObject(data['enableClickwrapsMetadata']);
       }
+      if (data.hasOwnProperty('enableCommentsHistoryDownloadInSigning')) {
+        obj['enableCommentsHistoryDownloadInSigning'] = ApiClient.convertToType(data['enableCommentsHistoryDownloadInSigning'], 'String');
+      }
+      if (data.hasOwnProperty('enableCommentsHistoryDownloadInSigningMetadata')) {
+        obj['enableCommentsHistoryDownloadInSigningMetadata'] = SettingsMetadata.constructFromObject(data['enableCommentsHistoryDownloadInSigningMetadata']);
+      }
       if (data.hasOwnProperty('enableCustomerSatisfactionMetricTracking')) {
         obj['enableCustomerSatisfactionMetricTracking'] = ApiClient.convertToType(data['enableCustomerSatisfactionMetricTracking'], 'String');
       }
@@ -835,6 +859,12 @@
       }
       if (data.hasOwnProperty('enableScheduledReleaseMetadata')) {
         obj['enableScheduledReleaseMetadata'] = SettingsMetadata.constructFromObject(data['enableScheduledReleaseMetadata']);
+      }
+      if (data.hasOwnProperty('enableSearchUI')) {
+        obj['enableSearchUI'] = ApiClient.convertToType(data['enableSearchUI'], 'String');
+      }
+      if (data.hasOwnProperty('enableSearchUIMetadata')) {
+        obj['enableSearchUIMetadata'] = SettingsMetadata.constructFromObject(data['enableSearchUIMetadata']);
       }
       if (data.hasOwnProperty('enableSendingTagsFontSettings')) {
         obj['enableSendingTagsFontSettings'] = ApiClient.convertToType(data['enableSendingTagsFontSettings'], 'String');
@@ -2195,6 +2225,15 @@
   exports.prototype['allowSignNowMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowSMSDelivery
+   */
+  exports.prototype['allowSMSDelivery'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowSMSDeliveryMetadata
+   */
+  exports.prototype['allowSMSDeliveryMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowSocialIdLogin
    */
   exports.prototype['allowSocialIdLogin'] = undefined;
@@ -2211,6 +2250,24 @@
    * @member {module:model/SettingsMetadata} allowSupplementalDocumentsMetadata
    */
   exports.prototype['allowSupplementalDocumentsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowUsersToAccessDirectory
+   */
+  exports.prototype['allowUsersToAccessDirectory'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowUsersToAccessDirectoryMetadata
+   */
+  exports.prototype['allowUsersToAccessDirectoryMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowValueInsights
+   */
+  exports.prototype['allowValueInsights'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowValueInsightsMetadata
+   */
+  exports.prototype['allowValueInsightsMetadata'] = undefined;
   /**
    * 
    * @member {String} anchorPopulationScope
@@ -2618,6 +2675,15 @@
   exports.prototype['enableClickwrapsMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableCommentsHistoryDownloadInSigning
+   */
+  exports.prototype['enableCommentsHistoryDownloadInSigning'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableCommentsHistoryDownloadInSigningMetadata
+   */
+  exports.prototype['enableCommentsHistoryDownloadInSigningMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableCustomerSatisfactionMetricTracking
    */
   exports.prototype['enableCustomerSatisfactionMetricTracking'] = undefined;
@@ -2742,6 +2808,15 @@
    * @member {module:model/SettingsMetadata} enableScheduledReleaseMetadata
    */
   exports.prototype['enableScheduledReleaseMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableSearchUI
+   */
+  exports.prototype['enableSearchUI'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableSearchUIMetadata
+   */
+  exports.prototype['enableSearchUIMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSendingTagsFontSettings

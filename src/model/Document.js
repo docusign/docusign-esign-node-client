@@ -30,7 +30,7 @@
   /**
    * The Document model module.
    * @module model/Document
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -66,9 +66,6 @@
       }
       if (data.hasOwnProperty('documentFields')) {
         obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
-      }
-      if (data.hasOwnProperty('documentGroup')) {
-        obj['documentGroup'] = ApiClient.convertToType(data['documentGroup'], 'String');
       }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
@@ -133,6 +130,9 @@
       if (data.hasOwnProperty('signerMustAcknowledge')) {
         obj['signerMustAcknowledge'] = ApiClient.convertToType(data['signerMustAcknowledge'], 'String');
       }
+      if (data.hasOwnProperty('signerMustAcknowledgeUseAccountDefault')) {
+        obj['signerMustAcknowledgeUseAccountDefault'] = ApiClient.convertToType(data['signerMustAcknowledgeUseAccountDefault'], 'Boolean');
+      }
       if (data.hasOwnProperty('tabs')) {
         obj['tabs'] = Tabs.constructFromObject(data['tabs']);
       }
@@ -172,11 +172,6 @@
    * @member {Array.<module:model/NameValue>} documentFields
    */
   exports.prototype['documentFields'] = undefined;
-  /**
-   * 
-   * @member {String} documentGroup
-   */
-  exports.prototype['documentGroup'] = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
@@ -281,6 +276,11 @@
    * @member {String} signerMustAcknowledge
    */
   exports.prototype['signerMustAcknowledge'] = undefined;
+  /**
+   * 
+   * @member {Boolean} signerMustAcknowledgeUseAccountDefault
+   */
+  exports.prototype['signerMustAcknowledgeUseAccountDefault'] = undefined;
   /**
    * @member {module:model/Tabs} tabs
    */

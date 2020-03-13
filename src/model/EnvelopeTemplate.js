@@ -30,7 +30,7 @@
   /**
    * The EnvelopeTemplate model module.
    * @module model/EnvelopeTemplate
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -105,6 +105,9 @@
       }
       if (data.hasOwnProperty('completedDateTime')) {
         obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('copyRecipientData')) {
+        obj['copyRecipientData'] = ApiClient.convertToType(data['copyRecipientData'], 'String');
       }
       if (data.hasOwnProperty('created')) {
         obj['created'] = ApiClient.convertToType(data['created'], 'String');
@@ -432,6 +435,11 @@
    * @member {String} completedDateTime
    */
   exports.prototype['completedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} copyRecipientData
+   */
+  exports.prototype['copyRecipientData'] = undefined;
   /**
    * 
    * @member {String} created

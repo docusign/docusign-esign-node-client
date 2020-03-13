@@ -30,7 +30,7 @@
   /**
    * The ProofServiceViewLink model module.
    * @module model/ProofServiceViewLink
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

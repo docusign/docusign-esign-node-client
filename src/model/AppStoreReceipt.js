@@ -30,7 +30,7 @@
   /**
    * The AppStoreReceipt model module.
    * @module model/AppStoreReceipt
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

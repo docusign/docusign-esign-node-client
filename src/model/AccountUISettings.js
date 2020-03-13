@@ -30,7 +30,7 @@
   /**
    * The AccountUISettings model module.
    * @module model/AccountUISettings
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -78,6 +78,12 @@
       }
       if (data.hasOwnProperty('enableEasySignTemplateUploadMetadata')) {
         obj['enableEasySignTemplateUploadMetadata'] = SettingsMetadata.constructFromObject(data['enableEasySignTemplateUploadMetadata']);
+      }
+      if (data.hasOwnProperty('enableEnvelopeCopyWithData')) {
+        obj['enableEnvelopeCopyWithData'] = ApiClient.convertToType(data['enableEnvelopeCopyWithData'], 'String');
+      }
+      if (data.hasOwnProperty('enableEnvelopeCopyWithDataMetadata')) {
+        obj['enableEnvelopeCopyWithDataMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeCopyWithDataMetadata']);
       }
       if (data.hasOwnProperty('hideSendAnEnvelope')) {
         obj['hideSendAnEnvelope'] = ApiClient.convertToType(data['hideSendAnEnvelope'], 'String');
@@ -160,6 +166,15 @@
    * @member {module:model/SettingsMetadata} enableEasySignTemplateUploadMetadata
    */
   exports.prototype['enableEasySignTemplateUploadMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableEnvelopeCopyWithData
+   */
+  exports.prototype['enableEnvelopeCopyWithData'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableEnvelopeCopyWithDataMetadata
+   */
+  exports.prototype['enableEnvelopeCopyWithDataMetadata'] = undefined;
   /**
    * 
    * @member {String} hideSendAnEnvelope

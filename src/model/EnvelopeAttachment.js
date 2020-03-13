@@ -30,7 +30,7 @@
   /**
    * The EnvelopeAttachment model module.
    * @module model/EnvelopeAttachment
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

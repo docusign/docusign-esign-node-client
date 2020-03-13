@@ -12,25 +12,25 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddOn', 'model/FeatureSet', 'model/SeatDiscount'], factory);
+    define(['ApiClient', 'model/AddOn', 'model/DowngradePlanUpdateResponse', 'model/FeatureSet', 'model/SeatDiscount'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AddOn'), require('./FeatureSet'), require('./SeatDiscount'));
+    module.exports = factory(require('../ApiClient'), require('./AddOn'), require('./DowngradePlanUpdateResponse'), require('./FeatureSet'), require('./SeatDiscount'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountBillingPlan = factory(root.Docusign.ApiClient, root.Docusign.AddOn, root.Docusign.FeatureSet, root.Docusign.SeatDiscount);
+    root.Docusign.AccountBillingPlan = factory(root.Docusign.ApiClient, root.Docusign.AddOn, root.Docusign.DowngradePlanUpdateResponse, root.Docusign.FeatureSet, root.Docusign.SeatDiscount);
   }
-}(this, function(ApiClient, AddOn, FeatureSet, SeatDiscount) {
+}(this, function(ApiClient, AddOn, DowngradePlanUpdateResponse, FeatureSet, SeatDiscount) {
   'use strict';
 
 
   /**
    * The AccountBillingPlan model module.
    * @module model/AccountBillingPlan
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -67,6 +67,9 @@
       }
       if (data.hasOwnProperty('currencyCode')) {
         obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+      }
+      if (data.hasOwnProperty('downgradePlanInformation')) {
+        obj['downgradePlanInformation'] = DowngradePlanUpdateResponse.constructFromObject(data['downgradePlanInformation']);
       }
       if (data.hasOwnProperty('enableSupport')) {
         obj['enableSupport'] = ApiClient.convertToType(data['enableSupport'], 'String');
@@ -140,6 +143,10 @@
    * @member {String} currencyCode
    */
   exports.prototype['currencyCode'] = undefined;
+  /**
+   * @member {module:model/DowngradePlanUpdateResponse} downgradePlanInformation
+   */
+  exports.prototype['downgradePlanInformation'] = undefined;
   /**
    * When set to **true**, then customer support is provided as part of the account plan.
    * @member {String} enableSupport

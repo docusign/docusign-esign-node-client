@@ -30,7 +30,7 @@
   /**
    * The EnvelopeTransactionStatus model module.
    * @module model/EnvelopeTransactionStatus
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

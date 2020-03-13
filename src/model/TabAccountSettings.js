@@ -30,7 +30,7 @@
   /**
    * The TabAccountSettings model module.
    * @module model/TabAccountSettings
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -90,6 +90,12 @@
       }
       if (data.hasOwnProperty('dataFieldSizeMetadata')) {
         obj['dataFieldSizeMetadata'] = SettingsMetadata.constructFromObject(data['dataFieldSizeMetadata']);
+      }
+      if (data.hasOwnProperty('drawTabsEnabled')) {
+        obj['drawTabsEnabled'] = ApiClient.convertToType(data['drawTabsEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('drawTabsMetadata')) {
+        obj['drawTabsMetadata'] = SettingsMetadata.constructFromObject(data['drawTabsMetadata']);
       }
       if (data.hasOwnProperty('firstLastEmailTabsEnabled')) {
         obj['firstLastEmailTabsEnabled'] = ApiClient.convertToType(data['firstLastEmailTabsEnabled'], 'String');
@@ -227,6 +233,15 @@
    * @member {module:model/SettingsMetadata} dataFieldSizeMetadata
    */
   exports.prototype['dataFieldSizeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} drawTabsEnabled
+   */
+  exports.prototype['drawTabsEnabled'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} drawTabsMetadata
+   */
+  exports.prototype['drawTabsMetadata'] = undefined;
   /**
    * 
    * @member {String} firstLastEmailTabsEnabled

@@ -30,7 +30,7 @@
   /**
    * The NewUsersSummary model module.
    * @module model/NewUsersSummary
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
