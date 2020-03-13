@@ -30,7 +30,7 @@
   /**
    * The CustomFieldV2 model module.
    * @module model/CustomFieldV2
-   * @version 3.0.0
+   * @version 4.6.0-rc1
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The LastName model module.
    * @module model/LastName
-   * @version 3.0.0
+   * @version 4.6.0-rc1
    */
 
   /**

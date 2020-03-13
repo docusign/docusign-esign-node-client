@@ -29,7 +29,7 @@
   /**
    * BulkEnvelopes service.
    * @module api/BulkEnvelopesApi
-   * @version 3.0.0
+   * @version 4.6.0-rc1
    */
 
   /**
@@ -135,7 +135,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * @param {String} batchId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Specifies the number of entries to return.
-     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;Ã¢â¬Âfailed,queuedÃ¢â¬Â)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent Ã¢â¬â This only returns entries with a sent status.  
+     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
      * @param {String} optsOrCallback.startPosition Specifies the location in the list of envelopes from which to start.
      * @param {module:api/BulkEnvelopesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopeStatus}
@@ -353,7 +353,7 @@ The response returns information about the envelopes sent with bulk recipient ba
 
 The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
      * @param {String} bulkRecipientsRequest 
-     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} accountId The external account number (int) or account id GUID.
      * @param {String} envelopeId The envelope&#39;s GUID. Eg 93be49ab-afa0-4adf-933c-f752070d71ec 
      * @param {String} recipientId The &#x60;recipientId&#x60; used when the envelope or template was created.
      * @param {module:api/BulkEnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response

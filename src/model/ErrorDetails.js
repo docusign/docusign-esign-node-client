@@ -30,7 +30,7 @@
   /**
    * The ErrorDetails model module.
    * @module model/ErrorDetails
-   * @version 3.0.0
+   * @version 4.6.0-rc1
    */
 
   /**

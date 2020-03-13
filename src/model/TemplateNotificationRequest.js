@@ -30,7 +30,7 @@
   /**
    * The TemplateNotificationRequest model module.
    * @module model/TemplateNotificationRequest
-   * @version 3.0.0
+   * @version 4.6.0-rc1
    */
 
   /**

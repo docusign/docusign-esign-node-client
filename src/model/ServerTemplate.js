@@ -30,7 +30,7 @@
   /**
    * The ServerTemplate model module.
    * @module model/ServerTemplate
-   * @version 3.0.0
+   * @version 4.6.0-rc1
    */
 
   /**
