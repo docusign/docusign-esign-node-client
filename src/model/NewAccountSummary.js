@@ -30,7 +30,7 @@
   /**
    * The NewAccountSummary model module.
    * @module model/NewAccountSummary
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

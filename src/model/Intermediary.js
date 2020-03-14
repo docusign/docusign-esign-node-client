@@ -30,7 +30,7 @@
   /**
    * The Intermediary model module.
    * @module model/Intermediary
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -63,6 +63,9 @@
       }
       if (data.hasOwnProperty('addAccessCodeToEmail')) {
         obj['addAccessCodeToEmail'] = ApiClient.convertToType(data['addAccessCodeToEmail'], 'String');
+      }
+      if (data.hasOwnProperty('allowSystemOverrideForLockedRecipient')) {
+        obj['allowSystemOverrideForLockedRecipient'] = ApiClient.convertToType(data['allowSystemOverrideForLockedRecipient'], 'String');
       }
       if (data.hasOwnProperty('clientUserId')) {
         obj['clientUserId'] = ApiClient.convertToType(data['clientUserId'], 'String');
@@ -271,6 +274,11 @@
    * @member {String} addAccessCodeToEmail
    */
   exports.prototype['addAccessCodeToEmail'] = undefined;
+  /**
+   * 
+   * @member {String} allowSystemOverrideForLockedRecipient
+   */
+  exports.prototype['allowSystemOverrideForLockedRecipient'] = undefined;
   /**
    * Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
    * @member {String} clientUserId

@@ -30,7 +30,7 @@
   /**
    * The Envelope model module.
    * @module model/Envelope
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -99,6 +99,9 @@
       }
       if (data.hasOwnProperty('completedDateTime')) {
         obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
+      }
+      if (data.hasOwnProperty('copyRecipientData')) {
+        obj['copyRecipientData'] = ApiClient.convertToType(data['copyRecipientData'], 'String');
       }
       if (data.hasOwnProperty('createdDateTime')) {
         obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
@@ -356,6 +359,11 @@
    * @member {String} completedDateTime
    */
   exports.prototype['completedDateTime'] = undefined;
+  /**
+   * 
+   * @member {String} copyRecipientData
+   */
+  exports.prototype['copyRecipientData'] = undefined;
   /**
    * Indicates the date and time the item was created.
    * @member {String} createdDateTime

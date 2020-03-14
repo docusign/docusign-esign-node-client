@@ -30,7 +30,7 @@
   /**
    * The SigningGroupUsers model module.
    * @module model/SigningGroupUsers
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The RecipientFormData model module.
    * @module model/RecipientFormData
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

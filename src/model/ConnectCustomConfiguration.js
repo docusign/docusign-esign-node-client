@@ -12,25 +12,25 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ConnectSalesforceObject'], factory);
+    define(['ApiClient', 'model/ConnectEventData', 'model/ConnectSalesforceObject'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ConnectSalesforceObject'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectEventData'), require('./ConnectSalesforceObject'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectCustomConfiguration = factory(root.Docusign.ApiClient, root.Docusign.ConnectSalesforceObject);
+    root.Docusign.ConnectCustomConfiguration = factory(root.Docusign.ApiClient, root.Docusign.ConnectEventData, root.Docusign.ConnectSalesforceObject);
   }
-}(this, function(ApiClient, ConnectSalesforceObject) {
+}(this, function(ApiClient, ConnectEventData, ConnectSalesforceObject) {
   'use strict';
 
 
   /**
    * The ConnectCustomConfiguration model module.
    * @module model/ConnectCustomConfiguration
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -75,6 +75,9 @@
       }
       if (data.hasOwnProperty('envelopeEvents')) {
         obj['envelopeEvents'] = ApiClient.convertToType(data['envelopeEvents'], ['String']);
+      }
+      if (data.hasOwnProperty('eventData')) {
+        obj['eventData'] = ConnectEventData.constructFromObject(data['eventData']);
       }
       if (data.hasOwnProperty('externalFolderId')) {
         obj['externalFolderId'] = ApiClient.convertToType(data['externalFolderId'], 'String');
@@ -199,6 +202,10 @@
    * @member {Array.<String>} envelopeEvents
    */
   exports.prototype['envelopeEvents'] = undefined;
+  /**
+   * @member {module:model/ConnectEventData} eventData
+   */
+  exports.prototype['eventData'] = undefined;
   /**
    * 
    * @member {String} externalFolderId

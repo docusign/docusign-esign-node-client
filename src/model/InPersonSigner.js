@@ -30,7 +30,7 @@
   /**
    * The InPersonSigner model module.
    * @module model/InPersonSigner
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -63,6 +63,9 @@
       }
       if (data.hasOwnProperty('addAccessCodeToEmail')) {
         obj['addAccessCodeToEmail'] = ApiClient.convertToType(data['addAccessCodeToEmail'], 'String');
+      }
+      if (data.hasOwnProperty('allowSystemOverrideForLockedRecipient')) {
+        obj['allowSystemOverrideForLockedRecipient'] = ApiClient.convertToType(data['allowSystemOverrideForLockedRecipient'], 'String');
       }
       if (data.hasOwnProperty('autoNavigation')) {
         obj['autoNavigation'] = ApiClient.convertToType(data['autoNavigation'], 'String');
@@ -340,6 +343,11 @@
    * @member {String} addAccessCodeToEmail
    */
   exports.prototype['addAccessCodeToEmail'] = undefined;
+  /**
+   * 
+   * @member {String} allowSystemOverrideForLockedRecipient
+   */
+  exports.prototype['allowSystemOverrideForLockedRecipient'] = undefined;
   /**
    * 
    * @member {String} autoNavigation

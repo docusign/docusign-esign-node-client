@@ -12,25 +12,25 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/RecipientIdentityInputOption'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./RecipientIdentityInputOption'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.RecipientIdentityVerification = factory(root.Docusign.ApiClient);
+    root.Docusign.RecipientIdentityVerification = factory(root.Docusign.ApiClient, root.Docusign.RecipientIdentityInputOption);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, RecipientIdentityInputOption) {
   'use strict';
 
 
   /**
    * The RecipientIdentityVerification model module.
    * @module model/RecipientIdentityVerification
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('inputOptions')) {
+        obj['inputOptions'] = ApiClient.convertToType(data['inputOptions'], [RecipientIdentityInputOption]);
+      }
       if (data.hasOwnProperty('workflowId')) {
         obj['workflowId'] = ApiClient.convertToType(data['workflowId'], 'String');
       }
@@ -62,6 +65,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {Array.<module:model/RecipientIdentityInputOption>} inputOptions
+   */
+  exports.prototype['inputOptions'] = undefined;
   /**
    * 
    * @member {String} workflowId

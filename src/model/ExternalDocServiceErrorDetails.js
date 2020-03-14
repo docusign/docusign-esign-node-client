@@ -30,7 +30,7 @@
   /**
    * The ExternalDocServiceErrorDetails model module.
    * @module model/ExternalDocServiceErrorDetails
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

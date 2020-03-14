@@ -30,7 +30,7 @@
   /**
    * The ContactGetResponse model module.
    * @module model/ContactGetResponse
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

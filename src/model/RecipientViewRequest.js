@@ -30,7 +30,7 @@
   /**
    * The RecipientViewRequest model module.
    * @module model/RecipientViewRequest
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**

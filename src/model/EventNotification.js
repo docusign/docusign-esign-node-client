@@ -12,25 +12,25 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EnvelopeEvent', 'model/RecipientEvent'], factory);
+    define(['ApiClient', 'model/ConnectEventData', 'model/EnvelopeEvent', 'model/RecipientEvent'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EnvelopeEvent'), require('./RecipientEvent'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectEventData'), require('./EnvelopeEvent'), require('./RecipientEvent'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EventNotification = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeEvent, root.Docusign.RecipientEvent);
+    root.Docusign.EventNotification = factory(root.Docusign.ApiClient, root.Docusign.ConnectEventData, root.Docusign.EnvelopeEvent, root.Docusign.RecipientEvent);
   }
-}(this, function(ApiClient, EnvelopeEvent, RecipientEvent) {
+}(this, function(ApiClient, ConnectEventData, EnvelopeEvent, RecipientEvent) {
   'use strict';
 
 
   /**
    * The EventNotification model module.
    * @module model/EventNotification
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -58,6 +58,9 @@
 
       if (data.hasOwnProperty('envelopeEvents')) {
         obj['envelopeEvents'] = ApiClient.convertToType(data['envelopeEvents'], [EnvelopeEvent]);
+      }
+      if (data.hasOwnProperty('eventData')) {
+        obj['eventData'] = ConnectEventData.constructFromObject(data['eventData']);
       }
       if (data.hasOwnProperty('includeCertificateOfCompletion')) {
         obj['includeCertificateOfCompletion'] = ApiClient.convertToType(data['includeCertificateOfCompletion'], 'String');
@@ -113,6 +116,10 @@
    * @member {Array.<module:model/EnvelopeEvent>} envelopeEvents
    */
   exports.prototype['envelopeEvents'] = undefined;
+  /**
+   * @member {module:model/ConnectEventData} eventData
+   */
+  exports.prototype['eventData'] = undefined;
   /**
    * When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
    * @member {String} includeCertificateOfCompletion

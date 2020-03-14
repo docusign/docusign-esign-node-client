@@ -30,7 +30,7 @@
   /**
    * The DocumentFieldsInformation model module.
    * @module model/DocumentFieldsInformation
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -63,7 +63,7 @@
   }
 
   /**
-   * The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name Ã¢â¬â A string that can be a maximum of 50 characters.  * value Ã¢â¬â A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  
+   * The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  
    * @member {Array.<module:model/NameValue>} documentFields
    */
   exports.prototype['documentFields'] = undefined;

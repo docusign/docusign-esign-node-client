@@ -12,25 +12,25 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountIdentityVerificationStep', 'model/AccountSignatureProvider'], factory);
+    define(['ApiClient', 'model/AccountIdentityInputOption', 'model/AccountIdentityVerificationStep', 'model/AccountSignatureProvider'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountIdentityVerificationStep'), require('./AccountSignatureProvider'));
+    module.exports = factory(require('../ApiClient'), require('./AccountIdentityInputOption'), require('./AccountIdentityVerificationStep'), require('./AccountSignatureProvider'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountIdentityVerificationWorkflow = factory(root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationStep, root.Docusign.AccountSignatureProvider);
+    root.Docusign.AccountIdentityVerificationWorkflow = factory(root.Docusign.ApiClient, root.Docusign.AccountIdentityInputOption, root.Docusign.AccountIdentityVerificationStep, root.Docusign.AccountSignatureProvider);
   }
-}(this, function(ApiClient, AccountIdentityVerificationStep, AccountSignatureProvider) {
+}(this, function(ApiClient, AccountIdentityInputOption, AccountIdentityVerificationStep, AccountSignatureProvider) {
   'use strict';
 
 
   /**
    * The AccountIdentityVerificationWorkflow model module.
    * @module model/AccountIdentityVerificationWorkflow
-   * @version 3.0.0
+   * @version 5.3.0-rc1
    */
 
   /**
@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('defaultName')) {
         obj['defaultName'] = ApiClient.convertToType(data['defaultName'], 'String');
       }
+      if (data.hasOwnProperty('inputOptions')) {
+        obj['inputOptions'] = ApiClient.convertToType(data['inputOptions'], [AccountIdentityInputOption]);
+      }
       if (data.hasOwnProperty('signatureProvider')) {
         obj['signatureProvider'] = AccountSignatureProvider.constructFromObject(data['signatureProvider']);
       }
@@ -87,6 +90,11 @@
    * @member {String} defaultName
    */
   exports.prototype['defaultName'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/AccountIdentityInputOption>} inputOptions
+   */
+  exports.prototype['inputOptions'] = undefined;
   /**
    * @member {module:model/AccountSignatureProvider} signatureProvider
    */
