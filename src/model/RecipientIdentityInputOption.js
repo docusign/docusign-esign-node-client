@@ -12,30 +12,30 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Province'], factory);
+    define(['ApiClient', 'model/RecipientIdentityPhoneNumber'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Province'));
+    module.exports = factory(require('../ApiClient'), require('./RecipientIdentityPhoneNumber'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Country = factory(root.Docusign.ApiClient, root.Docusign.Province);
+    root.Docusign.RecipientIdentityInputOption = factory(root.Docusign.ApiClient, root.Docusign.RecipientIdentityPhoneNumber);
   }
-}(this, function(ApiClient, Province) {
+}(this, function(ApiClient, RecipientIdentityPhoneNumber) {
   'use strict';
 
 
   /**
-   * The Country model module.
-   * @module model/Country
+   * The RecipientIdentityInputOption model module.
+   * @module model/RecipientIdentityInputOption
    * @version 4.6.0-rc1
    */
 
   /**
-   * Constructs a new <code>Country</code>.
-   * @alias module:model/Country
+   * Constructs a new <code>RecipientIdentityInputOption</code>.
+   * @alias module:model/RecipientIdentityInputOption
    * @class
    */
   var exports = function() {
@@ -45,27 +45,24 @@
   };
 
   /**
-   * Constructs a <code>Country</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>RecipientIdentityInputOption</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Country} obj Optional instance to populate.
-   * @return {module:model/Country} The populated <code>Country</code> instance.
+   * @param {module:model/RecipientIdentityInputOption} obj Optional instance to populate.
+   * @return {module:model/RecipientIdentityInputOption} The populated <code>RecipientIdentityInputOption</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('isoCode')) {
-        obj['isoCode'] = ApiClient.convertToType(data['isoCode'], 'String');
-      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('provinces')) {
-        obj['provinces'] = ApiClient.convertToType(data['provinces'], [Province]);
+      if (data.hasOwnProperty('phoneNumberList')) {
+        obj['phoneNumberList'] = ApiClient.convertToType(data['phoneNumberList'], [RecipientIdentityPhoneNumber]);
       }
-      if (data.hasOwnProperty('provinceValidated')) {
-        obj['provinceValidated'] = ApiClient.convertToType(data['provinceValidated'], 'String');
+      if (data.hasOwnProperty('valueType')) {
+        obj['valueType'] = ApiClient.convertToType(data['valueType'], 'String');
       }
     }
     return obj;
@@ -73,24 +70,19 @@
 
   /**
    * 
-   * @member {String} isoCode
-   */
-  exports.prototype['isoCode'] = undefined;
-  /**
-   * 
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
    * 
-   * @member {Array.<module:model/Province>} provinces
+   * @member {Array.<module:model/RecipientIdentityPhoneNumber>} phoneNumberList
    */
-  exports.prototype['provinces'] = undefined;
+  exports.prototype['phoneNumberList'] = undefined;
   /**
    * 
-   * @member {String} provinceValidated
+   * @member {String} valueType
    */
-  exports.prototype['provinceValidated'] = undefined;
+  exports.prototype['valueType'] = undefined;
 
 
 

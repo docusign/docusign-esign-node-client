@@ -30,7 +30,7 @@
   /**
    * The PaymentDetails model module.
    * @module model/PaymentDetails
-   * @version 3.0.0
+   * @version 4.6.0-rc1
    */
 
   /**

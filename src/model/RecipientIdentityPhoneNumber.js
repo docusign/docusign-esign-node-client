@@ -21,21 +21,21 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectFailureFilter = factory(root.Docusign.ApiClient);
+    root.Docusign.RecipientIdentityPhoneNumber = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The ConnectFailureFilter model module.
-   * @module model/ConnectFailureFilter
+   * The RecipientIdentityPhoneNumber model module.
+   * @module model/RecipientIdentityPhoneNumber
    * @version 4.6.0-rc1
    */
 
   /**
-   * Constructs a new <code>ConnectFailureFilter</code>.
-   * @alias module:model/ConnectFailureFilter
+   * Constructs a new <code>RecipientIdentityPhoneNumber</code>.
+   * @alias module:model/RecipientIdentityPhoneNumber
    * @class
    */
   var exports = function() {
@@ -45,21 +45,24 @@
   };
 
   /**
-   * Constructs a <code>ConnectFailureFilter</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>RecipientIdentityPhoneNumber</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ConnectFailureFilter} obj Optional instance to populate.
-   * @return {module:model/ConnectFailureFilter} The populated <code>ConnectFailureFilter</code> instance.
+   * @param {module:model/RecipientIdentityPhoneNumber} obj Optional instance to populate.
+   * @return {module:model/RecipientIdentityPhoneNumber} The populated <code>RecipientIdentityPhoneNumber</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('envelopeIds')) {
-        obj['envelopeIds'] = ApiClient.convertToType(data['envelopeIds'], ['String']);
+      if (data.hasOwnProperty('countryCode')) {
+        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
       }
-      if (data.hasOwnProperty('synchronous')) {
-        obj['synchronous'] = ApiClient.convertToType(data['synchronous'], 'String');
+      if (data.hasOwnProperty('extension')) {
+        obj['extension'] = ApiClient.convertToType(data['extension'], 'String');
+      }
+      if (data.hasOwnProperty('number')) {
+        obj['number'] = ApiClient.convertToType(data['number'], 'String');
       }
     }
     return obj;
@@ -67,14 +70,19 @@
 
   /**
    * 
-   * @member {Array.<String>} envelopeIds
+   * @member {String} countryCode
    */
-  exports.prototype['envelopeIds'] = undefined;
+  exports.prototype['countryCode'] = undefined;
   /**
    * 
-   * @member {String} synchronous
+   * @member {String} extension
    */
-  exports.prototype['synchronous'] = undefined;
+  exports.prototype['extension'] = undefined;
+  /**
+   * 
+   * @member {String} number
+   */
+  exports.prototype['number'] = undefined;
 
 
 
