@@ -4,22 +4,32 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 
 ## [v4.6.0] - eSignature API v2-20.1.00
 ### Changed
-- The SDK now supports version 20.1.00 of the DocuSign eSignature v2 API.
-- SDK Release Version updated.
+
+*   Added support for version v2-20.1.00 of the DocuSign eSignature API.
+*   Updated the SDK release version.
+
+### Added
+
+*   Added the new property `copyRecipientData` to envelopes. When set to **true**, the information that recipients enter is retained when you clone an envelope. For example, if you resend an envelope that was declined or voided after one or more recipients entered data, that data is retained. Note that the new account UI setting `enableEnvelopeCopyWithData` must be enabled for the account.
+*   Added `RecipientIdentityInputOption` and `inputOptions` to `RecipientIdentityVerification.js`: Reserved for DocuSign.
+
+### Deleted
+
+*   Deleted the GET methods for account seals providers, which returned the seals for an account.
 
 ## [v4.5.0] - eSignature API v2-19.4.01
 ### Changed
-- The SDK now supports version 19.4.01 of the DocuSign eSignature v2 API.
+- The SDK now supports version 19.4.01 of the DocuSign eSignature API.
 - SDK Release Version updated.
 
 ## [v4.4.0] - eSignature API v2-19.2.02
 ### Changed
-- The SDK now supports version 19.2.02 of the DocuSign eSignature v2 API.
+- The SDK now supports version 19.2.02 of the DocuSign eSignature API.
 - SDK Release Version updated.
 
 ## [v4.3.0] - eSignature API v2-19.1.02
 ### Changed
-- The SDK now supports version 19.1.02 of the DocuSign eSignature v2 API.
+- The SDK now supports version 19.1.02 of the DocuSign eSignature API.
 - SDK Release Version updated.
 ### Added
 - Cache-control and Pragma headers to the oAuth calls. (DCM-2244)
@@ -30,7 +40,7 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 ### Fixed
 - A bug where API response for 'moveEnvelopes' was improperly documented as a non-undefined value. (DCM-3085)
 - A bug where dateTabs and numberTabs were not being able to be initialized by the docusign.Tabs object. (DCM-3226)
- 
+
 ##[v4.2.2] eSignature API v18.4.02
 ### Added
 - Support for the **latest DocuSign API** (18.4.02.00).
@@ -63,23 +73,23 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 
 ## [v4.0.2] - eSignature API v18.1.02 - 7/3/2018
 ### Changed
-- All SDK methods have been updated such that the `opts` parameter may now contain the callback, making the other opts parameters optional, and it has been renamed `optsOrCallback`. 
+- All SDK methods have been updated such that the `opts` parameter may now contain the callback, making the other opts parameters optional, and it has been renamed `optsOrCallback`.
 This resolves the breaking change for applications upgrading from version 3.X.X to 4.X.X.
 - The OAuth authorization code grant and implicit grant code examples in the readme.md file have been updated to use the addDefaultHeader method. Each API client needs this header to access DocuSign APIs.
- 
+
 ## [4.0.1] - 2018-06-25
 ### Fixed
 - Issues [`#101`](https://github.com/docusign/DocuSign-Node-Client/issues/101) and [`#66`](https://github.com/docusign/DocuSign-Node-Client/issues/66)
 - listTabs now maps to an array of List instead of array of Array
- 
+
 ## [4.0.0] - 2018-06-06
 ### BREAKING
-- This update has some breaking changes as certain api calls no longer accept query parameters. 
+- This update has some breaking changes as certain api calls no longer accept query parameters.
 - Due to this, their respective SDK method signatures of changed
 For example:
-  - EnvelopesApi.listDocuments(accountId, envelopeId, opts, callback) 
+  - EnvelopesApi.listDocuments(accountId, envelopeId, opts, callback)
   - has changed to:
-  - EnvelopesApi.listDocuments(accountId, envelopeId, callback) 
+  - EnvelopesApi.listDocuments(accountId, envelopeId, callback)
 
 ### Changed
 - Updated the package with the latest API release.
@@ -92,7 +102,7 @@ For example:
 ## [3.2.0] - 2017-08-01
 ### Added
 - Support for DocuSign JWT OAuth for service integration (2-legged authentication)
- 
+
 ## [3.1.0] - 2017-06-17
 ### Added
 - Support for DocuSign OAuth

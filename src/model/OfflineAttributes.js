@@ -30,7 +30,7 @@
   /**
    * The OfflineAttributes model module.
    * @module model/OfflineAttributes
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

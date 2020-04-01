@@ -30,7 +30,7 @@
   /**
    * The ContactPhoneNumber model module.
    * @module model/ContactPhoneNumber
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

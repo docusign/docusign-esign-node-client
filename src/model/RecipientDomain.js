@@ -30,7 +30,7 @@
   /**
    * The RecipientDomain model module.
    * @module model/RecipientDomain
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

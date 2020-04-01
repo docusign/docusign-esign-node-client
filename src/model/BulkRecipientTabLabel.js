@@ -30,7 +30,7 @@
   /**
    * The BulkRecipientTabLabel model module.
    * @module model/BulkRecipientTabLabel
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

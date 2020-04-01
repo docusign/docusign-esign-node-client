@@ -30,7 +30,7 @@
   /**
    * The BillingPlansResponse model module.
    * @module model/BillingPlansResponse
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

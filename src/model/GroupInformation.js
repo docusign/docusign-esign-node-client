@@ -30,7 +30,7 @@
   /**
    * The GroupInformation model module.
    * @module model/GroupInformation
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

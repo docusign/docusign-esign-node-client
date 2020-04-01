@@ -30,7 +30,7 @@
   /**
    * The TemplateTabs model module.
    * @module model/TemplateTabs
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

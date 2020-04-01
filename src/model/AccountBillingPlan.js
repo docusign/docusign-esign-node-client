@@ -30,7 +30,7 @@
   /**
    * The AccountBillingPlan model module.
    * @module model/AccountBillingPlan
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

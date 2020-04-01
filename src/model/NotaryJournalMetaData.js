@@ -30,7 +30,7 @@
   /**
    * The NotaryJournalMetaData model module.
    * @module model/NotaryJournalMetaData
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

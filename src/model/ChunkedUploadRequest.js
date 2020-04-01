@@ -30,7 +30,7 @@
   /**
    * The ChunkedUploadRequest model module.
    * @module model/ChunkedUploadRequest
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

@@ -29,7 +29,7 @@
   /**
    * Organizations service.
    * @module api/OrganizationsApi
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**
@@ -110,63 +110,6 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAccountSettingsExport operation. If none specified a Promise will be returned.
-     * @callback module:api/OrganizationsApi~getAccountSettingsExportCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Retrieves an account settings comparison.
-     * @param {String} organizationId 
-     * @param {String} resultId 
-     * @param {module:api/OrganizationsApi~getAccountSettingsExportCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getAccountSettingsExport = function(organizationId, resultId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId == undefined || organizationId == null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getAccountSettingsExport");
-      }
-
-      // verify the required parameter 'resultId' is set
-      if (resultId == undefined || resultId == null) {
-        throw new Error("Missing the required parameter 'resultId' when calling getAccountSettingsExport");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'resultId': resultId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v2/organization_exports/{organizationId}/account_settings/{resultId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
      * (Optional)Callback function to receive the result of the getReport operation. If none specified a Promise will be returned.
      * @callback module:api/OrganizationsApi~getReportCallback
      * @param {String} error Error message, if any.
@@ -218,63 +161,6 @@
 
       return this.apiClient.callApi(
         '/v2/organization_reporting/{organizationId}/reports/{reportCorrelationId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional)Callback function to receive the result of the getUserListExport operation. If none specified a Promise will be returned.
-     * @callback module:api/OrganizationsApi~getUserListExportCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Retrieves UserList Export Results data.
-     * @param {String} organizationId 
-     * @param {String} resultId 
-     * @param {module:api/OrganizationsApi~getUserListExportCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getUserListExport = function(organizationId, resultId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId == undefined || organizationId == null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getUserListExport");
-      }
-
-      // verify the required parameter 'resultId' is set
-      if (resultId == undefined || resultId == null) {
-        throw new Error("Missing the required parameter 'resultId' when calling getUserListExport");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'resultId': resultId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v2/organization_exports/{organizationId}/user_list/{resultId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

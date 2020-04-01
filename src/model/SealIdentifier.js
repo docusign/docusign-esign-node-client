@@ -30,7 +30,7 @@
   /**
    * The SealIdentifier model module.
    * @module model/SealIdentifier
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

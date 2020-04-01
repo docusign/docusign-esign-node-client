@@ -30,7 +30,7 @@
   /**
    * The CustomField model module.
    * @module model/CustomField
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**
