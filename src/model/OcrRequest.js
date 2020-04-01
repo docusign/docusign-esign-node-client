@@ -30,7 +30,7 @@
   /**
    * The OcrRequest model module.
    * @module model/OcrRequest
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

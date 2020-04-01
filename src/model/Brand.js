@@ -30,7 +30,7 @@
   /**
    * The Brand model module.
    * @module model/Brand
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

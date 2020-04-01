@@ -30,7 +30,7 @@
   /**
    * The View model module.
    * @module model/View
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

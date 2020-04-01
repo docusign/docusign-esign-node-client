@@ -30,7 +30,7 @@
   /**
    * The InitialHere model module.
    * @module model/InitialHere
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

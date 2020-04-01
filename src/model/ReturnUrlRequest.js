@@ -30,7 +30,7 @@
   /**
    * The ReturnUrlRequest model module.
    * @module model/ReturnUrlRequest
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

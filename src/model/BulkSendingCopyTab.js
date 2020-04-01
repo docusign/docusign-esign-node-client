@@ -30,7 +30,7 @@
   /**
    * The BulkSendingCopyTab model module.
    * @module model/BulkSendingCopyTab
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

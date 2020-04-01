@@ -30,7 +30,7 @@
   /**
    * The BrandsResponse model module.
    * @module model/BrandsResponse
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

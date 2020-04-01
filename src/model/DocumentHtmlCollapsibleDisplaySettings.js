@@ -30,7 +30,7 @@
   /**
    * The DocumentHtmlCollapsibleDisplaySettings model module.
    * @module model/DocumentHtmlCollapsibleDisplaySettings
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

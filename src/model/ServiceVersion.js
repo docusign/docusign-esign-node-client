@@ -30,7 +30,7 @@
   /**
    * The ServiceVersion model module.
    * @module model/ServiceVersion
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

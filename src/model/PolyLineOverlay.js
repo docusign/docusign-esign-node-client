@@ -30,7 +30,7 @@
   /**
    * The PolyLineOverlay model module.
    * @module model/PolyLineOverlay
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

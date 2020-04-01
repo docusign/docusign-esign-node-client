@@ -30,7 +30,7 @@
   /**
    * The MobileNotifierConfiguration model module.
    * @module model/MobileNotifierConfiguration
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The SignerAttachment model module.
    * @module model/SignerAttachment
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

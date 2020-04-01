@@ -30,7 +30,7 @@
   /**
    * The Witness model module.
    * @module model/Witness
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

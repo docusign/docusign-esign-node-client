@@ -30,7 +30,7 @@
   /**
    * The DocumentHtmlDisplaySettings model module.
    * @module model/DocumentHtmlDisplaySettings
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

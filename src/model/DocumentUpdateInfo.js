@@ -30,7 +30,7 @@
   /**
    * The DocumentUpdateInfo model module.
    * @module model/DocumentUpdateInfo
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

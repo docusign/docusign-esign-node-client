@@ -30,7 +30,7 @@
   /**
    * The BillingPlanPreview model module.
    * @module model/BillingPlanPreview
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The Attachment model module.
    * @module model/Attachment
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

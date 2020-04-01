@@ -30,7 +30,7 @@
   /**
    * The AccountInformation model module.
    * @module model/AccountInformation
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

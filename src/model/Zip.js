@@ -30,7 +30,7 @@
   /**
    * The Zip model module.
    * @module model/Zip
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The ConnectLogs model module.
    * @module model/ConnectLogs
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

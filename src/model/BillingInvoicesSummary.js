@@ -30,7 +30,7 @@
   /**
    * The BillingInvoicesSummary model module.
    * @module model/BillingInvoicesSummary
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

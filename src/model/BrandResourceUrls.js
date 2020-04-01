@@ -30,7 +30,7 @@
   /**
    * The BrandResourceUrls model module.
    * @module model/BrandResourceUrls
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**
