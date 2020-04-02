@@ -30,7 +30,7 @@
   /**
    * The Text model module.
    * @module model/Text
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

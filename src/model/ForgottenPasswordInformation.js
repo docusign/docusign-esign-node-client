@@ -30,7 +30,7 @@
   /**
    * The ForgottenPasswordInformation model module.
    * @module model/ForgottenPasswordInformation
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

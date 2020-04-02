@@ -30,7 +30,7 @@
   /**
    * The AuthenticationMethod model module.
    * @module model/AuthenticationMethod
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The CompositeTemplate model module.
    * @module model/CompositeTemplate
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

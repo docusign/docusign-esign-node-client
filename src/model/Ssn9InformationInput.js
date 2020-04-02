@@ -30,7 +30,7 @@
   /**
    * The Ssn9InformationInput model module.
    * @module model/Ssn9InformationInput
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

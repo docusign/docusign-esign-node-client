@@ -30,7 +30,7 @@
   /**
    * The FolderItem model module.
    * @module model/FolderItem
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

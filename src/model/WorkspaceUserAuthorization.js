@@ -30,7 +30,7 @@
   /**
    * The WorkspaceUserAuthorization model module.
    * @module model/WorkspaceUserAuthorization
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

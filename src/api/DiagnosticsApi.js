@@ -29,7 +29,7 @@
   /**
    * Diagnostics service.
    * @module api/DiagnosticsApi
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

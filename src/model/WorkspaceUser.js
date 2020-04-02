@@ -30,7 +30,7 @@
   /**
    * The WorkspaceUser model module.
    * @module model/WorkspaceUser
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

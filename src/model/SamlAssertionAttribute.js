@@ -30,7 +30,7 @@
   /**
    * The SamlAssertionAttribute model module.
    * @module model/SamlAssertionAttribute
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

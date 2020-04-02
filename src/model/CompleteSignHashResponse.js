@@ -30,7 +30,7 @@
   /**
    * The CompleteSignHashResponse model module.
    * @module model/CompleteSignHashResponse
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The EnvelopeDocument model module.
    * @module model/EnvelopeDocument
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

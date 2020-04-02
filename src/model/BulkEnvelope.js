@@ -30,7 +30,7 @@
   /**
    * The BulkEnvelope model module.
    * @module model/BulkEnvelope
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

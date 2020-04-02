@@ -30,7 +30,7 @@
   /**
    * The Intermediary model module.
    * @module model/Intermediary
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

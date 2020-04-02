@@ -30,7 +30,7 @@
   /**
    * The ChunkedUploadPart model module.
    * @module model/ChunkedUploadPart
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**
