@@ -30,7 +30,7 @@
   /**
    * The CustomSettingsInformation model module.
    * @module model/CustomSettingsInformation
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

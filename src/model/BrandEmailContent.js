@@ -30,7 +30,7 @@
   /**
    * The BrandEmailContent model module.
    * @module model/BrandEmailContent
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

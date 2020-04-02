@@ -30,7 +30,7 @@
   /**
    * The CompleteSignRequest model module.
    * @module model/CompleteSignRequest
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

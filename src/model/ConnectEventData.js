@@ -30,7 +30,7 @@
   /**
    * The ConnectEventData model module.
    * @module model/ConnectEventData
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

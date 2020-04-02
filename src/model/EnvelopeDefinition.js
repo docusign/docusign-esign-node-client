@@ -30,7 +30,7 @@
   /**
    * The EnvelopeDefinition model module.
    * @module model/EnvelopeDefinition
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

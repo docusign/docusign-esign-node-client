@@ -30,7 +30,7 @@
   /**
    * The InPersonSigner model module.
    * @module model/InPersonSigner
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

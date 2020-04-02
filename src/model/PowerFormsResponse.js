@@ -30,7 +30,7 @@
   /**
    * The PowerFormsResponse model module.
    * @module model/PowerFormsResponse
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

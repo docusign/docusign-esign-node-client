@@ -30,7 +30,7 @@
   /**
    * The Note model module.
    * @module model/Note
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

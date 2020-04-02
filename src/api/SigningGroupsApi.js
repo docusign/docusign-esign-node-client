@@ -29,7 +29,7 @@
   /**
    * SigningGroups service.
    * @module api/SigningGroupsApi
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

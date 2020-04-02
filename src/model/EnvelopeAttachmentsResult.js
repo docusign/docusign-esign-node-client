@@ -30,7 +30,7 @@
   /**
    * The EnvelopeAttachmentsResult model module.
    * @module model/EnvelopeAttachmentsResult
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

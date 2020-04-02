@@ -30,7 +30,7 @@
   /**
    * The SignatureType model module.
    * @module model/SignatureType
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

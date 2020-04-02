@@ -30,7 +30,7 @@
   /**
    * The TemplateDocumentVisibilityList model module.
    * @module model/TemplateDocumentVisibilityList
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

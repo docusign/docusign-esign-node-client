@@ -29,7 +29,7 @@
   /**
    * CloudStorage service.
    * @module api/CloudStorageApi
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

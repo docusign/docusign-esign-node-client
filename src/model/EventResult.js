@@ -30,7 +30,7 @@
   /**
    * The EventResult model module.
    * @module model/EventResult
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

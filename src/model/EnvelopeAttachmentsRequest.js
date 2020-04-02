@@ -30,7 +30,7 @@
   /**
    * The EnvelopeAttachmentsRequest model module.
    * @module model/EnvelopeAttachmentsRequest
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

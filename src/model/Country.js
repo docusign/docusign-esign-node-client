@@ -30,7 +30,7 @@
   /**
    * The Country model module.
    * @module model/Country
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

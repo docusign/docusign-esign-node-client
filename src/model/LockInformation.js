@@ -30,7 +30,7 @@
   /**
    * The LockInformation model module.
    * @module model/LockInformation
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

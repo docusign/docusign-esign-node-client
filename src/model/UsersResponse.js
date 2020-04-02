@@ -30,7 +30,7 @@
   /**
    * The UsersResponse model module.
    * @module model/UsersResponse
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

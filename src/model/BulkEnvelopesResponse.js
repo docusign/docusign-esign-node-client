@@ -30,7 +30,7 @@
   /**
    * The BulkEnvelopesResponse model module.
    * @module model/BulkEnvelopesResponse
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

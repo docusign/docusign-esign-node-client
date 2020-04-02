@@ -30,7 +30,7 @@
   /**
    * The FoldersRequest model module.
    * @module model/FoldersRequest
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

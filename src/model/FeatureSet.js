@@ -30,7 +30,7 @@
   /**
    * The FeatureSet model module.
    * @module model/FeatureSet
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

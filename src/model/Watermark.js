@@ -30,7 +30,7 @@
   /**
    * The Watermark model module.
    * @module model/Watermark
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

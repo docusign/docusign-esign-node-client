@@ -30,7 +30,7 @@
   /**
    * The Editor model module.
    * @module model/Editor
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

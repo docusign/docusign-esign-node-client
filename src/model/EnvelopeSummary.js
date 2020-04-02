@@ -30,7 +30,7 @@
   /**
    * The EnvelopeSummary model module.
    * @module model/EnvelopeSummary
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

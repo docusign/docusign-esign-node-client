@@ -30,7 +30,7 @@
   /**
    * The ConnectUserObject model module.
    * @module model/ConnectUserObject
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

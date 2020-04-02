@@ -30,7 +30,7 @@
   /**
    * The Reminders model module.
    * @module model/Reminders
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**

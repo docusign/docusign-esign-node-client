@@ -30,7 +30,7 @@
   /**
    * The EmailAddress model module.
    * @module model/EmailAddress
-   * @version 5.3.0-rc1
+   * @version 5.3.0
    */
 
   /**
