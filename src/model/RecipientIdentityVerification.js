@@ -30,7 +30,7 @@
   /**
    * The RecipientIdentityVerification model module.
    * @module model/RecipientIdentityVerification
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

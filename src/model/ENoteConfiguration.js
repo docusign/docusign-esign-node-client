@@ -30,7 +30,7 @@
   /**
    * The ENoteConfiguration model module.
    * @module model/ENoteConfiguration
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

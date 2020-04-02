@@ -1,6 +1,6 @@
 {
   "name": "docusign-esign",
-  "version": "4.6.0-rc1",
+  "version": "4.6.0",
   "description": "DocuSign Node.js API client.",
   "license": "MIT",
   "main": "src/index.js",
@@ -54,6 +54,7 @@
     "csv-stringify": "^1.0.0",
     "jsonwebtoken": "8.2.0",
     "passport-oauth2": "1.4.0",
+    "safe-buffer": "^5.1.2",
     "superagent": "3.8.2"
   },
   "devDependencies": {

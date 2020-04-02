@@ -30,7 +30,7 @@
   /**
    * The UserSharedItem model module.
    * @module model/UserSharedItem
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

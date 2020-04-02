@@ -30,7 +30,7 @@
   /**
    * The EnvelopeIdsRequest model module.
    * @module model/EnvelopeIdsRequest
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

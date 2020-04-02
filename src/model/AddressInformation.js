@@ -30,7 +30,7 @@
   /**
    * The AddressInformation model module.
    * @module model/AddressInformation
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

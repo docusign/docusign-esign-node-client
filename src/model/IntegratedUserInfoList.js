@@ -30,7 +30,7 @@
   /**
    * The IntegratedUserInfoList model module.
    * @module model/IntegratedUserInfoList
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

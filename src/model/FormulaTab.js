@@ -30,7 +30,7 @@
   /**
    * The FormulaTab model module.
    * @module model/FormulaTab
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

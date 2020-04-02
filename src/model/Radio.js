@@ -30,7 +30,7 @@
   /**
    * The Radio model module.
    * @module model/Radio
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The DocumentVisibilityList model module.
    * @module model/DocumentVisibilityList
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

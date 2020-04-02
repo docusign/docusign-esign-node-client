@@ -30,7 +30,7 @@
   /**
    * The Seal model module.
    * @module model/Seal
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The IdCheckInformationInput model module.
    * @module model/IdCheckInformationInput
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

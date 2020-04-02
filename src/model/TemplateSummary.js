@@ -30,7 +30,7 @@
   /**
    * The TemplateSummary model module.
    * @module model/TemplateSummary
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

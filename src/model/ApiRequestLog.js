@@ -30,7 +30,7 @@
   /**
    * The ApiRequestLog model module.
    * @module model/ApiRequestLog
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

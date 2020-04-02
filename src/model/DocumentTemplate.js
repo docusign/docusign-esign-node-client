@@ -30,7 +30,7 @@
   /**
    * The DocumentTemplate model module.
    * @module model/DocumentTemplate
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,7 @@
   /**
    * The TabMetadata model module.
    * @module model/TabMetadata
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

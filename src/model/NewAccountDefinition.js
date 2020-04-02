@@ -30,7 +30,7 @@
   /**
    * The NewAccountDefinition model module.
    * @module model/NewAccountDefinition
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

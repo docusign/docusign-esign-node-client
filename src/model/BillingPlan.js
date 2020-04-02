@@ -30,7 +30,7 @@
   /**
    * The BillingPlan model module.
    * @module model/BillingPlan
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

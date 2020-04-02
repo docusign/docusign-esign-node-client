@@ -30,7 +30,7 @@
   /**
    * The RecipientIdentityInputOption model module.
    * @module model/RecipientIdentityInputOption
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

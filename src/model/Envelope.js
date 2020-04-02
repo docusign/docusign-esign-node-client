@@ -30,7 +30,7 @@
   /**
    * The Envelope model module.
    * @module model/Envelope
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**

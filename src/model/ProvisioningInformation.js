@@ -30,7 +30,7 @@
   /**
    * The ProvisioningInformation model module.
    * @module model/ProvisioningInformation
-   * @version 4.6.0-rc1
+   * @version 4.6.0
    */
 
   /**
