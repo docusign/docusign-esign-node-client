@@ -5,17 +5,17 @@ See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for
 ## [v4.6.0] - eSignature API v2-20.1.00
 ### Changed
 
-*   Added support for version v2-20.1.00 of the DocuSign eSignature API.
-*   Updated the SDK release version.
+- Added support for version v2-20.1.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
 
 ### Added
 
-*   Added the new property `copyRecipientData` to envelopes. When set to **true**, the information that recipients enter is retained when you clone an envelope. For example, if you resend an envelope that was declined or voided after one or more recipients entered data, that data is retained. Note that the new account UI setting `enableEnvelopeCopyWithData` must be enabled for the account.
-*   Added `RecipientIdentityInputOption` and `inputOptions` to `RecipientIdentityVerification.js`: Reserved for DocuSign.
+- Added the new property `copyRecipientData` to envelopes. When set to **true**, the information that recipients enter is retained when you clone an envelope. For example, if you resend an envelope that was declined or voided after one or more recipients entered data, that data is retained. Note that the new account UI setting `enableEnvelopeCopyWithData` must be enabled for the account.
+- Added `RecipientIdentityInputOption` and `inputOptions` to `RecipientIdentityVerification.js`: Reserved for DocuSign.
 
 ### Deleted
 
-*   Deleted the GET methods for account seals providers, which returned the seals for an account.
+- Deleted the GET methods for account seals providers, which returned the seals for an account.
 
 ## [v4.5.0] - eSignature API v2-19.4.01
 ### Changed
