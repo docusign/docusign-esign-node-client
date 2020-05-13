@@ -8,29 +8,28 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/PropertyMetadata', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientPhoneAuthentication', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/PropertyMetadata', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./PropertyMetadata'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./PropertyMetadata'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.NotaryHost = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.PropertyMetadata, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
+    root.Docusign.NotaryHost = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.PropertyMetadata, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, PropertyMetadata, RecipientAttachment, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSMSAuthentication, SocialAuthentication, Tabs, UserInfo) {
+}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, PropertyMetadata, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientSMSAuthentication, SocialAuthentication, Tabs, UserInfo) {
   'use strict';
 
 
   /**
    * The NotaryHost model module.
    * @module model/NotaryHost
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -132,6 +131,9 @@
       }
       if (data.hasOwnProperty('idCheckInformationInput')) {
         obj['idCheckInformationInput'] = IdCheckInformationInput.constructFromObject(data['idCheckInformationInput']);
+      }
+      if (data.hasOwnProperty('identityVerification')) {
+        obj['identityVerification'] = RecipientIdentityVerification.constructFromObject(data['identityVerification']);
       }
       if (data.hasOwnProperty('inheritEmailNotificationConfiguration')) {
         obj['inheritEmailNotificationConfiguration'] = ApiClient.convertToType(data['inheritEmailNotificationConfiguration'], 'String');
@@ -368,6 +370,10 @@
    */
   exports.prototype['idCheckInformationInput'] = undefined;
   /**
+   * @member {module:model/RecipientIdentityVerification} identityVerification
+   */
+  exports.prototype['identityVerification'] = undefined;
+  /**
    * When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account. 
    * @member {String} inheritEmailNotificationConfiguration
    */
@@ -542,5 +548,3 @@
 
   return exports;
 }));
-
-

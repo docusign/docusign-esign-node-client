@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30,7 +29,7 @@
   /**
    * The UserAccountManagementGranularInformation model module.
    * @module model/UserAccountManagementGranularInformation
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -96,6 +95,9 @@
       }
       if (data.hasOwnProperty('canManageUsersMetadata')) {
         obj['canManageUsersMetadata'] = SettingsMetadata.constructFromObject(data['canManageUsersMetadata']);
+      }
+      if (data.hasOwnProperty('canViewUsers')) {
+        obj['canViewUsers'] = ApiClient.convertToType(data['canViewUsers'], 'String');
       }
     }
     return obj;
@@ -164,10 +166,13 @@
    * @member {module:model/SettingsMetadata} canManageUsersMetadata
    */
   exports.prototype['canManageUsersMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canViewUsers
+   */
+  exports.prototype['canViewUsers'] = undefined;
 
 
 
   return exports;
 }));
-
-

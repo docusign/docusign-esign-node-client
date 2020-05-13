@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30,7 +29,7 @@
   /**
    * The PowerFormRecipient model module.
    * @module model/PowerFormRecipient
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -168,5 +167,3 @@
 
   return exports;
 }));
-
-

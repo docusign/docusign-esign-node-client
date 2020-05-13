@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30,7 +29,7 @@
   /**
    * The TabMetadata model module.
    * @module model/TabMetadata
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -81,6 +80,9 @@
       }
       if (data.hasOwnProperty('bold')) {
         obj['bold'] = ApiClient.convertToType(data['bold'], 'String');
+      }
+      if (data.hasOwnProperty('collaborative')) {
+        obj['collaborative'] = ApiClient.convertToType(data['collaborative'], 'String');
       }
       if (data.hasOwnProperty('concealValueOnDocument')) {
         obj['concealValueOnDocument'] = ApiClient.convertToType(data['concealValueOnDocument'], 'String');
@@ -239,6 +241,11 @@
    * @member {String} bold
    */
   exports.prototype['bold'] = undefined;
+  /**
+   * 
+   * @member {String} collaborative
+   */
+  exports.prototype['collaborative'] = undefined;
   /**
    * When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
    * @member {String} concealValueOnDocument
@@ -422,5 +429,3 @@
 
   return exports;
 }));
-
-

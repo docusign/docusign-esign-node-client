@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30,7 +29,7 @@
   /**
    * The RecipientViewRequest model module.
    * @module model/RecipientViewRequest
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -69,6 +68,12 @@
       }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
+      if (data.hasOwnProperty('frameAncestors')) {
+        obj['frameAncestors'] = ApiClient.convertToType(data['frameAncestors'], ['String']);
+      }
+      if (data.hasOwnProperty('messageOrigins')) {
+        obj['messageOrigins'] = ApiClient.convertToType(data['messageOrigins'], ['String']);
       }
       if (data.hasOwnProperty('pingFrequency')) {
         obj['pingFrequency'] = ApiClient.convertToType(data['pingFrequency'], 'String');
@@ -127,6 +132,16 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * 
+   * @member {Array.<String>} frameAncestors
+   */
+  exports.prototype['frameAncestors'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} messageOrigins
+   */
+  exports.prototype['messageOrigins'] = undefined;
+  /**
    * Only used if pingUrl is specified. This is the interval, in seconds, between pings on the pingUrl.  The default is 300 seconds. Valid values are 60-1200 seconds.
    * @member {String} pingFrequency
    */
@@ -176,5 +191,3 @@
 
   return exports;
 }));
-
-

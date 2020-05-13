@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30,7 +29,7 @@
   /**
    * The Tabs model module.
    * @module model/Tabs
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -104,7 +103,7 @@
         obj['lastNameTabs'] = ApiClient.convertToType(data['lastNameTabs'], [LastName]);
       }
       if (data.hasOwnProperty('listTabs')) {
-        obj['listTabs'] = ApiClient.convertToType(data['listTabs'], [List]);
+        obj['listTabs'] = ApiClient.convertToType(data['listTabs'], [Array]);
       }
       if (data.hasOwnProperty('notarizeTabs')) {
         obj['notarizeTabs'] = ApiClient.convertToType(data['notarizeTabs'], [Notarize]);
@@ -234,7 +233,7 @@
   exports.prototype['lastNameTabs'] = undefined;
   /**
    * Specify this tag to give your recipient a list of options, presented as a drop-down list, from which they can select.
-   * @member {Array.<module:model/List>} listTabs
+   * @member {Array.<module:model/Array>} listTabs
    */
   exports.prototype['listTabs'] = undefined;
   /**
@@ -312,5 +311,3 @@
 
   return exports;
 }));
-
-

@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30,7 +29,7 @@
   /**
    * The PaymentGatewayAccount model module.
    * @module model/PaymentGatewayAccount
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -93,6 +92,9 @@
       }
       if (data.hasOwnProperty('supportedPaymentMethodsWithOptions')) {
         obj['supportedPaymentMethodsWithOptions'] = ApiClient.convertToType(data['supportedPaymentMethodsWithOptions'], [PaymentMethodWithOptions]);
+      }
+      if (data.hasOwnProperty('zeroDecimalCurrencies')) {
+        obj['zeroDecimalCurrencies'] = ApiClient.convertToType(data['zeroDecimalCurrencies'], ['String']);
       }
     }
     return obj;
@@ -161,10 +163,13 @@
    * @member {Array.<module:model/PaymentMethodWithOptions>} supportedPaymentMethodsWithOptions
    */
   exports.prototype['supportedPaymentMethodsWithOptions'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} zeroDecimalCurrencies
+   */
+  exports.prototype['zeroDecimalCurrencies'] = undefined;
 
 
 
   return exports;
 }));
-
-

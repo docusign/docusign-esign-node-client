@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -30,7 +29,7 @@
   /**
    * The AddressInformation model module.
    * @module model/AddressInformation
-   * @version 5.3.0
+   * @version 5.4.0-rc1
    */
 
   /**
@@ -80,6 +79,9 @@
       if (data.hasOwnProperty('stateOrProvince')) {
         obj['stateOrProvince'] = ApiClient.convertToType(data['stateOrProvince'], 'String');
       }
+      if (data.hasOwnProperty('zipPlus4')) {
+        obj['zipPlus4'] = ApiClient.convertToType(data['zipPlus4'], 'String');
+      }
     }
     return obj;
   }
@@ -124,10 +126,13 @@
    * @member {String} stateOrProvince
    */
   exports.prototype['stateOrProvince'] = undefined;
+  /**
+   * 
+   * @member {String} zipPlus4
+   */
+  exports.prototype['zipPlus4'] = undefined;
 
 
 
   return exports;
 }));
-
-
