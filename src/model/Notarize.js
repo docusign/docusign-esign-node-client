@@ -30,7 +30,6 @@
   /**
    * The Notarize model module.
    * @module model/Notarize
-   * @version 4.6.0
    */
 
   /**

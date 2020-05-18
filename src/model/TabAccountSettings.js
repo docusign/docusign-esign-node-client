@@ -30,7 +30,6 @@
   /**
    * The TabAccountSettings model module.
    * @module model/TabAccountSettings
-   * @version 4.6.0
    */
 
   /**

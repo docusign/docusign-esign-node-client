@@ -30,7 +30,6 @@
   /**
    * The CarbonCopy model module.
    * @module model/CarbonCopy
-   * @version 4.6.0
    */
 
   /**

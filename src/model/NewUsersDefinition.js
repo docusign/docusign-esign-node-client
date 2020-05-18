@@ -30,7 +30,6 @@
   /**
    * The NewUsersDefinition model module.
    * @module model/NewUsersDefinition
-   * @version 4.6.0
    */
 
   /**

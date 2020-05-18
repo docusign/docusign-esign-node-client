@@ -30,7 +30,6 @@
   /**
    * The AccountAddress model module.
    * @module model/AccountAddress
-   * @version 4.6.0
    */
 
   /**

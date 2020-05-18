@@ -30,7 +30,6 @@
   /**
    * The PowerFormFormDataEnvelope model module.
    * @module model/PowerFormFormDataEnvelope
-   * @version 4.6.0
    */
 
   /**

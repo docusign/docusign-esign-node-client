@@ -29,7 +29,6 @@
   /**
    * Groups service.
    * @module api/GroupsApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createGroups operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~createGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
@@ -82,7 +81,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createGroups");
       }
 
@@ -103,7 +102,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = GroupInformation;
@@ -116,7 +115,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteBrands operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~deleteBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
@@ -144,12 +143,12 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = optsOrCallback['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBrands");
       }
 
       // verify the required parameter 'groupId' is set
-      if (groupId == undefined || groupId == null) {
+      if (groupId === undefined || groupId === null) {
         throw new Error("Missing the required parameter 'groupId' when calling deleteBrands");
       }
 
@@ -171,7 +170,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandsResponse;
@@ -184,7 +183,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteGroupUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteGroupUsers operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~deleteGroupUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
@@ -213,12 +212,12 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = optsOrCallback['userInfoList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteGroupUsers");
       }
 
       // verify the required parameter 'groupId' is set
-      if (groupId == undefined || groupId == null) {
+      if (groupId === undefined || groupId === null) {
         throw new Error("Missing the required parameter 'groupId' when calling deleteGroupUsers");
       }
 
@@ -240,7 +239,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UsersResponse;
@@ -253,7 +252,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteGroups operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~deleteGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
@@ -280,7 +279,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteGroups");
       }
 
@@ -301,7 +300,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = GroupInformation;
@@ -314,7 +313,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBrands operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~getBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
@@ -333,12 +332,12 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBrands");
       }
 
       // verify the required parameter 'groupId' is set
-      if (groupId == undefined || groupId == null) {
+      if (groupId === undefined || groupId === null) {
         throw new Error("Missing the required parameter 'groupId' when calling getBrands");
       }
 
@@ -360,7 +359,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandsResponse;
@@ -373,7 +372,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listGroupUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listGroupUsers operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~listGroupUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
@@ -402,12 +401,12 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listGroupUsers");
       }
 
       // verify the required parameter 'groupId' is set
-      if (groupId == undefined || groupId == null) {
+      if (groupId === undefined || groupId === null) {
         throw new Error("Missing the required parameter 'groupId' when calling listGroupUsers");
       }
 
@@ -431,7 +430,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UsersResponse;
@@ -444,7 +443,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listGroups operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~listGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
@@ -474,7 +473,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listGroups");
       }
 
@@ -499,7 +498,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = GroupInformation;
@@ -512,7 +511,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateBrands operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~updateBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
@@ -540,12 +539,12 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = optsOrCallback['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateBrands");
       }
 
       // verify the required parameter 'groupId' is set
-      if (groupId == undefined || groupId == null) {
+      if (groupId === undefined || groupId === null) {
         throw new Error("Missing the required parameter 'groupId' when calling updateBrands");
       }
 
@@ -567,7 +566,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandsResponse;
@@ -580,7 +579,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateGroupUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateGroupUsers operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~updateGroupUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
@@ -608,12 +607,12 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = optsOrCallback['userInfoList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateGroupUsers");
       }
 
       // verify the required parameter 'groupId' is set
-      if (groupId == undefined || groupId == null) {
+      if (groupId === undefined || groupId === null) {
         throw new Error("Missing the required parameter 'groupId' when calling updateGroupUsers");
       }
 
@@ -635,7 +634,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UsersResponse;
@@ -648,7 +647,7 @@ Groups can be used to help manage users by associating users with a group. You c
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateGroups operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateGroups operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~updateGroupsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
@@ -675,7 +674,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateGroups");
       }
 
@@ -696,7 +695,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = GroupInformation;

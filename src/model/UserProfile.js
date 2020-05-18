@@ -30,7 +30,6 @@
   /**
    * The UserProfile model module.
    * @module model/UserProfile
-   * @version 4.6.0
    */
 
   /**

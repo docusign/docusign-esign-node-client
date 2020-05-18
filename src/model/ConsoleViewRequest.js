@@ -30,7 +30,6 @@
   /**
    * The ConsoleViewRequest model module.
    * @module model/ConsoleViewRequest
-   * @version 4.6.0
    */
 
   /**

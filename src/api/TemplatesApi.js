@@ -29,7 +29,6 @@
   /**
    * Templates service.
    * @module api/TemplatesApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -81,12 +80,12 @@
       var postBody = optsOrCallback['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createCustomFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createCustomFields");
       }
 
@@ -108,7 +107,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -121,7 +120,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -150,17 +149,17 @@
       var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createDocumentFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentFields");
       }
 
@@ -183,7 +182,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -196,7 +195,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEditView operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEditView operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createEditViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -223,12 +222,12 @@
       var postBody = optsOrCallback['returnUrlRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEditView");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createEditView");
       }
 
@@ -250,7 +249,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -263,7 +262,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -293,12 +292,12 @@
       var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createLock");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createLock");
       }
 
@@ -320,7 +319,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -333,7 +332,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -362,12 +361,12 @@
       var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createRecipients");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createRecipients");
       }
 
@@ -390,7 +389,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -403,7 +402,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -432,17 +431,17 @@
       var postBody = optsOrCallback['templateTabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createTabs");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling createTabs");
       }
 
@@ -465,7 +464,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -478,7 +477,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createTemplate operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createTemplate operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTemplateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateSummary} data The data returned by the service call.
@@ -535,7 +534,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['envelopeTemplate'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createTemplate");
       }
 
@@ -556,7 +555,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateSummary;
@@ -569,7 +568,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createTemplateDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createTemplateDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTemplateDocumentResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
@@ -597,17 +596,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['documentHtmlDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createTemplateDocumentResponsiveHtmlPreview");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createTemplateDocumentResponsiveHtmlPreview");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling createTemplateDocumentResponsiveHtmlPreview");
       }
 
@@ -630,7 +629,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitions;
@@ -643,7 +642,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createTemplateResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createTemplateResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~createTemplateResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
@@ -670,12 +669,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['documentHtmlDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createTemplateResponsiveHtmlPreview");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling createTemplateResponsiveHtmlPreview");
       }
 
@@ -697,7 +696,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitions;
@@ -710,7 +709,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteBulkRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteBulkRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteBulkRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsUpdateResponse} data The data returned by the service call.
@@ -730,17 +729,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBulkRecipients");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteBulkRecipients");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling deleteBulkRecipients");
       }
 
@@ -763,7 +762,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkRecipientsUpdateResponse;
@@ -776,7 +775,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -804,12 +803,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteCustomFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteCustomFields");
       }
 
@@ -831,7 +830,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -844,7 +843,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -873,17 +872,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteDocumentFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentFields");
       }
 
@@ -906,7 +905,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -919,7 +918,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteDocumentPage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -948,22 +947,22 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['pageRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteDocumentPage");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteDocumentPage");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentPage");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling deleteDocumentPage");
       }
 
@@ -987,7 +986,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -1000,7 +999,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteDocuments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
@@ -1028,12 +1027,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteDocuments");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteDocuments");
       }
 
@@ -1055,7 +1054,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateDocumentsResult;
@@ -1068,7 +1067,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteGroupShare operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteGroupShare operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteGroupShareCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
@@ -1076,7 +1075,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      */
 
     /**
-     * Removes a member group&#39;s sharing permissions for a template.
+     * Removes a member group's sharing permissions for a template.
      * Removes a member group's sharing permissions for a specified template.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
@@ -1097,17 +1096,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteGroupShare");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteGroupShare");
       }
 
       // verify the required parameter 'templatePart' is set
-      if (templatePart == undefined || templatePart == null) {
+      if (templatePart === undefined || templatePart === null) {
         throw new Error("Missing the required parameter 'templatePart' when calling deleteGroupShare");
       }
 
@@ -1130,7 +1129,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = GroupInformation;
@@ -1143,7 +1142,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -1171,12 +1170,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteLock");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteLock");
       }
 
@@ -1198,7 +1197,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -1211,7 +1210,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteRecipient operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -1240,17 +1239,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteRecipient");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteRecipient");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipient");
       }
 
@@ -1273,7 +1272,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -1286,7 +1285,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -1314,12 +1313,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteRecipients");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteRecipients");
       }
 
@@ -1341,7 +1340,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -1354,7 +1353,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~deleteTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -1383,17 +1382,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = optsOrCallback['templateTabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteTabs");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling deleteTabs");
       }
 
@@ -1416,7 +1415,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -1429,7 +1428,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTemplate} data The data returned by the service call.
@@ -1457,12 +1456,12 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling get");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling get");
       }
 
@@ -1485,7 +1484,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeTemplate;
@@ -1498,7 +1497,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getDocument operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getDocument operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getDocumentCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -1530,17 +1529,17 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDocument");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getDocument");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getDocument");
       }
 
@@ -1565,7 +1564,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/pdf'];
       var returnType = Object;
@@ -1578,7 +1577,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getDocumentPageImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getDocumentPageImage operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getDocumentPageImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -1611,22 +1610,22 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDocumentPageImage");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getDocumentPageImage");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getDocumentPageImage");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling getDocumentPageImage");
       }
 
@@ -1654,7 +1653,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['image/png'];
       var returnType = Object;
@@ -1667,7 +1666,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getDocumentTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getDocumentTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getDocumentTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -1695,17 +1694,17 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDocumentTabs");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getDocumentTabs");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getDocumentTabs");
       }
 
@@ -1729,7 +1728,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -1742,7 +1741,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -1763,12 +1762,12 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getLock");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getLock");
       }
 
@@ -1790,7 +1789,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -1803,7 +1802,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getNotificationSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
@@ -1822,12 +1821,12 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getNotificationSettings");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getNotificationSettings");
       }
 
@@ -1849,7 +1848,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Notification;
@@ -1862,7 +1861,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPageTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPageTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getPageTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -1882,22 +1881,22 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPageTabs");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getPageTabs");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getPageTabs");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling getPageTabs");
       }
 
@@ -1921,7 +1920,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -1934,7 +1933,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPages operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPages operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getPagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PageImages} data The data returned by the service call.
@@ -1968,17 +1967,17 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPages");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getPages");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getPages");
       }
 
@@ -2008,7 +2007,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageImages;
@@ -2021,7 +2020,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getTemplateDocumentHtmlDefinitions operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getTemplateDocumentHtmlDefinitions operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getTemplateDocumentHtmlDefinitionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
@@ -2040,17 +2039,17 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getTemplateDocumentHtmlDefinitions");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getTemplateDocumentHtmlDefinitions");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getTemplateDocumentHtmlDefinitions");
       }
 
@@ -2073,7 +2072,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitionOriginals;
@@ -2086,7 +2085,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getTemplateHtmlDefinitions operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getTemplateHtmlDefinitions operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~getTemplateHtmlDefinitionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
@@ -2104,12 +2103,12 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getTemplateHtmlDefinitions");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getTemplateHtmlDefinitions");
       }
 
@@ -2131,7 +2130,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitionOriginals;
@@ -2144,7 +2143,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listBulkRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listBulkRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listBulkRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsResponse} data The data returned by the service call.
@@ -2174,17 +2173,17 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listBulkRecipients");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling listBulkRecipients");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling listBulkRecipients");
       }
 
@@ -2209,7 +2208,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkRecipientsResponse;
@@ -2222,7 +2221,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -2241,12 +2240,12 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listCustomFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling listCustomFields");
       }
 
@@ -2268,7 +2267,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -2281,7 +2280,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -2301,17 +2300,17 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listDocumentFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling listDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling listDocumentFields");
       }
 
@@ -2334,7 +2333,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -2347,7 +2346,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listDocuments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
@@ -2366,12 +2365,12 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listDocuments");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling listDocuments");
       }
 
@@ -2393,7 +2392,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateDocumentsResult;
@@ -2406,7 +2405,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -2419,7 +2418,7 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and &#x60;include_tabs&#x60; is set to **true**, all tabs with anchor tab properties are included in the response. 
+     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response. 
      * @param {String} optsOrCallback.includeExtended  When set to **true**, the extended properties are included in the response. 
      * @param {String} optsOrCallback.includeTabs When set to **true**, the tab information associated with the recipient is included in the response.
      * @param {module:api/TemplatesApi~listRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -2436,12 +2435,12 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listRecipients");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling listRecipients");
       }
 
@@ -2466,7 +2465,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -2479,7 +2478,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -2509,17 +2508,17 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listTabs");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling listTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling listTabs");
       }
 
@@ -2544,7 +2543,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -2557,7 +2556,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listTemplates operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listTemplates operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~listTemplatesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTemplateResults} data The data returned by the service call.
@@ -2576,7 +2575,7 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} optsOrCallback.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
      * @param {String} optsOrCallback.modifiedFromDate 
      * @param {String} optsOrCallback.modifiedToDate 
-     * @param {String} optsOrCallback.order Sets the direction order used to sort the list. Valid values are: -asc &#x3D; ascending sort order (a to z)  -desc &#x3D; descending sort order (z to a)
+     * @param {String} optsOrCallback.order Sets the direction order used to sort the list. Valid values are: -asc = ascending sort order (a to z)  -desc = descending sort order (z to a)
      * @param {String} optsOrCallback.orderBy Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used.
      * @param {String} optsOrCallback.searchText The search text used to search the names of templates.
      * @param {String} optsOrCallback.sharedByMe If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected.
@@ -2600,7 +2599,7 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listTemplates");
       }
 
@@ -2638,7 +2637,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeTemplateResults;
@@ -2651,7 +2650,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the rotateDocumentPage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the rotateDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~rotateDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -2680,22 +2679,22 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = optsOrCallback['pageRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling rotateDocumentPage");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling rotateDocumentPage");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling rotateDocumentPage");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling rotateDocumentPage");
       }
 
@@ -2719,7 +2718,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -2732,7 +2731,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateUpdateSummary} data The data returned by the service call.
@@ -2760,12 +2759,12 @@ If the call is made by the user who has the lock and the request has the same in
       var postBody = optsOrCallback['envelopeTemplate'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling update");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling update");
       }
 
@@ -2787,7 +2786,7 @@ If the call is made by the user who has the lock and the request has the same in
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateUpdateSummary;
@@ -2800,7 +2799,7 @@ If the call is made by the user who has the lock and the request has the same in
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateBulkRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateBulkRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateBulkRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsSummaryResponse} data The data returned by the service call.
@@ -2831,17 +2830,17 @@ The REST API does not support modifying individual rows or values in the bulk re
       var postBody = optsOrCallback['bulkRecipientsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateBulkRecipients");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateBulkRecipients");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateBulkRecipients");
       }
 
@@ -2864,7 +2863,7 @@ The REST API does not support modifying individual rows or values in the bulk re
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkRecipientsSummaryResponse;
@@ -2877,7 +2876,7 @@ The REST API does not support modifying individual rows or values in the bulk re
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -2907,12 +2906,12 @@ Each custom field used in a template must have a unique name.
       var postBody = optsOrCallback['templateCustomFields'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateCustomFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateCustomFields");
       }
 
@@ -2934,7 +2933,7 @@ Each custom field used in a template must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -2947,7 +2946,7 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateDocument operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateDocument operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateDocumentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocument} data The data returned by the service call.
@@ -2978,17 +2977,17 @@ Each custom field used in a template must have a unique name.
       var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDocument");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateDocument");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling updateDocument");
       }
 
@@ -3013,7 +3012,7 @@ Each custom field used in a template must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeDocument;
@@ -3026,7 +3025,7 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -3055,17 +3054,17 @@ Each custom field used in a template must have a unique name.
       var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDocumentFields");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling updateDocumentFields");
       }
 
@@ -3088,7 +3087,7 @@ Each custom field used in a template must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -3101,7 +3100,7 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateDocuments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentsResult} data The data returned by the service call.
@@ -3131,12 +3130,12 @@ Each custom field used in a template must have a unique name.
       var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDocuments");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateDocuments");
       }
 
@@ -3160,7 +3159,7 @@ Each custom field used in a template must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateDocumentsResult;
@@ -3173,7 +3172,7 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateGroupShare operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateGroupShare operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateGroupShareCallback
      * @param {String} error Error message, if any.
      * @param {module:model/GroupInformation} data The data returned by the service call.
@@ -3202,17 +3201,17 @@ Each custom field used in a template must have a unique name.
       var postBody = optsOrCallback['groupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateGroupShare");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateGroupShare");
       }
 
       // verify the required parameter 'templatePart' is set
-      if (templatePart == undefined || templatePart == null) {
+      if (templatePart === undefined || templatePart === null) {
         throw new Error("Missing the required parameter 'templatePart' when calling updateGroupShare");
       }
 
@@ -3235,7 +3234,7 @@ Each custom field used in a template must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = GroupInformation;
@@ -3248,7 +3247,7 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateLock operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -3276,12 +3275,12 @@ Each custom field used in a template must have a unique name.
       var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateLock");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateLock");
       }
 
@@ -3303,7 +3302,7 @@ Each custom field used in a template must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -3316,7 +3315,7 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateNotificationSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
@@ -3344,12 +3343,12 @@ Each custom field used in a template must have a unique name.
       var postBody = optsOrCallback['templateNotificationRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateNotificationSettings");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateNotificationSettings");
       }
 
@@ -3371,7 +3370,7 @@ Each custom field used in a template must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Notification;
@@ -3384,7 +3383,7 @@ Each custom field used in a template must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/RecipientsUpdateSummary} data The data returned by the service call.
@@ -3415,12 +3414,12 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
       var postBody = optsOrCallback['templateRecipients'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateRecipients");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateRecipients");
       }
 
@@ -3443,7 +3442,7 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = RecipientsUpdateSummary;
@@ -3456,7 +3455,7 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateTabs operation. If none specified a Promise will be returned.
      * @callback module:api/TemplatesApi~updateTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -3485,17 +3484,17 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
       var postBody = optsOrCallback['templateTabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateTabs");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateTabs");
       }
 
@@ -3518,7 +3517,7 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;

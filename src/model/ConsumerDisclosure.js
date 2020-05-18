@@ -30,7 +30,6 @@
   /**
    * The ConsumerDisclosure model module.
    * @module model/ConsumerDisclosure
-   * @version 4.6.0
    */
 
   /**

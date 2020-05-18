@@ -30,7 +30,6 @@
   /**
    * The FolderItemResponse model module.
    * @module model/FolderItemResponse
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The CreditCardTypes model module.
    * @module model/CreditCardTypes
-   * @version 4.6.0
    */
 
   /**

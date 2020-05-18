@@ -30,7 +30,6 @@
   /**
    * The EnvelopeDocumentsResult model module.
    * @module model/EnvelopeDocumentsResult
-   * @version 4.6.0
    */
 
   /**

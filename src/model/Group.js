@@ -30,7 +30,6 @@
   /**
    * The Group model module.
    * @module model/Group
-   * @version 4.6.0
    */
 
   /**

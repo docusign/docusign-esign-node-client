@@ -30,7 +30,6 @@
   /**
    * The LoginInformation model module.
    * @module model/LoginInformation
-   * @version 4.6.0
    */
 
   /**

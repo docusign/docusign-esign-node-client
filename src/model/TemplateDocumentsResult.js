@@ -30,7 +30,6 @@
   /**
    * The TemplateDocumentsResult model module.
    * @module model/TemplateDocumentsResult
-   * @version 4.6.0
    */
 
   /**

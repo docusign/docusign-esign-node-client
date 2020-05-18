@@ -30,7 +30,6 @@
   /**
    * The BrandResources model module.
    * @module model/BrandResources
-   * @version 4.6.0
    */
 
   /**

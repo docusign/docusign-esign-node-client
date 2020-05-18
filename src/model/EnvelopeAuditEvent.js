@@ -30,7 +30,6 @@
   /**
    * The EnvelopeAuditEvent model module.
    * @module model/EnvelopeAuditEvent
-   * @version 4.6.0
    */
 
   /**

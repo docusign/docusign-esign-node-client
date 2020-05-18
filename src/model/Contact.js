@@ -30,7 +30,6 @@
   /**
    * The Contact model module.
    * @module model/Contact
-   * @version 4.6.0
    */
 
   /**

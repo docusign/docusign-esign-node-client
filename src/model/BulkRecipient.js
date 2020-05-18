@@ -30,7 +30,6 @@
   /**
    * The BulkRecipient model module.
    * @module model/BulkRecipient
-   * @version 4.6.0
    */
 
   /**

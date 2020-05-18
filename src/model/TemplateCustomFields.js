@@ -30,7 +30,6 @@
   /**
    * The TemplateCustomFields model module.
    * @module model/TemplateCustomFields
-   * @version 4.6.0
    */
 
   /**

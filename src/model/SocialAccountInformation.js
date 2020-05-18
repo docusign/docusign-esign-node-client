@@ -30,7 +30,6 @@
   /**
    * The SocialAccountInformation model module.
    * @module model/SocialAccountInformation
-   * @version 4.6.0
    */
 
   /**

@@ -29,7 +29,6 @@
   /**
    * SigningGroups service.
    * @module api/SigningGroupsApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createList operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~createListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
@@ -86,7 +85,7 @@ Signing groups can be used by any account user.
       var postBody = optsOrCallback['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createList");
       }
 
@@ -107,7 +106,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroupInformation;
@@ -120,7 +119,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteList operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~deleteListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
@@ -147,7 +146,7 @@ Signing groups can be used by any account user.
       var postBody = optsOrCallback['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteList");
       }
 
@@ -168,7 +167,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroupInformation;
@@ -181,7 +180,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteUsers operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~deleteUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupUsers} data The data returned by the service call.
@@ -209,12 +208,12 @@ Signing groups can be used by any account user.
       var postBody = optsOrCallback['signingGroupUsers'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteUsers");
       }
 
       // verify the required parameter 'signingGroupId' is set
-      if (signingGroupId == undefined || signingGroupId == null) {
+      if (signingGroupId === undefined || signingGroupId === null) {
         throw new Error("Missing the required parameter 'signingGroupId' when calling deleteUsers");
       }
 
@@ -236,7 +235,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroupUsers;
@@ -249,7 +248,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroup} data The data returned by the service call.
@@ -268,12 +267,12 @@ Signing groups can be used by any account user.
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling get");
       }
 
       // verify the required parameter 'signingGroupId' is set
-      if (signingGroupId == undefined || signingGroupId == null) {
+      if (signingGroupId === undefined || signingGroupId === null) {
         throw new Error("Missing the required parameter 'signingGroupId' when calling get");
       }
 
@@ -295,7 +294,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroup;
@@ -308,7 +307,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
@@ -336,7 +335,7 @@ Signing groups can be used by any account user.
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
@@ -359,7 +358,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroupInformation;
@@ -372,7 +371,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listUsers operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~listUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupUsers} data The data returned by the service call.
@@ -391,12 +390,12 @@ Signing groups can be used by any account user.
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listUsers");
       }
 
       // verify the required parameter 'signingGroupId' is set
-      if (signingGroupId == undefined || signingGroupId == null) {
+      if (signingGroupId === undefined || signingGroupId === null) {
         throw new Error("Missing the required parameter 'signingGroupId' when calling listUsers");
       }
 
@@ -418,7 +417,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroupUsers;
@@ -431,7 +430,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroup} data The data returned by the service call.
@@ -459,12 +458,12 @@ Signing groups can be used by any account user.
       var postBody = optsOrCallback['signingGroup'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling update");
       }
 
       // verify the required parameter 'signingGroupId' is set
-      if (signingGroupId == undefined || signingGroupId == null) {
+      if (signingGroupId === undefined || signingGroupId === null) {
         throw new Error("Missing the required parameter 'signingGroupId' when calling update");
       }
 
@@ -486,7 +485,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroup;
@@ -499,7 +498,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateList operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~updateListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupInformation} data The data returned by the service call.
@@ -526,7 +525,7 @@ Signing groups can be used by any account user.
       var postBody = optsOrCallback['signingGroupInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateList");
       }
 
@@ -547,7 +546,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroupInformation;
@@ -560,7 +559,7 @@ Signing groups can be used by any account user.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateUsers operation. If none specified a Promise will be returned.
      * @callback module:api/SigningGroupsApi~updateUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SigningGroupUsers} data The data returned by the service call.
@@ -588,12 +587,12 @@ Signing groups can be used by any account user.
       var postBody = optsOrCallback['signingGroupUsers'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateUsers");
       }
 
       // verify the required parameter 'signingGroupId' is set
-      if (signingGroupId == undefined || signingGroupId == null) {
+      if (signingGroupId === undefined || signingGroupId === null) {
         throw new Error("Missing the required parameter 'signingGroupId' when calling updateUsers");
       }
 
@@ -615,7 +614,7 @@ Signing groups can be used by any account user.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SigningGroupUsers;

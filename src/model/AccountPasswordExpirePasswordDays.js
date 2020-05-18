@@ -30,7 +30,6 @@
   /**
    * The AccountPasswordExpirePasswordDays model module.
    * @module model/AccountPasswordExpirePasswordDays
-   * @version 4.6.0
    */
 
   /**

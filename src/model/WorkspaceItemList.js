@@ -30,7 +30,6 @@
   /**
    * The WorkspaceItemList model module.
    * @module model/WorkspaceItemList
-   * @version 4.6.0
    */
 
   /**

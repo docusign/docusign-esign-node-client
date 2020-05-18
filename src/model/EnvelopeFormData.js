@@ -30,7 +30,6 @@
   /**
    * The EnvelopeFormData model module.
    * @module model/EnvelopeFormData
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The BillingPrice model module.
    * @module model/BillingPrice
-   * @version 4.6.0
    */
 
   /**

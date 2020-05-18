@@ -30,7 +30,6 @@
   /**
    * The Folder model module.
    * @module model/Folder
-   * @version 4.6.0
    */
 
   /**

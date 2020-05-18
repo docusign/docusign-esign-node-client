@@ -30,7 +30,6 @@
   /**
    * The SmartSectionDisplaySettings model module.
    * @module model/SmartSectionDisplaySettings
-   * @version 4.6.0
    */
 
   /**

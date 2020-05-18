@@ -30,7 +30,6 @@
   /**
    * The FirstName model module.
    * @module model/FirstName
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The SignerAttachment model module.
    * @module model/SignerAttachment
-   * @version 4.6.0
    */
 
   /**

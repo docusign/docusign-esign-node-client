@@ -30,7 +30,6 @@
   /**
    * The CorrectViewRequest model module.
    * @module model/CorrectViewRequest
-   * @version 4.6.0
    */
 
   /**

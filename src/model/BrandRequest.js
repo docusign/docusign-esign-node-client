@@ -30,7 +30,6 @@
   /**
    * The BrandRequest model module.
    * @module model/BrandRequest
-   * @version 4.6.0
    */
 
   /**

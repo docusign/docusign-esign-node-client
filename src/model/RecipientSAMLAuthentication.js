@@ -30,7 +30,6 @@
   /**
    * The RecipientSAMLAuthentication model module.
    * @module model/RecipientSAMLAuthentication
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The AccountSettingsInformation model module.
    * @module model/AccountSettingsInformation
-   * @version 4.6.0
    */
 
   /**

@@ -8,7 +8,6 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -49,7 +48,6 @@
    * </pre>
    * </p>
    * @module index
-   * @version 4.6.0
    */
   var exports = {
 	/**

@@ -30,7 +30,6 @@
   /**
    * The SignatureType model module.
    * @module model/SignatureType
-   * @version 4.6.0
    */
 
   /**

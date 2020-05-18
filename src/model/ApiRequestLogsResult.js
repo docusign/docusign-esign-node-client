@@ -30,7 +30,6 @@
   /**
    * The ApiRequestLogsResult model module.
    * @module model/ApiRequestLogsResult
-   * @version 4.6.0
    */
 
   /**

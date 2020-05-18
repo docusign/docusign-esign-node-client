@@ -30,7 +30,6 @@
   /**
    * The PowerFormSendersResponse model module.
    * @module model/PowerFormSendersResponse
-   * @version 4.6.0
    */
 
   /**

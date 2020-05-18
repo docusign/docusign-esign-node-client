@@ -30,7 +30,6 @@
   /**
    * The Zip model module.
    * @module model/Zip
-   * @version 4.6.0
    */
 
   /**

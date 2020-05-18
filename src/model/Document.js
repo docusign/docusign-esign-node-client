@@ -30,7 +30,6 @@
   /**
    * The Document model module.
    * @module model/Document
-   * @version 4.6.0
    */
 
   /**

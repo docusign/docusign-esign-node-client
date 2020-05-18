@@ -12,25 +12,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/IdCheckInformationInput', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientPhoneAuthentication', 'model/RecipientSAMLAuthentication', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/Tabs'], factory);
+    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/IdCheckInformationInput', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientSAMLAuthentication', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/Tabs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./Tabs'));
+    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./IdCheckInformationInput'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientSAMLAuthentication'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./Tabs'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.NotaryHost = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.Tabs);
+    root.Docusign.NotaryHost = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSAMLAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.Tabs);
   }
-}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, IdCheckInformationInput, RecipientAttachment, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, SocialAuthentication, Tabs) {
+}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, IdCheckInformationInput, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientSAMLAuthentication, RecipientSMSAuthentication, SocialAuthentication, Tabs) {
   'use strict';
 
 
   /**
    * The NotaryHost model module.
    * @module model/NotaryHost
-   * @version 4.6.0
    */
 
   /**
@@ -105,6 +104,9 @@
       }
       if (data.hasOwnProperty('idCheckInformationInput')) {
         obj['idCheckInformationInput'] = IdCheckInformationInput.constructFromObject(data['idCheckInformationInput']);
+      }
+      if (data.hasOwnProperty('identityVerification')) {
+        obj['identityVerification'] = RecipientIdentityVerification.constructFromObject(data['identityVerification']);
       }
       if (data.hasOwnProperty('inheritEmailNotificationConfiguration')) {
         obj['inheritEmailNotificationConfiguration'] = ApiClient.convertToType(data['inheritEmailNotificationConfiguration'], 'String');
@@ -258,6 +260,10 @@
    * @member {module:model/IdCheckInformationInput} idCheckInformationInput
    */
   exports.prototype['idCheckInformationInput'] = undefined;
+  /**
+   * @member {module:model/RecipientIdentityVerification} identityVerification
+   */
+  exports.prototype['identityVerification'] = undefined;
   /**
    * When set to **true** and the envelope recipient creates a DocuSign account after signing, the Manage Account Email Notification settings are used as the default settings for the recipient's account. 
    * @member {String} inheritEmailNotificationConfiguration

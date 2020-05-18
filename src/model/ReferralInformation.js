@@ -30,7 +30,6 @@
   /**
    * The ReferralInformation model module.
    * @module model/ReferralInformation
-   * @version 4.6.0
    */
 
   /**

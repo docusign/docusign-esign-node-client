@@ -30,7 +30,6 @@
   /**
    * The DocumentTemplateList model module.
    * @module model/DocumentTemplateList
-   * @version 4.6.0
    */
 
   /**

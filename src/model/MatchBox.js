@@ -30,7 +30,6 @@
   /**
    * The MatchBox model module.
    * @module model/MatchBox
-   * @version 4.6.0
    */
 
   /**
