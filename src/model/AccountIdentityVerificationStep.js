@@ -30,7 +30,6 @@
   /**
    * The AccountIdentityVerificationStep model module.
    * @module model/AccountIdentityVerificationStep
-   * @version 5.3.0
    */
 
   /**

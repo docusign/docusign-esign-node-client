@@ -30,7 +30,6 @@
   /**
    * The RecipientPhoneAuthentication model module.
    * @module model/RecipientPhoneAuthentication
-   * @version 5.3.0
    */
 
   /**

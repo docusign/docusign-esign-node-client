@@ -30,7 +30,6 @@
   /**
    * The EnvelopeNotificationRequest model module.
    * @module model/EnvelopeNotificationRequest
-   * @version 5.3.0
    */
 
   /**

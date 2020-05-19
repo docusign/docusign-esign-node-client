@@ -30,7 +30,6 @@
   /**
    * The Stamp model module.
    * @module model/Stamp
-   * @version 5.3.0
    */
 
   /**

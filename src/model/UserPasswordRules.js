@@ -30,7 +30,6 @@
   /**
    * The UserPasswordRules model module.
    * @module model/UserPasswordRules
-   * @version 5.3.0
    */
 
   /**

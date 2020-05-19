@@ -30,7 +30,6 @@
   /**
    * The SenderEmailNotifications model module.
    * @module model/SenderEmailNotifications
-   * @version 5.3.0
    */
 
   /**

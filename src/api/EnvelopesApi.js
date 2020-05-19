@@ -29,7 +29,6 @@
   /**
    * Envelopes service.
    * @module api/EnvelopesApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the applyTemplate operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the applyTemplate operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~applyTemplateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentTemplateList} data The data returned by the service call.
@@ -66,6 +65,7 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.preserveTemplateRecipient 
      * @param {module:model/DocumentTemplateList} optsOrCallback.documentTemplateList 
      * @param {module:api/EnvelopesApi~applyTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentTemplateList}
@@ -81,12 +81,12 @@
       var postBody = optsOrCallback['documentTemplateList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling applyTemplate");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling applyTemplate");
       }
 
@@ -102,13 +102,14 @@
         'envelopeId': envelopeId
       };
       var queryParams = {
+        'preserve_template_recipient': optsOrCallback['preserveTemplateRecipient']
       };
       var headerParams = {
       };
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentTemplateList;
@@ -121,7 +122,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the applyTemplateToDocument operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the applyTemplateToDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~applyTemplateToDocumentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentTemplateList} data The data returned by the service call.
@@ -135,6 +136,7 @@
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.preserveTemplateRecipient 
      * @param {module:model/DocumentTemplateList} optsOrCallback.documentTemplateList 
      * @param {module:api/EnvelopesApi~applyTemplateToDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentTemplateList}
@@ -150,17 +152,17 @@
       var postBody = optsOrCallback['documentTemplateList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling applyTemplateToDocument");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling applyTemplateToDocument");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling applyTemplateToDocument");
       }
 
@@ -177,13 +179,14 @@
         'documentId': documentId
       };
       var queryParams = {
+        'preserve_template_recipient': optsOrCallback['preserveTemplateRecipient']
       };
       var headerParams = {
       };
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentTemplateList;
@@ -196,7 +199,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createChunkedUpload operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
@@ -222,7 +225,7 @@
       var postBody = optsOrCallback['chunkedUploadRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createChunkedUpload");
       }
 
@@ -243,7 +246,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChunkedUploadResponse;
@@ -256,7 +259,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createConsoleView operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createConsoleView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createConsoleViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -283,7 +286,7 @@
       var postBody = optsOrCallback['consoleViewRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createConsoleView");
       }
 
@@ -304,7 +307,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -317,7 +320,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createCorrectView operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createCorrectView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createCorrectViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -347,12 +350,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['correctViewRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createCorrectView");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createCorrectView");
       }
 
@@ -374,7 +377,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -387,7 +390,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -417,12 +420,12 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['customFields'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createCustomFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createCustomFields");
       }
 
@@ -444,7 +447,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -457,7 +460,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -486,17 +489,17 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createDocumentFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentFields");
       }
 
@@ -519,7 +522,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -532,7 +535,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createDocumentResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createDocumentResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
@@ -560,17 +563,17 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['documentHtmlDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createDocumentResponsiveHtmlPreview");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createDocumentResponsiveHtmlPreview");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentResponsiveHtmlPreview");
       }
 
@@ -593,7 +596,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitions;
@@ -606,7 +609,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createDocumentTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createDocumentTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createDocumentTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -634,17 +637,17 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['tabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createDocumentTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createDocumentTabs");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentTabs");
       }
 
@@ -667,7 +670,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -680,7 +683,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEditView operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEditView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEditViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -712,12 +715,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['returnUrlRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEditView");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createEditView");
       }
 
@@ -739,7 +742,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -752,7 +755,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEmailSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
@@ -782,12 +785,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['emailSettings'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEmailSettings");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createEmailSettings");
       }
 
@@ -809,7 +812,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EmailSettings;
@@ -822,7 +825,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEnvelope operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEnvelope operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEnvelopeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeSummary} data The data returned by the service call.
@@ -1034,7 +1037,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.cdseMode 
      * @param {String} optsOrCallback.changeRoutingOrder 
-     * @param {String} optsOrCallback.completedDocumentsOnly If set to true then we want to set the sourceEnvelopeId to indicate that this is a\&quot;forward\&quot; envelope action
+     * @param {String} optsOrCallback.completedDocumentsOnly If set to true then we want to set the sourceEnvelopeId to indicate that this is a\"forward\" envelope action
      * @param {String} optsOrCallback.mergeRolesOnDraft When set to **true**, merges template roles and remove empty recipients when you create an envelope with multiple templates.
      * @param {String} optsOrCallback.tabLabelExactMatches 
      * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
@@ -1052,7 +1055,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEnvelope");
       }
 
@@ -1078,7 +1081,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeSummary;
@@ -1091,7 +1094,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEnvelopeComments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEnvelopeComments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEnvelopeCommentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CommentHistoryResult} data The data returned by the service call.
@@ -1118,12 +1121,12 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var postBody = optsOrCallback['commentsPublish'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEnvelopeComments");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createEnvelopeComments");
       }
 
@@ -1145,7 +1148,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CommentHistoryResult;
@@ -1158,7 +1161,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEnvelopeRecipientPreview operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEnvelopeRecipientPreview operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEnvelopeRecipientPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -1185,12 +1188,12 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var postBody = optsOrCallback['recipientPreviewRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEnvelopeRecipientPreview");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createEnvelopeRecipientPreview");
       }
 
@@ -1212,7 +1215,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -1225,7 +1228,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEnvelopeRecipientSharedView operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEnvelopeRecipientSharedView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEnvelopeRecipientSharedViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -1252,12 +1255,12 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var postBody = optsOrCallback['recipientViewRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEnvelopeRecipientSharedView");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createEnvelopeRecipientSharedView");
       }
 
@@ -1279,7 +1282,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -1292,7 +1295,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createEnvelopeTransferRules operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createEnvelopeTransferRules operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createEnvelopeTransferRulesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTransferRuleInformation} data The data returned by the service call.
@@ -1318,7 +1321,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var postBody = optsOrCallback['envelopeTransferRuleRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEnvelopeTransferRules");
       }
 
@@ -1339,7 +1342,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeTransferRuleInformation;
@@ -1352,7 +1355,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -1382,12 +1385,12 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createLock");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createLock");
       }
 
@@ -1409,7 +1412,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -1422,7 +1425,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createRecipient operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -1437,7 +1440,7 @@ For an in process envelope, one that has been sent and has not been completed or
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope&#39;s next recipient.
+     * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
      * @param {module:model/Recipients} optsOrCallback.recipients 
      * @param {module:api/EnvelopesApi~createRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
@@ -1453,12 +1456,12 @@ For an in process envelope, one that has been sent and has not been completed or
       var postBody = optsOrCallback['recipients'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createRecipient");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createRecipient");
       }
 
@@ -1481,7 +1484,7 @@ For an in process envelope, one that has been sent and has not been completed or
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -1494,7 +1497,7 @@ For an in process envelope, one that has been sent and has not been completed or
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createRecipientProofFileLink operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createRecipientProofFileLink operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createRecipientProofFileLinkCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ProofServiceViewLink} data The data returned by the service call.
@@ -1513,17 +1516,17 @@ For an in process envelope, one that has been sent and has not been completed or
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createRecipientProofFileLink");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createRecipientProofFileLink");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling createRecipientProofFileLink");
       }
 
@@ -1546,7 +1549,7 @@ For an in process envelope, one that has been sent and has not been completed or
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ProofServiceViewLink;
@@ -1559,7 +1562,7 @@ For an in process envelope, one that has been sent and has not been completed or
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createRecipientProofFileResourceToken operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createRecipientProofFileResourceToken operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createRecipientProofFileResourceTokenCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ProofServiceResourceToken} data The data returned by the service call.
@@ -1579,22 +1582,22 @@ For an in process envelope, one that has been sent and has not been completed or
       var postBody = null;
 
       // verify the required parameter 'tokenScopes' is set
-      if (tokenScopes == undefined || tokenScopes == null) {
+      if (tokenScopes === undefined || tokenScopes === null) {
         throw new Error("Missing the required parameter 'tokenScopes' when calling createRecipientProofFileResourceToken");
       }
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createRecipientProofFileResourceToken");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createRecipientProofFileResourceToken");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling createRecipientProofFileResourceToken");
       }
 
@@ -1618,7 +1621,7 @@ For an in process envelope, one that has been sent and has not been completed or
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ProofServiceResourceToken;
@@ -1631,7 +1634,7 @@ For an in process envelope, one that has been sent and has not been completed or
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createRecipientView operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createRecipientView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createRecipientViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -1663,12 +1666,12 @@ An entry is added into the Security Level section of the DocuSign Certificate of
       var postBody = optsOrCallback['recipientViewRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createRecipientView");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createRecipientView");
       }
 
@@ -1690,7 +1693,7 @@ An entry is added into the Security Level section of the DocuSign Certificate of
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -1703,7 +1706,7 @@ An entry is added into the Security Level section of the DocuSign Certificate of
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createResponsiveHtmlPreview operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createResponsiveHtmlPreview operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createResponsiveHtmlPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitions} data The data returned by the service call.
@@ -1730,12 +1733,12 @@ An entry is added into the Security Level section of the DocuSign Certificate of
       var postBody = optsOrCallback['documentHtmlDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createResponsiveHtmlPreview");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createResponsiveHtmlPreview");
       }
 
@@ -1757,7 +1760,7 @@ An entry is added into the Security Level section of the DocuSign Certificate of
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitions;
@@ -1770,7 +1773,7 @@ An entry is added into the Security Level section of the DocuSign Certificate of
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createSenderView operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createSenderView operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createSenderViewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ViewUrl} data The data returned by the service call.
@@ -1802,12 +1805,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['returnUrlRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createSenderView");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createSenderView");
       }
 
@@ -1829,7 +1832,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ViewUrl;
@@ -1842,7 +1845,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~createTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -1871,17 +1874,17 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['tabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling createTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling createTabs");
       }
 
@@ -1904,7 +1907,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -1917,7 +1920,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteAttachments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteAttachments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteAttachmentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
@@ -1944,12 +1947,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['envelopeAttachmentsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteAttachments");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteAttachments");
       }
 
@@ -1971,7 +1974,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeAttachmentsResult;
@@ -1984,7 +1987,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteChunkedUpload operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
@@ -2002,12 +2005,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteChunkedUpload");
       }
 
       // verify the required parameter 'chunkedUploadId' is set
-      if (chunkedUploadId == undefined || chunkedUploadId == null) {
+      if (chunkedUploadId === undefined || chunkedUploadId === null) {
         throw new Error("Missing the required parameter 'chunkedUploadId' when calling deleteChunkedUpload");
       }
 
@@ -2029,7 +2032,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChunkedUploadResponse;
@@ -2042,7 +2045,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -2070,12 +2073,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['customFields'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteCustomFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteCustomFields");
       }
 
@@ -2097,7 +2100,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -2110,7 +2113,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -2139,17 +2142,17 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteDocumentFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentFields");
       }
 
@@ -2172,7 +2175,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -2185,7 +2188,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteDocumentPage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -2205,22 +2208,22 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteDocumentPage");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteDocumentPage");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentPage");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling deleteDocumentPage");
       }
 
@@ -2244,7 +2247,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -2257,7 +2260,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteDocumentTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteDocumentTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteDocumentTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -2285,17 +2288,17 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['tabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteDocumentTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteDocumentTabs");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentTabs");
       }
 
@@ -2318,7 +2321,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -2331,7 +2334,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteDocuments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocumentsResult} data The data returned by the service call.
@@ -2359,12 +2362,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteDocuments");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteDocuments");
       }
 
@@ -2386,7 +2389,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeDocumentsResult;
@@ -2399,7 +2402,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteEmailSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
@@ -2418,12 +2421,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteEmailSettings");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteEmailSettings");
       }
 
@@ -2445,7 +2448,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EmailSettings;
@@ -2458,7 +2461,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteEnvelopeTransferRules operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteEnvelopeTransferRules operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteEnvelopeTransferRulesCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -2475,12 +2478,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteEnvelopeTransferRules");
       }
 
       // verify the required parameter 'envelopeTransferRuleId' is set
-      if (envelopeTransferRuleId == undefined || envelopeTransferRuleId == null) {
+      if (envelopeTransferRuleId === undefined || envelopeTransferRuleId === null) {
         throw new Error("Missing the required parameter 'envelopeTransferRuleId' when calling deleteEnvelopeTransferRules");
       }
 
@@ -2502,7 +2505,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -2515,7 +2518,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -2534,12 +2537,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteLock");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteLock");
       }
 
@@ -2561,7 +2564,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -2574,7 +2577,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteRecipient operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -2594,17 +2597,17 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteRecipient");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteRecipient");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipient");
       }
 
@@ -2627,7 +2630,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -2640,7 +2643,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -2670,12 +2673,12 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = optsOrCallback['recipients'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteRecipients");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteRecipients");
       }
 
@@ -2697,7 +2700,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -2710,7 +2713,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -2739,17 +2742,17 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = optsOrCallback['tabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling deleteTabs");
       }
 
@@ -2772,7 +2775,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -2785,7 +2788,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteTemplatesFromDocument operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteTemplatesFromDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteTemplatesFromDocumentCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -2805,22 +2808,22 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteTemplatesFromDocument");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteTemplatesFromDocument");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling deleteTemplatesFromDocument");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling deleteTemplatesFromDocument");
       }
 
@@ -2844,7 +2847,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -2857,7 +2860,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAttachment operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getAttachment operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getAttachmentCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -2875,17 +2878,17 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAttachment");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getAttachment");
       }
 
       // verify the required parameter 'attachmentId' is set
-      if (attachmentId == undefined || attachmentId == null) {
+      if (attachmentId === undefined || attachmentId === null) {
         throw new Error("Missing the required parameter 'attachmentId' when calling getAttachment");
       }
 
@@ -2908,7 +2911,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -2921,7 +2924,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAttachments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getAttachments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getAttachmentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
@@ -2939,12 +2942,12 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAttachments");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getAttachments");
       }
 
@@ -2966,7 +2969,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeAttachmentsResult;
@@ -2979,7 +2982,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getChunkedUpload operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
@@ -3006,12 +3009,12 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getChunkedUpload");
       }
 
       // verify the required parameter 'chunkedUploadId' is set
-      if (chunkedUploadId == undefined || chunkedUploadId == null) {
+      if (chunkedUploadId === undefined || chunkedUploadId === null) {
         throw new Error("Missing the required parameter 'chunkedUploadId' when calling getChunkedUpload");
       }
 
@@ -3034,7 +3037,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChunkedUploadResponse;
@@ -3047,7 +3050,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getCommentsTranscript operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getCommentsTranscript operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getCommentsTranscriptCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -3074,12 +3077,12 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getCommentsTranscript");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getCommentsTranscript");
       }
 
@@ -3102,7 +3105,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/pdf'];
       var returnType = Object;
@@ -3115,7 +3118,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getConsumerDisclosure operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getConsumerDisclosure operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getConsumerDisclosureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
@@ -3145,22 +3148,22 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getConsumerDisclosure");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getConsumerDisclosure");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getConsumerDisclosure");
       }
 
       // verify the required parameter 'langCode' is set
-      if (langCode == undefined || langCode == null) {
+      if (langCode === undefined || langCode === null) {
         throw new Error("Missing the required parameter 'langCode' when calling getConsumerDisclosure");
       }
 
@@ -3185,7 +3188,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConsumerDisclosure;
@@ -3198,7 +3201,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getConsumerDisclosureDefault operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getConsumerDisclosureDefault operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getConsumerDisclosureDefaultCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
@@ -3227,17 +3230,17 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getConsumerDisclosureDefault");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getConsumerDisclosureDefault");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getConsumerDisclosureDefault");
       }
 
@@ -3261,7 +3264,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConsumerDisclosure;
@@ -3274,7 +3277,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getDocument operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getDocumentCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -3316,17 +3319,17 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDocument");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getDocument");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getDocument");
       }
 
@@ -3358,7 +3361,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/pdf'];
       var returnType = Object;
@@ -3371,7 +3374,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getDocumentPageImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getDocumentPageImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getDocumentPageImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -3404,22 +3407,22 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDocumentPageImage");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getDocumentPageImage");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getDocumentPageImage");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling getDocumentPageImage");
       }
 
@@ -3447,7 +3450,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['image/png'];
       var returnType = Object;
@@ -3460,7 +3463,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getDocumentTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getDocumentTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getDocumentTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -3488,17 +3491,17 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDocumentTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getDocumentTabs");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getDocumentTabs");
       }
 
@@ -3522,7 +3525,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -3535,7 +3538,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getEmailSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
@@ -3554,12 +3557,12 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEmailSettings");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getEmailSettings");
       }
 
@@ -3581,7 +3584,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EmailSettings;
@@ -3594,7 +3597,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getEnvelope operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getEnvelope operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEnvelopeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Envelope} data The data returned by the service call.
@@ -3623,12 +3626,12 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEnvelope");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelope");
       }
 
@@ -3652,7 +3655,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Envelope;
@@ -3665,7 +3668,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getEnvelopeDocumentHtmlDefinitions operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getEnvelopeDocumentHtmlDefinitions operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEnvelopeDocumentHtmlDefinitionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
@@ -3684,17 +3687,17 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeDocumentHtmlDefinitions");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeDocumentHtmlDefinitions");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getEnvelopeDocumentHtmlDefinitions");
       }
 
@@ -3717,7 +3720,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitionOriginals;
@@ -3730,7 +3733,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getEnvelopeHtmlDefinitions operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getEnvelopeHtmlDefinitions operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEnvelopeHtmlDefinitionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
@@ -3748,12 +3751,12 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeHtmlDefinitions");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeHtmlDefinitions");
       }
 
@@ -3775,7 +3778,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentHtmlDefinitionOriginals;
@@ -3788,7 +3791,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getEnvelopeTransferRules operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getEnvelopeTransferRules operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEnvelopeTransferRulesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTransferRuleInformation} data The data returned by the service call.
@@ -3815,7 +3818,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeTransferRules");
       }
 
@@ -3838,7 +3841,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeTransferRuleInformation;
@@ -3851,7 +3854,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getFormData operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getFormData operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getFormDataCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeFormData} data The data returned by the service call.
@@ -3869,12 +3872,12 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getFormData");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getFormData");
       }
 
@@ -3896,7 +3899,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeFormData;
@@ -3909,7 +3912,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -3930,12 +3933,12 @@ If the call is made by the locked by user and the request has the same integrato
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getLock");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getLock");
       }
 
@@ -3957,7 +3960,7 @@ If the call is made by the locked by user and the request has the same integrato
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -3970,7 +3973,7 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getNotificationSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
@@ -3989,12 +3992,12 @@ If the call is made by the locked by user and the request has the same integrato
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getNotificationSettings");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getNotificationSettings");
       }
 
@@ -4016,7 +4019,7 @@ If the call is made by the locked by user and the request has the same integrato
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Notification;
@@ -4029,7 +4032,7 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPageTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPageTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getPageTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -4049,22 +4052,22 @@ If the call is made by the locked by user and the request has the same integrato
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPageTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getPageTabs");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getPageTabs");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling getPageTabs");
       }
 
@@ -4088,7 +4091,7 @@ If the call is made by the locked by user and the request has the same integrato
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -4101,7 +4104,7 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPages operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPages operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getPagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PageImages} data The data returned by the service call.
@@ -4135,17 +4138,17 @@ If the call is made by the locked by user and the request has the same integrato
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPages");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getPages");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling getPages");
       }
 
@@ -4175,7 +4178,7 @@ If the call is made by the locked by user and the request has the same integrato
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageImages;
@@ -4188,7 +4191,7 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getRecipientDocumentVisibility operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
@@ -4207,17 +4210,17 @@ If the call is made by the locked by user and the request has the same integrato
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientDocumentVisibility");
       }
 
@@ -4240,7 +4243,7 @@ If the call is made by the locked by user and the request has the same integrato
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentVisibilityList;
@@ -4253,7 +4256,7 @@ If the call is made by the locked by user and the request has the same integrato
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getRecipientInitialsImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getRecipientInitialsImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientInitialsImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -4290,17 +4293,17 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getRecipientInitialsImage");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getRecipientInitialsImage");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientInitialsImage");
       }
 
@@ -4324,7 +4327,7 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['image/gif'];
       var returnType = Object;
@@ -4337,7 +4340,7 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getRecipientSignature operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getRecipientSignature operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientSignatureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
@@ -4357,17 +4360,17 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getRecipientSignature");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getRecipientSignature");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientSignature");
       }
 
@@ -4390,7 +4393,7 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSignature;
@@ -4403,7 +4406,7 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getRecipientSignatureImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getRecipientSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getRecipientSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -4440,17 +4443,17 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getRecipientSignatureImage");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getRecipientSignatureImage");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientSignatureImage");
       }
 
@@ -4474,7 +4477,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['image/gif'];
       var returnType = Object;
@@ -4487,7 +4490,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getTabsBlob operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getTabsBlob operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getTabsBlobCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -4504,12 +4507,12 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getTabsBlob");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getTabsBlob");
       }
 
@@ -4531,7 +4534,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -4544,7 +4547,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getTemplateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
@@ -4563,17 +4566,17 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getTemplateRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling getTemplateRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getTemplateRecipientDocumentVisibility");
       }
 
@@ -4596,7 +4599,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentVisibilityList;
@@ -4609,7 +4612,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listAuditEvents operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listAuditEvents operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listAuditEventsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAuditEventResponse} data The data returned by the service call.
@@ -4628,12 +4631,12 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listAuditEvents");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listAuditEvents");
       }
 
@@ -4655,7 +4658,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeAuditEventResponse;
@@ -4668,7 +4671,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFieldsEnvelope} data The data returned by the service call.
@@ -4689,12 +4692,12 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listCustomFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listCustomFields");
       }
 
@@ -4716,7 +4719,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFieldsEnvelope;
@@ -4729,7 +4732,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -4749,17 +4752,17 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listDocumentFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling listDocumentFields");
       }
 
@@ -4782,7 +4785,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -4795,7 +4798,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listDocuments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocumentsResult} data The data returned by the service call.
@@ -4828,12 +4831,12 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listDocuments");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listDocuments");
       }
 
@@ -4861,7 +4864,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeDocumentsResult;
@@ -4874,7 +4877,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Recipients} data The data returned by the service call.
@@ -4889,7 +4892,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and &#x60;include_tabs&#x60; is set to **true**, all tabs with anchor tab properties are included in the response. 
+     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response. 
      * @param {String} optsOrCallback.includeExtended  When set to **true**, the extended properties are included in the response. 
      * @param {String} optsOrCallback.includeMetadata 
      * @param {String} optsOrCallback.includeTabs When set to **true**, the tab information associated with the recipient is included in the response.
@@ -4907,12 +4910,12 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listRecipients");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listRecipients");
       }
 
@@ -4938,7 +4941,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Recipients;
@@ -4951,7 +4954,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listStatus operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listStatus operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listStatusCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopesInformation} data The data returned by the service call.
@@ -4990,7 +4993,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
       var postBody = optsOrCallback['envelopeIdsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listStatus");
       }
 
@@ -5023,7 +5026,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopesInformation;
@@ -5036,7 +5039,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listStatusChanges operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listStatusChanges operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listStatusChangesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopesInformation} data The data returned by the service call.
@@ -5067,14 +5070,14 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} optsOrCallback.cdseMode 
      * @param {String} optsOrCallback.continuationToken 
      * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.customField This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding &#39;%&#39; (percent sign) around the custom field query value.   Example 1: If you have an envelope custom field called \&quot;Region\&quot; and you want to search for all envelopes where the value is \&quot;West\&quot; you would use the query: &#x60;?custom_field&#x3D;Region&#x3D;West&#x60;.   Example 2: To search for envelopes where the &#x60;ApplicationID&#x60; custom field has the value or partial value of \&quot;DocuSign\&quot; in field, the query would be: &#x60;?custom_field&#x3D;ApplicationId&#x3D;%DocuSign%&#x60; This would find envelopes where the custom field value is \&quot;DocuSign for Salesforce\&quot; or \&quot;DocuSign envelope.\&quot;  
+     * @param {String} optsOrCallback.customField This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding '%' (percent sign) around the custom field query value.   Example 1: If you have an envelope custom field called \"Region\" and you want to search for all envelopes where the value is \"West\" you would use the query: `?custom_field=Region=West`.   Example 2: To search for envelopes where the `ApplicationID` custom field has the value or partial value of \"DocuSign\" in field, the query would be: `?custom_field=ApplicationId=%DocuSign%` This would find envelopes where the custom field value is \"DocuSign for Salesforce\" or \"DocuSign envelope.\"  
      * @param {String} optsOrCallback.email 
      * @param {String} optsOrCallback.envelopeIds 
      * @param {String} optsOrCallback.exclude 
      * @param {String} optsOrCallback.folderIds 
      * @param {String} optsOrCallback.folderTypes 
-     * @param {String} optsOrCallback.fromDate The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.  This is required unless &#39;envelopeId&#39;s are used.
-     * @param {String} optsOrCallback.fromToStatus This is the status type checked for in the &#x60;from_date&#x60;/&#x60;to_date&#x60; period. If &#x60;changed&#x60; is specified, then envelopes that changed status during the period are found. If for example, &#x60;created&#x60; is specified, then envelopes created during the period are found. Default is &#x60;changed&#x60;.   Possible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
+     * @param {String} optsOrCallback.fromDate The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.  This is required unless 'envelopeId's are used.
+     * @param {String} optsOrCallback.fromToStatus This is the status type checked for in the `from_date`/`to_date` period. If `changed` is specified, then envelopes that changed status during the period are found. If for example, `created` is specified, then envelopes created during the period are found. Default is `changed`.   Possible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
      * @param {String} optsOrCallback.include 
      * @param {String} optsOrCallback.includePurgeInformation 
      * @param {String} optsOrCallback.intersectingFolderIds 
@@ -5087,8 +5090,8 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} optsOrCallback.searchText 
      * @param {String} optsOrCallback.startPosition 
      * @param {String} optsOrCallback.status The list of current statuses to include in the response. By default, all envelopes found are returned. If values are specified, then of the envelopes found, only those with the current status specified are returned in the results.   Possible values are: Voided, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
-     * @param {String} optsOrCallback.toDate Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the &#x60;to_date&#x60;. 
-     * @param {String} optsOrCallback.transactionIds If included in the query string, this is a comma separated list of envelope &#x60;transactionId&#x60;s.   If included in the &#x60;request_body&#x60;, this is a list of envelope &#x60;transactionId&#x60;s.   ###### Note: &#x60;transactionId&#x60;s are only valid in the DocuSign system for seven days. 
+     * @param {String} optsOrCallback.toDate Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the `to_date`. 
+     * @param {String} optsOrCallback.transactionIds If included in the query string, this is a comma separated list of envelope `transactionId`s.   If included in the `request_body`, this is a list of envelope `transactionId`s.   ###### Note: `transactionId`s are only valid in the DocuSign system for seven days. 
      * @param {String} optsOrCallback.userFilter 
      * @param {String} optsOrCallback.userId 
      * @param {String} optsOrCallback.userName 
@@ -5106,7 +5109,7 @@ Client applications should check that the statuses they are requesting make sens
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listStatusChanges");
       }
 
@@ -5157,7 +5160,7 @@ Client applications should check that the statuses they are requesting make sens
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopesInformation;
@@ -5170,7 +5173,7 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -5200,17 +5203,17 @@ Client applications should check that the statuses they are requesting make sens
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling listTabs");
       }
 
@@ -5235,7 +5238,7 @@ Client applications should check that the statuses they are requesting make sens
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -5248,7 +5251,7 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listTemplates operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listTemplates operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listTemplatesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateInformation} data The data returned by the service call.
@@ -5277,12 +5280,12 @@ Client applications should check that the statuses they are requesting make sens
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listTemplates");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listTemplates");
       }
 
@@ -5305,7 +5308,7 @@ Client applications should check that the statuses they are requesting make sens
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateInformation;
@@ -5318,7 +5321,7 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listTemplatesForDocument operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listTemplatesForDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~listTemplatesForDocumentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateInformation} data The data returned by the service call.
@@ -5347,17 +5350,17 @@ Client applications should check that the statuses they are requesting make sens
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listTemplatesForDocument");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling listTemplatesForDocument");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling listTemplatesForDocument");
       }
 
@@ -5381,7 +5384,7 @@ Client applications should check that the statuses they are requesting make sens
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateInformation;
@@ -5394,7 +5397,7 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * (Optional)Callback function to receive the result of the putAttachment operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the putAttachment operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~putAttachmentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
@@ -5422,17 +5425,17 @@ Client applications should check that the statuses they are requesting make sens
       var postBody = optsOrCallback['attachment'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling putAttachment");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling putAttachment");
       }
 
       // verify the required parameter 'attachmentId' is set
-      if (attachmentId == undefined || attachmentId == null) {
+      if (attachmentId === undefined || attachmentId === null) {
         throw new Error("Missing the required parameter 'attachmentId' when calling putAttachment");
       }
 
@@ -5455,7 +5458,7 @@ Client applications should check that the statuses they are requesting make sens
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeAttachmentsResult;
@@ -5468,7 +5471,7 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * (Optional)Callback function to receive the result of the putAttachments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the putAttachments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~putAttachmentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeAttachmentsResult} data The data returned by the service call.
@@ -5495,12 +5498,12 @@ Client applications should check that the statuses they are requesting make sens
       var postBody = optsOrCallback['envelopeAttachmentsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling putAttachments");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling putAttachments");
       }
 
@@ -5522,7 +5525,7 @@ Client applications should check that the statuses they are requesting make sens
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeAttachmentsResult;
@@ -5535,7 +5538,7 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * (Optional)Callback function to receive the result of the rotateDocumentPage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the rotateDocumentPage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~rotateDocumentPageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -5564,22 +5567,22 @@ Client applications should check that the statuses they are requesting make sens
       var postBody = optsOrCallback['pageRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling rotateDocumentPage");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling rotateDocumentPage");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling rotateDocumentPage");
       }
 
       // verify the required parameter 'pageNumber' is set
-      if (pageNumber == undefined || pageNumber == null) {
+      if (pageNumber === undefined || pageNumber === null) {
         throw new Error("Missing the required parameter 'pageNumber' when calling rotateDocumentPage");
       }
 
@@ -5603,7 +5606,7 @@ Client applications should check that the statuses they are requesting make sens
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -5616,7 +5619,7 @@ Client applications should check that the statuses they are requesting make sens
     };
 
     /**
-     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeUpdateSummary} data The data returned by the service call.
@@ -5670,12 +5673,12 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
       var postBody = optsOrCallback['envelope'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling update");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling update");
       }
 
@@ -5699,7 +5702,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeUpdateSummary;
@@ -5712,7 +5715,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateChunkedUpload operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateChunkedUpload operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateChunkedUploadCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
@@ -5739,12 +5742,12 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateChunkedUpload");
       }
 
       // verify the required parameter 'chunkedUploadId' is set
-      if (chunkedUploadId == undefined || chunkedUploadId == null) {
+      if (chunkedUploadId === undefined || chunkedUploadId === null) {
         throw new Error("Missing the required parameter 'chunkedUploadId' when calling updateChunkedUpload");
       }
 
@@ -5767,7 +5770,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChunkedUploadResponse;
@@ -5780,7 +5783,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateChunkedUploadPart operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateChunkedUploadPart operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateChunkedUploadPartCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ChunkedUploadResponse} data The data returned by the service call.
@@ -5788,7 +5791,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
      */
 
     /**
-     * Add a chunk, a chunk &#39;part&#39;, to an existing ChunkedUpload.
+     * Add a chunk, a chunk 'part', to an existing ChunkedUpload.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} chunkedUploadId 
      * @param {String} chunkedUploadPartSeq 
@@ -5808,17 +5811,17 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
       var postBody = optsOrCallback['chunkedUploadRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateChunkedUploadPart");
       }
 
       // verify the required parameter 'chunkedUploadId' is set
-      if (chunkedUploadId == undefined || chunkedUploadId == null) {
+      if (chunkedUploadId === undefined || chunkedUploadId === null) {
         throw new Error("Missing the required parameter 'chunkedUploadId' when calling updateChunkedUploadPart");
       }
 
       // verify the required parameter 'chunkedUploadPartSeq' is set
-      if (chunkedUploadPartSeq == undefined || chunkedUploadPartSeq == null) {
+      if (chunkedUploadPartSeq === undefined || chunkedUploadPartSeq === null) {
         throw new Error("Missing the required parameter 'chunkedUploadPartSeq' when calling updateChunkedUploadPart");
       }
 
@@ -5841,7 +5844,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChunkedUploadResponse;
@@ -5854,7 +5857,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -5885,12 +5888,12 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['customFields'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateCustomFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateCustomFields");
       }
 
@@ -5912,7 +5915,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -5925,7 +5928,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateDocument operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateDocument operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateDocumentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocument} data The data returned by the service call.
@@ -5945,17 +5948,17 @@ Each custom field used in an envelope must have a unique name.
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDocument");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateDocument");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling updateDocument");
       }
 
@@ -5978,7 +5981,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeDocument;
@@ -5991,7 +5994,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateDocumentFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateDocumentFields operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateDocumentFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentFieldsInformation} data The data returned by the service call.
@@ -6020,17 +6023,17 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['documentFieldsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDocumentFields");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateDocumentFields");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling updateDocumentFields");
       }
 
@@ -6053,7 +6056,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentFieldsInformation;
@@ -6066,7 +6069,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateDocumentTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateDocumentTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateDocumentTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -6094,17 +6097,17 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['tabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDocumentTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateDocumentTabs");
       }
 
       // verify the required parameter 'documentId' is set
-      if (documentId == undefined || documentId == null) {
+      if (documentId === undefined || documentId === null) {
         throw new Error("Missing the required parameter 'documentId' when calling updateDocumentTabs");
       }
 
@@ -6127,7 +6130,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -6140,7 +6143,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateDocuments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateDocuments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateDocumentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeDocumentsResult} data The data returned by the service call.
@@ -6168,12 +6171,12 @@ Each custom field used in an envelope must have a unique name.
       var postBody = optsOrCallback['envelopeDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDocuments");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateDocuments");
       }
 
@@ -6195,7 +6198,7 @@ Each custom field used in an envelope must have a unique name.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeDocumentsResult;
@@ -6208,7 +6211,7 @@ Each custom field used in an envelope must have a unique name.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateEmailSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateEmailSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateEmailSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EmailSettings} data The data returned by the service call.
@@ -6238,12 +6241,12 @@ This can also be used to delete an individual email override setting by using an
       var postBody = optsOrCallback['emailSettings'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateEmailSettings");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateEmailSettings");
       }
 
@@ -6265,7 +6268,7 @@ This can also be used to delete an individual email override setting by using an
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EmailSettings;
@@ -6278,7 +6281,7 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateEnvelopeTransferRule operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateEnvelopeTransferRule operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateEnvelopeTransferRuleCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTransferRule} data The data returned by the service call.
@@ -6305,12 +6308,12 @@ This can also be used to delete an individual email override setting by using an
       var postBody = optsOrCallback['envelopeTransferRule'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopeTransferRule");
       }
 
       // verify the required parameter 'envelopeTransferRuleId' is set
-      if (envelopeTransferRuleId == undefined || envelopeTransferRuleId == null) {
+      if (envelopeTransferRuleId === undefined || envelopeTransferRuleId === null) {
         throw new Error("Missing the required parameter 'envelopeTransferRuleId' when calling updateEnvelopeTransferRule");
       }
 
@@ -6332,7 +6335,7 @@ This can also be used to delete an individual email override setting by using an
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeTransferRule;
@@ -6345,7 +6348,7 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateEnvelopeTransferRules operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateEnvelopeTransferRules operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateEnvelopeTransferRulesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/EnvelopeTransferRuleInformation} data The data returned by the service call.
@@ -6371,7 +6374,7 @@ This can also be used to delete an individual email override setting by using an
       var postBody = optsOrCallback['envelopeTransferRuleInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopeTransferRules");
       }
 
@@ -6392,7 +6395,7 @@ This can also be used to delete an individual email override setting by using an
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EnvelopeTransferRuleInformation;
@@ -6405,7 +6408,7 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateLock operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateLock operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateLockCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LockInformation} data The data returned by the service call.
@@ -6433,12 +6436,12 @@ This can also be used to delete an individual email override setting by using an
       var postBody = optsOrCallback['lockRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateLock");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateLock");
       }
 
@@ -6460,7 +6463,7 @@ This can also be used to delete an individual email override setting by using an
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LockInformation;
@@ -6473,7 +6476,7 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateNotificationSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateNotificationSettings operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateNotificationSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notification} data The data returned by the service call.
@@ -6500,12 +6503,12 @@ This can also be used to delete an individual email override setting by using an
       var postBody = optsOrCallback['envelopeNotificationRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateNotificationSettings");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateNotificationSettings");
       }
 
@@ -6527,7 +6530,7 @@ This can also be used to delete an individual email override setting by using an
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Notification;
@@ -6540,7 +6543,7 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
@@ -6568,17 +6571,17 @@ This can also be used to delete an individual email override setting by using an
       var postBody = optsOrCallback['documentVisibilityList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipientDocumentVisibility");
       }
 
@@ -6601,7 +6604,7 @@ This can also be used to delete an individual email override setting by using an
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentVisibilityList;
@@ -6614,7 +6617,7 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRecipientInitialsImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRecipientInitialsImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientInitialsImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -6635,17 +6638,17 @@ For the Authentication/Authorization for this call, the credentials must match t
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateRecipientInitialsImage");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipientInitialsImage");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipientInitialsImage");
       }
 
@@ -6668,7 +6671,7 @@ For the Authentication/Authorization for this call, the credentials must match t
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = ['image/gif'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -6681,7 +6684,7 @@ For the Authentication/Authorization for this call, the credentials must match t
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRecipientSignatureImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRecipientSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -6702,17 +6705,17 @@ For the Authentication/Authorization for this call, the credentials must match t
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateRecipientSignatureImage");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipientSignatureImage");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipientSignatureImage");
       }
 
@@ -6735,7 +6738,7 @@ For the Authentication/Authorization for this call, the credentials must match t
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = ['image/gif'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -6748,7 +6751,7 @@ For the Authentication/Authorization for this call, the credentials must match t
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/RecipientsUpdateSummary} data The data returned by the service call.
@@ -6769,7 +6772,7 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.combineSameOrderRecipients 
      * @param {String} optsOrCallback.offlineSigning 
-     * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the   envelope if the new recipient&#39;s routing order is before or the same as the envelope&#39;s next recipient.
+     * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
      * @param {module:model/Recipients} optsOrCallback.recipients 
      * @param {module:api/EnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RecipientsUpdateSummary}
@@ -6785,12 +6788,12 @@ If you send information for a recipient that does not already exist in a draft e
       var postBody = optsOrCallback['recipients'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateRecipients");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipients");
       }
 
@@ -6815,7 +6818,7 @@ If you send information for a recipient that does not already exist in a draft e
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = RecipientsUpdateSummary;
@@ -6828,7 +6831,7 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRecipientsDocumentVisibility operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRecipientsDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateRecipientsDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DocumentVisibilityList} data The data returned by the service call.
@@ -6855,12 +6858,12 @@ If you send information for a recipient that does not already exist in a draft e
       var postBody = optsOrCallback['documentVisibilityList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateRecipientsDocumentVisibility");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipientsDocumentVisibility");
       }
 
@@ -6882,7 +6885,7 @@ If you send information for a recipient that does not already exist in a draft e
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DocumentVisibilityList;
@@ -6895,7 +6898,7 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateTabs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateTabs operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTabsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Tabs} data The data returned by the service call.
@@ -6924,17 +6927,17 @@ If you send information for a recipient that does not already exist in a draft e
       var postBody = optsOrCallback['tabs'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateTabs");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateTabs");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateTabs");
       }
 
@@ -6957,7 +6960,7 @@ If you send information for a recipient that does not already exist in a draft e
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Tabs;
@@ -6970,7 +6973,7 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateTabsBlob operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateTabsBlob operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTabsBlobCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -6987,12 +6990,12 @@ If you send information for a recipient that does not already exist in a draft e
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateTabsBlob");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateTabsBlob");
       }
 
@@ -7014,7 +7017,7 @@ If you send information for a recipient that does not already exist in a draft e
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -7027,7 +7030,7 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTemplateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentVisibilityList} data The data returned by the service call.
@@ -7055,17 +7058,17 @@ If you send information for a recipient that does not already exist in a draft e
       var postBody = optsOrCallback['templateDocumentVisibilityList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateTemplateRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateTemplateRecipientDocumentVisibility");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateTemplateRecipientDocumentVisibility");
       }
 
@@ -7088,7 +7091,7 @@ If you send information for a recipient that does not already exist in a draft e
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateDocumentVisibilityList;
@@ -7101,7 +7104,7 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateTemplateRecipientsDocumentVisibility operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateTemplateRecipientsDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTemplateRecipientsDocumentVisibilityCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateDocumentVisibilityList} data The data returned by the service call.
@@ -7128,12 +7131,12 @@ If you send information for a recipient that does not already exist in a draft e
       var postBody = optsOrCallback['templateDocumentVisibilityList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateTemplateRecipientsDocumentVisibility");
       }
 
       // verify the required parameter 'templateId' is set
-      if (templateId == undefined || templateId == null) {
+      if (templateId === undefined || templateId === null) {
         throw new Error("Missing the required parameter 'templateId' when calling updateTemplateRecipientsDocumentVisibility");
       }
 
@@ -7155,7 +7158,7 @@ If you send information for a recipient that does not already exist in a draft e
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateDocumentVisibilityList;

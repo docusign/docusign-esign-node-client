@@ -30,7 +30,6 @@
   /**
    * The DateSigned model module.
    * @module model/DateSigned
-   * @version 5.3.0
    */
 
   /**

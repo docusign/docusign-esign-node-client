@@ -30,7 +30,6 @@
   /**
    * The ConnectSalesforceObject model module.
    * @module model/ConnectSalesforceObject
-   * @version 5.3.0
    */
 
   /**

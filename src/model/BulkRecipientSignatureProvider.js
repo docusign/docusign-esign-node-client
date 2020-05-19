@@ -30,7 +30,6 @@
   /**
    * The BulkRecipientSignatureProvider model module.
    * @module model/BulkRecipientSignatureProvider
-   * @version 5.3.0
    */
 
   /**

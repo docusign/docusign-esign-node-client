@@ -30,7 +30,6 @@
   /**
    * The SmartSectionAnchorPosition model module.
    * @module model/SmartSectionAnchorPosition
-   * @version 5.3.0
    */
 
   /**

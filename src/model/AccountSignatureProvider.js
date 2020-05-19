@@ -30,7 +30,6 @@
   /**
    * The AccountSignatureProvider model module.
    * @module model/AccountSignatureProvider
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The NotificationDefaults model module.
    * @module model/NotificationDefaults
-   * @version 5.3.0
    */
 
   /**

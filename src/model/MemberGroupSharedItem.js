@@ -30,7 +30,6 @@
   /**
    * The MemberGroupSharedItem model module.
    * @module model/MemberGroupSharedItem
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The PurchasedEnvelopesInformation model module.
    * @module model/PurchasedEnvelopesInformation
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The Title model module.
    * @module model/Title
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The UserInfo model module.
    * @module model/UserInfo
-   * @version 5.3.0
    */
 
   /**

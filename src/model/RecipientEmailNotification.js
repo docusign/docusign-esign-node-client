@@ -30,7 +30,6 @@
   /**
    * The RecipientEmailNotification model module.
    * @module model/RecipientEmailNotification
-   * @version 5.3.0
    */
 
   /**

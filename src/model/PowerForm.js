@@ -30,7 +30,6 @@
   /**
    * The PowerForm model module.
    * @module model/PowerForm
-   * @version 5.3.0
    */
 
   /**

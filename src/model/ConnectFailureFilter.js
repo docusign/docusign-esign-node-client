@@ -30,7 +30,6 @@
   /**
    * The ConnectFailureFilter model module.
    * @module model/ConnectFailureFilter
-   * @version 5.3.0
    */
 
   /**

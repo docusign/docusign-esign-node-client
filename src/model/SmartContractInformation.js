@@ -30,7 +30,6 @@
   /**
    * The SmartContractInformation model module.
    * @module model/SmartContractInformation
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The RecipientSignatureProviderOptions model module.
    * @module model/RecipientSignatureProviderOptions
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The ViewUrl model module.
    * @module model/ViewUrl
-   * @version 5.3.0
    */
 
   /**

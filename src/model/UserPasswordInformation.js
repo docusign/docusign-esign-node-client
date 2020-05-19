@@ -30,7 +30,6 @@
   /**
    * The UserPasswordInformation model module.
    * @module model/UserPasswordInformation
-   * @version 5.3.0
    */
 
   /**

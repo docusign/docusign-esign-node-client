@@ -30,7 +30,6 @@
   /**
    * The EnvelopesInformation model module.
    * @module model/EnvelopesInformation
-   * @version 5.3.0
    */
 
   /**

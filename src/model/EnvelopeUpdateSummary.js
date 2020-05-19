@@ -30,7 +30,6 @@
   /**
    * The EnvelopeUpdateSummary model module.
    * @module model/EnvelopeUpdateSummary
-   * @version 5.3.0
    */
 
   /**

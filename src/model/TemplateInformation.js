@@ -30,7 +30,6 @@
   /**
    * The TemplateInformation model module.
    * @module model/TemplateInformation
-   * @version 5.3.0
    */
 
   /**

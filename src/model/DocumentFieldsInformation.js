@@ -30,7 +30,6 @@
   /**
    * The DocumentFieldsInformation model module.
    * @module model/DocumentFieldsInformation
-   * @version 5.3.0
    */
 
   /**

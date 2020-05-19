@@ -30,7 +30,6 @@
   /**
    * The BillingChargeResponse model module.
    * @module model/BillingChargeResponse
-   * @version 5.3.0
    */
 
   /**

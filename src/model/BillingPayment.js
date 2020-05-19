@@ -30,7 +30,6 @@
   /**
    * The BillingPayment model module.
    * @module model/BillingPayment
-   * @version 5.3.0
    */
 
   /**

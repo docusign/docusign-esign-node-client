@@ -30,7 +30,6 @@
   /**
    * The AccountNotification model module.
    * @module model/AccountNotification
-   * @version 5.3.0
    */
 
   /**

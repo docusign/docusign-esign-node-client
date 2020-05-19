@@ -30,7 +30,6 @@
   /**
    * The ContactUpdateResponse model module.
    * @module model/ContactUpdateResponse
-   * @version 5.3.0
    */
 
   /**

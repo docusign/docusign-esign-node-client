@@ -30,7 +30,6 @@
   /**
    * The SeatDiscount model module.
    * @module model/SeatDiscount
-   * @version 5.3.0
    */
 
   /**

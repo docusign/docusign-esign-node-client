@@ -29,7 +29,6 @@
   /**
    * Connect service.
    * @module api/ConnectApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createConfiguration operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~createConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectCustomConfiguration} data The data returned by the service call.
@@ -82,7 +81,7 @@
       var postBody = optsOrCallback['connectCustomConfiguration'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createConfiguration");
       }
 
@@ -103,7 +102,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectCustomConfiguration;
@@ -116,7 +115,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteConfiguration operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -139,12 +138,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteConfiguration");
       }
 
       // verify the required parameter 'connectId' is set
-      if (connectId == undefined || connectId == null) {
+      if (connectId === undefined || connectId === null) {
         throw new Error("Missing the required parameter 'connectId' when calling deleteConfiguration");
       }
 
@@ -166,7 +165,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -179,7 +178,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteEventFailureLog operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteEventFailureLog operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteEventFailureLogCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -197,12 +196,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteEventFailureLog");
       }
 
       // verify the required parameter 'failureId' is set
-      if (failureId == undefined || failureId == null) {
+      if (failureId === undefined || failureId === null) {
         throw new Error("Missing the required parameter 'failureId' when calling deleteEventFailureLog");
       }
 
@@ -224,7 +223,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -237,7 +236,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteEventLog operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteEventLog operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteEventLogCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -256,12 +255,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteEventLog");
       }
 
       // verify the required parameter 'logId' is set
-      if (logId == undefined || logId == null) {
+      if (logId === undefined || logId === null) {
         throw new Error("Missing the required parameter 'logId' when calling deleteEventLog");
       }
 
@@ -283,7 +282,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -296,7 +295,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteEventLogs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteEventLogs operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteEventLogsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -315,7 +314,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteEventLogs");
       }
 
@@ -336,7 +335,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -349,7 +348,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteMobileNotifiers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteMobileNotifiers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteMobileNotifiersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
@@ -376,7 +375,7 @@
       var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteMobileNotifiers");
       }
 
@@ -397,7 +396,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = MobileNotifierConfigurationInformation;
@@ -410,7 +409,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getConfiguration operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~getConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectConfigResults} data The data returned by the service call.
@@ -432,12 +431,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getConfiguration");
       }
 
       // verify the required parameter 'connectId' is set
-      if (connectId == undefined || connectId == null) {
+      if (connectId === undefined || connectId === null) {
         throw new Error("Missing the required parameter 'connectId' when calling getConfiguration");
       }
 
@@ -459,7 +458,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectConfigResults;
@@ -472,7 +471,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getEventLog operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getEventLog operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~getEventLogCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectLog} data The data returned by the service call.
@@ -502,12 +501,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEventLog");
       }
 
       // verify the required parameter 'logId' is set
-      if (logId == undefined || logId == null) {
+      if (logId === undefined || logId === null) {
         throw new Error("Missing the required parameter 'logId' when calling getEventLog");
       }
 
@@ -530,7 +529,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectLog;
@@ -543,7 +542,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listConfigurations operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listConfigurations operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listConfigurationsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectConfigResults} data The data returned by the service call.
@@ -563,7 +562,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listConfigurations");
       }
 
@@ -584,7 +583,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectConfigResults;
@@ -597,7 +596,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listEventFailureLogs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listEventFailureLogs operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listEventFailureLogsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectLogs} data The data returned by the service call.
@@ -625,7 +624,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listEventFailureLogs");
       }
 
@@ -648,7 +647,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectLogs;
@@ -661,7 +660,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listEventLogs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listEventLogs operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listEventLogsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectLogs} data The data returned by the service call.
@@ -691,7 +690,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listEventLogs");
       }
 
@@ -714,7 +713,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectLogs;
@@ -727,7 +726,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listMobileNotifiers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listMobileNotifiers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listMobileNotifiersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
@@ -745,7 +744,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listMobileNotifiers");
       }
 
@@ -766,7 +765,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = MobileNotifierConfigurationInformation;
@@ -779,7 +778,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listTests operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listTests operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listTestsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ResourceInformation} data The data returned by the service call.
@@ -797,12 +796,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listTests");
       }
 
       // verify the required parameter 'connectId' is set
-      if (connectId == undefined || connectId == null) {
+      if (connectId === undefined || connectId === null) {
         throw new Error("Missing the required parameter 'connectId' when calling listTests");
       }
 
@@ -824,7 +823,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ResourceInformation;
@@ -837,7 +836,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listUsers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~listUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/IntegratedUserInfoList} data The data returned by the service call.
@@ -870,12 +869,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listUsers");
       }
 
       // verify the required parameter 'connectId' is set
-      if (connectId == undefined || connectId == null) {
+      if (connectId === undefined || connectId === null) {
         throw new Error("Missing the required parameter 'connectId' when calling listUsers");
       }
 
@@ -903,7 +902,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = IntegratedUserInfoList;
@@ -916,7 +915,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the retryEventForEnvelope operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the retryEventForEnvelope operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~retryEventForEnvelopeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectFailureResults} data The data returned by the service call.
@@ -935,12 +934,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling retryEventForEnvelope");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling retryEventForEnvelope");
       }
 
@@ -962,7 +961,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectFailureResults;
@@ -975,7 +974,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the retryEventForEnvelopes operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the retryEventForEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~retryEventForEnvelopesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectFailureResults} data The data returned by the service call.
@@ -1002,7 +1001,7 @@
       var postBody = optsOrCallback['connectFailureFilter'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling retryEventForEnvelopes");
       }
 
@@ -1023,7 +1022,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectFailureResults;
@@ -1036,7 +1035,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateConfiguration operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~updateConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConnectCustomConfiguration} data The data returned by the service call.
@@ -1065,7 +1064,7 @@
       var postBody = optsOrCallback['connectCustomConfiguration'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateConfiguration");
       }
 
@@ -1086,7 +1085,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConnectCustomConfiguration;
@@ -1099,7 +1098,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateMobileNotifiers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateMobileNotifiers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~updateMobileNotifiersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/MobileNotifierConfigurationInformation} data The data returned by the service call.
@@ -1126,7 +1125,7 @@
       var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateMobileNotifiers");
       }
 
@@ -1147,7 +1146,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = MobileNotifierConfigurationInformation;

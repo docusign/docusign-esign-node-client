@@ -29,7 +29,6 @@
   /**
    * Notary service.
    * @module api/NotaryApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createNotary operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createNotary operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~createNotaryCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notary} data The data returned by the service call.
@@ -93,7 +92,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Notary;
@@ -106,7 +105,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createNotaryJurisdictions operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createNotaryJurisdictions operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~createNotaryJurisdictionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NotaryJurisdiction} data The data returned by the service call.
@@ -146,7 +145,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NotaryJurisdiction;
@@ -159,7 +158,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteNotaryJurisdiction operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteNotaryJurisdiction operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~deleteNotaryJurisdictionCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -175,7 +174,7 @@
       var postBody = null;
 
       // verify the required parameter 'jurisdictionId' is set
-      if (jurisdictionId == undefined || jurisdictionId == null) {
+      if (jurisdictionId === undefined || jurisdictionId === null) {
         throw new Error("Missing the required parameter 'jurisdictionId' when calling deleteNotaryJurisdiction");
       }
 
@@ -196,7 +195,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -209,7 +208,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getNotary operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getNotary operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~getNotaryCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NotaryResult} data The data returned by the service call.
@@ -250,7 +249,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NotaryResult;
@@ -263,7 +262,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getNotaryJurisdiction operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getNotaryJurisdiction operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~getNotaryJurisdictionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NotaryJurisdiction} data The data returned by the service call.
@@ -280,7 +279,7 @@
       var postBody = null;
 
       // verify the required parameter 'jurisdictionId' is set
-      if (jurisdictionId == undefined || jurisdictionId == null) {
+      if (jurisdictionId === undefined || jurisdictionId === null) {
         throw new Error("Missing the required parameter 'jurisdictionId' when calling getNotaryJurisdiction");
       }
 
@@ -301,7 +300,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NotaryJurisdiction;
@@ -314,7 +313,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getNotaryJurisdictionSeal operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getNotaryJurisdictionSeal operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~getNotaryJurisdictionSealCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -330,7 +329,7 @@
       var postBody = null;
 
       // verify the required parameter 'jurisdictionId' is set
-      if (jurisdictionId == undefined || jurisdictionId == null) {
+      if (jurisdictionId === undefined || jurisdictionId === null) {
         throw new Error("Missing the required parameter 'jurisdictionId' when calling getNotaryJurisdictionSeal");
       }
 
@@ -351,7 +350,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -364,7 +363,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getNotaryJurisdictions operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getNotaryJurisdictions operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~getNotaryJurisdictionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NotaryJurisdictionList} data The data returned by the service call.
@@ -395,7 +394,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NotaryJurisdictionList;
@@ -408,7 +407,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listNotaryJournals operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listNotaryJournals operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~listNotaryJournalsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NotaryJournalList} data The data returned by the service call.
@@ -453,7 +452,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NotaryJournalList;
@@ -466,7 +465,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateNotary operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateNotary operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~updateNotaryCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Notary} data The data returned by the service call.
@@ -506,7 +505,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Notary;
@@ -519,7 +518,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateNotaryJurisdiction operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateNotaryJurisdiction operation. If none specified a Promise will be returned.
      * @callback module:api/NotaryApi~updateNotaryJurisdictionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NotaryJurisdiction} data The data returned by the service call.
@@ -545,7 +544,7 @@
       var postBody = optsOrCallback['notaryJurisdiction'];
 
       // verify the required parameter 'jurisdictionId' is set
-      if (jurisdictionId == undefined || jurisdictionId == null) {
+      if (jurisdictionId === undefined || jurisdictionId === null) {
         throw new Error("Missing the required parameter 'jurisdictionId' when calling updateNotaryJurisdiction");
       }
 
@@ -566,7 +565,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NotaryJurisdiction;

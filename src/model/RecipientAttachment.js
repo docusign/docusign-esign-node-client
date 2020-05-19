@@ -30,7 +30,6 @@
   /**
    * The RecipientAttachment model module.
    * @module model/RecipientAttachment
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The AccountPasswordStrengthType model module.
    * @module model/AccountPasswordStrengthType
-   * @version 5.3.0
    */
 
   /**

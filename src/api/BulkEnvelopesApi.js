@@ -29,7 +29,6 @@
   /**
    * BulkEnvelopes service.
    * @module api/BulkEnvelopesApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createBulkSendList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createBulkSendList operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~createBulkSendListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkSendingList} data The data returned by the service call.
@@ -79,7 +78,7 @@
       var postBody = optsOrCallback['bulkSendingList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBulkSendList");
       }
 
@@ -100,7 +99,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkSendingList;
@@ -113,7 +112,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createBulkSendRequest operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createBulkSendRequest operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~createBulkSendRequestCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkSendResponse} data The data returned by the service call.
@@ -140,12 +139,12 @@
       var postBody = optsOrCallback['bulkSendRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBulkSendRequest");
       }
 
       // verify the required parameter 'bulkSendListId' is set
-      if (bulkSendListId == undefined || bulkSendListId == null) {
+      if (bulkSendListId === undefined || bulkSendListId === null) {
         throw new Error("Missing the required parameter 'bulkSendListId' when calling createBulkSendRequest");
       }
 
@@ -167,7 +166,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkSendResponse;
@@ -180,7 +179,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createBulkSendTestRequest operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createBulkSendTestRequest operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~createBulkSendTestRequestCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkSendTestResponse} data The data returned by the service call.
@@ -207,12 +206,12 @@
       var postBody = optsOrCallback['bulkSendRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBulkSendTestRequest");
       }
 
       // verify the required parameter 'bulkSendListId' is set
-      if (bulkSendListId == undefined || bulkSendListId == null) {
+      if (bulkSendListId === undefined || bulkSendListId === null) {
         throw new Error("Missing the required parameter 'bulkSendListId' when calling createBulkSendTestRequest");
       }
 
@@ -234,7 +233,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkSendTestResponse;
@@ -247,7 +246,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteBulkSendList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteBulkSendList operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~deleteBulkSendListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkSendingListSummaries} data The data returned by the service call.
@@ -265,12 +264,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBulkSendList");
       }
 
       // verify the required parameter 'bulkSendListId' is set
-      if (bulkSendListId == undefined || bulkSendListId == null) {
+      if (bulkSendListId === undefined || bulkSendListId === null) {
         throw new Error("Missing the required parameter 'bulkSendListId' when calling deleteBulkSendList");
       }
 
@@ -292,7 +291,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkSendingListSummaries;
@@ -305,7 +304,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~deleteRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsUpdateResponse} data The data returned by the service call.
@@ -327,17 +326,17 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteRecipients");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteRecipients");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipients");
       }
 
@@ -360,7 +359,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkRecipientsUpdateResponse;
@@ -373,7 +372,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkEnvelopeStatus} data The data returned by the service call.
@@ -387,7 +386,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
      * @param {String} batchId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Specifies the number of entries to return.
-     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include&#x3D;\&quot;failed,queued\&quot;)   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
+     * @param {String} optsOrCallback.include Specifies which entries are included in the response. Multiple entries can be included by using commas in the query string (example: ?include=\"failed,queued\")   Valid values are:   * all - Returns all entries. If present, overrides all other query settings. This is the default if no query string is provided. * failed - This only returns entries with a failed status. * queued - This only returns entries with a queued status. * sent - This only returns entries with a sent status.  
      * @param {String} optsOrCallback.startPosition Specifies the location in the list of envelopes from which to start.
      * @param {module:api/BulkEnvelopesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopeStatus}
@@ -403,12 +402,12 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling get");
       }
 
       // verify the required parameter 'batchId' is set
-      if (batchId == undefined || batchId == null) {
+      if (batchId === undefined || batchId === null) {
         throw new Error("Missing the required parameter 'batchId' when calling get");
       }
 
@@ -433,7 +432,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkEnvelopeStatus;
@@ -446,7 +445,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBulkSendList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBulkSendList operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~getBulkSendListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkSendingList} data The data returned by the service call.
@@ -464,12 +463,12 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBulkSendList");
       }
 
       // verify the required parameter 'bulkSendListId' is set
-      if (bulkSendListId == undefined || bulkSendListId == null) {
+      if (bulkSendListId === undefined || bulkSendListId === null) {
         throw new Error("Missing the required parameter 'bulkSendListId' when calling getBulkSendList");
       }
 
@@ -491,7 +490,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkSendingList;
@@ -504,7 +503,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBulkSendLists operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBulkSendLists operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~getBulkSendListsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkSendingListSummaries} data The data returned by the service call.
@@ -521,7 +520,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBulkSendLists");
       }
 
@@ -542,7 +541,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkSendingListSummaries;
@@ -555,7 +554,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~getRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsResponse} data The data returned by the service call.
@@ -585,17 +584,17 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getRecipients");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling getRecipients");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipients");
       }
 
@@ -620,7 +619,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkRecipientsResponse;
@@ -633,7 +632,7 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
-     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkEnvelopesResponse} data The data returned by the service call.
@@ -664,7 +663,7 @@ The response returns information about the envelopes sent with bulk recipient ba
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
@@ -688,7 +687,7 @@ The response returns information about the envelopes sent with bulk recipient ba
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkEnvelopesResponse;
@@ -701,7 +700,7 @@ The response returns information about the envelopes sent with bulk recipient ba
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateBulkSendList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateBulkSendList operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~updateBulkSendListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkSendingList} data The data returned by the service call.
@@ -728,12 +727,12 @@ The response returns information about the envelopes sent with bulk recipient ba
       var postBody = optsOrCallback['bulkSendingList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateBulkSendList");
       }
 
       // verify the required parameter 'bulkSendListId' is set
-      if (bulkSendListId == undefined || bulkSendListId == null) {
+      if (bulkSendListId === undefined || bulkSendListId === null) {
         throw new Error("Missing the required parameter 'bulkSendListId' when calling updateBulkSendList");
       }
 
@@ -755,7 +754,7 @@ The response returns information about the envelopes sent with bulk recipient ba
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BulkSendingList;
@@ -768,7 +767,7 @@ The response returns information about the envelopes sent with bulk recipient ba
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRecipients operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~updateRecipientsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BulkRecipientsSummaryResponse} data The data returned by the service call.
@@ -780,36 +779,36 @@ The response returns information about the envelopes sent with bulk recipient ba
      * Updates the bulk recipients in a draft envelope using a file upload. The Content-Type supported for uploading a bulk recipient file is CSV (text/csv).
 
 The REST API does not support modifying individual rows or values in the bulk recipients file. It only allows the entire file to be added or replaced with a new file.
-     * @param {String} bulkRecipientsRequest 
      * @param {String} accountId The external account number (int) or account ID GUID.
-     * @param {String} envelopeId The envelope&#39;s GUID. 
+     * @param {String} envelopeId The envelope's GUID. 
 
-Example: &#x60;93be49ab-afa0-4adf-933c-f752070d71ec&#x60;
-     * @param {String} recipientId A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each &#x60;recipientId&#x60; must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a &#x60;recipientId&#x60; of &#x60;1&#x60;.
+Example: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec`
+     * @param {String} recipientId A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each `recipientId` must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a `recipientId` of `1`.
+     * @param {Blob} bulkRecipientsRequest 
      * @param {module:api/BulkEnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsSummaryResponse}
      */
     this.updateRecipients = function(bulkRecipientsRequest, accountId, envelopeId, recipientId, callback) {
       var postBody = bulkRecipientsRequest;
 
-      // verify the required parameter 'bulkRecipientsRequest' is set
-      if (bulkRecipientsRequest == undefined || bulkRecipientsRequest == null) {
-        throw new Error("Missing the required parameter 'bulkRecipientsRequest' when calling updateRecipients");
-      }
-
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateRecipients");
       }
 
       // verify the required parameter 'envelopeId' is set
-      if (envelopeId == undefined || envelopeId == null) {
+      if (envelopeId === undefined || envelopeId === null) {
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipients");
       }
 
       // verify the required parameter 'recipientId' is set
-      if (recipientId == undefined || recipientId == null) {
+      if (recipientId === undefined || recipientId === null) {
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipients");
+      }
+
+      // verify the required parameter 'bulkRecipientsRequest' is set
+      if (bulkRecipientsRequest === undefined || bulkRecipientsRequest === null) {
+        throw new Error("Missing the required parameter 'bulkRecipientsRequest' when calling updateRecipients");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -831,7 +830,7 @@ Example: &#x60;93be49ab-afa0-4adf-933c-f752070d71ec&#x60;
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = ['text/csv'];
       var accepts = ['application/json'];
       var returnType = BulkRecipientsSummaryResponse;

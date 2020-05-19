@@ -30,7 +30,6 @@
   /**
    * The BrandLink model module.
    * @module model/BrandLink
-   * @version 5.3.0
    */
 
   /**

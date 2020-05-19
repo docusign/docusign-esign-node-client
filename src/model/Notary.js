@@ -30,7 +30,6 @@
   /**
    * The Notary model module.
    * @module model/Notary
-   * @version 5.3.0
    */
 
   /**

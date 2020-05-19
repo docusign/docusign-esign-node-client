@@ -30,7 +30,6 @@
   /**
    * The PageImages model module.
    * @module model/PageImages
-   * @version 5.3.0
    */
 
   /**

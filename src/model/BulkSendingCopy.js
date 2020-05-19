@@ -30,7 +30,6 @@
   /**
    * The BulkSendingCopy model module.
    * @module model/BulkSendingCopy
-   * @version 5.3.0
    */
 
   /**

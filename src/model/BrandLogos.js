@@ -30,7 +30,6 @@
   /**
    * The BrandLogos model module.
    * @module model/BrandLogos
-   * @version 5.3.0
    */
 
   /**

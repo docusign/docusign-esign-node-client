@@ -30,7 +30,6 @@
   /**
    * The RecipientProofFile model module.
    * @module model/RecipientProofFile
-   * @version 5.3.0
    */
 
   /**

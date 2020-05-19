@@ -30,7 +30,6 @@
   /**
    * The PermissionProfileInformation model module.
    * @module model/PermissionProfileInformation
-   * @version 5.3.0
    */
 
   /**

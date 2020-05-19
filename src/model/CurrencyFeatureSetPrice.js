@@ -30,7 +30,6 @@
   /**
    * The CurrencyFeatureSetPrice model module.
    * @module model/CurrencyFeatureSetPrice
-   * @version 5.3.0
    */
 
   /**

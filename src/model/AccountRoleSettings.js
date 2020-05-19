@@ -30,7 +30,6 @@
   /**
    * The AccountRoleSettings model module.
    * @module model/AccountRoleSettings
-   * @version 5.3.0
    */
 
   /**

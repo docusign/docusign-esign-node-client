@@ -30,7 +30,6 @@
   /**
    * The AccountPasswordQuestionsRequired model module.
    * @module model/AccountPasswordQuestionsRequired
-   * @version 5.3.0
    */
 
   /**

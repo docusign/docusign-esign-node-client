@@ -30,7 +30,6 @@
   /**
    * The Money model module.
    * @module model/Money
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The PayPalLegacySettings model module.
    * @module model/PayPalLegacySettings
-   * @version 5.3.0
    */
 
   /**

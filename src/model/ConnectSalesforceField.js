@@ -30,7 +30,6 @@
   /**
    * The ConnectSalesforceField model module.
    * @module model/ConnectSalesforceField
-   * @version 5.3.0
    */
 
   /**

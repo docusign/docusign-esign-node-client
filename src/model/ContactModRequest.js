@@ -30,7 +30,6 @@
   /**
    * The ContactModRequest model module.
    * @module model/ContactModRequest
-   * @version 5.3.0
    */
 
   /**

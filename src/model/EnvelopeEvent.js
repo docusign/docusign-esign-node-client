@@ -30,7 +30,6 @@
   /**
    * The EnvelopeEvent model module.
    * @module model/EnvelopeEvent
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The EnvelopeId model module.
    * @module model/EnvelopeId
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The BulkSendingCopyCustomField model module.
    * @module model/BulkSendingCopyCustomField
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The CreditCardInformation model module.
    * @module model/CreditCardInformation
-   * @version 5.3.0
    */
 
   /**

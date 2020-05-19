@@ -30,7 +30,6 @@
   /**
    * The Recipients model module.
    * @module model/Recipients
-   * @version 5.3.0
    */
 
   /**

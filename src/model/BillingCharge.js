@@ -30,7 +30,6 @@
   /**
    * The BillingCharge model module.
    * @module model/BillingCharge
-   * @version 5.3.0
    */
 
   /**

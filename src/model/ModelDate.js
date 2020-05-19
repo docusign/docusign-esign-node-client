@@ -30,7 +30,6 @@
   /**
    * The ModelDate model module.
    * @module model/ModelDate
-   * @version 5.3.0
    */
 
   /**

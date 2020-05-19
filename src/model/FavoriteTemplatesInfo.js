@@ -30,7 +30,6 @@
   /**
    * The FavoriteTemplatesInfo model module.
    * @module model/FavoriteTemplatesInfo
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The SignHere model module.
    * @module model/SignHere
-   * @version 5.3.0
    */
 
   /**

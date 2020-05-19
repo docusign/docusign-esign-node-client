@@ -30,7 +30,6 @@
   /**
    * The FileTypeList model module.
    * @module model/FileTypeList
-   * @version 5.3.0
    */
 
   /**

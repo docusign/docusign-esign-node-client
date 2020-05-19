@@ -30,7 +30,6 @@
   /**
    * The TemplateMatch model module.
    * @module model/TemplateMatch
-   * @version 5.3.0
    */
 
   /**

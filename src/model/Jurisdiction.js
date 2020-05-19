@@ -30,7 +30,6 @@
   /**
    * The Jurisdiction model module.
    * @module model/Jurisdiction
-   * @version 5.3.0
    */
 
   /**

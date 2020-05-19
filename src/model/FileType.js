@@ -30,7 +30,6 @@
   /**
    * The FileType model module.
    * @module model/FileType
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The Page model module.
    * @module model/Page
-   * @version 5.3.0
    */
 
   /**

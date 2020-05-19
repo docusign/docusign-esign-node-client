@@ -30,7 +30,6 @@
   /**
    * The CustomFieldsEnvelope model module.
    * @module model/CustomFieldsEnvelope
-   * @version 5.3.0
    */
 
   /**

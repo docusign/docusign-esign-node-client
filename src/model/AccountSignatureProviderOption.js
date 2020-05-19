@@ -30,7 +30,6 @@
   /**
    * The AccountSignatureProviderOption model module.
    * @module model/AccountSignatureProviderOption
-   * @version 5.3.0
    */
 
   /**

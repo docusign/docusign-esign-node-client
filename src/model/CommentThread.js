@@ -30,7 +30,6 @@
   /**
    * The CommentThread model module.
    * @module model/CommentThread
-   * @version 5.3.0
    */
 
   /**

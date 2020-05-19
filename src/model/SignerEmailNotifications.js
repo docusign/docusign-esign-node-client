@@ -30,7 +30,6 @@
   /**
    * The SignerEmailNotifications model module.
    * @module model/SignerEmailNotifications
-   * @version 5.3.0
    */
 
   /**

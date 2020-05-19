@@ -30,7 +30,6 @@
   /**
    * The DiagnosticsSettingsInformation model module.
    * @module model/DiagnosticsSettingsInformation
-   * @version 5.3.0
    */
 
   /**

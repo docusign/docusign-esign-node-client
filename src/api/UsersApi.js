@@ -29,7 +29,6 @@
   /**
    * Users service.
    * @module api/UsersApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~_deleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UsersResponse} data The data returned by the service call.
@@ -83,7 +82,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
       var postBody = optsOrCallback['userInfoList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling _delete");
       }
 
@@ -105,7 +104,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UsersResponse;
@@ -118,7 +117,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the create operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the create operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~createCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NewUsersSummary} data The data returned by the service call.
@@ -145,7 +144,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
       var postBody = optsOrCallback['newUsersDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling create");
       }
 
@@ -166,7 +165,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NewUsersSummary;
@@ -179,7 +178,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createSignatures operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createSignatures operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~createSignaturesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignaturesInformation} data The data returned by the service call.
@@ -225,12 +224,12 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var postBody = optsOrCallback['userSignaturesInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createSignatures");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling createSignatures");
       }
 
@@ -252,7 +251,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSignaturesInformation;
@@ -265,7 +264,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteContactWithId operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteContactWithId operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteContactWithIdCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
@@ -283,12 +282,12 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteContactWithId");
       }
 
       // verify the required parameter 'contactId' is set
-      if (contactId == undefined || contactId == null) {
+      if (contactId === undefined || contactId === null) {
         throw new Error("Missing the required parameter 'contactId' when calling deleteContactWithId");
       }
 
@@ -310,7 +309,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ContactUpdateResponse;
@@ -323,7 +322,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteContacts operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteContacts operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteContactsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
@@ -349,7 +348,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var postBody = optsOrCallback['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteContacts");
       }
 
@@ -370,7 +369,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ContactUpdateResponse;
@@ -383,7 +382,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteCustomSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteCustomSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteCustomSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomSettingsInformation} data The data returned by the service call.
@@ -421,12 +420,12 @@ If the extra header information is not included, only the custom user settings t
       var postBody = optsOrCallback['customSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteCustomSettings");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling deleteCustomSettings");
       }
 
@@ -448,7 +447,7 @@ If the extra header information is not included, only the custom user settings t
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomSettingsInformation;
@@ -461,7 +460,7 @@ If the extra header information is not included, only the custom user settings t
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteProfileImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteProfileImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteProfileImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -481,12 +480,12 @@ The userId parameter specified in the endpoint must match the authenticated user
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteProfileImage");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling deleteProfileImage");
       }
 
@@ -508,7 +507,7 @@ The userId parameter specified in the endpoint must match the authenticated user
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -521,7 +520,7 @@ The userId parameter specified in the endpoint must match the authenticated user
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteSignature operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteSignature operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteSignatureCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -546,17 +545,17 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteSignature");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling deleteSignature");
       }
 
       // verify the required parameter 'signatureId' is set
-      if (signatureId == undefined || signatureId == null) {
+      if (signatureId === undefined || signatureId === null) {
         throw new Error("Missing the required parameter 'signatureId' when calling deleteSignature");
       }
 
@@ -579,7 +578,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -592,7 +591,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteSignatureImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~deleteSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
@@ -621,22 +620,22 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteSignatureImage");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling deleteSignatureImage");
       }
 
       // verify the required parameter 'signatureId' is set
-      if (signatureId == undefined || signatureId == null) {
+      if (signatureId === undefined || signatureId === null) {
         throw new Error("Missing the required parameter 'signatureId' when calling deleteSignatureImage");
       }
 
       // verify the required parameter 'imageType' is set
-      if (imageType == undefined || imageType == null) {
+      if (imageType === undefined || imageType === null) {
         throw new Error("Missing the required parameter 'imageType' when calling deleteSignatureImage");
       }
 
@@ -660,7 +659,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSignature;
@@ -673,7 +672,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getContactById operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getContactById operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getContactByIdCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactGetResponse} data The data returned by the service call.
@@ -681,7 +680,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      */
 
     /**
-     * Gets a particular contact associated with the user&#39;s account.
+     * Gets a particular contact associated with the user's account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} contactId The unique identifier of a person in the contacts address book.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -700,12 +699,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getContactById");
       }
 
       // verify the required parameter 'contactId' is set
-      if (contactId == undefined || contactId == null) {
+      if (contactId === undefined || contactId === null) {
         throw new Error("Missing the required parameter 'contactId' when calling getContactById");
       }
 
@@ -728,7 +727,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ContactGetResponse;
@@ -741,7 +740,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getInformation operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getInformation operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getInformationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformation} data The data returned by the service call.
@@ -772,12 +771,12 @@ To return additional user information that details the last login date, login st
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getInformation");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling getInformation");
       }
 
@@ -801,7 +800,7 @@ To return additional user information that details the last login date, login st
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserInformation;
@@ -814,7 +813,7 @@ To return additional user information that details the last login date, login st
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getProfile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getProfile operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserProfile} data The data returned by the service call.
@@ -835,12 +834,12 @@ The userId parameter specified in the endpoint must match the authenticated user
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getProfile");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling getProfile");
       }
 
@@ -862,7 +861,7 @@ The userId parameter specified in the endpoint must match the authenticated user
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserProfile;
@@ -875,7 +874,7 @@ The userId parameter specified in the endpoint must match the authenticated user
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getProfileImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getProfileImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getProfileImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -907,12 +906,12 @@ If successful, the response returns a 200 - OK and the user profile image.
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getProfileImage");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling getProfileImage");
       }
 
@@ -935,7 +934,7 @@ If successful, the response returns a 200 - OK and the user profile image.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['image/gif'];
       var returnType = Object;
@@ -948,7 +947,7 @@ If successful, the response returns a 200 - OK and the user profile image.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSettingsInformation} data The data returned by the service call.
@@ -969,12 +968,12 @@ The response returns the account setting name/value information and the email no
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getSettings");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling getSettings");
       }
 
@@ -996,7 +995,7 @@ The response returns the account setting name/value information and the email no
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSettingsInformation;
@@ -1009,7 +1008,7 @@ The response returns the account setting name/value information and the email no
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getSignature operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getSignature operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getSignatureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
@@ -1035,17 +1034,17 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getSignature");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling getSignature");
       }
 
       // verify the required parameter 'signatureId' is set
-      if (signatureId == undefined || signatureId == null) {
+      if (signatureId === undefined || signatureId === null) {
         throw new Error("Missing the required parameter 'signatureId' when calling getSignature");
       }
 
@@ -1068,7 +1067,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSignature;
@@ -1081,7 +1080,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getSignatureImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~getSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -1119,22 +1118,22 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getSignatureImage");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling getSignatureImage");
       }
 
       // verify the required parameter 'signatureId' is set
-      if (signatureId == undefined || signatureId == null) {
+      if (signatureId === undefined || signatureId === null) {
         throw new Error("Missing the required parameter 'signatureId' when calling getSignatureImage");
       }
 
       // verify the required parameter 'imageType' is set
-      if (imageType == undefined || imageType == null) {
+      if (imageType === undefined || imageType === null) {
         throw new Error("Missing the required parameter 'imageType' when calling getSignatureImage");
       }
 
@@ -1159,7 +1158,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['image/gif'];
       var returnType = Object;
@@ -1172,7 +1171,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformationList} data The data returned by the service call.
@@ -1190,7 +1189,7 @@ The response returns the list of users for the account along with the informatio
      * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 0 and less than or equal to 100. 
      * @param {String} optsOrCallback.email 
      * @param {String} optsOrCallback.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
-     * @param {String} optsOrCallback.groupId Filters user records returned by one or more group Id&#39;s.
+     * @param {String} optsOrCallback.groupId Filters user records returned by one or more group Id's.
      * @param {String} optsOrCallback.includeUsersettingsForCsv 
      * @param {String} optsOrCallback.loginStatus 
      * @param {String} optsOrCallback.notGroupId 
@@ -1211,7 +1210,7 @@ The response returns the list of users for the account along with the informatio
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
@@ -1243,7 +1242,7 @@ The response returns the list of users for the account along with the informatio
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserInformationList;
@@ -1256,7 +1255,7 @@ The response returns the list of users for the account along with the informatio
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listCustomSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listCustomSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~listCustomSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomSettingsInformation} data The data returned by the service call.
@@ -1289,12 +1288,12 @@ If the extra header information is not included, only the custom user settings t
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listCustomSettings");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling listCustomSettings");
       }
 
@@ -1316,7 +1315,7 @@ If the extra header information is not included, only the custom user settings t
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomSettingsInformation;
@@ -1329,7 +1328,7 @@ If the extra header information is not included, only the custom user settings t
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listSignatures operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listSignatures operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~listSignaturesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignaturesInformation} data The data returned by the service call.
@@ -1363,12 +1362,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSignatures");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling listSignatures");
       }
 
@@ -1391,7 +1390,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSignaturesInformation;
@@ -1404,7 +1403,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the postContacts operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the postContacts operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~postContactsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
@@ -1430,7 +1429,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = optsOrCallback['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling postContacts");
       }
 
@@ -1451,7 +1450,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ContactUpdateResponse;
@@ -1464,7 +1463,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the putContacts operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the putContacts operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~putContactsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ContactUpdateResponse} data The data returned by the service call.
@@ -1490,7 +1489,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = optsOrCallback['contactModRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling putContacts");
       }
 
@@ -1511,7 +1510,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ContactUpdateResponse;
@@ -1524,7 +1523,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateCustomSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateCustomSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateCustomSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomSettingsInformation} data The data returned by the service call.
@@ -1572,12 +1571,12 @@ Grouping custom user settings is not required and if the extra header informatio
       var postBody = optsOrCallback['customSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateCustomSettings");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateCustomSettings");
       }
 
@@ -1599,7 +1598,7 @@ Grouping custom user settings is not required and if the extra header informatio
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomSettingsInformation;
@@ -1612,7 +1611,7 @@ Grouping custom user settings is not required and if the extra header informatio
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateProfile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateProfile operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateProfileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -1641,12 +1640,12 @@ You can also change a user's name by changing the information in the `userDetail
       var postBody = optsOrCallback['userProfile'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateProfile");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateProfile");
       }
 
@@ -1668,7 +1667,7 @@ You can also change a user's name by changing the information in the `userDetail
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -1681,7 +1680,7 @@ You can also change a user's name by changing the information in the `userDetail
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateProfileImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateProfileImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateProfileImageCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -1701,12 +1700,12 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateProfileImage");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateProfileImage");
       }
 
@@ -1728,7 +1727,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = ['image/gif'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -1741,7 +1740,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateSettings operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSettingsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -1768,12 +1767,12 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
       var postBody = optsOrCallback['userSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSettings");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateSettings");
       }
 
@@ -1795,7 +1794,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -1808,7 +1807,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateSignature operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateSignature operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSignatureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
@@ -1846,17 +1845,17 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = optsOrCallback['userSignatureDefinition'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSignature");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateSignature");
       }
 
       // verify the required parameter 'signatureId' is set
-      if (signatureId == undefined || signatureId == null) {
+      if (signatureId === undefined || signatureId === null) {
         throw new Error("Missing the required parameter 'signatureId' when calling updateSignature");
       }
 
@@ -1880,7 +1879,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSignature;
@@ -1893,7 +1892,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateSignatureImage operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateSignatureImage operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSignatureImageCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignature} data The data returned by the service call.
@@ -1930,22 +1929,22 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSignatureImage");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateSignatureImage");
       }
 
       // verify the required parameter 'signatureId' is set
-      if (signatureId == undefined || signatureId == null) {
+      if (signatureId === undefined || signatureId === null) {
         throw new Error("Missing the required parameter 'signatureId' when calling updateSignatureImage");
       }
 
       // verify the required parameter 'imageType' is set
-      if (imageType == undefined || imageType == null) {
+      if (imageType === undefined || imageType === null) {
         throw new Error("Missing the required parameter 'imageType' when calling updateSignatureImage");
       }
 
@@ -1970,7 +1969,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = ['image/gif'];
       var accepts = ['application/json'];
       var returnType = UserSignature;
@@ -1983,7 +1982,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateSignatures operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateSignatures operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateSignaturesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSignaturesInformation} data The data returned by the service call.
@@ -2010,12 +2009,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = optsOrCallback['userSignaturesInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSignatures");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateSignatures");
       }
 
@@ -2037,7 +2036,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSignaturesInformation;
@@ -2050,7 +2049,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateUser operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateUser operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateUserCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformation} data The data returned by the service call.
@@ -2077,12 +2076,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = optsOrCallback['userInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateUser");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateUser");
       }
 
@@ -2104,7 +2103,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserInformation;
@@ -2117,7 +2116,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateUsers operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateUsers operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~updateUsersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserInformationList} data The data returned by the service call.
@@ -2143,7 +2142,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var postBody = optsOrCallback['userInformationList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateUsers");
       }
 
@@ -2164,7 +2163,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserInformationList;

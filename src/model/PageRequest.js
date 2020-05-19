@@ -30,7 +30,6 @@
   /**
    * The PageRequest model module.
    * @module model/PageRequest
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The DobInformationInput model module.
    * @module model/DobInformationInput
-   * @version 5.3.0
    */
 
   /**

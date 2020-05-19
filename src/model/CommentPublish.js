@@ -30,7 +30,6 @@
   /**
    * The CommentPublish model module.
    * @module model/CommentPublish
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The ResourceInformation model module.
    * @module model/ResourceInformation
-   * @version 5.3.0
    */
 
   /**

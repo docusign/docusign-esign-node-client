@@ -30,7 +30,6 @@
   /**
    * The ProofServiceResourceToken model module.
    * @module model/ProofServiceResourceToken
-   * @version 5.3.0
    */
 
   /**

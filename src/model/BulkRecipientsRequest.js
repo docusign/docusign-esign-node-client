@@ -30,7 +30,6 @@
   /**
    * The BulkRecipientsRequest model module.
    * @module model/BulkRecipientsRequest
-   * @version 5.3.0
    */
 
   /**

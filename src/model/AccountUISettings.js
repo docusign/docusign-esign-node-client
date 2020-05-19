@@ -30,7 +30,6 @@
   /**
    * The AccountUISettings model module.
    * @module model/AccountUISettings
-   * @version 5.3.0
    */
 
   /**

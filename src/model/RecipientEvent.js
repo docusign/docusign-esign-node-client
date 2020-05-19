@@ -30,7 +30,6 @@
   /**
    * The RecipientEvent model module.
    * @module model/RecipientEvent
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The FormDataItem model module.
    * @module model/FormDataItem
-   * @version 5.3.0
    */
 
   /**

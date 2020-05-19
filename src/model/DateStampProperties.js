@@ -30,7 +30,6 @@
   /**
    * The DateStampProperties model module.
    * @module model/DateStampProperties
-   * @version 5.3.0
    */
 
   /**

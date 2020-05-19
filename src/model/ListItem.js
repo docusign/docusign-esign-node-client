@@ -30,7 +30,6 @@
   /**
    * The ListItem model module.
    * @module model/ListItem
-   * @version 5.3.0
    */
 
   /**
