@@ -29,7 +29,6 @@
   /**
    * CustomTabs service.
    * @module api/CustomTabsApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~_deleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -71,12 +70,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling _delete");
       }
 
       // verify the required parameter 'customTabId' is set
-      if (customTabId == undefined || customTabId == null) {
+      if (customTabId === undefined || customTabId === null) {
         throw new Error("Missing the required parameter 'customTabId' when calling _delete");
       }
 
@@ -98,7 +97,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -111,7 +110,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the create operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the create operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~createCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadata} data The data returned by the service call.
@@ -140,7 +139,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var postBody = optsOrCallback['tabMetadata'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling create");
       }
 
@@ -161,7 +160,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TabMetadata;
@@ -174,7 +173,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
     };
 
     /**
-     * (Optional)Callback function to receive the result of the get operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the get operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~getCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadata} data The data returned by the service call.
@@ -193,12 +192,12 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling get");
       }
 
       // verify the required parameter 'customTabId' is set
-      if (customTabId == undefined || customTabId == null) {
+      if (customTabId === undefined || customTabId === null) {
         throw new Error("Missing the required parameter 'customTabId' when calling get");
       }
 
@@ -220,7 +219,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TabMetadata;
@@ -233,7 +232,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
     };
 
     /**
-     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadataList} data The data returned by the service call.
@@ -260,7 +259,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
@@ -282,7 +281,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TabMetadataList;
@@ -295,7 +294,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
     };
 
     /**
-     * (Optional)Callback function to receive the result of the update operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the update operation. If none specified a Promise will be returned.
      * @callback module:api/CustomTabsApi~updateCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabMetadata} data The data returned by the service call.
@@ -323,12 +322,12 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var postBody = optsOrCallback['tabMetadata'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling update");
       }
 
       // verify the required parameter 'customTabId' is set
-      if (customTabId == undefined || customTabId == null) {
+      if (customTabId === undefined || customTabId === null) {
         throw new Error("Missing the required parameter 'customTabId' when calling update");
       }
 
@@ -350,7 +349,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TabMetadata;

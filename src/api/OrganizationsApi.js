@@ -29,7 +29,6 @@
   /**
    * Organizations service.
    * @module api/OrganizationsApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the deleteReport operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteReport operation. If none specified a Promise will be returned.
      * @callback module:api/OrganizationsApi~deleteReportCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -70,12 +69,12 @@
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
-      if (organizationId == undefined || organizationId == null) {
+      if (organizationId === undefined || organizationId === null) {
         throw new Error("Missing the required parameter 'organizationId' when calling deleteReport");
       }
 
       // verify the required parameter 'reportCorrelationId' is set
-      if (reportCorrelationId == undefined || reportCorrelationId == null) {
+      if (reportCorrelationId === undefined || reportCorrelationId === null) {
         throw new Error("Missing the required parameter 'reportCorrelationId' when calling deleteReport");
       }
 
@@ -97,7 +96,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -110,7 +109,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getReport operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getReport operation. If none specified a Promise will be returned.
      * @callback module:api/OrganizationsApi~getReportCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -127,12 +126,12 @@
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
-      if (organizationId == undefined || organizationId == null) {
+      if (organizationId === undefined || organizationId === null) {
         throw new Error("Missing the required parameter 'organizationId' when calling getReport");
       }
 
       // verify the required parameter 'reportCorrelationId' is set
-      if (reportCorrelationId == undefined || reportCorrelationId == null) {
+      if (reportCorrelationId === undefined || reportCorrelationId === null) {
         throw new Error("Missing the required parameter 'reportCorrelationId' when calling getReport");
       }
 
@@ -154,7 +153,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;

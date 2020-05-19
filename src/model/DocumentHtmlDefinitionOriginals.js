@@ -30,7 +30,6 @@
   /**
    * The DocumentHtmlDefinitionOriginals model module.
    * @module model/DocumentHtmlDefinitionOriginals
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The TemplateRole model module.
    * @module model/TemplateRole
-   * @version 4.6.0
    */
 
   /**

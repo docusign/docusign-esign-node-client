@@ -30,7 +30,6 @@
   /**
    * The AppStoreProduct model module.
    * @module model/AppStoreProduct
-   * @version 4.6.0
    */
 
   /**

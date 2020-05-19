@@ -30,7 +30,6 @@
   /**
    * The AccountSeals model module.
    * @module model/AccountSeals
-   * @version 4.6.0
    */
 
   /**

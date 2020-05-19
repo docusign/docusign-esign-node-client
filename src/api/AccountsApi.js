@@ -29,7 +29,6 @@
   /**
    * Accounts service.
    * @module api/AccountsApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~_deleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -70,7 +69,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling _delete");
       }
 
@@ -91,7 +90,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -104,7 +103,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the create operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the create operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createCallback
      * @param {String} error Error message, if any.
      * @param {module:model/NewAccountSummary} data The data returned by the service call.
@@ -156,7 +155,7 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NewAccountSummary;
@@ -169,7 +168,7 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createBrand operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createBrandCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
@@ -200,7 +199,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = optsOrCallback['brand'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBrand");
       }
 
@@ -221,7 +220,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandsResponse;
@@ -234,7 +233,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createCustomField operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createCustomField operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createCustomFieldCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -261,7 +260,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = optsOrCallback['customField'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createCustomField");
       }
 
@@ -283,7 +282,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -296,7 +295,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createPermissionProfile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createPermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~createPermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfile} data The data returned by the service call.
@@ -323,7 +322,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = optsOrCallback['permissionProfile'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createPermissionProfile");
       }
 
@@ -345,7 +344,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PermissionProfile;
@@ -358,7 +357,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteBrand operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteBrandCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -375,12 +374,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBrand");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling deleteBrand");
       }
 
@@ -402,7 +401,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -415,7 +414,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteBrandLogoByType operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteBrandLogoByType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteBrandLogoByTypeCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -433,17 +432,17 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBrandLogoByType");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling deleteBrandLogoByType");
       }
 
       // verify the required parameter 'logoType' is set
-      if (logoType == undefined || logoType == null) {
+      if (logoType === undefined || logoType === null) {
         throw new Error("Missing the required parameter 'logoType' when calling deleteBrandLogoByType");
       }
 
@@ -466,7 +465,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -479,7 +478,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteBrands operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteBrands operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
@@ -506,7 +505,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = optsOrCallback['brandsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBrands");
       }
 
@@ -527,7 +526,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandsResponse;
@@ -540,7 +539,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteCaptiveRecipient operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteCaptiveRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteCaptiveRecipientCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CaptiveRecipientInformation} data The data returned by the service call.
@@ -568,12 +567,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = optsOrCallback['captiveRecipientInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteCaptiveRecipient");
       }
 
       // verify the required parameter 'recipientPart' is set
-      if (recipientPart == undefined || recipientPart == null) {
+      if (recipientPart === undefined || recipientPart === null) {
         throw new Error("Missing the required parameter 'recipientPart' when calling deleteCaptiveRecipient");
       }
 
@@ -595,7 +594,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CaptiveRecipientInformation;
@@ -608,7 +607,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteCustomField operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteCustomField operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteCustomFieldCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -634,12 +633,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteCustomField");
       }
 
       // verify the required parameter 'customFieldId' is set
-      if (customFieldId == undefined || customFieldId == null) {
+      if (customFieldId === undefined || customFieldId === null) {
         throw new Error("Missing the required parameter 'customFieldId' when calling deleteCustomField");
       }
 
@@ -662,7 +661,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -675,7 +674,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteENoteConfiguration operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteENoteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deleteENoteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -691,7 +690,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteENoteConfiguration");
       }
 
@@ -712,7 +711,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -725,7 +724,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deletePermissionProfile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deletePermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~deletePermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -751,12 +750,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deletePermissionProfile");
       }
 
       // verify the required parameter 'permissionProfileId' is set
-      if (permissionProfileId == undefined || permissionProfileId == null) {
+      if (permissionProfileId === undefined || permissionProfileId === null) {
         throw new Error("Missing the required parameter 'permissionProfileId' when calling deletePermissionProfile");
       }
 
@@ -779,7 +778,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -792,7 +791,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAccountIdentityVerification operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getAccountIdentityVerification operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountIdentityVerificationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountIdentityVerificationResponse} data The data returned by the service call.
@@ -809,7 +808,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAccountIdentityVerification");
       }
 
@@ -830,7 +829,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountIdentityVerificationResponse;
@@ -843,7 +842,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAccountInformation operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getAccountInformation operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountInformationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountInformation} data The data returned by the service call.
@@ -873,7 +872,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAccountInformation");
       }
 
@@ -895,7 +894,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountInformation;
@@ -908,7 +907,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAccountTabSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountTabSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabAccountSettings} data The data returned by the service call.
@@ -925,7 +924,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAccountTabSettings");
       }
 
@@ -946,7 +945,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TabAccountSettings;
@@ -959,7 +958,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getAllPaymentGatewayAccounts operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getAllPaymentGatewayAccounts operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAllPaymentGatewayAccountsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaymentGatewayAccountsInfo} data The data returned by the service call.
@@ -976,7 +975,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAllPaymentGatewayAccounts");
       }
 
@@ -997,7 +996,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PaymentGatewayAccountsInfo;
@@ -1010,7 +1009,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBillingCharges operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBillingCharges operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBillingChargesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingChargeResponse} data The data returned by the service call.
@@ -1039,7 +1038,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBillingCharges");
       }
 
@@ -1061,7 +1060,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingChargeResponse;
@@ -1074,7 +1073,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBrand operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Brand} data The data returned by the service call.
@@ -1102,12 +1101,12 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBrand");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling getBrand");
       }
 
@@ -1131,7 +1130,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Brand;
@@ -1144,7 +1143,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBrandExportFile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBrandExportFile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandExportFileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -1161,12 +1160,12 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBrandExportFile");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling getBrandExportFile");
       }
 
@@ -1188,7 +1187,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -1201,7 +1200,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBrandLogoByType operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBrandLogoByType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandLogoByTypeCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -1220,17 +1219,17 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBrandLogoByType");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling getBrandLogoByType");
       }
 
       // verify the required parameter 'logoType' is set
-      if (logoType == undefined || logoType == null) {
+      if (logoType === undefined || logoType === null) {
         throw new Error("Missing the required parameter 'logoType' when calling getBrandLogoByType");
       }
 
@@ -1253,7 +1252,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['image/png'];
       var returnType = Object;
@@ -1266,7 +1265,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBrandResources operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBrandResources operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandResourcesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandResourcesList} data The data returned by the service call.
@@ -1274,7 +1273,7 @@ Privileges required: account administrator
      */
 
     /**
-     * Returns the specified account&#39;s list of branding resources (metadata).
+     * Returns the specified account's list of branding resources (metadata).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {module:api/AccountsApi~getBrandResourcesCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1284,12 +1283,12 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBrandResources");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling getBrandResources");
       }
 
@@ -1311,7 +1310,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandResourcesList;
@@ -1324,7 +1323,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBrandResourcesByContentType operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBrandResourcesByContentType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getBrandResourcesByContentTypeCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -1352,17 +1351,17 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBrandResourcesByContentType");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling getBrandResourcesByContentType");
       }
 
       // verify the required parameter 'resourceContentType' is set
-      if (resourceContentType == undefined || resourceContentType == null) {
+      if (resourceContentType === undefined || resourceContentType === null) {
         throw new Error("Missing the required parameter 'resourceContentType' when calling getBrandResourcesByContentType");
       }
 
@@ -1387,7 +1386,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -1400,7 +1399,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getConsumerDisclosure operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getConsumerDisclosure operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getConsumerDisclosureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
@@ -1419,12 +1418,12 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getConsumerDisclosure");
       }
 
       // verify the required parameter 'langCode' is set
-      if (langCode == undefined || langCode == null) {
+      if (langCode === undefined || langCode === null) {
         throw new Error("Missing the required parameter 'langCode' when calling getConsumerDisclosure");
       }
 
@@ -1446,7 +1445,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConsumerDisclosure;
@@ -1459,7 +1458,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getConsumerDisclosureDefault operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getConsumerDisclosureDefault operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getConsumerDisclosureDefaultCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
@@ -1471,7 +1470,7 @@ Privileges required: account administrator
      * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account. You can use an optional query string to set the language for the disclosure.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.langCode Specifies the language used in the response. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).  Additionally, the value can be set to &#x60;browser&#x60; to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
+     * @param {String} optsOrCallback.langCode Specifies the language used in the response. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).  Additionally, the value can be set to `browser` to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
      * @param {module:api/AccountsApi~getConsumerDisclosureDefaultCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
@@ -1486,7 +1485,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getConsumerDisclosureDefault");
       }
 
@@ -1508,7 +1507,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConsumerDisclosure;
@@ -1521,7 +1520,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getENoteConfiguration operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getENoteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getENoteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ENoteConfiguration} data The data returned by the service call.
@@ -1538,7 +1537,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getENoteConfiguration");
       }
 
@@ -1559,7 +1558,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ENoteConfiguration;
@@ -1572,7 +1571,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPasswordRules operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPasswordRules operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getPasswordRulesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountPasswordRules} data The data returned by the service call.
@@ -1589,7 +1588,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPasswordRules");
       }
 
@@ -1610,7 +1609,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountPasswordRules;
@@ -1623,7 +1622,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPasswordRules_0 operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPasswordRules_0 operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getPasswordRules_0Callback
      * @param {String} error Error message, if any.
      * @param {module:model/UserPasswordRules} data The data returned by the service call.
@@ -1654,7 +1653,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserPasswordRules;
@@ -1667,7 +1666,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPermissionProfile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getPermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfile} data The data returned by the service call.
@@ -1694,12 +1693,12 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPermissionProfile");
       }
 
       // verify the required parameter 'permissionProfileId' is set
-      if (permissionProfileId == undefined || permissionProfileId == null) {
+      if (permissionProfileId === undefined || permissionProfileId === null) {
         throw new Error("Missing the required parameter 'permissionProfileId' when calling getPermissionProfile");
       }
 
@@ -1722,7 +1721,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PermissionProfile;
@@ -1735,7 +1734,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getProvisioning operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getProvisioning operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getProvisioningCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ProvisioningInformation} data The data returned by the service call.
@@ -1767,7 +1766,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ProvisioningInformation;
@@ -1780,7 +1779,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getSupportedLanguages operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getSupportedLanguages operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getSupportedLanguagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SupportedLanguages} data The data returned by the service call.
@@ -1797,7 +1796,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getSupportedLanguages");
       }
 
@@ -1818,7 +1817,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SupportedLanguages;
@@ -1831,7 +1830,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getWatermark operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getWatermark operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getWatermarkCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Watermark} data The data returned by the service call.
@@ -1848,7 +1847,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getWatermark");
       }
 
@@ -1869,7 +1868,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Watermark;
@@ -1882,7 +1881,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getWatermarkPreview operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getWatermarkPreview operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getWatermarkPreviewCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Watermark} data The data returned by the service call.
@@ -1908,7 +1907,7 @@ Privileges required: account administrator
       var postBody = optsOrCallback['watermark'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getWatermarkPreview");
       }
 
@@ -1929,7 +1928,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Watermark;
@@ -1942,7 +1941,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listBrands operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listBrands operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listBrandsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandsResponse} data The data returned by the service call.
@@ -1970,7 +1969,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listBrands");
       }
 
@@ -1993,7 +1992,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandsResponse;
@@ -2006,7 +2005,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listCustomFields operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listCustomFieldsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -2026,7 +2025,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listCustomFields");
       }
 
@@ -2047,7 +2046,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -2060,7 +2059,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listPermissions operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listPermissions operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listPermissionsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfileInformation} data The data returned by the service call.
@@ -2089,7 +2088,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listPermissions");
       }
 
@@ -2111,7 +2110,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PermissionProfileInformation;
@@ -2124,7 +2123,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listRecipientNamesByEmail operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listRecipientNamesByEmail operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listRecipientNamesByEmailCallback
      * @param {String} error Error message, if any.
      * @param {module:model/RecipientNamesResponse} data The data returned by the service call.
@@ -2151,7 +2150,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listRecipientNamesByEmail");
       }
 
@@ -2173,7 +2172,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = RecipientNamesResponse;
@@ -2186,7 +2185,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSettingsInformation} data The data returned by the service call.
@@ -2204,7 +2203,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSettings");
       }
 
@@ -2225,7 +2224,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountSettingsInformation;
@@ -2238,7 +2237,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listSharedAccess operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listSharedAccess operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listSharedAccessCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSharedAccess} data The data returned by the service call.
@@ -2256,8 +2255,8 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} optsOrCallback.envelopesNotSharedUserStatus 
      * @param {String} optsOrCallback.folderIds 
      * @param {String} optsOrCallback.itemType Specifies the type of shared item being requested. The accepted values are: -envelopes: returns information about envelope sharing between users.
-     * @param {String} optsOrCallback.searchText This can be used to filter user names in the response. The wild-card &#39;*&#39; (asterisk) can be used around the string.
-     * @param {String} optsOrCallback.shared Specifies which users should be included in the response. Multiple values can be used in the query by using a comma separated list of shared values. If the requestor does not have account administrator privileges, the shared_to value is used. Requestors that do not have account administrator privileges can only use the shared_to, any other setting will result in an error. The accepted values are:  -not_shared: Returns account users that the specified item type is not being shared with and that are not sharing the specified item type with the user.  User X (Share) X Account user  -shared_to: Returns account users that the specified item type is not being shared with and who are sharing the specified item type with the user (only shared to the user).  User X (Share) Account user  -shared_from: Returns account users that the specified item type is being shared with and who are not sharing the specified item type with the user (only shared from the user).  User (Share) &gt;&gt; Account user  -shared_to_and_from: Returns account users that the specified item type is being shared with and who are sharing the specified item type with the user.  User &lt;&lt; (Share) &gt;&gt; Account user
+     * @param {String} optsOrCallback.searchText This can be used to filter user names in the response. The wild-card '*' (asterisk) can be used around the string.
+     * @param {String} optsOrCallback.shared Specifies which users should be included in the response. Multiple values can be used in the query by using a comma separated list of shared values. If the requestor does not have account administrator privileges, the shared_to value is used. Requestors that do not have account administrator privileges can only use the shared_to, any other setting will result in an error. The accepted values are:  -not_shared: Returns account users that the specified item type is not being shared with and that are not sharing the specified item type with the user.  User X (Share) X Account user  -shared_to: Returns account users that the specified item type is not being shared with and who are sharing the specified item type with the user (only shared to the user).  User X (Share) Account user  -shared_from: Returns account users that the specified item type is being shared with and who are not sharing the specified item type with the user (only shared from the user).  User (Share) >> Account user  -shared_to_and_from: Returns account users that the specified item type is being shared with and who are sharing the specified item type with the user.  User << (Share) >> Account user
      * @param {String} optsOrCallback.startPosition If the response set exceeds Count, this can be used to specify that the method should return users starting at the specified index. The first index is 0, and should be used in the first GET call. Typically this number is a multiple of Count. If no value is specified, this defaults to be 0. 
      * @param {String} optsOrCallback.userIds A comma separated list of userIds for whom the shared item information is being requested. 
      * @param {module:api/AccountsApi~listSharedAccessCallback} callback The callback function, accepting three arguments: error, data, response
@@ -2274,7 +2273,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSharedAccess");
       }
 
@@ -2303,7 +2302,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountSharedAccess;
@@ -2316,7 +2315,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listSignatureProviders operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listSignatureProviders operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listSignatureProvidersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSignatureProviders} data The data returned by the service call.
@@ -2333,7 +2332,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSignatureProviders");
       }
 
@@ -2354,7 +2353,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountSignatureProviders;
@@ -2367,7 +2366,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listUnsupportedFileTypes operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listUnsupportedFileTypes operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~listUnsupportedFileTypesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FileTypeList} data The data returned by the service call.
@@ -2385,7 +2384,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listUnsupportedFileTypes");
       }
 
@@ -2406,7 +2405,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = FileTypeList;
@@ -2419,7 +2418,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateAccountTabSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateAccountTabSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TabAccountSettings} data The data returned by the service call.
@@ -2445,7 +2444,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['tabAccountSettings'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateAccountTabSettings");
       }
 
@@ -2466,7 +2465,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TabAccountSettings;
@@ -2479,7 +2478,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateBrand operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateBrand operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateBrandCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Brand} data The data returned by the service call.
@@ -2506,12 +2505,12 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['brand'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateBrand");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling updateBrand");
       }
 
@@ -2533,7 +2532,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Brand;
@@ -2546,7 +2545,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateBrandLogoByType operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateBrandLogoByType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateBrandLogoByTypeCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -2555,33 +2554,33 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Put one branding logo.
-     * @param {String} logoFileBytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places
      * @param {String} accountId The external account number (int) or account id GUID.
      * @param {String} brandId The unique identifier of a brand.
      * @param {String} logoType One of **Primary**, **Secondary** or **Email**.
+     * @param {Blob} logoFileBytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places
      * @param {module:api/AccountsApi~updateBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.updateBrandLogoByType = function(logoFileBytes, accountId, brandId, logoType, callback) {
       var postBody = logoFileBytes;
 
-      // verify the required parameter 'logoFileBytes' is set
-      if (logoFileBytes == undefined || logoFileBytes == null) {
-        throw new Error("Missing the required parameter 'logoFileBytes' when calling updateBrandLogoByType");
-      }
-
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateBrandLogoByType");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling updateBrandLogoByType");
       }
 
       // verify the required parameter 'logoType' is set
-      if (logoType == undefined || logoType == null) {
+      if (logoType === undefined || logoType === null) {
         throw new Error("Missing the required parameter 'logoType' when calling updateBrandLogoByType");
+      }
+
+      // verify the required parameter 'logoFileBytes' is set
+      if (logoFileBytes === undefined || logoFileBytes === null) {
+        throw new Error("Missing the required parameter 'logoFileBytes' when calling updateBrandLogoByType");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -2603,7 +2602,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = ['image/png'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -2616,7 +2615,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateBrandResourcesByContentType operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateBrandResourcesByContentType operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateBrandResourcesByContentTypeCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BrandResources} data The data returned by the service call.
@@ -2635,17 +2634,17 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateBrandResourcesByContentType");
       }
 
       // verify the required parameter 'brandId' is set
-      if (brandId == undefined || brandId == null) {
+      if (brandId === undefined || brandId === null) {
         throw new Error("Missing the required parameter 'brandId' when calling updateBrandResourcesByContentType");
       }
 
       // verify the required parameter 'resourceContentType' is set
-      if (resourceContentType == undefined || resourceContentType == null) {
+      if (resourceContentType === undefined || resourceContentType === null) {
         throw new Error("Missing the required parameter 'resourceContentType' when calling updateBrandResourcesByContentType");
       }
 
@@ -2668,7 +2667,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BrandResources;
@@ -2681,7 +2680,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateConsumerDisclosure operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateConsumerDisclosure operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateConsumerDisclosureCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ConsumerDisclosure} data The data returned by the service call.
@@ -2709,12 +2708,12 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['consumerDisclosure'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateConsumerDisclosure");
       }
 
       // verify the required parameter 'langCode' is set
-      if (langCode == undefined || langCode == null) {
+      if (langCode === undefined || langCode === null) {
         throw new Error("Missing the required parameter 'langCode' when calling updateConsumerDisclosure");
       }
 
@@ -2737,7 +2736,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ConsumerDisclosure;
@@ -2750,7 +2749,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateCustomField operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateCustomField operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateCustomFieldCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CustomFields} data The data returned by the service call.
@@ -2778,12 +2777,12 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['customField'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateCustomField");
       }
 
       // verify the required parameter 'customFieldId' is set
-      if (customFieldId == undefined || customFieldId == null) {
+      if (customFieldId === undefined || customFieldId === null) {
         throw new Error("Missing the required parameter 'customFieldId' when calling updateCustomField");
       }
 
@@ -2806,7 +2805,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CustomFields;
@@ -2819,7 +2818,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateENoteConfiguration operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateENoteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateENoteConfigurationCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ENoteConfiguration} data The data returned by the service call.
@@ -2845,7 +2844,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['eNoteConfiguration'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateENoteConfiguration");
       }
 
@@ -2866,7 +2865,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ENoteConfiguration;
@@ -2879,7 +2878,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updatePasswordRules operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updatePasswordRules operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updatePasswordRulesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountPasswordRules} data The data returned by the service call.
@@ -2905,7 +2904,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['accountPasswordRules'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePasswordRules");
       }
 
@@ -2926,7 +2925,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountPasswordRules;
@@ -2939,7 +2938,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updatePermissionProfile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updatePermissionProfile operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updatePermissionProfileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PermissionProfile} data The data returned by the service call.
@@ -2967,12 +2966,12 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['permissionProfile'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePermissionProfile");
       }
 
       // verify the required parameter 'permissionProfileId' is set
-      if (permissionProfileId == undefined || permissionProfileId == null) {
+      if (permissionProfileId === undefined || permissionProfileId === null) {
         throw new Error("Missing the required parameter 'permissionProfileId' when calling updatePermissionProfile");
       }
 
@@ -2995,7 +2994,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PermissionProfile;
@@ -3008,7 +3007,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateSettingsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -3034,7 +3033,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['accountSettingsInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSettings");
       }
 
@@ -3055,7 +3054,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -3068,7 +3067,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateSharedAccess operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateSharedAccess operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateSharedAccessCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountSharedAccess} data The data returned by the service call.
@@ -3097,7 +3096,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['accountSharedAccess'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSharedAccess");
       }
 
@@ -3120,7 +3119,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountSharedAccess;
@@ -3133,7 +3132,7 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateWatermark operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateWatermark operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateWatermarkCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Watermark} data The data returned by the service call.
@@ -3159,7 +3158,7 @@ Users with account administration privileges can retrieve shared access informat
       var postBody = optsOrCallback['watermark'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateWatermark");
       }
 
@@ -3180,7 +3179,7 @@ Users with account administration privileges can retrieve shared access informat
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Watermark;

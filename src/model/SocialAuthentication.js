@@ -30,7 +30,6 @@
   /**
    * The SocialAuthentication model module.
    * @module model/SocialAuthentication
-   * @version 4.6.0
    */
 
   /**

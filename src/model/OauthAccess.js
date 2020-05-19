@@ -30,7 +30,6 @@
   /**
    * The OauthAccess model module.
    * @module model/OauthAccess
-   * @version 4.6.0
    */
 
   /**

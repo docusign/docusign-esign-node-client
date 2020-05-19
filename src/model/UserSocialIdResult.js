@@ -30,7 +30,6 @@
   /**
    * The UserSocialIdResult model module.
    * @module model/UserSocialIdResult
-   * @version 4.6.0
    */
 
   /**

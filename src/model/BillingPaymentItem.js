@@ -30,7 +30,6 @@
   /**
    * The BillingPaymentItem model module.
    * @module model/BillingPaymentItem
-   * @version 4.6.0
    */
 
   /**

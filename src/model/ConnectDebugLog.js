@@ -30,7 +30,6 @@
   /**
    * The ConnectDebugLog model module.
    * @module model/ConnectDebugLog
-   * @version 4.6.0
    */
 
   /**

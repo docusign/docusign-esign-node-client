@@ -30,7 +30,6 @@
   /**
    * The Checkbox model module.
    * @module model/Checkbox
-   * @version 4.6.0
    */
 
   /**

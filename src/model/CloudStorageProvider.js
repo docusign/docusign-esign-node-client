@@ -30,7 +30,6 @@
   /**
    * The CloudStorageProvider model module.
    * @module model/CloudStorageProvider
-   * @version 4.6.0
    */
 
   /**

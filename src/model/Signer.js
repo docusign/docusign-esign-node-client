@@ -30,7 +30,6 @@
   /**
    * The Signer model module.
    * @module model/Signer
-   * @version 4.6.0
    */
 
   /**

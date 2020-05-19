@@ -30,7 +30,6 @@
   /**
    * The BillingPlanInformation model module.
    * @module model/BillingPlanInformation
-   * @version 4.6.0
    */
 
   /**

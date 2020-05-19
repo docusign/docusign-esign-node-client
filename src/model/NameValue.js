@@ -30,7 +30,6 @@
   /**
    * The NameValue model module.
    * @module model/NameValue
-   * @version 4.6.0
    */
 
   /**

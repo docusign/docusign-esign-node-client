@@ -30,7 +30,6 @@
   /**
    * The UsageHistory model module.
    * @module model/UsageHistory
-   * @version 4.6.0
    */
 
   /**

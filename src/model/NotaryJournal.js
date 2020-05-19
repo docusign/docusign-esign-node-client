@@ -30,7 +30,6 @@
   /**
    * The NotaryJournal model module.
    * @module model/NotaryJournal
-   * @version 4.6.0
    */
 
   /**

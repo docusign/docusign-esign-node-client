@@ -30,7 +30,6 @@
   /**
    * The UserSettingsInformation model module.
    * @module model/UserSettingsInformation
-   * @version 4.6.0
    */
 
   /**

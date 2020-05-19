@@ -29,7 +29,6 @@
   /**
    * Billing service.
    * @module api/BillingApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the getBillingPlan operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBillingPlan operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getBillingPlanCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPlanResponse} data The data returned by the service call.
@@ -71,7 +70,7 @@
       var postBody = null;
 
       // verify the required parameter 'billingPlanId' is set
-      if (billingPlanId == undefined || billingPlanId == null) {
+      if (billingPlanId === undefined || billingPlanId === null) {
         throw new Error("Missing the required parameter 'billingPlanId' when calling getBillingPlan");
       }
 
@@ -92,7 +91,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingPlanResponse;
@@ -105,7 +104,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getCreditCardInfo operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getCreditCardInfo operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getCreditCardInfoCallback
      * @param {String} error Error message, if any.
      * @param {module:model/CreditCardInformation} data The data returned by the service call.
@@ -122,7 +121,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getCreditCardInfo");
       }
 
@@ -143,7 +142,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CreditCardInformation;
@@ -156,7 +155,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getInvoice operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getInvoice operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getInvoiceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingInvoice} data The data returned by the service call.
@@ -208,12 +207,12 @@ The following table provides a description of the different `chargeName` propert
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getInvoice");
       }
 
       // verify the required parameter 'invoiceId' is set
-      if (invoiceId == undefined || invoiceId == null) {
+      if (invoiceId === undefined || invoiceId === null) {
         throw new Error("Missing the required parameter 'invoiceId' when calling getInvoice");
       }
 
@@ -235,7 +234,7 @@ The following table provides a description of the different `chargeName` propert
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingInvoice;
@@ -248,7 +247,7 @@ The following table provides a description of the different `chargeName` propert
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPayment operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPayment operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getPaymentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPaymentItem} data The data returned by the service call.
@@ -269,12 +268,12 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPayment");
       }
 
       // verify the required parameter 'paymentId' is set
-      if (paymentId == undefined || paymentId == null) {
+      if (paymentId === undefined || paymentId === null) {
         throw new Error("Missing the required parameter 'paymentId' when calling getPayment");
       }
 
@@ -296,7 +295,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingPaymentItem;
@@ -309,7 +308,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPlan operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPlan operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~getPlanCallback
      * @param {String} error Error message, if any.
      * @param {module:model/AccountBillingPlanResponse} data The data returned by the service call.
@@ -330,7 +329,7 @@ The response returns the billing plan information, including the currency code, 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeCreditCardInformation When set to **true**, excludes credit card information from the response.
-     * @param {String} optsOrCallback.includeMetadata When set to **true**, the &#x60;canUpgrade&#x60; and &#x60;renewalStatus&#x60; properities are included the response and an array of &#x60;supportedCountries&#x60; property is added to the &#x60;billingAddress&#x60; information. 
+     * @param {String} optsOrCallback.includeMetadata When set to **true**, the `canUpgrade` and `renewalStatus` properities are included the response and an array of `supportedCountries` property is added to the `billingAddress` information. 
      * @param {String} optsOrCallback.includeSuccessorPlans When set to **true**, excludes successor information from the response.
      * @param {module:api/BillingApi~getPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountBillingPlanResponse}
@@ -346,7 +345,7 @@ The response returns the billing plan information, including the currency code, 
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPlan");
       }
 
@@ -370,7 +369,7 @@ The response returns the billing plan information, including the currency code, 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AccountBillingPlanResponse;
@@ -383,7 +382,7 @@ The response returns the billing plan information, including the currency code, 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listBillingPlans operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listBillingPlans operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listBillingPlansCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPlansResponse} data The data returned by the service call.
@@ -415,7 +414,7 @@ The response returns the billing plan information, including the currency code, 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingPlansResponse;
@@ -428,7 +427,7 @@ The response returns the billing plan information, including the currency code, 
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listInvoices operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listInvoices operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listInvoicesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingInvoicesResponse} data The data returned by the service call.
@@ -458,7 +457,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listInvoices");
       }
 
@@ -481,7 +480,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingInvoicesResponse;
@@ -494,7 +493,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listInvoicesPastDue operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listInvoicesPastDue operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listInvoicesPastDueCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingInvoicesSummary} data The data returned by the service call.
@@ -514,7 +513,7 @@ Privileges Required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listInvoicesPastDue");
       }
 
@@ -535,7 +534,7 @@ Privileges Required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingInvoicesSummary;
@@ -548,7 +547,7 @@ Privileges Required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listPayments operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listPayments operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~listPaymentsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPaymentsResponse} data The data returned by the service call.
@@ -578,7 +577,7 @@ Privileges required: account administrator
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listPayments");
       }
 
@@ -601,7 +600,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingPaymentsResponse;
@@ -614,7 +613,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the makePayment operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the makePayment operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~makePaymentCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPaymentResponse} data The data returned by the service call.
@@ -647,7 +646,7 @@ Privileges required: account administrator
       var postBody = optsOrCallback['billingPaymentRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling makePayment");
       }
 
@@ -668,7 +667,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingPaymentResponse;
@@ -681,7 +680,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the purchaseEnvelopes operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the purchaseEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~purchaseEnvelopesCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -707,7 +706,7 @@ Privileges required: account administrator
       var postBody = optsOrCallback['purchasedEnvelopesInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling purchaseEnvelopes");
       }
 
@@ -728,7 +727,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -741,7 +740,7 @@ Privileges required: account administrator
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updatePlan operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updatePlan operation. If none specified a Promise will be returned.
      * @callback module:api/BillingApi~updatePlanCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BillingPlanUpdateResponse} data The data returned by the service call.
@@ -769,7 +768,7 @@ Privileges required: account administrator
       var postBody = optsOrCallback['billingPlanInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePlan");
       }
 
@@ -791,7 +790,7 @@ Privileges required: account administrator
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BillingPlanUpdateResponse;

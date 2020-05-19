@@ -30,7 +30,6 @@
   /**
    * The CertifiedDelivery model module.
    * @module model/CertifiedDelivery
-   * @version 4.6.0
    */
 
   /**

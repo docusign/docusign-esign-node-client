@@ -30,7 +30,6 @@
   /**
    * The Expirations model module.
    * @module model/Expirations
-   * @version 4.6.0
    */
 
   /**

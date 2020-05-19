@@ -30,7 +30,6 @@
   /**
    * The Province model module.
    * @module model/Province
-   * @version 4.6.0
    */
 
   /**

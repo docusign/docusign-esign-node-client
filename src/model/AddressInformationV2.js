@@ -30,7 +30,6 @@
   /**
    * The AddressInformationV2 model module.
    * @module model/AddressInformationV2
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The PaymentGatewayAccount model module.
    * @module model/PaymentGatewayAccount
-   * @version 4.6.0
    */
 
   /**

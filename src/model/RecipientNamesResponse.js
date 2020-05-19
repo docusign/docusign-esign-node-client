@@ -30,7 +30,6 @@
   /**
    * The RecipientNamesResponse model module.
    * @module model/RecipientNamesResponse
-   * @version 4.6.0
    */
 
   /**

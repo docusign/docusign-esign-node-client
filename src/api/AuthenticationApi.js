@@ -29,7 +29,6 @@
   /**
    * Authentication service.
    * @module api/AuthenticationApi
-   * @version 4.6.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the deleteSocialLogin operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteSocialLogin operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~deleteSocialLoginCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -61,7 +60,7 @@
      */
 
     /**
-     * Deletes user&#39;s social account.
+     * Deletes user's social account.
      * Deletes a social account from a use's account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
@@ -80,12 +79,12 @@
       var postBody = optsOrCallback['socialAccountInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteSocialLogin");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling deleteSocialLogin");
       }
 
@@ -107,7 +106,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -120,7 +119,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getOAuthToken operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getOAuthToken operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~getOAuthTokenCallback
      * @param {String} error Error message, if any.
      * @param {module:model/OauthAccess} data The data returned by the service call.
@@ -152,7 +151,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = OauthAccess;
@@ -165,7 +164,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listSocialLogins operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listSocialLogins operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~listSocialLoginsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/UserSocialIdResult} data The data returned by the service call.
@@ -173,7 +172,7 @@
      */
 
     /**
-     * Gets a list of a user&#39;s social accounts.
+     * Gets a list of a user's social accounts.
      * Retrieves a list of social accounts linked to a user's account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
@@ -184,12 +183,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSocialLogins");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling listSocialLogins");
       }
 
@@ -211,7 +210,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserSocialIdResult;
@@ -224,7 +223,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the login operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the login operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~loginCallback
      * @param {String} error Error message, if any.
      * @param {module:model/LoginInformation} data The data returned by the service call.
@@ -274,7 +273,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LoginInformation;
@@ -287,7 +286,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
     };
 
     /**
-     * (Optional)Callback function to receive the result of the revokeOAuthToken operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the revokeOAuthToken operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~revokeOAuthTokenCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -318,7 +317,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -331,7 +330,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updatePassword operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updatePassword operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~updatePasswordCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -357,7 +356,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var postBody = optsOrCallback['userPasswordInformation'];
 
       // verify the required parameter 'loginPart' is set
-      if (loginPart == undefined || loginPart == null) {
+      if (loginPart === undefined || loginPart === null) {
         throw new Error("Missing the required parameter 'loginPart' when calling updatePassword");
       }
 
@@ -378,7 +377,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -391,7 +390,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateSocialLogin operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateSocialLogin operation. If none specified a Promise will be returned.
      * @callback module:api/AuthenticationApi~updateSocialLoginCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -418,12 +417,12 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var postBody = optsOrCallback['socialAccountInformation'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSocialLogin");
       }
 
       // verify the required parameter 'userId' is set
-      if (userId == undefined || userId == null) {
+      if (userId === undefined || userId === null) {
         throw new Error("Missing the required parameter 'userId' when calling updateSocialLogin");
       }
 
@@ -445,7 +444,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;

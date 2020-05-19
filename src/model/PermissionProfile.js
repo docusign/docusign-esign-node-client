@@ -30,7 +30,6 @@
   /**
    * The PermissionProfile model module.
    * @module model/PermissionProfile
-   * @version 4.6.0
    */
 
   /**

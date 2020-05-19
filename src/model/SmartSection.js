@@ -30,7 +30,6 @@
   /**
    * The SmartSection model module.
    * @module model/SmartSection
-   * @version 4.6.0
    */
 
   /**

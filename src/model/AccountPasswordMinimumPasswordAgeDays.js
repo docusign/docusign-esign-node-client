@@ -30,7 +30,6 @@
   /**
    * The AccountPasswordMinimumPasswordAgeDays model module.
    * @module model/AccountPasswordMinimumPasswordAgeDays
-   * @version 4.6.0
    */
 
   /**

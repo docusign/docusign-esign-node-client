@@ -30,7 +30,6 @@
   /**
    * The Ssn model module.
    * @module model/Ssn
-   * @version 4.6.0
    */
 
   /**

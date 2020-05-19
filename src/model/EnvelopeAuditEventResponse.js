@@ -30,7 +30,6 @@
   /**
    * The EnvelopeAuditEventResponse model module.
    * @module model/EnvelopeAuditEventResponse
-   * @version 4.6.0
    */
 
   /**

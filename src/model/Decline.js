@@ -30,7 +30,6 @@
   /**
    * The Decline model module.
    * @module model/Decline
-   * @version 4.6.0
    */
 
   /**

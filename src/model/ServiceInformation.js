@@ -30,7 +30,6 @@
   /**
    * The ServiceInformation model module.
    * @module model/ServiceInformation
-   * @version 4.6.0
    */
 
   /**

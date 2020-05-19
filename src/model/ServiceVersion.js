@@ -30,7 +30,6 @@
   /**
    * The ServiceVersion model module.
    * @module model/ServiceVersion
-   * @version 4.6.0
    */
 
   /**

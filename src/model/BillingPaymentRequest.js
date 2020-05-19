@@ -30,7 +30,6 @@
   /**
    * The BillingPaymentRequest model module.
    * @module model/BillingPaymentRequest
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The PlanInformation model module.
    * @module model/PlanInformation
-   * @version 4.6.0
    */
 
   /**

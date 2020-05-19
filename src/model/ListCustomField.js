@@ -30,7 +30,6 @@
   /**
    * The ListCustomField model module.
    * @module model/ListCustomField
-   * @version 4.6.0
    */
 
   /**

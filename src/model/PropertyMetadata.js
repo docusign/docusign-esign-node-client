@@ -30,7 +30,6 @@
   /**
    * The PropertyMetadata model module.
    * @module model/PropertyMetadata
-   * @version 4.6.0
    */
 
   /**

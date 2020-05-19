@@ -30,7 +30,6 @@
   /**
    * The UserSignaturesInformation model module.
    * @module model/UserSignaturesInformation
-   * @version 4.6.0
    */
 
   /**

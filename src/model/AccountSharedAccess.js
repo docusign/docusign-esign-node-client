@@ -30,7 +30,6 @@
   /**
    * The AccountSharedAccess model module.
    * @module model/AccountSharedAccess
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The List model module.
    * @module model/List
-   * @version 4.6.0
    */
 
   /**

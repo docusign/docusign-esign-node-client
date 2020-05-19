@@ -30,7 +30,6 @@
   /**
    * The RadioGroup model module.
    * @module model/RadioGroup
-   * @version 4.6.0
    */
 
   /**

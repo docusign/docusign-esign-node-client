@@ -30,7 +30,6 @@
   /**
    * The ModelNumber model module.
    * @module model/ModelNumber
-   * @version 4.6.0
    */
 
   /**

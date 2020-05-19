@@ -30,7 +30,6 @@
   /**
    * The ConnectCustomConfiguration model module.
    * @module model/ConnectCustomConfiguration
-   * @version 4.6.0
    */
 
   /**
