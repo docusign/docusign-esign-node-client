@@ -30,7 +30,6 @@
   /**
    * The WorkspaceUser model module.
    * @module model/WorkspaceUser
-   * @version 5.3.0
    */
 
   /**

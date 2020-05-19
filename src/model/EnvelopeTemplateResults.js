@@ -30,7 +30,6 @@
   /**
    * The EnvelopeTemplateResults model module.
    * @module model/EnvelopeTemplateResults
-   * @version 5.3.0
    */
 
   /**

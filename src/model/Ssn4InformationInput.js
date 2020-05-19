@@ -30,7 +30,6 @@
   /**
    * The Ssn4InformationInput model module.
    * @module model/Ssn4InformationInput
-   * @version 5.3.0
    */
 
   /**

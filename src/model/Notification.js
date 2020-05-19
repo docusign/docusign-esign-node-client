@@ -30,7 +30,6 @@
   /**
    * The Notification model module.
    * @module model/Notification
-   * @version 5.3.0
    */
 
   /**

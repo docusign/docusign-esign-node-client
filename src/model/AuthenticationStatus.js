@@ -30,7 +30,6 @@
   /**
    * The AuthenticationStatus model module.
    * @module model/AuthenticationStatus
-   * @version 5.3.0
    */
 
   /**

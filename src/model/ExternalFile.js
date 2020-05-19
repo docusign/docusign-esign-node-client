@@ -30,7 +30,6 @@
   /**
    * The ExternalFile model module.
    * @module model/ExternalFile
-   * @version 5.3.0
    */
 
   /**

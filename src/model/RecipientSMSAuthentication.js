@@ -30,7 +30,6 @@
   /**
    * The RecipientSMSAuthentication model module.
    * @module model/RecipientSMSAuthentication
-   * @version 5.3.0
    */
 
   /**

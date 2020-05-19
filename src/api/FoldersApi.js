@@ -29,7 +29,6 @@
   /**
    * Folders service.
    * @module api/FoldersApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the list operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~listCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FoldersResponse} data The data returned by the service call.
@@ -84,7 +83,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
@@ -110,7 +109,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = FoldersResponse;
@@ -123,7 +122,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listItems operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listItems operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~listItemsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FolderItemsResponse} data The data returned by the service call.
@@ -158,12 +157,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listItems");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling listItems");
       }
 
@@ -193,7 +192,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = FolderItemsResponse;
@@ -206,7 +205,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the moveEnvelopes operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the moveEnvelopes operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~moveEnvelopesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FoldersResponse} data The data returned by the service call.
@@ -234,12 +233,12 @@
       var postBody = optsOrCallback['foldersRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling moveEnvelopes");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling moveEnvelopes");
       }
 
@@ -261,7 +260,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = FoldersResponse;
@@ -274,7 +273,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the search operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the search operation. If none specified a Promise will be returned.
      * @callback module:api/FoldersApi~searchCallback
      * @param {String} error Error message, if any.
      * @param {module:model/FolderItemResponse} data The data returned by the service call.
@@ -293,8 +292,8 @@ If the user ID of the user making the call is the same as the user ID for any re
      * @param {String} optsOrCallback.count Specifies the number of records returned in the cache. The number must be greater than 0 and less than or equal to 100.
      * @param {String} optsOrCallback.fromDate Specifies the start of the date range to return. If no value is provided, the default search is the previous 30 days.
      * @param {String} optsOrCallback.includeRecipients When set to **true**, the recipient information is returned in the response.
-     * @param {String} optsOrCallback.order Specifies the order in which the list is returned. Valid values are: &#x60;asc&#x60; for ascending order, and &#x60;desc&#x60; for descending order.
-     * @param {String} optsOrCallback.orderBy Specifies the property used to sort the list. Valid values are: &#x60;action_required&#x60;, &#x60;created&#x60;, &#x60;completed&#x60;, &#x60;sent&#x60;, &#x60;signer_list&#x60;, &#x60;status&#x60;, or &#x60;subject&#x60;.
+     * @param {String} optsOrCallback.order Specifies the order in which the list is returned. Valid values are: `asc` for ascending order, and `desc` for descending order.
+     * @param {String} optsOrCallback.orderBy Specifies the property used to sort the list. Valid values are: `action_required`, `created`, `completed`, `sent`, `signer_list`, `status`, or `subject`.
      * @param {String} optsOrCallback.startPosition Specifies the the starting location in the result set of the items that are returned.
      * @param {String} optsOrCallback.toDate Specifies the end of the date range to return.
      * @param {module:api/FoldersApi~searchCallback} callback The callback function, accepting three arguments: error, data, response
@@ -311,12 +310,12 @@ If the user ID of the user making the call is the same as the user ID for any re
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling search");
       }
 
       // verify the required parameter 'searchFolderId' is set
-      if (searchFolderId == undefined || searchFolderId == null) {
+      if (searchFolderId === undefined || searchFolderId === null) {
         throw new Error("Missing the required parameter 'searchFolderId' when calling search");
       }
 
@@ -346,7 +345,7 @@ If the user ID of the user making the call is the same as the user ID for any re
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = FolderItemResponse;

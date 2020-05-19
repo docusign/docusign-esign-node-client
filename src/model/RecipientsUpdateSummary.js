@@ -30,7 +30,6 @@
   /**
    * The RecipientsUpdateSummary model module.
    * @module model/RecipientsUpdateSummary
-   * @version 5.3.0
    */
 
   /**

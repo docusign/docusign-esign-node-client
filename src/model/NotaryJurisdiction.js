@@ -30,7 +30,6 @@
   /**
    * The NotaryJurisdiction model module.
    * @module model/NotaryJurisdiction
-   * @version 5.3.0
    */
 
   /**

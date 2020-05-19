@@ -12,25 +12,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DocumentHtmlDefinition', 'model/MatchBox', 'model/NameValue', 'model/OcrRequest', 'model/PageSize', 'model/Tabs'], factory);
+    define(['ApiClient', 'model/DocumentHtmlDefinition', 'model/MatchBox', 'model/NameValue', 'model/Tabs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DocumentHtmlDefinition'), require('./MatchBox'), require('./NameValue'), require('./OcrRequest'), require('./PageSize'), require('./Tabs'));
+    module.exports = factory(require('../ApiClient'), require('./DocumentHtmlDefinition'), require('./MatchBox'), require('./NameValue'), require('./Tabs'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinition, root.Docusign.MatchBox, root.Docusign.NameValue, root.Docusign.OcrRequest, root.Docusign.PageSize, root.Docusign.Tabs);
+    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinition, root.Docusign.MatchBox, root.Docusign.NameValue, root.Docusign.Tabs);
   }
-}(this, function(ApiClient, DocumentHtmlDefinition, MatchBox, NameValue, OcrRequest, PageSize, Tabs) {
+}(this, function(ApiClient, DocumentHtmlDefinition, MatchBox, NameValue, Tabs) {
   'use strict';
 
 
   /**
    * The Document model module.
    * @module model/Document
-   * @version 5.3.0
    */
 
   /**
@@ -85,44 +84,23 @@
       if (data.hasOwnProperty('includeInDownload')) {
         obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
       }
-      if (data.hasOwnProperty('isDynamicXfa')) {
-        obj['isDynamicXfa'] = ApiClient.convertToType(data['isDynamicXfa'], 'Boolean');
-      }
-      if (data.hasOwnProperty('isStaticXfa')) {
-        obj['isStaticXfa'] = ApiClient.convertToType(data['isStaticXfa'], 'Boolean');
-      }
       if (data.hasOwnProperty('matchBoxes')) {
         obj['matchBoxes'] = ApiClient.convertToType(data['matchBoxes'], [MatchBox]);
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('ocrRequests')) {
-        obj['ocrRequests'] = ApiClient.convertToType(data['ocrRequests'], [OcrRequest]);
-      }
       if (data.hasOwnProperty('order')) {
         obj['order'] = ApiClient.convertToType(data['order'], 'String');
-      }
-      if (data.hasOwnProperty('pageCount')) {
-        obj['pageCount'] = ApiClient.convertToType(data['pageCount'], 'String');
       }
       if (data.hasOwnProperty('pages')) {
         obj['pages'] = ApiClient.convertToType(data['pages'], 'String');
       }
-      if (data.hasOwnProperty('pageSizes')) {
-        obj['pageSizes'] = ApiClient.convertToType(data['pageSizes'], [PageSize]);
-      }
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
-      if (data.hasOwnProperty('pdfFieldsData')) {
-        obj['pdfFieldsData'] = ApiClient.convertToType(data['pdfFieldsData'], 'String');
-      }
       if (data.hasOwnProperty('pdfFormFieldOption')) {
         obj['pdfFormFieldOption'] = ApiClient.convertToType(data['pdfFormFieldOption'], 'String');
-      }
-      if (data.hasOwnProperty('pdfWidgetsBase64')) {
-        obj['pdfWidgetsBase64'] = ApiClient.convertToType(data['pdfWidgetsBase64'], 'String');
       }
       if (data.hasOwnProperty('remoteUrl')) {
         obj['remoteUrl'] = ApiClient.convertToType(data['remoteUrl'], 'String');
@@ -202,16 +180,6 @@
    */
   exports.prototype['includeInDownload'] = undefined;
   /**
-   * 
-   * @member {Boolean} isDynamicXfa
-   */
-  exports.prototype['isDynamicXfa'] = undefined;
-  /**
-   * 
-   * @member {Boolean} isStaticXfa
-   */
-  exports.prototype['isStaticXfa'] = undefined;
-  /**
    * Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
    * @member {Array.<module:model/MatchBox>} matchBoxes
    */
@@ -223,19 +191,9 @@
   exports.prototype['name'] = undefined;
   /**
    * 
-   * @member {Array.<module:model/OcrRequest>} ocrRequests
-   */
-  exports.prototype['ocrRequests'] = undefined;
-  /**
-   * 
    * @member {String} order
    */
   exports.prototype['order'] = undefined;
-  /**
-   * 
-   * @member {String} pageCount
-   */
-  exports.prototype['pageCount'] = undefined;
   /**
    * 
    * @member {String} pages
@@ -243,29 +201,14 @@
   exports.prototype['pages'] = undefined;
   /**
    * 
-   * @member {Array.<module:model/PageSize>} pageSizes
-   */
-  exports.prototype['pageSizes'] = undefined;
-  /**
-   * 
    * @member {String} password
    */
   exports.prototype['password'] = undefined;
   /**
    * 
-   * @member {String} pdfFieldsData
-   */
-  exports.prototype['pdfFieldsData'] = undefined;
-  /**
-   * 
    * @member {String} pdfFormFieldOption
    */
   exports.prototype['pdfFormFieldOption'] = undefined;
-  /**
-   * 
-   * @member {String} pdfWidgetsBase64
-   */
-  exports.prototype['pdfWidgetsBase64'] = undefined;
   /**
    * The file id from the cloud storage service where the document is located. This information is returned using [ML:GET /folders] or [ML:/folders/{folderid}]. 
    * @member {String} remoteUrl

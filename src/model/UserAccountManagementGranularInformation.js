@@ -30,7 +30,6 @@
   /**
    * The UserAccountManagementGranularInformation model module.
    * @module model/UserAccountManagementGranularInformation
-   * @version 5.3.0
    */
 
   /**
@@ -96,6 +95,9 @@
       }
       if (data.hasOwnProperty('canManageUsersMetadata')) {
         obj['canManageUsersMetadata'] = SettingsMetadata.constructFromObject(data['canManageUsersMetadata']);
+      }
+      if (data.hasOwnProperty('canViewUsers')) {
+        obj['canViewUsers'] = ApiClient.convertToType(data['canViewUsers'], 'String');
       }
     }
     return obj;
@@ -164,6 +166,11 @@
    * @member {module:model/SettingsMetadata} canManageUsersMetadata
    */
   exports.prototype['canManageUsersMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canViewUsers
+   */
+  exports.prototype['canViewUsers'] = undefined;
 
 
 

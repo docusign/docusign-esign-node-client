@@ -30,7 +30,6 @@
   /**
    * The ConnectFailureResults model module.
    * @module model/ConnectFailureResults
-   * @version 5.3.0
    */
 
   /**

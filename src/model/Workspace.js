@@ -30,7 +30,6 @@
   /**
    * The Workspace model module.
    * @module model/Workspace
-   * @version 5.3.0
    */
 
   /**

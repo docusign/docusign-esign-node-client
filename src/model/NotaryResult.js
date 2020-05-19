@@ -30,7 +30,6 @@
   /**
    * The NotaryResult model module.
    * @module model/NotaryResult
-   * @version 5.3.0
    */
 
   /**

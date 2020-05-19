@@ -30,7 +30,6 @@
   /**
    * The AccountIdentityVerificationResponse model module.
    * @module model/AccountIdentityVerificationResponse
-   * @version 5.3.0
    */
 
   /**

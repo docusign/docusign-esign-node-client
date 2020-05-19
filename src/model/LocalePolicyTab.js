@@ -30,7 +30,6 @@
   /**
    * The LocalePolicyTab model module.
    * @module model/LocalePolicyTab
-   * @version 5.3.0
    */
 
   /**

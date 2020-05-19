@@ -30,7 +30,6 @@
   /**
    * The TemplateSharedItem model module.
    * @module model/TemplateSharedItem
-   * @version 5.3.0
    */
 
   /**

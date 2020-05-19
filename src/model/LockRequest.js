@@ -30,7 +30,6 @@
   /**
    * The LockRequest model module.
    * @module model/LockRequest
-   * @version 5.3.0
    */
 
   /**

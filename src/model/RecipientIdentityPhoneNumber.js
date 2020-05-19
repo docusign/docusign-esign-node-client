@@ -30,7 +30,6 @@
   /**
    * The RecipientIdentityPhoneNumber model module.
    * @module model/RecipientIdentityPhoneNumber
-   * @version 5.3.0
    */
 
   /**

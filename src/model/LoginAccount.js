@@ -30,7 +30,6 @@
   /**
    * The LoginAccount model module.
    * @module model/LoginAccount
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The Filter model module.
    * @module model/Filter
-   * @version 5.3.0
    */
 
   /**

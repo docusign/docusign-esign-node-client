@@ -30,7 +30,6 @@
   /**
    * The MergeField model module.
    * @module model/MergeField
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The NotaryJournalCredibleWitness model module.
    * @module model/NotaryJournalCredibleWitness
-   * @version 5.3.0
    */
 
   /**

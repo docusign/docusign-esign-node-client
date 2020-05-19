@@ -30,7 +30,6 @@
   /**
    * The BccEmailAddress model module.
    * @module model/BccEmailAddress
-   * @version 5.3.0
    */
 
   /**

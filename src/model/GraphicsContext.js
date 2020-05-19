@@ -30,7 +30,6 @@
   /**
    * The GraphicsContext model module.
    * @module model/GraphicsContext
-   * @version 5.3.0
    */
 
   /**

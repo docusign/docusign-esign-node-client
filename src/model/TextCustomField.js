@@ -30,7 +30,6 @@
   /**
    * The TextCustomField model module.
    * @module model/TextCustomField
-   * @version 5.3.0
    */
 
   /**

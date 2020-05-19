@@ -30,7 +30,6 @@
   /**
    * The AskAnAdmin model module.
    * @module model/AskAnAdmin
-   * @version 5.3.0
    */
 
   /**

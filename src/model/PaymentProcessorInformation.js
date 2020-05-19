@@ -30,7 +30,6 @@
   /**
    * The PaymentProcessorInformation model module.
    * @module model/PaymentProcessorInformation
-   * @version 5.3.0
    */
 
   /**

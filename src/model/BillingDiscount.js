@@ -30,7 +30,6 @@
   /**
    * The BillingDiscount model module.
    * @module model/BillingDiscount
-   * @version 5.3.0
    */
 
   /**

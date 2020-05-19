@@ -30,7 +30,6 @@
   /**
    * The DocumentVisibilityList model module.
    * @module model/DocumentVisibilityList
-   * @version 5.3.0
    */
 
   /**

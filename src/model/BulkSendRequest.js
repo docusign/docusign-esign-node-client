@@ -30,7 +30,6 @@
   /**
    * The BulkSendRequest model module.
    * @module model/BulkSendRequest
-   * @version 5.3.0
    */
 
   /**

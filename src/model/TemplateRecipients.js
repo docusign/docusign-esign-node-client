@@ -30,7 +30,6 @@
   /**
    * The TemplateRecipients model module.
    * @module model/TemplateRecipients
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The UserSignature model module.
    * @module model/UserSignature
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The SigningGroupInformation model module.
    * @module model/SigningGroupInformation
-   * @version 5.3.0
    */
 
   /**

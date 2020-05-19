@@ -30,7 +30,6 @@
   /**
    * The DowngradeBillingPlanInformation model module.
    * @module model/DowngradeBillingPlanInformation
-   * @version 5.3.0
    */
 
   /**

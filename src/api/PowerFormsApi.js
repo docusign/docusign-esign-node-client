@@ -29,7 +29,6 @@
   /**
    * PowerForms service.
    * @module api/PowerFormsApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createPowerForm operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createPowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~createPowerFormCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerForm} data The data returned by the service call.
@@ -79,7 +78,7 @@
       var postBody = optsOrCallback['powerForm'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createPowerForm");
       }
 
@@ -100,7 +99,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PowerForm;
@@ -113,7 +112,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deletePowerForm operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deletePowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~deletePowerFormCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -130,12 +129,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deletePowerForm");
       }
 
       // verify the required parameter 'powerFormId' is set
-      if (powerFormId == undefined || powerFormId == null) {
+      if (powerFormId === undefined || powerFormId === null) {
         throw new Error("Missing the required parameter 'powerFormId' when calling deletePowerForm");
       }
 
@@ -157,7 +156,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -170,7 +169,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deletePowerForms operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deletePowerForms operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~deletePowerFormsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormsResponse} data The data returned by the service call.
@@ -196,7 +195,7 @@
       var postBody = optsOrCallback['powerFormsRequest'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deletePowerForms");
       }
 
@@ -217,7 +216,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PowerFormsResponse;
@@ -230,7 +229,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPowerForm operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~getPowerFormCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerForm} data The data returned by the service call.
@@ -248,12 +247,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPowerForm");
       }
 
       // verify the required parameter 'powerFormId' is set
-      if (powerFormId == undefined || powerFormId == null) {
+      if (powerFormId === undefined || powerFormId === null) {
         throw new Error("Missing the required parameter 'powerFormId' when calling getPowerForm");
       }
 
@@ -275,7 +274,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PowerForm;
@@ -288,7 +287,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getPowerFormData operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getPowerFormData operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~getPowerFormDataCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormsFormDataResponse} data The data returned by the service call.
@@ -317,12 +316,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPowerFormData");
       }
 
       // verify the required parameter 'powerFormId' is set
-      if (powerFormId == undefined || powerFormId == null) {
+      if (powerFormId === undefined || powerFormId === null) {
         throw new Error("Missing the required parameter 'powerFormId' when calling getPowerFormData");
       }
 
@@ -347,7 +346,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PowerFormsFormDataResponse;
@@ -360,7 +359,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listPowerFormSenders operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listPowerFormSenders operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~listPowerFormSendersCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormSendersResponse} data The data returned by the service call.
@@ -386,7 +385,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listPowerFormSenders");
       }
 
@@ -408,7 +407,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PowerFormSendersResponse;
@@ -421,7 +420,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listPowerForms operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listPowerForms operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~listPowerFormsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerFormsResponse} data The data returned by the service call.
@@ -450,7 +449,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listPowerForms");
       }
 
@@ -475,7 +474,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PowerFormsResponse;
@@ -488,7 +487,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updatePowerForm operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updatePowerForm operation. If none specified a Promise will be returned.
      * @callback module:api/PowerFormsApi~updatePowerFormCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PowerForm} data The data returned by the service call.
@@ -515,12 +514,12 @@
       var postBody = optsOrCallback['powerForm'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePowerForm");
       }
 
       // verify the required parameter 'powerFormId' is set
-      if (powerFormId == undefined || powerFormId == null) {
+      if (powerFormId === undefined || powerFormId === null) {
         throw new Error("Missing the required parameter 'powerFormId' when calling updatePowerForm");
       }
 
@@ -542,7 +541,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PowerForm;

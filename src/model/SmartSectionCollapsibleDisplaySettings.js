@@ -30,7 +30,6 @@
   /**
    * The SmartSectionCollapsibleDisplaySettings model module.
    * @module model/SmartSectionCollapsibleDisplaySettings
-   * @version 5.3.0
    */
 
   /**

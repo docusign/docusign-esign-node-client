@@ -30,7 +30,6 @@
   /**
    * The SignatureProviderRequiredOption model module.
    * @module model/SignatureProviderRequiredOption
-   * @version 5.3.0
    */
 
   /**

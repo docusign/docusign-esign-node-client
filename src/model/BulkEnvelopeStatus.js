@@ -30,7 +30,6 @@
   /**
    * The BulkEnvelopeStatus model module.
    * @module model/BulkEnvelopeStatus
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The AdminMessage model module.
    * @module model/AdminMessage
-   * @version 5.3.0
    */
 
   /**

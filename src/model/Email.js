@@ -30,7 +30,6 @@
   /**
    * The Email model module.
    * @module model/Email
-   * @version 5.3.0
    */
 
   /**

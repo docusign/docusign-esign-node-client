@@ -29,7 +29,6 @@
   /**
    * EmailArchive service.
    * @module api/EmailArchiveApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createBCCEmailArchive operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createBCCEmailArchive operation. If none specified a Promise will be returned.
      * @callback module:api/EmailArchiveApi~createBCCEmailArchiveCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BccEmailArchive} data The data returned by the service call.
@@ -79,7 +78,7 @@
       var postBody = optsOrCallback['bccEmailArchive'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBCCEmailArchive");
       }
 
@@ -100,7 +99,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BccEmailArchive;
@@ -113,7 +112,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteBCCEmailArchive operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteBCCEmailArchive operation. If none specified a Promise will be returned.
      * @callback module:api/EmailArchiveApi~deleteBCCEmailArchiveCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -130,12 +129,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBCCEmailArchive");
       }
 
       // verify the required parameter 'bccEmailArchiveId' is set
-      if (bccEmailArchiveId == undefined || bccEmailArchiveId == null) {
+      if (bccEmailArchiveId === undefined || bccEmailArchiveId === null) {
         throw new Error("Missing the required parameter 'bccEmailArchiveId' when calling deleteBCCEmailArchive");
       }
 
@@ -157,7 +156,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -170,7 +169,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBCCEmailArchiveHistoryList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBCCEmailArchiveHistoryList operation. If none specified a Promise will be returned.
      * @callback module:api/EmailArchiveApi~getBCCEmailArchiveHistoryListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BccEmailArchiveHistoryList} data The data returned by the service call.
@@ -198,12 +197,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBCCEmailArchiveHistoryList");
       }
 
       // verify the required parameter 'bccEmailArchiveId' is set
-      if (bccEmailArchiveId == undefined || bccEmailArchiveId == null) {
+      if (bccEmailArchiveId === undefined || bccEmailArchiveId === null) {
         throw new Error("Missing the required parameter 'bccEmailArchiveId' when calling getBCCEmailArchiveHistoryList");
       }
 
@@ -227,7 +226,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BccEmailArchiveHistoryList;
@@ -240,7 +239,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getBCCEmailArchiveList operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getBCCEmailArchiveList operation. If none specified a Promise will be returned.
      * @callback module:api/EmailArchiveApi~getBCCEmailArchiveListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/BccEmailArchiveList} data The data returned by the service call.
@@ -267,7 +266,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBCCEmailArchiveList");
       }
 
@@ -290,7 +289,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BccEmailArchiveList;

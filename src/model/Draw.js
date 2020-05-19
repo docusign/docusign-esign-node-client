@@ -30,7 +30,6 @@
   /**
    * The Draw model module.
    * @module model/Draw
-   * @version 5.3.0
    */
 
   /**

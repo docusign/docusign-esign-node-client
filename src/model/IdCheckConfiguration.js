@@ -30,7 +30,6 @@
   /**
    * The IdCheckConfiguration model module.
    * @module model/IdCheckConfiguration
-   * @version 5.3.0
    */
 
   /**

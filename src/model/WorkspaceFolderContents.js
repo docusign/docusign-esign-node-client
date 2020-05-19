@@ -30,7 +30,6 @@
   /**
    * The WorkspaceFolderContents model module.
    * @module model/WorkspaceFolderContents
-   * @version 5.3.0
    */
 
   /**

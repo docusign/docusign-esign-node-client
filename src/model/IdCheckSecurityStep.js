@@ -30,7 +30,6 @@
   /**
    * The IdCheckSecurityStep model module.
    * @module model/IdCheckSecurityStep
-   * @version 5.3.0
    */
 
   /**

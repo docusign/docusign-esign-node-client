@@ -30,7 +30,6 @@
   /**
    * The PowerFormsRequest model module.
    * @module model/PowerFormsRequest
-   * @version 5.3.0
    */
 
   /**

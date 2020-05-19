@@ -30,7 +30,6 @@
   /**
    * The BillingInvoice model module.
    * @module model/BillingInvoice
-   * @version 5.3.0
    */
 
   /**

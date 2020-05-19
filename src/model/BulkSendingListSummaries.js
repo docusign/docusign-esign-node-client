@@ -30,7 +30,6 @@
   /**
    * The BulkSendingListSummaries model module.
    * @module model/BulkSendingListSummaries
-   * @version 5.3.0
    */
 
   /**

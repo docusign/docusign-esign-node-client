@@ -30,7 +30,6 @@
   /**
    * The InlineTemplate model module.
    * @module model/InlineTemplate
-   * @version 5.3.0
    */
 
   /**

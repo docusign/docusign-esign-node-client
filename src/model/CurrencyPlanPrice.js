@@ -30,7 +30,6 @@
   /**
    * The CurrencyPlanPrice model module.
    * @module model/CurrencyPlanPrice
-   * @version 5.3.0
    */
 
   /**

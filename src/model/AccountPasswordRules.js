@@ -30,7 +30,6 @@
   /**
    * The AccountPasswordRules model module.
    * @module model/AccountPasswordRules
-   * @version 5.3.0
    */
 
   /**

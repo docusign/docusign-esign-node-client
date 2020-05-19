@@ -30,7 +30,6 @@
   /**
    * The PolyLine model module.
    * @module model/PolyLine
-   * @version 5.3.0
    */
 
   /**

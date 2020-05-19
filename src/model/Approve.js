@@ -30,7 +30,6 @@
   /**
    * The Approve model module.
    * @module model/Approve
-   * @version 5.3.0
    */
 
   /**

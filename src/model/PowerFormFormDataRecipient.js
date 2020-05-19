@@ -30,7 +30,6 @@
   /**
    * The PowerFormFormDataRecipient model module.
    * @module model/PowerFormFormDataRecipient
-   * @version 5.3.0
    */
 
   /**

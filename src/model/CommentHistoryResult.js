@@ -30,7 +30,6 @@
   /**
    * The CommentHistoryResult model module.
    * @module model/CommentHistoryResult
-   * @version 5.3.0
    */
 
   /**

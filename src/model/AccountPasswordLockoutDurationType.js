@@ -30,7 +30,6 @@
   /**
    * The AccountPasswordLockoutDurationType model module.
    * @module model/AccountPasswordLockoutDurationType
-   * @version 5.3.0
    */
 
   /**

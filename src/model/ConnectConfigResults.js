@@ -30,7 +30,6 @@
   /**
    * The ConnectConfigResults model module.
    * @module model/ConnectConfigResults
-   * @version 5.3.0
    */
 
   /**

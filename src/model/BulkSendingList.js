@@ -30,7 +30,6 @@
   /**
    * The BulkSendingList model module.
    * @module model/BulkSendingList
-   * @version 5.3.0
    */
 
   /**

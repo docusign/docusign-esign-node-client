@@ -30,7 +30,6 @@
   /**
    * The FavoriteTemplatesContentItem model module.
    * @module model/FavoriteTemplatesContentItem
-   * @version 5.3.0
    */
 
   /**

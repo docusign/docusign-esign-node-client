@@ -30,7 +30,6 @@
   /**
    * The DowngradePlanUpdateResponse model module.
    * @module model/DowngradePlanUpdateResponse
-   * @version 5.3.0
    */
 
   /**

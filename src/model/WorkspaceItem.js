@@ -30,7 +30,6 @@
   /**
    * The WorkspaceItem model module.
    * @module model/WorkspaceItem
-   * @version 5.3.0
    */
 
   /**

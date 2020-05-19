@@ -30,7 +30,6 @@
   /**
    * The AccountIdentityVerificationWorkflow model module.
    * @module model/AccountIdentityVerificationWorkflow
-   * @version 5.3.0
    */
 
   /**

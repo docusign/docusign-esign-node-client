@@ -29,7 +29,6 @@
   /**
    * Diagnostics service.
    * @module api/DiagnosticsApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the deleteRequestLogs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteRequestLogs operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~deleteRequestLogsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -84,7 +83,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -97,7 +96,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getRequestLog operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getRequestLog operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getRequestLogCallback
      * @param {String} error Error message, if any.
      * @param {Object} data The data returned by the service call.
@@ -121,7 +120,7 @@ If the Content-Transfer-Encoding header was set to base64, the log is returned a
       var postBody = null;
 
       // verify the required parameter 'requestLogId' is set
-      if (requestLogId == undefined || requestLogId == null) {
+      if (requestLogId === undefined || requestLogId === null) {
         throw new Error("Missing the required parameter 'requestLogId' when calling getRequestLog");
       }
 
@@ -142,7 +141,7 @@ If the Content-Transfer-Encoding header was set to base64, the log is returned a
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['text/plain'];
       var returnType = Object;
@@ -155,7 +154,7 @@ If the Content-Transfer-Encoding header was set to base64, the log is returned a
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getRequestLogSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getRequestLogSettings operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getRequestLogSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DiagnosticsSettingsInformation} data The data returned by the service call.
@@ -190,7 +189,7 @@ The response includes the current API request logging setting for the user, alon
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DiagnosticsSettingsInformation;
@@ -203,7 +202,7 @@ The response includes the current API request logging setting for the user, alon
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getResources operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getResources operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getResourcesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ResourceInformation} data The data returned by the service call.
@@ -243,7 +242,7 @@ Example: https://demo.docusign.net/restapi/help lists the REST API operations on
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ResourceInformation;
@@ -256,7 +255,7 @@ Example: https://demo.docusign.net/restapi/help lists the REST API operations on
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getService operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getService operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~getServiceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ServiceInformation} data The data returned by the service call.
@@ -293,7 +292,7 @@ You do not need an integrator key to view the REST API versions and resources.
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ServiceInformation;
@@ -306,7 +305,7 @@ You do not need an integrator key to view the REST API versions and resources.
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listRequestLogs operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listRequestLogs operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~listRequestLogsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/ApiRequestLogsResult} data The data returned by the service call.
@@ -352,7 +351,7 @@ If the Accept header is set to `application/json` or `application/xml`, the resp
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ApiRequestLogsResult;
@@ -365,7 +364,7 @@ If the Accept header is set to `application/json` or `application/xml`, the resp
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateRequestLogSettings operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateRequestLogSettings operation. If none specified a Promise will be returned.
      * @callback module:api/DiagnosticsApi~updateRequestLogSettingsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DiagnosticsSettingsInformation} data The data returned by the service call.
@@ -415,7 +414,7 @@ Private information, such as passwords and integrator key information, which is 
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DiagnosticsSettingsInformation;

@@ -29,7 +29,6 @@
   /**
    * DataFeed service.
    * @module api/DataFeedApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the getDataFeedElement operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getDataFeedElement operation. If none specified a Promise will be returned.
      * @callback module:api/DataFeedApi~getDataFeedElementCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -70,12 +69,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDataFeedElement");
       }
 
       // verify the required parameter 'dataFeedElementId' is set
-      if (dataFeedElementId == undefined || dataFeedElementId == null) {
+      if (dataFeedElementId === undefined || dataFeedElementId === null) {
         throw new Error("Missing the required parameter 'dataFeedElementId' when calling getDataFeedElement");
       }
 
@@ -97,7 +96,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;

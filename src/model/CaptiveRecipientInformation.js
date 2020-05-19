@@ -30,7 +30,6 @@
   /**
    * The CaptiveRecipientInformation model module.
    * @module model/CaptiveRecipientInformation
-   * @version 5.3.0
    */
 
   /**

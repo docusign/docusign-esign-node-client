@@ -30,7 +30,6 @@
   /**
    * The UserInformationList model module.
    * @module model/UserInformationList
-   * @version 5.3.0
    */
 
   /**

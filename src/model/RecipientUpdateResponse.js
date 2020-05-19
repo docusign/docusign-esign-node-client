@@ -30,7 +30,6 @@
   /**
    * The RecipientUpdateResponse model module.
    * @module model/RecipientUpdateResponse
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The AddressInformation model module.
    * @module model/AddressInformation
-   * @version 5.3.0
    */
 
   /**
@@ -80,6 +79,9 @@
       if (data.hasOwnProperty('stateOrProvince')) {
         obj['stateOrProvince'] = ApiClient.convertToType(data['stateOrProvince'], 'String');
       }
+      if (data.hasOwnProperty('zipPlus4')) {
+        obj['zipPlus4'] = ApiClient.convertToType(data['zipPlus4'], 'String');
+      }
     }
     return obj;
   }
@@ -124,6 +126,11 @@
    * @member {String} stateOrProvince
    */
   exports.prototype['stateOrProvince'] = undefined;
+  /**
+   * 
+   * @member {String} zipPlus4
+   */
+  exports.prototype['zipPlus4'] = undefined;
 
 
 

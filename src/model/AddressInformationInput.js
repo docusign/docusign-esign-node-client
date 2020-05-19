@@ -30,7 +30,6 @@
   /**
    * The AddressInformationInput model module.
    * @module model/AddressInformationInput
-   * @version 5.3.0
    */
 
   /**

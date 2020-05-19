@@ -30,7 +30,6 @@
   /**
    * The PaymentGatewayAccount model module.
    * @module model/PaymentGatewayAccount
-   * @version 5.3.0
    */
 
   /**
@@ -93,6 +92,9 @@
       }
       if (data.hasOwnProperty('supportedPaymentMethodsWithOptions')) {
         obj['supportedPaymentMethodsWithOptions'] = ApiClient.convertToType(data['supportedPaymentMethodsWithOptions'], [PaymentMethodWithOptions]);
+      }
+      if (data.hasOwnProperty('zeroDecimalCurrencies')) {
+        obj['zeroDecimalCurrencies'] = ApiClient.convertToType(data['zeroDecimalCurrencies'], ['String']);
       }
     }
     return obj;
@@ -161,6 +163,11 @@
    * @member {Array.<module:model/PaymentMethodWithOptions>} supportedPaymentMethodsWithOptions
    */
   exports.prototype['supportedPaymentMethodsWithOptions'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} zeroDecimalCurrencies
+   */
+  exports.prototype['zeroDecimalCurrencies'] = undefined;
 
 
 

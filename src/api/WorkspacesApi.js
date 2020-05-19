@@ -29,7 +29,6 @@
   /**
    * Workspaces service.
    * @module api/WorkspacesApi
-   * @version 5.3.0
    */
 
   /**
@@ -53,7 +52,7 @@
 
 
     /**
-     * (Optional)Callback function to receive the result of the createWorkspace operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~createWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
@@ -80,7 +79,7 @@
       var postBody = optsOrCallback['workspace'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createWorkspace");
       }
 
@@ -101,7 +100,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Workspace;
@@ -114,7 +113,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the createWorkspaceFile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the createWorkspaceFile operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~createWorkspaceFileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceItem} data The data returned by the service call.
@@ -133,17 +132,17 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createWorkspaceFile");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling createWorkspaceFile");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling createWorkspaceFile");
       }
 
@@ -166,7 +165,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = WorkspaceItem;
@@ -179,7 +178,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteWorkspace operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~deleteWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
@@ -198,12 +197,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteWorkspace");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling deleteWorkspace");
       }
 
@@ -225,7 +224,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Workspace;
@@ -238,7 +237,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the deleteWorkspaceFolderItems operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the deleteWorkspaceFolderItems operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~deleteWorkspaceFolderItemsCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -265,17 +264,17 @@
       var postBody = optsOrCallback['workspaceItemList'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteWorkspaceFolderItems");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling deleteWorkspaceFolderItems");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling deleteWorkspaceFolderItems");
       }
 
@@ -298,7 +297,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -311,7 +310,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getWorkspace operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~getWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
@@ -330,12 +329,12 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getWorkspace");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling getWorkspace");
       }
 
@@ -357,7 +356,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Workspace;
@@ -370,7 +369,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the getWorkspaceFile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the getWorkspaceFile operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~getWorkspaceFileCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
@@ -400,22 +399,22 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getWorkspaceFile");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling getWorkspaceFile");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling getWorkspaceFile");
       }
 
       // verify the required parameter 'fileId' is set
-      if (fileId == undefined || fileId == null) {
+      if (fileId === undefined || fileId === null) {
         throw new Error("Missing the required parameter 'fileId' when calling getWorkspaceFile");
       }
 
@@ -441,7 +440,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -454,7 +453,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listWorkspaceFilePages operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listWorkspaceFilePages operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~listWorkspaceFilePagesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PageImages} data The data returned by the service call.
@@ -488,22 +487,22 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listWorkspaceFilePages");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling listWorkspaceFilePages");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling listWorkspaceFilePages");
       }
 
       // verify the required parameter 'fileId' is set
-      if (fileId == undefined || fileId == null) {
+      if (fileId === undefined || fileId === null) {
         throw new Error("Missing the required parameter 'fileId' when calling listWorkspaceFilePages");
       }
 
@@ -532,7 +531,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageImages;
@@ -545,7 +544,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listWorkspaceFolderItems operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listWorkspaceFolderItems operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~listWorkspaceFolderItemsCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceFolderContents} data The data returned by the service call.
@@ -580,17 +579,17 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listWorkspaceFolderItems");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling listWorkspaceFolderItems");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling listWorkspaceFolderItems");
       }
 
@@ -620,7 +619,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = WorkspaceFolderContents;
@@ -633,7 +632,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the listWorkspaces operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the listWorkspaces operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~listWorkspacesCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceList} data The data returned by the service call.
@@ -651,7 +650,7 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listWorkspaces");
       }
 
@@ -672,7 +671,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = WorkspaceList;
@@ -685,7 +684,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateWorkspace operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateWorkspace operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~updateWorkspaceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Workspace} data The data returned by the service call.
@@ -713,12 +712,12 @@
       var postBody = optsOrCallback['workspace'];
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateWorkspace");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling updateWorkspace");
       }
 
@@ -740,7 +739,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Workspace;
@@ -753,7 +752,7 @@
     };
 
     /**
-     * (Optional)Callback function to receive the result of the updateWorkspaceFile operation. If none specified a Promise will be returned.
+     * (Optional) Callback function to receive the result of the updateWorkspaceFile operation. If none specified a Promise will be returned.
      * @callback module:api/WorkspacesApi~updateWorkspaceFileCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WorkspaceItem} data The data returned by the service call.
@@ -774,22 +773,22 @@
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
-      if (accountId == undefined || accountId == null) {
+      if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateWorkspaceFile");
       }
 
       // verify the required parameter 'workspaceId' is set
-      if (workspaceId == undefined || workspaceId == null) {
+      if (workspaceId === undefined || workspaceId === null) {
         throw new Error("Missing the required parameter 'workspaceId' when calling updateWorkspaceFile");
       }
 
       // verify the required parameter 'folderId' is set
-      if (folderId == undefined || folderId == null) {
+      if (folderId === undefined || folderId === null) {
         throw new Error("Missing the required parameter 'folderId' when calling updateWorkspaceFile");
       }
 
       // verify the required parameter 'fileId' is set
-      if (fileId == undefined || fileId == null) {
+      if (fileId === undefined || fileId === null) {
         throw new Error("Missing the required parameter 'fileId' when calling updateWorkspaceFile");
       }
 
@@ -813,7 +812,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = WorkspaceItem;

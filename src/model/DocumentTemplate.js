@@ -30,7 +30,6 @@
   /**
    * The DocumentTemplate model module.
    * @module model/DocumentTemplate
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The DirectDebitProcessorInformation model module.
    * @module model/DirectDebitProcessorInformation
-   * @version 5.3.0
    */
 
   /**

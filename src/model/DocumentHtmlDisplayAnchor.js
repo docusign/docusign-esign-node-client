@@ -30,7 +30,6 @@
   /**
    * The DocumentHtmlDisplayAnchor model module.
    * @module model/DocumentHtmlDisplayAnchor
-   * @version 5.3.0
    */
 
   /**

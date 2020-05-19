@@ -30,7 +30,6 @@
   /**
    * The AccessCodeFormat model module.
    * @module model/AccessCodeFormat
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The SettingsMetadata model module.
    * @module model/SettingsMetadata
-   * @version 5.3.0
    */
 
   /**
