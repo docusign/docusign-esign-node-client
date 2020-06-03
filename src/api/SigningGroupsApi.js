@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -112,7 +112,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups', 'POST',
+        '/v2/accounts/{accountId}/signing_groups', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -173,7 +173,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups', 'DELETE',
+        '/v2/accounts/{accountId}/signing_groups', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -241,7 +241,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroupUsers;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users', 'DELETE',
+        '/v2/accounts/{accountId}/signing_groups/{signingGroupId}/users', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -300,7 +300,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroup;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}', 'GET',
+        '/v2/accounts/{accountId}/signing_groups/{signingGroupId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -364,7 +364,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups', 'GET',
+        '/v2/accounts/{accountId}/signing_groups', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -423,7 +423,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroupUsers;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users', 'GET',
+        '/v2/accounts/{accountId}/signing_groups/{signingGroupId}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -491,7 +491,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroup;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}', 'PUT',
+        '/v2/accounts/{accountId}/signing_groups/{signingGroupId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -552,7 +552,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups', 'PUT',
+        '/v2/accounts/{accountId}/signing_groups', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -620,7 +620,7 @@ Signing groups can be used by any account user.
       var returnType = SigningGroupUsers;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signing_groups/{signingGroupId}/users', 'PUT',
+        '/v2/accounts/{accountId}/signing_groups/{signingGroupId}/users', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

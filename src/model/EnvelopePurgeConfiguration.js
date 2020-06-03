@@ -30,6 +30,7 @@
   /**
    * The EnvelopePurgeConfiguration model module.
    * @module model/EnvelopePurgeConfiguration
+   * @version 3.0.0
    */
 
   /**

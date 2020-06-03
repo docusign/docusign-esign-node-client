@@ -16,7 +16,7 @@ commented out
 -->
 
 
-<p><h3>&#x26A0;&#xFE0F; The current release is <code>the first version to use <a href=“https://developers.docusign.com/esign-rest-api“>eSignature API v2.1</a></code>. The GA version will be released soon.</h3></p><p><h3>All previous releases use eSignature API v2 and they no longer will be actively maintained.</p>
+<p><h3>&#x26A0;&#xFE0F; This client library is for the legacy <code><a href=“https://developers.docusign.com/esign-rest-api“>eSignature API v2</a></code>.<p><h3>This version of the API will be subject to deprecation soon and the published client libraries for it are not actively maintained.</p><p>If you are still using this version, please upgrade to the v2.1 client library.</p>
 
 ## Requirements
 - Node 4

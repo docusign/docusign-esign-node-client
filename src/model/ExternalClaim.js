@@ -30,7 +30,7 @@
   /**
    * The ExternalClaim model module.
    * @module model/ExternalClaim
-   * @version 5.3.0
+   * @version 3.0.0
    */
 
   /**

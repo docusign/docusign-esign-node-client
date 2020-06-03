@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountBillingPlanResponse', 'model/BillingInvoice', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlanInformation', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/CreditCardInformation', 'model/DowngradRequestBillingInfoResponse', 'model/DowngradeBillingPlanInformation', 'model/DowngradePlanUpdateResponse', 'model/ErrorDetails', 'model/PurchasedEnvelopesInformation'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountBillingPlanResponse', 'model/BillingInvoice', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlanInformation', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/CreditCardInformation', 'model/ErrorDetails', 'model/PurchasedEnvelopesInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountBillingPlanResponse'), require('../model/BillingInvoice'), require('../model/BillingInvoicesResponse'), require('../model/BillingInvoicesSummary'), require('../model/BillingPaymentItem'), require('../model/BillingPaymentRequest'), require('../model/BillingPaymentResponse'), require('../model/BillingPaymentsResponse'), require('../model/BillingPlanInformation'), require('../model/BillingPlanResponse'), require('../model/BillingPlanUpdateResponse'), require('../model/BillingPlansResponse'), require('../model/CreditCardInformation'), require('../model/DowngradRequestBillingInfoResponse'), require('../model/DowngradeBillingPlanInformation'), require('../model/DowngradePlanUpdateResponse'), require('../model/ErrorDetails'), require('../model/PurchasedEnvelopesInformation'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountBillingPlanResponse'), require('../model/BillingInvoice'), require('../model/BillingInvoicesResponse'), require('../model/BillingInvoicesSummary'), require('../model/BillingPaymentItem'), require('../model/BillingPaymentRequest'), require('../model/BillingPaymentResponse'), require('../model/BillingPaymentsResponse'), require('../model/BillingPlanInformation'), require('../model/BillingPlanResponse'), require('../model/BillingPlanUpdateResponse'), require('../model/BillingPlansResponse'), require('../model/CreditCardInformation'), require('../model/ErrorDetails'), require('../model/PurchasedEnvelopesInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BillingApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountBillingPlanResponse, root.Docusign.BillingInvoice, root.Docusign.BillingInvoicesResponse, root.Docusign.BillingInvoicesSummary, root.Docusign.BillingPaymentItem, root.Docusign.BillingPaymentRequest, root.Docusign.BillingPaymentResponse, root.Docusign.BillingPaymentsResponse, root.Docusign.BillingPlanInformation, root.Docusign.BillingPlanResponse, root.Docusign.BillingPlanUpdateResponse, root.Docusign.BillingPlansResponse, root.Docusign.CreditCardInformation, root.Docusign.DowngradRequestBillingInfoResponse, root.Docusign.DowngradeBillingPlanInformation, root.Docusign.DowngradePlanUpdateResponse, root.Docusign.ErrorDetails, root.Docusign.PurchasedEnvelopesInformation);
+    root.Docusign.BillingApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountBillingPlanResponse, root.Docusign.BillingInvoice, root.Docusign.BillingInvoicesResponse, root.Docusign.BillingInvoicesSummary, root.Docusign.BillingPaymentItem, root.Docusign.BillingPaymentRequest, root.Docusign.BillingPaymentResponse, root.Docusign.BillingPaymentsResponse, root.Docusign.BillingPlanInformation, root.Docusign.BillingPlanResponse, root.Docusign.BillingPlanUpdateResponse, root.Docusign.BillingPlansResponse, root.Docusign.CreditCardInformation, root.Docusign.ErrorDetails, root.Docusign.PurchasedEnvelopesInformation);
   }
-}(this, function(Configuration, ApiClient, AccountBillingPlanResponse, BillingInvoice, BillingInvoicesResponse, BillingInvoicesSummary, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlanInformation, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, CreditCardInformation, DowngradRequestBillingInfoResponse, DowngradeBillingPlanInformation, DowngradePlanUpdateResponse, ErrorDetails, PurchasedEnvelopesInformation) {
+}(this, function(Configuration, ApiClient, AccountBillingPlanResponse, BillingInvoice, BillingInvoicesResponse, BillingInvoicesSummary, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlanInformation, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, CreditCardInformation, ErrorDetails, PurchasedEnvelopesInformation) {
   'use strict';
 
   /**
@@ -97,7 +97,7 @@
       var returnType = BillingPlanResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/billing_plans/{billingPlanId}', 'GET',
+        '/v2/billing_plans/{billingPlanId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -148,58 +148,7 @@
       var returnType = CreditCardInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_plan/credit_card', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the getDowngradeRequestBillingInfo operation. If none specified a Promise will be returned.
-     * @callback module:api/BillingApi~getDowngradeRequestBillingInfoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DowngradRequestBillingInfoResponse} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Returns downgrade plan information for the specified account.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/BillingApi~getDowngradeRequestBillingInfoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DowngradRequestBillingInfoResponse}
-     */
-    this.getDowngradeRequestBillingInfo = function(accountId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getDowngradeRequestBillingInfo");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DowngradRequestBillingInfoResponse;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_plan/downgrade', 'GET',
+        '/v2/accounts/{accountId}/billing_plan/credit_card', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -291,7 +240,7 @@ The following table provides a description of the different `chargeName` propert
       var returnType = BillingInvoice;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_invoices/{invoiceId}', 'GET',
+        '/v2/accounts/{accountId}/billing_invoices/{invoiceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -352,7 +301,7 @@ Privileges required: account administrator
       var returnType = BillingPaymentItem;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_payments/{paymentId}', 'GET',
+        '/v2/accounts/{accountId}/billing_payments/{paymentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -426,7 +375,7 @@ The response returns the billing plan information, including the currency code, 
       var returnType = AccountBillingPlanResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_plan', 'GET',
+        '/v2/accounts/{accountId}/billing_plan', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -471,7 +420,7 @@ The response returns the billing plan information, including the currency code, 
       var returnType = BillingPlansResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/billing_plans', 'GET',
+        '/v2/billing_plans', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -537,7 +486,7 @@ Privileges required: account administrator
       var returnType = BillingInvoicesResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_invoices', 'GET',
+        '/v2/accounts/{accountId}/billing_invoices', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -591,7 +540,7 @@ Privileges Required: account administrator
       var returnType = BillingInvoicesSummary;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_invoices_past_due', 'GET',
+        '/v2/accounts/{accountId}/billing_invoices_past_due', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -657,7 +606,7 @@ Privileges required: account administrator
       var returnType = BillingPaymentsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_payments', 'GET',
+        '/v2/accounts/{accountId}/billing_payments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -724,7 +673,7 @@ Privileges required: account administrator
       var returnType = BillingPaymentResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_payments', 'POST',
+        '/v2/accounts/{accountId}/billing_payments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -784,67 +733,7 @@ Privileges required: account administrator
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_plan/purchased_envelopes', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the updateDowngradeAccountBillingPlan operation. If none specified a Promise will be returned.
-     * @callback module:api/BillingApi~updateDowngradeAccountBillingPlanCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/DowngradePlanUpdateResponse} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Queues downgrade billing plan request for an account.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DowngradeBillingPlanInformation} optsOrCallback.downgradeBillingPlanInformation 
-     * @param {module:api/BillingApi~updateDowngradeAccountBillingPlanCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DowngradePlanUpdateResponse}
-     */
-    this.updateDowngradeAccountBillingPlan = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['downgradeBillingPlanInformation'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateDowngradeAccountBillingPlan");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DowngradePlanUpdateResponse;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_plan/downgrade', 'PUT',
+        '/v2/accounts/{accountId}/billing_plan/purchased_envelopes', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -907,7 +796,7 @@ Privileges required: account administrator
       var returnType = BillingPlanUpdateResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_plan', 'PUT',
+        '/v2/accounts/{accountId}/billing_plan', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

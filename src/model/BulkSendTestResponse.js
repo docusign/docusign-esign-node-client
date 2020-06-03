@@ -30,6 +30,7 @@
   /**
    * The BulkSendTestResponse model module.
    * @module model/BulkSendTestResponse
+   * @version 3.0.0
    */
 
   /**

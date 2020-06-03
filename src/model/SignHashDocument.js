@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,25 +12,25 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Revision', 'model/SignatureProperties'], factory);
+    define(['ApiClient', 'model/Revision'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Revision'), require('./SignatureProperties'));
+    module.exports = factory(require('../ApiClient'), require('./Revision'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.SignHashDocument = factory(root.Docusign.ApiClient, root.Docusign.Revision, root.Docusign.SignatureProperties);
+    root.Docusign.SignHashDocument = factory(root.Docusign.ApiClient, root.Docusign.Revision);
   }
-}(this, function(ApiClient, Revision, SignatureProperties) {
+}(this, function(ApiClient, Revision) {
   'use strict';
 
 
   /**
    * The SignHashDocument model module.
    * @module model/SignHashDocument
-   * @version 5.3.0
+   * @version 4.6.0
    */
 
   /**
@@ -68,13 +68,10 @@
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('remainingSignatures')) {
-        obj['remainingSignatures'] = ApiClient.convertToType(data['remainingSignatures'], 'Number');
+        obj['remainingSignatures'] = ApiClient.convertToType(data['remainingSignatures'], 'String');
       }
       if (data.hasOwnProperty('revisions')) {
         obj['revisions'] = ApiClient.convertToType(data['revisions'], [Revision]);
-      }
-      if (data.hasOwnProperty('signatureProperties')) {
-        obj['signatureProperties'] = SignatureProperties.constructFromObject(data['signatureProperties']);
       }
       if (data.hasOwnProperty('signatureType')) {
         obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
@@ -105,7 +102,7 @@
   exports.prototype['name'] = undefined;
   /**
    * 
-   * @member {Number} remainingSignatures
+   * @member {String} remainingSignatures
    */
   exports.prototype['remainingSignatures'] = undefined;
   /**
@@ -113,10 +110,6 @@
    * @member {Array.<module:model/Revision>} revisions
    */
   exports.prototype['revisions'] = undefined;
-  /**
-   * @member {module:model/SignatureProperties} signatureProperties
-   */
-  exports.prototype['signatureProperties'] = undefined;
   /**
    * 
    * @member {String} signatureType

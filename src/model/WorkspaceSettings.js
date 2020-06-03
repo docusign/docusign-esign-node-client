@@ -30,6 +30,7 @@
   /**
    * The WorkspaceSettings model module.
    * @module model/WorkspaceSettings
+   * @version 3.0.0
    */
 
   /**

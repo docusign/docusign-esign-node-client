@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -106,7 +106,7 @@
       var returnType = Workspace;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces', 'POST',
+        '/v2/accounts/{accountId}/workspaces', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -171,7 +171,7 @@
       var returnType = WorkspaceItem;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files', 'POST',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -230,7 +230,7 @@
       var returnType = Workspace;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}', 'DELETE',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -303,7 +303,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}', 'DELETE',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -362,7 +362,7 @@
       var returnType = Workspace;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}', 'GET',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -446,7 +446,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}', 'GET',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -537,7 +537,7 @@
       var returnType = PageImages;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}/pages', 'GET',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}/pages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -625,7 +625,7 @@
       var returnType = WorkspaceFolderContents;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}', 'GET',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -677,7 +677,7 @@
       var returnType = WorkspaceList;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces', 'GET',
+        '/v2/accounts/{accountId}/workspaces', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -745,7 +745,7 @@
       var returnType = Workspace;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}', 'PUT',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -818,7 +818,7 @@
       var returnType = WorkspaceItem;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}', 'PUT',
+        '/v2/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

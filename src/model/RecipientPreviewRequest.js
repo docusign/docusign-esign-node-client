@@ -30,6 +30,7 @@
   /**
    * The RecipientPreviewRequest model module.
    * @module model/RecipientPreviewRequest
+   * @version 3.0.0
    */
 
   /**

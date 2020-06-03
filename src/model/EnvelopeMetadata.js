@@ -30,6 +30,7 @@
   /**
    * The EnvelopeMetadata model module.
    * @module model/EnvelopeMetadata
+   * @version 3.0.0
    */
 
   /**

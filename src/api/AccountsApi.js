@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProviders', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProviders', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/ErrorDetails', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/ErrorDetails'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
+    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.ErrorDetails, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
   }
-}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
+}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, ErrorDetails, FileTypeList, NewAccountDefinition, NewAccountSummary, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
   'use strict';
 
   /**
@@ -96,7 +96,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}', 'DELETE',
+        '/v2/accounts/{accountId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -161,7 +161,7 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
       var returnType = NewAccountSummary;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts', 'POST',
+        '/v2/accounts', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -226,7 +226,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = BrandsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands', 'POST',
+        '/v2/accounts/{accountId}/brands', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -288,7 +288,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = CustomFields;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/custom_fields', 'POST',
+        '/v2/accounts/{accountId}/custom_fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -350,7 +350,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = PermissionProfile;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/permission_profiles', 'POST',
+        '/v2/accounts/{accountId}/permission_profiles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -407,7 +407,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}', 'DELETE',
+        '/v2/accounts/{accountId}/brands/{brandId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -471,7 +471,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'DELETE',
+        '/v2/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -532,7 +532,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = BrandsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands', 'DELETE',
+        '/v2/accounts/{accountId}/brands', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -600,7 +600,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = CaptiveRecipientInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/captive_recipients/{recipientPart}', 'DELETE',
+        '/v2/accounts/{accountId}/captive_recipients/{recipientPart}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -667,7 +667,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/custom_fields/{customFieldId}', 'DELETE',
+        '/v2/accounts/{accountId}/custom_fields/{customFieldId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -717,7 +717,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/enote_configuration', 'DELETE',
+        '/v2/accounts/{accountId}/settings/enote_configuration', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -784,7 +784,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'DELETE',
+        '/v2/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -835,7 +835,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
       var returnType = AccountIdentityVerificationResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/identity_verification', 'GET',
+        '/v2/accounts/{accountId}/identity_verification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -900,7 +900,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var returnType = AccountInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}', 'GET',
+        '/v2/accounts/{accountId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -951,7 +951,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var returnType = TabAccountSettings;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/tabs', 'GET',
+        '/v2/accounts/{accountId}/settings/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1002,7 +1002,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
       var returnType = PaymentGatewayAccountsInfo;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/payment_gateway_accounts', 'GET',
+        '/v2/accounts/{accountId}/payment_gateway_accounts', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1066,7 +1066,7 @@ Privileges required: account administrator
       var returnType = BillingChargeResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/billing_charges', 'GET',
+        '/v2/accounts/{accountId}/billing_charges', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1136,7 +1136,7 @@ Privileges required: account administrator
       var returnType = Brand;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}', 'GET',
+        '/v2/accounts/{accountId}/brands/{brandId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1193,7 +1193,7 @@ Privileges required: account administrator
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}/file', 'GET',
+        '/v2/accounts/{accountId}/brands/{brandId}/file', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1258,7 +1258,7 @@ Privileges required: account administrator
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'GET',
+        '/v2/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1316,7 +1316,7 @@ Privileges required: account administrator
       var returnType = BrandResourcesList;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}/resources', 'GET',
+        '/v2/accounts/{accountId}/brands/{brandId}/resources', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1392,7 +1392,7 @@ Privileges required: account administrator
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}', 'GET',
+        '/v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1451,7 +1451,7 @@ Privileges required: account administrator
       var returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}', 'GET',
+        '/v2/accounts/{accountId}/consumer_disclosure/{langCode}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1513,7 +1513,7 @@ Privileges required: account administrator
       var returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/consumer_disclosure', 'GET',
+        '/v2/accounts/{accountId}/consumer_disclosure', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1564,160 +1564,7 @@ Privileges required: account administrator
       var returnType = ENoteConfiguration;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/enote_configuration', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the getEnvelopePurgeConfiguration operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~getEnvelopePurgeConfigurationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/EnvelopePurgeConfiguration} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Select envelope purge configuration.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/AccountsApi~getEnvelopePurgeConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/EnvelopePurgeConfiguration}
-     */
-    this.getEnvelopePurgeConfiguration = function(accountId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopePurgeConfiguration");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopePurgeConfiguration;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/envelope_purge_configuration', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the getFavoriteTemplates operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~getFavoriteTemplatesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FavoriteTemplatesInfo} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Retrieves the list of favorited templates for this caller
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/AccountsApi~getFavoriteTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FavoriteTemplatesInfo}
-     */
-    this.getFavoriteTemplates = function(accountId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getFavoriteTemplates");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FavoriteTemplatesInfo;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/favorite_templates', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the getNotificationDefaults operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~getNotificationDefaultsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/NotificationDefaults} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Returns default user level settings for a specified account
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/AccountsApi~getNotificationDefaultsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/NotificationDefaults}
-     */
-    this.getNotificationDefaults = function(accountId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getNotificationDefaults");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NotificationDefaults;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/notification_defaults', 'GET',
+        '/v2/accounts/{accountId}/settings/enote_configuration', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1768,7 +1615,7 @@ Privileges required: account administrator
       var returnType = AccountPasswordRules;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/password_rules', 'GET',
+        '/v2/accounts/{accountId}/settings/password_rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1812,7 +1659,7 @@ Privileges required: account administrator
       var returnType = UserPasswordRules;
 
       return this.apiClient.callApi(
-        '/v2.1/current_user/password_rules', 'GET',
+        '/v2/current_user/password_rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1880,7 +1727,7 @@ Privileges required: account administrator
       var returnType = PermissionProfile;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'GET',
+        '/v2/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1925,7 +1772,7 @@ Privileges required: account administrator
       var returnType = ProvisioningInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/provisioning', 'GET',
+        '/v2/accounts/provisioning', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1976,7 +1823,7 @@ Privileges required: account administrator
       var returnType = SupportedLanguages;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/supported_languages', 'GET',
+        '/v2/accounts/{accountId}/supported_languages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2027,7 +1874,7 @@ Privileges required: account administrator
       var returnType = Watermark;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/watermark', 'GET',
+        '/v2/accounts/{accountId}/watermark', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2087,7 +1934,7 @@ Privileges required: account administrator
       var returnType = Watermark;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/watermark/preview', 'PUT',
+        '/v2/accounts/{accountId}/watermark/preview', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2151,7 +1998,7 @@ Privileges required: account administrator
       var returnType = BrandsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands', 'GET',
+        '/v2/accounts/{accountId}/brands', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2205,7 +2052,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       var returnType = CustomFields;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/custom_fields', 'GET',
+        '/v2/accounts/{accountId}/custom_fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2269,7 +2116,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var returnType = PermissionProfileInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/permission_profiles', 'GET',
+        '/v2/accounts/{accountId}/permission_profiles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2331,7 +2178,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var returnType = RecipientNamesResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/recipient_names', 'GET',
+        '/v2/accounts/{accountId}/recipient_names', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2383,7 +2230,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
       var returnType = AccountSettingsInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings', 'GET',
+        '/v2/accounts/{accountId}/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2461,7 +2308,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = AccountSharedAccess;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/shared_access', 'GET',
+        '/v2/accounts/{accountId}/shared_access', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2512,7 +2359,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = AccountSignatureProviders;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/signatureProviders', 'GET',
+        '/v2/accounts/{accountId}/signatureProviders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2564,67 +2411,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = FileTypeList;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/unsupported_file_types', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the unFavoriteTemplate operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~unFavoriteTemplateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FavoriteTemplatesInfo} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Unfavorite a template
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo 
-     * @param {module:api/AccountsApi~unFavoriteTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FavoriteTemplatesInfo}
-     */
-    this.unFavoriteTemplate = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['favoriteTemplatesInfo'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling unFavoriteTemplate");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FavoriteTemplatesInfo;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/favorite_templates', 'DELETE',
+        '/v2/accounts/{accountId}/unsupported_file_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2684,7 +2471,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = TabAccountSettings;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/tabs', 'PUT',
+        '/v2/accounts/{accountId}/settings/tabs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2751,7 +2538,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = Brand;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}', 'PUT',
+        '/v2/accounts/{accountId}/brands/{brandId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2767,13 +2554,9 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Put one branding logo.
-     * @param {String} accountId The external account number (int) or account ID GUID.
-     * @param {String} brandId The id of the brand.
-     * @param {String} logoType The type of logo. Valid values are:
-
-- `primary` 
-- `secondary` 
-- `email`
+     * @param {String} accountId The external account number (int) or account id GUID.
+     * @param {String} brandId The unique identifier of a brand.
+     * @param {String} logoType One of **Primary**, **Secondary** or **Email**.
      * @param {Blob} logoFileBytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places
      * @param {module:api/AccountsApi~updateBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -2825,7 +2608,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'PUT',
+        '/v2/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2890,7 +2673,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = BrandResources;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}', 'PUT',
+        '/v2/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2959,7 +2742,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}', 'PUT',
+        '/v2/accounts/{accountId}/consumer_disclosure/{langCode}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3028,7 +2811,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = CustomFields;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/custom_fields/{customFieldId}', 'PUT',
+        '/v2/accounts/{accountId}/custom_fields/{customFieldId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3088,187 +2871,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = ENoteConfiguration;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/enote_configuration', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the updateEnvelopePurgeConfiguration operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~updateEnvelopePurgeConfigurationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/EnvelopePurgeConfiguration} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Updates envelope purge configuration.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopePurgeConfiguration} optsOrCallback.envelopePurgeConfiguration 
-     * @param {module:api/AccountsApi~updateEnvelopePurgeConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/EnvelopePurgeConfiguration}
-     */
-    this.updateEnvelopePurgeConfiguration = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['envelopePurgeConfiguration'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopePurgeConfiguration");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopePurgeConfiguration;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/envelope_purge_configuration', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the updateFavoriteTemplate operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~updateFavoriteTemplateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/FavoriteTemplatesInfo} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Favorites a template
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo 
-     * @param {module:api/AccountsApi~updateFavoriteTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/FavoriteTemplatesInfo}
-     */
-    this.updateFavoriteTemplate = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['favoriteTemplatesInfo'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateFavoriteTemplate");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FavoriteTemplatesInfo;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/favorite_templates', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the updateNotificationDefaults operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~updateNotificationDefaultsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/NotificationDefaults} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Updates default user level settings for a specified account
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/NotificationDefaults} optsOrCallback.notificationDefaults 
-     * @param {module:api/AccountsApi~updateNotificationDefaultsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/NotificationDefaults}
-     */
-    this.updateNotificationDefaults = function(accountId, optsOrCallback, callback) {
-      optsOrCallback = optsOrCallback || {};
-
-      if (typeof optsOrCallback === 'function') {
-        callback = optsOrCallback;
-        optsOrCallback = {};
-      }
-
-      var postBody = optsOrCallback['notificationDefaults'];
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateNotificationDefaults");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NotificationDefaults;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/notification_defaults', 'PUT',
+        '/v2/accounts/{accountId}/settings/enote_configuration', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3328,7 +2931,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = AccountPasswordRules;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings/password_rules', 'PUT',
+        '/v2/accounts/{accountId}/settings/password_rules', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3397,7 +3000,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = PermissionProfile;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'PUT',
+        '/v2/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3457,7 +3060,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/settings', 'PUT',
+        '/v2/accounts/{accountId}/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3477,7 +3080,6 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.itemType 
-     * @param {String} optsOrCallback.preserveExistingSharedAccess 
      * @param {String} optsOrCallback.userIds 
      * @param {module:model/AccountSharedAccess} optsOrCallback.accountSharedAccess 
      * @param {module:api/AccountsApi~updateSharedAccessCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3510,7 +3112,6 @@ Users with account administration privileges can retrieve shared access informat
       };
       var queryParams = {
         'item_type': optsOrCallback['itemType'],
-        'preserve_existing_shared_access': optsOrCallback['preserveExistingSharedAccess'],
         'user_ids': optsOrCallback['userIds']
       };
       var headerParams = {
@@ -3524,7 +3125,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = AccountSharedAccess;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/shared_access', 'PUT',
+        '/v2/accounts/{accountId}/shared_access', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3584,7 +3185,7 @@ Users with account administration privileges can retrieve shared access informat
       var returnType = Watermark;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/watermark', 'PUT',
+        '/v2/accounts/{accountId}/watermark', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

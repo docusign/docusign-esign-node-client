@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -75,8 +75,8 @@
       if (data.hasOwnProperty('checkboxTabsEnabled')) {
         obj['checkboxTabsEnabled'] = ApiClient.convertToType(data['checkboxTabsEnabled'], 'String');
       }
-      if (data.hasOwnProperty('checkBoxTabsMetadata')) {
-        obj['checkBoxTabsMetadata'] = SettingsMetadata.constructFromObject(data['checkBoxTabsMetadata']);
+      if (data.hasOwnProperty('checkboxTabsMetadata')) {
+        obj['checkboxTabsMetadata'] = SettingsMetadata.constructFromObject(data['checkboxTabsMetadata']);
       }
       if (data.hasOwnProperty('dataFieldRegexEnabled')) {
         obj['dataFieldRegexEnabled'] = ApiClient.convertToType(data['dataFieldRegexEnabled'], 'String');
@@ -89,12 +89,6 @@
       }
       if (data.hasOwnProperty('dataFieldSizeMetadata')) {
         obj['dataFieldSizeMetadata'] = SettingsMetadata.constructFromObject(data['dataFieldSizeMetadata']);
-      }
-      if (data.hasOwnProperty('drawTabsEnabled')) {
-        obj['drawTabsEnabled'] = ApiClient.convertToType(data['drawTabsEnabled'], 'String');
-      }
-      if (data.hasOwnProperty('drawTabsMetadata')) {
-        obj['drawTabsMetadata'] = SettingsMetadata.constructFromObject(data['drawTabsMetadata']);
       }
       if (data.hasOwnProperty('firstLastEmailTabsEnabled')) {
         obj['firstLastEmailTabsEnabled'] = ApiClient.convertToType(data['firstLastEmailTabsEnabled'], 'String');
@@ -211,9 +205,9 @@
    */
   exports.prototype['checkboxTabsEnabled'] = undefined;
   /**
-   * @member {module:model/SettingsMetadata} checkBoxTabsMetadata
+   * @member {module:model/SettingsMetadata} checkboxTabsMetadata
    */
-  exports.prototype['checkBoxTabsMetadata'] = undefined;
+  exports.prototype['checkboxTabsMetadata'] = undefined;
   /**
    * 
    * @member {String} dataFieldRegexEnabled
@@ -232,15 +226,6 @@
    * @member {module:model/SettingsMetadata} dataFieldSizeMetadata
    */
   exports.prototype['dataFieldSizeMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} drawTabsEnabled
-   */
-  exports.prototype['drawTabsEnabled'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} drawTabsMetadata
-   */
-  exports.prototype['drawTabsMetadata'] = undefined;
   /**
    * 
    * @member {String} firstLastEmailTabsEnabled

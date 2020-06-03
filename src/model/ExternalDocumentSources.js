@@ -30,6 +30,7 @@
   /**
    * The ExternalDocumentSources model module.
    * @module model/ExternalDocumentSources
+   * @version 3.0.0
    */
 
   /**

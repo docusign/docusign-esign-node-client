@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -11,12 +11,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Configuration', 'ApiClient', 'model/AccessCodeFormat', 'model/AccountAddress', 'model/AccountBillingPlan', 'model/AccountBillingPlanResponse', 'model/AccountIdentityInputOption', 'model/AccountIdentityVerificationResponse', 'model/AccountIdentityVerificationStep', 'model/AccountIdentityVerificationWorkflow', 'model/AccountInformation', 'model/AccountMinimumPasswordLength', 'model/AccountNotification', 'model/AccountPasswordExpirePasswordDays', 'model/AccountPasswordLockoutDurationMinutes', 'model/AccountPasswordLockoutDurationType', 'model/AccountPasswordMinimumPasswordAgeDays', 'model/AccountPasswordQuestionsRequired', 'model/AccountPasswordRules', 'model/AccountPasswordStrengthType', 'model/AccountPasswordStrengthTypeOption', 'model/AccountRoleSettings', 'model/AccountSeals', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProvider', 'model/AccountSignatureProviderOption', 'model/AccountSignatureProviders', 'model/AccountUISettings', 'model/AddOn', 'model/AddressInformation', 'model/AddressInformationInput', 'model/AdminMessage', 'model/Agent', 'model/ApiRequestLog', 'model/ApiRequestLogsResult', 'model/AppStoreProduct', 'model/AppStoreReceipt', 'model/Approve', 'model/AskAnAdmin', 'model/Attachment', 'model/AuthenticationMethod', 'model/AuthenticationStatus', 'model/BccEmailAddress', 'model/BccEmailArchive', 'model/BccEmailArchiveHistory', 'model/BccEmailArchiveHistoryList', 'model/BccEmailArchiveList', 'model/BillingCharge', 'model/BillingChargeResponse', 'model/BillingDiscount', 'model/BillingInvoice', 'model/BillingInvoiceItem', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPayment', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlan', 'model/BillingPlanInformation', 'model/BillingPlanPreview', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/BillingPrice', 'model/Brand', 'model/BrandEmailContent', 'model/BrandLink', 'model/BrandLogos', 'model/BrandRequest', 'model/BrandResourceUrls', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/BulkEnvelope', 'model/BulkEnvelopeStatus', 'model/BulkEnvelopesResponse', 'model/BulkRecipient', 'model/BulkRecipientSignatureProvider', 'model/BulkRecipientTabLabel', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/BulkSendRequest', 'model/BulkSendResponse', 'model/BulkSendTestResponse', 'model/BulkSendingCopy', 'model/BulkSendingCopyCustomField', 'model/BulkSendingCopyRecipient', 'model/BulkSendingCopyTab', 'model/BulkSendingList', 'model/BulkSendingListSummaries', 'model/BulkSendingListSummary', 'model/CaptiveRecipient', 'model/CaptiveRecipientInformation', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Checkbox', 'model/ChunkedUploadPart', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/CloudStorageProvider', 'model/CloudStorageProviders', 'model/Comment', 'model/CommentHistoryResult', 'model/CommentPublish', 'model/CommentThread', 'model/CommentsPublish', 'model/Company', 'model/CompositeTemplate', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectDebugLog', 'model/ConnectEventData', 'model/ConnectFailureFilter', 'model/ConnectFailureResult', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ConnectSalesforceField', 'model/ConnectSalesforceObject', 'model/ConnectUserObject', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/Contact', 'model/ContactGetResponse', 'model/ContactModRequest', 'model/ContactPhoneNumber', 'model/ContactUpdateResponse', 'model/CorrectViewRequest', 'model/Country', 'model/CreditCardInformation', 'model/CreditCardTypes', 'model/CurrencyFeatureSetPrice', 'model/CurrencyPlanPrice', 'model/CustomField', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/CustomSettingsInformation', 'model/DateSigned', 'model/DateStampProperties', 'model/Decline', 'model/DiagnosticsSettingsInformation', 'model/DirectDebitProcessorInformation', 'model/DobInformationInput', 'model/Document', 'model/DocumentFieldsInformation', 'model/DocumentHtmlCollapsibleDisplaySettings', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginal', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/DocumentHtmlDisplayAnchor', 'model/DocumentHtmlDisplaySettings', 'model/DocumentTemplate', 'model/DocumentTemplateList', 'model/DocumentVisibility', 'model/DocumentVisibilityList', 'model/DowngradRequestBillingInfoResponse', 'model/DowngradeBillingPlanInformation', 'model/DowngradePlanUpdateResponse', 'model/Draw', 'model/ENoteConfiguration', 'model/Editor', 'model/Email', 'model/EmailAddress', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachment', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEvent', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeDocumentsResult', 'model/EnvelopeEvent', 'model/EnvelopeFormData', 'model/EnvelopeId', 'model/EnvelopeIdsRequest', 'model/EnvelopeMetadata', 'model/EnvelopeNotificationRequest', 'model/EnvelopePurgeConfiguration', 'model/EnvelopeSummary', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/EnvelopeTransactionStatus', 'model/EnvelopeTransferRule', 'model/EnvelopeTransferRuleInformation', 'model/EnvelopeTransferRuleRequest', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/EventNotification', 'model/EventResult', 'model/Expirations', 'model/ExternalDocServiceErrorDetails', 'model/ExternalDocumentSources', 'model/ExternalFile', 'model/ExternalFolder', 'model/FavoriteTemplatesContentItem', 'model/FavoriteTemplatesInfo', 'model/FeatureAvailableMetadata', 'model/FeatureSet', 'model/FileType', 'model/FileTypeList', 'model/Filter', 'model/FirstName', 'model/Folder', 'model/FolderItemResponse', 'model/FolderItemV2', 'model/FolderItemsResponse', 'model/FolderSharedItem', 'model/FoldersRequest', 'model/FoldersResponse', 'model/ForgottenPasswordInformation', 'model/FormDataItem', 'model/FormulaTab', 'model/FullName', 'model/GraphicsContext', 'model/Group', 'model/GroupInformation', 'model/IdCheckConfiguration', 'model/IdCheckInformationInput', 'model/IdCheckSecurityStep', 'model/InPersonSigner', 'model/InitialHere', 'model/InlineTemplate', 'model/IntegratedUserInfoList', 'model/Intermediary', 'model/Jurisdiction', 'model/LastName', 'model/List', 'model/ListCustomField', 'model/ListItem', 'model/LocalePolicy', 'model/LocalePolicyTab', 'model/LockInformation', 'model/LockRequest', 'model/LoginAccount', 'model/LoginInformation', 'model/MatchBox', 'model/MemberGroupSharedItem', 'model/MemberSharedItems', 'model/MergeField', 'model/MobileNotifierConfiguration', 'model/MobileNotifierConfigurationInformation', 'model/ModelDate', 'model/ModelNumber', 'model/Money', 'model/NameValue', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NewUser', 'model/NewUsersDefinition', 'model/NewUsersSummary', 'model/Notarize', 'model/Notary', 'model/NotaryHost', 'model/NotaryJournal', 'model/NotaryJournalCredibleWitness', 'model/NotaryJournalList', 'model/NotaryJournalMetaData', 'model/NotaryJurisdiction', 'model/NotaryJurisdictionList', 'model/NotaryResult', 'model/Note', 'model/Notification', 'model/NotificationDefaultSettings', 'model/NotificationDefaults', 'model/OauthAccess', 'model/OfflineAttributes', 'model/Page', 'model/PageImages', 'model/PageRequest', 'model/PathExtendedElement', 'model/PayPalLegacySettings', 'model/PaymentDetails', 'model/PaymentGatewayAccount', 'model/PaymentGatewayAccountSetting', 'model/PaymentGatewayAccountsInfo', 'model/PaymentLineItem', 'model/PaymentMethodWithOptions', 'model/PaymentProcessorInformation', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/PlanInformation', 'model/PolyLine', 'model/PolyLineOverlay', 'model/PowerForm', 'model/PowerFormFormDataEnvelope', 'model/PowerFormFormDataRecipient', 'model/PowerFormRecipient', 'model/PowerFormSendersResponse', 'model/PowerFormsFormDataResponse', 'model/PowerFormsRequest', 'model/PowerFormsResponse', 'model/ProofServiceResourceToken', 'model/ProofServiceViewLink', 'model/PropertyMetadata', 'model/Province', 'model/ProvisioningInformation', 'model/PurchasedEnvelopesInformation', 'model/Radio', 'model/RadioGroup', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientDomain', 'model/RecipientEmailNotification', 'model/RecipientEvent', 'model/RecipientFormData', 'model/RecipientIdentityInputOption', 'model/RecipientIdentityPhoneNumber', 'model/RecipientIdentityVerification', 'model/RecipientNamesResponse', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientPreviewRequest', 'model/RecipientProofFile', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/RecipientSignatureProviderOptions', 'model/RecipientUpdateResponse', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReferralInformation', 'model/Reminders', 'model/ResourceInformation', 'model/ReturnUrlRequest', 'model/SealIdentifier', 'model/SealSign', 'model/SeatDiscount', 'model/SenderEmailNotifications', 'model/ServerTemplate', 'model/ServiceInformation', 'model/ServiceVersion', 'model/SettingsMetadata', 'model/SharedItem', 'model/SignHere', 'model/SignatureProviderRequiredOption', 'model/SignatureType', 'model/Signer', 'model/SignerAttachment', 'model/SignerEmailNotifications', 'model/SigningGroup', 'model/SigningGroupInformation', 'model/SigningGroupUser', 'model/SigningGroupUsers', 'model/SmartContractInformation', 'model/SmartSection', 'model/SmartSectionAnchorPosition', 'model/SmartSectionCollapsibleDisplaySettings', 'model/SmartSectionDisplaySettings', 'model/SocialAccountInformation', 'model/SocialAuthentication', 'model/Ssn', 'model/Ssn4InformationInput', 'model/Ssn9InformationInput', 'model/Stamp', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/TabGroup', 'model/TabMetadata', 'model/TabMetadataList', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentVisibilityList', 'model/TemplateDocumentsResult', 'model/TemplateInformation', 'model/TemplateMatch', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateRole', 'model/TemplateSharedItem', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/Text', 'model/TextCustomField', 'model/Title', 'model/UsageHistory', 'model/UserAccountManagementGranularInformation', 'model/UserInfo', 'model/UserInfoList', 'model/UserInformation', 'model/UserInformationList', 'model/UserPasswordInformation', 'model/UserPasswordRules', 'model/UserProfile', 'model/UserSettingsInformation', 'model/UserSharedItem', 'model/UserSignature', 'model/UserSignatureDefinition', 'model/UserSignaturesInformation', 'model/UserSocialIdResult', 'model/UsersResponse', 'model/View', 'model/ViewUrl', 'model/Watermark', 'model/Witness', 'model/Workspace', 'model/WorkspaceFolderContents', 'model/WorkspaceItem', 'model/WorkspaceItemList', 'model/WorkspaceList', 'model/WorkspaceSettings', 'model/WorkspaceUser', 'model/WorkspaceUserAuthorization', 'model/Zip', 'api/AccountsApi', 'api/AuthenticationApi', 'api/BillingApi', 'api/BulkEnvelopesApi', 'api/CloudStorageApi', 'api/ConnectApi', 'api/CustomTabsApi', 'api/DataFeedApi', 'api/DiagnosticsApi', 'api/EmailArchiveApi', 'api/EnvelopesApi', 'api/FoldersApi', 'api/GroupsApi', 'api/NotaryApi', 'api/OrganizationsApi', 'api/PowerFormsApi', 'api/SigningGroupsApi', 'api/TemplatesApi', 'api/UsersApi', 'api/WorkspacesApi'], factory);
+    define(['Configuration', 'ApiClient', 'model/AccountAddress', 'model/AccountBillingPlan', 'model/AccountBillingPlanResponse', 'model/AccountIdentityVerificationResponse', 'model/AccountIdentityVerificationStep', 'model/AccountIdentityVerificationWorkflow', 'model/AccountInformation', 'model/AccountMinimumPasswordLength', 'model/AccountPasswordExpirePasswordDays', 'model/AccountPasswordLockoutDurationMinutes', 'model/AccountPasswordLockoutDurationType', 'model/AccountPasswordMinimumPasswordAgeDays', 'model/AccountPasswordQuestionsRequired', 'model/AccountPasswordRules', 'model/AccountPasswordStrengthType', 'model/AccountPasswordStrengthTypeOption', 'model/AccountRoleSettings', 'model/AccountSeals', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProvider', 'model/AccountSignatureProviderOption', 'model/AccountSignatureProviders', 'model/AddOn', 'model/AddressInformation', 'model/AddressInformationInput', 'model/AddressInformationV2', 'model/Agent', 'model/ApiRequestLog', 'model/ApiRequestLogsResult', 'model/AppStoreProduct', 'model/AppStoreReceipt', 'model/Approve', 'model/Attachment', 'model/AuthenticationMethod', 'model/AuthenticationStatus', 'model/BccEmailAddress', 'model/BillingCharge', 'model/BillingChargeResponse', 'model/BillingDiscount', 'model/BillingInvoice', 'model/BillingInvoiceItem', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPayment', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlan', 'model/BillingPlanInformation', 'model/BillingPlanPreview', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/BillingPrice', 'model/Brand', 'model/BrandEmailContent', 'model/BrandLink', 'model/BrandLogos', 'model/BrandRequest', 'model/BrandResourceUrls', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/BulkEnvelope', 'model/BulkEnvelopeStatus', 'model/BulkEnvelopesResponse', 'model/BulkRecipient', 'model/BulkRecipientSignatureProvider', 'model/BulkRecipientTabLabel', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/CaptiveRecipient', 'model/CaptiveRecipientInformation', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Checkbox', 'model/ChunkedUploadPart', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/CloudStorageProvider', 'model/CloudStorageProviders', 'model/Company', 'model/CompositeTemplate', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectDebugLog', 'model/ConnectFailureFilter', 'model/ConnectFailureResult', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/Contact', 'model/ContactGetResponse', 'model/ContactModRequest', 'model/ContactPhoneNumber', 'model/ContactUpdateResponse', 'model/CorrectViewRequest', 'model/Country', 'model/CreditCardInformation', 'model/CreditCardTypes', 'model/CurrencyFeatureSetPrice', 'model/CurrencyPlanPrice', 'model/CustomField', 'model/CustomFieldV2', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/CustomSettingsInformation', 'model/DateSigned', 'model/DateStampProperties', 'model/Decline', 'model/DiagnosticsSettingsInformation', 'model/DobInformationInput', 'model/Document', 'model/DocumentFieldsInformation', 'model/DocumentHtmlCollapsibleDisplaySettings', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginal', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/DocumentHtmlDisplayAnchor', 'model/DocumentHtmlDisplaySettings', 'model/DocumentTemplate', 'model/DocumentTemplateList', 'model/DocumentVisibility', 'model/DocumentVisibilityList', 'model/ENoteConfiguration', 'model/Editor', 'model/Email', 'model/EmailAddress', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachment', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEvent', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeDocumentsResult', 'model/EnvelopeEvent', 'model/EnvelopeFormData', 'model/EnvelopeId', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopeSummary', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateDefinition', 'model/EnvelopeTemplateResult', 'model/EnvelopeTemplateResults', 'model/EnvelopeTransactionStatus', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/EventNotification', 'model/EventResult', 'model/Expirations', 'model/ExternalDocServiceErrorDetails', 'model/ExternalFile', 'model/ExternalFolder', 'model/FeatureSet', 'model/FileType', 'model/FileTypeList', 'model/Filter', 'model/FirstName', 'model/Folder', 'model/FolderItem', 'model/FolderItemResponse', 'model/FolderItemV2', 'model/FolderItemsResponse', 'model/FoldersRequest', 'model/FoldersResponse', 'model/ForgottenPasswordInformation', 'model/FormulaTab', 'model/FullName', 'model/Group', 'model/GroupInformation', 'model/IdCheckInformationInput', 'model/InPersonSigner', 'model/InitialHere', 'model/InlineTemplate', 'model/IntegratedUserInfoList', 'model/Intermediary', 'model/Jurisdiction', 'model/LastName', 'model/List', 'model/ListCustomField', 'model/ListItem', 'model/LockInformation', 'model/LockRequest', 'model/LoginAccount', 'model/LoginInformation', 'model/MatchBox', 'model/MemberGroupSharedItem', 'model/MemberSharedItems', 'model/MergeField', 'model/MobileNotifierConfiguration', 'model/MobileNotifierConfigurationInformation', 'model/ModelDate', 'model/ModelNumber', 'model/Money', 'model/NameValue', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NewUser', 'model/NewUsersDefinition', 'model/NewUsersSummary', 'model/Notarize', 'model/NotaryHost', 'model/NotaryJournal', 'model/NotaryJournalCredibleWitness', 'model/NotaryJournalList', 'model/NotaryJournalMetaData', 'model/Note', 'model/Notification', 'model/OauthAccess', 'model/OfflineAttributes', 'model/Page', 'model/PageImages', 'model/PageRequest', 'model/PaymentDetails', 'model/PaymentGatewayAccount', 'model/PaymentGatewayAccountsInfo', 'model/PaymentLineItem', 'model/PaymentProcessorInformation', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/PlanInformation', 'model/PowerForm', 'model/PowerFormFormDataEnvelope', 'model/PowerFormFormDataRecipient', 'model/PowerFormRecipient', 'model/PowerFormSendersResponse', 'model/PowerFormsFormDataResponse', 'model/PowerFormsRequest', 'model/PowerFormsResponse', 'model/PropertyMetadata', 'model/Province', 'model/ProvisioningInformation', 'model/PurchasedEnvelopesInformation', 'model/Radio', 'model/RadioGroup', 'model/RecipientAttachment', 'model/RecipientDomain', 'model/RecipientEmailNotification', 'model/RecipientEvent', 'model/RecipientFormData', 'model/RecipientIdentityInputOption', 'model/RecipientIdentityPhoneNumber', 'model/RecipientIdentityVerification', 'model/RecipientNamesResponse', 'model/RecipientPhoneAuthentication', 'model/RecipientProofFile', 'model/RecipientSAMLAuthentication', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/RecipientSignatureProviderOptions', 'model/RecipientUpdateResponse', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReferralInformation', 'model/Reminders', 'model/ResourceInformation', 'model/ReturnUrlRequest', 'model/SamlAssertionAttribute', 'model/SealIdentifier', 'model/SealSign', 'model/SeatDiscount', 'model/SenderEmailNotifications', 'model/ServerTemplate', 'model/ServiceInformation', 'model/ServiceVersion', 'model/SettingsMetadata', 'model/SharedItem', 'model/SignHere', 'model/SignatureProviderRequiredOption', 'model/SignatureType', 'model/Signer', 'model/SignerAttachment', 'model/SignerEmailNotifications', 'model/SigningGroup', 'model/SigningGroupInformation', 'model/SigningGroupUser', 'model/SigningGroupUsers', 'model/SmartSection', 'model/SmartSectionAnchorPosition', 'model/SmartSectionCollapsibleDisplaySettings', 'model/SmartSectionDisplaySettings', 'model/SocialAccountInformation', 'model/SocialAuthentication', 'model/Ssn', 'model/Ssn4InformationInput', 'model/Ssn9InformationInput', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/TabMetadata', 'model/TabMetadataList', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentVisibilityList', 'model/TemplateDocumentsResult', 'model/TemplateInformation', 'model/TemplateMatch', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateRole', 'model/TemplateSharedItem', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/Text', 'model/TextCustomField', 'model/Title', 'model/UsageHistory', 'model/UserAccountManagementGranularInformation', 'model/UserInfo', 'model/UserInfoList', 'model/UserInformation', 'model/UserInformationList', 'model/UserPasswordInformation', 'model/UserPasswordRules', 'model/UserProfile', 'model/UserSettingsInformation', 'model/UserSharedItem', 'model/UserSignature', 'model/UserSignatureDefinition', 'model/UserSignaturesInformation', 'model/UserSocialIdResult', 'model/UsersResponse', 'model/View', 'model/ViewUrl', 'model/Watermark', 'model/Witness', 'model/Workspace', 'model/WorkspaceFolderContents', 'model/WorkspaceItem', 'model/WorkspaceItemList', 'model/WorkspaceList', 'model/WorkspaceUser', 'model/WorkspaceUserAuthorization', 'model/Zip', 'api/AccountsApi', 'api/AuthenticationApi', 'api/BillingApi', 'api/BulkEnvelopesApi', 'api/CloudStorageApi', 'api/ConnectApi', 'api/CustomTabsApi', 'api/DiagnosticsApi', 'api/EnvelopesApi', 'api/FoldersApi', 'api/GroupsApi', 'api/NotaryApi', 'api/OrganizationsApi', 'api/PowerFormsApi', 'api/SigningGroupsApi', 'api/TemplatesApi', 'api/UsersApi', 'api/WorkspacesApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./Configuration'), require('./ApiClient'), require('./model/AccessCodeFormat'), require('./model/AccountAddress'), require('./model/AccountBillingPlan'), require('./model/AccountBillingPlanResponse'), require('./model/AccountIdentityInputOption'), require('./model/AccountIdentityVerificationResponse'), require('./model/AccountIdentityVerificationStep'), require('./model/AccountIdentityVerificationWorkflow'), require('./model/AccountInformation'), require('./model/AccountMinimumPasswordLength'), require('./model/AccountNotification'), require('./model/AccountPasswordExpirePasswordDays'), require('./model/AccountPasswordLockoutDurationMinutes'), require('./model/AccountPasswordLockoutDurationType'), require('./model/AccountPasswordMinimumPasswordAgeDays'), require('./model/AccountPasswordQuestionsRequired'), require('./model/AccountPasswordRules'), require('./model/AccountPasswordStrengthType'), require('./model/AccountPasswordStrengthTypeOption'), require('./model/AccountRoleSettings'), require('./model/AccountSeals'), require('./model/AccountSettingsInformation'), require('./model/AccountSharedAccess'), require('./model/AccountSignatureProvider'), require('./model/AccountSignatureProviderOption'), require('./model/AccountSignatureProviders'), require('./model/AccountUISettings'), require('./model/AddOn'), require('./model/AddressInformation'), require('./model/AddressInformationInput'), require('./model/AdminMessage'), require('./model/Agent'), require('./model/ApiRequestLog'), require('./model/ApiRequestLogsResult'), require('./model/AppStoreProduct'), require('./model/AppStoreReceipt'), require('./model/Approve'), require('./model/AskAnAdmin'), require('./model/Attachment'), require('./model/AuthenticationMethod'), require('./model/AuthenticationStatus'), require('./model/BccEmailAddress'), require('./model/BccEmailArchive'), require('./model/BccEmailArchiveHistory'), require('./model/BccEmailArchiveHistoryList'), require('./model/BccEmailArchiveList'), require('./model/BillingCharge'), require('./model/BillingChargeResponse'), require('./model/BillingDiscount'), require('./model/BillingInvoice'), require('./model/BillingInvoiceItem'), require('./model/BillingInvoicesResponse'), require('./model/BillingInvoicesSummary'), require('./model/BillingPayment'), require('./model/BillingPaymentItem'), require('./model/BillingPaymentRequest'), require('./model/BillingPaymentResponse'), require('./model/BillingPaymentsResponse'), require('./model/BillingPlan'), require('./model/BillingPlanInformation'), require('./model/BillingPlanPreview'), require('./model/BillingPlanResponse'), require('./model/BillingPlanUpdateResponse'), require('./model/BillingPlansResponse'), require('./model/BillingPrice'), require('./model/Brand'), require('./model/BrandEmailContent'), require('./model/BrandLink'), require('./model/BrandLogos'), require('./model/BrandRequest'), require('./model/BrandResourceUrls'), require('./model/BrandResources'), require('./model/BrandResourcesList'), require('./model/BrandsRequest'), require('./model/BrandsResponse'), require('./model/BulkEnvelope'), require('./model/BulkEnvelopeStatus'), require('./model/BulkEnvelopesResponse'), require('./model/BulkRecipient'), require('./model/BulkRecipientSignatureProvider'), require('./model/BulkRecipientTabLabel'), require('./model/BulkRecipientsRequest'), require('./model/BulkRecipientsResponse'), require('./model/BulkRecipientsSummaryResponse'), require('./model/BulkRecipientsUpdateResponse'), require('./model/BulkSendRequest'), require('./model/BulkSendResponse'), require('./model/BulkSendTestResponse'), require('./model/BulkSendingCopy'), require('./model/BulkSendingCopyCustomField'), require('./model/BulkSendingCopyRecipient'), require('./model/BulkSendingCopyTab'), require('./model/BulkSendingList'), require('./model/BulkSendingListSummaries'), require('./model/BulkSendingListSummary'), require('./model/CaptiveRecipient'), require('./model/CaptiveRecipientInformation'), require('./model/CarbonCopy'), require('./model/CertifiedDelivery'), require('./model/Checkbox'), require('./model/ChunkedUploadPart'), require('./model/ChunkedUploadRequest'), require('./model/ChunkedUploadResponse'), require('./model/CloudStorageProvider'), require('./model/CloudStorageProviders'), require('./model/Comment'), require('./model/CommentHistoryResult'), require('./model/CommentPublish'), require('./model/CommentThread'), require('./model/CommentsPublish'), require('./model/Company'), require('./model/CompositeTemplate'), require('./model/ConnectConfigResults'), require('./model/ConnectCustomConfiguration'), require('./model/ConnectDebugLog'), require('./model/ConnectEventData'), require('./model/ConnectFailureFilter'), require('./model/ConnectFailureResult'), require('./model/ConnectFailureResults'), require('./model/ConnectLog'), require('./model/ConnectLogs'), require('./model/ConnectSalesforceField'), require('./model/ConnectSalesforceObject'), require('./model/ConnectUserObject'), require('./model/ConsoleViewRequest'), require('./model/ConsumerDisclosure'), require('./model/Contact'), require('./model/ContactGetResponse'), require('./model/ContactModRequest'), require('./model/ContactPhoneNumber'), require('./model/ContactUpdateResponse'), require('./model/CorrectViewRequest'), require('./model/Country'), require('./model/CreditCardInformation'), require('./model/CreditCardTypes'), require('./model/CurrencyFeatureSetPrice'), require('./model/CurrencyPlanPrice'), require('./model/CustomField'), require('./model/CustomFields'), require('./model/CustomFieldsEnvelope'), require('./model/CustomSettingsInformation'), require('./model/DateSigned'), require('./model/DateStampProperties'), require('./model/Decline'), require('./model/DiagnosticsSettingsInformation'), require('./model/DirectDebitProcessorInformation'), require('./model/DobInformationInput'), require('./model/Document'), require('./model/DocumentFieldsInformation'), require('./model/DocumentHtmlCollapsibleDisplaySettings'), require('./model/DocumentHtmlDefinition'), require('./model/DocumentHtmlDefinitionOriginal'), require('./model/DocumentHtmlDefinitionOriginals'), require('./model/DocumentHtmlDefinitions'), require('./model/DocumentHtmlDisplayAnchor'), require('./model/DocumentHtmlDisplaySettings'), require('./model/DocumentTemplate'), require('./model/DocumentTemplateList'), require('./model/DocumentVisibility'), require('./model/DocumentVisibilityList'), require('./model/DowngradRequestBillingInfoResponse'), require('./model/DowngradeBillingPlanInformation'), require('./model/DowngradePlanUpdateResponse'), require('./model/Draw'), require('./model/ENoteConfiguration'), require('./model/Editor'), require('./model/Email'), require('./model/EmailAddress'), require('./model/EmailSettings'), require('./model/Envelope'), require('./model/EnvelopeAttachment'), require('./model/EnvelopeAttachmentsRequest'), require('./model/EnvelopeAttachmentsResult'), require('./model/EnvelopeAuditEvent'), require('./model/EnvelopeAuditEventResponse'), require('./model/EnvelopeDefinition'), require('./model/EnvelopeDocument'), require('./model/EnvelopeDocumentsResult'), require('./model/EnvelopeEvent'), require('./model/EnvelopeFormData'), require('./model/EnvelopeId'), require('./model/EnvelopeIdsRequest'), require('./model/EnvelopeMetadata'), require('./model/EnvelopeNotificationRequest'), require('./model/EnvelopePurgeConfiguration'), require('./model/EnvelopeSummary'), require('./model/EnvelopeTemplate'), require('./model/EnvelopeTemplateResults'), require('./model/EnvelopeTransactionStatus'), require('./model/EnvelopeTransferRule'), require('./model/EnvelopeTransferRuleInformation'), require('./model/EnvelopeTransferRuleRequest'), require('./model/EnvelopeUpdateSummary'), require('./model/EnvelopesInformation'), require('./model/ErrorDetails'), require('./model/EventNotification'), require('./model/EventResult'), require('./model/Expirations'), require('./model/ExternalDocServiceErrorDetails'), require('./model/ExternalDocumentSources'), require('./model/ExternalFile'), require('./model/ExternalFolder'), require('./model/FavoriteTemplatesContentItem'), require('./model/FavoriteTemplatesInfo'), require('./model/FeatureAvailableMetadata'), require('./model/FeatureSet'), require('./model/FileType'), require('./model/FileTypeList'), require('./model/Filter'), require('./model/FirstName'), require('./model/Folder'), require('./model/FolderItemResponse'), require('./model/FolderItemV2'), require('./model/FolderItemsResponse'), require('./model/FolderSharedItem'), require('./model/FoldersRequest'), require('./model/FoldersResponse'), require('./model/ForgottenPasswordInformation'), require('./model/FormDataItem'), require('./model/FormulaTab'), require('./model/FullName'), require('./model/GraphicsContext'), require('./model/Group'), require('./model/GroupInformation'), require('./model/IdCheckConfiguration'), require('./model/IdCheckInformationInput'), require('./model/IdCheckSecurityStep'), require('./model/InPersonSigner'), require('./model/InitialHere'), require('./model/InlineTemplate'), require('./model/IntegratedUserInfoList'), require('./model/Intermediary'), require('./model/Jurisdiction'), require('./model/LastName'), require('./model/List'), require('./model/ListCustomField'), require('./model/ListItem'), require('./model/LocalePolicy'), require('./model/LocalePolicyTab'), require('./model/LockInformation'), require('./model/LockRequest'), require('./model/LoginAccount'), require('./model/LoginInformation'), require('./model/MatchBox'), require('./model/MemberGroupSharedItem'), require('./model/MemberSharedItems'), require('./model/MergeField'), require('./model/MobileNotifierConfiguration'), require('./model/MobileNotifierConfigurationInformation'), require('./model/ModelDate'), require('./model/ModelNumber'), require('./model/Money'), require('./model/NameValue'), require('./model/NewAccountDefinition'), require('./model/NewAccountSummary'), require('./model/NewUser'), require('./model/NewUsersDefinition'), require('./model/NewUsersSummary'), require('./model/Notarize'), require('./model/Notary'), require('./model/NotaryHost'), require('./model/NotaryJournal'), require('./model/NotaryJournalCredibleWitness'), require('./model/NotaryJournalList'), require('./model/NotaryJournalMetaData'), require('./model/NotaryJurisdiction'), require('./model/NotaryJurisdictionList'), require('./model/NotaryResult'), require('./model/Note'), require('./model/Notification'), require('./model/NotificationDefaultSettings'), require('./model/NotificationDefaults'), require('./model/OauthAccess'), require('./model/OfflineAttributes'), require('./model/Page'), require('./model/PageImages'), require('./model/PageRequest'), require('./model/PathExtendedElement'), require('./model/PayPalLegacySettings'), require('./model/PaymentDetails'), require('./model/PaymentGatewayAccount'), require('./model/PaymentGatewayAccountSetting'), require('./model/PaymentGatewayAccountsInfo'), require('./model/PaymentLineItem'), require('./model/PaymentMethodWithOptions'), require('./model/PaymentProcessorInformation'), require('./model/PermissionProfile'), require('./model/PermissionProfileInformation'), require('./model/PlanInformation'), require('./model/PolyLine'), require('./model/PolyLineOverlay'), require('./model/PowerForm'), require('./model/PowerFormFormDataEnvelope'), require('./model/PowerFormFormDataRecipient'), require('./model/PowerFormRecipient'), require('./model/PowerFormSendersResponse'), require('./model/PowerFormsFormDataResponse'), require('./model/PowerFormsRequest'), require('./model/PowerFormsResponse'), require('./model/ProofServiceResourceToken'), require('./model/ProofServiceViewLink'), require('./model/PropertyMetadata'), require('./model/Province'), require('./model/ProvisioningInformation'), require('./model/PurchasedEnvelopesInformation'), require('./model/Radio'), require('./model/RadioGroup'), require('./model/RecipientAdditionalNotification'), require('./model/RecipientAttachment'), require('./model/RecipientDomain'), require('./model/RecipientEmailNotification'), require('./model/RecipientEvent'), require('./model/RecipientFormData'), require('./model/RecipientIdentityInputOption'), require('./model/RecipientIdentityPhoneNumber'), require('./model/RecipientIdentityVerification'), require('./model/RecipientNamesResponse'), require('./model/RecipientPhoneAuthentication'), require('./model/RecipientPhoneNumber'), require('./model/RecipientPreviewRequest'), require('./model/RecipientProofFile'), require('./model/RecipientSMSAuthentication'), require('./model/RecipientSignatureInformation'), require('./model/RecipientSignatureProvider'), require('./model/RecipientSignatureProviderOptions'), require('./model/RecipientUpdateResponse'), require('./model/RecipientViewRequest'), require('./model/Recipients'), require('./model/RecipientsUpdateSummary'), require('./model/ReferralInformation'), require('./model/Reminders'), require('./model/ResourceInformation'), require('./model/ReturnUrlRequest'), require('./model/SealIdentifier'), require('./model/SealSign'), require('./model/SeatDiscount'), require('./model/SenderEmailNotifications'), require('./model/ServerTemplate'), require('./model/ServiceInformation'), require('./model/ServiceVersion'), require('./model/SettingsMetadata'), require('./model/SharedItem'), require('./model/SignHere'), require('./model/SignatureProviderRequiredOption'), require('./model/SignatureType'), require('./model/Signer'), require('./model/SignerAttachment'), require('./model/SignerEmailNotifications'), require('./model/SigningGroup'), require('./model/SigningGroupInformation'), require('./model/SigningGroupUser'), require('./model/SigningGroupUsers'), require('./model/SmartContractInformation'), require('./model/SmartSection'), require('./model/SmartSectionAnchorPosition'), require('./model/SmartSectionCollapsibleDisplaySettings'), require('./model/SmartSectionDisplaySettings'), require('./model/SocialAccountInformation'), require('./model/SocialAuthentication'), require('./model/Ssn'), require('./model/Ssn4InformationInput'), require('./model/Ssn9InformationInput'), require('./model/Stamp'), require('./model/SupportedLanguages'), require('./model/TabAccountSettings'), require('./model/TabGroup'), require('./model/TabMetadata'), require('./model/TabMetadataList'), require('./model/Tabs'), require('./model/TemplateCustomFields'), require('./model/TemplateDocumentVisibilityList'), require('./model/TemplateDocumentsResult'), require('./model/TemplateInformation'), require('./model/TemplateMatch'), require('./model/TemplateNotificationRequest'), require('./model/TemplateRecipients'), require('./model/TemplateRole'), require('./model/TemplateSharedItem'), require('./model/TemplateSummary'), require('./model/TemplateTabs'), require('./model/TemplateUpdateSummary'), require('./model/Text'), require('./model/TextCustomField'), require('./model/Title'), require('./model/UsageHistory'), require('./model/UserAccountManagementGranularInformation'), require('./model/UserInfo'), require('./model/UserInfoList'), require('./model/UserInformation'), require('./model/UserInformationList'), require('./model/UserPasswordInformation'), require('./model/UserPasswordRules'), require('./model/UserProfile'), require('./model/UserSettingsInformation'), require('./model/UserSharedItem'), require('./model/UserSignature'), require('./model/UserSignatureDefinition'), require('./model/UserSignaturesInformation'), require('./model/UserSocialIdResult'), require('./model/UsersResponse'), require('./model/View'), require('./model/ViewUrl'), require('./model/Watermark'), require('./model/Witness'), require('./model/Workspace'), require('./model/WorkspaceFolderContents'), require('./model/WorkspaceItem'), require('./model/WorkspaceItemList'), require('./model/WorkspaceList'), require('./model/WorkspaceSettings'), require('./model/WorkspaceUser'), require('./model/WorkspaceUserAuthorization'), require('./model/Zip'), require('./api/AccountsApi'), require('./api/AuthenticationApi'), require('./api/BillingApi'), require('./api/BulkEnvelopesApi'), require('./api/CloudStorageApi'), require('./api/ConnectApi'), require('./api/CustomTabsApi'), require('./api/DataFeedApi'), require('./api/DiagnosticsApi'), require('./api/EmailArchiveApi'), require('./api/EnvelopesApi'), require('./api/FoldersApi'), require('./api/GroupsApi'), require('./api/NotaryApi'), require('./api/OrganizationsApi'), require('./api/PowerFormsApi'), require('./api/SigningGroupsApi'), require('./api/TemplatesApi'), require('./api/UsersApi'), require('./api/WorkspacesApi'));
+    module.exports = factory(require('./Configuration'), require('./ApiClient'), require('./model/AccountAddress'), require('./model/AccountBillingPlan'), require('./model/AccountBillingPlanResponse'), require('./model/AccountIdentityVerificationResponse'), require('./model/AccountIdentityVerificationStep'), require('./model/AccountIdentityVerificationWorkflow'), require('./model/AccountInformation'), require('./model/AccountMinimumPasswordLength'), require('./model/AccountPasswordExpirePasswordDays'), require('./model/AccountPasswordLockoutDurationMinutes'), require('./model/AccountPasswordLockoutDurationType'), require('./model/AccountPasswordMinimumPasswordAgeDays'), require('./model/AccountPasswordQuestionsRequired'), require('./model/AccountPasswordRules'), require('./model/AccountPasswordStrengthType'), require('./model/AccountPasswordStrengthTypeOption'), require('./model/AccountRoleSettings'), require('./model/AccountSeals'), require('./model/AccountSettingsInformation'), require('./model/AccountSharedAccess'), require('./model/AccountSignatureProvider'), require('./model/AccountSignatureProviderOption'), require('./model/AccountSignatureProviders'), require('./model/AddOn'), require('./model/AddressInformation'), require('./model/AddressInformationInput'), require('./model/AddressInformationV2'), require('./model/Agent'), require('./model/ApiRequestLog'), require('./model/ApiRequestLogsResult'), require('./model/AppStoreProduct'), require('./model/AppStoreReceipt'), require('./model/Approve'), require('./model/Attachment'), require('./model/AuthenticationMethod'), require('./model/AuthenticationStatus'), require('./model/BccEmailAddress'), require('./model/BillingCharge'), require('./model/BillingChargeResponse'), require('./model/BillingDiscount'), require('./model/BillingInvoice'), require('./model/BillingInvoiceItem'), require('./model/BillingInvoicesResponse'), require('./model/BillingInvoicesSummary'), require('./model/BillingPayment'), require('./model/BillingPaymentItem'), require('./model/BillingPaymentRequest'), require('./model/BillingPaymentResponse'), require('./model/BillingPaymentsResponse'), require('./model/BillingPlan'), require('./model/BillingPlanInformation'), require('./model/BillingPlanPreview'), require('./model/BillingPlanResponse'), require('./model/BillingPlanUpdateResponse'), require('./model/BillingPlansResponse'), require('./model/BillingPrice'), require('./model/Brand'), require('./model/BrandEmailContent'), require('./model/BrandLink'), require('./model/BrandLogos'), require('./model/BrandRequest'), require('./model/BrandResourceUrls'), require('./model/BrandResources'), require('./model/BrandResourcesList'), require('./model/BrandsRequest'), require('./model/BrandsResponse'), require('./model/BulkEnvelope'), require('./model/BulkEnvelopeStatus'), require('./model/BulkEnvelopesResponse'), require('./model/BulkRecipient'), require('./model/BulkRecipientSignatureProvider'), require('./model/BulkRecipientTabLabel'), require('./model/BulkRecipientsRequest'), require('./model/BulkRecipientsResponse'), require('./model/BulkRecipientsSummaryResponse'), require('./model/BulkRecipientsUpdateResponse'), require('./model/CaptiveRecipient'), require('./model/CaptiveRecipientInformation'), require('./model/CarbonCopy'), require('./model/CertifiedDelivery'), require('./model/Checkbox'), require('./model/ChunkedUploadPart'), require('./model/ChunkedUploadRequest'), require('./model/ChunkedUploadResponse'), require('./model/CloudStorageProvider'), require('./model/CloudStorageProviders'), require('./model/Company'), require('./model/CompositeTemplate'), require('./model/ConnectConfigResults'), require('./model/ConnectCustomConfiguration'), require('./model/ConnectDebugLog'), require('./model/ConnectFailureFilter'), require('./model/ConnectFailureResult'), require('./model/ConnectFailureResults'), require('./model/ConnectLog'), require('./model/ConnectLogs'), require('./model/ConsoleViewRequest'), require('./model/ConsumerDisclosure'), require('./model/Contact'), require('./model/ContactGetResponse'), require('./model/ContactModRequest'), require('./model/ContactPhoneNumber'), require('./model/ContactUpdateResponse'), require('./model/CorrectViewRequest'), require('./model/Country'), require('./model/CreditCardInformation'), require('./model/CreditCardTypes'), require('./model/CurrencyFeatureSetPrice'), require('./model/CurrencyPlanPrice'), require('./model/CustomField'), require('./model/CustomFieldV2'), require('./model/CustomFields'), require('./model/CustomFieldsEnvelope'), require('./model/CustomSettingsInformation'), require('./model/DateSigned'), require('./model/DateStampProperties'), require('./model/Decline'), require('./model/DiagnosticsSettingsInformation'), require('./model/DobInformationInput'), require('./model/Document'), require('./model/DocumentFieldsInformation'), require('./model/DocumentHtmlCollapsibleDisplaySettings'), require('./model/DocumentHtmlDefinition'), require('./model/DocumentHtmlDefinitionOriginal'), require('./model/DocumentHtmlDefinitionOriginals'), require('./model/DocumentHtmlDefinitions'), require('./model/DocumentHtmlDisplayAnchor'), require('./model/DocumentHtmlDisplaySettings'), require('./model/DocumentTemplate'), require('./model/DocumentTemplateList'), require('./model/DocumentVisibility'), require('./model/DocumentVisibilityList'), require('./model/ENoteConfiguration'), require('./model/Editor'), require('./model/Email'), require('./model/EmailAddress'), require('./model/EmailSettings'), require('./model/Envelope'), require('./model/EnvelopeAttachment'), require('./model/EnvelopeAttachmentsRequest'), require('./model/EnvelopeAttachmentsResult'), require('./model/EnvelopeAuditEvent'), require('./model/EnvelopeAuditEventResponse'), require('./model/EnvelopeDefinition'), require('./model/EnvelopeDocument'), require('./model/EnvelopeDocumentsResult'), require('./model/EnvelopeEvent'), require('./model/EnvelopeFormData'), require('./model/EnvelopeId'), require('./model/EnvelopeIdsRequest'), require('./model/EnvelopeNotificationRequest'), require('./model/EnvelopeSummary'), require('./model/EnvelopeTemplate'), require('./model/EnvelopeTemplateDefinition'), require('./model/EnvelopeTemplateResult'), require('./model/EnvelopeTemplateResults'), require('./model/EnvelopeTransactionStatus'), require('./model/EnvelopeUpdateSummary'), require('./model/EnvelopesInformation'), require('./model/ErrorDetails'), require('./model/EventNotification'), require('./model/EventResult'), require('./model/Expirations'), require('./model/ExternalDocServiceErrorDetails'), require('./model/ExternalFile'), require('./model/ExternalFolder'), require('./model/FeatureSet'), require('./model/FileType'), require('./model/FileTypeList'), require('./model/Filter'), require('./model/FirstName'), require('./model/Folder'), require('./model/FolderItem'), require('./model/FolderItemResponse'), require('./model/FolderItemV2'), require('./model/FolderItemsResponse'), require('./model/FoldersRequest'), require('./model/FoldersResponse'), require('./model/ForgottenPasswordInformation'), require('./model/FormulaTab'), require('./model/FullName'), require('./model/Group'), require('./model/GroupInformation'), require('./model/IdCheckInformationInput'), require('./model/InPersonSigner'), require('./model/InitialHere'), require('./model/InlineTemplate'), require('./model/IntegratedUserInfoList'), require('./model/Intermediary'), require('./model/Jurisdiction'), require('./model/LastName'), require('./model/List'), require('./model/ListCustomField'), require('./model/ListItem'), require('./model/LockInformation'), require('./model/LockRequest'), require('./model/LoginAccount'), require('./model/LoginInformation'), require('./model/MatchBox'), require('./model/MemberGroupSharedItem'), require('./model/MemberSharedItems'), require('./model/MergeField'), require('./model/MobileNotifierConfiguration'), require('./model/MobileNotifierConfigurationInformation'), require('./model/ModelDate'), require('./model/ModelNumber'), require('./model/Money'), require('./model/NameValue'), require('./model/NewAccountDefinition'), require('./model/NewAccountSummary'), require('./model/NewUser'), require('./model/NewUsersDefinition'), require('./model/NewUsersSummary'), require('./model/Notarize'), require('./model/NotaryHost'), require('./model/NotaryJournal'), require('./model/NotaryJournalCredibleWitness'), require('./model/NotaryJournalList'), require('./model/NotaryJournalMetaData'), require('./model/Note'), require('./model/Notification'), require('./model/OauthAccess'), require('./model/OfflineAttributes'), require('./model/Page'), require('./model/PageImages'), require('./model/PageRequest'), require('./model/PaymentDetails'), require('./model/PaymentGatewayAccount'), require('./model/PaymentGatewayAccountsInfo'), require('./model/PaymentLineItem'), require('./model/PaymentProcessorInformation'), require('./model/PermissionProfile'), require('./model/PermissionProfileInformation'), require('./model/PlanInformation'), require('./model/PowerForm'), require('./model/PowerFormFormDataEnvelope'), require('./model/PowerFormFormDataRecipient'), require('./model/PowerFormRecipient'), require('./model/PowerFormSendersResponse'), require('./model/PowerFormsFormDataResponse'), require('./model/PowerFormsRequest'), require('./model/PowerFormsResponse'), require('./model/PropertyMetadata'), require('./model/Province'), require('./model/ProvisioningInformation'), require('./model/PurchasedEnvelopesInformation'), require('./model/Radio'), require('./model/RadioGroup'), require('./model/RecipientAttachment'), require('./model/RecipientDomain'), require('./model/RecipientEmailNotification'), require('./model/RecipientEvent'), require('./model/RecipientFormData'), require('./model/RecipientIdentityInputOption'), require('./model/RecipientIdentityPhoneNumber'), require('./model/RecipientIdentityVerification'), require('./model/RecipientNamesResponse'), require('./model/RecipientPhoneAuthentication'), require('./model/RecipientProofFile'), require('./model/RecipientSAMLAuthentication'), require('./model/RecipientSMSAuthentication'), require('./model/RecipientSignatureInformation'), require('./model/RecipientSignatureProvider'), require('./model/RecipientSignatureProviderOptions'), require('./model/RecipientUpdateResponse'), require('./model/RecipientViewRequest'), require('./model/Recipients'), require('./model/RecipientsUpdateSummary'), require('./model/ReferralInformation'), require('./model/Reminders'), require('./model/ResourceInformation'), require('./model/ReturnUrlRequest'), require('./model/SamlAssertionAttribute'), require('./model/SealIdentifier'), require('./model/SealSign'), require('./model/SeatDiscount'), require('./model/SenderEmailNotifications'), require('./model/ServerTemplate'), require('./model/ServiceInformation'), require('./model/ServiceVersion'), require('./model/SettingsMetadata'), require('./model/SharedItem'), require('./model/SignHere'), require('./model/SignatureProviderRequiredOption'), require('./model/SignatureType'), require('./model/Signer'), require('./model/SignerAttachment'), require('./model/SignerEmailNotifications'), require('./model/SigningGroup'), require('./model/SigningGroupInformation'), require('./model/SigningGroupUser'), require('./model/SigningGroupUsers'), require('./model/SmartSection'), require('./model/SmartSectionAnchorPosition'), require('./model/SmartSectionCollapsibleDisplaySettings'), require('./model/SmartSectionDisplaySettings'), require('./model/SocialAccountInformation'), require('./model/SocialAuthentication'), require('./model/Ssn'), require('./model/Ssn4InformationInput'), require('./model/Ssn9InformationInput'), require('./model/SupportedLanguages'), require('./model/TabAccountSettings'), require('./model/TabMetadata'), require('./model/TabMetadataList'), require('./model/Tabs'), require('./model/TemplateCustomFields'), require('./model/TemplateDocumentVisibilityList'), require('./model/TemplateDocumentsResult'), require('./model/TemplateInformation'), require('./model/TemplateMatch'), require('./model/TemplateNotificationRequest'), require('./model/TemplateRecipients'), require('./model/TemplateRole'), require('./model/TemplateSharedItem'), require('./model/TemplateSummary'), require('./model/TemplateTabs'), require('./model/TemplateUpdateSummary'), require('./model/Text'), require('./model/TextCustomField'), require('./model/Title'), require('./model/UsageHistory'), require('./model/UserAccountManagementGranularInformation'), require('./model/UserInfo'), require('./model/UserInfoList'), require('./model/UserInformation'), require('./model/UserInformationList'), require('./model/UserPasswordInformation'), require('./model/UserPasswordRules'), require('./model/UserProfile'), require('./model/UserSettingsInformation'), require('./model/UserSharedItem'), require('./model/UserSignature'), require('./model/UserSignatureDefinition'), require('./model/UserSignaturesInformation'), require('./model/UserSocialIdResult'), require('./model/UsersResponse'), require('./model/View'), require('./model/ViewUrl'), require('./model/Watermark'), require('./model/Witness'), require('./model/Workspace'), require('./model/WorkspaceFolderContents'), require('./model/WorkspaceItem'), require('./model/WorkspaceItemList'), require('./model/WorkspaceList'), require('./model/WorkspaceUser'), require('./model/WorkspaceUserAuthorization'), require('./model/Zip'), require('./api/AccountsApi'), require('./api/AuthenticationApi'), require('./api/BillingApi'), require('./api/BulkEnvelopesApi'), require('./api/CloudStorageApi'), require('./api/ConnectApi'), require('./api/CustomTabsApi'), require('./api/DiagnosticsApi'), require('./api/EnvelopesApi'), require('./api/FoldersApi'), require('./api/GroupsApi'), require('./api/NotaryApi'), require('./api/OrganizationsApi'), require('./api/PowerFormsApi'), require('./api/SigningGroupsApi'), require('./api/TemplatesApi'), require('./api/UsersApi'), require('./api/WorkspacesApi'));
   }
-}(function(Configuration, ApiClient, AccessCodeFormat, AccountAddress, AccountBillingPlan, AccountBillingPlanResponse, AccountIdentityInputOption, AccountIdentityVerificationResponse, AccountIdentityVerificationStep, AccountIdentityVerificationWorkflow, AccountInformation, AccountMinimumPasswordLength, AccountNotification, AccountPasswordExpirePasswordDays, AccountPasswordLockoutDurationMinutes, AccountPasswordLockoutDurationType, AccountPasswordMinimumPasswordAgeDays, AccountPasswordQuestionsRequired, AccountPasswordRules, AccountPasswordStrengthType, AccountPasswordStrengthTypeOption, AccountRoleSettings, AccountSeals, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProvider, AccountSignatureProviderOption, AccountSignatureProviders, AccountUISettings, AddOn, AddressInformation, AddressInformationInput, AdminMessage, Agent, ApiRequestLog, ApiRequestLogsResult, AppStoreProduct, AppStoreReceipt, Approve, AskAnAdmin, Attachment, AuthenticationMethod, AuthenticationStatus, BccEmailAddress, BccEmailArchive, BccEmailArchiveHistory, BccEmailArchiveHistoryList, BccEmailArchiveList, BillingCharge, BillingChargeResponse, BillingDiscount, BillingInvoice, BillingInvoiceItem, BillingInvoicesResponse, BillingInvoicesSummary, BillingPayment, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlan, BillingPlanInformation, BillingPlanPreview, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, BillingPrice, Brand, BrandEmailContent, BrandLink, BrandLogos, BrandRequest, BrandResourceUrls, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, BulkEnvelope, BulkEnvelopeStatus, BulkEnvelopesResponse, BulkRecipient, BulkRecipientSignatureProvider, BulkRecipientTabLabel, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, BulkSendRequest, BulkSendResponse, BulkSendTestResponse, BulkSendingCopy, BulkSendingCopyCustomField, BulkSendingCopyRecipient, BulkSendingCopyTab, BulkSendingList, BulkSendingListSummaries, BulkSendingListSummary, CaptiveRecipient, CaptiveRecipientInformation, CarbonCopy, CertifiedDelivery, Checkbox, ChunkedUploadPart, ChunkedUploadRequest, ChunkedUploadResponse, CloudStorageProvider, CloudStorageProviders, Comment, CommentHistoryResult, CommentPublish, CommentThread, CommentsPublish, Company, CompositeTemplate, ConnectConfigResults, ConnectCustomConfiguration, ConnectDebugLog, ConnectEventData, ConnectFailureFilter, ConnectFailureResult, ConnectFailureResults, ConnectLog, ConnectLogs, ConnectSalesforceField, ConnectSalesforceObject, ConnectUserObject, ConsoleViewRequest, ConsumerDisclosure, Contact, ContactGetResponse, ContactModRequest, ContactPhoneNumber, ContactUpdateResponse, CorrectViewRequest, Country, CreditCardInformation, CreditCardTypes, CurrencyFeatureSetPrice, CurrencyPlanPrice, CustomField, CustomFields, CustomFieldsEnvelope, CustomSettingsInformation, DateSigned, DateStampProperties, Decline, DiagnosticsSettingsInformation, DirectDebitProcessorInformation, DobInformationInput, Document, DocumentFieldsInformation, DocumentHtmlCollapsibleDisplaySettings, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginal, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, DocumentHtmlDisplayAnchor, DocumentHtmlDisplaySettings, DocumentTemplate, DocumentTemplateList, DocumentVisibility, DocumentVisibilityList, DowngradRequestBillingInfoResponse, DowngradeBillingPlanInformation, DowngradePlanUpdateResponse, Draw, ENoteConfiguration, Editor, Email, EmailAddress, EmailSettings, Envelope, EnvelopeAttachment, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEvent, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocument, EnvelopeDocumentsResult, EnvelopeEvent, EnvelopeFormData, EnvelopeId, EnvelopeIdsRequest, EnvelopeMetadata, EnvelopeNotificationRequest, EnvelopePurgeConfiguration, EnvelopeSummary, EnvelopeTemplate, EnvelopeTemplateResults, EnvelopeTransactionStatus, EnvelopeTransferRule, EnvelopeTransferRuleInformation, EnvelopeTransferRuleRequest, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, EventNotification, EventResult, Expirations, ExternalDocServiceErrorDetails, ExternalDocumentSources, ExternalFile, ExternalFolder, FavoriteTemplatesContentItem, FavoriteTemplatesInfo, FeatureAvailableMetadata, FeatureSet, FileType, FileTypeList, Filter, FirstName, Folder, FolderItemResponse, FolderItemV2, FolderItemsResponse, FolderSharedItem, FoldersRequest, FoldersResponse, ForgottenPasswordInformation, FormDataItem, FormulaTab, FullName, GraphicsContext, Group, GroupInformation, IdCheckConfiguration, IdCheckInformationInput, IdCheckSecurityStep, InPersonSigner, InitialHere, InlineTemplate, IntegratedUserInfoList, Intermediary, Jurisdiction, LastName, List, ListCustomField, ListItem, LocalePolicy, LocalePolicyTab, LockInformation, LockRequest, LoginAccount, LoginInformation, MatchBox, MemberGroupSharedItem, MemberSharedItems, MergeField, MobileNotifierConfiguration, MobileNotifierConfigurationInformation, ModelDate, ModelNumber, Money, NameValue, NewAccountDefinition, NewAccountSummary, NewUser, NewUsersDefinition, NewUsersSummary, Notarize, Notary, NotaryHost, NotaryJournal, NotaryJournalCredibleWitness, NotaryJournalList, NotaryJournalMetaData, NotaryJurisdiction, NotaryJurisdictionList, NotaryResult, Note, Notification, NotificationDefaultSettings, NotificationDefaults, OauthAccess, OfflineAttributes, Page, PageImages, PageRequest, PathExtendedElement, PayPalLegacySettings, PaymentDetails, PaymentGatewayAccount, PaymentGatewayAccountSetting, PaymentGatewayAccountsInfo, PaymentLineItem, PaymentMethodWithOptions, PaymentProcessorInformation, PermissionProfile, PermissionProfileInformation, PlanInformation, PolyLine, PolyLineOverlay, PowerForm, PowerFormFormDataEnvelope, PowerFormFormDataRecipient, PowerFormRecipient, PowerFormSendersResponse, PowerFormsFormDataResponse, PowerFormsRequest, PowerFormsResponse, ProofServiceResourceToken, ProofServiceViewLink, PropertyMetadata, Province, ProvisioningInformation, PurchasedEnvelopesInformation, Radio, RadioGroup, RecipientAdditionalNotification, RecipientAttachment, RecipientDomain, RecipientEmailNotification, RecipientEvent, RecipientFormData, RecipientIdentityInputOption, RecipientIdentityPhoneNumber, RecipientIdentityVerification, RecipientNamesResponse, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientPreviewRequest, RecipientProofFile, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, RecipientSignatureProviderOptions, RecipientUpdateResponse, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReferralInformation, Reminders, ResourceInformation, ReturnUrlRequest, SealIdentifier, SealSign, SeatDiscount, SenderEmailNotifications, ServerTemplate, ServiceInformation, ServiceVersion, SettingsMetadata, SharedItem, SignHere, SignatureProviderRequiredOption, SignatureType, Signer, SignerAttachment, SignerEmailNotifications, SigningGroup, SigningGroupInformation, SigningGroupUser, SigningGroupUsers, SmartContractInformation, SmartSection, SmartSectionAnchorPosition, SmartSectionCollapsibleDisplaySettings, SmartSectionDisplaySettings, SocialAccountInformation, SocialAuthentication, Ssn, Ssn4InformationInput, Ssn9InformationInput, Stamp, SupportedLanguages, TabAccountSettings, TabGroup, TabMetadata, TabMetadataList, Tabs, TemplateCustomFields, TemplateDocumentVisibilityList, TemplateDocumentsResult, TemplateInformation, TemplateMatch, TemplateNotificationRequest, TemplateRecipients, TemplateRole, TemplateSharedItem, TemplateSummary, TemplateTabs, TemplateUpdateSummary, Text, TextCustomField, Title, UsageHistory, UserAccountManagementGranularInformation, UserInfo, UserInfoList, UserInformation, UserInformationList, UserPasswordInformation, UserPasswordRules, UserProfile, UserSettingsInformation, UserSharedItem, UserSignature, UserSignatureDefinition, UserSignaturesInformation, UserSocialIdResult, UsersResponse, View, ViewUrl, Watermark, Witness, Workspace, WorkspaceFolderContents, WorkspaceItem, WorkspaceItemList, WorkspaceList, WorkspaceSettings, WorkspaceUser, WorkspaceUserAuthorization, Zip, AccountsApi, AuthenticationApi, BillingApi, BulkEnvelopesApi, CloudStorageApi, ConnectApi, CustomTabsApi, DataFeedApi, DiagnosticsApi, EmailArchiveApi, EnvelopesApi, FoldersApi, GroupsApi, NotaryApi, OrganizationsApi, PowerFormsApi, SigningGroupsApi, TemplatesApi, UsersApi, WorkspacesApi) {
+}(function(Configuration, ApiClient, AccountAddress, AccountBillingPlan, AccountBillingPlanResponse, AccountIdentityVerificationResponse, AccountIdentityVerificationStep, AccountIdentityVerificationWorkflow, AccountInformation, AccountMinimumPasswordLength, AccountPasswordExpirePasswordDays, AccountPasswordLockoutDurationMinutes, AccountPasswordLockoutDurationType, AccountPasswordMinimumPasswordAgeDays, AccountPasswordQuestionsRequired, AccountPasswordRules, AccountPasswordStrengthType, AccountPasswordStrengthTypeOption, AccountRoleSettings, AccountSeals, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProvider, AccountSignatureProviderOption, AccountSignatureProviders, AddOn, AddressInformation, AddressInformationInput, AddressInformationV2, Agent, ApiRequestLog, ApiRequestLogsResult, AppStoreProduct, AppStoreReceipt, Approve, Attachment, AuthenticationMethod, AuthenticationStatus, BccEmailAddress, BillingCharge, BillingChargeResponse, BillingDiscount, BillingInvoice, BillingInvoiceItem, BillingInvoicesResponse, BillingInvoicesSummary, BillingPayment, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlan, BillingPlanInformation, BillingPlanPreview, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, BillingPrice, Brand, BrandEmailContent, BrandLink, BrandLogos, BrandRequest, BrandResourceUrls, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, BulkEnvelope, BulkEnvelopeStatus, BulkEnvelopesResponse, BulkRecipient, BulkRecipientSignatureProvider, BulkRecipientTabLabel, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, CaptiveRecipient, CaptiveRecipientInformation, CarbonCopy, CertifiedDelivery, Checkbox, ChunkedUploadPart, ChunkedUploadRequest, ChunkedUploadResponse, CloudStorageProvider, CloudStorageProviders, Company, CompositeTemplate, ConnectConfigResults, ConnectCustomConfiguration, ConnectDebugLog, ConnectFailureFilter, ConnectFailureResult, ConnectFailureResults, ConnectLog, ConnectLogs, ConsoleViewRequest, ConsumerDisclosure, Contact, ContactGetResponse, ContactModRequest, ContactPhoneNumber, ContactUpdateResponse, CorrectViewRequest, Country, CreditCardInformation, CreditCardTypes, CurrencyFeatureSetPrice, CurrencyPlanPrice, CustomField, CustomFieldV2, CustomFields, CustomFieldsEnvelope, CustomSettingsInformation, DateSigned, DateStampProperties, Decline, DiagnosticsSettingsInformation, DobInformationInput, Document, DocumentFieldsInformation, DocumentHtmlCollapsibleDisplaySettings, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginal, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, DocumentHtmlDisplayAnchor, DocumentHtmlDisplaySettings, DocumentTemplate, DocumentTemplateList, DocumentVisibility, DocumentVisibilityList, ENoteConfiguration, Editor, Email, EmailAddress, EmailSettings, Envelope, EnvelopeAttachment, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEvent, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocument, EnvelopeDocumentsResult, EnvelopeEvent, EnvelopeFormData, EnvelopeId, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopeSummary, EnvelopeTemplate, EnvelopeTemplateDefinition, EnvelopeTemplateResult, EnvelopeTemplateResults, EnvelopeTransactionStatus, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, EventNotification, EventResult, Expirations, ExternalDocServiceErrorDetails, ExternalFile, ExternalFolder, FeatureSet, FileType, FileTypeList, Filter, FirstName, Folder, FolderItem, FolderItemResponse, FolderItemV2, FolderItemsResponse, FoldersRequest, FoldersResponse, ForgottenPasswordInformation, FormulaTab, FullName, Group, GroupInformation, IdCheckInformationInput, InPersonSigner, InitialHere, InlineTemplate, IntegratedUserInfoList, Intermediary, Jurisdiction, LastName, List, ListCustomField, ListItem, LockInformation, LockRequest, LoginAccount, LoginInformation, MatchBox, MemberGroupSharedItem, MemberSharedItems, MergeField, MobileNotifierConfiguration, MobileNotifierConfigurationInformation, ModelDate, ModelNumber, Money, NameValue, NewAccountDefinition, NewAccountSummary, NewUser, NewUsersDefinition, NewUsersSummary, Notarize, NotaryHost, NotaryJournal, NotaryJournalCredibleWitness, NotaryJournalList, NotaryJournalMetaData, Note, Notification, OauthAccess, OfflineAttributes, Page, PageImages, PageRequest, PaymentDetails, PaymentGatewayAccount, PaymentGatewayAccountsInfo, PaymentLineItem, PaymentProcessorInformation, PermissionProfile, PermissionProfileInformation, PlanInformation, PowerForm, PowerFormFormDataEnvelope, PowerFormFormDataRecipient, PowerFormRecipient, PowerFormSendersResponse, PowerFormsFormDataResponse, PowerFormsRequest, PowerFormsResponse, PropertyMetadata, Province, ProvisioningInformation, PurchasedEnvelopesInformation, Radio, RadioGroup, RecipientAttachment, RecipientDomain, RecipientEmailNotification, RecipientEvent, RecipientFormData, RecipientIdentityInputOption, RecipientIdentityPhoneNumber, RecipientIdentityVerification, RecipientNamesResponse, RecipientPhoneAuthentication, RecipientProofFile, RecipientSAMLAuthentication, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, RecipientSignatureProviderOptions, RecipientUpdateResponse, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReferralInformation, Reminders, ResourceInformation, ReturnUrlRequest, SamlAssertionAttribute, SealIdentifier, SealSign, SeatDiscount, SenderEmailNotifications, ServerTemplate, ServiceInformation, ServiceVersion, SettingsMetadata, SharedItem, SignHere, SignatureProviderRequiredOption, SignatureType, Signer, SignerAttachment, SignerEmailNotifications, SigningGroup, SigningGroupInformation, SigningGroupUser, SigningGroupUsers, SmartSection, SmartSectionAnchorPosition, SmartSectionCollapsibleDisplaySettings, SmartSectionDisplaySettings, SocialAccountInformation, SocialAuthentication, Ssn, Ssn4InformationInput, Ssn9InformationInput, SupportedLanguages, TabAccountSettings, TabMetadata, TabMetadataList, Tabs, TemplateCustomFields, TemplateDocumentVisibilityList, TemplateDocumentsResult, TemplateInformation, TemplateMatch, TemplateNotificationRequest, TemplateRecipients, TemplateRole, TemplateSharedItem, TemplateSummary, TemplateTabs, TemplateUpdateSummary, Text, TextCustomField, Title, UsageHistory, UserAccountManagementGranularInformation, UserInfo, UserInfoList, UserInformation, UserInformationList, UserPasswordInformation, UserPasswordRules, UserProfile, UserSettingsInformation, UserSharedItem, UserSignature, UserSignatureDefinition, UserSignaturesInformation, UserSocialIdResult, UsersResponse, View, ViewUrl, Watermark, Witness, Workspace, WorkspaceFolderContents, WorkspaceItem, WorkspaceItemList, WorkspaceList, WorkspaceUser, WorkspaceUserAuthorization, Zip, AccountsApi, AuthenticationApi, BillingApi, BulkEnvelopesApi, CloudStorageApi, ConnectApi, CustomTabsApi, DiagnosticsApi, EnvelopesApi, FoldersApi, GroupsApi, NotaryApi, OrganizationsApi, PowerFormsApi, SigningGroupsApi, TemplatesApi, UsersApi, WorkspacesApi) {
   'use strict';
 
   /**
@@ -61,11 +61,6 @@
      */
     ApiClient: ApiClient,
     /**
-     * The AccessCodeFormat model constructor.
-     * @property {module:model/AccessCodeFormat}
-     */
-    AccessCodeFormat: AccessCodeFormat,
-    /**
      * The AccountAddress model constructor.
      * @property {module:model/AccountAddress}
      */
@@ -80,11 +75,6 @@
      * @property {module:model/AccountBillingPlanResponse}
      */
     AccountBillingPlanResponse: AccountBillingPlanResponse,
-    /**
-     * The AccountIdentityInputOption model constructor.
-     * @property {module:model/AccountIdentityInputOption}
-     */
-    AccountIdentityInputOption: AccountIdentityInputOption,
     /**
      * The AccountIdentityVerificationResponse model constructor.
      * @property {module:model/AccountIdentityVerificationResponse}
@@ -110,11 +100,6 @@
      * @property {module:model/AccountMinimumPasswordLength}
      */
     AccountMinimumPasswordLength: AccountMinimumPasswordLength,
-    /**
-     * The AccountNotification model constructor.
-     * @property {module:model/AccountNotification}
-     */
-    AccountNotification: AccountNotification,
     /**
      * The AccountPasswordExpirePasswordDays model constructor.
      * @property {module:model/AccountPasswordExpirePasswordDays}
@@ -191,11 +176,6 @@
      */
     AccountSignatureProviders: AccountSignatureProviders,
     /**
-     * The AccountUISettings model constructor.
-     * @property {module:model/AccountUISettings}
-     */
-    AccountUISettings: AccountUISettings,
-    /**
      * The AddOn model constructor.
      * @property {module:model/AddOn}
      */
@@ -211,10 +191,10 @@
      */
     AddressInformationInput: AddressInformationInput,
     /**
-     * The AdminMessage model constructor.
-     * @property {module:model/AdminMessage}
+     * The AddressInformationV2 model constructor.
+     * @property {module:model/AddressInformationV2}
      */
-    AdminMessage: AdminMessage,
+    AddressInformationV2: AddressInformationV2,
     /**
      * The Agent model constructor.
      * @property {module:model/Agent}
@@ -246,11 +226,6 @@
      */
     Approve: Approve,
     /**
-     * The AskAnAdmin model constructor.
-     * @property {module:model/AskAnAdmin}
-     */
-    AskAnAdmin: AskAnAdmin,
-    /**
      * The Attachment model constructor.
      * @property {module:model/Attachment}
      */
@@ -270,26 +245,6 @@
      * @property {module:model/BccEmailAddress}
      */
     BccEmailAddress: BccEmailAddress,
-    /**
-     * The BccEmailArchive model constructor.
-     * @property {module:model/BccEmailArchive}
-     */
-    BccEmailArchive: BccEmailArchive,
-    /**
-     * The BccEmailArchiveHistory model constructor.
-     * @property {module:model/BccEmailArchiveHistory}
-     */
-    BccEmailArchiveHistory: BccEmailArchiveHistory,
-    /**
-     * The BccEmailArchiveHistoryList model constructor.
-     * @property {module:model/BccEmailArchiveHistoryList}
-     */
-    BccEmailArchiveHistoryList: BccEmailArchiveHistoryList,
-    /**
-     * The BccEmailArchiveList model constructor.
-     * @property {module:model/BccEmailArchiveList}
-     */
-    BccEmailArchiveList: BccEmailArchiveList,
     /**
      * The BillingCharge model constructor.
      * @property {module:model/BillingCharge}
@@ -486,56 +441,6 @@
      */
     BulkRecipientsUpdateResponse: BulkRecipientsUpdateResponse,
     /**
-     * The BulkSendRequest model constructor.
-     * @property {module:model/BulkSendRequest}
-     */
-    BulkSendRequest: BulkSendRequest,
-    /**
-     * The BulkSendResponse model constructor.
-     * @property {module:model/BulkSendResponse}
-     */
-    BulkSendResponse: BulkSendResponse,
-    /**
-     * The BulkSendTestResponse model constructor.
-     * @property {module:model/BulkSendTestResponse}
-     */
-    BulkSendTestResponse: BulkSendTestResponse,
-    /**
-     * The BulkSendingCopy model constructor.
-     * @property {module:model/BulkSendingCopy}
-     */
-    BulkSendingCopy: BulkSendingCopy,
-    /**
-     * The BulkSendingCopyCustomField model constructor.
-     * @property {module:model/BulkSendingCopyCustomField}
-     */
-    BulkSendingCopyCustomField: BulkSendingCopyCustomField,
-    /**
-     * The BulkSendingCopyRecipient model constructor.
-     * @property {module:model/BulkSendingCopyRecipient}
-     */
-    BulkSendingCopyRecipient: BulkSendingCopyRecipient,
-    /**
-     * The BulkSendingCopyTab model constructor.
-     * @property {module:model/BulkSendingCopyTab}
-     */
-    BulkSendingCopyTab: BulkSendingCopyTab,
-    /**
-     * The BulkSendingList model constructor.
-     * @property {module:model/BulkSendingList}
-     */
-    BulkSendingList: BulkSendingList,
-    /**
-     * The BulkSendingListSummaries model constructor.
-     * @property {module:model/BulkSendingListSummaries}
-     */
-    BulkSendingListSummaries: BulkSendingListSummaries,
-    /**
-     * The BulkSendingListSummary model constructor.
-     * @property {module:model/BulkSendingListSummary}
-     */
-    BulkSendingListSummary: BulkSendingListSummary,
-    /**
      * The CaptiveRecipient model constructor.
      * @property {module:model/CaptiveRecipient}
      */
@@ -586,31 +491,6 @@
      */
     CloudStorageProviders: CloudStorageProviders,
     /**
-     * The Comment model constructor.
-     * @property {module:model/Comment}
-     */
-    Comment: Comment,
-    /**
-     * The CommentHistoryResult model constructor.
-     * @property {module:model/CommentHistoryResult}
-     */
-    CommentHistoryResult: CommentHistoryResult,
-    /**
-     * The CommentPublish model constructor.
-     * @property {module:model/CommentPublish}
-     */
-    CommentPublish: CommentPublish,
-    /**
-     * The CommentThread model constructor.
-     * @property {module:model/CommentThread}
-     */
-    CommentThread: CommentThread,
-    /**
-     * The CommentsPublish model constructor.
-     * @property {module:model/CommentsPublish}
-     */
-    CommentsPublish: CommentsPublish,
-    /**
      * The Company model constructor.
      * @property {module:model/Company}
      */
@@ -636,11 +516,6 @@
      */
     ConnectDebugLog: ConnectDebugLog,
     /**
-     * The ConnectEventData model constructor.
-     * @property {module:model/ConnectEventData}
-     */
-    ConnectEventData: ConnectEventData,
-    /**
      * The ConnectFailureFilter model constructor.
      * @property {module:model/ConnectFailureFilter}
      */
@@ -665,21 +540,6 @@
      * @property {module:model/ConnectLogs}
      */
     ConnectLogs: ConnectLogs,
-    /**
-     * The ConnectSalesforceField model constructor.
-     * @property {module:model/ConnectSalesforceField}
-     */
-    ConnectSalesforceField: ConnectSalesforceField,
-    /**
-     * The ConnectSalesforceObject model constructor.
-     * @property {module:model/ConnectSalesforceObject}
-     */
-    ConnectSalesforceObject: ConnectSalesforceObject,
-    /**
-     * The ConnectUserObject model constructor.
-     * @property {module:model/ConnectUserObject}
-     */
-    ConnectUserObject: ConnectUserObject,
     /**
      * The ConsoleViewRequest model constructor.
      * @property {module:model/ConsoleViewRequest}
@@ -751,6 +611,11 @@
      */
     CustomField: CustomField,
     /**
+     * The CustomFieldV2 model constructor.
+     * @property {module:model/CustomFieldV2}
+     */
+    CustomFieldV2: CustomFieldV2,
+    /**
      * The CustomFields model constructor.
      * @property {module:model/CustomFields}
      */
@@ -785,11 +650,6 @@
      * @property {module:model/DiagnosticsSettingsInformation}
      */
     DiagnosticsSettingsInformation: DiagnosticsSettingsInformation,
-    /**
-     * The DirectDebitProcessorInformation model constructor.
-     * @property {module:model/DirectDebitProcessorInformation}
-     */
-    DirectDebitProcessorInformation: DirectDebitProcessorInformation,
     /**
      * The DobInformationInput model constructor.
      * @property {module:model/DobInformationInput}
@@ -860,26 +720,6 @@
      * @property {module:model/DocumentVisibilityList}
      */
     DocumentVisibilityList: DocumentVisibilityList,
-    /**
-     * The DowngradRequestBillingInfoResponse model constructor.
-     * @property {module:model/DowngradRequestBillingInfoResponse}
-     */
-    DowngradRequestBillingInfoResponse: DowngradRequestBillingInfoResponse,
-    /**
-     * The DowngradeBillingPlanInformation model constructor.
-     * @property {module:model/DowngradeBillingPlanInformation}
-     */
-    DowngradeBillingPlanInformation: DowngradeBillingPlanInformation,
-    /**
-     * The DowngradePlanUpdateResponse model constructor.
-     * @property {module:model/DowngradePlanUpdateResponse}
-     */
-    DowngradePlanUpdateResponse: DowngradePlanUpdateResponse,
-    /**
-     * The Draw model constructor.
-     * @property {module:model/Draw}
-     */
-    Draw: Draw,
     /**
      * The ENoteConfiguration model constructor.
      * @property {module:model/ENoteConfiguration}
@@ -971,20 +811,10 @@
      */
     EnvelopeIdsRequest: EnvelopeIdsRequest,
     /**
-     * The EnvelopeMetadata model constructor.
-     * @property {module:model/EnvelopeMetadata}
-     */
-    EnvelopeMetadata: EnvelopeMetadata,
-    /**
      * The EnvelopeNotificationRequest model constructor.
      * @property {module:model/EnvelopeNotificationRequest}
      */
     EnvelopeNotificationRequest: EnvelopeNotificationRequest,
-    /**
-     * The EnvelopePurgeConfiguration model constructor.
-     * @property {module:model/EnvelopePurgeConfiguration}
-     */
-    EnvelopePurgeConfiguration: EnvelopePurgeConfiguration,
     /**
      * The EnvelopeSummary model constructor.
      * @property {module:model/EnvelopeSummary}
@@ -996,6 +826,16 @@
      */
     EnvelopeTemplate: EnvelopeTemplate,
     /**
+     * The EnvelopeTemplateDefinition model constructor.
+     * @property {module:model/EnvelopeTemplateDefinition}
+     */
+    EnvelopeTemplateDefinition: EnvelopeTemplateDefinition,
+    /**
+     * The EnvelopeTemplateResult model constructor.
+     * @property {module:model/EnvelopeTemplateResult}
+     */
+    EnvelopeTemplateResult: EnvelopeTemplateResult,
+    /**
      * The EnvelopeTemplateResults model constructor.
      * @property {module:model/EnvelopeTemplateResults}
      */
@@ -1005,21 +845,6 @@
      * @property {module:model/EnvelopeTransactionStatus}
      */
     EnvelopeTransactionStatus: EnvelopeTransactionStatus,
-    /**
-     * The EnvelopeTransferRule model constructor.
-     * @property {module:model/EnvelopeTransferRule}
-     */
-    EnvelopeTransferRule: EnvelopeTransferRule,
-    /**
-     * The EnvelopeTransferRuleInformation model constructor.
-     * @property {module:model/EnvelopeTransferRuleInformation}
-     */
-    EnvelopeTransferRuleInformation: EnvelopeTransferRuleInformation,
-    /**
-     * The EnvelopeTransferRuleRequest model constructor.
-     * @property {module:model/EnvelopeTransferRuleRequest}
-     */
-    EnvelopeTransferRuleRequest: EnvelopeTransferRuleRequest,
     /**
      * The EnvelopeUpdateSummary model constructor.
      * @property {module:model/EnvelopeUpdateSummary}
@@ -1056,11 +881,6 @@
      */
     ExternalDocServiceErrorDetails: ExternalDocServiceErrorDetails,
     /**
-     * The ExternalDocumentSources model constructor.
-     * @property {module:model/ExternalDocumentSources}
-     */
-    ExternalDocumentSources: ExternalDocumentSources,
-    /**
      * The ExternalFile model constructor.
      * @property {module:model/ExternalFile}
      */
@@ -1070,21 +890,6 @@
      * @property {module:model/ExternalFolder}
      */
     ExternalFolder: ExternalFolder,
-    /**
-     * The FavoriteTemplatesContentItem model constructor.
-     * @property {module:model/FavoriteTemplatesContentItem}
-     */
-    FavoriteTemplatesContentItem: FavoriteTemplatesContentItem,
-    /**
-     * The FavoriteTemplatesInfo model constructor.
-     * @property {module:model/FavoriteTemplatesInfo}
-     */
-    FavoriteTemplatesInfo: FavoriteTemplatesInfo,
-    /**
-     * The FeatureAvailableMetadata model constructor.
-     * @property {module:model/FeatureAvailableMetadata}
-     */
-    FeatureAvailableMetadata: FeatureAvailableMetadata,
     /**
      * The FeatureSet model constructor.
      * @property {module:model/FeatureSet}
@@ -1116,6 +921,11 @@
      */
     Folder: Folder,
     /**
+     * The FolderItem model constructor.
+     * @property {module:model/FolderItem}
+     */
+    FolderItem: FolderItem,
+    /**
      * The FolderItemResponse model constructor.
      * @property {module:model/FolderItemResponse}
      */
@@ -1130,11 +940,6 @@
      * @property {module:model/FolderItemsResponse}
      */
     FolderItemsResponse: FolderItemsResponse,
-    /**
-     * The FolderSharedItem model constructor.
-     * @property {module:model/FolderSharedItem}
-     */
-    FolderSharedItem: FolderSharedItem,
     /**
      * The FoldersRequest model constructor.
      * @property {module:model/FoldersRequest}
@@ -1151,11 +956,6 @@
      */
     ForgottenPasswordInformation: ForgottenPasswordInformation,
     /**
-     * The FormDataItem model constructor.
-     * @property {module:model/FormDataItem}
-     */
-    FormDataItem: FormDataItem,
-    /**
      * The FormulaTab model constructor.
      * @property {module:model/FormulaTab}
      */
@@ -1165,11 +965,6 @@
      * @property {module:model/FullName}
      */
     FullName: FullName,
-    /**
-     * The GraphicsContext model constructor.
-     * @property {module:model/GraphicsContext}
-     */
-    GraphicsContext: GraphicsContext,
     /**
      * The Group model constructor.
      * @property {module:model/Group}
@@ -1181,20 +976,10 @@
      */
     GroupInformation: GroupInformation,
     /**
-     * The IdCheckConfiguration model constructor.
-     * @property {module:model/IdCheckConfiguration}
-     */
-    IdCheckConfiguration: IdCheckConfiguration,
-    /**
      * The IdCheckInformationInput model constructor.
      * @property {module:model/IdCheckInformationInput}
      */
     IdCheckInformationInput: IdCheckInformationInput,
-    /**
-     * The IdCheckSecurityStep model constructor.
-     * @property {module:model/IdCheckSecurityStep}
-     */
-    IdCheckSecurityStep: IdCheckSecurityStep,
     /**
      * The InPersonSigner model constructor.
      * @property {module:model/InPersonSigner}
@@ -1245,16 +1030,6 @@
      * @property {module:model/ListItem}
      */
     ListItem: ListItem,
-    /**
-     * The LocalePolicy model constructor.
-     * @property {module:model/LocalePolicy}
-     */
-    LocalePolicy: LocalePolicy,
-    /**
-     * The LocalePolicyTab model constructor.
-     * @property {module:model/LocalePolicyTab}
-     */
-    LocalePolicyTab: LocalePolicyTab,
     /**
      * The LockInformation model constructor.
      * @property {module:model/LockInformation}
@@ -1356,11 +1131,6 @@
      */
     Notarize: Notarize,
     /**
-     * The Notary model constructor.
-     * @property {module:model/Notary}
-     */
-    Notary: Notary,
-    /**
      * The NotaryHost model constructor.
      * @property {module:model/NotaryHost}
      */
@@ -1386,21 +1156,6 @@
      */
     NotaryJournalMetaData: NotaryJournalMetaData,
     /**
-     * The NotaryJurisdiction model constructor.
-     * @property {module:model/NotaryJurisdiction}
-     */
-    NotaryJurisdiction: NotaryJurisdiction,
-    /**
-     * The NotaryJurisdictionList model constructor.
-     * @property {module:model/NotaryJurisdictionList}
-     */
-    NotaryJurisdictionList: NotaryJurisdictionList,
-    /**
-     * The NotaryResult model constructor.
-     * @property {module:model/NotaryResult}
-     */
-    NotaryResult: NotaryResult,
-    /**
      * The Note model constructor.
      * @property {module:model/Note}
      */
@@ -1410,16 +1165,6 @@
      * @property {module:model/Notification}
      */
     Notification: Notification,
-    /**
-     * The NotificationDefaultSettings model constructor.
-     * @property {module:model/NotificationDefaultSettings}
-     */
-    NotificationDefaultSettings: NotificationDefaultSettings,
-    /**
-     * The NotificationDefaults model constructor.
-     * @property {module:model/NotificationDefaults}
-     */
-    NotificationDefaults: NotificationDefaults,
     /**
      * The OauthAccess model constructor.
      * @property {module:model/OauthAccess}
@@ -1446,16 +1191,6 @@
      */
     PageRequest: PageRequest,
     /**
-     * The PathExtendedElement model constructor.
-     * @property {module:model/PathExtendedElement}
-     */
-    PathExtendedElement: PathExtendedElement,
-    /**
-     * The PayPalLegacySettings model constructor.
-     * @property {module:model/PayPalLegacySettings}
-     */
-    PayPalLegacySettings: PayPalLegacySettings,
-    /**
      * The PaymentDetails model constructor.
      * @property {module:model/PaymentDetails}
      */
@@ -1466,11 +1201,6 @@
      */
     PaymentGatewayAccount: PaymentGatewayAccount,
     /**
-     * The PaymentGatewayAccountSetting model constructor.
-     * @property {module:model/PaymentGatewayAccountSetting}
-     */
-    PaymentGatewayAccountSetting: PaymentGatewayAccountSetting,
-    /**
      * The PaymentGatewayAccountsInfo model constructor.
      * @property {module:model/PaymentGatewayAccountsInfo}
      */
@@ -1480,11 +1210,6 @@
      * @property {module:model/PaymentLineItem}
      */
     PaymentLineItem: PaymentLineItem,
-    /**
-     * The PaymentMethodWithOptions model constructor.
-     * @property {module:model/PaymentMethodWithOptions}
-     */
-    PaymentMethodWithOptions: PaymentMethodWithOptions,
     /**
      * The PaymentProcessorInformation model constructor.
      * @property {module:model/PaymentProcessorInformation}
@@ -1505,16 +1230,6 @@
      * @property {module:model/PlanInformation}
      */
     PlanInformation: PlanInformation,
-    /**
-     * The PolyLine model constructor.
-     * @property {module:model/PolyLine}
-     */
-    PolyLine: PolyLine,
-    /**
-     * The PolyLineOverlay model constructor.
-     * @property {module:model/PolyLineOverlay}
-     */
-    PolyLineOverlay: PolyLineOverlay,
     /**
      * The PowerForm model constructor.
      * @property {module:model/PowerForm}
@@ -1556,16 +1271,6 @@
      */
     PowerFormsResponse: PowerFormsResponse,
     /**
-     * The ProofServiceResourceToken model constructor.
-     * @property {module:model/ProofServiceResourceToken}
-     */
-    ProofServiceResourceToken: ProofServiceResourceToken,
-    /**
-     * The ProofServiceViewLink model constructor.
-     * @property {module:model/ProofServiceViewLink}
-     */
-    ProofServiceViewLink: ProofServiceViewLink,
-    /**
      * The PropertyMetadata model constructor.
      * @property {module:model/PropertyMetadata}
      */
@@ -1595,11 +1300,6 @@
      * @property {module:model/RadioGroup}
      */
     RadioGroup: RadioGroup,
-    /**
-     * The RecipientAdditionalNotification model constructor.
-     * @property {module:model/RecipientAdditionalNotification}
-     */
-    RecipientAdditionalNotification: RecipientAdditionalNotification,
     /**
      * The RecipientAttachment model constructor.
      * @property {module:model/RecipientAttachment}
@@ -1651,20 +1351,15 @@
      */
     RecipientPhoneAuthentication: RecipientPhoneAuthentication,
     /**
-     * The RecipientPhoneNumber model constructor.
-     * @property {module:model/RecipientPhoneNumber}
-     */
-    RecipientPhoneNumber: RecipientPhoneNumber,
-    /**
-     * The RecipientPreviewRequest model constructor.
-     * @property {module:model/RecipientPreviewRequest}
-     */
-    RecipientPreviewRequest: RecipientPreviewRequest,
-    /**
      * The RecipientProofFile model constructor.
      * @property {module:model/RecipientProofFile}
      */
     RecipientProofFile: RecipientProofFile,
+    /**
+     * The RecipientSAMLAuthentication model constructor.
+     * @property {module:model/RecipientSAMLAuthentication}
+     */
+    RecipientSAMLAuthentication: RecipientSAMLAuthentication,
     /**
      * The RecipientSMSAuthentication model constructor.
      * @property {module:model/RecipientSMSAuthentication}
@@ -1725,6 +1420,11 @@
      * @property {module:model/ReturnUrlRequest}
      */
     ReturnUrlRequest: ReturnUrlRequest,
+    /**
+     * The SamlAssertionAttribute model constructor.
+     * @property {module:model/SamlAssertionAttribute}
+     */
+    SamlAssertionAttribute: SamlAssertionAttribute,
     /**
      * The SealIdentifier model constructor.
      * @property {module:model/SealIdentifier}
@@ -1821,11 +1521,6 @@
      */
     SigningGroupUsers: SigningGroupUsers,
     /**
-     * The SmartContractInformation model constructor.
-     * @property {module:model/SmartContractInformation}
-     */
-    SmartContractInformation: SmartContractInformation,
-    /**
      * The SmartSection model constructor.
      * @property {module:model/SmartSection}
      */
@@ -1871,11 +1566,6 @@
      */
     Ssn9InformationInput: Ssn9InformationInput,
     /**
-     * The Stamp model constructor.
-     * @property {module:model/Stamp}
-     */
-    Stamp: Stamp,
-    /**
      * The SupportedLanguages model constructor.
      * @property {module:model/SupportedLanguages}
      */
@@ -1885,11 +1575,6 @@
      * @property {module:model/TabAccountSettings}
      */
     TabAccountSettings: TabAccountSettings,
-    /**
-     * The TabGroup model constructor.
-     * @property {module:model/TabGroup}
-     */
-    TabGroup: TabGroup,
     /**
      * The TabMetadata model constructor.
      * @property {module:model/TabMetadata}
@@ -2106,11 +1791,6 @@
      */
     WorkspaceList: WorkspaceList,
     /**
-     * The WorkspaceSettings model constructor.
-     * @property {module:model/WorkspaceSettings}
-     */
-    WorkspaceSettings: WorkspaceSettings,
-    /**
      * The WorkspaceUser model constructor.
      * @property {module:model/WorkspaceUser}
      */
@@ -2161,20 +1841,10 @@
      */
     CustomTabsApi: CustomTabsApi,
     /**
-     * The DataFeedApi service constructor.
-     * @property {module:api/DataFeedApi}
-     */
-    DataFeedApi: DataFeedApi,
-    /**
      * The DiagnosticsApi service constructor.
      * @property {module:api/DiagnosticsApi}
      */
     DiagnosticsApi: DiagnosticsApi,
-    /**
-     * The EmailArchiveApi service constructor.
-     * @property {module:api/EmailArchiveApi}
-     */
-    EmailArchiveApi: EmailArchiveApi,
     /**
      * The EnvelopesApi service constructor.
      * @property {module:api/EnvelopesApi}

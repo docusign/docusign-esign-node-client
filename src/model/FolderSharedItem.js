@@ -30,6 +30,7 @@
   /**
    * The FolderSharedItem model module.
    * @module model/FolderSharedItem
+   * @version 3.0.0
    */
 
   /**

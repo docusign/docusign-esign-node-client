@@ -30,6 +30,7 @@
   /**
    * The FeatureAvailableMetadata model module.
    * @module model/FeatureAvailableMetadata
+   * @version 3.0.0
    */
 
   /**

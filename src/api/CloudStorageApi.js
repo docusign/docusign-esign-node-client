@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -113,7 +113,7 @@
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'POST',
+        '/v2/accounts/{accountId}/users/{userId}/cloud_storage', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -181,7 +181,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'DELETE',
+        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -249,7 +249,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'DELETE',
+        '/v2/accounts/{accountId}/users/{userId}/cloud_storage', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -327,7 +327,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -343,7 +343,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
 
     /**
      * Gets a list of all the items from the specified cloud storage provider.
-     * Retrieves a list of all the items in all the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
+     * Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {String} serviceId The ID of the service to access. 
@@ -352,12 +352,11 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {String} folderId The ID of the folder being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.cloudStorageFolderPath 
-     * @param {String} optsOrCallback.cloudStorageFolderidPlain 
-     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response. The default setting for this is 25. 
-     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list. Valid values are: * asc = ascending sort order * desc = descending sort order 
-     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list. Valid values are: * modified * name 
+     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25. 
+     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order 
+     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
      * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0. 
+     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
      * @param {module:api/CloudStorageApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExternalFolder}
      */
@@ -406,7 +405,6 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
       };
       var queryParams = {
         'cloud_storage_folder_path': optsOrCallback['cloudStorageFolderPath'],
-        'cloud_storage_folderid_plain': optsOrCallback['cloudStorageFolderidPlain'],
         'count': optsOrCallback['count'],
         'order': optsOrCallback['order'],
         'order_by': optsOrCallback['orderBy'],
@@ -424,7 +422,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
       var returnType = ExternalFolder;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -448,11 +446,11 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
 Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.cloudStorageFolderPath A comma separated list of folder IDs included in the request. 
-     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response. The default setting for this is 25. 
-     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list. Valid values are: * asc = ascending sort order * desc = descending sort order 
-     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list. Valid values are: * modified * name 
+     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25. 
+     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order 
+     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
      * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0. 
+     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
      * @param {module:api/CloudStorageApi~listFoldersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExternalFolder}
      */
@@ -512,7 +510,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
       var returnType = ExternalFolder;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -583,7 +581,7 @@ The {serviceId} parameter can be either the service name or serviceId.
       var returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/cloud_storage', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

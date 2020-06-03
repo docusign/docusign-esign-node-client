@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Attachment', 'model/CompositeTemplate', 'model/CustomFields', 'model/Document', 'model/EmailSettings', 'model/EnvelopeDocument', 'model/EnvelopeMetadata', 'model/EventNotification', 'model/Folder', 'model/LockInformation', 'model/Notification', 'model/PowerForm', 'model/Recipients', 'model/TemplateRole', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/Attachment', 'model/CompositeTemplate', 'model/CustomFields', 'model/Document', 'model/EmailSettings', 'model/EventNotification', 'model/LockInformation', 'model/Notification', 'model/Recipients', 'model/TemplateRole'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CompositeTemplate'), require('./CustomFields'), require('./Document'), require('./EmailSettings'), require('./EnvelopeDocument'), require('./EnvelopeMetadata'), require('./EventNotification'), require('./Folder'), require('./LockInformation'), require('./Notification'), require('./PowerForm'), require('./Recipients'), require('./TemplateRole'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CompositeTemplate'), require('./CustomFields'), require('./Document'), require('./EmailSettings'), require('./EventNotification'), require('./LockInformation'), require('./Notification'), require('./Recipients'), require('./TemplateRole'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeDefinition = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CompositeTemplate, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeMetadata, root.Docusign.EventNotification, root.Docusign.Folder, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PowerForm, root.Docusign.Recipients, root.Docusign.TemplateRole, root.Docusign.UserInfo);
+    root.Docusign.EnvelopeDefinition = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CompositeTemplate, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.EventNotification, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.Recipients, root.Docusign.TemplateRole);
   }
-}(this, function(ApiClient, Attachment, CompositeTemplate, CustomFields, Document, EmailSettings, EnvelopeDocument, EnvelopeMetadata, EventNotification, Folder, LockInformation, Notification, PowerForm, Recipients, TemplateRole, UserInfo) {
+}(this, function(ApiClient, Attachment, CompositeTemplate, CustomFields, Document, EmailSettings, EventNotification, LockInformation, Notification, Recipients, TemplateRole) {
   'use strict';
 
 
@@ -54,14 +54,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('accessControlListBase64')) {
-        obj['accessControlListBase64'] = ApiClient.convertToType(data['accessControlListBase64'], 'String');
-      }
       if (data.hasOwnProperty('accessibility')) {
         obj['accessibility'] = ApiClient.convertToType(data['accessibility'], 'String');
-      }
-      if (data.hasOwnProperty('allowComments')) {
-        obj['allowComments'] = ApiClient.convertToType(data['allowComments'], 'String');
       }
       if (data.hasOwnProperty('allowMarkup')) {
         obj['allowMarkup'] = ApiClient.convertToType(data['allowMarkup'], 'String');
@@ -74,9 +68,6 @@
       }
       if (data.hasOwnProperty('allowViewHistory')) {
         obj['allowViewHistory'] = ApiClient.convertToType(data['allowViewHistory'], 'String');
-      }
-      if (data.hasOwnProperty('anySigner')) {
-        obj['anySigner'] = ApiClient.convertToType(data['anySigner'], 'String');
       }
       if (data.hasOwnProperty('asynchronous')) {
         obj['asynchronous'] = ApiClient.convertToType(data['asynchronous'], 'String');
@@ -159,23 +150,11 @@
       if (data.hasOwnProperty('enforceSignerVisibility')) {
         obj['enforceSignerVisibility'] = ApiClient.convertToType(data['enforceSignerVisibility'], 'String');
       }
-      if (data.hasOwnProperty('envelopeAttachments')) {
-        obj['envelopeAttachments'] = ApiClient.convertToType(data['envelopeAttachments'], [Attachment]);
-      }
-      if (data.hasOwnProperty('envelopeDocuments')) {
-        obj['envelopeDocuments'] = ApiClient.convertToType(data['envelopeDocuments'], [EnvelopeDocument]);
-      }
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
       }
       if (data.hasOwnProperty('envelopeIdStamping')) {
         obj['envelopeIdStamping'] = ApiClient.convertToType(data['envelopeIdStamping'], 'String');
-      }
-      if (data.hasOwnProperty('envelopeLocation')) {
-        obj['envelopeLocation'] = ApiClient.convertToType(data['envelopeLocation'], 'String');
-      }
-      if (data.hasOwnProperty('envelopeMetadata')) {
-        obj['envelopeMetadata'] = EnvelopeMetadata.constructFromObject(data['envelopeMetadata']);
       }
       if (data.hasOwnProperty('envelopeUri')) {
         obj['envelopeUri'] = ApiClient.convertToType(data['envelopeUri'], 'String');
@@ -183,53 +162,17 @@
       if (data.hasOwnProperty('eventNotification')) {
         obj['eventNotification'] = EventNotification.constructFromObject(data['eventNotification']);
       }
-      if (data.hasOwnProperty('eventNotifications')) {
-        obj['eventNotifications'] = ApiClient.convertToType(data['eventNotifications'], [EventNotification]);
-      }
-      if (data.hasOwnProperty('expireAfter')) {
-        obj['expireAfter'] = ApiClient.convertToType(data['expireAfter'], 'String');
-      }
-      if (data.hasOwnProperty('expireDateTime')) {
-        obj['expireDateTime'] = ApiClient.convertToType(data['expireDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('expireEnabled')) {
-        obj['expireEnabled'] = ApiClient.convertToType(data['expireEnabled'], 'String');
-      }
-      if (data.hasOwnProperty('externalEnvelopeId')) {
-        obj['externalEnvelopeId'] = ApiClient.convertToType(data['externalEnvelopeId'], 'String');
-      }
-      if (data.hasOwnProperty('folders')) {
-        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
-      }
-      if (data.hasOwnProperty('hasComments')) {
-        obj['hasComments'] = ApiClient.convertToType(data['hasComments'], 'String');
-      }
-      if (data.hasOwnProperty('hasFormDataChanged')) {
-        obj['hasFormDataChanged'] = ApiClient.convertToType(data['hasFormDataChanged'], 'String');
-      }
-      if (data.hasOwnProperty('hasWavFile')) {
-        obj['hasWavFile'] = ApiClient.convertToType(data['hasWavFile'], 'String');
-      }
-      if (data.hasOwnProperty('holder')) {
-        obj['holder'] = ApiClient.convertToType(data['holder'], 'String');
-      }
       if (data.hasOwnProperty('initialSentDateTime')) {
         obj['initialSentDateTime'] = ApiClient.convertToType(data['initialSentDateTime'], 'String');
       }
       if (data.hasOwnProperty('is21CFRPart11')) {
         obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
       }
-      if (data.hasOwnProperty('isDynamicEnvelope')) {
-        obj['isDynamicEnvelope'] = ApiClient.convertToType(data['isDynamicEnvelope'], 'String');
-      }
       if (data.hasOwnProperty('isSignatureProviderEnvelope')) {
         obj['isSignatureProviderEnvelope'] = ApiClient.convertToType(data['isSignatureProviderEnvelope'], 'String');
       }
       if (data.hasOwnProperty('lastModifiedDateTime')) {
         obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('location')) {
-        obj['location'] = ApiClient.convertToType(data['location'], 'String');
       }
       if (data.hasOwnProperty('lockInformation')) {
         obj['lockInformation'] = LockInformation.constructFromObject(data['lockInformation']);
@@ -246,15 +189,6 @@
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
-      if (data.hasOwnProperty('powerForm')) {
-        obj['powerForm'] = PowerForm.constructFromObject(data['powerForm']);
-      }
-      if (data.hasOwnProperty('purgeCompletedDate')) {
-        obj['purgeCompletedDate'] = ApiClient.convertToType(data['purgeCompletedDate'], 'String');
-      }
-      if (data.hasOwnProperty('purgeRequestDate')) {
-        obj['purgeRequestDate'] = ApiClient.convertToType(data['purgeRequestDate'], 'String');
-      }
       if (data.hasOwnProperty('purgeState')) {
         obj['purgeState'] = ApiClient.convertToType(data['purgeState'], 'String');
       }
@@ -266,9 +200,6 @@
       }
       if (data.hasOwnProperty('recipientsUri')) {
         obj['recipientsUri'] = ApiClient.convertToType(data['recipientsUri'], 'String');
-      }
-      if (data.hasOwnProperty('sender')) {
-        obj['sender'] = UserInfo.constructFromObject(data['sender']);
       }
       if (data.hasOwnProperty('sentDateTime')) {
         obj['sentDateTime'] = ApiClient.convertToType(data['sentDateTime'], 'String');
@@ -284,9 +215,6 @@
       }
       if (data.hasOwnProperty('statusChangedDateTime')) {
         obj['statusChangedDateTime'] = ApiClient.convertToType(data['statusChangedDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('statusDateTime')) {
-        obj['statusDateTime'] = ApiClient.convertToType(data['statusDateTime'], 'String');
       }
       if (data.hasOwnProperty('templateId')) {
         obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
@@ -314,20 +242,10 @@
   }
 
   /**
-   * 
-   * @member {String} accessControlListBase64
-   */
-  exports.prototype['accessControlListBase64'] = undefined;
-  /**
    * Sets the document reading zones for screen reader applications.  This element can only be used if Document Accessibility is enabled for the account.   ###### Note: This information is currently generated from the DocuSign web console by setting the reading zones when creating a template, exporting the reading zone string information, and adding it here.
    * @member {String} accessibility
    */
   exports.prototype['accessibility'] = undefined;
-  /**
-   * 
-   * @member {String} allowComments
-   */
-  exports.prototype['allowComments'] = undefined;
   /**
    * When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this
    * @member {String} allowMarkup
@@ -348,11 +266,6 @@
    * @member {String} allowViewHistory
    */
   exports.prototype['allowViewHistory'] = undefined;
-  /**
-   * 
-   * @member {String} anySigner
-   */
-  exports.prototype['anySigner'] = undefined;
   /**
    * When set to **true**, the envelope is queued for processing and the value of the `status` property is set to 'Processing'. Additionally, get status calls return 'Processing' until completed.
    * @member {String} asynchronous
@@ -487,16 +400,6 @@
    */
   exports.prototype['enforceSignerVisibility'] = undefined;
   /**
-   * 
-   * @member {Array.<module:model/Attachment>} envelopeAttachments
-   */
-  exports.prototype['envelopeAttachments'] = undefined;
-  /**
-   * 
-   * @member {Array.<module:model/EnvelopeDocument>} envelopeDocuments
-   */
-  exports.prototype['envelopeDocuments'] = undefined;
-  /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
@@ -507,15 +410,6 @@
    */
   exports.prototype['envelopeIdStamping'] = undefined;
   /**
-   * 
-   * @member {String} envelopeLocation
-   */
-  exports.prototype['envelopeLocation'] = undefined;
-  /**
-   * @member {module:model/EnvelopeMetadata} envelopeMetadata
-   */
-  exports.prototype['envelopeMetadata'] = undefined;
-  /**
    * Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
    * @member {String} envelopeUri
    */
@@ -524,56 +418,6 @@
    * @member {module:model/EventNotification} eventNotification
    */
   exports.prototype['eventNotification'] = undefined;
-  /**
-   * 
-   * @member {Array.<module:model/EventNotification>} eventNotifications
-   */
-  exports.prototype['eventNotifications'] = undefined;
-  /**
-   * 
-   * @member {String} expireAfter
-   */
-  exports.prototype['expireAfter'] = undefined;
-  /**
-   * 
-   * @member {String} expireDateTime
-   */
-  exports.prototype['expireDateTime'] = undefined;
-  /**
-   * 
-   * @member {String} expireEnabled
-   */
-  exports.prototype['expireEnabled'] = undefined;
-  /**
-   * 
-   * @member {String} externalEnvelopeId
-   */
-  exports.prototype['externalEnvelopeId'] = undefined;
-  /**
-   * 
-   * @member {Array.<module:model/Folder>} folders
-   */
-  exports.prototype['folders'] = undefined;
-  /**
-   * 
-   * @member {String} hasComments
-   */
-  exports.prototype['hasComments'] = undefined;
-  /**
-   * 
-   * @member {String} hasFormDataChanged
-   */
-  exports.prototype['hasFormDataChanged'] = undefined;
-  /**
-   * 
-   * @member {String} hasWavFile
-   */
-  exports.prototype['hasWavFile'] = undefined;
-  /**
-   * 
-   * @member {String} holder
-   */
-  exports.prototype['holder'] = undefined;
   /**
    * 
    * @member {String} initialSentDateTime
@@ -586,11 +430,6 @@
   exports.prototype['is21CFRPart11'] = undefined;
   /**
    * 
-   * @member {String} isDynamicEnvelope
-   */
-  exports.prototype['isDynamicEnvelope'] = undefined;
-  /**
-   * 
    * @member {String} isSignatureProviderEnvelope
    */
   exports.prototype['isSignatureProviderEnvelope'] = undefined;
@@ -599,11 +438,6 @@
    * @member {String} lastModifiedDateTime
    */
   exports.prototype['lastModifiedDateTime'] = undefined;
-  /**
-   * 
-   * @member {String} location
-   */
-  exports.prototype['location'] = undefined;
   /**
    * @member {module:model/LockInformation} lockInformation
    */
@@ -628,20 +462,6 @@
    */
   exports.prototype['password'] = undefined;
   /**
-   * @member {module:model/PowerForm} powerForm
-   */
-  exports.prototype['powerForm'] = undefined;
-  /**
-   * 
-   * @member {String} purgeCompletedDate
-   */
-  exports.prototype['purgeCompletedDate'] = undefined;
-  /**
-   * 
-   * @member {String} purgeRequestDate
-   */
-  exports.prototype['purgeRequestDate'] = undefined;
-  /**
    * Initiates a purge request. Valid values are: * documents_queued: Places envelope documents in the purge queue. * documents_and_metadata_queued: Places envelope documents and metadata in the purge queue. 
    * @member {String} purgeState
    */
@@ -660,10 +480,6 @@
    * @member {String} recipientsUri
    */
   exports.prototype['recipientsUri'] = undefined;
-  /**
-   * @member {module:model/UserInfo} sender
-   */
-  exports.prototype['sender'] = undefined;
   /**
    * The date and time the envelope was sent.
    * @member {String} sentDateTime
@@ -689,11 +505,6 @@
    * @member {String} statusChangedDateTime
    */
   exports.prototype['statusChangedDateTime'] = undefined;
-  /**
-   * 
-   * @member {String} statusDateTime
-   */
-  exports.prototype['statusDateTime'] = undefined;
   /**
    * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
    * @member {String} templateId
