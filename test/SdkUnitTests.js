@@ -1103,7 +1103,8 @@ describe('SDK Unit Tests:', function (done) {
             console.log('TemplateSummary Number: ' + JSON.stringify(template));
             assert.equal(!!template.numberTabs, true);
             assert.equal(!!template.numberTabs.length, true);
-            assert.equal(isNaN(template.numberTabs[0]), false);
+            assert.equal(isNaN(template.numberTabs[0]), true);
+            assert.equal(typeof (template.numberTabs[0]) === 'number', true);
             assert.equal(!!template.dateTabs, true);
             assert.equal(!!template.dateTabs.length, true);
             return done();
