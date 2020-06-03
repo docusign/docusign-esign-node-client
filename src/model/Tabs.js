@@ -23,7 +23,7 @@
     }
     root.Docusign.Tabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.CommentThread, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Draw, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.ModelDate, root.Docusign.ModelNumber, root.Docusign.Notarize, root.Docusign.Note, root.Docusign.PolyLineOverlay, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.SmartSection, root.Docusign.Ssn, root.Docusign.TabGroup, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
   }
-}(this, function(ApiClient, Approve, Checkbox, CommentThread, Company, DateSigned, Decline, Draw, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, ModelDate, Notarize, Note, PolyLineOverlay, RadioGroup, SignHere, SignerAttachment, SmartSection, Ssn, TabGroup, Text, Title, View, Zip) {
+}(this, function(ApiClient, Approve, Checkbox, CommentThread, Company, DateSigned, Decline, Draw, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, ModelDate, ModelNumber, Notarize, Note, PolyLineOverlay, RadioGroup, SignHere, SignerAttachment, SmartSection, Ssn, TabGroup, Text, Title, View, Zip) {
   'use strict';
 
 
@@ -112,7 +112,7 @@
         obj['noteTabs'] = ApiClient.convertToType(data['noteTabs'], [Note]);
       }
       if (data.hasOwnProperty('numberTabs')) {
-        obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], [ModelNumber]);
+        obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], ['ModelNumber']);
       }
       if (data.hasOwnProperty('polyLineOverlayTabs')) {
         obj['polyLineOverlayTabs'] = ApiClient.convertToType(data['polyLineOverlayTabs'], [PolyLineOverlay]);
