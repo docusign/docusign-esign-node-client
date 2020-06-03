@@ -343,7 +343,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
 
     /**
      * Gets a list of all the items from the specified cloud storage provider.
-     * Retrieves a list of all the items in all the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
+     * Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {String} serviceId The ID of the service to access. 
@@ -353,11 +353,11 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.cloudStorageFolderPath 
      * @param {String} optsOrCallback.cloudStorageFolderidPlain 
-     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response. The default setting for this is 25. 
-     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list. Valid values are: * asc = ascending sort order * desc = descending sort order 
-     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list. Valid values are: * modified * name 
+     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25. 
+     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order 
+     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
      * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0. 
+     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
      * @param {module:api/CloudStorageApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExternalFolder}
      */
@@ -448,11 +448,11 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
 Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.cloudStorageFolderPath A comma separated list of folder IDs included in the request. 
-     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response. The default setting for this is 25. 
-     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list. Valid values are: * asc = ascending sort order * desc = descending sort order 
-     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list. Valid values are: * modified * name 
+     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25. 
+     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order 
+     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
      * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0. 
+     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
      * @param {module:api/CloudStorageApi~listFoldersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExternalFolder}
      */

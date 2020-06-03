@@ -1440,7 +1440,7 @@ For an in process envelope, one that has been sent and has not been completed or
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
+     * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
      * @param {module:model/Recipients} optsOrCallback.recipients 
      * @param {module:api/EnvelopesApi~createRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
