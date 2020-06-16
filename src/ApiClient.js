@@ -445,7 +445,7 @@
     // Rely on SuperAgent for parsing response body.
     // See http://visionmedia.github.io/superagent/#parsing-response-bodies
     var data = response.body || (response.res && response.res.data);
-    if (data == null || !Object.keys(data).length) {
+    if (typeof data !== 'string' && (data == null || !Object.keys(data).length)) {
       // SuperAgent does not always produce a body; use the unparsed response as a fallback
       data = response.text;
     }

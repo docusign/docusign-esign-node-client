@@ -1,5 +1,5 @@
 {
-  "name": "docusign-esign",
+  "name": "@side/docusign-esign",
   "version": "5.4.0",
   "description": "DocuSign Node.js API client.",
   "license": "MIT",
