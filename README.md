@@ -1,4 +1,4 @@
-﻿# The Official DocuSign Node Client
+# The Official DocuSign Node Client
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
@@ -58,7 +58,7 @@ This client has the following external dependencies:
 
 ### Launchers
 
-DocuSign provides a sample application code referred to as a [Launcher](https://github.com/docusign/code-examples-node). The Launcher contains a set of 31 common use cases and associated source files. These examples use either DocuSign&#39;s [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) or [JSON Web Tokens (JWT)](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken) flows.
+DocuSign provides a sample application referred to as a [Launcher](https://github.com/docusign/eg-03-node-auth-code-grant). The Launcher contains a set of 18 common use cases and associated source files. These examples use DocuSign&#39;s [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
 
 ### Proof-of-concept applications
 
@@ -72,8 +72,8 @@ For security purposes, DocuSign recommends using the [Authorization Code Grant](
 
 There are other use-case scenarios, such as **single-page applications** (SPA) that use **Cross-Origin Resource Sharing** (CORS), or where there may not be a user to interact with your Service Account. For these use cases, DocuSign also supports [JWT](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken) and [Implicit](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-implicit) grants. For Ccode eExamples, see the links below:
 
-- [JWT (JSON Web Token)](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken)
-- [Implicit Grant] (https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-implicit)
+- [JWT (JSON Web Token)](https://github.com/docusign/eg-01-node-jwt)
+- Implicit Grant (coming soon)
 
 ## Support
 
@@ -91,9 +91,3 @@ The DocuSign Node Client is licensed under the [MIT License](https://github.com/
 [travis-url]: https://travis-ci.org/docusign/docusign-node-client
 [coveralls-image]: https://coveralls.io/repos/github/docusign/DocuSign-Node-Client/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/docusign/DocuSign-Node-Client?branch=master
-
-### Additional Resources
-* [DocuSign Developer Center](https://developers.docusign.com)
-* [DocuSign API on Twitter](https://twitter.com/docusignapi)
-* [DocuSign For Developers on LinkedIn](https://www.linkedin.com/showcase/docusign-for-developers/)
-* [DocuSign For Developers on YouTube](https://www.youtube.com/channel/UCJSJ2kMs_qeQotmw4-lX2NQ)
