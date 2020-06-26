@@ -7,9 +7,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || 'localhost';
 /*
-const integratorKey = 'ae30ea4e-xxxx-xxxx-xxxx-fcb57d2dc4df'; // An IK for a non-mobile docusign account
-const integratorKeyImplicit = '68c1711f-xxxx-xxxx-xxxx-b49b4211d831'; // an IK with mobile selected in Docusign admin
-const clientSecret = 'b4dccdbe-xxxx-xxxx-xxxx-b2f0f7448f8f';
+const integratorKey = 'ae30ea4e-3959-4d1c-b867-fcb57d2dc4df'; // An IK for a non-mobile docusign account
+const integratorKeyImplicit = '68c1711f-8b19-47b1-888f-b49b4211d831'; // an IK with mobile selected in Docusign admin
+const clientSecret = 'b4dccdbe-232f-46cc-96c5-b2f0f7448f8f';
 const redirectUri = 'http://localhost:3000/auth';
 const basePath = 'https://demo.docusign.net/restapi';
 
