@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -108,7 +108,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = GroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups', 'POST',
+        '/v2/accounts/{accountId}/groups', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -176,7 +176,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = BrandsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups/{groupId}/brands', 'DELETE',
+        '/v2/accounts/{accountId}/groups/{groupId}/brands', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -245,7 +245,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = UsersResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups/{groupId}/users', 'DELETE',
+        '/v2/accounts/{accountId}/groups/{groupId}/users', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -306,7 +306,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = GroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups', 'DELETE',
+        '/v2/accounts/{accountId}/groups', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -365,7 +365,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = BrandsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups/{groupId}/brands', 'GET',
+        '/v2/accounts/{accountId}/groups/{groupId}/brands', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -436,7 +436,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = UsersResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups/{groupId}/users', 'GET',
+        '/v2/accounts/{accountId}/groups/{groupId}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -457,7 +457,6 @@ Groups can be used to help manage users by associating users with a group. You c
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 1 and less than or equal to 100.
      * @param {String} optsOrCallback.groupType 
-     * @param {String} optsOrCallback.includeUsercount 
      * @param {String} optsOrCallback.searchText 
      * @param {String} optsOrCallback.startPosition Starting value for the list.
      * @param {module:api/GroupsApi~listGroupsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -491,7 +490,6 @@ Groups can be used to help manage users by associating users with a group. You c
       var queryParams = {
         'count': optsOrCallback['count'],
         'group_type': optsOrCallback['groupType'],
-        'include_usercount': optsOrCallback['includeUsercount'],
         'search_text': optsOrCallback['searchText'],
         'start_position': optsOrCallback['startPosition']
       };
@@ -506,7 +504,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = GroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups', 'GET',
+        '/v2/accounts/{accountId}/groups', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -574,7 +572,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = BrandsResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups/{groupId}/brands', 'PUT',
+        '/v2/accounts/{accountId}/groups/{groupId}/brands', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -642,7 +640,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = UsersResponse;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups/{groupId}/users', 'PUT',
+        '/v2/accounts/{accountId}/groups/{groupId}/users', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -703,7 +701,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var returnType = GroupInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/groups', 'PUT',
+        '/v2/accounts/{accountId}/groups', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

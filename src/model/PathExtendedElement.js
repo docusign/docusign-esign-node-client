@@ -30,6 +30,7 @@
   /**
    * The PathExtendedElement model module.
    * @module model/PathExtendedElement
+   * @version 3.0.0
    */
 
   /**

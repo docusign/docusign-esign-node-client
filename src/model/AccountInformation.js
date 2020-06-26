@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountSettingsInformation', 'model/RecipientDomain'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountSettingsInformation'), require('./RecipientDomain'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountSettingsInformation, root.Docusign.RecipientDomain);
+    root.Docusign.AccountInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient, AccountSettingsInformation, RecipientDomain) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -61,9 +61,6 @@
       if (data.hasOwnProperty('accountName')) {
         obj['accountName'] = ApiClient.convertToType(data['accountName'], 'String');
       }
-      if (data.hasOwnProperty('accountSettings')) {
-        obj['accountSettings'] = AccountSettingsInformation.constructFromObject(data['accountSettings']);
-      }
       if (data.hasOwnProperty('allowTransactionRooms')) {
         obj['allowTransactionRooms'] = ApiClient.convertToType(data['allowTransactionRooms'], 'String');
       }
@@ -85,6 +82,9 @@
       if (data.hasOwnProperty('billingProfile')) {
         obj['billingProfile'] = ApiClient.convertToType(data['billingProfile'], 'String');
       }
+      if (data.hasOwnProperty('canCancelRenewal')) {
+        obj['canCancelRenewal'] = ApiClient.convertToType(data['canCancelRenewal'], 'String');
+      }
       if (data.hasOwnProperty('canUpgrade')) {
         obj['canUpgrade'] = ApiClient.convertToType(data['canUpgrade'], 'String');
       }
@@ -105,9 +105,6 @@
       }
       if (data.hasOwnProperty('docuSignLandingUrl')) {
         obj['docuSignLandingUrl'] = ApiClient.convertToType(data['docuSignLandingUrl'], 'String');
-      }
-      if (data.hasOwnProperty('dssValues')) {
-        obj['dssValues'] = ApiClient.convertToType(data['dssValues'], {'String': 'String'});
       }
       if (data.hasOwnProperty('envelopeSendingBlocked')) {
         obj['envelopeSendingBlocked'] = ApiClient.convertToType(data['envelopeSendingBlocked'], 'String');
@@ -139,9 +136,6 @@
       if (data.hasOwnProperty('planStartDate')) {
         obj['planStartDate'] = ApiClient.convertToType(data['planStartDate'], 'String');
       }
-      if (data.hasOwnProperty('recipientDomains')) {
-        obj['recipientDomains'] = ApiClient.convertToType(data['recipientDomains'], [RecipientDomain]);
-      }
       if (data.hasOwnProperty('seatsAllowed')) {
         obj['seatsAllowed'] = ApiClient.convertToType(data['seatsAllowed'], 'String');
       }
@@ -171,10 +165,6 @@
    * @member {String} accountName
    */
   exports.prototype['accountName'] = undefined;
-  /**
-   * @member {module:model/AccountSettingsInformation} accountSettings
-   */
-  exports.prototype['accountSettings'] = undefined;
   /**
    * When set to **true**, the transaction rooms feature exposed through the Workspaces API is enabled.
    * @member {String} allowTransactionRooms
@@ -211,6 +201,11 @@
    */
   exports.prototype['billingProfile'] = undefined;
   /**
+   * Reserved: TBD
+   * @member {String} canCancelRenewal
+   */
+  exports.prototype['canCancelRenewal'] = undefined;
+  /**
    * When set to **true**, specifies that you can upgrade the account through the API.
    * @member {String} canUpgrade
    */
@@ -245,11 +240,6 @@
    * @member {String} docuSignLandingUrl
    */
   exports.prototype['docuSignLandingUrl'] = undefined;
-  /**
-   * 
-   * @member {Object.<String, String>} dssValues
-   */
-  exports.prototype['dssValues'] = undefined;
   /**
    * 
    * @member {String} envelopeSendingBlocked
@@ -300,11 +290,6 @@
    * @member {String} planStartDate
    */
   exports.prototype['planStartDate'] = undefined;
-  /**
-   * 
-   * @member {Array.<module:model/RecipientDomain>} recipientDomains
-   */
-  exports.prototype['recipientDomains'] = undefined;
   /**
    * 
    * @member {String} seatsAllowed

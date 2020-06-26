@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -69,9 +69,6 @@
       if (data.hasOwnProperty('lockInformation')) {
         obj['lockInformation'] = LockInformation.constructFromObject(data['lockInformation']);
       }
-      if (data.hasOwnProperty('purgeState')) {
-        obj['purgeState'] = ApiClient.convertToType(data['purgeState'], 'String');
-      }
       if (data.hasOwnProperty('recipientUpdateResults')) {
         obj['recipientUpdateResults'] = ApiClient.convertToType(data['recipientUpdateResults'], [RecipientUpdateResponse]);
       }
@@ -107,11 +104,6 @@
    * @member {module:model/LockInformation} lockInformation
    */
   exports.prototype['lockInformation'] = undefined;
-  /**
-   * 
-   * @member {String} purgeState
-   */
-  exports.prototype['purgeState'] = undefined;
   /**
    * 
    * @member {Array.<module:model/RecipientUpdateResponse>} recipientUpdateResults

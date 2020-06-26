@@ -12,24 +12,25 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AdminMessage', 'model/AskAnAdmin', 'model/SettingsMetadata'], factory);
+    define(['ApiClient', 'model/SettingsMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AdminMessage'), require('./AskAnAdmin'), require('./SettingsMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./SettingsMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountUISettings = factory(root.Docusign.ApiClient, root.Docusign.AdminMessage, root.Docusign.AskAnAdmin, root.Docusign.SettingsMetadata);
+    root.Docusign.AccountUISettings = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, AdminMessage, AskAnAdmin, SettingsMetadata) {
+}(this, function(ApiClient, SettingsMetadata) {
   'use strict';
 
 
   /**
    * The AccountUISettings model module.
    * @module model/AccountUISettings
+   * @version 3.0.0
    */
 
   /**
@@ -54,18 +55,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('adminMessage')) {
-        obj['adminMessage'] = AdminMessage.constructFromObject(data['adminMessage']);
-      }
-      if (data.hasOwnProperty('askAnAdmin')) {
-        obj['askAnAdmin'] = AskAnAdmin.constructFromObject(data['askAnAdmin']);
-      }
-      if (data.hasOwnProperty('enableAdminMessage')) {
-        obj['enableAdminMessage'] = ApiClient.convertToType(data['enableAdminMessage'], 'String');
-      }
-      if (data.hasOwnProperty('enableAdminMessageMetadata')) {
-        obj['enableAdminMessageMetadata'] = SettingsMetadata.constructFromObject(data['enableAdminMessageMetadata']);
-      }
       if (data.hasOwnProperty('enableEasySignCanUseMultiTemplateApply')) {
         obj['enableEasySignCanUseMultiTemplateApply'] = ApiClient.convertToType(data['enableEasySignCanUseMultiTemplateApply'], 'String');
       }
@@ -77,12 +66,6 @@
       }
       if (data.hasOwnProperty('enableEasySignTemplateUploadMetadata')) {
         obj['enableEasySignTemplateUploadMetadata'] = SettingsMetadata.constructFromObject(data['enableEasySignTemplateUploadMetadata']);
-      }
-      if (data.hasOwnProperty('enableEnvelopeCopyWithData')) {
-        obj['enableEnvelopeCopyWithData'] = ApiClient.convertToType(data['enableEnvelopeCopyWithData'], 'String');
-      }
-      if (data.hasOwnProperty('enableEnvelopeCopyWithDataMetadata')) {
-        obj['enableEnvelopeCopyWithDataMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeCopyWithDataMetadata']);
       }
       if (data.hasOwnProperty('hideSendAnEnvelope')) {
         obj['hideSendAnEnvelope'] = ApiClient.convertToType(data['hideSendAnEnvelope'], 'String');
@@ -120,33 +103,10 @@
       if (data.hasOwnProperty('shouldRedactAccessCodeMetadata')) {
         obj['shouldRedactAccessCodeMetadata'] = SettingsMetadata.constructFromObject(data['shouldRedactAccessCodeMetadata']);
       }
-      if (data.hasOwnProperty('uploadNewImageToSignOrInitial')) {
-        obj['uploadNewImageToSignOrInitial'] = ApiClient.convertToType(data['uploadNewImageToSignOrInitial'], 'String');
-      }
-      if (data.hasOwnProperty('uploadNewImageToSignOrInitialMetadata')) {
-        obj['uploadNewImageToSignOrInitialMetadata'] = SettingsMetadata.constructFromObject(data['uploadNewImageToSignOrInitialMetadata']);
-      }
     }
     return obj;
   }
 
-  /**
-   * @member {module:model/AdminMessage} adminMessage
-   */
-  exports.prototype['adminMessage'] = undefined;
-  /**
-   * @member {module:model/AskAnAdmin} askAnAdmin
-   */
-  exports.prototype['askAnAdmin'] = undefined;
-  /**
-   * 
-   * @member {String} enableAdminMessage
-   */
-  exports.prototype['enableAdminMessage'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} enableAdminMessageMetadata
-   */
-  exports.prototype['enableAdminMessageMetadata'] = undefined;
   /**
    * 
    * @member {String} enableEasySignCanUseMultiTemplateApply
@@ -165,15 +125,6 @@
    * @member {module:model/SettingsMetadata} enableEasySignTemplateUploadMetadata
    */
   exports.prototype['enableEasySignTemplateUploadMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} enableEnvelopeCopyWithData
-   */
-  exports.prototype['enableEnvelopeCopyWithData'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} enableEnvelopeCopyWithDataMetadata
-   */
-  exports.prototype['enableEnvelopeCopyWithDataMetadata'] = undefined;
   /**
    * 
    * @member {String} hideSendAnEnvelope
@@ -228,15 +179,6 @@
    * @member {module:model/SettingsMetadata} shouldRedactAccessCodeMetadata
    */
   exports.prototype['shouldRedactAccessCodeMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} uploadNewImageToSignOrInitial
-   */
-  exports.prototype['uploadNewImageToSignOrInitial'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} uploadNewImageToSignOrInitialMetadata
-   */
-  exports.prototype['uploadNewImageToSignOrInitialMetadata'] = undefined;
 
 
 

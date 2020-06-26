@@ -2,52 +2,29 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [v5.4.0] - eSignature API v2.1-20.1.02
+## [v4.7.0] - eSignature API v2-20.1.02
 ### Changed
-- Added support for version v2.1-20.1.02 of the DocuSign eSignature API.
+- Added support for version v2-20.1.02 of the DocuSign eSignature API.
 - Updated the SDK release version.
 
-## [v5.3.0] - eSignature API v2.1-20.1.00
+## [v4.6.0] - eSignature API v2-20.1.00
 ### Changed
-
-- Added support for version v2.1-20.1.00 of the DocuSign eSignature API.
-- Updated the SDK release version.
-
-### Added
-
-- Added the new property `copyRecipientData` to envelopes. When set to **true**, the information that recipients enter is retained when you clone an envelope. For example, if you resend an envelope that was declined or voided after one or more recipients entered data, that data is retained. Note that the new account UI setting `enableEnvelopeCopyWithData` must be enabled for the account.
-- Added `RecipientIdentityInputOption` and `inputOptions` to `RecipientIdentityVerification.js`: Reserved for DocuSign.
-
-### Deleted
-
-- Deleted the GET methods for account seals providers, which returned the seals for an account.
-
-## [v5.2.0] - eSignature API v2.1-19.4.01
-### Changed
-- The SDK now supports version 19.4.01 of the DocuSign eSignature API.
+- The SDK now supports version 20.1.00 of the DocuSign eSignature v2 API.
 - SDK Release Version updated.
 
-## [v5.1.0] - eSignature API v2.1-19.2.02
+## [v4.5.0] - eSignature API v2-19.4.01
 ### Changed
-- The SDK now supports version 19.2.02 of the DocuSign eSignature API.
+- The SDK now supports version 19.4.01 of the DocuSign eSignature v2 API.
 - SDK Release Version updated.
 
-## [v5.0.2] - 2019-07-12
-### Security
-- [CVE-2019-10744](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10744).
-
-## [v5.0.1] - 2019-06-25
-### Removed
-- Removed hardcoded test config values from test cases. Config values are now being read from env variables.
-
-## [v5.0.0] - eSignature API v2.1-19.1.02
-### BREAKING
-- The SDK now supports version v2.1-19.1.02 of the DocuSign eSignature API.
+## [v4.4.0] - eSignature API v2-19.2.02
+### Changed
+- The SDK now supports version 19.2.02 of the DocuSign eSignature v2 API.
 - SDK Release Version updated.
 
-## [v4.3.0] - eSignature API v19.1.02
+## [v4.3.0] - eSignature API v2-19.1.02
 ### Changed
-- The SDK now supports version 19.1.02 of the DocuSign eSignature API.
+- The SDK now supports version 19.1.02 of the DocuSign eSignature v2 API.
 - SDK Release Version updated.
 ### Added
 - Cache-control and Pragma headers to the oAuth calls. (DCM-2244)

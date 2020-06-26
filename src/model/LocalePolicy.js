@@ -30,6 +30,7 @@
   /**
    * The LocalePolicy model module.
    * @module model/LocalePolicy
+   * @version 3.0.0
    */
 
   /**

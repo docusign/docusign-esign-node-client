@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BulkEnvelopeStatus', 'model/ErrorDetails'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BulkEnvelopeStatus'), require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeSummary = factory(root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.ErrorDetails);
+    root.Docusign.EnvelopeSummary = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient, BulkEnvelopeStatus, ErrorDetails) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -54,14 +54,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('bulkEnvelopeStatus')) {
-        obj['bulkEnvelopeStatus'] = BulkEnvelopeStatus.constructFromObject(data['bulkEnvelopeStatus']);
-      }
       if (data.hasOwnProperty('envelopeId')) {
         obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
-      }
-      if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -77,18 +71,10 @@
   }
 
   /**
-   * @member {module:model/BulkEnvelopeStatus} bulkEnvelopeStatus
-   */
-  exports.prototype['bulkEnvelopeStatus'] = undefined;
-  /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
   exports.prototype['envelopeId'] = undefined;
-  /**
-   * @member {module:model/ErrorDetails} errorDetails
-   */
-  exports.prototype['errorDetails'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status

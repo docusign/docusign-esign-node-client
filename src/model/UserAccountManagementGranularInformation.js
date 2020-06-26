@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -72,6 +72,12 @@
       if (data.hasOwnProperty('canManageAdminsMetadata')) {
         obj['canManageAdminsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAdminsMetadata']);
       }
+      if (data.hasOwnProperty('canManageGroups')) {
+        obj['canManageGroups'] = ApiClient.convertToType(data['canManageGroups'], 'String');
+      }
+      if (data.hasOwnProperty('canManageGroupsMetadata')) {
+        obj['canManageGroupsMetadata'] = SettingsMetadata.constructFromObject(data['canManageGroupsMetadata']);
+      }
       if (data.hasOwnProperty('canManageReporting')) {
         obj['canManageReporting'] = ApiClient.convertToType(data['canManageReporting'], 'String');
       }
@@ -98,6 +104,9 @@
       }
       if (data.hasOwnProperty('canViewUsers')) {
         obj['canViewUsers'] = ApiClient.convertToType(data['canViewUsers'], 'String');
+      }
+      if (data.hasOwnProperty('canViewUsersMetadata')) {
+        obj['canViewUsersMetadata'] = SettingsMetadata.constructFromObject(data['canViewUsersMetadata']);
       }
     }
     return obj;
@@ -130,6 +139,15 @@
    * @member {module:model/SettingsMetadata} canManageAdminsMetadata
    */
   exports.prototype['canManageAdminsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageGroups
+   */
+  exports.prototype['canManageGroups'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageGroupsMetadata
+   */
+  exports.prototype['canManageGroupsMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageReporting
@@ -171,6 +189,10 @@
    * @member {String} canViewUsers
    */
   exports.prototype['canViewUsers'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canViewUsersMetadata
+   */
+  exports.prototype['canViewUsersMetadata'] = undefined;
 
 
 

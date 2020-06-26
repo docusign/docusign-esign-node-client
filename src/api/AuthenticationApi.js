@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -112,7 +112,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/social', 'DELETE',
+        '/v2/accounts/{accountId}/users/{userId}/social', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -157,7 +157,7 @@
       var returnType = OauthAccess;
 
       return this.apiClient.callApi(
-        '/v2.1/oauth2/token', 'POST',
+        '/v2/oauth2/token', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -216,7 +216,7 @@
       var returnType = UserSocialIdResult;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/social', 'GET',
+        '/v2/accounts/{accountId}/users/{userId}/social', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -279,7 +279,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var returnType = LoginInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/login_information', 'GET',
+        '/v2/login_information', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -323,7 +323,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/oauth2/revoke', 'POST',
+        '/v2/oauth2/revoke', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -383,7 +383,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/login_information/{loginPart}', 'PUT',
+        '/v2/login_information/{loginPart}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -450,7 +450,7 @@ The `baseUrl` property, returned in the response, is used in all future API call
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/users/{userId}/social', 'PUT',
+        '/v2/accounts/{accountId}/users/{userId}/social', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

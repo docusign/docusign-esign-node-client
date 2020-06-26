@@ -30,7 +30,6 @@
   /**
    * The EnvelopeTemplateResult model module.
    * @module model/EnvelopeTemplateResult
-   * @version 3.0.0
    */
 
   /**
@@ -91,6 +90,9 @@
       if (data.hasOwnProperty('completedDateTime')) {
         obj['completedDateTime'] = ApiClient.convertToType(data['completedDateTime'], 'String');
       }
+      if (data.hasOwnProperty('copyRecipientData')) {
+        obj['copyRecipientData'] = ApiClient.convertToType(data['copyRecipientData'], 'String');
+      }
       if (data.hasOwnProperty('created')) {
         obj['created'] = ApiClient.convertToType(data['created'], 'String');
       }
@@ -114,6 +116,9 @@
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('disableResponsiveDocument')) {
+        obj['disableResponsiveDocument'] = ApiClient.convertToType(data['disableResponsiveDocument'], 'String');
       }
       if (data.hasOwnProperty('documents')) {
         obj['documents'] = ApiClient.convertToType(data['documents'], [Document]);
@@ -316,6 +321,11 @@
   exports.prototype['completedDateTime'] = undefined;
   /**
    * 
+   * @member {String} copyRecipientData
+   */
+  exports.prototype['copyRecipientData'] = undefined;
+  /**
+   * 
    * @member {String} created
    */
   exports.prototype['created'] = undefined;
@@ -353,6 +363,11 @@
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
+  /**
+   * 
+   * @member {String} disableResponsiveDocument
+   */
+  exports.prototype['disableResponsiveDocument'] = undefined;
   /**
    * Complex element contains the details on the documents in the envelope.
    * @member {Array.<module:model/Document>} documents

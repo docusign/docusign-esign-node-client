@@ -30,6 +30,7 @@
   /**
    * The BccEmailArchiveHistoryList model module.
    * @module model/BccEmailArchiveHistoryList
+   * @version 3.0.0
    */
 
   /**

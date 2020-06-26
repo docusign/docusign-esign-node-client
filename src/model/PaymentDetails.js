@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Money', 'model/PaymentLineItem', 'model/PropertyMetadata'], factory);
+    define(['ApiClient', 'model/Money', 'model/PaymentLineItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Money'), require('./PaymentLineItem'), require('./PropertyMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./Money'), require('./PaymentLineItem'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.PaymentDetails = factory(root.Docusign.ApiClient, root.Docusign.Money, root.Docusign.PaymentLineItem, root.Docusign.PropertyMetadata);
+    root.Docusign.PaymentDetails = factory(root.Docusign.ApiClient, root.Docusign.Money, root.Docusign.PaymentLineItem);
   }
-}(this, function(ApiClient, Money, PaymentLineItem, PropertyMetadata) {
+}(this, function(ApiClient, Money, PaymentLineItem) {
   'use strict';
 
 
@@ -63,9 +63,6 @@
       if (data.hasOwnProperty('currencyCode')) {
         obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
       }
-      if (data.hasOwnProperty('currencyCodeMetadata')) {
-        obj['currencyCodeMetadata'] = PropertyMetadata.constructFromObject(data['currencyCodeMetadata']);
-      }
       if (data.hasOwnProperty('customerId')) {
         obj['customerId'] = ApiClient.convertToType(data['customerId'], 'String');
       }
@@ -77,9 +74,6 @@
       }
       if (data.hasOwnProperty('gatewayAccountId')) {
         obj['gatewayAccountId'] = ApiClient.convertToType(data['gatewayAccountId'], 'String');
-      }
-      if (data.hasOwnProperty('gatewayAccountIdMetadata')) {
-        obj['gatewayAccountIdMetadata'] = PropertyMetadata.constructFromObject(data['gatewayAccountIdMetadata']);
       }
       if (data.hasOwnProperty('gatewayDisplayName')) {
         obj['gatewayDisplayName'] = ApiClient.convertToType(data['gatewayDisplayName'], 'String');
@@ -122,10 +116,6 @@
    */
   exports.prototype['currencyCode'] = undefined;
   /**
-   * @member {module:model/PropertyMetadata} currencyCodeMetadata
-   */
-  exports.prototype['currencyCodeMetadata'] = undefined;
-  /**
    * 
    * @member {String} customerId
    */
@@ -145,10 +135,6 @@
    * @member {String} gatewayAccountId
    */
   exports.prototype['gatewayAccountId'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} gatewayAccountIdMetadata
-   */
-  exports.prototype['gatewayAccountIdMetadata'] = undefined;
   /**
    * 
    * @member {String} gatewayDisplayName

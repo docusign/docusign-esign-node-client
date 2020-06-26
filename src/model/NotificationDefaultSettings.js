@@ -30,6 +30,7 @@
   /**
    * The NotificationDefaultSettings model module.
    * @module model/NotificationDefaultSettings
+   * @version 3.0.0
    */
 
   /**

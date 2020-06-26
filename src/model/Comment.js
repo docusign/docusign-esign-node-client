@@ -30,6 +30,7 @@
   /**
    * The Comment model module.
    * @module model/Comment
+   * @version 3.0.0
    */
 
   /**

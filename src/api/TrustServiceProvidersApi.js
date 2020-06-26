@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -12,28 +12,28 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ErrorDetails'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountSeals', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountSeals'), require('../model/ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DataFeedApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails);
+    root.Docusign.TrustServiceProvidersApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountSeals, root.Docusign.ErrorDetails);
   }
-}(this, function(Configuration, ApiClient, ErrorDetails) {
+}(this, function(Configuration, ApiClient, AccountSeals, ErrorDetails) {
   'use strict';
 
   /**
-   * DataFeed service.
-   * @module api/DataFeedApi
+   * TrustServiceProviders service.
+   * @module api/TrustServiceProvidersApi
    */
 
   /**
-   * Constructs a new DataFeedApi. 
-   * @alias module:api/DataFeedApi
+   * Constructs a new TrustServiceProvidersApi. 
+   * @alias module:api/TrustServiceProvidersApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -52,30 +52,25 @@
 
 
     /**
-     * (Optional) Callback function to receive the result of the getDataFeedElement operation. If none specified a Promise will be returned.
-     * @callback module:api/DataFeedApi~getDataFeedElementCallback
+     * (Optional) Callback function to receive the result of the getSealProviders operation. If none specified a Promise will be returned.
+     * @callback module:api/TrustServiceProvidersApi~getSealProvidersCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/AccountSeals} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
     /**
-     * Retrieves a Datafeed element by Id.
+     * Returns Account available seals for specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} dataFeedElementId 
-     * @param {module:api/DataFeedApi~getDataFeedElementCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TrustServiceProvidersApi~getSealProvidersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSeals}
      */
-    this.getDataFeedElement = function(accountId, dataFeedElementId, callback) {
+    this.getSealProviders = function(accountId, callback) {
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getDataFeedElement");
-      }
-
-      // verify the required parameter 'dataFeedElementId' is set
-      if (dataFeedElementId === undefined || dataFeedElementId === null) {
-        throw new Error("Missing the required parameter 'dataFeedElementId' when calling getDataFeedElement");
+        throw new Error("Missing the required parameter 'accountId' when calling getSealProviders");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -86,8 +81,7 @@
       }
 
       var pathParams = {
-        'accountId': accountId,
-        'dataFeedElementId': dataFeedElementId
+        'accountId': accountId
       };
       var queryParams = {
       };
@@ -99,10 +93,10 @@
       var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = AccountSeals;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/data_feeds/data/{dataFeedElementId}', 'GET',
+        '/v2/accounts/{accountId}/seals', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

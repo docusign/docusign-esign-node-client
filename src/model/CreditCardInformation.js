@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -63,9 +63,6 @@
       if (data.hasOwnProperty('cardType')) {
         obj['cardType'] = ApiClient.convertToType(data['cardType'], 'String');
       }
-      if (data.hasOwnProperty('cvNumber')) {
-        obj['cvNumber'] = ApiClient.convertToType(data['cvNumber'], 'String');
-      }
       if (data.hasOwnProperty('expirationMonth')) {
         obj['expirationMonth'] = ApiClient.convertToType(data['expirationMonth'], 'String');
       }
@@ -93,11 +90,6 @@
    * @member {String} cardType
    */
   exports.prototype['cardType'] = undefined;
-  /**
-   * 
-   * @member {String} cvNumber
-   */
-  exports.prototype['cvNumber'] = undefined;
   /**
    * The month that the credit card expires (1-12).
    * @member {String} expirationMonth

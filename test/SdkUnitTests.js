@@ -35,6 +35,7 @@ var userId = config.userId;
 var RedirectURI = 'https://www.docusign.com/api';
 var privateKeyFilename = 'keys/docusign_private_key.txt';
 var expiresIn = 3600;
+var isV2 = docusign.EnvelopeTemplate;
 
 if (privateKey) {
   var buf;
@@ -647,9 +648,15 @@ describe('SDK Unit Tests:', function (done) {
     template.recipients.signers = [];
     template.recipients.signers.push(signer);
 
-    var envTemplate = new docusign.EnvelopeTemplate();
-    envTemplate.name = 'myTemplate';
-    template.envelopeTemplate = envTemplate;
+    if (!isV2) {
+      var envTemplate = new docusign.EnvelopeTemplate();
+      envTemplate.name = 'myTemplate';
+      template.envelopeTemplate = envTemplate;
+    } else {
+      var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
+      envTemplateDef.name = 'myTemplate';
+      template.envelopeTemplateDefinition = envTemplateDef;
+    }
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
@@ -1089,9 +1096,15 @@ describe('SDK Unit Tests:', function (done) {
     template.recipients.signers = [];
     template.recipients.signers.push(signer);
 
-    var envTemplate = new docusign.EnvelopeTemplate();
-    envTemplate.name = 'myTemplate ModelNumber';
-    template.envelopeTemplate = envTemplate;
+    if (!isV2) {
+      var envTemplate = new docusign.EnvelopeTemplate();
+      envTemplate.name = 'myTemplate';
+      template.envelopeTemplate = envTemplate;
+    } else {
+      var envTemplateDef = new docusign.EnvelopeTemplateDefinition();
+      envTemplateDef.name = 'myTemplate';
+      template.envelopeTemplateDefinition = envTemplateDef;
+    }
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 

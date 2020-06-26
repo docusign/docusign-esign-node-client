@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -30,7 +30,7 @@
   /**
    * The Credential model module.
    * @module model/Credential
-   * @version 5.3.0
+   * @version 4.6.0
    */
 
   /**
@@ -55,9 +55,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('accessCode')) {
-        obj['accessCode'] = ApiClient.convertToType(data['accessCode'], 'String');
-      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
@@ -68,11 +65,6 @@
     return obj;
   }
 
-  /**
-   * If a value is provided, the recipient must enter the value as the access code to view and sign the envelope.   Maximum Length: 50 characters and it must conform to the account's access code format setting.  If blank, but the signer `accessCode` property is set in the envelope, then that value is used.  If blank and the signer `accessCode` property is not set, then the access code is not required.
-   * @member {String} accessCode
-   */
-  exports.prototype['accessCode'] = undefined;
   /**
    * 
    * @member {String} type

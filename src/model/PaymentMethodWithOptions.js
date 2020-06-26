@@ -30,6 +30,7 @@
   /**
    * The PaymentMethodWithOptions model module.
    * @module model/PaymentMethodWithOptions
+   * @version 3.0.0
    */
 
   /**

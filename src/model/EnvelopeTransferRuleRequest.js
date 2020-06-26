@@ -30,6 +30,7 @@
   /**
    * The EnvelopeTransferRuleRequest model module.
    * @module model/EnvelopeTransferRuleRequest
+   * @version 3.0.0
    */
 
   /**

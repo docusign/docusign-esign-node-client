@@ -2,7 +2,7 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2.1
+ * OpenAPI spec version: v2
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
@@ -107,12 +107,6 @@
       }
       if (data.hasOwnProperty('allowedAddressBookAccessMetadata')) {
         obj['allowedAddressBookAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedAddressBookAccessMetadata']);
-      }
-      if (data.hasOwnProperty('allowedClickwrapsAccess')) {
-        obj['allowedClickwrapsAccess'] = ApiClient.convertToType(data['allowedClickwrapsAccess'], 'String');
-      }
-      if (data.hasOwnProperty('allowedClickwrapsAccessMetadata')) {
-        obj['allowedClickwrapsAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedClickwrapsAccessMetadata']);
       }
       if (data.hasOwnProperty('allowedTemplateAccess')) {
         obj['allowedTemplateAccess'] = ApiClient.convertToType(data['allowedTemplateAccess'], 'String');
@@ -233,9 +227,6 @@
       }
       if (data.hasOwnProperty('receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata')) {
         obj['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata'] = SettingsMetadata.constructFromObject(data['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata']);
-      }
-      if (data.hasOwnProperty('signingUiVersionMetadata')) {
-        obj['signingUiVersionMetadata'] = SettingsMetadata.constructFromObject(data['signingUiVersionMetadata']);
       }
       if (data.hasOwnProperty('supplementalDocumentsMustAccept')) {
         obj['supplementalDocumentsMustAccept'] = ApiClient.convertToType(data['supplementalDocumentsMustAccept'], 'String');
@@ -358,15 +349,6 @@
    * @member {module:model/SettingsMetadata} allowedAddressBookAccessMetadata
    */
   exports.prototype['allowedAddressBookAccessMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} allowedClickwrapsAccess
-   */
-  exports.prototype['allowedClickwrapsAccess'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} allowedClickwrapsAccessMetadata
-   */
-  exports.prototype['allowedClickwrapsAccessMetadata'] = undefined;
   /**
    * 
    * @member {String} allowedTemplateAccess
@@ -547,10 +529,6 @@
    * @member {module:model/SettingsMetadata} receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata
    */
   exports.prototype['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} signingUiVersionMetadata
-   */
-  exports.prototype['signingUiVersionMetadata'] = undefined;
   /**
    * 
    * @member {String} supplementalDocumentsMustAccept
