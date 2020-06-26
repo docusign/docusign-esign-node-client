@@ -16,7 +16,7 @@ commented out
 -->
 
 
-<p><h3>&#x26A0;&#xFE0F; This client library is for the old <code><a href=“https://developers.docusign.com/esign-rest-api“>eSignature API v2</a></code>.<p><h3>This version of the API will be subject to deprecation soon and the published client libraries for it are not actively maintained.</p><p>If you are still using this version, please upgrade to the v2.1 client library.</p>
+<p><h3>&#x26A0;&#xFE0F; This client library is for the legacy <code><a href=“https://developers.docusign.com/esign-rest-api“>eSignature API v2</a></code>.<p><h3>This version of the API will be subject to deprecation soon and the published client libraries for it are not actively maintained.</p><p>If you are still using this version, please upgrade to the v2.1 client library.</p>
 
 ## Requirements
 - Node 4
