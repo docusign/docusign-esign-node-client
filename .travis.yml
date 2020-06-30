@@ -3,7 +3,7 @@ sudo: false
 branches:
   only: 
     - master
-    - APIv2-master
+    - v2-master
 
 language: node_js
 
@@ -29,3 +29,4 @@ cache:
     - "node_modules"
 
 after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
+
