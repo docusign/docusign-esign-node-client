@@ -783,6 +783,7 @@ The REST API does not support modifying individual rows or values in the bulk re
      * @param {String} envelopeId The envelope's GUID. 
 
 Example: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec`
+
      * @param {String} recipientId A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each `recipientId` must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a `recipientId` of `1`.
      * @param {Blob} bulkRecipientsRequest 
      * @param {module:api/BulkEnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
