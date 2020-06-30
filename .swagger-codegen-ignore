@@ -30,7 +30,6 @@ git_push.sh
 
 # Project files
 LICENSE
-package.json
 .travis.yml
 mocha.opts
 

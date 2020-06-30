@@ -299,7 +299,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -341,7 +341,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -417,7 +417,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -431,7 +431,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
         recipientView.authenticationMethod = 'email';
         recipientView.userName = name;
         recipientView.email = userName;
-        envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, {'recipientViewRequest': recipientView}, function (error, viewUrl, response) {
+        envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, { recipientViewRequest: recipientView }, function (error, viewUrl, response) {
           if (error) {
             return done(error);
           }
@@ -503,7 +503,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, {'envelopeTemplate': template}, function (error, templateSummary, response) {
+    templatesApi.createTemplate(accountId, { envelopeTemplate: template }, function (error, templateSummary, response) {
       if (error) {
         return done(error);
       }
@@ -579,7 +579,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -702,7 +702,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var diagSettings = new docusign.DiagnosticsSettingsInformation();
     diagSettings.apiRequestLogging = 'true';
-    diagApi.updateRequestLogSettings({'diagnosticsSettingsInformation': diagSettings}, function (error, diagnosticsSettingsInformation, response) {
+    diagApi.updateRequestLogSettings({ diagnosticsSettingsInformation: diagSettings }, function (error, diagnosticsSettingsInformation, response) {
       if (error) {
         return done(error);
       }
@@ -712,7 +712,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
         var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-        envelopesApi.createEnvelope(accountId, {'envelopeDefinition': envDef}, function (error, envelopeSummary, response) {
+        envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
           if (error) {
             return done(error);
           }

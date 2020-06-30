@@ -112,7 +112,7 @@
         obj['noteTabs'] = ApiClient.convertToType(data['noteTabs'], [Note]);
       }
       if (data.hasOwnProperty('numberTabs')) {
-        obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], ['ModelNumber']);
+        obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], [ModelNumber]);
       }
       if (data.hasOwnProperty('polyLineOverlayTabs')) {
         obj['polyLineOverlayTabs'] = ApiClient.convertToType(data['polyLineOverlayTabs'], [PolyLineOverlay]);
@@ -248,7 +248,7 @@
   exports.prototype['noteTabs'] = undefined;
   /**
    * Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. 
-   * @member {Array.<Number>} numberTabs
+   * @member {Array.<module:model/ModelNumber>} numberTabs
    */
   exports.prototype['numberTabs'] = undefined;
   /**
