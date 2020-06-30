@@ -1,4 +1,4 @@
-﻿# The Official DocuSign Node Client
+# The Official DocuSign Node Client
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
