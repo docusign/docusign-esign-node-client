@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('batchId')) {
         obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
       }
+      if (data.hasOwnProperty('batchSize')) {
+        obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'String');
+      }
       if (data.hasOwnProperty('envelopeOrTemplateId')) {
         obj['envelopeOrTemplateId'] = ApiClient.convertToType(data['envelopeOrTemplateId'], 'String');
       }
@@ -65,6 +68,12 @@
       }
       if (data.hasOwnProperty('errors')) {
         obj['errors'] = ApiClient.convertToType(data['errors'], ['String']);
+      }
+      if (data.hasOwnProperty('queueLimit')) {
+        obj['queueLimit'] = ApiClient.convertToType(data['queueLimit'], 'String');
+      }
+      if (data.hasOwnProperty('totalQueued')) {
+        obj['totalQueued'] = ApiClient.convertToType(data['totalQueued'], 'String');
       }
     }
     return obj;
@@ -75,6 +84,11 @@
    * @member {String} batchId
    */
   exports.prototype['batchId'] = undefined;
+  /**
+   * 
+   * @member {String} batchSize
+   */
+  exports.prototype['batchSize'] = undefined;
   /**
    * 
    * @member {String} envelopeOrTemplateId
@@ -90,6 +104,16 @@
    * @member {Array.<String>} errors
    */
   exports.prototype['errors'] = undefined;
+  /**
+   * 
+   * @member {String} queueLimit
+   */
+  exports.prototype['queueLimit'] = undefined;
+  /**
+   * 
+   * @member {String} totalQueued
+   */
+  exports.prototype['totalQueued'] = undefined;
 
 
 
