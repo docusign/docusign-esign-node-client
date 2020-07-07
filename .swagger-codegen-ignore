@@ -36,7 +36,6 @@ mocha.opts
 # Specific src and test files
 docs/*.md
 test/*/*.spec.js
-test/assert-equals.js
 src/OAuth.js
 src/RestApi.js
 src/ApiClient.js
