@@ -6,3 +6,5 @@ auth-info.json
 config.json
 .idea/
 npm-debug.log
+package-lock.json
+.swagger-codegen/
