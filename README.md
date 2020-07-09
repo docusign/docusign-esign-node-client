@@ -15,8 +15,6 @@
 commented out
 -->
 
-<p><h3>&#x26A0;&#xFE0F; This client library is for the new <code><a href=“https://developers.docusign.com/esign-rest-api“>eSignature API v2.1</a></code>.<p><h3>We will continue to release client libraries for API v2, but please note that the v2 version of our API will be subject to deprecation soon and the published client libraries for it are not actively maintained.</p>
-
 ## Requirements
 - Node 4
 - Free [Developer Sandbox](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)

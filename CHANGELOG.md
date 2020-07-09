@@ -2,6 +2,12 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v5.5.0] - eSignature API v2.1-20.2.00
+### Changed
+- Added support for version v2.1-20.2.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+- Added properties `batchSize`, `queueLimit`, and `totalQueued` to bulk send response.
+
 ## [v5.4.0] - eSignature API v2.1-20.1.02
 ### Changed
 - Added support for version v2.1-20.1.02 of the DocuSign eSignature API.

@@ -8,3 +8,4 @@ config.json
 npm-debug.log
 package-lock.json
 .swagger-codegen/
+test/assert-equals.js
