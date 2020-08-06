@@ -286,7 +286,6 @@ The response returns information about the envelopes sent with bulk recipient ba
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count The number of results to return. This can be 1 to 20.
-     * @param {String} optsOrCallback.include 
      * @param {String} optsOrCallback.startPosition The position of the bulk envelope items in the response. This is used for repeated calls, when the number of bulk envelopes returned is too large for one return. The default value is 0.
      * @param {module:api/BulkEnvelopesApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopesResponse}
@@ -318,7 +317,6 @@ The response returns information about the envelopes sent with bulk recipient ba
       };
       var queryParams = {
         'count': optsOrCallback['count'],
-        'include': optsOrCallback['include'],
         'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {

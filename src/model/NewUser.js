@@ -66,6 +66,9 @@
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('membershipId')) {
+        obj['membershipId'] = ApiClient.convertToType(data['membershipId'], 'String');
+      }
       if (data.hasOwnProperty('permissionProfileId')) {
         obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
       }
@@ -107,6 +110,11 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} membershipId
+   */
+  exports.prototype['membershipId'] = undefined;
   /**
    * 
    * @member {String} permissionProfileId
