@@ -72,6 +72,9 @@
       if (data.hasOwnProperty('offlineSigningFailed')) {
         obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
       }
+      if (data.hasOwnProperty('powerformResponsesLimitNotificationEmail')) {
+        obj['powerformResponsesLimitNotificationEmail'] = ApiClient.convertToType(data['powerformResponsesLimitNotificationEmail'], 'String');
+      }
       if (data.hasOwnProperty('recipientViewed')) {
         obj['recipientViewed'] = ApiClient.convertToType(data['recipientViewed'], 'String');
       }
@@ -115,6 +118,11 @@
    * @member {String} offlineSigningFailed
    */
   exports.prototype['offlineSigningFailed'] = undefined;
+  /**
+   * 
+   * @member {String} powerformResponsesLimitNotificationEmail
+   */
+  exports.prototype['powerformResponsesLimitNotificationEmail'] = undefined;
   /**
    * When set to **true**, the sender receives notification that the recipient viewed the enveloper.
    * @member {String} recipientViewed
