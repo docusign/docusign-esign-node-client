@@ -12,29 +12,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ReportInProductListItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ReportInProductListItem'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ProofServiceResourceToken = factory(root.Docusign.ApiClient);
+    root.Docusign.ReportInProductList = factory(root.Docusign.ApiClient, root.Docusign.ReportInProductListItem);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ReportInProductListItem) {
   'use strict';
 
 
   /**
-   * The ProofServiceResourceToken model module.
-   * @module model/ProofServiceResourceToken
+   * The ReportInProductList model module.
+   * @module model/ReportInProductList
    */
 
   /**
-   * Constructs a new <code>ProofServiceResourceToken</code>.
-   * @alias module:model/ProofServiceResourceToken
+   * Constructs a new <code>ReportInProductList</code>.
+   * @alias module:model/ReportInProductList
    * @class
    */
   var exports = function() {
@@ -44,21 +44,18 @@
   };
 
   /**
-   * Constructs a <code>ProofServiceResourceToken</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ReportInProductList</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ProofServiceResourceToken} obj Optional instance to populate.
-   * @return {module:model/ProofServiceResourceToken} The populated <code>ProofServiceResourceToken</code> instance.
+   * @param {module:model/ReportInProductList} obj Optional instance to populate.
+   * @return {module:model/ReportInProductList} The populated <code>ReportInProductList</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('proofBaseURI')) {
-        obj['proofBaseURI'] = ApiClient.convertToType(data['proofBaseURI'], 'String');
-      }
-      if (data.hasOwnProperty('resourceToken')) {
-        obj['resourceToken'] = ApiClient.convertToType(data['resourceToken'], 'String');
+      if (data.hasOwnProperty('reports')) {
+        obj['reports'] = ApiClient.convertToType(data['reports'], [ReportInProductListItem]);
       }
     }
     return obj;
@@ -66,14 +63,9 @@
 
   /**
    * 
-   * @member {String} proofBaseURI
+   * @member {Array.<module:model/ReportInProductListItem>} reports
    */
-  exports.prototype['proofBaseURI'] = undefined;
-  /**
-   * 
-   * @member {String} resourceToken
-   */
-  exports.prototype['resourceToken'] = undefined;
+  exports.prototype['reports'] = undefined;
 
 
 

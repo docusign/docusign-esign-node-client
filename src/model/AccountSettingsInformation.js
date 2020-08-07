@@ -157,6 +157,9 @@
       if (data.hasOwnProperty('allowConnectSendFinishLaterMetadata')) {
         obj['allowConnectSendFinishLaterMetadata'] = SettingsMetadata.constructFromObject(data['allowConnectSendFinishLaterMetadata']);
       }
+      if (data.hasOwnProperty('allowConnectUnifiedPayloadUI')) {
+        obj['allowConnectUnifiedPayloadUI'] = ApiClient.convertToType(data['allowConnectUnifiedPayloadUI'], 'String');
+      }
       if (data.hasOwnProperty('allowConsumerDisclosureOverride')) {
         obj['allowConsumerDisclosureOverride'] = ApiClient.convertToType(data['allowConsumerDisclosureOverride'], 'String');
       }
@@ -1753,6 +1756,11 @@
    * @member {module:model/SettingsMetadata} allowConnectSendFinishLaterMetadata
    */
   exports.prototype['allowConnectSendFinishLaterMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowConnectUnifiedPayloadUI
+   */
+  exports.prototype['allowConnectUnifiedPayloadUI'] = undefined;
   /**
    * 
    * @member {String} allowConsumerDisclosureOverride

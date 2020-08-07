@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkEnvelopeStatus', 'model/BulkEnvelopesResponse', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/BulkSendRequest', 'model/BulkSendResponse', 'model/BulkSendTestResponse', 'model/BulkSendingList', 'model/BulkSendingListSummaries', 'model/ErrorDetails'], factory);
+	define(['Configuration', 'ApiClient', 'model/BulkEnvelopeStatus', 'model/BulkEnvelopesResponse', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/BulkSendBatchStatus', 'model/BulkSendBatchSummaries', 'model/BulkSendRequest', 'model/BulkSendResponse', 'model/BulkSendTestResponse', 'model/BulkSendingList', 'model/BulkSendingListSummaries', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkEnvelopeStatus'), require('../model/BulkEnvelopesResponse'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/BulkSendRequest'), require('../model/BulkSendResponse'), require('../model/BulkSendTestResponse'), require('../model/BulkSendingList'), require('../model/BulkSendingListSummaries'), require('../model/ErrorDetails'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkEnvelopeStatus'), require('../model/BulkEnvelopesResponse'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/BulkSendBatchStatus'), require('../model/BulkSendBatchSummaries'), require('../model/BulkSendRequest'), require('../model/BulkSendResponse'), require('../model/BulkSendTestResponse'), require('../model/BulkSendingList'), require('../model/BulkSendingListSummaries'), require('../model/ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BulkEnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.BulkEnvelopesResponse, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.BulkSendRequest, root.Docusign.BulkSendResponse, root.Docusign.BulkSendTestResponse, root.Docusign.BulkSendingList, root.Docusign.BulkSendingListSummaries, root.Docusign.ErrorDetails);
+    root.Docusign.BulkEnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.BulkEnvelopesResponse, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.BulkSendBatchStatus, root.Docusign.BulkSendBatchSummaries, root.Docusign.BulkSendRequest, root.Docusign.BulkSendResponse, root.Docusign.BulkSendTestResponse, root.Docusign.BulkSendingList, root.Docusign.BulkSendingListSummaries, root.Docusign.ErrorDetails);
   }
-}(this, function(Configuration, ApiClient, BulkEnvelopeStatus, BulkEnvelopesResponse, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, BulkSendRequest, BulkSendResponse, BulkSendTestResponse, BulkSendingList, BulkSendingListSummaries, ErrorDetails) {
+}(this, function(Configuration, ApiClient, BulkEnvelopeStatus, BulkEnvelopesResponse, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, BulkSendBatchStatus, BulkSendBatchSummaries, BulkSendRequest, BulkSendResponse, BulkSendTestResponse, BulkSendingList, BulkSendingListSummaries, ErrorDetails) {
   'use strict';
 
   /**
@@ -445,6 +445,131 @@ After using this, the `bulkRecipientsUri` property is not returned in subsequent
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getBulkSendBatchStatus operation. If none specified a Promise will be returned.
+     * @callback module:api/BulkEnvelopesApi~getBulkSendBatchStatusCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BulkSendBatchStatus} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Gets a specific bulk send batch status
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} bulkSendBatchId 
+     * @param {module:api/BulkEnvelopesApi~getBulkSendBatchStatusCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BulkSendBatchStatus}
+     */
+    this.getBulkSendBatchStatus = function(accountId, bulkSendBatchId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getBulkSendBatchStatus");
+      }
+
+      // verify the required parameter 'bulkSendBatchId' is set
+      if (bulkSendBatchId === undefined || bulkSendBatchId === null) {
+        throw new Error("Missing the required parameter 'bulkSendBatchId' when calling getBulkSendBatchStatus");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'bulkSendBatchId': bulkSendBatchId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = BulkSendBatchStatus;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getBulkSendBatches operation. If none specified a Promise will be returned.
+     * @callback module:api/BulkEnvelopesApi~getBulkSendBatchesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BulkSendBatchSummaries} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns a list of bulk send batch satuses initiated by account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.batchIds 
+     * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.status 
+     * @param {module:api/BulkEnvelopesApi~getBulkSendBatchesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BulkSendBatchSummaries}
+     */
+    this.getBulkSendBatches = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getBulkSendBatches");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+        'batch_ids': optsOrCallback['batchIds'],
+        'count': optsOrCallback['count'],
+        'start_position': optsOrCallback['startPosition'],
+        'status': optsOrCallback['status']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = BulkSendBatchSummaries;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/bulk_send_batch', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getBulkSendList operation. If none specified a Promise will be returned.
      * @callback module:api/BulkEnvelopesApi~getBulkSendListCallback
      * @param {String} error Error message, if any.
@@ -647,7 +772,6 @@ The response returns information about the envelopes sent with bulk recipient ba
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count The number of results to return. This can be 1 to 20.
-     * @param {String} optsOrCallback.include 
      * @param {String} optsOrCallback.startPosition The position of the bulk envelope items in the response. This is used for repeated calls, when the number of bulk envelopes returned is too large for one return. The default value is 0.
      * @param {module:api/BulkEnvelopesApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkEnvelopesResponse}
@@ -679,7 +803,6 @@ The response returns information about the envelopes sent with bulk recipient ba
       };
       var queryParams = {
         'count': optsOrCallback['count'],
-        'include': optsOrCallback['include'],
         'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {

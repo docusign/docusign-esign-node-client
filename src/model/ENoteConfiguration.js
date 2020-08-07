@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('apiKey')) {
+        obj['apiKey'] = ApiClient.convertToType(data['apiKey'], 'String');
+      }
       if (data.hasOwnProperty('connectConfigured')) {
         obj['connectConfigured'] = ApiClient.convertToType(data['connectConfigured'], 'String');
       }
@@ -73,6 +76,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} apiKey
+   */
+  exports.prototype['apiKey'] = undefined;
   /**
    * 
    * @member {String} connectConfigured

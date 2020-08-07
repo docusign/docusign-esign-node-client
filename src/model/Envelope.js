@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Attachment', 'model/CustomFields', 'model/EmailSettings', 'model/EnvelopeDocument', 'model/EnvelopeMetadata', 'model/Folder', 'model/LockInformation', 'model/Notification', 'model/PowerForm', 'model/Recipients', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/Attachment', 'model/CustomFields', 'model/EmailSettings', 'model/EnvelopeDocument', 'model/EnvelopeMetadata', 'model/Folder', 'model/LockInformation', 'model/Notification', 'model/PowerForm', 'model/Recipients', 'model/UserInfo', 'model/Workflow'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CustomFields'), require('./EmailSettings'), require('./EnvelopeDocument'), require('./EnvelopeMetadata'), require('./Folder'), require('./LockInformation'), require('./Notification'), require('./PowerForm'), require('./Recipients'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CustomFields'), require('./EmailSettings'), require('./EnvelopeDocument'), require('./EnvelopeMetadata'), require('./Folder'), require('./LockInformation'), require('./Notification'), require('./PowerForm'), require('./Recipients'), require('./UserInfo'), require('./Workflow'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Envelope = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CustomFields, root.Docusign.EmailSettings, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeMetadata, root.Docusign.Folder, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PowerForm, root.Docusign.Recipients, root.Docusign.UserInfo);
+    root.Docusign.Envelope = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CustomFields, root.Docusign.EmailSettings, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeMetadata, root.Docusign.Folder, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PowerForm, root.Docusign.Recipients, root.Docusign.UserInfo, root.Docusign.Workflow);
   }
-}(this, function(ApiClient, Attachment, CustomFields, EmailSettings, EnvelopeDocument, EnvelopeMetadata, Folder, LockInformation, Notification, PowerForm, Recipients, UserInfo) {
+}(this, function(ApiClient, Attachment, CustomFields, EmailSettings, EnvelopeDocument, EnvelopeMetadata, Folder, LockInformation, Notification, PowerForm, Recipients, UserInfo, Workflow) {
   'use strict';
 
 
@@ -278,6 +278,9 @@
       }
       if (data.hasOwnProperty('voidedReason')) {
         obj['voidedReason'] = ApiClient.convertToType(data['voidedReason'], 'String');
+      }
+      if (data.hasOwnProperty('workflow')) {
+        obj['workflow'] = Workflow.constructFromObject(data['workflow']);
       }
     }
     return obj;
@@ -650,6 +653,10 @@
    * @member {String} voidedReason
    */
   exports.prototype['voidedReason'] = undefined;
+  /**
+   * @member {module:model/Workflow} workflow
+   */
+  exports.prototype['workflow'] = undefined;
 
 
 
