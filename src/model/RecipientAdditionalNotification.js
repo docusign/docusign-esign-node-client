@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('secondaryDeliveryMethodMetadata')) {
         obj['secondaryDeliveryMethodMetadata'] = PropertyMetadata.constructFromObject(data['secondaryDeliveryMethodMetadata']);
       }
+      if (data.hasOwnProperty('secondaryDeliveryStatus')) {
+        obj['secondaryDeliveryStatus'] = ApiClient.convertToType(data['secondaryDeliveryStatus'], 'String');
+      }
     }
     return obj;
   }
@@ -80,6 +83,11 @@
    * @member {module:model/PropertyMetadata} secondaryDeliveryMethodMetadata
    */
   exports.prototype['secondaryDeliveryMethodMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} secondaryDeliveryStatus
+   */
+  exports.prototype['secondaryDeliveryStatus'] = undefined;
 
 
 

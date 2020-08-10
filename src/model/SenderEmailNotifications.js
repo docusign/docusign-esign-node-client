@@ -72,6 +72,9 @@
       if (data.hasOwnProperty('offlineSigningFailed')) {
         obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
       }
+      if (data.hasOwnProperty('powerformResponsesLimitNotificationEmail')) {
+        obj['powerformResponsesLimitNotificationEmail'] = ApiClient.convertToType(data['powerformResponsesLimitNotificationEmail'], 'String');
+      }
       if (data.hasOwnProperty('purgeDocuments')) {
         obj['purgeDocuments'] = ApiClient.convertToType(data['purgeDocuments'], 'String');
       }
@@ -118,6 +121,11 @@
    * @member {String} offlineSigningFailed
    */
   exports.prototype['offlineSigningFailed'] = undefined;
+  /**
+   * 
+   * @member {String} powerformResponsesLimitNotificationEmail
+   */
+  exports.prototype['powerformResponsesLimitNotificationEmail'] = undefined;
   /**
    * 
    * @member {String} purgeDocuments

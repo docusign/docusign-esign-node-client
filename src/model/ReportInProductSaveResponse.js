@@ -21,20 +21,20 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ProofServiceResourceToken = factory(root.Docusign.ApiClient);
+    root.Docusign.ReportInProductSaveResponse = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The ProofServiceResourceToken model module.
-   * @module model/ProofServiceResourceToken
+   * The ReportInProductSaveResponse model module.
+   * @module model/ReportInProductSaveResponse
    */
 
   /**
-   * Constructs a new <code>ProofServiceResourceToken</code>.
-   * @alias module:model/ProofServiceResourceToken
+   * Constructs a new <code>ReportInProductSaveResponse</code>.
+   * @alias module:model/ReportInProductSaveResponse
    * @class
    */
   var exports = function() {
@@ -44,21 +44,18 @@
   };
 
   /**
-   * Constructs a <code>ProofServiceResourceToken</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ReportInProductSaveResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ProofServiceResourceToken} obj Optional instance to populate.
-   * @return {module:model/ProofServiceResourceToken} The populated <code>ProofServiceResourceToken</code> instance.
+   * @param {module:model/ReportInProductSaveResponse} obj Optional instance to populate.
+   * @return {module:model/ReportInProductSaveResponse} The populated <code>ReportInProductSaveResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('proofBaseURI')) {
-        obj['proofBaseURI'] = ApiClient.convertToType(data['proofBaseURI'], 'String');
-      }
-      if (data.hasOwnProperty('resourceToken')) {
-        obj['resourceToken'] = ApiClient.convertToType(data['resourceToken'], 'String');
+      if (data.hasOwnProperty('reportCustomizedId')) {
+        obj['reportCustomizedId'] = ApiClient.convertToType(data['reportCustomizedId'], 'String');
       }
     }
     return obj;
@@ -66,14 +63,9 @@
 
   /**
    * 
-   * @member {String} proofBaseURI
+   * @member {String} reportCustomizedId
    */
-  exports.prototype['proofBaseURI'] = undefined;
-  /**
-   * 
-   * @member {String} resourceToken
-   */
-  exports.prototype['resourceToken'] = undefined;
+  exports.prototype['reportCustomizedId'] = undefined;
 
 
 

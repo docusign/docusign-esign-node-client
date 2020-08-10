@@ -156,8 +156,14 @@
       if (data.hasOwnProperty('paymentItemName')) {
         obj['paymentItemName'] = ApiClient.convertToType(data['paymentItemName'], 'String');
       }
+      if (data.hasOwnProperty('requireAll')) {
+        obj['requireAll'] = ApiClient.convertToType(data['requireAll'], 'String');
+      }
       if (data.hasOwnProperty('required')) {
         obj['required'] = ApiClient.convertToType(data['required'], 'String');
+      }
+      if (data.hasOwnProperty('requireInitialOnSharedChange')) {
+        obj['requireInitialOnSharedChange'] = ApiClient.convertToType(data['requireInitialOnSharedChange'], 'String');
       }
       if (data.hasOwnProperty('scaleValue')) {
         obj['scaleValue'] = ApiClient.convertToType(data['scaleValue'], 'String');
@@ -366,10 +372,20 @@
    */
   exports.prototype['paymentItemName'] = undefined;
   /**
+   * When set to **true** and shared is true, information must be entered in this field to complete the envelope. 
+   * @member {String} requireAll
+   */
+  exports.prototype['requireAll'] = undefined;
+  /**
    * When set to **true**, the signer is required to fill out this tab
    * @member {String} required
    */
   exports.prototype['required'] = undefined;
+  /**
+   * Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.
+   * @member {String} requireInitialOnSharedChange
+   */
+  exports.prototype['requireInitialOnSharedChange'] = undefined;
   /**
    * 
    * @member {String} scaleValue
