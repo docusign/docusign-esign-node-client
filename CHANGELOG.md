@@ -2,6 +2,12 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v5.6.0] - eSignature API v2.1-20.2.02.02
+### Changed
+- Added support for version v2.1-20.2.02.02 of the DocuSign eSignature API.
+- Updated the SDK release version.
+- Added support for request body in all DELETE methods. (DCM-4454)
+
 ## [v5.5.0] - eSignature API v2.1-20.2.00
 ### Changed
 - Added support for version v2.1-20.2.00 of the DocuSign eSignature API.
