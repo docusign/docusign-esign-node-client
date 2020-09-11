@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/CommentThread', 'model/Company', 'model/DateSigned', 'model/Decline', 'model/Draw', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/ModelDate', 'model/ModelNumber', 'model/Notarize', 'model/Note', 'model/PolyLineOverlay', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/SmartSection', 'model/Ssn', 'model/TabGroup', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
+    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/CommentThread', 'model/Company', 'model/DateSigned', 'model/Decline', 'model/Draw', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/ModelDate', 'model/ModelNumber', 'model/Notarize', 'model/NotaryCertificate', 'model/NotarySeal', 'model/Note', 'model/PolyLineOverlay', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/SmartSection', 'model/Ssn', 'model/TabGroup', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./CommentThread'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Draw'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./ModelDate'), require('./ModelNumber'), require('./Notarize'), require('./Note'), require('./PolyLineOverlay'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./SmartSection'), require('./Ssn'), require('./TabGroup'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
+    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./CommentThread'), require('./Company'), require('./DateSigned'), require('./Decline'), require('./Draw'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./ModelDate'), require('./ModelNumber'), require('./Notarize'), require('./NotaryCertificate'), require('./NotarySeal'), require('./Note'), require('./PolyLineOverlay'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./SmartSection'), require('./Ssn'), require('./TabGroup'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Tabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.CommentThread, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Draw, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.ModelDate, root.Docusign.ModelNumber, root.Docusign.Notarize, root.Docusign.Note, root.Docusign.PolyLineOverlay, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.SmartSection, root.Docusign.Ssn, root.Docusign.TabGroup, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
+    root.Docusign.Tabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.CommentThread, root.Docusign.Company, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Draw, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.ModelDate, root.Docusign.ModelNumber, root.Docusign.Notarize, root.Docusign.NotaryCertificate, root.Docusign.NotarySeal, root.Docusign.Note, root.Docusign.PolyLineOverlay, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.SmartSection, root.Docusign.Ssn, root.Docusign.TabGroup, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
   }
-}(this, function(ApiClient, Approve, Checkbox, CommentThread, Company, DateSigned, Decline, Draw, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, ModelDate, ModelNumber, Notarize, Note, PolyLineOverlay, RadioGroup, SignHere, SignerAttachment, SmartSection, Ssn, TabGroup, Text, Title, View, Zip) {
+}(this, function(ApiClient, Approve, Checkbox, CommentThread, Company, DateSigned, Decline, Draw, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, ModelDate, ModelNumber, Notarize, NotaryCertificate, NotarySeal, Note, PolyLineOverlay, RadioGroup, SignHere, SignerAttachment, SmartSection, Ssn, TabGroup, Text, Title, View, Zip) {
   'use strict';
 
 
@@ -107,6 +107,12 @@
       }
       if (data.hasOwnProperty('notarizeTabs')) {
         obj['notarizeTabs'] = ApiClient.convertToType(data['notarizeTabs'], [Notarize]);
+      }
+      if (data.hasOwnProperty('notaryCertificateTabs')) {
+        obj['notaryCertificateTabs'] = ApiClient.convertToType(data['notaryCertificateTabs'], [NotaryCertificate]);
+      }
+      if (data.hasOwnProperty('notarySealTabs')) {
+        obj['notarySealTabs'] = ApiClient.convertToType(data['notarySealTabs'], [NotarySeal]);
       }
       if (data.hasOwnProperty('noteTabs')) {
         obj['noteTabs'] = ApiClient.convertToType(data['noteTabs'], [Note]);
@@ -241,6 +247,16 @@
    * @member {Array.<module:model/Notarize>} notarizeTabs
    */
   exports.prototype['notarizeTabs'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/NotaryCertificate>} notaryCertificateTabs
+   */
+  exports.prototype['notaryCertificateTabs'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/NotarySeal>} notarySealTabs
+   */
+  exports.prototype['notarySealTabs'] = undefined;
   /**
    * Specifies a location on the document where you want to place additional information, in the form of a note, for a recipient.
    * @member {Array.<module:model/Note>} noteTabs

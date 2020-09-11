@@ -201,6 +201,9 @@
       if (data.hasOwnProperty('nameMetadata')) {
         obj['nameMetadata'] = PropertyMetadata.constructFromObject(data['nameMetadata']);
       }
+      if (data.hasOwnProperty('notaryId')) {
+        obj['notaryId'] = ApiClient.convertToType(data['notaryId'], 'String');
+      }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
       }
@@ -558,6 +561,11 @@
    * @member {module:model/PropertyMetadata} nameMetadata
    */
   exports.prototype['nameMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} notaryId
+   */
+  exports.prototype['notaryId'] = undefined;
   /**
    * Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
    * @member {String} note

@@ -64,6 +64,12 @@
       if (data.hasOwnProperty('accountDateTimeFormatMetadata')) {
         obj['accountDateTimeFormatMetadata'] = SettingsMetadata.constructFromObject(data['accountDateTimeFormatMetadata']);
       }
+      if (data.hasOwnProperty('accountDefaultLanguage')) {
+        obj['accountDefaultLanguage'] = ApiClient.convertToType(data['accountDefaultLanguage'], 'String');
+      }
+      if (data.hasOwnProperty('accountDefaultLanguageMetadata')) {
+        obj['accountDefaultLanguageMetadata'] = SettingsMetadata.constructFromObject(data['accountDefaultLanguageMetadata']);
+      }
       if (data.hasOwnProperty('accountName')) {
         obj['accountName'] = ApiClient.convertToType(data['accountName'], 'String');
       }
@@ -1617,6 +1623,15 @@
    * @member {module:model/SettingsMetadata} accountDateTimeFormatMetadata
    */
   exports.prototype['accountDateTimeFormatMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} accountDefaultLanguage
+   */
+  exports.prototype['accountDefaultLanguage'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} accountDefaultLanguageMetadata
+   */
+  exports.prototype['accountDefaultLanguageMetadata'] = undefined;
   /**
    * 
    * @member {String} accountName

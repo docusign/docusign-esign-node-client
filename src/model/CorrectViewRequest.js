@@ -60,6 +60,9 @@
       if (data.hasOwnProperty('suppressNavigation')) {
         obj['suppressNavigation'] = ApiClient.convertToType(data['suppressNavigation'], 'String');
       }
+      if (data.hasOwnProperty('viewUrl')) {
+        obj['viewUrl'] = ApiClient.convertToType(data['viewUrl'], 'String');
+      }
     }
     return obj;
   }
@@ -74,6 +77,11 @@
    * @member {String} suppressNavigation
    */
   exports.prototype['suppressNavigation'] = undefined;
+  /**
+   * 
+   * @member {String} viewUrl
+   */
+  exports.prototype['viewUrl'] = undefined;
 
 
 

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignatureProviders', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/ReportInProductCsvRunRequest', 'model/ReportInProductGet', 'model/ReportInProductList', 'model/ReportInProductRunRequest', 'model/ReportInProductRunResponse', 'model/ReportInProductSaveResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignature', 'model/AccountSignatureDefinition', 'model/AccountSignatureProviders', 'model/AccountSignaturesInformation', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/ReportInProductCsvRunRequest', 'model/ReportInProductGet', 'model/ReportInProductList', 'model/ReportInProductRunRequest', 'model/ReportInProductRunResponse', 'model/ReportInProductSaveResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignatureProviders'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/ReportInProductCsvRunRequest'), require('../model/ReportInProductGet'), require('../model/ReportInProductList'), require('../model/ReportInProductRunRequest'), require('../model/ReportInProductRunResponse'), require('../model/ReportInProductSaveResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignature'), require('../model/AccountSignatureDefinition'), require('../model/AccountSignatureProviders'), require('../model/AccountSignaturesInformation'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/ReportInProductCsvRunRequest'), require('../model/ReportInProductGet'), require('../model/ReportInProductList'), require('../model/ReportInProductRunRequest'), require('../model/ReportInProductRunResponse'), require('../model/ReportInProductSaveResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignatureProviders, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.ReportInProductCsvRunRequest, root.Docusign.ReportInProductGet, root.Docusign.ReportInProductList, root.Docusign.ReportInProductRunRequest, root.Docusign.ReportInProductRunResponse, root.Docusign.ReportInProductSaveResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
+    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignature, root.Docusign.AccountSignatureDefinition, root.Docusign.AccountSignatureProviders, root.Docusign.AccountSignaturesInformation, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.ReportInProductCsvRunRequest, root.Docusign.ReportInProductGet, root.Docusign.ReportInProductList, root.Docusign.ReportInProductRunRequest, root.Docusign.ReportInProductRunResponse, root.Docusign.ReportInProductSaveResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
   }
-}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignatureProviders, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, ReportInProductCsvRunRequest, ReportInProductGet, ReportInProductList, ReportInProductRunRequest, ReportInProductRunResponse, ReportInProductSaveResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
+}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignature, AccountSignatureDefinition, AccountSignatureProviders, AccountSignaturesInformation, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, ReportInProductCsvRunRequest, ReportInProductGet, ReportInProductList, ReportInProductRunRequest, ReportInProductRunResponse, ReportInProductSaveResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
   'use strict';
 
   /**
@@ -162,6 +162,68 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
 
       return this.apiClient.callApi(
         '/v2.1/accounts', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the createAccountSignatures operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~createAccountSignaturesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountSignaturesInformation} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Adds/updates one or more account signatures. This request may include images in multi-part format.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.decodeOnly 
+     * @param {module:model/AccountSignaturesInformation} optsOrCallback.accountSignaturesInformation 
+     * @param {module:api/AccountsApi~createAccountSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSignaturesInformation}
+     */
+    this.createAccountSignatures = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountSignaturesInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createAccountSignatures");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+        'decode_only': optsOrCallback['decodeOnly']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountSignaturesInformation;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -411,6 +473,128 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteAccountSignature operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~deleteAccountSignatureCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Close the specified signature by Id.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} signatureId The ID of the signature being accessed.
+     * @param {module:api/AccountsApi~deleteAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteAccountSignature = function(accountId, signatureId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteAccountSignature");
+      }
+
+      // verify the required parameter 'signatureId' is set
+      if (signatureId === undefined || signatureId === null) {
+        throw new Error("Missing the required parameter 'signatureId' when calling deleteAccountSignature");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'signatureId': signatureId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures/{signatureId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteAccountSignatureImage operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~deleteAccountSignatureImageCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountSignature} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes a signature, initials, or stamps image.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} signatureId The ID of the signature being accessed.
+     * @param {String} imageType One of **signature_image** or **initials_image**.
+     * @param {module:api/AccountsApi~deleteAccountSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSignature}
+     */
+    this.deleteAccountSignatureImage = function(accountId, signatureId, imageType, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteAccountSignatureImage");
+      }
+
+      // verify the required parameter 'signatureId' is set
+      if (signatureId === undefined || signatureId === null) {
+        throw new Error("Missing the required parameter 'signatureId' when calling deleteAccountSignatureImage");
+      }
+
+      // verify the required parameter 'imageType' is set
+      if (imageType === undefined || imageType === null) {
+        throw new Error("Missing the required parameter 'imageType' when calling deleteAccountSignatureImage");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'signatureId': signatureId,
+        'imageType': imageType
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountSignature;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1025,6 +1209,204 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getAccountSignature operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getAccountSignatureCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountSignature} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns information about a single signature by specifed signatureId.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} signatureId The ID of the signature being accessed.
+     * @param {module:api/AccountsApi~getAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSignature}
+     */
+    this.getAccountSignature = function(accountId, signatureId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAccountSignature");
+      }
+
+      // verify the required parameter 'signatureId' is set
+      if (signatureId === undefined || signatureId === null) {
+        throw new Error("Missing the required parameter 'signatureId' when calling getAccountSignature");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'signatureId': signatureId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountSignature;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures/{signatureId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getAccountSignatureImage operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getAccountSignatureImageCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns a signature, initials, or stamps image.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} signatureId The ID of the signature being accessed.
+     * @param {String} imageType One of **signature_image** or **initials_image**.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeChrome 
+     * @param {module:api/AccountsApi~getAccountSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.getAccountSignatureImage = function(accountId, signatureId, imageType, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAccountSignatureImage");
+      }
+
+      // verify the required parameter 'signatureId' is set
+      if (signatureId === undefined || signatureId === null) {
+        throw new Error("Missing the required parameter 'signatureId' when calling getAccountSignatureImage");
+      }
+
+      // verify the required parameter 'imageType' is set
+      if (imageType === undefined || imageType === null) {
+        throw new Error("Missing the required parameter 'imageType' when calling getAccountSignatureImage");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'signatureId': signatureId,
+        'imageType': imageType
+      };
+      var queryParams = {
+        'include_chrome': optsOrCallback['includeChrome']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['image/gif'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getAccountSignatures operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getAccountSignaturesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountSignaturesInformation} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the managed signature definitions for the account
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.stampFormat 
+     * @param {String} optsOrCallback.stampName 
+     * @param {String} optsOrCallback.stampType 
+     * @param {module:api/AccountsApi~getAccountSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSignaturesInformation}
+     */
+    this.getAccountSignatures = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAccountSignatures");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+        'stamp_format': optsOrCallback['stampFormat'],
+        'stamp_name': optsOrCallback['stampName'],
+        'stamp_type': optsOrCallback['stampType']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountSignaturesInformation;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountTabSettingsCallback
      * @param {String} error Error message, if any.
@@ -1528,7 +1910,7 @@ Privileges required: account administrator
      * Gets the Electronic Record and Signature Disclosure.
      * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/AccountsApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
@@ -2858,6 +3240,210 @@ Users with account administration privileges can retrieve shared access informat
     };
 
     /**
+     * (Optional) Callback function to receive the result of the updateAccountSignature operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~updateAccountSignatureCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountSignaturesInformation} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates a account signature.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/AccountSignaturesInformation} optsOrCallback.accountSignaturesInformation 
+     * @param {module:api/AccountsApi~updateAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSignaturesInformation}
+     */
+    this.updateAccountSignature = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountSignaturesInformation'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateAccountSignature");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountSignaturesInformation;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the updateAccountSignatureById operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~updateAccountSignatureByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountSignature} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates a account signature.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} signatureId The ID of the signature being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.closeExistingSignature 
+     * @param {module:model/AccountSignatureDefinition} optsOrCallback.accountSignatureDefinition 
+     * @param {module:api/AccountsApi~updateAccountSignatureByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSignature}
+     */
+    this.updateAccountSignatureById = function(accountId, signatureId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['accountSignatureDefinition'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateAccountSignatureById");
+      }
+
+      // verify the required parameter 'signatureId' is set
+      if (signatureId === undefined || signatureId === null) {
+        throw new Error("Missing the required parameter 'signatureId' when calling updateAccountSignatureById");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'signatureId': signatureId
+      };
+      var queryParams = {
+        'close_existing_signature': optsOrCallback['closeExistingSignature']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AccountSignature;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures/{signatureId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the updateAccountSignatureImage operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~updateAccountSignatureImageCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AccountSignature} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Sets a signature, initials, or stamps image.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} signatureId The ID of the signature being accessed.
+     * @param {String} imageType One of **signature_image** or **initials_image**.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.transparentPng 
+     * @param {module:api/AccountsApi~updateAccountSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AccountSignature}
+     */
+    this.updateAccountSignatureImage = function(accountId, signatureId, imageType, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateAccountSignatureImage");
+      }
+
+      // verify the required parameter 'signatureId' is set
+      if (signatureId === undefined || signatureId === null) {
+        throw new Error("Missing the required parameter 'signatureId' when calling updateAccountSignatureImage");
+      }
+
+      // verify the required parameter 'imageType' is set
+      if (imageType === undefined || imageType === null) {
+        throw new Error("Missing the required parameter 'imageType' when calling updateAccountSignatureImage");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'signatureId': signatureId,
+        'imageType': imageType
+      };
+      var queryParams = {
+        'transparent_png': optsOrCallback['transparentPng']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = ['image/gif'];
+      var accepts = ['application/json'];
+      var returnType = AccountSignature;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the updateAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~updateAccountTabSettingsCallback
      * @param {String} error Error message, if any.
@@ -3134,7 +3720,7 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Update Consumer Disclosure.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeMetadata 
      * @param {module:model/ConsumerDisclosure} optsOrCallback.consumerDisclosure 
