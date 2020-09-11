@@ -12,29 +12,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/NotaryHost', 'model/OfflineAttributes', 'model/PropertyMetadata', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/OfflineAttributes', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientProofFile', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./NotaryHost'), require('./OfflineAttributes'), require('./PropertyMetadata'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientProofFile'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.InPersonSigner = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.NotaryHost, root.Docusign.OfflineAttributes, root.Docusign.PropertyMetadata, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
+    root.Docusign.NotaryRecipient = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientProofFile, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, NotaryHost, OfflineAttributes, PropertyMetadata, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
+}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, OfflineAttributes, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientProofFile, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
   'use strict';
 
 
   /**
-   * The InPersonSigner model module.
-   * @module model/InPersonSigner
+   * The NotaryRecipient model module.
+   * @module model/NotaryRecipient
    */
 
   /**
-   * Constructs a new <code>InPersonSigner</code>.
-   * @alias module:model/InPersonSigner
+   * Constructs a new <code>NotaryRecipient</code>.
+   * @alias module:model/NotaryRecipient
    * @class
    */
   var exports = function() {
@@ -44,11 +44,11 @@
   };
 
   /**
-   * Constructs a <code>InPersonSigner</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>NotaryRecipient</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InPersonSigner} obj Optional instance to populate.
-   * @return {module:model/InPersonSigner} The populated <code>InPersonSigner</code> instance.
+   * @param {module:model/NotaryRecipient} obj Optional instance to populate.
+   * @return {module:model/NotaryRecipient} The populated <code>NotaryRecipient</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -63,11 +63,26 @@
       if (data.hasOwnProperty('addAccessCodeToEmail')) {
         obj['addAccessCodeToEmail'] = ApiClient.convertToType(data['addAccessCodeToEmail'], 'String');
       }
+      if (data.hasOwnProperty('additionalNotifications')) {
+        obj['additionalNotifications'] = ApiClient.convertToType(data['additionalNotifications'], [RecipientAdditionalNotification]);
+      }
+      if (data.hasOwnProperty('additionalNotificationsMetadata')) {
+        obj['additionalNotificationsMetadata'] = PropertyMetadata.constructFromObject(data['additionalNotificationsMetadata']);
+      }
+      if (data.hasOwnProperty('agentCanEditEmail')) {
+        obj['agentCanEditEmail'] = ApiClient.convertToType(data['agentCanEditEmail'], 'String');
+      }
+      if (data.hasOwnProperty('agentCanEditName')) {
+        obj['agentCanEditName'] = ApiClient.convertToType(data['agentCanEditName'], 'String');
+      }
       if (data.hasOwnProperty('allowSystemOverrideForLockedRecipient')) {
         obj['allowSystemOverrideForLockedRecipient'] = ApiClient.convertToType(data['allowSystemOverrideForLockedRecipient'], 'String');
       }
       if (data.hasOwnProperty('autoNavigation')) {
         obj['autoNavigation'] = ApiClient.convertToType(data['autoNavigation'], 'String');
+      }
+      if (data.hasOwnProperty('bulkRecipientsUri')) {
+        obj['bulkRecipientsUri'] = ApiClient.convertToType(data['bulkRecipientsUri'], 'String');
       }
       if (data.hasOwnProperty('canSignOffline')) {
         obj['canSignOffline'] = ApiClient.convertToType(data['canSignOffline'], 'String');
@@ -135,17 +150,17 @@
       if (data.hasOwnProperty('faxNumberMetadata')) {
         obj['faxNumberMetadata'] = PropertyMetadata.constructFromObject(data['faxNumberMetadata']);
       }
-      if (data.hasOwnProperty('hostEmail')) {
-        obj['hostEmail'] = ApiClient.convertToType(data['hostEmail'], 'String');
+      if (data.hasOwnProperty('firstName')) {
+        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
       }
-      if (data.hasOwnProperty('hostEmailMetadata')) {
-        obj['hostEmailMetadata'] = PropertyMetadata.constructFromObject(data['hostEmailMetadata']);
+      if (data.hasOwnProperty('firstNameMetadata')) {
+        obj['firstNameMetadata'] = PropertyMetadata.constructFromObject(data['firstNameMetadata']);
       }
-      if (data.hasOwnProperty('hostName')) {
-        obj['hostName'] = ApiClient.convertToType(data['hostName'], 'String');
+      if (data.hasOwnProperty('fullName')) {
+        obj['fullName'] = ApiClient.convertToType(data['fullName'], 'String');
       }
-      if (data.hasOwnProperty('hostNameMetadata')) {
-        obj['hostNameMetadata'] = PropertyMetadata.constructFromObject(data['hostNameMetadata']);
+      if (data.hasOwnProperty('fullNameMetadata')) {
+        obj['fullNameMetadata'] = PropertyMetadata.constructFromObject(data['fullNameMetadata']);
       }
       if (data.hasOwnProperty('idCheckConfigurationName')) {
         obj['idCheckConfigurationName'] = ApiClient.convertToType(data['idCheckConfigurationName'], 'String');
@@ -162,11 +177,17 @@
       if (data.hasOwnProperty('inheritEmailNotificationConfiguration')) {
         obj['inheritEmailNotificationConfiguration'] = ApiClient.convertToType(data['inheritEmailNotificationConfiguration'], 'String');
       }
-      if (data.hasOwnProperty('inPersonSigningType')) {
-        obj['inPersonSigningType'] = ApiClient.convertToType(data['inPersonSigningType'], 'String');
+      if (data.hasOwnProperty('isBulkRecipient')) {
+        obj['isBulkRecipient'] = ApiClient.convertToType(data['isBulkRecipient'], 'String');
       }
-      if (data.hasOwnProperty('inPersonSigningTypeMetadata')) {
-        obj['inPersonSigningTypeMetadata'] = PropertyMetadata.constructFromObject(data['inPersonSigningTypeMetadata']);
+      if (data.hasOwnProperty('isBulkRecipientMetadata')) {
+        obj['isBulkRecipientMetadata'] = PropertyMetadata.constructFromObject(data['isBulkRecipientMetadata']);
+      }
+      if (data.hasOwnProperty('lastName')) {
+        obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+      }
+      if (data.hasOwnProperty('lastNameMetadata')) {
+        obj['lastNameMetadata'] = PropertyMetadata.constructFromObject(data['lastNameMetadata']);
       }
       if (data.hasOwnProperty('lockedRecipientPhoneAuthEditable')) {
         obj['lockedRecipientPhoneAuthEditable'] = ApiClient.convertToType(data['lockedRecipientPhoneAuthEditable'], 'String');
@@ -180,11 +201,14 @@
       if (data.hasOwnProperty('nameMetadata')) {
         obj['nameMetadata'] = PropertyMetadata.constructFromObject(data['nameMetadata']);
       }
-      if (data.hasOwnProperty('notaryHost')) {
-        obj['notaryHost'] = NotaryHost.constructFromObject(data['notaryHost']);
-      }
       if (data.hasOwnProperty('notaryId')) {
         obj['notaryId'] = ApiClient.convertToType(data['notaryId'], 'String');
+      }
+      if (data.hasOwnProperty('notarySigners')) {
+        obj['notarySigners'] = ApiClient.convertToType(data['notarySigners'], ['String']);
+      }
+      if (data.hasOwnProperty('notaryType')) {
+        obj['notaryType'] = ApiClient.convertToType(data['notaryType'], 'String');
       }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
@@ -197,6 +221,9 @@
       }
       if (data.hasOwnProperty('phoneAuthentication')) {
         obj['phoneAuthentication'] = RecipientPhoneAuthentication.constructFromObject(data['phoneAuthentication']);
+      }
+      if (data.hasOwnProperty('proofFile')) {
+        obj['proofFile'] = RecipientProofFile.constructFromObject(data['proofFile']);
       }
       if (data.hasOwnProperty('recipientAttachments')) {
         obj['recipientAttachments'] = ApiClient.convertToType(data['recipientAttachments'], [RecipientAttachment]);
@@ -257,30 +284,6 @@
       }
       if (data.hasOwnProperty('signedDateTime')) {
         obj['signedDateTime'] = ApiClient.convertToType(data['signedDateTime'], 'String');
-      }
-      if (data.hasOwnProperty('signerEmail')) {
-        obj['signerEmail'] = ApiClient.convertToType(data['signerEmail'], 'String');
-      }
-      if (data.hasOwnProperty('signerEmailMetadata')) {
-        obj['signerEmailMetadata'] = PropertyMetadata.constructFromObject(data['signerEmailMetadata']);
-      }
-      if (data.hasOwnProperty('signerFirstName')) {
-        obj['signerFirstName'] = ApiClient.convertToType(data['signerFirstName'], 'String');
-      }
-      if (data.hasOwnProperty('signerFirstNameMetadata')) {
-        obj['signerFirstNameMetadata'] = PropertyMetadata.constructFromObject(data['signerFirstNameMetadata']);
-      }
-      if (data.hasOwnProperty('signerLastName')) {
-        obj['signerLastName'] = ApiClient.convertToType(data['signerLastName'], 'String');
-      }
-      if (data.hasOwnProperty('signerLastNameMetadata')) {
-        obj['signerLastNameMetadata'] = PropertyMetadata.constructFromObject(data['signerLastNameMetadata']);
-      }
-      if (data.hasOwnProperty('signerName')) {
-        obj['signerName'] = ApiClient.convertToType(data['signerName'], 'String');
-      }
-      if (data.hasOwnProperty('signerNameMetadata')) {
-        obj['signerNameMetadata'] = PropertyMetadata.constructFromObject(data['signerNameMetadata']);
       }
       if (data.hasOwnProperty('signInEachLocation')) {
         obj['signInEachLocation'] = ApiClient.convertToType(data['signInEachLocation'], 'String');
@@ -350,6 +353,25 @@
   exports.prototype['addAccessCodeToEmail'] = undefined;
   /**
    * 
+   * @member {Array.<module:model/RecipientAdditionalNotification>} additionalNotifications
+   */
+  exports.prototype['additionalNotifications'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} additionalNotificationsMetadata
+   */
+  exports.prototype['additionalNotificationsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} agentCanEditEmail
+   */
+  exports.prototype['agentCanEditEmail'] = undefined;
+  /**
+   * 
+   * @member {String} agentCanEditName
+   */
+  exports.prototype['agentCanEditName'] = undefined;
+  /**
+   * 
    * @member {String} allowSystemOverrideForLockedRecipient
    */
   exports.prototype['allowSystemOverrideForLockedRecipient'] = undefined;
@@ -358,6 +380,11 @@
    * @member {String} autoNavigation
    */
   exports.prototype['autoNavigation'] = undefined;
+  /**
+   * Contains a URI for an endpoint that allows you to easily retrieve bulk recipient information.
+   * @member {String} bulkRecipientsUri
+   */
+  exports.prototype['bulkRecipientsUri'] = undefined;
   /**
    * When set to **true**, specifies that the signer can perform the signing ceremony offline.
    * @member {String} canSignOffline
@@ -464,23 +491,23 @@
    */
   exports.prototype['faxNumberMetadata'] = undefined;
   /**
+   * The user's first name.  Maximum Length: 50 characters.
+   * @member {String} firstName
+   */
+  exports.prototype['firstName'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} firstNameMetadata
+   */
+  exports.prototype['firstNameMetadata'] = undefined;
+  /**
    * 
-   * @member {String} hostEmail
+   * @member {String} fullName
    */
-  exports.prototype['hostEmail'] = undefined;
+  exports.prototype['fullName'] = undefined;
   /**
-   * @member {module:model/PropertyMetadata} hostEmailMetadata
+   * @member {module:model/PropertyMetadata} fullNameMetadata
    */
-  exports.prototype['hostEmailMetadata'] = undefined;
-  /**
-   * Specifies the name of the signing host. It is a required element for In Person Signers recipient Type.  Maximum Length: 100 characters.
-   * @member {String} hostName
-   */
-  exports.prototype['hostName'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} hostNameMetadata
-   */
-  exports.prototype['hostNameMetadata'] = undefined;
+  exports.prototype['fullNameMetadata'] = undefined;
   /**
    * Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
    * @member {String} idCheckConfigurationName
@@ -505,13 +532,22 @@
   exports.prototype['inheritEmailNotificationConfiguration'] = undefined;
   /**
    * 
-   * @member {String} inPersonSigningType
+   * @member {String} isBulkRecipient
    */
-  exports.prototype['inPersonSigningType'] = undefined;
+  exports.prototype['isBulkRecipient'] = undefined;
   /**
-   * @member {module:model/PropertyMetadata} inPersonSigningTypeMetadata
+   * @member {module:model/PropertyMetadata} isBulkRecipientMetadata
    */
-  exports.prototype['inPersonSigningTypeMetadata'] = undefined;
+  exports.prototype['isBulkRecipientMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} lastName
+   */
+  exports.prototype['lastName'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} lastNameMetadata
+   */
+  exports.prototype['lastNameMetadata'] = undefined;
   /**
    * 
    * @member {String} lockedRecipientPhoneAuthEditable
@@ -532,14 +568,20 @@
    */
   exports.prototype['nameMetadata'] = undefined;
   /**
-   * @member {module:model/NotaryHost} notaryHost
-   */
-  exports.prototype['notaryHost'] = undefined;
-  /**
    * 
    * @member {String} notaryId
    */
   exports.prototype['notaryId'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} notarySigners
+   */
+  exports.prototype['notarySigners'] = undefined;
+  /**
+   * 
+   * @member {String} notaryType
+   */
+  exports.prototype['notaryType'] = undefined;
   /**
    * Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
    * @member {String} note
@@ -557,6 +599,10 @@
    * @member {module:model/RecipientPhoneAuthentication} phoneAuthentication
    */
   exports.prototype['phoneAuthentication'] = undefined;
+  /**
+   * @member {module:model/RecipientProofFile} proofFile
+   */
+  exports.prototype['proofFile'] = undefined;
   /**
    * Reserved:
    * @member {Array.<module:model/RecipientAttachment>} recipientAttachments
@@ -652,42 +698,6 @@
    * @member {String} signedDateTime
    */
   exports.prototype['signedDateTime'] = undefined;
-  /**
-   * The email address for an InPersonSigner recipient Type.   Maximum Length: 100 characters. 
-   * @member {String} signerEmail
-   */
-  exports.prototype['signerEmail'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} signerEmailMetadata
-   */
-  exports.prototype['signerEmailMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} signerFirstName
-   */
-  exports.prototype['signerFirstName'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} signerFirstNameMetadata
-   */
-  exports.prototype['signerFirstNameMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} signerLastName
-   */
-  exports.prototype['signerLastName'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} signerLastNameMetadata
-   */
-  exports.prototype['signerLastNameMetadata'] = undefined;
-  /**
-   * Required. The full legal name of a signer for the envelope.   Maximum Length: 100 characters.   
-   * @member {String} signerName
-   */
-  exports.prototype['signerName'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} signerNameMetadata
-   */
-  exports.prototype['signerNameMetadata'] = undefined;
   /**
    * When set to **true**, specifies that the signer must sign in all locations.
    * @member {String} signInEachLocation
