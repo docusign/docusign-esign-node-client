@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('batchName')) {
+        obj['batchName'] = ApiClient.convertToType(data['batchName'], 'String');
+      }
       if (data.hasOwnProperty('envelopeOrTemplateId')) {
         obj['envelopeOrTemplateId'] = ApiClient.convertToType(data['envelopeOrTemplateId'], 'String');
       }
@@ -61,6 +64,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} batchName
+   */
+  exports.prototype['batchName'] = undefined;
   /**
    * 
    * @member {String} envelopeOrTemplateId

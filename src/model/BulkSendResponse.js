@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('batchId')) {
         obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
       }
+      if (data.hasOwnProperty('batchName')) {
+        obj['batchName'] = ApiClient.convertToType(data['batchName'], 'String');
+      }
       if (data.hasOwnProperty('batchSize')) {
         obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'String');
       }
@@ -84,6 +87,11 @@
    * @member {String} batchId
    */
   exports.prototype['batchId'] = undefined;
+  /**
+   * 
+   * @member {String} batchName
+   */
+  exports.prototype['batchName'] = undefined;
   /**
    * 
    * @member {String} batchSize
