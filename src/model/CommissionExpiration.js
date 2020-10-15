@@ -12,29 +12,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation'], factory);
+    define(['ApiClient', 'model/ErrorDetails', 'model/LocalePolicyTab', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'));
+    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./LocalePolicyTab'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.NotarySeal = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation);
+    root.Docusign.CommissionExpiration = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation);
   }
-}(this, function(ApiClient, ErrorDetails, MergeField, PropertyMetadata, SmartContractInformation) {
+}(this, function(ApiClient, ErrorDetails, LocalePolicyTab, MergeField, PropertyMetadata, SmartContractInformation) {
   'use strict';
 
 
   /**
-   * The NotarySeal model module.
-   * @module model/NotarySeal
+   * The CommissionExpiration model module.
+   * @module model/CommissionExpiration
    */
 
   /**
-   * Constructs a new <code>NotarySeal</code>.
-   * @alias module:model/NotarySeal
+   * Constructs a new <code>CommissionExpiration</code>.
+   * @alias module:model/CommissionExpiration
    * @class
    */
   var exports = function() {
@@ -44,11 +44,11 @@
   };
 
   /**
-   * Constructs a <code>NotarySeal</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CommissionExpiration</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/NotarySeal} obj Optional instance to populate.
-   * @return {module:model/NotarySeal} The populated <code>NotarySeal</code> instance.
+   * @param {module:model/CommissionExpiration} obj Optional instance to populate.
+   * @return {module:model/CommissionExpiration} The populated <code>CommissionExpiration</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -114,6 +114,18 @@
       if (data.hasOwnProperty('anchorYOffsetMetadata')) {
         obj['anchorYOffsetMetadata'] = PropertyMetadata.constructFromObject(data['anchorYOffsetMetadata']);
       }
+      if (data.hasOwnProperty('bold')) {
+        obj['bold'] = ApiClient.convertToType(data['bold'], 'String');
+      }
+      if (data.hasOwnProperty('boldMetadata')) {
+        obj['boldMetadata'] = PropertyMetadata.constructFromObject(data['boldMetadata']);
+      }
+      if (data.hasOwnProperty('concealValueOnDocument')) {
+        obj['concealValueOnDocument'] = ApiClient.convertToType(data['concealValueOnDocument'], 'String');
+      }
+      if (data.hasOwnProperty('concealValueOnDocumentMetadata')) {
+        obj['concealValueOnDocumentMetadata'] = PropertyMetadata.constructFromObject(data['concealValueOnDocumentMetadata']);
+      }
       if (data.hasOwnProperty('conditionalParentLabel')) {
         obj['conditionalParentLabel'] = ApiClient.convertToType(data['conditionalParentLabel'], 'String');
       }
@@ -132,6 +144,12 @@
       if (data.hasOwnProperty('customTabIdMetadata')) {
         obj['customTabIdMetadata'] = PropertyMetadata.constructFromObject(data['customTabIdMetadata']);
       }
+      if (data.hasOwnProperty('disableAutoSize')) {
+        obj['disableAutoSize'] = ApiClient.convertToType(data['disableAutoSize'], 'String');
+      }
+      if (data.hasOwnProperty('disableAutoSizeMetadata')) {
+        obj['disableAutoSizeMetadata'] = PropertyMetadata.constructFromObject(data['disableAutoSizeMetadata']);
+      }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
       }
@@ -140,6 +158,24 @@
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('font')) {
+        obj['font'] = ApiClient.convertToType(data['font'], 'String');
+      }
+      if (data.hasOwnProperty('fontColor')) {
+        obj['fontColor'] = ApiClient.convertToType(data['fontColor'], 'String');
+      }
+      if (data.hasOwnProperty('fontColorMetadata')) {
+        obj['fontColorMetadata'] = PropertyMetadata.constructFromObject(data['fontColorMetadata']);
+      }
+      if (data.hasOwnProperty('fontMetadata')) {
+        obj['fontMetadata'] = PropertyMetadata.constructFromObject(data['fontMetadata']);
+      }
+      if (data.hasOwnProperty('fontSize')) {
+        obj['fontSize'] = ApiClient.convertToType(data['fontSize'], 'String');
+      }
+      if (data.hasOwnProperty('fontSizeMetadata')) {
+        obj['fontSizeMetadata'] = PropertyMetadata.constructFromObject(data['fontSizeMetadata']);
       }
       if (data.hasOwnProperty('formOrder')) {
         obj['formOrder'] = ApiClient.convertToType(data['formOrder'], 'String');
@@ -165,6 +201,27 @@
       if (data.hasOwnProperty('heightMetadata')) {
         obj['heightMetadata'] = PropertyMetadata.constructFromObject(data['heightMetadata']);
       }
+      if (data.hasOwnProperty('italic')) {
+        obj['italic'] = ApiClient.convertToType(data['italic'], 'String');
+      }
+      if (data.hasOwnProperty('italicMetadata')) {
+        obj['italicMetadata'] = PropertyMetadata.constructFromObject(data['italicMetadata']);
+      }
+      if (data.hasOwnProperty('localePolicy')) {
+        obj['localePolicy'] = LocalePolicyTab.constructFromObject(data['localePolicy']);
+      }
+      if (data.hasOwnProperty('locked')) {
+        obj['locked'] = ApiClient.convertToType(data['locked'], 'String');
+      }
+      if (data.hasOwnProperty('lockedMetadata')) {
+        obj['lockedMetadata'] = PropertyMetadata.constructFromObject(data['lockedMetadata']);
+      }
+      if (data.hasOwnProperty('maxLength')) {
+        obj['maxLength'] = ApiClient.convertToType(data['maxLength'], 'String');
+      }
+      if (data.hasOwnProperty('maxLengthMetadata')) {
+        obj['maxLengthMetadata'] = PropertyMetadata.constructFromObject(data['maxLengthMetadata']);
+      }
       if (data.hasOwnProperty('mergeField')) {
         obj['mergeField'] = MergeField.constructFromObject(data['mergeField']);
       }
@@ -176,6 +233,12 @@
       }
       if (data.hasOwnProperty('nameMetadata')) {
         obj['nameMetadata'] = PropertyMetadata.constructFromObject(data['nameMetadata']);
+      }
+      if (data.hasOwnProperty('originalValue')) {
+        obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
+      }
+      if (data.hasOwnProperty('originalValueMetadata')) {
+        obj['originalValueMetadata'] = PropertyMetadata.constructFromObject(data['originalValueMetadata']);
       }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
@@ -195,11 +258,11 @@
       if (data.hasOwnProperty('recipientIdMetadata')) {
         obj['recipientIdMetadata'] = PropertyMetadata.constructFromObject(data['recipientIdMetadata']);
       }
-      if (data.hasOwnProperty('scaleValue')) {
-        obj['scaleValue'] = ApiClient.convertToType(data['scaleValue'], 'String');
+      if (data.hasOwnProperty('required')) {
+        obj['required'] = ApiClient.convertToType(data['required'], 'String');
       }
-      if (data.hasOwnProperty('scaleValueMetadata')) {
-        obj['scaleValueMetadata'] = PropertyMetadata.constructFromObject(data['scaleValueMetadata']);
+      if (data.hasOwnProperty('requiredMetadata')) {
+        obj['requiredMetadata'] = PropertyMetadata.constructFromObject(data['requiredMetadata']);
       }
       if (data.hasOwnProperty('smartContractInformation')) {
         obj['smartContractInformation'] = SmartContractInformation.constructFromObject(data['smartContractInformation']);
@@ -257,6 +320,18 @@
       }
       if (data.hasOwnProperty('toolTipMetadata')) {
         obj['toolTipMetadata'] = PropertyMetadata.constructFromObject(data['toolTipMetadata']);
+      }
+      if (data.hasOwnProperty('underline')) {
+        obj['underline'] = ApiClient.convertToType(data['underline'], 'String');
+      }
+      if (data.hasOwnProperty('underlineMetadata')) {
+        obj['underlineMetadata'] = PropertyMetadata.constructFromObject(data['underlineMetadata']);
+      }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
+      if (data.hasOwnProperty('valueMetadata')) {
+        obj['valueMetadata'] = PropertyMetadata.constructFromObject(data['valueMetadata']);
       }
       if (data.hasOwnProperty('width')) {
         obj['width'] = ApiClient.convertToType(data['width'], 'String');
@@ -371,6 +446,24 @@
    */
   exports.prototype['anchorYOffsetMetadata'] = undefined;
   /**
+   * When set to **true**, the information in the tab is bold.
+   * @member {String} bold
+   */
+  exports.prototype['bold'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} boldMetadata
+   */
+  exports.prototype['boldMetadata'] = undefined;
+  /**
+   * When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
+   * @member {String} concealValueOnDocument
+   */
+  exports.prototype['concealValueOnDocument'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} concealValueOnDocumentMetadata
+   */
+  exports.prototype['concealValueOnDocumentMetadata'] = undefined;
+  /**
    * For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
    * @member {String} conditionalParentLabel
    */
@@ -398,6 +491,15 @@
    */
   exports.prototype['customTabIdMetadata'] = undefined;
   /**
+   * When set to **true**, disables the auto sizing of single line text boxes in the signing screen when the signer enters data. If disabled users will only be able enter as much data as the text box can hold. By default this is false. This property only affects single line text boxes.
+   * @member {String} disableAutoSize
+   */
+  exports.prototype['disableAutoSize'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} disableAutoSizeMetadata
+   */
+  exports.prototype['disableAutoSizeMetadata'] = undefined;
+  /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
@@ -410,6 +512,33 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
+   * @member {String} font
+   */
+  exports.prototype['font'] = undefined;
+  /**
+   * The font color used for the information in the tab.  Possible values are: Black, BrightBlue, BrightRed, DarkGreen, DarkRed, Gold, Green, NavyBlue, Purple, or White.
+   * @member {String} fontColor
+   */
+  exports.prototype['fontColor'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} fontColorMetadata
+   */
+  exports.prototype['fontColorMetadata'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} fontMetadata
+   */
+  exports.prototype['fontMetadata'] = undefined;
+  /**
+   * The font size used for the information in the tab.  Possible values are: Size7, Size8, Size9, Size10, Size11, Size12, Size14, Size16, Size18, Size20, Size22, Size24, Size26, Size28, Size36, Size48, or Size72.
+   * @member {String} fontSize
+   */
+  exports.prototype['fontSize'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} fontSizeMetadata
+   */
+  exports.prototype['fontSizeMetadata'] = undefined;
   /**
    * 
    * @member {String} formOrder
@@ -447,6 +576,37 @@
    */
   exports.prototype['heightMetadata'] = undefined;
   /**
+   * When set to **true**, the information in the tab is italic.
+   * @member {String} italic
+   */
+  exports.prototype['italic'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} italicMetadata
+   */
+  exports.prototype['italicMetadata'] = undefined;
+  /**
+   * @member {module:model/LocalePolicyTab} localePolicy
+   */
+  exports.prototype['localePolicy'] = undefined;
+  /**
+   * When set to **true**, the signer cannot change the data of the custom tab.
+   * @member {String} locked
+   */
+  exports.prototype['locked'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} lockedMetadata
+   */
+  exports.prototype['lockedMetadata'] = undefined;
+  /**
+   * An optional value that describes the maximum length of the property when the property is a string.
+   * @member {String} maxLength
+   */
+  exports.prototype['maxLength'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} maxLengthMetadata
+   */
+  exports.prototype['maxLengthMetadata'] = undefined;
+  /**
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
@@ -464,6 +624,15 @@
    * @member {module:model/PropertyMetadata} nameMetadata
    */
   exports.prototype['nameMetadata'] = undefined;
+  /**
+   * The initial value of the tab when it was sent to the recipient. 
+   * @member {String} originalValue
+   */
+  exports.prototype['originalValue'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} originalValueMetadata
+   */
+  exports.prototype['originalValueMetadata'] = undefined;
   /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber
@@ -492,14 +661,14 @@
    */
   exports.prototype['recipientIdMetadata'] = undefined;
   /**
-   * 
-   * @member {String} scaleValue
+   * When set to **true**, the signer is required to fill out this tab
+   * @member {String} required
    */
-  exports.prototype['scaleValue'] = undefined;
+  exports.prototype['required'] = undefined;
   /**
-   * @member {module:model/PropertyMetadata} scaleValueMetadata
+   * @member {module:model/PropertyMetadata} requiredMetadata
    */
-  exports.prototype['scaleValueMetadata'] = undefined;
+  exports.prototype['requiredMetadata'] = undefined;
   /**
    * @member {module:model/SmartContractInformation} smartContractInformation
    */
@@ -585,6 +754,24 @@
    * @member {module:model/PropertyMetadata} toolTipMetadata
    */
   exports.prototype['toolTipMetadata'] = undefined;
+  /**
+   * When set to **true**, the information in the tab is underlined.
+   * @member {String} underline
+   */
+  exports.prototype['underline'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} underlineMetadata
+   */
+  exports.prototype['underlineMetadata'] = undefined;
+  /**
+   * Specifies the value of the tab. 
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} valueMetadata
+   */
+  exports.prototype['valueMetadata'] = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width

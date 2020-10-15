@@ -67,9 +67,6 @@
       if (data.hasOwnProperty('additionalNotifications')) {
         obj['additionalNotifications'] = ApiClient.convertToType(data['additionalNotifications'], [RecipientAdditionalNotification]);
       }
-      if (data.hasOwnProperty('additionalNotificationsMetadata')) {
-        obj['additionalNotificationsMetadata'] = PropertyMetadata.constructFromObject(data['additionalNotificationsMetadata']);
-      }
       if (data.hasOwnProperty('allowSystemOverrideForLockedRecipient')) {
         obj['allowSystemOverrideForLockedRecipient'] = ApiClient.convertToType(data['allowSystemOverrideForLockedRecipient'], 'String');
       }
@@ -288,10 +285,6 @@
    * @member {Array.<module:model/RecipientAdditionalNotification>} additionalNotifications
    */
   exports.prototype['additionalNotifications'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} additionalNotificationsMetadata
-   */
-  exports.prototype['additionalNotificationsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowSystemOverrideForLockedRecipient

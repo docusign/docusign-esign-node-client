@@ -382,6 +382,12 @@
       if (data.hasOwnProperty('allowRemindersMetadata')) {
         obj['allowRemindersMetadata'] = SettingsMetadata.constructFromObject(data['allowRemindersMetadata']);
       }
+      if (data.hasOwnProperty('allowRemoteNotary')) {
+        obj['allowRemoteNotary'] = ApiClient.convertToType(data['allowRemoteNotary'], 'String');
+      }
+      if (data.hasOwnProperty('allowRemoteNotaryMetadata')) {
+        obj['allowRemoteNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowRemoteNotaryMetadata']);
+      }
       if (data.hasOwnProperty('allowResourceFileBranding')) {
         obj['allowResourceFileBranding'] = ApiClient.convertToType(data['allowResourceFileBranding'], 'String');
       }
@@ -759,6 +765,18 @@
       }
       if (data.hasOwnProperty('enableAdvancedPowerFormsMetadata')) {
         obj['enableAdvancedPowerFormsMetadata'] = SettingsMetadata.constructFromObject(data['enableAdvancedPowerFormsMetadata']);
+      }
+      if (data.hasOwnProperty('enableAgreementActionsForCLM')) {
+        obj['enableAgreementActionsForCLM'] = ApiClient.convertToType(data['enableAgreementActionsForCLM'], 'String');
+      }
+      if (data.hasOwnProperty('enableAgreementActionsForCLMMetadata')) {
+        obj['enableAgreementActionsForCLMMetadata'] = SettingsMetadata.constructFromObject(data['enableAgreementActionsForCLMMetadata']);
+      }
+      if (data.hasOwnProperty('enableAgreementActionsForESign')) {
+        obj['enableAgreementActionsForESign'] = ApiClient.convertToType(data['enableAgreementActionsForESign'], 'String');
+      }
+      if (data.hasOwnProperty('enableAgreementActionsForESignMetadata')) {
+        obj['enableAgreementActionsForESignMetadata'] = SettingsMetadata.constructFromObject(data['enableAgreementActionsForESignMetadata']);
       }
       if (data.hasOwnProperty('enableAutoNav')) {
         obj['enableAutoNav'] = ApiClient.convertToType(data['enableAutoNav'], 'String');
@@ -2102,6 +2120,15 @@
   exports.prototype['allowRemindersMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowRemoteNotary
+   */
+  exports.prototype['allowRemoteNotary'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowRemoteNotaryMetadata
+   */
+  exports.prototype['allowRemoteNotaryMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowResourceFileBranding
    */
   exports.prototype['allowResourceFileBranding'] = undefined;
@@ -2668,6 +2695,24 @@
    * @member {module:model/SettingsMetadata} enableAdvancedPowerFormsMetadata
    */
   exports.prototype['enableAdvancedPowerFormsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableAgreementActionsForCLM
+   */
+  exports.prototype['enableAgreementActionsForCLM'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableAgreementActionsForCLMMetadata
+   */
+  exports.prototype['enableAgreementActionsForCLMMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableAgreementActionsForESign
+   */
+  exports.prototype['enableAgreementActionsForESign'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableAgreementActionsForESignMetadata
+   */
+  exports.prototype['enableAgreementActionsForESignMetadata'] = undefined;
   /**
    * 
    * @member {String} enableAutoNav
