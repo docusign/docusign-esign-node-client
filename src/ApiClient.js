@@ -445,11 +445,20 @@
     // Rely on SuperAgent for parsing response body.
     // See http://visionmedia.github.io/superagent/#parsing-response-bodies
     var data = response.body || (response.res && response.res.data);
-    if (data == null || !Object.keys(data).length) {
+    if (data == null || (typeof data === 'object' && typeof data.length === 'undefined' && !Object.keys(data).length)) {
       // SuperAgent does not always produce a body; use the unparsed response as a fallback
       data = response.text;
     }
     return exports.convertToType(data, returnType);
+  };
+
+  exports.prototype.hasBufferFormParam = function(formParams) {
+    if (!formParams) {
+      return false;
+    }
+    return Object.keys(formParams).some(function(key) {
+      return formParams[key] instanceof Buffer;
+    });
   };
 
   /**
@@ -484,7 +493,8 @@
     var _this = this;
     var url = this.buildUrl(path, pathParams);
     var request = superagent(httpMethod, url);
-
+    var _formParams = this.normalizeParams(formParams);
+    var body = bodyParam || {};
     // apply authentications
     this.applyAuthToRequest(request, authNames);
 
@@ -513,19 +523,32 @@
     if (contentType === 'application/x-www-form-urlencoded') {
       request.send(this.normalizeParams(formParams));
     } else if (contentType == 'multipart/form-data') {
-      var _formParams = this.normalizeParams(formParams);
-      for (var key in _formParams) {
-        if (_formParams.hasOwnProperty(key)) {
-          if (this.isFileParam(_formParams[key])) {
-            // file field
-            request.attach(key, _formParams[key]);
-          } else {
-            request.field(key, _formParams[key]);
+      if (this.hasBufferFormParam(_formParams)) {
+        var formAttachmentKey = Object.keys(formParams).find(function(key) {
+          return _this.isFileParam(_formParams[key]);
+        });
+        request.set({
+          'Content-Disposition': 'form-data; name="file"; filename="file.xml"'
+        });
+        request.set({
+          'Content-Type': 'application/octet-stream'
+        });
+        request.send(removeNulls(formParams[formAttachmentKey]));
+      } else {
+        var _formParams = this.normalizeParams(formParams);
+        for (var key in _formParams) {
+          if (_formParams.hasOwnProperty(key)) {
+            if (this.isFileParam(_formParams[key])) {
+              // file field
+              request.attach(key, _formParams[key]);
+            } else {
+              request.field(key, _formParams[key]);
+            }
           }
         }
       }
-    } else if (bodyParam) {
-      request.send(removeNulls(bodyParam));
+    } else if (body) {
+      request.send(removeNulls(body));
     }
 
     var accept = this.jsonPreferredMime(accepts);
@@ -555,7 +578,6 @@
         });
       })
     }
-
 
     var data = null;
     if (!callback) {
@@ -791,7 +813,6 @@
           });
         });
       } catch (err) {
-        console.log(err)
         throw(err)
       }
     } else {
