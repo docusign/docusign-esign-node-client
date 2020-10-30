@@ -1,6 +1,14 @@
 # DocuSign Node Client Changelog
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
+## [v5.8.1] - eSignature API v2.1-20.3.01
+### Changed
+- Added support for version v2.1-20.3.01 of the DocuSign eSignature API.
+- Updated the SDK release version.
+### Fixed 
+- DCM-3866, Added support for updateBrandResourcesByContentType function to take in file to upload.
+- DCM-3369, Updated ApiClient to use an empty JSON object if the body is null.
+- DCM-4614, Fixed out of memory issue when deserializing large files.
 
 ## [v5.7.0] - eSignature API v2.1-20.3.00
 ### Changed

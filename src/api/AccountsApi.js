@@ -244,7 +244,7 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
 An error is returned if `brandId` property for a brand profile is already set for the account. To upload a new version of an existing brand profile, you must delete the profile and then upload the newer version.
 
 When brand profile files are being uploaded, they must be combined into one zip file and the `Content-Type` must be `application/zip`.
-     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} accountId The external account number (int) or account ID GUID.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/Brand} optsOrCallback.brand 
      * @param {module:api/AccountsApi~createBrandCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3654,13 +3654,19 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Uploads a branding resource file.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} brandId The unique identifier of a brand.
-     * @param {String} resourceContentType 
+     * @param {String} accountId The external account number (int) or account ID GUID.
+     * @param {String} brandId The id of the brand.
+     * @param {String} resourceContentType The type of brand resource file that you are updating. Valid values are:
+
+- `sending`
+- `signing`
+- `email`
+- `signing_captive`
+     * @param {Object} fileXml Brand resource XML file.
      * @param {module:api/AccountsApi~updateBrandResourcesByContentTypeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandResources}
      */
-    this.updateBrandResourcesByContentType = function(accountId, brandId, resourceContentType, callback) {
+    this.updateBrandResourcesByContentType = function(accountId, brandId, resourceContentType, fileXml, callback) {
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -3676,6 +3682,11 @@ Users with account administration privileges can retrieve shared access informat
       // verify the required parameter 'resourceContentType' is set
       if (resourceContentType === undefined || resourceContentType === null) {
         throw new Error("Missing the required parameter 'resourceContentType' when calling updateBrandResourcesByContentType");
+      }
+
+      // verify the required parameter 'fileXml' is set
+      if (fileXml === undefined || fileXml === null) {
+        throw new Error("Missing the required parameter 'fileXml' when calling updateBrandResourcesByContentType");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -3695,10 +3706,11 @@ Users with account administration privileges can retrieve shared access informat
       var headerParams = {
       };
       var formParams = {
+        'file.xml': fileXml
       };
 
       var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
+      var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json'];
       var returnType = BrandResources;
 
