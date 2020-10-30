@@ -11,7 +11,7 @@ var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
 var csvStringify = require('csv-stringify');
-
+var brandXmlPath = 'docs/brand.xml';
 var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 var fs = require('fs');
 
@@ -28,6 +28,7 @@ var basePath = restApi.BasePath.DEMO;
 var oAuthBasePath = oAuth.BasePath.DEMO;
 
 var SignTest1File = 'docs/SignTest1.pdf';
+var LargeTestDocument1 = 'docs/LargeTestDocument1.pdf';
 var brandLogoPath = 'img/docusign-lgo.png';
 var accountId = '';
 var envelopeId = '';
@@ -678,7 +679,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, LargeTestDocument1));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -1128,6 +1129,115 @@ describe('SDK Unit Tests:', function (done) {
         if (error) {
           // console.log('TemplateSummary Number Error: ' + JSON.stringify(templateSummary));
           console.error(error);
+          return done(error);
+        }
+      });
+  });
+
+  it('it updateBrandResourcesByContentType', function (done) {
+    var accountsApi = new docusign.AccountsApi(apiClient);
+    accountsApi.listBrands(accountId, { includeLogos: true })
+      .then(function (brandsData) {
+        var currentBrand = brandsData.brands[0];
+        var brandXmlBuffer = fs.readFileSync(path.resolve(__dirname, brandXmlPath));
+        accountsApi.updateBrandResourcesByContentType(accountId, currentBrand.brandId, 'email', brandXmlBuffer)
+          .then(function (data) {
+            assert.notEqual(data.createdByUserInfo, undefined);
+            assert.notEqual(data.resourcesContentUri, undefined);
+            return done();
+          })
+          .catch(function (error) {
+            return done(error);
+          });
+      })
+      .catch(function (error) {
+        return done(error);
+      });
+  });
+
+  it('resend envelope with envelope update', function (done) {
+    var fileBytes = null;
+    try {
+      var fs = require('fs');
+      // read file from a local directory
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+    } catch (ex) {
+      // handle error
+      console.log('Exception: ' + ex);
+    }
+
+    // create an envelope to be signed
+    var envDef = new docusign.EnvelopeDefinition();
+    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
+    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
+
+    // add a document to the envelope
+    var doc = new docusign.Document();
+    var base64Doc = Buffer.from(fileBytes).toString('base64');
+    doc.documentBase64 = base64Doc;
+    doc.name = 'TestFile.pdf';
+    doc.documentId = '1';
+
+    var docs = [];
+    docs.push(doc);
+    envDef.documents = docs;
+
+    // Add a recipient to sign the document
+    var signer = new docusign.Signer();
+    signer.email = userName;
+    var name = 'Pat Developer';
+    signer.name = name;
+    signer.recipientId = '1';
+
+    // this value represents the client's unique identifier for the signer
+    var clientUserId = '2939';
+    signer.clientUserId = clientUserId;
+
+    // create a signHere tab somewhere on the document for the signer to sign
+    // default unit of measurement is pixels, can be mms, cms, inches also
+    var signHere = new docusign.SignHere();
+    signHere.documentId = '1';
+    signHere.pageNumber = '1';
+    signHere.recipientId = '1';
+    signHere.xPosition = '100';
+    signHere.yPosition = '100';
+
+    // can have multiple tabs, so need to add to envelope as a single element list
+    var signHereTabs = [];
+    signHereTabs.push(signHere);
+    var tabs = new docusign.Tabs();
+    tabs.signHereTabs = signHereTabs;
+    signer.tabs = tabs;
+
+    // Above causes issue
+    envDef.recipients = new docusign.Recipients();
+    envDef.recipients.signers = [];
+    envDef.recipients.signers.push(signer);
+
+    // send the envelope (otherwise it will be "created" in the Draft folder
+    envDef.status = 'sent';
+
+    var envelopesApi = new docusign.EnvelopesApi(apiClient);
+
+    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+      .then(function (envelopeSummary) {
+        if (envelopeSummary) {
+          envelopesApi.update(accountId, envelopeSummary.envelopeId, { resendEnvelope: true })
+            .then(function (envelopeUpdateSummary) {
+              if (envelopeUpdateSummary) {
+                console.log('envelopeUpdateSummary: ' + JSON.stringify(envelopeUpdateSummary));
+                done();
+              }
+            })
+            .catch(function (error) {
+              if (error) {
+                return done(error);
+              }
+            });
+        }
+      })
+      .catch(function (error) {
+        if (error) {
           return done(error);
         }
       });
