@@ -5328,7 +5328,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
       var returnType = EnvelopesInformation;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/envelopes/status', 'PUT',
+        '/v2.1/accounts/{accountId}/envelopes/status', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
