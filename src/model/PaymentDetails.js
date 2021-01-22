@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Money', 'model/PaymentLineItem'], factory);
+    define(['ApiClient', 'model/Money', 'model/PaymentLineItem', 'model/PaymentSignerValues'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Money'), require('./PaymentLineItem'));
+    module.exports = factory(require('../ApiClient'), require('./Money'), require('./PaymentLineItem'), require('./PaymentSignerValues'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.PaymentDetails = factory(root.Docusign.ApiClient, root.Docusign.Money, root.Docusign.PaymentLineItem);
+    root.Docusign.PaymentDetails = factory(root.Docusign.ApiClient, root.Docusign.Money, root.Docusign.PaymentLineItem, root.Docusign.PaymentSignerValues);
   }
-}(this, function(ApiClient, Money, PaymentLineItem) {
+}(this, function(ApiClient, Money, PaymentLineItem, PaymentSignerValues) {
   'use strict';
 
 
@@ -89,6 +89,9 @@
       }
       if (data.hasOwnProperty('paymentSourceId')) {
         obj['paymentSourceId'] = ApiClient.convertToType(data['paymentSourceId'], 'String');
+      }
+      if (data.hasOwnProperty('signerValues')) {
+        obj['signerValues'] = PaymentSignerValues.constructFromObject(data['signerValues']);
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -160,6 +163,10 @@
    * @member {String} paymentSourceId
    */
   exports.prototype['paymentSourceId'] = undefined;
+  /**
+   * @member {module:model/PaymentSignerValues} signerValues
+   */
+  exports.prototype['signerValues'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status

@@ -30,7 +30,6 @@
   /**
    * The Sender model module.
    * @module model/Sender
-   * @version 4.6.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The User model module.
    * @module model/User
-   * @version 4.6.0
    */
 
   /**

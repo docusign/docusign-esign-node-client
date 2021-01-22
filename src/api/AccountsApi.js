@@ -907,6 +907,63 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getAccountSettingsExport operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getAccountSettingsExportCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Retrieves an account settings comparison.
+     * @param {String} organizationId 
+     * @param {String} resultId 
+     * @param {module:api/AccountsApi~getAccountSettingsExportCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getAccountSettingsExport = function(organizationId, resultId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'organizationId' is set
+      if (organizationId === undefined || organizationId === null) {
+        throw new Error("Missing the required parameter 'organizationId' when calling getAccountSettingsExport");
+      }
+
+      // verify the required parameter 'resultId' is set
+      if (resultId === undefined || resultId === null) {
+        throw new Error("Missing the required parameter 'resultId' when calling getAccountSettingsExport");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'organizationId': organizationId,
+        'resultId': resultId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/organization_exports/{organizationId}/account_settings/{resultId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getAccountTabSettings operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountTabSettingsCallback
      * @param {String} error Error message, if any.

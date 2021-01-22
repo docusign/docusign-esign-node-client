@@ -115,6 +115,56 @@
     };
 
     /**
+     * (Optional) Callback function to receive the result of the createConnectSecret operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~createConnectSecretCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Generates a new connect HMAC Secret.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~createConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.createConnectSecret = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createConnectSecret");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/connect/secret', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the deleteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteConfigurationCallback
      * @param {String} error Error message, if any.
@@ -172,6 +222,63 @@
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/connect/{connectId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteConnectSecret operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~deleteConnectSecretCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Delete the connect HMAC Secret for AccountID
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} keyId 
+     * @param {module:api/ConnectApi~deleteConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteConnectSecret = function(accountId, keyId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteConnectSecret");
+      }
+
+      // verify the required parameter 'keyId' is set
+      if (keyId === undefined || keyId === null) {
+        throw new Error("Missing the required parameter 'keyId' when calling deleteConnectSecret");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'keyId': keyId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/connect/secret/{keyId}/delete', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -409,6 +516,56 @@
     };
 
     /**
+     * (Optional) Callback function to receive the result of the generateConnectSecret operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~generateConnectSecretCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Generates a new connect HMAC Secret.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~generateConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.generateConnectSecret = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling generateConnectSecret");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/connect/secret', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~getConfigurationCallback
      * @param {String} error Error message, if any.
@@ -465,6 +622,56 @@
 
       return this.apiClient.callApi(
         '/v2/accounts/{accountId}/connect/{connectId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getConnectSecrets operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~getConnectSecretsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get the connect HMAC Secrets for AccountID
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~getConnectSecretsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.getConnectSecrets = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getConnectSecrets");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2/accounts/{accountId}/connect/secrets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

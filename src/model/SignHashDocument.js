@@ -30,7 +30,6 @@
   /**
    * The SignHashDocument model module.
    * @module model/SignHashDocument
-   * @version 4.6.0
    */
 
   /**

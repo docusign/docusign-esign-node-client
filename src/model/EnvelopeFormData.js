@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('formData')) {
         obj['formData'] = ApiClient.convertToType(data['formData'], [NameValue]);
       }
+      if (data.hasOwnProperty('prefillFormData')) {
+        obj['prefillFormData'] = ApiClient.convertToType(data['prefillFormData'], [NameValue]);
+      }
       if (data.hasOwnProperty('recipientFormData')) {
         obj['recipientFormData'] = ApiClient.convertToType(data['recipientFormData'], [RecipientFormData]);
       }
@@ -91,6 +94,11 @@
    * @member {Array.<module:model/NameValue>} formData
    */
   exports.prototype['formData'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/NameValue>} prefillFormData
+   */
+  exports.prototype['prefillFormData'] = undefined;
   /**
    * 
    * @member {Array.<module:model/RecipientFormData>} recipientFormData

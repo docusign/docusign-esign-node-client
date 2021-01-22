@@ -30,7 +30,6 @@
   /**
    * The UpdateTransactionResponse model module.
    * @module model/UpdateTransactionResponse
-   * @version 4.6.0
    */
 
   /**
