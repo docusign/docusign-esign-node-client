@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BrandsRequest', 'model/BrandsResponse', 'model/ErrorDetails', 'model/GroupInformation', 'model/UserInfoList', 'model/UsersResponse'], factory);
+	define(['Configuration', 'ApiClient', 'model/BrandsRequest', 'model/ErrorDetails', 'model/GroupBrands', 'model/GroupInformation', 'model/UserInfoList', 'model/UsersResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/UserInfoList'), require('../model/UsersResponse'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BrandsRequest'), require('../model/ErrorDetails'), require('../model/GroupBrands'), require('../model/GroupInformation'), require('../model/UserInfoList'), require('../model/UsersResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.GroupsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.UserInfoList, root.Docusign.UsersResponse);
+    root.Docusign.GroupsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BrandsRequest, root.Docusign.ErrorDetails, root.Docusign.GroupBrands, root.Docusign.GroupInformation, root.Docusign.UserInfoList, root.Docusign.UsersResponse);
   }
-}(this, function(Configuration, ApiClient, BrandsRequest, BrandsResponse, ErrorDetails, GroupInformation, UserInfoList, UsersResponse) {
+}(this, function(Configuration, ApiClient, BrandsRequest, ErrorDetails, GroupBrands, GroupInformation, UserInfoList, UsersResponse) {
   'use strict';
 
   /**
@@ -118,7 +118,7 @@ Groups can be used to help manage users by associating users with a group. You c
      * (Optional) Callback function to receive the result of the deleteBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~deleteBrandsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/BrandsResponse} data The data returned by the service call.
+     * @param {module:model/GroupBrands} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
@@ -130,7 +130,7 @@ Groups can be used to help manage users by associating users with a group. You c
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/BrandsRequest} optsOrCallback.brandsRequest 
      * @param {module:api/GroupsApi~deleteBrandsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BrandsResponse}
+     * data is of type: {@link module:model/GroupBrands}
      */
     this.deleteBrands = function(accountId, groupId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
@@ -173,7 +173,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = BrandsResponse;
+      var returnType = GroupBrands;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/groups/{groupId}/brands', 'DELETE',
@@ -316,7 +316,7 @@ Groups can be used to help manage users by associating users with a group. You c
      * (Optional) Callback function to receive the result of the getBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~getBrandsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/BrandsResponse} data The data returned by the service call.
+     * @param {module:model/GroupBrands} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
@@ -326,7 +326,7 @@ Groups can be used to help manage users by associating users with a group. You c
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} groupId The ID of the group being accessed.
      * @param {module:api/GroupsApi~getBrandsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BrandsResponse}
+     * data is of type: {@link module:model/GroupBrands}
      */
     this.getBrands = function(accountId, groupId, callback) {
       var postBody = null;
@@ -362,7 +362,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = BrandsResponse;
+      var returnType = GroupBrands;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/groups/{groupId}/brands', 'GET',
@@ -516,7 +516,7 @@ Groups can be used to help manage users by associating users with a group. You c
      * (Optional) Callback function to receive the result of the updateBrands operation. If none specified a Promise will be returned.
      * @callback module:api/GroupsApi~updateBrandsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/BrandsResponse} data The data returned by the service call.
+     * @param {module:model/GroupBrands} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
      */
 
@@ -528,7 +528,7 @@ Groups can be used to help manage users by associating users with a group. You c
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/BrandsRequest} optsOrCallback.brandsRequest 
      * @param {module:api/GroupsApi~updateBrandsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BrandsResponse}
+     * data is of type: {@link module:model/GroupBrands}
      */
     this.updateBrands = function(accountId, groupId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
@@ -571,7 +571,7 @@ Groups can be used to help manage users by associating users with a group. You c
       var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = BrandsResponse;
+      var returnType = GroupBrands;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/groups/{groupId}/brands', 'PUT',

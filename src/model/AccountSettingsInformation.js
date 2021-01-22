@@ -268,6 +268,18 @@
       if (data.hasOwnProperty('allowIDVLevel1Metadata')) {
         obj['allowIDVLevel1Metadata'] = SettingsMetadata.constructFromObject(data['allowIDVLevel1Metadata']);
       }
+      if (data.hasOwnProperty('allowIDVLevel2')) {
+        obj['allowIDVLevel2'] = ApiClient.convertToType(data['allowIDVLevel2'], 'String');
+      }
+      if (data.hasOwnProperty('allowIDVLevel2Metadata')) {
+        obj['allowIDVLevel2Metadata'] = SettingsMetadata.constructFromObject(data['allowIDVLevel2Metadata']);
+      }
+      if (data.hasOwnProperty('allowIDVLevel3')) {
+        obj['allowIDVLevel3'] = ApiClient.convertToType(data['allowIDVLevel3'], 'String');
+      }
+      if (data.hasOwnProperty('allowIDVLevel3Metadata')) {
+        obj['allowIDVLevel3Metadata'] = SettingsMetadata.constructFromObject(data['allowIDVLevel3Metadata']);
+      }
       if (data.hasOwnProperty('allowIDVPlatform')) {
         obj['allowIDVPlatform'] = ApiClient.convertToType(data['allowIDVPlatform'], 'String');
       }
@@ -376,6 +388,12 @@
       if (data.hasOwnProperty('allowPrivateSigningGroupsMetadata')) {
         obj['allowPrivateSigningGroupsMetadata'] = SettingsMetadata.constructFromObject(data['allowPrivateSigningGroupsMetadata']);
       }
+      if (data.hasOwnProperty('allowRecipientConnect')) {
+        obj['allowRecipientConnect'] = ApiClient.convertToType(data['allowRecipientConnect'], 'String');
+      }
+      if (data.hasOwnProperty('allowRecipientConnectMetadata')) {
+        obj['allowRecipientConnectMetadata'] = SettingsMetadata.constructFromObject(data['allowRecipientConnectMetadata']);
+      }
       if (data.hasOwnProperty('allowReminders')) {
         obj['allowReminders'] = ApiClient.convertToType(data['allowReminders'], 'String');
       }
@@ -471,6 +489,12 @@
       }
       if (data.hasOwnProperty('allowSigningGroupsMetadata')) {
         obj['allowSigningGroupsMetadata'] = SettingsMetadata.constructFromObject(data['allowSigningGroupsMetadata']);
+      }
+      if (data.hasOwnProperty('allowSigningInsights')) {
+        obj['allowSigningInsights'] = ApiClient.convertToType(data['allowSigningInsights'], 'String');
+      }
+      if (data.hasOwnProperty('allowSigningInsightsMetadata')) {
+        obj['allowSigningInsightsMetadata'] = SettingsMetadata.constructFromObject(data['allowSigningInsightsMetadata']);
       }
       if (data.hasOwnProperty('allowSigningRadioDeselect')) {
         obj['allowSigningRadioDeselect'] = ApiClient.convertToType(data['allowSigningRadioDeselect'], 'String');
@@ -658,6 +682,12 @@
       if (data.hasOwnProperty('dataPopulationScopeMetadata')) {
         obj['dataPopulationScopeMetadata'] = SettingsMetadata.constructFromObject(data['dataPopulationScopeMetadata']);
       }
+      if (data.hasOwnProperty('disableAutoTemplateMatching')) {
+        obj['disableAutoTemplateMatching'] = ApiClient.convertToType(data['disableAutoTemplateMatching'], 'String');
+      }
+      if (data.hasOwnProperty('disableAutoTemplateMatchingMetadata')) {
+        obj['disableAutoTemplateMatchingMetadata'] = SettingsMetadata.constructFromObject(data['disableAutoTemplateMatchingMetadata']);
+      }
       if (data.hasOwnProperty('disableMobileApp')) {
         obj['disableMobileApp'] = ApiClient.convertToType(data['disableMobileApp'], 'String');
       }
@@ -826,6 +856,12 @@
       if (data.hasOwnProperty('enableEnvelopeStampingByDSAdminMetadata')) {
         obj['enableEnvelopeStampingByDSAdminMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeStampingByDSAdminMetadata']);
       }
+      if (data.hasOwnProperty('enableEsignCommunities')) {
+        obj['enableEsignCommunities'] = ApiClient.convertToType(data['enableEsignCommunities'], 'String');
+      }
+      if (data.hasOwnProperty('enableEsignCommunitiesMetadata')) {
+        obj['enableEsignCommunitiesMetadata'] = SettingsMetadata.constructFromObject(data['enableEsignCommunitiesMetadata']);
+      }
       if (data.hasOwnProperty('enableInBrowserEditor')) {
         obj['enableInBrowserEditor'] = ApiClient.convertToType(data['enableInBrowserEditor'], 'String');
       }
@@ -885,6 +921,12 @@
       }
       if (data.hasOwnProperty('enableScheduledReleaseMetadata')) {
         obj['enableScheduledReleaseMetadata'] = SettingsMetadata.constructFromObject(data['enableScheduledReleaseMetadata']);
+      }
+      if (data.hasOwnProperty('enableSearch')) {
+        obj['enableSearch'] = ApiClient.convertToType(data['enableSearch'], 'String');
+      }
+      if (data.hasOwnProperty('enableSearchMetadata')) {
+        obj['enableSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableSearchMetadata']);
       }
       if (data.hasOwnProperty('enableSearchUI')) {
         obj['enableSearchUI'] = ApiClient.convertToType(data['enableSearchUI'], 'String');
@@ -1949,6 +1991,24 @@
   exports.prototype['allowIDVLevel1Metadata'] = undefined;
   /**
    * 
+   * @member {String} allowIDVLevel2
+   */
+  exports.prototype['allowIDVLevel2'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowIDVLevel2Metadata
+   */
+  exports.prototype['allowIDVLevel2Metadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowIDVLevel3
+   */
+  exports.prototype['allowIDVLevel3'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowIDVLevel3Metadata
+   */
+  exports.prototype['allowIDVLevel3Metadata'] = undefined;
+  /**
+   * 
    * @member {String} allowIDVPlatform
    */
   exports.prototype['allowIDVPlatform'] = undefined;
@@ -2111,6 +2171,15 @@
   exports.prototype['allowPrivateSigningGroupsMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowRecipientConnect
+   */
+  exports.prototype['allowRecipientConnect'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowRecipientConnectMetadata
+   */
+  exports.prototype['allowRecipientConnectMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowReminders
    */
   exports.prototype['allowReminders'] = undefined;
@@ -2253,6 +2322,15 @@
    * @member {module:model/SettingsMetadata} allowSigningGroupsMetadata
    */
   exports.prototype['allowSigningGroupsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowSigningInsights
+   */
+  exports.prototype['allowSigningInsights'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowSigningInsightsMetadata
+   */
+  exports.prototype['allowSigningInsightsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowSigningRadioDeselect
@@ -2535,6 +2613,15 @@
   exports.prototype['dataPopulationScopeMetadata'] = undefined;
   /**
    * 
+   * @member {String} disableAutoTemplateMatching
+   */
+  exports.prototype['disableAutoTemplateMatching'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} disableAutoTemplateMatchingMetadata
+   */
+  exports.prototype['disableAutoTemplateMatchingMetadata'] = undefined;
+  /**
+   * 
    * @member {String} disableMobileApp
    */
   exports.prototype['disableMobileApp'] = undefined;
@@ -2787,6 +2874,15 @@
   exports.prototype['enableEnvelopeStampingByDSAdminMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableEsignCommunities
+   */
+  exports.prototype['enableEsignCommunities'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableEsignCommunitiesMetadata
+   */
+  exports.prototype['enableEsignCommunitiesMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableInBrowserEditor
    */
   exports.prototype['enableInBrowserEditor'] = undefined;
@@ -2875,6 +2971,15 @@
    * @member {module:model/SettingsMetadata} enableScheduledReleaseMetadata
    */
   exports.prototype['enableScheduledReleaseMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableSearch
+   */
+  exports.prototype['enableSearch'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableSearchMetadata
+   */
+  exports.prototype['enableSearchMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSearchUI

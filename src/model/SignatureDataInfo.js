@@ -30,7 +30,6 @@
   /**
    * The SignatureDataInfo model module.
    * @module model/SignatureDataInfo
-   * @version 5.3.0
    */
 
   /**

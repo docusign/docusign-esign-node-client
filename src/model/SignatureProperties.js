@@ -30,7 +30,6 @@
   /**
    * The SignatureProperties model module.
    * @module model/SignatureProperties
-   * @version 5.3.0
    */
 
   /**

@@ -100,6 +100,12 @@
       if (data.hasOwnProperty('currentPlanId')) {
         obj['currentPlanId'] = ApiClient.convertToType(data['currentPlanId'], 'String');
       }
+      if (data.hasOwnProperty('displayApplianceStartUrl')) {
+        obj['displayApplianceStartUrl'] = ApiClient.convertToType(data['displayApplianceStartUrl'], 'String');
+      }
+      if (data.hasOwnProperty('displayApplianceUrl')) {
+        obj['displayApplianceUrl'] = ApiClient.convertToType(data['displayApplianceUrl'], 'String');
+      }
       if (data.hasOwnProperty('distributorCode')) {
         obj['distributorCode'] = ApiClient.convertToType(data['distributorCode'], 'String');
       }
@@ -156,6 +162,9 @@
       }
       if (data.hasOwnProperty('suspensionStatus')) {
         obj['suspensionStatus'] = ApiClient.convertToType(data['suspensionStatus'], 'String');
+      }
+      if (data.hasOwnProperty('useDisplayAppliance')) {
+        obj['useDisplayAppliance'] = ApiClient.convertToType(data['useDisplayAppliance'], 'Boolean');
       }
     }
     return obj;
@@ -235,6 +244,16 @@
    * @member {String} currentPlanId
    */
   exports.prototype['currentPlanId'] = undefined;
+  /**
+   * 
+   * @member {String} displayApplianceStartUrl
+   */
+  exports.prototype['displayApplianceStartUrl'] = undefined;
+  /**
+   * 
+   * @member {String} displayApplianceUrl
+   */
+  exports.prototype['displayApplianceUrl'] = undefined;
   /**
    * The code that identifies the billing plan groups and plans for the new account.
    * @member {String} distributorCode
@@ -330,6 +349,11 @@
    * @member {String} suspensionStatus
    */
   exports.prototype['suspensionStatus'] = undefined;
+  /**
+   * 
+   * @member {Boolean} useDisplayAppliance
+   */
+  exports.prototype['useDisplayAppliance'] = undefined;
 
 
 

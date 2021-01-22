@@ -84,6 +84,12 @@
       if (data.hasOwnProperty('enableEnvelopeCopyWithDataMetadata')) {
         obj['enableEnvelopeCopyWithDataMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeCopyWithDataMetadata']);
       }
+      if (data.hasOwnProperty('enableLegacyHomepageLink')) {
+        obj['enableLegacyHomepageLink'] = ApiClient.convertToType(data['enableLegacyHomepageLink'], 'String');
+      }
+      if (data.hasOwnProperty('enableLegacyHomepageLinkMetadata')) {
+        obj['enableLegacyHomepageLinkMetadata'] = SettingsMetadata.constructFromObject(data['enableLegacyHomepageLinkMetadata']);
+      }
       if (data.hasOwnProperty('hideSendAnEnvelope')) {
         obj['hideSendAnEnvelope'] = ApiClient.convertToType(data['hideSendAnEnvelope'], 'String');
       }
@@ -174,6 +180,15 @@
    * @member {module:model/SettingsMetadata} enableEnvelopeCopyWithDataMetadata
    */
   exports.prototype['enableEnvelopeCopyWithDataMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableLegacyHomepageLink
+   */
+  exports.prototype['enableLegacyHomepageLink'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableLegacyHomepageLinkMetadata
+   */
+  exports.prototype['enableLegacyHomepageLinkMetadata'] = undefined;
   /**
    * 
    * @member {String} hideSendAnEnvelope

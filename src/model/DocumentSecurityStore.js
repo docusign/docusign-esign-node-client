@@ -30,7 +30,6 @@
   /**
    * The DocumentSecurityStore model module.
    * @module model/DocumentSecurityStore
-   * @version 5.3.0
    */
 
   /**

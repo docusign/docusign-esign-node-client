@@ -30,7 +30,6 @@
   /**
    * The Credential model module.
    * @module model/Credential
-   * @version 5.3.0
    */
 
   /**

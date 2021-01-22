@@ -30,7 +30,6 @@
   /**
    * The Revision model module.
    * @module model/Revision
-   * @version 5.3.0
    */
 
   /**

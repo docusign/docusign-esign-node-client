@@ -78,8 +78,14 @@
       if (data.hasOwnProperty('mailingListId')) {
         obj['mailingListId'] = ApiClient.convertToType(data['mailingListId'], 'String');
       }
+      if (data.hasOwnProperty('ownerUserId')) {
+        obj['ownerUserId'] = ApiClient.convertToType(data['ownerUserId'], 'String');
+      }
       if (data.hasOwnProperty('queued')) {
         obj['queued'] = ApiClient.convertToType(data['queued'], 'String');
+      }
+      if (data.hasOwnProperty('senderUserId')) {
+        obj['senderUserId'] = ApiClient.convertToType(data['senderUserId'], 'String');
       }
       if (data.hasOwnProperty('sent')) {
         obj['sent'] = ApiClient.convertToType(data['sent'], 'String');
@@ -133,9 +139,19 @@
   exports.prototype['mailingListId'] = undefined;
   /**
    * 
+   * @member {String} ownerUserId
+   */
+  exports.prototype['ownerUserId'] = undefined;
+  /**
+   * 
    * @member {String} queued
    */
   exports.prototype['queued'] = undefined;
+  /**
+   * 
+   * @member {String} senderUserId
+   */
+  exports.prototype['senderUserId'] = undefined;
   /**
    * 
    * @member {String} sent
