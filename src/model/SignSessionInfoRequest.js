@@ -30,7 +30,6 @@
   /**
    * The SignSessionInfoRequest model module.
    * @module model/SignSessionInfoRequest
-   * @version 5.3.0
    */
 
   /**

@@ -30,7 +30,6 @@
   /**
    * The DisplayApplianceSignerAttachment model module.
    * @module model/DisplayApplianceSignerAttachment
-   * @version 3.0.0
    */
 
   /**
@@ -55,66 +54,10 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('attachmentDescription')) {
-        obj['attachmentDescription'] = ApiClient.convertToType(data['attachmentDescription'], 'String');
-      }
-      if (data.hasOwnProperty('attachmentTabId')) {
-        obj['attachmentTabId'] = ApiClient.convertToType(data['attachmentTabId'], 'String');
-      }
-      if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
-      }
-      if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
-      }
-      if (data.hasOwnProperty('pageCount')) {
-        obj['pageCount'] = ApiClient.convertToType(data['pageCount'], 'Number');
-      }
-      if (data.hasOwnProperty('pageId')) {
-        obj['pageId'] = ApiClient.convertToType(data['pageId'], 'String');
-      }
-      if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
-      }
     }
     return obj;
   }
 
-  /**
-   * 
-   * @member {String} attachmentDescription
-   */
-  exports.prototype['attachmentDescription'] = undefined;
-  /**
-   * 
-   * @member {String} attachmentTabId
-   */
-  exports.prototype['attachmentTabId'] = undefined;
-  /**
-   * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
-   * @member {String} documentId
-   */
-  exports.prototype['documentId'] = undefined;
-  /**
-   * The envelope ID of the envelope status that failed to post.
-   * @member {String} envelopeId
-   */
-  exports.prototype['envelopeId'] = undefined;
-  /**
-   * 
-   * @member {Number} pageCount
-   */
-  exports.prototype['pageCount'] = undefined;
-  /**
-   * 
-   * @member {String} pageId
-   */
-  exports.prototype['pageId'] = undefined;
-  /**
-   * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
-   * @member {String} recipientId
-   */
-  exports.prototype['recipientId'] = undefined;
 
 
 

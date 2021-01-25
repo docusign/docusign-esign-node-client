@@ -93,6 +93,9 @@
       if (data.hasOwnProperty('groupList')) {
         obj['groupList'] = ApiClient.convertToType(data['groupList'], [Group]);
       }
+      if (data.hasOwnProperty('hasRemoteNotary')) {
+        obj['hasRemoteNotary'] = ApiClient.convertToType(data['hasRemoteNotary'], 'Boolean');
+      }
       if (data.hasOwnProperty('homeAddress')) {
         obj['homeAddress'] = AddressInformation.constructFromObject(data['homeAddress']);
       }
@@ -247,6 +250,11 @@
    * @member {Array.<module:model/Group>} groupList
    */
   exports.prototype['groupList'] = undefined;
+  /**
+   * 
+   * @member {Boolean} hasRemoteNotary
+   */
+  exports.prototype['hasRemoteNotary'] = undefined;
   /**
    * @member {module:model/AddressInformation} homeAddress
    */

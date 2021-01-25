@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('applyAnchorTabs')) {
         obj['applyAnchorTabs'] = ApiClient.convertToType(data['applyAnchorTabs'], 'String');
       }
+      if (data.hasOwnProperty('assignTabsToRecipientId')) {
+        obj['assignTabsToRecipientId'] = ApiClient.convertToType(data['assignTabsToRecipientId'], 'String');
+      }
       if (data.hasOwnProperty('display')) {
         obj['display'] = ApiClient.convertToType(data['display'], 'String');
       }
@@ -135,6 +138,11 @@
    * @member {String} applyAnchorTabs
    */
   exports.prototype['applyAnchorTabs'] = undefined;
+  /**
+   * 
+   * @member {String} assignTabsToRecipientId
+   */
+  exports.prototype['assignTabsToRecipientId'] = undefined;
   /**
    * 
    * @member {String} display

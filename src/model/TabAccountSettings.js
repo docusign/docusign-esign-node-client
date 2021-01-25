@@ -114,6 +114,12 @@
       if (data.hasOwnProperty('noteTabsMetadata')) {
         obj['noteTabsMetadata'] = SettingsMetadata.constructFromObject(data['noteTabsMetadata']);
       }
+      if (data.hasOwnProperty('prefillTabsEnabled')) {
+        obj['prefillTabsEnabled'] = ApiClient.convertToType(data['prefillTabsEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('prefillTabsMetadata')) {
+        obj['prefillTabsMetadata'] = SettingsMetadata.constructFromObject(data['prefillTabsMetadata']);
+      }
       if (data.hasOwnProperty('radioTabsEnabled')) {
         obj['radioTabsEnabled'] = ApiClient.convertToType(data['radioTabsEnabled'], 'String');
       }
@@ -268,6 +274,15 @@
    * @member {module:model/SettingsMetadata} noteTabsMetadata
    */
   exports.prototype['noteTabsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} prefillTabsEnabled
+   */
+  exports.prototype['prefillTabsEnabled'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} prefillTabsMetadata
+   */
+  exports.prototype['prefillTabsMetadata'] = undefined;
   /**
    * 
    * @member {String} radioTabsEnabled

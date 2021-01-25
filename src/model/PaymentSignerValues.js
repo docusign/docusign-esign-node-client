@@ -21,20 +21,20 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DisplayApplianceInfo = factory(root.Docusign.ApiClient);
+    root.Docusign.PaymentSignerValues = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The DisplayApplianceInfo model module.
-   * @module model/DisplayApplianceInfo
+   * The PaymentSignerValues model module.
+   * @module model/PaymentSignerValues
    */
 
   /**
-   * Constructs a new <code>DisplayApplianceInfo</code>.
-   * @alias module:model/DisplayApplianceInfo
+   * Constructs a new <code>PaymentSignerValues</code>.
+   * @alias module:model/PaymentSignerValues
    * @class
    */
   var exports = function() {
@@ -44,20 +44,28 @@
   };
 
   /**
-   * Constructs a <code>DisplayApplianceInfo</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PaymentSignerValues</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/DisplayApplianceInfo} obj Optional instance to populate.
-   * @return {module:model/DisplayApplianceInfo} The populated <code>DisplayApplianceInfo</code> instance.
+   * @param {module:model/PaymentSignerValues} obj Optional instance to populate.
+   * @return {module:model/PaymentSignerValues} The populated <code>PaymentSignerValues</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('paymentOption')) {
+        obj['paymentOption'] = ApiClient.convertToType(data['paymentOption'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} paymentOption
+   */
+  exports.prototype['paymentOption'] = undefined;
 
 
 

@@ -30,7 +30,6 @@
   /**
    * The TspHealthCheckRequest model module.
    * @module model/TspHealthCheckRequest
-   * @version 5.3.0
    */
 
   /**

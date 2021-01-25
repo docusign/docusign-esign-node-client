@@ -30,7 +30,6 @@
   /**
    * The SignHashSessionInfoResponse model module.
    * @module model/SignHashSessionInfoResponse
-   * @version 5.3.0
    */
 
   /**

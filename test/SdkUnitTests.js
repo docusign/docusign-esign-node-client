@@ -10,7 +10,6 @@ try {
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
-var csvStringify = require('csv-stringify');
 
 var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 var fs = require('fs');
@@ -19,8 +18,6 @@ var userName = config.email;
 var privateKey = config.privateKey;
 var integratorKey = config.integratorKey;
 var integratorKeyAuthCode = config.integratorKeyAuthCode;
-// var IntegratorKeyImplicit = config.integratorKeyImplicit;
-// var ClientSecret = config.clientSecr
 var templateId = config.templateId;
 
 // for production environment update to "www.docusign.net/restapi"
@@ -361,101 +358,102 @@ describe('SDK Unit Tests:', function (done) {
         }
       });
   });
-  it('bulkEnvelope update recipients', function (done) {
-    var bulkEnvelopesApi = new docusign.BulkEnvelopesApi(apiClient);
-    var bulkRecipients = [{ name: 'test User1', email: 'test1@mailinator.com' }, {
-      name: 'test User2',
-      email: 'test2@mailinator.com'
-    }, { name: 'test User3', email: 'test3@mailinator.com' }];
-    var fileBytes = null;
-    try {
-      var fs = require('fs');
-      // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
-    } catch (ex) {
-      // handle error
-      // console.log('Exception: ' + ex);
-    }
-
-    // create an envelope to be signed
-    var envDef = new docusign.EnvelopeDefinition();
-    envDef.emailSubject = 'Please Sign my Node SDK Envelope';
-    envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
-
-    // add a document to the envelope
-    var doc = new docusign.Document();
-    var base64Doc = Buffer.from(fileBytes).toString('base64');
-    doc.documentBase64 = base64Doc;
-    doc.name = 'TestFile.pdf';
-    doc.documentId = '1';
-
-    var docs = [];
-    docs.push(doc);
-    envDef.documents = docs;
-
-    // Add a recipient to sign the document
-    var signer = new docusign.Signer();
-    signer.email = userName;
-    signer.name = 'Pat Developer';
-    signer.recipientId = '1';
-
-    // create a signHere tab somewhere on the document for the signer to sign
-    // default unit of measurement is pixels, can be mms, cms, inches also
-    var signHere = new docusign.SignHere();
-    signHere.documentId = '1';
-    signHere.pageNumber = '1';
-    signHere.recipientId = '1';
-    signHere.xPosition = '100';
-    signHere.yPosition = '100';
-
-    // can have multiple tabs, so need to add to envelope as a single element list
-    var signHereTabs = [];
-    signHereTabs.push(signHere);
-    var tabs = new docusign.Tabs();
-    tabs.signHereTabs = signHereTabs;
-    signer.tabs = tabs;
-
-    // Above causes issue
-    envDef.recipients = new docusign.Recipients();
-    envDef.recipients.signers = [];
-    envDef.recipients.signers.push(signer);
-
-    // send the envelope (otherwise it will be "created" in the Draft folder
-
-    var envelopesApi = new docusign.EnvelopesApi(apiClient);
-
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
-      .then(function (envelopeSummary) {
-        if (envelopeSummary) {
-          console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          envelopeId = envelopeSummary.envelopeId;
-          console.log(bulkRecipients);
-          csvStringify(bulkRecipients, { header: true }, function (err, bulkRecipientsRequest) {
-            if (err) {
-              return done(err);
-            }
-            console.log(bulkRecipientsRequest);
-            var byteArray = Buffer.from(bulkRecipientsRequest);
-            console.log(byteArray);
-
-            bulkEnvelopesApi.updateRecipients(byteArray, accountId, envelopeId, '1')
-              .then(function (data) {
-                assert.equal(data.bulkRecipientsCount, bulkRecipients.length);
-                done();
-              })
-              .catch(function (err) {
-                console.log(err);
-                done(err);
-              });
-          });
-        }
-      })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
-  });
+  // deprecated
+  // it('bulkEnvelope update recipients', function (done) {
+  //   var bulkEnvelopesApi = new docusign.BulkEnvelopesApi(apiClient);
+  //   var bulkRecipients = [{ name: 'test User1', email: 'test1@mailinator.com' }, {
+  //     name: 'test User2',
+  //     email: 'test2@mailinator.com'
+  //   }, { name: 'test User3', email: 'test3@mailinator.com' }];
+  //   var fileBytes = null;
+  //   try {
+  //     var fs = require('fs');
+  //     // read file from a local directory
+  //     fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+  //   } catch (ex) {
+  //     // handle error
+  //     // console.log('Exception: ' + ex);
+  //   }
+  //
+  //   // create an envelope to be signed
+  //   var envDef = new docusign.EnvelopeDefinition();
+  //   envDef.emailSubject = 'Please Sign my Node SDK Envelope';
+  //   envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
+  //
+  //   // add a document to the envelope
+  //   var doc = new docusign.Document();
+  //   var base64Doc = Buffer.from(fileBytes).toString('base64');
+  //   doc.documentBase64 = base64Doc;
+  //   doc.name = 'TestFile.pdf';
+  //   doc.documentId = '1';
+  //
+  //   var docs = [];
+  //   docs.push(doc);
+  //   envDef.documents = docs;
+  //
+  //   // Add a recipient to sign the document
+  //   var signer = new docusign.Signer();
+  //   signer.email = userName;
+  //   signer.name = 'Pat Developer';
+  //   signer.recipientId = '1';
+  //
+  //   // create a signHere tab somewhere on the document for the signer to sign
+  //   // default unit of measurement is pixels, can be mms, cms, inches also
+  //   var signHere = new docusign.SignHere();
+  //   signHere.documentId = '1';
+  //   signHere.pageNumber = '1';
+  //   signHere.recipientId = '1';
+  //   signHere.xPosition = '100';
+  //   signHere.yPosition = '100';
+  //
+  //   // can have multiple tabs, so need to add to envelope as a single element list
+  //   var signHereTabs = [];
+  //   signHereTabs.push(signHere);
+  //   var tabs = new docusign.Tabs();
+  //   tabs.signHereTabs = signHereTabs;
+  //   signer.tabs = tabs;
+  //
+  //   // Above causes issue
+  //   envDef.recipients = new docusign.Recipients();
+  //   envDef.recipients.signers = [];
+  //   envDef.recipients.signers.push(signer);
+  //
+  //   // send the envelope (otherwise it will be "created" in the Draft folder
+  //
+  //   var envelopesApi = new docusign.EnvelopesApi(apiClient);
+  //
+  //   envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+  //     .then(function (envelopeSummary) {
+  //       if (envelopeSummary) {
+  //         console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+  //         envelopeId = envelopeSummary.envelopeId;
+  //         console.log(bulkRecipients);
+  //         csvStringify(bulkRecipients, { header: true }, function (err, bulkRecipientsRequest) {
+  //           if (err) {
+  //             return done(err);
+  //           }
+  //           console.log(bulkRecipientsRequest);
+  //           var byteArray = Buffer.from(bulkRecipientsRequest);
+  //           console.log(byteArray);
+  //
+  //           bulkEnvelopesApi.updateRecipients(byteArray, accountId, envelopeId, '1')
+  //             .then(function (data) {
+  //               assert.equal(data.bulkRecipientsCount, bulkRecipients.length);
+  //               done();
+  //             })
+  //             .catch(function (err) {
+  //               console.log(err);
+  //               done(err);
+  //             });
+  //         });
+  //       }
+  //     })
+  //     .catch(function (error) {
+  //       if (error) {
+  //         return done(error);
+  //       }
+  //     });
+  // });
   it('requestSignatureFromTemplate', function (done) {
     var templateRoleName = 'Needs to sign';
 
@@ -1015,7 +1013,7 @@ describe('SDK Unit Tests:', function (done) {
             .then(function (envelopeTemplateNoOpts) {
               if (envelopeTemplateNoOpts) {
                 console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplateNoOpts));
-                assert.equal(envelopeTemplateNoOpts.envelopeTemplate);
+                assert.equal(envelopeTemplateNoOpts.emailSubject, envelopeTemplate.emailSubject);
                 done();
               }
             })

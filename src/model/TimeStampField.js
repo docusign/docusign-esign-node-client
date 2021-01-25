@@ -30,7 +30,6 @@
   /**
    * The TimeStampField model module.
    * @module model/TimeStampField
-   * @version 5.3.0
    */
 
   /**

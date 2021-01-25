@@ -30,7 +30,6 @@
   /**
    * The UserInfoResponse model module.
    * @module model/UserInfoResponse
-   * @version 5.3.0
    */
 
   /**

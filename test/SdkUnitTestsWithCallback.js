@@ -793,7 +793,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
           if (envelopeTemplateNoOpts) {
             console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplateNoOpts));
-            assert.equal(envelopeTemplateNoOpts.envelopeTemplate);
+            assert.equal(envelopeTemplateNoOpts.emailSubject, envelopeTemplate.emailSubject);
             done();
           }
         });
