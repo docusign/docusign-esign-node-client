@@ -79,6 +79,9 @@
       if (data.hasOwnProperty('isDowngrade')) {
         obj['isDowngrade'] = ApiClient.convertToType(data['isDowngrade'], 'String');
       }
+      if (data.hasOwnProperty('notificationType')) {
+        obj['notificationType'] = ApiClient.convertToType(data['notificationType'], 'String');
+      }
       if (data.hasOwnProperty('otherDiscountPercent')) {
         obj['otherDiscountPercent'] = ApiClient.convertToType(data['otherDiscountPercent'], 'String');
       }
@@ -159,6 +162,11 @@
    * @member {String} isDowngrade
    */
   exports.prototype['isDowngrade'] = undefined;
+  /**
+   * 
+   * @member {String} notificationType
+   */
+  exports.prototype['notificationType'] = undefined;
   /**
    *  Any other percentage discount for the plan. 
    * @member {String} otherDiscountPercent

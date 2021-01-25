@@ -30,7 +30,6 @@
   /**
    * The UpdateTransactionRequest model module.
    * @module model/UpdateTransactionRequest
-   * @version 4.6.0
    */
 
   /**

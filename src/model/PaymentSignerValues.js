@@ -21,20 +21,20 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DocumentSecurityStore = factory(root.Docusign.ApiClient);
+    root.Docusign.PaymentSignerValues = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The DocumentSecurityStore model module.
-   * @module model/DocumentSecurityStore
+   * The PaymentSignerValues model module.
+   * @module model/PaymentSignerValues
    */
 
   /**
-   * Constructs a new <code>DocumentSecurityStore</code>.
-   * @alias module:model/DocumentSecurityStore
+   * Constructs a new <code>PaymentSignerValues</code>.
+   * @alias module:model/PaymentSignerValues
    * @class
    */
   var exports = function() {
@@ -44,24 +44,18 @@
   };
 
   /**
-   * Constructs a <code>DocumentSecurityStore</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PaymentSignerValues</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/DocumentSecurityStore} obj Optional instance to populate.
-   * @return {module:model/DocumentSecurityStore} The populated <code>DocumentSecurityStore</code> instance.
+   * @param {module:model/PaymentSignerValues} obj Optional instance to populate.
+   * @return {module:model/PaymentSignerValues} The populated <code>PaymentSignerValues</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('certificates')) {
-        obj['certificates'] = ApiClient.convertToType(data['certificates'], ['String']);
-      }
-      if (data.hasOwnProperty('crls')) {
-        obj['crls'] = ApiClient.convertToType(data['crls'], ['String']);
-      }
-      if (data.hasOwnProperty('ocsps')) {
-        obj['ocsps'] = ApiClient.convertToType(data['ocsps'], ['String']);
+      if (data.hasOwnProperty('paymentOption')) {
+        obj['paymentOption'] = ApiClient.convertToType(data['paymentOption'], 'String');
       }
     }
     return obj;
@@ -69,19 +63,9 @@
 
   /**
    * 
-   * @member {Array.<String>} certificates
+   * @member {String} paymentOption
    */
-  exports.prototype['certificates'] = undefined;
-  /**
-   * 
-   * @member {Array.<String>} crls
-   */
-  exports.prototype['crls'] = undefined;
-  /**
-   * 
-   * @member {Array.<String>} ocsps
-   */
-  exports.prototype['ocsps'] = undefined;
+  exports.prototype['paymentOption'] = undefined;
 
 
 
