@@ -58,6 +58,12 @@
       if (data.hasOwnProperty('addOns')) {
         obj['addOns'] = ApiClient.convertToType(data['addOns'], [AddOn]);
       }
+      if (data.hasOwnProperty('appStoreReceiptExpirationDate')) {
+        obj['appStoreReceiptExpirationDate'] = ApiClient.convertToType(data['appStoreReceiptExpirationDate'], 'String');
+      }
+      if (data.hasOwnProperty('appStoreReceiptPurchaseDate')) {
+        obj['appStoreReceiptPurchaseDate'] = ApiClient.convertToType(data['appStoreReceiptPurchaseDate'], 'String');
+      }
       if (data.hasOwnProperty('canCancelRenewal')) {
         obj['canCancelRenewal'] = ApiClient.convertToType(data['canCancelRenewal'], 'String');
       }
@@ -130,6 +136,16 @@
    * @member {Array.<module:model/AddOn>} addOns
    */
   exports.prototype['addOns'] = undefined;
+  /**
+   * 
+   * @member {String} appStoreReceiptExpirationDate
+   */
+  exports.prototype['appStoreReceiptExpirationDate'] = undefined;
+  /**
+   * 
+   * @member {String} appStoreReceiptPurchaseDate
+   */
+  exports.prototype['appStoreReceiptPurchaseDate'] = undefined;
   /**
    * Reserved: TBD
    * @member {String} canCancelRenewal

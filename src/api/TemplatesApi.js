@@ -2800,6 +2800,7 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} optsOrCallback.folderTypes 
      * @param {String} optsOrCallback.fromDate Start of the search date range. Only returns templates created on or after this date/time. If no value is specified, there is no limit on the earliest date created.
      * @param {String} optsOrCallback.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
+     * @param {String} optsOrCallback.isDeletedTemplateOnly 
      * @param {String} optsOrCallback.isDownload 
      * @param {String} optsOrCallback.modifiedFromDate 
      * @param {String} optsOrCallback.modifiedToDate 
@@ -2851,6 +2852,7 @@ If the call is made by the user who has the lock and the request has the same in
         'folder_types': optsOrCallback['folderTypes'],
         'from_date': optsOrCallback['fromDate'],
         'include': optsOrCallback['include'],
+        'is_deleted_template_only': optsOrCallback['isDeletedTemplateOnly'],
         'is_download': optsOrCallback['isDownload'],
         'modified_from_date': optsOrCallback['modifiedFromDate'],
         'modified_to_date': optsOrCallback['modifiedToDate'],

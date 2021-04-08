@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('cultureName')) {
         obj['cultureName'] = ApiClient.convertToType(data['cultureName'], 'String');
       }
+      if (data.hasOwnProperty('currencyCode')) {
+        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+      }
       if (data.hasOwnProperty('currencyNegativeFormat')) {
         obj['currencyNegativeFormat'] = ApiClient.convertToType(data['currencyNegativeFormat'], 'String');
       }
@@ -109,6 +112,11 @@
    * @member {String} cultureName
    */
   exports.prototype['cultureName'] = undefined;
+  /**
+   * 
+   * @member {String} currencyCode
+   */
+  exports.prototype['currencyCode'] = undefined;
   /**
    * 
    * @member {String} currencyNegativeFormat

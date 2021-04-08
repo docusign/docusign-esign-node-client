@@ -78,6 +78,12 @@
       if (data.hasOwnProperty('faxNumber')) {
         obj['faxNumber'] = ApiClient.convertToType(data['faxNumber'], 'String');
       }
+      if (data.hasOwnProperty('hostEmail')) {
+        obj['hostEmail'] = ApiClient.convertToType(data['hostEmail'], 'String');
+      }
+      if (data.hasOwnProperty('hostName')) {
+        obj['hostName'] = ApiClient.convertToType(data['hostName'], 'String');
+      }
       if (data.hasOwnProperty('idCheckConfigurationName')) {
         obj['idCheckConfigurationName'] = ApiClient.convertToType(data['idCheckConfigurationName'], 'String');
       }
@@ -104,6 +110,12 @@
       }
       if (data.hasOwnProperty('roleName')) {
         obj['roleName'] = ApiClient.convertToType(data['roleName'], 'String');
+      }
+      if (data.hasOwnProperty('signerName')) {
+        obj['signerName'] = ApiClient.convertToType(data['signerName'], 'String');
+      }
+      if (data.hasOwnProperty('signingGroupId')) {
+        obj['signingGroupId'] = ApiClient.convertToType(data['signingGroupId'], 'String');
       }
       if (data.hasOwnProperty('smsAuthentication')) {
         obj['smsAuthentication'] = RecipientSMSAuthentication.constructFromObject(data['smsAuthentication']);
@@ -158,6 +170,16 @@
    */
   exports.prototype['faxNumber'] = undefined;
   /**
+   * 
+   * @member {String} hostEmail
+   */
+  exports.prototype['hostEmail'] = undefined;
+  /**
+   * 
+   * @member {String} hostName
+   */
+  exports.prototype['hostName'] = undefined;
+  /**
    * Specifies authentication check by name. The names used here must be the same as the authentication type names used by the account (these name can also be found in the web console sending interface in the Identify list for a recipient,) This overrides any default authentication setting.  *Example*: Your account has ID Check and SMS Authentication available and in the web console Identify list these appear as 'ID Check $' and 'SMS Auth $'. To use ID check in an envelope, the idCheckConfigurationName should be 'ID Check '. If you wanted to use SMS, it would be 'SMS Auth $' and you would need to add you would need to add phone number information to the `smsAuthentication` node.
    * @member {String} idCheckConfigurationName
    */
@@ -200,6 +222,16 @@
    * @member {String} roleName
    */
   exports.prototype['roleName'] = undefined;
+  /**
+   * 
+   * @member {String} signerName
+   */
+  exports.prototype['signerName'] = undefined;
+  /**
+   * When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
+   * @member {String} signingGroupId
+   */
+  exports.prototype['signingGroupId'] = undefined;
   /**
    * @member {module:model/RecipientSMSAuthentication} smsAuthentication
    */

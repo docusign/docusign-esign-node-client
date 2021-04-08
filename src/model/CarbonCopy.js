@@ -165,6 +165,9 @@
       if (data.hasOwnProperty('lastNameMetadata')) {
         obj['lastNameMetadata'] = PropertyMetadata.constructFromObject(data['lastNameMetadata']);
       }
+      if (data.hasOwnProperty('linkedAccountConfigurationId')) {
+        obj['linkedAccountConfigurationId'] = ApiClient.convertToType(data['linkedAccountConfigurationId'], 'String');
+      }
       if (data.hasOwnProperty('lockedRecipientPhoneAuthEditable')) {
         obj['lockedRecipientPhoneAuthEditable'] = ApiClient.convertToType(data['lockedRecipientPhoneAuthEditable'], 'String');
       }
@@ -450,6 +453,11 @@
    * @member {module:model/PropertyMetadata} lastNameMetadata
    */
   exports.prototype['lastNameMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} linkedAccountConfigurationId
+   */
+  exports.prototype['linkedAccountConfigurationId'] = undefined;
   /**
    * 
    * @member {String} lockedRecipientPhoneAuthEditable
