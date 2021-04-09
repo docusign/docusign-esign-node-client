@@ -66,6 +66,9 @@
       if (data.hasOwnProperty('enableAdminMessageMetadata')) {
         obj['enableAdminMessageMetadata'] = SettingsMetadata.constructFromObject(data['enableAdminMessageMetadata']);
       }
+      if (data.hasOwnProperty('enableAdvancedPaymentsReactEdit')) {
+        obj['enableAdvancedPaymentsReactEdit'] = ApiClient.convertToType(data['enableAdvancedPaymentsReactEdit'], 'String');
+      }
       if (data.hasOwnProperty('enableEasySignCanUseMultiTemplateApply')) {
         obj['enableEasySignCanUseMultiTemplateApply'] = ApiClient.convertToType(data['enableEasySignCanUseMultiTemplateApply'], 'String');
       }
@@ -89,6 +92,12 @@
       }
       if (data.hasOwnProperty('enableLegacyHomepageLinkMetadata')) {
         obj['enableLegacyHomepageLinkMetadata'] = SettingsMetadata.constructFromObject(data['enableLegacyHomepageLinkMetadata']);
+      }
+      if (data.hasOwnProperty('hasExternalLinkedAccounts')) {
+        obj['hasExternalLinkedAccounts'] = ApiClient.convertToType(data['hasExternalLinkedAccounts'], 'String');
+      }
+      if (data.hasOwnProperty('hasExternalLinkedAccountsMetadata')) {
+        obj['hasExternalLinkedAccountsMetadata'] = SettingsMetadata.constructFromObject(data['hasExternalLinkedAccountsMetadata']);
       }
       if (data.hasOwnProperty('hideSendAnEnvelope')) {
         obj['hideSendAnEnvelope'] = ApiClient.convertToType(data['hideSendAnEnvelope'], 'String');
@@ -155,6 +164,11 @@
   exports.prototype['enableAdminMessageMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableAdvancedPaymentsReactEdit
+   */
+  exports.prototype['enableAdvancedPaymentsReactEdit'] = undefined;
+  /**
+   * 
    * @member {String} enableEasySignCanUseMultiTemplateApply
    */
   exports.prototype['enableEasySignCanUseMultiTemplateApply'] = undefined;
@@ -189,6 +203,15 @@
    * @member {module:model/SettingsMetadata} enableLegacyHomepageLinkMetadata
    */
   exports.prototype['enableLegacyHomepageLinkMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} hasExternalLinkedAccounts
+   */
+  exports.prototype['hasExternalLinkedAccounts'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} hasExternalLinkedAccountsMetadata
+   */
+  exports.prototype['hasExternalLinkedAccountsMetadata'] = undefined;
   /**
    * 
    * @member {String} hideSendAnEnvelope

@@ -2380,6 +2380,63 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
+     * (Optional) Callback function to receive the result of the deleteCustomFieldsV2 operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deleteCustomFieldsV2Callback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Delete custom fields information for Display Appliance
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {module:api/EnvelopesApi~deleteCustomFieldsV2Callback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteCustomFieldsV2 = function(accountId, envelopeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteCustomFieldsV2");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling deleteCustomFieldsV2");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/custom_fields', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the deleteCustomFields_0 operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteCustomFields_0Callback
      * @param {String} error Error message, if any.
@@ -3145,6 +3202,63 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
+     * (Optional) Callback function to receive the result of the deletePageInfoV2 operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deletePageInfoV2Callback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Delete page information for Display Appliance
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {module:api/EnvelopesApi~deletePageInfoV2Callback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deletePageInfoV2 = function(accountId, envelopeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deletePageInfoV2");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling deletePageInfoV2");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the deleteRecipient operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteRecipientCallback
      * @param {String} error Error message, if any.
@@ -3651,6 +3765,88 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/account_info', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getApplianceEnvelopeInfo operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getApplianceEnvelopeInfoCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DisplayApplianceInfo} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns Display Appliance envelope information
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.beforeSign 
+     * @param {String} optsOrCallback.documentId 
+     * @param {String} optsOrCallback.entityType 
+     * @param {String} optsOrCallback.inPerson 
+     * @param {String} optsOrCallback.recipientId 
+     * @param {String} optsOrCallback.tabLocalePolicy 
+     * @param {String} optsOrCallback.tabType 
+     * @param {String} optsOrCallback.useDateSignedTabValExclusively 
+     * @param {module:api/EnvelopesApi~getApplianceEnvelopeInfoCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DisplayApplianceInfo}
+     */
+    this.getApplianceEnvelopeInfo = function(accountId, envelopeId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getApplianceEnvelopeInfo");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getApplianceEnvelopeInfo");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+        'beforeSign': optsOrCallback['beforeSign'],
+        'document_id': optsOrCallback['documentId'],
+        'entity_type': optsOrCallback['entityType'],
+        'inPerson': optsOrCallback['inPerson'],
+        'recipient_id': optsOrCallback['recipientId'],
+        'tabLocalePolicy': optsOrCallback['tabLocalePolicy'],
+        'tabType': optsOrCallback['tabType'],
+        'useDateSignedTabValExclusively': optsOrCallback['useDateSignedTabValExclusively']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DisplayApplianceInfo;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info_v2', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -6001,21 +6197,15 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     /**
      * Returns if template was encrypted by Display Appliance
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} templateId The ID of the template being accessed.
      * @param {module:api/EnvelopesApi~getTemplateInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getTemplateInfo = function(accountId, templateId, callback) {
+    this.getTemplateInfo = function(accountId, callback) {
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getTemplateInfo");
-      }
-
-      // verify the required parameter 'templateId' is set
-      if (templateId === undefined || templateId === null) {
-        throw new Error("Missing the required parameter 'templateId' when calling getTemplateInfo");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -6026,8 +6216,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       }
 
       var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+        'accountId': accountId
       };
       var queryParams = {
       };
@@ -6042,7 +6231,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
       var returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/envelopes/{templateId}/display_appliance_info/templateInfo', 'GET',
+        '/v2.1/accounts/{accountId}/display_appliance_info/templateInfo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -186,6 +186,12 @@
       if (data.hasOwnProperty('canCreateWorkspacesMetadata')) {
         obj['canCreateWorkspacesMetadata'] = SettingsMetadata.constructFromObject(data['canCreateWorkspacesMetadata']);
       }
+      if (data.hasOwnProperty('canSendEnvelopesViaSMS')) {
+        obj['canSendEnvelopesViaSMS'] = ApiClient.convertToType(data['canSendEnvelopesViaSMS'], 'String');
+      }
+      if (data.hasOwnProperty('canSendEnvelopesViaSMSMetadata')) {
+        obj['canSendEnvelopesViaSMSMetadata'] = SettingsMetadata.constructFromObject(data['canSendEnvelopesViaSMSMetadata']);
+      }
       if (data.hasOwnProperty('disableDocumentUpload')) {
         obj['disableDocumentUpload'] = ApiClient.convertToType(data['disableDocumentUpload'], 'String');
       }
@@ -475,6 +481,15 @@
    * @member {module:model/SettingsMetadata} canCreateWorkspacesMetadata
    */
   exports.prototype['canCreateWorkspacesMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canSendEnvelopesViaSMS
+   */
+  exports.prototype['canSendEnvelopesViaSMS'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canSendEnvelopesViaSMSMetadata
+   */
+  exports.prototype['canSendEnvelopesViaSMSMetadata'] = undefined;
   /**
    * 
    * @member {String} disableDocumentUpload

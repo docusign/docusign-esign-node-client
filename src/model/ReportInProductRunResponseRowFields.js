@@ -162,6 +162,9 @@
       if (data.hasOwnProperty('expiredTs')) {
         obj['expiredTs'] = ApiClient.convertToType(data['expiredTs'], 'String');
       }
+      if (data.hasOwnProperty('failureReason')) {
+        obj['failureReason'] = ApiClient.convertToType(data['failureReason'], 'String');
+      }
       if (data.hasOwnProperty('failures')) {
         obj['failures'] = ApiClient.convertToType(data['failures'], 'String');
       }
@@ -414,6 +417,12 @@
       if (data.hasOwnProperty('userId')) {
         obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
       }
+      if (data.hasOwnProperty('verificationStatus')) {
+        obj['verificationStatus'] = ApiClient.convertToType(data['verificationStatus'], 'String');
+      }
+      if (data.hasOwnProperty('verificationType')) {
+        obj['verificationType'] = ApiClient.convertToType(data['verificationType'], 'String');
+      }
       if (data.hasOwnProperty('viewDate')) {
         obj['viewDate'] = ApiClient.convertToType(data['viewDate'], 'String');
       }
@@ -604,6 +613,11 @@
    * @member {String} expiredTs
    */
   exports.prototype['expiredTs'] = undefined;
+  /**
+   * 
+   * @member {String} failureReason
+   */
+  exports.prototype['failureReason'] = undefined;
   /**
    * 
    * @member {String} failures
@@ -1024,6 +1038,16 @@
    * @member {String} userId
    */
   exports.prototype['userId'] = undefined;
+  /**
+   * 
+   * @member {String} verificationStatus
+   */
+  exports.prototype['verificationStatus'] = undefined;
+  /**
+   * 
+   * @member {String} verificationType
+   */
+  exports.prototype['verificationType'] = undefined;
   /**
    * 
    * @member {String} viewDate

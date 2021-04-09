@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/MergeField', 'model/PropertyMetadata'], factory);
+    define(['ApiClient', 'model/LocalePolicyTab', 'model/MergeField', 'model/PropertyMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./MergeField'), require('./PropertyMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./LocalePolicyTab'), require('./MergeField'), require('./PropertyMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TabMetadata = factory(root.Docusign.ApiClient, root.Docusign.MergeField, root.Docusign.PropertyMetadata);
+    root.Docusign.TabMetadata = factory(root.Docusign.ApiClient, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient, MergeField, PropertyMetadata) {
+}(this, function(ApiClient, LocalePolicyTab, MergeField, PropertyMetadata) {
   'use strict';
 
 
@@ -135,6 +135,9 @@
       if (data.hasOwnProperty('lastModifiedByUserId')) {
         obj['lastModifiedByUserId'] = ApiClient.convertToType(data['lastModifiedByUserId'], 'String');
       }
+      if (data.hasOwnProperty('localePolicy')) {
+        obj['localePolicy'] = LocalePolicyTab.constructFromObject(data['localePolicy']);
+      }
       if (data.hasOwnProperty('locked')) {
         obj['locked'] = ApiClient.convertToType(data['locked'], 'String');
       }
@@ -146,6 +149,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('numericalValue')) {
+        obj['numericalValue'] = ApiClient.convertToType(data['numericalValue'], 'String');
       }
       if (data.hasOwnProperty('paymentItemCode')) {
         obj['paymentItemCode'] = ApiClient.convertToType(data['paymentItemCode'], 'String');
@@ -338,6 +344,10 @@
    */
   exports.prototype['lastModifiedByUserId'] = undefined;
   /**
+   * @member {module:model/LocalePolicyTab} localePolicy
+   */
+  exports.prototype['localePolicy'] = undefined;
+  /**
    * When set to **true**, the signer cannot change the data of the custom tab.
    * @member {String} locked
    */
@@ -356,6 +366,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} numericalValue
+   */
+  exports.prototype['numericalValue'] = undefined;
   /**
    * 
    * @member {String} paymentItemCode
