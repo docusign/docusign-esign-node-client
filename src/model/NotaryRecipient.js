@@ -186,6 +186,9 @@
       if (data.hasOwnProperty('lastNameMetadata')) {
         obj['lastNameMetadata'] = PropertyMetadata.constructFromObject(data['lastNameMetadata']);
       }
+      if (data.hasOwnProperty('liveOakStartURL')) {
+        obj['liveOakStartURL'] = ApiClient.convertToType(data['liveOakStartURL'], 'String');
+      }
       if (data.hasOwnProperty('lockedRecipientPhoneAuthEditable')) {
         obj['lockedRecipientPhoneAuthEditable'] = ApiClient.convertToType(data['lockedRecipientPhoneAuthEditable'], 'String');
       }
@@ -541,6 +544,11 @@
    * @member {module:model/PropertyMetadata} lastNameMetadata
    */
   exports.prototype['lastNameMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} liveOakStartURL
+   */
+  exports.prototype['liveOakStartURL'] = undefined;
   /**
    * 
    * @member {String} lockedRecipientPhoneAuthEditable

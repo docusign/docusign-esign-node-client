@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccessCodeFormat', 'model/AccountIdentityVerificationWorkflow', 'model/AccountNotification', 'model/AccountUISettings', 'model/AddressInformation', 'model/ExternalDocumentSources', 'model/IdCheckConfiguration', 'model/SettingsMetadata', 'model/TabAccountSettings'], factory);
+    define(['ApiClient', 'model/AccessCodeFormat', 'model/AccountIdentityVerificationWorkflow', 'model/AccountNotification', 'model/AccountUISettings', 'model/AddressInformation', 'model/ExternalDocumentSources', 'model/IdCheckConfiguration', 'model/LinkedExternalPrimaryAccount', 'model/SettingsMetadata', 'model/TabAccountSettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccessCodeFormat'), require('./AccountIdentityVerificationWorkflow'), require('./AccountNotification'), require('./AccountUISettings'), require('./AddressInformation'), require('./ExternalDocumentSources'), require('./IdCheckConfiguration'), require('./SettingsMetadata'), require('./TabAccountSettings'));
+    module.exports = factory(require('../ApiClient'), require('./AccessCodeFormat'), require('./AccountIdentityVerificationWorkflow'), require('./AccountNotification'), require('./AccountUISettings'), require('./AddressInformation'), require('./ExternalDocumentSources'), require('./IdCheckConfiguration'), require('./LinkedExternalPrimaryAccount'), require('./SettingsMetadata'), require('./TabAccountSettings'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.AccessCodeFormat, root.Docusign.AccountIdentityVerificationWorkflow, root.Docusign.AccountNotification, root.Docusign.AccountUISettings, root.Docusign.AddressInformation, root.Docusign.ExternalDocumentSources, root.Docusign.IdCheckConfiguration, root.Docusign.SettingsMetadata, root.Docusign.TabAccountSettings);
+    root.Docusign.AccountSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.AccessCodeFormat, root.Docusign.AccountIdentityVerificationWorkflow, root.Docusign.AccountNotification, root.Docusign.AccountUISettings, root.Docusign.AddressInformation, root.Docusign.ExternalDocumentSources, root.Docusign.IdCheckConfiguration, root.Docusign.LinkedExternalPrimaryAccount, root.Docusign.SettingsMetadata, root.Docusign.TabAccountSettings);
   }
-}(this, function(ApiClient, AccessCodeFormat, AccountIdentityVerificationWorkflow, AccountNotification, AccountUISettings, AddressInformation, ExternalDocumentSources, IdCheckConfiguration, SettingsMetadata, TabAccountSettings) {
+}(this, function(ApiClient, AccessCodeFormat, AccountIdentityVerificationWorkflow, AccountNotification, AccountUISettings, AddressInformation, ExternalDocumentSources, IdCheckConfiguration, LinkedExternalPrimaryAccount, SettingsMetadata, TabAccountSettings) {
   'use strict';
 
 
@@ -255,6 +255,12 @@
       }
       if (data.hasOwnProperty('allowExtendedSendingResourceFileMetadata')) {
         obj['allowExtendedSendingResourceFileMetadata'] = SettingsMetadata.constructFromObject(data['allowExtendedSendingResourceFileMetadata']);
+      }
+      if (data.hasOwnProperty('allowExternalLinkedAccounts')) {
+        obj['allowExternalLinkedAccounts'] = ApiClient.convertToType(data['allowExternalLinkedAccounts'], 'String');
+      }
+      if (data.hasOwnProperty('allowExternalLinkedAccountsMetadata')) {
+        obj['allowExternalLinkedAccountsMetadata'] = SettingsMetadata.constructFromObject(data['allowExternalLinkedAccountsMetadata']);
       }
       if (data.hasOwnProperty('allowExternalSignaturePad')) {
         obj['allowExternalSignaturePad'] = ApiClient.convertToType(data['allowExternalSignaturePad'], 'String');
@@ -1024,6 +1030,12 @@
       if (data.hasOwnProperty('enableSMSAuthenticationMetadata')) {
         obj['enableSMSAuthenticationMetadata'] = SettingsMetadata.constructFromObject(data['enableSMSAuthenticationMetadata']);
       }
+      if (data.hasOwnProperty('enableSMSDeliveryAdditionalNotification')) {
+        obj['enableSMSDeliveryAdditionalNotification'] = ApiClient.convertToType(data['enableSMSDeliveryAdditionalNotification'], 'String');
+      }
+      if (data.hasOwnProperty('enableSMSDeliveryAdditionalNotificationMetadata')) {
+        obj['enableSMSDeliveryAdditionalNotificationMetadata'] = SettingsMetadata.constructFromObject(data['enableSMSDeliveryAdditionalNotificationMetadata']);
+      }
       if (data.hasOwnProperty('enableSocialIdLogin')) {
         obj['enableSocialIdLogin'] = ApiClient.convertToType(data['enableSocialIdLogin'], 'String');
       }
@@ -1185,6 +1197,9 @@
       }
       if (data.hasOwnProperty('inSessionSuppressEmailsMetadata')) {
         obj['inSessionSuppressEmailsMetadata'] = SettingsMetadata.constructFromObject(data['inSessionSuppressEmailsMetadata']);
+      }
+      if (data.hasOwnProperty('linkedExternalPrimaryAccounts')) {
+        obj['linkedExternalPrimaryAccounts'] = ApiClient.convertToType(data['linkedExternalPrimaryAccounts'], [LinkedExternalPrimaryAccount]);
       }
       if (data.hasOwnProperty('maximumSigningGroups')) {
         obj['maximumSigningGroups'] = ApiClient.convertToType(data['maximumSigningGroups'], 'String');
@@ -1384,6 +1399,12 @@
       if (data.hasOwnProperty('showLocalizedWatermarksMetadata')) {
         obj['showLocalizedWatermarksMetadata'] = SettingsMetadata.constructFromObject(data['showLocalizedWatermarksMetadata']);
       }
+      if (data.hasOwnProperty('showMaskedFieldsWhenDownloadingDocumentAsSender')) {
+        obj['showMaskedFieldsWhenDownloadingDocumentAsSender'] = ApiClient.convertToType(data['showMaskedFieldsWhenDownloadingDocumentAsSender'], 'String');
+      }
+      if (data.hasOwnProperty('showMaskedFieldsWhenDownloadingDocumentAsSenderMetadata')) {
+        obj['showMaskedFieldsWhenDownloadingDocumentAsSenderMetadata'] = SettingsMetadata.constructFromObject(data['showMaskedFieldsWhenDownloadingDocumentAsSenderMetadata']);
+      }
       if (data.hasOwnProperty('showTutorials')) {
         obj['showTutorials'] = ApiClient.convertToType(data['showTutorials'], 'String');
       }
@@ -1401,6 +1422,18 @@
       }
       if (data.hasOwnProperty('signDateFormatMetadata')) {
         obj['signDateFormatMetadata'] = SettingsMetadata.constructFromObject(data['signDateFormatMetadata']);
+      }
+      if (data.hasOwnProperty('signDateTimeAccountLanguageOverride')) {
+        obj['signDateTimeAccountLanguageOverride'] = ApiClient.convertToType(data['signDateTimeAccountLanguageOverride'], 'String');
+      }
+      if (data.hasOwnProperty('signDateTimeAccountLanguageOverrideMetadata')) {
+        obj['signDateTimeAccountLanguageOverrideMetadata'] = SettingsMetadata.constructFromObject(data['signDateTimeAccountLanguageOverrideMetadata']);
+      }
+      if (data.hasOwnProperty('signDateTimeAccountTimezoneOverride')) {
+        obj['signDateTimeAccountTimezoneOverride'] = ApiClient.convertToType(data['signDateTimeAccountTimezoneOverride'], 'String');
+      }
+      if (data.hasOwnProperty('signDateTimeAccountTimezoneOverrideMetadata')) {
+        obj['signDateTimeAccountTimezoneOverrideMetadata'] = SettingsMetadata.constructFromObject(data['signDateTimeAccountTimezoneOverrideMetadata']);
       }
       if (data.hasOwnProperty('signerAttachCertificateToEnvelopePDF')) {
         obj['signerAttachCertificateToEnvelopePDF'] = ApiClient.convertToType(data['signerAttachCertificateToEnvelopePDF'], 'String');
@@ -1971,6 +2004,15 @@
    * @member {module:model/SettingsMetadata} allowExtendedSendingResourceFileMetadata
    */
   exports.prototype['allowExtendedSendingResourceFileMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowExternalLinkedAccounts
+   */
+  exports.prototype['allowExternalLinkedAccounts'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowExternalLinkedAccountsMetadata
+   */
+  exports.prototype['allowExternalLinkedAccountsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowExternalSignaturePad
@@ -3126,6 +3168,15 @@
   exports.prototype['enableSMSAuthenticationMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableSMSDeliveryAdditionalNotification
+   */
+  exports.prototype['enableSMSDeliveryAdditionalNotification'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableSMSDeliveryAdditionalNotificationMetadata
+   */
+  exports.prototype['enableSMSDeliveryAdditionalNotificationMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableSocialIdLogin
    */
   exports.prototype['enableSocialIdLogin'] = undefined;
@@ -3367,6 +3418,11 @@
    * @member {module:model/SettingsMetadata} inSessionSuppressEmailsMetadata
    */
   exports.prototype['inSessionSuppressEmailsMetadata'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/LinkedExternalPrimaryAccount>} linkedExternalPrimaryAccounts
+   */
+  exports.prototype['linkedExternalPrimaryAccounts'] = undefined;
   /**
    * 
    * @member {String} maximumSigningGroups
@@ -3669,6 +3725,15 @@
   exports.prototype['showLocalizedWatermarksMetadata'] = undefined;
   /**
    * 
+   * @member {String} showMaskedFieldsWhenDownloadingDocumentAsSender
+   */
+  exports.prototype['showMaskedFieldsWhenDownloadingDocumentAsSender'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} showMaskedFieldsWhenDownloadingDocumentAsSenderMetadata
+   */
+  exports.prototype['showMaskedFieldsWhenDownloadingDocumentAsSenderMetadata'] = undefined;
+  /**
+   * 
    * @member {String} showTutorials
    */
   exports.prototype['showTutorials'] = undefined;
@@ -3694,6 +3759,24 @@
    * @member {module:model/SettingsMetadata} signDateFormatMetadata
    */
   exports.prototype['signDateFormatMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} signDateTimeAccountLanguageOverride
+   */
+  exports.prototype['signDateTimeAccountLanguageOverride'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} signDateTimeAccountLanguageOverrideMetadata
+   */
+  exports.prototype['signDateTimeAccountLanguageOverrideMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} signDateTimeAccountTimezoneOverride
+   */
+  exports.prototype['signDateTimeAccountTimezoneOverride'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} signDateTimeAccountTimezoneOverrideMetadata
+   */
+  exports.prototype['signDateTimeAccountTimezoneOverrideMetadata'] = undefined;
   /**
    * 
    * @member {String} signerAttachCertificateToEnvelopePDF

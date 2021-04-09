@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation', 'model/ResourceInformation'], factory);
+	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'), require('../model/ResourceInformation'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation, root.Docusign.ResourceInformation);
+    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation);
   }
-}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedUserInfoList, MobileNotifierConfigurationInformation, ResourceInformation) {
+}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedUserInfoList, MobileNotifierConfigurationInformation) {
   'use strict';
 
   /**
@@ -278,7 +278,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/connect/secret/{keyId}/delete', 'DELETE',
+        '/v2.1/accounts/{accountId}/connect/secret/{keyId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -979,64 +979,6 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/mobile_notifiers', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the listTests operation. If none specified a Promise will be returned.
-     * @callback module:api/ConnectApi~listTestsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ResourceInformation} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Test connect configuration.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} connectId The ID of the custom Connect configuration being accessed.
-     * @param {module:api/ConnectApi~listTestsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ResourceInformation}
-     */
-    this.listTests = function(accountId, connectId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling listTests");
-      }
-
-      // verify the required parameter 'connectId' is set
-      if (connectId === undefined || connectId === null) {
-        throw new Error("Missing the required parameter 'connectId' when calling listTests");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId,
-        'connectId': connectId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ResourceInformation;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/connect/{connectId}/tests', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -171,6 +171,12 @@
       if (data.hasOwnProperty('canSendEnvelopeMetadata')) {
         obj['canSendEnvelopeMetadata'] = SettingsMetadata.constructFromObject(data['canSendEnvelopeMetadata']);
       }
+      if (data.hasOwnProperty('canSendEnvelopesViaSMS')) {
+        obj['canSendEnvelopesViaSMS'] = ApiClient.convertToType(data['canSendEnvelopesViaSMS'], 'String');
+      }
+      if (data.hasOwnProperty('canSendEnvelopesViaSMSMetadata')) {
+        obj['canSendEnvelopesViaSMSMetadata'] = SettingsMetadata.constructFromObject(data['canSendEnvelopesViaSMSMetadata']);
+      }
       if (data.hasOwnProperty('canSignEnvelope')) {
         obj['canSignEnvelope'] = ApiClient.convertToType(data['canSignEnvelope'], 'String');
       }
@@ -591,6 +597,15 @@
    * @member {module:model/SettingsMetadata} canSendEnvelopeMetadata
    */
   exports.prototype['canSendEnvelopeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canSendEnvelopesViaSMS
+   */
+  exports.prototype['canSendEnvelopesViaSMS'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canSendEnvelopesViaSMSMetadata
+   */
+  exports.prototype['canSendEnvelopesViaSMSMetadata'] = undefined;
   /**
    * 
    * @member {String} canSignEnvelope

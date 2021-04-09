@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RecipientEmailNotification', 'model/RecipientSignatureProvider', 'model/Tabs'], factory);
+    define(['ApiClient', 'model/RecipientAdditionalNotification', 'model/RecipientEmailNotification', 'model/RecipientSignatureProvider', 'model/Tabs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RecipientEmailNotification'), require('./RecipientSignatureProvider'), require('./Tabs'));
+    module.exports = factory(require('../ApiClient'), require('./RecipientAdditionalNotification'), require('./RecipientEmailNotification'), require('./RecipientSignatureProvider'), require('./Tabs'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateRole = factory(root.Docusign.ApiClient, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientSignatureProvider, root.Docusign.Tabs);
+    root.Docusign.TemplateRole = factory(root.Docusign.ApiClient, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientSignatureProvider, root.Docusign.Tabs);
   }
-}(this, function(ApiClient, RecipientEmailNotification, RecipientSignatureProvider, Tabs) {
+}(this, function(ApiClient, RecipientAdditionalNotification, RecipientEmailNotification, RecipientSignatureProvider, Tabs) {
   'use strict';
 
 
@@ -56,6 +56,9 @@
 
       if (data.hasOwnProperty('accessCode')) {
         obj['accessCode'] = ApiClient.convertToType(data['accessCode'], 'String');
+      }
+      if (data.hasOwnProperty('additionalNotifications')) {
+        obj['additionalNotifications'] = ApiClient.convertToType(data['additionalNotifications'], [RecipientAdditionalNotification]);
       }
       if (data.hasOwnProperty('clientUserId')) {
         obj['clientUserId'] = ApiClient.convertToType(data['clientUserId'], 'String');
@@ -102,6 +105,11 @@
    * @member {String} accessCode
    */
   exports.prototype['accessCode'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/RecipientAdditionalNotification>} additionalNotifications
+   */
+  exports.prototype['additionalNotifications'] = undefined;
   /**
    * Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
    * @member {String} clientUserId
