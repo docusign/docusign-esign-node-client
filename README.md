@@ -1,4 +1,4 @@
-# The Official DocuSign Node Client
+# The Official DocuSign eSignature Node Client SDK
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
@@ -58,6 +58,12 @@ Log issues against this client through GitHub. We also have an [active developer
 ## License
 The DocuSign eSignature Node Client SDK is licensed under the [MIT License](https://github.com/docusign/docusign-node-client/blob/master/LICENSE).
 
+### Additional resources
+*   [DocuSign Developer Center](https://developers.docusign.com/)
+*   [DocuSign API on Twitter](https://twitter.com/docusignapi)
+*   [DocuSign For Developers on LinkedIn](https://www.linkedin.com/showcase/docusign-for-developers/)
+*   [DocuSign For Developers on YouTube](https://www.youtube.com/channel/UCJSJ2kMs_qeQotmw4-lX2NQ)
+
 [npm-image]: https://img.shields.io/npm/v/docusign-esign.svg?style=flat
 [npm-url]: https://npmjs.org/package/docusign-esign
 [downloads-image]: https://img.shields.io/npm/dm/docusign-esign.svg?style=flat
@@ -66,9 +72,3 @@ The DocuSign eSignature Node Client SDK is licensed under the [MIT License](http
 [travis-url]: https://travis-ci.org/docusign/docusign-node-client
 [coveralls-image]: https://coveralls.io/repos/github/docusign/DocuSign-Node-Client/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/docusign/DocuSign-Node-Client?branch=master
-
-### Additional resources
-*   [DocuSign Developer Center](https://developers.docusign.com/)
-*   [DocuSign API on Twitter](https://twitter.com/docusignapi)
-*   [DocuSign For Developers on LinkedIn](https://www.linkedin.com/showcase/docusign-for-developers/)
-*   [DocuSign For Developers on YouTube](https://www.youtube.com/channel/UCJSJ2kMs_qeQotmw4-lX2NQ)
