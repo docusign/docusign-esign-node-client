@@ -228,6 +228,9 @@
       if (data.hasOwnProperty('smartContractInformation')) {
         obj['smartContractInformation'] = SmartContractInformation.constructFromObject(data['smartContractInformation']);
       }
+      if (data.hasOwnProperty('source')) {
+        obj['source'] = ApiClient.convertToType(data['source'], 'String');
+      }
       if (data.hasOwnProperty('startAnchor')) {
         obj['startAnchor'] = ApiClient.convertToType(data['startAnchor'], 'String');
       }
@@ -568,6 +571,11 @@
    * @member {module:model/SmartContractInformation} smartContractInformation
    */
   exports.prototype['smartContractInformation'] = undefined;
+  /**
+   * 
+   * @member {String} source
+   */
+  exports.prototype['source'] = undefined;
   /**
    * 
    * @member {String} startAnchor

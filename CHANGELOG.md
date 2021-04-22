@@ -1,6 +1,11 @@
 # DocuSign Node Client Changelog
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
+## [v5.9.0] - eSignature API v2.1-21.1.01.03
+### Changed
+- Added support for version v2.1-21.1.01.03 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v5.8.1] - eSignature API v2.1-20.3.01
 ### Changed
 - Added support for version v2.1-20.3.01 of the DocuSign eSignature API.
