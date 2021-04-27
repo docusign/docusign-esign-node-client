@@ -291,6 +291,9 @@
       if (data.hasOwnProperty('smartContractInformation')) {
         obj['smartContractInformation'] = SmartContractInformation.constructFromObject(data['smartContractInformation']);
       }
+      if (data.hasOwnProperty('source')) {
+        obj['source'] = ApiClient.convertToType(data['source'], 'String');
+      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
@@ -745,6 +748,11 @@
    * @member {module:model/SmartContractInformation} smartContractInformation
    */
   exports.prototype['smartContractInformation'] = undefined;
+  /**
+   * 
+   * @member {String} source
+   */
+  exports.prototype['source'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
