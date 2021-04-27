@@ -1,6 +1,11 @@
 # DocuSign Node Client Changelog
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
+## [v4.11.0] - eSignature API v2-21.1.01.03
+### Changed
+- Added support for version v2-21.1.01.03 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v4.10.1] - eSignature API v2-20.3.01
 ### Fixed 
 - DCM-3866, Added support for updateBrandResourcesByContentType function to take in file to upload.
