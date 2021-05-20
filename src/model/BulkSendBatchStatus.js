@@ -78,6 +78,9 @@
       if (data.hasOwnProperty('mailingListId')) {
         obj['mailingListId'] = ApiClient.convertToType(data['mailingListId'], 'String');
       }
+      if (data.hasOwnProperty('mailingListName')) {
+        obj['mailingListName'] = ApiClient.convertToType(data['mailingListName'], 'String');
+      }
       if (data.hasOwnProperty('ownerUserId')) {
         obj['ownerUserId'] = ApiClient.convertToType(data['ownerUserId'], 'String');
       }
@@ -137,6 +140,11 @@
    * @member {String} mailingListId
    */
   exports.prototype['mailingListId'] = undefined;
+  /**
+   * 
+   * @member {String} mailingListName
+   */
+  exports.prototype['mailingListName'] = undefined;
   /**
    * 
    * @member {String} ownerUserId

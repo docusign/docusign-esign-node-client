@@ -63,6 +63,12 @@
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('recipientSigningUri')) {
+        obj['recipientSigningUri'] = ApiClient.convertToType(data['recipientSigningUri'], 'String');
+      }
+      if (data.hasOwnProperty('recipientSigningUriError')) {
+        obj['recipientSigningUriError'] = ApiClient.convertToType(data['recipientSigningUriError'], 'String');
+      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
@@ -89,6 +95,16 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} recipientSigningUri
+   */
+  exports.prototype['recipientSigningUri'] = undefined;
+  /**
+   * 
+   * @member {String} recipientSigningUriError
+   */
+  exports.prototype['recipientSigningUriError'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status

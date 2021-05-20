@@ -78,6 +78,9 @@
       if (data.hasOwnProperty('displayMetadata')) {
         obj['displayMetadata'] = PropertyMetadata.constructFromObject(data['displayMetadata']);
       }
+      if (data.hasOwnProperty('documentBase64')) {
+        obj['documentBase64'] = ApiClient.convertToType(data['documentBase64'], 'String');
+      }
       if (data.hasOwnProperty('documentFields')) {
         obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
       }
@@ -171,6 +174,11 @@
    * @member {module:model/PropertyMetadata} displayMetadata
    */
   exports.prototype['displayMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} documentBase64
+   */
+  exports.prototype['documentBase64'] = undefined;
   /**
    * 
    * @member {Array.<module:model/NameValue>} documentFields

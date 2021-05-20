@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('authenticationSuccessFilter')) {
+        obj['authenticationSuccessFilter'] = ApiClient.convertToType(data['authenticationSuccessFilter'], 'String');
+      }
       if (data.hasOwnProperty('customFieldFilter')) {
         obj['customFieldFilter'] = ApiClient.convertToType(data['customFieldFilter'], 'String');
       }
@@ -132,10 +135,18 @@
       if (data.hasOwnProperty('startPosition')) {
         obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
       }
+      if (data.hasOwnProperty('verificationStatusFilter')) {
+        obj['verificationStatusFilter'] = ApiClient.convertToType(data['verificationStatusFilter'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} authenticationSuccessFilter
+   */
+  exports.prototype['authenticationSuccessFilter'] = undefined;
   /**
    * 
    * @member {String} customFieldFilter
@@ -266,6 +277,11 @@
    * @member {String} startPosition
    */
   exports.prototype['startPosition'] = undefined;
+  /**
+   * 
+   * @member {String} verificationStatusFilter
+   */
+  exports.prototype['verificationStatusFilter'] = undefined;
 
 
 

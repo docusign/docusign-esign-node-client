@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Attachment', 'model/CompositeTemplate', 'model/CustomFields', 'model/Document', 'model/EmailSettings', 'model/EnvelopeDocument', 'model/EnvelopeMetadata', 'model/EventNotification', 'model/Folder', 'model/LockInformation', 'model/Notification', 'model/PowerForm', 'model/Recipients', 'model/TemplateRole', 'model/UserInfo', 'model/Workflow'], factory);
+    define(['ApiClient', 'model/Attachment', 'model/CompositeTemplate', 'model/CustomFields', 'model/Document', 'model/EmailSettings', 'model/EnvelopeDocument', 'model/EnvelopeMetadata', 'model/EventNotification', 'model/Folder', 'model/LockInformation', 'model/Notification', 'model/PowerForm', 'model/RecipientViewRequest', 'model/Recipients', 'model/TemplateRole', 'model/UserInfo', 'model/Workflow'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CompositeTemplate'), require('./CustomFields'), require('./Document'), require('./EmailSettings'), require('./EnvelopeDocument'), require('./EnvelopeMetadata'), require('./EventNotification'), require('./Folder'), require('./LockInformation'), require('./Notification'), require('./PowerForm'), require('./Recipients'), require('./TemplateRole'), require('./UserInfo'), require('./Workflow'));
+    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CompositeTemplate'), require('./CustomFields'), require('./Document'), require('./EmailSettings'), require('./EnvelopeDocument'), require('./EnvelopeMetadata'), require('./EventNotification'), require('./Folder'), require('./LockInformation'), require('./Notification'), require('./PowerForm'), require('./RecipientViewRequest'), require('./Recipients'), require('./TemplateRole'), require('./UserInfo'), require('./Workflow'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeDefinition = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CompositeTemplate, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeMetadata, root.Docusign.EventNotification, root.Docusign.Folder, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PowerForm, root.Docusign.Recipients, root.Docusign.TemplateRole, root.Docusign.UserInfo, root.Docusign.Workflow);
+    root.Docusign.EnvelopeDefinition = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CompositeTemplate, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeMetadata, root.Docusign.EventNotification, root.Docusign.Folder, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PowerForm, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.TemplateRole, root.Docusign.UserInfo, root.Docusign.Workflow);
   }
-}(this, function(ApiClient, Attachment, CompositeTemplate, CustomFields, Document, EmailSettings, EnvelopeDocument, EnvelopeMetadata, EventNotification, Folder, LockInformation, Notification, PowerForm, Recipients, TemplateRole, UserInfo, Workflow) {
+}(this, function(ApiClient, Attachment, CompositeTemplate, CustomFields, Document, EmailSettings, EnvelopeDocument, EnvelopeMetadata, EventNotification, Folder, LockInformation, Notification, PowerForm, RecipientViewRequest, Recipients, TemplateRole, UserInfo, Workflow) {
   'use strict';
 
 
@@ -134,6 +134,9 @@
       }
       if (data.hasOwnProperty('disableResponsiveDocument')) {
         obj['disableResponsiveDocument'] = ApiClient.convertToType(data['disableResponsiveDocument'], 'String');
+      }
+      if (data.hasOwnProperty('documentBase64')) {
+        obj['documentBase64'] = ApiClient.convertToType(data['documentBase64'], 'String');
       }
       if (data.hasOwnProperty('documents')) {
         obj['documents'] = ApiClient.convertToType(data['documents'], [Document]);
@@ -266,6 +269,9 @@
       }
       if (data.hasOwnProperty('recipientsUri')) {
         obj['recipientsUri'] = ApiClient.convertToType(data['recipientsUri'], 'String');
+      }
+      if (data.hasOwnProperty('recipientViewRequest')) {
+        obj['recipientViewRequest'] = RecipientViewRequest.constructFromObject(data['recipientViewRequest']);
       }
       if (data.hasOwnProperty('sender')) {
         obj['sender'] = UserInfo.constructFromObject(data['sender']);
@@ -450,6 +456,11 @@
    * @member {String} disableResponsiveDocument
    */
   exports.prototype['disableResponsiveDocument'] = undefined;
+  /**
+   * 
+   * @member {String} documentBase64
+   */
+  exports.prototype['documentBase64'] = undefined;
   /**
    * Complex element contains the details on the documents in the envelope.
    * @member {Array.<module:model/Document>} documents
@@ -663,6 +674,10 @@
    * @member {String} recipientsUri
    */
   exports.prototype['recipientsUri'] = undefined;
+  /**
+   * @member {module:model/RecipientViewRequest} recipientViewRequest
+   */
+  exports.prototype['recipientViewRequest'] = undefined;
   /**
    * @member {module:model/UserInfo} sender
    */
