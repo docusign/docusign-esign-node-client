@@ -1161,63 +1161,6 @@ For example encode "Bob Smith" as "Bob%20Smith".
     };
 
     /**
-     * (Optional) Callback function to receive the result of the getUserListExport operation. If none specified a Promise will be returned.
-     * @callback module:api/UsersApi~getUserListExportCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Retrieves UserList Export Results data.
-     * @param {String} organizationId 
-     * @param {String} resultId 
-     * @param {module:api/UsersApi~getUserListExportCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getUserListExport = function(organizationId, resultId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getUserListExport");
-      }
-
-      // verify the required parameter 'resultId' is set
-      if (resultId === undefined || resultId === null) {
-        throw new Error("Missing the required parameter 'resultId' when calling getUserListExport");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'resultId': resultId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v2/organization_exports/{organizationId}/user_list/{resultId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
      * (Optional) Callback function to receive the result of the list operation. If none specified a Promise will be returned.
      * @callback module:api/UsersApi~listCallback
      * @param {String} error Error message, if any.
