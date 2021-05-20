@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('numericalValue')) {
+        obj['numericalValue'] = ApiClient.convertToType(data['numericalValue'], 'String');
+      }
       if (data.hasOwnProperty('originalValue')) {
         obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
       }
@@ -87,6 +90,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {String} numericalValue
+   */
+  exports.prototype['numericalValue'] = undefined;
   /**
    * The initial value of the tab when it was sent to the recipient. 
    * @member {String} originalValue

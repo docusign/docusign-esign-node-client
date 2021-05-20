@@ -820,6 +820,12 @@
       if (data.hasOwnProperty('enableAutoNavMetadata')) {
         obj['enableAutoNavMetadata'] = SettingsMetadata.constructFromObject(data['enableAutoNavMetadata']);
       }
+      if (data.hasOwnProperty('enableBccDummyLink')) {
+        obj['enableBccDummyLink'] = ApiClient.convertToType(data['enableBccDummyLink'], 'String');
+      }
+      if (data.hasOwnProperty('enableBccDummyLinkMetadata')) {
+        obj['enableBccDummyLinkMetadata'] = SettingsMetadata.constructFromObject(data['enableBccDummyLinkMetadata']);
+      }
       if (data.hasOwnProperty('enableCalculatedFields')) {
         obj['enableCalculatedFields'] = ApiClient.convertToType(data['enableCalculatedFields'], 'String');
       }
@@ -880,6 +886,12 @@
       if (data.hasOwnProperty('enablePaymentProcessingMetadata')) {
         obj['enablePaymentProcessingMetadata'] = SettingsMetadata.constructFromObject(data['enablePaymentProcessingMetadata']);
       }
+      if (data.hasOwnProperty('enablePDFAConversion')) {
+        obj['enablePDFAConversion'] = ApiClient.convertToType(data['enablePDFAConversion'], 'String');
+      }
+      if (data.hasOwnProperty('enablePDFAConversionMetadata')) {
+        obj['enablePDFAConversionMetadata'] = SettingsMetadata.constructFromObject(data['enablePDFAConversionMetadata']);
+      }
       if (data.hasOwnProperty('enablePowerForm')) {
         obj['enablePowerForm'] = ApiClient.convertToType(data['enablePowerForm'], 'String');
       }
@@ -897,6 +909,12 @@
       }
       if (data.hasOwnProperty('enableRecipientDomainValidationMetadata')) {
         obj['enableRecipientDomainValidationMetadata'] = SettingsMetadata.constructFromObject(data['enableRecipientDomainValidationMetadata']);
+      }
+      if (data.hasOwnProperty('enableRecipientMayProvidePhoneNumber')) {
+        obj['enableRecipientMayProvidePhoneNumber'] = ApiClient.convertToType(data['enableRecipientMayProvidePhoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('enableRecipientMayProvidePhoneNumberMetadata')) {
+        obj['enableRecipientMayProvidePhoneNumberMetadata'] = SettingsMetadata.constructFromObject(data['enableRecipientMayProvidePhoneNumberMetadata']);
       }
       if (data.hasOwnProperty('enableReportLinks')) {
         obj['enableReportLinks'] = ApiClient.convertToType(data['enableReportLinks'], 'String');
@@ -2853,6 +2871,15 @@
   exports.prototype['enableAutoNavMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableBccDummyLink
+   */
+  exports.prototype['enableBccDummyLink'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableBccDummyLinkMetadata
+   */
+  exports.prototype['enableBccDummyLinkMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableCalculatedFields
    */
   exports.prototype['enableCalculatedFields'] = undefined;
@@ -2943,6 +2970,15 @@
   exports.prototype['enablePaymentProcessingMetadata'] = undefined;
   /**
    * 
+   * @member {String} enablePDFAConversion
+   */
+  exports.prototype['enablePDFAConversion'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enablePDFAConversionMetadata
+   */
+  exports.prototype['enablePDFAConversionMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enablePowerForm
    */
   exports.prototype['enablePowerForm'] = undefined;
@@ -2968,6 +3004,15 @@
    * @member {module:model/SettingsMetadata} enableRecipientDomainValidationMetadata
    */
   exports.prototype['enableRecipientDomainValidationMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableRecipientMayProvidePhoneNumber
+   */
+  exports.prototype['enableRecipientMayProvidePhoneNumber'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableRecipientMayProvidePhoneNumberMetadata
+   */
+  exports.prototype['enableRecipientMayProvidePhoneNumberMetadata'] = undefined;
   /**
    * 
    * @member {String} enableReportLinks

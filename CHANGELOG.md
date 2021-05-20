@@ -1,6 +1,21 @@
 # DocuSign Node Client Changelog
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
+## [v5.10.0-rc1] - eSignature API v2.1-21.1.02.00
+### Breaking
+- Removed methods `getAccountSettingsExport`,`getSealProviders` from Accounts.
+- Removed methods `createConnectSecret`,`deleteConnectSecret`,`generateConnectSecret`,`getConnectSecrets` from Connect.
+- Removed methods `getDynamicSystemSettings`,`getTemplateInfo`,`getApplianceInfo`,`getAccount`,`getCustomFields`,`deleteCustomFieldsV2`,`getDocumentPages`,`getImage`,`getLocalePolicy`,`updatePageInfo`,`createPageInfo`,`deletePageInfo`,`updatePdf`,`getPdf`,`getPdfBlob`,`updatePdfBlob`,`createPdfBlob`,`updateRecipientDeniedDocumentCopy`,`deleteRecipientDeniedDocumentCopy`,`getSignerAttachment`,`deleteSignerAttachment`, from Envelopes.
+- Removed methods `completeSignHash`,`getUserInfo`,`healthCheck`,`signHashSessionInfo`,`updateTransaction` from TrustServiceProviders.
+- Removed methods `getUserListExport` from Users.
+
+### Added
+- Added new methods `getBulkSendBatchEnvelopes` to BulkEnvelopes.
+
+### Changed
+- Added support for version v2.1-21.1.02.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v5.9.0] - eSignature API v2.1-21.1.01.03
 ### Changed
 - Added support for version v2.1-21.1.01.03 of the DocuSign eSignature API.

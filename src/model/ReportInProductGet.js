@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('authenticationSuccessFilter')) {
+        obj['authenticationSuccessFilter'] = ApiClient.convertToType(data['authenticationSuccessFilter'], 'String');
+      }
       if (data.hasOwnProperty('customFieldFilter')) {
         obj['customFieldFilter'] = ApiClient.convertToType(data['customFieldFilter'], 'String');
       }
@@ -141,10 +144,18 @@
       if (data.hasOwnProperty('sortFieldName')) {
         obj['sortFieldName'] = ApiClient.convertToType(data['sortFieldName'], 'String');
       }
+      if (data.hasOwnProperty('verificationStatusFilter')) {
+        obj['verificationStatusFilter'] = ApiClient.convertToType(data['verificationStatusFilter'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} authenticationSuccessFilter
+   */
+  exports.prototype['authenticationSuccessFilter'] = undefined;
   /**
    * 
    * @member {String} customFieldFilter
@@ -289,6 +300,11 @@
    * @member {String} sortFieldName
    */
   exports.prototype['sortFieldName'] = undefined;
+  /**
+   * 
+   * @member {String} verificationStatusFilter
+   */
+  exports.prototype['verificationStatusFilter'] = undefined;
 
 
 

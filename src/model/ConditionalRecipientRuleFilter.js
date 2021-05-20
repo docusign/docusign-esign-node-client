@@ -69,6 +69,9 @@
       if (data.hasOwnProperty('tabLabel')) {
         obj['tabLabel'] = ApiClient.convertToType(data['tabLabel'], 'String');
       }
+      if (data.hasOwnProperty('tabType')) {
+        obj['tabType'] = ApiClient.convertToType(data['tabType'], 'String');
+      }
       if (data.hasOwnProperty('value')) {
         obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
@@ -101,6 +104,11 @@
    * @member {String} tabLabel
    */
   exports.prototype['tabLabel'] = undefined;
+  /**
+   * 
+   * @member {String} tabType
+   */
+  exports.prototype['tabType'] = undefined;
   /**
    * Specifies the value of the tab. 
    * @member {String} value

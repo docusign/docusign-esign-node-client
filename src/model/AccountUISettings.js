@@ -66,9 +66,6 @@
       if (data.hasOwnProperty('enableAdminMessageMetadata')) {
         obj['enableAdminMessageMetadata'] = SettingsMetadata.constructFromObject(data['enableAdminMessageMetadata']);
       }
-      if (data.hasOwnProperty('enableAdvancedPaymentsReactEdit')) {
-        obj['enableAdvancedPaymentsReactEdit'] = ApiClient.convertToType(data['enableAdvancedPaymentsReactEdit'], 'String');
-      }
       if (data.hasOwnProperty('enableEasySignCanUseMultiTemplateApply')) {
         obj['enableEasySignCanUseMultiTemplateApply'] = ApiClient.convertToType(data['enableEasySignCanUseMultiTemplateApply'], 'String');
       }
@@ -162,11 +159,6 @@
    * @member {module:model/SettingsMetadata} enableAdminMessageMetadata
    */
   exports.prototype['enableAdminMessageMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} enableAdvancedPaymentsReactEdit
-   */
-  exports.prototype['enableAdvancedPaymentsReactEdit'] = undefined;
   /**
    * 
    * @member {String} enableEasySignCanUseMultiTemplateApply

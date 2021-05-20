@@ -81,6 +81,9 @@
       if (data.hasOwnProperty('avgCompleteSeconds')) {
         obj['avgCompleteSeconds'] = ApiClient.convertToType(data['avgCompleteSeconds'], 'String');
       }
+      if (data.hasOwnProperty('captureMethod')) {
+        obj['captureMethod'] = ApiClient.convertToType(data['captureMethod'], 'String');
+      }
       if (data.hasOwnProperty('completed')) {
         obj['completed'] = ApiClient.convertToType(data['completed'], 'String');
       }
@@ -195,6 +198,12 @@
       if (data.hasOwnProperty('idChecksFailed')) {
         obj['idChecksFailed'] = ApiClient.convertToType(data['idChecksFailed'], 'String');
       }
+      if (data.hasOwnProperty('idCountry')) {
+        obj['idCountry'] = ApiClient.convertToType(data['idCountry'], 'String');
+      }
+      if (data.hasOwnProperty('idMethod')) {
+        obj['idMethod'] = ApiClient.convertToType(data['idMethod'], 'String');
+      }
       if (data.hasOwnProperty('initialSendTs')) {
         obj['initialSendTs'] = ApiClient.convertToType(data['initialSendTs'], 'String');
       }
@@ -209,6 +218,9 @@
       }
       if (data.hasOwnProperty('lastSentDate')) {
         obj['lastSentDate'] = ApiClient.convertToType(data['lastSentDate'], 'String');
+      }
+      if (data.hasOwnProperty('metadataRemoved')) {
+        obj['metadataRemoved'] = ApiClient.convertToType(data['metadataRemoved'], 'String');
       }
       if (data.hasOwnProperty('notSigned')) {
         obj['notSigned'] = ApiClient.convertToType(data['notSigned'], 'String');
@@ -260,6 +272,12 @@
       }
       if (data.hasOwnProperty('phoneCallsFailed')) {
         obj['phoneCallsFailed'] = ApiClient.convertToType(data['phoneCallsFailed'], 'String');
+      }
+      if (data.hasOwnProperty('piiRedacted')) {
+        obj['piiRedacted'] = ApiClient.convertToType(data['piiRedacted'], 'String');
+      }
+      if (data.hasOwnProperty('purgeDate')) {
+        obj['purgeDate'] = ApiClient.convertToType(data['purgeDate'], 'String');
       }
       if (data.hasOwnProperty('reasonForDeclining')) {
         obj['reasonForDeclining'] = ApiClient.convertToType(data['reasonForDeclining'], 'String');
@@ -362,6 +380,9 @@
       }
       if (data.hasOwnProperty('statusChangedTs')) {
         obj['statusChangedTs'] = ApiClient.convertToType(data['statusChangedTs'], 'String');
+      }
+      if (data.hasOwnProperty('statusComment')) {
+        obj['statusComment'] = ApiClient.convertToType(data['statusComment'], 'String');
       }
       if (data.hasOwnProperty('subject')) {
         obj['subject'] = ApiClient.convertToType(data['subject'], 'String');
@@ -478,6 +499,11 @@
    * @member {String} avgCompleteSeconds
    */
   exports.prototype['avgCompleteSeconds'] = undefined;
+  /**
+   * 
+   * @member {String} captureMethod
+   */
+  exports.prototype['captureMethod'] = undefined;
   /**
    * 
    * @member {String} completed
@@ -670,6 +696,16 @@
   exports.prototype['idChecksFailed'] = undefined;
   /**
    * 
+   * @member {String} idCountry
+   */
+  exports.prototype['idCountry'] = undefined;
+  /**
+   * 
+   * @member {String} idMethod
+   */
+  exports.prototype['idMethod'] = undefined;
+  /**
+   * 
    * @member {String} initialSendTs
    */
   exports.prototype['initialSendTs'] = undefined;
@@ -693,6 +729,11 @@
    * @member {String} lastSentDate
    */
   exports.prototype['lastSentDate'] = undefined;
+  /**
+   * 
+   * @member {String} metadataRemoved
+   */
+  exports.prototype['metadataRemoved'] = undefined;
   /**
    * 
    * @member {String} notSigned
@@ -778,6 +819,16 @@
    * @member {String} phoneCallsFailed
    */
   exports.prototype['phoneCallsFailed'] = undefined;
+  /**
+   * 
+   * @member {String} piiRedacted
+   */
+  exports.prototype['piiRedacted'] = undefined;
+  /**
+   * 
+   * @member {String} purgeDate
+   */
+  exports.prototype['purgeDate'] = undefined;
   /**
    * 
    * @member {String} reasonForDeclining
@@ -948,6 +999,11 @@
    * @member {String} statusChangedTs
    */
   exports.prototype['statusChangedTs'] = undefined;
+  /**
+   * 
+   * @member {String} statusComment
+   */
+  exports.prototype['statusComment'] = undefined;
   /**
    * 
    * @member {String} subject
