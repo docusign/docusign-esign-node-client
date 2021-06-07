@@ -1242,4 +1242,37 @@ describe('SDK Unit Tests:', function (done) {
         }
       });
   });
+
+  it('Test Get Form Data', function(done) {
+    var envelopeId = "137e8369-3242-438e-ab0f-4808ec6047cd";
+    var envelopesApi = new docusign.EnvelopesApi(apiClient);
+    envelopesApi.getFormData(accountId, envelopeId).then(function (envelopeFormData) {
+      // console.log('EnvelopeFormData: ' + JSON.stringify(envelopeFormData));
+      // console.log('EnvelopeFormData: ', envelopeFormData);
+      
+      // NOTE: Need to check against the following values...
+      // envelopeFormData
+      // envelopeFormData.formData
+      // envelopeFormData.formData[0]
+      // envelopeFormData.formData[0].name
+      // envelopeFormData.prefillFormData.formData
+      // envelopeFormData.prefillFormData.formData[0]
+      // envelopeFormData.prefillFormData.formData[0].name
+
+      assert.notStrictEqual(envelopeFormData, null || undefined);
+      assert.notStrictEqual(envelopeFormData.formData, null || undefined);
+      assert.notStrictEqual(envelopeFormData.formData[0], null || undefined);
+      assert.notStrictEqual(envelopeFormData.formData[0].name, null || undefined);
+      assert.notStrictEqual(envelopeFormData.prefillFormData, null || undefined);
+      assert.notStrictEqual(envelopeFormData.prefillFormData.formData, null || undefined);
+      assert.notStrictEqual(envelopeFormData.prefillFormData.formData[0], null || undefined);
+      assert.notStrictEqual(envelopeFormData.prefillFormData.formData[0].name, null || undefined);
+      done();
+    })
+    .catch(function (error) {
+      if (error) {
+        return done(error);
+      }
+    });
+  });
 });
