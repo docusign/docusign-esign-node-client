@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/NameValue', 'model/RecipientFormData'], factory);
+    define(['ApiClient', 'model/EnvelopeFormDataPrefillFormData', 'model/NameValue', 'model/RecipientFormData'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./NameValue'), require('./RecipientFormData'));
+    module.exports = factory(require('../ApiClient'), require('./EnvelopeFormDataPrefillFormData'), require('./NameValue'), require('./RecipientFormData'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeFormData = factory(root.Docusign.ApiClient, root.Docusign.NameValue, root.Docusign.RecipientFormData);
+    root.Docusign.EnvelopeFormData = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeFormDataPrefillFormData, root.Docusign.NameValue, root.Docusign.RecipientFormData);
   }
-}(this, function(ApiClient, NameValue, RecipientFormData) {
+}(this, function(ApiClient, EnvelopeFormDataPrefillFormData, NameValue, RecipientFormData) {
   'use strict';
 
 
@@ -64,7 +64,7 @@
         obj['formData'] = ApiClient.convertToType(data['formData'], [NameValue]);
       }
       if (data.hasOwnProperty('prefillFormData')) {
-        obj['prefillFormData'] = ApiClient.convertToType(data['prefillFormData'], [NameValue]);
+        obj['prefillFormData'] = EnvelopeFormDataPrefillFormData.constructFromObject(data['prefillFormData']);
       }
       if (data.hasOwnProperty('recipientFormData')) {
         obj['recipientFormData'] = ApiClient.convertToType(data['recipientFormData'], [RecipientFormData]);
@@ -95,8 +95,7 @@
    */
   exports.prototype['formData'] = undefined;
   /**
-   * 
-   * @member {Array.<module:model/NameValue>} prefillFormData
+   * @member {module:model/EnvelopeFormDataPrefillFormData} prefillFormData
    */
   exports.prototype['prefillFormData'] = undefined;
   /**
