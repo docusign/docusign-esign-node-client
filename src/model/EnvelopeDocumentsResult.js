@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/EnvelopeDocument'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeDocumentsResult = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeDocument);
   }
-}(this, function(ApiClient, EnvelopeDocument) {
-  'use strict';
-
-
+}(this, (ApiClient, EnvelopeDocument) => {
   /**
    * The EnvelopeDocumentsResult model module.
    * @module model/EnvelopeDocumentsResult
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeDocumentsResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/EnvelopeDocumentsResult} obj Optional instance to populate.
    * @return {module:model/EnvelopeDocumentsResult} The populated <code>EnvelopeDocumentsResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeDocuments')) {
-        obj['envelopeDocuments'] = ApiClient.convertToType(data['envelopeDocuments'], [EnvelopeDocument]);
+        obj.envelopeDocuments = ApiClient.convertToType(data.envelopeDocuments, [EnvelopeDocument]);
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/EnvelopeDocument>} envelopeDocuments
    */
-  exports.prototype['envelopeDocuments'] = undefined;
+  exports.prototype.envelopeDocuments = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
-
-
+  exports.prototype.envelopeId = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Expirations = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The Expirations model module.
    * @module model/Expirations
@@ -38,10 +35,8 @@
    * @alias module:model/Expirations
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/Expirations} obj Optional instance to populate.
    * @return {module:model/Expirations} The populated <code>Expirations</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('expireAfter')) {
-        obj['expireAfter'] = ApiClient.convertToType(data['expireAfter'], 'String');
+        obj.expireAfter = ApiClient.convertToType(data.expireAfter, 'String');
       }
       if (data.hasOwnProperty('expireEnabled')) {
-        obj['expireEnabled'] = ApiClient.convertToType(data['expireEnabled'], 'String');
+        obj.expireEnabled = ApiClient.convertToType(data.expireEnabled, 'String');
       }
       if (data.hasOwnProperty('expireWarn')) {
-        obj['expireWarn'] = ApiClient.convertToType(data['expireWarn'], 'String');
+        obj.expireWarn = ApiClient.convertToType(data.expireWarn, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * An integer that sets the number of days the envelope is active.
    * @member {String} expireAfter
    */
-  exports.prototype['expireAfter'] = undefined;
+  exports.prototype.expireAfter = undefined;
   /**
    * When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used.
    * @member {String} expireEnabled
    */
-  exports.prototype['expireEnabled'] = undefined;
+  exports.prototype.expireEnabled = undefined;
   /**
    * An integer that sets the number of days before envelope expiration that an expiration warning email is sent to the recipient. If set to 0 (zero), no warning email is sent.
    * @member {String} expireWarn
    */
-  exports.prototype['expireWarn'] = undefined;
-
-
+  exports.prototype.expireWarn = undefined;
 
   return exports;
 }));
-
-

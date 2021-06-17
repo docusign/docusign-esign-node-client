@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandLogos = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BrandLogos model module.
    * @module model/BrandLogos
@@ -37,10 +34,8 @@
    * @alias module:model/BrandLogos
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/BrandLogos} obj Optional instance to populate.
    * @return {module:model/BrandLogos} The populated <code>BrandLogos</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('primary')) {
-        obj['primary'] = ApiClient.convertToType(data['primary'], 'String');
+        obj.primary = ApiClient.convertToType(data.primary, 'String');
       }
       if (data.hasOwnProperty('secondary')) {
-        obj['secondary'] = ApiClient.convertToType(data['secondary'], 'String');
+        obj.secondary = ApiClient.convertToType(data.secondary, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {String} primary
    */
-  exports.prototype['primary'] = undefined;
+  exports.prototype.primary = undefined;
   /**
-   * 
+   *
    * @member {String} secondary
    */
-  exports.prototype['secondary'] = undefined;
-
-
+  exports.prototype.secondary = undefined;
 
   return exports;
 }));
-
-

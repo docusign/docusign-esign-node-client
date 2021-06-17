@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientEvent = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientEvent model module.
    * @module model/RecipientEvent
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientEvent
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/RecipientEvent} obj Optional instance to populate.
    * @return {module:model/RecipientEvent} The populated <code>RecipientEvent</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('includeDocuments')) {
-        obj['includeDocuments'] = ApiClient.convertToType(data['includeDocuments'], 'String');
+        obj.includeDocuments = ApiClient.convertToType(data.includeDocuments, 'String');
       }
       if (data.hasOwnProperty('recipientEventStatusCode')) {
-        obj['recipientEventStatusCode'] = ApiClient.convertToType(data['recipientEventStatusCode'], 'String');
+        obj.recipientEventStatusCode = ApiClient.convertToType(data.recipientEventStatusCode, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * When set to **true**, the PDF documents are included in the message along with the updated XML. 
+   * When set to **true**, the PDF documents are included in the message along with the updated XML.
    * @member {String} includeDocuments
    */
-  exports.prototype['includeDocuments'] = undefined;
+  exports.prototype.includeDocuments = undefined;
   /**
    * The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
    * @member {String} recipientEventStatusCode
    */
-  exports.prototype['recipientEventStatusCode'] = undefined;
-
-
+  exports.prototype.recipientEventStatusCode = undefined;
 
   return exports;
 }));
-
-

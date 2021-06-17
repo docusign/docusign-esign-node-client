@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountPasswordLockoutDurationMinutes = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountPasswordLockoutDurationMinutes model module.
    * @module model/AccountPasswordLockoutDurationMinutes
@@ -37,10 +34,8 @@
    * @alias module:model/AccountPasswordLockoutDurationMinutes
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/AccountPasswordLockoutDurationMinutes} obj Optional instance to populate.
    * @return {module:model/AccountPasswordLockoutDurationMinutes} The populated <code>AccountPasswordLockoutDurationMinutes</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('maximumMinutes')) {
-        obj['maximumMinutes'] = ApiClient.convertToType(data['maximumMinutes'], 'String');
+        obj.maximumMinutes = ApiClient.convertToType(data.maximumMinutes, 'String');
       }
       if (data.hasOwnProperty('minimumMinutes')) {
-        obj['minimumMinutes'] = ApiClient.convertToType(data['minimumMinutes'], 'String');
+        obj.minimumMinutes = ApiClient.convertToType(data.minimumMinutes, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} maximumMinutes
    */
-  exports.prototype['maximumMinutes'] = undefined;
+  exports.prototype.maximumMinutes = undefined;
   /**
-   * 
+   *
    * @member {String} minimumMinutes
    */
-  exports.prototype['minimumMinutes'] = undefined;
-
-
+  exports.prototype.minimumMinutes = undefined;
 
   return exports;
 }));
-
-

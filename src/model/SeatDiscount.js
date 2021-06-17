@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SeatDiscount = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SeatDiscount model module.
    * @module model/SeatDiscount
@@ -37,10 +34,8 @@
    * @alias module:model/SeatDiscount
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/SeatDiscount} obj Optional instance to populate.
    * @return {module:model/SeatDiscount} The populated <code>SeatDiscount</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('beginSeatCount')) {
-        obj['beginSeatCount'] = ApiClient.convertToType(data['beginSeatCount'], 'String');
+        obj.beginSeatCount = ApiClient.convertToType(data.beginSeatCount, 'String');
       }
       if (data.hasOwnProperty('discountPercent')) {
-        obj['discountPercent'] = ApiClient.convertToType(data['discountPercent'], 'String');
+        obj.discountPercent = ApiClient.convertToType(data.discountPercent, 'String');
       }
       if (data.hasOwnProperty('endSeatCount')) {
-        obj['endSeatCount'] = ApiClient.convertToType(data['endSeatCount'], 'String');
+        obj.endSeatCount = ApiClient.convertToType(data.endSeatCount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} beginSeatCount
    */
-  exports.prototype['beginSeatCount'] = undefined;
+  exports.prototype.beginSeatCount = undefined;
   /**
-   * 
+   *
    * @member {String} discountPercent
    */
-  exports.prototype['discountPercent'] = undefined;
+  exports.prototype.discountPercent = undefined;
   /**
    * Reserved: TBD
    * @member {String} endSeatCount
    */
-  exports.prototype['endSeatCount'] = undefined;
-
-
+  exports.prototype.endSeatCount = undefined;
 
   return exports;
 }));
-
-

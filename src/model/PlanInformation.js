@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AddOn', 'model/FeatureSet', 'model/RecipientDomain'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PlanInformation = factory(root.Docusign.ApiClient, root.Docusign.AddOn, root.Docusign.FeatureSet, root.Docusign.RecipientDomain);
   }
-}(this, function(ApiClient, AddOn, FeatureSet, RecipientDomain) {
-  'use strict';
-
-
+}(this, (ApiClient, AddOn, FeatureSet, RecipientDomain) => {
   /**
    * The PlanInformation model module.
    * @module model/PlanInformation
@@ -38,10 +35,8 @@
    * @alias module:model/PlanInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,66 +46,62 @@
    * @param {module:model/PlanInformation} obj Optional instance to populate.
    * @return {module:model/PlanInformation} The populated <code>PlanInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('addOns')) {
-        obj['addOns'] = ApiClient.convertToType(data['addOns'], [AddOn]);
+        obj.addOns = ApiClient.convertToType(data.addOns, [AddOn]);
       }
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('freeTrialDaysOverride')) {
-        obj['freeTrialDaysOverride'] = ApiClient.convertToType(data['freeTrialDaysOverride'], 'String');
+        obj.freeTrialDaysOverride = ApiClient.convertToType(data.freeTrialDaysOverride, 'String');
       }
       if (data.hasOwnProperty('planFeatureSets')) {
-        obj['planFeatureSets'] = ApiClient.convertToType(data['planFeatureSets'], [FeatureSet]);
+        obj.planFeatureSets = ApiClient.convertToType(data.planFeatureSets, [FeatureSet]);
       }
       if (data.hasOwnProperty('planId')) {
-        obj['planId'] = ApiClient.convertToType(data['planId'], 'String');
+        obj.planId = ApiClient.convertToType(data.planId, 'String');
       }
       if (data.hasOwnProperty('recipientDomains')) {
-        obj['recipientDomains'] = ApiClient.convertToType(data['recipientDomains'], [RecipientDomain]);
+        obj.recipientDomains = ApiClient.convertToType(data.recipientDomains, [RecipientDomain]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved:
    * @member {Array.<module:model/AddOn>} addOns
    */
-  exports.prototype['addOns'] = undefined;
+  exports.prototype.addOns = undefined;
   /**
    * Specifies the ISO currency code for the account.
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * Reserved for DocuSign use only.
    * @member {String} freeTrialDaysOverride
    */
-  exports.prototype['freeTrialDaysOverride'] = undefined;
+  exports.prototype.freeTrialDaysOverride = undefined;
   /**
    * A complex type that sets the feature sets for the account.
    * @member {Array.<module:model/FeatureSet>} planFeatureSets
    */
-  exports.prototype['planFeatureSets'] = undefined;
+  exports.prototype.planFeatureSets = undefined;
   /**
    * The DocuSign Plan ID for the account.
    * @member {String} planId
    */
-  exports.prototype['planId'] = undefined;
+  exports.prototype.planId = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/RecipientDomain>} recipientDomains
    */
-  exports.prototype['recipientDomains'] = undefined;
-
-
+  exports.prototype.recipientDomains = undefined;
 
   return exports;
 }));
-
-

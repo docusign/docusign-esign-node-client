@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/NameValue'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ResourceInformation = factory(root.Docusign.ApiClient, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, NameValue) {
-  'use strict';
-
-
+}(this, (ApiClient, NameValue) => {
   /**
    * The ResourceInformation model module.
    * @module model/ResourceInformation
@@ -37,10 +34,8 @@
    * @alias module:model/ResourceInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ResourceInformation} obj Optional instance to populate.
    * @return {module:model/ResourceInformation} The populated <code>ResourceInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('resources')) {
-        obj['resources'] = ApiClient.convertToType(data['resources'], [NameValue]);
+        obj.resources = ApiClient.convertToType(data.resources, [NameValue]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/NameValue>} resources
    */
-  exports.prototype['resources'] = undefined;
-
-
+  exports.prototype.resources = undefined;
 
   return exports;
 }));
-
-

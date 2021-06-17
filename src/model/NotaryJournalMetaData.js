@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/NotaryJournalCredibleWitness'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.NotaryJournalMetaData = factory(root.Docusign.ApiClient, root.Docusign.NotaryJournalCredibleWitness);
   }
-}(this, function(ApiClient, NotaryJournalCredibleWitness) {
-  'use strict';
-
-
+}(this, (ApiClient, NotaryJournalCredibleWitness) => {
   /**
    * The NotaryJournalMetaData model module.
    * @module model/NotaryJournalMetaData
@@ -37,10 +34,8 @@
    * @alias module:model/NotaryJournalMetaData
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/NotaryJournalMetaData} obj Optional instance to populate.
    * @return {module:model/NotaryJournalMetaData} The populated <code>NotaryJournalMetaData</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('comment')) {
-        obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
+        obj.comment = ApiClient.convertToType(data.comment, 'String');
       }
       if (data.hasOwnProperty('credibleWitnesses')) {
-        obj['credibleWitnesses'] = ApiClient.convertToType(data['credibleWitnesses'], [NotaryJournalCredibleWitness]);
+        obj.credibleWitnesses = ApiClient.convertToType(data.credibleWitnesses, [NotaryJournalCredibleWitness]);
       }
       if (data.hasOwnProperty('signatureImage')) {
-        obj['signatureImage'] = ApiClient.convertToType(data['signatureImage'], 'String');
+        obj.signatureImage = ApiClient.convertToType(data.signatureImage, 'String');
       }
       if (data.hasOwnProperty('signerIdType')) {
-        obj['signerIdType'] = ApiClient.convertToType(data['signerIdType'], 'String');
+        obj.signerIdType = ApiClient.convertToType(data.signerIdType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} comment
    */
-  exports.prototype['comment'] = undefined;
+  exports.prototype.comment = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/NotaryJournalCredibleWitness>} credibleWitnesses
    */
-  exports.prototype['credibleWitnesses'] = undefined;
+  exports.prototype.credibleWitnesses = undefined;
   /**
-   * 
+   *
    * @member {String} signatureImage
    */
-  exports.prototype['signatureImage'] = undefined;
+  exports.prototype.signatureImage = undefined;
   /**
-   * 
+   *
    * @member {String} signerIdType
    */
-  exports.prototype['signerIdType'] = undefined;
-
-
+  exports.prototype.signerIdType = undefined;
 
   return exports;
 }));
-
-

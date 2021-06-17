@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Brand'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.GroupBrands = factory(root.Docusign.ApiClient, root.Docusign.Brand);
   }
-}(this, function(ApiClient, Brand) {
-  'use strict';
-
-
+}(this, (ApiClient, Brand) => {
   /**
    * The GroupBrands model module.
    * @module model/GroupBrands
@@ -34,14 +31,12 @@
 
   /**
    * Constructs a new <code>GroupBrands</code>.
-   * 
+   *
    * @alias module:model/GroupBrands
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/GroupBrands} obj Optional instance to populate.
    * @return {module:model/GroupBrands} The populated <code>GroupBrands</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('recipientBrandIdDefault')) {
-        obj['recipientBrandIdDefault'] = ApiClient.convertToType(data['recipientBrandIdDefault'], 'String');
+        obj.recipientBrandIdDefault = ApiClient.convertToType(data.recipientBrandIdDefault, 'String');
       }
       if (data.hasOwnProperty('senderBrandIdDefault')) {
-        obj['senderBrandIdDefault'] = ApiClient.convertToType(data['senderBrandIdDefault'], 'String');
+        obj.senderBrandIdDefault = ApiClient.convertToType(data.senderBrandIdDefault, 'String');
       }
       if (data.hasOwnProperty('brandOptions')) {
-        obj['brandOptions'] = ApiClient.convertToType(data['brandOptions'], [Brand]);
+        obj.brandOptions = ApiClient.convertToType(data.brandOptions, [Brand]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The brand seen by envelope recipients when a brand is not explicitly set.
    * @member {String} recipientBrandIdDefault
    */
-  exports.prototype['recipientBrandIdDefault'] = undefined;
+  exports.prototype.recipientBrandIdDefault = undefined;
   /**
    * The brand seen by envelope senders when a brand is not explicitly set.
    * @member {String} senderBrandIdDefault
    */
-  exports.prototype['senderBrandIdDefault'] = undefined;
+  exports.prototype.senderBrandIdDefault = undefined;
   /**
    * The list of brands.
    * @member {Array.<module:model/Brand>} brandOptions
    */
-  exports.prototype['brandOptions'] = undefined;
-
-
+  exports.prototype.brandOptions = undefined;
 
   return exports;
 }));
-
-

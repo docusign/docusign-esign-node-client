@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AddressInformationV2 = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AddressInformationV2 model module.
    * @module model/AddressInformationV2
@@ -38,10 +35,8 @@
    * @alias module:model/AddressInformationV2
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,82 +46,78 @@
    * @param {module:model/AddressInformationV2} obj Optional instance to populate.
    * @return {module:model/AddressInformationV2} The populated <code>AddressInformationV2</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('address1')) {
-        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
+        obj.address1 = ApiClient.convertToType(data.address1, 'String');
       }
       if (data.hasOwnProperty('address2')) {
-        obj['address2'] = ApiClient.convertToType(data['address2'], 'String');
+        obj.address2 = ApiClient.convertToType(data.address2, 'String');
       }
       if (data.hasOwnProperty('city')) {
-        obj['city'] = ApiClient.convertToType(data['city'], 'String');
+        obj.city = ApiClient.convertToType(data.city, 'String');
       }
       if (data.hasOwnProperty('country')) {
-        obj['country'] = ApiClient.convertToType(data['country'], 'String');
+        obj.country = ApiClient.convertToType(data.country, 'String');
       }
       if (data.hasOwnProperty('fax')) {
-        obj['fax'] = ApiClient.convertToType(data['fax'], 'String');
+        obj.fax = ApiClient.convertToType(data.fax, 'String');
       }
       if (data.hasOwnProperty('phone')) {
-        obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
+        obj.phone = ApiClient.convertToType(data.phone, 'String');
       }
       if (data.hasOwnProperty('postalCode')) {
-        obj['postalCode'] = ApiClient.convertToType(data['postalCode'], 'String');
+        obj.postalCode = ApiClient.convertToType(data.postalCode, 'String');
       }
       if (data.hasOwnProperty('stateOrProvince')) {
-        obj['stateOrProvince'] = ApiClient.convertToType(data['stateOrProvince'], 'String');
+        obj.stateOrProvince = ApiClient.convertToType(data.stateOrProvince, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * First Line of the address. Maximum length: 100 characters.
    * @member {String} address1
    */
-  exports.prototype['address1'] = undefined;
+  exports.prototype.address1 = undefined;
   /**
    * Second Line of the address. Maximum length: 100 characters.
    * @member {String} address2
    */
-  exports.prototype['address2'] = undefined;
+  exports.prototype.address2 = undefined;
   /**
-   * 
+   *
    * @member {String} city
    */
-  exports.prototype['city'] = undefined;
+  exports.prototype.city = undefined;
   /**
    * Specifies the country associated with the address.
    * @member {String} country
    */
-  exports.prototype['country'] = undefined;
+  exports.prototype.country = undefined;
   /**
-   * 
+   *
    * @member {String} fax
    */
-  exports.prototype['fax'] = undefined;
+  exports.prototype.fax = undefined;
   /**
-   * 
+   *
    * @member {String} phone
    */
-  exports.prototype['phone'] = undefined;
+  exports.prototype.phone = undefined;
   /**
-   * 
+   *
    * @member {String} postalCode
    */
-  exports.prototype['postalCode'] = undefined;
+  exports.prototype.postalCode = undefined;
   /**
    * The state or province associated with the address.
    * @member {String} stateOrProvince
    */
-  exports.prototype['stateOrProvince'] = undefined;
-
-
+  exports.prototype.stateOrProvince = undefined;
 
   return exports;
 }));
-
-

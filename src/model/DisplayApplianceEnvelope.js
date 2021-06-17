@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DisplayApplianceEnvelope = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DisplayApplianceEnvelope model module.
    * @module model/DisplayApplianceEnvelope
@@ -38,10 +35,8 @@
    * @alias module:model/DisplayApplianceEnvelope
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,138 +46,134 @@
    * @param {module:model/DisplayApplianceEnvelope} obj Optional instance to populate.
    * @return {module:model/DisplayApplianceEnvelope} The populated <code>DisplayApplianceEnvelope</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('addDemoStamp')) {
-        obj['addDemoStamp'] = ApiClient.convertToType(data['addDemoStamp'], 'Boolean');
+        obj.addDemoStamp = ApiClient.convertToType(data.addDemoStamp, 'Boolean');
       }
       if (data.hasOwnProperty('allowMultipleAttachments')) {
-        obj['allowMultipleAttachments'] = ApiClient.convertToType(data['allowMultipleAttachments'], 'Boolean');
+        obj.allowMultipleAttachments = ApiClient.convertToType(data.allowMultipleAttachments, 'Boolean');
       }
       if (data.hasOwnProperty('burnDefaultTabData')) {
-        obj['burnDefaultTabData'] = ApiClient.convertToType(data['burnDefaultTabData'], 'Boolean');
+        obj.burnDefaultTabData = ApiClient.convertToType(data.burnDefaultTabData, 'Boolean');
       }
       if (data.hasOwnProperty('convertPdfFields')) {
-        obj['convertPdfFields'] = ApiClient.convertToType(data['convertPdfFields'], 'Boolean');
+        obj.convertPdfFields = ApiClient.convertToType(data.convertPdfFields, 'Boolean');
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('envelopeType')) {
-        obj['envelopeType'] = ApiClient.convertToType(data['envelopeType'], 'String');
+        obj.envelopeType = ApiClient.convertToType(data.envelopeType, 'String');
       }
       if (data.hasOwnProperty('includeSigsBeforeComplete')) {
-        obj['includeSigsBeforeComplete'] = ApiClient.convertToType(data['includeSigsBeforeComplete'], 'Boolean');
+        obj.includeSigsBeforeComplete = ApiClient.convertToType(data.includeSigsBeforeComplete, 'Boolean');
       }
       if (data.hasOwnProperty('isConcatMode')) {
-        obj['isConcatMode'] = ApiClient.convertToType(data['isConcatMode'], 'Boolean');
+        obj.isConcatMode = ApiClient.convertToType(data.isConcatMode, 'Boolean');
       }
       if (data.hasOwnProperty('isEnvelopeIDStampingEnabled')) {
-        obj['isEnvelopeIDStampingEnabled'] = ApiClient.convertToType(data['isEnvelopeIDStampingEnabled'], 'Boolean');
+        obj.isEnvelopeIDStampingEnabled = ApiClient.convertToType(data.isEnvelopeIDStampingEnabled, 'Boolean');
       }
       if (data.hasOwnProperty('pdfFormConversionFontScale100')) {
-        obj['pdfFormConversionFontScale100'] = ApiClient.convertToType(data['pdfFormConversionFontScale100'], 'Boolean');
+        obj.pdfFormConversionFontScale100 = ApiClient.convertToType(data.pdfFormConversionFontScale100, 'Boolean');
       }
       if (data.hasOwnProperty('shouldFlatten')) {
-        obj['shouldFlatten'] = ApiClient.convertToType(data['shouldFlatten'], 'Boolean');
+        obj.shouldFlatten = ApiClient.convertToType(data.shouldFlatten, 'Boolean');
       }
       if (data.hasOwnProperty('showEnvelopeChanges')) {
-        obj['showEnvelopeChanges'] = ApiClient.convertToType(data['showEnvelopeChanges'], 'Boolean');
+        obj.showEnvelopeChanges = ApiClient.convertToType(data.showEnvelopeChanges, 'Boolean');
       }
       if (data.hasOwnProperty('signOnline')) {
-        obj['signOnline'] = ApiClient.convertToType(data['signOnline'], 'Boolean');
+        obj.signOnline = ApiClient.convertToType(data.signOnline, 'Boolean');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+        obj.userId = ApiClient.convertToType(data.userId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Boolean} addDemoStamp
    */
-  exports.prototype['addDemoStamp'] = undefined;
+  exports.prototype.addDemoStamp = undefined;
   /**
-   * 
+   *
    * @member {Boolean} allowMultipleAttachments
    */
-  exports.prototype['allowMultipleAttachments'] = undefined;
+  exports.prototype.allowMultipleAttachments = undefined;
   /**
-   * 
+   *
    * @member {Boolean} burnDefaultTabData
    */
-  exports.prototype['burnDefaultTabData'] = undefined;
+  exports.prototype.burnDefaultTabData = undefined;
   /**
-   * 
+   *
    * @member {Boolean} convertPdfFields
    */
-  exports.prototype['convertPdfFields'] = undefined;
+  exports.prototype.convertPdfFields = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeType
    */
-  exports.prototype['envelopeType'] = undefined;
+  exports.prototype.envelopeType = undefined;
   /**
-   * 
+   *
    * @member {Boolean} includeSigsBeforeComplete
    */
-  exports.prototype['includeSigsBeforeComplete'] = undefined;
+  exports.prototype.includeSigsBeforeComplete = undefined;
   /**
-   * 
+   *
    * @member {Boolean} isConcatMode
    */
-  exports.prototype['isConcatMode'] = undefined;
+  exports.prototype.isConcatMode = undefined;
   /**
-   * 
+   *
    * @member {Boolean} isEnvelopeIDStampingEnabled
    */
-  exports.prototype['isEnvelopeIDStampingEnabled'] = undefined;
+  exports.prototype.isEnvelopeIDStampingEnabled = undefined;
   /**
-   * 
+   *
    * @member {Boolean} pdfFormConversionFontScale100
    */
-  exports.prototype['pdfFormConversionFontScale100'] = undefined;
+  exports.prototype.pdfFormConversionFontScale100 = undefined;
   /**
-   * 
+   *
    * @member {Boolean} shouldFlatten
    */
-  exports.prototype['shouldFlatten'] = undefined;
+  exports.prototype.shouldFlatten = undefined;
   /**
-   * 
+   *
    * @member {Boolean} showEnvelopeChanges
    */
-  exports.prototype['showEnvelopeChanges'] = undefined;
+  exports.prototype.showEnvelopeChanges = undefined;
   /**
-   * 
+   *
    * @member {Boolean} signOnline
    */
-  exports.prototype['signOnline'] = undefined;
+  exports.prototype.signOnline = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
-   * 
+   *
    * @member {String} userId
    */
-  exports.prototype['userId'] = undefined;
-
-
+  exports.prototype.userId = undefined;
 
   return exports;
 }));
-
-

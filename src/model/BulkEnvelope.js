@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkEnvelope = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The BulkEnvelope model module.
    * @module model/BulkEnvelope
@@ -37,10 +34,8 @@
    * @alias module:model/BulkEnvelope
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,89 +45,85 @@
    * @param {module:model/BulkEnvelope} obj Optional instance to populate.
    * @return {module:model/BulkEnvelope} The populated <code>BulkEnvelope</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkRecipientRow')) {
-        obj['bulkRecipientRow'] = ApiClient.convertToType(data['bulkRecipientRow'], 'String');
+        obj.bulkRecipientRow = ApiClient.convertToType(data.bulkRecipientRow, 'String');
       }
       if (data.hasOwnProperty('bulkStatus')) {
-        obj['bulkStatus'] = ApiClient.convertToType(data['bulkStatus'], 'String');
+        obj.bulkStatus = ApiClient.convertToType(data.bulkStatus, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('envelopeUri')) {
-        obj['envelopeUri'] = ApiClient.convertToType(data['envelopeUri'], 'String');
+        obj.envelopeUri = ApiClient.convertToType(data.envelopeUri, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('submittedDateTime')) {
-        obj['submittedDateTime'] = ApiClient.convertToType(data['submittedDateTime'], 'String');
+        obj.submittedDateTime = ApiClient.convertToType(data.submittedDateTime, 'String');
       }
       if (data.hasOwnProperty('transactionId')) {
-        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
+        obj.transactionId = ApiClient.convertToType(data.transactionId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} bulkRecipientRow
    */
-  exports.prototype['bulkRecipientRow'] = undefined;
+  exports.prototype.bulkRecipientRow = undefined;
   /**
    * Indicates the status of the bulk send operation. Returned values can be: * queued * processing * sent * failed
    * @member {String} bulkStatus
    */
-  exports.prototype['bulkStatus'] = undefined;
+  exports.prototype.bulkStatus = undefined;
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
    * Contains a URI for an endpoint that you can use to retrieve the envelope or envelopes.
    * @member {String} envelopeUri
    */
-  exports.prototype['envelopeUri'] = undefined;
+  exports.prototype.envelopeUri = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} submittedDateTime
    */
-  exports.prototype['submittedDateTime'] = undefined;
+  exports.prototype.submittedDateTime = undefined;
   /**
    *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
    * @member {String} transactionId
    */
-  exports.prototype['transactionId'] = undefined;
-
-
+  exports.prototype.transactionId = undefined;
 
   return exports;
 }));
-
-

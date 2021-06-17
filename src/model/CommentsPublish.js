@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/CommentPublish'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CommentsPublish = factory(root.Docusign.ApiClient, root.Docusign.CommentPublish);
   }
-}(this, function(ApiClient, CommentPublish) {
-  'use strict';
-
-
+}(this, (ApiClient, CommentPublish) => {
   /**
    * The CommentsPublish model module.
    * @module model/CommentsPublish
@@ -37,10 +34,8 @@
    * @alias module:model/CommentsPublish
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/CommentsPublish} obj Optional instance to populate.
    * @return {module:model/CommentsPublish} The populated <code>CommentsPublish</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('commentsToPublish')) {
-        obj['commentsToPublish'] = ApiClient.convertToType(data['commentsToPublish'], [CommentPublish]);
+        obj.commentsToPublish = ApiClient.convertToType(data.commentsToPublish, [CommentPublish]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/CommentPublish>} commentsToPublish
    */
-  exports.prototype['commentsToPublish'] = undefined;
-
-
+  exports.prototype.commentsToPublish = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Credential', 'model/ExternalClaim'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.User = factory(root.Docusign.ApiClient, root.Docusign.Credential, root.Docusign.ExternalClaim);
   }
-}(this, function(ApiClient, Credential, ExternalClaim) {
-  'use strict';
-
-
+}(this, (ApiClient, Credential, ExternalClaim) => {
   /**
    * The User model module.
    * @module model/User
@@ -37,10 +34,8 @@
    * @alias module:model/User
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/User} obj Optional instance to populate.
    * @return {module:model/User} The populated <code>User</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cellPhoneNumber')) {
-        obj['cellPhoneNumber'] = ApiClient.convertToType(data['cellPhoneNumber'], 'String');
+        obj.cellPhoneNumber = ApiClient.convertToType(data.cellPhoneNumber, 'String');
       }
       if (data.hasOwnProperty('countryCode')) {
-        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
+        obj.countryCode = ApiClient.convertToType(data.countryCode, 'String');
       }
       if (data.hasOwnProperty('credentials')) {
-        obj['credentials'] = ApiClient.convertToType(data['credentials'], [Credential]);
+        obj.credentials = ApiClient.convertToType(data.credentials, [Credential]);
       }
       if (data.hasOwnProperty('displayName')) {
-        obj['displayName'] = ApiClient.convertToType(data['displayName'], 'String');
+        obj.displayName = ApiClient.convertToType(data.displayName, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('externalClaims')) {
-        obj['externalClaims'] = ApiClient.convertToType(data['externalClaims'], [ExternalClaim]);
+        obj.externalClaims = ApiClient.convertToType(data.externalClaims, [ExternalClaim]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} cellPhoneNumber
    */
-  exports.prototype['cellPhoneNumber'] = undefined;
+  exports.prototype.cellPhoneNumber = undefined;
   /**
-   * 
+   *
    * @member {String} countryCode
    */
-  exports.prototype['countryCode'] = undefined;
+  exports.prototype.countryCode = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/Credential>} credentials
    */
-  exports.prototype['credentials'] = undefined;
+  exports.prototype.credentials = undefined;
   /**
-   * 
+   *
    * @member {String} displayName
    */
-  exports.prototype['displayName'] = undefined;
+  exports.prototype.displayName = undefined;
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ExternalClaim>} externalClaims
    */
-  exports.prototype['externalClaims'] = undefined;
-
-
+  exports.prototype.externalClaims = undefined;
 
   return exports;
 }));
-
-

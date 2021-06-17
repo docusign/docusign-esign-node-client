@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SocialAuthentication = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SocialAuthentication model module.
    * @module model/SocialAuthentication
@@ -37,10 +34,8 @@
    * @alias module:model/SocialAuthentication
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/SocialAuthentication} obj Optional instance to populate.
    * @return {module:model/SocialAuthentication} The populated <code>SocialAuthentication</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('authentication')) {
-        obj['authentication'] = ApiClient.convertToType(data['authentication'], 'String');
+        obj.authentication = ApiClient.convertToType(data.authentication, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} authentication
    */
-  exports.prototype['authentication'] = undefined;
-
-
+  exports.prototype.authentication = undefined;
 
   return exports;
 }));
-
-

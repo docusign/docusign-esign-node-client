@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/MobileNotifierConfiguration'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.MobileNotifierConfigurationInformation = factory(root.Docusign.ApiClient, root.Docusign.MobileNotifierConfiguration);
   }
-}(this, function(ApiClient, MobileNotifierConfiguration) {
-  'use strict';
-
-
+}(this, (ApiClient, MobileNotifierConfiguration) => {
   /**
    * The MobileNotifierConfigurationInformation model module.
    * @module model/MobileNotifierConfigurationInformation
@@ -37,10 +34,8 @@
    * @alias module:model/MobileNotifierConfigurationInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/MobileNotifierConfigurationInformation} obj Optional instance to populate.
    * @return {module:model/MobileNotifierConfigurationInformation} The populated <code>MobileNotifierConfigurationInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('mobileNotifierConfigurations')) {
-        obj['mobileNotifierConfigurations'] = ApiClient.convertToType(data['mobileNotifierConfigurations'], [MobileNotifierConfiguration]);
+        obj.mobileNotifierConfigurations = ApiClient.convertToType(data.mobileNotifierConfigurations, [MobileNotifierConfiguration]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/MobileNotifierConfiguration>} mobileNotifierConfigurations
    */
-  exports.prototype['mobileNotifierConfigurations'] = undefined;
-
-
+  exports.prototype.mobileNotifierConfigurations = undefined;
 
   return exports;
 }));
-
-

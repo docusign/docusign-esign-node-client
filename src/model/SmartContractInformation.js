@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SmartContractInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SmartContractInformation model module.
    * @module model/SmartContractInformation
@@ -37,10 +34,8 @@
    * @alias module:model/SmartContractInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/SmartContractInformation} obj Optional instance to populate.
    * @return {module:model/SmartContractInformation} The populated <code>SmartContractInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('code')) {
-        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+        obj.code = ApiClient.convertToType(data.code, 'String');
       }
       if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+        obj.uri = ApiClient.convertToType(data.uri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} code
    */
-  exports.prototype['code'] = undefined;
+  exports.prototype.code = undefined;
   /**
-   * 
+   *
    * @member {String} uri
    */
-  exports.prototype['uri'] = undefined;
-
-
+  exports.prototype.uri = undefined;
 
   return exports;
 }));
-
-

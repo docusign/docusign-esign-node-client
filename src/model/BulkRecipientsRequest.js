@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BulkRecipient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkRecipientsRequest = factory(root.Docusign.ApiClient, root.Docusign.BulkRecipient);
   }
-}(this, function(ApiClient, BulkRecipient) {
-  'use strict';
-
-
+}(this, (ApiClient, BulkRecipient) => {
   /**
    * The BulkRecipientsRequest model module.
    * @module model/BulkRecipientsRequest
@@ -37,10 +34,8 @@
    * @alias module:model/BulkRecipientsRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/BulkRecipientsRequest} obj Optional instance to populate.
    * @return {module:model/BulkRecipientsRequest} The populated <code>BulkRecipientsRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkRecipients')) {
-        obj['bulkRecipients'] = ApiClient.convertToType(data['bulkRecipients'], [BulkRecipient]);
+        obj.bulkRecipients = ApiClient.convertToType(data.bulkRecipients, [BulkRecipient]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A complex type containing information about the bulk recipients in the request.
    * @member {Array.<module:model/BulkRecipient>} bulkRecipients
    */
-  exports.prototype['bulkRecipients'] = undefined;
-
-
+  exports.prototype.bulkRecipients = undefined;
 
   return exports;
 }));
-
-

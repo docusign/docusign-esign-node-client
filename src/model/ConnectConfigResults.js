@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConnectCustomConfiguration'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectConfigResults = factory(root.Docusign.ApiClient, root.Docusign.ConnectCustomConfiguration);
   }
-}(this, function(ApiClient, ConnectCustomConfiguration) {
-  'use strict';
-
-
+}(this, (ApiClient, ConnectCustomConfiguration) => {
   /**
    * The ConnectConfigResults model module.
    * @module model/ConnectConfigResults
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectConfigResults
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/ConnectConfigResults} obj Optional instance to populate.
    * @return {module:model/ConnectConfigResults} The populated <code>ConnectConfigResults</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('configurations')) {
-        obj['configurations'] = ApiClient.convertToType(data['configurations'], [ConnectCustomConfiguration]);
+        obj.configurations = ApiClient.convertToType(data.configurations, [ConnectCustomConfiguration]);
       }
       if (data.hasOwnProperty('totalRecords')) {
-        obj['totalRecords'] = ApiClient.convertToType(data['totalRecords'], 'String');
+        obj.totalRecords = ApiClient.convertToType(data.totalRecords, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {Array.<module:model/ConnectCustomConfiguration>} configurations
    */
-  exports.prototype['configurations'] = undefined;
+  exports.prototype.configurations = undefined;
   /**
-   * 
+   *
    * @member {String} totalRecords
    */
-  exports.prototype['totalRecords'] = undefined;
-
-
+  exports.prototype.totalRecords = undefined;
 
   return exports;
 }));
-
-

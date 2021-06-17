@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingInvoice'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingInvoicesSummary = factory(root.Docusign.ApiClient, root.Docusign.BillingInvoice);
   }
-}(this, function(ApiClient, BillingInvoice) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingInvoice) => {
   /**
    * The BillingInvoicesSummary model module.
    * @module model/BillingInvoicesSummary
@@ -37,10 +34,8 @@
    * @alias module:model/BillingInvoicesSummary
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/BillingInvoicesSummary} obj Optional instance to populate.
    * @return {module:model/BillingInvoicesSummary} The populated <code>BillingInvoicesSummary</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billingInvoices')) {
-        obj['billingInvoices'] = ApiClient.convertToType(data['billingInvoices'], [BillingInvoice]);
+        obj.billingInvoices = ApiClient.convertToType(data.billingInvoices, [BillingInvoice]);
       }
       if (data.hasOwnProperty('pastDueBalance')) {
-        obj['pastDueBalance'] = ApiClient.convertToType(data['pastDueBalance'], 'String');
+        obj.pastDueBalance = ApiClient.convertToType(data.pastDueBalance, 'String');
       }
       if (data.hasOwnProperty('paymentAllowed')) {
-        obj['paymentAllowed'] = ApiClient.convertToType(data['paymentAllowed'], 'String');
+        obj.paymentAllowed = ApiClient.convertToType(data.paymentAllowed, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {Array.<module:model/BillingInvoice>} billingInvoices
    */
-  exports.prototype['billingInvoices'] = undefined;
+  exports.prototype.billingInvoices = undefined;
   /**
-   * 
+   *
    * @member {String} pastDueBalance
    */
-  exports.prototype['pastDueBalance'] = undefined;
+  exports.prototype.pastDueBalance = undefined;
   /**
-   * 
+   *
    * @member {String} paymentAllowed
    */
-  exports.prototype['paymentAllowed'] = undefined;
-
-
+  exports.prototype.paymentAllowed = undefined;
 
   return exports;
 }));
-
-

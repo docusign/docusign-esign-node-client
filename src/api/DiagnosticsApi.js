@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ApiRequestLogsResult', 'model/DiagnosticsSettingsInformation', 'model/ErrorDetails', 'model/ResourceInformation', 'model/ServiceInformation'], factory);
+    define(['Configuration', 'ApiClient', 'model/ApiRequestLogsResult', 'model/DiagnosticsSettingsInformation', 'model/ErrorDetails', 'model/ResourceInformation', 'model/ServiceInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ApiRequestLogsResult'), require('../model/DiagnosticsSettingsInformation'), require('../model/ErrorDetails'), require('../model/ResourceInformation'), require('../model/ServiceInformation'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.DiagnosticsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ApiRequestLogsResult, root.Docusign.DiagnosticsSettingsInformation, root.Docusign.ErrorDetails, root.Docusign.ResourceInformation, root.Docusign.ServiceInformation);
   }
-}(this, function(Configuration, ApiClient, ApiRequestLogsResult, DiagnosticsSettingsInformation, ErrorDetails, ResourceInformation, ServiceInformation) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, ApiRequestLogsResult, DiagnosticsSettingsInformation, ErrorDetails, ResourceInformation, ServiceInformation) => {
   /**
    * Diagnostics service.
    * @module api/DiagnosticsApi
    */
 
   /**
-   * Constructs a new DiagnosticsApi. 
+   * Constructs a new DiagnosticsApi.
    * @alias module:api/DiagnosticsApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the deleteRequestLogs operation. If none specified a Promise will be returned.
@@ -64,34 +60,34 @@
      * Deletes the request log files.
      * @param {module:api/DiagnosticsApi~deleteRequestLogsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteRequestLogs = function(callback) {
-      var postBody = null;
+    this.deleteRequestLogs = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/diagnostics/request_logs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -112,44 +108,44 @@ The `requestLogfId` property can be retrieved by getting the list of log entries
 
 **Response**
 If the Content-Transfer-Encoding header was set to base64, the log is returned as a base64 string.
-     * @param {String} requestLogId 
+     * @param {String} requestLogId
      * @param {module:api/DiagnosticsApi~getRequestLogCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getRequestLog = function(requestLogId, callback) {
-      var postBody = null;
+    this.getRequestLog = function (requestLogId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'requestLogId' is set
       if (requestLogId === undefined || requestLogId === null) {
         throw new Error("Missing the required parameter 'requestLogId' when calling getRequestLog");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'requestLogId': requestLogId
+      const pathParams = {
+        requestLogId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['text/plain'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['text/plain'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/diagnostics/request_logs/{requestLogId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -170,34 +166,34 @@ The response includes the current API request logging setting for the user, alon
      * @param {module:api/DiagnosticsApi~getRequestLogSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DiagnosticsSettingsInformation}
      */
-    this.getRequestLogSettings = function(callback) {
-      var postBody = null;
+    this.getRequestLogSettings = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DiagnosticsSettingsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DiagnosticsSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/diagnostics/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -223,34 +219,34 @@ Example: https://demo.docusign.net/restapi/help lists the REST API operations on
      * @param {module:api/DiagnosticsApi~getResourcesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ResourceInformation}
      */
-    this.getResources = function(callback) {
-      var postBody = null;
+    this.getResources = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ResourceInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ResourceInformation;
 
       return this.apiClient.callApi(
         '/v2.1', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -273,34 +269,34 @@ You do not need an integrator key to view the REST API versions and resources.
      * @param {module:api/DiagnosticsApi~getServiceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ServiceInformation}
      */
-    this.getService = function(callback) {
-      var postBody = null;
+    this.getService = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ServiceInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ServiceInformation;
 
       return this.apiClient.callApi(
         '/service_information', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -318,13 +314,13 @@ You do not need an integrator key to view the REST API versions and resources.
 
 If the Accept header is set to application/zip, the response is a zip file containing individual text files, each representing an API request.
 
-If the Accept header is set to `application/json` or `application/xml`, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below. 
+If the Accept header is set to `application/json` or `application/xml`, the response returns list of log entries in either JSON or XML. An example JSON response body is shown below.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.encoding 
+     * @param {String} optsOrCallback.encoding
      * @param {module:api/DiagnosticsApi~listRequestLogsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiRequestLogsResult}
      */
-    this.listRequestLogs = function(optsOrCallback, callback) {
+    this.listRequestLogs = function (optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -332,34 +328,34 @@ If the Accept header is set to `application/json` or `application/xml`, the resp
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
-        'encoding': optsOrCallback['encoding']
+      const queryParams = {
+        encoding: optsOrCallback.encoding,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ApiRequestLogsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ApiRequestLogsResult;
 
       return this.apiClient.callApi(
         '/v2.1/diagnostics/request_logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -384,11 +380,11 @@ Private information, such as passwords and integrator key information, which is 
 ###### Note: API request logging only captures requests from the authenticated user. Any call that does not authenticate the user and resolve a userId isn't logged. Meaning that login_information, NewAccounts, or other distributor-credential calls are not logged.
 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DiagnosticsSettingsInformation} optsOrCallback.diagnosticsSettingsInformation 
+     * @param {module:model/DiagnosticsSettingsInformation} optsOrCallback.diagnosticsSettingsInformation
      * @param {module:api/DiagnosticsApi~updateRequestLogSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DiagnosticsSettingsInformation}
      */
-    this.updateRequestLogSettings = function(optsOrCallback, callback) {
+    this.updateRequestLogSettings = function (optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -396,33 +392,33 @@ Private information, such as passwords and integrator key information, which is 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['diagnosticsSettingsInformation'];
+      const postBody = optsOrCallback.diagnosticsSettingsInformation;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DiagnosticsSettingsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DiagnosticsSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/diagnostics/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

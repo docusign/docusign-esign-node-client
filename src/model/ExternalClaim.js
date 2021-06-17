@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ExternalClaim = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ExternalClaim model module.
    * @module model/ExternalClaim
@@ -37,10 +34,8 @@
    * @alias module:model/ExternalClaim
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/ExternalClaim} obj Optional instance to populate.
    * @return {module:model/ExternalClaim} The populated <code>ExternalClaim</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('acquiredTime')) {
-        obj['acquiredTime'] = ApiClient.convertToType(data['acquiredTime'], 'String');
+        obj.acquiredTime = ApiClient.convertToType(data.acquiredTime, 'String');
       }
       if (data.hasOwnProperty('claimName')) {
-        obj['claimName'] = ApiClient.convertToType(data['claimName'], 'String');
+        obj.claimName = ApiClient.convertToType(data.claimName, 'String');
       }
       if (data.hasOwnProperty('provider')) {
-        obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
+        obj.provider = ApiClient.convertToType(data.provider, 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+        obj.value = ApiClient.convertToType(data.value, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} acquiredTime
    */
-  exports.prototype['acquiredTime'] = undefined;
+  exports.prototype.acquiredTime = undefined;
   /**
-   * 
+   *
    * @member {String} claimName
    */
-  exports.prototype['claimName'] = undefined;
+  exports.prototype.claimName = undefined;
   /**
-   * 
+   *
    * @member {String} provider
    */
-  exports.prototype['provider'] = undefined;
+  exports.prototype.provider = undefined;
   /**
-   * Specifies the value of the tab. 
+   * Specifies the value of the tab.
    * @member {String} value
    */
-  exports.prototype['value'] = undefined;
-
-
+  exports.prototype.value = undefined;
 
   return exports;
 }));
-
-

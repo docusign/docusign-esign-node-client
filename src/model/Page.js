@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Page = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The Page model module.
    * @module model/Page
@@ -38,10 +35,8 @@
    * @alias module:model/Page
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,81 +46,77 @@
    * @param {module:model/Page} obj Optional instance to populate.
    * @return {module:model/Page} The populated <code>Page</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('dpi')) {
-        obj['dpi'] = ApiClient.convertToType(data['dpi'], 'String');
+        obj.dpi = ApiClient.convertToType(data.dpi, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('height')) {
-        obj['height'] = ApiClient.convertToType(data['height'], 'String');
+        obj.height = ApiClient.convertToType(data.height, 'String');
       }
       if (data.hasOwnProperty('imageBytes')) {
-        obj['imageBytes'] = ApiClient.convertToType(data['imageBytes'], 'String');
+        obj.imageBytes = ApiClient.convertToType(data.imageBytes, 'String');
       }
       if (data.hasOwnProperty('mimeType')) {
-        obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
+        obj.mimeType = ApiClient.convertToType(data.mimeType, 'String');
       }
       if (data.hasOwnProperty('pageId')) {
-        obj['pageId'] = ApiClient.convertToType(data['pageId'], 'String');
+        obj.pageId = ApiClient.convertToType(data.pageId, 'String');
       }
       if (data.hasOwnProperty('sequence')) {
-        obj['sequence'] = ApiClient.convertToType(data['sequence'], 'String');
+        obj.sequence = ApiClient.convertToType(data.sequence, 'String');
       }
       if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'String');
+        obj.width = ApiClient.convertToType(data.width, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The number of dots per inch used for the page image.
    * @member {String} dpi
    */
-  exports.prototype['dpi'] = undefined;
+  exports.prototype.dpi = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * Height of the tab in pixels.
    * @member {String} height
    */
-  exports.prototype['height'] = undefined;
+  exports.prototype.height = undefined;
   /**
-   * 
+   *
    * @member {String} imageBytes
    */
-  exports.prototype['imageBytes'] = undefined;
+  exports.prototype.imageBytes = undefined;
   /**
-   * 
+   *
    * @member {String} mimeType
    */
-  exports.prototype['mimeType'] = undefined;
+  exports.prototype.mimeType = undefined;
   /**
-   * 
+   *
    * @member {String} pageId
    */
-  exports.prototype['pageId'] = undefined;
+  exports.prototype.pageId = undefined;
   /**
-   * 
+   *
    * @member {String} sequence
    */
-  exports.prototype['sequence'] = undefined;
+  exports.prototype.sequence = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width
    */
-  exports.prototype['width'] = undefined;
-
-
+  exports.prototype.width = undefined;
 
   return exports;
 }));
-
-

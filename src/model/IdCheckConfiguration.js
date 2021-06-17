@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/IdCheckSecurityStep'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.IdCheckConfiguration = factory(root.Docusign.ApiClient, root.Docusign.IdCheckSecurityStep);
   }
-}(this, function(ApiClient, IdCheckSecurityStep) {
-  'use strict';
-
-
+}(this, (ApiClient, IdCheckSecurityStep) => {
   /**
    * The IdCheckConfiguration model module.
    * @module model/IdCheckConfiguration
@@ -37,10 +34,8 @@
    * @alias module:model/IdCheckConfiguration
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/IdCheckConfiguration} obj Optional instance to populate.
    * @return {module:model/IdCheckConfiguration} The populated <code>IdCheckConfiguration</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('authSteps')) {
-        obj['authSteps'] = ApiClient.convertToType(data['authSteps'], [IdCheckSecurityStep]);
+        obj.authSteps = ApiClient.convertToType(data.authSteps, [IdCheckSecurityStep]);
       }
       if (data.hasOwnProperty('isDefault')) {
-        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+        obj.isDefault = ApiClient.convertToType(data.isDefault, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/IdCheckSecurityStep>} authSteps
    */
-  exports.prototype['authSteps'] = undefined;
+  exports.prototype.authSteps = undefined;
   /**
-   * 
+   *
    * @member {String} isDefault
    */
-  exports.prototype['isDefault'] = undefined;
+  exports.prototype.isDefault = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-
-
+  exports.prototype.name = undefined;
 
   return exports;
 }));
-
-

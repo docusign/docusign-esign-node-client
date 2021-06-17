@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BulkEnvelopeStatus', 'model/ErrorDetails', 'model/ListCustomField', 'model/LockInformation', 'model/RecipientUpdateResponse', 'model/Tabs', 'model/TextCustomField'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TemplateUpdateSummary = factory(root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.ErrorDetails, root.Docusign.ListCustomField, root.Docusign.LockInformation, root.Docusign.RecipientUpdateResponse, root.Docusign.Tabs, root.Docusign.TextCustomField);
   }
-}(this, function(ApiClient, BulkEnvelopeStatus, ErrorDetails, ListCustomField, LockInformation, RecipientUpdateResponse, Tabs, TextCustomField) {
-  'use strict';
-
-
+}(this, (ApiClient, BulkEnvelopeStatus, ErrorDetails, ListCustomField, LockInformation, RecipientUpdateResponse, Tabs, TextCustomField) => {
   /**
    * The TemplateUpdateSummary model module.
    * @module model/TemplateUpdateSummary
@@ -37,10 +34,8 @@
    * @alias module:model/TemplateUpdateSummary
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,86 +45,82 @@
    * @param {module:model/TemplateUpdateSummary} obj Optional instance to populate.
    * @return {module:model/TemplateUpdateSummary} The populated <code>TemplateUpdateSummary</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkEnvelopeStatus')) {
-        obj['bulkEnvelopeStatus'] = BulkEnvelopeStatus.constructFromObject(data['bulkEnvelopeStatus']);
+        obj.bulkEnvelopeStatus = BulkEnvelopeStatus.constructFromObject(data.bulkEnvelopeStatus);
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('listCustomFieldUpdateResults')) {
-        obj['listCustomFieldUpdateResults'] = ApiClient.convertToType(data['listCustomFieldUpdateResults'], [ListCustomField]);
+        obj.listCustomFieldUpdateResults = ApiClient.convertToType(data.listCustomFieldUpdateResults, [ListCustomField]);
       }
       if (data.hasOwnProperty('lockInformation')) {
-        obj['lockInformation'] = LockInformation.constructFromObject(data['lockInformation']);
+        obj.lockInformation = LockInformation.constructFromObject(data.lockInformation);
       }
       if (data.hasOwnProperty('purgeState')) {
-        obj['purgeState'] = ApiClient.convertToType(data['purgeState'], 'String');
+        obj.purgeState = ApiClient.convertToType(data.purgeState, 'String');
       }
       if (data.hasOwnProperty('recipientUpdateResults')) {
-        obj['recipientUpdateResults'] = ApiClient.convertToType(data['recipientUpdateResults'], [RecipientUpdateResponse]);
+        obj.recipientUpdateResults = ApiClient.convertToType(data.recipientUpdateResults, [RecipientUpdateResponse]);
       }
       if (data.hasOwnProperty('tabUpdateResults')) {
-        obj['tabUpdateResults'] = Tabs.constructFromObject(data['tabUpdateResults']);
+        obj.tabUpdateResults = Tabs.constructFromObject(data.tabUpdateResults);
       }
       if (data.hasOwnProperty('textCustomFieldUpdateResults')) {
-        obj['textCustomFieldUpdateResults'] = ApiClient.convertToType(data['textCustomFieldUpdateResults'], [TextCustomField]);
+        obj.textCustomFieldUpdateResults = ApiClient.convertToType(data.textCustomFieldUpdateResults, [TextCustomField]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/BulkEnvelopeStatus} bulkEnvelopeStatus
    */
-  exports.prototype['bulkEnvelopeStatus'] = undefined;
+  exports.prototype.bulkEnvelopeStatus = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ListCustomField>} listCustomFieldUpdateResults
    */
-  exports.prototype['listCustomFieldUpdateResults'] = undefined;
+  exports.prototype.listCustomFieldUpdateResults = undefined;
   /**
    * @member {module:model/LockInformation} lockInformation
    */
-  exports.prototype['lockInformation'] = undefined;
+  exports.prototype.lockInformation = undefined;
   /**
-   * 
+   *
    * @member {String} purgeState
    */
-  exports.prototype['purgeState'] = undefined;
+  exports.prototype.purgeState = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/RecipientUpdateResponse>} recipientUpdateResults
    */
-  exports.prototype['recipientUpdateResults'] = undefined;
+  exports.prototype.recipientUpdateResults = undefined;
   /**
    * @member {module:model/Tabs} tabUpdateResults
    */
-  exports.prototype['tabUpdateResults'] = undefined;
+  exports.prototype.tabUpdateResults = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/TextCustomField>} textCustomFieldUpdateResults
    */
-  exports.prototype['textCustomFieldUpdateResults'] = undefined;
-
-
+  exports.prototype.textCustomFieldUpdateResults = undefined;
 
   return exports;
 }));
-
-

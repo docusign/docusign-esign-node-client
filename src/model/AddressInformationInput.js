@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AddressInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AddressInformationInput = factory(root.Docusign.ApiClient, root.Docusign.AddressInformation);
   }
-}(this, function(ApiClient, AddressInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, AddressInformation) => {
   /**
    * The AddressInformationInput model module.
    * @module model/AddressInformationInput
@@ -38,10 +35,8 @@
    * @alias module:model/AddressInformationInput
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,41 +46,37 @@
    * @param {module:model/AddressInformationInput} obj Optional instance to populate.
    * @return {module:model/AddressInformationInput} The populated <code>AddressInformationInput</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('addressInformation')) {
-        obj['addressInformation'] = AddressInformation.constructFromObject(data['addressInformation']);
+        obj.addressInformation = AddressInformation.constructFromObject(data.addressInformation);
       }
       if (data.hasOwnProperty('displayLevelCode')) {
-        obj['displayLevelCode'] = ApiClient.convertToType(data['displayLevelCode'], 'String');
+        obj.displayLevelCode = ApiClient.convertToType(data.displayLevelCode, 'String');
       }
       if (data.hasOwnProperty('receiveInResponse')) {
-        obj['receiveInResponse'] = ApiClient.convertToType(data['receiveInResponse'], 'String');
+        obj.receiveInResponse = ApiClient.convertToType(data.receiveInResponse, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/AddressInformation} addressInformation
    */
-  exports.prototype['addressInformation'] = undefined;
+  exports.prototype.addressInformation = undefined;
   /**
    * Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay
    * @member {String} displayLevelCode
    */
-  exports.prototype['displayLevelCode'] = undefined;
+  exports.prototype.displayLevelCode = undefined;
   /**
    * When set to **true**, the information needs to be returned in the response.
    * @member {String} receiveInResponse
    */
-  exports.prototype['receiveInResponse'] = undefined;
-
-
+  exports.prototype.receiveInResponse = undefined;
 
   return exports;
 }));
-
-

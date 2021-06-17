@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/UserInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SharedItem = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, ErrorDetails, UserInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, UserInfo) => {
   /**
    * The SharedItem model module.
    * @module model/SharedItem
@@ -37,10 +34,8 @@
    * @alias module:model/SharedItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,40 +45,36 @@
    * @param {module:model/SharedItem} obj Optional instance to populate.
    * @return {module:model/SharedItem} The populated <code>SharedItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+        obj.shared = ApiClient.convertToType(data.shared, 'String');
       }
       if (data.hasOwnProperty('user')) {
-        obj['user'] = UserInfo.constructFromObject(data['user']);
+        obj.user = UserInfo.constructFromObject(data.user);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
    */
-  exports.prototype['shared'] = undefined;
+  exports.prototype.shared = undefined;
   /**
    * @member {module:model/UserInfo} user
    */
-  exports.prototype['user'] = undefined;
-
-
+  exports.prototype.user = undefined;
 
   return exports;
 }));
-
-

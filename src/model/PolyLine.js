@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PolyLine = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PolyLine model module.
    * @module model/PolyLine
@@ -37,10 +34,8 @@
    * @alias module:model/PolyLine
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/PolyLine} obj Optional instance to populate.
    * @return {module:model/PolyLine} The populated <code>PolyLine</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('x1')) {
-        obj['x1'] = ApiClient.convertToType(data['x1'], 'String');
+        obj.x1 = ApiClient.convertToType(data.x1, 'String');
       }
       if (data.hasOwnProperty('x2')) {
-        obj['x2'] = ApiClient.convertToType(data['x2'], 'String');
+        obj.x2 = ApiClient.convertToType(data.x2, 'String');
       }
       if (data.hasOwnProperty('y1')) {
-        obj['y1'] = ApiClient.convertToType(data['y1'], 'String');
+        obj.y1 = ApiClient.convertToType(data.y1, 'String');
       }
       if (data.hasOwnProperty('y2')) {
-        obj['y2'] = ApiClient.convertToType(data['y2'], 'String');
+        obj.y2 = ApiClient.convertToType(data.y2, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} x1
    */
-  exports.prototype['x1'] = undefined;
+  exports.prototype.x1 = undefined;
   /**
-   * 
+   *
    * @member {String} x2
    */
-  exports.prototype['x2'] = undefined;
+  exports.prototype.x2 = undefined;
   /**
-   * 
+   *
    * @member {String} y1
    */
-  exports.prototype['y1'] = undefined;
+  exports.prototype.y1 = undefined;
   /**
-   * 
+   *
    * @member {String} y2
    */
-  exports.prototype['y2'] = undefined;
-
-
+  exports.prototype.y2 = undefined;
 
   return exports;
 }));
-
-

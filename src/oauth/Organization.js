@@ -1,5 +1,3 @@
-
-
 /**
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
@@ -11,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'oauth/Account'], factory);
@@ -24,8 +22,7 @@
       root.Docusign = {};
     }
   }
-}(this, function(ApiClient,  Account) {
-  'use strict';
+}(this, (ApiClient, Account) => {
   /**
    * The Organization model module.
    * @module oauth/Organization
@@ -37,10 +34,8 @@
    * @alias module:oauth/Organization
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,35 +45,34 @@
    * @param {module:oauth/Organization} obj Optional instance to populate.
    * @return {module:oauth/Organization} The populated <code>Organization</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    var ApiClient = require('../ApiClient');
-    var Link = require('./Link');
+  exports.constructFromObject = function (data, obj) {
+    const ApiClient = require('../ApiClient');
+    const Link = require('./Link');
 
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('organization_id')) {
-        obj['organization_id'] = ApiClient.convertToType(data['organization_id'], 'String');
+        obj.organization_id = ApiClient.convertToType(data.organization_id, 'String');
       }
       if (data.hasOwnProperty('links')) {
-        obj['links'] = ApiClient.convertToType(data['links'], [Link]);
+        obj.links = ApiClient.convertToType(data.links, [Link]);
       }
     }
 
     return obj;
-  }
+  };
 
   /**
    *
    * @member {String} sub
    */
-  exports.prototype['organization_id'] = undefined;
+  exports.prototype.organization_id = undefined;
   /**
    *
    * @member {String} email
    */
-  exports.prototype['links'] = undefined;
-
+  exports.prototype.links = undefined;
 
   return exports;
 }));

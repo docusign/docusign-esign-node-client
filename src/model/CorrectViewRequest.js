@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CorrectViewRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The CorrectViewRequest model module.
    * @module model/CorrectViewRequest
@@ -37,10 +34,8 @@
    * @alias module:model/CorrectViewRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/CorrectViewRequest} obj Optional instance to populate.
    * @return {module:model/CorrectViewRequest} The populated <code>CorrectViewRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('returnUrl')) {
-        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
+        obj.returnUrl = ApiClient.convertToType(data.returnUrl, 'String');
       }
       if (data.hasOwnProperty('suppressNavigation')) {
-        obj['suppressNavigation'] = ApiClient.convertToType(data['suppressNavigation'], 'String');
+        obj.suppressNavigation = ApiClient.convertToType(data.suppressNavigation, 'String');
       }
       if (data.hasOwnProperty('viewUrl')) {
-        obj['viewUrl'] = ApiClient.convertToType(data['viewUrl'], 'String');
+        obj.viewUrl = ApiClient.convertToType(data.viewUrl, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * The url used after correct/send view session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your app. The event parameters returned are:   * send (user corrected and sent the envelope) * save (user saved the envelope) * cancel (user canceled the transaction.) * error (there was an error when performing the correct or send) * sessionEnd (the session ended before the user completed a different action)  ###### Note: Include https:// in the URL or the redirect might not succeed on some browsers. 
+   * The url used after correct/send view session has ended. DocuSign redirects to the url and includes an event parameter that can be used by your app. The event parameters returned are:   * send (user corrected and sent the envelope) * save (user saved the envelope) * cancel (user canceled the transaction.) * error (there was an error when performing the correct or send) * sessionEnd (the session ended before the user completed a different action)  ###### Note: Include https:// in the URL or the redirect might not succeed on some browsers.
    * @member {String} returnUrl
    */
-  exports.prototype['returnUrl'] = undefined;
+  exports.prototype.returnUrl = undefined;
   /**
    * Specifies whether the window is displayed with or without dressing.
    * @member {String} suppressNavigation
    */
-  exports.prototype['suppressNavigation'] = undefined;
+  exports.prototype.suppressNavigation = undefined;
   /**
-   * 
+   *
    * @member {String} viewUrl
    */
-  exports.prototype['viewUrl'] = undefined;
-
-
+  exports.prototype.viewUrl = undefined;
 
   return exports;
 }));
-
-

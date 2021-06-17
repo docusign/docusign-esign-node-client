@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ProofServiceResourceToken = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ProofServiceResourceToken model module.
    * @module model/ProofServiceResourceToken
@@ -37,10 +34,8 @@
    * @alias module:model/ProofServiceResourceToken
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/ProofServiceResourceToken} obj Optional instance to populate.
    * @return {module:model/ProofServiceResourceToken} The populated <code>ProofServiceResourceToken</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('proofBaseURI')) {
-        obj['proofBaseURI'] = ApiClient.convertToType(data['proofBaseURI'], 'String');
+        obj.proofBaseURI = ApiClient.convertToType(data.proofBaseURI, 'String');
       }
       if (data.hasOwnProperty('resourceToken')) {
-        obj['resourceToken'] = ApiClient.convertToType(data['resourceToken'], 'String');
+        obj.resourceToken = ApiClient.convertToType(data.resourceToken, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} proofBaseURI
    */
-  exports.prototype['proofBaseURI'] = undefined;
+  exports.prototype.proofBaseURI = undefined;
   /**
-   * 
+   *
    * @member {String} resourceToken
    */
-  exports.prototype['resourceToken'] = undefined;
-
-
+  exports.prototype.resourceToken = undefined;
 
   return exports;
 }));
-
-

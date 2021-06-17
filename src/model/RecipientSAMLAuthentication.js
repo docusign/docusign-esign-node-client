@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SamlAssertionAttribute'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientSAMLAuthentication = factory(root.Docusign.ApiClient, root.Docusign.SamlAssertionAttribute);
   }
-}(this, function(ApiClient, SamlAssertionAttribute) {
-  'use strict';
-
-
+}(this, (ApiClient, SamlAssertionAttribute) => {
   /**
    * The RecipientSAMLAuthentication model module.
    * @module model/RecipientSAMLAuthentication
@@ -39,10 +36,8 @@
    * @alias module:model/RecipientSAMLAuthentication
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -52,26 +47,22 @@
    * @param {module:model/RecipientSAMLAuthentication} obj Optional instance to populate.
    * @return {module:model/RecipientSAMLAuthentication} The populated <code>RecipientSAMLAuthentication</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('samlAssertionAttributes')) {
-        obj['samlAssertionAttributes'] = ApiClient.convertToType(data['samlAssertionAttributes'], [SamlAssertionAttribute]);
+        obj.samlAssertionAttributes = ApiClient.convertToType(data.samlAssertionAttributes, [SamlAssertionAttribute]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/SamlAssertionAttribute>} samlAssertionAttributes
    */
-  exports.prototype['samlAssertionAttributes'] = undefined;
-
-
+  exports.prototype.samlAssertionAttributes = undefined;
 
   return exports;
 }));
-
-

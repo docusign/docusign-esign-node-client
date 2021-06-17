@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/CustomFields', 'model/Document', 'model/Envelope', 'model/Recipients'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.InlineTemplate = factory(root.Docusign.ApiClient, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.Envelope, root.Docusign.Recipients);
   }
-}(this, function(ApiClient, CustomFields, Document, Envelope, Recipients) {
-  'use strict';
-
-
+}(this, (ApiClient, CustomFields, Document, Envelope, Recipients) => {
   /**
    * The InlineTemplate model module.
    * @module model/InlineTemplate
@@ -37,10 +34,8 @@
    * @alias module:model/InlineTemplate
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,55 +45,51 @@
    * @param {module:model/InlineTemplate} obj Optional instance to populate.
    * @return {module:model/InlineTemplate} The populated <code>InlineTemplate</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('customFields')) {
-        obj['customFields'] = CustomFields.constructFromObject(data['customFields']);
+        obj.customFields = CustomFields.constructFromObject(data.customFields);
       }
       if (data.hasOwnProperty('documents')) {
-        obj['documents'] = ApiClient.convertToType(data['documents'], [Document]);
+        obj.documents = ApiClient.convertToType(data.documents, [Document]);
       }
       if (data.hasOwnProperty('envelope')) {
-        obj['envelope'] = Envelope.constructFromObject(data['envelope']);
+        obj.envelope = Envelope.constructFromObject(data.envelope);
       }
       if (data.hasOwnProperty('recipients')) {
-        obj['recipients'] = Recipients.constructFromObject(data['recipients']);
+        obj.recipients = Recipients.constructFromObject(data.recipients);
       }
       if (data.hasOwnProperty('sequence')) {
-        obj['sequence'] = ApiClient.convertToType(data['sequence'], 'String');
+        obj.sequence = ApiClient.convertToType(data.sequence, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/CustomFields} customFields
    */
-  exports.prototype['customFields'] = undefined;
+  exports.prototype.customFields = undefined;
   /**
    * Complex element contains the details on the documents in the envelope.
    * @member {Array.<module:model/Document>} documents
    */
-  exports.prototype['documents'] = undefined;
+  exports.prototype.documents = undefined;
   /**
    * @member {module:model/Envelope} envelope
    */
-  exports.prototype['envelope'] = undefined;
+  exports.prototype.envelope = undefined;
   /**
    * @member {module:model/Recipients} recipients
    */
-  exports.prototype['recipients'] = undefined;
+  exports.prototype.recipients = undefined;
   /**
    * Specifies the order in which templates are overlaid.
    * @member {String} sequence
    */
-  exports.prototype['sequence'] = undefined;
-
-
+  exports.prototype.sequence = undefined;
 
   return exports;
 }));
-
-

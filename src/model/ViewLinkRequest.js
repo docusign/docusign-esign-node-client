@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ViewLinkRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ViewLinkRequest model module.
    * @module model/ViewLinkRequest
@@ -38,10 +35,8 @@
    * @alias module:model/ViewLinkRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,34 +46,30 @@
    * @param {module:model/ViewLinkRequest} obj Optional instance to populate.
    * @return {module:model/ViewLinkRequest} The populated <code>ViewLinkRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('returnUrl')) {
-        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
+        obj.returnUrl = ApiClient.convertToType(data.returnUrl, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {String} returnUrl
    */
-  exports.prototype['returnUrl'] = undefined;
-
-
+  exports.prototype.returnUrl = undefined;
 
   return exports;
 }));
-
-

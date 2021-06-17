@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientIdentityPhoneNumber = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientIdentityPhoneNumber model module.
    * @module model/RecipientIdentityPhoneNumber
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientIdentityPhoneNumber
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/RecipientIdentityPhoneNumber} obj Optional instance to populate.
    * @return {module:model/RecipientIdentityPhoneNumber} The populated <code>RecipientIdentityPhoneNumber</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('countryCode')) {
-        obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
+        obj.countryCode = ApiClient.convertToType(data.countryCode, 'String');
       }
       if (data.hasOwnProperty('extension')) {
-        obj['extension'] = ApiClient.convertToType(data['extension'], 'String');
+        obj.extension = ApiClient.convertToType(data.extension, 'String');
       }
       if (data.hasOwnProperty('number')) {
-        obj['number'] = ApiClient.convertToType(data['number'], 'String');
+        obj.number = ApiClient.convertToType(data.number, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} countryCode
    */
-  exports.prototype['countryCode'] = undefined;
+  exports.prototype.countryCode = undefined;
   /**
-   * 
+   *
    * @member {String} extension
    */
-  exports.prototype['extension'] = undefined;
+  exports.prototype.extension = undefined;
   /**
-   * 
+   *
    * @member {String} number
    */
-  exports.prototype['number'] = undefined;
-
-
+  exports.prototype.number = undefined;
 
   return exports;
 }));
-
-

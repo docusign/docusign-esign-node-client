@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountPasswordLockoutDurationType = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountPasswordLockoutDurationType model module.
    * @module model/AccountPasswordLockoutDurationType
@@ -37,10 +34,8 @@
    * @alias module:model/AccountPasswordLockoutDurationType
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/AccountPasswordLockoutDurationType} obj Optional instance to populate.
    * @return {module:model/AccountPasswordLockoutDurationType} The populated <code>AccountPasswordLockoutDurationType</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('options')) {
-        obj['options'] = ApiClient.convertToType(data['options'], ['String']);
+        obj.options = ApiClient.convertToType(data.options, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} options
    */
-  exports.prototype['options'] = undefined;
-
-
+  exports.prototype.options = undefined;
 
   return exports;
 }));
-
-

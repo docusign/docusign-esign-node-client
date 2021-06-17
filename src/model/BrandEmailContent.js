@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandEmailContent = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BrandEmailContent model module.
    * @module model/BrandEmailContent
@@ -37,10 +34,8 @@
    * @alias module:model/BrandEmailContent
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/BrandEmailContent} obj Optional instance to populate.
    * @return {module:model/BrandEmailContent} The populated <code>BrandEmailContent</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('content')) {
-        obj['content'] = ApiClient.convertToType(data['content'], 'String');
+        obj.content = ApiClient.convertToType(data.content, 'String');
       }
       if (data.hasOwnProperty('emailContentType')) {
-        obj['emailContentType'] = ApiClient.convertToType(data['emailContentType'], 'String');
+        obj.emailContentType = ApiClient.convertToType(data.emailContentType, 'String');
       }
       if (data.hasOwnProperty('emailToLink')) {
-        obj['emailToLink'] = ApiClient.convertToType(data['emailToLink'], 'String');
+        obj.emailToLink = ApiClient.convertToType(data.emailToLink, 'String');
       }
       if (data.hasOwnProperty('linkText')) {
-        obj['linkText'] = ApiClient.convertToType(data['linkText'], 'String');
+        obj.linkText = ApiClient.convertToType(data.linkText, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} content
    */
-  exports.prototype['content'] = undefined;
+  exports.prototype.content = undefined;
   /**
-   * 
+   *
    * @member {String} emailContentType
    */
-  exports.prototype['emailContentType'] = undefined;
+  exports.prototype.emailContentType = undefined;
   /**
-   * 
+   *
    * @member {String} emailToLink
    */
-  exports.prototype['emailToLink'] = undefined;
+  exports.prototype.emailToLink = undefined;
   /**
-   * 
+   *
    * @member {String} linkText
    */
-  exports.prototype['linkText'] = undefined;
-
-
+  exports.prototype.linkText = undefined;
 
   return exports;
 }));
-
-

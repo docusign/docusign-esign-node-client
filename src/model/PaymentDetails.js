@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Money', 'model/PaymentLineItem', 'model/PaymentSignerValues', 'model/PropertyMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentDetails = factory(root.Docusign.ApiClient, root.Docusign.Money, root.Docusign.PaymentLineItem, root.Docusign.PaymentSignerValues, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient, Money, PaymentLineItem, PaymentSignerValues, PropertyMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, Money, PaymentLineItem, PaymentSignerValues, PropertyMetadata) => {
   /**
    * The PaymentDetails model module.
    * @module model/PaymentDetails
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentDetails
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,150 +45,146 @@
    * @param {module:model/PaymentDetails} obj Optional instance to populate.
    * @return {module:model/PaymentDetails} The populated <code>PaymentDetails</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('allowedPaymentMethods')) {
-        obj['allowedPaymentMethods'] = ApiClient.convertToType(data['allowedPaymentMethods'], ['String']);
+        obj.allowedPaymentMethods = ApiClient.convertToType(data.allowedPaymentMethods, ['String']);
       }
       if (data.hasOwnProperty('chargeId')) {
-        obj['chargeId'] = ApiClient.convertToType(data['chargeId'], 'String');
+        obj.chargeId = ApiClient.convertToType(data.chargeId, 'String');
       }
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('currencyCodeMetadata')) {
-        obj['currencyCodeMetadata'] = PropertyMetadata.constructFromObject(data['currencyCodeMetadata']);
+        obj.currencyCodeMetadata = PropertyMetadata.constructFromObject(data.currencyCodeMetadata);
       }
       if (data.hasOwnProperty('customerId')) {
-        obj['customerId'] = ApiClient.convertToType(data['customerId'], 'String');
+        obj.customerId = ApiClient.convertToType(data.customerId, 'String');
       }
       if (data.hasOwnProperty('customMetadata')) {
-        obj['customMetadata'] = ApiClient.convertToType(data['customMetadata'], 'String');
+        obj.customMetadata = ApiClient.convertToType(data.customMetadata, 'String');
       }
       if (data.hasOwnProperty('customMetadataRequired')) {
-        obj['customMetadataRequired'] = ApiClient.convertToType(data['customMetadataRequired'], 'Boolean');
+        obj.customMetadataRequired = ApiClient.convertToType(data.customMetadataRequired, 'Boolean');
       }
       if (data.hasOwnProperty('gatewayAccountId')) {
-        obj['gatewayAccountId'] = ApiClient.convertToType(data['gatewayAccountId'], 'String');
+        obj.gatewayAccountId = ApiClient.convertToType(data.gatewayAccountId, 'String');
       }
       if (data.hasOwnProperty('gatewayAccountIdMetadata')) {
-        obj['gatewayAccountIdMetadata'] = PropertyMetadata.constructFromObject(data['gatewayAccountIdMetadata']);
+        obj.gatewayAccountIdMetadata = PropertyMetadata.constructFromObject(data.gatewayAccountIdMetadata);
       }
       if (data.hasOwnProperty('gatewayDisplayName')) {
-        obj['gatewayDisplayName'] = ApiClient.convertToType(data['gatewayDisplayName'], 'String');
+        obj.gatewayDisplayName = ApiClient.convertToType(data.gatewayDisplayName, 'String');
       }
       if (data.hasOwnProperty('gatewayName')) {
-        obj['gatewayName'] = ApiClient.convertToType(data['gatewayName'], 'String');
+        obj.gatewayName = ApiClient.convertToType(data.gatewayName, 'String');
       }
       if (data.hasOwnProperty('lineItems')) {
-        obj['lineItems'] = ApiClient.convertToType(data['lineItems'], [PaymentLineItem]);
+        obj.lineItems = ApiClient.convertToType(data.lineItems, [PaymentLineItem]);
       }
       if (data.hasOwnProperty('paymentOption')) {
-        obj['paymentOption'] = ApiClient.convertToType(data['paymentOption'], 'String');
+        obj.paymentOption = ApiClient.convertToType(data.paymentOption, 'String');
       }
       if (data.hasOwnProperty('paymentSourceId')) {
-        obj['paymentSourceId'] = ApiClient.convertToType(data['paymentSourceId'], 'String');
+        obj.paymentSourceId = ApiClient.convertToType(data.paymentSourceId, 'String');
       }
       if (data.hasOwnProperty('signerValues')) {
-        obj['signerValues'] = PaymentSignerValues.constructFromObject(data['signerValues']);
+        obj.signerValues = PaymentSignerValues.constructFromObject(data.signerValues);
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('total')) {
-        obj['total'] = Money.constructFromObject(data['total']);
+        obj.total = Money.constructFromObject(data.total);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} allowedPaymentMethods
    */
-  exports.prototype['allowedPaymentMethods'] = undefined;
+  exports.prototype.allowedPaymentMethods = undefined;
   /**
-   * 
+   *
    * @member {String} chargeId
    */
-  exports.prototype['chargeId'] = undefined;
+  exports.prototype.chargeId = undefined;
   /**
-   * 
+   *
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * @member {module:model/PropertyMetadata} currencyCodeMetadata
    */
-  exports.prototype['currencyCodeMetadata'] = undefined;
+  exports.prototype.currencyCodeMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} customerId
    */
-  exports.prototype['customerId'] = undefined;
+  exports.prototype.customerId = undefined;
   /**
-   * 
+   *
    * @member {String} customMetadata
    */
-  exports.prototype['customMetadata'] = undefined;
+  exports.prototype.customMetadata = undefined;
   /**
-   * 
+   *
    * @member {Boolean} customMetadataRequired
    */
-  exports.prototype['customMetadataRequired'] = undefined;
+  exports.prototype.customMetadataRequired = undefined;
   /**
-   * 
+   *
    * @member {String} gatewayAccountId
    */
-  exports.prototype['gatewayAccountId'] = undefined;
+  exports.prototype.gatewayAccountId = undefined;
   /**
    * @member {module:model/PropertyMetadata} gatewayAccountIdMetadata
    */
-  exports.prototype['gatewayAccountIdMetadata'] = undefined;
+  exports.prototype.gatewayAccountIdMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} gatewayDisplayName
    */
-  exports.prototype['gatewayDisplayName'] = undefined;
+  exports.prototype.gatewayDisplayName = undefined;
   /**
-   * 
+   *
    * @member {String} gatewayName
    */
-  exports.prototype['gatewayName'] = undefined;
+  exports.prototype.gatewayName = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/PaymentLineItem>} lineItems
    */
-  exports.prototype['lineItems'] = undefined;
+  exports.prototype.lineItems = undefined;
   /**
-   * 
+   *
    * @member {String} paymentOption
    */
-  exports.prototype['paymentOption'] = undefined;
+  exports.prototype.paymentOption = undefined;
   /**
-   * 
+   *
    * @member {String} paymentSourceId
    */
-  exports.prototype['paymentSourceId'] = undefined;
+  exports.prototype.paymentSourceId = undefined;
   /**
    * @member {module:model/PaymentSignerValues} signerValues
    */
-  exports.prototype['signerValues'] = undefined;
+  exports.prototype.signerValues = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
    * @member {module:model/Money} total
    */
-  exports.prototype['total'] = undefined;
-
-
+  exports.prototype.total = undefined;
 
   return exports;
 }));
-
-

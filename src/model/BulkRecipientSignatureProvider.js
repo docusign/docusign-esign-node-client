@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkRecipientSignatureProvider = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BulkRecipientSignatureProvider model module.
    * @module model/BulkRecipientSignatureProvider
@@ -37,10 +34,8 @@
    * @alias module:model/BulkRecipientSignatureProvider
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/BulkRecipientSignatureProvider} obj Optional instance to populate.
    * @return {module:model/BulkRecipientSignatureProvider} The populated <code>BulkRecipientSignatureProvider</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+        obj.value = ApiClient.convertToType(data.value, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * Specifies the value of the tab. 
+   * Specifies the value of the tab.
    * @member {String} value
    */
-  exports.prototype['value'] = undefined;
-
-
+  exports.prototype.value = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ProofServiceViewLink = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ProofServiceViewLink model module.
    * @module model/ProofServiceViewLink
@@ -37,10 +34,8 @@
    * @alias module:model/ProofServiceViewLink
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ProofServiceViewLink} obj Optional instance to populate.
    * @return {module:model/ProofServiceViewLink} The populated <code>ProofServiceViewLink</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ViewLink')) {
-        obj['ViewLink'] = ApiClient.convertToType(data['ViewLink'], 'String');
+        obj.ViewLink = ApiClient.convertToType(data.ViewLink, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} ViewLink
    */
-  exports.prototype['ViewLink'] = undefined;
-
-
+  exports.prototype.ViewLink = undefined;
 
   return exports;
 }));
-
-

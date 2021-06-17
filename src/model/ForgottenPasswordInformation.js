@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ForgottenPasswordInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ForgottenPasswordInformation model module.
    * @module model/ForgottenPasswordInformation
@@ -38,10 +35,8 @@
    * @alias module:model/ForgottenPasswordInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,82 +46,78 @@
    * @param {module:model/ForgottenPasswordInformation} obj Optional instance to populate.
    * @return {module:model/ForgottenPasswordInformation} The populated <code>ForgottenPasswordInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('forgottenPasswordAnswer1')) {
-        obj['forgottenPasswordAnswer1'] = ApiClient.convertToType(data['forgottenPasswordAnswer1'], 'String');
+        obj.forgottenPasswordAnswer1 = ApiClient.convertToType(data.forgottenPasswordAnswer1, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordAnswer2')) {
-        obj['forgottenPasswordAnswer2'] = ApiClient.convertToType(data['forgottenPasswordAnswer2'], 'String');
+        obj.forgottenPasswordAnswer2 = ApiClient.convertToType(data.forgottenPasswordAnswer2, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordAnswer3')) {
-        obj['forgottenPasswordAnswer3'] = ApiClient.convertToType(data['forgottenPasswordAnswer3'], 'String');
+        obj.forgottenPasswordAnswer3 = ApiClient.convertToType(data.forgottenPasswordAnswer3, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordAnswer4')) {
-        obj['forgottenPasswordAnswer4'] = ApiClient.convertToType(data['forgottenPasswordAnswer4'], 'String');
+        obj.forgottenPasswordAnswer4 = ApiClient.convertToType(data.forgottenPasswordAnswer4, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordQuestion1')) {
-        obj['forgottenPasswordQuestion1'] = ApiClient.convertToType(data['forgottenPasswordQuestion1'], 'String');
+        obj.forgottenPasswordQuestion1 = ApiClient.convertToType(data.forgottenPasswordQuestion1, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordQuestion2')) {
-        obj['forgottenPasswordQuestion2'] = ApiClient.convertToType(data['forgottenPasswordQuestion2'], 'String');
+        obj.forgottenPasswordQuestion2 = ApiClient.convertToType(data.forgottenPasswordQuestion2, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordQuestion3')) {
-        obj['forgottenPasswordQuestion3'] = ApiClient.convertToType(data['forgottenPasswordQuestion3'], 'String');
+        obj.forgottenPasswordQuestion3 = ApiClient.convertToType(data.forgottenPasswordQuestion3, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordQuestion4')) {
-        obj['forgottenPasswordQuestion4'] = ApiClient.convertToType(data['forgottenPasswordQuestion4'], 'String');
+        obj.forgottenPasswordQuestion4 = ApiClient.convertToType(data.forgottenPasswordQuestion4, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The answer to the first forgotten password challenge question.
    * @member {String} forgottenPasswordAnswer1
    */
-  exports.prototype['forgottenPasswordAnswer1'] = undefined;
+  exports.prototype.forgottenPasswordAnswer1 = undefined;
   /**
    * The answer to the second forgotten password challenge question.
    * @member {String} forgottenPasswordAnswer2
    */
-  exports.prototype['forgottenPasswordAnswer2'] = undefined;
+  exports.prototype.forgottenPasswordAnswer2 = undefined;
   /**
    * The answer to the third forgotten password challenge question.
    * @member {String} forgottenPasswordAnswer3
    */
-  exports.prototype['forgottenPasswordAnswer3'] = undefined;
+  exports.prototype.forgottenPasswordAnswer3 = undefined;
   /**
    * The answer to the fourth forgotten password challenge question.
    * @member {String} forgottenPasswordAnswer4
    */
-  exports.prototype['forgottenPasswordAnswer4'] = undefined;
+  exports.prototype.forgottenPasswordAnswer4 = undefined;
   /**
    * The first challenge question presented to a user who has forgotten their password.
    * @member {String} forgottenPasswordQuestion1
    */
-  exports.prototype['forgottenPasswordQuestion1'] = undefined;
+  exports.prototype.forgottenPasswordQuestion1 = undefined;
   /**
    * The second challenge question presented to a user who has forgotten their password.
    * @member {String} forgottenPasswordQuestion2
    */
-  exports.prototype['forgottenPasswordQuestion2'] = undefined;
+  exports.prototype.forgottenPasswordQuestion2 = undefined;
   /**
    * The third challenge question presented to a user who has forgotten their password.
    * @member {String} forgottenPasswordQuestion3
    */
-  exports.prototype['forgottenPasswordQuestion3'] = undefined;
+  exports.prototype.forgottenPasswordQuestion3 = undefined;
   /**
    * The fourth challenge question presented to a user who has forgotten their password.
    * @member {String} forgottenPasswordQuestion4
    */
-  exports.prototype['forgottenPasswordQuestion4'] = undefined;
-
-
+  exports.prototype.forgottenPasswordQuestion4 = undefined;
 
   return exports;
 }));
-
-

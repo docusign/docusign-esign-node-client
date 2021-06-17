@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SocialAccountInformation = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The SocialAccountInformation model module.
    * @module model/SocialAccountInformation
@@ -37,10 +34,8 @@
    * @alias module:model/SocialAccountInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,57 +45,53 @@
    * @param {module:model/SocialAccountInformation} obj Optional instance to populate.
    * @return {module:model/SocialAccountInformation} The populated <code>SocialAccountInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('provider')) {
-        obj['provider'] = ApiClient.convertToType(data['provider'], 'String');
+        obj.provider = ApiClient.convertToType(data.provider, 'String');
       }
       if (data.hasOwnProperty('socialId')) {
-        obj['socialId'] = ApiClient.convertToType(data['socialId'], 'String');
+        obj.socialId = ApiClient.convertToType(data.socialId, 'String');
       }
       if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+        obj.userName = ApiClient.convertToType(data.userName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The users email address.
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * The social account provider (Facebook, Yahoo, etc.)
    * @member {String} provider
    */
-  exports.prototype['provider'] = undefined;
+  exports.prototype.provider = undefined;
   /**
    * The ID provided by the Socal Account.
    * @member {String} socialId
    */
-  exports.prototype['socialId'] = undefined;
+  exports.prototype.socialId = undefined;
   /**
    * The full user name for the account.
    * @member {String} userName
    */
-  exports.prototype['userName'] = undefined;
-
-
+  exports.prototype.userName = undefined;
 
   return exports;
 }));
-
-

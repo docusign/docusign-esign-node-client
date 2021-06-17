@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountRoleSettings', 'model/UserInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PermissionProfile = factory(root.Docusign.ApiClient, root.Docusign.AccountRoleSettings, root.Docusign.UserInformation);
   }
-}(this, function(ApiClient, AccountRoleSettings, UserInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountRoleSettings, UserInformation) => {
   /**
    * The PermissionProfile model module.
    * @module model/PermissionProfile
@@ -37,10 +34,8 @@
    * @alias module:model/PermissionProfile
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,73 +45,69 @@
    * @param {module:model/PermissionProfile} obj Optional instance to populate.
    * @return {module:model/PermissionProfile} The populated <code>PermissionProfile</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('modifiedByUsername')) {
-        obj['modifiedByUsername'] = ApiClient.convertToType(data['modifiedByUsername'], 'String');
+        obj.modifiedByUsername = ApiClient.convertToType(data.modifiedByUsername, 'String');
       }
       if (data.hasOwnProperty('modifiedDateTime')) {
-        obj['modifiedDateTime'] = ApiClient.convertToType(data['modifiedDateTime'], 'String');
+        obj.modifiedDateTime = ApiClient.convertToType(data.modifiedDateTime, 'String');
       }
       if (data.hasOwnProperty('permissionProfileId')) {
-        obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
+        obj.permissionProfileId = ApiClient.convertToType(data.permissionProfileId, 'String');
       }
       if (data.hasOwnProperty('permissionProfileName')) {
-        obj['permissionProfileName'] = ApiClient.convertToType(data['permissionProfileName'], 'String');
+        obj.permissionProfileName = ApiClient.convertToType(data.permissionProfileName, 'String');
       }
       if (data.hasOwnProperty('settings')) {
-        obj['settings'] = AccountRoleSettings.constructFromObject(data['settings']);
+        obj.settings = AccountRoleSettings.constructFromObject(data.settings);
       }
       if (data.hasOwnProperty('userCount')) {
-        obj['userCount'] = ApiClient.convertToType(data['userCount'], 'String');
+        obj.userCount = ApiClient.convertToType(data.userCount, 'String');
       }
       if (data.hasOwnProperty('users')) {
-        obj['users'] = ApiClient.convertToType(data['users'], [UserInformation]);
+        obj.users = ApiClient.convertToType(data.users, [UserInformation]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} modifiedByUsername
    */
-  exports.prototype['modifiedByUsername'] = undefined;
+  exports.prototype.modifiedByUsername = undefined;
   /**
-   * 
+   *
    * @member {String} modifiedDateTime
    */
-  exports.prototype['modifiedDateTime'] = undefined;
+  exports.prototype.modifiedDateTime = undefined;
   /**
-   * 
+   *
    * @member {String} permissionProfileId
    */
-  exports.prototype['permissionProfileId'] = undefined;
+  exports.prototype.permissionProfileId = undefined;
   /**
-   * 
+   *
    * @member {String} permissionProfileName
    */
-  exports.prototype['permissionProfileName'] = undefined;
+  exports.prototype.permissionProfileName = undefined;
   /**
    * @member {module:model/AccountRoleSettings} settings
    */
-  exports.prototype['settings'] = undefined;
+  exports.prototype.settings = undefined;
   /**
-   * 
+   *
    * @member {String} userCount
    */
-  exports.prototype['userCount'] = undefined;
+  exports.prototype.userCount = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/UserInformation>} users
    */
-  exports.prototype['users'] = undefined;
-
-
+  exports.prototype.users = undefined;
 
   return exports;
 }));
-
-

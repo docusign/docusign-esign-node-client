@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingInvoiceItem = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BillingInvoiceItem model module.
    * @module model/BillingInvoiceItem
@@ -38,10 +35,8 @@
    * @alias module:model/BillingInvoiceItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,58 +46,54 @@
    * @param {module:model/BillingInvoiceItem} obj Optional instance to populate.
    * @return {module:model/BillingInvoiceItem} The populated <code>BillingInvoiceItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('chargeAmount')) {
-        obj['chargeAmount'] = ApiClient.convertToType(data['chargeAmount'], 'String');
+        obj.chargeAmount = ApiClient.convertToType(data.chargeAmount, 'String');
       }
       if (data.hasOwnProperty('chargeName')) {
-        obj['chargeName'] = ApiClient.convertToType(data['chargeName'], 'String');
+        obj.chargeName = ApiClient.convertToType(data.chargeName, 'String');
       }
       if (data.hasOwnProperty('invoiceItemId')) {
-        obj['invoiceItemId'] = ApiClient.convertToType(data['invoiceItemId'], 'String');
+        obj.invoiceItemId = ApiClient.convertToType(data.invoiceItemId, 'String');
       }
       if (data.hasOwnProperty('quantity')) {
-        obj['quantity'] = ApiClient.convertToType(data['quantity'], 'String');
+        obj.quantity = ApiClient.convertToType(data.quantity, 'String');
       }
       if (data.hasOwnProperty('unitPrice')) {
-        obj['unitPrice'] = ApiClient.convertToType(data['unitPrice'], 'String');
+        obj.unitPrice = ApiClient.convertToType(data.unitPrice, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} chargeAmount
    */
-  exports.prototype['chargeAmount'] = undefined;
+  exports.prototype.chargeAmount = undefined;
   /**
    * Reserved: TBD
    * @member {String} chargeName
    */
-  exports.prototype['chargeName'] = undefined;
+  exports.prototype.chargeName = undefined;
   /**
    * Reserved: TBD
    * @member {String} invoiceItemId
    */
-  exports.prototype['invoiceItemId'] = undefined;
+  exports.prototype.invoiceItemId = undefined;
   /**
-   * 
+   *
    * @member {String} quantity
    */
-  exports.prototype['quantity'] = undefined;
+  exports.prototype.quantity = undefined;
   /**
    * Reserved: TBD
    * @member {String} unitPrice
    */
-  exports.prototype['unitPrice'] = undefined;
-
-
+  exports.prototype.unitPrice = undefined;
 
   return exports;
 }));
-
-

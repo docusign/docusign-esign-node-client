@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BrandRequest'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandsRequest = factory(root.Docusign.ApiClient, root.Docusign.BrandRequest);
   }
-}(this, function(ApiClient, BrandRequest) {
-  'use strict';
-
-
+}(this, (ApiClient, BrandRequest) => {
   /**
    * The BrandsRequest model module.
    * @module model/BrandsRequest
@@ -37,10 +34,8 @@
    * @alias module:model/BrandsRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/BrandsRequest} obj Optional instance to populate.
    * @return {module:model/BrandsRequest} The populated <code>BrandsRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('brands')) {
-        obj['brands'] = ApiClient.convertToType(data['brands'], [BrandRequest]);
+        obj.brands = ApiClient.convertToType(data.brands, [BrandRequest]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The list of brands.
    * @member {Array.<module:model/BrandRequest>} brands
    */
-  exports.prototype['brands'] = undefined;
-
-
+  exports.prototype.brands = undefined;
 
   return exports;
 }));
-
-

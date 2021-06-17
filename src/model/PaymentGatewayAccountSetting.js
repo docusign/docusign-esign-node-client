@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentGatewayAccountSetting = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PaymentGatewayAccountSetting model module.
    * @module model/PaymentGatewayAccountSetting
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentGatewayAccountSetting
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/PaymentGatewayAccountSetting} obj Optional instance to populate.
    * @return {module:model/PaymentGatewayAccountSetting} The populated <code>PaymentGatewayAccountSetting</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('apiFields')) {
-        obj['apiFields'] = ApiClient.convertToType(data['apiFields'], 'String');
+        obj.apiFields = ApiClient.convertToType(data.apiFields, 'String');
       }
       if (data.hasOwnProperty('authorizationCode')) {
-        obj['authorizationCode'] = ApiClient.convertToType(data['authorizationCode'], 'String');
+        obj.authorizationCode = ApiClient.convertToType(data.authorizationCode, 'String');
       }
       if (data.hasOwnProperty('credentialStatus')) {
-        obj['credentialStatus'] = ApiClient.convertToType(data['credentialStatus'], 'String');
+        obj.credentialStatus = ApiClient.convertToType(data.credentialStatus, 'String');
       }
       if (data.hasOwnProperty('merchantId')) {
-        obj['merchantId'] = ApiClient.convertToType(data['merchantId'], 'String');
+        obj.merchantId = ApiClient.convertToType(data.merchantId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} apiFields
    */
-  exports.prototype['apiFields'] = undefined;
+  exports.prototype.apiFields = undefined;
   /**
-   * 
+   *
    * @member {String} authorizationCode
    */
-  exports.prototype['authorizationCode'] = undefined;
+  exports.prototype.authorizationCode = undefined;
   /**
-   * 
+   *
    * @member {String} credentialStatus
    */
-  exports.prototype['credentialStatus'] = undefined;
+  exports.prototype.credentialStatus = undefined;
   /**
-   * 
+   *
    * @member {String} merchantId
    */
-  exports.prototype['merchantId'] = undefined;
-
-
+  exports.prototype.merchantId = undefined;
 
   return exports;
 }));
-
-

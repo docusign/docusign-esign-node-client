@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BulkSendingCopyCustomField', 'model/BulkSendingCopyRecipient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendingCopy = factory(root.Docusign.ApiClient, root.Docusign.BulkSendingCopyCustomField, root.Docusign.BulkSendingCopyRecipient);
   }
-}(this, function(ApiClient, BulkSendingCopyCustomField, BulkSendingCopyRecipient) {
-  'use strict';
-
-
+}(this, (ApiClient, BulkSendingCopyCustomField, BulkSendingCopyRecipient) => {
   /**
    * The BulkSendingCopy model module.
    * @module model/BulkSendingCopy
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendingCopy
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/BulkSendingCopy} obj Optional instance to populate.
    * @return {module:model/BulkSendingCopy} The populated <code>BulkSendingCopy</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('customFields')) {
-        obj['customFields'] = ApiClient.convertToType(data['customFields'], [BulkSendingCopyCustomField]);
+        obj.customFields = ApiClient.convertToType(data.customFields, [BulkSendingCopyCustomField]);
       }
       if (data.hasOwnProperty('emailBlurb')) {
-        obj['emailBlurb'] = ApiClient.convertToType(data['emailBlurb'], 'String');
+        obj.emailBlurb = ApiClient.convertToType(data.emailBlurb, 'String');
       }
       if (data.hasOwnProperty('emailSubject')) {
-        obj['emailSubject'] = ApiClient.convertToType(data['emailSubject'], 'String');
+        obj.emailSubject = ApiClient.convertToType(data.emailSubject, 'String');
       }
       if (data.hasOwnProperty('recipients')) {
-        obj['recipients'] = ApiClient.convertToType(data['recipients'], [BulkSendingCopyRecipient]);
+        obj.recipients = ApiClient.convertToType(data.recipients, [BulkSendingCopyRecipient]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
    * @member {Array.<module:model/BulkSendingCopyCustomField>} customFields
    */
-  exports.prototype['customFields'] = undefined;
+  exports.prototype.customFields = undefined;
   /**
-   * 
+   *
    * @member {String} emailBlurb
    */
-  exports.prototype['emailBlurb'] = undefined;
+  exports.prototype.emailBlurb = undefined;
   /**
    * Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
    * @member {String} emailSubject
    */
-  exports.prototype['emailSubject'] = undefined;
+  exports.prototype.emailSubject = undefined;
   /**
    * An array of powerform recipients.
    * @member {Array.<module:model/BulkSendingCopyRecipient>} recipients
    */
-  exports.prototype['recipients'] = undefined;
-
-
+  exports.prototype.recipients = undefined;
 
   return exports;
 }));
-
-

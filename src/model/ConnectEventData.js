@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectEventData = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConnectEventData model module.
    * @module model/ConnectEventData
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectEventData
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/ConnectEventData} obj Optional instance to populate.
    * @return {module:model/ConnectEventData} The populated <code>ConnectEventData</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('format')) {
-        obj['format'] = ApiClient.convertToType(data['format'], 'String');
+        obj.format = ApiClient.convertToType(data.format, 'String');
       }
       if (data.hasOwnProperty('includeData')) {
-        obj['includeData'] = ApiClient.convertToType(data['includeData'], ['String']);
+        obj.includeData = ApiClient.convertToType(data.includeData, ['String']);
       }
       if (data.hasOwnProperty('version')) {
-        obj['version'] = ApiClient.convertToType(data['version'], 'String');
+        obj.version = ApiClient.convertToType(data.version, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} format
    */
-  exports.prototype['format'] = undefined;
+  exports.prototype.format = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} includeData
    */
-  exports.prototype['includeData'] = undefined;
+  exports.prototype.includeData = undefined;
   /**
-   * 
+   *
    * @member {String} version
    */
-  exports.prototype['version'] = undefined;
-
-
+  exports.prototype.version = undefined;
 
   return exports;
 }));
-
-

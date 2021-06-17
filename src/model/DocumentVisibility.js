@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentVisibility = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The DocumentVisibility model module.
    * @module model/DocumentVisibility
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentVisibility
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,57 +45,53 @@
    * @param {module:model/DocumentVisibility} obj Optional instance to populate.
    * @return {module:model/DocumentVisibility} The populated <code>DocumentVisibility</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+        obj.recipientId = ApiClient.convertToType(data.recipientId, 'String');
       }
       if (data.hasOwnProperty('rights')) {
-        obj['rights'] = ApiClient.convertToType(data['rights'], 'String');
+        obj.rights = ApiClient.convertToType(data.rights, 'String');
       }
       if (data.hasOwnProperty('visible')) {
-        obj['visible'] = ApiClient.convertToType(data['visible'], 'String');
+        obj.visible = ApiClient.convertToType(data.visible, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
    * @member {String} recipientId
    */
-  exports.prototype['recipientId'] = undefined;
+  exports.prototype.recipientId = undefined;
   /**
-   * 
+   *
    * @member {String} rights
    */
-  exports.prototype['rights'] = undefined;
+  exports.prototype.rights = undefined;
   /**
-   * 
+   *
    * @member {String} visible
    */
-  exports.prototype['visible'] = undefined;
-
-
+  exports.prototype.visible = undefined;
 
   return exports;
 }));
-
-

@@ -36,7 +36,7 @@
     "push-docs": "git subtree push --prefix docs origin gh-pages",
     "update-docs": "./node_modules/.bin/jsdoc -c .jsdoc.json",
     "check-config": "./scripts/check-config.js",
-    "test": "semistandard --fix && ./node_modules/mocha/bin/mocha --reporter mocha-junit-reporter test/SdkUnitTests test/SdkUnitTestsWithCallback"
+    "test": "eslint src/** test/ --fix"
   },
   "semistandard": {
     "globals": [
@@ -52,6 +52,9 @@
   },
   "dependencies": {
     "csv-stringify": "^1.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
     "jsonwebtoken": "8.2.0",
     "passport-oauth2": "1.4.0",
     "safe-buffer": "^5.1.2",

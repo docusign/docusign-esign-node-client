@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Folder'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FoldersRequest = factory(root.Docusign.ApiClient, root.Docusign.Folder);
   }
-}(this, function(ApiClient, Folder) {
-  'use strict';
-
-
+}(this, (ApiClient, Folder) => {
   /**
    * The FoldersRequest model module.
    * @module model/FoldersRequest
@@ -37,10 +34,8 @@
    * @alias module:model/FoldersRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/FoldersRequest} obj Optional instance to populate.
    * @return {module:model/FoldersRequest} The populated <code>FoldersRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeIds')) {
-        obj['envelopeIds'] = ApiClient.convertToType(data['envelopeIds'], ['String']);
+        obj.envelopeIds = ApiClient.convertToType(data.envelopeIds, ['String']);
       }
       if (data.hasOwnProperty('folders')) {
-        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
+        obj.folders = ApiClient.convertToType(data.folders, [Folder]);
       }
       if (data.hasOwnProperty('fromFolderId')) {
-        obj['fromFolderId'] = ApiClient.convertToType(data['fromFolderId'], 'String');
+        obj.fromFolderId = ApiClient.convertToType(data.fromFolderId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} envelopeIds
    */
-  exports.prototype['envelopeIds'] = undefined;
+  exports.prototype.envelopeIds = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/Folder>} folders
    */
-  exports.prototype['folders'] = undefined;
+  exports.prototype.folders = undefined;
   /**
    *  The folder ID the envelope is being moved from.
    * @member {String} fromFolderId
    */
-  exports.prototype['fromFolderId'] = undefined;
-
-
+  exports.prototype.fromFolderId = undefined;
 
   return exports;
 }));
-
-

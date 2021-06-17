@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReturnUrlRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ReturnUrlRequest model module.
    * @module model/ReturnUrlRequest
@@ -37,10 +34,8 @@
    * @alias module:model/ReturnUrlRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ReturnUrlRequest} obj Optional instance to populate.
    * @return {module:model/ReturnUrlRequest} The populated <code>ReturnUrlRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('returnUrl')) {
-        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
+        obj.returnUrl = ApiClient.convertToType(data.returnUrl, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Identifies the return point after sending the envelope. DocuSign returns to the URL and includes an event parameter that can be used to redirect the recipient to another location. The possible event parameters returned are:   * send (user sends the envelope) * save (user saves the envelope) * cancel (user cancels the sending transaction. No envelopeId is returned in this case.) * error (there is an error when performing the send) * sessionEnd (the sending session ends before the user completes another action).
    * @member {String} returnUrl
    */
-  exports.prototype['returnUrl'] = undefined;
-
-
+  exports.prototype.returnUrl = undefined;
 
   return exports;
 }));
-
-

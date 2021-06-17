@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.NotaryJournalCredibleWitness = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The NotaryJournalCredibleWitness model module.
    * @module model/NotaryJournalCredibleWitness
@@ -37,10 +34,8 @@
    * @alias module:model/NotaryJournalCredibleWitness
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/NotaryJournalCredibleWitness} obj Optional instance to populate.
    * @return {module:model/NotaryJournalCredibleWitness} The populated <code>NotaryJournalCredibleWitness</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('address')) {
-        obj['address'] = ApiClient.convertToType(data['address'], 'String');
+        obj.address = ApiClient.convertToType(data.address, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('signatureImage')) {
-        obj['signatureImage'] = ApiClient.convertToType(data['signatureImage'], 'String');
+        obj.signatureImage = ApiClient.convertToType(data.signatureImage, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} address
    */
-  exports.prototype['address'] = undefined;
+  exports.prototype.address = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} signatureImage
    */
-  exports.prototype['signatureImage'] = undefined;
-
-
+  exports.prototype.signatureImage = undefined;
 
   return exports;
 }));
-
-

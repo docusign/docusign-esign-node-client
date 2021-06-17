@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ViewUrl = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ViewUrl model module.
    * @module model/ViewUrl
@@ -37,10 +34,8 @@
    * @alias module:model/ViewUrl
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ViewUrl} obj Optional instance to populate.
    * @return {module:model/ViewUrl} The populated <code>ViewUrl</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('url')) {
-        obj['url'] = ApiClient.convertToType(data['url'], 'String');
+        obj.url = ApiClient.convertToType(data.url, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The view URL to be navigated to.
    * @member {String} url
    */
-  exports.prototype['url'] = undefined;
-
-
+  exports.prototype.url = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/Filter', 'model/Folder', 'model/FolderItemV2', 'model/UserInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Folder = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.Filter, root.Docusign.Folder, root.Docusign.FolderItemV2, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, ErrorDetails, Filter, Folder, FolderItemV2, UserInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, Filter, Folder, FolderItemV2, UserInfo) => {
   /**
    * The Folder model module.
    * @module model/Folder
@@ -37,10 +34,8 @@
    * @alias module:model/Folder
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,135 +45,131 @@
    * @param {module:model/Folder} obj Optional instance to populate.
    * @return {module:model/Folder} The populated <code>Folder</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('filter')) {
-        obj['filter'] = Filter.constructFromObject(data['filter']);
+        obj.filter = Filter.constructFromObject(data.filter);
       }
       if (data.hasOwnProperty('folderId')) {
-        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+        obj.folderId = ApiClient.convertToType(data.folderId, 'String');
       }
       if (data.hasOwnProperty('folderItems')) {
-        obj['folderItems'] = ApiClient.convertToType(data['folderItems'], [FolderItemV2]);
+        obj.folderItems = ApiClient.convertToType(data.folderItems, [FolderItemV2]);
       }
       if (data.hasOwnProperty('folders')) {
-        obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
+        obj.folders = ApiClient.convertToType(data.folders, [Folder]);
       }
       if (data.hasOwnProperty('hasAccess')) {
-        obj['hasAccess'] = ApiClient.convertToType(data['hasAccess'], 'String');
+        obj.hasAccess = ApiClient.convertToType(data.hasAccess, 'String');
       }
       if (data.hasOwnProperty('hasSubFolders')) {
-        obj['hasSubFolders'] = ApiClient.convertToType(data['hasSubFolders'], 'String');
+        obj.hasSubFolders = ApiClient.convertToType(data.hasSubFolders, 'String');
       }
       if (data.hasOwnProperty('itemCount')) {
-        obj['itemCount'] = ApiClient.convertToType(data['itemCount'], 'String');
+        obj.itemCount = ApiClient.convertToType(data.itemCount, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('owner')) {
-        obj['owner'] = UserInfo.constructFromObject(data['owner']);
+        obj.owner = UserInfo.constructFromObject(data.owner);
       }
       if (data.hasOwnProperty('parentFolderId')) {
-        obj['parentFolderId'] = ApiClient.convertToType(data['parentFolderId'], 'String');
+        obj.parentFolderId = ApiClient.convertToType(data.parentFolderId, 'String');
       }
       if (data.hasOwnProperty('parentFolderUri')) {
-        obj['parentFolderUri'] = ApiClient.convertToType(data['parentFolderUri'], 'String');
+        obj.parentFolderUri = ApiClient.convertToType(data.parentFolderUri, 'String');
       }
       if (data.hasOwnProperty('subFolderCount')) {
-        obj['subFolderCount'] = ApiClient.convertToType(data['subFolderCount'], 'String');
+        obj.subFolderCount = ApiClient.convertToType(data.subFolderCount, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
       if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+        obj.uri = ApiClient.convertToType(data.uri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * @member {module:model/Filter} filter
    */
-  exports.prototype['filter'] = undefined;
+  exports.prototype.filter = undefined;
   /**
-   * 
+   *
    * @member {String} folderId
    */
-  exports.prototype['folderId'] = undefined;
+  exports.prototype.folderId = undefined;
   /**
-   * A list of the envelopes in the specified folder or folders. 
+   * A list of the envelopes in the specified folder or folders.
    * @member {Array.<module:model/FolderItemV2>} folderItems
    */
-  exports.prototype['folderItems'] = undefined;
+  exports.prototype.folderItems = undefined;
   /**
    * A collection of folder objects returned in a response.
    * @member {Array.<module:model/Folder>} folders
    */
-  exports.prototype['folders'] = undefined;
+  exports.prototype.folders = undefined;
   /**
-   * 
+   *
    * @member {String} hasAccess
    */
-  exports.prototype['hasAccess'] = undefined;
+  exports.prototype.hasAccess = undefined;
   /**
-   * 
+   *
    * @member {String} hasSubFolders
    */
-  exports.prototype['hasSubFolders'] = undefined;
+  exports.prototype.hasSubFolders = undefined;
   /**
-   * 
+   *
    * @member {String} itemCount
    */
-  exports.prototype['itemCount'] = undefined;
+  exports.prototype.itemCount = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * @member {module:model/UserInfo} owner
    */
-  exports.prototype['owner'] = undefined;
+  exports.prototype.owner = undefined;
   /**
-   * 
+   *
    * @member {String} parentFolderId
    */
-  exports.prototype['parentFolderId'] = undefined;
+  exports.prototype.parentFolderId = undefined;
   /**
-   * 
+   *
    * @member {String} parentFolderUri
    */
-  exports.prototype['parentFolderUri'] = undefined;
+  exports.prototype.parentFolderUri = undefined;
   /**
-   * 
+   *
    * @member {String} subFolderCount
    */
-  exports.prototype['subFolderCount'] = undefined;
+  exports.prototype.subFolderCount = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype.type = undefined;
   /**
-   * 
+   *
    * @member {String} uri
    */
-  exports.prototype['uri'] = undefined;
-
-
+  exports.prototype.uri = undefined;
 
   return exports;
 }));
-
-

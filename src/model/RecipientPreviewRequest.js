@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientPreviewRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientPreviewRequest model module.
    * @module model/RecipientPreviewRequest
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientPreviewRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,98 +45,94 @@
    * @param {module:model/RecipientPreviewRequest} obj Optional instance to populate.
    * @return {module:model/RecipientPreviewRequest} The populated <code>RecipientPreviewRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('assertionId')) {
-        obj['assertionId'] = ApiClient.convertToType(data['assertionId'], 'String');
+        obj.assertionId = ApiClient.convertToType(data.assertionId, 'String');
       }
       if (data.hasOwnProperty('authenticationInstant')) {
-        obj['authenticationInstant'] = ApiClient.convertToType(data['authenticationInstant'], 'String');
+        obj.authenticationInstant = ApiClient.convertToType(data.authenticationInstant, 'String');
       }
       if (data.hasOwnProperty('authenticationMethod')) {
-        obj['authenticationMethod'] = ApiClient.convertToType(data['authenticationMethod'], 'String');
+        obj.authenticationMethod = ApiClient.convertToType(data.authenticationMethod, 'String');
       }
       if (data.hasOwnProperty('pingFrequency')) {
-        obj['pingFrequency'] = ApiClient.convertToType(data['pingFrequency'], 'String');
+        obj.pingFrequency = ApiClient.convertToType(data.pingFrequency, 'String');
       }
       if (data.hasOwnProperty('pingUrl')) {
-        obj['pingUrl'] = ApiClient.convertToType(data['pingUrl'], 'String');
+        obj.pingUrl = ApiClient.convertToType(data.pingUrl, 'String');
       }
       if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+        obj.recipientId = ApiClient.convertToType(data.recipientId, 'String');
       }
       if (data.hasOwnProperty('returnUrl')) {
-        obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
+        obj.returnUrl = ApiClient.convertToType(data.returnUrl, 'String');
       }
       if (data.hasOwnProperty('securityDomain')) {
-        obj['securityDomain'] = ApiClient.convertToType(data['securityDomain'], 'String');
+        obj.securityDomain = ApiClient.convertToType(data.securityDomain, 'String');
       }
       if (data.hasOwnProperty('xFrameOptions')) {
-        obj['xFrameOptions'] = ApiClient.convertToType(data['xFrameOptions'], 'String');
+        obj.xFrameOptions = ApiClient.convertToType(data.xFrameOptions, 'String');
       }
       if (data.hasOwnProperty('xFrameOptionsAllowFromUrl')) {
-        obj['xFrameOptionsAllowFromUrl'] = ApiClient.convertToType(data['xFrameOptionsAllowFromUrl'], 'String');
+        obj.xFrameOptionsAllowFromUrl = ApiClient.convertToType(data.xFrameOptionsAllowFromUrl, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} assertionId
    */
-  exports.prototype['assertionId'] = undefined;
+  exports.prototype.assertionId = undefined;
   /**
-   * 
+   *
    * @member {String} authenticationInstant
    */
-  exports.prototype['authenticationInstant'] = undefined;
+  exports.prototype.authenticationInstant = undefined;
   /**
-   * 
+   *
    * @member {String} authenticationMethod
    */
-  exports.prototype['authenticationMethod'] = undefined;
+  exports.prototype.authenticationMethod = undefined;
   /**
-   * 
+   *
    * @member {String} pingFrequency
    */
-  exports.prototype['pingFrequency'] = undefined;
+  exports.prototype.pingFrequency = undefined;
   /**
-   * 
+   *
    * @member {String} pingUrl
    */
-  exports.prototype['pingUrl'] = undefined;
+  exports.prototype.pingUrl = undefined;
   /**
    * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
    * @member {String} recipientId
    */
-  exports.prototype['recipientId'] = undefined;
+  exports.prototype.recipientId = undefined;
   /**
-   * 
+   *
    * @member {String} returnUrl
    */
-  exports.prototype['returnUrl'] = undefined;
+  exports.prototype.returnUrl = undefined;
   /**
-   * 
+   *
    * @member {String} securityDomain
    */
-  exports.prototype['securityDomain'] = undefined;
+  exports.prototype.securityDomain = undefined;
   /**
-   * 
+   *
    * @member {String} xFrameOptions
    */
-  exports.prototype['xFrameOptions'] = undefined;
+  exports.prototype.xFrameOptions = undefined;
   /**
-   * 
+   *
    * @member {String} xFrameOptionsAllowFromUrl
    */
-  exports.prototype['xFrameOptionsAllowFromUrl'] = undefined;
-
-
+  exports.prototype.xFrameOptionsAllowFromUrl = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BulkRecipient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkRecipientsSummaryResponse = factory(root.Docusign.ApiClient, root.Docusign.BulkRecipient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, BulkRecipient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, BulkRecipient, ErrorDetails) => {
   /**
    * The BulkRecipientsSummaryResponse model module.
    * @module model/BulkRecipientsSummaryResponse
@@ -37,10 +34,8 @@
    * @alias module:model/BulkRecipientsSummaryResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/BulkRecipientsSummaryResponse} obj Optional instance to populate.
    * @return {module:model/BulkRecipientsSummaryResponse} The populated <code>BulkRecipientsSummaryResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkRecipients')) {
-        obj['bulkRecipients'] = ApiClient.convertToType(data['bulkRecipients'], [BulkRecipient]);
+        obj.bulkRecipients = ApiClient.convertToType(data.bulkRecipients, [BulkRecipient]);
       }
       if (data.hasOwnProperty('bulkRecipientsCount')) {
-        obj['bulkRecipientsCount'] = ApiClient.convertToType(data['bulkRecipientsCount'], 'String');
+        obj.bulkRecipientsCount = ApiClient.convertToType(data.bulkRecipientsCount, 'String');
       }
       if (data.hasOwnProperty('bulkRecipientsUri')) {
-        obj['bulkRecipientsUri'] = ApiClient.convertToType(data['bulkRecipientsUri'], 'String');
+        obj.bulkRecipientsUri = ApiClient.convertToType(data.bulkRecipientsUri, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ApiClient.convertToType(data['errorDetails'], [ErrorDetails]);
+        obj.errorDetails = ApiClient.convertToType(data.errorDetails, [ErrorDetails]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A complex type containing information about the bulk recipients in the response.
    * @member {Array.<module:model/BulkRecipient>} bulkRecipients
    */
-  exports.prototype['bulkRecipients'] = undefined;
+  exports.prototype.bulkRecipients = undefined;
   /**
    * The number of items returned in this response.
    * @member {String} bulkRecipientsCount
    */
-  exports.prototype['bulkRecipientsCount'] = undefined;
+  exports.prototype.bulkRecipientsCount = undefined;
   /**
    * Contains a URI for an endpoint that allows you to easily retrieve bulk recipient information.
    * @member {String} bulkRecipientsUri
    */
-  exports.prototype['bulkRecipientsUri'] = undefined;
+  exports.prototype.bulkRecipientsUri = undefined;
   /**
    * Array or errors.
    * @member {Array.<module:model/ErrorDetails>} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
-
-
+  exports.prototype.errorDetails = undefined;
 
   return exports;
 }));
-
-

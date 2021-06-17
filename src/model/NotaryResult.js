@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Jurisdiction', 'model/Notary'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.NotaryResult = factory(root.Docusign.ApiClient, root.Docusign.Jurisdiction, root.Docusign.Notary);
   }
-}(this, function(ApiClient, Jurisdiction, Notary) {
-  'use strict';
-
-
+}(this, (ApiClient, Jurisdiction, Notary) => {
   /**
    * The NotaryResult model module.
    * @module model/NotaryResult
@@ -37,10 +34,8 @@
    * @alias module:model/NotaryResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,33 +45,29 @@
    * @param {module:model/NotaryResult} obj Optional instance to populate.
    * @return {module:model/NotaryResult} The populated <code>NotaryResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('jurisdictions')) {
-        obj['jurisdictions'] = ApiClient.convertToType(data['jurisdictions'], [Jurisdiction]);
+        obj.jurisdictions = ApiClient.convertToType(data.jurisdictions, [Jurisdiction]);
       }
       if (data.hasOwnProperty('notary')) {
-        obj['notary'] = Notary.constructFromObject(data['notary']);
+        obj.notary = Notary.constructFromObject(data.notary);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/Jurisdiction>} jurisdictions
    */
-  exports.prototype['jurisdictions'] = undefined;
+  exports.prototype.jurisdictions = undefined;
   /**
    * @member {module:model/Notary} notary
    */
-  exports.prototype['notary'] = undefined;
-
-
+  exports.prototype.notary = undefined;
 
   return exports;
 }));
-
-

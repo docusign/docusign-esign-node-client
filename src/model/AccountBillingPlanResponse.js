@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountAddress', 'model/AccountBillingPlan', 'model/BillingPlan', 'model/CreditCardInformation', 'model/DirectDebitProcessorInformation', 'model/DowngradePlanUpdateResponse', 'model/PaymentProcessorInformation', 'model/ReferralInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountBillingPlanResponse = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AccountBillingPlan, root.Docusign.BillingPlan, root.Docusign.CreditCardInformation, root.Docusign.DirectDebitProcessorInformation, root.Docusign.DowngradePlanUpdateResponse, root.Docusign.PaymentProcessorInformation, root.Docusign.ReferralInformation);
   }
-}(this, function(ApiClient, AccountAddress, AccountBillingPlan, BillingPlan, CreditCardInformation, DirectDebitProcessorInformation, DowngradePlanUpdateResponse, PaymentProcessorInformation, ReferralInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountAddress, AccountBillingPlan, BillingPlan, CreditCardInformation, DirectDebitProcessorInformation, DowngradePlanUpdateResponse, PaymentProcessorInformation, ReferralInformation) => {
   /**
    * The AccountBillingPlanResponse model module.
    * @module model/AccountBillingPlanResponse
@@ -38,10 +35,8 @@
    * @alias module:model/AccountBillingPlanResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,91 +46,87 @@
    * @param {module:model/AccountBillingPlanResponse} obj Optional instance to populate.
    * @return {module:model/AccountBillingPlanResponse} The populated <code>AccountBillingPlanResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billingAddress')) {
-        obj['billingAddress'] = AccountAddress.constructFromObject(data['billingAddress']);
+        obj.billingAddress = AccountAddress.constructFromObject(data.billingAddress);
       }
       if (data.hasOwnProperty('billingAddressIsCreditCardAddress')) {
-        obj['billingAddressIsCreditCardAddress'] = ApiClient.convertToType(data['billingAddressIsCreditCardAddress'], 'String');
+        obj.billingAddressIsCreditCardAddress = ApiClient.convertToType(data.billingAddressIsCreditCardAddress, 'String');
       }
       if (data.hasOwnProperty('billingPlan')) {
-        obj['billingPlan'] = AccountBillingPlan.constructFromObject(data['billingPlan']);
+        obj.billingPlan = AccountBillingPlan.constructFromObject(data.billingPlan);
       }
       if (data.hasOwnProperty('creditCardInformation')) {
-        obj['creditCardInformation'] = CreditCardInformation.constructFromObject(data['creditCardInformation']);
+        obj.creditCardInformation = CreditCardInformation.constructFromObject(data.creditCardInformation);
       }
       if (data.hasOwnProperty('directDebitProcessorInformation')) {
-        obj['directDebitProcessorInformation'] = DirectDebitProcessorInformation.constructFromObject(data['directDebitProcessorInformation']);
+        obj.directDebitProcessorInformation = DirectDebitProcessorInformation.constructFromObject(data.directDebitProcessorInformation);
       }
       if (data.hasOwnProperty('downgradePlanInformation')) {
-        obj['downgradePlanInformation'] = DowngradePlanUpdateResponse.constructFromObject(data['downgradePlanInformation']);
+        obj.downgradePlanInformation = DowngradePlanUpdateResponse.constructFromObject(data.downgradePlanInformation);
       }
       if (data.hasOwnProperty('paymentMethod')) {
-        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+        obj.paymentMethod = ApiClient.convertToType(data.paymentMethod, 'String');
       }
       if (data.hasOwnProperty('paymentProcessorInformation')) {
-        obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
+        obj.paymentProcessorInformation = PaymentProcessorInformation.constructFromObject(data.paymentProcessorInformation);
       }
       if (data.hasOwnProperty('referralInformation')) {
-        obj['referralInformation'] = ReferralInformation.constructFromObject(data['referralInformation']);
+        obj.referralInformation = ReferralInformation.constructFromObject(data.referralInformation);
       }
       if (data.hasOwnProperty('successorPlans')) {
-        obj['successorPlans'] = ApiClient.convertToType(data['successorPlans'], [BillingPlan]);
+        obj.successorPlans = ApiClient.convertToType(data.successorPlans, [BillingPlan]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/AccountAddress} billingAddress
    */
-  exports.prototype['billingAddress'] = undefined;
+  exports.prototype.billingAddress = undefined;
   /**
    * When set to **true**, the credit card address information is the same as that returned as the billing address. If false, then the billing address is considered a billing contact address, and the credit card address can be different.
    * @member {String} billingAddressIsCreditCardAddress
    */
-  exports.prototype['billingAddressIsCreditCardAddress'] = undefined;
+  exports.prototype.billingAddressIsCreditCardAddress = undefined;
   /**
    * @member {module:model/AccountBillingPlan} billingPlan
    */
-  exports.prototype['billingPlan'] = undefined;
+  exports.prototype.billingPlan = undefined;
   /**
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
-  exports.prototype['creditCardInformation'] = undefined;
+  exports.prototype.creditCardInformation = undefined;
   /**
    * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
    */
-  exports.prototype['directDebitProcessorInformation'] = undefined;
+  exports.prototype.directDebitProcessorInformation = undefined;
   /**
    * @member {module:model/DowngradePlanUpdateResponse} downgradePlanInformation
    */
-  exports.prototype['downgradePlanInformation'] = undefined;
+  exports.prototype.downgradePlanInformation = undefined;
   /**
-   * 
+   *
    * @member {String} paymentMethod
    */
-  exports.prototype['paymentMethod'] = undefined;
+  exports.prototype.paymentMethod = undefined;
   /**
    * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
    */
-  exports.prototype['paymentProcessorInformation'] = undefined;
+  exports.prototype.paymentProcessorInformation = undefined;
   /**
    * @member {module:model/ReferralInformation} referralInformation
    */
-  exports.prototype['referralInformation'] = undefined;
+  exports.prototype.referralInformation = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/BillingPlan>} successorPlans
    */
-  exports.prototype['successorPlans'] = undefined;
-
-
+  exports.prototype.successorPlans = undefined;
 
   return exports;
 }));
-
-

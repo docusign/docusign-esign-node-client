@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConnectFailureResult'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectFailureResults = factory(root.Docusign.ApiClient, root.Docusign.ConnectFailureResult);
   }
-}(this, function(ApiClient, ConnectFailureResult) {
-  'use strict';
-
-
+}(this, (ApiClient, ConnectFailureResult) => {
   /**
    * The ConnectFailureResults model module.
    * @module model/ConnectFailureResults
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectFailureResults
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ConnectFailureResults} obj Optional instance to populate.
    * @return {module:model/ConnectFailureResults} The populated <code>ConnectFailureResults</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('retryQueue')) {
-        obj['retryQueue'] = ApiClient.convertToType(data['retryQueue'], [ConnectFailureResult]);
+        obj.retryQueue = ApiClient.convertToType(data.retryQueue, [ConnectFailureResult]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/ConnectFailureResult>} retryQueue
    */
-  exports.prototype['retryQueue'] = undefined;
-
-
+  exports.prototype.retryQueue = undefined;
 
   return exports;
 }));
-
-

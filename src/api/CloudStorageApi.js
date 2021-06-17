@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/CloudStorageProviders', 'model/ErrorDetails', 'model/ExternalFolder'], factory);
+    define(['Configuration', 'ApiClient', 'model/CloudStorageProviders', 'model/ErrorDetails', 'model/ExternalFolder'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/CloudStorageProviders'), require('../model/ErrorDetails'), require('../model/ExternalFolder'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.CloudStorageApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.CloudStorageProviders, root.Docusign.ErrorDetails, root.Docusign.ExternalFolder);
   }
-}(this, function(Configuration, ApiClient, CloudStorageProviders, ErrorDetails, ExternalFolder) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, CloudStorageProviders, ErrorDetails, ExternalFolder) => {
   /**
    * CloudStorage service.
    * @module api/CloudStorageApi
    */
 
   /**
-   * Constructs a new CloudStorageApi. 
+   * Constructs a new CloudStorageApi.
    * @alias module:api/CloudStorageApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the createProvider operation. If none specified a Promise will be returned.
@@ -65,11 +61,11 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CloudStorageProviders} optsOrCallback.cloudStorageProviders 
+     * @param {module:model/CloudStorageProviders} optsOrCallback.cloudStorageProviders
      * @param {module:api/CloudStorageApi~createProviderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageProviders}
      */
-    this.createProvider = function(accountId, userId, optsOrCallback, callback) {
+    this.createProvider = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -77,7 +73,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['cloudStorageProviders'];
+      const postBody = optsOrCallback.cloudStorageProviders;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -89,33 +85,33 @@
         throw new Error("Missing the required parameter 'userId' when calling createProvider");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CloudStorageProviders;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -132,14 +128,14 @@
      * Deletes the user authentication information for the specified cloud storage provider. The next time the user tries to access the cloud storage provider, they must pass normal authentication for this cloud storage provider.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {String} serviceId The ID of the service to access. 
+     * @param {String} serviceId The ID of the service to access.
 
 Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {module:api/CloudStorageApi~deleteProviderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageProviders}
      */
-    this.deleteProvider = function(accountId, userId, serviceId, callback) {
-      var postBody = null;
+    this.deleteProvider = function (accountId, userId, serviceId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -156,34 +152,34 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         throw new Error("Missing the required parameter 'serviceId' when calling deleteProvider");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'serviceId': serviceId
+      const pathParams = {
+        accountId,
+        userId,
+        serviceId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CloudStorageProviders;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -201,11 +197,11 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CloudStorageProviders} optsOrCallback.cloudStorageProviders 
+     * @param {module:model/CloudStorageProviders} optsOrCallback.cloudStorageProviders
      * @param {module:api/CloudStorageApi~deleteProvidersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageProviders}
      */
-    this.deleteProviders = function(accountId, userId, optsOrCallback, callback) {
+    this.deleteProviders = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -213,7 +209,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['cloudStorageProviders'];
+      const postBody = optsOrCallback.cloudStorageProviders;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -225,33 +221,33 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         throw new Error("Missing the required parameter 'userId' when calling deleteProviders");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CloudStorageProviders;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -268,15 +264,15 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * Retrieves the list of cloud storage providers enabled for the account and the configuration information for the user.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {String} serviceId The ID of the service to access. 
+     * @param {String} serviceId The ID of the service to access.
 
 Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.redirectUrl  The URL the user is redirected to after the cloud storage provider authenticates the user. Using this will append the redirectUrl to the authenticationUrl.  The redirectUrl is restricted to URLs in the docusign.com or docusign.net domains.  
+     * @param {String} optsOrCallback.redirectUrl  The URL the user is redirected to after the cloud storage provider authenticates the user. Using this will append the redirectUrl to the authenticationUrl.  The redirectUrl is restricted to URLs in the docusign.com or docusign.net domains.
      * @param {module:api/CloudStorageApi~getProviderCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageProviders}
      */
-    this.getProvider = function(accountId, userId, serviceId, optsOrCallback, callback) {
+    this.getProvider = function (accountId, userId, serviceId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -284,7 +280,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -301,35 +297,35 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         throw new Error("Missing the required parameter 'serviceId' when calling getProvider");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'serviceId': serviceId
+      const pathParams = {
+        accountId,
+        userId,
+        serviceId,
       };
-      var queryParams = {
-        'redirectUrl': optsOrCallback['redirectUrl']
+      const queryParams = {
+        redirectUrl: optsOrCallback.redirectUrl,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CloudStorageProviders;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -346,22 +342,22 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * Retrieves a list of all the items in all  the folders associated with the user from the specified cloud storage provider. You can limit the scope of the returned items by providing a comma separated list of folder IDs in the request.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {String} serviceId The ID of the service to access. 
+     * @param {String} serviceId The ID of the service to access.
 
 Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {String} folderId The ID of the folder being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.cloudStorageFolderPath 
-     * @param {String} optsOrCallback.cloudStorageFolderidPlain 
-     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25. 
-     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order 
-     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
-     * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
+     * @param {String} optsOrCallback.cloudStorageFolderPath
+     * @param {String} optsOrCallback.cloudStorageFolderidPlain
+     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25.
+     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order
+     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name
+     * @param {String} optsOrCallback.searchText
+     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.
      * @param {module:api/CloudStorageApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExternalFolder}
      */
-    this.list = function(accountId, userId, serviceId, folderId, optsOrCallback, callback) {
+    this.list = function (accountId, userId, serviceId, folderId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -369,7 +365,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -391,42 +387,42 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         throw new Error("Missing the required parameter 'folderId' when calling list");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'serviceId': serviceId,
-        'folderId': folderId
+      const pathParams = {
+        accountId,
+        userId,
+        serviceId,
+        folderId,
       };
-      var queryParams = {
-        'cloud_storage_folder_path': optsOrCallback['cloudStorageFolderPath'],
-        'cloud_storage_folderid_plain': optsOrCallback['cloudStorageFolderidPlain'],
-        'count': optsOrCallback['count'],
-        'order': optsOrCallback['order'],
-        'order_by': optsOrCallback['orderBy'],
-        'search_text': optsOrCallback['searchText'],
-        'start_position': optsOrCallback['startPosition']
+      const queryParams = {
+        cloud_storage_folder_path: optsOrCallback.cloudStorageFolderPath,
+        cloud_storage_folderid_plain: optsOrCallback.cloudStorageFolderidPlain,
+        count: optsOrCallback.count,
+        order: optsOrCallback.order,
+        order_by: optsOrCallback.orderBy,
+        search_text: optsOrCallback.searchText,
+        start_position: optsOrCallback.startPosition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ExternalFolder;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ExternalFolder;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders/{folderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -440,23 +436,23 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
 
     /**
      * Retrieves a list of all the items in a specified folder from the specified cloud storage provider.
-     * Retrieves a list of all the items in a specified folder from the specified cloud storage provider. 
+     * Retrieves a list of all the items in a specified folder from the specified cloud storage provider.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
-     * @param {String} serviceId The ID of the service to access. 
+     * @param {String} serviceId The ID of the service to access.
 
 Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.cloudStorageFolderPath A comma separated list of folder IDs included in the request. 
-     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25. 
-     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order 
-     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
-     * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
+     * @param {String} optsOrCallback.cloudStorageFolderPath A comma separated list of folder IDs included in the request.
+     * @param {String} optsOrCallback.count An optional value that sets how many items are included in the response.   The default setting for this is 25.
+     * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order
+     * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name
+     * @param {String} optsOrCallback.searchText
+     * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.
      * @param {module:api/CloudStorageApi~listFoldersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExternalFolder}
      */
-    this.listFolders = function(accountId, userId, serviceId, optsOrCallback, callback) {
+    this.listFolders = function (accountId, userId, serviceId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -464,7 +460,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -481,40 +477,40 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         throw new Error("Missing the required parameter 'serviceId' when calling listFolders");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'serviceId': serviceId
+      const pathParams = {
+        accountId,
+        userId,
+        serviceId,
       };
-      var queryParams = {
-        'cloud_storage_folder_path': optsOrCallback['cloudStorageFolderPath'],
-        'count': optsOrCallback['count'],
-        'order': optsOrCallback['order'],
-        'order_by': optsOrCallback['orderBy'],
-        'search_text': optsOrCallback['searchText'],
-        'start_position': optsOrCallback['startPosition']
+      const queryParams = {
+        cloud_storage_folder_path: optsOrCallback.cloudStorageFolderPath,
+        count: optsOrCallback.count,
+        order: optsOrCallback.order,
+        order_by: optsOrCallback.orderBy,
+        search_text: optsOrCallback.searchText,
+        start_position: optsOrCallback.startPosition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ExternalFolder;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ExternalFolder;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage/{serviceId}/folders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -534,11 +530,11 @@ The {serviceId} parameter can be either the service name or serviceId.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.redirectUrl  The URL the user is redirected to after the cloud storage provider authenticates the user. Using this will append the redirectUrl to the authenticationUrl.  The redirectUrl is restricted to URLs in the docusign.com or docusign.net domains.  
+     * @param {String} optsOrCallback.redirectUrl  The URL the user is redirected to after the cloud storage provider authenticates the user. Using this will append the redirectUrl to the authenticationUrl.  The redirectUrl is restricted to URLs in the docusign.com or docusign.net domains.
      * @param {module:api/CloudStorageApi~listProvidersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageProviders}
      */
-    this.listProviders = function(accountId, userId, optsOrCallback, callback) {
+    this.listProviders = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -546,7 +542,7 @@ The {serviceId} parameter can be either the service name or serviceId.
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -558,34 +554,34 @@ The {serviceId} parameter can be either the service name or serviceId.
         throw new Error("Missing the required parameter 'userId' when calling listProviders");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
-        'redirectUrl': optsOrCallback['redirectUrl']
+      const queryParams = {
+        redirectUrl: optsOrCallback.redirectUrl,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CloudStorageProviders;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CloudStorageProviders;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/cloud_storage', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

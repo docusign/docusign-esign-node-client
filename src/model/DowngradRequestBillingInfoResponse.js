@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DowngradePlanUpdateResponse'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DowngradRequestBillingInfoResponse = factory(root.Docusign.ApiClient, root.Docusign.DowngradePlanUpdateResponse);
   }
-}(this, function(ApiClient, DowngradePlanUpdateResponse) {
-  'use strict';
-
-
+}(this, (ApiClient, DowngradePlanUpdateResponse) => {
   /**
    * The DowngradRequestBillingInfoResponse model module.
    * @module model/DowngradRequestBillingInfoResponse
@@ -37,10 +34,8 @@
    * @alias module:model/DowngradRequestBillingInfoResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,33 +45,29 @@
    * @param {module:model/DowngradRequestBillingInfoResponse} obj Optional instance to populate.
    * @return {module:model/DowngradRequestBillingInfoResponse} The populated <code>DowngradRequestBillingInfoResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('downgradePlanInformation')) {
-        obj['downgradePlanInformation'] = DowngradePlanUpdateResponse.constructFromObject(data['downgradePlanInformation']);
+        obj.downgradePlanInformation = DowngradePlanUpdateResponse.constructFromObject(data.downgradePlanInformation);
       }
       if (data.hasOwnProperty('paymentMethod')) {
-        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+        obj.paymentMethod = ApiClient.convertToType(data.paymentMethod, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/DowngradePlanUpdateResponse} downgradePlanInformation
    */
-  exports.prototype['downgradePlanInformation'] = undefined;
+  exports.prototype.downgradePlanInformation = undefined;
   /**
-   * 
+   *
    * @member {String} paymentMethod
    */
-  exports.prototype['paymentMethod'] = undefined;
-
-
+  exports.prototype.paymentMethod = undefined;
 
   return exports;
 }));
-
-

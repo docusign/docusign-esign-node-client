@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SocialAccountInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UserSocialIdResult = factory(root.Docusign.ApiClient, root.Docusign.SocialAccountInformation);
   }
-}(this, function(ApiClient, SocialAccountInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, SocialAccountInformation) => {
   /**
    * The UserSocialIdResult model module.
    * @module model/UserSocialIdResult
@@ -37,10 +34,8 @@
    * @alias module:model/UserSocialIdResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/UserSocialIdResult} obj Optional instance to populate.
    * @return {module:model/UserSocialIdResult} The populated <code>UserSocialIdResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('socialAccountInformation')) {
-        obj['socialAccountInformation'] = ApiClient.convertToType(data['socialAccountInformation'], [SocialAccountInformation]);
+        obj.socialAccountInformation = ApiClient.convertToType(data.socialAccountInformation, [SocialAccountInformation]);
       }
       if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+        obj.userId = ApiClient.convertToType(data.userId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Contains properties that map a DocuSign user to a social account (Facebook, Yahoo, etc.)
    * @member {Array.<module:model/SocialAccountInformation>} socialAccountInformation
    */
-  exports.prototype['socialAccountInformation'] = undefined;
+  exports.prototype.socialAccountInformation = undefined;
   /**
-   * 
+   *
    * @member {String} userId
    */
-  exports.prototype['userId'] = undefined;
-
-
+  exports.prototype.userId = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PowerFormFormDataEnvelope'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PowerFormsFormDataResponse = factory(root.Docusign.ApiClient, root.Docusign.PowerFormFormDataEnvelope);
   }
-}(this, function(ApiClient, PowerFormFormDataEnvelope) {
-  'use strict';
-
-
+}(this, (ApiClient, PowerFormFormDataEnvelope) => {
   /**
    * The PowerFormsFormDataResponse model module.
    * @module model/PowerFormsFormDataResponse
@@ -37,10 +34,8 @@
    * @alias module:model/PowerFormsFormDataResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/PowerFormsFormDataResponse} obj Optional instance to populate.
    * @return {module:model/PowerFormsFormDataResponse} The populated <code>PowerFormsFormDataResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopes')) {
-        obj['envelopes'] = ApiClient.convertToType(data['envelopes'], [PowerFormFormDataEnvelope]);
+        obj.envelopes = ApiClient.convertToType(data.envelopes, [PowerFormFormDataEnvelope]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/PowerFormFormDataEnvelope>} envelopes
    */
-  exports.prototype['envelopes'] = undefined;
-
-
+  exports.prototype.envelopes = undefined;
 
   return exports;
 }));
-
-

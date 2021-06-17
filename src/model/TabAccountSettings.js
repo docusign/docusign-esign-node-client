@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SettingsMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TabAccountSettings = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, SettingsMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, SettingsMetadata) => {
   /**
    * The TabAccountSettings model module.
    * @module model/TabAccountSettings
@@ -37,10 +34,8 @@
    * @alias module:model/TabAccountSettings
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,333 +45,329 @@
    * @param {module:model/TabAccountSettings} obj Optional instance to populate.
    * @return {module:model/TabAccountSettings} The populated <code>TabAccountSettings</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('allowTabOrder')) {
-        obj['allowTabOrder'] = ApiClient.convertToType(data['allowTabOrder'], 'String');
+        obj.allowTabOrder = ApiClient.convertToType(data.allowTabOrder, 'String');
       }
       if (data.hasOwnProperty('allowTabOrderMetadata')) {
-        obj['allowTabOrderMetadata'] = SettingsMetadata.constructFromObject(data['allowTabOrderMetadata']);
+        obj.allowTabOrderMetadata = SettingsMetadata.constructFromObject(data.allowTabOrderMetadata);
       }
       if (data.hasOwnProperty('approveDeclineTabsEnabled')) {
-        obj['approveDeclineTabsEnabled'] = ApiClient.convertToType(data['approveDeclineTabsEnabled'], 'String');
+        obj.approveDeclineTabsEnabled = ApiClient.convertToType(data.approveDeclineTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('approveDeclineTabsMetadata')) {
-        obj['approveDeclineTabsMetadata'] = SettingsMetadata.constructFromObject(data['approveDeclineTabsMetadata']);
+        obj.approveDeclineTabsMetadata = SettingsMetadata.constructFromObject(data.approveDeclineTabsMetadata);
       }
       if (data.hasOwnProperty('calculatedFieldsEnabled')) {
-        obj['calculatedFieldsEnabled'] = ApiClient.convertToType(data['calculatedFieldsEnabled'], 'String');
+        obj.calculatedFieldsEnabled = ApiClient.convertToType(data.calculatedFieldsEnabled, 'String');
       }
       if (data.hasOwnProperty('calculatedFieldsMetadata')) {
-        obj['calculatedFieldsMetadata'] = SettingsMetadata.constructFromObject(data['calculatedFieldsMetadata']);
+        obj.calculatedFieldsMetadata = SettingsMetadata.constructFromObject(data.calculatedFieldsMetadata);
       }
       if (data.hasOwnProperty('checkboxTabsEnabled')) {
-        obj['checkboxTabsEnabled'] = ApiClient.convertToType(data['checkboxTabsEnabled'], 'String');
+        obj.checkboxTabsEnabled = ApiClient.convertToType(data.checkboxTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('checkBoxTabsMetadata')) {
-        obj['checkBoxTabsMetadata'] = SettingsMetadata.constructFromObject(data['checkBoxTabsMetadata']);
+        obj.checkBoxTabsMetadata = SettingsMetadata.constructFromObject(data.checkBoxTabsMetadata);
       }
       if (data.hasOwnProperty('dataFieldRegexEnabled')) {
-        obj['dataFieldRegexEnabled'] = ApiClient.convertToType(data['dataFieldRegexEnabled'], 'String');
+        obj.dataFieldRegexEnabled = ApiClient.convertToType(data.dataFieldRegexEnabled, 'String');
       }
       if (data.hasOwnProperty('dataFieldRegexMetadata')) {
-        obj['dataFieldRegexMetadata'] = SettingsMetadata.constructFromObject(data['dataFieldRegexMetadata']);
+        obj.dataFieldRegexMetadata = SettingsMetadata.constructFromObject(data.dataFieldRegexMetadata);
       }
       if (data.hasOwnProperty('dataFieldSizeEnabled')) {
-        obj['dataFieldSizeEnabled'] = ApiClient.convertToType(data['dataFieldSizeEnabled'], 'String');
+        obj.dataFieldSizeEnabled = ApiClient.convertToType(data.dataFieldSizeEnabled, 'String');
       }
       if (data.hasOwnProperty('dataFieldSizeMetadata')) {
-        obj['dataFieldSizeMetadata'] = SettingsMetadata.constructFromObject(data['dataFieldSizeMetadata']);
+        obj.dataFieldSizeMetadata = SettingsMetadata.constructFromObject(data.dataFieldSizeMetadata);
       }
       if (data.hasOwnProperty('drawTabsEnabled')) {
-        obj['drawTabsEnabled'] = ApiClient.convertToType(data['drawTabsEnabled'], 'String');
+        obj.drawTabsEnabled = ApiClient.convertToType(data.drawTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('drawTabsMetadata')) {
-        obj['drawTabsMetadata'] = SettingsMetadata.constructFromObject(data['drawTabsMetadata']);
+        obj.drawTabsMetadata = SettingsMetadata.constructFromObject(data.drawTabsMetadata);
       }
       if (data.hasOwnProperty('firstLastEmailTabsEnabled')) {
-        obj['firstLastEmailTabsEnabled'] = ApiClient.convertToType(data['firstLastEmailTabsEnabled'], 'String');
+        obj.firstLastEmailTabsEnabled = ApiClient.convertToType(data.firstLastEmailTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('firstLastEmailTabsMetadata')) {
-        obj['firstLastEmailTabsMetadata'] = SettingsMetadata.constructFromObject(data['firstLastEmailTabsMetadata']);
+        obj.firstLastEmailTabsMetadata = SettingsMetadata.constructFromObject(data.firstLastEmailTabsMetadata);
       }
       if (data.hasOwnProperty('listTabsEnabled')) {
-        obj['listTabsEnabled'] = ApiClient.convertToType(data['listTabsEnabled'], 'String');
+        obj.listTabsEnabled = ApiClient.convertToType(data.listTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('listTabsMetadata')) {
-        obj['listTabsMetadata'] = SettingsMetadata.constructFromObject(data['listTabsMetadata']);
+        obj.listTabsMetadata = SettingsMetadata.constructFromObject(data.listTabsMetadata);
       }
       if (data.hasOwnProperty('noteTabsEnabled')) {
-        obj['noteTabsEnabled'] = ApiClient.convertToType(data['noteTabsEnabled'], 'String');
+        obj.noteTabsEnabled = ApiClient.convertToType(data.noteTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('noteTabsMetadata')) {
-        obj['noteTabsMetadata'] = SettingsMetadata.constructFromObject(data['noteTabsMetadata']);
+        obj.noteTabsMetadata = SettingsMetadata.constructFromObject(data.noteTabsMetadata);
       }
       if (data.hasOwnProperty('prefillTabsEnabled')) {
-        obj['prefillTabsEnabled'] = ApiClient.convertToType(data['prefillTabsEnabled'], 'String');
+        obj.prefillTabsEnabled = ApiClient.convertToType(data.prefillTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('prefillTabsMetadata')) {
-        obj['prefillTabsMetadata'] = SettingsMetadata.constructFromObject(data['prefillTabsMetadata']);
+        obj.prefillTabsMetadata = SettingsMetadata.constructFromObject(data.prefillTabsMetadata);
       }
       if (data.hasOwnProperty('radioTabsEnabled')) {
-        obj['radioTabsEnabled'] = ApiClient.convertToType(data['radioTabsEnabled'], 'String');
+        obj.radioTabsEnabled = ApiClient.convertToType(data.radioTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('radioTabsMetadata')) {
-        obj['radioTabsMetadata'] = SettingsMetadata.constructFromObject(data['radioTabsMetadata']);
+        obj.radioTabsMetadata = SettingsMetadata.constructFromObject(data.radioTabsMetadata);
       }
       if (data.hasOwnProperty('savingCustomTabsEnabled')) {
-        obj['savingCustomTabsEnabled'] = ApiClient.convertToType(data['savingCustomTabsEnabled'], 'String');
+        obj.savingCustomTabsEnabled = ApiClient.convertToType(data.savingCustomTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('savingCustomTabsMetadata')) {
-        obj['savingCustomTabsMetadata'] = SettingsMetadata.constructFromObject(data['savingCustomTabsMetadata']);
+        obj.savingCustomTabsMetadata = SettingsMetadata.constructFromObject(data.savingCustomTabsMetadata);
       }
       if (data.hasOwnProperty('senderToChangeTabAssignmentsEnabled')) {
-        obj['senderToChangeTabAssignmentsEnabled'] = ApiClient.convertToType(data['senderToChangeTabAssignmentsEnabled'], 'String');
+        obj.senderToChangeTabAssignmentsEnabled = ApiClient.convertToType(data.senderToChangeTabAssignmentsEnabled, 'String');
       }
       if (data.hasOwnProperty('senderToChangeTabAssignmentsMetadata')) {
-        obj['senderToChangeTabAssignmentsMetadata'] = SettingsMetadata.constructFromObject(data['senderToChangeTabAssignmentsMetadata']);
+        obj.senderToChangeTabAssignmentsMetadata = SettingsMetadata.constructFromObject(data.senderToChangeTabAssignmentsMetadata);
       }
       if (data.hasOwnProperty('sharedCustomTabsEnabled')) {
-        obj['sharedCustomTabsEnabled'] = ApiClient.convertToType(data['sharedCustomTabsEnabled'], 'String');
+        obj.sharedCustomTabsEnabled = ApiClient.convertToType(data.sharedCustomTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('sharedCustomTabsMetadata')) {
-        obj['sharedCustomTabsMetadata'] = SettingsMetadata.constructFromObject(data['sharedCustomTabsMetadata']);
+        obj.sharedCustomTabsMetadata = SettingsMetadata.constructFromObject(data.sharedCustomTabsMetadata);
       }
       if (data.hasOwnProperty('tabDataLabelEnabled')) {
-        obj['tabDataLabelEnabled'] = ApiClient.convertToType(data['tabDataLabelEnabled'], 'String');
+        obj.tabDataLabelEnabled = ApiClient.convertToType(data.tabDataLabelEnabled, 'String');
       }
       if (data.hasOwnProperty('tabDataLabelMetadata')) {
-        obj['tabDataLabelMetadata'] = SettingsMetadata.constructFromObject(data['tabDataLabelMetadata']);
+        obj.tabDataLabelMetadata = SettingsMetadata.constructFromObject(data.tabDataLabelMetadata);
       }
       if (data.hasOwnProperty('tabLocationEnabled')) {
-        obj['tabLocationEnabled'] = ApiClient.convertToType(data['tabLocationEnabled'], 'String');
+        obj.tabLocationEnabled = ApiClient.convertToType(data.tabLocationEnabled, 'String');
       }
       if (data.hasOwnProperty('tabLocationMetadata')) {
-        obj['tabLocationMetadata'] = SettingsMetadata.constructFromObject(data['tabLocationMetadata']);
+        obj.tabLocationMetadata = SettingsMetadata.constructFromObject(data.tabLocationMetadata);
       }
       if (data.hasOwnProperty('tabLockingEnabled')) {
-        obj['tabLockingEnabled'] = ApiClient.convertToType(data['tabLockingEnabled'], 'String');
+        obj.tabLockingEnabled = ApiClient.convertToType(data.tabLockingEnabled, 'String');
       }
       if (data.hasOwnProperty('tabLockingMetadata')) {
-        obj['tabLockingMetadata'] = SettingsMetadata.constructFromObject(data['tabLockingMetadata']);
+        obj.tabLockingMetadata = SettingsMetadata.constructFromObject(data.tabLockingMetadata);
       }
       if (data.hasOwnProperty('tabScaleEnabled')) {
-        obj['tabScaleEnabled'] = ApiClient.convertToType(data['tabScaleEnabled'], 'String');
+        obj.tabScaleEnabled = ApiClient.convertToType(data.tabScaleEnabled, 'String');
       }
       if (data.hasOwnProperty('tabScaleMetadata')) {
-        obj['tabScaleMetadata'] = SettingsMetadata.constructFromObject(data['tabScaleMetadata']);
+        obj.tabScaleMetadata = SettingsMetadata.constructFromObject(data.tabScaleMetadata);
       }
       if (data.hasOwnProperty('tabTextFormattingEnabled')) {
-        obj['tabTextFormattingEnabled'] = ApiClient.convertToType(data['tabTextFormattingEnabled'], 'String');
+        obj.tabTextFormattingEnabled = ApiClient.convertToType(data.tabTextFormattingEnabled, 'String');
       }
       if (data.hasOwnProperty('tabTextFormattingMetadata')) {
-        obj['tabTextFormattingMetadata'] = SettingsMetadata.constructFromObject(data['tabTextFormattingMetadata']);
+        obj.tabTextFormattingMetadata = SettingsMetadata.constructFromObject(data.tabTextFormattingMetadata);
       }
       if (data.hasOwnProperty('textTabsEnabled')) {
-        obj['textTabsEnabled'] = ApiClient.convertToType(data['textTabsEnabled'], 'String');
+        obj.textTabsEnabled = ApiClient.convertToType(data.textTabsEnabled, 'String');
       }
       if (data.hasOwnProperty('textTabsMetadata')) {
-        obj['textTabsMetadata'] = SettingsMetadata.constructFromObject(data['textTabsMetadata']);
+        obj.textTabsMetadata = SettingsMetadata.constructFromObject(data.textTabsMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} allowTabOrder
    */
-  exports.prototype['allowTabOrder'] = undefined;
+  exports.prototype.allowTabOrder = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowTabOrderMetadata
    */
-  exports.prototype['allowTabOrderMetadata'] = undefined;
+  exports.prototype.allowTabOrderMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} approveDeclineTabsEnabled
    */
-  exports.prototype['approveDeclineTabsEnabled'] = undefined;
+  exports.prototype.approveDeclineTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} approveDeclineTabsMetadata
    */
-  exports.prototype['approveDeclineTabsMetadata'] = undefined;
+  exports.prototype.approveDeclineTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} calculatedFieldsEnabled
    */
-  exports.prototype['calculatedFieldsEnabled'] = undefined;
+  exports.prototype.calculatedFieldsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} calculatedFieldsMetadata
    */
-  exports.prototype['calculatedFieldsMetadata'] = undefined;
+  exports.prototype.calculatedFieldsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} checkboxTabsEnabled
    */
-  exports.prototype['checkboxTabsEnabled'] = undefined;
+  exports.prototype.checkboxTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} checkBoxTabsMetadata
    */
-  exports.prototype['checkBoxTabsMetadata'] = undefined;
+  exports.prototype.checkBoxTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} dataFieldRegexEnabled
    */
-  exports.prototype['dataFieldRegexEnabled'] = undefined;
+  exports.prototype.dataFieldRegexEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} dataFieldRegexMetadata
    */
-  exports.prototype['dataFieldRegexMetadata'] = undefined;
+  exports.prototype.dataFieldRegexMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} dataFieldSizeEnabled
    */
-  exports.prototype['dataFieldSizeEnabled'] = undefined;
+  exports.prototype.dataFieldSizeEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} dataFieldSizeMetadata
    */
-  exports.prototype['dataFieldSizeMetadata'] = undefined;
+  exports.prototype.dataFieldSizeMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} drawTabsEnabled
    */
-  exports.prototype['drawTabsEnabled'] = undefined;
+  exports.prototype.drawTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} drawTabsMetadata
    */
-  exports.prototype['drawTabsMetadata'] = undefined;
+  exports.prototype.drawTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} firstLastEmailTabsEnabled
    */
-  exports.prototype['firstLastEmailTabsEnabled'] = undefined;
+  exports.prototype.firstLastEmailTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} firstLastEmailTabsMetadata
    */
-  exports.prototype['firstLastEmailTabsMetadata'] = undefined;
+  exports.prototype.firstLastEmailTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} listTabsEnabled
    */
-  exports.prototype['listTabsEnabled'] = undefined;
+  exports.prototype.listTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} listTabsMetadata
    */
-  exports.prototype['listTabsMetadata'] = undefined;
+  exports.prototype.listTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} noteTabsEnabled
    */
-  exports.prototype['noteTabsEnabled'] = undefined;
+  exports.prototype.noteTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} noteTabsMetadata
    */
-  exports.prototype['noteTabsMetadata'] = undefined;
+  exports.prototype.noteTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} prefillTabsEnabled
    */
-  exports.prototype['prefillTabsEnabled'] = undefined;
+  exports.prototype.prefillTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} prefillTabsMetadata
    */
-  exports.prototype['prefillTabsMetadata'] = undefined;
+  exports.prototype.prefillTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} radioTabsEnabled
    */
-  exports.prototype['radioTabsEnabled'] = undefined;
+  exports.prototype.radioTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} radioTabsMetadata
    */
-  exports.prototype['radioTabsMetadata'] = undefined;
+  exports.prototype.radioTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} savingCustomTabsEnabled
    */
-  exports.prototype['savingCustomTabsEnabled'] = undefined;
+  exports.prototype.savingCustomTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} savingCustomTabsMetadata
    */
-  exports.prototype['savingCustomTabsMetadata'] = undefined;
+  exports.prototype.savingCustomTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} senderToChangeTabAssignmentsEnabled
    */
-  exports.prototype['senderToChangeTabAssignmentsEnabled'] = undefined;
+  exports.prototype.senderToChangeTabAssignmentsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} senderToChangeTabAssignmentsMetadata
    */
-  exports.prototype['senderToChangeTabAssignmentsMetadata'] = undefined;
+  exports.prototype.senderToChangeTabAssignmentsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} sharedCustomTabsEnabled
    */
-  exports.prototype['sharedCustomTabsEnabled'] = undefined;
+  exports.prototype.sharedCustomTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} sharedCustomTabsMetadata
    */
-  exports.prototype['sharedCustomTabsMetadata'] = undefined;
+  exports.prototype.sharedCustomTabsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} tabDataLabelEnabled
    */
-  exports.prototype['tabDataLabelEnabled'] = undefined;
+  exports.prototype.tabDataLabelEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} tabDataLabelMetadata
    */
-  exports.prototype['tabDataLabelMetadata'] = undefined;
+  exports.prototype.tabDataLabelMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} tabLocationEnabled
    */
-  exports.prototype['tabLocationEnabled'] = undefined;
+  exports.prototype.tabLocationEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} tabLocationMetadata
    */
-  exports.prototype['tabLocationMetadata'] = undefined;
+  exports.prototype.tabLocationMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} tabLockingEnabled
    */
-  exports.prototype['tabLockingEnabled'] = undefined;
+  exports.prototype.tabLockingEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} tabLockingMetadata
    */
-  exports.prototype['tabLockingMetadata'] = undefined;
+  exports.prototype.tabLockingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} tabScaleEnabled
    */
-  exports.prototype['tabScaleEnabled'] = undefined;
+  exports.prototype.tabScaleEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} tabScaleMetadata
    */
-  exports.prototype['tabScaleMetadata'] = undefined;
+  exports.prototype.tabScaleMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} tabTextFormattingEnabled
    */
-  exports.prototype['tabTextFormattingEnabled'] = undefined;
+  exports.prototype.tabTextFormattingEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} tabTextFormattingMetadata
    */
-  exports.prototype['tabTextFormattingMetadata'] = undefined;
+  exports.prototype.tabTextFormattingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} textTabsEnabled
    */
-  exports.prototype['textTabsEnabled'] = undefined;
+  exports.prototype.textTabsEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} textTabsMetadata
    */
-  exports.prototype['textTabsMetadata'] = undefined;
-
-
+  exports.prototype.textTabsMetadata = undefined;
 
   return exports;
 }));
-
-

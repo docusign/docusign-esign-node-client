@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentHtmlDefinition'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentHtmlDefinitionOriginal = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinition);
   }
-}(this, function(ApiClient, DocumentHtmlDefinition) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentHtmlDefinition) => {
   /**
    * The DocumentHtmlDefinitionOriginal model module.
    * @module model/DocumentHtmlDefinitionOriginal
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentHtmlDefinitionOriginal
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,41 +45,37 @@
    * @param {module:model/DocumentHtmlDefinitionOriginal} obj Optional instance to populate.
    * @return {module:model/DocumentHtmlDefinitionOriginal} The populated <code>DocumentHtmlDefinitionOriginal</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('documentIdGuid')) {
-        obj['documentIdGuid'] = ApiClient.convertToType(data['documentIdGuid'], 'String');
+        obj.documentIdGuid = ApiClient.convertToType(data.documentIdGuid, 'String');
       }
       if (data.hasOwnProperty('htmlDefinition')) {
-        obj['htmlDefinition'] = DocumentHtmlDefinition.constructFromObject(data['htmlDefinition']);
+        obj.htmlDefinition = DocumentHtmlDefinition.constructFromObject(data.htmlDefinition);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} documentIdGuid
    */
-  exports.prototype['documentIdGuid'] = undefined;
+  exports.prototype.documentIdGuid = undefined;
   /**
    * @member {module:model/DocumentHtmlDefinition} htmlDefinition
    */
-  exports.prototype['htmlDefinition'] = undefined;
-
-
+  exports.prototype.htmlDefinition = undefined;
 
   return exports;
 }));
-
-

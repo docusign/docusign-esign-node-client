@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/CreditCardTypes'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CurrencyPlanPrice = factory(root.Docusign.ApiClient, root.Docusign.CreditCardTypes);
   }
-}(this, function(ApiClient, CreditCardTypes) {
-  'use strict';
-
-
+}(this, (ApiClient, CreditCardTypes) => {
   /**
    * The CurrencyPlanPrice model module.
    * @module model/CurrencyPlanPrice
@@ -37,10 +34,8 @@
    * @alias module:model/CurrencyPlanPrice
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,65 +45,61 @@
    * @param {module:model/CurrencyPlanPrice} obj Optional instance to populate.
    * @return {module:model/CurrencyPlanPrice} The populated <code>CurrencyPlanPrice</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('currencySymbol')) {
-        obj['currencySymbol'] = ApiClient.convertToType(data['currencySymbol'], 'String');
+        obj.currencySymbol = ApiClient.convertToType(data.currencySymbol, 'String');
       }
       if (data.hasOwnProperty('perSeatPrice')) {
-        obj['perSeatPrice'] = ApiClient.convertToType(data['perSeatPrice'], 'String');
+        obj.perSeatPrice = ApiClient.convertToType(data.perSeatPrice, 'String');
       }
       if (data.hasOwnProperty('supportedCardTypes')) {
-        obj['supportedCardTypes'] = CreditCardTypes.constructFromObject(data['supportedCardTypes']);
+        obj.supportedCardTypes = CreditCardTypes.constructFromObject(data.supportedCardTypes);
       }
       if (data.hasOwnProperty('supportIncidentFee')) {
-        obj['supportIncidentFee'] = ApiClient.convertToType(data['supportIncidentFee'], 'String');
+        obj.supportIncidentFee = ApiClient.convertToType(data.supportIncidentFee, 'String');
       }
       if (data.hasOwnProperty('supportPlanFee')) {
-        obj['supportPlanFee'] = ApiClient.convertToType(data['supportPlanFee'], 'String');
+        obj.supportPlanFee = ApiClient.convertToType(data.supportPlanFee, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the ISO currency code for the account.
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * Specifies the currency symbol for the account.
    * @member {String} currencySymbol
    */
-  exports.prototype['currencySymbol'] = undefined;
+  exports.prototype.currencySymbol = undefined;
   /**
-   * 
+   *
    * @member {String} perSeatPrice
    */
-  exports.prototype['perSeatPrice'] = undefined;
+  exports.prototype.perSeatPrice = undefined;
   /**
    * @member {module:model/CreditCardTypes} supportedCardTypes
    */
-  exports.prototype['supportedCardTypes'] = undefined;
+  exports.prototype.supportedCardTypes = undefined;
   /**
    * The support incident fee charged for each support incident.
    * @member {String} supportIncidentFee
    */
-  exports.prototype['supportIncidentFee'] = undefined;
+  exports.prototype.supportIncidentFee = undefined;
   /**
    * The support plan fee charged for this plan.
    * @member {String} supportPlanFee
    */
-  exports.prototype['supportPlanFee'] = undefined;
-
-
+  exports.prototype.supportPlanFee = undefined;
 
   return exports;
 }));
-
-

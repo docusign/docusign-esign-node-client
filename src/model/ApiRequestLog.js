@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ApiRequestLog = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ApiRequestLog model module.
    * @module model/ApiRequestLog
@@ -38,10 +35,8 @@
    * @alias module:model/ApiRequestLog
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,50 +46,46 @@
    * @param {module:model/ApiRequestLog} obj Optional instance to populate.
    * @return {module:model/ApiRequestLog} The populated <code>ApiRequestLog</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('createdDateTime')) {
-        obj['createdDateTime'] = ApiClient.convertToType(data['createdDateTime'], 'String');
+        obj.createdDateTime = ApiClient.convertToType(data.createdDateTime, 'String');
       }
       if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+        obj.description = ApiClient.convertToType(data.description, 'String');
       }
       if (data.hasOwnProperty('requestLogId')) {
-        obj['requestLogId'] = ApiClient.convertToType(data['requestLogId'], 'String');
+        obj.requestLogId = ApiClient.convertToType(data.requestLogId, 'String');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Indicates the date and time the item was created.
    * @member {String} createdDateTime
    */
-  exports.prototype['createdDateTime'] = undefined;
+  exports.prototype.createdDateTime = undefined;
   /**
-   * 
+   *
    * @member {String} description
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype.description = undefined;
   /**
-   * 
+   *
    * @member {String} requestLogId
    */
-  exports.prototype['requestLogId'] = undefined;
+  exports.prototype.requestLogId = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
-
-
+  exports.prototype.status = undefined;
 
   return exports;
 }));
-
-

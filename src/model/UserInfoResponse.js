@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Seal', 'model/Sender', 'model/User'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UserInfoResponse = factory(root.Docusign.ApiClient, root.Docusign.Seal, root.Docusign.Sender, root.Docusign.User);
   }
-}(this, function(ApiClient, Seal, Sender, User) {
-  'use strict';
-
-
+}(this, (ApiClient, Seal, Sender, User) => {
   /**
    * The UserInfoResponse model module.
    * @module model/UserInfoResponse
@@ -37,10 +34,8 @@
    * @alias module:model/UserInfoResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,55 +45,51 @@
    * @param {module:model/UserInfoResponse} obj Optional instance to populate.
    * @return {module:model/UserInfoResponse} The populated <code>UserInfoResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('language')) {
-        obj['language'] = ApiClient.convertToType(data['language'], 'String');
+        obj.language = ApiClient.convertToType(data.language, 'String');
       }
       if (data.hasOwnProperty('seal')) {
-        obj['seal'] = Seal.constructFromObject(data['seal']);
+        obj.seal = Seal.constructFromObject(data.seal);
       }
       if (data.hasOwnProperty('sender')) {
-        obj['sender'] = Sender.constructFromObject(data['sender']);
+        obj.sender = Sender.constructFromObject(data.sender);
       }
       if (data.hasOwnProperty('user')) {
-        obj['user'] = User.constructFromObject(data['user']);
+        obj.user = User.constructFromObject(data.user);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
-   * 
+   *
    * @member {String} language
    */
-  exports.prototype['language'] = undefined;
+  exports.prototype.language = undefined;
   /**
    * @member {module:model/Seal} seal
    */
-  exports.prototype['seal'] = undefined;
+  exports.prototype.seal = undefined;
   /**
    * @member {module:model/Sender} sender
    */
-  exports.prototype['sender'] = undefined;
+  exports.prototype.sender = undefined;
   /**
    * @member {module:model/User} user
    */
-  exports.prototype['user'] = undefined;
-
-
+  exports.prototype.user = undefined;
 
   return exports;
 }));
-
-

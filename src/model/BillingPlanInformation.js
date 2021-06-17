@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountAddress', 'model/AppStoreReceipt', 'model/CreditCardInformation', 'model/DirectDebitProcessorInformation', 'model/PaymentProcessorInformation', 'model/PlanInformation', 'model/ReferralInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPlanInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountAddress, root.Docusign.AppStoreReceipt, root.Docusign.CreditCardInformation, root.Docusign.DirectDebitProcessorInformation, root.Docusign.PaymentProcessorInformation, root.Docusign.PlanInformation, root.Docusign.ReferralInformation);
   }
-}(this, function(ApiClient, AccountAddress, AppStoreReceipt, CreditCardInformation, DirectDebitProcessorInformation, PaymentProcessorInformation, PlanInformation, ReferralInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountAddress, AppStoreReceipt, CreditCardInformation, DirectDebitProcessorInformation, PaymentProcessorInformation, PlanInformation, ReferralInformation) => {
   /**
    * The BillingPlanInformation model module.
    * @module model/BillingPlanInformation
@@ -37,10 +34,8 @@
    * @alias module:model/BillingPlanInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,155 +45,151 @@
    * @param {module:model/BillingPlanInformation} obj Optional instance to populate.
    * @return {module:model/BillingPlanInformation} The populated <code>BillingPlanInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('appStoreReceipt')) {
-        obj['appStoreReceipt'] = AppStoreReceipt.constructFromObject(data['appStoreReceipt']);
+        obj.appStoreReceipt = AppStoreReceipt.constructFromObject(data.appStoreReceipt);
       }
       if (data.hasOwnProperty('billingAddress')) {
-        obj['billingAddress'] = AccountAddress.constructFromObject(data['billingAddress']);
+        obj.billingAddress = AccountAddress.constructFromObject(data.billingAddress);
       }
       if (data.hasOwnProperty('creditCardInformation')) {
-        obj['creditCardInformation'] = CreditCardInformation.constructFromObject(data['creditCardInformation']);
+        obj.creditCardInformation = CreditCardInformation.constructFromObject(data.creditCardInformation);
       }
       if (data.hasOwnProperty('directDebitProcessorInformation')) {
-        obj['directDebitProcessorInformation'] = DirectDebitProcessorInformation.constructFromObject(data['directDebitProcessorInformation']);
+        obj.directDebitProcessorInformation = DirectDebitProcessorInformation.constructFromObject(data.directDebitProcessorInformation);
       }
       if (data.hasOwnProperty('downgradeReason')) {
-        obj['downgradeReason'] = ApiClient.convertToType(data['downgradeReason'], 'String');
+        obj.downgradeReason = ApiClient.convertToType(data.downgradeReason, 'String');
       }
       if (data.hasOwnProperty('enableSupport')) {
-        obj['enableSupport'] = ApiClient.convertToType(data['enableSupport'], 'String');
+        obj.enableSupport = ApiClient.convertToType(data.enableSupport, 'String');
       }
       if (data.hasOwnProperty('includedSeats')) {
-        obj['includedSeats'] = ApiClient.convertToType(data['includedSeats'], 'String');
+        obj.includedSeats = ApiClient.convertToType(data.includedSeats, 'String');
       }
       if (data.hasOwnProperty('incrementalSeats')) {
-        obj['incrementalSeats'] = ApiClient.convertToType(data['incrementalSeats'], 'String');
+        obj.incrementalSeats = ApiClient.convertToType(data.incrementalSeats, 'String');
       }
       if (data.hasOwnProperty('paymentMethod')) {
-        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+        obj.paymentMethod = ApiClient.convertToType(data.paymentMethod, 'String');
       }
       if (data.hasOwnProperty('paymentProcessorInformation')) {
-        obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
+        obj.paymentProcessorInformation = PaymentProcessorInformation.constructFromObject(data.paymentProcessorInformation);
       }
       if (data.hasOwnProperty('planInformation')) {
-        obj['planInformation'] = PlanInformation.constructFromObject(data['planInformation']);
+        obj.planInformation = PlanInformation.constructFromObject(data.planInformation);
       }
       if (data.hasOwnProperty('referralInformation')) {
-        obj['referralInformation'] = ReferralInformation.constructFromObject(data['referralInformation']);
+        obj.referralInformation = ReferralInformation.constructFromObject(data.referralInformation);
       }
       if (data.hasOwnProperty('renewalStatus')) {
-        obj['renewalStatus'] = ApiClient.convertToType(data['renewalStatus'], 'String');
+        obj.renewalStatus = ApiClient.convertToType(data.renewalStatus, 'String');
       }
       if (data.hasOwnProperty('saleDiscountAmount')) {
-        obj['saleDiscountAmount'] = ApiClient.convertToType(data['saleDiscountAmount'], 'String');
+        obj.saleDiscountAmount = ApiClient.convertToType(data.saleDiscountAmount, 'String');
       }
       if (data.hasOwnProperty('saleDiscountFixedAmount')) {
-        obj['saleDiscountFixedAmount'] = ApiClient.convertToType(data['saleDiscountFixedAmount'], 'String');
+        obj.saleDiscountFixedAmount = ApiClient.convertToType(data.saleDiscountFixedAmount, 'String');
       }
       if (data.hasOwnProperty('saleDiscountPercent')) {
-        obj['saleDiscountPercent'] = ApiClient.convertToType(data['saleDiscountPercent'], 'String');
+        obj.saleDiscountPercent = ApiClient.convertToType(data.saleDiscountPercent, 'String');
       }
       if (data.hasOwnProperty('saleDiscountPeriods')) {
-        obj['saleDiscountPeriods'] = ApiClient.convertToType(data['saleDiscountPeriods'], 'String');
+        obj.saleDiscountPeriods = ApiClient.convertToType(data.saleDiscountPeriods, 'String');
       }
       if (data.hasOwnProperty('saleDiscountSeatPriceOverride')) {
-        obj['saleDiscountSeatPriceOverride'] = ApiClient.convertToType(data['saleDiscountSeatPriceOverride'], 'String');
+        obj.saleDiscountSeatPriceOverride = ApiClient.convertToType(data.saleDiscountSeatPriceOverride, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/AppStoreReceipt} appStoreReceipt
    */
-  exports.prototype['appStoreReceipt'] = undefined;
+  exports.prototype.appStoreReceipt = undefined;
   /**
    * @member {module:model/AccountAddress} billingAddress
    */
-  exports.prototype['billingAddress'] = undefined;
+  exports.prototype.billingAddress = undefined;
   /**
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
-  exports.prototype['creditCardInformation'] = undefined;
+  exports.prototype.creditCardInformation = undefined;
   /**
    * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
    */
-  exports.prototype['directDebitProcessorInformation'] = undefined;
+  exports.prototype.directDebitProcessorInformation = undefined;
   /**
-   * 
+   *
    * @member {String} downgradeReason
    */
-  exports.prototype['downgradeReason'] = undefined;
+  exports.prototype.downgradeReason = undefined;
   /**
-   * 
+   *
    * @member {String} enableSupport
    */
-  exports.prototype['enableSupport'] = undefined;
+  exports.prototype.enableSupport = undefined;
   /**
    * The number of seats (users) included.
    * @member {String} includedSeats
    */
-  exports.prototype['includedSeats'] = undefined;
+  exports.prototype.includedSeats = undefined;
   /**
    * Reserved: TBD
    * @member {String} incrementalSeats
    */
-  exports.prototype['incrementalSeats'] = undefined;
+  exports.prototype.incrementalSeats = undefined;
   /**
-   * 
+   *
    * @member {String} paymentMethod
    */
-  exports.prototype['paymentMethod'] = undefined;
+  exports.prototype.paymentMethod = undefined;
   /**
    * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
    */
-  exports.prototype['paymentProcessorInformation'] = undefined;
+  exports.prototype.paymentProcessorInformation = undefined;
   /**
    * @member {module:model/PlanInformation} planInformation
    */
-  exports.prototype['planInformation'] = undefined;
+  exports.prototype.planInformation = undefined;
   /**
    * @member {module:model/ReferralInformation} referralInformation
    */
-  exports.prototype['referralInformation'] = undefined;
+  exports.prototype.referralInformation = undefined;
   /**
-   * 
+   *
    * @member {String} renewalStatus
    */
-  exports.prototype['renewalStatus'] = undefined;
+  exports.prototype.renewalStatus = undefined;
   /**
-   * 
+   *
    * @member {String} saleDiscountAmount
    */
-  exports.prototype['saleDiscountAmount'] = undefined;
+  exports.prototype.saleDiscountAmount = undefined;
   /**
-   * 
+   *
    * @member {String} saleDiscountFixedAmount
    */
-  exports.prototype['saleDiscountFixedAmount'] = undefined;
+  exports.prototype.saleDiscountFixedAmount = undefined;
   /**
-   * 
+   *
    * @member {String} saleDiscountPercent
    */
-  exports.prototype['saleDiscountPercent'] = undefined;
+  exports.prototype.saleDiscountPercent = undefined;
   /**
-   * 
+   *
    * @member {String} saleDiscountPeriods
    */
-  exports.prototype['saleDiscountPeriods'] = undefined;
+  exports.prototype.saleDiscountPeriods = undefined;
   /**
-   * 
+   *
    * @member {String} saleDiscountSeatPriceOverride
    */
-  exports.prototype['saleDiscountSeatPriceOverride'] = undefined;
-
-
+  exports.prototype.saleDiscountSeatPriceOverride = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientEmail = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientEmail model module.
    * @module model/RecipientEmail
@@ -38,10 +35,8 @@
    * @alias module:model/RecipientEmail
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,82 +46,78 @@
    * @param {module:model/RecipientEmail} obj Optional instance to populate.
    * @return {module:model/RecipientEmail} The populated <code>RecipientEmail</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
+        obj.accountId = ApiClient.convertToType(data.accountId, 'String');
       }
       if (data.hasOwnProperty('accountName')) {
-        obj['accountName'] = ApiClient.convertToType(data['accountName'], 'String');
+        obj.accountName = ApiClient.convertToType(data.accountName, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+        obj.recipientId = ApiClient.convertToType(data.recipientId, 'String');
       }
       if (data.hasOwnProperty('supported')) {
-        obj['supported'] = ApiClient.convertToType(data['supported'], 'Boolean');
+        obj.supported = ApiClient.convertToType(data.supported, 'Boolean');
       }
       if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+        obj.userId = ApiClient.convertToType(data.userId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The account ID associated with the envelope.
    * @member {String} accountId
    */
-  exports.prototype['accountId'] = undefined;
+  exports.prototype.accountId = undefined;
   /**
-   * 
+   *
    * @member {String} accountName
    */
-  exports.prototype['accountName'] = undefined;
+  exports.prototype.accountName = undefined;
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
    * @member {String} recipientId
    */
-  exports.prototype['recipientId'] = undefined;
+  exports.prototype.recipientId = undefined;
   /**
-   * 
+   *
    * @member {Boolean} supported
    */
-  exports.prototype['supported'] = undefined;
+  exports.prototype.supported = undefined;
   /**
-   * 
+   *
    * @member {String} userId
    */
-  exports.prototype['userId'] = undefined;
-
-
+  exports.prototype.userId = undefined;
 
   return exports;
 }));
-
-

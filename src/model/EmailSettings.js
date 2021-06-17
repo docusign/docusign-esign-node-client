@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BccEmailAddress'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EmailSettings = factory(root.Docusign.ApiClient, root.Docusign.BccEmailAddress);
   }
-}(this, function(ApiClient, BccEmailAddress) {
-  'use strict';
-
-
+}(this, (ApiClient, BccEmailAddress) => {
   /**
    * The EmailSettings model module.
    * @module model/EmailSettings
@@ -38,10 +35,8 @@
    * @alias module:model/EmailSettings
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/EmailSettings} obj Optional instance to populate.
    * @return {module:model/EmailSettings} The populated <code>EmailSettings</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bccEmailAddresses')) {
-        obj['bccEmailAddresses'] = ApiClient.convertToType(data['bccEmailAddresses'], [BccEmailAddress]);
+        obj.bccEmailAddresses = ApiClient.convertToType(data.bccEmailAddresses, [BccEmailAddress]);
       }
       if (data.hasOwnProperty('replyEmailAddressOverride')) {
-        obj['replyEmailAddressOverride'] = ApiClient.convertToType(data['replyEmailAddressOverride'], 'String');
+        obj.replyEmailAddressOverride = ApiClient.convertToType(data.replyEmailAddressOverride, 'String');
       }
       if (data.hasOwnProperty('replyEmailNameOverride')) {
-        obj['replyEmailNameOverride'] = ApiClient.convertToType(data['replyEmailNameOverride'], 'String');
+        obj.replyEmailNameOverride = ApiClient.convertToType(data.replyEmailNameOverride, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A list of email addresses that receive a copy of all email communications for an envelope. You can use this for archiving purposes.
    * @member {Array.<module:model/BccEmailAddress>} bccEmailAddresses
    */
-  exports.prototype['bccEmailAddresses'] = undefined;
+  exports.prototype.bccEmailAddresses = undefined;
   /**
-   * 
+   *
    * @member {String} replyEmailAddressOverride
    */
-  exports.prototype['replyEmailAddressOverride'] = undefined;
+  exports.prototype.replyEmailAddressOverride = undefined;
   /**
-   * 
+   *
    * @member {String} replyEmailNameOverride
    */
-  exports.prototype['replyEmailNameOverride'] = undefined;
-
-
+  exports.prototype.replyEmailNameOverride = undefined;
 
   return exports;
 }));
-
-

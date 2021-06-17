@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentHtmlDisplaySettings'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentHtmlDisplayAnchor = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDisplaySettings);
   }
-}(this, function(ApiClient, DocumentHtmlDisplaySettings) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentHtmlDisplaySettings) => {
   /**
    * The DocumentHtmlDisplayAnchor model module.
    * @module model/DocumentHtmlDisplayAnchor
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentHtmlDisplayAnchor
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,65 +45,61 @@
    * @param {module:model/DocumentHtmlDisplayAnchor} obj Optional instance to populate.
    * @return {module:model/DocumentHtmlDisplayAnchor} The populated <code>DocumentHtmlDisplayAnchor</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('caseSensitive')) {
-        obj['caseSensitive'] = ApiClient.convertToType(data['caseSensitive'], 'Boolean');
+        obj.caseSensitive = ApiClient.convertToType(data.caseSensitive, 'Boolean');
       }
       if (data.hasOwnProperty('displaySettings')) {
-        obj['displaySettings'] = DocumentHtmlDisplaySettings.constructFromObject(data['displaySettings']);
+        obj.displaySettings = DocumentHtmlDisplaySettings.constructFromObject(data.displaySettings);
       }
       if (data.hasOwnProperty('endAnchor')) {
-        obj['endAnchor'] = ApiClient.convertToType(data['endAnchor'], 'String');
+        obj.endAnchor = ApiClient.convertToType(data.endAnchor, 'String');
       }
       if (data.hasOwnProperty('removeEndAnchor')) {
-        obj['removeEndAnchor'] = ApiClient.convertToType(data['removeEndAnchor'], 'Boolean');
+        obj.removeEndAnchor = ApiClient.convertToType(data.removeEndAnchor, 'Boolean');
       }
       if (data.hasOwnProperty('removeStartAnchor')) {
-        obj['removeStartAnchor'] = ApiClient.convertToType(data['removeStartAnchor'], 'Boolean');
+        obj.removeStartAnchor = ApiClient.convertToType(data.removeStartAnchor, 'Boolean');
       }
       if (data.hasOwnProperty('startAnchor')) {
-        obj['startAnchor'] = ApiClient.convertToType(data['startAnchor'], 'String');
+        obj.startAnchor = ApiClient.convertToType(data.startAnchor, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Boolean} caseSensitive
    */
-  exports.prototype['caseSensitive'] = undefined;
+  exports.prototype.caseSensitive = undefined;
   /**
    * @member {module:model/DocumentHtmlDisplaySettings} displaySettings
    */
-  exports.prototype['displaySettings'] = undefined;
+  exports.prototype.displaySettings = undefined;
   /**
-   * 
+   *
    * @member {String} endAnchor
    */
-  exports.prototype['endAnchor'] = undefined;
+  exports.prototype.endAnchor = undefined;
   /**
-   * 
+   *
    * @member {Boolean} removeEndAnchor
    */
-  exports.prototype['removeEndAnchor'] = undefined;
+  exports.prototype.removeEndAnchor = undefined;
   /**
-   * 
+   *
    * @member {Boolean} removeStartAnchor
    */
-  exports.prototype['removeStartAnchor'] = undefined;
+  exports.prototype.removeStartAnchor = undefined;
   /**
-   * 
+   *
    * @member {String} startAnchor
    */
-  exports.prototype['startAnchor'] = undefined;
-
-
+  exports.prototype.startAnchor = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountPasswordStrengthTypeOption = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountPasswordStrengthTypeOption model module.
    * @module model/AccountPasswordStrengthTypeOption
@@ -37,10 +34,8 @@
    * @alias module:model/AccountPasswordStrengthTypeOption
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,74 +45,70 @@
    * @param {module:model/AccountPasswordStrengthTypeOption} obj Optional instance to populate.
    * @return {module:model/AccountPasswordStrengthTypeOption} The populated <code>AccountPasswordStrengthTypeOption</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('minimumLength')) {
-        obj['minimumLength'] = ApiClient.convertToType(data['minimumLength'], 'String');
+        obj.minimumLength = ApiClient.convertToType(data.minimumLength, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('passwordIncludeDigit')) {
-        obj['passwordIncludeDigit'] = ApiClient.convertToType(data['passwordIncludeDigit'], 'String');
+        obj.passwordIncludeDigit = ApiClient.convertToType(data.passwordIncludeDigit, 'String');
       }
       if (data.hasOwnProperty('passwordIncludeDigitOrSpecialCharacter')) {
-        obj['passwordIncludeDigitOrSpecialCharacter'] = ApiClient.convertToType(data['passwordIncludeDigitOrSpecialCharacter'], 'String');
+        obj.passwordIncludeDigitOrSpecialCharacter = ApiClient.convertToType(data.passwordIncludeDigitOrSpecialCharacter, 'String');
       }
       if (data.hasOwnProperty('passwordIncludeLowerCase')) {
-        obj['passwordIncludeLowerCase'] = ApiClient.convertToType(data['passwordIncludeLowerCase'], 'String');
+        obj.passwordIncludeLowerCase = ApiClient.convertToType(data.passwordIncludeLowerCase, 'String');
       }
       if (data.hasOwnProperty('passwordIncludeSpecialCharacter')) {
-        obj['passwordIncludeSpecialCharacter'] = ApiClient.convertToType(data['passwordIncludeSpecialCharacter'], 'String');
+        obj.passwordIncludeSpecialCharacter = ApiClient.convertToType(data.passwordIncludeSpecialCharacter, 'String');
       }
       if (data.hasOwnProperty('passwordIncludeUpperCase')) {
-        obj['passwordIncludeUpperCase'] = ApiClient.convertToType(data['passwordIncludeUpperCase'], 'String');
+        obj.passwordIncludeUpperCase = ApiClient.convertToType(data.passwordIncludeUpperCase, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} minimumLength
    */
-  exports.prototype['minimumLength'] = undefined;
+  exports.prototype.minimumLength = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} passwordIncludeDigit
    */
-  exports.prototype['passwordIncludeDigit'] = undefined;
+  exports.prototype.passwordIncludeDigit = undefined;
   /**
-   * 
+   *
    * @member {String} passwordIncludeDigitOrSpecialCharacter
    */
-  exports.prototype['passwordIncludeDigitOrSpecialCharacter'] = undefined;
+  exports.prototype.passwordIncludeDigitOrSpecialCharacter = undefined;
   /**
-   * 
+   *
    * @member {String} passwordIncludeLowerCase
    */
-  exports.prototype['passwordIncludeLowerCase'] = undefined;
+  exports.prototype.passwordIncludeLowerCase = undefined;
   /**
-   * 
+   *
    * @member {String} passwordIncludeSpecialCharacter
    */
-  exports.prototype['passwordIncludeSpecialCharacter'] = undefined;
+  exports.prototype.passwordIncludeSpecialCharacter = undefined;
   /**
-   * 
+   *
    * @member {String} passwordIncludeUpperCase
    */
-  exports.prototype['passwordIncludeUpperCase'] = undefined;
-
-
+  exports.prototype.passwordIncludeUpperCase = undefined;
 
   return exports;
 }));
-
-

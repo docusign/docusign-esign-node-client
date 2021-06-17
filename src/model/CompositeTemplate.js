@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Document', 'model/InlineTemplate', 'model/ServerTemplate'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CompositeTemplate = factory(root.Docusign.ApiClient, root.Docusign.Document, root.Docusign.InlineTemplate, root.Docusign.ServerTemplate);
   }
-}(this, function(ApiClient, Document, InlineTemplate, ServerTemplate) {
-  'use strict';
-
-
+}(this, (ApiClient, Document, InlineTemplate, ServerTemplate) => {
   /**
    * The CompositeTemplate model module.
    * @module model/CompositeTemplate
@@ -37,10 +34,8 @@
    * @alias module:model/CompositeTemplate
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,57 +45,53 @@
    * @param {module:model/CompositeTemplate} obj Optional instance to populate.
    * @return {module:model/CompositeTemplate} The populated <code>CompositeTemplate</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('compositeTemplateId')) {
-        obj['compositeTemplateId'] = ApiClient.convertToType(data['compositeTemplateId'], 'String');
+        obj.compositeTemplateId = ApiClient.convertToType(data.compositeTemplateId, 'String');
       }
       if (data.hasOwnProperty('document')) {
-        obj['document'] = Document.constructFromObject(data['document']);
+        obj.document = Document.constructFromObject(data.document);
       }
       if (data.hasOwnProperty('inlineTemplates')) {
-        obj['inlineTemplates'] = ApiClient.convertToType(data['inlineTemplates'], [InlineTemplate]);
+        obj.inlineTemplates = ApiClient.convertToType(data.inlineTemplates, [InlineTemplate]);
       }
       if (data.hasOwnProperty('pdfMetaDataTemplateSequence')) {
-        obj['pdfMetaDataTemplateSequence'] = ApiClient.convertToType(data['pdfMetaDataTemplateSequence'], 'String');
+        obj.pdfMetaDataTemplateSequence = ApiClient.convertToType(data.pdfMetaDataTemplateSequence, 'String');
       }
       if (data.hasOwnProperty('serverTemplates')) {
-        obj['serverTemplates'] = ApiClient.convertToType(data['serverTemplates'], [ServerTemplate]);
+        obj.serverTemplates = ApiClient.convertToType(data.serverTemplates, [ServerTemplate]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The identify of this composite template. It is used as a reference when adding document object information. If used, the document's `content-disposition` must include the composite template ID to which the document should be added. If a composite template ID is not specified in the content-disposition, the document is applied based on the value of the `documentId` property only. If no document object is specified, the composite template inherits the first document.
    * @member {String} compositeTemplateId
    */
-  exports.prototype['compositeTemplateId'] = undefined;
+  exports.prototype.compositeTemplateId = undefined;
   /**
    * @member {module:model/Document} document
    */
-  exports.prototype['document'] = undefined;
+  exports.prototype.document = undefined;
   /**
    *  Zero or more inline templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value.
    * @member {Array.<module:model/InlineTemplate>} inlineTemplates
    */
-  exports.prototype['inlineTemplates'] = undefined;
+  exports.prototype.inlineTemplates = undefined;
   /**
-   * 
+   *
    * @member {String} pdfMetaDataTemplateSequence
    */
-  exports.prototype['pdfMetaDataTemplateSequence'] = undefined;
+  exports.prototype.pdfMetaDataTemplateSequence = undefined;
   /**
    * 0 or more server-side templates and their position in the overlay. If supplied, they are overlaid into the envelope in the order of their Sequence value
    * @member {Array.<module:model/ServerTemplate>} serverTemplates
    */
-  exports.prototype['serverTemplates'] = undefined;
-
-
+  exports.prototype.serverTemplates = undefined;
 
   return exports;
 }));
-
-

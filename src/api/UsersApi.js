@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ContactGetResponse', 'model/ContactModRequest', 'model/ContactUpdateResponse', 'model/CustomSettingsInformation', 'model/ErrorDetails', 'model/NewUsersDefinition', 'model/NewUsersSummary', 'model/UserInfoList', 'model/UserInformation', 'model/UserInformationList', 'model/UserProfile', 'model/UserSettingsInformation', 'model/UserSignature', 'model/UserSignatureDefinition', 'model/UserSignaturesInformation', 'model/UsersResponse'], factory);
+    define(['Configuration', 'ApiClient', 'model/ContactGetResponse', 'model/ContactModRequest', 'model/ContactUpdateResponse', 'model/CustomSettingsInformation', 'model/ErrorDetails', 'model/NewUsersDefinition', 'model/NewUsersSummary', 'model/UserInfoList', 'model/UserInformation', 'model/UserInformationList', 'model/UserProfile', 'model/UserSettingsInformation', 'model/UserSignature', 'model/UserSignatureDefinition', 'model/UserSignaturesInformation', 'model/UsersResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ContactGetResponse'), require('../model/ContactModRequest'), require('../model/ContactUpdateResponse'), require('../model/CustomSettingsInformation'), require('../model/ErrorDetails'), require('../model/NewUsersDefinition'), require('../model/NewUsersSummary'), require('../model/UserInfoList'), require('../model/UserInformation'), require('../model/UserInformationList'), require('../model/UserProfile'), require('../model/UserSettingsInformation'), require('../model/UserSignature'), require('../model/UserSignatureDefinition'), require('../model/UserSignaturesInformation'), require('../model/UsersResponse'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.UsersApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ContactGetResponse, root.Docusign.ContactModRequest, root.Docusign.ContactUpdateResponse, root.Docusign.CustomSettingsInformation, root.Docusign.ErrorDetails, root.Docusign.NewUsersDefinition, root.Docusign.NewUsersSummary, root.Docusign.UserInfoList, root.Docusign.UserInformation, root.Docusign.UserInformationList, root.Docusign.UserProfile, root.Docusign.UserSettingsInformation, root.Docusign.UserSignature, root.Docusign.UserSignatureDefinition, root.Docusign.UserSignaturesInformation, root.Docusign.UsersResponse);
   }
-}(this, function(Configuration, ApiClient, ContactGetResponse, ContactModRequest, ContactUpdateResponse, CustomSettingsInformation, ErrorDetails, NewUsersDefinition, NewUsersSummary, UserInfoList, UserInformation, UserInformationList, UserProfile, UserSettingsInformation, UserSignature, UserSignatureDefinition, UserSignaturesInformation, UsersResponse) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, ContactGetResponse, ContactModRequest, ContactUpdateResponse, CustomSettingsInformation, ErrorDetails, NewUsersDefinition, NewUsersSummary, UserInfoList, UserInformation, UserInformationList, UserProfile, UserSettingsInformation, UserSignature, UserSignatureDefinition, UserSignaturesInformation, UsersResponse) => {
   /**
    * Users service.
    * @module api/UsersApi
    */
 
   /**
-   * Constructs a new UsersApi. 
+   * Constructs a new UsersApi.
    * @alias module:api/UsersApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
@@ -66,12 +62,12 @@
 The response returns whether the API execution was successful (200 - OK) or  if it failed. The response contains a user structure similar to the request and includes the user changes. If an error occurred during the DELETE operation for any of the users, the response for that user contains an `errorDetails` node with `errorCode` and `message` properties.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback._delete 
-     * @param {module:model/UserInfoList} optsOrCallback.userInfoList 
+     * @param {String} optsOrCallback._delete
+     * @param {module:model/UserInfoList} optsOrCallback.userInfoList
      * @param {module:api/UsersApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UsersResponse}
      */
-    this._delete = function(accountId, optsOrCallback, callback) {
+    this._delete = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -79,40 +75,40 @@ The response returns whether the API execution was successful (200 - OK) or  if 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userInfoList'];
+      const postBody = optsOrCallback.userInfoList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling _delete");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'delete': optsOrCallback['_delete']
+      const queryParams = {
+        delete: optsOrCallback._delete,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UsersResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UsersResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -129,11 +125,11 @@ The response returns whether the API execution was successful (200 - OK) or  if 
      * Adds new users to your account. Set the `userSettings` property in the request to specify the actions the users can perform on the account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/NewUsersDefinition} optsOrCallback.newUsersDefinition 
+     * @param {module:model/NewUsersDefinition} optsOrCallback.newUsersDefinition
      * @param {module:api/UsersApi~createCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NewUsersSummary}
      */
-    this.create = function(accountId, optsOrCallback, callback) {
+    this.create = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -141,39 +137,39 @@ The response returns whether the API execution was successful (200 - OK) or  if 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['newUsersDefinition'];
+      const postBody = optsOrCallback.newUsersDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling create");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NewUsersSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = NewUsersSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -187,7 +183,7 @@ The response returns whether the API execution was successful (200 - OK) or  if 
 
     /**
      * Adds user Signature and initials images to a Signature.
-     * Adds a user signature image and/or user initials image to the specified user. 
+     * Adds a user signature image and/or user initials image to the specified user.
 
 The userId property specified in the endpoint must match the authenticated user's userId and the user must be a member of the account.
 
@@ -196,9 +192,9 @@ The rules and processes associated with this are:
 * If Content-Type is set to application/json, then the default behavior for creating a default signature image, based on the name and a DocuSign font, is used.
 * If Content-Type is set to multipart/form-data, then the request must contain a first part with the user signature information, followed by parts that contain the images.
 
-For each Image part, the Content-Disposition header has a "filename" value that is used to map to the `signatureName` and/or `signatureInitials` properties in the JSON to the image. 
+For each Image part, the Content-Disposition header has a "filename" value that is used to map to the `signatureName` and/or `signatureInitials` properties in the JSON to the image.
 
-For example: 
+For example:
 `Content-Disposition: file; filename="Ron Test20121127083900"`
 
 If no matching image (by filename value) is found, then the image is not set. One, both, or neither of the signature and initials images can be set with this call.
@@ -209,11 +205,11 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/UserSignaturesInformation} optsOrCallback.userSignaturesInformation 
+     * @param {module:model/UserSignaturesInformation} optsOrCallback.userSignaturesInformation
      * @param {module:api/UsersApi~createSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignaturesInformation}
      */
-    this.createSignatures = function(accountId, userId, optsOrCallback, callback) {
+    this.createSignatures = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -221,7 +217,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userSignaturesInformation'];
+      const postBody = optsOrCallback.userSignaturesInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -233,33 +229,33 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
         throw new Error("Missing the required parameter 'userId' when calling createSignatures");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSignaturesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSignaturesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -278,8 +274,8 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
      * @param {module:api/UsersApi~deleteContactWithIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
-    this.deleteContactWithId = function(accountId, contactId, callback) {
-      var postBody = null;
+    this.deleteContactWithId = function (accountId, contactId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -291,33 +287,33 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
         throw new Error("Missing the required parameter 'contactId' when calling deleteContactWithId");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'contactId': contactId
+      const pathParams = {
+        accountId,
+        contactId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ContactUpdateResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/contacts/{contactId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -333,11 +329,11 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
      * Delete contacts associated with an account for the DocuSign service.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
+     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest
      * @param {module:api/UsersApi~deleteContactsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
-    this.deleteContacts = function(accountId, optsOrCallback, callback) {
+    this.deleteContacts = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -345,39 +341,39 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['contactModRequest'];
+      const postBody = optsOrCallback.contactModRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteContacts");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ContactUpdateResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/contacts', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -405,11 +401,11 @@ If the extra header information is not included, only the custom user settings t
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CustomSettingsInformation} optsOrCallback.customSettingsInformation 
+     * @param {module:model/CustomSettingsInformation} optsOrCallback.customSettingsInformation
      * @param {module:api/UsersApi~deleteCustomSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomSettingsInformation}
      */
-    this.deleteCustomSettings = function(accountId, userId, optsOrCallback, callback) {
+    this.deleteCustomSettings = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -417,7 +413,7 @@ If the extra header information is not included, only the custom user settings t
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['customSettingsInformation'];
+      const postBody = optsOrCallback.customSettingsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -429,33 +425,33 @@ If the extra header information is not included, only the custom user settings t
         throw new Error("Missing the required parameter 'userId' when calling deleteCustomSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomSettingsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/custom_settings', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -476,8 +472,8 @@ The userId parameter specified in the endpoint must match the authenticated user
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {module:api/UsersApi~deleteProfileImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteProfileImage = function(accountId, userId, callback) {
-      var postBody = null;
+    this.deleteProfileImage = function (accountId, userId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -489,33 +485,33 @@ The userId parameter specified in the endpoint must match the authenticated user
         throw new Error("Missing the required parameter 'userId' when calling deleteProfileImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/profile/image', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -533,7 +529,7 @@ The userId parameter specified in the endpoint must match the authenticated user
 
 The userId parameter specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureId` accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint. 
+The `signatureId` accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.
 
 For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
@@ -541,8 +537,8 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {module:api/UsersApi~deleteSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteSignature = function(accountId, userId, signatureId, callback) {
-      var postBody = null;
+    this.deleteSignature = function (accountId, userId, signatureId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -559,34 +555,34 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'signatureId' when calling deleteSignature");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'signatureId': signatureId
+      const pathParams = {
+        accountId,
+        userId,
+        signatureId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -606,7 +602,7 @@ The function deletes one or the other of the image types, to delete both the ini
 
 The userId parameter specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint. 
+The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.
 
 For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
@@ -616,8 +612,8 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {module:api/UsersApi~deleteSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.deleteSignatureImage = function(accountId, userId, signatureId, imageType, callback) {
-      var postBody = null;
+    this.deleteSignatureImage = function (accountId, userId, signatureId, imageType, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -639,35 +635,35 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'imageType' when calling deleteSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'signatureId': signatureId,
-        'imageType': imageType
+      const pathParams = {
+        accountId,
+        userId,
+        signatureId,
+        imageType,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -684,11 +680,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} contactId The unique identifier of a person in the contacts address book.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.cloudProvider 
+     * @param {String} optsOrCallback.cloudProvider
      * @param {module:api/UsersApi~getContactByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactGetResponse}
      */
-    this.getContactById = function(accountId, contactId, optsOrCallback, callback) {
+    this.getContactById = function (accountId, contactId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -696,7 +692,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -708,34 +704,34 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'contactId' when calling getContactById");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'contactId': contactId
+      const pathParams = {
+        accountId,
+        contactId,
       };
-      var queryParams = {
-        'cloud_provider': optsOrCallback['cloudProvider']
+      const queryParams = {
+        cloud_provider: optsOrCallback.cloudProvider,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ContactGetResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ContactGetResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/contacts/{contactId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -749,18 +745,18 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Gets the user information for a specified user.
-     * Retrieves the user information for the specified user. 
+     * Retrieves the user information for the specified user.
 
 To return additional user information that details the last login date, login status, and the user's password expiration date, set the optional `additional_info` query string parameter to **true**.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
-     * @param {String} optsOrCallback.email 
+     * @param {String} optsOrCallback.email
      * @param {module:api/UsersApi~getInformationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformation}
      */
-    this.getInformation = function(accountId, userId, optsOrCallback, callback) {
+    this.getInformation = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -768,7 +764,7 @@ To return additional user information that details the last login date, login st
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -780,35 +776,35 @@ To return additional user information that details the last login date, login st
         throw new Error("Missing the required parameter 'userId' when calling getInformation");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
-        'additional_info': optsOrCallback['additionalInfo'],
-        'email': optsOrCallback['email']
+      const queryParams = {
+        additional_info: optsOrCallback.additionalInfo,
+        email: optsOrCallback.email,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -830,8 +826,8 @@ The userId parameter specified in the endpoint must match the authenticated user
      * @param {module:api/UsersApi~getProfileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserProfile}
      */
-    this.getProfile = function(accountId, userId, callback) {
-      var postBody = null;
+    this.getProfile = function (accountId, userId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -843,33 +839,33 @@ The userId parameter specified in the endpoint must match the authenticated user
         throw new Error("Missing the required parameter 'userId' when calling getProfile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserProfile;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserProfile;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/profile', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -891,11 +887,11 @@ If successful, the response returns a 200 - OK and the user profile image.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.encoding 
+     * @param {String} optsOrCallback.encoding
      * @param {module:api/UsersApi~getProfileImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getProfileImage = function(accountId, userId, optsOrCallback, callback) {
+    this.getProfileImage = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -903,7 +899,7 @@ If successful, the response returns a 200 - OK and the user profile image.
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -915,34 +911,34 @@ If successful, the response returns a 200 - OK and the user profile image.
         throw new Error("Missing the required parameter 'userId' when calling getProfileImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
-        'encoding': optsOrCallback['encoding']
+      const queryParams = {
+        encoding: optsOrCallback.encoding,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/gif'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/gif'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/profile/image', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -964,8 +960,8 @@ The response returns the account setting name/value information and the email no
      * @param {module:api/UsersApi~getSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSettingsInformation}
      */
-    this.getSettings = function(accountId, userId, callback) {
-      var postBody = null;
+    this.getSettings = function (accountId, userId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -977,33 +973,33 @@ The response returns the account setting name/value information and the email no
         throw new Error("Missing the required parameter 'userId' when calling getSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSettingsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1021,7 +1017,7 @@ The response returns the account setting name/value information and the email no
 
 The userId specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint. 
+The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.
 
 For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
@@ -1030,8 +1026,8 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {module:api/UsersApi~getSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.getSignature = function(accountId, userId, signatureId, callback) {
-      var postBody = null;
+    this.getSignature = function (accountId, userId, signatureId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1048,34 +1044,34 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'signatureId' when calling getSignature");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'signatureId': signatureId
+      const pathParams = {
+        accountId,
+        userId,
+        signatureId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1093,7 +1089,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
 The userId property specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint. 
+The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.
 
 For example encode "Bob Smith" as "Bob%20Smith".
 
@@ -1103,11 +1099,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeChrome 
+     * @param {String} optsOrCallback.includeChrome
      * @param {module:api/UsersApi~getSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getSignatureImage = function(accountId, userId, signatureId, imageType, optsOrCallback, callback) {
+    this.getSignatureImage = function (accountId, userId, signatureId, imageType, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1115,7 +1111,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1137,36 +1133,36 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'imageType' when calling getSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'signatureId': signatureId,
-        'imageType': imageType
+      const pathParams = {
+        accountId,
+        userId,
+        signatureId,
+        imageType,
       };
-      var queryParams = {
-        'include_chrome': optsOrCallback['includeChrome']
+      const queryParams = {
+        include_chrome: optsOrCallback.includeChrome,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/gif'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/gif'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1180,12 +1176,12 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Retrieves UserList Export Results data.
-     * @param {String} organizationId 
-     * @param {String} resultId 
+     * @param {String} organizationId
+     * @param {String} resultId
      * @param {module:api/UsersApi~getUserListExportCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getUserListExport = function(organizationId, resultId, callback) {
-      var postBody = null;
+    this.getUserListExport = function (organizationId, resultId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -1197,33 +1193,33 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'resultId' when calling getUserListExport");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'organizationId': organizationId,
-        'resultId': resultId
+      const pathParams = {
+        organizationId,
+        resultId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/organization_exports/{organizationId}/user_list/{resultId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1243,20 +1239,20 @@ The response returns the list of users for the account along with the informatio
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
-     * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 0 and less than or equal to 100. 
-     * @param {String} optsOrCallback.email 
+     * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 0 and less than or equal to 100.
+     * @param {String} optsOrCallback.email
      * @param {String} optsOrCallback.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
      * @param {String} optsOrCallback.groupId Filters user records returned by one or more group Id's.
-     * @param {String} optsOrCallback.includeUsersettingsForCsv 
-     * @param {String} optsOrCallback.loginStatus 
-     * @param {String} optsOrCallback.notGroupId 
-     * @param {String} optsOrCallback.startPosition Starting value for the list. 
-     * @param {String} optsOrCallback.status 
+     * @param {String} optsOrCallback.includeUsersettingsForCsv
+     * @param {String} optsOrCallback.loginStatus
+     * @param {String} optsOrCallback.notGroupId
+     * @param {String} optsOrCallback.startPosition Starting value for the list.
+     * @param {String} optsOrCallback.status
      * @param {String} optsOrCallback.userNameSubstring Filters the user records returned by the user name or a sub-string of user name.
      * @param {module:api/UsersApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformationList}
      */
-    this.list = function(accountId, optsOrCallback, callback) {
+    this.list = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1264,50 +1260,50 @@ The response returns the list of users for the account along with the informatio
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'additional_info': optsOrCallback['additionalInfo'],
-        'count': optsOrCallback['count'],
-        'email': optsOrCallback['email'],
-        'email_substring': optsOrCallback['emailSubstring'],
-        'group_id': optsOrCallback['groupId'],
-        'include_usersettings_for_csv': optsOrCallback['includeUsersettingsForCsv'],
-        'login_status': optsOrCallback['loginStatus'],
-        'not_group_id': optsOrCallback['notGroupId'],
-        'start_position': optsOrCallback['startPosition'],
-        'status': optsOrCallback['status'],
-        'user_name_substring': optsOrCallback['userNameSubstring']
+      const queryParams = {
+        additional_info: optsOrCallback.additionalInfo,
+        count: optsOrCallback.count,
+        email: optsOrCallback.email,
+        email_substring: optsOrCallback.emailSubstring,
+        group_id: optsOrCallback.groupId,
+        include_usersettings_for_csv: optsOrCallback.includeUsersettingsForCsv,
+        login_status: optsOrCallback.loginStatus,
+        not_group_id: optsOrCallback.notGroupId,
+        start_position: optsOrCallback.startPosition,
+        status: optsOrCallback.status,
+        user_name_substring: optsOrCallback.userNameSubstring,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserInformationList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserInformationList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1341,8 +1337,8 @@ If the extra header information is not included, only the custom user settings t
      * @param {module:api/UsersApi~listCustomSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomSettingsInformation}
      */
-    this.listCustomSettings = function(accountId, userId, callback) {
-      var postBody = null;
+    this.listCustomSettings = function (accountId, userId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1354,33 +1350,33 @@ If the extra header information is not included, only the custom user settings t
         throw new Error("Missing the required parameter 'userId' when calling listCustomSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomSettingsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/custom_settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1398,17 +1394,17 @@ If the extra header information is not included, only the custom user settings t
 
 The userId parameter specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint. 
+The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.
 
 For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.stampType 
+     * @param {String} optsOrCallback.stampType
      * @param {module:api/UsersApi~listSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignaturesInformation}
      */
-    this.listSignatures = function(accountId, userId, optsOrCallback, callback) {
+    this.listSignatures = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1416,7 +1412,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1428,34 +1424,34 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'userId' when calling listSignatures");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
-        'stamp_type': optsOrCallback['stampType']
+      const queryParams = {
+        stamp_type: optsOrCallback.stampType,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSignaturesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSignaturesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1471,11 +1467,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
+     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest
      * @param {module:api/UsersApi~postContactsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
-    this.postContacts = function(accountId, optsOrCallback, callback) {
+    this.postContacts = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1483,39 +1479,39 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['contactModRequest'];
+      const postBody = optsOrCallback.contactModRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling postContacts");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ContactUpdateResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/contacts', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1531,11 +1527,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * Replaces contacts associated with an account for the DocuSign service.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
+     * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest
      * @param {module:api/UsersApi~putContactsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContactUpdateResponse}
      */
-    this.putContacts = function(accountId, optsOrCallback, callback) {
+    this.putContacts = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1543,39 +1539,39 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['contactModRequest'];
+      const postBody = optsOrCallback.contactModRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling putContacts");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ContactUpdateResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ContactUpdateResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/contacts', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1613,11 +1609,11 @@ Grouping custom user settings is not required and if the extra header informatio
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CustomSettingsInformation} optsOrCallback.customSettingsInformation 
+     * @param {module:model/CustomSettingsInformation} optsOrCallback.customSettingsInformation
      * @param {module:api/UsersApi~updateCustomSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomSettingsInformation}
      */
-    this.updateCustomSettings = function(accountId, userId, optsOrCallback, callback) {
+    this.updateCustomSettings = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1625,7 +1621,7 @@ Grouping custom user settings is not required and if the extra header informatio
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['customSettingsInformation'];
+      const postBody = optsOrCallback.customSettingsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1637,33 +1633,33 @@ Grouping custom user settings is not required and if the extra header informatio
         throw new Error("Missing the required parameter 'userId' when calling updateCustomSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomSettingsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/custom_settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1683,10 +1679,10 @@ You can also change a user's name by changing the information in the `userDetail
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/UserProfile} optsOrCallback.userProfile 
+     * @param {module:model/UserProfile} optsOrCallback.userProfile
      * @param {module:api/UsersApi~updateProfileCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateProfile = function(accountId, userId, optsOrCallback, callback) {
+    this.updateProfile = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1694,7 +1690,7 @@ You can also change a user's name by changing the information in the `userDetail
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userProfile'];
+      const postBody = optsOrCallback.userProfile;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1706,33 +1702,33 @@ You can also change a user's name by changing the information in the `userDetail
         throw new Error("Missing the required parameter 'userId' when calling updateProfile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/profile', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1753,8 +1749,8 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {module:api/UsersApi~updateProfileImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateProfileImage = function(accountId, userId, callback) {
-      var postBody = null;
+    this.updateProfileImage = function (accountId, userId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1766,33 +1762,33 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
         throw new Error("Missing the required parameter 'userId' when calling updateProfileImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = ['image/gif'];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = ['image/gif'];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/profile/image', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1810,10 +1806,10 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/UserSettingsInformation} optsOrCallback.userSettingsInformation 
+     * @param {module:model/UserSettingsInformation} optsOrCallback.userSettingsInformation
      * @param {module:api/UsersApi~updateSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateSettings = function(accountId, userId, optsOrCallback, callback) {
+    this.updateSettings = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1821,7 +1817,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userSettingsInformation'];
+      const postBody = optsOrCallback.userSettingsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1833,33 +1829,33 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
         throw new Error("Missing the required parameter 'userId' when calling updateSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1879,7 +1875,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
 
 The userId property specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint. 
+The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.
 
 For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
@@ -1887,11 +1883,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.closeExistingSignature When set to **true**, closes the current signature.
-     * @param {module:model/UserSignatureDefinition} optsOrCallback.userSignatureDefinition 
+     * @param {module:model/UserSignatureDefinition} optsOrCallback.userSignatureDefinition
      * @param {module:api/UsersApi~updateSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.updateSignature = function(accountId, userId, signatureId, optsOrCallback, callback) {
+    this.updateSignature = function (accountId, userId, signatureId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1899,7 +1895,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userSignatureDefinition'];
+      const postBody = optsOrCallback.userSignatureDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1916,35 +1912,35 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'signatureId' when calling updateSignature");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'signatureId': signatureId
+      const pathParams = {
+        accountId,
+        userId,
+        signatureId,
       };
-      var queryParams = {
-        'close_existing_signature': optsOrCallback['closeExistingSignature']
+      const queryParams = {
+        close_existing_signature: optsOrCallback.closeExistingSignature,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1962,7 +1958,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
 The userId property specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint. 
+The `signatureId` parameter accepts a signature ID or a signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly encode into a URL. If you use the user name, it is likely that the name includes spaces. In that case, URL encode the name before using it in the endpoint.
 
 For example encode "Bob Smith" as "Bob%20Smith".
 
@@ -1971,11 +1967,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.transparentPng 
+     * @param {String} optsOrCallback.transparentPng
      * @param {module:api/UsersApi~updateSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.updateSignatureImage = function(accountId, userId, signatureId, imageType, optsOrCallback, callback) {
+    this.updateSignatureImage = function (accountId, userId, signatureId, imageType, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1983,7 +1979,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2005,36 +2001,36 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'imageType' when calling updateSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId,
-        'signatureId': signatureId,
-        'imageType': imageType
+      const pathParams = {
+        accountId,
+        userId,
+        signatureId,
+        imageType,
       };
-      var queryParams = {
-        'transparent_png': optsOrCallback['transparentPng']
+      const queryParams = {
+        transparent_png: optsOrCallback.transparentPng,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = ['image/gif'];
-      var accepts = ['application/json'];
-      var returnType = UserSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = ['image/gif'];
+      const accepts = ['application/json'];
+      const returnType = UserSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures/{signatureId}/{imageType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2051,11 +2047,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/UserSignaturesInformation} optsOrCallback.userSignaturesInformation 
+     * @param {module:model/UserSignaturesInformation} optsOrCallback.userSignaturesInformation
      * @param {module:api/UsersApi~updateSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignaturesInformation}
      */
-    this.updateSignatures = function(accountId, userId, optsOrCallback, callback) {
+    this.updateSignatures = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2063,7 +2059,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userSignaturesInformation'];
+      const postBody = optsOrCallback.userSignaturesInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2075,33 +2071,33 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'userId' when calling updateSignatures");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSignaturesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSignaturesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}/signatures', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2118,11 +2114,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/UserInformation} optsOrCallback.userInformation 
+     * @param {module:model/UserInformation} optsOrCallback.userInformation
      * @param {module:api/UsersApi~updateUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformation}
      */
-    this.updateUser = function(accountId, userId, optsOrCallback, callback) {
+    this.updateUser = function (accountId, userId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2130,7 +2126,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userInformation'];
+      const postBody = optsOrCallback.userInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2142,33 +2138,33 @@ For example encode "Bob Smith" as "Bob%20Smith".
         throw new Error("Missing the required parameter 'userId' when calling updateUser");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users/{userId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2184,11 +2180,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * Change one or more user in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/UserInformationList} optsOrCallback.userInformationList 
+     * @param {module:model/UserInformationList} optsOrCallback.userInformationList
      * @param {module:api/UsersApi~updateUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformationList}
      */
-    this.updateUsers = function(accountId, optsOrCallback, callback) {
+    this.updateUsers = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2196,39 +2192,39 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['userInformationList'];
+      const postBody = optsOrCallback.userInformationList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateUsers");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserInformationList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserInformationList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/users', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

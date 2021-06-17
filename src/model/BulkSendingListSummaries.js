@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BulkSendingListSummary'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendingListSummaries = factory(root.Docusign.ApiClient, root.Docusign.BulkSendingListSummary);
   }
-}(this, function(ApiClient, BulkSendingListSummary) {
-  'use strict';
-
-
+}(this, (ApiClient, BulkSendingListSummary) => {
   /**
    * The BulkSendingListSummaries model module.
    * @module model/BulkSendingListSummaries
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendingListSummaries
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/BulkSendingListSummaries} obj Optional instance to populate.
    * @return {module:model/BulkSendingListSummaries} The populated <code>BulkSendingListSummaries</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkListSummaries')) {
-        obj['bulkListSummaries'] = ApiClient.convertToType(data['bulkListSummaries'], [BulkSendingListSummary]);
+        obj.bulkListSummaries = ApiClient.convertToType(data.bulkListSummaries, [BulkSendingListSummary]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/BulkSendingListSummary>} bulkListSummaries
    */
-  exports.prototype['bulkListSummaries'] = undefined;
-
-
+  exports.prototype.bulkListSummaries = undefined;
 
   return exports;
 }));
-
-

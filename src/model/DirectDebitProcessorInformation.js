@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DirectDebitProcessorInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DirectDebitProcessorInformation model module.
    * @module model/DirectDebitProcessorInformation
@@ -37,10 +34,8 @@
    * @alias module:model/DirectDebitProcessorInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,114 +45,110 @@
    * @param {module:model/DirectDebitProcessorInformation} obj Optional instance to populate.
    * @return {module:model/DirectDebitProcessorInformation} The populated <code>DirectDebitProcessorInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bankBranchCode')) {
-        obj['bankBranchCode'] = ApiClient.convertToType(data['bankBranchCode'], 'String');
+        obj.bankBranchCode = ApiClient.convertToType(data.bankBranchCode, 'String');
       }
       if (data.hasOwnProperty('bankCheckDigit')) {
-        obj['bankCheckDigit'] = ApiClient.convertToType(data['bankCheckDigit'], 'String');
+        obj.bankCheckDigit = ApiClient.convertToType(data.bankCheckDigit, 'String');
       }
       if (data.hasOwnProperty('bankCode')) {
-        obj['bankCode'] = ApiClient.convertToType(data['bankCode'], 'String');
+        obj.bankCode = ApiClient.convertToType(data.bankCode, 'String');
       }
       if (data.hasOwnProperty('bankName')) {
-        obj['bankName'] = ApiClient.convertToType(data['bankName'], 'String');
+        obj.bankName = ApiClient.convertToType(data.bankName, 'String');
       }
       if (data.hasOwnProperty('bankTransferAccountName')) {
-        obj['bankTransferAccountName'] = ApiClient.convertToType(data['bankTransferAccountName'], 'String');
+        obj.bankTransferAccountName = ApiClient.convertToType(data.bankTransferAccountName, 'String');
       }
       if (data.hasOwnProperty('bankTransferAccountNumber')) {
-        obj['bankTransferAccountNumber'] = ApiClient.convertToType(data['bankTransferAccountNumber'], 'String');
+        obj.bankTransferAccountNumber = ApiClient.convertToType(data.bankTransferAccountNumber, 'String');
       }
       if (data.hasOwnProperty('bankTransferType')) {
-        obj['bankTransferType'] = ApiClient.convertToType(data['bankTransferType'], 'String');
+        obj.bankTransferType = ApiClient.convertToType(data.bankTransferType, 'String');
       }
       if (data.hasOwnProperty('country')) {
-        obj['country'] = ApiClient.convertToType(data['country'], 'String');
+        obj.country = ApiClient.convertToType(data.country, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('firstName')) {
-        obj['firstName'] = ApiClient.convertToType(data['firstName'], 'String');
+        obj.firstName = ApiClient.convertToType(data.firstName, 'String');
       }
       if (data.hasOwnProperty('iBAN')) {
-        obj['iBAN'] = ApiClient.convertToType(data['iBAN'], 'String');
+        obj.iBAN = ApiClient.convertToType(data.iBAN, 'String');
       }
       if (data.hasOwnProperty('lastName')) {
-        obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+        obj.lastName = ApiClient.convertToType(data.lastName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} bankBranchCode
    */
-  exports.prototype['bankBranchCode'] = undefined;
+  exports.prototype.bankBranchCode = undefined;
   /**
-   * 
+   *
    * @member {String} bankCheckDigit
    */
-  exports.prototype['bankCheckDigit'] = undefined;
+  exports.prototype.bankCheckDigit = undefined;
   /**
-   * 
+   *
    * @member {String} bankCode
    */
-  exports.prototype['bankCode'] = undefined;
+  exports.prototype.bankCode = undefined;
   /**
-   * 
+   *
    * @member {String} bankName
    */
-  exports.prototype['bankName'] = undefined;
+  exports.prototype.bankName = undefined;
   /**
-   * 
+   *
    * @member {String} bankTransferAccountName
    */
-  exports.prototype['bankTransferAccountName'] = undefined;
+  exports.prototype.bankTransferAccountName = undefined;
   /**
-   * 
+   *
    * @member {String} bankTransferAccountNumber
    */
-  exports.prototype['bankTransferAccountNumber'] = undefined;
+  exports.prototype.bankTransferAccountNumber = undefined;
   /**
-   * 
+   *
    * @member {String} bankTransferType
    */
-  exports.prototype['bankTransferType'] = undefined;
+  exports.prototype.bankTransferType = undefined;
   /**
    * Specifies the country associated with the address.
    * @member {String} country
    */
-  exports.prototype['country'] = undefined;
+  exports.prototype.country = undefined;
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
    * The user's first name.  Maximum Length: 50 characters.
    * @member {String} firstName
    */
-  exports.prototype['firstName'] = undefined;
+  exports.prototype.firstName = undefined;
   /**
-   * 
+   *
    * @member {String} iBAN
    */
-  exports.prototype['iBAN'] = undefined;
+  exports.prototype.iBAN = undefined;
   /**
-   * 
+   *
    * @member {String} lastName
    */
-  exports.prototype['lastName'] = undefined;
-
-
+  exports.prototype.lastName = undefined;
 
   return exports;
 }));
-
-

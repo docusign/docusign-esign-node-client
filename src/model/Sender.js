@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Sender = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The Sender model module.
    * @module model/Sender
@@ -37,10 +34,8 @@
    * @alias module:model/Sender
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/Sender} obj Optional instance to populate.
    * @return {module:model/Sender} The populated <code>Sender</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accountIdGuid')) {
-        obj['accountIdGuid'] = ApiClient.convertToType(data['accountIdGuid'], 'String');
+        obj.accountIdGuid = ApiClient.convertToType(data.accountIdGuid, 'String');
       }
       if (data.hasOwnProperty('companyName')) {
-        obj['companyName'] = ApiClient.convertToType(data['companyName'], 'String');
+        obj.companyName = ApiClient.convertToType(data.companyName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The GUID associated with the account ID.
    * @member {String} accountIdGuid
    */
-  exports.prototype['accountIdGuid'] = undefined;
+  exports.prototype.accountIdGuid = undefined;
   /**
-   * 
+   *
    * @member {String} companyName
    */
-  exports.prototype['companyName'] = undefined;
-
-
+  exports.prototype.companyName = undefined;
 
   return exports;
 }));
-
-

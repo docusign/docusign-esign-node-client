@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendErrorStatus = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BulkSendErrorStatus model module.
    * @module model/BulkSendErrorStatus
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendErrorStatus
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/BulkSendErrorStatus} obj Optional instance to populate.
    * @return {module:model/BulkSendErrorStatus} The populated <code>BulkSendErrorStatus</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+        obj.created = ApiClient.convertToType(data.created, 'String');
       }
       if (data.hasOwnProperty('errorMessage')) {
-        obj['errorMessage'] = ApiClient.convertToType(data['errorMessage'], 'String');
+        obj.errorMessage = ApiClient.convertToType(data.errorMessage, 'String');
       }
       if (data.hasOwnProperty('recipientEmails')) {
-        obj['recipientEmails'] = ApiClient.convertToType(data['recipientEmails'], ['String']);
+        obj.recipientEmails = ApiClient.convertToType(data.recipientEmails, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} created
    */
-  exports.prototype['created'] = undefined;
+  exports.prototype.created = undefined;
   /**
-   * 
+   *
    * @member {String} errorMessage
    */
-  exports.prototype['errorMessage'] = undefined;
+  exports.prototype.errorMessage = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} recipientEmails
    */
-  exports.prototype['recipientEmails'] = undefined;
-
-
+  exports.prototype.recipientEmails = undefined;
 
   return exports;
 }));
-
-

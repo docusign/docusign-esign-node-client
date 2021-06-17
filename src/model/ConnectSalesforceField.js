@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectSalesforceField = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConnectSalesforceField model module.
    * @module model/ConnectSalesforceField
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectSalesforceField
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,82 +45,78 @@
    * @param {module:model/ConnectSalesforceField} obj Optional instance to populate.
    * @return {module:model/ConnectSalesforceField} The populated <code>ConnectSalesforceField</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('dsAttribute')) {
-        obj['dsAttribute'] = ApiClient.convertToType(data['dsAttribute'], 'String');
+        obj.dsAttribute = ApiClient.convertToType(data.dsAttribute, 'String');
       }
       if (data.hasOwnProperty('dsLink')) {
-        obj['dsLink'] = ApiClient.convertToType(data['dsLink'], 'String');
+        obj.dsLink = ApiClient.convertToType(data.dsLink, 'String');
       }
       if (data.hasOwnProperty('dsNode')) {
-        obj['dsNode'] = ApiClient.convertToType(data['dsNode'], 'String');
+        obj.dsNode = ApiClient.convertToType(data.dsNode, 'String');
       }
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+        obj.id = ApiClient.convertToType(data.id, 'String');
       }
       if (data.hasOwnProperty('sfField')) {
-        obj['sfField'] = ApiClient.convertToType(data['sfField'], 'String');
+        obj.sfField = ApiClient.convertToType(data.sfField, 'String');
       }
       if (data.hasOwnProperty('sfFieldName')) {
-        obj['sfFieldName'] = ApiClient.convertToType(data['sfFieldName'], 'String');
+        obj.sfFieldName = ApiClient.convertToType(data.sfFieldName, 'String');
       }
       if (data.hasOwnProperty('sfFolder')) {
-        obj['sfFolder'] = ApiClient.convertToType(data['sfFolder'], 'String');
+        obj.sfFolder = ApiClient.convertToType(data.sfFolder, 'String');
       }
       if (data.hasOwnProperty('sfLockedValue')) {
-        obj['sfLockedValue'] = ApiClient.convertToType(data['sfLockedValue'], 'String');
+        obj.sfLockedValue = ApiClient.convertToType(data.sfLockedValue, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} dsAttribute
    */
-  exports.prototype['dsAttribute'] = undefined;
+  exports.prototype.dsAttribute = undefined;
   /**
-   * 
+   *
    * @member {String} dsLink
    */
-  exports.prototype['dsLink'] = undefined;
+  exports.prototype.dsLink = undefined;
   /**
-   * 
+   *
    * @member {String} dsNode
    */
-  exports.prototype['dsNode'] = undefined;
+  exports.prototype.dsNode = undefined;
   /**
-   * 
+   *
    * @member {String} id
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype.id = undefined;
   /**
-   * 
+   *
    * @member {String} sfField
    */
-  exports.prototype['sfField'] = undefined;
+  exports.prototype.sfField = undefined;
   /**
-   * 
+   *
    * @member {String} sfFieldName
    */
-  exports.prototype['sfFieldName'] = undefined;
+  exports.prototype.sfFieldName = undefined;
   /**
-   * 
+   *
    * @member {String} sfFolder
    */
-  exports.prototype['sfFolder'] = undefined;
+  exports.prototype.sfFolder = undefined;
   /**
-   * 
+   *
    * @member {String} sfLockedValue
    */
-  exports.prototype['sfLockedValue'] = undefined;
-
-
+  exports.prototype.sfLockedValue = undefined;
 
   return exports;
 }));
-
-

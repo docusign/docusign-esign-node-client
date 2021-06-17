@@ -1,14 +1,13 @@
 // Load modules.
-var OAuth2Strategy = require('passport-oauth2')
-  , util = require('util')
-  , uri = require('url')
-  , crypto = require('crypto')
-  , Profile = require('./profile')
-  , InternalOAuthError = require('passport-oauth2').InternalOAuthError
-  , docusignAuthorizationError = require('./errors/docusignauthorizationerror')
-  , docusignTokenError = require('./errors/docusigntokenerror')
-  , docusignAPIError = require('./errors/docusignapierror');
-
+const OAuth2Strategy = require('passport-oauth2');
+const util = require('util');
+const uri = require('url');
+const crypto = require('crypto');
+const { InternalOAuthError } = require('passport-oauth2');
+const Profile = require('./profile');
+const docusignAuthorizationError = require('./errors/docusignauthorizationerror');
+const docusignTokenError = require('./errors/docusigntokenerror');
+const docusignAPIError = require('./errors/docusignapierror');
 
 /**
  * `Strategy` constructor.
@@ -48,20 +47,19 @@ var OAuth2Strategy = require('passport-oauth2')
 function Strategy(options, verify) {
   options = options || {};
   this._baseURL = options.sandbox ? 'https://account-d.docusign.com/oauth' : 'https://account.docusign.com/oauth';
-  options.authorizationURL = options.authorizationURL || this._baseURL + '/auth';
-  options.tokenURL = options.tokenURL || this._baseURL + '/token';
+  options.authorizationURL = options.authorizationURL || `${this._baseURL}/auth`;
+  options.tokenURL = options.tokenURL || `${this._baseURL}/token`;
   options.scopeSeparator = options.scopeSeparator || ',';
 
   OAuth2Strategy.call(this, options, verify);
   this.name = 'docusign';
-  this._profileURL = options.profileURL || this._baseURL + '/userinfo';
+  this._profileURL = options.profileURL || `${this._baseURL}/userinfo`;
   this._profileFields = options.profileFields || null;
   this._clientSecret = options.clientSecret;
 }
 
 // Inherit from `OAuth2Strategy`.
 util.inherits(Strategy, OAuth2Strategy);
-
 
 /**
  * Authenticate request by delegating to docusign using OAuth 2.0.
@@ -91,7 +89,7 @@ Strategy.prototype.authenticate = function (req, options) {
  * @access protected
  */
 Strategy.prototype.authorizationParams = function (options) {
-  var params = {};
+  const params = {};
 
   if (options.display) {
     params.display = options.display;
@@ -125,19 +123,19 @@ Strategy.prototype.authorizationParams = function (options) {
  * @access protected
  */
 Strategy.prototype.userProfile = function (accessToken, done) {
-  var url = uri.parse(this._profileURL);
+  let url = uri.parse(this._profileURL);
   if (this._profileFields) {
-    //var fields = this._convertProfileFields(this._profileFields);
-    var fields = this._profileFields;
+    // var fields = this._convertProfileFields(this._profileFields);
+    const fields = this._profileFields;
     if (fields !== '') {
-      url.search = (url.search ? url.search + '&' : '') + 'fields=' + fields;
+      url.search = `${url.search ? `${url.search}&` : ''}fields=${fields}`;
     }
   }
   url = uri.format(url);
 
   this._oauth2.useAuthorizationHeaderforGET(true);
-  this._oauth2.get(url, accessToken, function (err, body, res) {
-    var json;
+  this._oauth2.get(url, accessToken, (err, body, res) => {
+    let json;
 
     if (!body && err) {
       if (err.data) {
@@ -147,7 +145,7 @@ Strategy.prototype.userProfile = function (accessToken, done) {
         }
       }
 
-      if (json && json.error && typeof json.error == 'object') {
+      if (json && json.error && typeof json.error === 'object') {
         return done(new docusignAPIError(json.error.message, json.error.type, json.error.code, json.error.error_subcode, json.error.fbtrace_id));
       }
       return done(new InternalOAuthError('Failed to fetch user profile', err));
@@ -159,7 +157,7 @@ Strategy.prototype.userProfile = function (accessToken, done) {
       return done(new Error('Failed to parse user profile'));
     }
 
-    var profile = Profile.parse(json);
+    const profile = Profile.parse(json);
     profile.provider = 'docusign';
     profile._raw = body;
     profile._json = json;
@@ -177,8 +175,8 @@ Strategy.prototype.userProfile = function (accessToken, done) {
  * @access protected
  */
 Strategy.prototype.parseErrorResponse = function (body, status) {
-  var json = JSON.parse(body);
-  if (json.error && typeof json.error == 'object') {
+  const json = JSON.parse(body);
+  if (json.error && typeof json.error === 'object') {
     return new docusignTokenError(json.error.message, json.error.type, json.error.code, json.error.error_subcode, json.error.fbtrace_id);
   }
   return OAuth2Strategy.prototype.parseErrorResponse.call(this, body, status);
@@ -192,24 +190,23 @@ Strategy.prototype.parseErrorResponse = function (body, status) {
  * @access protected
  */
 Strategy.prototype._convertProfileFields = function (profileFields) {
-  var map = {
-    'sub': 'sub',
-    'name': 'name',
-    'given_name': 'given_name',
-    'family_name': 'family_name',
-    'email': 'email',
-    'accounts': 'accounts'
+  const map = {
+    sub: 'sub',
+    name: 'name',
+    given_name: 'given_name',
+    family_name: 'family_name',
+    email: 'email',
+    accounts: 'accounts',
   };
 
-  var fields = [];
+  const fields = [];
 
-  profileFields.forEach(function (f) {
+  profileFields.forEach((f) => {
     // return raw docusign profile field to support the many fields that don't
     // map cleanly to Portable Contacts
     if (typeof map[f] === 'undefined') {
       return fields.push(f);
     }
-    ;
 
     if (Array.isArray(map[f])) {
       Array.prototype.push.apply(fields, map[f]);
@@ -220,7 +217,6 @@ Strategy.prototype._convertProfileFields = function (profileFields) {
 
   return fields.join(',');
 };
-
 
 // Expose constructor.
 module.exports = Strategy;

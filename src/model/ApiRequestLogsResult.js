@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ApiRequestLog'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ApiRequestLogsResult = factory(root.Docusign.ApiClient, root.Docusign.ApiRequestLog);
   }
-}(this, function(ApiClient, ApiRequestLog) {
-  'use strict';
-
-
+}(this, (ApiClient, ApiRequestLog) => {
   /**
    * The ApiRequestLogsResult model module.
    * @module model/ApiRequestLogsResult
@@ -38,10 +35,8 @@
    * @alias module:model/ApiRequestLogsResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,26 +46,22 @@
    * @param {module:model/ApiRequestLogsResult} obj Optional instance to populate.
    * @return {module:model/ApiRequestLogsResult} The populated <code>ApiRequestLogsResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('apiRequestLogs')) {
-        obj['apiRequestLogs'] = ApiClient.convertToType(data['apiRequestLogs'], [ApiRequestLog]);
+        obj.apiRequestLogs = ApiClient.convertToType(data.apiRequestLogs, [ApiRequestLog]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {Array.<module:model/ApiRequestLog>} apiRequestLogs
    */
-  exports.prototype['apiRequestLogs'] = undefined;
-
-
+  exports.prototype.apiRequestLogs = undefined;
 
   return exports;
 }));
-
-

@@ -1,11 +1,11 @@
-var SIGNATURE = 'signature';
-var EXTENDED = 'extended';
-var IMPERSONATION = 'impersonation';
+const SIGNATURE = 'signature';
+const EXTENDED = 'extended';
+const IMPERSONATION = 'impersonation';
 
 module.exports = {
-  SIGNATURE: SIGNATURE,
-  EXTENDED: EXTENDED,
-  IMPERSONATION: IMPERSONATION
+  SIGNATURE,
+  EXTENDED,
+  IMPERSONATION,
 };
 
 Object.freeze(module.exports);

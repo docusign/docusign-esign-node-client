@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PageSize = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PageSize model module.
    * @module model/PageSize
@@ -38,10 +35,8 @@
    * @alias module:model/PageSize
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,34 +46,30 @@
    * @param {module:model/PageSize} obj Optional instance to populate.
    * @return {module:model/PageSize} The populated <code>PageSize</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('pageHeight')) {
-        obj['pageHeight'] = ApiClient.convertToType(data['pageHeight'], 'String');
+        obj.pageHeight = ApiClient.convertToType(data.pageHeight, 'String');
       }
       if (data.hasOwnProperty('pageWidth')) {
-        obj['pageWidth'] = ApiClient.convertToType(data['pageWidth'], 'String');
+        obj.pageWidth = ApiClient.convertToType(data.pageWidth, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} pageHeight
    */
-  exports.prototype['pageHeight'] = undefined;
+  exports.prototype.pageHeight = undefined;
   /**
-   * 
+   *
    * @member {String} pageWidth
    */
-  exports.prototype['pageWidth'] = undefined;
-
-
+  exports.prototype.pageWidth = undefined;
 
   return exports;
 }));
-
-

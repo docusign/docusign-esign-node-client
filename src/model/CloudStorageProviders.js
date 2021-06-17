@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/CloudStorageProvider'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CloudStorageProviders = factory(root.Docusign.ApiClient, root.Docusign.CloudStorageProvider);
   }
-}(this, function(ApiClient, CloudStorageProvider) {
-  'use strict';
-
-
+}(this, (ApiClient, CloudStorageProvider) => {
   /**
    * The CloudStorageProviders model module.
    * @module model/CloudStorageProviders
@@ -37,10 +34,8 @@
    * @alias module:model/CloudStorageProviders
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/CloudStorageProviders} obj Optional instance to populate.
    * @return {module:model/CloudStorageProviders} The populated <code>CloudStorageProviders</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('storageProviders')) {
-        obj['storageProviders'] = ApiClient.convertToType(data['storageProviders'], [CloudStorageProvider]);
+        obj.storageProviders = ApiClient.convertToType(data.storageProviders, [CloudStorageProvider]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * An Array containing the storage providers associated with the user.
    * @member {Array.<module:model/CloudStorageProvider>} storageProviders
    */
-  exports.prototype['storageProviders'] = undefined;
-
-
+  exports.prototype.storageProviders = undefined;
 
   return exports;
 }));
-
-

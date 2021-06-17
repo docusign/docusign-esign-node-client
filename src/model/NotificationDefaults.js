@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/NotificationDefaultSettings'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.NotificationDefaults = factory(root.Docusign.ApiClient, root.Docusign.NotificationDefaultSettings);
   }
-}(this, function(ApiClient, NotificationDefaultSettings) {
-  'use strict';
-
-
+}(this, (ApiClient, NotificationDefaultSettings) => {
   /**
    * The NotificationDefaults model module.
    * @module model/NotificationDefaults
@@ -37,10 +34,8 @@
    * @alias module:model/NotificationDefaults
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,32 +45,28 @@
    * @param {module:model/NotificationDefaults} obj Optional instance to populate.
    * @return {module:model/NotificationDefaults} The populated <code>NotificationDefaults</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('apiEmailNotifications')) {
-        obj['apiEmailNotifications'] = NotificationDefaultSettings.constructFromObject(data['apiEmailNotifications']);
+        obj.apiEmailNotifications = NotificationDefaultSettings.constructFromObject(data.apiEmailNotifications);
       }
       if (data.hasOwnProperty('emailNotifications')) {
-        obj['emailNotifications'] = NotificationDefaultSettings.constructFromObject(data['emailNotifications']);
+        obj.emailNotifications = NotificationDefaultSettings.constructFromObject(data.emailNotifications);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/NotificationDefaultSettings} apiEmailNotifications
    */
-  exports.prototype['apiEmailNotifications'] = undefined;
+  exports.prototype.apiEmailNotifications = undefined;
   /**
    * @member {module:model/NotificationDefaultSettings} emailNotifications
    */
-  exports.prototype['emailNotifications'] = undefined;
-
-
+  exports.prototype.emailNotifications = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DisplayApplianceSignerAttachment = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DisplayApplianceSignerAttachment model module.
    * @module model/DisplayApplianceSignerAttachment
@@ -37,10 +34,8 @@
    * @alias module:model/DisplayApplianceSignerAttachment
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,18 +45,12 @@
    * @param {module:model/DisplayApplianceSignerAttachment} obj Optional instance to populate.
    * @return {module:model/DisplayApplianceSignerAttachment} The populated <code>DisplayApplianceSignerAttachment</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
-
     }
     return obj;
-  }
-
-
-
+  };
 
   return exports;
 }));
-
-

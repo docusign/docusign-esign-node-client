@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SignatureType = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SignatureType model module.
    * @module model/SignatureType
@@ -37,10 +34,8 @@
    * @alias module:model/SignatureType
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/SignatureType} obj Optional instance to populate.
    * @return {module:model/SignatureType} The populated <code>SignatureType</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('isDefault')) {
-        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+        obj.isDefault = ApiClient.convertToType(data.isDefault, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} isDefault
    */
-  exports.prototype['isDefault'] = undefined;
+  exports.prototype.isDefault = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
-
-
+  exports.prototype.type = undefined;
 
   return exports;
 }));
-
-

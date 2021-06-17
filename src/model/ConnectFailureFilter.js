@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectFailureFilter = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConnectFailureFilter model module.
    * @module model/ConnectFailureFilter
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectFailureFilter
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/ConnectFailureFilter} obj Optional instance to populate.
    * @return {module:model/ConnectFailureFilter} The populated <code>ConnectFailureFilter</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeIds')) {
-        obj['envelopeIds'] = ApiClient.convertToType(data['envelopeIds'], ['String']);
+        obj.envelopeIds = ApiClient.convertToType(data.envelopeIds, ['String']);
       }
       if (data.hasOwnProperty('synchronous')) {
-        obj['synchronous'] = ApiClient.convertToType(data['synchronous'], 'String');
+        obj.synchronous = ApiClient.convertToType(data.synchronous, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} envelopeIds
    */
-  exports.prototype['envelopeIds'] = undefined;
+  exports.prototype.envelopeIds = undefined;
   /**
-   * 
+   *
    * @member {String} synchronous
    */
-  exports.prototype['synchronous'] = undefined;
-
-
+  exports.prototype.synchronous = undefined;
 
   return exports;
 }));
-
-

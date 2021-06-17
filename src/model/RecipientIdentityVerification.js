@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/RecipientIdentityInputOption'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientIdentityVerification = factory(root.Docusign.ApiClient, root.Docusign.RecipientIdentityInputOption);
   }
-}(this, function(ApiClient, RecipientIdentityInputOption) {
-  'use strict';
-
-
+}(this, (ApiClient, RecipientIdentityInputOption) => {
   /**
    * The RecipientIdentityVerification model module.
    * @module model/RecipientIdentityVerification
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientIdentityVerification
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/RecipientIdentityVerification} obj Optional instance to populate.
    * @return {module:model/RecipientIdentityVerification} The populated <code>RecipientIdentityVerification</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('inputOptions')) {
-        obj['inputOptions'] = ApiClient.convertToType(data['inputOptions'], [RecipientIdentityInputOption]);
+        obj.inputOptions = ApiClient.convertToType(data.inputOptions, [RecipientIdentityInputOption]);
       }
       if (data.hasOwnProperty('workflowId')) {
-        obj['workflowId'] = ApiClient.convertToType(data['workflowId'], 'String');
+        obj.workflowId = ApiClient.convertToType(data.workflowId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/RecipientIdentityInputOption>} inputOptions
    */
-  exports.prototype['inputOptions'] = undefined;
+  exports.prototype.inputOptions = undefined;
   /**
-   * 
+   *
    * @member {String} workflowId
    */
-  exports.prototype['workflowId'] = undefined;
-
-
+  exports.prototype.workflowId = undefined;
 
   return exports;
 }));
-
-

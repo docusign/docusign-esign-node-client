@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConditionalRecipientRuleFilter = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConditionalRecipientRuleFilter model module.
    * @module model/ConditionalRecipientRuleFilter
@@ -37,10 +34,8 @@
    * @alias module:model/ConditionalRecipientRuleFilter
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/ConditionalRecipientRuleFilter} obj Optional instance to populate.
    * @return {module:model/ConditionalRecipientRuleFilter} The populated <code>ConditionalRecipientRuleFilter</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('operator')) {
-        obj['operator'] = ApiClient.convertToType(data['operator'], 'String');
+        obj.operator = ApiClient.convertToType(data.operator, 'String');
       }
       if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+        obj.recipientId = ApiClient.convertToType(data.recipientId, 'String');
       }
       if (data.hasOwnProperty('scope')) {
-        obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
+        obj.scope = ApiClient.convertToType(data.scope, 'String');
       }
       if (data.hasOwnProperty('tabId')) {
-        obj['tabId'] = ApiClient.convertToType(data['tabId'], 'String');
+        obj.tabId = ApiClient.convertToType(data.tabId, 'String');
       }
       if (data.hasOwnProperty('tabLabel')) {
-        obj['tabLabel'] = ApiClient.convertToType(data['tabLabel'], 'String');
+        obj.tabLabel = ApiClient.convertToType(data.tabLabel, 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+        obj.value = ApiClient.convertToType(data.value, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} operator
    */
-  exports.prototype['operator'] = undefined;
+  exports.prototype.operator = undefined;
   /**
    * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
    * @member {String} recipientId
    */
-  exports.prototype['recipientId'] = undefined;
+  exports.prototype.recipientId = undefined;
   /**
-   * 
+   *
    * @member {String} scope
    */
-  exports.prototype['scope'] = undefined;
+  exports.prototype.scope = undefined;
   /**
-   * The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
+   * The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].
    * @member {String} tabId
    */
-  exports.prototype['tabId'] = undefined;
+  exports.prototype.tabId = undefined;
   /**
    * The label string associated with the tab.
    * @member {String} tabLabel
    */
-  exports.prototype['tabLabel'] = undefined;
+  exports.prototype.tabLabel = undefined;
   /**
-   * Specifies the value of the tab. 
+   * Specifies the value of the tab.
    * @member {String} value
    */
-  exports.prototype['value'] = undefined;
-
-
+  exports.prototype.value = undefined;
 
   return exports;
 }));
-
-

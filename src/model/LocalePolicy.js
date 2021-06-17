@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SettingsMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.LocalePolicy = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, SettingsMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, SettingsMetadata) => {
   /**
    * The LocalePolicy model module.
    * @module model/LocalePolicy
@@ -37,10 +34,8 @@
    * @alias module:model/LocalePolicy
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,349 +45,345 @@
    * @param {module:model/LocalePolicy} obj Optional instance to populate.
    * @return {module:model/LocalePolicy} The populated <code>LocalePolicy</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('addressFormat')) {
-        obj['addressFormat'] = ApiClient.convertToType(data['addressFormat'], 'String');
+        obj.addressFormat = ApiClient.convertToType(data.addressFormat, 'String');
       }
       if (data.hasOwnProperty('addressFormatMetadata')) {
-        obj['addressFormatMetadata'] = SettingsMetadata.constructFromObject(data['addressFormatMetadata']);
+        obj.addressFormatMetadata = SettingsMetadata.constructFromObject(data.addressFormatMetadata);
       }
       if (data.hasOwnProperty('allowRegion')) {
-        obj['allowRegion'] = ApiClient.convertToType(data['allowRegion'], 'String');
+        obj.allowRegion = ApiClient.convertToType(data.allowRegion, 'String');
       }
       if (data.hasOwnProperty('calendarType')) {
-        obj['calendarType'] = ApiClient.convertToType(data['calendarType'], 'String');
+        obj.calendarType = ApiClient.convertToType(data.calendarType, 'String');
       }
       if (data.hasOwnProperty('calendarTypeMetadata')) {
-        obj['calendarTypeMetadata'] = SettingsMetadata.constructFromObject(data['calendarTypeMetadata']);
+        obj.calendarTypeMetadata = SettingsMetadata.constructFromObject(data.calendarTypeMetadata);
       }
       if (data.hasOwnProperty('cultureName')) {
-        obj['cultureName'] = ApiClient.convertToType(data['cultureName'], 'String');
+        obj.cultureName = ApiClient.convertToType(data.cultureName, 'String');
       }
       if (data.hasOwnProperty('cultureNameMetadata')) {
-        obj['cultureNameMetadata'] = SettingsMetadata.constructFromObject(data['cultureNameMetadata']);
+        obj.cultureNameMetadata = SettingsMetadata.constructFromObject(data.cultureNameMetadata);
       }
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('currencyCodeMetadata')) {
-        obj['currencyCodeMetadata'] = SettingsMetadata.constructFromObject(data['currencyCodeMetadata']);
+        obj.currencyCodeMetadata = SettingsMetadata.constructFromObject(data.currencyCodeMetadata);
       }
       if (data.hasOwnProperty('currencyNegativeFormat')) {
-        obj['currencyNegativeFormat'] = ApiClient.convertToType(data['currencyNegativeFormat'], 'String');
+        obj.currencyNegativeFormat = ApiClient.convertToType(data.currencyNegativeFormat, 'String');
       }
       if (data.hasOwnProperty('currencyNegativeFormatMetadata')) {
-        obj['currencyNegativeFormatMetadata'] = SettingsMetadata.constructFromObject(data['currencyNegativeFormatMetadata']);
+        obj.currencyNegativeFormatMetadata = SettingsMetadata.constructFromObject(data.currencyNegativeFormatMetadata);
       }
       if (data.hasOwnProperty('currencyPositiveFormat')) {
-        obj['currencyPositiveFormat'] = ApiClient.convertToType(data['currencyPositiveFormat'], 'String');
+        obj.currencyPositiveFormat = ApiClient.convertToType(data.currencyPositiveFormat, 'String');
       }
       if (data.hasOwnProperty('currencyPositiveFormatMetadata')) {
-        obj['currencyPositiveFormatMetadata'] = SettingsMetadata.constructFromObject(data['currencyPositiveFormatMetadata']);
+        obj.currencyPositiveFormatMetadata = SettingsMetadata.constructFromObject(data.currencyPositiveFormatMetadata);
       }
       if (data.hasOwnProperty('customDateFormat')) {
-        obj['customDateFormat'] = ApiClient.convertToType(data['customDateFormat'], 'String');
+        obj.customDateFormat = ApiClient.convertToType(data.customDateFormat, 'String');
       }
       if (data.hasOwnProperty('customSignDateFormat')) {
-        obj['customSignDateFormat'] = ApiClient.convertToType(data['customSignDateFormat'], 'String');
+        obj.customSignDateFormat = ApiClient.convertToType(data.customSignDateFormat, 'String');
       }
       if (data.hasOwnProperty('customSignTimeFormat')) {
-        obj['customSignTimeFormat'] = ApiClient.convertToType(data['customSignTimeFormat'], 'String');
+        obj.customSignTimeFormat = ApiClient.convertToType(data.customSignTimeFormat, 'String');
       }
       if (data.hasOwnProperty('customTimeFormat')) {
-        obj['customTimeFormat'] = ApiClient.convertToType(data['customTimeFormat'], 'String');
+        obj.customTimeFormat = ApiClient.convertToType(data.customTimeFormat, 'String');
       }
       if (data.hasOwnProperty('dateFormat')) {
-        obj['dateFormat'] = ApiClient.convertToType(data['dateFormat'], 'String');
+        obj.dateFormat = ApiClient.convertToType(data.dateFormat, 'String');
       }
       if (data.hasOwnProperty('dateFormatMetadata')) {
-        obj['dateFormatMetadata'] = SettingsMetadata.constructFromObject(data['dateFormatMetadata']);
+        obj.dateFormatMetadata = SettingsMetadata.constructFromObject(data.dateFormatMetadata);
       }
       if (data.hasOwnProperty('effectiveAddressFormat')) {
-        obj['effectiveAddressFormat'] = ApiClient.convertToType(data['effectiveAddressFormat'], 'String');
+        obj.effectiveAddressFormat = ApiClient.convertToType(data.effectiveAddressFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveCalendarType')) {
-        obj['effectiveCalendarType'] = ApiClient.convertToType(data['effectiveCalendarType'], 'String');
+        obj.effectiveCalendarType = ApiClient.convertToType(data.effectiveCalendarType, 'String');
       }
       if (data.hasOwnProperty('effectiveCurrencyCode')) {
-        obj['effectiveCurrencyCode'] = ApiClient.convertToType(data['effectiveCurrencyCode'], 'String');
+        obj.effectiveCurrencyCode = ApiClient.convertToType(data.effectiveCurrencyCode, 'String');
       }
       if (data.hasOwnProperty('effectiveCurrencyNegativeFormat')) {
-        obj['effectiveCurrencyNegativeFormat'] = ApiClient.convertToType(data['effectiveCurrencyNegativeFormat'], 'String');
+        obj.effectiveCurrencyNegativeFormat = ApiClient.convertToType(data.effectiveCurrencyNegativeFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveCurrencyPositiveFormat')) {
-        obj['effectiveCurrencyPositiveFormat'] = ApiClient.convertToType(data['effectiveCurrencyPositiveFormat'], 'String');
+        obj.effectiveCurrencyPositiveFormat = ApiClient.convertToType(data.effectiveCurrencyPositiveFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveCustomDateFormat')) {
-        obj['effectiveCustomDateFormat'] = ApiClient.convertToType(data['effectiveCustomDateFormat'], 'String');
+        obj.effectiveCustomDateFormat = ApiClient.convertToType(data.effectiveCustomDateFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveCustomTimeFormat')) {
-        obj['effectiveCustomTimeFormat'] = ApiClient.convertToType(data['effectiveCustomTimeFormat'], 'String');
+        obj.effectiveCustomTimeFormat = ApiClient.convertToType(data.effectiveCustomTimeFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveDateFormat')) {
-        obj['effectiveDateFormat'] = ApiClient.convertToType(data['effectiveDateFormat'], 'String');
+        obj.effectiveDateFormat = ApiClient.convertToType(data.effectiveDateFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveInitialFormat')) {
-        obj['effectiveInitialFormat'] = ApiClient.convertToType(data['effectiveInitialFormat'], 'String');
+        obj.effectiveInitialFormat = ApiClient.convertToType(data.effectiveInitialFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveNameFormat')) {
-        obj['effectiveNameFormat'] = ApiClient.convertToType(data['effectiveNameFormat'], 'String');
+        obj.effectiveNameFormat = ApiClient.convertToType(data.effectiveNameFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveTimeFormat')) {
-        obj['effectiveTimeFormat'] = ApiClient.convertToType(data['effectiveTimeFormat'], 'String');
+        obj.effectiveTimeFormat = ApiClient.convertToType(data.effectiveTimeFormat, 'String');
       }
       if (data.hasOwnProperty('effectiveTimeZone')) {
-        obj['effectiveTimeZone'] = ApiClient.convertToType(data['effectiveTimeZone'], 'String');
+        obj.effectiveTimeZone = ApiClient.convertToType(data.effectiveTimeZone, 'String');
       }
       if (data.hasOwnProperty('initialFormat')) {
-        obj['initialFormat'] = ApiClient.convertToType(data['initialFormat'], 'String');
+        obj.initialFormat = ApiClient.convertToType(data.initialFormat, 'String');
       }
       if (data.hasOwnProperty('initialFormatMetadata')) {
-        obj['initialFormatMetadata'] = SettingsMetadata.constructFromObject(data['initialFormatMetadata']);
+        obj.initialFormatMetadata = SettingsMetadata.constructFromObject(data.initialFormatMetadata);
       }
       if (data.hasOwnProperty('nameFormat')) {
-        obj['nameFormat'] = ApiClient.convertToType(data['nameFormat'], 'String');
+        obj.nameFormat = ApiClient.convertToType(data.nameFormat, 'String');
       }
       if (data.hasOwnProperty('nameFormatMetadata')) {
-        obj['nameFormatMetadata'] = SettingsMetadata.constructFromObject(data['nameFormatMetadata']);
+        obj.nameFormatMetadata = SettingsMetadata.constructFromObject(data.nameFormatMetadata);
       }
       if (data.hasOwnProperty('signDateFormat')) {
-        obj['signDateFormat'] = ApiClient.convertToType(data['signDateFormat'], 'String');
+        obj.signDateFormat = ApiClient.convertToType(data.signDateFormat, 'String');
       }
       if (data.hasOwnProperty('signDateFormatMetadata')) {
-        obj['signDateFormatMetadata'] = SettingsMetadata.constructFromObject(data['signDateFormatMetadata']);
+        obj.signDateFormatMetadata = SettingsMetadata.constructFromObject(data.signDateFormatMetadata);
       }
       if (data.hasOwnProperty('signTimeFormat')) {
-        obj['signTimeFormat'] = ApiClient.convertToType(data['signTimeFormat'], 'String');
+        obj.signTimeFormat = ApiClient.convertToType(data.signTimeFormat, 'String');
       }
       if (data.hasOwnProperty('signTimeFormatMetadata')) {
-        obj['signTimeFormatMetadata'] = SettingsMetadata.constructFromObject(data['signTimeFormatMetadata']);
+        obj.signTimeFormatMetadata = SettingsMetadata.constructFromObject(data.signTimeFormatMetadata);
       }
       if (data.hasOwnProperty('timeFormat')) {
-        obj['timeFormat'] = ApiClient.convertToType(data['timeFormat'], 'String');
+        obj.timeFormat = ApiClient.convertToType(data.timeFormat, 'String');
       }
       if (data.hasOwnProperty('timeFormatMetadata')) {
-        obj['timeFormatMetadata'] = SettingsMetadata.constructFromObject(data['timeFormatMetadata']);
+        obj.timeFormatMetadata = SettingsMetadata.constructFromObject(data.timeFormatMetadata);
       }
       if (data.hasOwnProperty('timeZone')) {
-        obj['timeZone'] = ApiClient.convertToType(data['timeZone'], 'String');
+        obj.timeZone = ApiClient.convertToType(data.timeZone, 'String');
       }
       if (data.hasOwnProperty('timeZoneMetadata')) {
-        obj['timeZoneMetadata'] = SettingsMetadata.constructFromObject(data['timeZoneMetadata']);
+        obj.timeZoneMetadata = SettingsMetadata.constructFromObject(data.timeZoneMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} addressFormat
    */
-  exports.prototype['addressFormat'] = undefined;
+  exports.prototype.addressFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} addressFormatMetadata
    */
-  exports.prototype['addressFormatMetadata'] = undefined;
+  exports.prototype.addressFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowRegion
    */
-  exports.prototype['allowRegion'] = undefined;
+  exports.prototype.allowRegion = undefined;
   /**
-   * 
+   *
    * @member {String} calendarType
    */
-  exports.prototype['calendarType'] = undefined;
+  exports.prototype.calendarType = undefined;
   /**
    * @member {module:model/SettingsMetadata} calendarTypeMetadata
    */
-  exports.prototype['calendarTypeMetadata'] = undefined;
+  exports.prototype.calendarTypeMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} cultureName
    */
-  exports.prototype['cultureName'] = undefined;
+  exports.prototype.cultureName = undefined;
   /**
    * @member {module:model/SettingsMetadata} cultureNameMetadata
    */
-  exports.prototype['cultureNameMetadata'] = undefined;
+  exports.prototype.cultureNameMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * @member {module:model/SettingsMetadata} currencyCodeMetadata
    */
-  exports.prototype['currencyCodeMetadata'] = undefined;
+  exports.prototype.currencyCodeMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} currencyNegativeFormat
    */
-  exports.prototype['currencyNegativeFormat'] = undefined;
+  exports.prototype.currencyNegativeFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} currencyNegativeFormatMetadata
    */
-  exports.prototype['currencyNegativeFormatMetadata'] = undefined;
+  exports.prototype.currencyNegativeFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} currencyPositiveFormat
    */
-  exports.prototype['currencyPositiveFormat'] = undefined;
+  exports.prototype.currencyPositiveFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} currencyPositiveFormatMetadata
    */
-  exports.prototype['currencyPositiveFormatMetadata'] = undefined;
+  exports.prototype.currencyPositiveFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} customDateFormat
    */
-  exports.prototype['customDateFormat'] = undefined;
+  exports.prototype.customDateFormat = undefined;
   /**
-   * 
+   *
    * @member {String} customSignDateFormat
    */
-  exports.prototype['customSignDateFormat'] = undefined;
+  exports.prototype.customSignDateFormat = undefined;
   /**
-   * 
+   *
    * @member {String} customSignTimeFormat
    */
-  exports.prototype['customSignTimeFormat'] = undefined;
+  exports.prototype.customSignTimeFormat = undefined;
   /**
-   * 
+   *
    * @member {String} customTimeFormat
    */
-  exports.prototype['customTimeFormat'] = undefined;
+  exports.prototype.customTimeFormat = undefined;
   /**
-   * 
+   *
    * @member {String} dateFormat
    */
-  exports.prototype['dateFormat'] = undefined;
+  exports.prototype.dateFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} dateFormatMetadata
    */
-  exports.prototype['dateFormatMetadata'] = undefined;
+  exports.prototype.dateFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveAddressFormat
    */
-  exports.prototype['effectiveAddressFormat'] = undefined;
+  exports.prototype.effectiveAddressFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveCalendarType
    */
-  exports.prototype['effectiveCalendarType'] = undefined;
+  exports.prototype.effectiveCalendarType = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveCurrencyCode
    */
-  exports.prototype['effectiveCurrencyCode'] = undefined;
+  exports.prototype.effectiveCurrencyCode = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveCurrencyNegativeFormat
    */
-  exports.prototype['effectiveCurrencyNegativeFormat'] = undefined;
+  exports.prototype.effectiveCurrencyNegativeFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveCurrencyPositiveFormat
    */
-  exports.prototype['effectiveCurrencyPositiveFormat'] = undefined;
+  exports.prototype.effectiveCurrencyPositiveFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveCustomDateFormat
    */
-  exports.prototype['effectiveCustomDateFormat'] = undefined;
+  exports.prototype.effectiveCustomDateFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveCustomTimeFormat
    */
-  exports.prototype['effectiveCustomTimeFormat'] = undefined;
+  exports.prototype.effectiveCustomTimeFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveDateFormat
    */
-  exports.prototype['effectiveDateFormat'] = undefined;
+  exports.prototype.effectiveDateFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveInitialFormat
    */
-  exports.prototype['effectiveInitialFormat'] = undefined;
+  exports.prototype.effectiveInitialFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveNameFormat
    */
-  exports.prototype['effectiveNameFormat'] = undefined;
+  exports.prototype.effectiveNameFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveTimeFormat
    */
-  exports.prototype['effectiveTimeFormat'] = undefined;
+  exports.prototype.effectiveTimeFormat = undefined;
   /**
-   * 
+   *
    * @member {String} effectiveTimeZone
    */
-  exports.prototype['effectiveTimeZone'] = undefined;
+  exports.prototype.effectiveTimeZone = undefined;
   /**
-   * 
+   *
    * @member {String} initialFormat
    */
-  exports.prototype['initialFormat'] = undefined;
+  exports.prototype.initialFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} initialFormatMetadata
    */
-  exports.prototype['initialFormatMetadata'] = undefined;
+  exports.prototype.initialFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} nameFormat
    */
-  exports.prototype['nameFormat'] = undefined;
+  exports.prototype.nameFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} nameFormatMetadata
    */
-  exports.prototype['nameFormatMetadata'] = undefined;
+  exports.prototype.nameFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} signDateFormat
    */
-  exports.prototype['signDateFormat'] = undefined;
+  exports.prototype.signDateFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} signDateFormatMetadata
    */
-  exports.prototype['signDateFormatMetadata'] = undefined;
+  exports.prototype.signDateFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} signTimeFormat
    */
-  exports.prototype['signTimeFormat'] = undefined;
+  exports.prototype.signTimeFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} signTimeFormatMetadata
    */
-  exports.prototype['signTimeFormatMetadata'] = undefined;
+  exports.prototype.signTimeFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} timeFormat
    */
-  exports.prototype['timeFormat'] = undefined;
+  exports.prototype.timeFormat = undefined;
   /**
    * @member {module:model/SettingsMetadata} timeFormatMetadata
    */
-  exports.prototype['timeFormatMetadata'] = undefined;
+  exports.prototype.timeFormatMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} timeZone
    */
-  exports.prototype['timeZone'] = undefined;
+  exports.prototype.timeZone = undefined;
   /**
    * @member {module:model/SettingsMetadata} timeZoneMetadata
    */
-  exports.prototype['timeZoneMetadata'] = undefined;
-
-
+  exports.prototype.timeZoneMetadata = undefined;
 
   return exports;
 }));
-
-

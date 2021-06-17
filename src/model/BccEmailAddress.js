@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BccEmailAddress = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BccEmailAddress model module.
    * @module model/BccEmailAddress
@@ -38,10 +35,8 @@
    * @alias module:model/BccEmailAddress
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,34 +46,30 @@
    * @param {module:model/BccEmailAddress} obj Optional instance to populate.
    * @return {module:model/BccEmailAddress} The populated <code>BccEmailAddress</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bccEmailAddressId')) {
-        obj['bccEmailAddressId'] = ApiClient.convertToType(data['bccEmailAddressId'], 'String');
+        obj.bccEmailAddressId = ApiClient.convertToType(data.bccEmailAddressId, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Only users with canManageAccount setting can use this option. An array of up to 5 email addresses the envelope is sent to as a BCC email.    Example: If your account has BCC for Email Archive set up for the email address 'archive@mycompany.com' and you send an envelope using the BCC Email Override to send a BCC email to 'salesarchive@mycompany.com', then a copy of the envelope is only sent to the 'salesarchive@mycompany.com' email address.
    * @member {String} bccEmailAddressId
    */
-  exports.prototype['bccEmailAddressId'] = undefined;
+  exports.prototype.bccEmailAddressId = undefined;
   /**
-   * Specifies the BCC email address. DocuSign verifies that the email format is correct, but does not verify that the email is active.Using this overrides the BCC for Email Archive information setting for this envelope.  Maximum of length: 100 characters. 
+   * Specifies the BCC email address. DocuSign verifies that the email format is correct, but does not verify that the email is active.Using this overrides the BCC for Email Archive information setting for this envelope.  Maximum of length: 100 characters.
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
-
-
+  exports.prototype.email = undefined;
 
   return exports;
 }));
-
-

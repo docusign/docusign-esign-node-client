@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TspHealthCheckStatusDescription = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The TspHealthCheckStatusDescription model module.
    * @module model/TspHealthCheckStatusDescription
@@ -37,10 +34,8 @@
    * @alias module:model/TspHealthCheckStatusDescription
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/TspHealthCheckStatusDescription} obj Optional instance to populate.
    * @return {module:model/TspHealthCheckStatusDescription} The populated <code>TspHealthCheckStatusDescription</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+        obj.description = ApiClient.convertToType(data.description, 'String');
       }
       if (data.hasOwnProperty('error')) {
-        obj['error'] = ApiClient.convertToType(data['error'], 'String');
+        obj.error = ApiClient.convertToType(data.error, 'String');
       }
       if (data.hasOwnProperty('hostname')) {
-        obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
+        obj.hostname = ApiClient.convertToType(data.hostname, 'String');
       }
       if (data.hasOwnProperty('responseSeconds')) {
-        obj['responseSeconds'] = ApiClient.convertToType(data['responseSeconds'], 'String');
+        obj.responseSeconds = ApiClient.convertToType(data.responseSeconds, 'String');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} description
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype.description = undefined;
   /**
-   * 
+   *
    * @member {String} error
    */
-  exports.prototype['error'] = undefined;
+  exports.prototype.error = undefined;
   /**
-   * 
+   *
    * @member {String} hostname
    */
-  exports.prototype['hostname'] = undefined;
+  exports.prototype.hostname = undefined;
   /**
-   * 
+   *
    * @member {String} responseSeconds
    */
-  exports.prototype['responseSeconds'] = undefined;
+  exports.prototype.responseSeconds = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
-
-
+  exports.prototype.type = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SettingsMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ExternalDocumentSources = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, SettingsMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, SettingsMetadata) => {
   /**
    * The ExternalDocumentSources model module.
    * @module model/ExternalDocumentSources
@@ -37,10 +34,8 @@
    * @alias module:model/ExternalDocumentSources
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,93 +45,89 @@
    * @param {module:model/ExternalDocumentSources} obj Optional instance to populate.
    * @return {module:model/ExternalDocumentSources} The populated <code>ExternalDocumentSources</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('boxnetEnabled')) {
-        obj['boxnetEnabled'] = ApiClient.convertToType(data['boxnetEnabled'], 'String');
+        obj.boxnetEnabled = ApiClient.convertToType(data.boxnetEnabled, 'String');
       }
       if (data.hasOwnProperty('boxnetMetadata')) {
-        obj['boxnetMetadata'] = SettingsMetadata.constructFromObject(data['boxnetMetadata']);
+        obj.boxnetMetadata = SettingsMetadata.constructFromObject(data.boxnetMetadata);
       }
       if (data.hasOwnProperty('dropboxEnabled')) {
-        obj['dropboxEnabled'] = ApiClient.convertToType(data['dropboxEnabled'], 'String');
+        obj.dropboxEnabled = ApiClient.convertToType(data.dropboxEnabled, 'String');
       }
       if (data.hasOwnProperty('dropboxMetadata')) {
-        obj['dropboxMetadata'] = SettingsMetadata.constructFromObject(data['dropboxMetadata']);
+        obj.dropboxMetadata = SettingsMetadata.constructFromObject(data.dropboxMetadata);
       }
       if (data.hasOwnProperty('googleDriveEnabled')) {
-        obj['googleDriveEnabled'] = ApiClient.convertToType(data['googleDriveEnabled'], 'String');
+        obj.googleDriveEnabled = ApiClient.convertToType(data.googleDriveEnabled, 'String');
       }
       if (data.hasOwnProperty('googleDriveMetadata')) {
-        obj['googleDriveMetadata'] = SettingsMetadata.constructFromObject(data['googleDriveMetadata']);
+        obj.googleDriveMetadata = SettingsMetadata.constructFromObject(data.googleDriveMetadata);
       }
       if (data.hasOwnProperty('oneDriveEnabled')) {
-        obj['oneDriveEnabled'] = ApiClient.convertToType(data['oneDriveEnabled'], 'String');
+        obj.oneDriveEnabled = ApiClient.convertToType(data.oneDriveEnabled, 'String');
       }
       if (data.hasOwnProperty('oneDriveMetadata')) {
-        obj['oneDriveMetadata'] = SettingsMetadata.constructFromObject(data['oneDriveMetadata']);
+        obj.oneDriveMetadata = SettingsMetadata.constructFromObject(data.oneDriveMetadata);
       }
       if (data.hasOwnProperty('salesforceEnabled')) {
-        obj['salesforceEnabled'] = ApiClient.convertToType(data['salesforceEnabled'], 'String');
+        obj.salesforceEnabled = ApiClient.convertToType(data.salesforceEnabled, 'String');
       }
       if (data.hasOwnProperty('salesforceMetadata')) {
-        obj['salesforceMetadata'] = SettingsMetadata.constructFromObject(data['salesforceMetadata']);
+        obj.salesforceMetadata = SettingsMetadata.constructFromObject(data.salesforceMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} boxnetEnabled
    */
-  exports.prototype['boxnetEnabled'] = undefined;
+  exports.prototype.boxnetEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} boxnetMetadata
    */
-  exports.prototype['boxnetMetadata'] = undefined;
+  exports.prototype.boxnetMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} dropboxEnabled
    */
-  exports.prototype['dropboxEnabled'] = undefined;
+  exports.prototype.dropboxEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} dropboxMetadata
    */
-  exports.prototype['dropboxMetadata'] = undefined;
+  exports.prototype.dropboxMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} googleDriveEnabled
    */
-  exports.prototype['googleDriveEnabled'] = undefined;
+  exports.prototype.googleDriveEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} googleDriveMetadata
    */
-  exports.prototype['googleDriveMetadata'] = undefined;
+  exports.prototype.googleDriveMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} oneDriveEnabled
    */
-  exports.prototype['oneDriveEnabled'] = undefined;
+  exports.prototype.oneDriveEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} oneDriveMetadata
    */
-  exports.prototype['oneDriveMetadata'] = undefined;
+  exports.prototype.oneDriveMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} salesforceEnabled
    */
-  exports.prototype['salesforceEnabled'] = undefined;
+  exports.prototype.salesforceEnabled = undefined;
   /**
    * @member {module:model/SettingsMetadata} salesforceMetadata
    */
-  exports.prototype['salesforceMetadata'] = undefined;
-
-
+  exports.prototype.salesforceMetadata = undefined;
 
   return exports;
 }));
-
-

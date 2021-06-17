@@ -1,5 +1,3 @@
-
-
 /**
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
@@ -11,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'oauth/Account'], factory);
@@ -24,8 +22,7 @@
       root.Docusign = {};
     }
   }
-}(this, function(ApiClient,  Account) {
-  'use strict';
+}(this, (ApiClient, Account) => {
   /**
    * The Link model module.
    * @module oauth/Link
@@ -37,10 +34,8 @@
    * @alias module:oauth/Link
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,33 @@
    * @param {module:oauth/Link} obj Optional instance to populate.
    * @return {module:oauth/Link} The populated <code>Link</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    var ApiClient = require('../ApiClient');
+  exports.constructFromObject = function (data, obj) {
+    const ApiClient = require('../ApiClient');
 
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('rel')) {
-        obj['rel'] = ApiClient.convertToType(data['rel'], 'String');
+        obj.rel = ApiClient.convertToType(data.rel, 'String');
       }
       if (data.hasOwnProperty('href')) {
-        obj['href'] = ApiClient.convertToType(data['href'], 'String');
+        obj.href = ApiClient.convertToType(data.href, 'String');
       }
     }
 
     return obj;
-  }
+  };
 
   /**
    *
    * @member {String} rel
    */
-  exports.prototype['rel'] = undefined;
+  exports.prototype.rel = undefined;
   /**
    *
    * @member {String} href
    */
-  exports.prototype['href'] = undefined;
-
+  exports.prototype.href = undefined;
 
   return exports;
 }));

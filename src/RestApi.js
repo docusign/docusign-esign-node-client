@@ -6,6 +6,6 @@ module.exports = {
   BasePath: {
     PRODUCTION: PRODUCTION_BASE_PATH,
     DEMO: DEMO_BASE_PATH,
-    STAGE: STAGE_BASE_PATH
-  }
+    STAGE: STAGE_BASE_PATH,
+  },
 };

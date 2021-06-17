@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SignatureProperties = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SignatureProperties model module.
    * @module model/SignatureProperties
@@ -37,10 +34,8 @@
    * @alias module:model/SignatureProperties
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/SignatureProperties} obj Optional instance to populate.
    * @return {module:model/SignatureProperties} The populated <code>SignatureProperties</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('filter')) {
-        obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
+        obj.filter = ApiClient.convertToType(data.filter, 'String');
       }
       if (data.hasOwnProperty('subFilter')) {
-        obj['subFilter'] = ApiClient.convertToType(data['subFilter'], 'String');
+        obj.subFilter = ApiClient.convertToType(data.subFilter, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} filter
    */
-  exports.prototype['filter'] = undefined;
+  exports.prototype.filter = undefined;
   /**
-   * 
+   *
    * @member {String} subFilter
    */
-  exports.prototype['subFilter'] = undefined;
-
-
+  exports.prototype.subFilter = undefined;
 
   return exports;
 }));
-
-

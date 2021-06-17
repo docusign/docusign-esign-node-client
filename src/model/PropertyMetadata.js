@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PropertyMetadata = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PropertyMetadata model module.
    * @module model/PropertyMetadata
@@ -37,10 +34,8 @@
    * @alias module:model/PropertyMetadata
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/PropertyMetadata} obj Optional instance to populate.
    * @return {module:model/PropertyMetadata} The populated <code>PropertyMetadata</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('options')) {
-        obj['options'] = ApiClient.convertToType(data['options'], ['String']);
+        obj.options = ApiClient.convertToType(data.options, ['String']);
       }
       if (data.hasOwnProperty('rights')) {
-        obj['rights'] = ApiClient.convertToType(data['rights'], 'String');
+        obj.rights = ApiClient.convertToType(data.rights, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} options
    */
-  exports.prototype['options'] = undefined;
+  exports.prototype.options = undefined;
   /**
-   * 
+   *
    * @member {String} rights
    */
-  exports.prototype['rights'] = undefined;
-
-
+  exports.prototype.rights = undefined;
 
   return exports;
 }));
-
-

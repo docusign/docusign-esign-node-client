@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountPasswordRules'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UserPasswordRules = factory(root.Docusign.ApiClient, root.Docusign.AccountPasswordRules);
   }
-}(this, function(ApiClient, AccountPasswordRules) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountPasswordRules) => {
   /**
    * The UserPasswordRules model module.
    * @module model/UserPasswordRules
@@ -37,10 +34,8 @@
    * @alias module:model/UserPasswordRules
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,33 +45,29 @@
    * @param {module:model/UserPasswordRules} obj Optional instance to populate.
    * @return {module:model/UserPasswordRules} The populated <code>UserPasswordRules</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('passwordRules')) {
-        obj['passwordRules'] = AccountPasswordRules.constructFromObject(data['passwordRules']);
+        obj.passwordRules = AccountPasswordRules.constructFromObject(data.passwordRules);
       }
       if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+        obj.userId = ApiClient.convertToType(data.userId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/AccountPasswordRules} passwordRules
    */
-  exports.prototype['passwordRules'] = undefined;
+  exports.prototype.passwordRules = undefined;
   /**
-   * 
+   *
    * @member {String} userId
    */
-  exports.prototype['userId'] = undefined;
-
-
+  exports.prototype.userId = undefined;
 
   return exports;
 }));
-
-

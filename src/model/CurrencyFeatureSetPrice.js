@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CurrencyFeatureSetPrice = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The CurrencyFeatureSetPrice model module.
    * @module model/CurrencyFeatureSetPrice
@@ -37,10 +34,8 @@
    * @alias module:model/CurrencyFeatureSetPrice
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,58 +45,54 @@
    * @param {module:model/CurrencyFeatureSetPrice} obj Optional instance to populate.
    * @return {module:model/CurrencyFeatureSetPrice} The populated <code>CurrencyFeatureSetPrice</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('currencySymbol')) {
-        obj['currencySymbol'] = ApiClient.convertToType(data['currencySymbol'], 'String');
+        obj.currencySymbol = ApiClient.convertToType(data.currencySymbol, 'String');
       }
       if (data.hasOwnProperty('envelopeFee')) {
-        obj['envelopeFee'] = ApiClient.convertToType(data['envelopeFee'], 'String');
+        obj.envelopeFee = ApiClient.convertToType(data.envelopeFee, 'String');
       }
       if (data.hasOwnProperty('fixedFee')) {
-        obj['fixedFee'] = ApiClient.convertToType(data['fixedFee'], 'String');
+        obj.fixedFee = ApiClient.convertToType(data.fixedFee, 'String');
       }
       if (data.hasOwnProperty('seatFee')) {
-        obj['seatFee'] = ApiClient.convertToType(data['seatFee'], 'String');
+        obj.seatFee = ApiClient.convertToType(data.seatFee, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * Specifies the alternate ISO currency code for the account. 
+   * Specifies the alternate ISO currency code for the account.
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * Specifies the alternate currency symbol for the account.
    * @member {String} currencySymbol
    */
-  exports.prototype['currencySymbol'] = undefined;
+  exports.prototype.currencySymbol = undefined;
   /**
    * An incremental envelope cost for plans with envelope overages (when `isEnabled` is set to **true**.)
    * @member {String} envelopeFee
    */
-  exports.prototype['envelopeFee'] = undefined;
+  exports.prototype.envelopeFee = undefined;
   /**
    * Specifies a one-time fee associated with the plan (when `isEnabled` is set to **true**.)
    * @member {String} fixedFee
    */
-  exports.prototype['fixedFee'] = undefined;
+  exports.prototype.fixedFee = undefined;
   /**
    * Specifies an incremental seat cost for seat-based plans (when `isEnabled` is set to **true**.)
    * @member {String} seatFee
    */
-  exports.prototype['seatFee'] = undefined;
-
-
+  exports.prototype.seatFee = undefined;
 
   return exports;
 }));
-
-

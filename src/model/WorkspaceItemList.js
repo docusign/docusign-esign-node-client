@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/WorkspaceItem'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.WorkspaceItemList = factory(root.Docusign.ApiClient, root.Docusign.WorkspaceItem);
   }
-}(this, function(ApiClient, WorkspaceItem) {
-  'use strict';
-
-
+}(this, (ApiClient, WorkspaceItem) => {
   /**
    * The WorkspaceItemList model module.
    * @module model/WorkspaceItemList
@@ -38,10 +35,8 @@
    * @alias module:model/WorkspaceItemList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,26 +46,22 @@
    * @param {module:model/WorkspaceItemList} obj Optional instance to populate.
    * @return {module:model/WorkspaceItemList} The populated <code>WorkspaceItemList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('items')) {
-        obj['items'] = ApiClient.convertToType(data['items'], [WorkspaceItem]);
+        obj.items = ApiClient.convertToType(data.items, [WorkspaceItem]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/WorkspaceItem>} items
    */
-  exports.prototype['items'] = undefined;
-
-
+  exports.prototype.items = undefined;
 
   return exports;
 }));
-
-

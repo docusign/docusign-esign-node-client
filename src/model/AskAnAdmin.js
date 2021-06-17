@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AskAnAdmin = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AskAnAdmin model module.
    * @module model/AskAnAdmin
@@ -37,10 +34,8 @@
    * @alias module:model/AskAnAdmin
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/AskAnAdmin} obj Optional instance to populate.
    * @return {module:model/AskAnAdmin} The populated <code>AskAnAdmin</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+        obj.message = ApiClient.convertToType(data.message, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('phone')) {
-        obj['phone'] = ApiClient.convertToType(data['phone'], 'String');
+        obj.phone = ApiClient.convertToType(data.phone, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {String} message
    */
-  exports.prototype['message'] = undefined;
+  exports.prototype.message = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} phone
    */
-  exports.prototype['phone'] = undefined;
-
-
+  exports.prototype.phone = undefined;
 
   return exports;
 }));
-
-

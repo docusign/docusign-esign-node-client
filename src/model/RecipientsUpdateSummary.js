@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/RecipientUpdateResponse'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientsUpdateSummary = factory(root.Docusign.ApiClient, root.Docusign.RecipientUpdateResponse);
   }
-}(this, function(ApiClient, RecipientUpdateResponse) {
-  'use strict';
-
-
+}(this, (ApiClient, RecipientUpdateResponse) => {
   /**
    * The RecipientsUpdateSummary model module.
    * @module model/RecipientsUpdateSummary
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientsUpdateSummary
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/RecipientsUpdateSummary} obj Optional instance to populate.
    * @return {module:model/RecipientsUpdateSummary} The populated <code>RecipientsUpdateSummary</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('recipientUpdateResults')) {
-        obj['recipientUpdateResults'] = ApiClient.convertToType(data['recipientUpdateResults'], [RecipientUpdateResponse]);
+        obj.recipientUpdateResults = ApiClient.convertToType(data.recipientUpdateResults, [RecipientUpdateResponse]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/RecipientUpdateResponse>} recipientUpdateResults
    */
-  exports.prototype['recipientUpdateResults'] = undefined;
-
-
+  exports.prototype.recipientUpdateResults = undefined;
 
   return exports;
 }));
-
-

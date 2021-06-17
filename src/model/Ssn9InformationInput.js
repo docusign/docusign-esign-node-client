@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Ssn9InformationInput = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The Ssn9InformationInput model module.
    * @module model/Ssn9InformationInput
@@ -37,10 +34,8 @@
    * @alias module:model/Ssn9InformationInput
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/Ssn9InformationInput} obj Optional instance to populate.
    * @return {module:model/Ssn9InformationInput} The populated <code>Ssn9InformationInput</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('displayLevelCode')) {
-        obj['displayLevelCode'] = ApiClient.convertToType(data['displayLevelCode'], 'String');
+        obj.displayLevelCode = ApiClient.convertToType(data.displayLevelCode, 'String');
       }
       if (data.hasOwnProperty('ssn9')) {
-        obj['ssn9'] = ApiClient.convertToType(data['ssn9'], 'String');
+        obj.ssn9 = ApiClient.convertToType(data.ssn9, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay
    * @member {String} displayLevelCode
    */
-  exports.prototype['displayLevelCode'] = undefined;
+  exports.prototype.displayLevelCode = undefined;
   /**
    *  The recipient's Social Security Number(SSN).
    * @member {String} ssn9
    */
-  exports.prototype['ssn9'] = undefined;
-
-
+  exports.prototype.ssn9 = undefined;
 
   return exports;
 }));
-
-

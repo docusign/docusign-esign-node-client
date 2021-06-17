@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountPasswordExpirePasswordDays = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountPasswordExpirePasswordDays model module.
    * @module model/AccountPasswordExpirePasswordDays
@@ -37,10 +34,8 @@
    * @alias module:model/AccountPasswordExpirePasswordDays
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/AccountPasswordExpirePasswordDays} obj Optional instance to populate.
    * @return {module:model/AccountPasswordExpirePasswordDays} The populated <code>AccountPasswordExpirePasswordDays</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('maximumDays')) {
-        obj['maximumDays'] = ApiClient.convertToType(data['maximumDays'], 'String');
+        obj.maximumDays = ApiClient.convertToType(data.maximumDays, 'String');
       }
       if (data.hasOwnProperty('minimumDays')) {
-        obj['minimumDays'] = ApiClient.convertToType(data['minimumDays'], 'String');
+        obj.minimumDays = ApiClient.convertToType(data.minimumDays, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} maximumDays
    */
-  exports.prototype['maximumDays'] = undefined;
+  exports.prototype.maximumDays = undefined;
   /**
-   * 
+   *
    * @member {String} minimumDays
    */
-  exports.prototype['minimumDays'] = undefined;
-
-
+  exports.prototype.minimumDays = undefined;
 
   return exports;
 }));
-
-

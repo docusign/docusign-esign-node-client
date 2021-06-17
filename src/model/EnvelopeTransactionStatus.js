@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeTransactionStatus = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The EnvelopeTransactionStatus model module.
    * @module model/EnvelopeTransactionStatus
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeTransactionStatus
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,49 +45,45 @@
    * @param {module:model/EnvelopeTransactionStatus} obj Optional instance to populate.
    * @return {module:model/EnvelopeTransactionStatus} The populated <code>EnvelopeTransactionStatus</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('transactionId')) {
-        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
+        obj.transactionId = ApiClient.convertToType(data.transactionId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
    *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
    * @member {String} transactionId
    */
-  exports.prototype['transactionId'] = undefined;
-
-
+  exports.prototype.transactionId = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountPasswordStrengthTypeOption'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountPasswordStrengthType = factory(root.Docusign.ApiClient, root.Docusign.AccountPasswordStrengthTypeOption);
   }
-}(this, function(ApiClient, AccountPasswordStrengthTypeOption) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountPasswordStrengthTypeOption) => {
   /**
    * The AccountPasswordStrengthType model module.
    * @module model/AccountPasswordStrengthType
@@ -37,10 +34,8 @@
    * @alias module:model/AccountPasswordStrengthType
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/AccountPasswordStrengthType} obj Optional instance to populate.
    * @return {module:model/AccountPasswordStrengthType} The populated <code>AccountPasswordStrengthType</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('options')) {
-        obj['options'] = ApiClient.convertToType(data['options'], [AccountPasswordStrengthTypeOption]);
+        obj.options = ApiClient.convertToType(data.options, [AccountPasswordStrengthTypeOption]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/AccountPasswordStrengthTypeOption>} options
    */
-  exports.prototype['options'] = undefined;
-
-
+  exports.prototype.options = undefined;
 
   return exports;
 }));
-
-

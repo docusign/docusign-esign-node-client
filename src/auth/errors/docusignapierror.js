@@ -27,6 +27,5 @@ function DocusignAPIError(message, type, code, subcode, traceID) {
 // Inherit from `Error`.
 DocusignAPIError.prototype.__proto__ = Error.prototype;
 
-
 // Expose constructor.
 module.exports = DocusignAPIError;

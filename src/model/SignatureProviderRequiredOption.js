@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SignatureProviderRequiredOption = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SignatureProviderRequiredOption model module.
    * @module model/SignatureProviderRequiredOption
@@ -37,10 +34,8 @@
    * @alias module:model/SignatureProviderRequiredOption
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/SignatureProviderRequiredOption} obj Optional instance to populate.
    * @return {module:model/SignatureProviderRequiredOption} The populated <code>SignatureProviderRequiredOption</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('requiredSignatureProviderOptionIds')) {
-        obj['requiredSignatureProviderOptionIds'] = ApiClient.convertToType(data['requiredSignatureProviderOptionIds'], ['String']);
+        obj.requiredSignatureProviderOptionIds = ApiClient.convertToType(data.requiredSignatureProviderOptionIds, ['String']);
       }
       if (data.hasOwnProperty('signerType')) {
-        obj['signerType'] = ApiClient.convertToType(data['signerType'], 'String');
+        obj.signerType = ApiClient.convertToType(data.signerType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} requiredSignatureProviderOptionIds
    */
-  exports.prototype['requiredSignatureProviderOptionIds'] = undefined;
+  exports.prototype.requiredSignatureProviderOptionIds = undefined;
   /**
-   * 
+   *
    * @member {String} signerType
    */
-  exports.prototype['signerType'] = undefined;
-
-
+  exports.prototype.signerType = undefined;
 
   return exports;
 }));
-
-

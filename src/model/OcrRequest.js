@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.OcrRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The OcrRequest model module.
    * @module model/OcrRequest
@@ -38,10 +35,8 @@
    * @alias module:model/OcrRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,66 +46,62 @@
    * @param {module:model/OcrRequest} obj Optional instance to populate.
    * @return {module:model/OcrRequest} The populated <code>OcrRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ocrLanguage')) {
-        obj['ocrLanguage'] = ApiClient.convertToType(data['ocrLanguage'], 'String');
+        obj.ocrLanguage = ApiClient.convertToType(data.ocrLanguage, 'String');
       }
       if (data.hasOwnProperty('pageSelection')) {
-        obj['pageSelection'] = ApiClient.convertToType(data['pageSelection'], 'String');
+        obj.pageSelection = ApiClient.convertToType(data.pageSelection, 'String');
       }
       if (data.hasOwnProperty('setPageOrientation')) {
-        obj['setPageOrientation'] = ApiClient.convertToType(data['setPageOrientation'], 'String');
+        obj.setPageOrientation = ApiClient.convertToType(data.setPageOrientation, 'String');
       }
       if (data.hasOwnProperty('showFrames')) {
-        obj['showFrames'] = ApiClient.convertToType(data['showFrames'], 'String');
+        obj.showFrames = ApiClient.convertToType(data.showFrames, 'String');
       }
       if (data.hasOwnProperty('showText')) {
-        obj['showText'] = ApiClient.convertToType(data['showText'], 'String');
+        obj.showText = ApiClient.convertToType(data.showText, 'String');
       }
       if (data.hasOwnProperty('skipPagesHavingExistingExtractableText')) {
-        obj['skipPagesHavingExistingExtractableText'] = ApiClient.convertToType(data['skipPagesHavingExistingExtractableText'], 'String');
+        obj.skipPagesHavingExistingExtractableText = ApiClient.convertToType(data.skipPagesHavingExistingExtractableText, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} ocrLanguage
    */
-  exports.prototype['ocrLanguage'] = undefined;
+  exports.prototype.ocrLanguage = undefined;
   /**
-   * 
+   *
    * @member {String} pageSelection
    */
-  exports.prototype['pageSelection'] = undefined;
+  exports.prototype.pageSelection = undefined;
   /**
-   * 
+   *
    * @member {String} setPageOrientation
    */
-  exports.prototype['setPageOrientation'] = undefined;
+  exports.prototype.setPageOrientation = undefined;
   /**
-   * 
+   *
    * @member {String} showFrames
    */
-  exports.prototype['showFrames'] = undefined;
+  exports.prototype.showFrames = undefined;
   /**
-   * 
+   *
    * @member {String} showText
    */
-  exports.prototype['showText'] = undefined;
+  exports.prototype.showText = undefined;
   /**
-   * 
+   *
    * @member {String} skipPagesHavingExistingExtractableText
    */
-  exports.prototype['skipPagesHavingExistingExtractableText'] = undefined;
-
-
+  exports.prototype.skipPagesHavingExistingExtractableText = undefined;
 
   return exports;
 }));
-
-

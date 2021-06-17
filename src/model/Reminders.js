@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Reminders = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The Reminders model module.
    * @module model/Reminders
@@ -38,10 +35,8 @@
    * @alias module:model/Reminders
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/Reminders} obj Optional instance to populate.
    * @return {module:model/Reminders} The populated <code>Reminders</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('reminderDelay')) {
-        obj['reminderDelay'] = ApiClient.convertToType(data['reminderDelay'], 'String');
+        obj.reminderDelay = ApiClient.convertToType(data.reminderDelay, 'String');
       }
       if (data.hasOwnProperty('reminderEnabled')) {
-        obj['reminderEnabled'] = ApiClient.convertToType(data['reminderEnabled'], 'String');
+        obj.reminderEnabled = ApiClient.convertToType(data.reminderEnabled, 'String');
       }
       if (data.hasOwnProperty('reminderFrequency')) {
-        obj['reminderFrequency'] = ApiClient.convertToType(data['reminderFrequency'], 'String');
+        obj.reminderFrequency = ApiClient.convertToType(data.reminderFrequency, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient.
    * @member {String} reminderDelay
    */
-  exports.prototype['reminderDelay'] = undefined;
+  exports.prototype.reminderDelay = undefined;
   /**
    * When set to **true**, the envelope expires (is no longer available for signing) in the set number of days. If false, the account default setting is used. If the account does not have an expiration setting, the DocuSign default value of 120 days is used.
    * @member {String} reminderEnabled
    */
-  exports.prototype['reminderEnabled'] = undefined;
+  exports.prototype.reminderEnabled = undefined;
   /**
    * An interger that sets the interval, in days, between reminder emails.
    * @member {String} reminderFrequency
    */
-  exports.prototype['reminderFrequency'] = undefined;
-
-
+  exports.prototype.reminderFrequency = undefined;
 
   return exports;
 }));
-
-

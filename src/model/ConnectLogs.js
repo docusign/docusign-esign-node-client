@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConnectLog'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectLogs = factory(root.Docusign.ApiClient, root.Docusign.ConnectLog);
   }
-}(this, function(ApiClient, ConnectLog) {
-  'use strict';
-
-
+}(this, (ApiClient, ConnectLog) => {
   /**
    * The ConnectLogs model module.
    * @module model/ConnectLogs
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectLogs
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/ConnectLogs} obj Optional instance to populate.
    * @return {module:model/ConnectLogs} The populated <code>ConnectLogs</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('failures')) {
-        obj['failures'] = ApiClient.convertToType(data['failures'], [ConnectLog]);
+        obj.failures = ApiClient.convertToType(data.failures, [ConnectLog]);
       }
       if (data.hasOwnProperty('logs')) {
-        obj['logs'] = ApiClient.convertToType(data['logs'], [ConnectLog]);
+        obj.logs = ApiClient.convertToType(data.logs, [ConnectLog]);
       }
       if (data.hasOwnProperty('totalRecords')) {
-        obj['totalRecords'] = ApiClient.convertToType(data['totalRecords'], 'String');
+        obj.totalRecords = ApiClient.convertToType(data.totalRecords, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * An array of containing failure information from the Connect failure log.
    * @member {Array.<module:model/ConnectLog>} failures
    */
-  exports.prototype['failures'] = undefined;
+  exports.prototype.failures = undefined;
   /**
-   * A complex type containing Connect log information. It is divided into two sections, one for regular logs and one for Connect failures. 
+   * A complex type containing Connect log information. It is divided into two sections, one for regular logs and one for Connect failures.
    * @member {Array.<module:model/ConnectLog>} logs
    */
-  exports.prototype['logs'] = undefined;
+  exports.prototype.logs = undefined;
   /**
-   * 
+   *
    * @member {String} totalRecords
    */
-  exports.prototype['totalRecords'] = undefined;
+  exports.prototype.totalRecords = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
-
-
+  exports.prototype.type = undefined;
 
   return exports;
 }));
-
-

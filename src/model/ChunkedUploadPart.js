@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ChunkedUploadPart = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ChunkedUploadPart model module.
    * @module model/ChunkedUploadPart
@@ -37,10 +34,8 @@
    * @alias module:model/ChunkedUploadPart
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/ChunkedUploadPart} obj Optional instance to populate.
    * @return {module:model/ChunkedUploadPart} The populated <code>ChunkedUploadPart</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('sequence')) {
-        obj['sequence'] = ApiClient.convertToType(data['sequence'], 'String');
+        obj.sequence = ApiClient.convertToType(data.sequence, 'String');
       }
       if (data.hasOwnProperty('size')) {
-        obj['size'] = ApiClient.convertToType(data['size'], 'String');
+        obj.size = ApiClient.convertToType(data.size, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} sequence
    */
-  exports.prototype['sequence'] = undefined;
+  exports.prototype.sequence = undefined;
   /**
-   * 
+   *
    * @member {String} size
    */
-  exports.prototype['size'] = undefined;
-
-
+  exports.prototype.size = undefined;
 
   return exports;
 }));
-
-

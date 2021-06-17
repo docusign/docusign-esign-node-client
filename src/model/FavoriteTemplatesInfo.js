@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/FavoriteTemplatesContentItem'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FavoriteTemplatesInfo = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesContentItem);
   }
-}(this, function(ApiClient, ErrorDetails, FavoriteTemplatesContentItem) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, FavoriteTemplatesContentItem) => {
   /**
    * The FavoriteTemplatesInfo model module.
    * @module model/FavoriteTemplatesInfo
@@ -37,10 +34,8 @@
    * @alias module:model/FavoriteTemplatesInfo
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,41 +45,37 @@
    * @param {module:model/FavoriteTemplatesInfo} obj Optional instance to populate.
    * @return {module:model/FavoriteTemplatesInfo} The populated <code>FavoriteTemplatesInfo</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('favoriteTemplates')) {
-        obj['favoriteTemplates'] = ApiClient.convertToType(data['favoriteTemplates'], [FavoriteTemplatesContentItem]);
+        obj.favoriteTemplates = ApiClient.convertToType(data.favoriteTemplates, [FavoriteTemplatesContentItem]);
       }
       if (data.hasOwnProperty('templatesUpdatedCount')) {
-        obj['templatesUpdatedCount'] = ApiClient.convertToType(data['templatesUpdatedCount'], 'Number');
+        obj.templatesUpdatedCount = ApiClient.convertToType(data.templatesUpdatedCount, 'Number');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/FavoriteTemplatesContentItem>} favoriteTemplates
    */
-  exports.prototype['favoriteTemplates'] = undefined;
+  exports.prototype.favoriteTemplates = undefined;
   /**
-   * 
+   *
    * @member {Number} templatesUpdatedCount
    */
-  exports.prototype['templatesUpdatedCount'] = undefined;
-
-
+  exports.prototype.templatesUpdatedCount = undefined;
 
   return exports;
 }));
-
-

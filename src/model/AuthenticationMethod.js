@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AuthenticationMethod = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AuthenticationMethod model module.
    * @module model/AuthenticationMethod
@@ -38,10 +35,8 @@
    * @alias module:model/AuthenticationMethod
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,50 +46,46 @@
    * @param {module:model/AuthenticationMethod} obj Optional instance to populate.
    * @return {module:model/AuthenticationMethod} The populated <code>AuthenticationMethod</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('authenticationType')) {
-        obj['authenticationType'] = ApiClient.convertToType(data['authenticationType'], 'String');
+        obj.authenticationType = ApiClient.convertToType(data.authenticationType, 'String');
       }
       if (data.hasOwnProperty('lastProvider')) {
-        obj['lastProvider'] = ApiClient.convertToType(data['lastProvider'], 'String');
+        obj.lastProvider = ApiClient.convertToType(data.lastProvider, 'String');
       }
       if (data.hasOwnProperty('lastTimestamp')) {
-        obj['lastTimestamp'] = ApiClient.convertToType(data['lastTimestamp'], 'String');
+        obj.lastTimestamp = ApiClient.convertToType(data.lastTimestamp, 'String');
       }
       if (data.hasOwnProperty('totalCount')) {
-        obj['totalCount'] = ApiClient.convertToType(data['totalCount'], 'String');
+        obj.totalCount = ApiClient.convertToType(data.totalCount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * Indicates the type of authentication. Valid values are: PhoneAuth, STAN, ISCheck, OFAC, AccessCode, AgeVerify, or SSOAuth. 
+   * Indicates the type of authentication. Valid values are: PhoneAuth, STAN, ISCheck, OFAC, AccessCode, AgeVerify, or SSOAuth.
    * @member {String} authenticationType
    */
-  exports.prototype['authenticationType'] = undefined;
+  exports.prototype.authenticationType = undefined;
   /**
-   * The last provider that authenticated the user. 
+   * The last provider that authenticated the user.
    * @member {String} lastProvider
    */
-  exports.prototype['lastProvider'] = undefined;
+  exports.prototype.lastProvider = undefined;
   /**
-   *  The data and time the user last used the authentication method. 
+   *  The data and time the user last used the authentication method.
    * @member {String} lastTimestamp
    */
-  exports.prototype['lastTimestamp'] = undefined;
+  exports.prototype.lastTimestamp = undefined;
   /**
-   * The number of times the authentication method was used. 
+   * The number of times the authentication method was used.
    * @member {String} totalCount
    */
-  exports.prototype['totalCount'] = undefined;
-
-
+  exports.prototype.totalCount = undefined;
 
   return exports;
 }));
-
-

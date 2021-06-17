@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingPayment'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPaymentResponse = factory(root.Docusign.ApiClient, root.Docusign.BillingPayment);
   }
-}(this, function(ApiClient, BillingPayment) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingPayment) => {
   /**
    * The BillingPaymentResponse model module.
    * @module model/BillingPaymentResponse
@@ -38,10 +35,8 @@
    * @alias module:model/BillingPaymentResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,26 +46,22 @@
    * @param {module:model/BillingPaymentResponse} obj Optional instance to populate.
    * @return {module:model/BillingPaymentResponse} The populated <code>BillingPaymentResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billingPayments')) {
-        obj['billingPayments'] = ApiClient.convertToType(data['billingPayments'], [BillingPayment]);
+        obj.billingPayments = ApiClient.convertToType(data.billingPayments, [BillingPayment]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {Array.<module:model/BillingPayment>} billingPayments
    */
-  exports.prototype['billingPayments'] = undefined;
-
-
+  exports.prototype.billingPayments = undefined;
 
   return exports;
 }));
-
-

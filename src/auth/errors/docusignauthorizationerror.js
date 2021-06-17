@@ -24,6 +24,5 @@ function DocusignAuthorizationError(message, code) {
 // Inherit from `Error`.
 DocusignAuthorizationError.prototype.__proto__ = Error.prototype;
 
-
 // Expose constructor.
 module.exports = DocusignAuthorizationError;

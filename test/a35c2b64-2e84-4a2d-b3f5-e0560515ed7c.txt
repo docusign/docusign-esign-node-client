@@ -1,0 +1,35 @@
+TraceToken: 6f44a1b9-76c0-40d8-8ffb-846f298f950f
+Timestamp: 2020-10-06T01:05:21.5630068Z
+
+GET https://demo-app.docusign.net:7802/restapi/v2.1/accounts/3c9c0391-01ac-4a98-8fab-adb9d0e548d2/users/f6c9e287-c8b0-4064-8c3f-7130f1a9ebcf/reports/dashboard?from_date=2020-04-05T07:00:00.000Z&to_date=2020-10-06T07:00:00.000Z
+Content-Length: 0
+Connection: close
+Accept: application/json;text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+Accept-Encoding: gzip; deflate; br
+Accept-Language: en-US; en; q=0.9
+Authorization: Bearer [omitted]
+Host: demo-app.docusign.net
+Referer: https://appdemo.docusign.com/home
+User-Agent: Mozilla/5.0; (Macintosh; Intel Mac OS X 10_13_6); AppleWebKit/537.36; (KHTML, like Gecko); Chrome/85.0.4183.121; Safari/537.36
+X-DocuSign-ClientTransactionId: 6f85d738-0745-496e-849a-03f4e00381d1
+sec-fetch-site: same-origin
+sec-fetch-mode: cors
+x-forwarded-for: 4.16.173.60, 64.207.219.136
+x-docusign-prettyprint: false
+x-forwarded-for-martini: 4.16.173.60
+x-docusign-diagnostics: {"storedProcedureEventLogThreshold":"300"}
+x-docusign-timetrack: CONN_START,2020-10-06T01:05:21.178Z;;REQ_SENT,2020-10-06T01:05:21.185Z;; REST0_Start,2020-10-06T01:05:21.2036568Z
+x-docusign-correlationtoken: 6f85d738-0745-496e-849a-03f4e00381d1
+HPX: YES
+X-SecurityProtocol-Version: TLSv1.2
+X-SecurityProtocol-CipherSuite: ECDHE-RSA-AES128-GCM-SHA256
+
+200 OK
+
+Content-Type: application/json; charset=utf-8
+Content-Length: 185
+X-DocuSign-ClientTransactionId: 6f85d738-0745-496e-849a-03f4e00381d1
+X-DocuSign-TimeTrack: CONN_START,2020-10-06T01:05:21.178Z;;REQ_SENT,2020-10-06T01:05:21.185Z;;REST0_Start,2020-10-06T01:05:21.2036568Z;REST0_End,2020-10-06T01:05:21.5630068Z
+X-DocuSign-TraceToken: 6f44a1b9-76c0-40d8-8ffb-846f298f950f
+
+{"voidedCount":"0","declinedCount":"0","awaitingMySignatureCount":"1604","completedEnvelopeCount":"29","draftEnvelopeCount":"421","expiringSoonCount":"0","waitingForOthersCount":"5108"}

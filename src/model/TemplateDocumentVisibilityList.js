@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentVisibility'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TemplateDocumentVisibilityList = factory(root.Docusign.ApiClient, root.Docusign.DocumentVisibility);
   }
-}(this, function(ApiClient, DocumentVisibility) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentVisibility) => {
   /**
    * The TemplateDocumentVisibilityList model module.
    * @module model/TemplateDocumentVisibilityList
@@ -37,10 +34,8 @@
    * @alias module:model/TemplateDocumentVisibilityList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/TemplateDocumentVisibilityList} obj Optional instance to populate.
    * @return {module:model/TemplateDocumentVisibilityList} The populated <code>TemplateDocumentVisibilityList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentVisibility')) {
-        obj['documentVisibility'] = ApiClient.convertToType(data['documentVisibility'], [DocumentVisibility]);
+        obj.documentVisibility = ApiClient.convertToType(data.documentVisibility, [DocumentVisibility]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/DocumentVisibility>} documentVisibility
    */
-  exports.prototype['documentVisibility'] = undefined;
-
-
+  exports.prototype.documentVisibility = undefined;
 
   return exports;
 }));
-
-

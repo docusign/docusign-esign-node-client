@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/EnvelopeAuditEvent'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeAuditEventResponse = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeAuditEvent);
   }
-}(this, function(ApiClient, EnvelopeAuditEvent) {
-  'use strict';
-
-
+}(this, (ApiClient, EnvelopeAuditEvent) => {
   /**
    * The EnvelopeAuditEventResponse model module.
    * @module model/EnvelopeAuditEventResponse
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeAuditEventResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/EnvelopeAuditEventResponse} obj Optional instance to populate.
    * @return {module:model/EnvelopeAuditEventResponse} The populated <code>EnvelopeAuditEventResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('auditEvents')) {
-        obj['auditEvents'] = ApiClient.convertToType(data['auditEvents'], [EnvelopeAuditEvent]);
+        obj.auditEvents = ApiClient.convertToType(data.auditEvents, [EnvelopeAuditEvent]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {Array.<module:model/EnvelopeAuditEvent>} auditEvents
    */
-  exports.prototype['auditEvents'] = undefined;
-
-
+  exports.prototype.auditEvents = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/LoginAccount'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.LoginInformation = factory(root.Docusign.ApiClient, root.Docusign.LoginAccount);
   }
-}(this, function(ApiClient, LoginAccount) {
-  'use strict';
-
-
+}(this, (ApiClient, LoginAccount) => {
   /**
    * The LoginInformation model module.
    * @module model/LoginInformation
@@ -37,10 +34,8 @@
    * @alias module:model/LoginInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/LoginInformation} obj Optional instance to populate.
    * @return {module:model/LoginInformation} The populated <code>LoginInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('apiPassword')) {
-        obj['apiPassword'] = ApiClient.convertToType(data['apiPassword'], 'String');
+        obj.apiPassword = ApiClient.convertToType(data.apiPassword, 'String');
       }
       if (data.hasOwnProperty('loginAccounts')) {
-        obj['loginAccounts'] = ApiClient.convertToType(data['loginAccounts'], [LoginAccount]);
+        obj.loginAccounts = ApiClient.convertToType(data.loginAccounts, [LoginAccount]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Contains a token that can be used for authentication in API calls instead of using the user name and password. Only returned if the `api_password=true` query string is added to the URL.
    * @member {String} apiPassword
    */
-  exports.prototype['apiPassword'] = undefined;
+  exports.prototype.apiPassword = undefined;
   /**
    * The list of accounts that authenticating user is a member of.
    * @member {Array.<module:model/LoginAccount>} loginAccounts
    */
-  exports.prototype['loginAccounts'] = undefined;
-
-
+  exports.prototype.loginAccounts = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingInvoice'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingInvoicesResponse = factory(root.Docusign.ApiClient, root.Docusign.BillingInvoice);
   }
-}(this, function(ApiClient, BillingInvoice) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingInvoice) => {
   /**
    * The BillingInvoicesResponse model module.
    * @module model/BillingInvoicesResponse
@@ -38,10 +35,8 @@
    * @alias module:model/BillingInvoicesResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/BillingInvoicesResponse} obj Optional instance to populate.
    * @return {module:model/BillingInvoicesResponse} The populated <code>BillingInvoicesResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billingInvoices')) {
-        obj['billingInvoices'] = ApiClient.convertToType(data['billingInvoices'], [BillingInvoice]);
+        obj.billingInvoices = ApiClient.convertToType(data.billingInvoices, [BillingInvoice]);
       }
       if (data.hasOwnProperty('nextUri')) {
-        obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
+        obj.nextUri = ApiClient.convertToType(data.nextUri, 'String');
       }
       if (data.hasOwnProperty('previousUri')) {
-        obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
+        obj.previousUri = ApiClient.convertToType(data.previousUri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {Array.<module:model/BillingInvoice>} billingInvoices
    */
-  exports.prototype['billingInvoices'] = undefined;
+  exports.prototype.billingInvoices = undefined;
   /**
-   * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
+   * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
    * @member {String} nextUri
    */
-  exports.prototype['nextUri'] = undefined;
+  exports.prototype.nextUri = undefined;
   /**
    * The postal code for the billing address.
    * @member {String} previousUri
    */
-  exports.prototype['previousUri'] = undefined;
-
-
+  exports.prototype.previousUri = undefined;
 
   return exports;
 }));
-
-

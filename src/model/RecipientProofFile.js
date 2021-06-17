@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientProofFile = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientProofFile model module.
    * @module model/RecipientProofFile
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientProofFile
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/RecipientProofFile} obj Optional instance to populate.
    * @return {module:model/RecipientProofFile} The populated <code>RecipientProofFile</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('isInProofFile')) {
-        obj['isInProofFile'] = ApiClient.convertToType(data['isInProofFile'], 'String');
+        obj.isInProofFile = ApiClient.convertToType(data.isInProofFile, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} isInProofFile
    */
-  exports.prototype['isInProofFile'] = undefined;
-
-
+  exports.prototype.isInProofFile = undefined;
 
   return exports;
 }));
-
-

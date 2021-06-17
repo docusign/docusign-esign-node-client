@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ListCustomField = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The ListCustomField model module.
    * @module model/ListCustomField
@@ -37,10 +34,8 @@
    * @alias module:model/ListCustomField
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,81 +45,77 @@
    * @param {module:model/ListCustomField} obj Optional instance to populate.
    * @return {module:model/ListCustomField} The populated <code>ListCustomField</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('configurationType')) {
-        obj['configurationType'] = ApiClient.convertToType(data['configurationType'], 'String');
+        obj.configurationType = ApiClient.convertToType(data.configurationType, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('fieldId')) {
-        obj['fieldId'] = ApiClient.convertToType(data['fieldId'], 'String');
+        obj.fieldId = ApiClient.convertToType(data.fieldId, 'String');
       }
       if (data.hasOwnProperty('listItems')) {
-        obj['listItems'] = ApiClient.convertToType(data['listItems'], ['String']);
+        obj.listItems = ApiClient.convertToType(data.listItems, ['String']);
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('required')) {
-        obj['required'] = ApiClient.convertToType(data['required'], 'String');
+        obj.required = ApiClient.convertToType(data.required, 'String');
       }
       if (data.hasOwnProperty('show')) {
-        obj['show'] = ApiClient.convertToType(data['show'], 'String');
+        obj.show = ApiClient.convertToType(data.show, 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+        obj.value = ApiClient.convertToType(data.value, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
    * @member {String} configurationType
    */
-  exports.prototype['configurationType'] = undefined;
+  exports.prototype.configurationType = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * An ID used to specify a custom field.
    * @member {String} fieldId
    */
-  exports.prototype['fieldId'] = undefined;
+  exports.prototype.fieldId = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} listItems
    */
-  exports.prototype['listItems'] = undefined;
+  exports.prototype.listItems = undefined;
   /**
    * The name of the custom field.
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * When set to **true**, the signer is required to fill out this tab
    * @member {String} required
    */
-  exports.prototype['required'] = undefined;
+  exports.prototype.required = undefined;
   /**
    * A boolean indicating if the value should be displayed.
    * @member {String} show
    */
-  exports.prototype['show'] = undefined;
+  exports.prototype.show = undefined;
   /**
    * The value of the custom field.  Maximum Length: 100 characters.
    * @member {String} value
    */
-  exports.prototype['value'] = undefined;
-
-
+  exports.prototype.value = undefined;
 
   return exports;
 }));
-
-

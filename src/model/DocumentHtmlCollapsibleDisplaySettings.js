@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentHtmlCollapsibleDisplaySettings = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DocumentHtmlCollapsibleDisplaySettings model module.
    * @module model/DocumentHtmlCollapsibleDisplaySettings
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentHtmlCollapsibleDisplaySettings
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,98 +45,94 @@
    * @param {module:model/DocumentHtmlCollapsibleDisplaySettings} obj Optional instance to populate.
    * @return {module:model/DocumentHtmlCollapsibleDisplaySettings} The populated <code>DocumentHtmlCollapsibleDisplaySettings</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('arrowClosed')) {
-        obj['arrowClosed'] = ApiClient.convertToType(data['arrowClosed'], 'String');
+        obj.arrowClosed = ApiClient.convertToType(data.arrowClosed, 'String');
       }
       if (data.hasOwnProperty('arrowColor')) {
-        obj['arrowColor'] = ApiClient.convertToType(data['arrowColor'], 'String');
+        obj.arrowColor = ApiClient.convertToType(data.arrowColor, 'String');
       }
       if (data.hasOwnProperty('arrowLocation')) {
-        obj['arrowLocation'] = ApiClient.convertToType(data['arrowLocation'], 'String');
+        obj.arrowLocation = ApiClient.convertToType(data.arrowLocation, 'String');
       }
       if (data.hasOwnProperty('arrowOpen')) {
-        obj['arrowOpen'] = ApiClient.convertToType(data['arrowOpen'], 'String');
+        obj.arrowOpen = ApiClient.convertToType(data.arrowOpen, 'String');
       }
       if (data.hasOwnProperty('arrowSize')) {
-        obj['arrowSize'] = ApiClient.convertToType(data['arrowSize'], 'String');
+        obj.arrowSize = ApiClient.convertToType(data.arrowSize, 'String');
       }
       if (data.hasOwnProperty('arrowStyle')) {
-        obj['arrowStyle'] = ApiClient.convertToType(data['arrowStyle'], 'String');
+        obj.arrowStyle = ApiClient.convertToType(data.arrowStyle, 'String');
       }
       if (data.hasOwnProperty('containerStyle')) {
-        obj['containerStyle'] = ApiClient.convertToType(data['containerStyle'], 'String');
+        obj.containerStyle = ApiClient.convertToType(data.containerStyle, 'String');
       }
       if (data.hasOwnProperty('labelStyle')) {
-        obj['labelStyle'] = ApiClient.convertToType(data['labelStyle'], 'String');
+        obj.labelStyle = ApiClient.convertToType(data.labelStyle, 'String');
       }
       if (data.hasOwnProperty('onlyArrowIsClickable')) {
-        obj['onlyArrowIsClickable'] = ApiClient.convertToType(data['onlyArrowIsClickable'], 'Boolean');
+        obj.onlyArrowIsClickable = ApiClient.convertToType(data.onlyArrowIsClickable, 'Boolean');
       }
       if (data.hasOwnProperty('outerLabelAndArrowStyle')) {
-        obj['outerLabelAndArrowStyle'] = ApiClient.convertToType(data['outerLabelAndArrowStyle'], 'String');
+        obj.outerLabelAndArrowStyle = ApiClient.convertToType(data.outerLabelAndArrowStyle, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} arrowClosed
    */
-  exports.prototype['arrowClosed'] = undefined;
+  exports.prototype.arrowClosed = undefined;
   /**
-   * 
+   *
    * @member {String} arrowColor
    */
-  exports.prototype['arrowColor'] = undefined;
+  exports.prototype.arrowColor = undefined;
   /**
-   * 
+   *
    * @member {String} arrowLocation
    */
-  exports.prototype['arrowLocation'] = undefined;
+  exports.prototype.arrowLocation = undefined;
   /**
-   * 
+   *
    * @member {String} arrowOpen
    */
-  exports.prototype['arrowOpen'] = undefined;
+  exports.prototype.arrowOpen = undefined;
   /**
-   * 
+   *
    * @member {String} arrowSize
    */
-  exports.prototype['arrowSize'] = undefined;
+  exports.prototype.arrowSize = undefined;
   /**
-   * 
+   *
    * @member {String} arrowStyle
    */
-  exports.prototype['arrowStyle'] = undefined;
+  exports.prototype.arrowStyle = undefined;
   /**
-   * 
+   *
    * @member {String} containerStyle
    */
-  exports.prototype['containerStyle'] = undefined;
+  exports.prototype.containerStyle = undefined;
   /**
-   * 
+   *
    * @member {String} labelStyle
    */
-  exports.prototype['labelStyle'] = undefined;
+  exports.prototype.labelStyle = undefined;
   /**
-   * 
+   *
    * @member {Boolean} onlyArrowIsClickable
    */
-  exports.prototype['onlyArrowIsClickable'] = undefined;
+  exports.prototype.onlyArrowIsClickable = undefined;
   /**
-   * 
+   *
    * @member {String} outerLabelAndArrowStyle
    */
-  exports.prototype['outerLabelAndArrowStyle'] = undefined;
-
-
+  exports.prototype.outerLabelAndArrowStyle = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CommentPublish = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The CommentPublish model module.
    * @module model/CommentPublish
@@ -37,10 +34,8 @@
    * @alias module:model/CommentPublish
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/CommentPublish} obj Optional instance to populate.
    * @return {module:model/CommentPublish} The populated <code>CommentPublish</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+        obj.id = ApiClient.convertToType(data.id, 'String');
       }
       if (data.hasOwnProperty('mentions')) {
-        obj['mentions'] = ApiClient.convertToType(data['mentions'], ['String']);
+        obj.mentions = ApiClient.convertToType(data.mentions, ['String']);
       }
       if (data.hasOwnProperty('text')) {
-        obj['text'] = ApiClient.convertToType(data['text'], 'String');
+        obj.text = ApiClient.convertToType(data.text, 'String');
       }
       if (data.hasOwnProperty('threadAnchorKeys')) {
-        obj['threadAnchorKeys'] = ApiClient.convertToType(data['threadAnchorKeys'], {'String': 'String'});
+        obj.threadAnchorKeys = ApiClient.convertToType(data.threadAnchorKeys, { String: 'String' });
       }
       if (data.hasOwnProperty('threadId')) {
-        obj['threadId'] = ApiClient.convertToType(data['threadId'], 'String');
+        obj.threadId = ApiClient.convertToType(data.threadId, 'String');
       }
       if (data.hasOwnProperty('visibleTo')) {
-        obj['visibleTo'] = ApiClient.convertToType(data['visibleTo'], ['String']);
+        obj.visibleTo = ApiClient.convertToType(data.visibleTo, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} id
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype.id = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} mentions
    */
-  exports.prototype['mentions'] = undefined;
+  exports.prototype.mentions = undefined;
   /**
-   * 
+   *
    * @member {String} text
    */
-  exports.prototype['text'] = undefined;
+  exports.prototype.text = undefined;
   /**
-   * 
+   *
    * @member {Object.<String, String>} threadAnchorKeys
    */
-  exports.prototype['threadAnchorKeys'] = undefined;
+  exports.prototype.threadAnchorKeys = undefined;
   /**
-   * 
+   *
    * @member {String} threadId
    */
-  exports.prototype['threadId'] = undefined;
+  exports.prototype.threadId = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} visibleTo
    */
-  exports.prototype['visibleTo'] = undefined;
-
-
+  exports.prototype.visibleTo = undefined;
 
   return exports;
 }));
-
-

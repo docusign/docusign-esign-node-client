@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientAttachment = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientAttachment model module.
    * @module model/RecipientAttachment
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientAttachment
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/RecipientAttachment} obj Optional instance to populate.
    * @return {module:model/RecipientAttachment} The populated <code>RecipientAttachment</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('attachmentId')) {
-        obj['attachmentId'] = ApiClient.convertToType(data['attachmentId'], 'String');
+        obj.attachmentId = ApiClient.convertToType(data.attachmentId, 'String');
       }
       if (data.hasOwnProperty('attachmentType')) {
-        obj['attachmentType'] = ApiClient.convertToType(data['attachmentType'], 'String');
+        obj.attachmentType = ApiClient.convertToType(data.attachmentType, 'String');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], 'String');
+        obj.data = ApiClient.convertToType(data.data, 'String');
       }
       if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+        obj.label = ApiClient.convertToType(data.label, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('remoteUrl')) {
-        obj['remoteUrl'] = ApiClient.convertToType(data['remoteUrl'], 'String');
+        obj.remoteUrl = ApiClient.convertToType(data.remoteUrl, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} attachmentId
    */
-  exports.prototype['attachmentId'] = undefined;
+  exports.prototype.attachmentId = undefined;
   /**
-   * 
+   *
    * @member {String} attachmentType
    */
-  exports.prototype['attachmentType'] = undefined;
+  exports.prototype.attachmentType = undefined;
   /**
-   * 
+   *
    * @member {String} data
    */
-  exports.prototype['data'] = undefined;
+  exports.prototype.data = undefined;
   /**
-   * 
+   *
    * @member {String} label
    */
-  exports.prototype['label'] = undefined;
+  exports.prototype.label = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} remoteUrl
    */
-  exports.prototype['remoteUrl'] = undefined;
-
-
+  exports.prototype.remoteUrl = undefined;
 
   return exports;
 }));
-
-

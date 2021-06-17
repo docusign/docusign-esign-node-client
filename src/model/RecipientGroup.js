@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/RecipientOption'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientGroup = factory(root.Docusign.ApiClient, root.Docusign.RecipientOption);
   }
-}(this, function(ApiClient, RecipientOption) {
-  'use strict';
-
-
+}(this, (ApiClient, RecipientOption) => {
   /**
    * The RecipientGroup model module.
    * @module model/RecipientGroup
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientGroup
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/RecipientGroup} obj Optional instance to populate.
    * @return {module:model/RecipientGroup} The populated <code>RecipientGroup</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('groupMessage')) {
-        obj['groupMessage'] = ApiClient.convertToType(data['groupMessage'], 'String');
+        obj.groupMessage = ApiClient.convertToType(data.groupMessage, 'String');
       }
       if (data.hasOwnProperty('groupName')) {
-        obj['groupName'] = ApiClient.convertToType(data['groupName'], 'String');
+        obj.groupName = ApiClient.convertToType(data.groupName, 'String');
       }
       if (data.hasOwnProperty('recipients')) {
-        obj['recipients'] = ApiClient.convertToType(data['recipients'], [RecipientOption]);
+        obj.recipients = ApiClient.convertToType(data.recipients, [RecipientOption]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} groupMessage
    */
-  exports.prototype['groupMessage'] = undefined;
+  exports.prototype.groupMessage = undefined;
   /**
    * The name of the group.
    * @member {String} groupName
    */
-  exports.prototype['groupName'] = undefined;
+  exports.prototype.groupName = undefined;
   /**
    * An array of powerform recipients.
    * @member {Array.<module:model/RecipientOption>} recipients
    */
-  exports.prototype['recipients'] = undefined;
-
-
+  exports.prototype.recipients = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentHtmlDisplayAnchor'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentHtmlDefinition = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDisplayAnchor);
   }
-}(this, function(ApiClient, DocumentHtmlDisplayAnchor) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentHtmlDisplayAnchor) => {
   /**
    * The DocumentHtmlDefinition model module.
    * @module model/DocumentHtmlDefinition
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentHtmlDefinition
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,106 +45,102 @@
    * @param {module:model/DocumentHtmlDefinition} obj Optional instance to populate.
    * @return {module:model/DocumentHtmlDefinition} The populated <code>DocumentHtmlDefinition</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('displayAnchorPrefix')) {
-        obj['displayAnchorPrefix'] = ApiClient.convertToType(data['displayAnchorPrefix'], 'String');
+        obj.displayAnchorPrefix = ApiClient.convertToType(data.displayAnchorPrefix, 'String');
       }
       if (data.hasOwnProperty('displayAnchors')) {
-        obj['displayAnchors'] = ApiClient.convertToType(data['displayAnchors'], [DocumentHtmlDisplayAnchor]);
+        obj.displayAnchors = ApiClient.convertToType(data.displayAnchors, [DocumentHtmlDisplayAnchor]);
       }
       if (data.hasOwnProperty('displayOrder')) {
-        obj['displayOrder'] = ApiClient.convertToType(data['displayOrder'], 'String');
+        obj.displayOrder = ApiClient.convertToType(data.displayOrder, 'String');
       }
       if (data.hasOwnProperty('displayPageNumber')) {
-        obj['displayPageNumber'] = ApiClient.convertToType(data['displayPageNumber'], 'String');
+        obj.displayPageNumber = ApiClient.convertToType(data.displayPageNumber, 'String');
       }
       if (data.hasOwnProperty('documentGuid')) {
-        obj['documentGuid'] = ApiClient.convertToType(data['documentGuid'], 'String');
+        obj.documentGuid = ApiClient.convertToType(data.documentGuid, 'String');
       }
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('headerLabel')) {
-        obj['headerLabel'] = ApiClient.convertToType(data['headerLabel'], 'String');
+        obj.headerLabel = ApiClient.convertToType(data.headerLabel, 'String');
       }
       if (data.hasOwnProperty('maxScreenWidth')) {
-        obj['maxScreenWidth'] = ApiClient.convertToType(data['maxScreenWidth'], 'String');
+        obj.maxScreenWidth = ApiClient.convertToType(data.maxScreenWidth, 'String');
       }
       if (data.hasOwnProperty('removeEmptyTags')) {
-        obj['removeEmptyTags'] = ApiClient.convertToType(data['removeEmptyTags'], 'String');
+        obj.removeEmptyTags = ApiClient.convertToType(data.removeEmptyTags, 'String');
       }
       if (data.hasOwnProperty('showMobileOptimizedToggle')) {
-        obj['showMobileOptimizedToggle'] = ApiClient.convertToType(data['showMobileOptimizedToggle'], 'String');
+        obj.showMobileOptimizedToggle = ApiClient.convertToType(data.showMobileOptimizedToggle, 'String');
       }
       if (data.hasOwnProperty('source')) {
-        obj['source'] = ApiClient.convertToType(data['source'], 'String');
+        obj.source = ApiClient.convertToType(data.source, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} displayAnchorPrefix
    */
-  exports.prototype['displayAnchorPrefix'] = undefined;
+  exports.prototype.displayAnchorPrefix = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/DocumentHtmlDisplayAnchor>} displayAnchors
    */
-  exports.prototype['displayAnchors'] = undefined;
+  exports.prototype.displayAnchors = undefined;
   /**
-   * 
+   *
    * @member {String} displayOrder
    */
-  exports.prototype['displayOrder'] = undefined;
+  exports.prototype.displayOrder = undefined;
   /**
-   * 
+   *
    * @member {String} displayPageNumber
    */
-  exports.prototype['displayPageNumber'] = undefined;
+  exports.prototype.displayPageNumber = undefined;
   /**
-   * 
+   *
    * @member {String} documentGuid
    */
-  exports.prototype['documentGuid'] = undefined;
+  exports.prototype.documentGuid = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} headerLabel
    */
-  exports.prototype['headerLabel'] = undefined;
+  exports.prototype.headerLabel = undefined;
   /**
-   * 
+   *
    * @member {String} maxScreenWidth
    */
-  exports.prototype['maxScreenWidth'] = undefined;
+  exports.prototype.maxScreenWidth = undefined;
   /**
-   * 
+   *
    * @member {String} removeEmptyTags
    */
-  exports.prototype['removeEmptyTags'] = undefined;
+  exports.prototype.removeEmptyTags = undefined;
   /**
-   * 
+   *
    * @member {String} showMobileOptimizedToggle
    */
-  exports.prototype['showMobileOptimizedToggle'] = undefined;
+  exports.prototype.showMobileOptimizedToggle = undefined;
   /**
-   * 
+   *
    * @member {String} source
    */
-  exports.prototype['source'] = undefined;
-
-
+  exports.prototype.source = undefined;
 
   return exports;
 }));
-
-

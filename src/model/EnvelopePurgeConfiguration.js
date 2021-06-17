@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopePurgeConfiguration = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The EnvelopePurgeConfiguration model module.
    * @module model/EnvelopePurgeConfiguration
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopePurgeConfiguration
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/EnvelopePurgeConfiguration} obj Optional instance to populate.
    * @return {module:model/EnvelopePurgeConfiguration} The populated <code>EnvelopePurgeConfiguration</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('purgeEnvelopes')) {
-        obj['purgeEnvelopes'] = ApiClient.convertToType(data['purgeEnvelopes'], 'String');
+        obj.purgeEnvelopes = ApiClient.convertToType(data.purgeEnvelopes, 'String');
       }
       if (data.hasOwnProperty('redactPII')) {
-        obj['redactPII'] = ApiClient.convertToType(data['redactPII'], 'String');
+        obj.redactPII = ApiClient.convertToType(data.redactPII, 'String');
       }
       if (data.hasOwnProperty('removeTabsAndEnvelopeAttachments')) {
-        obj['removeTabsAndEnvelopeAttachments'] = ApiClient.convertToType(data['removeTabsAndEnvelopeAttachments'], 'String');
+        obj.removeTabsAndEnvelopeAttachments = ApiClient.convertToType(data.removeTabsAndEnvelopeAttachments, 'String');
       }
       if (data.hasOwnProperty('retentionDays')) {
-        obj['retentionDays'] = ApiClient.convertToType(data['retentionDays'], 'String');
+        obj.retentionDays = ApiClient.convertToType(data.retentionDays, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} purgeEnvelopes
    */
-  exports.prototype['purgeEnvelopes'] = undefined;
+  exports.prototype.purgeEnvelopes = undefined;
   /**
-   * 
+   *
    * @member {String} redactPII
    */
-  exports.prototype['redactPII'] = undefined;
+  exports.prototype.redactPII = undefined;
   /**
-   * 
+   *
    * @member {String} removeTabsAndEnvelopeAttachments
    */
-  exports.prototype['removeTabsAndEnvelopeAttachments'] = undefined;
+  exports.prototype.removeTabsAndEnvelopeAttachments = undefined;
   /**
-   * 
+   *
    * @member {String} retentionDays
    */
-  exports.prototype['retentionDays'] = undefined;
-
-
+  exports.prototype.retentionDays = undefined;
 
   return exports;
 }));
-
-

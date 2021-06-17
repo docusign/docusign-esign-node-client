@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FeatureAvailableMetadata = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The FeatureAvailableMetadata model module.
    * @module model/FeatureAvailableMetadata
@@ -37,10 +34,8 @@
    * @alias module:model/FeatureAvailableMetadata
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/FeatureAvailableMetadata} obj Optional instance to populate.
    * @return {module:model/FeatureAvailableMetadata} The populated <code>FeatureAvailableMetadata</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('availabilty')) {
-        obj['availabilty'] = ApiClient.convertToType(data['availabilty'], 'String');
+        obj.availabilty = ApiClient.convertToType(data.availabilty, 'String');
       }
       if (data.hasOwnProperty('featureName')) {
-        obj['featureName'] = ApiClient.convertToType(data['featureName'], 'String');
+        obj.featureName = ApiClient.convertToType(data.featureName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} availabilty
    */
-  exports.prototype['availabilty'] = undefined;
+  exports.prototype.availabilty = undefined;
   /**
-   * 
+   *
    * @member {String} featureName
    */
-  exports.prototype['featureName'] = undefined;
-
-
+  exports.prototype.featureName = undefined;
 
   return exports;
 }));
-
-

@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ErrorDetails', 'model/TabMetadata', 'model/TabMetadataList'], factory);
+    define(['Configuration', 'ApiClient', 'model/ErrorDetails', 'model/TabMetadata', 'model/TabMetadataList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'), require('../model/TabMetadata'), require('../model/TabMetadataList'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.CustomTabsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.TabMetadata, root.Docusign.TabMetadataList);
   }
-}(this, function(Configuration, ApiClient, ErrorDetails, TabMetadata, TabMetadataList) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, ErrorDetails, TabMetadata, TabMetadataList) => {
   /**
    * CustomTabs service.
    * @module api/CustomTabsApi
    */
 
   /**
-   * Constructs a new CustomTabsApi. 
+   * Constructs a new CustomTabsApi.
    * @alias module:api/CustomTabsApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
@@ -63,11 +59,11 @@
      * Deletes custom tab information.
      * Deletes the custom from the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} customTabId 
+     * @param {String} customTabId
      * @param {module:api/CustomTabsApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this._delete = function(accountId, customTabId, callback) {
-      var postBody = null;
+    this._delete = function (accountId, customTabId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -79,33 +75,33 @@
         throw new Error("Missing the required parameter 'customTabId' when calling _delete");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'customTabId': customTabId
+      const pathParams = {
+        accountId,
+        customTabId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/tab_definitions/{customTabId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -124,11 +120,11 @@
 Custom tabs can be created for approve, checkbox, company, date, date signed, decline, email, email address, envelope ID, first name, formula, full name, initial here, last name, list, note, number, radio, sign here, signer attachment, SSN, text, title, and zip tabs.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TabMetadata} optsOrCallback.tabMetadata 
+     * @param {module:model/TabMetadata} optsOrCallback.tabMetadata
      * @param {module:api/CustomTabsApi~createCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadata}
      */
-    this.create = function(accountId, optsOrCallback, callback) {
+    this.create = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -136,39 +132,39 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabMetadata'];
+      const postBody = optsOrCallback.tabMetadata;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling create");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TabMetadata;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TabMetadata;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/tab_definitions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -184,12 +180,12 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      * Gets custom tab information.
      * Retrieves information about the requested custom tab on the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} customTabId 
+     * @param {String} customTabId
      * @param {module:api/CustomTabsApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadata}
      */
-    this.get = function(accountId, customTabId, callback) {
-      var postBody = null;
+    this.get = function (accountId, customTabId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -201,33 +197,33 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         throw new Error("Missing the required parameter 'customTabId' when calling get");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'customTabId': customTabId
+      const pathParams = {
+        accountId,
+        customTabId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TabMetadata;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TabMetadata;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/tab_definitions/{customTabId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -244,11 +240,11 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      * Retrieves a list of all tabs associated with the account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.customTabOnly When set to **true**, only custom tabs are returned in the response. 
+     * @param {String} optsOrCallback.customTabOnly When set to **true**, only custom tabs are returned in the response.
      * @param {module:api/CustomTabsApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadataList}
      */
-    this.list = function(accountId, optsOrCallback, callback) {
+    this.list = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -256,40 +252,40 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling list");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'custom_tab_only': optsOrCallback['customTabOnly']
+      const queryParams = {
+        custom_tab_only: optsOrCallback.customTabOnly,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TabMetadataList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TabMetadataList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/tab_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -302,16 +298,16 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
      */
 
     /**
-     * Updates custom tab information.  
+     * Updates custom tab information.
      * Updates the information in a custom tab for the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} customTabId 
+     * @param {String} customTabId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TabMetadata} optsOrCallback.tabMetadata 
+     * @param {module:model/TabMetadata} optsOrCallback.tabMetadata
      * @param {module:api/CustomTabsApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabMetadata}
      */
-    this.update = function(accountId, customTabId, optsOrCallback, callback) {
+    this.update = function (accountId, customTabId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -319,7 +315,7 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabMetadata'];
+      const postBody = optsOrCallback.tabMetadata;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -331,33 +327,33 @@ Custom tabs can be created for approve, checkbox, company, date, date signed, de
         throw new Error("Missing the required parameter 'customTabId' when calling update");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'customTabId': customTabId
+      const pathParams = {
+        accountId,
+        customTabId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TabMetadata;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TabMetadata;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/tab_definitions/{customTabId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

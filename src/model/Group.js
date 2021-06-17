@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/UserInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Group = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, ErrorDetails, UserInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, UserInfo) => {
   /**
    * The Group model module.
    * @module model/Group
@@ -37,10 +34,8 @@
    * @alias module:model/Group
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,73 +45,69 @@
    * @param {module:model/Group} obj Optional instance to populate.
    * @return {module:model/Group} The populated <code>Group</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('groupId')) {
-        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'String');
+        obj.groupId = ApiClient.convertToType(data.groupId, 'String');
       }
       if (data.hasOwnProperty('groupName')) {
-        obj['groupName'] = ApiClient.convertToType(data['groupName'], 'String');
+        obj.groupName = ApiClient.convertToType(data.groupName, 'String');
       }
       if (data.hasOwnProperty('groupType')) {
-        obj['groupType'] = ApiClient.convertToType(data['groupType'], 'String');
+        obj.groupType = ApiClient.convertToType(data.groupType, 'String');
       }
       if (data.hasOwnProperty('permissionProfileId')) {
-        obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
+        obj.permissionProfileId = ApiClient.convertToType(data.permissionProfileId, 'String');
       }
       if (data.hasOwnProperty('users')) {
-        obj['users'] = ApiClient.convertToType(data['users'], [UserInfo]);
+        obj.users = ApiClient.convertToType(data.users, [UserInfo]);
       }
       if (data.hasOwnProperty('usersCount')) {
-        obj['usersCount'] = ApiClient.convertToType(data['usersCount'], 'String');
+        obj.usersCount = ApiClient.convertToType(data.usersCount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * The DocuSign group ID for the group.
    * @member {String} groupId
    */
-  exports.prototype['groupId'] = undefined;
+  exports.prototype.groupId = undefined;
   /**
    * The name of the group.
    * @member {String} groupName
    */
-  exports.prototype['groupName'] = undefined;
+  exports.prototype.groupName = undefined;
   /**
    * The group type.
    * @member {String} groupType
    */
-  exports.prototype['groupType'] = undefined;
+  exports.prototype.groupType = undefined;
   /**
    * The ID of the permission profile associated with the group.
    * @member {String} permissionProfileId
    */
-  exports.prototype['permissionProfileId'] = undefined;
+  exports.prototype.permissionProfileId = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/UserInfo>} users
    */
-  exports.prototype['users'] = undefined;
+  exports.prototype.users = undefined;
   /**
-   * 
+   *
    * @member {String} usersCount
    */
-  exports.prototype['usersCount'] = undefined;
-
-
+  exports.prototype.usersCount = undefined;
 
   return exports;
 }));
-
-

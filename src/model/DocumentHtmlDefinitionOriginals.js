@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentHtmlDefinitionOriginal'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentHtmlDefinitionOriginals = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinitionOriginal);
   }
-}(this, function(ApiClient, DocumentHtmlDefinitionOriginal) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentHtmlDefinitionOriginal) => {
   /**
    * The DocumentHtmlDefinitionOriginals model module.
    * @module model/DocumentHtmlDefinitionOriginals
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentHtmlDefinitionOriginals
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/DocumentHtmlDefinitionOriginals} obj Optional instance to populate.
    * @return {module:model/DocumentHtmlDefinitionOriginals} The populated <code>DocumentHtmlDefinitionOriginals</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('htmlDefinitions')) {
-        obj['htmlDefinitions'] = ApiClient.convertToType(data['htmlDefinitions'], [DocumentHtmlDefinitionOriginal]);
+        obj.htmlDefinitions = ApiClient.convertToType(data.htmlDefinitions, [DocumentHtmlDefinitionOriginal]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/DocumentHtmlDefinitionOriginal>} htmlDefinitions
    */
-  exports.prototype['htmlDefinitions'] = undefined;
-
-
+  exports.prototype.htmlDefinitions = undefined;
 
   return exports;
 }));
-
-

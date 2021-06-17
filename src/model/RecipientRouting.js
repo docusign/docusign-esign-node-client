@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/RecipientRules'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientRouting = factory(root.Docusign.ApiClient, root.Docusign.RecipientRules);
   }
-}(this, function(ApiClient, RecipientRules) {
-  'use strict';
-
-
+}(this, (ApiClient, RecipientRules) => {
   /**
    * The RecipientRouting model module.
    * @module model/RecipientRouting
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientRouting
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,25 +45,21 @@
    * @param {module:model/RecipientRouting} obj Optional instance to populate.
    * @return {module:model/RecipientRouting} The populated <code>RecipientRouting</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('rules')) {
-        obj['rules'] = RecipientRules.constructFromObject(data['rules']);
+        obj.rules = RecipientRules.constructFromObject(data.rules);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/RecipientRules} rules
    */
-  exports.prototype['rules'] = undefined;
-
-
+  exports.prototype.rules = undefined;
 
   return exports;
 }));
-
-

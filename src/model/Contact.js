@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ContactPhoneNumber', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Contact = factory(root.Docusign.ApiClient, root.Docusign.ContactPhoneNumber, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ContactPhoneNumber, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ContactPhoneNumber, ErrorDetails) => {
   /**
    * The Contact model module.
    * @module model/Contact
@@ -37,10 +34,8 @@
    * @alias module:model/Contact
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,121 +45,117 @@
    * @param {module:model/Contact} obj Optional instance to populate.
    * @return {module:model/Contact} The populated <code>Contact</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cloudProvider')) {
-        obj['cloudProvider'] = ApiClient.convertToType(data['cloudProvider'], 'String');
+        obj.cloudProvider = ApiClient.convertToType(data.cloudProvider, 'String');
       }
       if (data.hasOwnProperty('cloudProviderContainerId')) {
-        obj['cloudProviderContainerId'] = ApiClient.convertToType(data['cloudProviderContainerId'], 'String');
+        obj.cloudProviderContainerId = ApiClient.convertToType(data.cloudProviderContainerId, 'String');
       }
       if (data.hasOwnProperty('contactId')) {
-        obj['contactId'] = ApiClient.convertToType(data['contactId'], 'String');
+        obj.contactId = ApiClient.convertToType(data.contactId, 'String');
       }
       if (data.hasOwnProperty('contactPhoneNumbers')) {
-        obj['contactPhoneNumbers'] = ApiClient.convertToType(data['contactPhoneNumbers'], [ContactPhoneNumber]);
+        obj.contactPhoneNumbers = ApiClient.convertToType(data.contactPhoneNumbers, [ContactPhoneNumber]);
       }
       if (data.hasOwnProperty('contactUri')) {
-        obj['contactUri'] = ApiClient.convertToType(data['contactUri'], 'String');
+        obj.contactUri = ApiClient.convertToType(data.contactUri, 'String');
       }
       if (data.hasOwnProperty('emails')) {
-        obj['emails'] = ApiClient.convertToType(data['emails'], ['String']);
+        obj.emails = ApiClient.convertToType(data.emails, ['String']);
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('isOwner')) {
-        obj['isOwner'] = ApiClient.convertToType(data['isOwner'], 'Boolean');
+        obj.isOwner = ApiClient.convertToType(data.isOwner, 'Boolean');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('organization')) {
-        obj['organization'] = ApiClient.convertToType(data['organization'], 'String');
+        obj.organization = ApiClient.convertToType(data.organization, 'String');
       }
       if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+        obj.shared = ApiClient.convertToType(data.shared, 'String');
       }
       if (data.hasOwnProperty('signingGroup')) {
-        obj['signingGroup'] = ApiClient.convertToType(data['signingGroup'], 'String');
+        obj.signingGroup = ApiClient.convertToType(data.signingGroup, 'String');
       }
       if (data.hasOwnProperty('signingGroupName')) {
-        obj['signingGroupName'] = ApiClient.convertToType(data['signingGroupName'], 'String');
+        obj.signingGroupName = ApiClient.convertToType(data.signingGroupName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} cloudProvider
    */
-  exports.prototype['cloudProvider'] = undefined;
+  exports.prototype.cloudProvider = undefined;
   /**
-   * 
+   *
    * @member {String} cloudProviderContainerId
    */
-  exports.prototype['cloudProviderContainerId'] = undefined;
+  exports.prototype.cloudProviderContainerId = undefined;
   /**
-   * 
+   *
    * @member {String} contactId
    */
-  exports.prototype['contactId'] = undefined;
+  exports.prototype.contactId = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ContactPhoneNumber>} contactPhoneNumbers
    */
-  exports.prototype['contactPhoneNumbers'] = undefined;
+  exports.prototype.contactPhoneNumbers = undefined;
   /**
-   * 
+   *
    * @member {String} contactUri
    */
-  exports.prototype['contactUri'] = undefined;
+  exports.prototype.contactUri = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} emails
    */
-  exports.prototype['emails'] = undefined;
+  exports.prototype.emails = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {Boolean} isOwner
    */
-  exports.prototype['isOwner'] = undefined;
+  exports.prototype.isOwner = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} organization
    */
-  exports.prototype['organization'] = undefined;
+  exports.prototype.organization = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
    */
-  exports.prototype['shared'] = undefined;
+  exports.prototype.shared = undefined;
   /**
-   * 
+   *
    * @member {String} signingGroup
    */
-  exports.prototype['signingGroup'] = undefined;
+  exports.prototype.signingGroup = undefined;
   /**
-   * The display name for the signing group.   Maximum Length: 100 characters. 
+   * The display name for the signing group.   Maximum Length: 100 characters.
    * @member {String} signingGroupName
    */
-  exports.prototype['signingGroupName'] = undefined;
-
-
+  exports.prototype.signingGroupName = undefined;
 
   return exports;
 }));
-
-

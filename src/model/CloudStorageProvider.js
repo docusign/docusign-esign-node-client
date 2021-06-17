@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CloudStorageProvider = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The CloudStorageProvider model module.
    * @module model/CloudStorageProvider
@@ -37,10 +34,8 @@
    * @alias module:model/CloudStorageProvider
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,57 +45,53 @@
    * @param {module:model/CloudStorageProvider} obj Optional instance to populate.
    * @return {module:model/CloudStorageProvider} The populated <code>CloudStorageProvider</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('authenticationUrl')) {
-        obj['authenticationUrl'] = ApiClient.convertToType(data['authenticationUrl'], 'String');
+        obj.authenticationUrl = ApiClient.convertToType(data.authenticationUrl, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('redirectUrl')) {
-        obj['redirectUrl'] = ApiClient.convertToType(data['redirectUrl'], 'String');
+        obj.redirectUrl = ApiClient.convertToType(data.redirectUrl, 'String');
       }
       if (data.hasOwnProperty('service')) {
-        obj['service'] = ApiClient.convertToType(data['service'], 'String');
+        obj.service = ApiClient.convertToType(data.service, 'String');
       }
       if (data.hasOwnProperty('serviceId')) {
-        obj['serviceId'] = ApiClient.convertToType(data['serviceId'], 'String');
+        obj.serviceId = ApiClient.convertToType(data.serviceId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * The authentication URL used for the cloud storage provider. This information is only included in the response if the user has not passed authentication for the cloud storage provider. If the redirectUrl query string is provided, the returnUrl is appended to the authenticationUrl. 
+   * The authentication URL used for the cloud storage provider. This information is only included in the response if the user has not passed authentication for the cloud storage provider. If the redirectUrl query string is provided, the returnUrl is appended to the authenticationUrl.
    * @member {String} authenticationUrl
    */
-  exports.prototype['authenticationUrl'] = undefined;
+  exports.prototype.authenticationUrl = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * The URL the user is redirected to after the cloud storage provider authenticates the user. Using this will append the redirectUrl to the authenticationUrl.  The redirectUrl is restricted to URLs in the docusign.com or docusign.net domains.
    * @member {String} redirectUrl
    */
-  exports.prototype['redirectUrl'] = undefined;
+  exports.prototype.redirectUrl = undefined;
   /**
    * The service name for the cloud storage provider.
    * @member {String} service
    */
-  exports.prototype['service'] = undefined;
+  exports.prototype.service = undefined;
   /**
    * The DocuSign generated ID for the cloud storage provider
    * @member {String} serviceId
    */
-  exports.prototype['serviceId'] = undefined;
-
-
+  exports.prototype.serviceId = undefined;
 
   return exports;
 }));
-
-

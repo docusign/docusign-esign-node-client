@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Folder', 'model/Group', 'model/UserInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeTransferRule = factory(root.Docusign.ApiClient, root.Docusign.Folder, root.Docusign.Group, root.Docusign.UserInformation);
   }
-}(this, function(ApiClient, Folder, Group, UserInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, Folder, Group, UserInformation) => {
   /**
    * The EnvelopeTransferRule model module.
    * @module model/EnvelopeTransferRule
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeTransferRule
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,93 +45,89 @@
    * @param {module:model/EnvelopeTransferRule} obj Optional instance to populate.
    * @return {module:model/EnvelopeTransferRule} The populated <code>EnvelopeTransferRule</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('carbonCopyOriginalOwner')) {
-        obj['carbonCopyOriginalOwner'] = ApiClient.convertToType(data['carbonCopyOriginalOwner'], 'String');
+        obj.carbonCopyOriginalOwner = ApiClient.convertToType(data.carbonCopyOriginalOwner, 'String');
       }
       if (data.hasOwnProperty('enabled')) {
-        obj['enabled'] = ApiClient.convertToType(data['enabled'], 'String');
+        obj.enabled = ApiClient.convertToType(data.enabled, 'String');
       }
       if (data.hasOwnProperty('envelopeTransferRuleId')) {
-        obj['envelopeTransferRuleId'] = ApiClient.convertToType(data['envelopeTransferRuleId'], 'String');
+        obj.envelopeTransferRuleId = ApiClient.convertToType(data.envelopeTransferRuleId, 'String');
       }
       if (data.hasOwnProperty('eventType')) {
-        obj['eventType'] = ApiClient.convertToType(data['eventType'], 'String');
+        obj.eventType = ApiClient.convertToType(data.eventType, 'String');
       }
       if (data.hasOwnProperty('fromGroup')) {
-        obj['fromGroup'] = Group.constructFromObject(data['fromGroup']);
+        obj.fromGroup = Group.constructFromObject(data.fromGroup);
       }
       if (data.hasOwnProperty('fromUser')) {
-        obj['fromUser'] = UserInformation.constructFromObject(data['fromUser']);
+        obj.fromUser = UserInformation.constructFromObject(data.fromUser);
       }
       if (data.hasOwnProperty('modifiedDate')) {
-        obj['modifiedDate'] = ApiClient.convertToType(data['modifiedDate'], 'String');
+        obj.modifiedDate = ApiClient.convertToType(data.modifiedDate, 'String');
       }
       if (data.hasOwnProperty('modifiedUser')) {
-        obj['modifiedUser'] = UserInformation.constructFromObject(data['modifiedUser']);
+        obj.modifiedUser = UserInformation.constructFromObject(data.modifiedUser);
       }
       if (data.hasOwnProperty('toFolder')) {
-        obj['toFolder'] = Folder.constructFromObject(data['toFolder']);
+        obj.toFolder = Folder.constructFromObject(data.toFolder);
       }
       if (data.hasOwnProperty('toUser')) {
-        obj['toUser'] = UserInformation.constructFromObject(data['toUser']);
+        obj.toUser = UserInformation.constructFromObject(data.toUser);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} carbonCopyOriginalOwner
    */
-  exports.prototype['carbonCopyOriginalOwner'] = undefined;
+  exports.prototype.carbonCopyOriginalOwner = undefined;
   /**
-   * 
+   *
    * @member {String} enabled
    */
-  exports.prototype['enabled'] = undefined;
+  exports.prototype.enabled = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeTransferRuleId
    */
-  exports.prototype['envelopeTransferRuleId'] = undefined;
+  exports.prototype.envelopeTransferRuleId = undefined;
   /**
-   * 
+   *
    * @member {String} eventType
    */
-  exports.prototype['eventType'] = undefined;
+  exports.prototype.eventType = undefined;
   /**
    * @member {module:model/Group} fromGroup
    */
-  exports.prototype['fromGroup'] = undefined;
+  exports.prototype.fromGroup = undefined;
   /**
    * @member {module:model/UserInformation} fromUser
    */
-  exports.prototype['fromUser'] = undefined;
+  exports.prototype.fromUser = undefined;
   /**
-   * 
+   *
    * @member {String} modifiedDate
    */
-  exports.prototype['modifiedDate'] = undefined;
+  exports.prototype.modifiedDate = undefined;
   /**
    * @member {module:model/UserInformation} modifiedUser
    */
-  exports.prototype['modifiedUser'] = undefined;
+  exports.prototype.modifiedUser = undefined;
   /**
    * @member {module:model/Folder} toFolder
    */
-  exports.prototype['toFolder'] = undefined;
+  exports.prototype.toFolder = undefined;
   /**
    * @member {module:model/UserInformation} toUser
    */
-  exports.prototype['toUser'] = undefined;
-
-
+  exports.prototype.toUser = undefined;
 
   return exports;
 }));
-
-

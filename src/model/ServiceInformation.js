@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ServiceVersion'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ServiceInformation = factory(root.Docusign.ApiClient, root.Docusign.ServiceVersion);
   }
-}(this, function(ApiClient, ServiceVersion) {
-  'use strict';
-
-
+}(this, (ApiClient, ServiceVersion) => {
   /**
    * The ServiceInformation model module.
    * @module model/ServiceInformation
@@ -37,10 +34,8 @@
    * @alias module:model/ServiceInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/ServiceInformation} obj Optional instance to populate.
    * @return {module:model/ServiceInformation} The populated <code>ServiceInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('buildBranch')) {
-        obj['buildBranch'] = ApiClient.convertToType(data['buildBranch'], 'String');
+        obj.buildBranch = ApiClient.convertToType(data.buildBranch, 'String');
       }
       if (data.hasOwnProperty('buildBranchDeployedDateTime')) {
-        obj['buildBranchDeployedDateTime'] = ApiClient.convertToType(data['buildBranchDeployedDateTime'], 'String');
+        obj.buildBranchDeployedDateTime = ApiClient.convertToType(data.buildBranchDeployedDateTime, 'String');
       }
       if (data.hasOwnProperty('buildSHA')) {
-        obj['buildSHA'] = ApiClient.convertToType(data['buildSHA'], 'String');
+        obj.buildSHA = ApiClient.convertToType(data.buildSHA, 'String');
       }
       if (data.hasOwnProperty('buildVersion')) {
-        obj['buildVersion'] = ApiClient.convertToType(data['buildVersion'], 'String');
+        obj.buildVersion = ApiClient.convertToType(data.buildVersion, 'String');
       }
       if (data.hasOwnProperty('linkedSites')) {
-        obj['linkedSites'] = ApiClient.convertToType(data['linkedSites'], ['String']);
+        obj.linkedSites = ApiClient.convertToType(data.linkedSites, ['String']);
       }
       if (data.hasOwnProperty('serviceVersions')) {
-        obj['serviceVersions'] = ApiClient.convertToType(data['serviceVersions'], [ServiceVersion]);
+        obj.serviceVersions = ApiClient.convertToType(data.serviceVersions, [ServiceVersion]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} buildBranch
    */
-  exports.prototype['buildBranch'] = undefined;
+  exports.prototype.buildBranch = undefined;
   /**
    * Reserved: TBD
    * @member {String} buildBranchDeployedDateTime
    */
-  exports.prototype['buildBranchDeployedDateTime'] = undefined;
+  exports.prototype.buildBranchDeployedDateTime = undefined;
   /**
    * Reserved: TBD
    * @member {String} buildSHA
    */
-  exports.prototype['buildSHA'] = undefined;
+  exports.prototype.buildSHA = undefined;
   /**
    * Reserved: TBD
    * @member {String} buildVersion
    */
-  exports.prototype['buildVersion'] = undefined;
+  exports.prototype.buildVersion = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} linkedSites
    */
-  exports.prototype['linkedSites'] = undefined;
+  exports.prototype.linkedSites = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ServiceVersion>} serviceVersions
    */
-  exports.prototype['serviceVersions'] = undefined;
-
-
+  exports.prototype.serviceVersions = undefined;
 
   return exports;
 }));
-
-

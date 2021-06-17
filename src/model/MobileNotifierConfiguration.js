@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.MobileNotifierConfiguration = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The MobileNotifierConfiguration model module.
    * @module model/MobileNotifierConfiguration
@@ -37,10 +34,8 @@
    * @alias module:model/MobileNotifierConfiguration
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,41 +45,37 @@
    * @param {module:model/MobileNotifierConfiguration} obj Optional instance to populate.
    * @return {module:model/MobileNotifierConfiguration} The populated <code>MobileNotifierConfiguration</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('deviceId')) {
-        obj['deviceId'] = ApiClient.convertToType(data['deviceId'], 'String');
+        obj.deviceId = ApiClient.convertToType(data.deviceId, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('platform')) {
-        obj['platform'] = ApiClient.convertToType(data['platform'], 'String');
+        obj.platform = ApiClient.convertToType(data.platform, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} deviceId
    */
-  exports.prototype['deviceId'] = undefined;
+  exports.prototype.deviceId = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} platform
    */
-  exports.prototype['platform'] = undefined;
-
-
+  exports.prototype.platform = undefined;
 
   return exports;
 }));
-
-

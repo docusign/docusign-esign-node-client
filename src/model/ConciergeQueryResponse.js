@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConciergeQueryResponse = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConciergeQueryResponse model module.
    * @module model/ConciergeQueryResponse
@@ -38,10 +35,8 @@
    * @alias module:model/ConciergeQueryResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,50 +46,46 @@
    * @param {module:model/ConciergeQueryResponse} obj Optional instance to populate.
    * @return {module:model/ConciergeQueryResponse} The populated <code>ConciergeQueryResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('entityLocale')) {
-        obj['entityLocale'] = ApiClient.convertToType(data['entityLocale'], 'String');
+        obj.entityLocale = ApiClient.convertToType(data.entityLocale, 'String');
       }
       if (data.hasOwnProperty('entityTimeZone')) {
-        obj['entityTimeZone'] = ApiClient.convertToType(data['entityTimeZone'], 'String');
+        obj.entityTimeZone = ApiClient.convertToType(data.entityTimeZone, 'String');
       }
       if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+        obj.message = ApiClient.convertToType(data.message, 'String');
       }
       if (data.hasOwnProperty('zuoraEntityName')) {
-        obj['zuoraEntityName'] = ApiClient.convertToType(data['zuoraEntityName'], 'String');
+        obj.zuoraEntityName = ApiClient.convertToType(data.zuoraEntityName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} entityLocale
    */
-  exports.prototype['entityLocale'] = undefined;
+  exports.prototype.entityLocale = undefined;
   /**
-   * 
+   *
    * @member {String} entityTimeZone
    */
-  exports.prototype['entityTimeZone'] = undefined;
+  exports.prototype.entityTimeZone = undefined;
   /**
-   * 
+   *
    * @member {String} message
    */
-  exports.prototype['message'] = undefined;
+  exports.prototype.message = undefined;
   /**
-   * 
+   *
    * @member {String} zuoraEntityName
    */
-  exports.prototype['zuoraEntityName'] = undefined;
-
-
+  exports.prototype.zuoraEntityName = undefined;
 
   return exports;
 }));
-
-

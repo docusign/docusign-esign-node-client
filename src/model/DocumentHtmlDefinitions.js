@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentHtmlDefinitions = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DocumentHtmlDefinitions model module.
    * @module model/DocumentHtmlDefinitions
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentHtmlDefinitions
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/DocumentHtmlDefinitions} obj Optional instance to populate.
    * @return {module:model/DocumentHtmlDefinitions} The populated <code>DocumentHtmlDefinitions</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('htmlDefinitions')) {
-        obj['htmlDefinitions'] = ApiClient.convertToType(data['htmlDefinitions'], ['String']);
+        obj.htmlDefinitions = ApiClient.convertToType(data.htmlDefinitions, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} htmlDefinitions
    */
-  exports.prototype['htmlDefinitions'] = undefined;
-
-
+  exports.prototype.htmlDefinitions = undefined;
 
   return exports;
 }));
-
-

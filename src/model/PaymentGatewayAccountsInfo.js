@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PaymentGatewayAccount'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentGatewayAccountsInfo = factory(root.Docusign.ApiClient, root.Docusign.PaymentGatewayAccount);
   }
-}(this, function(ApiClient, PaymentGatewayAccount) {
-  'use strict';
-
-
+}(this, (ApiClient, PaymentGatewayAccount) => {
   /**
    * The PaymentGatewayAccountsInfo model module.
    * @module model/PaymentGatewayAccountsInfo
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentGatewayAccountsInfo
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/PaymentGatewayAccountsInfo} obj Optional instance to populate.
    * @return {module:model/PaymentGatewayAccountsInfo} The populated <code>PaymentGatewayAccountsInfo</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentGatewayAccounts')) {
-        obj['paymentGatewayAccounts'] = ApiClient.convertToType(data['paymentGatewayAccounts'], [PaymentGatewayAccount]);
+        obj.paymentGatewayAccounts = ApiClient.convertToType(data.paymentGatewayAccounts, [PaymentGatewayAccount]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/PaymentGatewayAccount>} paymentGatewayAccounts
    */
-  exports.prototype['paymentGatewayAccounts'] = undefined;
-
-
+  exports.prototype.paymentGatewayAccounts = undefined;
 
   return exports;
 }));
-
-

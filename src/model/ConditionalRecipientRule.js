@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConditionalRecipientRuleCondition', 'model/RecipientGroup'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConditionalRecipientRule = factory(root.Docusign.ApiClient, root.Docusign.ConditionalRecipientRuleCondition, root.Docusign.RecipientGroup);
   }
-}(this, function(ApiClient, ConditionalRecipientRuleCondition, RecipientGroup) {
-  'use strict';
-
-
+}(this, (ApiClient, ConditionalRecipientRuleCondition, RecipientGroup) => {
   /**
    * The ConditionalRecipientRule model module.
    * @module model/ConditionalRecipientRule
@@ -37,10 +34,8 @@
    * @alias module:model/ConditionalRecipientRule
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,49 +45,45 @@
    * @param {module:model/ConditionalRecipientRule} obj Optional instance to populate.
    * @return {module:model/ConditionalRecipientRule} The populated <code>ConditionalRecipientRule</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('conditions')) {
-        obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionalRecipientRuleCondition]);
+        obj.conditions = ApiClient.convertToType(data.conditions, [ConditionalRecipientRuleCondition]);
       }
       if (data.hasOwnProperty('order')) {
-        obj['order'] = ApiClient.convertToType(data['order'], 'String');
+        obj.order = ApiClient.convertToType(data.order, 'String');
       }
       if (data.hasOwnProperty('recipientGroup')) {
-        obj['recipientGroup'] = RecipientGroup.constructFromObject(data['recipientGroup']);
+        obj.recipientGroup = RecipientGroup.constructFromObject(data.recipientGroup);
       }
       if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+        obj.recipientId = ApiClient.convertToType(data.recipientId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/ConditionalRecipientRuleCondition>} conditions
    */
-  exports.prototype['conditions'] = undefined;
+  exports.prototype.conditions = undefined;
   /**
-   * 
+   *
    * @member {String} order
    */
-  exports.prototype['order'] = undefined;
+  exports.prototype.order = undefined;
   /**
    * @member {module:model/RecipientGroup} recipientGroup
    */
-  exports.prototype['recipientGroup'] = undefined;
+  exports.prototype.recipientGroup = undefined;
   /**
    * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
    * @member {String} recipientId
    */
-  exports.prototype['recipientId'] = undefined;
-
-
+  exports.prototype.recipientId = undefined;
 
   return exports;
 }));
-
-

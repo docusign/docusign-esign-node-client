@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AddressInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentProcessorInformation = factory(root.Docusign.ApiClient, root.Docusign.AddressInformation);
   }
-}(this, function(ApiClient, AddressInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, AddressInformation) => {
   /**
    * The PaymentProcessorInformation model module.
    * @module model/PaymentProcessorInformation
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentProcessorInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,41 +45,37 @@
    * @param {module:model/PaymentProcessorInformation} obj Optional instance to populate.
    * @return {module:model/PaymentProcessorInformation} The populated <code>PaymentProcessorInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('address')) {
-        obj['address'] = AddressInformation.constructFromObject(data['address']);
+        obj.address = AddressInformation.constructFromObject(data.address);
       }
       if (data.hasOwnProperty('billingAgreementId')) {
-        obj['billingAgreementId'] = ApiClient.convertToType(data['billingAgreementId'], 'String');
+        obj.billingAgreementId = ApiClient.convertToType(data.billingAgreementId, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/AddressInformation} address
    */
-  exports.prototype['address'] = undefined;
+  exports.prototype.address = undefined;
   /**
-   * 
+   *
    * @member {String} billingAgreementId
    */
-  exports.prototype['billingAgreementId'] = undefined;
+  exports.prototype.billingAgreementId = undefined;
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
-
-
+  exports.prototype.email = undefined;
 
   return exports;
 }));
-
-

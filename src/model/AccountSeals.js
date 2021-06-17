@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SealIdentifier'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountSeals = factory(root.Docusign.ApiClient, root.Docusign.SealIdentifier);
   }
-}(this, function(ApiClient, SealIdentifier) {
-  'use strict';
-
-
+}(this, (ApiClient, SealIdentifier) => {
   /**
    * The AccountSeals model module.
    * @module model/AccountSeals
@@ -37,10 +34,8 @@
    * @alias module:model/AccountSeals
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/AccountSeals} obj Optional instance to populate.
    * @return {module:model/AccountSeals} The populated <code>AccountSeals</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('seals')) {
-        obj['seals'] = ApiClient.convertToType(data['seals'], [SealIdentifier]);
+        obj.seals = ApiClient.convertToType(data.seals, [SealIdentifier]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/SealIdentifier>} seals
    */
-  exports.prototype['seals'] = undefined;
-
-
+  exports.prototype.seals = undefined;
 
   return exports;
 }));
-
-

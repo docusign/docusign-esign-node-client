@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountPasswordQuestionsRequired = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountPasswordQuestionsRequired model module.
    * @module model/AccountPasswordQuestionsRequired
@@ -37,10 +34,8 @@
    * @alias module:model/AccountPasswordQuestionsRequired
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/AccountPasswordQuestionsRequired} obj Optional instance to populate.
    * @return {module:model/AccountPasswordQuestionsRequired} The populated <code>AccountPasswordQuestionsRequired</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('maximumQuestions')) {
-        obj['maximumQuestions'] = ApiClient.convertToType(data['maximumQuestions'], 'String');
+        obj.maximumQuestions = ApiClient.convertToType(data.maximumQuestions, 'String');
       }
       if (data.hasOwnProperty('minimumQuestions')) {
-        obj['minimumQuestions'] = ApiClient.convertToType(data['minimumQuestions'], 'String');
+        obj.minimumQuestions = ApiClient.convertToType(data.minimumQuestions, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} maximumQuestions
    */
-  exports.prototype['maximumQuestions'] = undefined;
+  exports.prototype.maximumQuestions = undefined;
   /**
-   * 
+   *
    * @member {String} minimumQuestions
    */
-  exports.prototype['minimumQuestions'] = undefined;
-
-
+  exports.prototype.minimumQuestions = undefined;
 
   return exports;
 }));
-
-

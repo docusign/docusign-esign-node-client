@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/SigningGroupUser'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SigningGroup = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.SigningGroupUser);
   }
-}(this, function(ApiClient, ErrorDetails, SigningGroupUser) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, SigningGroupUser) => {
   /**
    * The SigningGroup model module.
    * @module model/SigningGroup
@@ -37,10 +34,8 @@
    * @alias module:model/SigningGroup
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,97 +45,93 @@
    * @param {module:model/SigningGroup} obj Optional instance to populate.
    * @return {module:model/SigningGroup} The populated <code>SigningGroup</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+        obj.created = ApiClient.convertToType(data.created, 'String');
       }
       if (data.hasOwnProperty('createdBy')) {
-        obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
+        obj.createdBy = ApiClient.convertToType(data.createdBy, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('groupEmail')) {
-        obj['groupEmail'] = ApiClient.convertToType(data['groupEmail'], 'String');
+        obj.groupEmail = ApiClient.convertToType(data.groupEmail, 'String');
       }
       if (data.hasOwnProperty('groupName')) {
-        obj['groupName'] = ApiClient.convertToType(data['groupName'], 'String');
+        obj.groupName = ApiClient.convertToType(data.groupName, 'String');
       }
       if (data.hasOwnProperty('groupType')) {
-        obj['groupType'] = ApiClient.convertToType(data['groupType'], 'String');
+        obj.groupType = ApiClient.convertToType(data.groupType, 'String');
       }
       if (data.hasOwnProperty('modified')) {
-        obj['modified'] = ApiClient.convertToType(data['modified'], 'String');
+        obj.modified = ApiClient.convertToType(data.modified, 'String');
       }
       if (data.hasOwnProperty('modifiedBy')) {
-        obj['modifiedBy'] = ApiClient.convertToType(data['modifiedBy'], 'String');
+        obj.modifiedBy = ApiClient.convertToType(data.modifiedBy, 'String');
       }
       if (data.hasOwnProperty('signingGroupId')) {
-        obj['signingGroupId'] = ApiClient.convertToType(data['signingGroupId'], 'String');
+        obj.signingGroupId = ApiClient.convertToType(data.signingGroupId, 'String');
       }
       if (data.hasOwnProperty('users')) {
-        obj['users'] = ApiClient.convertToType(data['users'], [SigningGroupUser]);
+        obj.users = ApiClient.convertToType(data.users, [SigningGroupUser]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} created
    */
-  exports.prototype['created'] = undefined;
+  exports.prototype.created = undefined;
   /**
-   * 
+   *
    * @member {String} createdBy
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype.createdBy = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} groupEmail
    */
-  exports.prototype['groupEmail'] = undefined;
+  exports.prototype.groupEmail = undefined;
   /**
    * The name of the group.
    * @member {String} groupName
    */
-  exports.prototype['groupName'] = undefined;
+  exports.prototype.groupName = undefined;
   /**
-   * 
+   *
    * @member {String} groupType
    */
-  exports.prototype['groupType'] = undefined;
+  exports.prototype.groupType = undefined;
   /**
-   * 
+   *
    * @member {String} modified
    */
-  exports.prototype['modified'] = undefined;
+  exports.prototype.modified = undefined;
   /**
-   * 
+   *
    * @member {String} modifiedBy
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype.modifiedBy = undefined;
   /**
    * When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
    * @member {String} signingGroupId
    */
-  exports.prototype['signingGroupId'] = undefined;
+  exports.prototype.signingGroupId = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/SigningGroupUser>} users
    */
-  exports.prototype['users'] = undefined;
-
-
+  exports.prototype.users = undefined;
 
   return exports;
 }));
-
-

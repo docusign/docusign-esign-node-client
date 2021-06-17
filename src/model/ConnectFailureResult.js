@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectFailureResult = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConnectFailureResult model module.
    * @module model/ConnectFailureResult
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectFailureResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,58 +45,54 @@
    * @param {module:model/ConnectFailureResult} obj Optional instance to populate.
    * @return {module:model/ConnectFailureResult} The populated <code>ConnectFailureResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('configId')) {
-        obj['configId'] = ApiClient.convertToType(data['configId'], 'String');
+        obj.configId = ApiClient.convertToType(data.configId, 'String');
       }
       if (data.hasOwnProperty('configUrl')) {
-        obj['configUrl'] = ApiClient.convertToType(data['configUrl'], 'String');
+        obj.configUrl = ApiClient.convertToType(data.configUrl, 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('statusMessage')) {
-        obj['statusMessage'] = ApiClient.convertToType(data['statusMessage'], 'String');
+        obj.statusMessage = ApiClient.convertToType(data.statusMessage, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} configId
    */
-  exports.prototype['configId'] = undefined;
+  exports.prototype.configId = undefined;
   /**
    * Reserved: TBD
    * @member {String} configUrl
    */
-  exports.prototype['configUrl'] = undefined;
+  exports.prototype.configUrl = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
-   * 
+   *
    * @member {String} statusMessage
    */
-  exports.prototype['statusMessage'] = undefined;
-
-
+  exports.prototype.statusMessage = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AddressInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CreditCardInformation = factory(root.Docusign.ApiClient, root.Docusign.AddressInformation);
   }
-}(this, function(ApiClient, AddressInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, AddressInformation) => {
   /**
    * The CreditCardInformation model module.
    * @module model/CreditCardInformation
@@ -37,10 +34,8 @@
    * @alias module:model/CreditCardInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,73 +45,69 @@
    * @param {module:model/CreditCardInformation} obj Optional instance to populate.
    * @return {module:model/CreditCardInformation} The populated <code>CreditCardInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('address')) {
-        obj['address'] = AddressInformation.constructFromObject(data['address']);
+        obj.address = AddressInformation.constructFromObject(data.address);
       }
       if (data.hasOwnProperty('cardNumber')) {
-        obj['cardNumber'] = ApiClient.convertToType(data['cardNumber'], 'String');
+        obj.cardNumber = ApiClient.convertToType(data.cardNumber, 'String');
       }
       if (data.hasOwnProperty('cardType')) {
-        obj['cardType'] = ApiClient.convertToType(data['cardType'], 'String');
+        obj.cardType = ApiClient.convertToType(data.cardType, 'String');
       }
       if (data.hasOwnProperty('cvNumber')) {
-        obj['cvNumber'] = ApiClient.convertToType(data['cvNumber'], 'String');
+        obj.cvNumber = ApiClient.convertToType(data.cvNumber, 'String');
       }
       if (data.hasOwnProperty('expirationMonth')) {
-        obj['expirationMonth'] = ApiClient.convertToType(data['expirationMonth'], 'String');
+        obj.expirationMonth = ApiClient.convertToType(data.expirationMonth, 'String');
       }
       if (data.hasOwnProperty('expirationYear')) {
-        obj['expirationYear'] = ApiClient.convertToType(data['expirationYear'], 'String');
+        obj.expirationYear = ApiClient.convertToType(data.expirationYear, 'String');
       }
       if (data.hasOwnProperty('nameOnCard')) {
-        obj['nameOnCard'] = ApiClient.convertToType(data['nameOnCard'], 'String');
+        obj.nameOnCard = ApiClient.convertToType(data.nameOnCard, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/AddressInformation} address
    */
-  exports.prototype['address'] = undefined;
+  exports.prototype.address = undefined;
   /**
    * The number on the credit card.
    * @member {String} cardNumber
    */
-  exports.prototype['cardNumber'] = undefined;
+  exports.prototype.cardNumber = undefined;
   /**
    * The credit card type. Valid values are: visa, mastercard, or amex.
    * @member {String} cardType
    */
-  exports.prototype['cardType'] = undefined;
+  exports.prototype.cardType = undefined;
   /**
-   * 
+   *
    * @member {String} cvNumber
    */
-  exports.prototype['cvNumber'] = undefined;
+  exports.prototype.cvNumber = undefined;
   /**
    * The month that the credit card expires (1-12).
    * @member {String} expirationMonth
    */
-  exports.prototype['expirationMonth'] = undefined;
+  exports.prototype.expirationMonth = undefined;
   /**
    * The year 4 digit year in which the credit card expires.
    * @member {String} expirationYear
    */
-  exports.prototype['expirationYear'] = undefined;
+  exports.prototype.expirationYear = undefined;
   /**
    * The exact name printed on the credit card.
    * @member {String} nameOnCard
    */
-  exports.prototype['nameOnCard'] = undefined;
-
-
+  exports.prototype.nameOnCard = undefined;
 
   return exports;
 }));
-
-

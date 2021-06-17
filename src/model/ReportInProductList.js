@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ReportInProductListItem'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReportInProductList = factory(root.Docusign.ApiClient, root.Docusign.ReportInProductListItem);
   }
-}(this, function(ApiClient, ReportInProductListItem) {
-  'use strict';
-
-
+}(this, (ApiClient, ReportInProductListItem) => {
   /**
    * The ReportInProductList model module.
    * @module model/ReportInProductList
@@ -37,10 +34,8 @@
    * @alias module:model/ReportInProductList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ReportInProductList} obj Optional instance to populate.
    * @return {module:model/ReportInProductList} The populated <code>ReportInProductList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('reports')) {
-        obj['reports'] = ApiClient.convertToType(data['reports'], [ReportInProductListItem]);
+        obj.reports = ApiClient.convertToType(data.reports, [ReportInProductListItem]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/ReportInProductListItem>} reports
    */
-  exports.prototype['reports'] = undefined;
-
-
+  exports.prototype.reports = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountMinimumPasswordLength = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountMinimumPasswordLength model module.
    * @module model/AccountMinimumPasswordLength
@@ -37,10 +34,8 @@
    * @alias module:model/AccountMinimumPasswordLength
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/AccountMinimumPasswordLength} obj Optional instance to populate.
    * @return {module:model/AccountMinimumPasswordLength} The populated <code>AccountMinimumPasswordLength</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('maximumLength')) {
-        obj['maximumLength'] = ApiClient.convertToType(data['maximumLength'], 'String');
+        obj.maximumLength = ApiClient.convertToType(data.maximumLength, 'String');
       }
       if (data.hasOwnProperty('minimumLength')) {
-        obj['minimumLength'] = ApiClient.convertToType(data['minimumLength'], 'String');
+        obj.minimumLength = ApiClient.convertToType(data.minimumLength, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} maximumLength
    */
-  exports.prototype['maximumLength'] = undefined;
+  exports.prototype.maximumLength = undefined;
   /**
-   * 
+   *
    * @member {String} minimumLength
    */
-  exports.prototype['minimumLength'] = undefined;
-
-
+  exports.prototype.minimumLength = undefined;
 
   return exports;
 }));
-
-

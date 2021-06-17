@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SettingsMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UserAccountManagementGranularInformation = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, SettingsMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, SettingsMetadata) => {
   /**
    * The UserAccountManagementGranularInformation model module.
    * @module model/UserAccountManagementGranularInformation
@@ -37,10 +34,8 @@
    * @alias module:model/UserAccountManagementGranularInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,146 +45,142 @@
    * @param {module:model/UserAccountManagementGranularInformation} obj Optional instance to populate.
    * @return {module:model/UserAccountManagementGranularInformation} The populated <code>UserAccountManagementGranularInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('canManageAccountSecuritySettings')) {
-        obj['canManageAccountSecuritySettings'] = ApiClient.convertToType(data['canManageAccountSecuritySettings'], 'String');
+        obj.canManageAccountSecuritySettings = ApiClient.convertToType(data.canManageAccountSecuritySettings, 'String');
       }
       if (data.hasOwnProperty('canManageAccountSecuritySettingsMetadata')) {
-        obj['canManageAccountSecuritySettingsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAccountSecuritySettingsMetadata']);
+        obj.canManageAccountSecuritySettingsMetadata = SettingsMetadata.constructFromObject(data.canManageAccountSecuritySettingsMetadata);
       }
       if (data.hasOwnProperty('canManageAccountSettings')) {
-        obj['canManageAccountSettings'] = ApiClient.convertToType(data['canManageAccountSettings'], 'String');
+        obj.canManageAccountSettings = ApiClient.convertToType(data.canManageAccountSettings, 'String');
       }
       if (data.hasOwnProperty('canManageAccountSettingsMetadata')) {
-        obj['canManageAccountSettingsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAccountSettingsMetadata']);
+        obj.canManageAccountSettingsMetadata = SettingsMetadata.constructFromObject(data.canManageAccountSettingsMetadata);
       }
       if (data.hasOwnProperty('canManageAdmins')) {
-        obj['canManageAdmins'] = ApiClient.convertToType(data['canManageAdmins'], 'String');
+        obj.canManageAdmins = ApiClient.convertToType(data.canManageAdmins, 'String');
       }
       if (data.hasOwnProperty('canManageAdminsMetadata')) {
-        obj['canManageAdminsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAdminsMetadata']);
+        obj.canManageAdminsMetadata = SettingsMetadata.constructFromObject(data.canManageAdminsMetadata);
       }
       if (data.hasOwnProperty('canManageEnvelopeTransfer')) {
-        obj['canManageEnvelopeTransfer'] = ApiClient.convertToType(data['canManageEnvelopeTransfer'], 'String');
+        obj.canManageEnvelopeTransfer = ApiClient.convertToType(data.canManageEnvelopeTransfer, 'String');
       }
       if (data.hasOwnProperty('canManageEnvelopeTransferMetadata')) {
-        obj['canManageEnvelopeTransferMetadata'] = SettingsMetadata.constructFromObject(data['canManageEnvelopeTransferMetadata']);
+        obj.canManageEnvelopeTransferMetadata = SettingsMetadata.constructFromObject(data.canManageEnvelopeTransferMetadata);
       }
       if (data.hasOwnProperty('canManageReporting')) {
-        obj['canManageReporting'] = ApiClient.convertToType(data['canManageReporting'], 'String');
+        obj.canManageReporting = ApiClient.convertToType(data.canManageReporting, 'String');
       }
       if (data.hasOwnProperty('canManageReportingMetadata')) {
-        obj['canManageReportingMetadata'] = SettingsMetadata.constructFromObject(data['canManageReportingMetadata']);
+        obj.canManageReportingMetadata = SettingsMetadata.constructFromObject(data.canManageReportingMetadata);
       }
       if (data.hasOwnProperty('canManageSharing')) {
-        obj['canManageSharing'] = ApiClient.convertToType(data['canManageSharing'], 'String');
+        obj.canManageSharing = ApiClient.convertToType(data.canManageSharing, 'String');
       }
       if (data.hasOwnProperty('canManageSharingMetadata')) {
-        obj['canManageSharingMetadata'] = SettingsMetadata.constructFromObject(data['canManageSharingMetadata']);
+        obj.canManageSharingMetadata = SettingsMetadata.constructFromObject(data.canManageSharingMetadata);
       }
       if (data.hasOwnProperty('canManageSigningGroups')) {
-        obj['canManageSigningGroups'] = ApiClient.convertToType(data['canManageSigningGroups'], 'String');
+        obj.canManageSigningGroups = ApiClient.convertToType(data.canManageSigningGroups, 'String');
       }
       if (data.hasOwnProperty('canManageSigningGroupsMetadata')) {
-        obj['canManageSigningGroupsMetadata'] = SettingsMetadata.constructFromObject(data['canManageSigningGroupsMetadata']);
+        obj.canManageSigningGroupsMetadata = SettingsMetadata.constructFromObject(data.canManageSigningGroupsMetadata);
       }
       if (data.hasOwnProperty('canManageUsers')) {
-        obj['canManageUsers'] = ApiClient.convertToType(data['canManageUsers'], 'String');
+        obj.canManageUsers = ApiClient.convertToType(data.canManageUsers, 'String');
       }
       if (data.hasOwnProperty('canManageUsersMetadata')) {
-        obj['canManageUsersMetadata'] = SettingsMetadata.constructFromObject(data['canManageUsersMetadata']);
+        obj.canManageUsersMetadata = SettingsMetadata.constructFromObject(data.canManageUsersMetadata);
       }
       if (data.hasOwnProperty('canViewUsers')) {
-        obj['canViewUsers'] = ApiClient.convertToType(data['canViewUsers'], 'String');
+        obj.canViewUsers = ApiClient.convertToType(data.canViewUsers, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} canManageAccountSecuritySettings
    */
-  exports.prototype['canManageAccountSecuritySettings'] = undefined;
+  exports.prototype.canManageAccountSecuritySettings = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageAccountSecuritySettingsMetadata
    */
-  exports.prototype['canManageAccountSecuritySettingsMetadata'] = undefined;
+  exports.prototype.canManageAccountSecuritySettingsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canManageAccountSettings
    */
-  exports.prototype['canManageAccountSettings'] = undefined;
+  exports.prototype.canManageAccountSettings = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageAccountSettingsMetadata
    */
-  exports.prototype['canManageAccountSettingsMetadata'] = undefined;
+  exports.prototype.canManageAccountSettingsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canManageAdmins
    */
-  exports.prototype['canManageAdmins'] = undefined;
+  exports.prototype.canManageAdmins = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageAdminsMetadata
    */
-  exports.prototype['canManageAdminsMetadata'] = undefined;
+  exports.prototype.canManageAdminsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canManageEnvelopeTransfer
    */
-  exports.prototype['canManageEnvelopeTransfer'] = undefined;
+  exports.prototype.canManageEnvelopeTransfer = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageEnvelopeTransferMetadata
    */
-  exports.prototype['canManageEnvelopeTransferMetadata'] = undefined;
+  exports.prototype.canManageEnvelopeTransferMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canManageReporting
    */
-  exports.prototype['canManageReporting'] = undefined;
+  exports.prototype.canManageReporting = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageReportingMetadata
    */
-  exports.prototype['canManageReportingMetadata'] = undefined;
+  exports.prototype.canManageReportingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canManageSharing
    */
-  exports.prototype['canManageSharing'] = undefined;
+  exports.prototype.canManageSharing = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageSharingMetadata
    */
-  exports.prototype['canManageSharingMetadata'] = undefined;
+  exports.prototype.canManageSharingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canManageSigningGroups
    */
-  exports.prototype['canManageSigningGroups'] = undefined;
+  exports.prototype.canManageSigningGroups = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageSigningGroupsMetadata
    */
-  exports.prototype['canManageSigningGroupsMetadata'] = undefined;
+  exports.prototype.canManageSigningGroupsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canManageUsers
    */
-  exports.prototype['canManageUsers'] = undefined;
+  exports.prototype.canManageUsers = undefined;
   /**
    * @member {module:model/SettingsMetadata} canManageUsersMetadata
    */
-  exports.prototype['canManageUsersMetadata'] = undefined;
+  exports.prototype.canManageUsersMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canViewUsers
    */
-  exports.prototype['canViewUsers'] = undefined;
-
-
+  exports.prototype.canViewUsers = undefined;
 
   return exports;
 }));
-
-

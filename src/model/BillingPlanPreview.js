@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingInvoice'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPlanPreview = factory(root.Docusign.ApiClient, root.Docusign.BillingInvoice);
   }
-}(this, function(ApiClient, BillingInvoice) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingInvoice) => {
   /**
    * The BillingPlanPreview model module.
    * @module model/BillingPlanPreview
@@ -38,10 +35,8 @@
    * @alias module:model/BillingPlanPreview
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,65 +46,61 @@
    * @param {module:model/BillingPlanPreview} obj Optional instance to populate.
    * @return {module:model/BillingPlanPreview} The populated <code>BillingPlanPreview</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('invoice')) {
-        obj['invoice'] = BillingInvoice.constructFromObject(data['invoice']);
+        obj.invoice = BillingInvoice.constructFromObject(data.invoice);
       }
       if (data.hasOwnProperty('isProrated')) {
-        obj['isProrated'] = ApiClient.convertToType(data['isProrated'], 'String');
+        obj.isProrated = ApiClient.convertToType(data.isProrated, 'String');
       }
       if (data.hasOwnProperty('subtotalAmount')) {
-        obj['subtotalAmount'] = ApiClient.convertToType(data['subtotalAmount'], 'String');
+        obj.subtotalAmount = ApiClient.convertToType(data.subtotalAmount, 'String');
       }
       if (data.hasOwnProperty('taxAmount')) {
-        obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'String');
+        obj.taxAmount = ApiClient.convertToType(data.taxAmount, 'String');
       }
       if (data.hasOwnProperty('totalAmount')) {
-        obj['totalAmount'] = ApiClient.convertToType(data['totalAmount'], 'String');
+        obj.totalAmount = ApiClient.convertToType(data.totalAmount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the ISO currency code for the account.
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * @member {module:model/BillingInvoice} invoice
    */
-  exports.prototype['invoice'] = undefined;
+  exports.prototype.invoice = undefined;
   /**
-   * 
+   *
    * @member {String} isProrated
    */
-  exports.prototype['isProrated'] = undefined;
+  exports.prototype.isProrated = undefined;
   /**
-   * 
+   *
    * @member {String} subtotalAmount
    */
-  exports.prototype['subtotalAmount'] = undefined;
+  exports.prototype.subtotalAmount = undefined;
   /**
-   * 
+   *
    * @member {String} taxAmount
    */
-  exports.prototype['taxAmount'] = undefined;
+  exports.prototype.taxAmount = undefined;
   /**
-   * 
+   *
    * @member {String} totalAmount
    */
-  exports.prototype['totalAmount'] = undefined;
-
-
+  exports.prototype.totalAmount = undefined;
 
   return exports;
 }));
-
-

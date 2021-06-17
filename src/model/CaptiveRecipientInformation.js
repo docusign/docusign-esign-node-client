@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/CaptiveRecipient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CaptiveRecipientInformation = factory(root.Docusign.ApiClient, root.Docusign.CaptiveRecipient);
   }
-}(this, function(ApiClient, CaptiveRecipient) {
-  'use strict';
-
-
+}(this, (ApiClient, CaptiveRecipient) => {
   /**
    * The CaptiveRecipientInformation model module.
    * @module model/CaptiveRecipientInformation
@@ -37,10 +34,8 @@
    * @alias module:model/CaptiveRecipientInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/CaptiveRecipientInformation} obj Optional instance to populate.
    * @return {module:model/CaptiveRecipientInformation} The populated <code>CaptiveRecipientInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('captiveRecipients')) {
-        obj['captiveRecipients'] = ApiClient.convertToType(data['captiveRecipients'], [CaptiveRecipient]);
+        obj.captiveRecipients = ApiClient.convertToType(data.captiveRecipients, [CaptiveRecipient]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A complex type containing information about one or more captive recipients.
    * @member {Array.<module:model/CaptiveRecipient>} captiveRecipients
    */
-  exports.prototype['captiveRecipients'] = undefined;
-
-
+  exports.prototype.captiveRecipients = undefined;
 
   return exports;
 }));
-
-

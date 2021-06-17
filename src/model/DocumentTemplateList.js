@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentTemplate'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentTemplateList = factory(root.Docusign.ApiClient, root.Docusign.DocumentTemplate);
   }
-}(this, function(ApiClient, DocumentTemplate) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentTemplate) => {
   /**
    * The DocumentTemplateList model module.
    * @module model/DocumentTemplateList
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentTemplateList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/DocumentTemplateList} obj Optional instance to populate.
    * @return {module:model/DocumentTemplateList} The populated <code>DocumentTemplateList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentTemplates')) {
-        obj['documentTemplates'] = ApiClient.convertToType(data['documentTemplates'], [DocumentTemplate]);
+        obj.documentTemplates = ApiClient.convertToType(data.documentTemplates, [DocumentTemplate]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/DocumentTemplate>} documentTemplates
    */
-  exports.prototype['documentTemplates'] = undefined;
-
-
+  exports.prototype.documentTemplates = undefined;
 
   return exports;
 }));
-
-

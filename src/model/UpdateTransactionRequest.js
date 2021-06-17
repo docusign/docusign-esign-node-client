@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UpdateTransactionRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The UpdateTransactionRequest model module.
    * @module model/UpdateTransactionRequest
@@ -37,10 +34,8 @@
    * @alias module:model/UpdateTransactionRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/UpdateTransactionRequest} obj Optional instance to populate.
    * @return {module:model/UpdateTransactionRequest} The populated <code>UpdateTransactionRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('code')) {
-        obj['code'] = ApiClient.convertToType(data['code'], 'String');
+        obj.code = ApiClient.convertToType(data.code, 'String');
       }
       if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+        obj.message = ApiClient.convertToType(data.message, 'String');
       }
       if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+        obj.state = ApiClient.convertToType(data.state, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} code
    */
-  exports.prototype['code'] = undefined;
+  exports.prototype.code = undefined;
   /**
-   * 
+   *
    * @member {String} message
    */
-  exports.prototype['message'] = undefined;
+  exports.prototype.message = undefined;
   /**
    * The state or province associated with the address.
    * @member {String} state
    */
-  exports.prototype['state'] = undefined;
-
-
+  exports.prototype.state = undefined;
 
   return exports;
 }));
-
-

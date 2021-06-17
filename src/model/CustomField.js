@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CustomField = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The CustomField model module.
    * @module model/CustomField
@@ -37,10 +34,8 @@
    * @alias module:model/CustomField
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,81 +45,77 @@
    * @param {module:model/CustomField} obj Optional instance to populate.
    * @return {module:model/CustomField} The populated <code>CustomField</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('customFieldType')) {
-        obj['customFieldType'] = ApiClient.convertToType(data['customFieldType'], 'String');
+        obj.customFieldType = ApiClient.convertToType(data.customFieldType, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('fieldId')) {
-        obj['fieldId'] = ApiClient.convertToType(data['fieldId'], 'String');
+        obj.fieldId = ApiClient.convertToType(data.fieldId, 'String');
       }
       if (data.hasOwnProperty('listItems')) {
-        obj['listItems'] = ApiClient.convertToType(data['listItems'], ['String']);
+        obj.listItems = ApiClient.convertToType(data.listItems, ['String']);
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('required')) {
-        obj['required'] = ApiClient.convertToType(data['required'], 'String');
+        obj.required = ApiClient.convertToType(data.required, 'String');
       }
       if (data.hasOwnProperty('show')) {
-        obj['show'] = ApiClient.convertToType(data['show'], 'String');
+        obj.show = ApiClient.convertToType(data.show, 'String');
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+        obj.value = ApiClient.convertToType(data.value, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} customFieldType
    */
-  exports.prototype['customFieldType'] = undefined;
+  exports.prototype.customFieldType = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} fieldId
    */
-  exports.prototype['fieldId'] = undefined;
+  exports.prototype.fieldId = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} listItems
    */
-  exports.prototype['listItems'] = undefined;
+  exports.prototype.listItems = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * When set to **true**, the signer is required to fill out this tab
    * @member {String} required
    */
-  exports.prototype['required'] = undefined;
+  exports.prototype.required = undefined;
   /**
-   * 
+   *
    * @member {String} show
    */
-  exports.prototype['show'] = undefined;
+  exports.prototype.show = undefined;
   /**
-   * Specifies the value of the tab. 
+   * Specifies the value of the tab.
    * @member {String} value
    */
-  exports.prototype['value'] = undefined;
-
-
+  exports.prototype.value = undefined;
 
   return exports;
 }));
-
-

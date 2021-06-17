@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ForgottenPasswordInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UserPasswordInformation = factory(root.Docusign.ApiClient, root.Docusign.ForgottenPasswordInformation);
   }
-}(this, function(ApiClient, ForgottenPasswordInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, ForgottenPasswordInformation) => {
   /**
    * The UserPasswordInformation model module.
    * @module model/UserPasswordInformation
@@ -37,10 +34,8 @@
    * @alias module:model/UserPasswordInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,49 +45,45 @@
    * @param {module:model/UserPasswordInformation} obj Optional instance to populate.
    * @return {module:model/UserPasswordInformation} The populated <code>UserPasswordInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('currentPassword')) {
-        obj['currentPassword'] = ApiClient.convertToType(data['currentPassword'], 'String');
+        obj.currentPassword = ApiClient.convertToType(data.currentPassword, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('forgottenPasswordInfo')) {
-        obj['forgottenPasswordInfo'] = ForgottenPasswordInformation.constructFromObject(data['forgottenPasswordInfo']);
+        obj.forgottenPasswordInfo = ForgottenPasswordInformation.constructFromObject(data.forgottenPasswordInfo);
       }
       if (data.hasOwnProperty('newPassword')) {
-        obj['newPassword'] = ApiClient.convertToType(data['newPassword'], 'String');
+        obj.newPassword = ApiClient.convertToType(data.newPassword, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The user's current password to be changed.
    * @member {String} currentPassword
    */
-  exports.prototype['currentPassword'] = undefined;
+  exports.prototype.currentPassword = undefined;
   /**
    * The user's email address for the associated account.
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
    * @member {module:model/ForgottenPasswordInformation} forgottenPasswordInfo
    */
-  exports.prototype['forgottenPasswordInfo'] = undefined;
+  exports.prototype.forgottenPasswordInfo = undefined;
   /**
    * The user's new password.
    * @member {String} newPassword
    */
-  exports.prototype['newPassword'] = undefined;
-
-
+  exports.prototype.newPassword = undefined;
 
   return exports;
 }));
-
-

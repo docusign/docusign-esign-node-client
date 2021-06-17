@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendResponse = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BulkSendResponse model module.
    * @module model/BulkSendResponse
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,82 +45,78 @@
    * @param {module:model/BulkSendResponse} obj Optional instance to populate.
    * @return {module:model/BulkSendResponse} The populated <code>BulkSendResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('batchId')) {
-        obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
+        obj.batchId = ApiClient.convertToType(data.batchId, 'String');
       }
       if (data.hasOwnProperty('batchName')) {
-        obj['batchName'] = ApiClient.convertToType(data['batchName'], 'String');
+        obj.batchName = ApiClient.convertToType(data.batchName, 'String');
       }
       if (data.hasOwnProperty('batchSize')) {
-        obj['batchSize'] = ApiClient.convertToType(data['batchSize'], 'String');
+        obj.batchSize = ApiClient.convertToType(data.batchSize, 'String');
       }
       if (data.hasOwnProperty('envelopeOrTemplateId')) {
-        obj['envelopeOrTemplateId'] = ApiClient.convertToType(data['envelopeOrTemplateId'], 'String');
+        obj.envelopeOrTemplateId = ApiClient.convertToType(data.envelopeOrTemplateId, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ApiClient.convertToType(data['errorDetails'], ['String']);
+        obj.errorDetails = ApiClient.convertToType(data.errorDetails, ['String']);
       }
       if (data.hasOwnProperty('errors')) {
-        obj['errors'] = ApiClient.convertToType(data['errors'], ['String']);
+        obj.errors = ApiClient.convertToType(data.errors, ['String']);
       }
       if (data.hasOwnProperty('queueLimit')) {
-        obj['queueLimit'] = ApiClient.convertToType(data['queueLimit'], 'String');
+        obj.queueLimit = ApiClient.convertToType(data.queueLimit, 'String');
       }
       if (data.hasOwnProperty('totalQueued')) {
-        obj['totalQueued'] = ApiClient.convertToType(data['totalQueued'], 'String');
+        obj.totalQueued = ApiClient.convertToType(data.totalQueued, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} batchId
    */
-  exports.prototype['batchId'] = undefined;
+  exports.prototype.batchId = undefined;
   /**
-   * 
+   *
    * @member {String} batchName
    */
-  exports.prototype['batchName'] = undefined;
+  exports.prototype.batchName = undefined;
   /**
-   * 
+   *
    * @member {String} batchSize
    */
-  exports.prototype['batchSize'] = undefined;
+  exports.prototype.batchSize = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeOrTemplateId
    */
-  exports.prototype['envelopeOrTemplateId'] = undefined;
+  exports.prototype.envelopeOrTemplateId = undefined;
   /**
    * Array or errors.
    * @member {Array.<String>} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} errors
    */
-  exports.prototype['errors'] = undefined;
+  exports.prototype.errors = undefined;
   /**
-   * 
+   *
    * @member {String} queueLimit
    */
-  exports.prototype['queueLimit'] = undefined;
+  exports.prototype.queueLimit = undefined;
   /**
-   * 
+   *
    * @member {String} totalQueued
    */
-  exports.prototype['totalQueued'] = undefined;
-
-
+  exports.prototype.totalQueued = undefined;
 
   return exports;
 }));
-
-

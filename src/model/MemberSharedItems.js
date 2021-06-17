@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/FolderSharedItem', 'model/SharedItem', 'model/TemplateSharedItem', 'model/UserInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.MemberSharedItems = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.FolderSharedItem, root.Docusign.SharedItem, root.Docusign.TemplateSharedItem, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, ErrorDetails, FolderSharedItem, SharedItem, TemplateSharedItem, UserInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, FolderSharedItem, SharedItem, TemplateSharedItem, UserInfo) => {
   /**
    * The MemberSharedItems model module.
    * @module model/MemberSharedItems
@@ -37,10 +34,8 @@
    * @alias module:model/MemberSharedItems
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,56 +45,52 @@
    * @param {module:model/MemberSharedItems} obj Optional instance to populate.
    * @return {module:model/MemberSharedItems} The populated <code>MemberSharedItems</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopes')) {
-        obj['envelopes'] = ApiClient.convertToType(data['envelopes'], [SharedItem]);
+        obj.envelopes = ApiClient.convertToType(data.envelopes, [SharedItem]);
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('folders')) {
-        obj['folders'] = ApiClient.convertToType(data['folders'], [FolderSharedItem]);
+        obj.folders = ApiClient.convertToType(data.folders, [FolderSharedItem]);
       }
       if (data.hasOwnProperty('templates')) {
-        obj['templates'] = ApiClient.convertToType(data['templates'], [TemplateSharedItem]);
+        obj.templates = ApiClient.convertToType(data.templates, [TemplateSharedItem]);
       }
       if (data.hasOwnProperty('user')) {
-        obj['user'] = UserInfo.constructFromObject(data['user']);
+        obj.user = UserInfo.constructFromObject(data.user);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/SharedItem>} envelopes
    */
-  exports.prototype['envelopes'] = undefined;
+  exports.prototype.envelopes = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/FolderSharedItem>} folders
    */
-  exports.prototype['folders'] = undefined;
+  exports.prototype.folders = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/TemplateSharedItem>} templates
    */
-  exports.prototype['templates'] = undefined;
+  exports.prototype.templates = undefined;
   /**
    * @member {module:model/UserInfo} user
    */
-  exports.prototype['user'] = undefined;
-
-
+  exports.prototype.user = undefined;
 
   return exports;
 }));
-
-

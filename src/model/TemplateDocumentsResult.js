@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/EnvelopeDocument'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TemplateDocumentsResult = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeDocument);
   }
-}(this, function(ApiClient, EnvelopeDocument) {
-  'use strict';
-
-
+}(this, (ApiClient, EnvelopeDocument) => {
   /**
    * The TemplateDocumentsResult model module.
    * @module model/TemplateDocumentsResult
@@ -37,10 +34,8 @@
    * @alias module:model/TemplateDocumentsResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/TemplateDocumentsResult} obj Optional instance to populate.
    * @return {module:model/TemplateDocumentsResult} The populated <code>TemplateDocumentsResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('templateDocuments')) {
-        obj['templateDocuments'] = ApiClient.convertToType(data['templateDocuments'], [EnvelopeDocument]);
+        obj.templateDocuments = ApiClient.convertToType(data.templateDocuments, [EnvelopeDocument]);
       }
       if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+        obj.templateId = ApiClient.convertToType(data.templateId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/EnvelopeDocument>} templateDocuments
    */
-  exports.prototype['templateDocuments'] = undefined;
+  exports.prototype.templateDocuments = undefined;
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
    * @member {String} templateId
    */
-  exports.prototype['templateId'] = undefined;
-
-
+  exports.prototype.templateId = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DateStampProperties = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DateStampProperties model module.
    * @module model/DateStampProperties
@@ -37,10 +34,8 @@
    * @alias module:model/DateStampProperties
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/DateStampProperties} obj Optional instance to populate.
    * @return {module:model/DateStampProperties} The populated <code>DateStampProperties</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('dateAreaHeight')) {
-        obj['dateAreaHeight'] = ApiClient.convertToType(data['dateAreaHeight'], 'String');
+        obj.dateAreaHeight = ApiClient.convertToType(data.dateAreaHeight, 'String');
       }
       if (data.hasOwnProperty('dateAreaWidth')) {
-        obj['dateAreaWidth'] = ApiClient.convertToType(data['dateAreaWidth'], 'String');
+        obj.dateAreaWidth = ApiClient.convertToType(data.dateAreaWidth, 'String');
       }
       if (data.hasOwnProperty('dateAreaX')) {
-        obj['dateAreaX'] = ApiClient.convertToType(data['dateAreaX'], 'String');
+        obj.dateAreaX = ApiClient.convertToType(data.dateAreaX, 'String');
       }
       if (data.hasOwnProperty('dateAreaY')) {
-        obj['dateAreaY'] = ApiClient.convertToType(data['dateAreaY'], 'String');
+        obj.dateAreaY = ApiClient.convertToType(data.dateAreaY, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} dateAreaHeight
    */
-  exports.prototype['dateAreaHeight'] = undefined;
+  exports.prototype.dateAreaHeight = undefined;
   /**
-   * 
+   *
    * @member {String} dateAreaWidth
    */
-  exports.prototype['dateAreaWidth'] = undefined;
+  exports.prototype.dateAreaWidth = undefined;
   /**
-   * 
+   *
    * @member {String} dateAreaX
    */
-  exports.prototype['dateAreaX'] = undefined;
+  exports.prototype.dateAreaX = undefined;
   /**
-   * 
+   *
    * @member {String} dateAreaY
    */
-  exports.prototype['dateAreaY'] = undefined;
-
-
+  exports.prototype.dateAreaY = undefined;
 
   return exports;
 }));
-
-

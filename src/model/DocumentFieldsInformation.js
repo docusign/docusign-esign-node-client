@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/NameValue'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentFieldsInformation = factory(root.Docusign.ApiClient, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, NameValue) {
-  'use strict';
-
-
+}(this, (ApiClient, NameValue) => {
   /**
    * The DocumentFieldsInformation model module.
    * @module model/DocumentFieldsInformation
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentFieldsInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/DocumentFieldsInformation} obj Optional instance to populate.
    * @return {module:model/DocumentFieldsInformation} The populated <code>DocumentFieldsInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentFields')) {
-        obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
+        obj.documentFields = ApiClient.convertToType(data.documentFields, [NameValue]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.  
+   * The array of name/value custom data strings to be added to a document. Custom document field information is returned in the status, but otherwise is not used by DocuSign. The array contains the elements:   * name - A string that can be a maximum of 50 characters.  * value - A string that can be a maximum of 200 characters.  *IMPORTANT*: If you are using xml, the name/value pair is contained in a nameValue element.
    * @member {Array.<module:model/NameValue>} documentFields
    */
-  exports.prototype['documentFields'] = undefined;
-
-
+  exports.prototype.documentFields = undefined;
 
   return exports;
 }));
-
-

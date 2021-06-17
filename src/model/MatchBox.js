@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.MatchBox = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The MatchBox model module.
    * @module model/MatchBox
@@ -37,10 +34,8 @@
    * @alias module:model/MatchBox
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,58 +45,54 @@
    * @param {module:model/MatchBox} obj Optional instance to populate.
    * @return {module:model/MatchBox} The populated <code>MatchBox</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('height')) {
-        obj['height'] = ApiClient.convertToType(data['height'], 'String');
+        obj.height = ApiClient.convertToType(data.height, 'String');
       }
       if (data.hasOwnProperty('pageNumber')) {
-        obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
+        obj.pageNumber = ApiClient.convertToType(data.pageNumber, 'String');
       }
       if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'String');
+        obj.width = ApiClient.convertToType(data.width, 'String');
       }
       if (data.hasOwnProperty('xPosition')) {
-        obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'String');
+        obj.xPosition = ApiClient.convertToType(data.xPosition, 'String');
       }
       if (data.hasOwnProperty('yPosition')) {
-        obj['yPosition'] = ApiClient.convertToType(data['yPosition'], 'String');
+        obj.yPosition = ApiClient.convertToType(data.yPosition, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Height of the tab in pixels.
    * @member {String} height
    */
-  exports.prototype['height'] = undefined;
+  exports.prototype.height = undefined;
   /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber
    */
-  exports.prototype['pageNumber'] = undefined;
+  exports.prototype.pageNumber = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width
    */
-  exports.prototype['width'] = undefined;
+  exports.prototype.width = undefined;
   /**
    * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {String} xPosition
    */
-  exports.prototype['xPosition'] = undefined;
+  exports.prototype.xPosition = undefined;
   /**
    * This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {String} yPosition
    */
-  exports.prototype['yPosition'] = undefined;
-
-
+  exports.prototype.yPosition = undefined;
 
   return exports;
 }));
-
-

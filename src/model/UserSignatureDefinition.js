@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DateStampProperties'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UserSignatureDefinition = factory(root.Docusign.ApiClient, root.Docusign.DateStampProperties);
   }
-}(this, function(ApiClient, DateStampProperties) {
-  'use strict';
-
-
+}(this, (ApiClient, DateStampProperties) => {
   /**
    * The UserSignatureDefinition model module.
    * @module model/UserSignatureDefinition
@@ -37,10 +34,8 @@
    * @alias module:model/UserSignatureDefinition
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,129 +45,125 @@
    * @param {module:model/UserSignatureDefinition} obj Optional instance to populate.
    * @return {module:model/UserSignatureDefinition} The populated <code>UserSignatureDefinition</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('dateStampProperties')) {
-        obj['dateStampProperties'] = DateStampProperties.constructFromObject(data['dateStampProperties']);
+        obj.dateStampProperties = DateStampProperties.constructFromObject(data.dateStampProperties);
       }
       if (data.hasOwnProperty('disallowUserResizeStamp')) {
-        obj['disallowUserResizeStamp'] = ApiClient.convertToType(data['disallowUserResizeStamp'], 'String');
+        obj.disallowUserResizeStamp = ApiClient.convertToType(data.disallowUserResizeStamp, 'String');
       }
       if (data.hasOwnProperty('externalID')) {
-        obj['externalID'] = ApiClient.convertToType(data['externalID'], 'String');
+        obj.externalID = ApiClient.convertToType(data.externalID, 'String');
       }
       if (data.hasOwnProperty('imageType')) {
-        obj['imageType'] = ApiClient.convertToType(data['imageType'], 'String');
+        obj.imageType = ApiClient.convertToType(data.imageType, 'String');
       }
       if (data.hasOwnProperty('isDefault')) {
-        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+        obj.isDefault = ApiClient.convertToType(data.isDefault, 'String');
       }
       if (data.hasOwnProperty('nrdsId')) {
-        obj['nrdsId'] = ApiClient.convertToType(data['nrdsId'], 'String');
+        obj.nrdsId = ApiClient.convertToType(data.nrdsId, 'String');
       }
       if (data.hasOwnProperty('nrdsLastName')) {
-        obj['nrdsLastName'] = ApiClient.convertToType(data['nrdsLastName'], 'String');
+        obj.nrdsLastName = ApiClient.convertToType(data.nrdsLastName, 'String');
       }
       if (data.hasOwnProperty('phoneticName')) {
-        obj['phoneticName'] = ApiClient.convertToType(data['phoneticName'], 'String');
+        obj.phoneticName = ApiClient.convertToType(data.phoneticName, 'String');
       }
       if (data.hasOwnProperty('signatureFont')) {
-        obj['signatureFont'] = ApiClient.convertToType(data['signatureFont'], 'String');
+        obj.signatureFont = ApiClient.convertToType(data.signatureFont, 'String');
       }
       if (data.hasOwnProperty('signatureId')) {
-        obj['signatureId'] = ApiClient.convertToType(data['signatureId'], 'String');
+        obj.signatureId = ApiClient.convertToType(data.signatureId, 'String');
       }
       if (data.hasOwnProperty('signatureInitials')) {
-        obj['signatureInitials'] = ApiClient.convertToType(data['signatureInitials'], 'String');
+        obj.signatureInitials = ApiClient.convertToType(data.signatureInitials, 'String');
       }
       if (data.hasOwnProperty('signatureName')) {
-        obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
+        obj.signatureName = ApiClient.convertToType(data.signatureName, 'String');
       }
       if (data.hasOwnProperty('stampFormat')) {
-        obj['stampFormat'] = ApiClient.convertToType(data['stampFormat'], 'String');
+        obj.stampFormat = ApiClient.convertToType(data.stampFormat, 'String');
       }
       if (data.hasOwnProperty('stampSizeMM')) {
-        obj['stampSizeMM'] = ApiClient.convertToType(data['stampSizeMM'], 'String');
+        obj.stampSizeMM = ApiClient.convertToType(data.stampSizeMM, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/DateStampProperties} dateStampProperties
    */
-  exports.prototype['dateStampProperties'] = undefined;
+  exports.prototype.dateStampProperties = undefined;
   /**
-   * 
+   *
    * @member {String} disallowUserResizeStamp
    */
-  exports.prototype['disallowUserResizeStamp'] = undefined;
+  exports.prototype.disallowUserResizeStamp = undefined;
   /**
-   * 
+   *
    * @member {String} externalID
    */
-  exports.prototype['externalID'] = undefined;
+  exports.prototype.externalID = undefined;
   /**
-   * 
+   *
    * @member {String} imageType
    */
-  exports.prototype['imageType'] = undefined;
+  exports.prototype.imageType = undefined;
   /**
-   * 
+   *
    * @member {String} isDefault
    */
-  exports.prototype['isDefault'] = undefined;
+  exports.prototype.isDefault = undefined;
   /**
-   * 
+   *
    * @member {String} nrdsId
    */
-  exports.prototype['nrdsId'] = undefined;
+  exports.prototype.nrdsId = undefined;
   /**
-   * 
+   *
    * @member {String} nrdsLastName
    */
-  exports.prototype['nrdsLastName'] = undefined;
+  exports.prototype.nrdsLastName = undefined;
   /**
-   * 
+   *
    * @member {String} phoneticName
    */
-  exports.prototype['phoneticName'] = undefined;
+  exports.prototype.phoneticName = undefined;
   /**
-   * 
+   *
    * @member {String} signatureFont
    */
-  exports.prototype['signatureFont'] = undefined;
+  exports.prototype.signatureFont = undefined;
   /**
    * Specifies the signature ID associated with the signature name. You can use the signature ID in the URI in place of the signature name, and the value stored in the `signatureName` property in the body is used. This allows the use of special characters (such as \"&\", \"<\", \">\") in a the signature name. Note that with each update to signatures, the returned signature ID might change, so the caller will need to trigger off the signature name to get the new signature ID.
    * @member {String} signatureId
    */
-  exports.prototype['signatureId'] = undefined;
+  exports.prototype.signatureId = undefined;
   /**
-   * 
+   *
    * @member {String} signatureInitials
    */
-  exports.prototype['signatureInitials'] = undefined;
+  exports.prototype.signatureInitials = undefined;
   /**
    * Specifies the user signature name.
    * @member {String} signatureName
    */
-  exports.prototype['signatureName'] = undefined;
+  exports.prototype.signatureName = undefined;
   /**
-   * 
+   *
    * @member {String} stampFormat
    */
-  exports.prototype['stampFormat'] = undefined;
+  exports.prototype.stampFormat = undefined;
   /**
-   * 
+   *
    * @member {String} stampSizeMM
    */
-  exports.prototype['stampSizeMM'] = undefined;
-
-
+  exports.prototype.stampSizeMM = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/EnvelopeAttachment'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeAttachmentsResult = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeAttachment);
   }
-}(this, function(ApiClient, EnvelopeAttachment) {
-  'use strict';
-
-
+}(this, (ApiClient, EnvelopeAttachment) => {
   /**
    * The EnvelopeAttachmentsResult model module.
    * @module model/EnvelopeAttachmentsResult
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeAttachmentsResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/EnvelopeAttachmentsResult} obj Optional instance to populate.
    * @return {module:model/EnvelopeAttachmentsResult} The populated <code>EnvelopeAttachmentsResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('attachments')) {
-        obj['attachments'] = ApiClient.convertToType(data['attachments'], [EnvelopeAttachment]);
+        obj.attachments = ApiClient.convertToType(data.attachments, [EnvelopeAttachment]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/EnvelopeAttachment>} attachments
    */
-  exports.prototype['attachments'] = undefined;
-
-
+  exports.prototype.attachments = undefined;
 
   return exports;
 }));
-
-

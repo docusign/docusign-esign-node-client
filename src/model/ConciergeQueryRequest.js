@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConciergeQueryRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConciergeQueryRequest model module.
    * @module model/ConciergeQueryRequest
@@ -38,10 +35,8 @@
    * @alias module:model/ConciergeQueryRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,58 +46,54 @@
    * @param {module:model/ConciergeQueryRequest} obj Optional instance to populate.
    * @return {module:model/ConciergeQueryRequest} The populated <code>ConciergeQueryRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accountManagementRepCountry')) {
-        obj['accountManagementRepCountry'] = ApiClient.convertToType(data['accountManagementRepCountry'], 'String');
+        obj.accountManagementRepCountry = ApiClient.convertToType(data.accountManagementRepCountry, 'String');
       }
       if (data.hasOwnProperty('contractCountry')) {
-        obj['contractCountry'] = ApiClient.convertToType(data['contractCountry'], 'String');
+        obj.contractCountry = ApiClient.convertToType(data.contractCountry, 'String');
       }
       if (data.hasOwnProperty('planId')) {
-        obj['planId'] = ApiClient.convertToType(data['planId'], 'String');
+        obj.planId = ApiClient.convertToType(data.planId, 'String');
       }
       if (data.hasOwnProperty('region')) {
-        obj['region'] = ApiClient.convertToType(data['region'], 'String');
+        obj.region = ApiClient.convertToType(data.region, 'String');
       }
       if (data.hasOwnProperty('shippingCountry')) {
-        obj['shippingCountry'] = ApiClient.convertToType(data['shippingCountry'], 'String');
+        obj.shippingCountry = ApiClient.convertToType(data.shippingCountry, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} accountManagementRepCountry
    */
-  exports.prototype['accountManagementRepCountry'] = undefined;
+  exports.prototype.accountManagementRepCountry = undefined;
   /**
-   * 
+   *
    * @member {String} contractCountry
    */
-  exports.prototype['contractCountry'] = undefined;
+  exports.prototype.contractCountry = undefined;
   /**
-   * 
+   *
    * @member {String} planId
    */
-  exports.prototype['planId'] = undefined;
+  exports.prototype.planId = undefined;
   /**
-   * 
+   *
    * @member {String} region
    */
-  exports.prototype['region'] = undefined;
+  exports.prototype.region = undefined;
   /**
-   * 
+   *
    * @member {String} shippingCountry
    */
-  exports.prototype['shippingCountry'] = undefined;
-
-
+  exports.prototype.shippingCountry = undefined;
 
   return exports;
 }));
-
-

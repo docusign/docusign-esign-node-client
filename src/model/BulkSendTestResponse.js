@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendTestResponse = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BulkSendTestResponse model module.
    * @module model/BulkSendTestResponse
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendTestResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/BulkSendTestResponse} obj Optional instance to populate.
    * @return {module:model/BulkSendTestResponse} The populated <code>BulkSendTestResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('canBeSent')) {
-        obj['canBeSent'] = ApiClient.convertToType(data['canBeSent'], 'Boolean');
+        obj.canBeSent = ApiClient.convertToType(data.canBeSent, 'Boolean');
       }
       if (data.hasOwnProperty('validationErrorDetails')) {
-        obj['validationErrorDetails'] = ApiClient.convertToType(data['validationErrorDetails'], ['String']);
+        obj.validationErrorDetails = ApiClient.convertToType(data.validationErrorDetails, ['String']);
       }
       if (data.hasOwnProperty('validationErrors')) {
-        obj['validationErrors'] = ApiClient.convertToType(data['validationErrors'], ['String']);
+        obj.validationErrors = ApiClient.convertToType(data.validationErrors, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Boolean} canBeSent
    */
-  exports.prototype['canBeSent'] = undefined;
+  exports.prototype.canBeSent = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} validationErrorDetails
    */
-  exports.prototype['validationErrorDetails'] = undefined;
+  exports.prototype.validationErrorDetails = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} validationErrors
    */
-  exports.prototype['validationErrors'] = undefined;
-
-
+  exports.prototype.validationErrors = undefined;
 
   return exports;
 }));
-
-

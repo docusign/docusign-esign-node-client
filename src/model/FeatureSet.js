@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/CurrencyFeatureSetPrice'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FeatureSet = factory(root.Docusign.ApiClient, root.Docusign.CurrencyFeatureSetPrice);
   }
-}(this, function(ApiClient, CurrencyFeatureSetPrice) {
-  'use strict';
-
-
+}(this, (ApiClient, CurrencyFeatureSetPrice) => {
   /**
    * The FeatureSet model module.
    * @module model/FeatureSet
@@ -37,10 +34,8 @@
    * @alias module:model/FeatureSet
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,90 +45,86 @@
    * @param {module:model/FeatureSet} obj Optional instance to populate.
    * @return {module:model/FeatureSet} The populated <code>FeatureSet</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('currencyFeatureSetPrices')) {
-        obj['currencyFeatureSetPrices'] = ApiClient.convertToType(data['currencyFeatureSetPrices'], [CurrencyFeatureSetPrice]);
+        obj.currencyFeatureSetPrices = ApiClient.convertToType(data.currencyFeatureSetPrices, [CurrencyFeatureSetPrice]);
       }
       if (data.hasOwnProperty('envelopeFee')) {
-        obj['envelopeFee'] = ApiClient.convertToType(data['envelopeFee'], 'String');
+        obj.envelopeFee = ApiClient.convertToType(data.envelopeFee, 'String');
       }
       if (data.hasOwnProperty('featureSetId')) {
-        obj['featureSetId'] = ApiClient.convertToType(data['featureSetId'], 'String');
+        obj.featureSetId = ApiClient.convertToType(data.featureSetId, 'String');
       }
       if (data.hasOwnProperty('fixedFee')) {
-        obj['fixedFee'] = ApiClient.convertToType(data['fixedFee'], 'String');
+        obj.fixedFee = ApiClient.convertToType(data.fixedFee, 'String');
       }
       if (data.hasOwnProperty('is21CFRPart11')) {
-        obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
+        obj.is21CFRPart11 = ApiClient.convertToType(data.is21CFRPart11, 'String');
       }
       if (data.hasOwnProperty('isActive')) {
-        obj['isActive'] = ApiClient.convertToType(data['isActive'], 'String');
+        obj.isActive = ApiClient.convertToType(data.isActive, 'String');
       }
       if (data.hasOwnProperty('isEnabled')) {
-        obj['isEnabled'] = ApiClient.convertToType(data['isEnabled'], 'String');
+        obj.isEnabled = ApiClient.convertToType(data.isEnabled, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('seatFee')) {
-        obj['seatFee'] = ApiClient.convertToType(data['seatFee'], 'String');
+        obj.seatFee = ApiClient.convertToType(data.seatFee, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A complex type that contains alternate currency values that are configured for this plan feature set.
    * @member {Array.<module:model/CurrencyFeatureSetPrice>} currencyFeatureSetPrices
    */
-  exports.prototype['currencyFeatureSetPrices'] = undefined;
+  exports.prototype.currencyFeatureSetPrices = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeFee
    */
-  exports.prototype['envelopeFee'] = undefined;
+  exports.prototype.envelopeFee = undefined;
   /**
    * A unique ID for the feature set.
    * @member {String} featureSetId
    */
-  exports.prototype['featureSetId'] = undefined;
+  exports.prototype.featureSetId = undefined;
   /**
-   * 
+   *
    * @member {String} fixedFee
    */
-  exports.prototype['fixedFee'] = undefined;
+  exports.prototype.fixedFee = undefined;
   /**
    * When set to **true**, indicates that this module is enabled on the account.
    * @member {String} is21CFRPart11
    */
-  exports.prototype['is21CFRPart11'] = undefined;
+  exports.prototype.is21CFRPart11 = undefined;
   /**
-   * 
+   *
    * @member {String} isActive
    */
-  exports.prototype['isActive'] = undefined;
+  exports.prototype.isActive = undefined;
   /**
    * Specifies whether the feature set is actively enabled as part of the plan.
    * @member {String} isEnabled
    */
-  exports.prototype['isEnabled'] = undefined;
+  exports.prototype.isEnabled = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * An incremental seat cost for seat-based plans. Only valid when isEnabled for the feature set is set to true.
    * @member {String} seatFee
    */
-  exports.prototype['seatFee'] = undefined;
-
-
+  exports.prototype.seatFee = undefined;
 
   return exports;
 }));
-
-

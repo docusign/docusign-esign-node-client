@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentLineItem = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PaymentLineItem model module.
    * @module model/PaymentLineItem
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentLineItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/PaymentLineItem} obj Optional instance to populate.
    * @return {module:model/PaymentLineItem} The populated <code>PaymentLineItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amountReference')) {
-        obj['amountReference'] = ApiClient.convertToType(data['amountReference'], 'String');
+        obj.amountReference = ApiClient.convertToType(data.amountReference, 'String');
       }
       if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+        obj.description = ApiClient.convertToType(data.description, 'String');
       }
       if (data.hasOwnProperty('itemCode')) {
-        obj['itemCode'] = ApiClient.convertToType(data['itemCode'], 'String');
+        obj.itemCode = ApiClient.convertToType(data.itemCode, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} amountReference
    */
-  exports.prototype['amountReference'] = undefined;
+  exports.prototype.amountReference = undefined;
   /**
-   * 
+   *
    * @member {String} description
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype.description = undefined;
   /**
-   * 
+   *
    * @member {String} itemCode
    */
-  exports.prototype['itemCode'] = undefined;
+  exports.prototype.itemCode = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-
-
+  exports.prototype.name = undefined;
 
   return exports;
 }));
-
-

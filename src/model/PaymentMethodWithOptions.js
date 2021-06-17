@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentMethodWithOptions = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PaymentMethodWithOptions model module.
    * @module model/PaymentMethodWithOptions
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentMethodWithOptions
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/PaymentMethodWithOptions} obj Optional instance to populate.
    * @return {module:model/PaymentMethodWithOptions} The populated <code>PaymentMethodWithOptions</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('supportedOptions')) {
-        obj['supportedOptions'] = ApiClient.convertToType(data['supportedOptions'], ['String']);
+        obj.supportedOptions = ApiClient.convertToType(data.supportedOptions, ['String']);
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} supportedOptions
    */
-  exports.prototype['supportedOptions'] = undefined;
+  exports.prototype.supportedOptions = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
-
-
+  exports.prototype.type = undefined;
 
   return exports;
 }));
-
-

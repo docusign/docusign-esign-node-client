@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PropertyMetadata', 'model/RecipientSignatureProviderOptions'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientSignatureProvider = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata, root.Docusign.RecipientSignatureProviderOptions);
   }
-}(this, function(ApiClient, PropertyMetadata, RecipientSignatureProviderOptions) {
-  'use strict';
-
-
+}(this, (ApiClient, PropertyMetadata, RecipientSignatureProviderOptions) => {
   /**
    * The RecipientSignatureProvider model module.
    * @module model/RecipientSignatureProvider
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientSignatureProvider
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,56 +45,52 @@
    * @param {module:model/RecipientSignatureProvider} obj Optional instance to populate.
    * @return {module:model/RecipientSignatureProvider} The populated <code>RecipientSignatureProvider</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('sealDocumentsWithTabsOnly')) {
-        obj['sealDocumentsWithTabsOnly'] = ApiClient.convertToType(data['sealDocumentsWithTabsOnly'], 'String');
+        obj.sealDocumentsWithTabsOnly = ApiClient.convertToType(data.sealDocumentsWithTabsOnly, 'String');
       }
       if (data.hasOwnProperty('sealName')) {
-        obj['sealName'] = ApiClient.convertToType(data['sealName'], 'String');
+        obj.sealName = ApiClient.convertToType(data.sealName, 'String');
       }
       if (data.hasOwnProperty('signatureProviderName')) {
-        obj['signatureProviderName'] = ApiClient.convertToType(data['signatureProviderName'], 'String');
+        obj.signatureProviderName = ApiClient.convertToType(data.signatureProviderName, 'String');
       }
       if (data.hasOwnProperty('signatureProviderNameMetadata')) {
-        obj['signatureProviderNameMetadata'] = PropertyMetadata.constructFromObject(data['signatureProviderNameMetadata']);
+        obj.signatureProviderNameMetadata = PropertyMetadata.constructFromObject(data.signatureProviderNameMetadata);
       }
       if (data.hasOwnProperty('signatureProviderOptions')) {
-        obj['signatureProviderOptions'] = RecipientSignatureProviderOptions.constructFromObject(data['signatureProviderOptions']);
+        obj.signatureProviderOptions = RecipientSignatureProviderOptions.constructFromObject(data.signatureProviderOptions);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} sealDocumentsWithTabsOnly
    */
-  exports.prototype['sealDocumentsWithTabsOnly'] = undefined;
+  exports.prototype.sealDocumentsWithTabsOnly = undefined;
   /**
-   * 
+   *
    * @member {String} sealName
    */
-  exports.prototype['sealName'] = undefined;
+  exports.prototype.sealName = undefined;
   /**
-   * 
+   *
    * @member {String} signatureProviderName
    */
-  exports.prototype['signatureProviderName'] = undefined;
+  exports.prototype.signatureProviderName = undefined;
   /**
    * @member {module:model/PropertyMetadata} signatureProviderNameMetadata
    */
-  exports.prototype['signatureProviderNameMetadata'] = undefined;
+  exports.prototype.signatureProviderNameMetadata = undefined;
   /**
    * @member {module:model/RecipientSignatureProviderOptions} signatureProviderOptions
    */
-  exports.prototype['signatureProviderOptions'] = undefined;
-
-
+  exports.prototype.signatureProviderOptions = undefined;
 
   return exports;
 }));
-
-

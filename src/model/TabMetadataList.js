@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/TabMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TabMetadataList = factory(root.Docusign.ApiClient, root.Docusign.TabMetadata);
   }
-}(this, function(ApiClient, TabMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, TabMetadata) => {
   /**
    * The TabMetadataList model module.
    * @module model/TabMetadataList
@@ -37,10 +34,8 @@
    * @alias module:model/TabMetadataList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/TabMetadataList} obj Optional instance to populate.
    * @return {module:model/TabMetadataList} The populated <code>TabMetadataList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('tabs')) {
-        obj['tabs'] = ApiClient.convertToType(data['tabs'], [TabMetadata]);
+        obj.tabs = ApiClient.convertToType(data.tabs, [TabMetadata]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/TabMetadata>} tabs
    */
-  exports.prototype['tabs'] = undefined;
-
-
+  exports.prototype.tabs = undefined;
 
   return exports;
 }));
-
-

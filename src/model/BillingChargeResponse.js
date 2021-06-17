@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingCharge'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingChargeResponse = factory(root.Docusign.ApiClient, root.Docusign.BillingCharge);
   }
-}(this, function(ApiClient, BillingCharge) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingCharge) => {
   /**
    * The BillingChargeResponse model module.
    * @module model/BillingChargeResponse
@@ -38,10 +35,8 @@
    * @alias module:model/BillingChargeResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,26 +46,22 @@
    * @param {module:model/BillingChargeResponse} obj Optional instance to populate.
    * @return {module:model/BillingChargeResponse} The populated <code>BillingChargeResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billingChargeItems')) {
-        obj['billingChargeItems'] = ApiClient.convertToType(data['billingChargeItems'], [BillingCharge]);
+        obj.billingChargeItems = ApiClient.convertToType(data.billingChargeItems, [BillingCharge]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {Array.<module:model/BillingCharge>} billingChargeItems
    */
-  exports.prototype['billingChargeItems'] = undefined;
-
-
+  exports.prototype.billingChargeItems = undefined;
 
   return exports;
 }));
-
-

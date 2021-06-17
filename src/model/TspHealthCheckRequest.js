@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/TspHealthCheckStatusDescription'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TspHealthCheckRequest = factory(root.Docusign.ApiClient, root.Docusign.TspHealthCheckStatusDescription);
   }
-}(this, function(ApiClient, TspHealthCheckStatusDescription) {
-  'use strict';
-
-
+}(this, (ApiClient, TspHealthCheckStatusDescription) => {
   /**
    * The TspHealthCheckRequest model module.
    * @module model/TspHealthCheckRequest
@@ -37,10 +34,8 @@
    * @alias module:model/TspHealthCheckRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,58 +45,54 @@
    * @param {module:model/TspHealthCheckRequest} obj Optional instance to populate.
    * @return {module:model/TspHealthCheckRequest} The populated <code>TspHealthCheckRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('appVersion')) {
-        obj['appVersion'] = ApiClient.convertToType(data['appVersion'], 'String');
+        obj.appVersion = ApiClient.convertToType(data.appVersion, 'String');
       }
       if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+        obj.description = ApiClient.convertToType(data.description, 'String');
       }
       if (data.hasOwnProperty('error')) {
-        obj['error'] = ApiClient.convertToType(data['error'], 'String');
+        obj.error = ApiClient.convertToType(data.error, 'String');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('statusDescription')) {
-        obj['statusDescription'] = ApiClient.convertToType(data['statusDescription'], [TspHealthCheckStatusDescription]);
+        obj.statusDescription = ApiClient.convertToType(data.statusDescription, [TspHealthCheckStatusDescription]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} appVersion
    */
-  exports.prototype['appVersion'] = undefined;
+  exports.prototype.appVersion = undefined;
   /**
-   * 
+   *
    * @member {String} description
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype.description = undefined;
   /**
-   * 
+   *
    * @member {String} error
    */
-  exports.prototype['error'] = undefined;
+  exports.prototype.error = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/TspHealthCheckStatusDescription>} statusDescription
    */
-  exports.prototype['statusDescription'] = undefined;
-
-
+  exports.prototype.statusDescription = undefined;
 
   return exports;
 }));
-
-

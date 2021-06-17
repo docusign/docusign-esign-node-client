@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DisplayApplianceRecipient = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DisplayApplianceRecipient model module.
    * @module model/DisplayApplianceRecipient
@@ -38,10 +35,8 @@
    * @alias module:model/DisplayApplianceRecipient
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,186 +46,182 @@
    * @param {module:model/DisplayApplianceRecipient} obj Optional instance to populate.
    * @return {module:model/DisplayApplianceRecipient} The populated <code>DisplayApplianceRecipient</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cfrPart11')) {
-        obj['cfrPart11'] = ApiClient.convertToType(data['cfrPart11'], 'Boolean');
+        obj.cfrPart11 = ApiClient.convertToType(data.cfrPart11, 'Boolean');
       }
       if (data.hasOwnProperty('company')) {
-        obj['company'] = ApiClient.convertToType(data['company'], 'String');
+        obj.company = ApiClient.convertToType(data.company, 'String');
       }
       if (data.hasOwnProperty('digitalSignatureBase64')) {
-        obj['digitalSignatureBase64'] = ApiClient.convertToType(data['digitalSignatureBase64'], 'String');
+        obj.digitalSignatureBase64 = ApiClient.convertToType(data.digitalSignatureBase64, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('fullName')) {
-        obj['fullName'] = ApiClient.convertToType(data['fullName'], 'String');
+        obj.fullName = ApiClient.convertToType(data.fullName, 'String');
       }
       if (data.hasOwnProperty('initialsBase64')) {
-        obj['initialsBase64'] = ApiClient.convertToType(data['initialsBase64'], 'String');
+        obj.initialsBase64 = ApiClient.convertToType(data.initialsBase64, 'String');
       }
       if (data.hasOwnProperty('inPersonEmail')) {
-        obj['inPersonEmail'] = ApiClient.convertToType(data['inPersonEmail'], 'String');
+        obj.inPersonEmail = ApiClient.convertToType(data.inPersonEmail, 'String');
       }
       if (data.hasOwnProperty('isNotary')) {
-        obj['isNotary'] = ApiClient.convertToType(data['isNotary'], 'Boolean');
+        obj.isNotary = ApiClient.convertToType(data.isNotary, 'Boolean');
       }
       if (data.hasOwnProperty('notarySealBase64')) {
-        obj['notarySealBase64'] = ApiClient.convertToType(data['notarySealBase64'], 'String');
+        obj.notarySealBase64 = ApiClient.convertToType(data.notarySealBase64, 'String');
       }
       if (data.hasOwnProperty('phoneNumber')) {
-        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+        obj.phoneNumber = ApiClient.convertToType(data.phoneNumber, 'String');
       }
       if (data.hasOwnProperty('recipientCompleteCount')) {
-        obj['recipientCompleteCount'] = ApiClient.convertToType(data['recipientCompleteCount'], 'Number');
+        obj.recipientCompleteCount = ApiClient.convertToType(data.recipientCompleteCount, 'Number');
       }
       if (data.hasOwnProperty('recipientGuidId')) {
-        obj['recipientGuidId'] = ApiClient.convertToType(data['recipientGuidId'], 'String');
+        obj.recipientGuidId = ApiClient.convertToType(data.recipientGuidId, 'String');
       }
       if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+        obj.recipientId = ApiClient.convertToType(data.recipientId, 'String');
       }
       if (data.hasOwnProperty('recipientStatus')) {
-        obj['recipientStatus'] = ApiClient.convertToType(data['recipientStatus'], 'String');
+        obj.recipientStatus = ApiClient.convertToType(data.recipientStatus, 'String');
       }
       if (data.hasOwnProperty('recipientType')) {
-        obj['recipientType'] = ApiClient.convertToType(data['recipientType'], 'String');
+        obj.recipientType = ApiClient.convertToType(data.recipientType, 'String');
       }
       if (data.hasOwnProperty('rowState')) {
-        obj['rowState'] = ApiClient.convertToType(data['rowState'], 'String');
+        obj.rowState = ApiClient.convertToType(data.rowState, 'String');
       }
       if (data.hasOwnProperty('signatureBase64')) {
-        obj['signatureBase64'] = ApiClient.convertToType(data['signatureBase64'], 'String');
+        obj.signatureBase64 = ApiClient.convertToType(data.signatureBase64, 'String');
       }
       if (data.hasOwnProperty('signed')) {
-        obj['signed'] = ApiClient.convertToType(data['signed'], 'Boolean');
+        obj.signed = ApiClient.convertToType(data.signed, 'Boolean');
       }
       if (data.hasOwnProperty('signerApplyTabs')) {
-        obj['signerApplyTabs'] = ApiClient.convertToType(data['signerApplyTabs'], 'Boolean');
+        obj.signerApplyTabs = ApiClient.convertToType(data.signerApplyTabs, 'Boolean');
       }
       if (data.hasOwnProperty('signerAttachmentBase64')) {
-        obj['signerAttachmentBase64'] = ApiClient.convertToType(data['signerAttachmentBase64'], 'String');
+        obj.signerAttachmentBase64 = ApiClient.convertToType(data.signerAttachmentBase64, 'String');
       }
       if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+        obj.userName = ApiClient.convertToType(data.userName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Boolean} cfrPart11
    */
-  exports.prototype['cfrPart11'] = undefined;
+  exports.prototype.cfrPart11 = undefined;
   /**
-   * 
+   *
    * @member {String} company
    */
-  exports.prototype['company'] = undefined;
+  exports.prototype.company = undefined;
   /**
-   * 
+   *
    * @member {String} digitalSignatureBase64
    */
-  exports.prototype['digitalSignatureBase64'] = undefined;
+  exports.prototype.digitalSignatureBase64 = undefined;
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {String} fullName
    */
-  exports.prototype['fullName'] = undefined;
+  exports.prototype.fullName = undefined;
   /**
-   * 
+   *
    * @member {String} initialsBase64
    */
-  exports.prototype['initialsBase64'] = undefined;
+  exports.prototype.initialsBase64 = undefined;
   /**
-   * 
+   *
    * @member {String} inPersonEmail
    */
-  exports.prototype['inPersonEmail'] = undefined;
+  exports.prototype.inPersonEmail = undefined;
   /**
-   * 
+   *
    * @member {Boolean} isNotary
    */
-  exports.prototype['isNotary'] = undefined;
+  exports.prototype.isNotary = undefined;
   /**
-   * 
+   *
    * @member {String} notarySealBase64
    */
-  exports.prototype['notarySealBase64'] = undefined;
+  exports.prototype.notarySealBase64 = undefined;
   /**
-   * 
+   *
    * @member {String} phoneNumber
    */
-  exports.prototype['phoneNumber'] = undefined;
+  exports.prototype.phoneNumber = undefined;
   /**
-   * 
+   *
    * @member {Number} recipientCompleteCount
    */
-  exports.prototype['recipientCompleteCount'] = undefined;
+  exports.prototype.recipientCompleteCount = undefined;
   /**
-   * 
+   *
    * @member {String} recipientGuidId
    */
-  exports.prototype['recipientGuidId'] = undefined;
+  exports.prototype.recipientGuidId = undefined;
   /**
    * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
    * @member {String} recipientId
    */
-  exports.prototype['recipientId'] = undefined;
+  exports.prototype.recipientId = undefined;
   /**
-   * 
+   *
    * @member {String} recipientStatus
    */
-  exports.prototype['recipientStatus'] = undefined;
+  exports.prototype.recipientStatus = undefined;
   /**
-   * 
+   *
    * @member {String} recipientType
    */
-  exports.prototype['recipientType'] = undefined;
+  exports.prototype.recipientType = undefined;
   /**
-   * 
+   *
    * @member {String} rowState
    */
-  exports.prototype['rowState'] = undefined;
+  exports.prototype.rowState = undefined;
   /**
-   * 
+   *
    * @member {String} signatureBase64
    */
-  exports.prototype['signatureBase64'] = undefined;
+  exports.prototype.signatureBase64 = undefined;
   /**
-   * 
+   *
    * @member {Boolean} signed
    */
-  exports.prototype['signed'] = undefined;
+  exports.prototype.signed = undefined;
   /**
-   * 
+   *
    * @member {Boolean} signerApplyTabs
    */
-  exports.prototype['signerApplyTabs'] = undefined;
+  exports.prototype.signerApplyTabs = undefined;
   /**
-   * 
+   *
    * @member {String} signerAttachmentBase64
    */
-  exports.prototype['signerAttachmentBase64'] = undefined;
+  exports.prototype.signerAttachmentBase64 = undefined;
   /**
-   * 
+   *
    * @member {String} userName
    */
-  exports.prototype['userName'] = undefined;
-
-
+  exports.prototype.userName = undefined;
 
   return exports;
 }));
-
-

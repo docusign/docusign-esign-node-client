@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Revision', 'model/SignatureProperties'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SignHashDocument = factory(root.Docusign.ApiClient, root.Docusign.Revision, root.Docusign.SignatureProperties);
   }
-}(this, function(ApiClient, Revision, SignatureProperties) {
-  'use strict';
-
-
+}(this, (ApiClient, Revision, SignatureProperties) => {
   /**
    * The SignHashDocument model module.
    * @module model/SignHashDocument
@@ -37,10 +34,8 @@
    * @alias module:model/SignHashDocument
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,81 +45,77 @@
    * @param {module:model/SignHashDocument} obj Optional instance to populate.
    * @return {module:model/SignHashDocument} The populated <code>SignHashDocument</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], 'String');
+        obj.data = ApiClient.convertToType(data.data, 'String');
       }
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('format')) {
-        obj['format'] = ApiClient.convertToType(data['format'], 'String');
+        obj.format = ApiClient.convertToType(data.format, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('remainingSignatures')) {
-        obj['remainingSignatures'] = ApiClient.convertToType(data['remainingSignatures'], 'Number');
+        obj.remainingSignatures = ApiClient.convertToType(data.remainingSignatures, 'Number');
       }
       if (data.hasOwnProperty('revisions')) {
-        obj['revisions'] = ApiClient.convertToType(data['revisions'], [Revision]);
+        obj.revisions = ApiClient.convertToType(data.revisions, [Revision]);
       }
       if (data.hasOwnProperty('signatureProperties')) {
-        obj['signatureProperties'] = SignatureProperties.constructFromObject(data['signatureProperties']);
+        obj.signatureProperties = SignatureProperties.constructFromObject(data.signatureProperties);
       }
       if (data.hasOwnProperty('signatureType')) {
-        obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
+        obj.signatureType = ApiClient.convertToType(data.signatureType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} data
    */
-  exports.prototype['data'] = undefined;
+  exports.prototype.data = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} format
    */
-  exports.prototype['format'] = undefined;
+  exports.prototype.format = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {Number} remainingSignatures
    */
-  exports.prototype['remainingSignatures'] = undefined;
+  exports.prototype.remainingSignatures = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/Revision>} revisions
    */
-  exports.prototype['revisions'] = undefined;
+  exports.prototype.revisions = undefined;
   /**
    * @member {module:model/SignatureProperties} signatureProperties
    */
-  exports.prototype['signatureProperties'] = undefined;
+  exports.prototype.signatureProperties = undefined;
   /**
-   * 
+   *
    * @member {String} signatureType
    */
-  exports.prototype['signatureType'] = undefined;
-
-
+  exports.prototype.signatureType = undefined;
 
   return exports;
 }));
-
-

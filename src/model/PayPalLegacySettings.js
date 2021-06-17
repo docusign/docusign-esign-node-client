@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PayPalLegacySettings = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PayPalLegacySettings model module.
    * @module model/PayPalLegacySettings
@@ -37,10 +34,8 @@
    * @alias module:model/PayPalLegacySettings
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,58 +45,54 @@
    * @param {module:model/PayPalLegacySettings} obj Optional instance to populate.
    * @return {module:model/PayPalLegacySettings} The populated <code>PayPalLegacySettings</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('currency')) {
-        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
+        obj.currency = ApiClient.convertToType(data.currency, 'String');
       }
       if (data.hasOwnProperty('partner')) {
-        obj['partner'] = ApiClient.convertToType(data['partner'], 'String');
+        obj.partner = ApiClient.convertToType(data.partner, 'String');
       }
       if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+        obj.password = ApiClient.convertToType(data.password, 'String');
       }
       if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+        obj.userName = ApiClient.convertToType(data.userName, 'String');
       }
       if (data.hasOwnProperty('vendor')) {
-        obj['vendor'] = ApiClient.convertToType(data['vendor'], 'String');
+        obj.vendor = ApiClient.convertToType(data.vendor, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} currency
    */
-  exports.prototype['currency'] = undefined;
+  exports.prototype.currency = undefined;
   /**
-   * 
+   *
    * @member {String} partner
    */
-  exports.prototype['partner'] = undefined;
+  exports.prototype.partner = undefined;
   /**
-   * 
+   *
    * @member {String} password
    */
-  exports.prototype['password'] = undefined;
+  exports.prototype.password = undefined;
   /**
-   * 
+   *
    * @member {String} userName
    */
-  exports.prototype['userName'] = undefined;
+  exports.prototype.userName = undefined;
   /**
-   * 
+   *
    * @member {String} vendor
    */
-  exports.prototype['vendor'] = undefined;
-
-
+  exports.prototype.vendor = undefined;
 
   return exports;
 }));
-
-

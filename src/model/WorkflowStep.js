@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/RecipientRouting'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.WorkflowStep = factory(root.Docusign.ApiClient, root.Docusign.RecipientRouting);
   }
-}(this, function(ApiClient, RecipientRouting) {
-  'use strict';
-
-
+}(this, (ApiClient, RecipientRouting) => {
   /**
    * The WorkflowStep model module.
    * @module model/WorkflowStep
@@ -37,10 +34,8 @@
    * @alias module:model/WorkflowStep
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,81 +45,77 @@
    * @param {module:model/WorkflowStep} obj Optional instance to populate.
    * @return {module:model/WorkflowStep} The populated <code>WorkflowStep</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('action')) {
-        obj['action'] = ApiClient.convertToType(data['action'], 'String');
+        obj.action = ApiClient.convertToType(data.action, 'String');
       }
       if (data.hasOwnProperty('completedDate')) {
-        obj['completedDate'] = ApiClient.convertToType(data['completedDate'], 'String');
+        obj.completedDate = ApiClient.convertToType(data.completedDate, 'String');
       }
       if (data.hasOwnProperty('itemId')) {
-        obj['itemId'] = ApiClient.convertToType(data['itemId'], 'String');
+        obj.itemId = ApiClient.convertToType(data.itemId, 'String');
       }
       if (data.hasOwnProperty('recipientRouting')) {
-        obj['recipientRouting'] = RecipientRouting.constructFromObject(data['recipientRouting']);
+        obj.recipientRouting = RecipientRouting.constructFromObject(data.recipientRouting);
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('triggeredDate')) {
-        obj['triggeredDate'] = ApiClient.convertToType(data['triggeredDate'], 'String');
+        obj.triggeredDate = ApiClient.convertToType(data.triggeredDate, 'String');
       }
       if (data.hasOwnProperty('triggerOnItem')) {
-        obj['triggerOnItem'] = ApiClient.convertToType(data['triggerOnItem'], 'String');
+        obj.triggerOnItem = ApiClient.convertToType(data.triggerOnItem, 'String');
       }
       if (data.hasOwnProperty('workflowStepId')) {
-        obj['workflowStepId'] = ApiClient.convertToType(data['workflowStepId'], 'String');
+        obj.workflowStepId = ApiClient.convertToType(data.workflowStepId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} action
    */
-  exports.prototype['action'] = undefined;
+  exports.prototype.action = undefined;
   /**
-   * 
+   *
    * @member {String} completedDate
    */
-  exports.prototype['completedDate'] = undefined;
+  exports.prototype.completedDate = undefined;
   /**
-   * 
+   *
    * @member {String} itemId
    */
-  exports.prototype['itemId'] = undefined;
+  exports.prototype.itemId = undefined;
   /**
    * @member {module:model/RecipientRouting} recipientRouting
    */
-  exports.prototype['recipientRouting'] = undefined;
+  exports.prototype.recipientRouting = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
-   * 
+   *
    * @member {String} triggeredDate
    */
-  exports.prototype['triggeredDate'] = undefined;
+  exports.prototype.triggeredDate = undefined;
   /**
-   * 
+   *
    * @member {String} triggerOnItem
    */
-  exports.prototype['triggerOnItem'] = undefined;
+  exports.prototype.triggerOnItem = undefined;
   /**
-   * 
+   *
    * @member {String} workflowStepId
    */
-  exports.prototype['workflowStepId'] = undefined;
-
-
+  exports.prototype.workflowStepId = undefined;
 
   return exports;
 }));
-
-

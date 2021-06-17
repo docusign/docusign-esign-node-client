@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/WorkflowStep'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Workflow = factory(root.Docusign.ApiClient, root.Docusign.WorkflowStep);
   }
-}(this, function(ApiClient, WorkflowStep) {
-  'use strict';
-
-
+}(this, (ApiClient, WorkflowStep) => {
   /**
    * The Workflow model module.
    * @module model/Workflow
@@ -37,10 +34,8 @@
    * @alias module:model/Workflow
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/Workflow} obj Optional instance to populate.
    * @return {module:model/Workflow} The populated <code>Workflow</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('currentWorkflowStepId')) {
-        obj['currentWorkflowStepId'] = ApiClient.convertToType(data['currentWorkflowStepId'], 'String');
+        obj.currentWorkflowStepId = ApiClient.convertToType(data.currentWorkflowStepId, 'String');
       }
       if (data.hasOwnProperty('workflowStatus')) {
-        obj['workflowStatus'] = ApiClient.convertToType(data['workflowStatus'], 'String');
+        obj.workflowStatus = ApiClient.convertToType(data.workflowStatus, 'String');
       }
       if (data.hasOwnProperty('workflowSteps')) {
-        obj['workflowSteps'] = ApiClient.convertToType(data['workflowSteps'], [WorkflowStep]);
+        obj.workflowSteps = ApiClient.convertToType(data.workflowSteps, [WorkflowStep]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} currentWorkflowStepId
    */
-  exports.prototype['currentWorkflowStepId'] = undefined;
+  exports.prototype.currentWorkflowStepId = undefined;
   /**
-   * 
+   *
    * @member {String} workflowStatus
    */
-  exports.prototype['workflowStatus'] = undefined;
+  exports.prototype.workflowStatus = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/WorkflowStep>} workflowSteps
    */
-  exports.prototype['workflowSteps'] = undefined;
-
-
+  exports.prototype.workflowSteps = undefined;
 
   return exports;
 }));
-
-

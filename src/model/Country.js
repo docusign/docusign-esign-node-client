@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Province'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Country = factory(root.Docusign.ApiClient, root.Docusign.Province);
   }
-}(this, function(ApiClient, Province) {
-  'use strict';
-
-
+}(this, (ApiClient, Province) => {
   /**
    * The Country model module.
    * @module model/Country
@@ -37,10 +34,8 @@
    * @alias module:model/Country
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/Country} obj Optional instance to populate.
    * @return {module:model/Country} The populated <code>Country</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('isoCode')) {
-        obj['isoCode'] = ApiClient.convertToType(data['isoCode'], 'String');
+        obj.isoCode = ApiClient.convertToType(data.isoCode, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('provinces')) {
-        obj['provinces'] = ApiClient.convertToType(data['provinces'], [Province]);
+        obj.provinces = ApiClient.convertToType(data.provinces, [Province]);
       }
       if (data.hasOwnProperty('provinceValidated')) {
-        obj['provinceValidated'] = ApiClient.convertToType(data['provinceValidated'], 'String');
+        obj.provinceValidated = ApiClient.convertToType(data.provinceValidated, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} isoCode
    */
-  exports.prototype['isoCode'] = undefined;
+  exports.prototype.isoCode = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/Province>} provinces
    */
-  exports.prototype['provinces'] = undefined;
+  exports.prototype.provinces = undefined;
   /**
-   * 
+   *
    * @member {String} provinceValidated
    */
-  exports.prototype['provinceValidated'] = undefined;
-
-
+  exports.prototype.provinceValidated = undefined;
 
   return exports;
 }));
-
-

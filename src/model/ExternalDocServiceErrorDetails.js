@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ExternalDocServiceErrorDetails = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ExternalDocServiceErrorDetails model module.
    * @module model/ExternalDocServiceErrorDetails
@@ -37,10 +34,8 @@
    * @alias module:model/ExternalDocServiceErrorDetails
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/ExternalDocServiceErrorDetails} obj Optional instance to populate.
    * @return {module:model/ExternalDocServiceErrorDetails} The populated <code>ExternalDocServiceErrorDetails</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('authenticationUrl')) {
-        obj['authenticationUrl'] = ApiClient.convertToType(data['authenticationUrl'], 'String');
+        obj.authenticationUrl = ApiClient.convertToType(data.authenticationUrl, 'String');
       }
       if (data.hasOwnProperty('errorCode')) {
-        obj['errorCode'] = ApiClient.convertToType(data['errorCode'], 'String');
+        obj.errorCode = ApiClient.convertToType(data.errorCode, 'String');
       }
       if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+        obj.message = ApiClient.convertToType(data.message, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} authenticationUrl
    */
-  exports.prototype['authenticationUrl'] = undefined;
+  exports.prototype.authenticationUrl = undefined;
   /**
-   * 
+   *
    * @member {String} errorCode
    */
-  exports.prototype['errorCode'] = undefined;
+  exports.prototype.errorCode = undefined;
   /**
-   * 
+   *
    * @member {String} message
    */
-  exports.prototype['message'] = undefined;
-
-
+  exports.prototype.message = undefined;
 
   return exports;
 }));
-
-

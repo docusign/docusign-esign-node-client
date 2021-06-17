@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ExternalFile = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ExternalFile model module.
    * @module model/ExternalFile
@@ -37,10 +34,8 @@
    * @alias module:model/ExternalFile
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,82 +45,78 @@
    * @param {module:model/ExternalFile} obj Optional instance to populate.
    * @return {module:model/ExternalFile} The populated <code>ExternalFile</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('date')) {
-        obj['date'] = ApiClient.convertToType(data['date'], 'String');
+        obj.date = ApiClient.convertToType(data.date, 'String');
       }
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+        obj.id = ApiClient.convertToType(data.id, 'String');
       }
       if (data.hasOwnProperty('img')) {
-        obj['img'] = ApiClient.convertToType(data['img'], 'String');
+        obj.img = ApiClient.convertToType(data.img, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('size')) {
-        obj['size'] = ApiClient.convertToType(data['size'], 'String');
+        obj.size = ApiClient.convertToType(data.size, 'String');
       }
       if (data.hasOwnProperty('supported')) {
-        obj['supported'] = ApiClient.convertToType(data['supported'], 'String');
+        obj.supported = ApiClient.convertToType(data.supported, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
       if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+        obj.uri = ApiClient.convertToType(data.uri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} date
    */
-  exports.prototype['date'] = undefined;
+  exports.prototype.date = undefined;
   /**
-   * 
+   *
    * @member {String} id
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype.id = undefined;
   /**
-   * 
+   *
    * @member {String} img
    */
-  exports.prototype['img'] = undefined;
+  exports.prototype.img = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * Reserved: TBD
    * @member {String} size
    */
-  exports.prototype['size'] = undefined;
+  exports.prototype.size = undefined;
   /**
-   * 
+   *
    * @member {String} supported
    */
-  exports.prototype['supported'] = undefined;
+  exports.prototype.supported = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype.type = undefined;
   /**
-   * 
+   *
    * @member {String} uri
    */
-  exports.prototype['uri'] = undefined;
-
-
+  exports.prototype.uri = undefined;
 
   return exports;
 }));
-
-

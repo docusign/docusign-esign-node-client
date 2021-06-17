@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkSendBatchRequest', 'model/BulkSendBatchStatus', 'model/BulkSendBatchSummaries', 'model/BulkSendRequest', 'model/BulkSendResponse', 'model/BulkSendTestResponse', 'model/BulkSendingList', 'model/BulkSendingListSummaries', 'model/ErrorDetails'], factory);
+    define(['Configuration', 'ApiClient', 'model/BulkSendBatchRequest', 'model/BulkSendBatchStatus', 'model/BulkSendBatchSummaries', 'model/BulkSendRequest', 'model/BulkSendResponse', 'model/BulkSendTestResponse', 'model/BulkSendingList', 'model/BulkSendingListSummaries', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkSendBatchRequest'), require('../model/BulkSendBatchStatus'), require('../model/BulkSendBatchSummaries'), require('../model/BulkSendRequest'), require('../model/BulkSendResponse'), require('../model/BulkSendTestResponse'), require('../model/BulkSendingList'), require('../model/BulkSendingListSummaries'), require('../model/ErrorDetails'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.BulkEnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkSendBatchRequest, root.Docusign.BulkSendBatchStatus, root.Docusign.BulkSendBatchSummaries, root.Docusign.BulkSendRequest, root.Docusign.BulkSendResponse, root.Docusign.BulkSendTestResponse, root.Docusign.BulkSendingList, root.Docusign.BulkSendingListSummaries, root.Docusign.ErrorDetails);
   }
-}(this, function(Configuration, ApiClient, BulkSendBatchRequest, BulkSendBatchStatus, BulkSendBatchSummaries, BulkSendRequest, BulkSendResponse, BulkSendTestResponse, BulkSendingList, BulkSendingListSummaries, ErrorDetails) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, BulkSendBatchRequest, BulkSendBatchStatus, BulkSendBatchSummaries, BulkSendRequest, BulkSendResponse, BulkSendTestResponse, BulkSendingList, BulkSendingListSummaries, ErrorDetails) => {
   /**
    * BulkEnvelopes service.
    * @module api/BulkEnvelopesApi
    */
 
   /**
-   * Constructs a new BulkEnvelopesApi. 
+   * Constructs a new BulkEnvelopesApi.
    * @alias module:api/BulkEnvelopesApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the createBulkSendList operation. If none specified a Promise will be returned.
@@ -63,11 +59,11 @@
      * Creates a new bulk send list
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BulkSendingList} optsOrCallback.bulkSendingList 
+     * @param {module:model/BulkSendingList} optsOrCallback.bulkSendingList
      * @param {module:api/BulkEnvelopesApi~createBulkSendListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendingList}
      */
-    this.createBulkSendList = function(accountId, optsOrCallback, callback) {
+    this.createBulkSendList = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -75,39 +71,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['bulkSendingList'];
+      const postBody = optsOrCallback.bulkSendingList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBulkSendList");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendingList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendingList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -122,13 +118,13 @@
     /**
      * Uses the specified bulk send list to send the envelope specified in the payload
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} bulkSendListId 
+     * @param {String} bulkSendListId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BulkSendRequest} optsOrCallback.bulkSendRequest 
+     * @param {module:model/BulkSendRequest} optsOrCallback.bulkSendRequest
      * @param {module:api/BulkEnvelopesApi~createBulkSendRequestCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendResponse}
      */
-    this.createBulkSendRequest = function(accountId, bulkSendListId, optsOrCallback, callback) {
+    this.createBulkSendRequest = function (accountId, bulkSendListId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -136,7 +132,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['bulkSendRequest'];
+      const postBody = optsOrCallback.bulkSendRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -148,33 +144,33 @@
         throw new Error("Missing the required parameter 'bulkSendListId' when calling createBulkSendRequest");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'bulkSendListId': bulkSendListId
+      const pathParams = {
+        accountId,
+        bulkSendListId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/send', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -189,13 +185,13 @@
     /**
      * Tests whether the specified bulk sending list can be used to send an envelope
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} bulkSendListId 
+     * @param {String} bulkSendListId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BulkSendRequest} optsOrCallback.bulkSendRequest 
+     * @param {module:model/BulkSendRequest} optsOrCallback.bulkSendRequest
      * @param {module:api/BulkEnvelopesApi~createBulkSendTestRequestCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendTestResponse}
      */
-    this.createBulkSendTestRequest = function(accountId, bulkSendListId, optsOrCallback, callback) {
+    this.createBulkSendTestRequest = function (accountId, bulkSendListId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -203,7 +199,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['bulkSendRequest'];
+      const postBody = optsOrCallback.bulkSendRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -215,33 +211,33 @@
         throw new Error("Missing the required parameter 'bulkSendListId' when calling createBulkSendTestRequest");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'bulkSendListId': bulkSendListId
+      const pathParams = {
+        accountId,
+        bulkSendListId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendTestResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendTestResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}/test', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -256,12 +252,12 @@
     /**
      * Deletes an existing bulk send list
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} bulkSendListId 
+     * @param {String} bulkSendListId
      * @param {module:api/BulkEnvelopesApi~deleteBulkSendListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendingListSummaries}
      */
-    this.deleteBulkSendList = function(accountId, bulkSendListId, callback) {
-      var postBody = null;
+    this.deleteBulkSendList = function (accountId, bulkSendListId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -273,33 +269,33 @@
         throw new Error("Missing the required parameter 'bulkSendListId' when calling deleteBulkSendList");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'bulkSendListId': bulkSendListId
+      const pathParams = {
+        accountId,
+        bulkSendListId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendingListSummaries;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendingListSummaries;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -314,12 +310,12 @@
     /**
      * Gets a specific bulk send batch status
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} bulkSendBatchId 
+     * @param {String} bulkSendBatchId
      * @param {module:api/BulkEnvelopesApi~getBulkSendBatchStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendBatchStatus}
      */
-    this.getBulkSendBatchStatus = function(accountId, bulkSendBatchId, callback) {
-      var postBody = null;
+    this.getBulkSendBatchStatus = function (accountId, bulkSendBatchId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -331,33 +327,33 @@
         throw new Error("Missing the required parameter 'bulkSendBatchId' when calling getBulkSendBatchStatus");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'bulkSendBatchId': bulkSendBatchId
+      const pathParams = {
+        accountId,
+        bulkSendBatchId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendBatchStatus;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendBatchStatus;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -373,15 +369,15 @@
      * Returns a list of bulk send batch satuses initiated by account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.batchIds 
-     * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition 
-     * @param {String} optsOrCallback.status 
+     * @param {String} optsOrCallback.batchIds
+     * @param {String} optsOrCallback.count
+     * @param {String} optsOrCallback.searchText
+     * @param {String} optsOrCallback.startPosition
+     * @param {String} optsOrCallback.status
      * @param {module:api/BulkEnvelopesApi~getBulkSendBatchesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendBatchSummaries}
      */
-    this.getBulkSendBatches = function(accountId, optsOrCallback, callback) {
+    this.getBulkSendBatches = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -389,44 +385,44 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBulkSendBatches");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'batch_ids': optsOrCallback['batchIds'],
-        'count': optsOrCallback['count'],
-        'search_text': optsOrCallback['searchText'],
-        'start_position': optsOrCallback['startPosition'],
-        'status': optsOrCallback['status']
+      const queryParams = {
+        batch_ids: optsOrCallback.batchIds,
+        count: optsOrCallback.count,
+        search_text: optsOrCallback.searchText,
+        start_position: optsOrCallback.startPosition,
+        status: optsOrCallback.status,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendBatchSummaries;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendBatchSummaries;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_batch', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -441,12 +437,12 @@
     /**
      * Gets a specific bulk send list
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} bulkSendListId 
+     * @param {String} bulkSendListId
      * @param {module:api/BulkEnvelopesApi~getBulkSendListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendingList}
      */
-    this.getBulkSendList = function(accountId, bulkSendListId, callback) {
-      var postBody = null;
+    this.getBulkSendList = function (accountId, bulkSendListId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -458,33 +454,33 @@
         throw new Error("Missing the required parameter 'bulkSendListId' when calling getBulkSendList");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'bulkSendListId': bulkSendListId
+      const pathParams = {
+        accountId,
+        bulkSendListId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendingList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendingList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -502,40 +498,40 @@
      * @param {module:api/BulkEnvelopesApi~getBulkSendListsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendingListSummaries}
      */
-    this.getBulkSendLists = function(accountId, callback) {
-      var postBody = null;
+    this.getBulkSendLists = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBulkSendLists");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendingListSummaries;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendingListSummaries;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -550,13 +546,13 @@
     /**
      * Put/Update a specific bulk send batch status
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} bulkSendBatchId 
+     * @param {String} bulkSendBatchId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BulkSendBatchRequest} optsOrCallback.bulkSendBatchRequest 
+     * @param {module:model/BulkSendBatchRequest} optsOrCallback.bulkSendBatchRequest
      * @param {module:api/BulkEnvelopesApi~updateBulkSendBatchStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendBatchStatus}
      */
-    this.updateBulkSendBatchStatus = function(accountId, bulkSendBatchId, optsOrCallback, callback) {
+    this.updateBulkSendBatchStatus = function (accountId, bulkSendBatchId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -564,7 +560,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['bulkSendBatchRequest'];
+      const postBody = optsOrCallback.bulkSendBatchRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -576,33 +572,33 @@
         throw new Error("Missing the required parameter 'bulkSendBatchId' when calling updateBulkSendBatchStatus");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'bulkSendBatchId': bulkSendBatchId
+      const pathParams = {
+        accountId,
+        bulkSendBatchId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendBatchStatus;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendBatchStatus;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -617,13 +613,13 @@
     /**
      * Updates an existing bulk send list.  If send_envelope query string value is provided, will accept an empty payload and try to send the specified envelope
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} bulkSendListId 
+     * @param {String} bulkSendListId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BulkSendingList} optsOrCallback.bulkSendingList 
+     * @param {module:model/BulkSendingList} optsOrCallback.bulkSendingList
      * @param {module:api/BulkEnvelopesApi~updateBulkSendListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendingList}
      */
-    this.updateBulkSendList = function(accountId, bulkSendListId, optsOrCallback, callback) {
+    this.updateBulkSendList = function (accountId, bulkSendListId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -631,7 +627,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['bulkSendingList'];
+      const postBody = optsOrCallback.bulkSendingList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -643,33 +639,33 @@
         throw new Error("Missing the required parameter 'bulkSendListId' when calling updateBulkSendList");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'bulkSendListId': bulkSendListId
+      const pathParams = {
+        accountId,
+        bulkSendListId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkSendingList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkSendingList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists/{bulkSendListId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

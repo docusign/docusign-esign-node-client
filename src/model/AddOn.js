@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AddOn = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AddOn model module.
    * @module model/AddOn
@@ -38,10 +35,8 @@
    * @alias module:model/AddOn
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,50 +46,46 @@
    * @param {module:model/AddOn} obj Optional instance to populate.
    * @return {module:model/AddOn} The populated <code>AddOn</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('active')) {
-        obj['active'] = ApiClient.convertToType(data['active'], 'String');
+        obj.active = ApiClient.convertToType(data.active, 'String');
       }
       if (data.hasOwnProperty('addOnId')) {
-        obj['addOnId'] = ApiClient.convertToType(data['addOnId'], 'String');
+        obj.addOnId = ApiClient.convertToType(data.addOnId, 'String');
       }
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+        obj.id = ApiClient.convertToType(data.id, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved:
    * @member {String} active
    */
-  exports.prototype['active'] = undefined;
+  exports.prototype.active = undefined;
   /**
    * Reserved:
    * @member {String} addOnId
    */
-  exports.prototype['addOnId'] = undefined;
+  exports.prototype.addOnId = undefined;
   /**
-   * 
+   *
    * @member {String} id
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype.id = undefined;
   /**
    * Reserved:
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-
-
+  exports.prototype.name = undefined;
 
   return exports;
 }));
-
-

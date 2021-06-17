@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountIdentityInputOption = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountIdentityInputOption model module.
    * @module model/AccountIdentityInputOption
@@ -37,10 +34,8 @@
    * @alias module:model/AccountIdentityInputOption
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/AccountIdentityInputOption} obj Optional instance to populate.
    * @return {module:model/AccountIdentityInputOption} The populated <code>AccountIdentityInputOption</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('isRequired')) {
-        obj['isRequired'] = ApiClient.convertToType(data['isRequired'], 'Boolean');
+        obj.isRequired = ApiClient.convertToType(data.isRequired, 'Boolean');
       }
       if (data.hasOwnProperty('optionName')) {
-        obj['optionName'] = ApiClient.convertToType(data['optionName'], 'String');
+        obj.optionName = ApiClient.convertToType(data.optionName, 'String');
       }
       if (data.hasOwnProperty('valueType')) {
-        obj['valueType'] = ApiClient.convertToType(data['valueType'], 'String');
+        obj.valueType = ApiClient.convertToType(data.valueType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Boolean} isRequired
    */
-  exports.prototype['isRequired'] = undefined;
+  exports.prototype.isRequired = undefined;
   /**
-   * 
+   *
    * @member {String} optionName
    */
-  exports.prototype['optionName'] = undefined;
+  exports.prototype.optionName = undefined;
   /**
-   * 
+   *
    * @member {String} valueType
    */
-  exports.prototype['valueType'] = undefined;
-
-
+  exports.prototype.valueType = undefined;
 
   return exports;
 }));
-
-

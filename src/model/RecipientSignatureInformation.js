@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientSignatureInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientSignatureInformation model module.
    * @module model/RecipientSignatureInformation
@@ -38,10 +35,8 @@
    * @alias module:model/RecipientSignatureInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/RecipientSignatureInformation} obj Optional instance to populate.
    * @return {module:model/RecipientSignatureInformation} The populated <code>RecipientSignatureInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('fontStyle')) {
-        obj['fontStyle'] = ApiClient.convertToType(data['fontStyle'], 'String');
+        obj.fontStyle = ApiClient.convertToType(data.fontStyle, 'String');
       }
       if (data.hasOwnProperty('signatureInitials')) {
-        obj['signatureInitials'] = ApiClient.convertToType(data['signatureInitials'], 'String');
+        obj.signatureInitials = ApiClient.convertToType(data.signatureInitials, 'String');
       }
       if (data.hasOwnProperty('signatureName')) {
-        obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
+        obj.signatureName = ApiClient.convertToType(data.signatureName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} fontStyle
    */
-  exports.prototype['fontStyle'] = undefined;
+  exports.prototype.fontStyle = undefined;
   /**
-   * 
+   *
    * @member {String} signatureInitials
    */
-  exports.prototype['signatureInitials'] = undefined;
+  exports.prototype.signatureInitials = undefined;
   /**
    * Specifies the user signature name.
    * @member {String} signatureName
    */
-  exports.prototype['signatureName'] = undefined;
-
-
+  exports.prototype.signatureName = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeAttachment = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The EnvelopeAttachment model module.
    * @module model/EnvelopeAttachment
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeAttachment
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,65 +45,61 @@
    * @param {module:model/EnvelopeAttachment} obj Optional instance to populate.
    * @return {module:model/EnvelopeAttachment} The populated <code>EnvelopeAttachment</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accessControl')) {
-        obj['accessControl'] = ApiClient.convertToType(data['accessControl'], 'String');
+        obj.accessControl = ApiClient.convertToType(data.accessControl, 'String');
       }
       if (data.hasOwnProperty('attachmentId')) {
-        obj['attachmentId'] = ApiClient.convertToType(data['attachmentId'], 'String');
+        obj.attachmentId = ApiClient.convertToType(data.attachmentId, 'String');
       }
       if (data.hasOwnProperty('attachmentType')) {
-        obj['attachmentType'] = ApiClient.convertToType(data['attachmentType'], 'String');
+        obj.attachmentType = ApiClient.convertToType(data.attachmentType, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+        obj.label = ApiClient.convertToType(data.label, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} accessControl
    */
-  exports.prototype['accessControl'] = undefined;
+  exports.prototype.accessControl = undefined;
   /**
-   * 
+   *
    * @member {String} attachmentId
    */
-  exports.prototype['attachmentId'] = undefined;
+  exports.prototype.attachmentId = undefined;
   /**
-   * 
+   *
    * @member {String} attachmentType
    */
-  exports.prototype['attachmentType'] = undefined;
+  exports.prototype.attachmentType = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} label
    */
-  exports.prototype['label'] = undefined;
+  exports.prototype.label = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-
-
+  exports.prototype.name = undefined;
 
   return exports;
 }));
-
-

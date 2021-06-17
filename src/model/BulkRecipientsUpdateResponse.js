@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Signer'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkRecipientsUpdateResponse = factory(root.Docusign.ApiClient, root.Docusign.Signer);
   }
-}(this, function(ApiClient, Signer) {
-  'use strict';
-
-
+}(this, (ApiClient, Signer) => {
   /**
    * The BulkRecipientsUpdateResponse model module.
    * @module model/BulkRecipientsUpdateResponse
@@ -37,10 +34,8 @@
    * @alias module:model/BulkRecipientsUpdateResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,25 +45,21 @@
    * @param {module:model/BulkRecipientsUpdateResponse} obj Optional instance to populate.
    * @return {module:model/BulkRecipientsUpdateResponse} The populated <code>BulkRecipientsUpdateResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('signer')) {
-        obj['signer'] = Signer.constructFromObject(data['signer']);
+        obj.signer = Signer.constructFromObject(data.signer);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/Signer} signer
    */
-  exports.prototype['signer'] = undefined;
-
-
+  exports.prototype.signer = undefined;
 
   return exports;
 }));
-
-

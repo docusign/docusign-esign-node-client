@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation'], factory);
+    define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation);
   }
-}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedUserInfoList, MobileNotifierConfigurationInformation) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedUserInfoList, MobileNotifierConfigurationInformation) => {
   /**
    * Connect service.
    * @module api/ConnectApi
    */
 
   /**
-   * Constructs a new ConnectApi. 
+   * Constructs a new ConnectApi.
    * @alias module:api/ConnectApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the createConfiguration operation. If none specified a Promise will be returned.
@@ -66,11 +62,11 @@
 ###### Note: Connect must be enabled for your account to use this function. This cannot be used to set up Connect configurations for Salesforce or eOriginal.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ConnectCustomConfiguration} optsOrCallback.connectCustomConfiguration 
+     * @param {module:model/ConnectCustomConfiguration} optsOrCallback.connectCustomConfiguration
      * @param {module:api/ConnectApi~createConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectCustomConfiguration}
      */
-    this.createConfiguration = function(accountId, optsOrCallback, callback) {
+    this.createConfiguration = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -78,39 +74,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['connectCustomConfiguration'];
+      const postBody = optsOrCallback.connectCustomConfiguration;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectCustomConfiguration;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectCustomConfiguration;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -127,40 +123,40 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/ConnectApi~createConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createConnectSecret = function(accountId, callback) {
-      var postBody = null;
+    this.createConnectSecret = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createConnectSecret");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/secret', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -178,14 +174,12 @@
 
 ###### Note: Connect must be enabled for your account to use this function.
 
- 
-
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} connectId The ID of the custom Connect configuration being accessed.
      * @param {module:api/ConnectApi~deleteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteConfiguration = function(accountId, connectId, callback) {
-      var postBody = null;
+    this.deleteConfiguration = function (accountId, connectId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -197,33 +191,33 @@
         throw new Error("Missing the required parameter 'connectId' when calling deleteConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'connectId': connectId
+      const pathParams = {
+        accountId,
+        connectId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -238,11 +232,11 @@
     /**
      * Delete the connect HMAC Secret for AccountID
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} keyId 
+     * @param {String} keyId
      * @param {module:api/ConnectApi~deleteConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteConnectSecret = function(accountId, keyId, callback) {
-      var postBody = null;
+    this.deleteConnectSecret = function (accountId, keyId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -254,33 +248,33 @@
         throw new Error("Missing the required parameter 'keyId' when calling deleteConnectSecret");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'keyId': keyId
+      const pathParams = {
+        accountId,
+        keyId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/secret/{keyId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -299,8 +293,8 @@
      * @param {String} failureId The ID of the failed connect log entry.
      * @param {module:api/ConnectApi~deleteEventFailureLogCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteEventFailureLog = function(accountId, failureId, callback) {
-      var postBody = null;
+    this.deleteEventFailureLog = function (accountId, failureId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -312,33 +306,33 @@
         throw new Error("Missing the required parameter 'failureId' when calling deleteEventFailureLog");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'failureId': failureId
+      const pathParams = {
+        accountId,
+        failureId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/failures/{failureId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -358,8 +352,8 @@
      * @param {String} logId The ID of the connect log entry
      * @param {module:api/ConnectApi~deleteEventLogCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteEventLog = function(accountId, logId, callback) {
-      var postBody = null;
+    this.deleteEventLog = function (accountId, logId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -371,33 +365,33 @@
         throw new Error("Missing the required parameter 'logId' when calling deleteEventLog");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'logId': logId
+      const pathParams = {
+        accountId,
+        logId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/logs/{logId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -417,40 +411,40 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/ConnectApi~deleteEventLogsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteEventLogs = function(accountId, callback) {
-      var postBody = null;
+    this.deleteEventLogs = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteEventLogs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/logs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -467,11 +461,11 @@
      * Reserved:
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation 
+     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation
      * @param {module:api/ConnectApi~deleteMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
      */
-    this.deleteMobileNotifiers = function(accountId, optsOrCallback, callback) {
+    this.deleteMobileNotifiers = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -479,39 +473,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
+      const postBody = optsOrCallback.mobileNotifierConfigurationInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteMobileNotifiers");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = MobileNotifierConfigurationInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = MobileNotifierConfigurationInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/mobile_notifiers', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -528,40 +522,40 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/ConnectApi~generateConnectSecretCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.generateConnectSecret = function(accountId, callback) {
-      var postBody = null;
+    this.generateConnectSecret = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling generateConnectSecret");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/secret', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -584,8 +578,8 @@
      * @param {module:api/ConnectApi~getConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectConfigResults}
      */
-    this.getConfiguration = function(accountId, connectId, callback) {
-      var postBody = null;
+    this.getConfiguration = function (accountId, connectId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -597,33 +591,33 @@
         throw new Error("Missing the required parameter 'connectId' when calling getConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'connectId': connectId
+      const pathParams = {
+        accountId,
+        connectId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectConfigResults;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectConfigResults;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -640,40 +634,40 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/ConnectApi~getConnectSecretsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getConnectSecrets = function(accountId, callback) {
-      var postBody = null;
+    this.getConnectSecrets = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getConnectSecrets");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/secrets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -689,7 +683,7 @@
      * Get the specified Connect log entry.
      * Retrieves the specified Connect log entry for your account.
 
-###### Note: The `enableLog` setting in the Connect configuration must be set to true to enable logging. If logging is not enabled, then no log entries are recorded. 
+###### Note: The `enableLog` setting in the Connect configuration must be set to true to enable logging. If logging is not enabled, then no log entries are recorded.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} logId The ID of the connect log entry
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -697,7 +691,7 @@
      * @param {module:api/ConnectApi~getEventLogCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectLog}
      */
-    this.getEventLog = function(accountId, logId, optsOrCallback, callback) {
+    this.getEventLog = function (accountId, logId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -705,7 +699,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -717,34 +711,34 @@
         throw new Error("Missing the required parameter 'logId' when calling getEventLog");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'logId': logId
+      const pathParams = {
+        accountId,
+        logId,
       };
-      var queryParams = {
-        'additional_info': optsOrCallback['additionalInfo']
+      const queryParams = {
+        additional_info: optsOrCallback.additionalInfo,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectLog;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectLog;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/logs/{logId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -765,40 +759,40 @@
      * @param {module:api/ConnectApi~listConfigurationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectConfigResults}
      */
-    this.listConfigurations = function(accountId, callback) {
-      var postBody = null;
+    this.listConfigurations = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listConfigurations");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectConfigResults;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectConfigResults;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -815,12 +809,12 @@
      * Retrieves the Connect Failure Log information. It can be used to determine which envelopes failed to post, so a republish request can be created.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.fromDate 
-     * @param {String} optsOrCallback.toDate 
+     * @param {String} optsOrCallback.fromDate
+     * @param {String} optsOrCallback.toDate
      * @param {module:api/ConnectApi~listEventFailureLogsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectLogs}
      */
-    this.listEventFailureLogs = function(accountId, optsOrCallback, callback) {
+    this.listEventFailureLogs = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -828,41 +822,41 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listEventFailureLogs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'from_date': optsOrCallback['fromDate'],
-        'to_date': optsOrCallback['toDate']
+      const queryParams = {
+        from_date: optsOrCallback.fromDate,
+        to_date: optsOrCallback.toDate,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectLogs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectLogs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/failures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -878,15 +872,15 @@
      * Gets the Connect log.
      * Retrieves a list of connect log entries for your account.
 
-###### Note: The `enableLog` setting in the Connect configuration must be set to true to enable logging. If logging is not enabled, then no log entries are recorded. 
+###### Note: The `enableLog` setting in the Connect configuration must be set to true to enable logging. If logging is not enabled, then no log entries are recorded.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.fromDate 
-     * @param {String} optsOrCallback.toDate 
+     * @param {String} optsOrCallback.fromDate
+     * @param {String} optsOrCallback.toDate
      * @param {module:api/ConnectApi~listEventLogsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectLogs}
      */
-    this.listEventLogs = function(accountId, optsOrCallback, callback) {
+    this.listEventLogs = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -894,41 +888,41 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listEventLogs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'from_date': optsOrCallback['fromDate'],
-        'to_date': optsOrCallback['toDate']
+      const queryParams = {
+        from_date: optsOrCallback.fromDate,
+        to_date: optsOrCallback.toDate,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectLogs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectLogs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/logs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -947,40 +941,40 @@
      * @param {module:api/ConnectApi~listMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
      */
-    this.listMobileNotifiers = function(accountId, callback) {
-      var postBody = null;
+    this.listMobileNotifiers = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listMobileNotifiers");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = MobileNotifierConfigurationInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = MobileNotifierConfigurationInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/mobile_notifiers', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -998,16 +992,16 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} connectId The ID of the custom Connect configuration being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.emailSubstring 
-     * @param {String} optsOrCallback.listIncludedUsers 
-     * @param {String} optsOrCallback.startPosition 
-     * @param {String} optsOrCallback.status 
-     * @param {String} optsOrCallback.userNameSubstring 
+     * @param {String} optsOrCallback.count
+     * @param {String} optsOrCallback.emailSubstring
+     * @param {String} optsOrCallback.listIncludedUsers
+     * @param {String} optsOrCallback.startPosition
+     * @param {String} optsOrCallback.status
+     * @param {String} optsOrCallback.userNameSubstring
      * @param {module:api/ConnectApi~listUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/IntegratedUserInfoList}
      */
-    this.listUsers = function(accountId, connectId, optsOrCallback, callback) {
+    this.listUsers = function (accountId, connectId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1015,7 +1009,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1027,39 +1021,39 @@
         throw new Error("Missing the required parameter 'connectId' when calling listUsers");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'connectId': connectId
+      const pathParams = {
+        accountId,
+        connectId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'email_substring': optsOrCallback['emailSubstring'],
-        'list_included_users': optsOrCallback['listIncludedUsers'],
-        'start_position': optsOrCallback['startPosition'],
-        'status': optsOrCallback['status'],
-        'user_name_substring': optsOrCallback['userNameSubstring']
+      const queryParams = {
+        count: optsOrCallback.count,
+        email_substring: optsOrCallback.emailSubstring,
+        list_included_users: optsOrCallback.listIncludedUsers,
+        start_position: optsOrCallback.startPosition,
+        status: optsOrCallback.status,
+        user_name_substring: optsOrCallback.userNameSubstring,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = IntegratedUserInfoList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = IntegratedUserInfoList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1079,8 +1073,8 @@
      * @param {module:api/ConnectApi~retryEventForEnvelopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectFailureResults}
      */
-    this.retryEventForEnvelope = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.retryEventForEnvelope = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1092,33 +1086,33 @@
         throw new Error("Missing the required parameter 'envelopeId' when calling retryEventForEnvelope");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectFailureResults;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectFailureResults;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/envelopes/{envelopeId}/retry_queue', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1135,11 +1129,11 @@
      * Republishes Connect information for the  specified set of envelopes. The primary use is to republish Connect post failures by including envelope IDs for the envelopes that failed to post in the request. The list of envelope IDs that failed to post correctly can be retrieved by calling to [ML:GetConnectLog] retrieve the failure log.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ConnectFailureFilter} optsOrCallback.connectFailureFilter 
+     * @param {module:model/ConnectFailureFilter} optsOrCallback.connectFailureFilter
      * @param {module:api/ConnectApi~retryEventForEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectFailureResults}
      */
-    this.retryEventForEnvelopes = function(accountId, optsOrCallback, callback) {
+    this.retryEventForEnvelopes = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1147,39 +1141,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['connectFailureFilter'];
+      const postBody = optsOrCallback.connectFailureFilter;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling retryEventForEnvelopes");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectFailureResults;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectFailureResults;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/envelopes/retry_queue', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1198,11 +1192,11 @@
 ###### Note: Connect must be enabled for your account to use this function. This cannot be used to update Connect configurations for Box, eOriginal, or Salesforce.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ConnectCustomConfiguration} optsOrCallback.connectCustomConfiguration 
+     * @param {module:model/ConnectCustomConfiguration} optsOrCallback.connectCustomConfiguration
      * @param {module:api/ConnectApi~updateConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConnectCustomConfiguration}
      */
-    this.updateConfiguration = function(accountId, optsOrCallback, callback) {
+    this.updateConfiguration = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1210,39 +1204,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['connectCustomConfiguration'];
+      const postBody = optsOrCallback.connectCustomConfiguration;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConnectCustomConfiguration;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConnectCustomConfiguration;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1259,11 +1253,11 @@
      * Reserved:
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation 
+     * @param {module:model/MobileNotifierConfigurationInformation} optsOrCallback.mobileNotifierConfigurationInformation
      * @param {module:api/ConnectApi~updateMobileNotifiersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MobileNotifierConfigurationInformation}
      */
-    this.updateMobileNotifiers = function(accountId, optsOrCallback, callback) {
+    this.updateMobileNotifiers = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1271,39 +1265,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['mobileNotifierConfigurationInformation'];
+      const postBody = optsOrCallback.mobileNotifierConfigurationInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateMobileNotifiers");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = MobileNotifierConfigurationInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = MobileNotifierConfigurationInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/mobile_notifiers', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

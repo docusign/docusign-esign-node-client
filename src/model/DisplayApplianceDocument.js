@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DisplayApplianceDocument = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DisplayApplianceDocument model module.
    * @module model/DisplayApplianceDocument
@@ -38,10 +35,8 @@
    * @alias module:model/DisplayApplianceDocument
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,82 +46,78 @@
    * @param {module:model/DisplayApplianceDocument} obj Optional instance to populate.
    * @return {module:model/DisplayApplianceDocument} The populated <code>DisplayApplianceDocument</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('attachmentDescription')) {
-        obj['attachmentDescription'] = ApiClient.convertToType(data['attachmentDescription'], 'String');
+        obj.attachmentDescription = ApiClient.convertToType(data.attachmentDescription, 'String');
       }
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('documentType')) {
-        obj['documentType'] = ApiClient.convertToType(data['documentType'], 'String');
+        obj.documentType = ApiClient.convertToType(data.documentType, 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('externalDocumentId')) {
-        obj['externalDocumentId'] = ApiClient.convertToType(data['externalDocumentId'], 'String');
+        obj.externalDocumentId = ApiClient.convertToType(data.externalDocumentId, 'String');
       }
       if (data.hasOwnProperty('latestPDFId')) {
-        obj['latestPDFId'] = ApiClient.convertToType(data['latestPDFId'], 'String');
+        obj.latestPDFId = ApiClient.convertToType(data.latestPDFId, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('pages')) {
-        obj['pages'] = ApiClient.convertToType(data['pages'], 'Number');
+        obj.pages = ApiClient.convertToType(data.pages, 'Number');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} attachmentDescription
    */
-  exports.prototype['attachmentDescription'] = undefined;
+  exports.prototype.attachmentDescription = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} documentType
    */
-  exports.prototype['documentType'] = undefined;
+  exports.prototype.documentType = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
-   * 
+   *
    * @member {String} externalDocumentId
    */
-  exports.prototype['externalDocumentId'] = undefined;
+  exports.prototype.externalDocumentId = undefined;
   /**
-   * 
+   *
    * @member {String} latestPDFId
    */
-  exports.prototype['latestPDFId'] = undefined;
+  exports.prototype.latestPDFId = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {Number} pages
    */
-  exports.prototype['pages'] = undefined;
-
-
+  exports.prototype.pages = undefined;
 
   return exports;
 }));
-
-

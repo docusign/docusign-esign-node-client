@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientNamesResponse = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientNamesResponse model module.
    * @module model/RecipientNamesResponse
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientNamesResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/RecipientNamesResponse} obj Optional instance to populate.
    * @return {module:model/RecipientNamesResponse} The populated <code>RecipientNamesResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('multipleUsers')) {
-        obj['multipleUsers'] = ApiClient.convertToType(data['multipleUsers'], 'String');
+        obj.multipleUsers = ApiClient.convertToType(data.multipleUsers, 'String');
       }
       if (data.hasOwnProperty('recipientNames')) {
-        obj['recipientNames'] = ApiClient.convertToType(data['recipientNames'], ['String']);
+        obj.recipientNames = ApiClient.convertToType(data.recipientNames, ['String']);
       }
       if (data.hasOwnProperty('reservedRecipientEmail')) {
-        obj['reservedRecipientEmail'] = ApiClient.convertToType(data['reservedRecipientEmail'], 'String');
+        obj.reservedRecipientEmail = ApiClient.convertToType(data.reservedRecipientEmail, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Indicates whether email address is used by more than one user.
    * @member {String} multipleUsers
    */
-  exports.prototype['multipleUsers'] = undefined;
+  exports.prototype.multipleUsers = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} recipientNames
    */
-  exports.prototype['recipientNames'] = undefined;
+  exports.prototype.recipientNames = undefined;
   /**
-   * 
+   *
    * @member {String} reservedRecipientEmail
    */
-  exports.prototype['reservedRecipientEmail'] = undefined;
-
-
+  exports.prototype.reservedRecipientEmail = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AppStoreProduct = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AppStoreProduct model module.
    * @module model/AppStoreProduct
@@ -38,10 +35,8 @@
    * @alias module:model/AppStoreProduct
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,34 +46,30 @@
    * @param {module:model/AppStoreProduct} obj Optional instance to populate.
    * @return {module:model/AppStoreProduct} The populated <code>AppStoreProduct</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('marketPlace')) {
-        obj['marketPlace'] = ApiClient.convertToType(data['marketPlace'], 'String');
+        obj.marketPlace = ApiClient.convertToType(data.marketPlace, 'String');
       }
       if (data.hasOwnProperty('productId')) {
-        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
+        obj.productId = ApiClient.convertToType(data.productId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} marketPlace
    */
-  exports.prototype['marketPlace'] = undefined;
+  exports.prototype.marketPlace = undefined;
   /**
    * The Product ID from the AppStore.
    * @member {String} productId
    */
-  exports.prototype['productId'] = undefined;
-
-
+  exports.prototype.productId = undefined;
 
   return exports;
 }));
-
-

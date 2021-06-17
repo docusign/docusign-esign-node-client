@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Ssn4InformationInput = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The Ssn4InformationInput model module.
    * @module model/Ssn4InformationInput
@@ -37,10 +34,8 @@
    * @alias module:model/Ssn4InformationInput
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/Ssn4InformationInput} obj Optional instance to populate.
    * @return {module:model/Ssn4InformationInput} The populated <code>Ssn4InformationInput</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('displayLevelCode')) {
-        obj['displayLevelCode'] = ApiClient.convertToType(data['displayLevelCode'], 'String');
+        obj.displayLevelCode = ApiClient.convertToType(data.displayLevelCode, 'String');
       }
       if (data.hasOwnProperty('receiveInResponse')) {
-        obj['receiveInResponse'] = ApiClient.convertToType(data['receiveInResponse'], 'String');
+        obj.receiveInResponse = ApiClient.convertToType(data.receiveInResponse, 'String');
       }
       if (data.hasOwnProperty('ssn4')) {
-        obj['ssn4'] = ApiClient.convertToType(data['ssn4'], 'String');
+        obj.ssn4 = ApiClient.convertToType(data.ssn4, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay
    * @member {String} displayLevelCode
    */
-  exports.prototype['displayLevelCode'] = undefined;
+  exports.prototype.displayLevelCode = undefined;
   /**
    * When set to **true**, the information needs to be returned in the response.
    * @member {String} receiveInResponse
    */
-  exports.prototype['receiveInResponse'] = undefined;
+  exports.prototype.receiveInResponse = undefined;
   /**
    * The last four digits of the recipient's Social Security Number (SSN).
    * @member {String} ssn4
    */
-  exports.prototype['ssn4'] = undefined;
-
-
+  exports.prototype.ssn4 = undefined;
 
   return exports;
 }));
-
-

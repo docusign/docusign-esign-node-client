@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendingListSummary = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BulkSendingListSummary model module.
    * @module model/BulkSendingListSummary
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendingListSummary
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/BulkSendingListSummary} obj Optional instance to populate.
    * @return {module:model/BulkSendingListSummary} The populated <code>BulkSendingListSummary</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkSendListId')) {
-        obj['bulkSendListId'] = ApiClient.convertToType(data['bulkSendListId'], 'String');
+        obj.bulkSendListId = ApiClient.convertToType(data.bulkSendListId, 'String');
       }
       if (data.hasOwnProperty('createdByUser')) {
-        obj['createdByUser'] = ApiClient.convertToType(data['createdByUser'], 'String');
+        obj.createdByUser = ApiClient.convertToType(data.createdByUser, 'String');
       }
       if (data.hasOwnProperty('createdDate')) {
-        obj['createdDate'] = ApiClient.convertToType(data['createdDate'], 'String');
+        obj.createdDate = ApiClient.convertToType(data.createdDate, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} bulkSendListId
    */
-  exports.prototype['bulkSendListId'] = undefined;
+  exports.prototype.bulkSendListId = undefined;
   /**
-   * 
+   *
    * @member {String} createdByUser
    */
-  exports.prototype['createdByUser'] = undefined;
+  exports.prototype.createdByUser = undefined;
   /**
-   * 
+   *
    * @member {String} createdDate
    */
-  exports.prototype['createdDate'] = undefined;
+  exports.prototype.createdDate = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-
-
+  exports.prototype.name = undefined;
 
   return exports;
 }));
-
-

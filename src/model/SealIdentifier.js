@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SealIdentifier = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SealIdentifier model module.
    * @module model/SealIdentifier
@@ -37,10 +34,8 @@
    * @alias module:model/SealIdentifier
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/SealIdentifier} obj Optional instance to populate.
    * @return {module:model/SealIdentifier} The populated <code>SealIdentifier</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('sealDisplayName')) {
-        obj['sealDisplayName'] = ApiClient.convertToType(data['sealDisplayName'], 'String');
+        obj.sealDisplayName = ApiClient.convertToType(data.sealDisplayName, 'String');
       }
       if (data.hasOwnProperty('sealName')) {
-        obj['sealName'] = ApiClient.convertToType(data['sealName'], 'String');
+        obj.sealName = ApiClient.convertToType(data.sealName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} sealDisplayName
    */
-  exports.prototype['sealDisplayName'] = undefined;
+  exports.prototype.sealDisplayName = undefined;
   /**
-   * 
+   *
    * @member {String} sealName
    */
-  exports.prototype['sealName'] = undefined;
-
-
+  exports.prototype.sealName = undefined;
 
   return exports;
 }));
-
-

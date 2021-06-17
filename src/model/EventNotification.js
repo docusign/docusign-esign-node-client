@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConnectEventData', 'model/EnvelopeEvent', 'model/RecipientEvent'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EventNotification = factory(root.Docusign.ApiClient, root.Docusign.ConnectEventData, root.Docusign.EnvelopeEvent, root.Docusign.RecipientEvent);
   }
-}(this, function(ApiClient, ConnectEventData, EnvelopeEvent, RecipientEvent) {
-  'use strict';
-
-
+}(this, (ApiClient, ConnectEventData, EnvelopeEvent, RecipientEvent) => {
   /**
    * The EventNotification model module.
    * @module model/EventNotification
@@ -38,10 +35,8 @@
    * @alias module:model/EventNotification
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,153 +46,149 @@
    * @param {module:model/EventNotification} obj Optional instance to populate.
    * @return {module:model/EventNotification} The populated <code>EventNotification</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeEvents')) {
-        obj['envelopeEvents'] = ApiClient.convertToType(data['envelopeEvents'], [EnvelopeEvent]);
+        obj.envelopeEvents = ApiClient.convertToType(data.envelopeEvents, [EnvelopeEvent]);
       }
       if (data.hasOwnProperty('eventData')) {
-        obj['eventData'] = ConnectEventData.constructFromObject(data['eventData']);
+        obj.eventData = ConnectEventData.constructFromObject(data.eventData);
       }
       if (data.hasOwnProperty('includeCertificateOfCompletion')) {
-        obj['includeCertificateOfCompletion'] = ApiClient.convertToType(data['includeCertificateOfCompletion'], 'String');
+        obj.includeCertificateOfCompletion = ApiClient.convertToType(data.includeCertificateOfCompletion, 'String');
       }
       if (data.hasOwnProperty('includeCertificateWithSoap')) {
-        obj['includeCertificateWithSoap'] = ApiClient.convertToType(data['includeCertificateWithSoap'], 'String');
+        obj.includeCertificateWithSoap = ApiClient.convertToType(data.includeCertificateWithSoap, 'String');
       }
       if (data.hasOwnProperty('includeDocumentFields')) {
-        obj['includeDocumentFields'] = ApiClient.convertToType(data['includeDocumentFields'], 'String');
+        obj.includeDocumentFields = ApiClient.convertToType(data.includeDocumentFields, 'String');
       }
       if (data.hasOwnProperty('includeDocuments')) {
-        obj['includeDocuments'] = ApiClient.convertToType(data['includeDocuments'], 'String');
+        obj.includeDocuments = ApiClient.convertToType(data.includeDocuments, 'String');
       }
       if (data.hasOwnProperty('includeEnvelopeVoidReason')) {
-        obj['includeEnvelopeVoidReason'] = ApiClient.convertToType(data['includeEnvelopeVoidReason'], 'String');
+        obj.includeEnvelopeVoidReason = ApiClient.convertToType(data.includeEnvelopeVoidReason, 'String');
       }
       if (data.hasOwnProperty('includeHMAC')) {
-        obj['includeHMAC'] = ApiClient.convertToType(data['includeHMAC'], 'String');
+        obj.includeHMAC = ApiClient.convertToType(data.includeHMAC, 'String');
       }
       if (data.hasOwnProperty('includeSenderAccountAsCustomField')) {
-        obj['includeSenderAccountAsCustomField'] = ApiClient.convertToType(data['includeSenderAccountAsCustomField'], 'String');
+        obj.includeSenderAccountAsCustomField = ApiClient.convertToType(data.includeSenderAccountAsCustomField, 'String');
       }
       if (data.hasOwnProperty('includeTimeZone')) {
-        obj['includeTimeZone'] = ApiClient.convertToType(data['includeTimeZone'], 'String');
+        obj.includeTimeZone = ApiClient.convertToType(data.includeTimeZone, 'String');
       }
       if (data.hasOwnProperty('loggingEnabled')) {
-        obj['loggingEnabled'] = ApiClient.convertToType(data['loggingEnabled'], 'String');
+        obj.loggingEnabled = ApiClient.convertToType(data.loggingEnabled, 'String');
       }
       if (data.hasOwnProperty('recipientEvents')) {
-        obj['recipientEvents'] = ApiClient.convertToType(data['recipientEvents'], [RecipientEvent]);
+        obj.recipientEvents = ApiClient.convertToType(data.recipientEvents, [RecipientEvent]);
       }
       if (data.hasOwnProperty('requireAcknowledgment')) {
-        obj['requireAcknowledgment'] = ApiClient.convertToType(data['requireAcknowledgment'], 'String');
+        obj.requireAcknowledgment = ApiClient.convertToType(data.requireAcknowledgment, 'String');
       }
       if (data.hasOwnProperty('signMessageWithX509Cert')) {
-        obj['signMessageWithX509Cert'] = ApiClient.convertToType(data['signMessageWithX509Cert'], 'String');
+        obj.signMessageWithX509Cert = ApiClient.convertToType(data.signMessageWithX509Cert, 'String');
       }
       if (data.hasOwnProperty('soapNameSpace')) {
-        obj['soapNameSpace'] = ApiClient.convertToType(data['soapNameSpace'], 'String');
+        obj.soapNameSpace = ApiClient.convertToType(data.soapNameSpace, 'String');
       }
       if (data.hasOwnProperty('url')) {
-        obj['url'] = ApiClient.convertToType(data['url'], 'String');
+        obj.url = ApiClient.convertToType(data.url, 'String');
       }
       if (data.hasOwnProperty('useSoapInterface')) {
-        obj['useSoapInterface'] = ApiClient.convertToType(data['useSoapInterface'], 'String');
+        obj.useSoapInterface = ApiClient.convertToType(data.useSoapInterface, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the `url` property.   To receive notifications, you must include either an `envelopeEvents` node or a `recipientEvents` node. You do not need to specify both.
    * @member {Array.<module:model/EnvelopeEvent>} envelopeEvents
    */
-  exports.prototype['envelopeEvents'] = undefined;
+  exports.prototype.envelopeEvents = undefined;
   /**
    * @member {module:model/ConnectEventData} eventData
    */
-  exports.prototype['eventData'] = undefined;
+  exports.prototype.eventData = undefined;
   /**
-   * When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
+   * When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes.
    * @member {String} includeCertificateOfCompletion
    */
-  exports.prototype['includeCertificateOfCompletion'] = undefined;
+  exports.prototype.includeCertificateOfCompletion = undefined;
   /**
    * When set to **true**, this tells the Connect service to send the DocuSign signedby certificate as part of the outgoing SOAP xml. This appears in the XML as wsse:BinarySecurityToken.
    * @member {String} includeCertificateWithSoap
    */
-  exports.prototype['includeCertificateWithSoap'] = undefined;
+  exports.prototype.includeCertificateWithSoap = undefined;
   /**
-   * When set to **true**, the Document Fields associated with envelope documents are included in the data. Document Fields are optional custom name-value pairs added to documents using the API. 
+   * When set to **true**, the Document Fields associated with envelope documents are included in the data. Document Fields are optional custom name-value pairs added to documents using the API.
    * @member {String} includeDocumentFields
    */
-  exports.prototype['includeDocumentFields'] = undefined;
+  exports.prototype.includeDocumentFields = undefined;
   /**
-   * When set to **true**, the PDF documents are included in the message along with the updated XML. 
+   * When set to **true**, the PDF documents are included in the message along with the updated XML.
    * @member {String} includeDocuments
    */
-  exports.prototype['includeDocuments'] = undefined;
+  exports.prototype.includeDocuments = undefined;
   /**
-   * When set to **true**, this tells the Connect Service to include the void reason, as entered by the person that voided the envelope, in the message. 
+   * When set to **true**, this tells the Connect Service to include the void reason, as entered by the person that voided the envelope, in the message.
    * @member {String} includeEnvelopeVoidReason
    */
-  exports.prototype['includeEnvelopeVoidReason'] = undefined;
+  exports.prototype.includeEnvelopeVoidReason = undefined;
   /**
-   * 
+   *
    * @member {String} includeHMAC
    */
-  exports.prototype['includeHMAC'] = undefined;
+  exports.prototype.includeHMAC = undefined;
   /**
-   * When set to **true**, the sender account ID is included as a envelope custom field in the data. 
+   * When set to **true**, the sender account ID is included as a envelope custom field in the data.
    * @member {String} includeSenderAccountAsCustomField
    */
-  exports.prototype['includeSenderAccountAsCustomField'] = undefined;
+  exports.prototype.includeSenderAccountAsCustomField = undefined;
   /**
-   * When set to **true**, the envelope time zone information is included in the message. 
+   * When set to **true**, the envelope time zone information is included in the message.
    * @member {String} includeTimeZone
    */
-  exports.prototype['includeTimeZone'] = undefined;
+  exports.prototype.includeTimeZone = undefined;
   /**
-   * When set to **true**, logging is turned on for envelope events on the Web Console Connect page. 
+   * When set to **true**, logging is turned on for envelope events on the Web Console Connect page.
    * @member {String} loggingEnabled
    */
-  exports.prototype['loggingEnabled'] = undefined;
+  exports.prototype.loggingEnabled = undefined;
   /**
    * A list of recipient event statuses that will trigger Connect to send updates to   the endpoint specified in the url property.  To receive notifications, you must include either an `envelopeEvents` node or a `recipientEvents` node. You do not need to specify both.
    * @member {Array.<module:model/RecipientEvent>} recipientEvents
    */
-  exports.prototype['recipientEvents'] = undefined;
+  exports.prototype.recipientEvents = undefined;
   /**
-   * When set to **true**, the DocuSign Connect service checks that the message was received and retries on failures. 
+   * When set to **true**, the DocuSign Connect service checks that the message was received and retries on failures.
    * @member {String} requireAcknowledgment
    */
-  exports.prototype['requireAcknowledgment'] = undefined;
+  exports.prototype.requireAcknowledgment = undefined;
   /**
-   * When set to **true**, messages are signed with an X509 certificate. This provides support for 2-way SSL in the envelope. 
+   * When set to **true**, messages are signed with an X509 certificate. This provides support for 2-way SSL in the envelope.
    * @member {String} signMessageWithX509Cert
    */
-  exports.prototype['signMessageWithX509Cert'] = undefined;
+  exports.prototype.signMessageWithX509Cert = undefined;
   /**
    * This lists the namespace in the SOAP listener provided.
    * @member {String} soapNameSpace
    */
-  exports.prototype['soapNameSpace'] = undefined;
+  exports.prototype.soapNameSpace = undefined;
   /**
    * Specifies the endpoint to which envelope updates are sent. Udpates are sent as XML unless `useSoapInterface` property is set to **true**.
    * @member {String} url
    */
-  exports.prototype['url'] = undefined;
+  exports.prototype.url = undefined;
   /**
-   * When set to **true**, this tells the Connect service that the user's endpoint has implemented a SOAP interface. 
+   * When set to **true**, this tells the Connect service that the user's endpoint has implemented a SOAP interface.
    * @member {String} useSoapInterface
    */
-  exports.prototype['useSoapInterface'] = undefined;
-
-
+  exports.prototype.useSoapInterface = undefined;
 
   return exports;
 }));
-
-

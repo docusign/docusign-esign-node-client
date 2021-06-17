@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PowerFormFormDataRecipient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PowerFormFormDataEnvelope = factory(root.Docusign.ApiClient, root.Docusign.PowerFormFormDataRecipient);
   }
-}(this, function(ApiClient, PowerFormFormDataRecipient) {
-  'use strict';
-
-
+}(this, (ApiClient, PowerFormFormDataRecipient) => {
   /**
    * The PowerFormFormDataEnvelope model module.
    * @module model/PowerFormFormDataEnvelope
@@ -37,10 +34,8 @@
    * @alias module:model/PowerFormFormDataEnvelope
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/PowerFormFormDataEnvelope} obj Optional instance to populate.
    * @return {module:model/PowerFormFormDataEnvelope} The populated <code>PowerFormFormDataEnvelope</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('recipients')) {
-        obj['recipients'] = ApiClient.convertToType(data['recipients'], [PowerFormFormDataRecipient]);
+        obj.recipients = ApiClient.convertToType(data.recipients, [PowerFormFormDataRecipient]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
    * An array of powerform recipients.
    * @member {Array.<module:model/PowerFormFormDataRecipient>} recipients
    */
-  exports.prototype['recipients'] = undefined;
-
-
+  exports.prototype.recipients = undefined;
 
   return exports;
 }));
-
-

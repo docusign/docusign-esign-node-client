@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentSignerValues = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PaymentSignerValues model module.
    * @module model/PaymentSignerValues
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentSignerValues
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/PaymentSignerValues} obj Optional instance to populate.
    * @return {module:model/PaymentSignerValues} The populated <code>PaymentSignerValues</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentOption')) {
-        obj['paymentOption'] = ApiClient.convertToType(data['paymentOption'], 'String');
+        obj.paymentOption = ApiClient.convertToType(data.paymentOption, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} paymentOption
    */
-  exports.prototype['paymentOption'] = undefined;
-
-
+  exports.prototype.paymentOption = undefined;
 
   return exports;
 }));
-
-

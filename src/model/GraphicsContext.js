@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.GraphicsContext = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The GraphicsContext model module.
    * @module model/GraphicsContext
@@ -37,10 +34,8 @@
    * @alias module:model/GraphicsContext
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/GraphicsContext} obj Optional instance to populate.
    * @return {module:model/GraphicsContext} The populated <code>GraphicsContext</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('fillColor')) {
-        obj['fillColor'] = ApiClient.convertToType(data['fillColor'], 'String');
+        obj.fillColor = ApiClient.convertToType(data.fillColor, 'String');
       }
       if (data.hasOwnProperty('lineColor')) {
-        obj['lineColor'] = ApiClient.convertToType(data['lineColor'], 'String');
+        obj.lineColor = ApiClient.convertToType(data.lineColor, 'String');
       }
       if (data.hasOwnProperty('lineWeight')) {
-        obj['lineWeight'] = ApiClient.convertToType(data['lineWeight'], 'String');
+        obj.lineWeight = ApiClient.convertToType(data.lineWeight, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} fillColor
    */
-  exports.prototype['fillColor'] = undefined;
+  exports.prototype.fillColor = undefined;
   /**
-   * 
+   *
    * @member {String} lineColor
    */
-  exports.prototype['lineColor'] = undefined;
+  exports.prototype.lineColor = undefined;
   /**
-   * 
+   *
    * @member {String} lineWeight
    */
-  exports.prototype['lineWeight'] = undefined;
-
-
+  exports.prototype.lineWeight = undefined;
 
   return exports;
 }));
-
-

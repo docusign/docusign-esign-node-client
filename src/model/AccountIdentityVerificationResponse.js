@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountIdentityVerificationWorkflow'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountIdentityVerificationResponse = factory(root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationWorkflow);
   }
-}(this, function(ApiClient, AccountIdentityVerificationWorkflow) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountIdentityVerificationWorkflow) => {
   /**
    * The AccountIdentityVerificationResponse model module.
    * @module model/AccountIdentityVerificationResponse
@@ -37,10 +34,8 @@
    * @alias module:model/AccountIdentityVerificationResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/AccountIdentityVerificationResponse} obj Optional instance to populate.
    * @return {module:model/AccountIdentityVerificationResponse} The populated <code>AccountIdentityVerificationResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('identityVerification')) {
-        obj['identityVerification'] = ApiClient.convertToType(data['identityVerification'], [AccountIdentityVerificationWorkflow]);
+        obj.identityVerification = ApiClient.convertToType(data.identityVerification, [AccountIdentityVerificationWorkflow]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/AccountIdentityVerificationWorkflow>} identityVerification
    */
-  exports.prototype['identityVerification'] = undefined;
-
-
+  exports.prototype.identityVerification = undefined;
 
   return exports;
 }));
-
-

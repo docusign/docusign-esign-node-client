@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentTemplate = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The DocumentTemplate model module.
    * @module model/DocumentTemplate
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentTemplate
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,57 +45,53 @@
    * @param {module:model/DocumentTemplate} obj Optional instance to populate.
    * @return {module:model/DocumentTemplate} The populated <code>DocumentTemplate</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentEndPage')) {
-        obj['documentEndPage'] = ApiClient.convertToType(data['documentEndPage'], 'String');
+        obj.documentEndPage = ApiClient.convertToType(data.documentEndPage, 'String');
       }
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('documentStartPage')) {
-        obj['documentStartPage'] = ApiClient.convertToType(data['documentStartPage'], 'String');
+        obj.documentStartPage = ApiClient.convertToType(data.documentStartPage, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+        obj.templateId = ApiClient.convertToType(data.templateId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} documentEndPage
    */
-  exports.prototype['documentEndPage'] = undefined;
+  exports.prototype.documentEndPage = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} documentStartPage
    */
-  exports.prototype['documentStartPage'] = undefined;
+  exports.prototype.documentStartPage = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
    * @member {String} templateId
    */
-  exports.prototype['templateId'] = undefined;
-
-
+  exports.prototype.templateId = undefined;
 
   return exports;
 }));
-
-

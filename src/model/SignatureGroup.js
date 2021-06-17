@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SignatureGroup = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SignatureGroup model module.
    * @module model/SignatureGroup
@@ -37,10 +34,8 @@
    * @alias module:model/SignatureGroup
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/SignatureGroup} obj Optional instance to populate.
    * @return {module:model/SignatureGroup} The populated <code>SignatureGroup</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('groupId')) {
-        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'String');
+        obj.groupId = ApiClient.convertToType(data.groupId, 'String');
       }
       if (data.hasOwnProperty('groupName')) {
-        obj['groupName'] = ApiClient.convertToType(data['groupName'], 'String');
+        obj.groupName = ApiClient.convertToType(data.groupName, 'String');
       }
       if (data.hasOwnProperty('rights')) {
-        obj['rights'] = ApiClient.convertToType(data['rights'], 'String');
+        obj.rights = ApiClient.convertToType(data.rights, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} groupId
    */
-  exports.prototype['groupId'] = undefined;
+  exports.prototype.groupId = undefined;
   /**
    * The name of the group.
    * @member {String} groupName
    */
-  exports.prototype['groupName'] = undefined;
+  exports.prototype.groupName = undefined;
   /**
-   * 
+   *
    * @member {String} rights
    */
-  exports.prototype['rights'] = undefined;
-
-
+  exports.prototype.rights = undefined;
 
   return exports;
 }));
-
-

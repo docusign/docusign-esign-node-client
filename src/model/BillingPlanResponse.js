@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingPlan'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPlanResponse = factory(root.Docusign.ApiClient, root.Docusign.BillingPlan);
   }
-}(this, function(ApiClient, BillingPlan) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingPlan) => {
   /**
    * The BillingPlanResponse model module.
    * @module model/BillingPlanResponse
@@ -38,10 +35,8 @@
    * @alias module:model/BillingPlanResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,33 +46,29 @@
    * @param {module:model/BillingPlanResponse} obj Optional instance to populate.
    * @return {module:model/BillingPlanResponse} The populated <code>BillingPlanResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billingPlan')) {
-        obj['billingPlan'] = BillingPlan.constructFromObject(data['billingPlan']);
+        obj.billingPlan = BillingPlan.constructFromObject(data.billingPlan);
       }
       if (data.hasOwnProperty('successorPlans')) {
-        obj['successorPlans'] = ApiClient.convertToType(data['successorPlans'], [BillingPlan]);
+        obj.successorPlans = ApiClient.convertToType(data.successorPlans, [BillingPlan]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/BillingPlan} billingPlan
    */
-  exports.prototype['billingPlan'] = undefined;
+  exports.prototype.billingPlan = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/BillingPlan>} successorPlans
    */
-  exports.prototype['successorPlans'] = undefined;
-
-
+  exports.prototype.successorPlans = undefined;
 
   return exports;
 }));
-
-

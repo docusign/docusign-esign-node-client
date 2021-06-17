@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/EventResult'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AuthenticationStatus = factory(root.Docusign.ApiClient, root.Docusign.EventResult);
   }
-}(this, function(ApiClient, EventResult) {
-  'use strict';
-
-
+}(this, (ApiClient, EventResult) => {
   /**
    * The AuthenticationStatus model module.
    * @module model/AuthenticationStatus
@@ -38,10 +35,8 @@
    * @alias module:model/AuthenticationStatus
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,151 +46,147 @@
    * @param {module:model/AuthenticationStatus} obj Optional instance to populate.
    * @return {module:model/AuthenticationStatus} The populated <code>AuthenticationStatus</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accessCodeResult')) {
-        obj['accessCodeResult'] = EventResult.constructFromObject(data['accessCodeResult']);
+        obj.accessCodeResult = EventResult.constructFromObject(data.accessCodeResult);
       }
       if (data.hasOwnProperty('ageVerifyResult')) {
-        obj['ageVerifyResult'] = EventResult.constructFromObject(data['ageVerifyResult']);
+        obj.ageVerifyResult = EventResult.constructFromObject(data.ageVerifyResult);
       }
       if (data.hasOwnProperty('anySocialIDResult')) {
-        obj['anySocialIDResult'] = EventResult.constructFromObject(data['anySocialIDResult']);
+        obj.anySocialIDResult = EventResult.constructFromObject(data.anySocialIDResult);
       }
       if (data.hasOwnProperty('facebookResult')) {
-        obj['facebookResult'] = EventResult.constructFromObject(data['facebookResult']);
+        obj.facebookResult = EventResult.constructFromObject(data.facebookResult);
       }
       if (data.hasOwnProperty('googleResult')) {
-        obj['googleResult'] = EventResult.constructFromObject(data['googleResult']);
+        obj.googleResult = EventResult.constructFromObject(data.googleResult);
       }
       if (data.hasOwnProperty('identityVerificationResult')) {
-        obj['identityVerificationResult'] = EventResult.constructFromObject(data['identityVerificationResult']);
+        obj.identityVerificationResult = EventResult.constructFromObject(data.identityVerificationResult);
       }
       if (data.hasOwnProperty('idLookupResult')) {
-        obj['idLookupResult'] = EventResult.constructFromObject(data['idLookupResult']);
+        obj.idLookupResult = EventResult.constructFromObject(data.idLookupResult);
       }
       if (data.hasOwnProperty('idQuestionsResult')) {
-        obj['idQuestionsResult'] = EventResult.constructFromObject(data['idQuestionsResult']);
+        obj.idQuestionsResult = EventResult.constructFromObject(data.idQuestionsResult);
       }
       if (data.hasOwnProperty('linkedinResult')) {
-        obj['linkedinResult'] = EventResult.constructFromObject(data['linkedinResult']);
+        obj.linkedinResult = EventResult.constructFromObject(data.linkedinResult);
       }
       if (data.hasOwnProperty('liveIDResult')) {
-        obj['liveIDResult'] = EventResult.constructFromObject(data['liveIDResult']);
+        obj.liveIDResult = EventResult.constructFromObject(data.liveIDResult);
       }
       if (data.hasOwnProperty('ofacResult')) {
-        obj['ofacResult'] = EventResult.constructFromObject(data['ofacResult']);
+        obj.ofacResult = EventResult.constructFromObject(data.ofacResult);
       }
       if (data.hasOwnProperty('openIDResult')) {
-        obj['openIDResult'] = EventResult.constructFromObject(data['openIDResult']);
+        obj.openIDResult = EventResult.constructFromObject(data.openIDResult);
       }
       if (data.hasOwnProperty('phoneAuthResult')) {
-        obj['phoneAuthResult'] = EventResult.constructFromObject(data['phoneAuthResult']);
+        obj.phoneAuthResult = EventResult.constructFromObject(data.phoneAuthResult);
       }
       if (data.hasOwnProperty('salesforceResult')) {
-        obj['salesforceResult'] = EventResult.constructFromObject(data['salesforceResult']);
+        obj.salesforceResult = EventResult.constructFromObject(data.salesforceResult);
       }
       if (data.hasOwnProperty('signatureProviderResult')) {
-        obj['signatureProviderResult'] = EventResult.constructFromObject(data['signatureProviderResult']);
+        obj.signatureProviderResult = EventResult.constructFromObject(data.signatureProviderResult);
       }
       if (data.hasOwnProperty('smsAuthResult')) {
-        obj['smsAuthResult'] = EventResult.constructFromObject(data['smsAuthResult']);
+        obj.smsAuthResult = EventResult.constructFromObject(data.smsAuthResult);
       }
       if (data.hasOwnProperty('sTANPinResult')) {
-        obj['sTANPinResult'] = EventResult.constructFromObject(data['sTANPinResult']);
+        obj.sTANPinResult = EventResult.constructFromObject(data.sTANPinResult);
       }
       if (data.hasOwnProperty('twitterResult')) {
-        obj['twitterResult'] = EventResult.constructFromObject(data['twitterResult']);
+        obj.twitterResult = EventResult.constructFromObject(data.twitterResult);
       }
       if (data.hasOwnProperty('yahooResult')) {
-        obj['yahooResult'] = EventResult.constructFromObject(data['yahooResult']);
+        obj.yahooResult = EventResult.constructFromObject(data.yahooResult);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/EventResult} accessCodeResult
    */
-  exports.prototype['accessCodeResult'] = undefined;
+  exports.prototype.accessCodeResult = undefined;
   /**
    * @member {module:model/EventResult} ageVerifyResult
    */
-  exports.prototype['ageVerifyResult'] = undefined;
+  exports.prototype.ageVerifyResult = undefined;
   /**
    * @member {module:model/EventResult} anySocialIDResult
    */
-  exports.prototype['anySocialIDResult'] = undefined;
+  exports.prototype.anySocialIDResult = undefined;
   /**
    * @member {module:model/EventResult} facebookResult
    */
-  exports.prototype['facebookResult'] = undefined;
+  exports.prototype.facebookResult = undefined;
   /**
    * @member {module:model/EventResult} googleResult
    */
-  exports.prototype['googleResult'] = undefined;
+  exports.prototype.googleResult = undefined;
   /**
    * @member {module:model/EventResult} identityVerificationResult
    */
-  exports.prototype['identityVerificationResult'] = undefined;
+  exports.prototype.identityVerificationResult = undefined;
   /**
    * @member {module:model/EventResult} idLookupResult
    */
-  exports.prototype['idLookupResult'] = undefined;
+  exports.prototype.idLookupResult = undefined;
   /**
    * @member {module:model/EventResult} idQuestionsResult
    */
-  exports.prototype['idQuestionsResult'] = undefined;
+  exports.prototype.idQuestionsResult = undefined;
   /**
    * @member {module:model/EventResult} linkedinResult
    */
-  exports.prototype['linkedinResult'] = undefined;
+  exports.prototype.linkedinResult = undefined;
   /**
    * @member {module:model/EventResult} liveIDResult
    */
-  exports.prototype['liveIDResult'] = undefined;
+  exports.prototype.liveIDResult = undefined;
   /**
    * @member {module:model/EventResult} ofacResult
    */
-  exports.prototype['ofacResult'] = undefined;
+  exports.prototype.ofacResult = undefined;
   /**
    * @member {module:model/EventResult} openIDResult
    */
-  exports.prototype['openIDResult'] = undefined;
+  exports.prototype.openIDResult = undefined;
   /**
    * @member {module:model/EventResult} phoneAuthResult
    */
-  exports.prototype['phoneAuthResult'] = undefined;
+  exports.prototype.phoneAuthResult = undefined;
   /**
    * @member {module:model/EventResult} salesforceResult
    */
-  exports.prototype['salesforceResult'] = undefined;
+  exports.prototype.salesforceResult = undefined;
   /**
    * @member {module:model/EventResult} signatureProviderResult
    */
-  exports.prototype['signatureProviderResult'] = undefined;
+  exports.prototype.signatureProviderResult = undefined;
   /**
    * @member {module:model/EventResult} smsAuthResult
    */
-  exports.prototype['smsAuthResult'] = undefined;
+  exports.prototype.smsAuthResult = undefined;
   /**
    * @member {module:model/EventResult} sTANPinResult
    */
-  exports.prototype['sTANPinResult'] = undefined;
+  exports.prototype.sTANPinResult = undefined;
   /**
    * @member {module:model/EventResult} twitterResult
    */
-  exports.prototype['twitterResult'] = undefined;
+  exports.prototype.twitterResult = undefined;
   /**
    * @member {module:model/EventResult} yahooResult
    */
-  exports.prototype['yahooResult'] = undefined;
-
-
+  exports.prototype.yahooResult = undefined;
 
   return exports;
 }));
-
-

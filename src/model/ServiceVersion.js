@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ServiceVersion = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ServiceVersion model module.
    * @module model/ServiceVersion
@@ -37,10 +34,8 @@
    * @alias module:model/ServiceVersion
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/ServiceVersion} obj Optional instance to populate.
    * @return {module:model/ServiceVersion} The populated <code>ServiceVersion</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('version')) {
-        obj['version'] = ApiClient.convertToType(data['version'], 'String');
+        obj.version = ApiClient.convertToType(data.version, 'String');
       }
       if (data.hasOwnProperty('versionUrl')) {
-        obj['versionUrl'] = ApiClient.convertToType(data['versionUrl'], 'String');
+        obj.versionUrl = ApiClient.convertToType(data.versionUrl, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The version of the rest API.
    * @member {String} version
    */
-  exports.prototype['version'] = undefined;
+  exports.prototype.version = undefined;
   /**
-   * 
+   *
    * @member {String} versionUrl
    */
-  exports.prototype['versionUrl'] = undefined;
-
-
+  exports.prototype.versionUrl = undefined;
 
   return exports;
 }));
-
-

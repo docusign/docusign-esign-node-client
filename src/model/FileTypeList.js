@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/FileType'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FileTypeList = factory(root.Docusign.ApiClient, root.Docusign.FileType);
   }
-}(this, function(ApiClient, FileType) {
-  'use strict';
-
-
+}(this, (ApiClient, FileType) => {
   /**
    * The FileTypeList model module.
    * @module model/FileTypeList
@@ -37,10 +34,8 @@
    * @alias module:model/FileTypeList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/FileTypeList} obj Optional instance to populate.
    * @return {module:model/FileTypeList} The populated <code>FileTypeList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('fileTypes')) {
-        obj['fileTypes'] = ApiClient.convertToType(data['fileTypes'], [FileType]);
+        obj.fileTypes = ApiClient.convertToType(data.fileTypes, [FileType]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A collection of file types.
    * @member {Array.<module:model/FileType>} fileTypes
    */
-  exports.prototype['fileTypes'] = undefined;
-
-
+  exports.prototype.fileTypes = undefined;
 
   return exports;
 }));
-
-

@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ErrorDetails', 'model/PageImages', 'model/Workspace', 'model/WorkspaceFolderContents', 'model/WorkspaceItem', 'model/WorkspaceItemList', 'model/WorkspaceList'], factory);
+    define(['Configuration', 'ApiClient', 'model/ErrorDetails', 'model/PageImages', 'model/Workspace', 'model/WorkspaceFolderContents', 'model/WorkspaceItem', 'model/WorkspaceItemList', 'model/WorkspaceList'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ErrorDetails'), require('../model/PageImages'), require('../model/Workspace'), require('../model/WorkspaceFolderContents'), require('../model/WorkspaceItem'), require('../model/WorkspaceItemList'), require('../model/WorkspaceList'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.WorkspacesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.PageImages, root.Docusign.Workspace, root.Docusign.WorkspaceFolderContents, root.Docusign.WorkspaceItem, root.Docusign.WorkspaceItemList, root.Docusign.WorkspaceList);
   }
-}(this, function(Configuration, ApiClient, ErrorDetails, PageImages, Workspace, WorkspaceFolderContents, WorkspaceItem, WorkspaceItemList, WorkspaceList) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, ErrorDetails, PageImages, Workspace, WorkspaceFolderContents, WorkspaceItem, WorkspaceItemList, WorkspaceList) => {
   /**
    * Workspaces service.
    * @module api/WorkspacesApi
    */
 
   /**
-   * Constructs a new WorkspacesApi. 
+   * Constructs a new WorkspacesApi.
    * @alias module:api/WorkspacesApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the createWorkspace operation. If none specified a Promise will be returned.
@@ -64,11 +60,11 @@
      * Creates a new workspace.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Workspace} optsOrCallback.workspace 
+     * @param {module:model/Workspace} optsOrCallback.workspace
      * @param {module:api/WorkspacesApi~createWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workspace}
      */
-    this.createWorkspace = function(accountId, optsOrCallback, callback) {
+    this.createWorkspace = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -76,39 +72,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['workspace'];
+      const postBody = optsOrCallback.workspace;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createWorkspace");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workspace;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workspace;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -128,8 +124,8 @@
      * @param {module:api/WorkspacesApi~createWorkspaceFileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WorkspaceItem}
      */
-    this.createWorkspaceFile = function(accountId, workspaceId, folderId, callback) {
-      var postBody = null;
+    this.createWorkspaceFile = function (accountId, workspaceId, folderId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -146,34 +142,34 @@
         throw new Error("Missing the required parameter 'folderId' when calling createWorkspaceFile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId,
-        'folderId': folderId
+      const pathParams = {
+        accountId,
+        workspaceId,
+        folderId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = WorkspaceItem;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = WorkspaceItem;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -193,8 +189,8 @@
      * @param {module:api/WorkspacesApi~deleteWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workspace}
      */
-    this.deleteWorkspace = function(accountId, workspaceId, callback) {
-      var postBody = null;
+    this.deleteWorkspace = function (accountId, workspaceId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -206,33 +202,33 @@
         throw new Error("Missing the required parameter 'workspaceId' when calling deleteWorkspace");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId
+      const pathParams = {
+        accountId,
+        workspaceId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workspace;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workspace;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -250,10 +246,10 @@
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {String} folderId The ID of the folder being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/WorkspaceItemList} optsOrCallback.workspaceItemList 
+     * @param {module:model/WorkspaceItemList} optsOrCallback.workspaceItemList
      * @param {module:api/WorkspacesApi~deleteWorkspaceFolderItemsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteWorkspaceFolderItems = function(accountId, workspaceId, folderId, optsOrCallback, callback) {
+    this.deleteWorkspaceFolderItems = function (accountId, workspaceId, folderId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -261,7 +257,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['workspaceItemList'];
+      const postBody = optsOrCallback.workspaceItemList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -278,34 +274,34 @@
         throw new Error("Missing the required parameter 'folderId' when calling deleteWorkspaceFolderItems");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId,
-        'folderId': folderId
+      const pathParams = {
+        accountId,
+        workspaceId,
+        folderId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -319,14 +315,14 @@
 
     /**
      * Get Workspace
-     * Retrives properties about a workspace given a unique workspaceId. 
+     * Retrives properties about a workspace given a unique workspaceId.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {module:api/WorkspacesApi~getWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workspace}
      */
-    this.getWorkspace = function(accountId, workspaceId, callback) {
-      var postBody = null;
+    this.getWorkspace = function (accountId, workspaceId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -338,33 +334,33 @@
         throw new Error("Missing the required parameter 'workspaceId' when calling getWorkspace");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId
+      const pathParams = {
+        accountId,
+        workspaceId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workspace;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workspace;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -388,7 +384,7 @@
      * @param {String} optsOrCallback.pdfVersion When set to **true** the file returned as a PDF.
      * @param {module:api/WorkspacesApi~getWorkspaceFileCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getWorkspaceFile = function(accountId, workspaceId, folderId, fileId, optsOrCallback, callback) {
+    this.getWorkspaceFile = function (accountId, workspaceId, folderId, fileId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -396,7 +392,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -418,37 +414,37 @@
         throw new Error("Missing the required parameter 'fileId' when calling getWorkspaceFile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId,
-        'folderId': folderId,
-        'fileId': fileId
+      const pathParams = {
+        accountId,
+        workspaceId,
+        folderId,
+        fileId,
       };
-      var queryParams = {
-        'is_download': optsOrCallback['isDownload'],
-        'pdf_version': optsOrCallback['pdfVersion']
+      const queryParams = {
+        is_download: optsOrCallback.isDownload,
+        pdf_version: optsOrCallback.pdfVersion,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -476,7 +472,7 @@
      * @param {module:api/WorkspacesApi~listWorkspaceFilePagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PageImages}
      */
-    this.listWorkspaceFilePages = function(accountId, workspaceId, folderId, fileId, optsOrCallback, callback) {
+    this.listWorkspaceFilePages = function (accountId, workspaceId, folderId, fileId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -484,7 +480,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -506,40 +502,40 @@
         throw new Error("Missing the required parameter 'fileId' when calling listWorkspaceFilePages");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId,
-        'folderId': folderId,
-        'fileId': fileId
+      const pathParams = {
+        accountId,
+        workspaceId,
+        folderId,
+        fileId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'dpi': optsOrCallback['dpi'],
-        'max_height': optsOrCallback['maxHeight'],
-        'max_width': optsOrCallback['maxWidth'],
-        'start_position': optsOrCallback['startPosition']
+      const queryParams = {
+        count: optsOrCallback.count,
+        dpi: optsOrCallback.dpi,
+        max_height: optsOrCallback.maxHeight,
+        max_width: optsOrCallback.maxWidth,
+        start_position: optsOrCallback.startPosition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PageImages;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PageImages;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}/pages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -568,7 +564,7 @@
      * @param {module:api/WorkspacesApi~listWorkspaceFolderItemsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WorkspaceFolderContents}
      */
-    this.listWorkspaceFolderItems = function(accountId, workspaceId, folderId, optsOrCallback, callback) {
+    this.listWorkspaceFolderItems = function (accountId, workspaceId, folderId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -576,7 +572,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -593,41 +589,41 @@
         throw new Error("Missing the required parameter 'folderId' when calling listWorkspaceFolderItems");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId,
-        'folderId': folderId
+      const pathParams = {
+        accountId,
+        workspaceId,
+        folderId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'include_files': optsOrCallback['includeFiles'],
-        'include_sub_folders': optsOrCallback['includeSubFolders'],
-        'include_thumbnails': optsOrCallback['includeThumbnails'],
-        'include_user_detail': optsOrCallback['includeUserDetail'],
-        'start_position': optsOrCallback['startPosition'],
-        'workspace_user_id': optsOrCallback['workspaceUserId']
+      const queryParams = {
+        count: optsOrCallback.count,
+        include_files: optsOrCallback.includeFiles,
+        include_sub_folders: optsOrCallback.includeSubFolders,
+        include_thumbnails: optsOrCallback.includeThumbnails,
+        include_user_detail: optsOrCallback.includeUserDetail,
+        start_position: optsOrCallback.startPosition,
+        workspace_user_id: optsOrCallback.workspaceUserId,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = WorkspaceFolderContents;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = WorkspaceFolderContents;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -646,40 +642,40 @@
      * @param {module:api/WorkspacesApi~listWorkspacesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WorkspaceList}
      */
-    this.listWorkspaces = function(accountId, callback) {
-      var postBody = null;
+    this.listWorkspaces = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listWorkspaces");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = WorkspaceList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = WorkspaceList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -697,11 +693,11 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Workspace} optsOrCallback.workspace 
+     * @param {module:model/Workspace} optsOrCallback.workspace
      * @param {module:api/WorkspacesApi~updateWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workspace}
      */
-    this.updateWorkspace = function(accountId, workspaceId, optsOrCallback, callback) {
+    this.updateWorkspace = function (accountId, workspaceId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -709,7 +705,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['workspace'];
+      const postBody = optsOrCallback.workspace;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -721,33 +717,33 @@
         throw new Error("Missing the required parameter 'workspaceId' when calling updateWorkspace");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId
+      const pathParams = {
+        accountId,
+        workspaceId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workspace;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workspace;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -769,8 +765,8 @@
      * @param {module:api/WorkspacesApi~updateWorkspaceFileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WorkspaceItem}
      */
-    this.updateWorkspaceFile = function(accountId, workspaceId, folderId, fileId, callback) {
-      var postBody = null;
+    this.updateWorkspaceFile = function (accountId, workspaceId, folderId, fileId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -792,35 +788,35 @@
         throw new Error("Missing the required parameter 'fileId' when calling updateWorkspaceFile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'workspaceId': workspaceId,
-        'folderId': folderId,
-        'fileId': fileId
+      const pathParams = {
+        accountId,
+        workspaceId,
+        folderId,
+        fileId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = WorkspaceItem;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = WorkspaceItem;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/workspaces/{workspaceId}/folders/{folderId}/files/{fileId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

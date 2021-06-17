@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/NameValue'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.OauthAccess = factory(root.Docusign.ApiClient, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, NameValue) {
-  'use strict';
-
-
+}(this, (ApiClient, NameValue) => {
   /**
    * The OauthAccess model module.
    * @module model/OauthAccess
@@ -37,10 +34,8 @@
    * @alias module:model/OauthAccess
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/OauthAccess} obj Optional instance to populate.
    * @return {module:model/OauthAccess} The populated <code>OauthAccess</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('access_token')) {
-        obj['access_token'] = ApiClient.convertToType(data['access_token'], 'String');
+        obj.access_token = ApiClient.convertToType(data.access_token, 'String');
       }
       if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [NameValue]);
+        obj.data = ApiClient.convertToType(data.data, [NameValue]);
       }
       if (data.hasOwnProperty('expires_in')) {
-        obj['expires_in'] = ApiClient.convertToType(data['expires_in'], 'String');
+        obj.expires_in = ApiClient.convertToType(data.expires_in, 'String');
       }
       if (data.hasOwnProperty('refresh_token')) {
-        obj['refresh_token'] = ApiClient.convertToType(data['refresh_token'], 'String');
+        obj.refresh_token = ApiClient.convertToType(data.refresh_token, 'String');
       }
       if (data.hasOwnProperty('scope')) {
-        obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
+        obj.scope = ApiClient.convertToType(data.scope, 'String');
       }
       if (data.hasOwnProperty('token_type')) {
-        obj['token_type'] = ApiClient.convertToType(data['token_type'], 'String');
+        obj.token_type = ApiClient.convertToType(data.token_type, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Access token information.
    * @member {String} access_token
    */
-  exports.prototype['access_token'] = undefined;
+  exports.prototype.access_token = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/NameValue>} data
    */
-  exports.prototype['data'] = undefined;
+  exports.prototype.data = undefined;
   /**
-   * 
+   *
    * @member {String} expires_in
    */
-  exports.prototype['expires_in'] = undefined;
+  exports.prototype.expires_in = undefined;
   /**
-   * 
+   *
    * @member {String} refresh_token
    */
-  exports.prototype['refresh_token'] = undefined;
+  exports.prototype.refresh_token = undefined;
   /**
    * Must be set to \"api\".
    * @member {String} scope
    */
-  exports.prototype['scope'] = undefined;
+  exports.prototype.scope = undefined;
   /**
-   * 
+   *
    * @member {String} token_type
    */
-  exports.prototype['token_type'] = undefined;
-
-
+  exports.prototype.token_type = undefined;
 
   return exports;
 }));
-
-

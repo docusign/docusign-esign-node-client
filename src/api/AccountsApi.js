@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSeals', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignature', 'model/AccountSignatureDefinition', 'model/AccountSignatureProviders', 'model/AccountSignaturesInformation', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/ReportInProductCsvRunRequest', 'model/ReportInProductGet', 'model/ReportInProductList', 'model/ReportInProductRunRequest', 'model/ReportInProductRunResponse', 'model/ReportInProductSaveResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
+    define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSeals', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignature', 'model/AccountSignatureDefinition', 'model/AccountSignatureProviders', 'model/AccountSignaturesInformation', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/ReportInProductCsvRunRequest', 'model/ReportInProductGet', 'model/ReportInProductList', 'model/ReportInProductRunRequest', 'model/ReportInProductRunResponse', 'model/ReportInProductSaveResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSeals'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignature'), require('../model/AccountSignatureDefinition'), require('../model/AccountSignatureProviders'), require('../model/AccountSignaturesInformation'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/ReportInProductCsvRunRequest'), require('../model/ReportInProductGet'), require('../model/ReportInProductList'), require('../model/ReportInProductRunRequest'), require('../model/ReportInProductRunResponse'), require('../model/ReportInProductSaveResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSeals, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignature, root.Docusign.AccountSignatureDefinition, root.Docusign.AccountSignatureProviders, root.Docusign.AccountSignaturesInformation, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.ReportInProductCsvRunRequest, root.Docusign.ReportInProductGet, root.Docusign.ReportInProductList, root.Docusign.ReportInProductRunRequest, root.Docusign.ReportInProductRunResponse, root.Docusign.ReportInProductSaveResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
   }
-}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSeals, AccountSettingsInformation, AccountSharedAccess, AccountSignature, AccountSignatureDefinition, AccountSignatureProviders, AccountSignaturesInformation, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, ReportInProductCsvRunRequest, ReportInProductGet, ReportInProductList, ReportInProductRunRequest, ReportInProductRunResponse, ReportInProductSaveResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSeals, AccountSettingsInformation, AccountSharedAccess, AccountSignature, AccountSignatureDefinition, AccountSignatureProviders, AccountSignaturesInformation, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, ReportInProductCsvRunRequest, ReportInProductGet, ReportInProductList, ReportInProductRunRequest, ReportInProductRunResponse, ReportInProductSaveResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) => {
   /**
    * Accounts service.
    * @module api/AccountsApi
    */
 
   /**
-   * Constructs a new AccountsApi. 
+   * Constructs a new AccountsApi.
    * @alias module:api/AccountsApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the _delete operation. If none specified a Promise will be returned.
@@ -65,40 +61,40 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~_deleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this._delete = function(accountId, callback) {
-      var postBody = null;
+    this._delete = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling _delete");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -124,11 +120,11 @@ The response returns the new account ID, password and the default user informati
 A 201 code is returned if the call succeeded.  While the call may have succeed, some of the individual account requests may have failed. In the case of failures to create the account,  an `errorDetails` node is added in the response to each specific request that failed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.previewBillingPlan When set to **true**, creates the account using a preview billing plan.
-     * @param {module:model/NewAccountDefinition} optsOrCallback.newAccountDefinition 
+     * @param {module:model/NewAccountDefinition} optsOrCallback.newAccountDefinition
      * @param {module:api/AccountsApi~createCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NewAccountSummary}
      */
-    this.create = function(optsOrCallback, callback) {
+    this.create = function (optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -136,34 +132,34 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['newAccountDefinition'];
+      const postBody = optsOrCallback.newAccountDefinition;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
-        'preview_billing_plan': optsOrCallback['previewBillingPlan']
+      const queryParams = {
+        preview_billing_plan: optsOrCallback.previewBillingPlan,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NewAccountSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = NewAccountSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -179,12 +175,12 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
      * Adds/updates one or more account signatures. This request may include images in multi-part format.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.decodeOnly 
-     * @param {module:model/AccountSignaturesInformation} optsOrCallback.accountSignaturesInformation 
+     * @param {String} optsOrCallback.decodeOnly
+     * @param {module:model/AccountSignaturesInformation} optsOrCallback.accountSignaturesInformation
      * @param {module:api/AccountsApi~createAccountSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignaturesInformation}
      */
-    this.createAccountSignatures = function(accountId, optsOrCallback, callback) {
+    this.createAccountSignatures = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -192,40 +188,40 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['accountSignaturesInformation'];
+      const postBody = optsOrCallback.accountSignaturesInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createAccountSignatures");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'decode_only': optsOrCallback['decodeOnly']
+      const queryParams = {
+        decode_only: optsOrCallback.decodeOnly,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSignaturesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSignaturesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -246,11 +242,11 @@ An error is returned if `brandId` property for a brand profile is already set fo
 When brand profile files are being uploaded, they must be combined into one zip file and the `Content-Type` must be `application/zip`.
      * @param {String} accountId The external account number (int) or account ID GUID.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Brand} optsOrCallback.brand 
+     * @param {module:model/Brand} optsOrCallback.brand
      * @param {module:api/AccountsApi~createBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.createBrand = function(accountId, optsOrCallback, callback) {
+    this.createBrand = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -258,39 +254,39 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['brand'];
+      const postBody = optsOrCallback.brand;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createBrand");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BrandsResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BrandsResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -306,12 +302,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Creates an acount custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.applyToTemplates 
-     * @param {module:model/CustomField} optsOrCallback.customField 
+     * @param {String} optsOrCallback.applyToTemplates
+     * @param {module:model/CustomField} optsOrCallback.customField
      * @param {module:api/AccountsApi~createCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.createCustomField = function(accountId, optsOrCallback, callback) {
+    this.createCustomField = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -319,40 +315,40 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['customField'];
+      const postBody = optsOrCallback.customField;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createCustomField");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'apply_to_templates': optsOrCallback['applyToTemplates']
+      const queryParams = {
+        apply_to_templates: optsOrCallback.applyToTemplates,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/custom_fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -368,12 +364,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Creates a new permission profile in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include 
-     * @param {module:model/PermissionProfile} optsOrCallback.permissionProfile 
+     * @param {String} optsOrCallback.include
+     * @param {module:model/PermissionProfile} optsOrCallback.permissionProfile
      * @param {module:api/AccountsApi~createPermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfile}
      */
-    this.createPermissionProfile = function(accountId, optsOrCallback, callback) {
+    this.createPermissionProfile = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -381,40 +377,40 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['permissionProfile'];
+      const postBody = optsOrCallback.permissionProfile;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createPermissionProfile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PermissionProfile;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PermissionProfile;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/permission_profiles', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -430,11 +426,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Creates a customized report
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ReportInProductRunRequest} optsOrCallback.reportInProductRunRequest 
+     * @param {module:model/ReportInProductRunRequest} optsOrCallback.reportInProductRunRequest
      * @param {module:api/AccountsApi~createReportInProductCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportInProductSaveResponse}
      */
-    this.createReportInProductCreate = function(accountId, optsOrCallback, callback) {
+    this.createReportInProductCreate = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -442,39 +438,39 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['reportInProductRunRequest'];
+      const postBody = optsOrCallback.reportInProductRunRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createReportInProductCreate");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReportInProductSaveResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ReportInProductSaveResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -492,8 +488,8 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {module:api/AccountsApi~deleteAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteAccountSignature = function(accountId, signatureId, callback) {
-      var postBody = null;
+    this.deleteAccountSignature = function (accountId, signatureId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -505,33 +501,33 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'signatureId' when calling deleteAccountSignature");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'signatureId': signatureId
+      const pathParams = {
+        accountId,
+        signatureId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures/{signatureId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -551,8 +547,8 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {module:api/AccountsApi~deleteAccountSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignature}
      */
-    this.deleteAccountSignatureImage = function(accountId, signatureId, imageType, callback) {
-      var postBody = null;
+    this.deleteAccountSignatureImage = function (accountId, signatureId, imageType, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -569,34 +565,34 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'imageType' when calling deleteAccountSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'signatureId': signatureId,
-        'imageType': imageType
+      const pathParams = {
+        accountId,
+        signatureId,
+        imageType,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -614,8 +610,8 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {String} brandId The unique identifier of a brand.
      * @param {module:api/AccountsApi~deleteBrandCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteBrand = function(accountId, brandId, callback) {
-      var postBody = null;
+    this.deleteBrand = function (accountId, brandId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -627,33 +623,33 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'brandId' when calling deleteBrand");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId
+      const pathParams = {
+        accountId,
+        brandId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -672,8 +668,8 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {String} logoType One of **Primary**, **Secondary** or **Email**.
      * @param {module:api/AccountsApi~deleteBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteBrandLogoByType = function(accountId, brandId, logoType, callback) {
-      var postBody = null;
+    this.deleteBrandLogoByType = function (accountId, brandId, logoType, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -690,34 +686,34 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'logoType' when calling deleteBrandLogoByType");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId,
-        'logoType': logoType
+      const pathParams = {
+        accountId,
+        brandId,
+        logoType,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -734,11 +730,11 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Deletes one or more brand profiles from an account. The Account Branding feature (accountSettings properties `canSelfBrandSend` and `canSelfBrandSend`) must be set to **true** to use this call.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BrandsRequest} optsOrCallback.brandsRequest 
+     * @param {module:model/BrandsRequest} optsOrCallback.brandsRequest
      * @param {module:api/AccountsApi~deleteBrandsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.deleteBrands = function(accountId, optsOrCallback, callback) {
+    this.deleteBrands = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -746,39 +742,39 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['brandsRequest'];
+      const postBody = optsOrCallback.brandsRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteBrands");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BrandsResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BrandsResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -794,13 +790,13 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Deletes the signature for one or more captive recipient records.
      * Deletes the signature for one or more captive recipient records; it is primarily used for testing. This provides a way to reset the signature associated with a client user ID so that a new signature can be created the next time the client user ID is used.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} recipientPart 
+     * @param {String} recipientPart
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CaptiveRecipientInformation} optsOrCallback.captiveRecipientInformation 
+     * @param {module:model/CaptiveRecipientInformation} optsOrCallback.captiveRecipientInformation
      * @param {module:api/AccountsApi~deleteCaptiveRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CaptiveRecipientInformation}
      */
-    this.deleteCaptiveRecipient = function(accountId, recipientPart, optsOrCallback, callback) {
+    this.deleteCaptiveRecipient = function (accountId, recipientPart, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -808,7 +804,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['captiveRecipientInformation'];
+      const postBody = optsOrCallback.captiveRecipientInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -820,33 +816,33 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'recipientPart' when calling deleteCaptiveRecipient");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'recipientPart': recipientPart
+      const pathParams = {
+        accountId,
+        recipientPart,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CaptiveRecipientInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CaptiveRecipientInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/captive_recipients/{recipientPart}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -861,12 +857,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
     /**
      * Delete an existing account custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} customFieldId 
+     * @param {String} customFieldId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.applyToTemplates 
+     * @param {String} optsOrCallback.applyToTemplates
      * @param {module:api/AccountsApi~deleteCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCustomField = function(accountId, customFieldId, optsOrCallback, callback) {
+    this.deleteCustomField = function (accountId, customFieldId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -874,7 +870,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -886,34 +882,34 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'customFieldId' when calling deleteCustomField");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'customFieldId': customFieldId
+      const pathParams = {
+        accountId,
+        customFieldId,
       };
-      var queryParams = {
-        'apply_to_templates': optsOrCallback['applyToTemplates']
+      const queryParams = {
+        apply_to_templates: optsOrCallback.applyToTemplates,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/custom_fields/{customFieldId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -930,40 +926,40 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~deleteENoteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteENoteConfiguration = function(accountId, callback) {
-      var postBody = null;
+    this.deleteENoteConfiguration = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling deleteENoteConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/enote_configuration', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -978,12 +974,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
     /**
      * Deletes a permissions profile within the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} permissionProfileId 
+     * @param {String} permissionProfileId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.moveUsersTo 
+     * @param {String} optsOrCallback.moveUsersTo
      * @param {module:api/AccountsApi~deletePermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deletePermissionProfile = function(accountId, permissionProfileId, optsOrCallback, callback) {
+    this.deletePermissionProfile = function (accountId, permissionProfileId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -991,7 +987,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1003,34 +999,34 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'permissionProfileId' when calling deletePermissionProfile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'permissionProfileId': permissionProfileId
+      const pathParams = {
+        accountId,
+        permissionProfileId,
       };
-      var queryParams = {
-        'move_users_to': optsOrCallback['moveUsersTo']
+      const queryParams = {
+        move_users_to: optsOrCallback.moveUsersTo,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1045,12 +1041,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
     /**
      * Removes a customized report
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} id 
+     * @param {String} id
      * @param {module:api/AccountsApi~deleteReportInProductCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportInProductSaveResponse}
      */
-    this.deleteReportInProduct = function(accountId, id, callback) {
-      var postBody = null;
+    this.deleteReportInProduct = function (accountId, id, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1062,33 +1058,33 @@ When brand profile files are being uploaded, they must be combined into one zip 
         throw new Error("Missing the required parameter 'id' when calling deleteReportInProduct");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'id': id
+      const pathParams = {
+        accountId,
+        id,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReportInProductSaveResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ReportInProductSaveResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1106,40 +1102,40 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * @param {module:api/AccountsApi~getAccountIdentityVerificationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountIdentityVerificationResponse}
      */
-    this.getAccountIdentityVerification = function(accountId, callback) {
-      var postBody = null;
+    this.getAccountIdentityVerification = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAccountIdentityVerification");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountIdentityVerificationResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountIdentityVerificationResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/identity_verification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1156,14 +1152,14 @@ When brand profile files are being uploaded, they must be combined into one zip 
      * Retrieves the account information for the specified account.
 
 **Response**
-The `canUpgrade` property contains is a Boolean that indicates whether the account can be upgraded through the API. 
+The `canUpgrade` property contains is a Boolean that indicates whether the account can be upgraded through the API.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeAccountSettings When set to **true**, includes the account settings for the account in the response.
      * @param {module:api/AccountsApi~getAccountInformationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountInformation}
      */
-    this.getAccountInformation = function(accountId, optsOrCallback, callback) {
+    this.getAccountInformation = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1171,40 +1167,40 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAccountInformation");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'include_account_settings': optsOrCallback['includeAccountSettings']
+      const queryParams = {
+        include_account_settings: optsOrCallback.includeAccountSettings,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1218,12 +1214,12 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
     /**
      * Retrieves an account settings comparison.
-     * @param {String} organizationId 
-     * @param {String} resultId 
+     * @param {String} organizationId
+     * @param {String} resultId
      * @param {module:api/AccountsApi~getAccountSettingsExportCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getAccountSettingsExport = function(organizationId, resultId, callback) {
-      var postBody = null;
+    this.getAccountSettingsExport = function (organizationId, resultId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
@@ -1235,33 +1231,33 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         throw new Error("Missing the required parameter 'resultId' when calling getAccountSettingsExport");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'organizationId': organizationId,
-        'resultId': resultId
+      const pathParams = {
+        organizationId,
+        resultId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/organization_exports/{organizationId}/account_settings/{resultId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1280,8 +1276,8 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * @param {module:api/AccountsApi~getAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignature}
      */
-    this.getAccountSignature = function(accountId, signatureId, callback) {
-      var postBody = null;
+    this.getAccountSignature = function (accountId, signatureId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1293,33 +1289,33 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         throw new Error("Missing the required parameter 'signatureId' when calling getAccountSignature");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'signatureId': signatureId
+      const pathParams = {
+        accountId,
+        signatureId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures/{signatureId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1337,11 +1333,11 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeChrome 
+     * @param {String} optsOrCallback.includeChrome
      * @param {module:api/AccountsApi~getAccountSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getAccountSignatureImage = function(accountId, signatureId, imageType, optsOrCallback, callback) {
+    this.getAccountSignatureImage = function (accountId, signatureId, imageType, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1349,7 +1345,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1366,35 +1362,35 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         throw new Error("Missing the required parameter 'imageType' when calling getAccountSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'signatureId': signatureId,
-        'imageType': imageType
+      const pathParams = {
+        accountId,
+        signatureId,
+        imageType,
       };
-      var queryParams = {
-        'include_chrome': optsOrCallback['includeChrome']
+      const queryParams = {
+        include_chrome: optsOrCallback.includeChrome,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/gif'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/gif'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1410,13 +1406,13 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * Returns the managed signature definitions for the account
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.stampFormat 
-     * @param {String} optsOrCallback.stampName 
-     * @param {String} optsOrCallback.stampType 
+     * @param {String} optsOrCallback.stampFormat
+     * @param {String} optsOrCallback.stampName
+     * @param {String} optsOrCallback.stampType
      * @param {module:api/AccountsApi~getAccountSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignaturesInformation}
      */
-    this.getAccountSignatures = function(accountId, optsOrCallback, callback) {
+    this.getAccountSignatures = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1424,42 +1420,42 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAccountSignatures");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'stamp_format': optsOrCallback['stampFormat'],
-        'stamp_name': optsOrCallback['stampName'],
-        'stamp_type': optsOrCallback['stampType']
+      const queryParams = {
+        stamp_format: optsOrCallback.stampFormat,
+        stamp_name: optsOrCallback.stampName,
+        stamp_type: optsOrCallback.stampType,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSignaturesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSignaturesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1477,40 +1473,40 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * @param {module:api/AccountsApi~getAccountTabSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabAccountSettings}
      */
-    this.getAccountTabSettings = function(accountId, callback) {
-      var postBody = null;
+    this.getAccountTabSettings = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAccountTabSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TabAccountSettings;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TabAccountSettings;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1528,40 +1524,40 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * @param {module:api/AccountsApi~getAllPaymentGatewayAccountsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentGatewayAccountsInfo}
      */
-    this.getAllPaymentGatewayAccounts = function(accountId, callback) {
-      var postBody = null;
+    this.getAllPaymentGatewayAccounts = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getAllPaymentGatewayAccounts");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PaymentGatewayAccountsInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PaymentGatewayAccountsInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/payment_gateway_accounts', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1575,16 +1571,16 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
     /**
      * Gets list of recurring and usage charges for the account.
-     * Retrieves the list of recurring and usage charges for the account. This can be used to determine the charge structure and usage of charge plan items. 
+     * Retrieves the list of recurring and usage charges for the account. This can be used to determine the charge structure and usage of charge plan items.
 
-Privileges required: account administrator 
+Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeCharges Specifies which billing charges to return. Valid values are:  * envelopes * seats 
+     * @param {String} optsOrCallback.includeCharges Specifies which billing charges to return. Valid values are:  * envelopes * seats
      * @param {module:api/AccountsApi~getBillingChargesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingChargeResponse}
      */
-    this.getBillingCharges = function(accountId, optsOrCallback, callback) {
+    this.getBillingCharges = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1592,40 +1588,40 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getBillingCharges");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'include_charges': optsOrCallback['includeCharges']
+      const queryParams = {
+        include_charges: optsOrCallback.includeCharges,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingChargeResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingChargeResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_charges', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1642,12 +1638,12 @@ Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeExternalReferences 
-     * @param {String} optsOrCallback.includeLogos 
+     * @param {String} optsOrCallback.includeExternalReferences
+     * @param {String} optsOrCallback.includeLogos
      * @param {module:api/AccountsApi~getBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Brand}
      */
-    this.getBrand = function(accountId, brandId, optsOrCallback, callback) {
+    this.getBrand = function (accountId, brandId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1655,7 +1651,7 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1667,35 +1663,35 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'brandId' when calling getBrand");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId
+      const pathParams = {
+        accountId,
+        brandId,
       };
-      var queryParams = {
-        'include_external_references': optsOrCallback['includeExternalReferences'],
-        'include_logos': optsOrCallback['includeLogos']
+      const queryParams = {
+        include_external_references: optsOrCallback.includeExternalReferences,
+        include_logos: optsOrCallback.includeLogos,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Brand;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Brand;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1713,8 +1709,8 @@ Privileges required: account administrator
      * @param {String} brandId The unique identifier of a brand.
      * @param {module:api/AccountsApi~getBrandExportFileCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getBrandExportFile = function(accountId, brandId, callback) {
-      var postBody = null;
+    this.getBrandExportFile = function (accountId, brandId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1726,33 +1722,33 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'brandId' when calling getBrandExportFile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId
+      const pathParams = {
+        accountId,
+        brandId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/file', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1772,8 +1768,8 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getBrandLogoByType = function(accountId, brandId, logoType, callback) {
-      var postBody = null;
+    this.getBrandLogoByType = function (accountId, brandId, logoType, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1790,34 +1786,34 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'logoType' when calling getBrandLogoByType");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId,
-        'logoType': logoType
+      const pathParams = {
+        accountId,
+        brandId,
+        logoType,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/png'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/png'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1836,8 +1832,8 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getBrandResourcesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandResourcesList}
      */
-    this.getBrandResources = function(accountId, brandId, callback) {
-      var postBody = null;
+    this.getBrandResources = function (accountId, brandId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1849,33 +1845,33 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'brandId' when calling getBrandResources");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId
+      const pathParams = {
+        accountId,
+        brandId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BrandResourcesList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BrandResourcesList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/resources', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1891,13 +1887,13 @@ Privileges required: account administrator
      * Returns the specified branding resource file.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
-     * @param {String} resourceContentType 
+     * @param {String} resourceContentType
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.langcode 
-     * @param {String} optsOrCallback.returnMaster 
+     * @param {String} optsOrCallback.langcode
+     * @param {String} optsOrCallback.returnMaster
      * @param {module:api/AccountsApi~getBrandResourcesByContentTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getBrandResourcesByContentType = function(accountId, brandId, resourceContentType, optsOrCallback, callback) {
+    this.getBrandResourcesByContentType = function (accountId, brandId, resourceContentType, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1905,7 +1901,7 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1922,36 +1918,36 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'resourceContentType' when calling getBrandResourcesByContentType");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId,
-        'resourceContentType': resourceContentType
+      const pathParams = {
+        accountId,
+        brandId,
+        resourceContentType,
       };
-      var queryParams = {
-        'langcode': optsOrCallback['langcode'],
-        'return_master': optsOrCallback['returnMaster']
+      const queryParams = {
+        langcode: optsOrCallback.langcode,
+        return_master: optsOrCallback.returnMaster,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1965,14 +1961,14 @@ Privileges required: account administrator
 
     /**
      * Gets the Electronic Record and Signature Disclosure.
-     * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
+     * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/AccountsApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
-    this.getConsumerDisclosure = function(accountId, langCode, callback) {
-      var postBody = null;
+    this.getConsumerDisclosure = function (accountId, langCode, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1984,33 +1980,33 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'langCode' when calling getConsumerDisclosure");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'langCode': langCode
+      const pathParams = {
+        accountId,
+        langCode,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConsumerDisclosure;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2027,11 +2023,11 @@ Privileges required: account administrator
      * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, associated with the account. You can use an optional query string to set the language for the disclosure.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.langCode Specifies the language used in the response. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).  Additionally, the value can be set to `browser` to automatically detect the browser language being used by the viewer and display the disclosure in that language. 
+     * @param {String} optsOrCallback.langCode Specifies the language used in the response. The supported languages, with the language value shown in parenthesis, are: Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk), and Vietnamese (vi).  Additionally, the value can be set to `browser` to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/AccountsApi~getConsumerDisclosureDefaultCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
-    this.getConsumerDisclosureDefault = function(accountId, optsOrCallback, callback) {
+    this.getConsumerDisclosureDefault = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2039,40 +2035,40 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getConsumerDisclosureDefault");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'langCode': optsOrCallback['langCode']
+      const queryParams = {
+        langCode: optsOrCallback.langCode,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConsumerDisclosure;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/consumer_disclosure', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2090,40 +2086,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getENoteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ENoteConfiguration}
      */
-    this.getENoteConfiguration = function(accountId, callback) {
-      var postBody = null;
+    this.getENoteConfiguration = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getENoteConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ENoteConfiguration;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ENoteConfiguration;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/enote_configuration', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2141,40 +2137,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getEnvelopePurgeConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopePurgeConfiguration}
      */
-    this.getEnvelopePurgeConfiguration = function(accountId, callback) {
-      var postBody = null;
+    this.getEnvelopePurgeConfiguration = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEnvelopePurgeConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopePurgeConfiguration;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopePurgeConfiguration;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/envelope_purge_configuration', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2192,40 +2188,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getFavoriteTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FavoriteTemplatesInfo}
      */
-    this.getFavoriteTemplates = function(accountId, callback) {
-      var postBody = null;
+    this.getFavoriteTemplates = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getFavoriteTemplates");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FavoriteTemplatesInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = FavoriteTemplatesInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/favorite_templates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2243,40 +2239,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getNotificationDefaultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NotificationDefaults}
      */
-    this.getNotificationDefaults = function(accountId, callback) {
-      var postBody = null;
+    this.getNotificationDefaults = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getNotificationDefaults");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NotificationDefaults;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = NotificationDefaults;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/notification_defaults', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2294,40 +2290,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountPasswordRules}
      */
-    this.getPasswordRules = function(accountId, callback) {
-      var postBody = null;
+    this.getPasswordRules = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPasswordRules");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountPasswordRules;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountPasswordRules;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/password_rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2344,34 +2340,34 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getPasswordRules_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserPasswordRules}
      */
-    this.getPasswordRules_0 = function(callback) {
-      var postBody = null;
+    this.getPasswordRules_0 = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserPasswordRules;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserPasswordRules;
 
       return this.apiClient.callApi(
         '/v2.1/current_user/password_rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2386,13 +2382,13 @@ Privileges required: account administrator
     /**
      * Returns a permissions profile in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} permissionProfileId 
+     * @param {String} permissionProfileId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.include
      * @param {module:api/AccountsApi~getPermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfile}
      */
-    this.getPermissionProfile = function(accountId, permissionProfileId, optsOrCallback, callback) {
+    this.getPermissionProfile = function (accountId, permissionProfileId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2400,7 +2396,7 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2412,34 +2408,34 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'permissionProfileId' when calling getPermissionProfile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'permissionProfileId': permissionProfileId
+      const pathParams = {
+        accountId,
+        permissionProfileId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PermissionProfile;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PermissionProfile;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2457,34 +2453,34 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getProvisioningCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProvisioningInformation}
      */
-    this.getProvisioning = function(callback) {
-      var postBody = null;
+    this.getProvisioning = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ProvisioningInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ProvisioningInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/provisioning', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2499,12 +2495,12 @@ Privileges required: account administrator
     /**
      * Gets the specified report
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} id 
+     * @param {String} id
      * @param {module:api/AccountsApi~getReportInProductCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportInProductGet}
      */
-    this.getReportInProduct = function(accountId, id, callback) {
-      var postBody = null;
+    this.getReportInProduct = function (accountId, id, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2516,33 +2512,33 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'id' when calling getReportInProduct");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'id': id
+      const pathParams = {
+        accountId,
+        id,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReportInProductGet;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ReportInProductGet;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2560,40 +2556,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getReportInProductListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportInProductList}
      */
-    this.getReportInProductList = function(accountId, callback) {
-      var postBody = null;
+    this.getReportInProductList = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getReportInProductList");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReportInProductList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ReportInProductList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2611,40 +2607,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getSealProvidersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSeals}
      */
-    this.getSealProviders = function(accountId, callback) {
-      var postBody = null;
+    this.getSealProviders = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getSealProviders");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSeals;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSeals;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/seals', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2662,40 +2658,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getSupportedLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SupportedLanguages}
      */
-    this.getSupportedLanguages = function(accountId, callback) {
-      var postBody = null;
+    this.getSupportedLanguages = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getSupportedLanguages");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = SupportedLanguages;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = SupportedLanguages;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/supported_languages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2713,40 +2709,40 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~getWatermarkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Watermark}
      */
-    this.getWatermark = function(accountId, callback) {
-      var postBody = null;
+    this.getWatermark = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getWatermark");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Watermark;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Watermark;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/watermark', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2762,11 +2758,11 @@ Privileges required: account administrator
      * Get watermark preview.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Watermark} optsOrCallback.watermark 
+     * @param {module:model/Watermark} optsOrCallback.watermark
      * @param {module:api/AccountsApi~getWatermarkPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Watermark}
      */
-    this.getWatermarkPreview = function(accountId, optsOrCallback, callback) {
+    this.getWatermarkPreview = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2774,39 +2770,39 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['watermark'];
+      const postBody = optsOrCallback.watermark;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getWatermarkPreview");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Watermark;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Watermark;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/watermark/preview', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2828,7 +2824,7 @@ Privileges required: account administrator
      * @param {module:api/AccountsApi~listBrandsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandsResponse}
      */
-    this.listBrands = function(accountId, optsOrCallback, callback) {
+    this.listBrands = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2836,41 +2832,41 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listBrands");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'exclude_distributor_brand': optsOrCallback['excludeDistributorBrand'],
-        'include_logos': optsOrCallback['includeLogos']
+      const queryParams = {
+        exclude_distributor_brand: optsOrCallback.excludeDistributorBrand,
+        include_logos: optsOrCallback.includeLogos,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BrandsResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BrandsResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2891,40 +2887,40 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * @param {module:api/AccountsApi~listCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.listCustomFields = function(accountId, callback) {
-      var postBody = null;
+    this.listCustomFields = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/custom_fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2943,11 +2939,11 @@ There are two types of envelope custom fields, text, and list. A text custom fie
 Currently, Permission Profiles can only be created and modified in the DocuSign console.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.include
      * @param {module:api/AccountsApi~listPermissionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfileInformation}
      */
-    this.listPermissions = function(accountId, optsOrCallback, callback) {
+    this.listPermissions = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2955,40 +2951,40 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listPermissions");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PermissionProfileInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PermissionProfileInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/permission_profiles', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3009,7 +3005,7 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
      * @param {module:api/AccountsApi~listRecipientNamesByEmailCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RecipientNamesResponse}
      */
-    this.listRecipientNamesByEmail = function(accountId, optsOrCallback, callback) {
+    this.listRecipientNamesByEmail = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3017,40 +3013,40 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listRecipientNamesByEmail");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'email': optsOrCallback['email']
+      const queryParams = {
+        email: optsOrCallback.email,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = RecipientNamesResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = RecipientNamesResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/recipient_names', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3069,40 +3065,40 @@ Currently, Permission Profiles can only be created and modified in the DocuSign 
      * @param {module:api/AccountsApi~listSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSettingsInformation}
      */
-    this.listSettings = function(accountId, callback) {
-      var postBody = null;
+    this.listSettings = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSettingsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSettingsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3122,17 +3118,17 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Specifies maximum number of results included in the response. If no value is specified, this defaults to 1000.
-     * @param {String} optsOrCallback.envelopesNotSharedUserStatus 
-     * @param {String} optsOrCallback.folderIds 
+     * @param {String} optsOrCallback.envelopesNotSharedUserStatus
+     * @param {String} optsOrCallback.folderIds
      * @param {String} optsOrCallback.itemType Specifies the type of shared item being requested. The accepted values are: -envelopes: returns information about envelope sharing between users.
      * @param {String} optsOrCallback.searchText This can be used to filter user names in the response. The wild-card '*' (asterisk) can be used around the string.
      * @param {String} optsOrCallback.shared Specifies which users should be included in the response. Multiple values can be used in the query by using a comma separated list of shared values. If the requestor does not have account administrator privileges, the shared_to value is used. Requestors that do not have account administrator privileges can only use the shared_to, any other setting will result in an error. The accepted values are:  -not_shared: Returns account users that the specified item type is not being shared with and that are not sharing the specified item type with the user.  User X (Share) X Account user  -shared_to: Returns account users that the specified item type is not being shared with and who are sharing the specified item type with the user (only shared to the user).  User X (Share) Account user  -shared_from: Returns account users that the specified item type is being shared with and who are not sharing the specified item type with the user (only shared from the user).  User (Share) >> Account user  -shared_to_and_from: Returns account users that the specified item type is being shared with and who are sharing the specified item type with the user.  User << (Share) >> Account user
-     * @param {String} optsOrCallback.startPosition If the response set exceeds Count, this can be used to specify that the method should return users starting at the specified index. The first index is 0, and should be used in the first GET call. Typically this number is a multiple of Count. If no value is specified, this defaults to be 0. 
-     * @param {String} optsOrCallback.userIds A comma separated list of userIds for whom the shared item information is being requested. 
+     * @param {String} optsOrCallback.startPosition If the response set exceeds Count, this can be used to specify that the method should return users starting at the specified index. The first index is 0, and should be used in the first GET call. Typically this number is a multiple of Count. If no value is specified, this defaults to be 0.
+     * @param {String} optsOrCallback.userIds A comma separated list of userIds for whom the shared item information is being requested.
      * @param {module:api/AccountsApi~listSharedAccessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSharedAccess}
      */
-    this.listSharedAccess = function(accountId, optsOrCallback, callback) {
+    this.listSharedAccess = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3140,47 +3136,47 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSharedAccess");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'envelopes_not_shared_user_status': optsOrCallback['envelopesNotSharedUserStatus'],
-        'folder_ids': optsOrCallback['folderIds'],
-        'item_type': optsOrCallback['itemType'],
-        'search_text': optsOrCallback['searchText'],
-        'shared': optsOrCallback['shared'],
-        'start_position': optsOrCallback['startPosition'],
-        'user_ids': optsOrCallback['userIds']
+      const queryParams = {
+        count: optsOrCallback.count,
+        envelopes_not_shared_user_status: optsOrCallback.envelopesNotSharedUserStatus,
+        folder_ids: optsOrCallback.folderIds,
+        item_type: optsOrCallback.itemType,
+        search_text: optsOrCallback.searchText,
+        shared: optsOrCallback.shared,
+        start_position: optsOrCallback.startPosition,
+        user_ids: optsOrCallback.userIds,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSharedAccess;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSharedAccess;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/shared_access', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3198,40 +3194,40 @@ Users with account administration privileges can retrieve shared access informat
      * @param {module:api/AccountsApi~listSignatureProvidersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignatureProviders}
      */
-    this.listSignatureProviders = function(accountId, callback) {
-      var postBody = null;
+    this.listSignatureProviders = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listSignatureProviders");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSignatureProviders;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSignatureProviders;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatureProviders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3250,40 +3246,40 @@ Users with account administration privileges can retrieve shared access informat
      * @param {module:api/AccountsApi~listUnsupportedFileTypesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FileTypeList}
      */
-    this.listUnsupportedFileTypes = function(accountId, callback) {
-      var postBody = null;
+    this.listUnsupportedFileTypes = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listUnsupportedFileTypes");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FileTypeList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = FileTypeList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/unsupported_file_types', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3299,11 +3295,11 @@ Users with account administration privileges can retrieve shared access informat
      * Unfavorite a template
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo 
+     * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo
      * @param {module:api/AccountsApi~unFavoriteTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FavoriteTemplatesInfo}
      */
-    this.unFavoriteTemplate = function(accountId, optsOrCallback, callback) {
+    this.unFavoriteTemplate = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3311,39 +3307,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['favoriteTemplatesInfo'];
+      const postBody = optsOrCallback.favoriteTemplatesInfo;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling unFavoriteTemplate");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FavoriteTemplatesInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = FavoriteTemplatesInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/favorite_templates', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3359,11 +3355,11 @@ Users with account administration privileges can retrieve shared access informat
      * Updates a account signature.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/AccountSignaturesInformation} optsOrCallback.accountSignaturesInformation 
+     * @param {module:model/AccountSignaturesInformation} optsOrCallback.accountSignaturesInformation
      * @param {module:api/AccountsApi~updateAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignaturesInformation}
      */
-    this.updateAccountSignature = function(accountId, optsOrCallback, callback) {
+    this.updateAccountSignature = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3371,39 +3367,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['accountSignaturesInformation'];
+      const postBody = optsOrCallback.accountSignaturesInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateAccountSignature");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSignaturesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSignaturesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3420,12 +3416,12 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.closeExistingSignature 
-     * @param {module:model/AccountSignatureDefinition} optsOrCallback.accountSignatureDefinition 
+     * @param {String} optsOrCallback.closeExistingSignature
+     * @param {module:model/AccountSignatureDefinition} optsOrCallback.accountSignatureDefinition
      * @param {module:api/AccountsApi~updateAccountSignatureByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignature}
      */
-    this.updateAccountSignatureById = function(accountId, signatureId, optsOrCallback, callback) {
+    this.updateAccountSignatureById = function (accountId, signatureId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3433,7 +3429,7 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['accountSignatureDefinition'];
+      const postBody = optsOrCallback.accountSignatureDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3445,34 +3441,34 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'signatureId' when calling updateAccountSignatureById");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'signatureId': signatureId
+      const pathParams = {
+        accountId,
+        signatureId,
       };
-      var queryParams = {
-        'close_existing_signature': optsOrCallback['closeExistingSignature']
+      const queryParams = {
+        close_existing_signature: optsOrCallback.closeExistingSignature,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures/{signatureId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3490,11 +3486,11 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.transparentPng 
+     * @param {String} optsOrCallback.transparentPng
      * @param {module:api/AccountsApi~updateAccountSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignature}
      */
-    this.updateAccountSignatureImage = function(accountId, signatureId, imageType, optsOrCallback, callback) {
+    this.updateAccountSignatureImage = function (accountId, signatureId, imageType, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3502,7 +3498,7 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3519,35 +3515,35 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'imageType' when calling updateAccountSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'signatureId': signatureId,
-        'imageType': imageType
+      const pathParams = {
+        accountId,
+        signatureId,
+        imageType,
       };
-      var queryParams = {
-        'transparent_png': optsOrCallback['transparentPng']
+      const queryParams = {
+        transparent_png: optsOrCallback.transparentPng,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = ['image/gif'];
-      var accepts = ['application/json'];
-      var returnType = AccountSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = ['image/gif'];
+      const accepts = ['application/json'];
+      const returnType = AccountSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/signatures/{signatureId}/{imageType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3563,11 +3559,11 @@ Users with account administration privileges can retrieve shared access informat
      * Modifies tab settings for specified account
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TabAccountSettings} optsOrCallback.tabAccountSettings 
+     * @param {module:model/TabAccountSettings} optsOrCallback.tabAccountSettings
      * @param {module:api/AccountsApi~updateAccountTabSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabAccountSettings}
      */
-    this.updateAccountTabSettings = function(accountId, optsOrCallback, callback) {
+    this.updateAccountTabSettings = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3575,39 +3571,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabAccountSettings'];
+      const postBody = optsOrCallback.tabAccountSettings;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateAccountTabSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TabAccountSettings;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TabAccountSettings;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/tabs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3624,11 +3620,11 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Brand} optsOrCallback.brand 
+     * @param {module:model/Brand} optsOrCallback.brand
      * @param {module:api/AccountsApi~updateBrandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Brand}
      */
-    this.updateBrand = function(accountId, brandId, optsOrCallback, callback) {
+    this.updateBrand = function (accountId, brandId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3636,7 +3632,7 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['brand'];
+      const postBody = optsOrCallback.brand;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3648,33 +3644,33 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'brandId' when calling updateBrand");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId
+      const pathParams = {
+        accountId,
+        brandId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Brand;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Brand;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3692,14 +3688,14 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} brandId The id of the brand.
      * @param {String} logoType The type of logo. Valid values are:
 
-- `primary` 
-- `secondary` 
+- `primary`
+- `secondary`
 - `email`
      * @param {Blob} logoFileBytes Brand logo binary Stream. Supported formats: JPG, GIF, PNG. Maximum file size: 300 KB. Recommended dimensions: 296 x 76 pixels (larger images will be resized). Changes may take up to one hour to display in all places
      * @param {module:api/AccountsApi~updateBrandLogoByTypeCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateBrandLogoByType = function(logoFileBytes, accountId, brandId, logoType, callback) {
-      var postBody = logoFileBytes;
+    this.updateBrandLogoByType = function (logoFileBytes, accountId, brandId, logoType, callback) {
+      const postBody = logoFileBytes;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3721,34 +3717,34 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'logoFileBytes' when calling updateBrandLogoByType");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId,
-        'logoType': logoType
+      const pathParams = {
+        accountId,
+        brandId,
+        logoType,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = ['image/png'];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = ['image/png'];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/logos/{logoType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3774,8 +3770,8 @@ Users with account administration privileges can retrieve shared access informat
      * @param {module:api/AccountsApi~updateBrandResourcesByContentTypeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BrandResources}
      */
-    this.updateBrandResourcesByContentType = function(accountId, brandId, resourceContentType, fileXml, callback) {
-      var postBody = null;
+    this.updateBrandResourcesByContentType = function (accountId, brandId, resourceContentType, fileXml, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3797,35 +3793,35 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'fileXml' when calling updateBrandResourcesByContentType");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'brandId': brandId,
-        'resourceContentType': resourceContentType
+      const pathParams = {
+        accountId,
+        brandId,
+        resourceContentType,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
-        'file.xml': fileXml
+      const formParams = {
+        'file.xml': fileXml,
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = ['multipart/form-data'];
-      var accepts = ['application/json'];
-      var returnType = BrandResources;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = ['multipart/form-data'];
+      const accepts = ['application/json'];
+      const returnType = BrandResources;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3842,12 +3838,12 @@ Users with account administration privileges can retrieve shared access informat
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeMetadata 
-     * @param {module:model/ConsumerDisclosure} optsOrCallback.consumerDisclosure 
+     * @param {String} optsOrCallback.includeMetadata
+     * @param {module:model/ConsumerDisclosure} optsOrCallback.consumerDisclosure
      * @param {module:api/AccountsApi~updateConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
-    this.updateConsumerDisclosure = function(accountId, langCode, optsOrCallback, callback) {
+    this.updateConsumerDisclosure = function (accountId, langCode, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3855,7 +3851,7 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['consumerDisclosure'];
+      const postBody = optsOrCallback.consumerDisclosure;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3867,34 +3863,34 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'langCode' when calling updateConsumerDisclosure");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'langCode': langCode
+      const pathParams = {
+        accountId,
+        langCode,
       };
-      var queryParams = {
-        'include_metadata': optsOrCallback['includeMetadata']
+      const queryParams = {
+        include_metadata: optsOrCallback.includeMetadata,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConsumerDisclosure;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/consumer_disclosure/{langCode}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3909,14 +3905,14 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Updates an existing account custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} customFieldId 
+     * @param {String} customFieldId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.applyToTemplates 
-     * @param {module:model/CustomField} optsOrCallback.customField 
+     * @param {String} optsOrCallback.applyToTemplates
+     * @param {module:model/CustomField} optsOrCallback.customField
      * @param {module:api/AccountsApi~updateCustomFieldCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.updateCustomField = function(accountId, customFieldId, optsOrCallback, callback) {
+    this.updateCustomField = function (accountId, customFieldId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3924,7 +3920,7 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['customField'];
+      const postBody = optsOrCallback.customField;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3936,34 +3932,34 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'customFieldId' when calling updateCustomField");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'customFieldId': customFieldId
+      const pathParams = {
+        accountId,
+        customFieldId,
       };
-      var queryParams = {
-        'apply_to_templates': optsOrCallback['applyToTemplates']
+      const queryParams = {
+        apply_to_templates: optsOrCallback.applyToTemplates,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/custom_fields/{customFieldId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3979,11 +3975,11 @@ Users with account administration privileges can retrieve shared access informat
      * Updates configuration information for the eNote eOriginal integration.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ENoteConfiguration} optsOrCallback.eNoteConfiguration 
+     * @param {module:model/ENoteConfiguration} optsOrCallback.eNoteConfiguration
      * @param {module:api/AccountsApi~updateENoteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ENoteConfiguration}
      */
-    this.updateENoteConfiguration = function(accountId, optsOrCallback, callback) {
+    this.updateENoteConfiguration = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3991,39 +3987,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['eNoteConfiguration'];
+      const postBody = optsOrCallback.eNoteConfiguration;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateENoteConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ENoteConfiguration;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ENoteConfiguration;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/enote_configuration', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4039,11 +4035,11 @@ Users with account administration privileges can retrieve shared access informat
      * Updates envelope purge configuration.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopePurgeConfiguration} optsOrCallback.envelopePurgeConfiguration 
+     * @param {module:model/EnvelopePurgeConfiguration} optsOrCallback.envelopePurgeConfiguration
      * @param {module:api/AccountsApi~updateEnvelopePurgeConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopePurgeConfiguration}
      */
-    this.updateEnvelopePurgeConfiguration = function(accountId, optsOrCallback, callback) {
+    this.updateEnvelopePurgeConfiguration = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4051,39 +4047,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopePurgeConfiguration'];
+      const postBody = optsOrCallback.envelopePurgeConfiguration;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopePurgeConfiguration");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopePurgeConfiguration;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopePurgeConfiguration;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/envelope_purge_configuration', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4099,11 +4095,11 @@ Users with account administration privileges can retrieve shared access informat
      * Favorites a template
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo 
+     * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo
      * @param {module:api/AccountsApi~updateFavoriteTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FavoriteTemplatesInfo}
      */
-    this.updateFavoriteTemplate = function(accountId, optsOrCallback, callback) {
+    this.updateFavoriteTemplate = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4111,39 +4107,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['favoriteTemplatesInfo'];
+      const postBody = optsOrCallback.favoriteTemplatesInfo;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateFavoriteTemplate");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FavoriteTemplatesInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = FavoriteTemplatesInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/favorite_templates', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4159,11 +4155,11 @@ Users with account administration privileges can retrieve shared access informat
      * Updates default user level settings for a specified account
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/NotificationDefaults} optsOrCallback.notificationDefaults 
+     * @param {module:model/NotificationDefaults} optsOrCallback.notificationDefaults
      * @param {module:api/AccountsApi~updateNotificationDefaultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NotificationDefaults}
      */
-    this.updateNotificationDefaults = function(accountId, optsOrCallback, callback) {
+    this.updateNotificationDefaults = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4171,39 +4167,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['notificationDefaults'];
+      const postBody = optsOrCallback.notificationDefaults;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateNotificationDefaults");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NotificationDefaults;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = NotificationDefaults;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/notification_defaults', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4219,11 +4215,11 @@ Users with account administration privileges can retrieve shared access informat
      * Update the password rules
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules 
+     * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules
      * @param {module:api/AccountsApi~updatePasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountPasswordRules}
      */
-    this.updatePasswordRules = function(accountId, optsOrCallback, callback) {
+    this.updatePasswordRules = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4231,39 +4227,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['accountPasswordRules'];
+      const postBody = optsOrCallback.accountPasswordRules;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePasswordRules");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountPasswordRules;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountPasswordRules;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/password_rules', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4278,14 +4274,14 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Updates a permission profile within the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} permissionProfileId 
+     * @param {String} permissionProfileId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include 
-     * @param {module:model/PermissionProfile} optsOrCallback.permissionProfile 
+     * @param {String} optsOrCallback.include
+     * @param {module:model/PermissionProfile} optsOrCallback.permissionProfile
      * @param {module:api/AccountsApi~updatePermissionProfileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PermissionProfile}
      */
-    this.updatePermissionProfile = function(accountId, permissionProfileId, optsOrCallback, callback) {
+    this.updatePermissionProfile = function (accountId, permissionProfileId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4293,7 +4289,7 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['permissionProfile'];
+      const postBody = optsOrCallback.permissionProfile;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4305,34 +4301,34 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'permissionProfileId' when calling updatePermissionProfile");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'permissionProfileId': permissionProfileId
+      const pathParams = {
+        accountId,
+        permissionProfileId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PermissionProfile;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PermissionProfile;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/permission_profiles/{permissionProfileId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4348,11 +4344,11 @@ Users with account administration privileges can retrieve shared access informat
      * Returns the result set from running the specified report
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ReportInProductRunRequest} optsOrCallback.reportInProductRunRequest 
+     * @param {module:model/ReportInProductRunRequest} optsOrCallback.reportInProductRunRequest
      * @param {module:api/AccountsApi~updateReportInProductRunResultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportInProductRunResponse}
      */
-    this.updateReportInProductRunResults = function(accountId, optsOrCallback, callback) {
+    this.updateReportInProductRunResults = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4360,39 +4356,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['reportInProductRunRequest'];
+      const postBody = optsOrCallback.reportInProductRunRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateReportInProductRunResults");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReportInProductRunResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ReportInProductRunResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports/report_results', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4407,13 +4403,13 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Saves a customized report
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} id 
+     * @param {String} id
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ReportInProductRunRequest} optsOrCallback.reportInProductRunRequest 
+     * @param {module:model/ReportInProductRunRequest} optsOrCallback.reportInProductRunRequest
      * @param {module:api/AccountsApi~updateReportInProductSaveCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ReportInProductSaveResponse}
      */
-    this.updateReportInProductSave = function(accountId, id, optsOrCallback, callback) {
+    this.updateReportInProductSave = function (accountId, id, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4421,7 +4417,7 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['reportInProductRunRequest'];
+      const postBody = optsOrCallback.reportInProductRunRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4433,33 +4429,33 @@ Users with account administration privileges can retrieve shared access informat
         throw new Error("Missing the required parameter 'id' when calling updateReportInProductSave");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'id': id
+      const pathParams = {
+        accountId,
+        id,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReportInProductSaveResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ReportInProductSaveResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4475,10 +4471,10 @@ Users with account administration privileges can retrieve shared access informat
      * Returns the specified report as a CSV string
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ReportInProductCsvRunRequest} optsOrCallback.reportInProductCsvRunRequest 
+     * @param {module:model/ReportInProductCsvRunRequest} optsOrCallback.reportInProductCsvRunRequest
      * @param {module:api/AccountsApi~updateReportResultsCsvCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateReportResultsCsv = function(accountId, optsOrCallback, callback) {
+    this.updateReportResultsCsv = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4486,39 +4482,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['reportInProductCsvRunRequest'];
+      const postBody = optsOrCallback.reportInProductCsvRunRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateReportResultsCsv");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/reports/report_results_csv', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4535,10 +4531,10 @@ Users with account administration privileges can retrieve shared access informat
      * Updates the account settings for the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/AccountSettingsInformation} optsOrCallback.accountSettingsInformation 
+     * @param {module:model/AccountSettingsInformation} optsOrCallback.accountSettingsInformation
      * @param {module:api/AccountsApi~updateSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateSettings = function(accountId, optsOrCallback, callback) {
+    this.updateSettings = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4546,39 +4542,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['accountSettingsInformation'];
+      const postBody = optsOrCallback.accountSettingsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4595,14 +4591,14 @@ Users with account administration privileges can retrieve shared access informat
      * Reserved: Sets the shared access information for one or more users.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.itemType 
-     * @param {String} optsOrCallback.preserveExistingSharedAccess 
-     * @param {String} optsOrCallback.userIds 
-     * @param {module:model/AccountSharedAccess} optsOrCallback.accountSharedAccess 
+     * @param {String} optsOrCallback.itemType
+     * @param {String} optsOrCallback.preserveExistingSharedAccess
+     * @param {String} optsOrCallback.userIds
+     * @param {module:model/AccountSharedAccess} optsOrCallback.accountSharedAccess
      * @param {module:api/AccountsApi~updateSharedAccessCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSharedAccess}
      */
-    this.updateSharedAccess = function(accountId, optsOrCallback, callback) {
+    this.updateSharedAccess = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4610,42 +4606,42 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['accountSharedAccess'];
+      const postBody = optsOrCallback.accountSharedAccess;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateSharedAccess");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'item_type': optsOrCallback['itemType'],
-        'preserve_existing_shared_access': optsOrCallback['preserveExistingSharedAccess'],
-        'user_ids': optsOrCallback['userIds']
+      const queryParams = {
+        item_type: optsOrCallback.itemType,
+        preserve_existing_shared_access: optsOrCallback.preserveExistingSharedAccess,
+        user_ids: optsOrCallback.userIds,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSharedAccess;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSharedAccess;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/shared_access', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4661,11 +4657,11 @@ Users with account administration privileges can retrieve shared access informat
      * Update watermark information.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Watermark} optsOrCallback.watermark 
+     * @param {module:model/Watermark} optsOrCallback.watermark
      * @param {module:api/AccountsApi~updateWatermarkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Watermark}
      */
-    this.updateWatermark = function(accountId, optsOrCallback, callback) {
+    this.updateWatermark = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4673,39 +4669,39 @@ Users with account administration privileges can retrieve shared access informat
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['watermark'];
+      const postBody = optsOrCallback.watermark;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateWatermark");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Watermark;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Watermark;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/watermark', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopePublishRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The EnvelopePublishRequest model module.
    * @module model/EnvelopePublishRequest
@@ -38,10 +35,8 @@
    * @alias module:model/EnvelopePublishRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/EnvelopePublishRequest} obj Optional instance to populate.
    * @return {module:model/EnvelopePublishRequest} The populated <code>EnvelopePublishRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('applyConnectSettings')) {
-        obj['applyConnectSettings'] = ApiClient.convertToType(data['applyConnectSettings'], 'String');
+        obj.applyConnectSettings = ApiClient.convertToType(data.applyConnectSettings, 'String');
       }
       if (data.hasOwnProperty('envelopeIds')) {
-        obj['envelopeIds'] = ApiClient.convertToType(data['envelopeIds'], ['String']);
+        obj.envelopeIds = ApiClient.convertToType(data.envelopeIds, ['String']);
       }
       if (data.hasOwnProperty('envelopeIdsBase64')) {
-        obj['envelopeIdsBase64'] = ApiClient.convertToType(data['envelopeIdsBase64'], 'String');
+        obj.envelopeIdsBase64 = ApiClient.convertToType(data.envelopeIdsBase64, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} applyConnectSettings
    */
-  exports.prototype['applyConnectSettings'] = undefined;
+  exports.prototype.applyConnectSettings = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} envelopeIds
    */
-  exports.prototype['envelopeIds'] = undefined;
+  exports.prototype.envelopeIds = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeIdsBase64
    */
-  exports.prototype['envelopeIdsBase64'] = undefined;
-
-
+  exports.prototype.envelopeIdsBase64 = undefined;
 
   return exports;
 }));
-
-

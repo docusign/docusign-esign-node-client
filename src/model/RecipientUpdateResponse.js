@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/Tabs'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientUpdateResponse = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.Tabs);
   }
-}(this, function(ApiClient, ErrorDetails, Tabs) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, Tabs) => {
   /**
    * The RecipientUpdateResponse model module.
    * @module model/RecipientUpdateResponse
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientUpdateResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,56 +45,52 @@
    * @param {module:model/RecipientUpdateResponse} obj Optional instance to populate.
    * @return {module:model/RecipientUpdateResponse} The populated <code>RecipientUpdateResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('combined')) {
-        obj['combined'] = ApiClient.convertToType(data['combined'], 'String');
+        obj.combined = ApiClient.convertToType(data.combined, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('recipientId')) {
-        obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
+        obj.recipientId = ApiClient.convertToType(data.recipientId, 'String');
       }
       if (data.hasOwnProperty('recipientIdGuid')) {
-        obj['recipientIdGuid'] = ApiClient.convertToType(data['recipientIdGuid'], 'String');
+        obj.recipientIdGuid = ApiClient.convertToType(data.recipientIdGuid, 'String');
       }
       if (data.hasOwnProperty('tabs')) {
-        obj['tabs'] = Tabs.constructFromObject(data['tabs']);
+        obj.tabs = Tabs.constructFromObject(data.tabs);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} combined
    */
-  exports.prototype['combined'] = undefined;
+  exports.prototype.combined = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * Unique for the recipient. It is used by the tab element to indicate which recipient is to sign the Document.
    * @member {String} recipientId
    */
-  exports.prototype['recipientId'] = undefined;
+  exports.prototype.recipientId = undefined;
   /**
-   * 
+   *
    * @member {String} recipientIdGuid
    */
-  exports.prototype['recipientIdGuid'] = undefined;
+  exports.prototype.recipientIdGuid = undefined;
   /**
    * @member {module:model/Tabs} tabs
    */
-  exports.prototype['tabs'] = undefined;
-
-
+  exports.prototype.tabs = undefined;
 
   return exports;
 }));
-
-

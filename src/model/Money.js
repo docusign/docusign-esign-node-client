@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Money = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The Money model module.
    * @module model/Money
@@ -37,10 +34,8 @@
    * @alias module:model/Money
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/Money} obj Optional instance to populate.
    * @return {module:model/Money} The populated <code>Money</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amountInBaseUnit')) {
-        obj['amountInBaseUnit'] = ApiClient.convertToType(data['amountInBaseUnit'], 'String');
+        obj.amountInBaseUnit = ApiClient.convertToType(data.amountInBaseUnit, 'String');
       }
       if (data.hasOwnProperty('currency')) {
-        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
+        obj.currency = ApiClient.convertToType(data.currency, 'String');
       }
       if (data.hasOwnProperty('displayAmount')) {
-        obj['displayAmount'] = ApiClient.convertToType(data['displayAmount'], 'String');
+        obj.displayAmount = ApiClient.convertToType(data.displayAmount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} amountInBaseUnit
    */
-  exports.prototype['amountInBaseUnit'] = undefined;
+  exports.prototype.amountInBaseUnit = undefined;
   /**
-   * 
+   *
    * @member {String} currency
    */
-  exports.prototype['currency'] = undefined;
+  exports.prototype.currency = undefined;
   /**
-   * 
+   *
    * @member {String} displayAmount
    */
-  exports.prototype['displayAmount'] = undefined;
-
-
+  exports.prototype.displayAmount = undefined;
 
   return exports;
 }));
-
-

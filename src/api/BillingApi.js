@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountBillingPlanResponse', 'model/BillingInvoice', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlanInformation', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/CreditCardInformation', 'model/DowngradRequestBillingInfoResponse', 'model/DowngradeBillingPlanInformation', 'model/DowngradePlanUpdateResponse', 'model/ErrorDetails', 'model/PurchasedEnvelopesInformation'], factory);
+    define(['Configuration', 'ApiClient', 'model/AccountBillingPlanResponse', 'model/BillingInvoice', 'model/BillingInvoicesResponse', 'model/BillingInvoicesSummary', 'model/BillingPaymentItem', 'model/BillingPaymentRequest', 'model/BillingPaymentResponse', 'model/BillingPaymentsResponse', 'model/BillingPlanInformation', 'model/BillingPlanResponse', 'model/BillingPlanUpdateResponse', 'model/BillingPlansResponse', 'model/CreditCardInformation', 'model/DowngradRequestBillingInfoResponse', 'model/DowngradeBillingPlanInformation', 'model/DowngradePlanUpdateResponse', 'model/ErrorDetails', 'model/PurchasedEnvelopesInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountBillingPlanResponse'), require('../model/BillingInvoice'), require('../model/BillingInvoicesResponse'), require('../model/BillingInvoicesSummary'), require('../model/BillingPaymentItem'), require('../model/BillingPaymentRequest'), require('../model/BillingPaymentResponse'), require('../model/BillingPaymentsResponse'), require('../model/BillingPlanInformation'), require('../model/BillingPlanResponse'), require('../model/BillingPlanUpdateResponse'), require('../model/BillingPlansResponse'), require('../model/CreditCardInformation'), require('../model/DowngradRequestBillingInfoResponse'), require('../model/DowngradeBillingPlanInformation'), require('../model/DowngradePlanUpdateResponse'), require('../model/ErrorDetails'), require('../model/PurchasedEnvelopesInformation'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.BillingApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountBillingPlanResponse, root.Docusign.BillingInvoice, root.Docusign.BillingInvoicesResponse, root.Docusign.BillingInvoicesSummary, root.Docusign.BillingPaymentItem, root.Docusign.BillingPaymentRequest, root.Docusign.BillingPaymentResponse, root.Docusign.BillingPaymentsResponse, root.Docusign.BillingPlanInformation, root.Docusign.BillingPlanResponse, root.Docusign.BillingPlanUpdateResponse, root.Docusign.BillingPlansResponse, root.Docusign.CreditCardInformation, root.Docusign.DowngradRequestBillingInfoResponse, root.Docusign.DowngradeBillingPlanInformation, root.Docusign.DowngradePlanUpdateResponse, root.Docusign.ErrorDetails, root.Docusign.PurchasedEnvelopesInformation);
   }
-}(this, function(Configuration, ApiClient, AccountBillingPlanResponse, BillingInvoice, BillingInvoicesResponse, BillingInvoicesSummary, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlanInformation, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, CreditCardInformation, DowngradRequestBillingInfoResponse, DowngradeBillingPlanInformation, DowngradePlanUpdateResponse, ErrorDetails, PurchasedEnvelopesInformation) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, AccountBillingPlanResponse, BillingInvoice, BillingInvoicesResponse, BillingInvoicesSummary, BillingPaymentItem, BillingPaymentRequest, BillingPaymentResponse, BillingPaymentsResponse, BillingPlanInformation, BillingPlanResponse, BillingPlanUpdateResponse, BillingPlansResponse, CreditCardInformation, DowngradRequestBillingInfoResponse, DowngradeBillingPlanInformation, DowngradePlanUpdateResponse, ErrorDetails, PurchasedEnvelopesInformation) => {
   /**
    * Billing service.
    * @module api/BillingApi
    */
 
   /**
-   * Constructs a new BillingApi. 
+   * Constructs a new BillingApi.
    * @alias module:api/BillingApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the getBillingPlan operation. If none specified a Promise will be returned.
@@ -66,40 +62,40 @@
      * @param {module:api/BillingApi~getBillingPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPlanResponse}
      */
-    this.getBillingPlan = function(billingPlanId, callback) {
-      var postBody = null;
+    this.getBillingPlan = function (billingPlanId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'billingPlanId' is set
       if (billingPlanId === undefined || billingPlanId === null) {
         throw new Error("Missing the required parameter 'billingPlanId' when calling getBillingPlan");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'billingPlanId': billingPlanId
+      const pathParams = {
+        billingPlanId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingPlanResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingPlanResponse;
 
       return this.apiClient.callApi(
         '/v2.1/billing_plans/{billingPlanId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -117,40 +113,40 @@
      * @param {module:api/BillingApi~getCreditCardInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreditCardInformation}
      */
-    this.getCreditCardInfo = function(accountId, callback) {
-      var postBody = null;
+    this.getCreditCardInfo = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getCreditCardInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CreditCardInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CreditCardInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_plan/credit_card', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -168,40 +164,40 @@
      * @param {module:api/BillingApi~getDowngradeRequestBillingInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DowngradRequestBillingInfoResponse}
      */
-    this.getDowngradeRequestBillingInfo = function(accountId, callback) {
-      var postBody = null;
+    this.getDowngradeRequestBillingInfo = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDowngradeRequestBillingInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DowngradRequestBillingInfoResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DowngradRequestBillingInfoResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_plan/downgrade', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -215,7 +211,7 @@
 
     /**
      * Retrieves a billing invoice.
-     * Retrieves the specified invoice. 
+     * Retrieves the specified invoice.
 
 ###### Note: If the `pdfAvailable` property in the response is set to *true*, you can download a PDF version of the invoice. To download the PDF, make the call again and change the value of the `Accept` property in the header to `Accept: application/pdf`.
 
@@ -248,14 +244,14 @@ The following table provides a description of the different `chargeName` propert
 | personal_signer_certificate | Personal Signer Certificate charge |
 | safe_certificate | SAFE BioPharma Signer Certificate charge |
 | seats | Included active seats charge |
-| open_trust_certificate | OpenTrust Signer Certificate charge | 
+| open_trust_certificate | OpenTrust Signer Certificate charge |
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} invoiceId 
+     * @param {String} invoiceId
      * @param {module:api/BillingApi~getInvoiceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingInvoice}
      */
-    this.getInvoice = function(accountId, invoiceId, callback) {
-      var postBody = null;
+    this.getInvoice = function (accountId, invoiceId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -267,33 +263,33 @@ The following table provides a description of the different `chargeName` propert
         throw new Error("Missing the required parameter 'invoiceId' when calling getInvoice");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'invoiceId': invoiceId
+      const pathParams = {
+        accountId,
+        invoiceId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingInvoice;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingInvoice;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_invoices/{invoiceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -307,16 +303,16 @@ The following table provides a description of the different `chargeName` propert
 
     /**
      * Gets billing payment information for a specific payment.
-     * Retrieves the information for a specified payment. 
+     * Retrieves the information for a specified payment.
 
-Privileges required: account administrator 
+Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} paymentId 
+     * @param {String} paymentId
      * @param {module:api/BillingApi~getPaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPaymentItem}
      */
-    this.getPayment = function(accountId, paymentId, callback) {
-      var postBody = null;
+    this.getPayment = function (accountId, paymentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -328,33 +324,33 @@ Privileges required: account administrator
         throw new Error("Missing the required parameter 'paymentId' when calling getPayment");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'paymentId': paymentId
+      const pathParams = {
+        accountId,
+        paymentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingPaymentItem;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingPaymentItem;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_payments/{paymentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -370,22 +366,22 @@ Privileges required: account administrator
      * Get Account Billing Plan
      * Retrieves the billing plan information for the specified account, including the current billing plan, successor plans, billing address, and billing credit card.
 
-By default the successor plan and credit card information is included in the response. This information can be excluded from the response by adding the appropriate optional query string with the `setting` set to **false**. 
+By default the successor plan and credit card information is included in the response. This information can be excluded from the response by adding the appropriate optional query string with the `setting` set to **false**.
 
 Response
 
 The response returns the billing plan information, including the currency code, for the plan. The `billingPlan` and `succesorPlans` property values are the same as those shown in the [ML:Get Billing Plan Details] reference. the `billingAddress` and `creditCardInformation` property values are the same as those shown in the [ML:Update Billing Plan] reference.
 
-###### Note: When credit card number information is shown, a mask is applied to the response so that only the last 4 digits of the card number are visible. 
+###### Note: When credit card number information is shown, a mask is applied to the response so that only the last 4 digits of the card number are visible.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeCreditCardInformation When set to **true**, excludes credit card information from the response.
-     * @param {String} optsOrCallback.includeMetadata When set to **true**, the `canUpgrade` and `renewalStatus` properities are included the response and an array of `supportedCountries` property is added to the `billingAddress` information. 
+     * @param {String} optsOrCallback.includeMetadata When set to **true**, the `canUpgrade` and `renewalStatus` properities are included the response and an array of `supportedCountries` property is added to the `billingAddress` information.
      * @param {String} optsOrCallback.includeSuccessorPlans When set to **true**, excludes successor information from the response.
      * @param {module:api/BillingApi~getPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountBillingPlanResponse}
      */
-    this.getPlan = function(accountId, optsOrCallback, callback) {
+    this.getPlan = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -393,42 +389,42 @@ The response returns the billing plan information, including the currency code, 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getPlan");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'include_credit_card_information': optsOrCallback['includeCreditCardInformation'],
-        'include_metadata': optsOrCallback['includeMetadata'],
-        'include_successor_plans': optsOrCallback['includeSuccessorPlans']
+      const queryParams = {
+        include_credit_card_information: optsOrCallback.includeCreditCardInformation,
+        include_metadata: optsOrCallback.includeMetadata,
+        include_successor_plans: optsOrCallback.includeSuccessorPlans,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountBillingPlanResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountBillingPlanResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_plan', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -446,34 +442,34 @@ The response returns the billing plan information, including the currency code, 
      * @param {module:api/BillingApi~listBillingPlansCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPlansResponse}
      */
-    this.listBillingPlans = function(callback) {
-      var postBody = null;
+    this.listBillingPlans = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingPlansResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingPlansResponse;
 
       return this.apiClient.callApi(
         '/v2.1/billing_plans', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -489,7 +485,7 @@ The response returns the billing plan information, including the currency code, 
      * Get a List of Billing Invoices
      * Retrieves a list of invoices for the account. If the from date or to date queries are not specified, the response returns invoices for the last 365 days.
 
-Privileges required: account administrator 
+Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.fromDate Specifies the date/time of the earliest invoice in the account to retrieve.
@@ -497,7 +493,7 @@ Privileges required: account administrator
      * @param {module:api/BillingApi~listInvoicesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingInvoicesResponse}
      */
-    this.listInvoices = function(accountId, optsOrCallback, callback) {
+    this.listInvoices = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -505,41 +501,41 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listInvoices");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'from_date': optsOrCallback['fromDate'],
-        'to_date': optsOrCallback['toDate']
+      const queryParams = {
+        from_date: optsOrCallback.fromDate,
+        to_date: optsOrCallback.toDate,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingInvoicesResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingInvoicesResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_invoices', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -553,47 +549,47 @@ Privileges required: account administrator
 
     /**
      * Get a list of past due invoices.
-     * Returns a list past due invoices for the account and notes if payment can be made through the REST API. 
+     * Returns a list past due invoices for the account and notes if payment can be made through the REST API.
 
 Privileges Required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/BillingApi~listInvoicesPastDueCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingInvoicesSummary}
      */
-    this.listInvoicesPastDue = function(accountId, callback) {
-      var postBody = null;
+    this.listInvoicesPastDue = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listInvoicesPastDue");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingInvoicesSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingInvoicesSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_invoices_past_due', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -607,9 +603,9 @@ Privileges Required: account administrator
 
     /**
      * Gets payment information for one or more payments.
-     * Retrieves a list containing information about one or more payments. If the from date or to date queries are not used, the response returns payment information for the last 365 days. 
+     * Retrieves a list containing information about one or more payments. If the from date or to date queries are not used, the response returns payment information for the last 365 days.
 
-Privileges required: account administrator 
+Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.fromDate Specifies the date/time of the earliest payment in the account to retrieve.
@@ -617,7 +613,7 @@ Privileges required: account administrator
      * @param {module:api/BillingApi~listPaymentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPaymentsResponse}
      */
-    this.listPayments = function(accountId, optsOrCallback, callback) {
+    this.listPayments = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -625,41 +621,41 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listPayments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'from_date': optsOrCallback['fromDate'],
-        'to_date': optsOrCallback['toDate']
+      const queryParams = {
+        from_date: optsOrCallback.fromDate,
+        to_date: optsOrCallback.toDate,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingPaymentsResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingPaymentsResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_payments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -673,7 +669,7 @@ Privileges required: account administrator
 
     /**
      * Posts a payment to a past due invoice.
-     * Posts a payment to a past due invoice. 
+     * Posts a payment to a past due invoice.
 
 ###### Note: This can only be used if the `paymentAllowed` value for a past due invoice is true. This can be determined calling [ML:GetBillingInvoicesPastDue].
 
@@ -682,11 +678,11 @@ The response returns information for a single payment, if a payment ID was used 
 Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BillingPaymentRequest} optsOrCallback.billingPaymentRequest 
+     * @param {module:model/BillingPaymentRequest} optsOrCallback.billingPaymentRequest
      * @param {module:api/BillingApi~makePaymentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPaymentResponse}
      */
-    this.makePayment = function(accountId, optsOrCallback, callback) {
+    this.makePayment = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -694,39 +690,39 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['billingPaymentRequest'];
+      const postBody = optsOrCallback.billingPaymentRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling makePayment");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingPaymentResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingPaymentResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_payments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -743,10 +739,10 @@ Privileges required: account administrator
      * Reserved: At this time, this endpoint is limited to DocuSign internal use only. Completes the purchase of envelopes for your account. The actual purchase is done as part of an internal workflow interaction with an envelope vendor.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/PurchasedEnvelopesInformation} optsOrCallback.purchasedEnvelopesInformation 
+     * @param {module:model/PurchasedEnvelopesInformation} optsOrCallback.purchasedEnvelopesInformation
      * @param {module:api/BillingApi~purchaseEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.purchaseEnvelopes = function(accountId, optsOrCallback, callback) {
+    this.purchaseEnvelopes = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -754,39 +750,39 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['purchasedEnvelopesInformation'];
+      const postBody = optsOrCallback.purchasedEnvelopesInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling purchaseEnvelopes");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_plan/purchased_envelopes', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -802,11 +798,11 @@ Privileges required: account administrator
      * Queues downgrade billing plan request for an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DowngradeBillingPlanInformation} optsOrCallback.downgradeBillingPlanInformation 
+     * @param {module:model/DowngradeBillingPlanInformation} optsOrCallback.downgradeBillingPlanInformation
      * @param {module:api/BillingApi~updateDowngradeAccountBillingPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DowngradePlanUpdateResponse}
      */
-    this.updateDowngradeAccountBillingPlan = function(accountId, optsOrCallback, callback) {
+    this.updateDowngradeAccountBillingPlan = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -814,39 +810,39 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['downgradeBillingPlanInformation'];
+      const postBody = optsOrCallback.downgradeBillingPlanInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateDowngradeAccountBillingPlan");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DowngradePlanUpdateResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DowngradePlanUpdateResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_plan/downgrade', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -864,11 +860,11 @@ Privileges required: account administrator
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.previewBillingPlan When set to **true**, updates the account using a preview billing plan.
-     * @param {module:model/BillingPlanInformation} optsOrCallback.billingPlanInformation 
+     * @param {module:model/BillingPlanInformation} optsOrCallback.billingPlanInformation
      * @param {module:api/BillingApi~updatePlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BillingPlanUpdateResponse}
      */
-    this.updatePlan = function(accountId, optsOrCallback, callback) {
+    this.updatePlan = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -876,40 +872,40 @@ Privileges required: account administrator
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['billingPlanInformation'];
+      const postBody = optsOrCallback.billingPlanInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updatePlan");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'preview_billing_plan': optsOrCallback['previewBillingPlan']
+      const queryParams = {
+        preview_billing_plan: optsOrCallback.previewBillingPlan,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BillingPlanUpdateResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BillingPlanUpdateResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/billing_plan', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

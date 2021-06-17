@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PropertyMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientPhoneAuthentication = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient, PropertyMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, PropertyMetadata) => {
   /**
    * The RecipientPhoneAuthentication model module.
    * @module model/RecipientPhoneAuthentication
@@ -38,10 +35,8 @@
    * @alias module:model/RecipientPhoneAuthentication
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,78 +46,74 @@
    * @param {module:model/RecipientPhoneAuthentication} obj Optional instance to populate.
    * @return {module:model/RecipientPhoneAuthentication} The populated <code>RecipientPhoneAuthentication</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('recipMayProvideNumber')) {
-        obj['recipMayProvideNumber'] = ApiClient.convertToType(data['recipMayProvideNumber'], 'String');
+        obj.recipMayProvideNumber = ApiClient.convertToType(data.recipMayProvideNumber, 'String');
       }
       if (data.hasOwnProperty('recipMayProvideNumberMetadata')) {
-        obj['recipMayProvideNumberMetadata'] = PropertyMetadata.constructFromObject(data['recipMayProvideNumberMetadata']);
+        obj.recipMayProvideNumberMetadata = PropertyMetadata.constructFromObject(data.recipMayProvideNumberMetadata);
       }
       if (data.hasOwnProperty('recordVoicePrint')) {
-        obj['recordVoicePrint'] = ApiClient.convertToType(data['recordVoicePrint'], 'String');
+        obj.recordVoicePrint = ApiClient.convertToType(data.recordVoicePrint, 'String');
       }
       if (data.hasOwnProperty('recordVoicePrintMetadata')) {
-        obj['recordVoicePrintMetadata'] = PropertyMetadata.constructFromObject(data['recordVoicePrintMetadata']);
+        obj.recordVoicePrintMetadata = PropertyMetadata.constructFromObject(data.recordVoicePrintMetadata);
       }
       if (data.hasOwnProperty('senderProvidedNumbers')) {
-        obj['senderProvidedNumbers'] = ApiClient.convertToType(data['senderProvidedNumbers'], ['String']);
+        obj.senderProvidedNumbers = ApiClient.convertToType(data.senderProvidedNumbers, ['String']);
       }
       if (data.hasOwnProperty('senderProvidedNumbersMetadata')) {
-        obj['senderProvidedNumbersMetadata'] = PropertyMetadata.constructFromObject(data['senderProvidedNumbersMetadata']);
+        obj.senderProvidedNumbersMetadata = PropertyMetadata.constructFromObject(data.senderProvidedNumbersMetadata);
       }
       if (data.hasOwnProperty('validateRecipProvidedNumber')) {
-        obj['validateRecipProvidedNumber'] = ApiClient.convertToType(data['validateRecipProvidedNumber'], 'String');
+        obj.validateRecipProvidedNumber = ApiClient.convertToType(data.validateRecipProvidedNumber, 'String');
       }
       if (data.hasOwnProperty('validateRecipProvidedNumberMetadata')) {
-        obj['validateRecipProvidedNumberMetadata'] = PropertyMetadata.constructFromObject(data['validateRecipProvidedNumberMetadata']);
+        obj.validateRecipProvidedNumberMetadata = PropertyMetadata.constructFromObject(data.validateRecipProvidedNumberMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Boolean. When set to **true**, the recipient can supply a phone number their choice.
    * @member {String} recipMayProvideNumber
    */
-  exports.prototype['recipMayProvideNumber'] = undefined;
+  exports.prototype.recipMayProvideNumber = undefined;
   /**
    * @member {module:model/PropertyMetadata} recipMayProvideNumberMetadata
    */
-  exports.prototype['recipMayProvideNumberMetadata'] = undefined;
+  exports.prototype.recipMayProvideNumberMetadata = undefined;
   /**
    * Reserved.
    * @member {String} recordVoicePrint
    */
-  exports.prototype['recordVoicePrint'] = undefined;
+  exports.prototype.recordVoicePrint = undefined;
   /**
    * @member {module:model/PropertyMetadata} recordVoicePrintMetadata
    */
-  exports.prototype['recordVoicePrintMetadata'] = undefined;
+  exports.prototype.recordVoicePrintMetadata = undefined;
   /**
-   * An Array containing a list of phone numbers the recipient may use for SMS text authentication. 
+   * An Array containing a list of phone numbers the recipient may use for SMS text authentication.
    * @member {Array.<String>} senderProvidedNumbers
    */
-  exports.prototype['senderProvidedNumbers'] = undefined;
+  exports.prototype.senderProvidedNumbers = undefined;
   /**
    * @member {module:model/PropertyMetadata} senderProvidedNumbersMetadata
    */
-  exports.prototype['senderProvidedNumbersMetadata'] = undefined;
+  exports.prototype.senderProvidedNumbersMetadata = undefined;
   /**
    *  Reserved.
    * @member {String} validateRecipProvidedNumber
    */
-  exports.prototype['validateRecipProvidedNumber'] = undefined;
+  exports.prototype.validateRecipProvidedNumber = undefined;
   /**
    * @member {module:model/PropertyMetadata} validateRecipProvidedNumberMetadata
    */
-  exports.prototype['validateRecipProvidedNumberMetadata'] = undefined;
-
-
+  exports.prototype.validateRecipProvidedNumberMetadata = undefined;
 
   return exports;
 }));
-
-

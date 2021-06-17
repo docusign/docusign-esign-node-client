@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BulkEnvelopeStatus', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeSummary = factory(root.Docusign.ApiClient, root.Docusign.BulkEnvelopeStatus, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, BulkEnvelopeStatus, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, BulkEnvelopeStatus, ErrorDetails) => {
   /**
    * The EnvelopeSummary model module.
    * @module model/EnvelopeSummary
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeSummary
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,64 +45,60 @@
    * @param {module:model/EnvelopeSummary} obj Optional instance to populate.
    * @return {module:model/EnvelopeSummary} The populated <code>EnvelopeSummary</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkEnvelopeStatus')) {
-        obj['bulkEnvelopeStatus'] = BulkEnvelopeStatus.constructFromObject(data['bulkEnvelopeStatus']);
+        obj.bulkEnvelopeStatus = BulkEnvelopeStatus.constructFromObject(data.bulkEnvelopeStatus);
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('statusDateTime')) {
-        obj['statusDateTime'] = ApiClient.convertToType(data['statusDateTime'], 'String');
+        obj.statusDateTime = ApiClient.convertToType(data.statusDateTime, 'String');
       }
       if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+        obj.uri = ApiClient.convertToType(data.uri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/BulkEnvelopeStatus} bulkEnvelopeStatus
    */
-  exports.prototype['bulkEnvelopeStatus'] = undefined;
+  exports.prototype.bulkEnvelopeStatus = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
    * The DateTime that the envelope changed status (i.e. was created or sent.)
    * @member {String} statusDateTime
    */
-  exports.prototype['statusDateTime'] = undefined;
+  exports.prototype.statusDateTime = undefined;
   /**
-   * 
+   *
    * @member {String} uri
    */
-  exports.prototype['uri'] = undefined;
-
-
+  exports.prototype.uri = undefined;
 
   return exports;
 }));
-
-

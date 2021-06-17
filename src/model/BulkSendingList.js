@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BulkSendingCopy'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendingList = factory(root.Docusign.ApiClient, root.Docusign.BulkSendingCopy);
   }
-}(this, function(ApiClient, BulkSendingCopy) {
-  'use strict';
-
-
+}(this, (ApiClient, BulkSendingCopy) => {
   /**
    * The BulkSendingList model module.
    * @module model/BulkSendingList
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendingList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/BulkSendingList} obj Optional instance to populate.
    * @return {module:model/BulkSendingList} The populated <code>BulkSendingList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('bulkCopies')) {
-        obj['bulkCopies'] = ApiClient.convertToType(data['bulkCopies'], [BulkSendingCopy]);
+        obj.bulkCopies = ApiClient.convertToType(data.bulkCopies, [BulkSendingCopy]);
       }
       if (data.hasOwnProperty('listId')) {
-        obj['listId'] = ApiClient.convertToType(data['listId'], 'String');
+        obj.listId = ApiClient.convertToType(data.listId, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/BulkSendingCopy>} bulkCopies
    */
-  exports.prototype['bulkCopies'] = undefined;
+  exports.prototype.bulkCopies = undefined;
   /**
-   * 
+   *
    * @member {String} listId
    */
-  exports.prototype['listId'] = undefined;
+  exports.prototype.listId = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-
-
+  exports.prototype.name = undefined;
 
   return exports;
 }));
-
-

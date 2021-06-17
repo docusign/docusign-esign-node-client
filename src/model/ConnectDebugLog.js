@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectDebugLog = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The ConnectDebugLog model module.
    * @module model/ConnectDebugLog
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectDebugLog
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,57 +45,53 @@
    * @param {module:model/ConnectDebugLog} obj Optional instance to populate.
    * @return {module:model/ConnectDebugLog} The populated <code>ConnectDebugLog</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('connectConfig')) {
-        obj['connectConfig'] = ApiClient.convertToType(data['connectConfig'], 'String');
+        obj.connectConfig = ApiClient.convertToType(data.connectConfig, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('eventDateTime')) {
-        obj['eventDateTime'] = ApiClient.convertToType(data['eventDateTime'], 'String');
+        obj.eventDateTime = ApiClient.convertToType(data.eventDateTime, 'String');
       }
       if (data.hasOwnProperty('eventDescription')) {
-        obj['eventDescription'] = ApiClient.convertToType(data['eventDescription'], 'String');
+        obj.eventDescription = ApiClient.convertToType(data.eventDescription, 'String');
       }
       if (data.hasOwnProperty('payload')) {
-        obj['payload'] = ApiClient.convertToType(data['payload'], 'String');
+        obj.payload = ApiClient.convertToType(data.payload, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} connectConfig
    */
-  exports.prototype['connectConfig'] = undefined;
+  exports.prototype.connectConfig = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} eventDateTime
    */
-  exports.prototype['eventDateTime'] = undefined;
+  exports.prototype.eventDateTime = undefined;
   /**
-   * 
+   *
    * @member {String} eventDescription
    */
-  exports.prototype['eventDescription'] = undefined;
+  exports.prototype.eventDescription = undefined;
   /**
-   * 
+   *
    * @member {String} payload
    */
-  exports.prototype['payload'] = undefined;
-
-
+  exports.prototype.payload = undefined;
 
   return exports;
 }));
-
-

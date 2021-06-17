@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConditionalRecipientRule'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientRules = factory(root.Docusign.ApiClient, root.Docusign.ConditionalRecipientRule);
   }
-}(this, function(ApiClient, ConditionalRecipientRule) {
-  'use strict';
-
-
+}(this, (ApiClient, ConditionalRecipientRule) => {
   /**
    * The RecipientRules model module.
    * @module model/RecipientRules
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientRules
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/RecipientRules} obj Optional instance to populate.
    * @return {module:model/RecipientRules} The populated <code>RecipientRules</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('conditionalRecipients')) {
-        obj['conditionalRecipients'] = ApiClient.convertToType(data['conditionalRecipients'], [ConditionalRecipientRule]);
+        obj.conditionalRecipients = ApiClient.convertToType(data.conditionalRecipients, [ConditionalRecipientRule]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/ConditionalRecipientRule>} conditionalRecipients
    */
-  exports.prototype['conditionalRecipients'] = undefined;
-
-
+  exports.prototype.conditionalRecipients = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DobInformationInput = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DobInformationInput model module.
    * @module model/DobInformationInput
@@ -38,10 +35,8 @@
    * @alias module:model/DobInformationInput
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/DobInformationInput} obj Optional instance to populate.
    * @return {module:model/DobInformationInput} The populated <code>DobInformationInput</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('dateOfBirth')) {
-        obj['dateOfBirth'] = ApiClient.convertToType(data['dateOfBirth'], 'String');
+        obj.dateOfBirth = ApiClient.convertToType(data.dateOfBirth, 'String');
       }
       if (data.hasOwnProperty('displayLevelCode')) {
-        obj['displayLevelCode'] = ApiClient.convertToType(data['displayLevelCode'], 'String');
+        obj.displayLevelCode = ApiClient.convertToType(data.displayLevelCode, 'String');
       }
       if (data.hasOwnProperty('receiveInResponse')) {
-        obj['receiveInResponse'] = ApiClient.convertToType(data['receiveInResponse'], 'String');
+        obj.receiveInResponse = ApiClient.convertToType(data.receiveInResponse, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the recipient's date, month, and year of birth.
    * @member {String} dateOfBirth
    */
-  exports.prototype['dateOfBirth'] = undefined;
+  exports.prototype.dateOfBirth = undefined;
   /**
    * Specifies the display level for the recipient.  Valid values are:   * ReadOnly * Editable * DoNotDisplay
    * @member {String} displayLevelCode
    */
-  exports.prototype['displayLevelCode'] = undefined;
+  exports.prototype.displayLevelCode = undefined;
   /**
    * When set to **true**, the information needs to be returned in the response.
    * @member {String} receiveInResponse
    */
-  exports.prototype['receiveInResponse'] = undefined;
-
-
+  exports.prototype.receiveInResponse = undefined;
 
   return exports;
 }));
-
-

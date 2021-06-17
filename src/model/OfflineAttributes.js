@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.OfflineAttributes = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The OfflineAttributes model module.
    * @module model/OfflineAttributes
@@ -38,10 +35,8 @@
    * @alias module:model/OfflineAttributes
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,66 +46,62 @@
    * @param {module:model/OfflineAttributes} obj Optional instance to populate.
    * @return {module:model/OfflineAttributes} The populated <code>OfflineAttributes</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accountEsignId')) {
-        obj['accountEsignId'] = ApiClient.convertToType(data['accountEsignId'], 'String');
+        obj.accountEsignId = ApiClient.convertToType(data.accountEsignId, 'String');
       }
       if (data.hasOwnProperty('deviceModel')) {
-        obj['deviceModel'] = ApiClient.convertToType(data['deviceModel'], 'String');
+        obj.deviceModel = ApiClient.convertToType(data.deviceModel, 'String');
       }
       if (data.hasOwnProperty('deviceName')) {
-        obj['deviceName'] = ApiClient.convertToType(data['deviceName'], 'String');
+        obj.deviceName = ApiClient.convertToType(data.deviceName, 'String');
       }
       if (data.hasOwnProperty('gpsLatitude')) {
-        obj['gpsLatitude'] = ApiClient.convertToType(data['gpsLatitude'], 'String');
+        obj.gpsLatitude = ApiClient.convertToType(data.gpsLatitude, 'String');
       }
       if (data.hasOwnProperty('gpsLongitude')) {
-        obj['gpsLongitude'] = ApiClient.convertToType(data['gpsLongitude'], 'String');
+        obj.gpsLongitude = ApiClient.convertToType(data.gpsLongitude, 'String');
       }
       if (data.hasOwnProperty('offlineSigningHash')) {
-        obj['offlineSigningHash'] = ApiClient.convertToType(data['offlineSigningHash'], 'String');
+        obj.offlineSigningHash = ApiClient.convertToType(data.offlineSigningHash, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A GUID identifying the account associated with the consumer disclosure
    * @member {String} accountEsignId
    */
-  exports.prototype['accountEsignId'] = undefined;
+  exports.prototype.accountEsignId = undefined;
   /**
    * A string containing information about the model of the device used for offline signing.
    * @member {String} deviceModel
    */
-  exports.prototype['deviceModel'] = undefined;
+  exports.prototype.deviceModel = undefined;
   /**
    * A string containing information about the type of device used for offline signing.
    * @member {String} deviceName
    */
-  exports.prototype['deviceName'] = undefined;
+  exports.prototype.deviceName = undefined;
   /**
    * A string containing the latitude of the device location at the time of signing.
    * @member {String} gpsLatitude
    */
-  exports.prototype['gpsLatitude'] = undefined;
+  exports.prototype.gpsLatitude = undefined;
   /**
    * A string containing the longitude of the device location at the time of signing.
    * @member {String} gpsLongitude
    */
-  exports.prototype['gpsLongitude'] = undefined;
+  exports.prototype.gpsLongitude = undefined;
   /**
-   * 
+   *
    * @member {String} offlineSigningHash
    */
-  exports.prototype['offlineSigningHash'] = undefined;
-
-
+  exports.prototype.offlineSigningHash = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/NameValue'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CustomSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, NameValue) {
-  'use strict';
-
-
+}(this, (ApiClient, NameValue) => {
   /**
    * The CustomSettingsInformation model module.
    * @module model/CustomSettingsInformation
@@ -37,10 +34,8 @@
    * @alias module:model/CustomSettingsInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/CustomSettingsInformation} obj Optional instance to populate.
    * @return {module:model/CustomSettingsInformation} The populated <code>CustomSettingsInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('customSettings')) {
-        obj['customSettings'] = ApiClient.convertToType(data['customSettings'], [NameValue]);
+        obj.customSettings = ApiClient.convertToType(data.customSettings, [NameValue]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/NameValue>} customSettings
    */
-  exports.prototype['customSettings'] = undefined;
-
-
+  exports.prototype.customSettings = undefined;
 
   return exports;
 }));
-
-

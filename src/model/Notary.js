@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/UserInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Notary = factory(root.Docusign.ApiClient, root.Docusign.UserInformation);
   }
-}(this, function(ApiClient, UserInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, UserInformation) => {
   /**
    * The Notary model module.
    * @module model/Notary
@@ -37,10 +34,8 @@
    * @alias module:model/Notary
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,49 +45,45 @@
    * @param {module:model/Notary} obj Optional instance to populate.
    * @return {module:model/Notary} The populated <code>Notary</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('createdDate')) {
-        obj['createdDate'] = ApiClient.convertToType(data['createdDate'], 'String');
+        obj.createdDate = ApiClient.convertToType(data.createdDate, 'String');
       }
       if (data.hasOwnProperty('enabled')) {
-        obj['enabled'] = ApiClient.convertToType(data['enabled'], 'String');
+        obj.enabled = ApiClient.convertToType(data.enabled, 'String');
       }
       if (data.hasOwnProperty('searchable')) {
-        obj['searchable'] = ApiClient.convertToType(data['searchable'], 'String');
+        obj.searchable = ApiClient.convertToType(data.searchable, 'String');
       }
       if (data.hasOwnProperty('userInfo')) {
-        obj['userInfo'] = UserInformation.constructFromObject(data['userInfo']);
+        obj.userInfo = UserInformation.constructFromObject(data.userInfo);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} createdDate
    */
-  exports.prototype['createdDate'] = undefined;
+  exports.prototype.createdDate = undefined;
   /**
-   * 
+   *
    * @member {String} enabled
    */
-  exports.prototype['enabled'] = undefined;
+  exports.prototype.enabled = undefined;
   /**
-   * 
+   *
    * @member {String} searchable
    */
-  exports.prototype['searchable'] = undefined;
+  exports.prototype.searchable = undefined;
   /**
    * @member {module:model/UserInformation} userInfo
    */
-  exports.prototype['userInfo'] = undefined;
-
-
+  exports.prototype.userInfo = undefined;
 
   return exports;
 }));
-
-

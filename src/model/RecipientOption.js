@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientOption = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientOption model module.
    * @module model/RecipientOption
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientOption
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,58 +45,54 @@
    * @param {module:model/RecipientOption} obj Optional instance to populate.
    * @return {module:model/RecipientOption} The populated <code>RecipientOption</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('recipientLabel')) {
-        obj['recipientLabel'] = ApiClient.convertToType(data['recipientLabel'], 'String');
+        obj.recipientLabel = ApiClient.convertToType(data.recipientLabel, 'String');
       }
       if (data.hasOwnProperty('roleName')) {
-        obj['roleName'] = ApiClient.convertToType(data['roleName'], 'String');
+        obj.roleName = ApiClient.convertToType(data.roleName, 'String');
       }
       if (data.hasOwnProperty('signingGroupId')) {
-        obj['signingGroupId'] = ApiClient.convertToType(data['signingGroupId'], 'String');
+        obj.signingGroupId = ApiClient.convertToType(data.signingGroupId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} recipientLabel
    */
-  exports.prototype['recipientLabel'] = undefined;
+  exports.prototype.recipientLabel = undefined;
   /**
    * Optional element. Specifies the role name associated with the recipient.<br/><br/>This is required when working with template recipients.
    * @member {String} roleName
    */
-  exports.prototype['roleName'] = undefined;
+  exports.prototype.roleName = undefined;
   /**
    * When set to **true** and the feature is enabled in the sender's account, the signing recipient is required to draw signatures and initials at each signature/initial tab ( instead of adopting a signature/initial style or only drawing a signature/initial once).
    * @member {String} signingGroupId
    */
-  exports.prototype['signingGroupId'] = undefined;
-
-
+  exports.prototype.signingGroupId = undefined;
 
   return exports;
 }));
-
-

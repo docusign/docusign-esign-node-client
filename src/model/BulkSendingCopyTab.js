@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendingCopyTab = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BulkSendingCopyTab model module.
    * @module model/BulkSendingCopyTab
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendingCopyTab
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/BulkSendingCopyTab} obj Optional instance to populate.
    * @return {module:model/BulkSendingCopyTab} The populated <code>BulkSendingCopyTab</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('initialValue')) {
-        obj['initialValue'] = ApiClient.convertToType(data['initialValue'], 'String');
+        obj.initialValue = ApiClient.convertToType(data.initialValue, 'String');
       }
       if (data.hasOwnProperty('tabLabel')) {
-        obj['tabLabel'] = ApiClient.convertToType(data['tabLabel'], 'String');
+        obj.tabLabel = ApiClient.convertToType(data.tabLabel, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The original value of the tab.
    * @member {String} initialValue
    */
-  exports.prototype['initialValue'] = undefined;
+  exports.prototype.initialValue = undefined;
   /**
    * The label string associated with the tab.
    * @member {String} tabLabel
    */
-  exports.prototype['tabLabel'] = undefined;
-
-
+  exports.prototype.tabLabel = undefined;
 
   return exports;
 }));
-
-

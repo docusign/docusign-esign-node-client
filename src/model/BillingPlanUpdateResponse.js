@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingPlanPreview'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPlanUpdateResponse = factory(root.Docusign.ApiClient, root.Docusign.BillingPlanPreview);
   }
-}(this, function(ApiClient, BillingPlanPreview) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingPlanPreview) => {
   /**
    * The BillingPlanUpdateResponse model module.
    * @module model/BillingPlanUpdateResponse
@@ -38,10 +35,8 @@
    * @alias module:model/BillingPlanUpdateResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,81 +46,77 @@
    * @param {module:model/BillingPlanUpdateResponse} obj Optional instance to populate.
    * @return {module:model/BillingPlanUpdateResponse} The populated <code>BillingPlanUpdateResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accountPaymentMethod')) {
-        obj['accountPaymentMethod'] = ApiClient.convertToType(data['accountPaymentMethod'], 'String');
+        obj.accountPaymentMethod = ApiClient.convertToType(data.accountPaymentMethod, 'String');
       }
       if (data.hasOwnProperty('billingPlanPreview')) {
-        obj['billingPlanPreview'] = BillingPlanPreview.constructFromObject(data['billingPlanPreview']);
+        obj.billingPlanPreview = BillingPlanPreview.constructFromObject(data.billingPlanPreview);
       }
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('includedSeats')) {
-        obj['includedSeats'] = ApiClient.convertToType(data['includedSeats'], 'String');
+        obj.includedSeats = ApiClient.convertToType(data.includedSeats, 'String');
       }
       if (data.hasOwnProperty('paymentCycle')) {
-        obj['paymentCycle'] = ApiClient.convertToType(data['paymentCycle'], 'String');
+        obj.paymentCycle = ApiClient.convertToType(data.paymentCycle, 'String');
       }
       if (data.hasOwnProperty('paymentMethod')) {
-        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+        obj.paymentMethod = ApiClient.convertToType(data.paymentMethod, 'String');
       }
       if (data.hasOwnProperty('planId')) {
-        obj['planId'] = ApiClient.convertToType(data['planId'], 'String');
+        obj.planId = ApiClient.convertToType(data.planId, 'String');
       }
       if (data.hasOwnProperty('planName')) {
-        obj['planName'] = ApiClient.convertToType(data['planName'], 'String');
+        obj.planName = ApiClient.convertToType(data.planName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} accountPaymentMethod
    */
-  exports.prototype['accountPaymentMethod'] = undefined;
+  exports.prototype.accountPaymentMethod = undefined;
   /**
    * @member {module:model/BillingPlanPreview} billingPlanPreview
    */
-  exports.prototype['billingPlanPreview'] = undefined;
+  exports.prototype.billingPlanPreview = undefined;
   /**
    * Specifies the ISO currency code for the account.
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * The number of seats (users) included.
    * @member {String} includedSeats
    */
-  exports.prototype['includedSeats'] = undefined;
+  exports.prototype.includedSeats = undefined;
   /**
-   * 
+   *
    * @member {String} paymentCycle
    */
-  exports.prototype['paymentCycle'] = undefined;
+  exports.prototype.paymentCycle = undefined;
   /**
-   * 
+   *
    * @member {String} paymentMethod
    */
-  exports.prototype['paymentMethod'] = undefined;
+  exports.prototype.paymentMethod = undefined;
   /**
-   * 
+   *
    * @member {String} planId
    */
-  exports.prototype['planId'] = undefined;
+  exports.prototype.planId = undefined;
   /**
-   * 
+   *
    * @member {String} planName
    */
-  exports.prototype['planName'] = undefined;
-
-
+  exports.prototype.planName = undefined;
 
   return exports;
 }));
-
-

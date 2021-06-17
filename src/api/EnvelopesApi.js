@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/CommentHistoryResult', 'model/CommentsPublish', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/DisplayApplianceAccount', 'model/DisplayApplianceInfo', 'model/DisplayAppliancePdf', 'model/DisplayApplianceSignerAttachment', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopeSummary', 'model/EnvelopeTransferRule', 'model/EnvelopeTransferRuleInformation', 'model/EnvelopeTransferRuleRequest', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/ProofServiceResourceToken', 'model/ProofServiceViewLink', 'model/RecipientPreviewRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewUrl', 'model/Workflow'], factory);
+    define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/CommentHistoryResult', 'model/CommentsPublish', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/DisplayApplianceAccount', 'model/DisplayApplianceInfo', 'model/DisplayAppliancePdf', 'model/DisplayApplianceSignerAttachment', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopeSummary', 'model/EnvelopeTransferRule', 'model/EnvelopeTransferRuleInformation', 'model/EnvelopeTransferRuleRequest', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/ProofServiceResourceToken', 'model/ProofServiceViewLink', 'model/RecipientPreviewRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewUrl', 'model/Workflow'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/Attachment'), require('../model/ChunkedUploadRequest'), require('../model/ChunkedUploadResponse'), require('../model/CommentHistoryResult'), require('../model/CommentsPublish'), require('../model/ConsoleViewRequest'), require('../model/ConsumerDisclosure'), require('../model/CorrectViewRequest'), require('../model/CustomFields'), require('../model/CustomFieldsEnvelope'), require('../model/DisplayApplianceAccount'), require('../model/DisplayApplianceInfo'), require('../model/DisplayAppliancePdf'), require('../model/DisplayApplianceSignerAttachment'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/DocumentTemplateList'), require('../model/DocumentVisibilityList'), require('../model/EmailSettings'), require('../model/Envelope'), require('../model/EnvelopeAttachmentsRequest'), require('../model/EnvelopeAttachmentsResult'), require('../model/EnvelopeAuditEventResponse'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeDocumentsResult'), require('../model/EnvelopeFormData'), require('../model/EnvelopeIdsRequest'), require('../model/EnvelopeNotificationRequest'), require('../model/EnvelopeSummary'), require('../model/EnvelopeTransferRule'), require('../model/EnvelopeTransferRuleInformation'), require('../model/EnvelopeTransferRuleRequest'), require('../model/EnvelopeUpdateSummary'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/ProofServiceResourceToken'), require('../model/ProofServiceViewLink'), require('../model/RecipientPreviewRequest'), require('../model/RecipientViewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateDocumentVisibilityList'), require('../model/TemplateInformation'), require('../model/UserSignature'), require('../model/ViewUrl'), require('../model/Workflow'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.EnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.ChunkedUploadRequest, root.Docusign.ChunkedUploadResponse, root.Docusign.CommentHistoryResult, root.Docusign.CommentsPublish, root.Docusign.ConsoleViewRequest, root.Docusign.ConsumerDisclosure, root.Docusign.CorrectViewRequest, root.Docusign.CustomFields, root.Docusign.CustomFieldsEnvelope, root.Docusign.DisplayApplianceAccount, root.Docusign.DisplayApplianceInfo, root.Docusign.DisplayAppliancePdf, root.Docusign.DisplayApplianceSignerAttachment, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.DocumentTemplateList, root.Docusign.DocumentVisibilityList, root.Docusign.EmailSettings, root.Docusign.Envelope, root.Docusign.EnvelopeAttachmentsRequest, root.Docusign.EnvelopeAttachmentsResult, root.Docusign.EnvelopeAuditEventResponse, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeDocumentsResult, root.Docusign.EnvelopeFormData, root.Docusign.EnvelopeIdsRequest, root.Docusign.EnvelopeNotificationRequest, root.Docusign.EnvelopeSummary, root.Docusign.EnvelopeTransferRule, root.Docusign.EnvelopeTransferRuleInformation, root.Docusign.EnvelopeTransferRuleRequest, root.Docusign.EnvelopeUpdateSummary, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.ProofServiceResourceToken, root.Docusign.ProofServiceViewLink, root.Docusign.RecipientPreviewRequest, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateDocumentVisibilityList, root.Docusign.TemplateInformation, root.Docusign.UserSignature, root.Docusign.ViewUrl, root.Docusign.Workflow);
   }
-}(this, function(Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, CommentHistoryResult, CommentsPublish, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, DisplayApplianceAccount, DisplayApplianceInfo, DisplayAppliancePdf, DisplayApplianceSignerAttachment, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocument, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopeSummary, EnvelopeTransferRule, EnvelopeTransferRuleInformation, EnvelopeTransferRuleRequest, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, LockInformation, LockRequest, Notification, PageImages, PageRequest, ProofServiceResourceToken, ProofServiceViewLink, RecipientPreviewRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewUrl, Workflow) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, CommentHistoryResult, CommentsPublish, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, DisplayApplianceAccount, DisplayApplianceInfo, DisplayAppliancePdf, DisplayApplianceSignerAttachment, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocument, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopeSummary, EnvelopeTransferRule, EnvelopeTransferRuleInformation, EnvelopeTransferRuleRequest, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, LockInformation, LockRequest, Notification, PageImages, PageRequest, ProofServiceResourceToken, ProofServiceViewLink, RecipientPreviewRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewUrl, Workflow) => {
   /**
    * Envelopes service.
    * @module api/EnvelopesApi
    */
 
   /**
-   * Constructs a new EnvelopesApi. 
+   * Constructs a new EnvelopesApi.
    * @alias module:api/EnvelopesApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the applyTemplate operation. If none specified a Promise will be returned.
@@ -65,12 +61,12 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.preserveTemplateRecipient 
-     * @param {module:model/DocumentTemplateList} optsOrCallback.documentTemplateList 
+     * @param {String} optsOrCallback.preserveTemplateRecipient
+     * @param {module:model/DocumentTemplateList} optsOrCallback.documentTemplateList
      * @param {module:api/EnvelopesApi~applyTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentTemplateList}
      */
-    this.applyTemplate = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.applyTemplate = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -78,7 +74,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentTemplateList'];
+      const postBody = optsOrCallback.documentTemplateList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -90,34 +86,34 @@
         throw new Error("Missing the required parameter 'envelopeId' when calling applyTemplate");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'preserve_template_recipient': optsOrCallback['preserveTemplateRecipient']
+      const queryParams = {
+        preserve_template_recipient: optsOrCallback.preserveTemplateRecipient,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentTemplateList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentTemplateList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/templates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -136,12 +132,12 @@
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.preserveTemplateRecipient 
-     * @param {module:model/DocumentTemplateList} optsOrCallback.documentTemplateList 
+     * @param {String} optsOrCallback.preserveTemplateRecipient
+     * @param {module:model/DocumentTemplateList} optsOrCallback.documentTemplateList
      * @param {module:api/EnvelopesApi~applyTemplateToDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentTemplateList}
      */
-    this.applyTemplateToDocument = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.applyTemplateToDocument = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -149,7 +145,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentTemplateList'];
+      const postBody = optsOrCallback.documentTemplateList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -166,35 +162,35 @@
         throw new Error("Missing the required parameter 'documentId' when calling applyTemplateToDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
-        'preserve_template_recipient': optsOrCallback['preserveTemplateRecipient']
+      const queryParams = {
+        preserve_template_recipient: optsOrCallback.preserveTemplateRecipient,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentTemplateList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentTemplateList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -210,11 +206,11 @@
      * Initiate a new ChunkedUpload.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ChunkedUploadRequest} optsOrCallback.chunkedUploadRequest 
+     * @param {module:model/ChunkedUploadRequest} optsOrCallback.chunkedUploadRequest
      * @param {module:api/EnvelopesApi~createChunkedUploadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ChunkedUploadResponse}
      */
-    this.createChunkedUpload = function(accountId, optsOrCallback, callback) {
+    this.createChunkedUpload = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -222,39 +218,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['chunkedUploadRequest'];
+      const postBody = optsOrCallback.chunkedUploadRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createChunkedUpload");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ChunkedUploadResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ChunkedUploadResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/chunked_uploads', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -271,11 +267,11 @@
      * Returns a URL that allows you to embed the authentication view of the DocuSign UI in your applications.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ConsoleViewRequest} optsOrCallback.consoleViewRequest 
+     * @param {module:model/ConsoleViewRequest} optsOrCallback.consoleViewRequest
      * @param {module:api/EnvelopesApi~createConsoleViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createConsoleView = function(accountId, optsOrCallback, callback) {
+    this.createConsoleView = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -283,39 +279,39 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['consoleViewRequest'];
+      const postBody = optsOrCallback.consoleViewRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createConsoleView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/views/console', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -331,15 +327,15 @@
      * Returns a URL to the envelope correction UI.
      * Returns a URL that allows you to embed the envelope correction view of the DocuSign UI in your applications.
 
-Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
+Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CorrectViewRequest} optsOrCallback.correctViewRequest 
+     * @param {module:model/CorrectViewRequest} optsOrCallback.correctViewRequest
      * @param {module:api/EnvelopesApi~createCorrectViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createCorrectView = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createCorrectView = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -347,7 +343,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['correctViewRequest'];
+      const postBody = optsOrCallback.correctViewRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -359,33 +355,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling createCorrectView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/correct', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -405,11 +401,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CustomFields} optsOrCallback.customFields 
+     * @param {module:model/CustomFields} optsOrCallback.customFields
      * @param {module:api/EnvelopesApi~createCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.createCustomFields = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createCustomFields = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -417,7 +413,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['customFields'];
+      const postBody = optsOrCallback.customFields;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -429,33 +425,33 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'envelopeId' when calling createCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -474,11 +470,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation
      * @param {module:api/EnvelopesApi~createDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.createDocumentFields = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.createDocumentFields = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -486,7 +482,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentFieldsInformation'];
+      const postBody = optsOrCallback.documentFieldsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -503,34 +499,34 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -548,11 +544,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition 
+     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition
      * @param {module:api/EnvelopesApi~createDocumentResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitions}
      */
-    this.createDocumentResponsiveHtmlPreview = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.createDocumentResponsiveHtmlPreview = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -560,7 +556,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentHtmlDefinition'];
+      const postBody = optsOrCallback.documentHtmlDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -577,34 +573,34 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentResponsiveHtmlPreview");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitions;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitions;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html_preview', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -622,11 +618,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Tabs} optsOrCallback.tabs 
+     * @param {module:model/Tabs} optsOrCallback.tabs
      * @param {module:api/EnvelopesApi~createDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.createDocumentTabs = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.createDocumentTabs = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -634,7 +630,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabs'];
+      const postBody = optsOrCallback.tabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -651,34 +647,34 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -692,19 +688,19 @@ Each custom field used in an envelope must have a unique name.
 
     /**
      * Returns a URL to the edit view UI.
-     * Returns a URL that allows you to embed the edit view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign editing view. 
+     * Returns a URL that allows you to embed the edit view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign editing view.
 
 Upon sending completion, the user is returned to the return URL provided by the API application.
 
-Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
+Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ReturnUrlRequest} optsOrCallback.returnUrlRequest 
+     * @param {module:model/ReturnUrlRequest} optsOrCallback.returnUrlRequest
      * @param {module:api/EnvelopesApi~createEditViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createEditView = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createEditView = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -712,7 +708,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['returnUrlRequest'];
+      const postBody = optsOrCallback.returnUrlRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -724,33 +720,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling createEditView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/edit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -770,11 +766,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EmailSettings} optsOrCallback.emailSettings 
+     * @param {module:model/EmailSettings} optsOrCallback.emailSettings
      * @param {module:api/EnvelopesApi~createEmailSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailSettings}
      */
-    this.createEmailSettings = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createEmailSettings = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -782,7 +778,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['emailSettings'];
+      const postBody = optsOrCallback.emailSettings;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -794,33 +790,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling createEmailSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EmailSettings;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EmailSettings;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -834,7 +830,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
     /**
      * Creates an envelope.
-     * Creates an envelope. 
+     * Creates an envelope.
 
 Using this function you can:
 * Create an envelope and send it.
@@ -879,18 +875,18 @@ If an email subject or message is entered before adding or applying a template w
 ## Envelope Status
 The status of sent envelopes can be determined through the DocuSign webhook system or by polling. Webhooks are highly recommended: they provide your application with the quickest updates when an envelope's status changes. DocuSign limits polling to once every 15 minutes or less frequently.
 
-When a webhook is used, DocuSign calls your application, via the URL you provide, with a notification XML message. 
+When a webhook is used, DocuSign calls your application, via the URL you provide, with a notification XML message.
 
 See the [Webhook recipe](https://www.docusign.com/developer-center/recipes/webhook-status) for examples and live demos of using webhooks.
 
 ## Webhook Options
-The two webhook options, *eventNotification* and *Connect* use the same notification mechanism and message formats. eventNotification is used to create a webhook for a specific envelope sent via the API. Connect webhooks can be used for any envelope sent from an account, from any user, from any client. 
+The two webhook options, *eventNotification* and *Connect* use the same notification mechanism and message formats. eventNotification is used to create a webhook for a specific envelope sent via the API. Connect webhooks can be used for any envelope sent from an account, from any user, from any client.
 
 ### eventNotification Webhooks
 The Envelopes::create method includes an optional [eventNotification object](#definition-eventNotification) that adds a webhook to the envelope. eventNotification webhooks are available for all DocuSign accounts with API access.
 
 ### Connect Webhooks
-Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc. 
+Connect can be used to create a webhook for all envelopes sent by all users in an account, either through the API or via other DocuSign clients (web, mobile, etc). Connect configurations are independent of specific envelopes. A Connect configuration includes a filter that may be used to limit the webhook to specific users, envelope statuses, etc.
 
 Connect configurations may be created and managed using the [ConnectConfigurations resource](../../Connect/ConnectConfigurations). Configurations can also be created and managed from the Administration tool accessed by selecting ÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂGo to AdminÃÂÃÂ¢ÃÂ¢ÃÂÃÂ¬ÃÂÃÂ from the menu next to your picture on the DocuSign web app. See the Integrations/Connect section of the Admin tool. For repeatability, and to minimize support questions, creating Connect configurations via the API is recommended, especially for ISVs.
 
@@ -940,7 +936,7 @@ For example, if you have a simple inline template with only one tab in it with a
 * If no DefaultRecipient is specified, tabs must be explicitly mapped to recipients in order to be generated from the form. Unmapped form objects will not be generated into their DocuSign equivalents. (In the case of Signature/Initials, the tabs will be disregarded entirely; in the case of pdf text fields, the field data will be flattened on the Envelope document, but there will not be a corresponding DocuSign data tab.)
 
 ### Including the Document Content for Composite Templates
-Document content can be supplied inline, using the `documentBase64` or can be included in a multi-part HTTP message. 
+Document content can be supplied inline, using the `documentBase64` or can be included in a multi-part HTTP message.
 If a multi-part message is used and there are multiple Composite Templates, the document content-disposition can include the `compositeTemplateId` to which the document should be added. Using the `compositeTemplateId` sets which documents are associated with particular composite templates. An example of this usage is:
 
 ```
@@ -1024,7 +1020,7 @@ The following rules are used to determine the `brandId` used in an envelope:
 * In cases where no brand is specified and the sender belongs to a Group; if there is only one brand associated with the Group, then that brand is used in the envelope. Otherwise, the account's default signing brand is used.
 * For envelopes that do not meet any of the previous criteria, the account's default signing brand is used for the envelope.
 
-## BCC Email address feature 
+## BCC Email address feature
 The BCC Email address feature is designed to provide a copy of all email communications for external archiving purposes. DocuSign recommends that envelopes sent using the BCC for Email Archive feature, including the BCC Email Override option, include additional signer authentication options. To send a copy of the envelope to a recipient who does not need to sign, don't use the BCC Email field. Use a Carbon Copy or Certified Delivery Recipient type.
 
 ## Merge Recipient Roles for Draft Envelopes
@@ -1035,16 +1031,16 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
 ###### Note: DocuSign recommends that the `merge_roles_on_draft` query parameter be used anytime you are creating an envelope with multiple templates and keeping it in draft (created) status.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.cdseMode 
-     * @param {String} optsOrCallback.changeRoutingOrder 
+     * @param {String} optsOrCallback.cdseMode
+     * @param {String} optsOrCallback.changeRoutingOrder
      * @param {String} optsOrCallback.completedDocumentsOnly If set to true then we want to set the sourceEnvelopeId to indicate that this is a\"forward\" envelope action
      * @param {String} optsOrCallback.mergeRolesOnDraft When set to **true**, merges template roles and remove empty recipients when you create an envelope with multiple templates.
-     * @param {String} optsOrCallback.tabLabelExactMatches 
-     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
+     * @param {String} optsOrCallback.tabLabelExactMatches
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition
      * @param {module:api/EnvelopesApi~createEnvelopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeSummary}
      */
-    this.createEnvelope = function(accountId, optsOrCallback, callback) {
+    this.createEnvelope = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1052,44 +1048,44 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeDefinition'];
+      const postBody = optsOrCallback.envelopeDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEnvelope");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'cdse_mode': optsOrCallback['cdseMode'],
-        'change_routing_order': optsOrCallback['changeRoutingOrder'],
-        'completed_documents_only': optsOrCallback['completedDocumentsOnly'],
-        'merge_roles_on_draft': optsOrCallback['mergeRolesOnDraft'],
-        'tab_label_exact_matches': optsOrCallback['tabLabelExactMatches']
+      const queryParams = {
+        cdse_mode: optsOrCallback.cdseMode,
+        change_routing_order: optsOrCallback.changeRoutingOrder,
+        completed_documents_only: optsOrCallback.completedDocumentsOnly,
+        merge_roles_on_draft: optsOrCallback.mergeRolesOnDraft,
+        tab_label_exact_matches: optsOrCallback.tabLabelExactMatches,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1106,11 +1102,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CommentsPublish} optsOrCallback.commentsPublish 
+     * @param {module:model/CommentsPublish} optsOrCallback.commentsPublish
      * @param {module:api/EnvelopesApi~createEnvelopeCommentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommentHistoryResult}
      */
-    this.createEnvelopeComments = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createEnvelopeComments = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1118,7 +1114,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['commentsPublish'];
+      const postBody = optsOrCallback.commentsPublish;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1130,33 +1126,33 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         throw new Error("Missing the required parameter 'envelopeId' when calling createEnvelopeComments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CommentHistoryResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CommentHistoryResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/comments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1173,11 +1169,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/RecipientPreviewRequest} optsOrCallback.recipientPreviewRequest 
+     * @param {module:model/RecipientPreviewRequest} optsOrCallback.recipientPreviewRequest
      * @param {module:api/EnvelopesApi~createEnvelopeRecipientPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createEnvelopeRecipientPreview = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createEnvelopeRecipientPreview = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1185,7 +1181,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['recipientPreviewRequest'];
+      const postBody = optsOrCallback.recipientPreviewRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1197,33 +1193,33 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         throw new Error("Missing the required parameter 'envelopeId' when calling createEnvelopeRecipientPreview");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/recipient_preview', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1240,11 +1236,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/RecipientViewRequest} optsOrCallback.recipientViewRequest 
+     * @param {module:model/RecipientViewRequest} optsOrCallback.recipientViewRequest
      * @param {module:api/EnvelopesApi~createEnvelopeRecipientSharedViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createEnvelopeRecipientSharedView = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createEnvelopeRecipientSharedView = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1252,7 +1248,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['recipientViewRequest'];
+      const postBody = optsOrCallback.recipientViewRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1264,33 +1260,33 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         throw new Error("Missing the required parameter 'envelopeId' when calling createEnvelopeRecipientSharedView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/shared', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1306,11 +1302,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * Add envelope transfer rules to an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeTransferRuleRequest} optsOrCallback.envelopeTransferRuleRequest 
+     * @param {module:model/EnvelopeTransferRuleRequest} optsOrCallback.envelopeTransferRuleRequest
      * @param {module:api/EnvelopesApi~createEnvelopeTransferRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTransferRuleInformation}
      */
-    this.createEnvelopeTransferRules = function(accountId, optsOrCallback, callback) {
+    this.createEnvelopeTransferRules = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1318,39 +1314,39 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeTransferRuleRequest'];
+      const postBody = optsOrCallback.envelopeTransferRuleRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createEnvelopeTransferRules");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeTransferRuleInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeTransferRuleInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/transfer_rules', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1366,34 +1362,34 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * Uploads Kazmon error for Display Appliance
      * @param {module:api/EnvelopesApi~createErrorCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createError = function(callback) {
-      var postBody = null;
+    this.createError = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/display_appliance_info/error', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1413,11 +1409,11 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest
      * @param {module:api/EnvelopesApi~createLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.createLock = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createLock = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1425,7 +1421,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['lockRequest'];
+      const postBody = optsOrCallback.lockRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1437,33 +1433,33 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         throw new Error("Missing the required parameter 'envelopeId' when calling createLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1481,8 +1477,8 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~createPageInfoCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.createPageInfo = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.createPageInfo = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1494,33 +1490,33 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         throw new Error("Missing the required parameter 'envelopeId' when calling createPageInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1539,8 +1535,8 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
      * @param {module:api/EnvelopesApi~createPdfBlobCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayAppliancePdf}
      */
-    this.createPdfBlob = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.createPdfBlob = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1552,33 +1548,33 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
         throw new Error("Missing the required parameter 'envelopeId' when calling createPdfBlob");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayAppliancePdf;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayAppliancePdf;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf_blobs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1599,11 +1595,11 @@ For an in process envelope, one that has been sent and has not been completed or
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
-     * @param {module:model/Recipients} optsOrCallback.recipients 
+     * @param {module:model/Recipients} optsOrCallback.recipients
      * @param {module:api/EnvelopesApi~createRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.createRecipient = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createRecipient = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1611,7 +1607,7 @@ For an in process envelope, one that has been sent and has not been completed or
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['recipients'];
+      const postBody = optsOrCallback.recipients;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1623,34 +1619,34 @@ For an in process envelope, one that has been sent and has not been completed or
         throw new Error("Missing the required parameter 'envelopeId' when calling createRecipient");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'resend_envelope': optsOrCallback['resendEnvelope']
+      const queryParams = {
+        resend_envelope: optsOrCallback.resendEnvelope,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1670,8 +1666,8 @@ For an in process envelope, one that has been sent and has not been completed or
      * @param {module:api/EnvelopesApi~createRecipientManualReviewViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createRecipientManualReviewView = function(accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.createRecipientManualReviewView = function (accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1688,34 +1684,34 @@ For an in process envelope, one that has been sent and has not been completed or
         throw new Error("Missing the required parameter 'recipientId' when calling createRecipientManualReviewView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/views/identity_manual_review', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1735,8 +1731,8 @@ For an in process envelope, one that has been sent and has not been completed or
      * @param {module:api/EnvelopesApi~createRecipientProofFileLinkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProofServiceViewLink}
      */
-    this.createRecipientProofFileLink = function(accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.createRecipientProofFileLink = function (accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1753,34 +1749,34 @@ For an in process envelope, one that has been sent and has not been completed or
         throw new Error("Missing the required parameter 'recipientId' when calling createRecipientProofFileLink");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ProofServiceViewLink;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ProofServiceViewLink;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1794,15 +1790,15 @@ For an in process envelope, one that has been sent and has not been completed or
 
     /**
      * Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
-     * @param {String} tokenScopes 
+     * @param {String} tokenScopes
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {module:api/EnvelopesApi~createRecipientProofFileResourceTokenCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProofServiceResourceToken}
      */
-    this.createRecipientProofFileResourceToken = function(tokenScopes, accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.createRecipientProofFileResourceToken = function (tokenScopes, accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'tokenScopes' is set
       if (tokenScopes === undefined || tokenScopes === null) {
@@ -1824,35 +1820,35 @@ For an in process envelope, one that has been sent and has not been completed or
         throw new Error("Missing the required parameter 'recipientId' when calling createRecipientProofFileResourceToken");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'token_scopes': tokenScopes,
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        token_scopes: tokenScopes,
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ProofServiceResourceToken;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ProofServiceResourceToken;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/identity_proof_token', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1866,19 +1862,19 @@ For an in process envelope, one that has been sent and has not been completed or
 
     /**
      * Returns a URL to the recipient view UI.
-     * Returns a URL that allows you to embed the recipient view of the DocuSign UI in your applications. This call cannot be used to view draft envelopes, since those envelopes have not been sent. 
+     * Returns a URL that allows you to embed the recipient view of the DocuSign UI in your applications. This call cannot be used to view draft envelopes, since those envelopes have not been sent.
 
-Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
+Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView.
 
 An entry is added into the Security Level section of the DocuSign Certificate of Completion that reflects the `securityDomain` and `authenticationMethod` properties used to verify the user identity.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/RecipientViewRequest} optsOrCallback.recipientViewRequest 
+     * @param {module:model/RecipientViewRequest} optsOrCallback.recipientViewRequest
      * @param {module:api/EnvelopesApi~createRecipientViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createRecipientView = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createRecipientView = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1886,7 +1882,7 @@ An entry is added into the Security Level section of the DocuSign Certificate of
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['recipientViewRequest'];
+      const postBody = optsOrCallback.recipientViewRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1898,33 +1894,33 @@ An entry is added into the Security Level section of the DocuSign Certificate of
         throw new Error("Missing the required parameter 'envelopeId' when calling createRecipientView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/recipient', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1941,34 +1937,34 @@ An entry is added into the Security Level section of the DocuSign Certificate of
      * @param {module:api/EnvelopesApi~createRedeemCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.createRedeem = function(callback) {
-      var postBody = null;
+    this.createRedeem = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/display_appliance_info/redeem', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1985,11 +1981,11 @@ An entry is added into the Security Level section of the DocuSign Certificate of
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition 
+     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition
      * @param {module:api/EnvelopesApi~createResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitions}
      */
-    this.createResponsiveHtmlPreview = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createResponsiveHtmlPreview = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1997,7 +1993,7 @@ An entry is added into the Security Level section of the DocuSign Certificate of
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentHtmlDefinition'];
+      const postBody = optsOrCallback.documentHtmlDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2009,33 +2005,33 @@ An entry is added into the Security Level section of the DocuSign Certificate of
         throw new Error("Missing the required parameter 'envelopeId' when calling createResponsiveHtmlPreview");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitions;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitions;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html_preview', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2049,19 +2045,19 @@ An entry is added into the Security Level section of the DocuSign Certificate of
 
     /**
      * Returns a URL to the sender view UI.
-     * Returns a URL that allows you to embed the sender view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign sending view. 
+     * Returns a URL that allows you to embed the sender view of the DocuSign UI in your applications. This is a one-time use login token that allows the user to be placed into the DocuSign sending view.
 
 Upon sending completion, the user is returned to the return URL provided by the API application.
 
-Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView. 
+Important: iFrames should not be used for embedded operations on mobile devices due to screen space issues. For iOS devices DocuSign recommends using a WebView.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ReturnUrlRequest} optsOrCallback.returnUrlRequest 
+     * @param {module:model/ReturnUrlRequest} optsOrCallback.returnUrlRequest
      * @param {module:api/EnvelopesApi~createSenderViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createSenderView = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.createSenderView = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2069,7 +2065,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['returnUrlRequest'];
+      const postBody = optsOrCallback.returnUrlRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2081,33 +2077,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling createSenderView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/sender', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2126,11 +2122,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Tabs} optsOrCallback.tabs 
+     * @param {module:model/Tabs} optsOrCallback.tabs
      * @param {module:api/EnvelopesApi~createTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.createTabs = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.createTabs = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2138,7 +2134,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabs'];
+      const postBody = optsOrCallback.tabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2155,34 +2151,34 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'recipientId' when calling createTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2199,11 +2195,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeAttachmentsRequest} optsOrCallback.envelopeAttachmentsRequest 
+     * @param {module:model/EnvelopeAttachmentsRequest} optsOrCallback.envelopeAttachmentsRequest
      * @param {module:api/EnvelopesApi~deleteAttachmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeAttachmentsResult}
      */
-    this.deleteAttachments = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.deleteAttachments = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2211,7 +2207,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeAttachmentsRequest'];
+      const postBody = optsOrCallback.envelopeAttachmentsRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2223,33 +2219,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteAttachments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeAttachmentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeAttachmentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2264,12 +2260,12 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     /**
      * Delete an existing ChunkedUpload.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} chunkedUploadId 
+     * @param {String} chunkedUploadId
      * @param {module:api/EnvelopesApi~deleteChunkedUploadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ChunkedUploadResponse}
      */
-    this.deleteChunkedUpload = function(accountId, chunkedUploadId, callback) {
-      var postBody = null;
+    this.deleteChunkedUpload = function (accountId, chunkedUploadId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2281,33 +2277,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'chunkedUploadId' when calling deleteChunkedUpload");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'chunkedUploadId': chunkedUploadId
+      const pathParams = {
+        accountId,
+        chunkedUploadId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ChunkedUploadResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ChunkedUploadResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2325,11 +2321,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CustomFields} optsOrCallback.customFields 
+     * @param {module:model/CustomFields} optsOrCallback.customFields
      * @param {module:api/EnvelopesApi~deleteCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.deleteCustomFields = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.deleteCustomFields = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2337,7 +2333,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['customFields'];
+      const postBody = optsOrCallback.customFields;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2349,33 +2345,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2393,8 +2389,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deleteCustomFieldsV2Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCustomFieldsV2 = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deleteCustomFieldsV2 = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2406,33 +2402,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteCustomFieldsV2");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/custom_fields', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2450,8 +2446,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deleteCustomFields_0Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteCustomFields_0 = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deleteCustomFields_0 = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2463,33 +2459,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteCustomFields_0");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/custom_fields/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2508,8 +2504,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} documentId The ID of the document being accessed.
      * @param {module:api/EnvelopesApi~deleteDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteDocument = function(accountId, envelopeId, documentId, callback) {
-      var postBody = null;
+    this.deleteDocument = function (accountId, envelopeId, documentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2526,34 +2522,34 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/document/{documentId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2572,11 +2568,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation
      * @param {module:api/EnvelopesApi~deleteDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.deleteDocumentFields = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.deleteDocumentFields = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2584,7 +2580,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentFieldsInformation'];
+      const postBody = optsOrCallback.documentFieldsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2601,34 +2597,34 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2649,8 +2645,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} pageNumber The page number being accessed.
      * @param {module:api/EnvelopesApi~deleteDocumentPageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteDocumentPage = function(accountId, envelopeId, documentId, pageNumber, callback) {
-      var postBody = null;
+    this.deleteDocumentPage = function (accountId, envelopeId, documentId, pageNumber, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2672,35 +2668,35 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'pageNumber' when calling deleteDocumentPage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2718,11 +2714,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Tabs} optsOrCallback.tabs 
+     * @param {module:model/Tabs} optsOrCallback.tabs
      * @param {module:api/EnvelopesApi~deleteDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.deleteDocumentTabs = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.deleteDocumentTabs = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2730,7 +2726,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabs'];
+      const postBody = optsOrCallback.tabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2747,34 +2743,34 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2792,11 +2788,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition
      * @param {module:api/EnvelopesApi~deleteDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocumentsResult}
      */
-    this.deleteDocuments = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.deleteDocuments = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2804,7 +2800,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeDefinition'];
+      const postBody = optsOrCallback.envelopeDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2816,33 +2812,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteDocuments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeDocumentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeDocumentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2862,8 +2858,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {module:api/EnvelopesApi~deleteEmailSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailSettings}
      */
-    this.deleteEmailSettings = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deleteEmailSettings = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2875,33 +2871,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteEmailSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EmailSettings;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EmailSettings;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2918,10 +2914,10 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CorrectViewRequest} optsOrCallback.correctViewRequest 
+     * @param {module:model/CorrectViewRequest} optsOrCallback.correctViewRequest
      * @param {module:api/EnvelopesApi~deleteEnvelopeCorrectViewCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteEnvelopeCorrectView = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.deleteEnvelopeCorrectView = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2929,7 +2925,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['correctViewRequest'];
+      const postBody = optsOrCallback.correctViewRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2941,33 +2937,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteEnvelopeCorrectView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/views/correct', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2982,11 +2978,11 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     /**
      * Delete envelope transfer rules for an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} envelopeTransferRuleId 
+     * @param {String} envelopeTransferRuleId
      * @param {module:api/EnvelopesApi~deleteEnvelopeTransferRulesCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteEnvelopeTransferRules = function(accountId, envelopeTransferRuleId, callback) {
-      var postBody = null;
+    this.deleteEnvelopeTransferRules = function (accountId, envelopeTransferRuleId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2998,33 +2994,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeTransferRuleId' when calling deleteEnvelopeTransferRules");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeTransferRuleId': envelopeTransferRuleId
+      const pathParams = {
+        accountId,
+        envelopeTransferRuleId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/transfer_rules/{envelopeTransferRuleId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3042,8 +3038,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deleteEnvelopeWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteEnvelopeWorkflowDefinition = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deleteEnvelopeWorkflowDefinition = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3055,33 +3051,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteEnvelopeWorkflowDefinition");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3101,8 +3097,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {module:api/EnvelopesApi~deleteLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.deleteLock = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deleteLock = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3114,33 +3110,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3158,8 +3154,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deletePageInfoCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deletePageInfo = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deletePageInfo = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3171,33 +3167,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deletePageInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3215,8 +3211,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deletePageInfoV2Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deletePageInfoV2 = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deletePageInfoV2 = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3228,33 +3224,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deletePageInfoV2");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3275,8 +3271,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {module:api/EnvelopesApi~deleteRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.deleteRecipient = function(accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.deleteRecipient = function (accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3293,34 +3289,34 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipient");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3338,8 +3334,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deleteRecipientDeniedDocumentCopyCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteRecipientDeniedDocumentCopy = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deleteRecipientDeniedDocumentCopy = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3351,33 +3347,33 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteRecipientDeniedDocumentCopy");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/recipient_denied_copy', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3397,11 +3393,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Recipients} optsOrCallback.recipients 
+     * @param {module:model/Recipients} optsOrCallback.recipients
      * @param {module:api/EnvelopesApi~deleteRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.deleteRecipients = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.deleteRecipients = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3409,7 +3405,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['recipients'];
+      const postBody = optsOrCallback.recipients;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3421,33 +3417,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3465,8 +3461,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deleteSignerAttachmentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteSignerAttachment = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.deleteSignerAttachment = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3478,33 +3474,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling deleteSignerAttachment");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/signer_attachment_info', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3523,11 +3519,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Tabs} optsOrCallback.tabs 
+     * @param {module:model/Tabs} optsOrCallback.tabs
      * @param {module:api/EnvelopesApi~deleteTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.deleteTabs = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.deleteTabs = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3535,7 +3531,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabs'];
+      const postBody = optsOrCallback.tabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3552,34 +3548,34 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'recipientId' when calling deleteTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3597,8 +3593,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} templateId The ID of the template being accessed.
      * @param {module:api/EnvelopesApi~deleteTemplateWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteTemplateWorkflowDefinition = function(accountId, templateId, callback) {
-      var postBody = null;
+    this.deleteTemplateWorkflowDefinition = function (accountId, templateId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3610,33 +3606,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'templateId' when calling deleteTemplateWorkflowDefinition");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/workflow', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3657,8 +3653,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} templateId The ID of the template being accessed.
      * @param {module:api/EnvelopesApi~deleteTemplatesFromDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteTemplatesFromDocument = function(accountId, envelopeId, documentId, templateId, callback) {
-      var postBody = null;
+    this.deleteTemplatesFromDocument = function (accountId, envelopeId, documentId, templateId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3680,35 +3676,35 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'templateId' when calling deleteTemplatesFromDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates/{templateId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3727,8 +3723,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {module:api/EnvelopesApi~getAccountCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceAccount}
      */
-    this.getAccount = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getAccount = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3740,33 +3736,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling getAccount");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceAccount;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceAccount;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/account_info', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3783,18 +3779,18 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.beforeSign 
-     * @param {String} optsOrCallback.documentId 
-     * @param {String} optsOrCallback.entityType 
-     * @param {String} optsOrCallback.inPerson 
-     * @param {String} optsOrCallback.recipientId 
-     * @param {String} optsOrCallback.tabLocalePolicy 
-     * @param {String} optsOrCallback.tabType 
-     * @param {String} optsOrCallback.useDateSignedTabValExclusively 
+     * @param {String} optsOrCallback.beforeSign
+     * @param {String} optsOrCallback.documentId
+     * @param {String} optsOrCallback.entityType
+     * @param {String} optsOrCallback.inPerson
+     * @param {String} optsOrCallback.recipientId
+     * @param {String} optsOrCallback.tabLocalePolicy
+     * @param {String} optsOrCallback.tabType
+     * @param {String} optsOrCallback.useDateSignedTabValExclusively
      * @param {module:api/EnvelopesApi~getApplianceEnvelopeInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getApplianceEnvelopeInfo = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.getApplianceEnvelopeInfo = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3802,7 +3798,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3814,41 +3810,41 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling getApplianceEnvelopeInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'beforeSign': optsOrCallback['beforeSign'],
-        'document_id': optsOrCallback['documentId'],
-        'entity_type': optsOrCallback['entityType'],
-        'inPerson': optsOrCallback['inPerson'],
-        'recipient_id': optsOrCallback['recipientId'],
-        'tabLocalePolicy': optsOrCallback['tabLocalePolicy'],
-        'tabType': optsOrCallback['tabType'],
-        'useDateSignedTabValExclusively': optsOrCallback['useDateSignedTabValExclusively']
+      const queryParams = {
+        beforeSign: optsOrCallback.beforeSign,
+        document_id: optsOrCallback.documentId,
+        entity_type: optsOrCallback.entityType,
+        inPerson: optsOrCallback.inPerson,
+        recipient_id: optsOrCallback.recipientId,
+        tabLocalePolicy: optsOrCallback.tabLocalePolicy,
+        tabType: optsOrCallback.tabType,
+        useDateSignedTabValExclusively: optsOrCallback.useDateSignedTabValExclusively,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info_v2', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3867,8 +3863,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {module:api/EnvelopesApi~getApplianceInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getApplianceInfo = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getApplianceInfo = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3880,33 +3876,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling getApplianceInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3922,11 +3918,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * Retrieves an attachment from the envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
-     * @param {String} attachmentId 
+     * @param {String} attachmentId
      * @param {module:api/EnvelopesApi~getAttachmentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getAttachment = function(accountId, envelopeId, attachmentId, callback) {
-      var postBody = null;
+    this.getAttachment = function (accountId, envelopeId, attachmentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3943,34 +3939,34 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'attachmentId' when calling getAttachment");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'attachmentId': attachmentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        attachmentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments/{attachmentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3989,8 +3985,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {module:api/EnvelopesApi~getAttachmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeAttachmentsResult}
      */
-    this.getAttachments = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getAttachments = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4002,33 +3998,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling getAttachments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeAttachmentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeAttachmentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4043,13 +4039,13 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     /**
      * Retrieves the current metadata of a ChunkedUpload.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} chunkedUploadId 
+     * @param {String} chunkedUploadId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.include
      * @param {module:api/EnvelopesApi~getChunkedUploadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ChunkedUploadResponse}
      */
-    this.getChunkedUpload = function(accountId, chunkedUploadId, optsOrCallback, callback) {
+    this.getChunkedUpload = function (accountId, chunkedUploadId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4057,7 +4053,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4069,34 +4065,34 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'chunkedUploadId' when calling getChunkedUpload");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'chunkedUploadId': chunkedUploadId
+      const pathParams = {
+        accountId,
+        chunkedUploadId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ChunkedUploadResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ChunkedUploadResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4113,11 +4109,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.encoding 
+     * @param {String} optsOrCallback.encoding
      * @param {module:api/EnvelopesApi~getCommentsTranscriptCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getCommentsTranscript = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.getCommentsTranscript = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4125,7 +4121,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4137,34 +4133,34 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling getCommentsTranscript");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'encoding': optsOrCallback['encoding']
+      const queryParams = {
+        encoding: optsOrCallback.encoding,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/pdf'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/pdf'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/comments/transcript', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4184,11 +4180,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.langCode2 
+     * @param {String} optsOrCallback.langCode2
      * @param {module:api/EnvelopesApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
-    this.getConsumerDisclosure = function(accountId, envelopeId, recipientId, langCode, optsOrCallback, callback) {
+    this.getConsumerDisclosure = function (accountId, envelopeId, recipientId, langCode, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4196,7 +4192,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4218,36 +4214,36 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'langCode' when calling getConsumerDisclosure");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId,
-        'langCode': langCode
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
+        langCode,
       };
-      var queryParams = {
-        'langCode': optsOrCallback['langCode2']
+      const queryParams = {
+        langCode: optsOrCallback.langCode2,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConsumerDisclosure;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/consumer_disclosure/{langCode}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4266,11 +4262,11 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.langCode 
+     * @param {String} optsOrCallback.langCode
      * @param {module:api/EnvelopesApi~getConsumerDisclosureDefaultCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
-    this.getConsumerDisclosureDefault = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.getConsumerDisclosureDefault = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4278,7 +4274,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4295,35 +4291,35 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'recipientId' when calling getConsumerDisclosureDefault");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
-        'langCode': optsOrCallback['langCode']
+      const queryParams = {
+        langCode: optsOrCallback.langCode,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ConsumerDisclosure;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ConsumerDisclosure;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/consumer_disclosure', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4342,8 +4338,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {module:api/EnvelopesApi~getCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getCustomFields = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getCustomFields = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4355,33 +4351,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling getCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/custom_fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4400,8 +4396,8 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {module:api/EnvelopesApi~getDateSignedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getDateSigned = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getDateSigned = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4413,33 +4409,33 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
         throw new Error("Missing the required parameter 'envelopeId' when calling getDateSigned");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/date_signed', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4455,7 +4451,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * Gets a document from an envelope.
      * Retrieves the specified document from the envelope. If the account has the Highlight Data Changes feature enabled, there is an option to request that any changes in the envelope be highlighted.
 
-You can also use this method to retrieve a PDF containing the combined content of all documents and the certificate. If the account has the Highlight Data Changes feature enabled, there is an option to request that any changes in the envelope be highlighted. 
+You can also use this method to retrieve a PDF containing the combined content of all documents and the certificate. If the account has the Highlight Data Changes feature enabled, there is an option to request that any changes in the envelope be highlighted.
 
 To retrieve the combined content replace the `{documentId}` parameter in the endpoint with `combined`.
 /accounts/{accountId}/envelopes/{envelopeId}/documents/combined
@@ -4464,18 +4460,18 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.certificate When set to **false**, the envelope signing certificate is removed from the download.
-     * @param {String} optsOrCallback.documentsByUserid 
-     * @param {String} optsOrCallback.encoding 
+     * @param {String} optsOrCallback.documentsByUserid
+     * @param {String} optsOrCallback.encoding
      * @param {String} optsOrCallback.encrypt When set to **true**, the PDF bytes returned in the response are encrypted for all the key managers configured on your DocuSign account. The documents can be decrypted with the KeyManager Decrypt Document API.
-     * @param {String} optsOrCallback.language Specifies the language for the Certificate of Completion in the response. The supported languages, with the language value shown in parenthesis, are: Chinese Simplified (zh_CN), , Chinese Traditional (zh_TW), Dutch (nl), English US (en), French (fr), German (de), Italian (it), Japanese (ja), Korean (ko), Portuguese (pt), Portuguese (Brazil) (pt_BR), Russian (ru), Spanish (es). 
-     * @param {String} optsOrCallback.recipientId 
-     * @param {String} optsOrCallback.sharedUserId 
-     * @param {String} optsOrCallback.showChanges When set to **true**, any changed fields for the returned PDF are highlighted in yellow and optional signatures or initials outlined in red. 
-     * @param {String} optsOrCallback.watermark When set to **true**, the account has the watermark feature enabled, and the envelope is not complete, the watermark for the account is added to the PDF documents. This option can remove the watermark. 
+     * @param {String} optsOrCallback.language Specifies the language for the Certificate of Completion in the response. The supported languages, with the language value shown in parenthesis, are: Chinese Simplified (zh_CN), , Chinese Traditional (zh_TW), Dutch (nl), English US (en), French (fr), German (de), Italian (it), Japanese (ja), Korean (ko), Portuguese (pt), Portuguese (Brazil) (pt_BR), Russian (ru), Spanish (es).
+     * @param {String} optsOrCallback.recipientId
+     * @param {String} optsOrCallback.sharedUserId
+     * @param {String} optsOrCallback.showChanges When set to **true**, any changed fields for the returned PDF are highlighted in yellow and optional signatures or initials outlined in red.
+     * @param {String} optsOrCallback.watermark When set to **true**, the account has the watermark feature enabled, and the envelope is not complete, the watermark for the account is added to the PDF documents. This option can remove the watermark.
      * @param {module:api/EnvelopesApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getDocument = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.getDocument = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4483,7 +4479,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4500,43 +4496,43 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'documentId' when calling getDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
-        'certificate': optsOrCallback['certificate'],
-        'documents_by_userid': optsOrCallback['documentsByUserid'],
-        'encoding': optsOrCallback['encoding'],
-        'encrypt': optsOrCallback['encrypt'],
-        'language': optsOrCallback['language'],
-        'recipient_id': optsOrCallback['recipientId'],
-        'shared_user_id': optsOrCallback['sharedUserId'],
-        'show_changes': optsOrCallback['showChanges'],
-        'watermark': optsOrCallback['watermark']
+      const queryParams = {
+        certificate: optsOrCallback.certificate,
+        documents_by_userid: optsOrCallback.documentsByUserid,
+        encoding: optsOrCallback.encoding,
+        encrypt: optsOrCallback.encrypt,
+        language: optsOrCallback.language,
+        recipient_id: optsOrCallback.recipientId,
+        shared_user_id: optsOrCallback.sharedUserId,
+        show_changes: optsOrCallback.showChanges,
+        watermark: optsOrCallback.watermark,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/pdf'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/pdf'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4559,11 +4555,11 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {String} optsOrCallback.dpi Sets the dpi for the image.
      * @param {String} optsOrCallback.maxHeight Sets the maximum height for the page image in pixels. The dpi is recalculated based on this setting.
      * @param {String} optsOrCallback.maxWidth Sets the maximum width for the page image in pixels. The dpi is recalculated based on this setting.
-     * @param {String} optsOrCallback.showChanges 
+     * @param {String} optsOrCallback.showChanges
      * @param {module:api/EnvelopesApi~getDocumentPageImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getDocumentPageImage = function(accountId, envelopeId, documentId, pageNumber, optsOrCallback, callback) {
+    this.getDocumentPageImage = function (accountId, envelopeId, documentId, pageNumber, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4571,7 +4567,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4593,39 +4589,39 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'pageNumber' when calling getDocumentPageImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
-        'dpi': optsOrCallback['dpi'],
-        'max_height': optsOrCallback['maxHeight'],
-        'max_width': optsOrCallback['maxWidth'],
-        'show_changes': optsOrCallback['showChanges']
+      const queryParams = {
+        dpi: optsOrCallback.dpi,
+        max_height: optsOrCallback.maxHeight,
+        max_width: optsOrCallback.maxWidth,
+        show_changes: optsOrCallback.showChanges,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/png'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/png'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4644,8 +4640,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getDocumentPagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getDocumentPages = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getDocumentPages = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4657,33 +4653,33 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'envelopeId' when calling getDocumentPages");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/document_page_list', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4701,12 +4697,12 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeMetadata 
-     * @param {String} optsOrCallback.pageNumbers 
+     * @param {String} optsOrCallback.includeMetadata
+     * @param {String} optsOrCallback.pageNumbers
      * @param {module:api/EnvelopesApi~getDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.getDocumentTabs = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.getDocumentTabs = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4714,7 +4710,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4731,36 +4727,36 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'documentId' when calling getDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
-        'include_metadata': optsOrCallback['includeMetadata'],
-        'page_numbers': optsOrCallback['pageNumbers']
+      const queryParams = {
+        include_metadata: optsOrCallback.includeMetadata,
+        page_numbers: optsOrCallback.pageNumbers,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4778,40 +4774,40 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getDynamicSystemSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getDynamicSystemSettings = function(accountId, callback) {
-      var postBody = null;
+    this.getDynamicSystemSettings = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getDynamicSystemSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/display_appliance_info/dynamicsystemsettings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4831,8 +4827,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getEmailSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailSettings}
      */
-    this.getEmailSettings = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getEmailSettings = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4844,33 +4840,33 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'envelopeId' when calling getEmailSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EmailSettings;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EmailSettings;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4889,11 +4885,11 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.advancedUpdate When true, envelope information can be added or modified.
-     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.include
      * @param {module:api/EnvelopesApi~getEnvelopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Envelope}
      */
-    this.getEnvelope = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.getEnvelope = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -4901,7 +4897,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4913,35 +4909,35 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelope");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'advanced_update': optsOrCallback['advancedUpdate'],
-        'include': optsOrCallback['include']
+      const queryParams = {
+        advanced_update: optsOrCallback.advancedUpdate,
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Envelope;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Envelope;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -4961,8 +4957,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getEnvelopeDocumentHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
      */
-    this.getEnvelopeDocumentHtmlDefinitions = function(accountId, envelopeId, documentId, callback) {
-      var postBody = null;
+    this.getEnvelopeDocumentHtmlDefinitions = function (accountId, envelopeId, documentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4979,34 +4975,34 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'documentId' when calling getEnvelopeDocumentHtmlDefinitions");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitionOriginals;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitionOriginals;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/html_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5025,8 +5021,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getEnvelopeHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
      */
-    this.getEnvelopeHtmlDefinitions = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getEnvelopeHtmlDefinitions = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5038,33 +5034,33 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeHtmlDefinitions");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitionOriginals;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitionOriginals;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/html_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5080,12 +5076,12 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * Returns a list of envelope transfer rules in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.count
+     * @param {String} optsOrCallback.startPosition
      * @param {module:api/EnvelopesApi~getEnvelopeTransferRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTransferRuleInformation}
      */
-    this.getEnvelopeTransferRules = function(accountId, optsOrCallback, callback) {
+    this.getEnvelopeTransferRules = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -5093,41 +5089,41 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeTransferRules");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'start_position': optsOrCallback['startPosition']
+      const queryParams = {
+        count: optsOrCallback.count,
+        start_position: optsOrCallback.startPosition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeTransferRuleInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeTransferRuleInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/transfer_rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5146,8 +5142,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getEnvelopeWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workflow}
      */
-    this.getEnvelopeWorkflowDefinition = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getEnvelopeWorkflowDefinition = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5159,33 +5155,33 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeWorkflowDefinition");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workflow;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workflow;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5204,8 +5200,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getFormDataCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeFormData}
      */
-    this.getFormData = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getFormData = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5217,33 +5213,33 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'envelopeId' when calling getFormData");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeFormData;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeFormData;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/form_data', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5262,8 +5258,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getImage = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getImage = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5275,33 +5271,33 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'envelopeId' when calling getImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/image', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5321,8 +5317,8 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
      * @param {module:api/EnvelopesApi~getLocalePolicyCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getLocalePolicy = function(accountId, envelopeId, userId, callback) {
-      var postBody = null;
+    this.getLocalePolicy = function (accountId, envelopeId, userId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5339,34 +5335,34 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
         throw new Error("Missing the required parameter 'userId' when calling getLocalePolicy");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'userId': userId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        userId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/localepolicy/{userId}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5388,8 +5384,8 @@ If the call is made by the locked by user and the request has the same integrato
      * @param {module:api/EnvelopesApi~getLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.getLock = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getLock = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5401,33 +5397,33 @@ If the call is made by the locked by user and the request has the same integrato
         throw new Error("Missing the required parameter 'envelopeId' when calling getLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5447,8 +5443,8 @@ If the call is made by the locked by user and the request has the same integrato
      * @param {module:api/EnvelopesApi~getNotificationSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notification}
      */
-    this.getNotificationSettings = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getNotificationSettings = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5460,33 +5456,33 @@ If the call is made by the locked by user and the request has the same integrato
         throw new Error("Missing the required parameter 'envelopeId' when calling getNotificationSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Notification;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Notification;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/notification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5507,8 +5503,8 @@ If the call is made by the locked by user and the request has the same integrato
      * @param {module:api/EnvelopesApi~getPageTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.getPageTabs = function(accountId, envelopeId, documentId, pageNumber, callback) {
-      var postBody = null;
+    this.getPageTabs = function (accountId, envelopeId, documentId, pageNumber, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5530,35 +5526,35 @@ If the call is made by the locked by user and the request has the same integrato
         throw new Error("Missing the required parameter 'pageNumber' when calling getPageTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5576,17 +5572,17 @@ If the call is made by the locked by user and the request has the same integrato
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.dpi 
-     * @param {String} optsOrCallback.maxHeight 
-     * @param {String} optsOrCallback.maxWidth 
-     * @param {String} optsOrCallback.nocache 
-     * @param {String} optsOrCallback.showChanges 
-     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.count
+     * @param {String} optsOrCallback.dpi
+     * @param {String} optsOrCallback.maxHeight
+     * @param {String} optsOrCallback.maxWidth
+     * @param {String} optsOrCallback.nocache
+     * @param {String} optsOrCallback.showChanges
+     * @param {String} optsOrCallback.startPosition
      * @param {module:api/EnvelopesApi~getPagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PageImages}
      */
-    this.getPages = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.getPages = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -5594,7 +5590,7 @@ If the call is made by the locked by user and the request has the same integrato
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5611,41 +5607,41 @@ If the call is made by the locked by user and the request has the same integrato
         throw new Error("Missing the required parameter 'documentId' when calling getPages");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'dpi': optsOrCallback['dpi'],
-        'max_height': optsOrCallback['maxHeight'],
-        'max_width': optsOrCallback['maxWidth'],
-        'nocache': optsOrCallback['nocache'],
-        'show_changes': optsOrCallback['showChanges'],
-        'start_position': optsOrCallback['startPosition']
+      const queryParams = {
+        count: optsOrCallback.count,
+        dpi: optsOrCallback.dpi,
+        max_height: optsOrCallback.maxHeight,
+        max_width: optsOrCallback.maxWidth,
+        nocache: optsOrCallback.nocache,
+        show_changes: optsOrCallback.showChanges,
+        start_position: optsOrCallback.startPosition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PageImages;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PageImages;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5661,12 +5657,12 @@ If the call is made by the locked by user and the request has the same integrato
      * Return pdf for Display Appliance
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
-     * @param {String} pdfId 
+     * @param {String} pdfId
      * @param {module:api/EnvelopesApi~getPdfCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayAppliancePdf}
      */
-    this.getPdf = function(accountId, envelopeId, pdfId, callback) {
-      var postBody = null;
+    this.getPdf = function (accountId, envelopeId, pdfId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5683,34 +5679,34 @@ If the call is made by the locked by user and the request has the same integrato
         throw new Error("Missing the required parameter 'pdfId' when calling getPdf");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'pdfId': pdfId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        pdfId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayAppliancePdf;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayAppliancePdf;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf/{pdfId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5729,8 +5725,8 @@ If the call is made by the locked by user and the request has the same integrato
      * @param {module:api/EnvelopesApi~getPdfBlobCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayAppliancePdf}
      */
-    this.getPdfBlob = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getPdfBlob = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5742,33 +5738,33 @@ If the call is made by the locked by user and the request has the same integrato
         throw new Error("Missing the required parameter 'envelopeId' when calling getPdfBlob");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayAppliancePdf;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayAppliancePdf;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf_blobs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5788,8 +5784,8 @@ If the call is made by the locked by user and the request has the same integrato
      * @param {module:api/EnvelopesApi~getRecipientDocumentVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentVisibilityList}
      */
-    this.getRecipientDocumentVisibility = function(accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.getRecipientDocumentVisibility = function (accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5806,34 +5802,34 @@ If the call is made by the locked by user and the request has the same integrato
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientDocumentVisibility");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentVisibilityList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentVisibilityList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/document_visibility', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5851,7 +5847,7 @@ If the call is made by the locked by user and the request has the same integrato
 
 The userId specified in the endpoint must match the authenticated user's user id and the user must be a member of the account.
 
-The `signatureIdOrName` paramter accepts signature ID or signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly URL encode. If you use the user name, it is likely that the name includes spaces and you might need to URL encode the name before using it in the endpoint. 
+The `signatureIdOrName` paramter accepts signature ID or signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that do not properly URL encode. If you use the user name, it is likely that the name includes spaces and you might need to URL encode the name before using it in the endpoint.
 
 For example: "Bob Smith" to "Bob%20Smith"
 
@@ -5864,7 +5860,7 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
      * @param {module:api/EnvelopesApi~getRecipientInitialsImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getRecipientInitialsImage = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.getRecipientInitialsImage = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -5872,7 +5868,7 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5889,35 +5885,35 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientInitialsImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
-        'include_chrome': optsOrCallback['includeChrome']
+      const queryParams = {
+        include_chrome: optsOrCallback.includeChrome,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/gif'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/gif'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/initials_image', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -5938,8 +5934,8 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
      * @param {module:api/EnvelopesApi~getRecipientSignatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.getRecipientSignature = function(accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.getRecipientSignature = function (accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -5956,34 +5952,34 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientSignature");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserSignature;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserSignature;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6001,7 +5997,7 @@ Older envelopes might only contain chromed images. If getting the non-chromed im
 
 The userId specified in the endpoint must match the authenticated user's user ID and the user must be a member of the account.
 
-The `signatureIdOrName` parameter accepts signature ID or signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that don't properly URL encode. If you use the user name, it is likely that the name includes spaces and you might need to URL encode the name before using it in the endpoint. 
+The `signatureIdOrName` parameter accepts signature ID or signature name. DocuSign recommends you use signature ID (`signatureId`), since some names contain characters that don't properly URL encode. If you use the user name, it is likely that the name includes spaces and you might need to URL encode the name before using it in the endpoint.
 
 For example: "Bob Smith" to "Bob%20Smith"
 
@@ -6014,7 +6010,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * @param {module:api/EnvelopesApi~getRecipientSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getRecipientSignatureImage = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.getRecipientSignatureImage = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -6022,7 +6018,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6039,35 +6035,35 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         throw new Error("Missing the required parameter 'recipientId' when calling getRecipientSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
-        'include_chrome': optsOrCallback['includeChrome']
+      const queryParams = {
+        include_chrome: optsOrCallback.includeChrome,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/gif'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/gif'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature_image', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6086,8 +6082,8 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * @param {module:api/EnvelopesApi~getSignerAttachmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceSignerAttachment}
      */
-    this.getSignerAttachment = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getSignerAttachment = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6099,33 +6095,33 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         throw new Error("Missing the required parameter 'envelopeId' when calling getSignerAttachment");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceSignerAttachment;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceSignerAttachment;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/signer_attachment_info', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6143,8 +6139,8 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~getTabsBlobCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.getTabsBlob = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getTabsBlob = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6156,33 +6152,33 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         throw new Error("Missing the required parameter 'envelopeId' when calling getTabsBlob");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/tabs_blob', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6200,40 +6196,40 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * @param {module:api/EnvelopesApi~getTemplateInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getTemplateInfo = function(accountId, callback) {
-      var postBody = null;
+    this.getTemplateInfo = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getTemplateInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/display_appliance_info/templateInfo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6253,8 +6249,8 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * @param {module:api/EnvelopesApi~getTemplateRecipientDocumentVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentVisibilityList}
      */
-    this.getTemplateRecipientDocumentVisibility = function(accountId, templateId, recipientId, callback) {
-      var postBody = null;
+    this.getTemplateRecipientDocumentVisibility = function (accountId, templateId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6271,34 +6267,34 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         throw new Error("Missing the required parameter 'recipientId' when calling getTemplateRecipientDocumentVisibility");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentVisibilityList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentVisibilityList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/document_visibility', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6317,8 +6313,8 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * @param {module:api/EnvelopesApi~getTemplateWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workflow}
      */
-    this.getTemplateWorkflowDefinition = function(accountId, templateId, callback) {
-      var postBody = null;
+    this.getTemplateWorkflowDefinition = function (accountId, templateId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6330,33 +6326,33 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         throw new Error("Missing the required parameter 'templateId' when calling getTemplateWorkflowDefinition");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workflow;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workflow;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/workflow', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6376,8 +6372,8 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * @param {module:api/EnvelopesApi~listAuditEventsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeAuditEventResponse}
      */
-    this.listAuditEvents = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.listAuditEvents = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6389,33 +6385,33 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         throw new Error("Missing the required parameter 'envelopeId' when calling listAuditEvents");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeAuditEventResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeAuditEventResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/audit_events', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6437,8 +6433,8 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * @param {module:api/EnvelopesApi~listCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFieldsEnvelope}
      */
-    this.listCustomFields = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.listCustomFields = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6450,33 +6446,33 @@ There are two types of envelope custom fields, text, and list. A text custom fie
         throw new Error("Missing the required parameter 'envelopeId' when calling listCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFieldsEnvelope;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFieldsEnvelope;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6497,8 +6493,8 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * @param {module:api/EnvelopesApi~listDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.listDocumentFields = function(accountId, envelopeId, documentId, callback) {
-      var postBody = null;
+    this.listDocumentFields = function (accountId, envelopeId, documentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6515,34 +6511,34 @@ There are two types of envelope custom fields, text, and list. A text custom fie
         throw new Error("Missing the required parameter 'documentId' when calling listDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6560,16 +6556,16 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.documentsByUserid 
-     * @param {String} optsOrCallback.includeDocumentSize 
-     * @param {String} optsOrCallback.includeMetadata 
-     * @param {String} optsOrCallback.includeTabs 
-     * @param {String} optsOrCallback.recipientId 
-     * @param {String} optsOrCallback.sharedUserId 
+     * @param {String} optsOrCallback.documentsByUserid
+     * @param {String} optsOrCallback.includeDocumentSize
+     * @param {String} optsOrCallback.includeMetadata
+     * @param {String} optsOrCallback.includeTabs
+     * @param {String} optsOrCallback.recipientId
+     * @param {String} optsOrCallback.sharedUserId
      * @param {module:api/EnvelopesApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocumentsResult}
      */
-    this.listDocuments = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.listDocuments = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -6577,7 +6573,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6589,39 +6585,39 @@ There are two types of envelope custom fields, text, and list. A text custom fie
         throw new Error("Missing the required parameter 'envelopeId' when calling listDocuments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'documents_by_userid': optsOrCallback['documentsByUserid'],
-        'include_document_size': optsOrCallback['includeDocumentSize'],
-        'include_metadata': optsOrCallback['includeMetadata'],
-        'include_tabs': optsOrCallback['includeTabs'],
-        'recipient_id': optsOrCallback['recipientId'],
-        'shared_user_id': optsOrCallback['sharedUserId']
+      const queryParams = {
+        documents_by_userid: optsOrCallback.documentsByUserid,
+        include_document_size: optsOrCallback.includeDocumentSize,
+        include_metadata: optsOrCallback.includeMetadata,
+        include_tabs: optsOrCallback.includeTabs,
+        recipient_id: optsOrCallback.recipientId,
+        shared_user_id: optsOrCallback.sharedUserId,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeDocumentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeDocumentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6635,20 +6631,20 @@ There are two types of envelope custom fields, text, and list. A text custom fie
 
     /**
      * Gets the status of recipients for an envelope.
-     * Retrieves the status of all recipients in a single envelope and identifies the current recipient in the routing list. 
+     * Retrieves the status of all recipients in a single envelope and identifies the current recipient in the routing list.
 
 The `currentRoutingOrder` property of the response contains the `routingOrder` value of the current recipient indicating that the envelope has been sent to the recipient, but the recipient has not completed their actions.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response. 
-     * @param {String} optsOrCallback.includeExtended  When set to **true**, the extended properties are included in the response. 
-     * @param {String} optsOrCallback.includeMetadata 
+     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response.
+     * @param {String} optsOrCallback.includeExtended  When set to **true**, the extended properties are included in the response.
+     * @param {String} optsOrCallback.includeMetadata
      * @param {String} optsOrCallback.includeTabs When set to **true**, the tab information associated with the recipient is included in the response.
      * @param {module:api/EnvelopesApi~listRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.listRecipients = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.listRecipients = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -6656,7 +6652,7 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6668,37 +6664,37 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
         throw new Error("Missing the required parameter 'envelopeId' when calling listRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations'],
-        'include_extended': optsOrCallback['includeExtended'],
-        'include_metadata': optsOrCallback['includeMetadata'],
-        'include_tabs': optsOrCallback['includeTabs']
+      const queryParams = {
+        include_anchor_tab_locations: optsOrCallback.includeAnchorTabLocations,
+        include_extended: optsOrCallback.includeExtended,
+        include_metadata: optsOrCallback.includeMetadata,
+        include_tabs: optsOrCallback.includeTabs,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6715,23 +6711,23 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
      * Retrieves the envelope status for the specified envelopes.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.acStatus 
-     * @param {String} optsOrCallback.block 
-     * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.email 
-     * @param {String} optsOrCallback.envelopeIds 
-     * @param {String} optsOrCallback.fromDate 
-     * @param {String} optsOrCallback.fromToStatus 
-     * @param {String} optsOrCallback.startPosition 
-     * @param {String} optsOrCallback.status 
-     * @param {String} optsOrCallback.toDate 
-     * @param {String} optsOrCallback.transactionIds 
-     * @param {String} optsOrCallback.userName 
-     * @param {module:model/EnvelopeIdsRequest} optsOrCallback.envelopeIdsRequest 
+     * @param {String} optsOrCallback.acStatus
+     * @param {String} optsOrCallback.block
+     * @param {String} optsOrCallback.count
+     * @param {String} optsOrCallback.email
+     * @param {String} optsOrCallback.envelopeIds
+     * @param {String} optsOrCallback.fromDate
+     * @param {String} optsOrCallback.fromToStatus
+     * @param {String} optsOrCallback.startPosition
+     * @param {String} optsOrCallback.status
+     * @param {String} optsOrCallback.toDate
+     * @param {String} optsOrCallback.transactionIds
+     * @param {String} optsOrCallback.userName
+     * @param {module:model/EnvelopeIdsRequest} optsOrCallback.envelopeIdsRequest
      * @param {module:api/EnvelopesApi~listStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopesInformation}
      */
-    this.listStatus = function(accountId, optsOrCallback, callback) {
+    this.listStatus = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -6739,51 +6735,51 @@ The `currentRoutingOrder` property of the response contains the `routingOrder` v
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeIdsRequest'];
+      const postBody = optsOrCallback.envelopeIdsRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listStatus");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'ac_status': optsOrCallback['acStatus'],
-        'block': optsOrCallback['block'],
-        'count': optsOrCallback['count'],
-        'email': optsOrCallback['email'],
-        'envelope_ids': optsOrCallback['envelopeIds'],
-        'from_date': optsOrCallback['fromDate'],
-        'from_to_status': optsOrCallback['fromToStatus'],
-        'start_position': optsOrCallback['startPosition'],
-        'status': optsOrCallback['status'],
-        'to_date': optsOrCallback['toDate'],
-        'transaction_ids': optsOrCallback['transactionIds'],
-        'user_name': optsOrCallback['userName']
+      const queryParams = {
+        ac_status: optsOrCallback.acStatus,
+        block: optsOrCallback.block,
+        count: optsOrCallback.count,
+        email: optsOrCallback.email,
+        envelope_ids: optsOrCallback.envelopeIds,
+        from_date: optsOrCallback.fromDate,
+        from_to_status: optsOrCallback.fromToStatus,
+        start_position: optsOrCallback.startPosition,
+        status: optsOrCallback.status,
+        to_date: optsOrCallback.toDate,
+        transaction_ids: optsOrCallback.transactionIds,
+        user_name: optsOrCallback.userName,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/status', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6815,39 +6811,39 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.acStatus Specifies the Authoritative Copy Status for the envelopes. The possible values are: Unknown, Original, Transferred, AuthoritativeCopy, AuthoritativeCopyExportPending, AuthoritativeCopyExported, DepositPending, Deposited, DepositedEO, or DepositFailed.
-     * @param {String} optsOrCallback.block 
-     * @param {String} optsOrCallback.cdseMode 
-     * @param {String} optsOrCallback.continuationToken 
-     * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.customField This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding '%' (percent sign) around the custom field query value.   Example 1: If you have an envelope custom field called \"Region\" and you want to search for all envelopes where the value is \"West\" you would use the query: `?custom_field=Region=West`.   Example 2: To search for envelopes where the `ApplicationID` custom field has the value or partial value of \"DocuSign\" in field, the query would be: `?custom_field=ApplicationId=%DocuSign%` This would find envelopes where the custom field value is \"DocuSign for Salesforce\" or \"DocuSign envelope.\"  
-     * @param {String} optsOrCallback.email 
-     * @param {String} optsOrCallback.envelopeIds 
-     * @param {String} optsOrCallback.exclude 
-     * @param {String} optsOrCallback.folderIds 
-     * @param {String} optsOrCallback.folderTypes 
+     * @param {String} optsOrCallback.block
+     * @param {String} optsOrCallback.cdseMode
+     * @param {String} optsOrCallback.continuationToken
+     * @param {String} optsOrCallback.count
+     * @param {String} optsOrCallback.customField This specifies the envelope custom field name and value searched for in the envelope information. The value portion of the query can use partial strings by adding '%' (percent sign) around the custom field query value.   Example 1: If you have an envelope custom field called \"Region\" and you want to search for all envelopes where the value is \"West\" you would use the query: `?custom_field=Region=West`.   Example 2: To search for envelopes where the `ApplicationID` custom field has the value or partial value of \"DocuSign\" in field, the query would be: `?custom_field=ApplicationId=%DocuSign%` This would find envelopes where the custom field value is \"DocuSign for Salesforce\" or \"DocuSign envelope.\"
+     * @param {String} optsOrCallback.email
+     * @param {String} optsOrCallback.envelopeIds
+     * @param {String} optsOrCallback.exclude
+     * @param {String} optsOrCallback.folderIds
+     * @param {String} optsOrCallback.folderTypes
      * @param {String} optsOrCallback.fromDate The date/time setting that specifies the date/time when the request begins checking for status changes for envelopes in the account.  This is required unless 'envelopeId's are used.
      * @param {String} optsOrCallback.fromToStatus This is the status type checked for in the `from_date`/`to_date` period. If `changed` is specified, then envelopes that changed status during the period are found. If for example, `created` is specified, then envelopes created during the period are found. Default is `changed`.   Possible values are: Voided, Changed, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
-     * @param {String} optsOrCallback.include 
-     * @param {String} optsOrCallback.includePurgeInformation 
-     * @param {String} optsOrCallback.intersectingFolderIds 
-     * @param {String} optsOrCallback.lastQueriedDate 
-     * @param {String} optsOrCallback.order 
-     * @param {String} optsOrCallback.orderBy 
-     * @param {String} optsOrCallback.powerformids 
-     * @param {String} optsOrCallback.queryBudget 
-     * @param {String} optsOrCallback.requesterDateFormat 
-     * @param {String} optsOrCallback.searchText 
-     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.include
+     * @param {String} optsOrCallback.includePurgeInformation
+     * @param {String} optsOrCallback.intersectingFolderIds
+     * @param {String} optsOrCallback.lastQueriedDate
+     * @param {String} optsOrCallback.order
+     * @param {String} optsOrCallback.orderBy
+     * @param {String} optsOrCallback.powerformids
+     * @param {String} optsOrCallback.queryBudget
+     * @param {String} optsOrCallback.requesterDateFormat
+     * @param {String} optsOrCallback.searchText
+     * @param {String} optsOrCallback.startPosition
      * @param {String} optsOrCallback.status The list of current statuses to include in the response. By default, all envelopes found are returned. If values are specified, then of the envelopes found, only those with the current status specified are returned in the results.   Possible values are: Voided, Created, Deleted, Sent, Delivered, Signed, Completed, Declined, TimedOut and Processing.
-     * @param {String} optsOrCallback.toDate Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the `to_date`. 
-     * @param {String} optsOrCallback.transactionIds If included in the query string, this is a comma separated list of envelope `transactionId`s.   If included in the `request_body`, this is a list of envelope `transactionId`s.   ###### Note: `transactionId`s are only valid in the DocuSign system for seven days. 
-     * @param {String} optsOrCallback.userFilter 
-     * @param {String} optsOrCallback.userId 
-     * @param {String} optsOrCallback.userName 
+     * @param {String} optsOrCallback.toDate Optional date/time setting that specifies the date/time when the request stops for status changes for envelopes in the account. If no entry, the system uses the time of the call as the `to_date`.
+     * @param {String} optsOrCallback.transactionIds If included in the query string, this is a comma separated list of envelope `transactionId`s.   If included in the `request_body`, this is a list of envelope `transactionId`s.   ###### Note: `transactionId`s are only valid in the DocuSign system for seven days.
+     * @param {String} optsOrCallback.userFilter
+     * @param {String} optsOrCallback.userId
+     * @param {String} optsOrCallback.userName
      * @param {module:api/EnvelopesApi~listStatusChangesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopesInformation}
      */
-    this.listStatusChanges = function(accountId, optsOrCallback, callback) {
+    this.listStatusChanges = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -6855,69 +6851,69 @@ Client applications should check that the statuses they are requesting make sens
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listStatusChanges");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'ac_status': optsOrCallback['acStatus'],
-        'block': optsOrCallback['block'],
-        'cdse_mode': optsOrCallback['cdseMode'],
-        'continuation_token': optsOrCallback['continuationToken'],
-        'count': optsOrCallback['count'],
-        'custom_field': optsOrCallback['customField'],
-        'email': optsOrCallback['email'],
-        'envelope_ids': optsOrCallback['envelopeIds'],
-        'exclude': optsOrCallback['exclude'],
-        'folder_ids': optsOrCallback['folderIds'],
-        'folder_types': optsOrCallback['folderTypes'],
-        'from_date': optsOrCallback['fromDate'],
-        'from_to_status': optsOrCallback['fromToStatus'],
-        'include': optsOrCallback['include'],
-        'include_purge_information': optsOrCallback['includePurgeInformation'],
-        'intersecting_folder_ids': optsOrCallback['intersectingFolderIds'],
-        'last_queried_date': optsOrCallback['lastQueriedDate'],
-        'order': optsOrCallback['order'],
-        'order_by': optsOrCallback['orderBy'],
-        'powerformids': optsOrCallback['powerformids'],
-        'query_budget': optsOrCallback['queryBudget'],
-        'requester_date_format': optsOrCallback['requesterDateFormat'],
-        'search_text': optsOrCallback['searchText'],
-        'start_position': optsOrCallback['startPosition'],
-        'status': optsOrCallback['status'],
-        'to_date': optsOrCallback['toDate'],
-        'transaction_ids': optsOrCallback['transactionIds'],
-        'user_filter': optsOrCallback['userFilter'],
-        'user_id': optsOrCallback['userId'],
-        'user_name': optsOrCallback['userName']
+      const queryParams = {
+        ac_status: optsOrCallback.acStatus,
+        block: optsOrCallback.block,
+        cdse_mode: optsOrCallback.cdseMode,
+        continuation_token: optsOrCallback.continuationToken,
+        count: optsOrCallback.count,
+        custom_field: optsOrCallback.customField,
+        email: optsOrCallback.email,
+        envelope_ids: optsOrCallback.envelopeIds,
+        exclude: optsOrCallback.exclude,
+        folder_ids: optsOrCallback.folderIds,
+        folder_types: optsOrCallback.folderTypes,
+        from_date: optsOrCallback.fromDate,
+        from_to_status: optsOrCallback.fromToStatus,
+        include: optsOrCallback.include,
+        include_purge_information: optsOrCallback.includePurgeInformation,
+        intersecting_folder_ids: optsOrCallback.intersectingFolderIds,
+        last_queried_date: optsOrCallback.lastQueriedDate,
+        order: optsOrCallback.order,
+        order_by: optsOrCallback.orderBy,
+        powerformids: optsOrCallback.powerformids,
+        query_budget: optsOrCallback.queryBudget,
+        requester_date_format: optsOrCallback.requesterDateFormat,
+        search_text: optsOrCallback.searchText,
+        start_position: optsOrCallback.startPosition,
+        status: optsOrCallback.status,
+        to_date: optsOrCallback.toDate,
+        transaction_ids: optsOrCallback.transactionIds,
+        user_filter: optsOrCallback.userFilter,
+        user_id: optsOrCallback.userId,
+        user_name: optsOrCallback.userName,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopesInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopesInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -6936,12 +6932,12 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeAnchorTabLocations When set to **true**, all tabs with anchor tab properties are included in the response. 
-     * @param {String} optsOrCallback.includeMetadata 
+     * @param {String} optsOrCallback.includeAnchorTabLocations When set to **true**, all tabs with anchor tab properties are included in the response.
+     * @param {String} optsOrCallback.includeMetadata
      * @param {module:api/EnvelopesApi~listTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.listTabs = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.listTabs = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -6949,7 +6945,7 @@ Client applications should check that the statuses they are requesting make sens
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -6966,36 +6962,36 @@ Client applications should check that the statuses they are requesting make sens
         throw new Error("Missing the required parameter 'recipientId' when calling listTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
-        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations'],
-        'include_metadata': optsOrCallback['includeMetadata']
+      const queryParams = {
+        include_anchor_tab_locations: optsOrCallback.includeAnchorTabLocations,
+        include_metadata: optsOrCallback.includeMetadata,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7018,7 +7014,7 @@ Client applications should check that the statuses they are requesting make sens
      * @param {module:api/EnvelopesApi~listTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateInformation}
      */
-    this.listTemplates = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.listTemplates = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7026,7 +7022,7 @@ Client applications should check that the statuses they are requesting make sens
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7038,34 +7034,34 @@ Client applications should check that the statuses they are requesting make sens
         throw new Error("Missing the required parameter 'envelopeId' when calling listTemplates");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/templates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7084,11 +7080,11 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.include
      * @param {module:api/EnvelopesApi~listTemplatesForDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateInformation}
      */
-    this.listTemplatesForDocument = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.listTemplatesForDocument = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7096,7 +7092,7 @@ Client applications should check that the statuses they are requesting make sens
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7113,35 +7109,35 @@ Client applications should check that the statuses they are requesting make sens
         throw new Error("Missing the required parameter 'documentId' when calling listTemplatesForDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/templates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7157,13 +7153,13 @@ Client applications should check that the statuses they are requesting make sens
      * Add an attachment to a DRAFT or IN-PROCESS envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
-     * @param {String} attachmentId 
+     * @param {String} attachmentId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Attachment} optsOrCallback.attachment 
+     * @param {module:model/Attachment} optsOrCallback.attachment
      * @param {module:api/EnvelopesApi~putAttachmentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeAttachmentsResult}
      */
-    this.putAttachment = function(accountId, envelopeId, attachmentId, optsOrCallback, callback) {
+    this.putAttachment = function (accountId, envelopeId, attachmentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7171,7 +7167,7 @@ Client applications should check that the statuses they are requesting make sens
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['attachment'];
+      const postBody = optsOrCallback.attachment;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7188,34 +7184,34 @@ Client applications should check that the statuses they are requesting make sens
         throw new Error("Missing the required parameter 'attachmentId' when calling putAttachment");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'attachmentId': attachmentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        attachmentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeAttachmentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeAttachmentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments/{attachmentId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7232,11 +7228,11 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeAttachmentsRequest} optsOrCallback.envelopeAttachmentsRequest 
+     * @param {module:model/EnvelopeAttachmentsRequest} optsOrCallback.envelopeAttachmentsRequest
      * @param {module:api/EnvelopesApi~putAttachmentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeAttachmentsResult}
      */
-    this.putAttachments = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.putAttachments = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7244,7 +7240,7 @@ Client applications should check that the statuses they are requesting make sens
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeAttachmentsRequest'];
+      const postBody = optsOrCallback.envelopeAttachmentsRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7256,33 +7252,33 @@ Client applications should check that the statuses they are requesting make sens
         throw new Error("Missing the required parameter 'envelopeId' when calling putAttachments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeAttachmentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeAttachmentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7302,10 +7298,10 @@ Client applications should check that the statuses they are requesting make sens
      * @param {String} documentId The ID of the document being accessed.
      * @param {String} pageNumber The page number being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/PageRequest} optsOrCallback.pageRequest 
+     * @param {module:model/PageRequest} optsOrCallback.pageRequest
      * @param {module:api/EnvelopesApi~rotateDocumentPageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.rotateDocumentPage = function(accountId, envelopeId, documentId, pageNumber, optsOrCallback, callback) {
+    this.rotateDocumentPage = function (accountId, envelopeId, documentId, pageNumber, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7313,7 +7309,7 @@ Client applications should check that the statuses they are requesting make sens
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['pageRequest'];
+      const postBody = optsOrCallback.pageRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7335,35 +7331,35 @@ Client applications should check that the statuses they are requesting make sens
         throw new Error("Missing the required parameter 'pageNumber' when calling rotateDocumentPage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7395,8 +7391,8 @@ Add {"purgeState":"purge type"} to the request body.
 
 The purge request can only be used for completed envelopes that are not marked as the authoritative copy. The requesting user must have permission to purge documents and must be the sender (the requesting user can act as the sender using Send On Behalf Of).
 
-###### Note: If you have set the Document Retention policy on your account, envelope documents are automatically placed in the purge queue and the warning emails are sent at the end of the retention period. 
-###### Note: You can set the Document Retention policy in the Classic DocuSign Experience by specifying the number of days to retain documents. 
+###### Note: If you have set the Document Retention policy on your account, envelope documents are automatically placed in the purge queue and the warning emails are sent at the end of the retention period.
+###### Note: You can set the Document Retention policy in the Classic DocuSign Experience by specifying the number of days to retain documents.
 ###### Note: Setting a Document Retention policy is the same as setting a schedule for purging documents.
 
 When the purge request is initiated the envelope documents, or documents and envelope metadata, are placed in a purge queue for deletion in 14 days. A warning email notification is sent to the sender and recipients associated with the envelope, notifying them that the envelope documents will be deleted in 14 days and providing a link to the documents. A second email is sent 7 days later with the same message. At the end of the 14-day period, the envelope documents are deleted from the system.
@@ -7407,11 +7403,11 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.advancedUpdate When set to **true**, allows the caller to update recipients, tabs, custom fields, notification, email settings and other envelope attributes.
      * @param {String} optsOrCallback.resendEnvelope When set to **true**, sends the specified envelope again.
-     * @param {module:model/Envelope} optsOrCallback.envelope 
+     * @param {module:model/Envelope} optsOrCallback.envelope
      * @param {module:api/EnvelopesApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeUpdateSummary}
      */
-    this.update = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.update = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7419,7 +7415,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelope'];
+      const postBody = optsOrCallback.envelope;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7431,35 +7427,35 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
         throw new Error("Missing the required parameter 'envelopeId' when calling update");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'advanced_update': optsOrCallback['advancedUpdate'],
-        'resend_envelope': optsOrCallback['resendEnvelope']
+      const queryParams = {
+        advanced_update: optsOrCallback.advancedUpdate,
+        resend_envelope: optsOrCallback.resendEnvelope,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeUpdateSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeUpdateSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7474,13 +7470,13 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     /**
      * Integrity-Check and Commit a ChunkedUpload, readying it for use elsewhere.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} chunkedUploadId 
+     * @param {String} chunkedUploadId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.action 
+     * @param {String} optsOrCallback.action
      * @param {module:api/EnvelopesApi~updateChunkedUploadCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ChunkedUploadResponse}
      */
-    this.updateChunkedUpload = function(accountId, chunkedUploadId, optsOrCallback, callback) {
+    this.updateChunkedUpload = function (accountId, chunkedUploadId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7488,7 +7484,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7500,34 +7496,34 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
         throw new Error("Missing the required parameter 'chunkedUploadId' when calling updateChunkedUpload");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'chunkedUploadId': chunkedUploadId
+      const pathParams = {
+        accountId,
+        chunkedUploadId,
       };
-      var queryParams = {
-        'action': optsOrCallback['action']
+      const queryParams = {
+        action: optsOrCallback.action,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ChunkedUploadResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ChunkedUploadResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7542,14 +7538,14 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
     /**
      * Add a chunk, a chunk 'part', to an existing ChunkedUpload.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} chunkedUploadId 
-     * @param {String} chunkedUploadPartSeq 
+     * @param {String} chunkedUploadId
+     * @param {String} chunkedUploadPartSeq
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ChunkedUploadRequest} optsOrCallback.chunkedUploadRequest 
+     * @param {module:model/ChunkedUploadRequest} optsOrCallback.chunkedUploadRequest
      * @param {module:api/EnvelopesApi~updateChunkedUploadPartCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ChunkedUploadResponse}
      */
-    this.updateChunkedUploadPart = function(accountId, chunkedUploadId, chunkedUploadPartSeq, optsOrCallback, callback) {
+    this.updateChunkedUploadPart = function (accountId, chunkedUploadId, chunkedUploadPartSeq, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7557,7 +7553,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['chunkedUploadRequest'];
+      const postBody = optsOrCallback.chunkedUploadRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7574,34 +7570,34 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
         throw new Error("Missing the required parameter 'chunkedUploadPartSeq' when calling updateChunkedUploadPart");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'chunkedUploadId': chunkedUploadId,
-        'chunkedUploadPartSeq': chunkedUploadPartSeq
+      const pathParams = {
+        accountId,
+        chunkedUploadId,
+        chunkedUploadPartSeq,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ChunkedUploadResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ChunkedUploadResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/{chunkedUploadPartSeq}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7622,11 +7618,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CustomFields} optsOrCallback.customFields 
+     * @param {module:model/CustomFields} optsOrCallback.customFields
      * @param {module:api/EnvelopesApi~updateCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.updateCustomFields = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateCustomFields = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7634,7 +7630,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['customFields'];
+      const postBody = optsOrCallback.customFields;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7646,33 +7642,33 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'envelopeId' when calling updateCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/custom_fields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7691,8 +7687,8 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} documentId The ID of the document being accessed.
      * @param {module:api/EnvelopesApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateDocument = function(accountId, envelopeId, documentId, callback) {
-      var postBody = null;
+    this.updateDocument = function (accountId, envelopeId, documentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7709,34 +7705,34 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/document/{documentId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7755,11 +7751,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation
      * @param {module:api/EnvelopesApi~updateDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.updateDocumentFields = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.updateDocumentFields = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7767,7 +7763,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentFieldsInformation'];
+      const postBody = optsOrCallback.documentFieldsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7784,34 +7780,34 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/fields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7829,11 +7825,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Tabs} optsOrCallback.tabs 
+     * @param {module:model/Tabs} optsOrCallback.tabs
      * @param {module:api/EnvelopesApi~updateDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.updateDocumentTabs = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+    this.updateDocumentTabs = function (accountId, envelopeId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7841,7 +7837,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabs'];
+      const postBody = optsOrCallback.tabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7858,34 +7854,34 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/tabs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7906,8 +7902,8 @@ Each custom field used in an envelope must have a unique name.
      * @param {module:api/EnvelopesApi~updateDocument_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocument}
      */
-    this.updateDocument_0 = function(accountId, envelopeId, documentId, callback) {
-      var postBody = null;
+    this.updateDocument_0 = function (accountId, envelopeId, documentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7924,34 +7920,34 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocument_0");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeDocument;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeDocument;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -7969,11 +7965,11 @@ Each custom field used in an envelope must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition
      * @param {module:api/EnvelopesApi~updateDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocumentsResult}
      */
-    this.updateDocuments = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateDocuments = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -7981,7 +7977,7 @@ Each custom field used in an envelope must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeDefinition'];
+      const postBody = optsOrCallback.envelopeDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -7993,33 +7989,33 @@ Each custom field used in an envelope must have a unique name.
         throw new Error("Missing the required parameter 'envelopeId' when calling updateDocuments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeDocumentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeDocumentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8039,11 +8035,11 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EmailSettings} optsOrCallback.emailSettings 
+     * @param {module:model/EmailSettings} optsOrCallback.emailSettings
      * @param {module:api/EnvelopesApi~updateEmailSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailSettings}
      */
-    this.updateEmailSettings = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateEmailSettings = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8051,7 +8047,7 @@ This can also be used to delete an individual email override setting by using an
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['emailSettings'];
+      const postBody = optsOrCallback.emailSettings;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8063,33 +8059,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updateEmailSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EmailSettings;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EmailSettings;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/email_settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8104,13 +8100,13 @@ This can also be used to delete an individual email override setting by using an
     /**
      * Update an envelope transfer rule for an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} envelopeTransferRuleId 
+     * @param {String} envelopeTransferRuleId
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeTransferRule} optsOrCallback.envelopeTransferRule 
+     * @param {module:model/EnvelopeTransferRule} optsOrCallback.envelopeTransferRule
      * @param {module:api/EnvelopesApi~updateEnvelopeTransferRuleCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTransferRule}
      */
-    this.updateEnvelopeTransferRule = function(accountId, envelopeTransferRuleId, optsOrCallback, callback) {
+    this.updateEnvelopeTransferRule = function (accountId, envelopeTransferRuleId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8118,7 +8114,7 @@ This can also be used to delete an individual email override setting by using an
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeTransferRule'];
+      const postBody = optsOrCallback.envelopeTransferRule;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8130,33 +8126,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeTransferRuleId' when calling updateEnvelopeTransferRule");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeTransferRuleId': envelopeTransferRuleId
+      const pathParams = {
+        accountId,
+        envelopeTransferRuleId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeTransferRule;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeTransferRule;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/transfer_rules/{envelopeTransferRuleId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8172,11 +8168,11 @@ This can also be used to delete an individual email override setting by using an
      * Update envelope transfer rules for an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeTransferRuleInformation} optsOrCallback.envelopeTransferRuleInformation 
+     * @param {module:model/EnvelopeTransferRuleInformation} optsOrCallback.envelopeTransferRuleInformation
      * @param {module:api/EnvelopesApi~updateEnvelopeTransferRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTransferRuleInformation}
      */
-    this.updateEnvelopeTransferRules = function(accountId, optsOrCallback, callback) {
+    this.updateEnvelopeTransferRules = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8184,39 +8180,39 @@ This can also be used to delete an individual email override setting by using an
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeTransferRuleInformation'];
+      const postBody = optsOrCallback.envelopeTransferRuleInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopeTransferRules");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeTransferRuleInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeTransferRuleInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/transfer_rules', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8233,11 +8229,11 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Workflow} optsOrCallback.workflow 
+     * @param {module:model/Workflow} optsOrCallback.workflow
      * @param {module:api/EnvelopesApi~updateEnvelopeWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workflow}
      */
-    this.updateEnvelopeWorkflowDefinition = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateEnvelopeWorkflowDefinition = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8245,7 +8241,7 @@ This can also be used to delete an individual email override setting by using an
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['workflow'];
+      const postBody = optsOrCallback.workflow;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8257,33 +8253,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updateEnvelopeWorkflowDefinition");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workflow;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workflow;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8301,11 +8297,11 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest
      * @param {module:api/EnvelopesApi~updateLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.updateLock = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateLock = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8313,7 +8309,7 @@ This can also be used to delete an individual email override setting by using an
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['lockRequest'];
+      const postBody = optsOrCallback.lockRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8325,33 +8321,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updateLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/lock', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8368,11 +8364,11 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeNotificationRequest} optsOrCallback.envelopeNotificationRequest 
+     * @param {module:model/EnvelopeNotificationRequest} optsOrCallback.envelopeNotificationRequest
      * @param {module:api/EnvelopesApi~updateNotificationSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notification}
      */
-    this.updateNotificationSettings = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateNotificationSettings = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8380,7 +8376,7 @@ This can also be used to delete an individual email override setting by using an
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeNotificationRequest'];
+      const postBody = optsOrCallback.envelopeNotificationRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8392,33 +8388,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updateNotificationSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Notification;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Notification;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/notification', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8436,8 +8432,8 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~updatePageInfoCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updatePageInfo = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.updatePageInfo = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8449,33 +8445,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updatePageInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/page_info', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8494,8 +8490,8 @@ This can also be used to delete an individual email override setting by using an
      * @param {module:api/EnvelopesApi~updatePdfCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayAppliancePdf}
      */
-    this.updatePdf = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.updatePdf = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8507,33 +8503,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updatePdf");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayAppliancePdf;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayAppliancePdf;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8551,8 +8547,8 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~updatePdfBlobCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updatePdfBlob = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.updatePdfBlob = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8564,33 +8560,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updatePdfBlob");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/pdf_blobs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8608,8 +8604,8 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~updateRecipientDeniedDocumentCopyCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateRecipientDeniedDocumentCopy = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.updateRecipientDeniedDocumentCopy = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8621,33 +8617,33 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipientDeniedDocumentCopy");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info/recipient_denied_copy', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8665,11 +8661,11 @@ This can also be used to delete an individual email override setting by using an
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentVisibilityList} optsOrCallback.documentVisibilityList 
+     * @param {module:model/DocumentVisibilityList} optsOrCallback.documentVisibilityList
      * @param {module:api/EnvelopesApi~updateRecipientDocumentVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentVisibilityList}
      */
-    this.updateRecipientDocumentVisibility = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.updateRecipientDocumentVisibility = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8677,7 +8673,7 @@ This can also be used to delete an individual email override setting by using an
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentVisibilityList'];
+      const postBody = optsOrCallback.documentVisibilityList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8694,34 +8690,34 @@ This can also be used to delete an individual email override setting by using an
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipientDocumentVisibility");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentVisibilityList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentVisibilityList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/document_visibility', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8743,8 +8739,8 @@ For the Authentication/Authorization for this call, the credentials must match t
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {module:api/EnvelopesApi~updateRecipientInitialsImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateRecipientInitialsImage = function(accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.updateRecipientInitialsImage = function (accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8761,34 +8757,34 @@ For the Authentication/Authorization for this call, the credentials must match t
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipientInitialsImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = ['image/gif'];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = ['image/gif'];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/initials_image', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8810,8 +8806,8 @@ For the Authentication/Authorization for this call, the credentials must match t
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {module:api/EnvelopesApi~updateRecipientSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateRecipientSignatureImage = function(accountId, envelopeId, recipientId, callback) {
-      var postBody = null;
+    this.updateRecipientSignatureImage = function (accountId, envelopeId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8828,34 +8824,34 @@ For the Authentication/Authorization for this call, the credentials must match t
         throw new Error("Missing the required parameter 'recipientId' when calling updateRecipientSignatureImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = ['image/gif'];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = ['image/gif'];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature_image', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8869,7 +8865,7 @@ For the Authentication/Authorization for this call, the credentials must match t
 
     /**
      * Updates recipients in a draft envelope or corrects recipient information for an in process envelope.
-     * Updates recipients in a draft envelope or corrects recipient information for an in process envelope. 
+     * Updates recipients in a draft envelope or corrects recipient information for an in process envelope.
 
 For draft envelopes, you can edit the following properties: `email`, `userName`, `routingOrder`, `faxNumber`, `deliveryMethod`, `accessCode`, and `requireIdLookup`.
 
@@ -8879,14 +8875,14 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.combineSameOrderRecipients 
-     * @param {String} optsOrCallback.offlineSigning 
+     * @param {String} optsOrCallback.combineSameOrderRecipients
+     * @param {String} optsOrCallback.offlineSigning
      * @param {String} optsOrCallback.resendEnvelope When set to **true**, resends the   envelope if the new recipient's routing order is before or the same as the envelope's next recipient.
-     * @param {module:model/Recipients} optsOrCallback.recipients 
+     * @param {module:model/Recipients} optsOrCallback.recipients
      * @param {module:api/EnvelopesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RecipientsUpdateSummary}
      */
-    this.updateRecipients = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateRecipients = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8894,7 +8890,7 @@ If you send information for a recipient that does not already exist in a draft e
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['recipients'];
+      const postBody = optsOrCallback.recipients;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8906,36 +8902,36 @@ If you send information for a recipient that does not already exist in a draft e
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
-        'combine_same_order_recipients': optsOrCallback['combineSameOrderRecipients'],
-        'offline_signing': optsOrCallback['offlineSigning'],
-        'resend_envelope': optsOrCallback['resendEnvelope']
+      const queryParams = {
+        combine_same_order_recipients: optsOrCallback.combineSameOrderRecipients,
+        offline_signing: optsOrCallback.offlineSigning,
+        resend_envelope: optsOrCallback.resendEnvelope,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = RecipientsUpdateSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = RecipientsUpdateSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -8952,11 +8948,11 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentVisibilityList} optsOrCallback.documentVisibilityList 
+     * @param {module:model/DocumentVisibilityList} optsOrCallback.documentVisibilityList
      * @param {module:api/EnvelopesApi~updateRecipientsDocumentVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentVisibilityList}
      */
-    this.updateRecipientsDocumentVisibility = function(accountId, envelopeId, optsOrCallback, callback) {
+    this.updateRecipientsDocumentVisibility = function (accountId, envelopeId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -8964,7 +8960,7 @@ If you send information for a recipient that does not already exist in a draft e
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentVisibilityList'];
+      const postBody = optsOrCallback.documentVisibilityList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -8976,33 +8972,33 @@ If you send information for a recipient that does not already exist in a draft e
         throw new Error("Missing the required parameter 'envelopeId' when calling updateRecipientsDocumentVisibility");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentVisibilityList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentVisibilityList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/document_visibility', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -9015,17 +9011,17 @@ If you send information for a recipient that does not already exist in a draft e
      */
 
     /**
-     * Updates the tabs for a recipient.  
+     * Updates the tabs for a recipient.
      * Updates one or more tabs for a recipient in a draft envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Tabs} optsOrCallback.tabs 
+     * @param {module:model/Tabs} optsOrCallback.tabs
      * @param {module:api/EnvelopesApi~updateTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.updateTabs = function(accountId, envelopeId, recipientId, optsOrCallback, callback) {
+    this.updateTabs = function (accountId, envelopeId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -9033,7 +9029,7 @@ If you send information for a recipient that does not already exist in a draft e
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tabs'];
+      const postBody = optsOrCallback.tabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -9050,34 +9046,34 @@ If you send information for a recipient that does not already exist in a draft e
         throw new Error("Missing the required parameter 'recipientId' when calling updateTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        envelopeId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/tabs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -9095,8 +9091,8 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~updateTabsBlobCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.updateTabsBlob = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.updateTabsBlob = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -9108,33 +9104,33 @@ If you send information for a recipient that does not already exist in a draft e
         throw new Error("Missing the required parameter 'envelopeId' when calling updateTabsBlob");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/tabs_blob', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -9152,11 +9148,11 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateDocumentVisibilityList} optsOrCallback.templateDocumentVisibilityList 
+     * @param {module:model/TemplateDocumentVisibilityList} optsOrCallback.templateDocumentVisibilityList
      * @param {module:api/EnvelopesApi~updateTemplateRecipientDocumentVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentVisibilityList}
      */
-    this.updateTemplateRecipientDocumentVisibility = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.updateTemplateRecipientDocumentVisibility = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -9164,7 +9160,7 @@ If you send information for a recipient that does not already exist in a draft e
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateDocumentVisibilityList'];
+      const postBody = optsOrCallback.templateDocumentVisibilityList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -9181,34 +9177,34 @@ If you send information for a recipient that does not already exist in a draft e
         throw new Error("Missing the required parameter 'recipientId' when calling updateTemplateRecipientDocumentVisibility");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateDocumentVisibilityList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateDocumentVisibilityList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/document_visibility', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -9225,11 +9221,11 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateDocumentVisibilityList} optsOrCallback.templateDocumentVisibilityList 
+     * @param {module:model/TemplateDocumentVisibilityList} optsOrCallback.templateDocumentVisibilityList
      * @param {module:api/EnvelopesApi~updateTemplateRecipientsDocumentVisibilityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentVisibilityList}
      */
-    this.updateTemplateRecipientsDocumentVisibility = function(accountId, templateId, optsOrCallback, callback) {
+    this.updateTemplateRecipientsDocumentVisibility = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -9237,7 +9233,7 @@ If you send information for a recipient that does not already exist in a draft e
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateDocumentVisibilityList'];
+      const postBody = optsOrCallback.templateDocumentVisibilityList;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -9249,33 +9245,33 @@ If you send information for a recipient that does not already exist in a draft e
         throw new Error("Missing the required parameter 'templateId' when calling updateTemplateRecipientsDocumentVisibility");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateDocumentVisibilityList;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateDocumentVisibilityList;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/document_visibility', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -9292,11 +9288,11 @@ If you send information for a recipient that does not already exist in a draft e
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/Workflow} optsOrCallback.workflow 
+     * @param {module:model/Workflow} optsOrCallback.workflow
      * @param {module:api/EnvelopesApi~updateTemplateWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Workflow}
      */
-    this.updateTemplateWorkflowDefinition = function(accountId, templateId, optsOrCallback, callback) {
+    this.updateTemplateWorkflowDefinition = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -9304,7 +9300,7 @@ If you send information for a recipient that does not already exist in a draft e
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['workflow'];
+      const postBody = optsOrCallback.workflow;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -9316,33 +9312,33 @@ If you send information for a recipient that does not already exist in a draft e
         throw new Error("Missing the required parameter 'templateId' when calling updateTemplateWorkflowDefinition");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Workflow;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Workflow;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/workflow', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

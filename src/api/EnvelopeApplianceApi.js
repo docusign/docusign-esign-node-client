@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/DisplayApplianceInfo', 'model/ErrorDetails'], factory);
+    define(['Configuration', 'ApiClient', 'model/DisplayApplianceInfo', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/DisplayApplianceInfo'), require('../model/ErrorDetails'));
@@ -23,9 +23,7 @@
     }
     root.Docusign.EnvelopeApplianceApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.DisplayApplianceInfo, root.Docusign.ErrorDetails);
   }
-}(this, function(Configuration, ApiClient, DisplayApplianceInfo, ErrorDetails) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, DisplayApplianceInfo, ErrorDetails) => {
   /**
    * EnvelopeAppliance service.
    * @module api/EnvelopeApplianceApi
@@ -33,24 +31,22 @@
    */
 
   /**
-   * Constructs a new EnvelopeApplianceApi. 
+   * Constructs a new EnvelopeApplianceApi.
    * @alias module:api/EnvelopeApplianceApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional)Callback function to receive the result of the getApplianceInfo operation. If none specified a Promise will be returned.
@@ -67,8 +63,8 @@
      * @param {module:api/EnvelopeApplianceApi~getApplianceInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisplayApplianceInfo}
      */
-    this.getApplianceInfo = function(accountId, envelopeId, callback) {
-      var postBody = null;
+    this.getApplianceInfo = function (accountId, envelopeId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId == undefined || accountId == null) {
@@ -80,33 +76,33 @@
         throw new Error("Missing the required parameter 'envelopeId' when calling getApplianceInfo");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'envelopeId': envelopeId
+      const pathParams = {
+        accountId,
+        envelopeId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = [];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DisplayApplianceInfo;
+      const authNames = [];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DisplayApplianceInfo;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/display_appliance_info', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

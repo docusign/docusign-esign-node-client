@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/Jurisdiction'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.NotaryJurisdiction = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.Jurisdiction);
   }
-}(this, function(ApiClient, ErrorDetails, Jurisdiction) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, Jurisdiction) => {
   /**
    * The NotaryJurisdiction model module.
    * @module model/NotaryJurisdiction
@@ -37,10 +34,8 @@
    * @alias module:model/NotaryJurisdiction
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,72 +45,68 @@
    * @param {module:model/NotaryJurisdiction} obj Optional instance to populate.
    * @return {module:model/NotaryJurisdiction} The populated <code>NotaryJurisdiction</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('commissionExpiration')) {
-        obj['commissionExpiration'] = ApiClient.convertToType(data['commissionExpiration'], 'String');
+        obj.commissionExpiration = ApiClient.convertToType(data.commissionExpiration, 'String');
       }
       if (data.hasOwnProperty('commissionId')) {
-        obj['commissionId'] = ApiClient.convertToType(data['commissionId'], 'String');
+        obj.commissionId = ApiClient.convertToType(data.commissionId, 'String');
       }
       if (data.hasOwnProperty('county')) {
-        obj['county'] = ApiClient.convertToType(data['county'], 'String');
+        obj.county = ApiClient.convertToType(data.county, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('jurisdiction')) {
-        obj['jurisdiction'] = Jurisdiction.constructFromObject(data['jurisdiction']);
+        obj.jurisdiction = Jurisdiction.constructFromObject(data.jurisdiction);
       }
       if (data.hasOwnProperty('registeredName')) {
-        obj['registeredName'] = ApiClient.convertToType(data['registeredName'], 'String');
+        obj.registeredName = ApiClient.convertToType(data.registeredName, 'String');
       }
       if (data.hasOwnProperty('sealType')) {
-        obj['sealType'] = ApiClient.convertToType(data['sealType'], 'String');
+        obj.sealType = ApiClient.convertToType(data.sealType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} commissionExpiration
    */
-  exports.prototype['commissionExpiration'] = undefined;
+  exports.prototype.commissionExpiration = undefined;
   /**
-   * 
+   *
    * @member {String} commissionId
    */
-  exports.prototype['commissionId'] = undefined;
+  exports.prototype.commissionId = undefined;
   /**
-   * 
+   *
    * @member {String} county
    */
-  exports.prototype['county'] = undefined;
+  exports.prototype.county = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * @member {module:model/Jurisdiction} jurisdiction
    */
-  exports.prototype['jurisdiction'] = undefined;
+  exports.prototype.jurisdiction = undefined;
   /**
-   * 
+   *
    * @member {String} registeredName
    */
-  exports.prototype['registeredName'] = undefined;
+  exports.prototype.registeredName = undefined;
   /**
-   * 
+   *
    * @member {String} sealType
    */
-  exports.prototype['sealType'] = undefined;
-
-
+  exports.prototype.sealType = undefined;
 
   return exports;
 }));
-
-

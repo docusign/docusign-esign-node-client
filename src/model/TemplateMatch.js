@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TemplateMatch = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The TemplateMatch model module.
    * @module model/TemplateMatch
@@ -37,10 +34,8 @@
    * @alias module:model/TemplateMatch
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/TemplateMatch} obj Optional instance to populate.
    * @return {module:model/TemplateMatch} The populated <code>TemplateMatch</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentEndPage')) {
-        obj['documentEndPage'] = ApiClient.convertToType(data['documentEndPage'], 'String');
+        obj.documentEndPage = ApiClient.convertToType(data.documentEndPage, 'String');
       }
       if (data.hasOwnProperty('documentStartPage')) {
-        obj['documentStartPage'] = ApiClient.convertToType(data['documentStartPage'], 'String');
+        obj.documentStartPage = ApiClient.convertToType(data.documentStartPage, 'String');
       }
       if (data.hasOwnProperty('matchPercentage')) {
-        obj['matchPercentage'] = ApiClient.convertToType(data['matchPercentage'], 'String');
+        obj.matchPercentage = ApiClient.convertToType(data.matchPercentage, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} documentEndPage
    */
-  exports.prototype['documentEndPage'] = undefined;
+  exports.prototype.documentEndPage = undefined;
   /**
-   * 
+   *
    * @member {String} documentStartPage
    */
-  exports.prototype['documentStartPage'] = undefined;
+  exports.prototype.documentStartPage = undefined;
   /**
-   * 
+   *
    * @member {String} matchPercentage
    */
-  exports.prototype['matchPercentage'] = undefined;
-
-
+  exports.prototype.matchPercentage = undefined;
 
   return exports;
 }));
-
-

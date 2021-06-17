@@ -6,11 +6,11 @@
  * @access public
  */
 exports.parse = function (json) {
-  if ('string' == typeof json) {
+  if (typeof json === 'string') {
     json = JSON.parse(json);
   }
 
-  var profile = {};
+  const profile = {};
 
   profile.sub = json.sub;
   profile.name = json.name;

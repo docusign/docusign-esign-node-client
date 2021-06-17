@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['superagent'], factory);
@@ -23,31 +23,28 @@
     }
     root.Docusign.ApiClient = factory(root.superagent, opts);
   }
-}(this, function(superagent, opts) {
-  'use strict';
-
-  var removeNulls = function(obj) {
-    var isArray = obj instanceof Array;
-    for (var k in obj) {
-      if (typeof obj[k] === "object") removeNulls(obj[k]);
+}(this, (superagent, opts) => {
+  var removeNulls = function (obj) {
+    const isArray = obj instanceof Array;
+    for (const k in obj) {
+      if (typeof obj[k] === 'object') removeNulls(obj[k]);
       if (isArray && obj.length === k) removeNulls(obj);
       if (obj[k] instanceof Array && obj[k].length === 0) delete obj[k];
     }
     return obj;
   };
 
-  var generateAndSignJWTAssertion = function(clientId, scopes, privateKey, oAuthBasePath, expiresIn, userId) {
-    if(typeof expiresIn !== 'number' || expiresIn < 0)
-      throw new Error("Invalid expires in param detected");
+  const generateAndSignJWTAssertion = function (clientId, scopes, privateKey, oAuthBasePath, expiresIn, userId) {
+    if (typeof expiresIn !== 'number' || expiresIn < 0) throw new Error('Invalid expires in param detected');
 
-    var MILLESECONDS_PER_SECOND = 1000,
-      JWT_SIGNING_ALGO = "RS256",
-      now = Math.floor(Date.now() / MILLESECONDS_PER_SECOND),
-      later = now + expiresIn,
-      jwt = require('jsonwebtoken'),
-      parsedScopes = Array.isArray(scopes) ? scopes.join(' ') : scopes;
+    const MILLESECONDS_PER_SECOND = 1000;
+    const JWT_SIGNING_ALGO = 'RS256';
+    const now = Math.floor(Date.now() / MILLESECONDS_PER_SECOND);
+    const later = now + expiresIn;
+    const jwt = require('jsonwebtoken');
+    const parsedScopes = Array.isArray(scopes) ? scopes.join(' ') : scopes;
 
-    var jwtPayload = {
+    const jwtPayload = {
       iss: clientId,
       aud: oAuthBasePath,
       iat: now,
@@ -55,40 +52,39 @@
       scope: parsedScopes,
     };
 
-    /** optional parameters  **/
-    if(userId) {
+    /** optional parameters  * */
+    if (userId) {
       jwtPayload.sub = userId;
     }
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
 
-  var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
-    var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
+  const sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
+    const request = superagent.post(`https://${oAuthBasePath}/oauth/token`)
       .timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
       .set('Pragma', 'no-cache')
       .send({
-        'assertion': assertion,
-        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+        assertion,
+        grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
       });
 
-    if (!callback){
-      return new Promise(function(resolve, reject){
-        request.end(function(err, data){
-          if (err){
+    if (!callback) {
+      return new Promise(((resolve, reject) => {
+        request.end((err, data) => {
+          if (err) {
             reject(err);
           } else {
             resolve(data);
           }
-        })
-      })
-    } else {
-      request.end(callback);
+        });
+      }));
     }
+    request.end(callback);
   };
 
-  var deriveOAuthBasePathFromRestBasePath = function(basePath) {
+  const deriveOAuthBasePathFromRestBasePath = function (basePath) {
     if (basePath == null) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
@@ -116,13 +112,13 @@
    * @alias module:ApiClient
    * @class
    */
-  var exports = function(opts) {
-    var defaults = {
+  var exports = function (opts) {
+    const defaults = {
       basePath: 'https://www.docusign.net/restapi'.replace(/\/+$/, ''),
       oAuthBasePath: require('./OAuth').BasePath.PRODUCTION,
     };
 
-    opts = Object.assign({},defaults, opts);
+    opts = { ...defaults, ...opts };
     opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
 
     /**
@@ -144,14 +140,14 @@
      * @type {Array.<String>}
      */
     this.authentications = {
-      'docusignAccessCode': {type: 'oauth2'}
+      docusignAccessCode: { type: 'oauth2' },
     };
     /**
      * The default HTTP headers to be included for all API calls.
      * @type {Array.<String>}
      * @default {}
      */
-    this.defaultHeaders = { "X-DocuSign-SDK": "Node" };
+    this.defaultHeaders = { 'X-DocuSign-SDK': 'Node' };
 
     /**
      * The default HTTP timeout for all API calls.
@@ -210,7 +206,7 @@
    * @param param The actual parameter.
    * @returns {String} The string representation of <code>param</code>.
    */
-  exports.prototype.paramToString = function(param) {
+  exports.prototype.paramToString = function (param) {
     if (param == undefined || param == null) {
       return '';
     }
@@ -227,14 +223,14 @@
    * @param {Object} pathParams The parameter values to append.
    * @returns {String} The encoded path with parameter values substituted.
    */
-  exports.prototype.buildUrl = function(path, pathParams) {
+  exports.prototype.buildUrl = function (path, pathParams) {
     if (!path.match(/^\//)) {
-      path = '/' + path;
+      path = `/${path}`;
     }
-    var url = this.basePath + path;
-    var _this = this;
-    url = url.replace(/\{([\w-]+)\}/g, function(fullMatch, key) {
-      var value;
+    let url = this.basePath + path;
+    const _this = this;
+    url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
+      let value;
       if (pathParams.hasOwnProperty(key)) {
         value = _this.paramToString(pathParams[key]);
       } else {
@@ -256,7 +252,7 @@
    * @param {String} contentType The MIME content type to check.
    * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
    */
-  exports.prototype.isJsonMime = function(contentType) {
+  exports.prototype.isJsonMime = function (contentType) {
     return Boolean(contentType != null && contentType.match(/^application\/json(;.*)?$/i));
   };
 
@@ -265,8 +261,8 @@
    * @param {Array.<String>} contentTypes
    * @returns {String} The chosen content type, preferring JSON.
    */
-  exports.prototype.jsonPreferredMime = function(contentTypes) {
-    for (var i = 0; i < contentTypes.length; i++) {
+  exports.prototype.jsonPreferredMime = function (contentTypes) {
+    for (let i = 0; i < contentTypes.length; i++) {
       if (this.isJsonMime(contentTypes[i])) {
         return contentTypes[i];
       }
@@ -279,12 +275,12 @@
    * @param param The parameter to check.
    * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
    */
-  exports.prototype.isFileParam = function(param) {
+  exports.prototype.isFileParam = function (param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
-    if (typeof window === 'undefined' &&
-      typeof require === 'function' &&
-      require('fs') &&
-      param instanceof require('fs').ReadStream) {
+    if (typeof window === 'undefined'
+      && typeof require === 'function'
+      && require('fs')
+      && param instanceof require('fs').ReadStream) {
       return true;
     }
     // Buffer in Node.js
@@ -312,11 +308,11 @@
    * @param {Object.<String, Object>} params The parameters as object properties.
    * @returns {Object.<String, Object>} normalized parameters.
    */
-  exports.prototype.normalizeParams = function(params) {
-    var newParams = {};
-    for (var key in params) {
+  exports.prototype.normalizeParams = function (params) {
+    const newParams = {};
+    for (const key in params) {
       if (params.hasOwnProperty(key) && params[key] != undefined && params[key] != null) {
-        var value = params[key];
+        const value = params[key];
         if (this.isFileParam(value) || Array.isArray(value)) {
           newParams[key] = value;
         } else {
@@ -357,7 +353,7 @@
      * Native array. Value: <code>multi</code>
      * @const
      */
-    MULTI: 'multi'
+    MULTI: 'multi',
   };
 
   /**
@@ -384,7 +380,7 @@
         // return the array directly as SuperAgent will handle it as expected
         return param.map(this.paramToString);
       default:
-        throw new Error('Unknown collection format: ' + collectionFormat);
+        throw new Error(`Unknown collection format: ${collectionFormat}`);
     }
   };
 
@@ -393,10 +389,10 @@
    * @param {Object} request The request object created by a <code>superagent()</code> call.
    * @param {Array.<String>} authNames An array of authentication method names.
    */
-  exports.prototype.applyAuthToRequest = function(request, authNames) {
-    var _this = this;
-    authNames.forEach(function(authName) {
-      var auth = _this.authentications[authName];
+  exports.prototype.applyAuthToRequest = function (request, authNames) {
+    const _this = this;
+    authNames.forEach((authName) => {
+      const auth = _this.authentications[authName];
       switch (auth.type) {
         case 'basic':
           if (auth.username || auth.password) {
@@ -405,13 +401,13 @@
           break;
         case 'apiKey':
           if (auth.apiKey) {
-            var data = {};
+            const data = {};
             if (auth.apiKeyPrefix) {
-              data[auth.name] = auth.apiKeyPrefix + ' ' + auth.apiKey;
+              data[auth.name] = `${auth.apiKeyPrefix} ${auth.apiKey}`;
             } else {
               data[auth.name] = auth.apiKey;
             }
-            if (auth['in'] === 'header') {
+            if (auth.in === 'header') {
               request.set(data);
             } else {
               request.query(data);
@@ -420,11 +416,11 @@
           break;
         case 'oauth2':
           if (auth.accessToken) {
-            request.set({'Authorization': 'Bearer ' + auth.accessToken});
+            request.set({ Authorization: `Bearer ${auth.accessToken}` });
           }
           break;
         default:
-          throw new Error('Unknown authentication type: ' + auth.type);
+          throw new Error(`Unknown authentication type: ${auth.type}`);
       }
     });
   };
@@ -444,7 +440,7 @@
     }
     // Rely on SuperAgent for parsing response body.
     // See http://visionmedia.github.io/superagent/#parsing-response-bodies
-    var data = response.body || (response.res && response.res.data);
+    let data = response.body || (response.res && response.res.data);
     if (data == null || (typeof data === 'object' && typeof data.length === 'undefined' && !Object.keys(data).length)) {
       // SuperAgent does not always produce a body; use the unparsed response as a fallback
       data = response.text;
@@ -452,13 +448,11 @@
     return exports.convertToType(data, returnType);
   };
 
-  exports.prototype.hasBufferFormParam = function(formParams) {
+  exports.prototype.hasBufferFormParam = function (formParams) {
     if (!formParams) {
       return false;
     }
-    return Object.keys(formParams).some(function(key) {
-      return formParams[key] instanceof Buffer;
-    });
+    return Object.keys(formParams).some((key) => formParams[key] instanceof Buffer);
   };
 
   /**
@@ -487,21 +481,20 @@
    * @returns {Object} The SuperAgent request object if a callback is specified, else {Promise} A {@link https://www.promisejs.org/|Promise} object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-                                               queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-                                               returnType, callback) {
-
-    var _this = this;
-    var url = this.buildUrl(path, pathParams);
-    var request = superagent(httpMethod, url);
+    queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+    returnType, callback) {
+    const _this = this;
+    const url = this.buildUrl(path, pathParams);
+    const request = superagent(httpMethod, url);
     var _formParams = this.normalizeParams(formParams);
-    var body = bodyParam || {};
+    const body = bodyParam || {};
 
     // apply authentications
     this.applyAuthToRequest(request, authNames);
 
     // set query parameters
     if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-      queryParams['_'] = new Date().getTime();
+      queryParams._ = new Date().getTime();
     }
     request.query(this.normalizeParams(queryParams));
 
@@ -511,10 +504,10 @@
     // set request timeout
     request.timeout(this.timeout);
 
-    var contentType = this.jsonPreferredMime(contentTypes);
+    const contentType = this.jsonPreferredMime(contentTypes);
     if (contentType) {
       // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
-      if(contentType != 'multipart/form-data') {
+      if (contentType != 'multipart/form-data') {
         request.type(contentType);
       }
     } else if (!request.header['Content-Type']) {
@@ -526,18 +519,16 @@
     } else if (contentType == 'multipart/form-data') {
       if (this.hasBufferFormParam(_formParams)) {
         request.set({
-          'Content-Disposition': 'form-data; name="file"; filename="file.xml"'
+          'Content-Disposition': 'form-data; name="file"; filename="file.xml"',
         });
         request.set({
-          'Content-Type': 'application/octet-stream'
+          'Content-Type': 'application/octet-stream',
         });
-        var formAttachmentKey = Object.keys(formParams).find(function(key) {
-          return _this.isFileParam(_formParams[key]);
-        });
+        const formAttachmentKey = Object.keys(formParams).find((key) => _this.isFileParam(_formParams[key]));
         request.send(removeNulls(formParams[formAttachmentKey]));
       } else {
         var _formParams = this.normalizeParams(formParams);
-        for (var key in _formParams) {
+        for (const key in _formParams) {
           if (_formParams.hasOwnProperty(key)) {
             if (this.isFileParam(_formParams[key])) {
               // file field
@@ -552,63 +543,62 @@
       request.send(removeNulls(body));
     }
 
-    var accept = this.jsonPreferredMime(accepts);
+    const accept = this.jsonPreferredMime(accepts);
     if (accept) {
       request.accept(accept);
     }
 
     var data;
-    if (request.header['Accept'] === 'application/pdf') {
+    if (request.header.Accept === 'application/pdf') {
       request.buffer();
       data = '';
     } else {
       data = '';
     }
 
-    if (request.header['Accept'] === 'application/pdf') {
-      request.parse( function (res, fn) {
+    if (request.header.Accept === 'application/pdf') {
+      request.parse((res, fn) => {
         res.data = '';
         res.setEncoding('binary');
-        res.on( 'data', function (chunk) { res.data += chunk; } );
-        res.on( 'end', function () {
+        res.on('data', (chunk) => { res.data += chunk; });
+        res.on('end', () => {
           try {
-            fn( null, res.data );
-          } catch ( err ) {
-            fn( err );
+            fn(null, res.data);
+          } catch (err) {
+            fn(err);
           }
         });
-      })
+      });
     }
 
     var data = null;
     if (!callback) {
-      return new Promise(function(resolve, reject){
-        request.end(function(error, data) {
+      return new Promise(((resolve, reject) => {
+        request.end((error, data) => {
           if (error) {
             reject(error);
           } else {
             try {
               data = _this.deserialize(data, returnType);
               resolve(data);
-            } catch(error) {
+            } catch (error) {
               reject(error);
             }
           }
-        })
-      });
-    } else {
-      request.end(function(error, response) {
-        if (!error) {
-          try {
-            data = _this.deserialize(response, returnType);
-          } catch (err) {
-            error = err;
-          }
-        }
-        callback(error, data, response);
-      });
-      return request;
+        });
+      }));
     }
+    request.end((error, response) => {
+      if (!error) {
+        try {
+          data = _this.deserialize(response, returnType);
+        } catch (err) {
+          error = err;
+        }
+      }
+      callback(error, data, response);
+    });
+    return request;
   };
 
   /**
@@ -616,7 +606,7 @@
    * @param {String} str The date value as a string.
    * @returns {Date} The parsed date object.
    */
-  exports.parseDate = function(str) {
+  exports.parseDate = function (str) {
     return new Date(str.replace(/T/i, ' '));
   };
 
@@ -629,7 +619,7 @@
    * all properties on <code>data<code> will be converted to this type.
    * @returns An instance of the specified type.
    */
-  exports.convertToType = function(data, type) {
+  exports.convertToType = function (data, type) {
     switch (type) {
       case 'Boolean':
         return Boolean(data);
@@ -645,18 +635,17 @@
         if (type === Object) {
           // generic object, return directly
           return data;
-        } else if (typeof type === 'function') {
+        } if (typeof type === 'function') {
           // for model type like: User
           return type.constructFromObject(data);
-        } else if (Array.isArray(type)) {
+        } if (Array.isArray(type)) {
           // for array type like: ['String']
-          var itemType = type[0];
-          return data.map(function(item) {
-            return exports.convertToType(item, itemType);
-          });
-        } else if (typeof type === 'object') {
+          const itemType = type[0];
+          return data.map((item) => exports.convertToType(item, itemType));
+        } if (typeof type === 'object') {
           // for plain object type like: {'String': 'Integer'}
-          var keyType, valueType;
+          let keyType; let
+            valueType;
           for (var k in type) {
             if (type.hasOwnProperty(k)) {
               keyType = k;
@@ -664,19 +653,18 @@
               break;
             }
           }
-          var result = {};
+          const result = {};
           for (var k in data) {
             if (data.hasOwnProperty(k)) {
-              var key = exports.convertToType(k, keyType);
-              var value = exports.convertToType(data[k], valueType);
+              const key = exports.convertToType(k, keyType);
+              const value = exports.convertToType(data[k], valueType);
               result[key] = value;
             }
           }
           return result;
-        } else {
-          // for unknown type, return the data directly
-          return data;
         }
+        // for unknown type, return the data directly
+        return data;
     }
   };
 
@@ -685,16 +673,14 @@
    * @param data {Object|Array} The REST data.
    * @param obj {Object|Array} The target object or array.
    */
-  exports.constructFromObject = function(data, obj, itemType) {
+  exports.constructFromObject = function (data, obj, itemType) {
     if (Array.isArray(data)) {
-      for (var i = 0; i < data.length; i++) {
-        if (data.hasOwnProperty(i))
-          obj[i] = exports.convertToType(data[i], itemType);
+      for (let i = 0; i < data.length; i++) {
+        if (data.hasOwnProperty(i)) obj[i] = exports.convertToType(data[i], itemType);
       }
     } else {
-      for (var k in data) {
-        if (data.hasOwnProperty(k))
-          obj[k] = exports.convertToType(data[k], itemType);
+      for (const k in data) {
+        if (data.hasOwnProperty(k)) obj[k] = exports.convertToType(data[k], itemType);
       }
     }
   };
@@ -712,7 +698,7 @@
    * @param state Allows for arbitrary state that may be useful to your application.
    * The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.
    */
-  exports.prototype.getAuthorizationUri = function(clientId, scopes, redirectUri, responseType, state) {
+  exports.prototype.getAuthorizationUri = function (clientId, scopes, redirectUri, responseType, state) {
     if (!clientId) throw new Error('Error clientId is required');
     if (!scopes) throw new Error('Error scopes is required');
     if (!scopes) throw new Error('Error scopes is required');
@@ -720,15 +706,15 @@
     if (!redirectUri) throw new Error('Error redirectUri is required');
     if (!responseType) throw new Error('Error responseType is required');
 
-    var formattedScopes = scopes.join(encodeURI(' '));
-    return  "https://" +
-      this.getOAuthBasePath() +
-      "/oauth/auth"+
-      "?response_type=" + responseType +
-      "&scope=" + formattedScopes +
-      "&client_id="+ clientId +
-      "&redirect_uri=" + encodeURIComponent(redirectUri) +
-      (state ? "&state=" + state : '');
+    const formattedScopes = scopes.join(encodeURI(' '));
+    return `https://${
+      this.getOAuthBasePath()
+    }/oauth/auth`
+      + `?response_type=${responseType
+      }&scope=${formattedScopes
+      }&client_id=${clientId
+      }&redirect_uri=${encodeURIComponent(redirectUri)
+      }${state ? `&state=${state}` : ''}`;
   };
 
   /**
@@ -738,70 +724,68 @@
    * @param code The authorization code that you received from the <i>getAuthorizationUri</i> callback.
    * @return OAuthToken object.xx
    */
-  exports.prototype.generateAccessToken = function(clientId, clientSecret, code, callback) {
+  exports.prototype.generateAccessToken = function (clientId, clientSecret, code, callback) {
     if (!clientId) throw new Error('Error clientId is required', null);
     if (!clientSecret) throw new Error('Error clientSecret is required', null);
     if (!code) throw new Error('Error code is required', null);
 
-    var clientString = clientId + ":" + clientSecret,
-      postData = {
-        "grant_type": "authorization_code",
-        code: code,
-      },
-      headers = {
-        "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
-        "Cache-Control": "no-store",
-        "Pragma": "no-cache"
-      },
-      OAuthToken = require('./OAuth').OAuthToken,
-      request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
-        .send(postData)
-        .set(headers)
-        .type("application/x-www-form-urlencoded");
+    const clientString = `${clientId}:${clientSecret}`;
+    const postData = {
+      grant_type: 'authorization_code',
+      code,
+    };
+    const headers = {
+      Authorization: `Basic ${new Buffer(clientString).toString('base64')}`,
+      'Cache-Control': 'no-store',
+      Pragma: 'no-cache',
+    };
+    const { OAuthToken } = require('./OAuth');
+    const request = superagent.post(`https://${this.getOAuthBasePath()}/oauth/token`)
+      .send(postData)
+      .set(headers)
+      .type('application/x-www-form-urlencoded');
 
     if (!callback) {
-      return new Promise(function (resolve, reject) {
-        request.end(function (err, res) {
+      return new Promise(((resolve, reject) => {
+        request.end((err, res) => {
           if (err) {
             reject(err);
           } else {
-            resolve(OAuthToken.constructFromObject(res.body))
+            resolve(OAuthToken.constructFromObject(res.body));
           }
         });
-      });
-    } else {
-      request.end(function (err, res) {
-        var OAuthToken;
-        if (err) {
-          return callback(err, res);
-        } else {
-          OAuthToken = require('./OAuth').OAuthToken;
-          return callback(err, OAuthToken.constructFromObject(res.body))
-        }
-      });
+      }));
     }
+    request.end((err, res) => {
+      let OAuthToken;
+      if (err) {
+        return callback(err, res);
+      }
+      OAuthToken = require('./OAuth').OAuthToken;
+      return callback(err, OAuthToken.constructFromObject(res.body));
+    });
   };
 
   /**
    * @param accessToken the bearer token to use to authenticate for this call.
    * @return OAuth UserInfo model
    */
-  exports.prototype.getUserInfo = function(accessToken, callback) {
-    if(!accessToken) throw new Error('Error accessToken is required',null);
+  exports.prototype.getUserInfo = function (accessToken, callback) {
+    if (!accessToken) throw new Error('Error accessToken is required', null);
 
-    var headers = {
-      "Authorization": "Bearer " + accessToken,
-      "Cache-Control": "no-store",
-      "Pragma": "no-cache"
-    }
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+      'Cache-Control': 'no-store',
+      Pragma: 'no-cache',
+    };
 
-    var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
-    var UserInfo = require('./OAuth').UserInfo;
+    const request = superagent.get(`https://${this.getOAuthBasePath()}/oauth/userinfo`).set(headers);
+    const { UserInfo } = require('./OAuth');
 
-    if(!callback) {
+    if (!callback) {
       try {
-        return new Promise(function (resolve, reject) {
-          request.end(function (err, res) {
+        return new Promise(((resolve, reject) => {
+          request.end((err, res) => {
             if (err) {
               reject(err);
             } else {
@@ -812,17 +796,16 @@
               }
             }
           });
-        });
+        }));
       } catch (err) {
-        throw(err)
+        throw (err);
       }
     } else {
-      request.end(function (err, res) {
+      request.end((err, res) => {
         if (err) {
           return callback(err, res);
-        } else {
-          return callback(err, UserInfo.constructFromObject(res.body));
         }
+        return callback(err, UserInfo.constructFromObject(res.body));
       });
     }
   };
@@ -835,12 +818,12 @@
    * 			  and account.docusign.com for the production platform)
    * @returns {string} the OAuth JWT grant uri as a String
    */
-  exports.prototype.getJWTUri = function(clientId, redirectURI, oAuthBasePath) {
-    return "https://" + oAuthBasePath + "/oauth/auth" + "?" +
-      "response_type=code&" +
-      "client_id=" + encodeURIComponent(clientId) + "&" +
-      "scope=" + encodeURIComponent("signature impersonation") + "&" +
-      "redirect_uri=" + encodeURIComponent(redirectURI);
+  exports.prototype.getJWTUri = function (clientId, redirectURI, oAuthBasePath) {
+    return `https://${oAuthBasePath}/oauth/auth` + '?'
+      + 'response_type=code&'
+      + `client_id=${encodeURIComponent(clientId)}&`
+      + `scope=${encodeURIComponent('signature impersonation')}&`
+      + `redirect_uri=${encodeURIComponent(redirectURI)}`;
   };
 
   /**
@@ -854,69 +837,65 @@
    * @param expiresIn in seconds for the token time-to-live
    * @param callback the callback function.
    */
-  exports.prototype.configureJWTAuthorizationFlow = function(privateKeyFilename, oAuthBasePath, clientId, userId, expiresIn, callback) {
-    console.warn('configureJWTAuthorizationFlow is a deprecated function! Please use requestJWTUserToken()')
-    var _this = this;
-    var jwt = require('jsonwebtoken')
-      , fs  = require('fs')
-      , private_key = fs.readFileSync(privateKeyFilename)
-      , now         = Math.floor(Date.now() / 1000)
-      , later       = now + expiresIn;
+  exports.prototype.configureJWTAuthorizationFlow = function (privateKeyFilename, oAuthBasePath, clientId, userId, expiresIn, callback) {
+    console.warn('configureJWTAuthorizationFlow is a deprecated function! Please use requestJWTUserToken()');
+    const _this = this;
+    const jwt = require('jsonwebtoken');
+    const fs = require('fs');
+    const private_key = fs.readFileSync(privateKeyFilename);
+    const now = Math.floor(Date.now() / 1000);
+    const later = now + expiresIn;
 
-    var jwt_payload = {
+    const jwt_payload = {
       iss: clientId,
       sub: userId,
       aud: oAuthBasePath,
       iat: now,
       exp: later,
-      scope: "signature"
+      scope: 'signature',
     };
 
-    var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
+    const assertion = jwt.sign(jwt_payload, private_key, { algorithm: 'RS256' });
 
-    superagent('post', 'https://' + this.getOAuthBasePath() + '/oauth/token')
+    superagent('post', `https://${this.getOAuthBasePath()}/oauth/token`)
       .timeout(this.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
       .set('Pragma', 'no-cache')
       .send({
-        'assertion': assertion,
-        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+        assertion,
+        grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
       })
-      .end(function(err, res) {
+      .end((err, res) => {
         if (callback) {
           if (!err && res.body && res.body.access_token) {
-            _this.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+            _this.addDefaultHeader('Authorization', `Bearer ${res.body.access_token}`);
           }
           callback(err, res);
         }
       });
   };
 
-  exports.prototype.hasNoInvalidScopes = function(scopes) {
-    var validScopes = require('./oauth/Scope');
+  exports.prototype.hasNoInvalidScopes = function (scopes) {
+    const validScopes = require('./oauth/Scope');
 
     return (
       Array.isArray(scopes)
       && scopes.length > 0
-      && scopes.every(function(scope){
-        return Object.keys(validScopes).some(function(key){
-          return validScopes[key] === scope;
-        })
-      })
+      && scopes.every((scope) => Object.keys(validScopes).some((key) => validScopes[key] === scope))
     );
   };
 
-  exports.prototype.requestJWTUserToken = function(clientId, userId, scopes, rsaPrivateKey, expiresIn, callback) {
-    var privateKey = rsaPrivateKey,
-      assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn, userId);
+  exports.prototype.requestJWTUserToken = function (clientId, userId, scopes, rsaPrivateKey, expiresIn, callback) {
+    const privateKey = rsaPrivateKey;
+    const assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn, userId);
 
     return sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
   };
 
-  exports.prototype.requestJWTApplicationToken = function(clientId, scopes, rsaPrivateKey, expiresIn, callback) {
-    var privateKey = rsaPrivateKey,
-      assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn);
+  exports.prototype.requestJWTApplicationToken = function (clientId, scopes, rsaPrivateKey, expiresIn, callback) {
+    const privateKey = rsaPrivateKey;
+    const assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn);
 
     return sendJWTTokenRequest(assertion, this.oAuthBasePath, callback);
   };

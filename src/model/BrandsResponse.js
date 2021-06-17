@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Brand'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandsResponse = factory(root.Docusign.ApiClient, root.Docusign.Brand);
   }
-}(this, function(ApiClient, Brand) {
-  'use strict';
-
-
+}(this, (ApiClient, Brand) => {
   /**
    * The BrandsResponse model module.
    * @module model/BrandsResponse
@@ -37,10 +34,8 @@
    * @alias module:model/BrandsResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/BrandsResponse} obj Optional instance to populate.
    * @return {module:model/BrandsResponse} The populated <code>BrandsResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('brands')) {
-        obj['brands'] = ApiClient.convertToType(data['brands'], [Brand]);
+        obj.brands = ApiClient.convertToType(data.brands, [Brand]);
       }
       if (data.hasOwnProperty('recipientBrandIdDefault')) {
-        obj['recipientBrandIdDefault'] = ApiClient.convertToType(data['recipientBrandIdDefault'], 'String');
+        obj.recipientBrandIdDefault = ApiClient.convertToType(data.recipientBrandIdDefault, 'String');
       }
       if (data.hasOwnProperty('senderBrandIdDefault')) {
-        obj['senderBrandIdDefault'] = ApiClient.convertToType(data['senderBrandIdDefault'], 'String');
+        obj.senderBrandIdDefault = ApiClient.convertToType(data.senderBrandIdDefault, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The list of brands.
    * @member {Array.<module:model/Brand>} brands
    */
-  exports.prototype['brands'] = undefined;
+  exports.prototype.brands = undefined;
   /**
    * The brand seen by envelope recipients when a brand is not explicitly set.
    * @member {String} recipientBrandIdDefault
    */
-  exports.prototype['recipientBrandIdDefault'] = undefined;
+  exports.prototype.recipientBrandIdDefault = undefined;
   /**
    * The brand seen by envelope senders when a brand is not explicitly set.
    * @member {String} senderBrandIdDefault
    */
-  exports.prototype['senderBrandIdDefault'] = undefined;
-
-
+  exports.prototype.senderBrandIdDefault = undefined;
 
   return exports;
 }));
-
-

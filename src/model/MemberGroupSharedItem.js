@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/Group'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.MemberGroupSharedItem = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.Group);
   }
-}(this, function(ApiClient, ErrorDetails, Group) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, Group) => {
   /**
    * The MemberGroupSharedItem model module.
    * @module model/MemberGroupSharedItem
@@ -37,10 +34,8 @@
    * @alias module:model/MemberGroupSharedItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,40 +45,36 @@
    * @param {module:model/MemberGroupSharedItem} obj Optional instance to populate.
    * @return {module:model/MemberGroupSharedItem} The populated <code>MemberGroupSharedItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('group')) {
-        obj['group'] = Group.constructFromObject(data['group']);
+        obj.group = Group.constructFromObject(data.group);
       }
       if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+        obj.shared = ApiClient.convertToType(data.shared, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * @member {module:model/Group} group
    */
-  exports.prototype['group'] = undefined;
+  exports.prototype.group = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
    */
-  exports.prototype['shared'] = undefined;
-
-
+  exports.prototype.shared = undefined;
 
   return exports;
 }));
-
-

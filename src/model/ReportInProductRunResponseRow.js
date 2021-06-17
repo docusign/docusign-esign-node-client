@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ReportInProductRunResponseRowFields'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReportInProductRunResponseRow = factory(root.Docusign.ApiClient, root.Docusign.ReportInProductRunResponseRowFields);
   }
-}(this, function(ApiClient, ReportInProductRunResponseRowFields) {
-  'use strict';
-
-
+}(this, (ApiClient, ReportInProductRunResponseRowFields) => {
   /**
    * The ReportInProductRunResponseRow model module.
    * @module model/ReportInProductRunResponseRow
@@ -37,10 +34,8 @@
    * @alias module:model/ReportInProductRunResponseRow
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,33 +45,29 @@
    * @param {module:model/ReportInProductRunResponseRow} obj Optional instance to populate.
    * @return {module:model/ReportInProductRunResponseRow} The populated <code>ReportInProductRunResponseRow</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('fields')) {
-        obj['fields'] = ReportInProductRunResponseRowFields.constructFromObject(data['fields']);
+        obj.fields = ReportInProductRunResponseRowFields.constructFromObject(data.fields);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
    * @member {module:model/ReportInProductRunResponseRowFields} fields
    */
-  exports.prototype['fields'] = undefined;
-
-
+  exports.prototype.fields = undefined;
 
   return exports;
 }));
-
-

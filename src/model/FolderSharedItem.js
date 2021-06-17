@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/MemberGroupSharedItem', 'model/UserInfo', 'model/UserSharedItem'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FolderSharedItem = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MemberGroupSharedItem, root.Docusign.UserInfo, root.Docusign.UserSharedItem);
   }
-}(this, function(ApiClient, ErrorDetails, MemberGroupSharedItem, UserInfo, UserSharedItem) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, MemberGroupSharedItem, UserInfo, UserSharedItem) => {
   /**
    * The FolderSharedItem model module.
    * @module model/FolderSharedItem
@@ -37,10 +34,8 @@
    * @alias module:model/FolderSharedItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,103 +45,99 @@
    * @param {module:model/FolderSharedItem} obj Optional instance to populate.
    * @return {module:model/FolderSharedItem} The populated <code>FolderSharedItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('folderId')) {
-        obj['folderId'] = ApiClient.convertToType(data['folderId'], 'String');
+        obj.folderId = ApiClient.convertToType(data.folderId, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('owner')) {
-        obj['owner'] = UserInfo.constructFromObject(data['owner']);
+        obj.owner = UserInfo.constructFromObject(data.owner);
       }
       if (data.hasOwnProperty('parentFolderId')) {
-        obj['parentFolderId'] = ApiClient.convertToType(data['parentFolderId'], 'String');
+        obj.parentFolderId = ApiClient.convertToType(data.parentFolderId, 'String');
       }
       if (data.hasOwnProperty('parentFolderUri')) {
-        obj['parentFolderUri'] = ApiClient.convertToType(data['parentFolderUri'], 'String');
+        obj.parentFolderUri = ApiClient.convertToType(data.parentFolderUri, 'String');
       }
       if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+        obj.shared = ApiClient.convertToType(data.shared, 'String');
       }
       if (data.hasOwnProperty('sharedGroups')) {
-        obj['sharedGroups'] = ApiClient.convertToType(data['sharedGroups'], [MemberGroupSharedItem]);
+        obj.sharedGroups = ApiClient.convertToType(data.sharedGroups, [MemberGroupSharedItem]);
       }
       if (data.hasOwnProperty('sharedUsers')) {
-        obj['sharedUsers'] = ApiClient.convertToType(data['sharedUsers'], [UserSharedItem]);
+        obj.sharedUsers = ApiClient.convertToType(data.sharedUsers, [UserSharedItem]);
       }
       if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+        obj.uri = ApiClient.convertToType(data.uri, 'String');
       }
       if (data.hasOwnProperty('user')) {
-        obj['user'] = UserInfo.constructFromObject(data['user']);
+        obj.user = UserInfo.constructFromObject(data.user);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} folderId
    */
-  exports.prototype['folderId'] = undefined;
+  exports.prototype.folderId = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * @member {module:model/UserInfo} owner
    */
-  exports.prototype['owner'] = undefined;
+  exports.prototype.owner = undefined;
   /**
-   * 
+   *
    * @member {String} parentFolderId
    */
-  exports.prototype['parentFolderId'] = undefined;
+  exports.prototype.parentFolderId = undefined;
   /**
-   * 
+   *
    * @member {String} parentFolderUri
    */
-  exports.prototype['parentFolderUri'] = undefined;
+  exports.prototype.parentFolderUri = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
    */
-  exports.prototype['shared'] = undefined;
+  exports.prototype.shared = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/MemberGroupSharedItem>} sharedGroups
    */
-  exports.prototype['sharedGroups'] = undefined;
+  exports.prototype.sharedGroups = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/UserSharedItem>} sharedUsers
    */
-  exports.prototype['sharedUsers'] = undefined;
+  exports.prototype.sharedUsers = undefined;
   /**
-   * 
+   *
    * @member {String} uri
    */
-  exports.prototype['uri'] = undefined;
+  exports.prototype.uri = undefined;
   /**
    * @member {module:model/UserInfo} user
    */
-  exports.prototype['user'] = undefined;
-
-
+  exports.prototype.user = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReportInProductField = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ReportInProductField model module.
    * @module model/ReportInProductField
@@ -37,10 +34,8 @@
    * @alias module:model/ReportInProductField
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/ReportInProductField} obj Optional instance to populate.
    * @return {module:model/ReportInProductField} The populated <code>ReportInProductField</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('displayOrder')) {
-        obj['displayOrder'] = ApiClient.convertToType(data['displayOrder'], 'String');
+        obj.displayOrder = ApiClient.convertToType(data.displayOrder, 'String');
       }
       if (data.hasOwnProperty('fieldVersion')) {
-        obj['fieldVersion'] = ApiClient.convertToType(data['fieldVersion'], 'String');
+        obj.fieldVersion = ApiClient.convertToType(data.fieldVersion, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('selected')) {
-        obj['selected'] = ApiClient.convertToType(data['selected'], 'String');
+        obj.selected = ApiClient.convertToType(data.selected, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} displayOrder
    */
-  exports.prototype['displayOrder'] = undefined;
+  exports.prototype.displayOrder = undefined;
   /**
-   * 
+   *
    * @member {String} fieldVersion
    */
-  exports.prototype['fieldVersion'] = undefined;
+  exports.prototype.fieldVersion = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} selected
    */
-  exports.prototype['selected'] = undefined;
-
-
+  exports.prototype.selected = undefined;
 
   return exports;
 }));
-
-

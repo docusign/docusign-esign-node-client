@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PlanInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DowngradeBillingPlanInformation = factory(root.Docusign.ApiClient, root.Docusign.PlanInformation);
   }
-}(this, function(ApiClient, PlanInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, PlanInformation) => {
   /**
    * The DowngradeBillingPlanInformation model module.
    * @module model/DowngradeBillingPlanInformation
@@ -37,10 +34,8 @@
    * @alias module:model/DowngradeBillingPlanInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,33 +45,29 @@
    * @param {module:model/DowngradeBillingPlanInformation} obj Optional instance to populate.
    * @return {module:model/DowngradeBillingPlanInformation} The populated <code>DowngradeBillingPlanInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('downgradeEventType')) {
-        obj['downgradeEventType'] = ApiClient.convertToType(data['downgradeEventType'], 'String');
+        obj.downgradeEventType = ApiClient.convertToType(data.downgradeEventType, 'String');
       }
       if (data.hasOwnProperty('planInformation')) {
-        obj['planInformation'] = PlanInformation.constructFromObject(data['planInformation']);
+        obj.planInformation = PlanInformation.constructFromObject(data.planInformation);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} downgradeEventType
    */
-  exports.prototype['downgradeEventType'] = undefined;
+  exports.prototype.downgradeEventType = undefined;
   /**
    * @member {module:model/PlanInformation} planInformation
    */
-  exports.prototype['planInformation'] = undefined;
-
-
+  exports.prototype.planInformation = undefined;
 
   return exports;
 }));
-
-

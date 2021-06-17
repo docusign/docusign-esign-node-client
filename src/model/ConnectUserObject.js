@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectUserObject = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ConnectUserObject model module.
    * @module model/ConnectUserObject
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectUserObject
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,58 +45,54 @@
    * @param {module:model/ConnectUserObject} obj Optional instance to populate.
    * @return {module:model/ConnectUserObject} The populated <code>ConnectUserObject</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('configurationtype')) {
-        obj['configurationtype'] = ApiClient.convertToType(data['configurationtype'], 'String');
+        obj.configurationtype = ApiClient.convertToType(data.configurationtype, 'String');
       }
       if (data.hasOwnProperty('connectId')) {
-        obj['connectId'] = ApiClient.convertToType(data['connectId'], 'String');
+        obj.connectId = ApiClient.convertToType(data.connectId, 'String');
       }
       if (data.hasOwnProperty('enabled')) {
-        obj['enabled'] = ApiClient.convertToType(data['enabled'], 'String');
+        obj.enabled = ApiClient.convertToType(data.enabled, 'String');
       }
       if (data.hasOwnProperty('hasAccess')) {
-        obj['hasAccess'] = ApiClient.convertToType(data['hasAccess'], 'String');
+        obj.hasAccess = ApiClient.convertToType(data.hasAccess, 'String');
       }
       if (data.hasOwnProperty('senderSearchableItems')) {
-        obj['senderSearchableItems'] = ApiClient.convertToType(data['senderSearchableItems'], ['String']);
+        obj.senderSearchableItems = ApiClient.convertToType(data.senderSearchableItems, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
    * @member {String} configurationtype
    */
-  exports.prototype['configurationtype'] = undefined;
+  exports.prototype.configurationtype = undefined;
   /**
-   * 
+   *
    * @member {String} connectId
    */
-  exports.prototype['connectId'] = undefined;
+  exports.prototype.connectId = undefined;
   /**
-   * 
+   *
    * @member {String} enabled
    */
-  exports.prototype['enabled'] = undefined;
+  exports.prototype.enabled = undefined;
   /**
-   * 
+   *
    * @member {String} hasAccess
    */
-  exports.prototype['hasAccess'] = undefined;
+  exports.prototype.hasAccess = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} senderSearchableItems
    */
-  exports.prototype['senderSearchableItems'] = undefined;
-
-
+  exports.prototype.senderSearchableItems = undefined;
 
   return exports;
 }));
-
-

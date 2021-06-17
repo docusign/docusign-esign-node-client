@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AdminMessage = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AdminMessage model module.
    * @module model/AdminMessage
@@ -37,10 +34,8 @@
    * @alias module:model/AdminMessage
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/AdminMessage} obj Optional instance to populate.
    * @return {module:model/AdminMessage} The populated <code>AdminMessage</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('baseMessage')) {
-        obj['baseMessage'] = ApiClient.convertToType(data['baseMessage'], 'String');
+        obj.baseMessage = ApiClient.convertToType(data.baseMessage, 'String');
       }
       if (data.hasOwnProperty('moreInformation')) {
-        obj['moreInformation'] = ApiClient.convertToType(data['moreInformation'], 'String');
+        obj.moreInformation = ApiClient.convertToType(data.moreInformation, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} baseMessage
    */
-  exports.prototype['baseMessage'] = undefined;
+  exports.prototype.baseMessage = undefined;
   /**
-   * 
+   *
    * @member {String} moreInformation
    */
-  exports.prototype['moreInformation'] = undefined;
-
-
+  exports.prototype.moreInformation = undefined;
 
   return exports;
 }));
-
-

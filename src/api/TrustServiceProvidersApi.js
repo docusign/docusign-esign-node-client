@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountSeals', 'model/CompleteSignHashResponse', 'model/CompleteSignRequest', 'model/ErrorDetails', 'model/SignHashSessionInfoResponse', 'model/SignSessionInfoRequest', 'model/TspHealthCheckRequest', 'model/UpdateTransactionRequest', 'model/UpdateTransactionResponse', 'model/UserInfoResponse'], factory);
+    define(['Configuration', 'ApiClient', 'model/AccountSeals', 'model/CompleteSignHashResponse', 'model/CompleteSignRequest', 'model/ErrorDetails', 'model/SignHashSessionInfoResponse', 'model/SignSessionInfoRequest', 'model/TspHealthCheckRequest', 'model/UpdateTransactionRequest', 'model/UpdateTransactionResponse', 'model/UserInfoResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountSeals'), require('../model/CompleteSignHashResponse'), require('../model/CompleteSignRequest'), require('../model/ErrorDetails'), require('../model/SignHashSessionInfoResponse'), require('../model/SignSessionInfoRequest'), require('../model/TspHealthCheckRequest'), require('../model/UpdateTransactionRequest'), require('../model/UpdateTransactionResponse'), require('../model/UserInfoResponse'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.TrustServiceProvidersApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountSeals, root.Docusign.CompleteSignHashResponse, root.Docusign.CompleteSignRequest, root.Docusign.ErrorDetails, root.Docusign.SignHashSessionInfoResponse, root.Docusign.SignSessionInfoRequest, root.Docusign.TspHealthCheckRequest, root.Docusign.UpdateTransactionRequest, root.Docusign.UpdateTransactionResponse, root.Docusign.UserInfoResponse);
   }
-}(this, function(Configuration, ApiClient, AccountSeals, CompleteSignHashResponse, CompleteSignRequest, ErrorDetails, SignHashSessionInfoResponse, SignSessionInfoRequest, TspHealthCheckRequest, UpdateTransactionRequest, UpdateTransactionResponse, UserInfoResponse) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, AccountSeals, CompleteSignHashResponse, CompleteSignRequest, ErrorDetails, SignHashSessionInfoResponse, SignSessionInfoRequest, TspHealthCheckRequest, UpdateTransactionRequest, UpdateTransactionResponse, UserInfoResponse) => {
   /**
    * TrustServiceProviders service.
    * @module api/TrustServiceProvidersApi
    */
 
   /**
-   * Constructs a new TrustServiceProvidersApi. 
+   * Constructs a new TrustServiceProvidersApi.
    * @alias module:api/TrustServiceProvidersApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the completeSignHash operation. If none specified a Promise will be returned.
@@ -62,11 +58,11 @@
     /**
      * Complete Sign Hash
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CompleteSignRequest} optsOrCallback.completeSignRequest 
+     * @param {module:model/CompleteSignRequest} optsOrCallback.completeSignRequest
      * @param {module:api/TrustServiceProvidersApi~completeSignHashCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompleteSignHashResponse}
      */
-    this.completeSignHash = function(optsOrCallback, callback) {
+    this.completeSignHash = function (optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -74,33 +70,33 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['completeSignRequest'];
+      const postBody = optsOrCallback.completeSignRequest;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CompleteSignHashResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CompleteSignHashResponse;
 
       return this.apiClient.callApi(
         '/v2.1/signature/completesignhash', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -118,40 +114,40 @@
      * @param {module:api/TrustServiceProvidersApi~getSealProvidersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSeals}
      */
-    this.getSealProviders = function(accountId, callback) {
-      var postBody = null;
+    this.getSealProviders = function (accountId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling getSealProviders");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = AccountSeals;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = AccountSeals;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/seals', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -168,34 +164,34 @@
      * @param {module:api/TrustServiceProvidersApi~getUserInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInfoResponse}
      */
-    this.getUserInfo = function(callback) {
-      var postBody = null;
+    this.getUserInfo = function (callback) {
+      const postBody = null;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserInfoResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UserInfoResponse;
 
       return this.apiClient.callApi(
         '/v2.1/signature/userInfo', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -210,10 +206,10 @@
     /**
      * Report status from the TSP to DocuSign
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TspHealthCheckRequest} optsOrCallback.tspHealthCheckRequest 
+     * @param {module:model/TspHealthCheckRequest} optsOrCallback.tspHealthCheckRequest
      * @param {module:api/TrustServiceProvidersApi~healthCheckCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.healthCheck = function(optsOrCallback, callback) {
+    this.healthCheck = function (optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -221,33 +217,33 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['tspHealthCheckRequest'];
+      const postBody = optsOrCallback.tspHealthCheckRequest;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/signature/healthcheck', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -262,11 +258,11 @@
     /**
      * Get Signature Session Info To Sign Document Hash
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/SignSessionInfoRequest} optsOrCallback.signSessionInfoRequest 
+     * @param {module:model/SignSessionInfoRequest} optsOrCallback.signSessionInfoRequest
      * @param {module:api/TrustServiceProvidersApi~signHashSessionInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SignHashSessionInfoResponse}
      */
-    this.signHashSessionInfo = function(optsOrCallback, callback) {
+    this.signHashSessionInfo = function (optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -274,33 +270,33 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['signSessionInfoRequest'];
+      const postBody = optsOrCallback.signSessionInfoRequest;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = SignHashSessionInfoResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = SignHashSessionInfoResponse;
 
       return this.apiClient.callApi(
         '/v2.1/signature/signhashsessioninfo', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -315,11 +311,11 @@
     /**
      * Report an error from the tsp to docusign
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/UpdateTransactionRequest} optsOrCallback.updateTransactionRequest 
+     * @param {module:model/UpdateTransactionRequest} optsOrCallback.updateTransactionRequest
      * @param {module:api/TrustServiceProvidersApi~updateTransactionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UpdateTransactionResponse}
      */
-    this.updateTransaction = function(optsOrCallback, callback) {
+    this.updateTransaction = function (optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -327,33 +323,33 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['updateTransactionRequest'];
+      const postBody = optsOrCallback.updateTransactionRequest;
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
+      const pathParams = {
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UpdateTransactionResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = UpdateTransactionResponse;
 
       return this.apiClient.callApi(
         '/v2.1/signature/updatetransaction', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

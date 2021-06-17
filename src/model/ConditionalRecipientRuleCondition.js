@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConditionalRecipientRuleFilter'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConditionalRecipientRuleCondition = factory(root.Docusign.ApiClient, root.Docusign.ConditionalRecipientRuleFilter);
   }
-}(this, function(ApiClient, ConditionalRecipientRuleFilter) {
-  'use strict';
-
-
+}(this, (ApiClient, ConditionalRecipientRuleFilter) => {
   /**
    * The ConditionalRecipientRuleCondition model module.
    * @module model/ConditionalRecipientRuleCondition
@@ -37,10 +34,8 @@
    * @alias module:model/ConditionalRecipientRuleCondition
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/ConditionalRecipientRuleCondition} obj Optional instance to populate.
    * @return {module:model/ConditionalRecipientRuleCondition} The populated <code>ConditionalRecipientRuleCondition</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('filters')) {
-        obj['filters'] = ApiClient.convertToType(data['filters'], [ConditionalRecipientRuleFilter]);
+        obj.filters = ApiClient.convertToType(data.filters, [ConditionalRecipientRuleFilter]);
       }
       if (data.hasOwnProperty('order')) {
-        obj['order'] = ApiClient.convertToType(data['order'], 'String');
+        obj.order = ApiClient.convertToType(data.order, 'String');
       }
       if (data.hasOwnProperty('recipientLabel')) {
-        obj['recipientLabel'] = ApiClient.convertToType(data['recipientLabel'], 'String');
+        obj.recipientLabel = ApiClient.convertToType(data.recipientLabel, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/ConditionalRecipientRuleFilter>} filters
    */
-  exports.prototype['filters'] = undefined;
+  exports.prototype.filters = undefined;
   /**
-   * 
+   *
    * @member {String} order
    */
-  exports.prototype['order'] = undefined;
+  exports.prototype.order = undefined;
   /**
-   * 
+   *
    * @member {String} recipientLabel
    */
-  exports.prototype['recipientLabel'] = undefined;
-
-
+  exports.prototype.recipientLabel = undefined;
 
   return exports;
 }));
-
-

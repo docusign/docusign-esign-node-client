@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DisplayAppliancePage = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DisplayAppliancePage model module.
    * @module model/DisplayAppliancePage
@@ -38,10 +35,8 @@
    * @alias module:model/DisplayAppliancePage
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,98 +46,94 @@
    * @param {module:model/DisplayAppliancePage} obj Optional instance to populate.
    * @return {module:model/DisplayAppliancePage} The populated <code>DisplayAppliancePage</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('documentName')) {
-        obj['documentName'] = ApiClient.convertToType(data['documentName'], 'String');
+        obj.documentName = ApiClient.convertToType(data.documentName, 'String');
       }
       if (data.hasOwnProperty('externalDocumentId')) {
-        obj['externalDocumentId'] = ApiClient.convertToType(data['externalDocumentId'], 'String');
+        obj.externalDocumentId = ApiClient.convertToType(data.externalDocumentId, 'String');
       }
       if (data.hasOwnProperty('height')) {
-        obj['height'] = ApiClient.convertToType(data['height'], 'Number');
+        obj.height = ApiClient.convertToType(data.height, 'Number');
       }
       if (data.hasOwnProperty('isFirstPage')) {
-        obj['isFirstPage'] = ApiClient.convertToType(data['isFirstPage'], 'Boolean');
+        obj.isFirstPage = ApiClient.convertToType(data.isFirstPage, 'Boolean');
       }
       if (data.hasOwnProperty('pageId')) {
-        obj['pageId'] = ApiClient.convertToType(data['pageId'], 'String');
+        obj.pageId = ApiClient.convertToType(data.pageId, 'String');
       }
       if (data.hasOwnProperty('pageNo')) {
-        obj['pageNo'] = ApiClient.convertToType(data['pageNo'], 'Number');
+        obj.pageNo = ApiClient.convertToType(data.pageNo, 'Number');
       }
       if (data.hasOwnProperty('pageStatus')) {
-        obj['pageStatus'] = ApiClient.convertToType(data['pageStatus'], 'String');
+        obj.pageStatus = ApiClient.convertToType(data.pageStatus, 'String');
       }
       if (data.hasOwnProperty('pageType')) {
-        obj['pageType'] = ApiClient.convertToType(data['pageType'], 'String');
+        obj.pageType = ApiClient.convertToType(data.pageType, 'String');
       }
       if (data.hasOwnProperty('width')) {
-        obj['width'] = ApiClient.convertToType(data['width'], 'Number');
+        obj.width = ApiClient.convertToType(data.width, 'Number');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} documentName
    */
-  exports.prototype['documentName'] = undefined;
+  exports.prototype.documentName = undefined;
   /**
-   * 
+   *
    * @member {String} externalDocumentId
    */
-  exports.prototype['externalDocumentId'] = undefined;
+  exports.prototype.externalDocumentId = undefined;
   /**
    * Height of the tab in pixels.
    * @member {Number} height
    */
-  exports.prototype['height'] = undefined;
+  exports.prototype.height = undefined;
   /**
-   * 
+   *
    * @member {Boolean} isFirstPage
    */
-  exports.prototype['isFirstPage'] = undefined;
+  exports.prototype.isFirstPage = undefined;
   /**
-   * 
+   *
    * @member {String} pageId
    */
-  exports.prototype['pageId'] = undefined;
+  exports.prototype.pageId = undefined;
   /**
-   * 
+   *
    * @member {Number} pageNo
    */
-  exports.prototype['pageNo'] = undefined;
+  exports.prototype.pageNo = undefined;
   /**
-   * 
+   *
    * @member {String} pageStatus
    */
-  exports.prototype['pageStatus'] = undefined;
+  exports.prototype.pageStatus = undefined;
   /**
-   * 
+   *
    * @member {String} pageType
    */
-  exports.prototype['pageType'] = undefined;
+  exports.prototype.pageType = undefined;
   /**
    * Width of the tab in pixels.
    * @member {Number} width
    */
-  exports.prototype['width'] = undefined;
-
-
+  exports.prototype.width = undefined;
 
   return exports;
 }));
-
-

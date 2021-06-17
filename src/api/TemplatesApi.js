@@ -9,10 +9,10 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
+    define(['Configuration', 'ApiClient', 'model/BulkRecipientsRequest', 'model/BulkRecipientsResponse', 'model/BulkRecipientsSummaryResponse', 'model/BulkRecipientsUpdateResponse', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkRecipientsRequest'), require('../model/BulkRecipientsResponse'), require('../model/BulkRecipientsSummaryResponse'), require('../model/BulkRecipientsUpdateResponse'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientPreviewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/ViewUrl'));
@@ -23,33 +23,29 @@
     }
     root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkRecipientsRequest, root.Docusign.BulkRecipientsResponse, root.Docusign.BulkRecipientsSummaryResponse, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientPreviewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.ViewUrl);
   }
-}(this, function(Configuration, ApiClient, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) {
-  'use strict';
-
+}(this, (Configuration, ApiClient, BulkRecipientsRequest, BulkRecipientsResponse, BulkRecipientsSummaryResponse, BulkRecipientsUpdateResponse, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) => {
   /**
    * Templates service.
    * @module api/TemplatesApi
    */
 
   /**
-   * Constructs a new TemplatesApi. 
+   * Constructs a new TemplatesApi.
    * @alias module:api/TemplatesApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
+  const exports = function (apiClient) {
     this.apiClient = apiClient || Configuration.default.getDefaultApiClient() || ApiClient.instance;
 
-
-    this.setApiClient = function(apiClient) {
+    this.setApiClient = function (apiClient) {
       this.apiClient = apiClient;
     };
 
-    this.getApiClient = function() {
+    this.getApiClient = function () {
       return this.apiClient;
     };
-
 
     /**
      * (Optional) Callback function to receive the result of the createCustomFields operation. If none specified a Promise will be returned.
@@ -65,11 +61,11 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields 
+     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields
      * @param {module:api/TemplatesApi~createCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.createCustomFields = function(accountId, templateId, optsOrCallback, callback) {
+    this.createCustomFields = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -77,7 +73,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateCustomFields'];
+      const postBody = optsOrCallback.templateCustomFields;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -89,33 +85,33 @@
         throw new Error("Missing the required parameter 'templateId' when calling createCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -134,11 +130,11 @@
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation
      * @param {module:api/TemplatesApi~createDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.createDocumentFields = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.createDocumentFields = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -146,7 +142,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentFieldsInformation'];
+      const postBody = optsOrCallback.documentFieldsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -163,34 +159,34 @@
         throw new Error("Missing the required parameter 'documentId' when calling createDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -207,11 +203,11 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/ReturnUrlRequest} optsOrCallback.returnUrlRequest 
+     * @param {module:model/ReturnUrlRequest} optsOrCallback.returnUrlRequest
      * @param {module:api/TemplatesApi~createEditViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createEditView = function(accountId, templateId, optsOrCallback, callback) {
+    this.createEditView = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -219,7 +215,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['returnUrlRequest'];
+      const postBody = optsOrCallback.returnUrlRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -231,33 +227,33 @@
         throw new Error("Missing the required parameter 'templateId' when calling createEditView");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/views/edit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -277,11 +273,11 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest
      * @param {module:api/TemplatesApi~createLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.createLock = function(accountId, templateId, optsOrCallback, callback) {
+    this.createLock = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -289,7 +285,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['lockRequest'];
+      const postBody = optsOrCallback.lockRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -301,33 +297,33 @@
         throw new Error("Missing the required parameter 'templateId' when calling createLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -345,12 +341,12 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.resendEnvelope 
-     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
+     * @param {String} optsOrCallback.resendEnvelope
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients
      * @param {module:api/TemplatesApi~createRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.createRecipients = function(accountId, templateId, optsOrCallback, callback) {
+    this.createRecipients = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -358,7 +354,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateRecipients'];
+      const postBody = optsOrCallback.templateRecipients;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -370,34 +366,34 @@
         throw new Error("Missing the required parameter 'templateId' when calling createRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
-        'resend_envelope': optsOrCallback['resendEnvelope']
+      const queryParams = {
+        resend_envelope: optsOrCallback.resendEnvelope,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -416,11 +412,11 @@
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs
      * @param {module:api/TemplatesApi~createTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.createTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.createTabs = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -428,7 +424,7 @@
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateTabs'];
+      const postBody = optsOrCallback.templateTabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -445,34 +441,34 @@
         throw new Error("Missing the required parameter 'recipientId' when calling createTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -513,17 +509,16 @@ Example:
 
 `"emailSubject":"[[Signer 1_Email]], Please sign this NDA",`
 
-
 In both cases the <roleName> is the recipient's contents of the `roleName` property in the template.
 
 For cases where another recipient (such as an Agent, Editor, or Intermediary recipient) is entering the name and email information for the recipient included in the email subject, then [[<roleName>_UserName]] or [[<roleName>_Email]] is shown in the email subject.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeTemplate} optsOrCallback.envelopeTemplate 
+     * @param {module:model/EnvelopeTemplate} optsOrCallback.envelopeTemplate
      * @param {module:api/TemplatesApi~createTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateSummary}
      */
-    this.createTemplate = function(accountId, optsOrCallback, callback) {
+    this.createTemplate = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -531,39 +526,39 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeTemplate'];
+      const postBody = optsOrCallback.envelopeTemplate;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling createTemplate");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -581,11 +576,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition 
+     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition
      * @param {module:api/TemplatesApi~createTemplateDocumentResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitions}
      */
-    this.createTemplateDocumentResponsiveHtmlPreview = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.createTemplateDocumentResponsiveHtmlPreview = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -593,7 +588,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentHtmlDefinition'];
+      const postBody = optsOrCallback.documentHtmlDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -610,34 +605,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'documentId' when calling createTemplateDocumentResponsiveHtmlPreview");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitions;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitions;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/responsive_html_preview', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -655,11 +650,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs
      * @param {module:api/TemplatesApi~createTemplateDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.createTemplateDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.createTemplateDocumentTabs = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -667,7 +662,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateTabs'];
+      const postBody = optsOrCallback.templateTabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -684,34 +679,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'documentId' when calling createTemplateDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -728,11 +723,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/RecipientPreviewRequest} optsOrCallback.recipientPreviewRequest 
+     * @param {module:model/RecipientPreviewRequest} optsOrCallback.recipientPreviewRequest
      * @param {module:api/TemplatesApi~createTemplateRecipientPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
-    this.createTemplateRecipientPreview = function(accountId, templateId, optsOrCallback, callback) {
+    this.createTemplateRecipientPreview = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -740,7 +735,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['recipientPreviewRequest'];
+      const postBody = optsOrCallback.recipientPreviewRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -752,33 +747,33 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling createTemplateRecipientPreview");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ViewUrl;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = ViewUrl;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/views/recipient_preview', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -795,11 +790,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition 
+     * @param {module:model/DocumentHtmlDefinition} optsOrCallback.documentHtmlDefinition
      * @param {module:api/TemplatesApi~createTemplateResponsiveHtmlPreviewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitions}
      */
-    this.createTemplateResponsiveHtmlPreview = function(accountId, templateId, optsOrCallback, callback) {
+    this.createTemplateResponsiveHtmlPreview = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -807,7 +802,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentHtmlDefinition'];
+      const postBody = optsOrCallback.documentHtmlDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -819,33 +814,33 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling createTemplateResponsiveHtmlPreview");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitions;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitions;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/responsive_html_preview', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -866,8 +861,8 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {module:api/TemplatesApi~deleteBulkRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsUpdateResponse}
      */
-    this.deleteBulkRecipients = function(accountId, templateId, recipientId, callback) {
-      var postBody = null;
+    this.deleteBulkRecipients = function (accountId, templateId, recipientId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -884,34 +879,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'recipientId' when calling deleteBulkRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkRecipientsUpdateResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkRecipientsUpdateResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -929,11 +924,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields 
+     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields
      * @param {module:api/TemplatesApi~deleteCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.deleteCustomFields = function(accountId, templateId, optsOrCallback, callback) {
+    this.deleteCustomFields = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -941,7 +936,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateCustomFields'];
+      const postBody = optsOrCallback.templateCustomFields;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -953,33 +948,33 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -998,11 +993,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation
      * @param {module:api/TemplatesApi~deleteDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.deleteDocumentFields = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.deleteDocumentFields = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1010,7 +1005,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentFieldsInformation'];
+      const postBody = optsOrCallback.documentFieldsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1027,34 +1022,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'documentId' when calling deleteDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1074,10 +1069,10 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} documentId The ID of the document being accessed.
      * @param {String} pageNumber The page number being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/PageRequest} optsOrCallback.pageRequest 
+     * @param {module:model/PageRequest} optsOrCallback.pageRequest
      * @param {module:api/TemplatesApi~deleteDocumentPageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteDocumentPage = function(accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
+    this.deleteDocumentPage = function (accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1085,7 +1080,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['pageRequest'];
+      const postBody = optsOrCallback.pageRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1107,35 +1102,35 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'pageNumber' when calling deleteDocumentPage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1153,11 +1148,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition
      * @param {module:api/TemplatesApi~deleteDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
      */
-    this.deleteDocuments = function(accountId, templateId, optsOrCallback, callback) {
+    this.deleteDocuments = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1165,7 +1160,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeDefinition'];
+      const postBody = optsOrCallback.envelopeDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1177,33 +1172,33 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteDocuments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateDocumentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateDocumentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1222,11 +1217,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} templatePart Currently, the only defined part is **groups**.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/GroupInformation} optsOrCallback.groupInformation 
+     * @param {module:model/GroupInformation} optsOrCallback.groupInformation
      * @param {module:api/TemplatesApi~deleteGroupShareCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.deleteGroupShare = function(accountId, templateId, templatePart, optsOrCallback, callback) {
+    this.deleteGroupShare = function (accountId, templateId, templatePart, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1234,7 +1229,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['groupInformation'];
+      const postBody = optsOrCallback.groupInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1251,34 +1246,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templatePart' when calling deleteGroupShare");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'templatePart': templatePart
+      const pathParams = {
+        accountId,
+        templateId,
+        templatePart,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = GroupInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = GroupInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1296,11 +1291,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest
      * @param {module:api/TemplatesApi~deleteLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.deleteLock = function(accountId, templateId, optsOrCallback, callback) {
+    this.deleteLock = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1308,7 +1303,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['lockRequest'];
+      const postBody = optsOrCallback.lockRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1320,33 +1315,33 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1365,11 +1360,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients
      * @param {module:api/TemplatesApi~deleteRecipientCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.deleteRecipient = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.deleteRecipient = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1377,7 +1372,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateRecipients'];
+      const postBody = optsOrCallback.templateRecipients;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1394,34 +1389,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'recipientId' when calling deleteRecipient");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1439,11 +1434,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients
      * @param {module:api/TemplatesApi~deleteRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.deleteRecipients = function(accountId, templateId, optsOrCallback, callback) {
+    this.deleteRecipients = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1451,7 +1446,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateRecipients'];
+      const postBody = optsOrCallback.templateRecipients;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1463,33 +1458,33 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling deleteRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1508,11 +1503,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs
      * @param {module:api/TemplatesApi~deleteTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.deleteTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.deleteTabs = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1520,7 +1515,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateTabs'];
+      const postBody = optsOrCallback.templateTabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1537,34 +1532,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'recipientId' when calling deleteTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1582,11 +1577,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs
      * @param {module:api/TemplatesApi~deleteTemplateDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.deleteTemplateDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.deleteTemplateDocumentTabs = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1594,7 +1589,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateTabs'];
+      const postBody = optsOrCallback.templateTabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1611,34 +1606,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'documentId' when calling deleteTemplateDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1656,11 +1651,11 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.include
      * @param {module:api/TemplatesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTemplate}
      */
-    this.get = function(accountId, templateId, optsOrCallback, callback) {
+    this.get = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1668,7 +1663,7 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1680,34 +1675,34 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
         throw new Error("Missing the required parameter 'templateId' when calling get");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
-        'include': optsOrCallback['include']
+      const queryParams = {
+        include: optsOrCallback.include,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeTemplate;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeTemplate;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1728,12 +1723,12 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.encrypt 
-     * @param {String} optsOrCallback.showChanges 
+     * @param {String} optsOrCallback.encrypt
+     * @param {String} optsOrCallback.showChanges
      * @param {module:api/TemplatesApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getDocument = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.getDocument = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1741,7 +1736,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1758,36 +1753,36 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         throw new Error("Missing the required parameter 'documentId' when calling getDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
-        'encrypt': optsOrCallback['encrypt'],
-        'show_changes': optsOrCallback['showChanges']
+      const queryParams = {
+        encrypt: optsOrCallback.encrypt,
+        show_changes: optsOrCallback.showChanges,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/pdf'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/pdf'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1807,14 +1802,14 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      * @param {String} documentId The ID of the document being accessed.
      * @param {String} pageNumber The page number being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.dpi 
-     * @param {String} optsOrCallback.maxHeight 
-     * @param {String} optsOrCallback.maxWidth 
-     * @param {String} optsOrCallback.showChanges 
+     * @param {String} optsOrCallback.dpi
+     * @param {String} optsOrCallback.maxHeight
+     * @param {String} optsOrCallback.maxWidth
+     * @param {String} optsOrCallback.showChanges
      * @param {module:api/TemplatesApi~getDocumentPageImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
-    this.getDocumentPageImage = function(accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
+    this.getDocumentPageImage = function (accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1822,7 +1817,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1844,39 +1839,39 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         throw new Error("Missing the required parameter 'pageNumber' when calling getDocumentPageImage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
-        'dpi': optsOrCallback['dpi'],
-        'max_height': optsOrCallback['maxHeight'],
-        'max_width': optsOrCallback['maxWidth'],
-        'show_changes': optsOrCallback['showChanges']
+      const queryParams = {
+        dpi: optsOrCallback.dpi,
+        max_height: optsOrCallback.maxHeight,
+        max_width: optsOrCallback.maxWidth,
+        show_changes: optsOrCallback.showChanges,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['image/png'];
-      var returnType = Object;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['image/png'];
+      const returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1894,11 +1889,11 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.pageNumbers 
+     * @param {String} optsOrCallback.pageNumbers
      * @param {module:api/TemplatesApi~getDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.getDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.getDocumentTabs = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1906,7 +1901,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1923,35 +1918,35 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
         throw new Error("Missing the required parameter 'documentId' when calling getDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
-        'page_numbers': optsOrCallback['pageNumbers']
+      const queryParams = {
+        page_numbers: optsOrCallback.pageNumbers,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -1973,8 +1968,8 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {module:api/TemplatesApi~getLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.getLock = function(accountId, templateId, callback) {
-      var postBody = null;
+    this.getLock = function (accountId, templateId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1986,33 +1981,33 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling getLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2032,8 +2027,8 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {module:api/TemplatesApi~getNotificationSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notification}
      */
-    this.getNotificationSettings = function(accountId, templateId, callback) {
-      var postBody = null;
+    this.getNotificationSettings = function (accountId, templateId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2045,33 +2040,33 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling getNotificationSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Notification;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Notification;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/notification', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2092,8 +2087,8 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {module:api/TemplatesApi~getPageTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.getPageTabs = function(accountId, templateId, documentId, pageNumber, callback) {
-      var postBody = null;
+    this.getPageTabs = function (accountId, templateId, documentId, pageNumber, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2115,35 +2110,35 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'pageNumber' when calling getPageTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2161,17 +2156,17 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.count 
-     * @param {String} optsOrCallback.dpi 
-     * @param {String} optsOrCallback.maxHeight 
-     * @param {String} optsOrCallback.maxWidth 
-     * @param {String} optsOrCallback.nocache 
-     * @param {String} optsOrCallback.showChanges 
-     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.count
+     * @param {String} optsOrCallback.dpi
+     * @param {String} optsOrCallback.maxHeight
+     * @param {String} optsOrCallback.maxWidth
+     * @param {String} optsOrCallback.nocache
+     * @param {String} optsOrCallback.showChanges
+     * @param {String} optsOrCallback.startPosition
      * @param {module:api/TemplatesApi~getPagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PageImages}
      */
-    this.getPages = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.getPages = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2179,7 +2174,7 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2196,41 +2191,41 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'documentId' when calling getPages");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'dpi': optsOrCallback['dpi'],
-        'max_height': optsOrCallback['maxHeight'],
-        'max_width': optsOrCallback['maxWidth'],
-        'nocache': optsOrCallback['nocache'],
-        'show_changes': optsOrCallback['showChanges'],
-        'start_position': optsOrCallback['startPosition']
+      const queryParams = {
+        count: optsOrCallback.count,
+        dpi: optsOrCallback.dpi,
+        max_height: optsOrCallback.maxHeight,
+        max_width: optsOrCallback.maxWidth,
+        nocache: optsOrCallback.nocache,
+        show_changes: optsOrCallback.showChanges,
+        start_position: optsOrCallback.startPosition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PageImages;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = PageImages;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2250,8 +2245,8 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {module:api/TemplatesApi~getTemplateDocumentHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
      */
-    this.getTemplateDocumentHtmlDefinitions = function(accountId, templateId, documentId, callback) {
-      var postBody = null;
+    this.getTemplateDocumentHtmlDefinitions = function (accountId, templateId, documentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2268,34 +2263,34 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'documentId' when calling getTemplateDocumentHtmlDefinitions");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitionOriginals;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitionOriginals;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/html_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2314,8 +2309,8 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {module:api/TemplatesApi~getTemplateHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
      */
-    this.getTemplateHtmlDefinitions = function(accountId, templateId, callback) {
-      var postBody = null;
+    this.getTemplateHtmlDefinitions = function (accountId, templateId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2327,33 +2322,33 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling getTemplateHtmlDefinitions");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentHtmlDefinitionOriginals;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentHtmlDefinitionOriginals;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/html_definitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2372,12 +2367,12 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeTabs 
-     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.includeTabs
+     * @param {String} optsOrCallback.startPosition
      * @param {module:api/TemplatesApi~listBulkRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsResponse}
      */
-    this.listBulkRecipients = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.listBulkRecipients = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2385,7 +2380,7 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2402,36 +2397,36 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'recipientId' when calling listBulkRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
-        'include_tabs': optsOrCallback['includeTabs'],
-        'start_position': optsOrCallback['startPosition']
+      const queryParams = {
+        include_tabs: optsOrCallback.includeTabs,
+        start_position: optsOrCallback.startPosition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkRecipientsResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkRecipientsResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2451,8 +2446,8 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {module:api/TemplatesApi~listCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.listCustomFields = function(accountId, templateId, callback) {
-      var postBody = null;
+    this.listCustomFields = function (accountId, templateId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2464,33 +2459,33 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling listCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2511,8 +2506,8 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {module:api/TemplatesApi~listDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.listDocumentFields = function(accountId, templateId, documentId, callback) {
-      var postBody = null;
+    this.listDocumentFields = function (accountId, templateId, documentId, callback) {
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2529,34 +2524,34 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'documentId' when calling listDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2574,11 +2569,11 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeTabs 
+     * @param {String} optsOrCallback.includeTabs
      * @param {module:api/TemplatesApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
      */
-    this.listDocuments = function(accountId, templateId, optsOrCallback, callback) {
+    this.listDocuments = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2586,7 +2581,7 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2598,34 +2593,34 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling listDocuments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
-        'include_tabs': optsOrCallback['includeTabs']
+      const queryParams = {
+        include_tabs: optsOrCallback.includeTabs,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateDocumentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateDocumentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2643,13 +2638,13 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response. 
-     * @param {String} optsOrCallback.includeExtended  When set to **true**, the extended properties are included in the response. 
+     * @param {String} optsOrCallback.includeAnchorTabLocations  When set to **true** and `include_tabs` is set to **true**, all tabs with anchor tab properties are included in the response.
+     * @param {String} optsOrCallback.includeExtended  When set to **true**, the extended properties are included in the response.
      * @param {String} optsOrCallback.includeTabs When set to **true**, the tab information associated with the recipient is included in the response.
      * @param {module:api/TemplatesApi~listRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Recipients}
      */
-    this.listRecipients = function(accountId, templateId, optsOrCallback, callback) {
+    this.listRecipients = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2657,7 +2652,7 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2669,36 +2664,36 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling listRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
-        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations'],
-        'include_extended': optsOrCallback['includeExtended'],
-        'include_tabs': optsOrCallback['includeTabs']
+      const queryParams = {
+        include_anchor_tab_locations: optsOrCallback.includeAnchorTabLocations,
+        include_extended: optsOrCallback.includeExtended,
+        include_tabs: optsOrCallback.includeTabs,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Recipients;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Recipients;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2717,12 +2712,12 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.includeAnchorTabLocations When set to **true**, all tabs with anchor tab properties are included in the response. 
-     * @param {String} optsOrCallback.includeMetadata 
+     * @param {String} optsOrCallback.includeAnchorTabLocations When set to **true**, all tabs with anchor tab properties are included in the response.
+     * @param {String} optsOrCallback.includeMetadata
      * @param {module:api/TemplatesApi~listTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.listTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.listTabs = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2730,7 +2725,7 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2747,36 +2742,36 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'recipientId' when calling listTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
-        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations'],
-        'include_metadata': optsOrCallback['includeMetadata']
+      const queryParams = {
+        include_anchor_tab_locations: optsOrCallback.includeAnchorTabLocations,
+        include_metadata: optsOrCallback.includeMetadata,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2794,32 +2789,32 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count Number of records to return in the cache.
-     * @param {String} optsOrCallback.createdFromDate 
-     * @param {String} optsOrCallback.createdToDate 
+     * @param {String} optsOrCallback.createdFromDate
+     * @param {String} optsOrCallback.createdToDate
      * @param {String} optsOrCallback.folderIds A comma separated list of folder ID GUIDs.
-     * @param {String} optsOrCallback.folderTypes 
+     * @param {String} optsOrCallback.folderTypes
      * @param {String} optsOrCallback.fromDate Start of the search date range. Only returns templates created on or after this date/time. If no value is specified, there is no limit on the earliest date created.
      * @param {String} optsOrCallback.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
-     * @param {String} optsOrCallback.isDeletedTemplateOnly 
-     * @param {String} optsOrCallback.isDownload 
-     * @param {String} optsOrCallback.modifiedFromDate 
-     * @param {String} optsOrCallback.modifiedToDate 
+     * @param {String} optsOrCallback.isDeletedTemplateOnly
+     * @param {String} optsOrCallback.isDownload
+     * @param {String} optsOrCallback.modifiedFromDate
+     * @param {String} optsOrCallback.modifiedToDate
      * @param {String} optsOrCallback.order Sets the direction order used to sort the list. Valid values are: -asc = ascending sort order (a to z)  -desc = descending sort order (z to a)
      * @param {String} optsOrCallback.orderBy Sets the file attribute used to sort the list. Valid values are:  -name: template name  -modified: date/time template was last modified.  -used: date/time the template was last used.
-     * @param {String} optsOrCallback.searchFields 
+     * @param {String} optsOrCallback.searchFields
      * @param {String} optsOrCallback.searchText The search text used to search the names of templates.
      * @param {String} optsOrCallback.sharedByMe If true, the response only includes templates shared by the user. If false, the response only returns template not shared by the user. If not specified, the response is not affected.
      * @param {String} optsOrCallback.startPosition The starting index for the first template shown in the response. This must be greater than or equal to 0 (zero).
-     * @param {String} optsOrCallback.templateIds 
+     * @param {String} optsOrCallback.templateIds
      * @param {String} optsOrCallback.toDate End of the search date range. Only returns templates created up to this date/time. If no value is provided, this defaults to the current date.
      * @param {String} optsOrCallback.usedFromDate Start of the search date range. Only returns templates used or edited on or after this date/time. If no value is specified, there is no limit on the earliest date used.
      * @param {String} optsOrCallback.usedToDate End of the search date range. Only returns templates used or edited up to this date/time. If no value is provided, this defaults to the current date.
      * @param {String} optsOrCallback.userFilter Sets if the templates shown in the response Valid values are:  -owned_by_me: only shows templates the user owns.  -shared_with_me: only shows templates that are shared with the user.  -all: shows all templates owned or shared with the user.
-     * @param {String} optsOrCallback.userId 
+     * @param {String} optsOrCallback.userId
      * @param {module:api/TemplatesApi~listTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTemplateResults}
      */
-    this.listTemplates = function(accountId, optsOrCallback, callback) {
+    this.listTemplates = function (accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2827,62 +2822,62 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      const postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
         throw new Error("Missing the required parameter 'accountId' when calling listTemplates");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId
+      const pathParams = {
+        accountId,
       };
-      var queryParams = {
-        'count': optsOrCallback['count'],
-        'created_from_date': optsOrCallback['createdFromDate'],
-        'created_to_date': optsOrCallback['createdToDate'],
-        'folder_ids': optsOrCallback['folderIds'],
-        'folder_types': optsOrCallback['folderTypes'],
-        'from_date': optsOrCallback['fromDate'],
-        'include': optsOrCallback['include'],
-        'is_deleted_template_only': optsOrCallback['isDeletedTemplateOnly'],
-        'is_download': optsOrCallback['isDownload'],
-        'modified_from_date': optsOrCallback['modifiedFromDate'],
-        'modified_to_date': optsOrCallback['modifiedToDate'],
-        'order': optsOrCallback['order'],
-        'order_by': optsOrCallback['orderBy'],
-        'search_fields': optsOrCallback['searchFields'],
-        'search_text': optsOrCallback['searchText'],
-        'shared_by_me': optsOrCallback['sharedByMe'],
-        'start_position': optsOrCallback['startPosition'],
-        'template_ids': optsOrCallback['templateIds'],
-        'to_date': optsOrCallback['toDate'],
-        'used_from_date': optsOrCallback['usedFromDate'],
-        'used_to_date': optsOrCallback['usedToDate'],
-        'user_filter': optsOrCallback['userFilter'],
-        'user_id': optsOrCallback['userId']
+      const queryParams = {
+        count: optsOrCallback.count,
+        created_from_date: optsOrCallback.createdFromDate,
+        created_to_date: optsOrCallback.createdToDate,
+        folder_ids: optsOrCallback.folderIds,
+        folder_types: optsOrCallback.folderTypes,
+        from_date: optsOrCallback.fromDate,
+        include: optsOrCallback.include,
+        is_deleted_template_only: optsOrCallback.isDeletedTemplateOnly,
+        is_download: optsOrCallback.isDownload,
+        modified_from_date: optsOrCallback.modifiedFromDate,
+        modified_to_date: optsOrCallback.modifiedToDate,
+        order: optsOrCallback.order,
+        order_by: optsOrCallback.orderBy,
+        search_fields: optsOrCallback.searchFields,
+        search_text: optsOrCallback.searchText,
+        shared_by_me: optsOrCallback.sharedByMe,
+        start_position: optsOrCallback.startPosition,
+        template_ids: optsOrCallback.templateIds,
+        to_date: optsOrCallback.toDate,
+        used_from_date: optsOrCallback.usedFromDate,
+        used_to_date: optsOrCallback.usedToDate,
+        user_filter: optsOrCallback.userFilter,
+        user_id: optsOrCallback.userId,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeTemplateResults;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeTemplateResults;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2902,10 +2897,10 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} documentId The ID of the document being accessed.
      * @param {String} pageNumber The page number being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/PageRequest} optsOrCallback.pageRequest 
+     * @param {module:model/PageRequest} optsOrCallback.pageRequest
      * @param {module:api/TemplatesApi~rotateDocumentPageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.rotateDocumentPage = function(accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
+    this.rotateDocumentPage = function (accountId, templateId, documentId, pageNumber, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2913,7 +2908,7 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['pageRequest'];
+      const postBody = optsOrCallback.pageRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -2935,35 +2930,35 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'pageNumber' when calling rotateDocumentPage");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId,
-        'pageNumber': pageNumber
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
+        pageNumber,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = null;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/pages/{pageNumber}/page_image', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -2981,11 +2976,11 @@ If the call is made by the user who has the lock and the request has the same in
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeTemplate} optsOrCallback.envelopeTemplate 
+     * @param {module:model/EnvelopeTemplate} optsOrCallback.envelopeTemplate
      * @param {module:api/TemplatesApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateUpdateSummary}
      */
-    this.update = function(accountId, templateId, optsOrCallback, callback) {
+    this.update = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -2993,7 +2988,7 @@ If the call is made by the user who has the lock and the request has the same in
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeTemplate'];
+      const postBody = optsOrCallback.envelopeTemplate;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3005,33 +3000,33 @@ If the call is made by the user who has the lock and the request has the same in
         throw new Error("Missing the required parameter 'templateId' when calling update");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateUpdateSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateUpdateSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3052,11 +3047,11 @@ The REST API does not support modifying individual rows or values in the bulk re
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/BulkRecipientsRequest} optsOrCallback.bulkRecipientsRequest 
+     * @param {module:model/BulkRecipientsRequest} optsOrCallback.bulkRecipientsRequest
      * @param {module:api/TemplatesApi~updateBulkRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkRecipientsSummaryResponse}
      */
-    this.updateBulkRecipients = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.updateBulkRecipients = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3064,7 +3059,7 @@ The REST API does not support modifying individual rows or values in the bulk re
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['bulkRecipientsRequest'];
+      const postBody = optsOrCallback.bulkRecipientsRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3081,34 +3076,34 @@ The REST API does not support modifying individual rows or values in the bulk re
         throw new Error("Missing the required parameter 'recipientId' when calling updateBulkRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkRecipientsSummaryResponse;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = BulkRecipientsSummaryResponse;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3128,11 +3123,11 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields 
+     * @param {module:model/TemplateCustomFields} optsOrCallback.templateCustomFields
      * @param {module:api/TemplatesApi~updateCustomFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CustomFields}
      */
-    this.updateCustomFields = function(accountId, templateId, optsOrCallback, callback) {
+    this.updateCustomFields = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3140,7 +3135,7 @@ Each custom field used in a template must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateCustomFields'];
+      const postBody = optsOrCallback.templateCustomFields;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3152,33 +3147,33 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateCustomFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CustomFields;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = CustomFields;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/custom_fields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3197,12 +3192,12 @@ Each custom field used in a template must have a unique name.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.isEnvelopeDefinition 
-     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
+     * @param {String} optsOrCallback.isEnvelopeDefinition
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition
      * @param {module:api/TemplatesApi~updateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeDocument}
      */
-    this.updateDocument = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.updateDocument = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3210,7 +3205,7 @@ Each custom field used in a template must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeDefinition'];
+      const postBody = optsOrCallback.envelopeDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3227,35 +3222,35 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocument");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
-        'is_envelope_definition': optsOrCallback['isEnvelopeDefinition']
+      const queryParams = {
+        is_envelope_definition: optsOrCallback.isEnvelopeDefinition,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = EnvelopeDocument;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = EnvelopeDocument;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3274,11 +3269,11 @@ Each custom field used in a template must have a unique name.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation 
+     * @param {module:model/DocumentFieldsInformation} optsOrCallback.documentFieldsInformation
      * @param {module:api/TemplatesApi~updateDocumentFieldsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DocumentFieldsInformation}
      */
-    this.updateDocumentFields = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.updateDocumentFields = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3286,7 +3281,7 @@ Each custom field used in a template must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['documentFieldsInformation'];
+      const postBody = optsOrCallback.documentFieldsInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3303,34 +3298,34 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'documentId' when calling updateDocumentFields");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DocumentFieldsInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = DocumentFieldsInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/fields', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3348,11 +3343,11 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition 
+     * @param {module:model/EnvelopeDefinition} optsOrCallback.envelopeDefinition
      * @param {module:api/TemplatesApi~updateDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
      */
-    this.updateDocuments = function(accountId, templateId, optsOrCallback, callback) {
+    this.updateDocuments = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3360,7 +3355,7 @@ Each custom field used in a template must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['envelopeDefinition'];
+      const postBody = optsOrCallback.envelopeDefinition;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3372,33 +3367,33 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateDocuments");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateDocumentsResult;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = TemplateDocumentsResult;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3417,11 +3412,11 @@ Each custom field used in a template must have a unique name.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} templatePart Currently, the only defined part is **groups**.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/GroupInformation} optsOrCallback.groupInformation 
+     * @param {module:model/GroupInformation} optsOrCallback.groupInformation
      * @param {module:api/TemplatesApi~updateGroupShareCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GroupInformation}
      */
-    this.updateGroupShare = function(accountId, templateId, templatePart, optsOrCallback, callback) {
+    this.updateGroupShare = function (accountId, templateId, templatePart, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3429,7 +3424,7 @@ Each custom field used in a template must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['groupInformation'];
+      const postBody = optsOrCallback.groupInformation;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3446,34 +3441,34 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templatePart' when calling updateGroupShare");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'templatePart': templatePart
+      const pathParams = {
+        accountId,
+        templateId,
+        templatePart,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = GroupInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = GroupInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/{templatePart}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3491,11 +3486,11 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/LockRequest} optsOrCallback.lockRequest 
+     * @param {module:model/LockRequest} optsOrCallback.lockRequest
      * @param {module:api/TemplatesApi~updateLockCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LockInformation}
      */
-    this.updateLock = function(accountId, templateId, optsOrCallback, callback) {
+    this.updateLock = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3503,7 +3498,7 @@ Each custom field used in a template must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['lockRequest'];
+      const postBody = optsOrCallback.lockRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3515,33 +3510,33 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateLock");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LockInformation;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = LockInformation;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/lock', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3559,11 +3554,11 @@ Each custom field used in a template must have a unique name.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateNotificationRequest} optsOrCallback.templateNotificationRequest 
+     * @param {module:model/TemplateNotificationRequest} optsOrCallback.templateNotificationRequest
      * @param {module:api/TemplatesApi~updateNotificationSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notification}
      */
-    this.updateNotificationSettings = function(accountId, templateId, optsOrCallback, callback) {
+    this.updateNotificationSettings = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3571,7 +3566,7 @@ Each custom field used in a template must have a unique name.
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateNotificationRequest'];
+      const postBody = optsOrCallback.templateNotificationRequest;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3583,33 +3578,33 @@ Each custom field used in a template must have a unique name.
         throw new Error("Missing the required parameter 'templateId' when calling updateNotificationSettings");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Notification;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Notification;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/notification', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3623,18 +3618,18 @@ Each custom field used in a template must have a unique name.
 
     /**
      * Updates recipients in a template.
-     * Updates recipients in a template. 
+     * Updates recipients in a template.
 
 You can edit the following properties: `email`, `userName`, `routingOrder`, `faxNumber`, `deliveryMethod`, `accessCode`, and `requireIdLookup`.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.resendEnvelope 
-     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients 
+     * @param {String} optsOrCallback.resendEnvelope
+     * @param {module:model/TemplateRecipients} optsOrCallback.templateRecipients
      * @param {module:api/TemplatesApi~updateRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RecipientsUpdateSummary}
      */
-    this.updateRecipients = function(accountId, templateId, optsOrCallback, callback) {
+    this.updateRecipients = function (accountId, templateId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3642,7 +3637,7 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateRecipients'];
+      const postBody = optsOrCallback.templateRecipients;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3654,34 +3649,34 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         throw new Error("Missing the required parameter 'templateId' when calling updateRecipients");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
+      const pathParams = {
+        accountId,
+        templateId,
       };
-      var queryParams = {
-        'resend_envelope': optsOrCallback['resendEnvelope']
+      const queryParams = {
+        resend_envelope: optsOrCallback.resendEnvelope,
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = RecipientsUpdateSummary;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = RecipientsUpdateSummary;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3700,11 +3695,11 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs
      * @param {module:api/TemplatesApi~updateTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.updateTabs = function(accountId, templateId, recipientId, optsOrCallback, callback) {
+    this.updateTabs = function (accountId, templateId, recipientId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3712,7 +3707,7 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateTabs'];
+      const postBody = optsOrCallback.templateTabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3729,34 +3724,34 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         throw new Error("Missing the required parameter 'recipientId' when calling updateTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
+      const pathParams = {
+        accountId,
+        templateId,
+        recipientId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/tabs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
 
@@ -3774,11 +3769,11 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs 
+     * @param {module:model/TemplateTabs} optsOrCallback.templateTabs
      * @param {module:api/TemplatesApi~updateTemplateDocumentTabsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tabs}
      */
-    this.updateTemplateDocumentTabs = function(accountId, templateId, documentId, optsOrCallback, callback) {
+    this.updateTemplateDocumentTabs = function (accountId, templateId, documentId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3786,7 +3781,7 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['templateTabs'];
+      const postBody = optsOrCallback.templateTabs;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -3803,34 +3798,34 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
         throw new Error("Missing the required parameter 'documentId' when calling updateTemplateDocumentTabs");
       }
 
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+      if (typeof callback !== 'function' && arguments.length && typeof arguments[arguments.length - 1] === 'function') {
         if (typeof optsOrCallback !== 'undefined') {
           optsOrCallback = callback;
         }
-        callback = arguments[arguments.length-1];
+        callback = arguments[arguments.length - 1];
       }
 
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'documentId': documentId
+      const pathParams = {
+        accountId,
+        templateId,
+        documentId,
       };
-      var queryParams = {
+      const queryParams = {
       };
-      var headerParams = {
+      const headerParams = {
       };
-      var formParams = {
+      const formParams = {
       };
 
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Tabs;
+      const authNames = ['docusignAccessCode'];
+      const contentTypes = [];
+      const accepts = ['application/json'];
+      const returnType = Tabs;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/documents/{documentId}/tabs', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType, callback,
       );
     };
   };

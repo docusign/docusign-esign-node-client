@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountIdentityInputOption', 'model/AccountIdentityVerificationStep', 'model/AccountSignatureProvider'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountIdentityVerificationWorkflow = factory(root.Docusign.ApiClient, root.Docusign.AccountIdentityInputOption, root.Docusign.AccountIdentityVerificationStep, root.Docusign.AccountSignatureProvider);
   }
-}(this, function(ApiClient, AccountIdentityInputOption, AccountIdentityVerificationStep, AccountSignatureProvider) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountIdentityInputOption, AccountIdentityVerificationStep, AccountSignatureProvider) => {
   /**
    * The AccountIdentityVerificationWorkflow model module.
    * @module model/AccountIdentityVerificationWorkflow
@@ -37,10 +34,8 @@
    * @alias module:model/AccountIdentityVerificationWorkflow
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,73 +45,69 @@
    * @param {module:model/AccountIdentityVerificationWorkflow} obj Optional instance to populate.
    * @return {module:model/AccountIdentityVerificationWorkflow} The populated <code>AccountIdentityVerificationWorkflow</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('defaultDescription')) {
-        obj['defaultDescription'] = ApiClient.convertToType(data['defaultDescription'], 'String');
+        obj.defaultDescription = ApiClient.convertToType(data.defaultDescription, 'String');
       }
       if (data.hasOwnProperty('defaultName')) {
-        obj['defaultName'] = ApiClient.convertToType(data['defaultName'], 'String');
+        obj.defaultName = ApiClient.convertToType(data.defaultName, 'String');
       }
       if (data.hasOwnProperty('inputOptions')) {
-        obj['inputOptions'] = ApiClient.convertToType(data['inputOptions'], [AccountIdentityInputOption]);
+        obj.inputOptions = ApiClient.convertToType(data.inputOptions, [AccountIdentityInputOption]);
       }
       if (data.hasOwnProperty('signatureProvider')) {
-        obj['signatureProvider'] = AccountSignatureProvider.constructFromObject(data['signatureProvider']);
+        obj.signatureProvider = AccountSignatureProvider.constructFromObject(data.signatureProvider);
       }
       if (data.hasOwnProperty('steps')) {
-        obj['steps'] = ApiClient.convertToType(data['steps'], [AccountIdentityVerificationStep]);
+        obj.steps = ApiClient.convertToType(data.steps, [AccountIdentityVerificationStep]);
       }
       if (data.hasOwnProperty('workflowId')) {
-        obj['workflowId'] = ApiClient.convertToType(data['workflowId'], 'String');
+        obj.workflowId = ApiClient.convertToType(data.workflowId, 'String');
       }
       if (data.hasOwnProperty('workflowResourceKey')) {
-        obj['workflowResourceKey'] = ApiClient.convertToType(data['workflowResourceKey'], 'String');
+        obj.workflowResourceKey = ApiClient.convertToType(data.workflowResourceKey, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} defaultDescription
    */
-  exports.prototype['defaultDescription'] = undefined;
+  exports.prototype.defaultDescription = undefined;
   /**
-   * 
+   *
    * @member {String} defaultName
    */
-  exports.prototype['defaultName'] = undefined;
+  exports.prototype.defaultName = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/AccountIdentityInputOption>} inputOptions
    */
-  exports.prototype['inputOptions'] = undefined;
+  exports.prototype.inputOptions = undefined;
   /**
    * @member {module:model/AccountSignatureProvider} signatureProvider
    */
-  exports.prototype['signatureProvider'] = undefined;
+  exports.prototype.signatureProvider = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/AccountIdentityVerificationStep>} steps
    */
-  exports.prototype['steps'] = undefined;
+  exports.prototype.steps = undefined;
   /**
-   * 
+   *
    * @member {String} workflowId
    */
-  exports.prototype['workflowId'] = undefined;
+  exports.prototype.workflowId = undefined;
   /**
-   * 
+   *
    * @member {String} workflowResourceKey
    */
-  exports.prototype['workflowResourceKey'] = undefined;
-
-
+  exports.prototype.workflowResourceKey = undefined;
 
   return exports;
 }));
-
-

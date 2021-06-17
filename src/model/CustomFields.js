@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ListCustomField', 'model/TextCustomField'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CustomFields = factory(root.Docusign.ApiClient, root.Docusign.ListCustomField, root.Docusign.TextCustomField);
   }
-}(this, function(ApiClient, ListCustomField, TextCustomField) {
-  'use strict';
-
-
+}(this, (ApiClient, ListCustomField, TextCustomField) => {
   /**
    * The CustomFields model module.
    * @module model/CustomFields
@@ -38,10 +35,8 @@
    * @alias module:model/CustomFields
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,34 +46,30 @@
    * @param {module:model/CustomFields} obj Optional instance to populate.
    * @return {module:model/CustomFields} The populated <code>CustomFields</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('listCustomFields')) {
-        obj['listCustomFields'] = ApiClient.convertToType(data['listCustomFields'], [ListCustomField]);
+        obj.listCustomFields = ApiClient.convertToType(data.listCustomFields, [ListCustomField]);
       }
       if (data.hasOwnProperty('textCustomFields')) {
-        obj['textCustomFields'] = ApiClient.convertToType(data['textCustomFields'], [TextCustomField]);
+        obj.textCustomFields = ApiClient.convertToType(data.textCustomFields, [TextCustomField]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * An array of list custom fields.
    * @member {Array.<module:model/ListCustomField>} listCustomFields
    */
-  exports.prototype['listCustomFields'] = undefined;
+  exports.prototype.listCustomFields = undefined;
   /**
    * An array of text custom fields.
    * @member {Array.<module:model/TextCustomField>} textCustomFields
    */
-  exports.prototype['textCustomFields'] = undefined;
-
-
+  exports.prototype.textCustomFields = undefined;
 
   return exports;
 }));
-
-

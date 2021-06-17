@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DocumentSecurityStore = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DocumentSecurityStore model module.
    * @module model/DocumentSecurityStore
@@ -37,10 +34,8 @@
    * @alias module:model/DocumentSecurityStore
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/DocumentSecurityStore} obj Optional instance to populate.
    * @return {module:model/DocumentSecurityStore} The populated <code>DocumentSecurityStore</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('certificates')) {
-        obj['certificates'] = ApiClient.convertToType(data['certificates'], ['String']);
+        obj.certificates = ApiClient.convertToType(data.certificates, ['String']);
       }
       if (data.hasOwnProperty('crls')) {
-        obj['crls'] = ApiClient.convertToType(data['crls'], ['String']);
+        obj.crls = ApiClient.convertToType(data.crls, ['String']);
       }
       if (data.hasOwnProperty('ocsps')) {
-        obj['ocsps'] = ApiClient.convertToType(data['ocsps'], ['String']);
+        obj.ocsps = ApiClient.convertToType(data.ocsps, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} certificates
    */
-  exports.prototype['certificates'] = undefined;
+  exports.prototype.certificates = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} crls
    */
-  exports.prototype['crls'] = undefined;
+  exports.prototype.crls = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} ocsps
    */
-  exports.prototype['ocsps'] = undefined;
-
-
+  exports.prototype.ocsps = undefined;
 
   return exports;
 }));
-
-

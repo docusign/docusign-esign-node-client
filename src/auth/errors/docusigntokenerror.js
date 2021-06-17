@@ -30,6 +30,5 @@ function DocusignTokenError(message, type, code, subcode, traceID) {
 // Inherit from `Error`.
 DocusignTokenError.prototype.__proto__ = Error.prototype;
 
-
 // Expose constructor.
 module.exports = DocusignTokenError;

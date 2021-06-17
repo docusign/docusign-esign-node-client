@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SignatureUser = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SignatureUser model module.
    * @module model/SignatureUser
@@ -37,10 +34,8 @@
    * @alias module:model/SignatureUser
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/SignatureUser} obj Optional instance to populate.
    * @return {module:model/SignatureUser} The populated <code>SignatureUser</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('isDefault')) {
-        obj['isDefault'] = ApiClient.convertToType(data['isDefault'], 'String');
+        obj.isDefault = ApiClient.convertToType(data.isDefault, 'String');
       }
       if (data.hasOwnProperty('rights')) {
-        obj['rights'] = ApiClient.convertToType(data['rights'], 'String');
+        obj.rights = ApiClient.convertToType(data.rights, 'String');
       }
       if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+        obj.userId = ApiClient.convertToType(data.userId, 'String');
       }
       if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+        obj.userName = ApiClient.convertToType(data.userName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} isDefault
    */
-  exports.prototype['isDefault'] = undefined;
+  exports.prototype.isDefault = undefined;
   /**
-   * 
+   *
    * @member {String} rights
    */
-  exports.prototype['rights'] = undefined;
+  exports.prototype.rights = undefined;
   /**
-   * 
+   *
    * @member {String} userId
    */
-  exports.prototype['userId'] = undefined;
+  exports.prototype.userId = undefined;
   /**
-   * 
+   *
    * @member {String} userName
    */
-  exports.prototype['userName'] = undefined;
-
-
+  exports.prototype.userName = undefined;
 
   return exports;
 }));
-
-

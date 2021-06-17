@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Jurisdiction = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The Jurisdiction model module.
    * @module model/Jurisdiction
@@ -37,10 +34,8 @@
    * @alias module:model/Jurisdiction
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,98 +45,94 @@
    * @param {module:model/Jurisdiction} obj Optional instance to populate.
    * @return {module:model/Jurisdiction} The populated <code>Jurisdiction</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('allowSystemCreatedSeal')) {
-        obj['allowSystemCreatedSeal'] = ApiClient.convertToType(data['allowSystemCreatedSeal'], 'String');
+        obj.allowSystemCreatedSeal = ApiClient.convertToType(data.allowSystemCreatedSeal, 'String');
       }
       if (data.hasOwnProperty('allowUserUploadedSeal')) {
-        obj['allowUserUploadedSeal'] = ApiClient.convertToType(data['allowUserUploadedSeal'], 'String');
+        obj.allowUserUploadedSeal = ApiClient.convertToType(data.allowUserUploadedSeal, 'String');
       }
       if (data.hasOwnProperty('commissionIdInSeal')) {
-        obj['commissionIdInSeal'] = ApiClient.convertToType(data['commissionIdInSeal'], 'String');
+        obj.commissionIdInSeal = ApiClient.convertToType(data.commissionIdInSeal, 'String');
       }
       if (data.hasOwnProperty('county')) {
-        obj['county'] = ApiClient.convertToType(data['county'], 'String');
+        obj.county = ApiClient.convertToType(data.county, 'String');
       }
       if (data.hasOwnProperty('countyInSeal')) {
-        obj['countyInSeal'] = ApiClient.convertToType(data['countyInSeal'], 'String');
+        obj.countyInSeal = ApiClient.convertToType(data.countyInSeal, 'String');
       }
       if (data.hasOwnProperty('enabled')) {
-        obj['enabled'] = ApiClient.convertToType(data['enabled'], 'String');
+        obj.enabled = ApiClient.convertToType(data.enabled, 'String');
       }
       if (data.hasOwnProperty('jurisdictionId')) {
-        obj['jurisdictionId'] = ApiClient.convertToType(data['jurisdictionId'], 'String');
+        obj.jurisdictionId = ApiClient.convertToType(data.jurisdictionId, 'String');
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('notaryPublicInSeal')) {
-        obj['notaryPublicInSeal'] = ApiClient.convertToType(data['notaryPublicInSeal'], 'String');
+        obj.notaryPublicInSeal = ApiClient.convertToType(data.notaryPublicInSeal, 'String');
       }
       if (data.hasOwnProperty('stateNameInSeal')) {
-        obj['stateNameInSeal'] = ApiClient.convertToType(data['stateNameInSeal'], 'String');
+        obj.stateNameInSeal = ApiClient.convertToType(data.stateNameInSeal, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} allowSystemCreatedSeal
    */
-  exports.prototype['allowSystemCreatedSeal'] = undefined;
+  exports.prototype.allowSystemCreatedSeal = undefined;
   /**
-   * 
+   *
    * @member {String} allowUserUploadedSeal
    */
-  exports.prototype['allowUserUploadedSeal'] = undefined;
+  exports.prototype.allowUserUploadedSeal = undefined;
   /**
-   * 
+   *
    * @member {String} commissionIdInSeal
    */
-  exports.prototype['commissionIdInSeal'] = undefined;
+  exports.prototype.commissionIdInSeal = undefined;
   /**
-   * 
+   *
    * @member {String} county
    */
-  exports.prototype['county'] = undefined;
+  exports.prototype.county = undefined;
   /**
-   * 
+   *
    * @member {String} countyInSeal
    */
-  exports.prototype['countyInSeal'] = undefined;
+  exports.prototype.countyInSeal = undefined;
   /**
-   * 
+   *
    * @member {String} enabled
    */
-  exports.prototype['enabled'] = undefined;
+  exports.prototype.enabled = undefined;
   /**
-   * 
+   *
    * @member {String} jurisdictionId
    */
-  exports.prototype['jurisdictionId'] = undefined;
+  exports.prototype.jurisdictionId = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} notaryPublicInSeal
    */
-  exports.prototype['notaryPublicInSeal'] = undefined;
+  exports.prototype.notaryPublicInSeal = undefined;
   /**
-   * 
+   *
    * @member {String} stateNameInSeal
    */
-  exports.prototype['stateNameInSeal'] = undefined;
-
-
+  exports.prototype.stateNameInSeal = undefined;
 
   return exports;
 }));
-
-

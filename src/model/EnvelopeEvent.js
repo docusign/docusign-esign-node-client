@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeEvent = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The EnvelopeEvent model module.
    * @module model/EnvelopeEvent
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeEvent
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/EnvelopeEvent} obj Optional instance to populate.
    * @return {module:model/EnvelopeEvent} The populated <code>EnvelopeEvent</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeEventStatusCode')) {
-        obj['envelopeEventStatusCode'] = ApiClient.convertToType(data['envelopeEventStatusCode'], 'String');
+        obj.envelopeEventStatusCode = ApiClient.convertToType(data.envelopeEventStatusCode, 'String');
       }
       if (data.hasOwnProperty('includeDocuments')) {
-        obj['includeDocuments'] = ApiClient.convertToType(data['includeDocuments'], 'String');
+        obj.includeDocuments = ApiClient.convertToType(data.includeDocuments, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * he envelope status, this can be Sent, Delivered, Completed, Declined, or Voided.
    * @member {String} envelopeEventStatusCode
    */
-  exports.prototype['envelopeEventStatusCode'] = undefined;
+  exports.prototype.envelopeEventStatusCode = undefined;
   /**
-   * When set to **true**, the PDF documents are included in the message along with the updated XML. 
+   * When set to **true**, the PDF documents are included in the message along with the updated XML.
    * @member {String} includeDocuments
    */
-  exports.prototype['includeDocuments'] = undefined;
-
-
+  exports.prototype.includeDocuments = undefined;
 
   return exports;
 }));
-
-

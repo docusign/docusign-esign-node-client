@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentUpdateInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CompleteSignRequest = factory(root.Docusign.ApiClient, root.Docusign.DocumentUpdateInfo);
   }
-}(this, function(ApiClient, DocumentUpdateInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentUpdateInfo) => {
   /**
    * The CompleteSignRequest model module.
    * @module model/CompleteSignRequest
@@ -37,10 +34,8 @@
    * @alias module:model/CompleteSignRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/CompleteSignRequest} obj Optional instance to populate.
    * @return {module:model/CompleteSignRequest} The populated <code>CompleteSignRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('certificate')) {
-        obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
+        obj.certificate = ApiClient.convertToType(data.certificate, 'String');
       }
       if (data.hasOwnProperty('correlationId')) {
-        obj['correlationId'] = ApiClient.convertToType(data['correlationId'], 'String');
+        obj.correlationId = ApiClient.convertToType(data.correlationId, 'String');
       }
       if (data.hasOwnProperty('documentUpdateInfos')) {
-        obj['documentUpdateInfos'] = ApiClient.convertToType(data['documentUpdateInfos'], [DocumentUpdateInfo]);
+        obj.documentUpdateInfos = ApiClient.convertToType(data.documentUpdateInfos, [DocumentUpdateInfo]);
       }
       if (data.hasOwnProperty('maxSignatureLength')) {
-        obj['maxSignatureLength'] = ApiClient.convertToType(data['maxSignatureLength'], 'String');
+        obj.maxSignatureLength = ApiClient.convertToType(data.maxSignatureLength, 'String');
       }
       if (data.hasOwnProperty('signingLocation')) {
-        obj['signingLocation'] = ApiClient.convertToType(data['signingLocation'], 'String');
+        obj.signingLocation = ApiClient.convertToType(data.signingLocation, 'String');
       }
       if (data.hasOwnProperty('transactionId')) {
-        obj['transactionId'] = ApiClient.convertToType(data['transactionId'], 'String');
+        obj.transactionId = ApiClient.convertToType(data.transactionId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} certificate
    */
-  exports.prototype['certificate'] = undefined;
+  exports.prototype.certificate = undefined;
   /**
-   * 
+   *
    * @member {String} correlationId
    */
-  exports.prototype['correlationId'] = undefined;
+  exports.prototype.correlationId = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/DocumentUpdateInfo>} documentUpdateInfos
    */
-  exports.prototype['documentUpdateInfos'] = undefined;
+  exports.prototype.documentUpdateInfos = undefined;
   /**
-   * 
+   *
    * @member {String} maxSignatureLength
    */
-  exports.prototype['maxSignatureLength'] = undefined;
+  exports.prototype.maxSignatureLength = undefined;
   /**
    * Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
    * @member {String} signingLocation
    */
-  exports.prototype['signingLocation'] = undefined;
+  exports.prototype.signingLocation = undefined;
   /**
    *  Used to identify an envelope. The id is a sender-generated value and is valid in the DocuSign system for 7 days. It is recommended that a transaction ID is used for offline signing to ensure that an envelope is not sent multiple times. The `transactionId` property can be used determine an envelope's status (i.e. was it created or not) in cases where the internet connection was lost before the envelope status was returned.
    * @member {String} transactionId
    */
-  exports.prototype['transactionId'] = undefined;
-
-
+  exports.prototype.transactionId = undefined;
 
   return exports;
 }));
-
-

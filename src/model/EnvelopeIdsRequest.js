@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeIdsRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The EnvelopeIdsRequest model module.
    * @module model/EnvelopeIdsRequest
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeIdsRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/EnvelopeIdsRequest} obj Optional instance to populate.
    * @return {module:model/EnvelopeIdsRequest} The populated <code>EnvelopeIdsRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('envelopeIds')) {
-        obj['envelopeIds'] = ApiClient.convertToType(data['envelopeIds'], ['String']);
+        obj.envelopeIds = ApiClient.convertToType(data.envelopeIds, ['String']);
       }
       if (data.hasOwnProperty('transactionIds')) {
-        obj['transactionIds'] = ApiClient.convertToType(data['transactionIds'], ['String']);
+        obj.transactionIds = ApiClient.convertToType(data.transactionIds, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} envelopeIds
    */
-  exports.prototype['envelopeIds'] = undefined;
+  exports.prototype.envelopeIds = undefined;
   /**
    *  A list of transaction Id's used to determining the status of envelopes sent asynchronously. See **transactionId** property on envelopes.
    * @member {Array.<String>} transactionIds
    */
-  exports.prototype['transactionIds'] = undefined;
-
-
+  exports.prototype.transactionIds = undefined;
 
   return exports;
 }));
-
-

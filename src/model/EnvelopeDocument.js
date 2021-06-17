@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/NameValue', 'model/Page', 'model/PropertyMetadata', 'model/SignatureType'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeDocument = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.NameValue, root.Docusign.Page, root.Docusign.PropertyMetadata, root.Docusign.SignatureType);
   }
-}(this, function(ApiClient, ErrorDetails, NameValue, Page, PropertyMetadata, SignatureType) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, NameValue, Page, PropertyMetadata, SignatureType) => {
   /**
    * The EnvelopeDocument model module.
    * @module model/EnvelopeDocument
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeDocument
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,212 +45,208 @@
    * @param {module:model/EnvelopeDocument} obj Optional instance to populate.
    * @return {module:model/EnvelopeDocument} The populated <code>EnvelopeDocument</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('addedRecipientIds')) {
-        obj['addedRecipientIds'] = ApiClient.convertToType(data['addedRecipientIds'], ['String']);
+        obj.addedRecipientIds = ApiClient.convertToType(data.addedRecipientIds, ['String']);
       }
       if (data.hasOwnProperty('attachmentTabId')) {
-        obj['attachmentTabId'] = ApiClient.convertToType(data['attachmentTabId'], 'String');
+        obj.attachmentTabId = ApiClient.convertToType(data.attachmentTabId, 'String');
       }
       if (data.hasOwnProperty('authoritativeCopy')) {
-        obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'String');
+        obj.authoritativeCopy = ApiClient.convertToType(data.authoritativeCopy, 'String');
       }
       if (data.hasOwnProperty('authoritativeCopyMetadata')) {
-        obj['authoritativeCopyMetadata'] = PropertyMetadata.constructFromObject(data['authoritativeCopyMetadata']);
+        obj.authoritativeCopyMetadata = PropertyMetadata.constructFromObject(data.authoritativeCopyMetadata);
       }
       if (data.hasOwnProperty('availableDocumentTypes')) {
-        obj['availableDocumentTypes'] = ApiClient.convertToType(data['availableDocumentTypes'], [SignatureType]);
+        obj.availableDocumentTypes = ApiClient.convertToType(data.availableDocumentTypes, [SignatureType]);
       }
       if (data.hasOwnProperty('containsPdfFormFields')) {
-        obj['containsPdfFormFields'] = ApiClient.convertToType(data['containsPdfFormFields'], 'String');
+        obj.containsPdfFormFields = ApiClient.convertToType(data.containsPdfFormFields, 'String');
       }
       if (data.hasOwnProperty('display')) {
-        obj['display'] = ApiClient.convertToType(data['display'], 'String');
+        obj.display = ApiClient.convertToType(data.display, 'String');
       }
       if (data.hasOwnProperty('displayMetadata')) {
-        obj['displayMetadata'] = PropertyMetadata.constructFromObject(data['displayMetadata']);
+        obj.displayMetadata = PropertyMetadata.constructFromObject(data.displayMetadata);
       }
       if (data.hasOwnProperty('documentFields')) {
-        obj['documentFields'] = ApiClient.convertToType(data['documentFields'], [NameValue]);
+        obj.documentFields = ApiClient.convertToType(data.documentFields, [NameValue]);
       }
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('documentIdGuid')) {
-        obj['documentIdGuid'] = ApiClient.convertToType(data['documentIdGuid'], 'String');
+        obj.documentIdGuid = ApiClient.convertToType(data.documentIdGuid, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('includeInDownload')) {
-        obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
+        obj.includeInDownload = ApiClient.convertToType(data.includeInDownload, 'String');
       }
       if (data.hasOwnProperty('includeInDownloadMetadata')) {
-        obj['includeInDownloadMetadata'] = PropertyMetadata.constructFromObject(data['includeInDownloadMetadata']);
+        obj.includeInDownloadMetadata = PropertyMetadata.constructFromObject(data.includeInDownloadMetadata);
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('nameMetadata')) {
-        obj['nameMetadata'] = PropertyMetadata.constructFromObject(data['nameMetadata']);
+        obj.nameMetadata = PropertyMetadata.constructFromObject(data.nameMetadata);
       }
       if (data.hasOwnProperty('order')) {
-        obj['order'] = ApiClient.convertToType(data['order'], 'String');
+        obj.order = ApiClient.convertToType(data.order, 'String');
       }
       if (data.hasOwnProperty('pages')) {
-        obj['pages'] = ApiClient.convertToType(data['pages'], [Page]);
+        obj.pages = ApiClient.convertToType(data.pages, [Page]);
       }
       if (data.hasOwnProperty('signerMustAcknowledge')) {
-        obj['signerMustAcknowledge'] = ApiClient.convertToType(data['signerMustAcknowledge'], 'String');
+        obj.signerMustAcknowledge = ApiClient.convertToType(data.signerMustAcknowledge, 'String');
       }
       if (data.hasOwnProperty('signerMustAcknowledgeMetadata')) {
-        obj['signerMustAcknowledgeMetadata'] = PropertyMetadata.constructFromObject(data['signerMustAcknowledgeMetadata']);
+        obj.signerMustAcknowledgeMetadata = PropertyMetadata.constructFromObject(data.signerMustAcknowledgeMetadata);
       }
       if (data.hasOwnProperty('sizeBytes')) {
-        obj['sizeBytes'] = ApiClient.convertToType(data['sizeBytes'], 'String');
+        obj.sizeBytes = ApiClient.convertToType(data.sizeBytes, 'String');
       }
       if (data.hasOwnProperty('templateLocked')) {
-        obj['templateLocked'] = ApiClient.convertToType(data['templateLocked'], 'String');
+        obj.templateLocked = ApiClient.convertToType(data.templateLocked, 'String');
       }
       if (data.hasOwnProperty('templateRequired')) {
-        obj['templateRequired'] = ApiClient.convertToType(data['templateRequired'], 'String');
+        obj.templateRequired = ApiClient.convertToType(data.templateRequired, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
       if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+        obj.uri = ApiClient.convertToType(data.uri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<String>} addedRecipientIds
    */
-  exports.prototype['addedRecipientIds'] = undefined;
+  exports.prototype.addedRecipientIds = undefined;
   /**
-   * 
+   *
    * @member {String} attachmentTabId
    */
-  exports.prototype['attachmentTabId'] = undefined;
+  exports.prototype.attachmentTabId = undefined;
   /**
    * Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
    * @member {String} authoritativeCopy
    */
-  exports.prototype['authoritativeCopy'] = undefined;
+  exports.prototype.authoritativeCopy = undefined;
   /**
    * @member {module:model/PropertyMetadata} authoritativeCopyMetadata
    */
-  exports.prototype['authoritativeCopyMetadata'] = undefined;
+  exports.prototype.authoritativeCopyMetadata = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/SignatureType>} availableDocumentTypes
    */
-  exports.prototype['availableDocumentTypes'] = undefined;
+  exports.prototype.availableDocumentTypes = undefined;
   /**
-   * 
+   *
    * @member {String} containsPdfFormFields
    */
-  exports.prototype['containsPdfFormFields'] = undefined;
+  exports.prototype.containsPdfFormFields = undefined;
   /**
-   * 
+   *
    * @member {String} display
    */
-  exports.prototype['display'] = undefined;
+  exports.prototype.display = undefined;
   /**
    * @member {module:model/PropertyMetadata} displayMetadata
    */
-  exports.prototype['displayMetadata'] = undefined;
+  exports.prototype.displayMetadata = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/NameValue>} documentFields
    */
-  exports.prototype['documentFields'] = undefined;
+  exports.prototype.documentFields = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} documentIdGuid
    */
-  exports.prototype['documentIdGuid'] = undefined;
+  exports.prototype.documentIdGuid = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} includeInDownload
    */
-  exports.prototype['includeInDownload'] = undefined;
+  exports.prototype.includeInDownload = undefined;
   /**
    * @member {module:model/PropertyMetadata} includeInDownloadMetadata
    */
-  exports.prototype['includeInDownloadMetadata'] = undefined;
+  exports.prototype.includeInDownloadMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
    * @member {module:model/PropertyMetadata} nameMetadata
    */
-  exports.prototype['nameMetadata'] = undefined;
+  exports.prototype.nameMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} order
    */
-  exports.prototype['order'] = undefined;
+  exports.prototype.order = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/Page>} pages
    */
-  exports.prototype['pages'] = undefined;
+  exports.prototype.pages = undefined;
   /**
-   * 
+   *
    * @member {String} signerMustAcknowledge
    */
-  exports.prototype['signerMustAcknowledge'] = undefined;
+  exports.prototype.signerMustAcknowledge = undefined;
   /**
    * @member {module:model/PropertyMetadata} signerMustAcknowledgeMetadata
    */
-  exports.prototype['signerMustAcknowledgeMetadata'] = undefined;
+  exports.prototype.signerMustAcknowledgeMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} sizeBytes
    */
-  exports.prototype['sizeBytes'] = undefined;
+  exports.prototype.sizeBytes = undefined;
   /**
-   * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. 
+   * When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients.
    * @member {String} templateLocked
    */
-  exports.prototype['templateLocked'] = undefined;
+  exports.prototype.templateLocked = undefined;
   /**
    * When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.
    * @member {String} templateRequired
    */
-  exports.prototype['templateRequired'] = undefined;
+  exports.prototype.templateRequired = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype.type = undefined;
   /**
-   * 
+   *
    * @member {String} uri
    */
-  exports.prototype['uri'] = undefined;
-
-
+  exports.prototype.uri = undefined;
 
   return exports;
 }));
-
-

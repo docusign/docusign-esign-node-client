@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ProvisioningInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ProvisioningInformation model module.
    * @module model/ProvisioningInformation
@@ -37,10 +34,8 @@
    * @alias module:model/ProvisioningInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,74 +45,70 @@
    * @param {module:model/ProvisioningInformation} obj Optional instance to populate.
    * @return {module:model/ProvisioningInformation} The populated <code>ProvisioningInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('defaultConnectionId')) {
-        obj['defaultConnectionId'] = ApiClient.convertToType(data['defaultConnectionId'], 'String');
+        obj.defaultConnectionId = ApiClient.convertToType(data.defaultConnectionId, 'String');
       }
       if (data.hasOwnProperty('defaultPlanId')) {
-        obj['defaultPlanId'] = ApiClient.convertToType(data['defaultPlanId'], 'String');
+        obj.defaultPlanId = ApiClient.convertToType(data.defaultPlanId, 'String');
       }
       if (data.hasOwnProperty('distributorCode')) {
-        obj['distributorCode'] = ApiClient.convertToType(data['distributorCode'], 'String');
+        obj.distributorCode = ApiClient.convertToType(data.distributorCode, 'String');
       }
       if (data.hasOwnProperty('distributorPassword')) {
-        obj['distributorPassword'] = ApiClient.convertToType(data['distributorPassword'], 'String');
+        obj.distributorPassword = ApiClient.convertToType(data.distributorPassword, 'String');
       }
       if (data.hasOwnProperty('passwordRuleText')) {
-        obj['passwordRuleText'] = ApiClient.convertToType(data['passwordRuleText'], 'String');
+        obj.passwordRuleText = ApiClient.convertToType(data.passwordRuleText, 'String');
       }
       if (data.hasOwnProperty('planPromotionText')) {
-        obj['planPromotionText'] = ApiClient.convertToType(data['planPromotionText'], 'String');
+        obj.planPromotionText = ApiClient.convertToType(data.planPromotionText, 'String');
       }
       if (data.hasOwnProperty('purchaseOrderOrPromAllowed')) {
-        obj['purchaseOrderOrPromAllowed'] = ApiClient.convertToType(data['purchaseOrderOrPromAllowed'], 'String');
+        obj.purchaseOrderOrPromAllowed = ApiClient.convertToType(data.purchaseOrderOrPromAllowed, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} defaultConnectionId
    */
-  exports.prototype['defaultConnectionId'] = undefined;
+  exports.prototype.defaultConnectionId = undefined;
   /**
-   * 
+   *
    * @member {String} defaultPlanId
    */
-  exports.prototype['defaultPlanId'] = undefined;
+  exports.prototype.defaultPlanId = undefined;
   /**
    * The code that identifies the billing plan groups and plans for the new account.
    * @member {String} distributorCode
    */
-  exports.prototype['distributorCode'] = undefined;
+  exports.prototype.distributorCode = undefined;
   /**
    * The password for the distributorCode.
    * @member {String} distributorPassword
    */
-  exports.prototype['distributorPassword'] = undefined;
+  exports.prototype.distributorPassword = undefined;
   /**
-   * 
+   *
    * @member {String} passwordRuleText
    */
-  exports.prototype['passwordRuleText'] = undefined;
+  exports.prototype.passwordRuleText = undefined;
   /**
-   * 
+   *
    * @member {String} planPromotionText
    */
-  exports.prototype['planPromotionText'] = undefined;
+  exports.prototype.planPromotionText = undefined;
   /**
-   * 
+   *
    * @member {String} purchaseOrderOrPromAllowed
    */
-  exports.prototype['purchaseOrderOrPromAllowed'] = undefined;
-
-
+  exports.prototype.purchaseOrderOrPromAllowed = undefined;
 
   return exports;
 }));
-
-

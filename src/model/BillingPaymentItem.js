@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPaymentItem = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BillingPaymentItem model module.
    * @module model/BillingPaymentItem
@@ -38,10 +35,8 @@
    * @alias module:model/BillingPaymentItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,58 +46,54 @@
    * @param {module:model/BillingPaymentItem} obj Optional instance to populate.
    * @return {module:model/BillingPaymentItem} The populated <code>BillingPaymentItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amount')) {
-        obj['amount'] = ApiClient.convertToType(data['amount'], 'String');
+        obj.amount = ApiClient.convertToType(data.amount, 'String');
       }
       if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+        obj.description = ApiClient.convertToType(data.description, 'String');
       }
       if (data.hasOwnProperty('paymentDate')) {
-        obj['paymentDate'] = ApiClient.convertToType(data['paymentDate'], 'String');
+        obj.paymentDate = ApiClient.convertToType(data.paymentDate, 'String');
       }
       if (data.hasOwnProperty('paymentId')) {
-        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], 'String');
+        obj.paymentId = ApiClient.convertToType(data.paymentId, 'String');
       }
       if (data.hasOwnProperty('paymentNumber')) {
-        obj['paymentNumber'] = ApiClient.convertToType(data['paymentNumber'], 'String');
+        obj.paymentNumber = ApiClient.convertToType(data.paymentNumber, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} amount
    */
-  exports.prototype['amount'] = undefined;
+  exports.prototype.amount = undefined;
   /**
-   * 
+   *
    * @member {String} description
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype.description = undefined;
   /**
-   * 
+   *
    * @member {String} paymentDate
    */
-  exports.prototype['paymentDate'] = undefined;
+  exports.prototype.paymentDate = undefined;
   /**
-   * 
+   *
    * @member {String} paymentId
    */
-  exports.prototype['paymentId'] = undefined;
+  exports.prototype.paymentId = undefined;
   /**
    * When set to **true**, a PDF version of the invoice is available.   To get the PDF, make the call again and change \"Accept:\" in the header to \"Accept: application/pdf\".
    * @member {String} paymentNumber
    */
-  exports.prototype['paymentNumber'] = undefined;
-
-
+  exports.prototype.paymentNumber = undefined;
 
   return exports;
 }));
-
-

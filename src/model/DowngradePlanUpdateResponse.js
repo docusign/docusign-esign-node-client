@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DowngradePlanUpdateResponse = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DowngradePlanUpdateResponse model module.
    * @module model/DowngradePlanUpdateResponse
@@ -37,10 +34,8 @@
    * @alias module:model/DowngradePlanUpdateResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,74 +45,70 @@
    * @param {module:model/DowngradePlanUpdateResponse} obj Optional instance to populate.
    * @return {module:model/DowngradePlanUpdateResponse} The populated <code>DowngradePlanUpdateResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accountPaymentMethod')) {
-        obj['accountPaymentMethod'] = ApiClient.convertToType(data['accountPaymentMethod'], 'String');
+        obj.accountPaymentMethod = ApiClient.convertToType(data.accountPaymentMethod, 'String');
       }
       if (data.hasOwnProperty('downgradeEffectiveDate')) {
-        obj['downgradeEffectiveDate'] = ApiClient.convertToType(data['downgradeEffectiveDate'], 'String');
+        obj.downgradeEffectiveDate = ApiClient.convertToType(data.downgradeEffectiveDate, 'String');
       }
       if (data.hasOwnProperty('downgradePaymentCycle')) {
-        obj['downgradePaymentCycle'] = ApiClient.convertToType(data['downgradePaymentCycle'], 'String');
+        obj.downgradePaymentCycle = ApiClient.convertToType(data.downgradePaymentCycle, 'String');
       }
       if (data.hasOwnProperty('downgradePlanId')) {
-        obj['downgradePlanId'] = ApiClient.convertToType(data['downgradePlanId'], 'String');
+        obj.downgradePlanId = ApiClient.convertToType(data.downgradePlanId, 'String');
       }
       if (data.hasOwnProperty('downgradePlanName')) {
-        obj['downgradePlanName'] = ApiClient.convertToType(data['downgradePlanName'], 'String');
+        obj.downgradePlanName = ApiClient.convertToType(data.downgradePlanName, 'String');
       }
       if (data.hasOwnProperty('downgradeRequestStatus')) {
-        obj['downgradeRequestStatus'] = ApiClient.convertToType(data['downgradeRequestStatus'], 'String');
+        obj.downgradeRequestStatus = ApiClient.convertToType(data.downgradeRequestStatus, 'String');
       }
       if (data.hasOwnProperty('message')) {
-        obj['message'] = ApiClient.convertToType(data['message'], 'String');
+        obj.message = ApiClient.convertToType(data.message, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} accountPaymentMethod
    */
-  exports.prototype['accountPaymentMethod'] = undefined;
+  exports.prototype.accountPaymentMethod = undefined;
   /**
-   * 
+   *
    * @member {String} downgradeEffectiveDate
    */
-  exports.prototype['downgradeEffectiveDate'] = undefined;
+  exports.prototype.downgradeEffectiveDate = undefined;
   /**
-   * 
+   *
    * @member {String} downgradePaymentCycle
    */
-  exports.prototype['downgradePaymentCycle'] = undefined;
+  exports.prototype.downgradePaymentCycle = undefined;
   /**
-   * 
+   *
    * @member {String} downgradePlanId
    */
-  exports.prototype['downgradePlanId'] = undefined;
+  exports.prototype.downgradePlanId = undefined;
   /**
-   * 
+   *
    * @member {String} downgradePlanName
    */
-  exports.prototype['downgradePlanName'] = undefined;
+  exports.prototype.downgradePlanName = undefined;
   /**
-   * 
+   *
    * @member {String} downgradeRequestStatus
    */
-  exports.prototype['downgradeRequestStatus'] = undefined;
+  exports.prototype.downgradeRequestStatus = undefined;
   /**
-   * 
+   *
    * @member {String} message
    */
-  exports.prototype['message'] = undefined;
-
-
+  exports.prototype.message = undefined;
 
   return exports;
 }));
-
-

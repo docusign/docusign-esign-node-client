@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SenderEmailNotifications', 'model/SignerEmailNotifications'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.NotificationDefaultSettings = factory(root.Docusign.ApiClient, root.Docusign.SenderEmailNotifications, root.Docusign.SignerEmailNotifications);
   }
-}(this, function(ApiClient, SenderEmailNotifications, SignerEmailNotifications) {
-  'use strict';
-
-
+}(this, (ApiClient, SenderEmailNotifications, SignerEmailNotifications) => {
   /**
    * The NotificationDefaultSettings model module.
    * @module model/NotificationDefaultSettings
@@ -37,10 +34,8 @@
    * @alias module:model/NotificationDefaultSettings
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,32 +45,28 @@
    * @param {module:model/NotificationDefaultSettings} obj Optional instance to populate.
    * @return {module:model/NotificationDefaultSettings} The populated <code>NotificationDefaultSettings</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('senderEmailNotifications')) {
-        obj['senderEmailNotifications'] = SenderEmailNotifications.constructFromObject(data['senderEmailNotifications']);
+        obj.senderEmailNotifications = SenderEmailNotifications.constructFromObject(data.senderEmailNotifications);
       }
       if (data.hasOwnProperty('signerEmailNotifications')) {
-        obj['signerEmailNotifications'] = SignerEmailNotifications.constructFromObject(data['signerEmailNotifications']);
+        obj.signerEmailNotifications = SignerEmailNotifications.constructFromObject(data.signerEmailNotifications);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/SenderEmailNotifications} senderEmailNotifications
    */
-  exports.prototype['senderEmailNotifications'] = undefined;
+  exports.prototype.senderEmailNotifications = undefined;
   /**
    * @member {module:model/SignerEmailNotifications} signerEmailNotifications
    */
-  exports.prototype['signerEmailNotifications'] = undefined;
-
-
+  exports.prototype.signerEmailNotifications = undefined;
 
   return exports;
 }));
-
-

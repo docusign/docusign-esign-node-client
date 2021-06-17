@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AddOn', 'model/DowngradePlanUpdateResponse', 'model/FeatureSet', 'model/SeatDiscount'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountBillingPlan = factory(root.Docusign.ApiClient, root.Docusign.AddOn, root.Docusign.DowngradePlanUpdateResponse, root.Docusign.FeatureSet, root.Docusign.SeatDiscount);
   }
-}(this, function(ApiClient, AddOn, DowngradePlanUpdateResponse, FeatureSet, SeatDiscount) {
-  'use strict';
-
-
+}(this, (ApiClient, AddOn, DowngradePlanUpdateResponse, FeatureSet, SeatDiscount) => {
   /**
    * The AccountBillingPlan model module.
    * @module model/AccountBillingPlan
@@ -38,10 +35,8 @@
    * @alias module:model/AccountBillingPlan
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,209 +46,205 @@
    * @param {module:model/AccountBillingPlan} obj Optional instance to populate.
    * @return {module:model/AccountBillingPlan} The populated <code>AccountBillingPlan</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('addOns')) {
-        obj['addOns'] = ApiClient.convertToType(data['addOns'], [AddOn]);
+        obj.addOns = ApiClient.convertToType(data.addOns, [AddOn]);
       }
       if (data.hasOwnProperty('appStoreReceiptExpirationDate')) {
-        obj['appStoreReceiptExpirationDate'] = ApiClient.convertToType(data['appStoreReceiptExpirationDate'], 'String');
+        obj.appStoreReceiptExpirationDate = ApiClient.convertToType(data.appStoreReceiptExpirationDate, 'String');
       }
       if (data.hasOwnProperty('appStoreReceiptPurchaseDate')) {
-        obj['appStoreReceiptPurchaseDate'] = ApiClient.convertToType(data['appStoreReceiptPurchaseDate'], 'String');
+        obj.appStoreReceiptPurchaseDate = ApiClient.convertToType(data.appStoreReceiptPurchaseDate, 'String');
       }
       if (data.hasOwnProperty('canCancelRenewal')) {
-        obj['canCancelRenewal'] = ApiClient.convertToType(data['canCancelRenewal'], 'String');
+        obj.canCancelRenewal = ApiClient.convertToType(data.canCancelRenewal, 'String');
       }
       if (data.hasOwnProperty('canUpgrade')) {
-        obj['canUpgrade'] = ApiClient.convertToType(data['canUpgrade'], 'String');
+        obj.canUpgrade = ApiClient.convertToType(data.canUpgrade, 'String');
       }
       if (data.hasOwnProperty('currencyCode')) {
-        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+        obj.currencyCode = ApiClient.convertToType(data.currencyCode, 'String');
       }
       if (data.hasOwnProperty('downgradePlanInformation')) {
-        obj['downgradePlanInformation'] = DowngradePlanUpdateResponse.constructFromObject(data['downgradePlanInformation']);
+        obj.downgradePlanInformation = DowngradePlanUpdateResponse.constructFromObject(data.downgradePlanInformation);
       }
       if (data.hasOwnProperty('enableSupport')) {
-        obj['enableSupport'] = ApiClient.convertToType(data['enableSupport'], 'String');
+        obj.enableSupport = ApiClient.convertToType(data.enableSupport, 'String');
       }
       if (data.hasOwnProperty('includedSeats')) {
-        obj['includedSeats'] = ApiClient.convertToType(data['includedSeats'], 'String');
+        obj.includedSeats = ApiClient.convertToType(data.includedSeats, 'String');
       }
       if (data.hasOwnProperty('incrementalSeats')) {
-        obj['incrementalSeats'] = ApiClient.convertToType(data['incrementalSeats'], 'String');
+        obj.incrementalSeats = ApiClient.convertToType(data.incrementalSeats, 'String');
       }
       if (data.hasOwnProperty('isDowngrade')) {
-        obj['isDowngrade'] = ApiClient.convertToType(data['isDowngrade'], 'String');
+        obj.isDowngrade = ApiClient.convertToType(data.isDowngrade, 'String');
       }
       if (data.hasOwnProperty('notificationType')) {
-        obj['notificationType'] = ApiClient.convertToType(data['notificationType'], 'String');
+        obj.notificationType = ApiClient.convertToType(data.notificationType, 'String');
       }
       if (data.hasOwnProperty('otherDiscountPercent')) {
-        obj['otherDiscountPercent'] = ApiClient.convertToType(data['otherDiscountPercent'], 'String');
+        obj.otherDiscountPercent = ApiClient.convertToType(data.otherDiscountPercent, 'String');
       }
       if (data.hasOwnProperty('paymentCycle')) {
-        obj['paymentCycle'] = ApiClient.convertToType(data['paymentCycle'], 'String');
+        obj.paymentCycle = ApiClient.convertToType(data.paymentCycle, 'String');
       }
       if (data.hasOwnProperty('paymentMethod')) {
-        obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
+        obj.paymentMethod = ApiClient.convertToType(data.paymentMethod, 'String');
       }
       if (data.hasOwnProperty('perSeatPrice')) {
-        obj['perSeatPrice'] = ApiClient.convertToType(data['perSeatPrice'], 'String');
+        obj.perSeatPrice = ApiClient.convertToType(data.perSeatPrice, 'String');
       }
       if (data.hasOwnProperty('planClassification')) {
-        obj['planClassification'] = ApiClient.convertToType(data['planClassification'], 'String');
+        obj.planClassification = ApiClient.convertToType(data.planClassification, 'String');
       }
       if (data.hasOwnProperty('planFeatureSets')) {
-        obj['planFeatureSets'] = ApiClient.convertToType(data['planFeatureSets'], [FeatureSet]);
+        obj.planFeatureSets = ApiClient.convertToType(data.planFeatureSets, [FeatureSet]);
       }
       if (data.hasOwnProperty('planId')) {
-        obj['planId'] = ApiClient.convertToType(data['planId'], 'String');
+        obj.planId = ApiClient.convertToType(data.planId, 'String');
       }
       if (data.hasOwnProperty('planName')) {
-        obj['planName'] = ApiClient.convertToType(data['planName'], 'String');
+        obj.planName = ApiClient.convertToType(data.planName, 'String');
       }
       if (data.hasOwnProperty('renewalStatus')) {
-        obj['renewalStatus'] = ApiClient.convertToType(data['renewalStatus'], 'String');
+        obj.renewalStatus = ApiClient.convertToType(data.renewalStatus, 'String');
       }
       if (data.hasOwnProperty('seatDiscounts')) {
-        obj['seatDiscounts'] = ApiClient.convertToType(data['seatDiscounts'], [SeatDiscount]);
+        obj.seatDiscounts = ApiClient.convertToType(data.seatDiscounts, [SeatDiscount]);
       }
       if (data.hasOwnProperty('supportIncidentFee')) {
-        obj['supportIncidentFee'] = ApiClient.convertToType(data['supportIncidentFee'], 'String');
+        obj.supportIncidentFee = ApiClient.convertToType(data.supportIncidentFee, 'String');
       }
       if (data.hasOwnProperty('supportPlanFee')) {
-        obj['supportPlanFee'] = ApiClient.convertToType(data['supportPlanFee'], 'String');
+        obj.supportPlanFee = ApiClient.convertToType(data.supportPlanFee, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved:
    * @member {Array.<module:model/AddOn>} addOns
    */
-  exports.prototype['addOns'] = undefined;
+  exports.prototype.addOns = undefined;
   /**
-   * 
+   *
    * @member {String} appStoreReceiptExpirationDate
    */
-  exports.prototype['appStoreReceiptExpirationDate'] = undefined;
+  exports.prototype.appStoreReceiptExpirationDate = undefined;
   /**
-   * 
+   *
    * @member {String} appStoreReceiptPurchaseDate
    */
-  exports.prototype['appStoreReceiptPurchaseDate'] = undefined;
+  exports.prototype.appStoreReceiptPurchaseDate = undefined;
   /**
    * Reserved: TBD
    * @member {String} canCancelRenewal
    */
-  exports.prototype['canCancelRenewal'] = undefined;
+  exports.prototype.canCancelRenewal = undefined;
   /**
    * When set to **true**, specifies that you can upgrade the account through the API.
    * @member {String} canUpgrade
    */
-  exports.prototype['canUpgrade'] = undefined;
+  exports.prototype.canUpgrade = undefined;
   /**
    * Specifies the ISO currency code for the account.
    * @member {String} currencyCode
    */
-  exports.prototype['currencyCode'] = undefined;
+  exports.prototype.currencyCode = undefined;
   /**
    * @member {module:model/DowngradePlanUpdateResponse} downgradePlanInformation
    */
-  exports.prototype['downgradePlanInformation'] = undefined;
+  exports.prototype.downgradePlanInformation = undefined;
   /**
    * When set to **true**, then customer support is provided as part of the account plan.
    * @member {String} enableSupport
    */
-  exports.prototype['enableSupport'] = undefined;
+  exports.prototype.enableSupport = undefined;
   /**
    * The number of seats (users) included.
    * @member {String} includedSeats
    */
-  exports.prototype['includedSeats'] = undefined;
+  exports.prototype.includedSeats = undefined;
   /**
    * Reserved: TBD
    * @member {String} incrementalSeats
    */
-  exports.prototype['incrementalSeats'] = undefined;
+  exports.prototype.incrementalSeats = undefined;
   /**
-   * 
+   *
    * @member {String} isDowngrade
    */
-  exports.prototype['isDowngrade'] = undefined;
+  exports.prototype.isDowngrade = undefined;
   /**
-   * 
+   *
    * @member {String} notificationType
    */
-  exports.prototype['notificationType'] = undefined;
+  exports.prototype.notificationType = undefined;
   /**
-   *  Any other percentage discount for the plan. 
+   *  Any other percentage discount for the plan.
    * @member {String} otherDiscountPercent
    */
-  exports.prototype['otherDiscountPercent'] = undefined;
+  exports.prototype.otherDiscountPercent = undefined;
   /**
-   * 
+   *
    * @member {String} paymentCycle
    */
-  exports.prototype['paymentCycle'] = undefined;
+  exports.prototype.paymentCycle = undefined;
   /**
-   *  The payment method used with the plan. The possible values are: CreditCard, PurchaseOrder, Premium, or Freemium. 
+   *  The payment method used with the plan. The possible values are: CreditCard, PurchaseOrder, Premium, or Freemium.
    * @member {String} paymentMethod
    */
-  exports.prototype['paymentMethod'] = undefined;
+  exports.prototype.paymentMethod = undefined;
   /**
-   * 
+   *
    * @member {String} perSeatPrice
    */
-  exports.prototype['perSeatPrice'] = undefined;
+  exports.prototype.perSeatPrice = undefined;
   /**
    * Identifies the type of plan. Examples include Business, Corporate, Enterprise, Free.
    * @member {String} planClassification
    */
-  exports.prototype['planClassification'] = undefined;
+  exports.prototype.planClassification = undefined;
   /**
-   * A complex type that sets the feature sets for the account. It contains the following information (all string content):  * currencyFeatureSetPrices - Contains the currencyCode and currencySymbol for the alternate currency values for envelopeFee, fixedFee, seatFee that are configured for this plan feature set. * envelopeFee - An incremental envelope cost for plans with envelope overages (when isEnabled=true). * featureSetId - A unique ID for the feature set. * fixedFee - A one-time fee associated with the plan (when isEnabled=true). * isActive - Specifies whether the feature set is actively set as part of the plan. * isEnabled - Specifies whether the feature set is actively enabled as part of the plan. * name - The name of the feature set. * seatFee - An incremental seat cost for seat-based plans (when isEnabled=true). 
+   * A complex type that sets the feature sets for the account. It contains the following information (all string content):  * currencyFeatureSetPrices - Contains the currencyCode and currencySymbol for the alternate currency values for envelopeFee, fixedFee, seatFee that are configured for this plan feature set. * envelopeFee - An incremental envelope cost for plans with envelope overages (when isEnabled=true). * featureSetId - A unique ID for the feature set. * fixedFee - A one-time fee associated with the plan (when isEnabled=true). * isActive - Specifies whether the feature set is actively set as part of the plan. * isEnabled - Specifies whether the feature set is actively enabled as part of the plan. * name - The name of the feature set. * seatFee - An incremental seat cost for seat-based plans (when isEnabled=true).
    * @member {Array.<module:model/FeatureSet>} planFeatureSets
    */
-  exports.prototype['planFeatureSets'] = undefined;
+  exports.prototype.planFeatureSets = undefined;
   /**
-   * 
+   *
    * @member {String} planId
    */
-  exports.prototype['planId'] = undefined;
+  exports.prototype.planId = undefined;
   /**
    * The name of the Billing Plan.
    * @member {String} planName
    */
-  exports.prototype['planName'] = undefined;
+  exports.prototype.planName = undefined;
   /**
    * The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate.
    * @member {String} renewalStatus
    */
-  exports.prototype['renewalStatus'] = undefined;
+  exports.prototype.renewalStatus = undefined;
   /**
-   *  A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.  
+   *  A complex type that contains any seat discount information.  Values are: BeginSeatCount, EndSeatCount, and SeatDiscountPercent.
    * @member {Array.<module:model/SeatDiscount>} seatDiscounts
    */
-  exports.prototype['seatDiscounts'] = undefined;
+  exports.prototype.seatDiscounts = undefined;
   /**
    * The support incident fee charged for each support incident.
    * @member {String} supportIncidentFee
    */
-  exports.prototype['supportIncidentFee'] = undefined;
+  exports.prototype.supportIncidentFee = undefined;
   /**
    * The support plan fee charged for this plan.
    * @member {String} supportPlanFee
    */
-  exports.prototype['supportPlanFee'] = undefined;
-
-
+  exports.prototype.supportPlanFee = undefined;
 
   return exports;
 }));
-
-

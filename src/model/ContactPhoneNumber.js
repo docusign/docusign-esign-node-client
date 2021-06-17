@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ContactPhoneNumber = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ContactPhoneNumber model module.
    * @module model/ContactPhoneNumber
@@ -37,10 +34,8 @@
    * @alias module:model/ContactPhoneNumber
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/ContactPhoneNumber} obj Optional instance to populate.
    * @return {module:model/ContactPhoneNumber} The populated <code>ContactPhoneNumber</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('phoneNumber')) {
-        obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
+        obj.phoneNumber = ApiClient.convertToType(data.phoneNumber, 'String');
       }
       if (data.hasOwnProperty('phoneType')) {
-        obj['phoneType'] = ApiClient.convertToType(data['phoneType'], 'String');
+        obj.phoneType = ApiClient.convertToType(data.phoneType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} phoneNumber
    */
-  exports.prototype['phoneNumber'] = undefined;
+  exports.prototype.phoneNumber = undefined;
   /**
-   * 
+   *
    * @member {String} phoneType
    */
-  exports.prototype['phoneType'] = undefined;
-
-
+  exports.prototype.phoneType = undefined;
 
   return exports;
 }));
-
-

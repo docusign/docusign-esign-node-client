@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DisplayApplianceDocumentPage = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DisplayApplianceDocumentPage model module.
    * @module model/DisplayApplianceDocumentPage
@@ -38,10 +35,8 @@
    * @alias module:model/DisplayApplianceDocumentPage
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,98 +46,94 @@
    * @param {module:model/DisplayApplianceDocumentPage} obj Optional instance to populate.
    * @return {module:model/DisplayApplianceDocumentPage} The populated <code>DisplayApplianceDocumentPage</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('docPageCountTotal')) {
-        obj['docPageCountTotal'] = ApiClient.convertToType(data['docPageCountTotal'], 'Number');
+        obj.docPageCountTotal = ApiClient.convertToType(data.docPageCountTotal, 'Number');
       }
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('documentName')) {
-        obj['documentName'] = ApiClient.convertToType(data['documentName'], 'String');
+        obj.documentName = ApiClient.convertToType(data.documentName, 'String');
       }
       if (data.hasOwnProperty('extension')) {
-        obj['extension'] = ApiClient.convertToType(data['extension'], 'String');
+        obj.extension = ApiClient.convertToType(data.extension, 'String');
       }
       if (data.hasOwnProperty('height72DPI')) {
-        obj['height72DPI'] = ApiClient.convertToType(data['height72DPI'], 'Number');
+        obj.height72DPI = ApiClient.convertToType(data.height72DPI, 'Number');
       }
       if (data.hasOwnProperty('isAttachmentType')) {
-        obj['isAttachmentType'] = ApiClient.convertToType(data['isAttachmentType'], 'Boolean');
+        obj.isAttachmentType = ApiClient.convertToType(data.isAttachmentType, 'Boolean');
       }
       if (data.hasOwnProperty('page')) {
-        obj['page'] = ApiClient.convertToType(data['page'], 'Number');
+        obj.page = ApiClient.convertToType(data.page, 'Number');
       }
       if (data.hasOwnProperty('pageId')) {
-        obj['pageId'] = ApiClient.convertToType(data['pageId'], 'String');
+        obj.pageId = ApiClient.convertToType(data.pageId, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
       if (data.hasOwnProperty('width72DPI')) {
-        obj['width72DPI'] = ApiClient.convertToType(data['width72DPI'], 'Number');
+        obj.width72DPI = ApiClient.convertToType(data.width72DPI, 'Number');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Number} docPageCountTotal
    */
-  exports.prototype['docPageCountTotal'] = undefined;
+  exports.prototype.docPageCountTotal = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} documentName
    */
-  exports.prototype['documentName'] = undefined;
+  exports.prototype.documentName = undefined;
   /**
-   * 
+   *
    * @member {String} extension
    */
-  exports.prototype['extension'] = undefined;
+  exports.prototype.extension = undefined;
   /**
-   * 
+   *
    * @member {Number} height72DPI
    */
-  exports.prototype['height72DPI'] = undefined;
+  exports.prototype.height72DPI = undefined;
   /**
-   * 
+   *
    * @member {Boolean} isAttachmentType
    */
-  exports.prototype['isAttachmentType'] = undefined;
+  exports.prototype.isAttachmentType = undefined;
   /**
-   * 
+   *
    * @member {Number} page
    */
-  exports.prototype['page'] = undefined;
+  exports.prototype.page = undefined;
   /**
-   * 
+   *
    * @member {String} pageId
    */
-  exports.prototype['pageId'] = undefined;
+  exports.prototype.pageId = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype.type = undefined;
   /**
-   * 
+   *
    * @member {Number} width72DPI
    */
-  exports.prototype['width72DPI'] = undefined;
-
-
+  exports.prototype.width72DPI = undefined;
 
   return exports;
 }));
-
-

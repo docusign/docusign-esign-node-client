@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PropertyMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ListItem = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient, PropertyMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, PropertyMetadata) => {
   /**
    * The ListItem model module.
    * @module model/ListItem
@@ -37,10 +34,8 @@
    * @alias module:model/ListItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,63 +45,59 @@
    * @param {module:model/ListItem} obj Optional instance to populate.
    * @return {module:model/ListItem} The populated <code>ListItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('selected')) {
-        obj['selected'] = ApiClient.convertToType(data['selected'], 'String');
+        obj.selected = ApiClient.convertToType(data.selected, 'String');
       }
       if (data.hasOwnProperty('selectedMetadata')) {
-        obj['selectedMetadata'] = PropertyMetadata.constructFromObject(data['selectedMetadata']);
+        obj.selectedMetadata = PropertyMetadata.constructFromObject(data.selectedMetadata);
       }
       if (data.hasOwnProperty('text')) {
-        obj['text'] = ApiClient.convertToType(data['text'], 'String');
+        obj.text = ApiClient.convertToType(data.text, 'String');
       }
       if (data.hasOwnProperty('textMetadata')) {
-        obj['textMetadata'] = PropertyMetadata.constructFromObject(data['textMetadata']);
+        obj.textMetadata = PropertyMetadata.constructFromObject(data.textMetadata);
       }
       if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+        obj.value = ApiClient.convertToType(data.value, 'String');
       }
       if (data.hasOwnProperty('valueMetadata')) {
-        obj['valueMetadata'] = PropertyMetadata.constructFromObject(data['valueMetadata']);
+        obj.valueMetadata = PropertyMetadata.constructFromObject(data.valueMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * When set to **true**, indicates that this item is the default selection shown to a signer.   Only one selection can be set as the default.
    * @member {String} selected
    */
-  exports.prototype['selected'] = undefined;
+  exports.prototype.selected = undefined;
   /**
    * @member {module:model/PropertyMetadata} selectedMetadata
    */
-  exports.prototype['selectedMetadata'] = undefined;
+  exports.prototype.selectedMetadata = undefined;
   /**
-   * Specifies the text that is shown in the dropdown list. 
+   * Specifies the text that is shown in the dropdown list.
    * @member {String} text
    */
-  exports.prototype['text'] = undefined;
+  exports.prototype.text = undefined;
   /**
    * @member {module:model/PropertyMetadata} textMetadata
    */
-  exports.prototype['textMetadata'] = undefined;
+  exports.prototype.textMetadata = undefined;
   /**
    * Specifies the value that is used when the list item is selected.
    * @member {String} value
    */
-  exports.prototype['value'] = undefined;
+  exports.prototype.value = undefined;
   /**
    * @member {module:model/PropertyMetadata} valueMetadata
    */
-  exports.prototype['valueMetadata'] = undefined;
-
-
+  exports.prototype.valueMetadata = undefined;
 
   return exports;
 }));
-
-

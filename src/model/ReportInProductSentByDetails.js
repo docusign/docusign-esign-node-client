@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Group', 'model/UserInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReportInProductSentByDetails = factory(root.Docusign.ApiClient, root.Docusign.Group, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, Group, UserInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, Group, UserInfo) => {
   /**
    * The ReportInProductSentByDetails model module.
    * @module model/ReportInProductSentByDetails
@@ -37,10 +34,8 @@
    * @alias module:model/ReportInProductSentByDetails
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/ReportInProductSentByDetails} obj Optional instance to populate.
    * @return {module:model/ReportInProductSentByDetails} The populated <code>ReportInProductSentByDetails</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('groups')) {
-        obj['groups'] = ApiClient.convertToType(data['groups'], [Group]);
+        obj.groups = ApiClient.convertToType(data.groups, [Group]);
       }
       if (data.hasOwnProperty('users')) {
-        obj['users'] = ApiClient.convertToType(data['users'], [UserInfo]);
+        obj.users = ApiClient.convertToType(data.users, [UserInfo]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A collection group objects containing information about the groups returned.
    * @member {Array.<module:model/Group>} groups
    */
-  exports.prototype['groups'] = undefined;
+  exports.prototype.groups = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/UserInfo>} users
    */
-  exports.prototype['users'] = undefined;
-
-
+  exports.prototype.users = undefined;
 
   return exports;
 }));
-
-

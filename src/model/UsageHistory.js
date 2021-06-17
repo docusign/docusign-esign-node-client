@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UsageHistory = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The UsageHistory model module.
    * @module model/UsageHistory
@@ -38,10 +35,8 @@
    * @alias module:model/UsageHistory
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,50 +46,46 @@
    * @param {module:model/UsageHistory} obj Optional instance to populate.
    * @return {module:model/UsageHistory} The populated <code>UsageHistory</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('lastSentDateTime')) {
-        obj['lastSentDateTime'] = ApiClient.convertToType(data['lastSentDateTime'], 'String');
+        obj.lastSentDateTime = ApiClient.convertToType(data.lastSentDateTime, 'String');
       }
       if (data.hasOwnProperty('lastSignedDateTime')) {
-        obj['lastSignedDateTime'] = ApiClient.convertToType(data['lastSignedDateTime'], 'String');
+        obj.lastSignedDateTime = ApiClient.convertToType(data.lastSignedDateTime, 'String');
       }
       if (data.hasOwnProperty('sentCount')) {
-        obj['sentCount'] = ApiClient.convertToType(data['sentCount'], 'String');
+        obj.sentCount = ApiClient.convertToType(data.sentCount, 'String');
       }
       if (data.hasOwnProperty('signedCount')) {
-        obj['signedCount'] = ApiClient.convertToType(data['signedCount'], 'String');
+        obj.signedCount = ApiClient.convertToType(data.signedCount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * The date and time the user last sent an envelope. 
+   * The date and time the user last sent an envelope.
    * @member {String} lastSentDateTime
    */
-  exports.prototype['lastSentDateTime'] = undefined;
+  exports.prototype.lastSentDateTime = undefined;
   /**
    * The date and time the user last signed an envelope.
    * @member {String} lastSignedDateTime
    */
-  exports.prototype['lastSignedDateTime'] = undefined;
+  exports.prototype.lastSignedDateTime = undefined;
   /**
-   * The number of envelopes the user has sent. 
+   * The number of envelopes the user has sent.
    * @member {String} sentCount
    */
-  exports.prototype['sentCount'] = undefined;
+  exports.prototype.sentCount = undefined;
   /**
-   * The number of envelopes the user has signed. 
+   * The number of envelopes the user has signed.
    * @member {String} signedCount
    */
-  exports.prototype['signedCount'] = undefined;
-
-
+  exports.prototype.signedCount = undefined;
 
   return exports;
 }));
-
-

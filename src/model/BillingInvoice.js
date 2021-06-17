@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BillingInvoiceItem'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingInvoice = factory(root.Docusign.ApiClient, root.Docusign.BillingInvoiceItem);
   }
-}(this, function(ApiClient, BillingInvoiceItem) {
-  'use strict';
-
-
+}(this, (ApiClient, BillingInvoiceItem) => {
   /**
    * The BillingInvoice model module.
    * @module model/BillingInvoice
@@ -38,10 +35,8 @@
    * @alias module:model/BillingInvoice
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,98 +46,94 @@
    * @param {module:model/BillingInvoice} obj Optional instance to populate.
    * @return {module:model/BillingInvoice} The populated <code>BillingInvoice</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amount')) {
-        obj['amount'] = ApiClient.convertToType(data['amount'], 'String');
+        obj.amount = ApiClient.convertToType(data.amount, 'String');
       }
       if (data.hasOwnProperty('balance')) {
-        obj['balance'] = ApiClient.convertToType(data['balance'], 'String');
+        obj.balance = ApiClient.convertToType(data.balance, 'String');
       }
       if (data.hasOwnProperty('dueDate')) {
-        obj['dueDate'] = ApiClient.convertToType(data['dueDate'], 'String');
+        obj.dueDate = ApiClient.convertToType(data.dueDate, 'String');
       }
       if (data.hasOwnProperty('invoiceId')) {
-        obj['invoiceId'] = ApiClient.convertToType(data['invoiceId'], 'String');
+        obj.invoiceId = ApiClient.convertToType(data.invoiceId, 'String');
       }
       if (data.hasOwnProperty('invoiceItems')) {
-        obj['invoiceItems'] = ApiClient.convertToType(data['invoiceItems'], [BillingInvoiceItem]);
+        obj.invoiceItems = ApiClient.convertToType(data.invoiceItems, [BillingInvoiceItem]);
       }
       if (data.hasOwnProperty('invoiceNumber')) {
-        obj['invoiceNumber'] = ApiClient.convertToType(data['invoiceNumber'], 'String');
+        obj.invoiceNumber = ApiClient.convertToType(data.invoiceNumber, 'String');
       }
       if (data.hasOwnProperty('invoiceUri')) {
-        obj['invoiceUri'] = ApiClient.convertToType(data['invoiceUri'], 'String');
+        obj.invoiceUri = ApiClient.convertToType(data.invoiceUri, 'String');
       }
       if (data.hasOwnProperty('nonTaxableAmount')) {
-        obj['nonTaxableAmount'] = ApiClient.convertToType(data['nonTaxableAmount'], 'String');
+        obj.nonTaxableAmount = ApiClient.convertToType(data.nonTaxableAmount, 'String');
       }
       if (data.hasOwnProperty('pdfAvailable')) {
-        obj['pdfAvailable'] = ApiClient.convertToType(data['pdfAvailable'], 'String');
+        obj.pdfAvailable = ApiClient.convertToType(data.pdfAvailable, 'String');
       }
       if (data.hasOwnProperty('taxableAmount')) {
-        obj['taxableAmount'] = ApiClient.convertToType(data['taxableAmount'], 'String');
+        obj.taxableAmount = ApiClient.convertToType(data.taxableAmount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} amount
    */
-  exports.prototype['amount'] = undefined;
+  exports.prototype.amount = undefined;
   /**
    * Reserved: TBD
    * @member {String} balance
    */
-  exports.prototype['balance'] = undefined;
+  exports.prototype.balance = undefined;
   /**
    * Reserved: TBD
    * @member {String} dueDate
    */
-  exports.prototype['dueDate'] = undefined;
+  exports.prototype.dueDate = undefined;
   /**
    * Reserved: TBD
    * @member {String} invoiceId
    */
-  exports.prototype['invoiceId'] = undefined;
+  exports.prototype.invoiceId = undefined;
   /**
    * Reserved: TBD
    * @member {Array.<module:model/BillingInvoiceItem>} invoiceItems
    */
-  exports.prototype['invoiceItems'] = undefined;
+  exports.prototype.invoiceItems = undefined;
   /**
    * Reserved: TBD
    * @member {String} invoiceNumber
    */
-  exports.prototype['invoiceNumber'] = undefined;
+  exports.prototype.invoiceNumber = undefined;
   /**
    * Contains a URI for an endpoint that you can use to retrieve invoice information.
    * @member {String} invoiceUri
    */
-  exports.prototype['invoiceUri'] = undefined;
+  exports.prototype.invoiceUri = undefined;
   /**
-   * 
+   *
    * @member {String} nonTaxableAmount
    */
-  exports.prototype['nonTaxableAmount'] = undefined;
+  exports.prototype.nonTaxableAmount = undefined;
   /**
-   * 
+   *
    * @member {String} pdfAvailable
    */
-  exports.prototype['pdfAvailable'] = undefined;
+  exports.prototype.pdfAvailable = undefined;
   /**
-   * 
+   *
    * @member {String} taxableAmount
    */
-  exports.prototype['taxableAmount'] = undefined;
-
-
+  exports.prototype.taxableAmount = undefined;
 
   return exports;
 }));
-
-

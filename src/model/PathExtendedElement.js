@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PathExtendedElement = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PathExtendedElement model module.
    * @module model/PathExtendedElement
@@ -37,10 +34,8 @@
    * @alias module:model/PathExtendedElement
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/PathExtendedElement} obj Optional instance to populate.
    * @return {module:model/PathExtendedElement} The populated <code>PathExtendedElement</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+        obj.type = ApiClient.convertToType(data.type, 'String');
       }
       if (data.hasOwnProperty('typeName')) {
-        obj['typeName'] = ApiClient.convertToType(data['typeName'], 'String');
+        obj.typeName = ApiClient.convertToType(data.typeName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {String} type
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype.type = undefined;
   /**
-   * 
+   *
    * @member {String} typeName
    */
-  exports.prototype['typeName'] = undefined;
-
-
+  exports.prototype.typeName = undefined;
 
   return exports;
 }));
-
-

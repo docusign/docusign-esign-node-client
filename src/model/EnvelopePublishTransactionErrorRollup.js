@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopePublishTransactionErrorRollup = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The EnvelopePublishTransactionErrorRollup model module.
    * @module model/EnvelopePublishTransactionErrorRollup
@@ -38,10 +35,8 @@
    * @alias module:model/EnvelopePublishTransactionErrorRollup
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,34 +46,30 @@
    * @param {module:model/EnvelopePublishTransactionErrorRollup} obj Optional instance to populate.
    * @return {module:model/EnvelopePublishTransactionErrorRollup} The populated <code>EnvelopePublishTransactionErrorRollup</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('count')) {
-        obj['count'] = ApiClient.convertToType(data['count'], 'String');
+        obj.count = ApiClient.convertToType(data.count, 'String');
       }
       if (data.hasOwnProperty('errorType')) {
-        obj['errorType'] = ApiClient.convertToType(data['errorType'], 'String');
+        obj.errorType = ApiClient.convertToType(data.errorType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} count
    */
-  exports.prototype['count'] = undefined;
+  exports.prototype.count = undefined;
   /**
-   * 
+   *
    * @member {String} errorType
    */
-  exports.prototype['errorType'] = undefined;
-
-
+  exports.prototype.errorType = undefined;
 
   return exports;
 }));
-
-

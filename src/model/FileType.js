@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FileType = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The FileType model module.
    * @module model/FileType
@@ -37,10 +34,8 @@
    * @alias module:model/FileType
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/FileType} obj Optional instance to populate.
    * @return {module:model/FileType} The populated <code>FileType</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('fileExtension')) {
-        obj['fileExtension'] = ApiClient.convertToType(data['fileExtension'], 'String');
+        obj.fileExtension = ApiClient.convertToType(data.fileExtension, 'String');
       }
       if (data.hasOwnProperty('mimeType')) {
-        obj['mimeType'] = ApiClient.convertToType(data['mimeType'], 'String');
+        obj.mimeType = ApiClient.convertToType(data.mimeType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} fileExtension
    */
-  exports.prototype['fileExtension'] = undefined;
+  exports.prototype.fileExtension = undefined;
   /**
    * The mime-type of a file type listed in a fileTypes collection.
    * @member {String} mimeType
    */
-  exports.prototype['mimeType'] = undefined;
-
-
+  exports.prototype.mimeType = undefined;
 
   return exports;
 }));
-
-

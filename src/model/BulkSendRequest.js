@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BulkSendRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BulkSendRequest model module.
    * @module model/BulkSendRequest
@@ -37,10 +34,8 @@
    * @alias module:model/BulkSendRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/BulkSendRequest} obj Optional instance to populate.
    * @return {module:model/BulkSendRequest} The populated <code>BulkSendRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('batchName')) {
-        obj['batchName'] = ApiClient.convertToType(data['batchName'], 'String');
+        obj.batchName = ApiClient.convertToType(data.batchName, 'String');
       }
       if (data.hasOwnProperty('envelopeOrTemplateId')) {
-        obj['envelopeOrTemplateId'] = ApiClient.convertToType(data['envelopeOrTemplateId'], 'String');
+        obj.envelopeOrTemplateId = ApiClient.convertToType(data.envelopeOrTemplateId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} batchName
    */
-  exports.prototype['batchName'] = undefined;
+  exports.prototype.batchName = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeOrTemplateId
    */
-  exports.prototype['envelopeOrTemplateId'] = undefined;
-
-
+  exports.prototype.envelopeOrTemplateId = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandResourceUrls = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BrandResourceUrls model module.
    * @module model/BrandResourceUrls
@@ -37,10 +34,8 @@
    * @alias module:model/BrandResourceUrls
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/BrandResourceUrls} obj Optional instance to populate.
    * @return {module:model/BrandResourceUrls} The populated <code>BrandResourceUrls</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('sending')) {
-        obj['sending'] = ApiClient.convertToType(data['sending'], 'String');
+        obj.sending = ApiClient.convertToType(data.sending, 'String');
       }
       if (data.hasOwnProperty('signing')) {
-        obj['signing'] = ApiClient.convertToType(data['signing'], 'String');
+        obj.signing = ApiClient.convertToType(data.signing, 'String');
       }
       if (data.hasOwnProperty('signingCaptive')) {
-        obj['signingCaptive'] = ApiClient.convertToType(data['signingCaptive'], 'String');
+        obj.signingCaptive = ApiClient.convertToType(data.signingCaptive, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {String} sending
    */
-  exports.prototype['sending'] = undefined;
+  exports.prototype.sending = undefined;
   /**
-   * 
+   *
    * @member {String} signing
    */
-  exports.prototype['signing'] = undefined;
+  exports.prototype.signing = undefined;
   /**
-   * 
+   *
    * @member {String} signingCaptive
    */
-  exports.prototype['signingCaptive'] = undefined;
-
-
+  exports.prototype.signingCaptive = undefined;
 
   return exports;
 }));
-
-

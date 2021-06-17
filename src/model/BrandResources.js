@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/UserInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandResources = factory(root.Docusign.ApiClient, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, UserInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, UserInfo) => {
   /**
    * The BrandResources model module.
    * @module model/BrandResources
@@ -37,10 +34,8 @@
    * @alias module:model/BrandResources
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,80 +45,76 @@
    * @param {module:model/BrandResources} obj Optional instance to populate.
    * @return {module:model/BrandResources} The populated <code>BrandResources</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('createdByUserInfo')) {
-        obj['createdByUserInfo'] = UserInfo.constructFromObject(data['createdByUserInfo']);
+        obj.createdByUserInfo = UserInfo.constructFromObject(data.createdByUserInfo);
       }
       if (data.hasOwnProperty('createdDate')) {
-        obj['createdDate'] = ApiClient.convertToType(data['createdDate'], 'String');
+        obj.createdDate = ApiClient.convertToType(data.createdDate, 'String');
       }
       if (data.hasOwnProperty('dataNotSavedNotInMaster')) {
-        obj['dataNotSavedNotInMaster'] = ApiClient.convertToType(data['dataNotSavedNotInMaster'], ['String']);
+        obj.dataNotSavedNotInMaster = ApiClient.convertToType(data.dataNotSavedNotInMaster, ['String']);
       }
       if (data.hasOwnProperty('modifiedByUserInfo')) {
-        obj['modifiedByUserInfo'] = UserInfo.constructFromObject(data['modifiedByUserInfo']);
+        obj.modifiedByUserInfo = UserInfo.constructFromObject(data.modifiedByUserInfo);
       }
       if (data.hasOwnProperty('modifiedDate')) {
-        obj['modifiedDate'] = ApiClient.convertToType(data['modifiedDate'], 'String');
+        obj.modifiedDate = ApiClient.convertToType(data.modifiedDate, 'String');
       }
       if (data.hasOwnProperty('modifiedTemplates')) {
-        obj['modifiedTemplates'] = ApiClient.convertToType(data['modifiedTemplates'], ['String']);
+        obj.modifiedTemplates = ApiClient.convertToType(data.modifiedTemplates, ['String']);
       }
       if (data.hasOwnProperty('resourcesContentType')) {
-        obj['resourcesContentType'] = ApiClient.convertToType(data['resourcesContentType'], 'String');
+        obj.resourcesContentType = ApiClient.convertToType(data.resourcesContentType, 'String');
       }
       if (data.hasOwnProperty('resourcesContentUri')) {
-        obj['resourcesContentUri'] = ApiClient.convertToType(data['resourcesContentUri'], 'String');
+        obj.resourcesContentUri = ApiClient.convertToType(data.resourcesContentUri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/UserInfo} createdByUserInfo
    */
-  exports.prototype['createdByUserInfo'] = undefined;
+  exports.prototype.createdByUserInfo = undefined;
   /**
-   * 
+   *
    * @member {String} createdDate
    */
-  exports.prototype['createdDate'] = undefined;
+  exports.prototype.createdDate = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} dataNotSavedNotInMaster
    */
-  exports.prototype['dataNotSavedNotInMaster'] = undefined;
+  exports.prototype.dataNotSavedNotInMaster = undefined;
   /**
    * @member {module:model/UserInfo} modifiedByUserInfo
    */
-  exports.prototype['modifiedByUserInfo'] = undefined;
+  exports.prototype.modifiedByUserInfo = undefined;
   /**
-   * 
+   *
    * @member {String} modifiedDate
    */
-  exports.prototype['modifiedDate'] = undefined;
+  exports.prototype.modifiedDate = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} modifiedTemplates
    */
-  exports.prototype['modifiedTemplates'] = undefined;
+  exports.prototype.modifiedTemplates = undefined;
   /**
-   * 
+   *
    * @member {String} resourcesContentType
    */
-  exports.prototype['resourcesContentType'] = undefined;
+  exports.prototype.resourcesContentType = undefined;
   /**
-   * 
+   *
    * @member {String} resourcesContentUri
    */
-  exports.prototype['resourcesContentUri'] = undefined;
-
-
+  exports.prototype.resourcesContentUri = undefined;
 
   return exports;
 }));
-
-

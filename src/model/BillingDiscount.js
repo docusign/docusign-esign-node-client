@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingDiscount = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BillingDiscount model module.
    * @module model/BillingDiscount
@@ -37,10 +34,8 @@
    * @alias module:model/BillingDiscount
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/BillingDiscount} obj Optional instance to populate.
    * @return {module:model/BillingDiscount} The populated <code>BillingDiscount</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('beginQuantity')) {
-        obj['beginQuantity'] = ApiClient.convertToType(data['beginQuantity'], 'String');
+        obj.beginQuantity = ApiClient.convertToType(data.beginQuantity, 'String');
       }
       if (data.hasOwnProperty('discount')) {
-        obj['discount'] = ApiClient.convertToType(data['discount'], 'String');
+        obj.discount = ApiClient.convertToType(data.discount, 'String');
       }
       if (data.hasOwnProperty('endQuantity')) {
-        obj['endQuantity'] = ApiClient.convertToType(data['endQuantity'], 'String');
+        obj.endQuantity = ApiClient.convertToType(data.endQuantity, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} beginQuantity
    */
-  exports.prototype['beginQuantity'] = undefined;
+  exports.prototype.beginQuantity = undefined;
   /**
-   * 
+   *
    * @member {String} discount
    */
-  exports.prototype['discount'] = undefined;
+  exports.prototype.discount = undefined;
   /**
-   * 
+   *
    * @member {String} endQuantity
    */
-  exports.prototype['endQuantity'] = undefined;
-
-
+  exports.prototype.endQuantity = undefined;
 
   return exports;
 }));
-
-

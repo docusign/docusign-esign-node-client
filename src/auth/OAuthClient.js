@@ -1,6 +1,5 @@
 // Load modules.
-var Strategy = require('./strategy');
-
+const Strategy = require('./strategy');
 
 // Expose Strategy.
 exports = module.exports = Strategy;

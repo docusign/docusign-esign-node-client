@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Contact'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ContactUpdateResponse = factory(root.Docusign.ApiClient, root.Docusign.Contact);
   }
-}(this, function(ApiClient, Contact) {
-  'use strict';
-
-
+}(this, (ApiClient, Contact) => {
   /**
    * The ContactUpdateResponse model module.
    * @module model/ContactUpdateResponse
@@ -37,10 +34,8 @@
    * @alias module:model/ContactUpdateResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ContactUpdateResponse} obj Optional instance to populate.
    * @return {module:model/ContactUpdateResponse} The populated <code>ContactUpdateResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('contacts')) {
-        obj['contacts'] = ApiClient.convertToType(data['contacts'], [Contact]);
+        obj.contacts = ApiClient.convertToType(data.contacts, [Contact]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/Contact>} contacts
    */
-  exports.prototype['contacts'] = undefined;
-
-
+  exports.prototype.contacts = undefined;
 
   return exports;
 }));
-
-

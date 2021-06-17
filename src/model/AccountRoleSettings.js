@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SettingsMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountRoleSettings = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, SettingsMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, SettingsMetadata) => {
   /**
    * The AccountRoleSettings model module.
    * @module model/AccountRoleSettings
@@ -37,10 +34,8 @@
    * @alias module:model/AccountRoleSettings
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,580 +45,576 @@
    * @param {module:model/AccountRoleSettings} obj Optional instance to populate.
    * @return {module:model/AccountRoleSettings} The populated <code>AccountRoleSettings</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('allowAccountManagement')) {
-        obj['allowAccountManagement'] = ApiClient.convertToType(data['allowAccountManagement'], 'String');
+        obj.allowAccountManagement = ApiClient.convertToType(data.allowAccountManagement, 'String');
       }
       if (data.hasOwnProperty('allowAccountManagementMetadata')) {
-        obj['allowAccountManagementMetadata'] = SettingsMetadata.constructFromObject(data['allowAccountManagementMetadata']);
+        obj.allowAccountManagementMetadata = SettingsMetadata.constructFromObject(data.allowAccountManagementMetadata);
       }
       if (data.hasOwnProperty('allowApiAccess')) {
-        obj['allowApiAccess'] = ApiClient.convertToType(data['allowApiAccess'], 'String');
+        obj.allowApiAccess = ApiClient.convertToType(data.allowApiAccess, 'String');
       }
       if (data.hasOwnProperty('allowApiAccessMetadata')) {
-        obj['allowApiAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowApiAccessMetadata']);
+        obj.allowApiAccessMetadata = SettingsMetadata.constructFromObject(data.allowApiAccessMetadata);
       }
       if (data.hasOwnProperty('allowApiAccessToAccount')) {
-        obj['allowApiAccessToAccount'] = ApiClient.convertToType(data['allowApiAccessToAccount'], 'String');
+        obj.allowApiAccessToAccount = ApiClient.convertToType(data.allowApiAccessToAccount, 'String');
       }
       if (data.hasOwnProperty('allowApiAccessToAccountMetadata')) {
-        obj['allowApiAccessToAccountMetadata'] = SettingsMetadata.constructFromObject(data['allowApiAccessToAccountMetadata']);
+        obj.allowApiAccessToAccountMetadata = SettingsMetadata.constructFromObject(data.allowApiAccessToAccountMetadata);
       }
       if (data.hasOwnProperty('allowApiSendingOnBehalfOfOthers')) {
-        obj['allowApiSendingOnBehalfOfOthers'] = ApiClient.convertToType(data['allowApiSendingOnBehalfOfOthers'], 'String');
+        obj.allowApiSendingOnBehalfOfOthers = ApiClient.convertToType(data.allowApiSendingOnBehalfOfOthers, 'String');
       }
       if (data.hasOwnProperty('allowApiSendingOnBehalfOfOthersMetadata')) {
-        obj['allowApiSendingOnBehalfOfOthersMetadata'] = SettingsMetadata.constructFromObject(data['allowApiSendingOnBehalfOfOthersMetadata']);
+        obj.allowApiSendingOnBehalfOfOthersMetadata = SettingsMetadata.constructFromObject(data.allowApiSendingOnBehalfOfOthersMetadata);
       }
       if (data.hasOwnProperty('allowApiSequentialSigning')) {
-        obj['allowApiSequentialSigning'] = ApiClient.convertToType(data['allowApiSequentialSigning'], 'String');
+        obj.allowApiSequentialSigning = ApiClient.convertToType(data.allowApiSequentialSigning, 'String');
       }
       if (data.hasOwnProperty('allowApiSequentialSigningMetadata')) {
-        obj['allowApiSequentialSigningMetadata'] = SettingsMetadata.constructFromObject(data['allowApiSequentialSigningMetadata']);
+        obj.allowApiSequentialSigningMetadata = SettingsMetadata.constructFromObject(data.allowApiSequentialSigningMetadata);
       }
       if (data.hasOwnProperty('allowAutoTagging')) {
-        obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
+        obj.allowAutoTagging = ApiClient.convertToType(data.allowAutoTagging, 'String');
       }
       if (data.hasOwnProperty('allowAutoTaggingMetadata')) {
-        obj['allowAutoTaggingMetadata'] = SettingsMetadata.constructFromObject(data['allowAutoTaggingMetadata']);
+        obj.allowAutoTaggingMetadata = SettingsMetadata.constructFromObject(data.allowAutoTaggingMetadata);
       }
       if (data.hasOwnProperty('allowBulkSending')) {
-        obj['allowBulkSending'] = ApiClient.convertToType(data['allowBulkSending'], 'String');
+        obj.allowBulkSending = ApiClient.convertToType(data.allowBulkSending, 'String');
       }
       if (data.hasOwnProperty('allowBulkSendingMetadata')) {
-        obj['allowBulkSendingMetadata'] = SettingsMetadata.constructFromObject(data['allowBulkSendingMetadata']);
+        obj.allowBulkSendingMetadata = SettingsMetadata.constructFromObject(data.allowBulkSendingMetadata);
       }
       if (data.hasOwnProperty('allowDocuSignDesktopClient')) {
-        obj['allowDocuSignDesktopClient'] = ApiClient.convertToType(data['allowDocuSignDesktopClient'], 'String');
+        obj.allowDocuSignDesktopClient = ApiClient.convertToType(data.allowDocuSignDesktopClient, 'String');
       }
       if (data.hasOwnProperty('allowDocuSignDesktopClientMetadata')) {
-        obj['allowDocuSignDesktopClientMetadata'] = SettingsMetadata.constructFromObject(data['allowDocuSignDesktopClientMetadata']);
+        obj.allowDocuSignDesktopClientMetadata = SettingsMetadata.constructFromObject(data.allowDocuSignDesktopClientMetadata);
       }
       if (data.hasOwnProperty('allowedAddressBookAccess')) {
-        obj['allowedAddressBookAccess'] = ApiClient.convertToType(data['allowedAddressBookAccess'], 'String');
+        obj.allowedAddressBookAccess = ApiClient.convertToType(data.allowedAddressBookAccess, 'String');
       }
       if (data.hasOwnProperty('allowedAddressBookAccessMetadata')) {
-        obj['allowedAddressBookAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedAddressBookAccessMetadata']);
+        obj.allowedAddressBookAccessMetadata = SettingsMetadata.constructFromObject(data.allowedAddressBookAccessMetadata);
       }
       if (data.hasOwnProperty('allowedClickwrapsAccess')) {
-        obj['allowedClickwrapsAccess'] = ApiClient.convertToType(data['allowedClickwrapsAccess'], 'String');
+        obj.allowedClickwrapsAccess = ApiClient.convertToType(data.allowedClickwrapsAccess, 'String');
       }
       if (data.hasOwnProperty('allowedClickwrapsAccessMetadata')) {
-        obj['allowedClickwrapsAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedClickwrapsAccessMetadata']);
+        obj.allowedClickwrapsAccessMetadata = SettingsMetadata.constructFromObject(data.allowedClickwrapsAccessMetadata);
       }
       if (data.hasOwnProperty('allowedTemplateAccess')) {
-        obj['allowedTemplateAccess'] = ApiClient.convertToType(data['allowedTemplateAccess'], 'String');
+        obj.allowedTemplateAccess = ApiClient.convertToType(data.allowedTemplateAccess, 'String');
       }
       if (data.hasOwnProperty('allowedTemplateAccessMetadata')) {
-        obj['allowedTemplateAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedTemplateAccessMetadata']);
+        obj.allowedTemplateAccessMetadata = SettingsMetadata.constructFromObject(data.allowedTemplateAccessMetadata);
       }
       if (data.hasOwnProperty('allowedToBeEnvelopeTransferRecipient')) {
-        obj['allowedToBeEnvelopeTransferRecipient'] = ApiClient.convertToType(data['allowedToBeEnvelopeTransferRecipient'], 'String');
+        obj.allowedToBeEnvelopeTransferRecipient = ApiClient.convertToType(data.allowedToBeEnvelopeTransferRecipient, 'String');
       }
       if (data.hasOwnProperty('allowedToBeEnvelopeTransferRecipientMetadata')) {
-        obj['allowedToBeEnvelopeTransferRecipientMetadata'] = SettingsMetadata.constructFromObject(data['allowedToBeEnvelopeTransferRecipientMetadata']);
+        obj.allowedToBeEnvelopeTransferRecipientMetadata = SettingsMetadata.constructFromObject(data.allowedToBeEnvelopeTransferRecipientMetadata);
       }
       if (data.hasOwnProperty('allowEnvelopeSending')) {
-        obj['allowEnvelopeSending'] = ApiClient.convertToType(data['allowEnvelopeSending'], 'String');
+        obj.allowEnvelopeSending = ApiClient.convertToType(data.allowEnvelopeSending, 'String');
       }
       if (data.hasOwnProperty('allowEnvelopeSendingMetadata')) {
-        obj['allowEnvelopeSendingMetadata'] = SettingsMetadata.constructFromObject(data['allowEnvelopeSendingMetadata']);
+        obj.allowEnvelopeSendingMetadata = SettingsMetadata.constructFromObject(data.allowEnvelopeSendingMetadata);
       }
       if (data.hasOwnProperty('allowESealRecipients')) {
-        obj['allowESealRecipients'] = ApiClient.convertToType(data['allowESealRecipients'], 'String');
+        obj.allowESealRecipients = ApiClient.convertToType(data.allowESealRecipients, 'String');
       }
       if (data.hasOwnProperty('allowESealRecipientsMetadata')) {
-        obj['allowESealRecipientsMetadata'] = SettingsMetadata.constructFromObject(data['allowESealRecipientsMetadata']);
+        obj.allowESealRecipientsMetadata = SettingsMetadata.constructFromObject(data.allowESealRecipientsMetadata);
       }
       if (data.hasOwnProperty('allowPowerFormsAdminToAccessAllPowerFormEnvelopes')) {
-        obj['allowPowerFormsAdminToAccessAllPowerFormEnvelopes'] = ApiClient.convertToType(data['allowPowerFormsAdminToAccessAllPowerFormEnvelopes'], 'String');
+        obj.allowPowerFormsAdminToAccessAllPowerFormEnvelopes = ApiClient.convertToType(data.allowPowerFormsAdminToAccessAllPowerFormEnvelopes, 'String');
       }
       if (data.hasOwnProperty('allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata')) {
-        obj['allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata'] = SettingsMetadata.constructFromObject(data['allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata']);
+        obj.allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = SettingsMetadata.constructFromObject(data.allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata);
       }
       if (data.hasOwnProperty('allowSendersToSetRecipientEmailLanguage')) {
-        obj['allowSendersToSetRecipientEmailLanguage'] = ApiClient.convertToType(data['allowSendersToSetRecipientEmailLanguage'], 'String');
+        obj.allowSendersToSetRecipientEmailLanguage = ApiClient.convertToType(data.allowSendersToSetRecipientEmailLanguage, 'String');
       }
       if (data.hasOwnProperty('allowSendersToSetRecipientEmailLanguageMetadata')) {
-        obj['allowSendersToSetRecipientEmailLanguageMetadata'] = SettingsMetadata.constructFromObject(data['allowSendersToSetRecipientEmailLanguageMetadata']);
+        obj.allowSendersToSetRecipientEmailLanguageMetadata = SettingsMetadata.constructFromObject(data.allowSendersToSetRecipientEmailLanguageMetadata);
       }
       if (data.hasOwnProperty('allowSignerAttachments')) {
-        obj['allowSignerAttachments'] = ApiClient.convertToType(data['allowSignerAttachments'], 'String');
+        obj.allowSignerAttachments = ApiClient.convertToType(data.allowSignerAttachments, 'String');
       }
       if (data.hasOwnProperty('allowSignerAttachmentsMetadata')) {
-        obj['allowSignerAttachmentsMetadata'] = SettingsMetadata.constructFromObject(data['allowSignerAttachmentsMetadata']);
+        obj.allowSignerAttachmentsMetadata = SettingsMetadata.constructFromObject(data.allowSignerAttachmentsMetadata);
       }
       if (data.hasOwnProperty('allowSupplementalDocuments')) {
-        obj['allowSupplementalDocuments'] = ApiClient.convertToType(data['allowSupplementalDocuments'], 'String');
+        obj.allowSupplementalDocuments = ApiClient.convertToType(data.allowSupplementalDocuments, 'String');
       }
       if (data.hasOwnProperty('allowSupplementalDocumentsMetadata')) {
-        obj['allowSupplementalDocumentsMetadata'] = SettingsMetadata.constructFromObject(data['allowSupplementalDocumentsMetadata']);
+        obj.allowSupplementalDocumentsMetadata = SettingsMetadata.constructFromObject(data.allowSupplementalDocumentsMetadata);
       }
       if (data.hasOwnProperty('allowTaggingInSendAndCorrect')) {
-        obj['allowTaggingInSendAndCorrect'] = ApiClient.convertToType(data['allowTaggingInSendAndCorrect'], 'String');
+        obj.allowTaggingInSendAndCorrect = ApiClient.convertToType(data.allowTaggingInSendAndCorrect, 'String');
       }
       if (data.hasOwnProperty('allowTaggingInSendAndCorrectMetadata')) {
-        obj['allowTaggingInSendAndCorrectMetadata'] = SettingsMetadata.constructFromObject(data['allowTaggingInSendAndCorrectMetadata']);
+        obj.allowTaggingInSendAndCorrectMetadata = SettingsMetadata.constructFromObject(data.allowTaggingInSendAndCorrectMetadata);
       }
       if (data.hasOwnProperty('allowVaulting')) {
-        obj['allowVaulting'] = ApiClient.convertToType(data['allowVaulting'], 'String');
+        obj.allowVaulting = ApiClient.convertToType(data.allowVaulting, 'String');
       }
       if (data.hasOwnProperty('allowVaultingMetadata')) {
-        obj['allowVaultingMetadata'] = SettingsMetadata.constructFromObject(data['allowVaultingMetadata']);
+        obj.allowVaultingMetadata = SettingsMetadata.constructFromObject(data.allowVaultingMetadata);
       }
       if (data.hasOwnProperty('allowWetSigningOverride')) {
-        obj['allowWetSigningOverride'] = ApiClient.convertToType(data['allowWetSigningOverride'], 'String');
+        obj.allowWetSigningOverride = ApiClient.convertToType(data.allowWetSigningOverride, 'String');
       }
       if (data.hasOwnProperty('allowWetSigningOverrideMetadata')) {
-        obj['allowWetSigningOverrideMetadata'] = SettingsMetadata.constructFromObject(data['allowWetSigningOverrideMetadata']);
+        obj.allowWetSigningOverrideMetadata = SettingsMetadata.constructFromObject(data.allowWetSigningOverrideMetadata);
       }
       if (data.hasOwnProperty('canCreateWorkspaces')) {
-        obj['canCreateWorkspaces'] = ApiClient.convertToType(data['canCreateWorkspaces'], 'String');
+        obj.canCreateWorkspaces = ApiClient.convertToType(data.canCreateWorkspaces, 'String');
       }
       if (data.hasOwnProperty('canCreateWorkspacesMetadata')) {
-        obj['canCreateWorkspacesMetadata'] = SettingsMetadata.constructFromObject(data['canCreateWorkspacesMetadata']);
+        obj.canCreateWorkspacesMetadata = SettingsMetadata.constructFromObject(data.canCreateWorkspacesMetadata);
       }
       if (data.hasOwnProperty('canSendEnvelopesViaSMS')) {
-        obj['canSendEnvelopesViaSMS'] = ApiClient.convertToType(data['canSendEnvelopesViaSMS'], 'String');
+        obj.canSendEnvelopesViaSMS = ApiClient.convertToType(data.canSendEnvelopesViaSMS, 'String');
       }
       if (data.hasOwnProperty('canSendEnvelopesViaSMSMetadata')) {
-        obj['canSendEnvelopesViaSMSMetadata'] = SettingsMetadata.constructFromObject(data['canSendEnvelopesViaSMSMetadata']);
+        obj.canSendEnvelopesViaSMSMetadata = SettingsMetadata.constructFromObject(data.canSendEnvelopesViaSMSMetadata);
       }
       if (data.hasOwnProperty('disableDocumentUpload')) {
-        obj['disableDocumentUpload'] = ApiClient.convertToType(data['disableDocumentUpload'], 'String');
+        obj.disableDocumentUpload = ApiClient.convertToType(data.disableDocumentUpload, 'String');
       }
       if (data.hasOwnProperty('disableDocumentUploadMetadata')) {
-        obj['disableDocumentUploadMetadata'] = SettingsMetadata.constructFromObject(data['disableDocumentUploadMetadata']);
+        obj.disableDocumentUploadMetadata = SettingsMetadata.constructFromObject(data.disableDocumentUploadMetadata);
       }
       if (data.hasOwnProperty('disableOtherActions')) {
-        obj['disableOtherActions'] = ApiClient.convertToType(data['disableOtherActions'], 'String');
+        obj.disableOtherActions = ApiClient.convertToType(data.disableOtherActions, 'String');
       }
       if (data.hasOwnProperty('disableOtherActionsMetadata')) {
-        obj['disableOtherActionsMetadata'] = SettingsMetadata.constructFromObject(data['disableOtherActionsMetadata']);
+        obj.disableOtherActionsMetadata = SettingsMetadata.constructFromObject(data.disableOtherActionsMetadata);
       }
       if (data.hasOwnProperty('enableApiRequestLogging')) {
-        obj['enableApiRequestLogging'] = ApiClient.convertToType(data['enableApiRequestLogging'], 'String');
+        obj.enableApiRequestLogging = ApiClient.convertToType(data.enableApiRequestLogging, 'String');
       }
       if (data.hasOwnProperty('enableApiRequestLoggingMetadata')) {
-        obj['enableApiRequestLoggingMetadata'] = SettingsMetadata.constructFromObject(data['enableApiRequestLoggingMetadata']);
+        obj.enableApiRequestLoggingMetadata = SettingsMetadata.constructFromObject(data.enableApiRequestLoggingMetadata);
       }
       if (data.hasOwnProperty('enableRecipientViewingNotifications')) {
-        obj['enableRecipientViewingNotifications'] = ApiClient.convertToType(data['enableRecipientViewingNotifications'], 'String');
+        obj.enableRecipientViewingNotifications = ApiClient.convertToType(data.enableRecipientViewingNotifications, 'String');
       }
       if (data.hasOwnProperty('enableRecipientViewingNotificationsMetadata')) {
-        obj['enableRecipientViewingNotificationsMetadata'] = SettingsMetadata.constructFromObject(data['enableRecipientViewingNotificationsMetadata']);
+        obj.enableRecipientViewingNotificationsMetadata = SettingsMetadata.constructFromObject(data.enableRecipientViewingNotificationsMetadata);
       }
       if (data.hasOwnProperty('enableSequentialSigningInterface')) {
-        obj['enableSequentialSigningInterface'] = ApiClient.convertToType(data['enableSequentialSigningInterface'], 'String');
+        obj.enableSequentialSigningInterface = ApiClient.convertToType(data.enableSequentialSigningInterface, 'String');
       }
       if (data.hasOwnProperty('enableSequentialSigningInterfaceMetadata')) {
-        obj['enableSequentialSigningInterfaceMetadata'] = SettingsMetadata.constructFromObject(data['enableSequentialSigningInterfaceMetadata']);
+        obj.enableSequentialSigningInterfaceMetadata = SettingsMetadata.constructFromObject(data.enableSequentialSigningInterfaceMetadata);
       }
       if (data.hasOwnProperty('enableTransactionPointIntegration')) {
-        obj['enableTransactionPointIntegration'] = ApiClient.convertToType(data['enableTransactionPointIntegration'], 'String');
+        obj.enableTransactionPointIntegration = ApiClient.convertToType(data.enableTransactionPointIntegration, 'String');
       }
       if (data.hasOwnProperty('enableTransactionPointIntegrationMetadata')) {
-        obj['enableTransactionPointIntegrationMetadata'] = SettingsMetadata.constructFromObject(data['enableTransactionPointIntegrationMetadata']);
+        obj.enableTransactionPointIntegrationMetadata = SettingsMetadata.constructFromObject(data.enableTransactionPointIntegrationMetadata);
       }
       if (data.hasOwnProperty('powerFormRole')) {
-        obj['powerFormRole'] = ApiClient.convertToType(data['powerFormRole'], 'String');
+        obj.powerFormRole = ApiClient.convertToType(data.powerFormRole, 'String');
       }
       if (data.hasOwnProperty('powerFormRoleMetadata')) {
-        obj['powerFormRoleMetadata'] = SettingsMetadata.constructFromObject(data['powerFormRoleMetadata']);
+        obj.powerFormRoleMetadata = SettingsMetadata.constructFromObject(data.powerFormRoleMetadata);
       }
       if (data.hasOwnProperty('receiveCompletedSelfSignedDocumentsAsEmailLinks')) {
-        obj['receiveCompletedSelfSignedDocumentsAsEmailLinks'] = ApiClient.convertToType(data['receiveCompletedSelfSignedDocumentsAsEmailLinks'], 'String');
+        obj.receiveCompletedSelfSignedDocumentsAsEmailLinks = ApiClient.convertToType(data.receiveCompletedSelfSignedDocumentsAsEmailLinks, 'String');
       }
       if (data.hasOwnProperty('receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata')) {
-        obj['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata'] = SettingsMetadata.constructFromObject(data['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata']);
+        obj.receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = SettingsMetadata.constructFromObject(data.receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata);
       }
       if (data.hasOwnProperty('signingUiVersionMetadata')) {
-        obj['signingUiVersionMetadata'] = SettingsMetadata.constructFromObject(data['signingUiVersionMetadata']);
+        obj.signingUiVersionMetadata = SettingsMetadata.constructFromObject(data.signingUiVersionMetadata);
       }
       if (data.hasOwnProperty('supplementalDocumentsMustAccept')) {
-        obj['supplementalDocumentsMustAccept'] = ApiClient.convertToType(data['supplementalDocumentsMustAccept'], 'String');
+        obj.supplementalDocumentsMustAccept = ApiClient.convertToType(data.supplementalDocumentsMustAccept, 'String');
       }
       if (data.hasOwnProperty('supplementalDocumentsMustAcceptMetadata')) {
-        obj['supplementalDocumentsMustAcceptMetadata'] = SettingsMetadata.constructFromObject(data['supplementalDocumentsMustAcceptMetadata']);
+        obj.supplementalDocumentsMustAcceptMetadata = SettingsMetadata.constructFromObject(data.supplementalDocumentsMustAcceptMetadata);
       }
       if (data.hasOwnProperty('supplementalDocumentsMustRead')) {
-        obj['supplementalDocumentsMustRead'] = ApiClient.convertToType(data['supplementalDocumentsMustRead'], 'String');
+        obj.supplementalDocumentsMustRead = ApiClient.convertToType(data.supplementalDocumentsMustRead, 'String');
       }
       if (data.hasOwnProperty('supplementalDocumentsMustReadMetadata')) {
-        obj['supplementalDocumentsMustReadMetadata'] = SettingsMetadata.constructFromObject(data['supplementalDocumentsMustReadMetadata']);
+        obj.supplementalDocumentsMustReadMetadata = SettingsMetadata.constructFromObject(data.supplementalDocumentsMustReadMetadata);
       }
       if (data.hasOwnProperty('supplementalDocumentsMustView')) {
-        obj['supplementalDocumentsMustView'] = ApiClient.convertToType(data['supplementalDocumentsMustView'], 'String');
+        obj.supplementalDocumentsMustView = ApiClient.convertToType(data.supplementalDocumentsMustView, 'String');
       }
       if (data.hasOwnProperty('supplementalDocumentsMustViewMetadata')) {
-        obj['supplementalDocumentsMustViewMetadata'] = SettingsMetadata.constructFromObject(data['supplementalDocumentsMustViewMetadata']);
+        obj.supplementalDocumentsMustViewMetadata = SettingsMetadata.constructFromObject(data.supplementalDocumentsMustViewMetadata);
       }
       if (data.hasOwnProperty('useNewDocuSignExperienceInterface')) {
-        obj['useNewDocuSignExperienceInterface'] = ApiClient.convertToType(data['useNewDocuSignExperienceInterface'], 'String');
+        obj.useNewDocuSignExperienceInterface = ApiClient.convertToType(data.useNewDocuSignExperienceInterface, 'String');
       }
       if (data.hasOwnProperty('useNewDocuSignExperienceInterfaceMetadata')) {
-        obj['useNewDocuSignExperienceInterfaceMetadata'] = SettingsMetadata.constructFromObject(data['useNewDocuSignExperienceInterfaceMetadata']);
+        obj.useNewDocuSignExperienceInterfaceMetadata = SettingsMetadata.constructFromObject(data.useNewDocuSignExperienceInterfaceMetadata);
       }
       if (data.hasOwnProperty('useNewSendingInterface')) {
-        obj['useNewSendingInterface'] = ApiClient.convertToType(data['useNewSendingInterface'], 'String');
+        obj.useNewSendingInterface = ApiClient.convertToType(data.useNewSendingInterface, 'String');
       }
       if (data.hasOwnProperty('useNewSendingInterfaceMetadata')) {
-        obj['useNewSendingInterfaceMetadata'] = SettingsMetadata.constructFromObject(data['useNewSendingInterfaceMetadata']);
+        obj.useNewSendingInterfaceMetadata = SettingsMetadata.constructFromObject(data.useNewSendingInterfaceMetadata);
       }
       if (data.hasOwnProperty('vaultingMode')) {
-        obj['vaultingMode'] = ApiClient.convertToType(data['vaultingMode'], 'String');
+        obj.vaultingMode = ApiClient.convertToType(data.vaultingMode, 'String');
       }
       if (data.hasOwnProperty('vaultingModeMetadata')) {
-        obj['vaultingModeMetadata'] = SettingsMetadata.constructFromObject(data['vaultingModeMetadata']);
+        obj.vaultingModeMetadata = SettingsMetadata.constructFromObject(data.vaultingModeMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} allowAccountManagement
    */
-  exports.prototype['allowAccountManagement'] = undefined;
+  exports.prototype.allowAccountManagement = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowAccountManagementMetadata
    */
-  exports.prototype['allowAccountManagementMetadata'] = undefined;
+  exports.prototype.allowAccountManagementMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowApiAccess
    */
-  exports.prototype['allowApiAccess'] = undefined;
+  exports.prototype.allowApiAccess = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowApiAccessMetadata
    */
-  exports.prototype['allowApiAccessMetadata'] = undefined;
+  exports.prototype.allowApiAccessMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowApiAccessToAccount
    */
-  exports.prototype['allowApiAccessToAccount'] = undefined;
+  exports.prototype.allowApiAccessToAccount = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowApiAccessToAccountMetadata
    */
-  exports.prototype['allowApiAccessToAccountMetadata'] = undefined;
+  exports.prototype.allowApiAccessToAccountMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowApiSendingOnBehalfOfOthers
    */
-  exports.prototype['allowApiSendingOnBehalfOfOthers'] = undefined;
+  exports.prototype.allowApiSendingOnBehalfOfOthers = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowApiSendingOnBehalfOfOthersMetadata
    */
-  exports.prototype['allowApiSendingOnBehalfOfOthersMetadata'] = undefined;
+  exports.prototype.allowApiSendingOnBehalfOfOthersMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowApiSequentialSigning
    */
-  exports.prototype['allowApiSequentialSigning'] = undefined;
+  exports.prototype.allowApiSequentialSigning = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowApiSequentialSigningMetadata
    */
-  exports.prototype['allowApiSequentialSigningMetadata'] = undefined;
+  exports.prototype.allowApiSequentialSigningMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowAutoTagging
    */
-  exports.prototype['allowAutoTagging'] = undefined;
+  exports.prototype.allowAutoTagging = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowAutoTaggingMetadata
    */
-  exports.prototype['allowAutoTaggingMetadata'] = undefined;
+  exports.prototype.allowAutoTaggingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowBulkSending
    */
-  exports.prototype['allowBulkSending'] = undefined;
+  exports.prototype.allowBulkSending = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowBulkSendingMetadata
    */
-  exports.prototype['allowBulkSendingMetadata'] = undefined;
+  exports.prototype.allowBulkSendingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowDocuSignDesktopClient
    */
-  exports.prototype['allowDocuSignDesktopClient'] = undefined;
+  exports.prototype.allowDocuSignDesktopClient = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowDocuSignDesktopClientMetadata
    */
-  exports.prototype['allowDocuSignDesktopClientMetadata'] = undefined;
+  exports.prototype.allowDocuSignDesktopClientMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowedAddressBookAccess
    */
-  exports.prototype['allowedAddressBookAccess'] = undefined;
+  exports.prototype.allowedAddressBookAccess = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowedAddressBookAccessMetadata
    */
-  exports.prototype['allowedAddressBookAccessMetadata'] = undefined;
+  exports.prototype.allowedAddressBookAccessMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowedClickwrapsAccess
    */
-  exports.prototype['allowedClickwrapsAccess'] = undefined;
+  exports.prototype.allowedClickwrapsAccess = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowedClickwrapsAccessMetadata
    */
-  exports.prototype['allowedClickwrapsAccessMetadata'] = undefined;
+  exports.prototype.allowedClickwrapsAccessMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowedTemplateAccess
    */
-  exports.prototype['allowedTemplateAccess'] = undefined;
+  exports.prototype.allowedTemplateAccess = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowedTemplateAccessMetadata
    */
-  exports.prototype['allowedTemplateAccessMetadata'] = undefined;
+  exports.prototype.allowedTemplateAccessMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowedToBeEnvelopeTransferRecipient
    */
-  exports.prototype['allowedToBeEnvelopeTransferRecipient'] = undefined;
+  exports.prototype.allowedToBeEnvelopeTransferRecipient = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowedToBeEnvelopeTransferRecipientMetadata
    */
-  exports.prototype['allowedToBeEnvelopeTransferRecipientMetadata'] = undefined;
+  exports.prototype.allowedToBeEnvelopeTransferRecipientMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowEnvelopeSending
    */
-  exports.prototype['allowEnvelopeSending'] = undefined;
+  exports.prototype.allowEnvelopeSending = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowEnvelopeSendingMetadata
    */
-  exports.prototype['allowEnvelopeSendingMetadata'] = undefined;
+  exports.prototype.allowEnvelopeSendingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowESealRecipients
    */
-  exports.prototype['allowESealRecipients'] = undefined;
+  exports.prototype.allowESealRecipients = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowESealRecipientsMetadata
    */
-  exports.prototype['allowESealRecipientsMetadata'] = undefined;
+  exports.prototype.allowESealRecipientsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowPowerFormsAdminToAccessAllPowerFormEnvelopes
    */
-  exports.prototype['allowPowerFormsAdminToAccessAllPowerFormEnvelopes'] = undefined;
+  exports.prototype.allowPowerFormsAdminToAccessAllPowerFormEnvelopes = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata
    */
-  exports.prototype['allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata'] = undefined;
+  exports.prototype.allowPowerFormsAdminToAccessAllPowerFormEnvelopesMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowSendersToSetRecipientEmailLanguage
    */
-  exports.prototype['allowSendersToSetRecipientEmailLanguage'] = undefined;
+  exports.prototype.allowSendersToSetRecipientEmailLanguage = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowSendersToSetRecipientEmailLanguageMetadata
    */
-  exports.prototype['allowSendersToSetRecipientEmailLanguageMetadata'] = undefined;
+  exports.prototype.allowSendersToSetRecipientEmailLanguageMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowSignerAttachments
    */
-  exports.prototype['allowSignerAttachments'] = undefined;
+  exports.prototype.allowSignerAttachments = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowSignerAttachmentsMetadata
    */
-  exports.prototype['allowSignerAttachmentsMetadata'] = undefined;
+  exports.prototype.allowSignerAttachmentsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowSupplementalDocuments
    */
-  exports.prototype['allowSupplementalDocuments'] = undefined;
+  exports.prototype.allowSupplementalDocuments = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowSupplementalDocumentsMetadata
    */
-  exports.prototype['allowSupplementalDocumentsMetadata'] = undefined;
+  exports.prototype.allowSupplementalDocumentsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowTaggingInSendAndCorrect
    */
-  exports.prototype['allowTaggingInSendAndCorrect'] = undefined;
+  exports.prototype.allowTaggingInSendAndCorrect = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowTaggingInSendAndCorrectMetadata
    */
-  exports.prototype['allowTaggingInSendAndCorrectMetadata'] = undefined;
+  exports.prototype.allowTaggingInSendAndCorrectMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowVaulting
    */
-  exports.prototype['allowVaulting'] = undefined;
+  exports.prototype.allowVaulting = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowVaultingMetadata
    */
-  exports.prototype['allowVaultingMetadata'] = undefined;
+  exports.prototype.allowVaultingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} allowWetSigningOverride
    */
-  exports.prototype['allowWetSigningOverride'] = undefined;
+  exports.prototype.allowWetSigningOverride = undefined;
   /**
    * @member {module:model/SettingsMetadata} allowWetSigningOverrideMetadata
    */
-  exports.prototype['allowWetSigningOverrideMetadata'] = undefined;
+  exports.prototype.allowWetSigningOverrideMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canCreateWorkspaces
    */
-  exports.prototype['canCreateWorkspaces'] = undefined;
+  exports.prototype.canCreateWorkspaces = undefined;
   /**
    * @member {module:model/SettingsMetadata} canCreateWorkspacesMetadata
    */
-  exports.prototype['canCreateWorkspacesMetadata'] = undefined;
+  exports.prototype.canCreateWorkspacesMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} canSendEnvelopesViaSMS
    */
-  exports.prototype['canSendEnvelopesViaSMS'] = undefined;
+  exports.prototype.canSendEnvelopesViaSMS = undefined;
   /**
    * @member {module:model/SettingsMetadata} canSendEnvelopesViaSMSMetadata
    */
-  exports.prototype['canSendEnvelopesViaSMSMetadata'] = undefined;
+  exports.prototype.canSendEnvelopesViaSMSMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} disableDocumentUpload
    */
-  exports.prototype['disableDocumentUpload'] = undefined;
+  exports.prototype.disableDocumentUpload = undefined;
   /**
    * @member {module:model/SettingsMetadata} disableDocumentUploadMetadata
    */
-  exports.prototype['disableDocumentUploadMetadata'] = undefined;
+  exports.prototype.disableDocumentUploadMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} disableOtherActions
    */
-  exports.prototype['disableOtherActions'] = undefined;
+  exports.prototype.disableOtherActions = undefined;
   /**
    * @member {module:model/SettingsMetadata} disableOtherActionsMetadata
    */
-  exports.prototype['disableOtherActionsMetadata'] = undefined;
+  exports.prototype.disableOtherActionsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableApiRequestLogging
    */
-  exports.prototype['enableApiRequestLogging'] = undefined;
+  exports.prototype.enableApiRequestLogging = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableApiRequestLoggingMetadata
    */
-  exports.prototype['enableApiRequestLoggingMetadata'] = undefined;
+  exports.prototype.enableApiRequestLoggingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableRecipientViewingNotifications
    */
-  exports.prototype['enableRecipientViewingNotifications'] = undefined;
+  exports.prototype.enableRecipientViewingNotifications = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableRecipientViewingNotificationsMetadata
    */
-  exports.prototype['enableRecipientViewingNotificationsMetadata'] = undefined;
+  exports.prototype.enableRecipientViewingNotificationsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableSequentialSigningInterface
    */
-  exports.prototype['enableSequentialSigningInterface'] = undefined;
+  exports.prototype.enableSequentialSigningInterface = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableSequentialSigningInterfaceMetadata
    */
-  exports.prototype['enableSequentialSigningInterfaceMetadata'] = undefined;
+  exports.prototype.enableSequentialSigningInterfaceMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableTransactionPointIntegration
    */
-  exports.prototype['enableTransactionPointIntegration'] = undefined;
+  exports.prototype.enableTransactionPointIntegration = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableTransactionPointIntegrationMetadata
    */
-  exports.prototype['enableTransactionPointIntegrationMetadata'] = undefined;
+  exports.prototype.enableTransactionPointIntegrationMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} powerFormRole
    */
-  exports.prototype['powerFormRole'] = undefined;
+  exports.prototype.powerFormRole = undefined;
   /**
    * @member {module:model/SettingsMetadata} powerFormRoleMetadata
    */
-  exports.prototype['powerFormRoleMetadata'] = undefined;
+  exports.prototype.powerFormRoleMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} receiveCompletedSelfSignedDocumentsAsEmailLinks
    */
-  exports.prototype['receiveCompletedSelfSignedDocumentsAsEmailLinks'] = undefined;
+  exports.prototype.receiveCompletedSelfSignedDocumentsAsEmailLinks = undefined;
   /**
    * @member {module:model/SettingsMetadata} receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata
    */
-  exports.prototype['receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata'] = undefined;
+  exports.prototype.receiveCompletedSelfSignedDocumentsAsEmailLinksMetadata = undefined;
   /**
    * @member {module:model/SettingsMetadata} signingUiVersionMetadata
    */
-  exports.prototype['signingUiVersionMetadata'] = undefined;
+  exports.prototype.signingUiVersionMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} supplementalDocumentsMustAccept
    */
-  exports.prototype['supplementalDocumentsMustAccept'] = undefined;
+  exports.prototype.supplementalDocumentsMustAccept = undefined;
   /**
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustAcceptMetadata
    */
-  exports.prototype['supplementalDocumentsMustAcceptMetadata'] = undefined;
+  exports.prototype.supplementalDocumentsMustAcceptMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} supplementalDocumentsMustRead
    */
-  exports.prototype['supplementalDocumentsMustRead'] = undefined;
+  exports.prototype.supplementalDocumentsMustRead = undefined;
   /**
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustReadMetadata
    */
-  exports.prototype['supplementalDocumentsMustReadMetadata'] = undefined;
+  exports.prototype.supplementalDocumentsMustReadMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} supplementalDocumentsMustView
    */
-  exports.prototype['supplementalDocumentsMustView'] = undefined;
+  exports.prototype.supplementalDocumentsMustView = undefined;
   /**
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustViewMetadata
    */
-  exports.prototype['supplementalDocumentsMustViewMetadata'] = undefined;
+  exports.prototype.supplementalDocumentsMustViewMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} useNewDocuSignExperienceInterface
    */
-  exports.prototype['useNewDocuSignExperienceInterface'] = undefined;
+  exports.prototype.useNewDocuSignExperienceInterface = undefined;
   /**
    * @member {module:model/SettingsMetadata} useNewDocuSignExperienceInterfaceMetadata
    */
-  exports.prototype['useNewDocuSignExperienceInterfaceMetadata'] = undefined;
+  exports.prototype.useNewDocuSignExperienceInterfaceMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} useNewSendingInterface
    */
-  exports.prototype['useNewSendingInterface'] = undefined;
+  exports.prototype.useNewSendingInterface = undefined;
   /**
    * @member {module:model/SettingsMetadata} useNewSendingInterfaceMetadata
    */
-  exports.prototype['useNewSendingInterfaceMetadata'] = undefined;
+  exports.prototype.useNewSendingInterfaceMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} vaultingMode
    */
-  exports.prototype['vaultingMode'] = undefined;
+  exports.prototype.vaultingMode = undefined;
   /**
    * @member {module:model/SettingsMetadata} vaultingModeMetadata
    */
-  exports.prototype['vaultingModeMetadata'] = undefined;
-
-
+  exports.prototype.vaultingModeMetadata = undefined;
 
   return exports;
 }));
-
-

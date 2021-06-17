@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PermissionProfile'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PermissionProfileInformation = factory(root.Docusign.ApiClient, root.Docusign.PermissionProfile);
   }
-}(this, function(ApiClient, PermissionProfile) {
-  'use strict';
-
-
+}(this, (ApiClient, PermissionProfile) => {
   /**
    * The PermissionProfileInformation model module.
    * @module model/PermissionProfileInformation
@@ -37,10 +34,8 @@
    * @alias module:model/PermissionProfileInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/PermissionProfileInformation} obj Optional instance to populate.
    * @return {module:model/PermissionProfileInformation} The populated <code>PermissionProfileInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('permissionProfiles')) {
-        obj['permissionProfiles'] = ApiClient.convertToType(data['permissionProfiles'], [PermissionProfile]);
+        obj.permissionProfiles = ApiClient.convertToType(data.permissionProfiles, [PermissionProfile]);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * A complex type containing a collection of permission profiles.
    * @member {Array.<module:model/PermissionProfile>} permissionProfiles
    */
-  exports.prototype['permissionProfiles'] = undefined;
-
-
+  exports.prototype.permissionProfiles = undefined;
 
   return exports;
 }));
-
-

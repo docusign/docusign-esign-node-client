@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandLink = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BrandLink model module.
    * @module model/BrandLink
@@ -37,10 +34,8 @@
    * @alias module:model/BrandLink
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/BrandLink} obj Optional instance to populate.
    * @return {module:model/BrandLink} The populated <code>BrandLink</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('linkText')) {
-        obj['linkText'] = ApiClient.convertToType(data['linkText'], 'String');
+        obj.linkText = ApiClient.convertToType(data.linkText, 'String');
       }
       if (data.hasOwnProperty('linkType')) {
-        obj['linkType'] = ApiClient.convertToType(data['linkType'], 'String');
+        obj.linkType = ApiClient.convertToType(data.linkType, 'String');
       }
       if (data.hasOwnProperty('showLink')) {
-        obj['showLink'] = ApiClient.convertToType(data['showLink'], 'String');
+        obj.showLink = ApiClient.convertToType(data.showLink, 'String');
       }
       if (data.hasOwnProperty('urlOrMailTo')) {
-        obj['urlOrMailTo'] = ApiClient.convertToType(data['urlOrMailTo'], 'String');
+        obj.urlOrMailTo = ApiClient.convertToType(data.urlOrMailTo, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} linkText
    */
-  exports.prototype['linkText'] = undefined;
+  exports.prototype.linkText = undefined;
   /**
-   * 
+   *
    * @member {String} linkType
    */
-  exports.prototype['linkType'] = undefined;
+  exports.prototype.linkType = undefined;
   /**
-   * 
+   *
    * @member {String} showLink
    */
-  exports.prototype['showLink'] = undefined;
+  exports.prototype.showLink = undefined;
   /**
-   * 
+   *
    * @member {String} urlOrMailTo
    */
-  exports.prototype['urlOrMailTo'] = undefined;
-
-
+  exports.prototype.urlOrMailTo = undefined;
 
   return exports;
 }));
-
-

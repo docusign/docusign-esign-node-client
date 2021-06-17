@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PayPalLegacySettings', 'model/PaymentGatewayAccountSetting', 'model/PaymentMethodWithOptions'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PaymentGatewayAccount = factory(root.Docusign.ApiClient, root.Docusign.PayPalLegacySettings, root.Docusign.PaymentGatewayAccountSetting, root.Docusign.PaymentMethodWithOptions);
   }
-}(this, function(ApiClient, PayPalLegacySettings, PaymentGatewayAccountSetting, PaymentMethodWithOptions) {
-  'use strict';
-
-
+}(this, (ApiClient, PayPalLegacySettings, PaymentGatewayAccountSetting, PaymentMethodWithOptions) => {
   /**
    * The PaymentGatewayAccount model module.
    * @module model/PaymentGatewayAccount
@@ -37,10 +34,8 @@
    * @alias module:model/PaymentGatewayAccount
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,128 +45,124 @@
    * @param {module:model/PaymentGatewayAccount} obj Optional instance to populate.
    * @return {module:model/PaymentGatewayAccount} The populated <code>PaymentGatewayAccount</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('allowCustomMetadata')) {
-        obj['allowCustomMetadata'] = ApiClient.convertToType(data['allowCustomMetadata'], 'Boolean');
+        obj.allowCustomMetadata = ApiClient.convertToType(data.allowCustomMetadata, 'Boolean');
       }
       if (data.hasOwnProperty('config')) {
-        obj['config'] = PaymentGatewayAccountSetting.constructFromObject(data['config']);
+        obj.config = PaymentGatewayAccountSetting.constructFromObject(data.config);
       }
       if (data.hasOwnProperty('displayName')) {
-        obj['displayName'] = ApiClient.convertToType(data['displayName'], 'String');
+        obj.displayName = ApiClient.convertToType(data.displayName, 'String');
       }
       if (data.hasOwnProperty('isEnabled')) {
-        obj['isEnabled'] = ApiClient.convertToType(data['isEnabled'], 'String');
+        obj.isEnabled = ApiClient.convertToType(data.isEnabled, 'String');
       }
       if (data.hasOwnProperty('isLegacy')) {
-        obj['isLegacy'] = ApiClient.convertToType(data['isLegacy'], 'String');
+        obj.isLegacy = ApiClient.convertToType(data.isLegacy, 'String');
       }
       if (data.hasOwnProperty('lastModified')) {
-        obj['lastModified'] = ApiClient.convertToType(data['lastModified'], 'String');
+        obj.lastModified = ApiClient.convertToType(data.lastModified, 'String');
       }
       if (data.hasOwnProperty('paymentGateway')) {
-        obj['paymentGateway'] = ApiClient.convertToType(data['paymentGateway'], 'String');
+        obj.paymentGateway = ApiClient.convertToType(data.paymentGateway, 'String');
       }
       if (data.hasOwnProperty('paymentGatewayAccountId')) {
-        obj['paymentGatewayAccountId'] = ApiClient.convertToType(data['paymentGatewayAccountId'], 'String');
+        obj.paymentGatewayAccountId = ApiClient.convertToType(data.paymentGatewayAccountId, 'String');
       }
       if (data.hasOwnProperty('paymentGatewayDisplayName')) {
-        obj['paymentGatewayDisplayName'] = ApiClient.convertToType(data['paymentGatewayDisplayName'], 'String');
+        obj.paymentGatewayDisplayName = ApiClient.convertToType(data.paymentGatewayDisplayName, 'String');
       }
       if (data.hasOwnProperty('payPalLegacySettings')) {
-        obj['payPalLegacySettings'] = PayPalLegacySettings.constructFromObject(data['payPalLegacySettings']);
+        obj.payPalLegacySettings = PayPalLegacySettings.constructFromObject(data.payPalLegacySettings);
       }
       if (data.hasOwnProperty('supportedCurrencies')) {
-        obj['supportedCurrencies'] = ApiClient.convertToType(data['supportedCurrencies'], ['String']);
+        obj.supportedCurrencies = ApiClient.convertToType(data.supportedCurrencies, ['String']);
       }
       if (data.hasOwnProperty('supportedPaymentMethods')) {
-        obj['supportedPaymentMethods'] = ApiClient.convertToType(data['supportedPaymentMethods'], ['String']);
+        obj.supportedPaymentMethods = ApiClient.convertToType(data.supportedPaymentMethods, ['String']);
       }
       if (data.hasOwnProperty('supportedPaymentMethodsWithOptions')) {
-        obj['supportedPaymentMethodsWithOptions'] = ApiClient.convertToType(data['supportedPaymentMethodsWithOptions'], [PaymentMethodWithOptions]);
+        obj.supportedPaymentMethodsWithOptions = ApiClient.convertToType(data.supportedPaymentMethodsWithOptions, [PaymentMethodWithOptions]);
       }
       if (data.hasOwnProperty('zeroDecimalCurrencies')) {
-        obj['zeroDecimalCurrencies'] = ApiClient.convertToType(data['zeroDecimalCurrencies'], ['String']);
+        obj.zeroDecimalCurrencies = ApiClient.convertToType(data.zeroDecimalCurrencies, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Boolean} allowCustomMetadata
    */
-  exports.prototype['allowCustomMetadata'] = undefined;
+  exports.prototype.allowCustomMetadata = undefined;
   /**
    * @member {module:model/PaymentGatewayAccountSetting} config
    */
-  exports.prototype['config'] = undefined;
+  exports.prototype.config = undefined;
   /**
-   * 
+   *
    * @member {String} displayName
    */
-  exports.prototype['displayName'] = undefined;
+  exports.prototype.displayName = undefined;
   /**
-   * 
+   *
    * @member {String} isEnabled
    */
-  exports.prototype['isEnabled'] = undefined;
+  exports.prototype.isEnabled = undefined;
   /**
-   * 
+   *
    * @member {String} isLegacy
    */
-  exports.prototype['isLegacy'] = undefined;
+  exports.prototype.isLegacy = undefined;
   /**
-   * 
+   *
    * @member {String} lastModified
    */
-  exports.prototype['lastModified'] = undefined;
+  exports.prototype.lastModified = undefined;
   /**
-   * 
+   *
    * @member {String} paymentGateway
    */
-  exports.prototype['paymentGateway'] = undefined;
+  exports.prototype.paymentGateway = undefined;
   /**
-   * 
+   *
    * @member {String} paymentGatewayAccountId
    */
-  exports.prototype['paymentGatewayAccountId'] = undefined;
+  exports.prototype.paymentGatewayAccountId = undefined;
   /**
-   * 
+   *
    * @member {String} paymentGatewayDisplayName
    */
-  exports.prototype['paymentGatewayDisplayName'] = undefined;
+  exports.prototype.paymentGatewayDisplayName = undefined;
   /**
    * @member {module:model/PayPalLegacySettings} payPalLegacySettings
    */
-  exports.prototype['payPalLegacySettings'] = undefined;
+  exports.prototype.payPalLegacySettings = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} supportedCurrencies
    */
-  exports.prototype['supportedCurrencies'] = undefined;
+  exports.prototype.supportedCurrencies = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} supportedPaymentMethods
    */
-  exports.prototype['supportedPaymentMethods'] = undefined;
+  exports.prototype.supportedPaymentMethods = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/PaymentMethodWithOptions>} supportedPaymentMethodsWithOptions
    */
-  exports.prototype['supportedPaymentMethodsWithOptions'] = undefined;
+  exports.prototype.supportedPaymentMethodsWithOptions = undefined;
   /**
-   * 
+   *
    * @member {Array.<String>} zeroDecimalCurrencies
    */
-  exports.prototype['zeroDecimalCurrencies'] = undefined;
-
-
+  exports.prototype.zeroDecimalCurrencies = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UpdateTransactionResponse = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The UpdateTransactionResponse model module.
    * @module model/UpdateTransactionResponse
@@ -37,10 +34,8 @@
    * @alias module:model/UpdateTransactionResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/UpdateTransactionResponse} obj Optional instance to populate.
    * @return {module:model/UpdateTransactionResponse} The populated <code>UpdateTransactionResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('redirectionUrl')) {
-        obj['redirectionUrl'] = ApiClient.convertToType(data['redirectionUrl'], 'String');
+        obj.redirectionUrl = ApiClient.convertToType(data.redirectionUrl, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} redirectionUrl
    */
-  exports.prototype['redirectionUrl'] = undefined;
-
-
+  exports.prototype.redirectionUrl = undefined;
 
   return exports;
 }));
-
-

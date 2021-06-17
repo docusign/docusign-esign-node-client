@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/UserInfo'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BccEmailArchiveHistory = factory(root.Docusign.ApiClient, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, UserInfo) {
-  'use strict';
-
-
+}(this, (ApiClient, UserInfo) => {
   /**
    * The BccEmailArchiveHistory model module.
    * @module model/BccEmailArchiveHistory
@@ -37,10 +34,8 @@
    * @alias module:model/BccEmailArchiveHistory
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,65 +45,61 @@
    * @param {module:model/BccEmailArchiveHistory} obj Optional instance to populate.
    * @return {module:model/BccEmailArchiveHistory} The populated <code>BccEmailArchiveHistory</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('accountId')) {
-        obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
+        obj.accountId = ApiClient.convertToType(data.accountId, 'String');
       }
       if (data.hasOwnProperty('action')) {
-        obj['action'] = ApiClient.convertToType(data['action'], 'String');
+        obj.action = ApiClient.convertToType(data.action, 'String');
       }
       if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+        obj.email = ApiClient.convertToType(data.email, 'String');
       }
       if (data.hasOwnProperty('modified')) {
-        obj['modified'] = ApiClient.convertToType(data['modified'], 'String');
+        obj.modified = ApiClient.convertToType(data.modified, 'String');
       }
       if (data.hasOwnProperty('modifiedBy')) {
-        obj['modifiedBy'] = UserInfo.constructFromObject(data['modifiedBy']);
+        obj.modifiedBy = UserInfo.constructFromObject(data.modifiedBy);
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The account ID associated with the envelope.
    * @member {String} accountId
    */
-  exports.prototype['accountId'] = undefined;
+  exports.prototype.accountId = undefined;
   /**
-   * 
+   *
    * @member {String} action
    */
-  exports.prototype['action'] = undefined;
+  exports.prototype.action = undefined;
   /**
-   * 
+   *
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype.email = undefined;
   /**
-   * 
+   *
    * @member {String} modified
    */
-  exports.prototype['modified'] = undefined;
+  exports.prototype.modified = undefined;
   /**
    * @member {module:model/UserInfo} modifiedBy
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype.modifiedBy = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
-
-
+  exports.prototype.status = undefined;
 
   return exports;
 }));
-
-

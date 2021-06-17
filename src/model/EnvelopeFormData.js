@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/FormDataItem', 'model/RecipientFormData'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeFormData = factory(root.Docusign.ApiClient, root.Docusign.FormDataItem, root.Docusign.RecipientFormData);
   }
-}(this, function(ApiClient, FormDataItem, RecipientFormData) {
-  'use strict';
-
-
+}(this, (ApiClient, FormDataItem, RecipientFormData) => {
   /**
    * The EnvelopeFormData model module.
    * @module model/EnvelopeFormData
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeFormData
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,74 +45,70 @@
    * @param {module:model/EnvelopeFormData} obj Optional instance to populate.
    * @return {module:model/EnvelopeFormData} The populated <code>EnvelopeFormData</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('emailSubject')) {
-        obj['emailSubject'] = ApiClient.convertToType(data['emailSubject'], 'String');
+        obj.emailSubject = ApiClient.convertToType(data.emailSubject, 'String');
       }
       if (data.hasOwnProperty('envelopeId')) {
-        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+        obj.envelopeId = ApiClient.convertToType(data.envelopeId, 'String');
       }
       if (data.hasOwnProperty('formData')) {
-        obj['formData'] = ApiClient.convertToType(data['formData'], [FormDataItem]);
+        obj.formData = ApiClient.convertToType(data.formData, [FormDataItem]);
       }
       if (data.hasOwnProperty('prefillFormData')) {
-        obj['prefillFormData'] = ApiClient.convertToType(data['prefillFormData'], [FormDataItem]);
+        obj.prefillFormData = ApiClient.convertToType(data.prefillFormData, [FormDataItem]);
       }
       if (data.hasOwnProperty('recipientFormData')) {
-        obj['recipientFormData'] = ApiClient.convertToType(data['recipientFormData'], [RecipientFormData]);
+        obj.recipientFormData = ApiClient.convertToType(data.recipientFormData, [RecipientFormData]);
       }
       if (data.hasOwnProperty('sentDateTime')) {
-        obj['sentDateTime'] = ApiClient.convertToType(data['sentDateTime'], 'String');
+        obj.sentDateTime = ApiClient.convertToType(data.sentDateTime, 'String');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the subject of the email that is sent to all recipients.  See [ML:Template Email Subject Merge Fields] for information about adding merge field information to the email subject.
    * @member {String} emailSubject
    */
-  exports.prototype['emailSubject'] = undefined;
+  exports.prototype.emailSubject = undefined;
   /**
    * The envelope ID of the envelope status that failed to post.
    * @member {String} envelopeId
    */
-  exports.prototype['envelopeId'] = undefined;
+  exports.prototype.envelopeId = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/FormDataItem>} formData
    */
-  exports.prototype['formData'] = undefined;
+  exports.prototype.formData = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/FormDataItem>} prefillFormData
    */
-  exports.prototype['prefillFormData'] = undefined;
+  exports.prototype.prefillFormData = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/RecipientFormData>} recipientFormData
    */
-  exports.prototype['recipientFormData'] = undefined;
+  exports.prototype.recipientFormData = undefined;
   /**
    * The date and time the envelope was sent.
    * @member {String} sentDateTime
    */
-  exports.prototype['sentDateTime'] = undefined;
+  exports.prototype.sentDateTime = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
-
-
+  exports.prototype.status = undefined;
 
   return exports;
 }));
-
-

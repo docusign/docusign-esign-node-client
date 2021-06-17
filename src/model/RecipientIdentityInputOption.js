@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/RecipientIdentityPhoneNumber'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientIdentityInputOption = factory(root.Docusign.ApiClient, root.Docusign.RecipientIdentityPhoneNumber);
   }
-}(this, function(ApiClient, RecipientIdentityPhoneNumber) {
-  'use strict';
-
-
+}(this, (ApiClient, RecipientIdentityPhoneNumber) => {
   /**
    * The RecipientIdentityInputOption model module.
    * @module model/RecipientIdentityInputOption
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientIdentityInputOption
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/RecipientIdentityInputOption} obj Optional instance to populate.
    * @return {module:model/RecipientIdentityInputOption} The populated <code>RecipientIdentityInputOption</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('phoneNumberList')) {
-        obj['phoneNumberList'] = ApiClient.convertToType(data['phoneNumberList'], [RecipientIdentityPhoneNumber]);
+        obj.phoneNumberList = ApiClient.convertToType(data.phoneNumberList, [RecipientIdentityPhoneNumber]);
       }
       if (data.hasOwnProperty('valueType')) {
-        obj['valueType'] = ApiClient.convertToType(data['valueType'], 'String');
+        obj.valueType = ApiClient.convertToType(data.valueType, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/RecipientIdentityPhoneNumber>} phoneNumberList
    */
-  exports.prototype['phoneNumberList'] = undefined;
+  exports.prototype.phoneNumberList = undefined;
   /**
-   * 
+   *
    * @member {String} valueType
    */
-  exports.prototype['valueType'] = undefined;
-
-
+  exports.prototype.valueType = undefined;
 
   return exports;
 }));
-
-

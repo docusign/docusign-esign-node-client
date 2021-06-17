@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountPasswordMinimumPasswordAgeDays = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountPasswordMinimumPasswordAgeDays model module.
    * @module model/AccountPasswordMinimumPasswordAgeDays
@@ -37,10 +34,8 @@
    * @alias module:model/AccountPasswordMinimumPasswordAgeDays
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/AccountPasswordMinimumPasswordAgeDays} obj Optional instance to populate.
    * @return {module:model/AccountPasswordMinimumPasswordAgeDays} The populated <code>AccountPasswordMinimumPasswordAgeDays</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('maximumAge')) {
-        obj['maximumAge'] = ApiClient.convertToType(data['maximumAge'], 'String');
+        obj.maximumAge = ApiClient.convertToType(data.maximumAge, 'String');
       }
       if (data.hasOwnProperty('minimumAge')) {
-        obj['minimumAge'] = ApiClient.convertToType(data['minimumAge'], 'String');
+        obj.minimumAge = ApiClient.convertToType(data.minimumAge, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} maximumAge
    */
-  exports.prototype['maximumAge'] = undefined;
+  exports.prototype.maximumAge = undefined;
   /**
-   * 
+   *
    * @member {String} minimumAge
    */
-  exports.prototype['minimumAge'] = undefined;
-
-
+  exports.prototype.minimumAge = undefined;
 
   return exports;
 }));
-
-

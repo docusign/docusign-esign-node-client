@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PowerForm'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PowerFormsRequest = factory(root.Docusign.ApiClient, root.Docusign.PowerForm);
   }
-}(this, function(ApiClient, PowerForm) {
-  'use strict';
-
-
+}(this, (ApiClient, PowerForm) => {
   /**
    * The PowerFormsRequest model module.
    * @module model/PowerFormsRequest
@@ -37,10 +34,8 @@
    * @alias module:model/PowerFormsRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/PowerFormsRequest} obj Optional instance to populate.
    * @return {module:model/PowerFormsRequest} The populated <code>PowerFormsRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('powerForms')) {
-        obj['powerForms'] = ApiClient.convertToType(data['powerForms'], [PowerForm]);
+        obj.powerForms = ApiClient.convertToType(data.powerForms, [PowerForm]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/PowerForm>} powerForms
    */
-  exports.prototype['powerForms'] = undefined;
-
-
+  exports.prototype.powerForms = undefined;
 
   return exports;
 }));
-
-

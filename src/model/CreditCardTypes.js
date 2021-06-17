@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CreditCardTypes = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The CreditCardTypes model module.
    * @module model/CreditCardTypes
@@ -37,10 +34,8 @@
    * @alias module:model/CreditCardTypes
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/CreditCardTypes} obj Optional instance to populate.
    * @return {module:model/CreditCardTypes} The populated <code>CreditCardTypes</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cardTypes')) {
-        obj['cardTypes'] = ApiClient.convertToType(data['cardTypes'], ['String']);
+        obj.cardTypes = ApiClient.convertToType(data.cardTypes, ['String']);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * An array containing supported credit card types.
    * @member {Array.<String>} cardTypes
    */
-  exports.prototype['cardTypes'] = undefined;
-
-
+  exports.prototype.cardTypes = undefined;
 
   return exports;
 }));
-
-

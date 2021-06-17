@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SignHashDocument'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CompleteSignHashResponse = factory(root.Docusign.ApiClient, root.Docusign.SignHashDocument);
   }
-}(this, function(ApiClient, SignHashDocument) {
-  'use strict';
-
-
+}(this, (ApiClient, SignHashDocument) => {
   /**
    * The CompleteSignHashResponse model module.
    * @module model/CompleteSignHashResponse
@@ -37,10 +34,8 @@
    * @alias module:model/CompleteSignHashResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/CompleteSignHashResponse} obj Optional instance to populate.
    * @return {module:model/CompleteSignHashResponse} The populated <code>CompleteSignHashResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documents')) {
-        obj['documents'] = ApiClient.convertToType(data['documents'], [SignHashDocument]);
+        obj.documents = ApiClient.convertToType(data.documents, [SignHashDocument]);
       }
       if (data.hasOwnProperty('redirectionUrl')) {
-        obj['redirectionUrl'] = ApiClient.convertToType(data['redirectionUrl'], 'String');
+        obj.redirectionUrl = ApiClient.convertToType(data.redirectionUrl, 'String');
       }
       if (data.hasOwnProperty('remainingSignatureRequests')) {
-        obj['remainingSignatureRequests'] = ApiClient.convertToType(data['remainingSignatureRequests'], 'String');
+        obj.remainingSignatureRequests = ApiClient.convertToType(data.remainingSignatureRequests, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Complex element contains the details on the documents in the envelope.
    * @member {Array.<module:model/SignHashDocument>} documents
    */
-  exports.prototype['documents'] = undefined;
+  exports.prototype.documents = undefined;
   /**
-   * 
+   *
    * @member {String} redirectionUrl
    */
-  exports.prototype['redirectionUrl'] = undefined;
+  exports.prototype.redirectionUrl = undefined;
   /**
-   * 
+   *
    * @member {String} remainingSignatureRequests
    */
-  exports.prototype['remainingSignatureRequests'] = undefined;
-
-
+  exports.prototype.remainingSignatureRequests = undefined;
 
   return exports;
 }));
-
-

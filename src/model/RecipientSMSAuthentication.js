@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/PropertyMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientSMSAuthentication = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient, PropertyMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, PropertyMetadata) => {
   /**
    * The RecipientSMSAuthentication model module.
    * @module model/RecipientSMSAuthentication
@@ -38,10 +35,8 @@
    * @alias module:model/RecipientSMSAuthentication
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,33 +46,29 @@
    * @param {module:model/RecipientSMSAuthentication} obj Optional instance to populate.
    * @return {module:model/RecipientSMSAuthentication} The populated <code>RecipientSMSAuthentication</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('senderProvidedNumbers')) {
-        obj['senderProvidedNumbers'] = ApiClient.convertToType(data['senderProvidedNumbers'], ['String']);
+        obj.senderProvidedNumbers = ApiClient.convertToType(data.senderProvidedNumbers, ['String']);
       }
       if (data.hasOwnProperty('senderProvidedNumbersMetadata')) {
-        obj['senderProvidedNumbersMetadata'] = PropertyMetadata.constructFromObject(data['senderProvidedNumbersMetadata']);
+        obj.senderProvidedNumbersMetadata = PropertyMetadata.constructFromObject(data.senderProvidedNumbersMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * An Array containing a list of phone numbers the recipient may use for SMS text authentication. 
+   * An Array containing a list of phone numbers the recipient may use for SMS text authentication.
    * @member {Array.<String>} senderProvidedNumbers
    */
-  exports.prototype['senderProvidedNumbers'] = undefined;
+  exports.prototype.senderProvidedNumbers = undefined;
   /**
    * @member {module:model/PropertyMetadata} senderProvidedNumbersMetadata
    */
-  exports.prototype['senderProvidedNumbersMetadata'] = undefined;
-
-
+  exports.prototype.senderProvidedNumbersMetadata = undefined;
 
   return exports;
 }));
-
-

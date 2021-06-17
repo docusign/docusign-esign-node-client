@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/MemberGroupSharedItem', 'model/UserInfo', 'model/UserSharedItem'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TemplateSharedItem = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MemberGroupSharedItem, root.Docusign.UserInfo, root.Docusign.UserSharedItem);
   }
-}(this, function(ApiClient, ErrorDetails, MemberGroupSharedItem, UserInfo, UserSharedItem) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, MemberGroupSharedItem, UserInfo, UserSharedItem) => {
   /**
    * The TemplateSharedItem model module.
    * @module model/TemplateSharedItem
@@ -37,10 +34,8 @@
    * @alias module:model/TemplateSharedItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,80 +45,76 @@
    * @param {module:model/TemplateSharedItem} obj Optional instance to populate.
    * @return {module:model/TemplateSharedItem} The populated <code>TemplateSharedItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('owner')) {
-        obj['owner'] = UserInfo.constructFromObject(data['owner']);
+        obj.owner = UserInfo.constructFromObject(data.owner);
       }
       if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+        obj.password = ApiClient.convertToType(data.password, 'String');
       }
       if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
+        obj.shared = ApiClient.convertToType(data.shared, 'String');
       }
       if (data.hasOwnProperty('sharedGroups')) {
-        obj['sharedGroups'] = ApiClient.convertToType(data['sharedGroups'], [MemberGroupSharedItem]);
+        obj.sharedGroups = ApiClient.convertToType(data.sharedGroups, [MemberGroupSharedItem]);
       }
       if (data.hasOwnProperty('sharedUsers')) {
-        obj['sharedUsers'] = ApiClient.convertToType(data['sharedUsers'], [UserSharedItem]);
+        obj.sharedUsers = ApiClient.convertToType(data.sharedUsers, [UserSharedItem]);
       }
       if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+        obj.templateId = ApiClient.convertToType(data.templateId, 'String');
       }
       if (data.hasOwnProperty('templateName')) {
-        obj['templateName'] = ApiClient.convertToType(data['templateName'], 'String');
+        obj.templateName = ApiClient.convertToType(data.templateName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
    * @member {module:model/UserInfo} owner
    */
-  exports.prototype['owner'] = undefined;
+  exports.prototype.owner = undefined;
   /**
-   * 
+   *
    * @member {String} password
    */
-  exports.prototype['password'] = undefined;
+  exports.prototype.password = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
    */
-  exports.prototype['shared'] = undefined;
+  exports.prototype.shared = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/MemberGroupSharedItem>} sharedGroups
    */
-  exports.prototype['sharedGroups'] = undefined;
+  exports.prototype.sharedGroups = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/UserSharedItem>} sharedUsers
    */
-  exports.prototype['sharedUsers'] = undefined;
+  exports.prototype.sharedUsers = undefined;
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
    * @member {String} templateId
    */
-  exports.prototype['templateId'] = undefined;
+  exports.prototype.templateId = undefined;
   /**
-   * 
+   *
    * @member {String} templateName
    */
-  exports.prototype['templateName'] = undefined;
-
-
+  exports.prototype.templateName = undefined;
 
   return exports;
 }));
-
-

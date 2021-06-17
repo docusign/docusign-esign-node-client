@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReportInProductSaveResponse = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ReportInProductSaveResponse model module.
    * @module model/ReportInProductSaveResponse
@@ -37,10 +34,8 @@
    * @alias module:model/ReportInProductSaveResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/ReportInProductSaveResponse} obj Optional instance to populate.
    * @return {module:model/ReportInProductSaveResponse} The populated <code>ReportInProductSaveResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('reportCustomizedId')) {
-        obj['reportCustomizedId'] = ApiClient.convertToType(data['reportCustomizedId'], 'String');
+        obj.reportCustomizedId = ApiClient.convertToType(data.reportCustomizedId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} reportCustomizedId
    */
-  exports.prototype['reportCustomizedId'] = undefined;
-
-
+  exports.prototype.reportCustomizedId = undefined;
 
   return exports;
 }));
-
-

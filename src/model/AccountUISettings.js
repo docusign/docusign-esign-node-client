@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AdminMessage', 'model/AskAnAdmin', 'model/SettingsMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountUISettings = factory(root.Docusign.ApiClient, root.Docusign.AdminMessage, root.Docusign.AskAnAdmin, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, AdminMessage, AskAnAdmin, SettingsMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, AdminMessage, AskAnAdmin, SettingsMetadata) => {
   /**
    * The AccountUISettings model module.
    * @module model/AccountUISettings
@@ -37,10 +34,8 @@
    * @alias module:model/AccountUISettings
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,235 +45,231 @@
    * @param {module:model/AccountUISettings} obj Optional instance to populate.
    * @return {module:model/AccountUISettings} The populated <code>AccountUISettings</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('adminMessage')) {
-        obj['adminMessage'] = AdminMessage.constructFromObject(data['adminMessage']);
+        obj.adminMessage = AdminMessage.constructFromObject(data.adminMessage);
       }
       if (data.hasOwnProperty('askAnAdmin')) {
-        obj['askAnAdmin'] = AskAnAdmin.constructFromObject(data['askAnAdmin']);
+        obj.askAnAdmin = AskAnAdmin.constructFromObject(data.askAnAdmin);
       }
       if (data.hasOwnProperty('enableAdminMessage')) {
-        obj['enableAdminMessage'] = ApiClient.convertToType(data['enableAdminMessage'], 'String');
+        obj.enableAdminMessage = ApiClient.convertToType(data.enableAdminMessage, 'String');
       }
       if (data.hasOwnProperty('enableAdminMessageMetadata')) {
-        obj['enableAdminMessageMetadata'] = SettingsMetadata.constructFromObject(data['enableAdminMessageMetadata']);
+        obj.enableAdminMessageMetadata = SettingsMetadata.constructFromObject(data.enableAdminMessageMetadata);
       }
       if (data.hasOwnProperty('enableAdvancedPaymentsReactEdit')) {
-        obj['enableAdvancedPaymentsReactEdit'] = ApiClient.convertToType(data['enableAdvancedPaymentsReactEdit'], 'String');
+        obj.enableAdvancedPaymentsReactEdit = ApiClient.convertToType(data.enableAdvancedPaymentsReactEdit, 'String');
       }
       if (data.hasOwnProperty('enableEasySignCanUseMultiTemplateApply')) {
-        obj['enableEasySignCanUseMultiTemplateApply'] = ApiClient.convertToType(data['enableEasySignCanUseMultiTemplateApply'], 'String');
+        obj.enableEasySignCanUseMultiTemplateApply = ApiClient.convertToType(data.enableEasySignCanUseMultiTemplateApply, 'String');
       }
       if (data.hasOwnProperty('enableEasySignCanUseMultiTemplateApplyMetadata')) {
-        obj['enableEasySignCanUseMultiTemplateApplyMetadata'] = SettingsMetadata.constructFromObject(data['enableEasySignCanUseMultiTemplateApplyMetadata']);
+        obj.enableEasySignCanUseMultiTemplateApplyMetadata = SettingsMetadata.constructFromObject(data.enableEasySignCanUseMultiTemplateApplyMetadata);
       }
       if (data.hasOwnProperty('enableEasySignTemplateUpload')) {
-        obj['enableEasySignTemplateUpload'] = ApiClient.convertToType(data['enableEasySignTemplateUpload'], 'String');
+        obj.enableEasySignTemplateUpload = ApiClient.convertToType(data.enableEasySignTemplateUpload, 'String');
       }
       if (data.hasOwnProperty('enableEasySignTemplateUploadMetadata')) {
-        obj['enableEasySignTemplateUploadMetadata'] = SettingsMetadata.constructFromObject(data['enableEasySignTemplateUploadMetadata']);
+        obj.enableEasySignTemplateUploadMetadata = SettingsMetadata.constructFromObject(data.enableEasySignTemplateUploadMetadata);
       }
       if (data.hasOwnProperty('enableEnvelopeCopyWithData')) {
-        obj['enableEnvelopeCopyWithData'] = ApiClient.convertToType(data['enableEnvelopeCopyWithData'], 'String');
+        obj.enableEnvelopeCopyWithData = ApiClient.convertToType(data.enableEnvelopeCopyWithData, 'String');
       }
       if (data.hasOwnProperty('enableEnvelopeCopyWithDataMetadata')) {
-        obj['enableEnvelopeCopyWithDataMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeCopyWithDataMetadata']);
+        obj.enableEnvelopeCopyWithDataMetadata = SettingsMetadata.constructFromObject(data.enableEnvelopeCopyWithDataMetadata);
       }
       if (data.hasOwnProperty('enableLegacyHomepageLink')) {
-        obj['enableLegacyHomepageLink'] = ApiClient.convertToType(data['enableLegacyHomepageLink'], 'String');
+        obj.enableLegacyHomepageLink = ApiClient.convertToType(data.enableLegacyHomepageLink, 'String');
       }
       if (data.hasOwnProperty('enableLegacyHomepageLinkMetadata')) {
-        obj['enableLegacyHomepageLinkMetadata'] = SettingsMetadata.constructFromObject(data['enableLegacyHomepageLinkMetadata']);
+        obj.enableLegacyHomepageLinkMetadata = SettingsMetadata.constructFromObject(data.enableLegacyHomepageLinkMetadata);
       }
       if (data.hasOwnProperty('hasExternalLinkedAccounts')) {
-        obj['hasExternalLinkedAccounts'] = ApiClient.convertToType(data['hasExternalLinkedAccounts'], 'String');
+        obj.hasExternalLinkedAccounts = ApiClient.convertToType(data.hasExternalLinkedAccounts, 'String');
       }
       if (data.hasOwnProperty('hasExternalLinkedAccountsMetadata')) {
-        obj['hasExternalLinkedAccountsMetadata'] = SettingsMetadata.constructFromObject(data['hasExternalLinkedAccountsMetadata']);
+        obj.hasExternalLinkedAccountsMetadata = SettingsMetadata.constructFromObject(data.hasExternalLinkedAccountsMetadata);
       }
       if (data.hasOwnProperty('hideSendAnEnvelope')) {
-        obj['hideSendAnEnvelope'] = ApiClient.convertToType(data['hideSendAnEnvelope'], 'String');
+        obj.hideSendAnEnvelope = ApiClient.convertToType(data.hideSendAnEnvelope, 'String');
       }
       if (data.hasOwnProperty('hideSendAnEnvelopeMetadata')) {
-        obj['hideSendAnEnvelopeMetadata'] = SettingsMetadata.constructFromObject(data['hideSendAnEnvelopeMetadata']);
+        obj.hideSendAnEnvelopeMetadata = SettingsMetadata.constructFromObject(data.hideSendAnEnvelopeMetadata);
       }
       if (data.hasOwnProperty('hideUseATemplate')) {
-        obj['hideUseATemplate'] = ApiClient.convertToType(data['hideUseATemplate'], 'String');
+        obj.hideUseATemplate = ApiClient.convertToType(data.hideUseATemplate, 'String');
       }
       if (data.hasOwnProperty('hideUseATemplateInPrepare')) {
-        obj['hideUseATemplateInPrepare'] = ApiClient.convertToType(data['hideUseATemplateInPrepare'], 'String');
+        obj.hideUseATemplateInPrepare = ApiClient.convertToType(data.hideUseATemplateInPrepare, 'String');
       }
       if (data.hasOwnProperty('hideUseATemplateInPrepareMetadata')) {
-        obj['hideUseATemplateInPrepareMetadata'] = SettingsMetadata.constructFromObject(data['hideUseATemplateInPrepareMetadata']);
+        obj.hideUseATemplateInPrepareMetadata = SettingsMetadata.constructFromObject(data.hideUseATemplateInPrepareMetadata);
       }
       if (data.hasOwnProperty('hideUseATemplateMetadata')) {
-        obj['hideUseATemplateMetadata'] = SettingsMetadata.constructFromObject(data['hideUseATemplateMetadata']);
+        obj.hideUseATemplateMetadata = SettingsMetadata.constructFromObject(data.hideUseATemplateMetadata);
       }
       if (data.hasOwnProperty('orderBasedRecipientIdGeneration')) {
-        obj['orderBasedRecipientIdGeneration'] = ApiClient.convertToType(data['orderBasedRecipientIdGeneration'], 'String');
+        obj.orderBasedRecipientIdGeneration = ApiClient.convertToType(data.orderBasedRecipientIdGeneration, 'String');
       }
       if (data.hasOwnProperty('orderBasedRecipientIdGenerationMetadata')) {
-        obj['orderBasedRecipientIdGenerationMetadata'] = SettingsMetadata.constructFromObject(data['orderBasedRecipientIdGenerationMetadata']);
+        obj.orderBasedRecipientIdGenerationMetadata = SettingsMetadata.constructFromObject(data.orderBasedRecipientIdGenerationMetadata);
       }
       if (data.hasOwnProperty('removeEnvelopeForwarding')) {
-        obj['removeEnvelopeForwarding'] = ApiClient.convertToType(data['removeEnvelopeForwarding'], 'String');
+        obj.removeEnvelopeForwarding = ApiClient.convertToType(data.removeEnvelopeForwarding, 'String');
       }
       if (data.hasOwnProperty('removeEnvelopeForwardingMetadata')) {
-        obj['removeEnvelopeForwardingMetadata'] = SettingsMetadata.constructFromObject(data['removeEnvelopeForwardingMetadata']);
+        obj.removeEnvelopeForwardingMetadata = SettingsMetadata.constructFromObject(data.removeEnvelopeForwardingMetadata);
       }
       if (data.hasOwnProperty('shouldRedactAccessCode')) {
-        obj['shouldRedactAccessCode'] = ApiClient.convertToType(data['shouldRedactAccessCode'], 'String');
+        obj.shouldRedactAccessCode = ApiClient.convertToType(data.shouldRedactAccessCode, 'String');
       }
       if (data.hasOwnProperty('shouldRedactAccessCodeMetadata')) {
-        obj['shouldRedactAccessCodeMetadata'] = SettingsMetadata.constructFromObject(data['shouldRedactAccessCodeMetadata']);
+        obj.shouldRedactAccessCodeMetadata = SettingsMetadata.constructFromObject(data.shouldRedactAccessCodeMetadata);
       }
       if (data.hasOwnProperty('uploadNewImageToSignOrInitial')) {
-        obj['uploadNewImageToSignOrInitial'] = ApiClient.convertToType(data['uploadNewImageToSignOrInitial'], 'String');
+        obj.uploadNewImageToSignOrInitial = ApiClient.convertToType(data.uploadNewImageToSignOrInitial, 'String');
       }
       if (data.hasOwnProperty('uploadNewImageToSignOrInitialMetadata')) {
-        obj['uploadNewImageToSignOrInitialMetadata'] = SettingsMetadata.constructFromObject(data['uploadNewImageToSignOrInitialMetadata']);
+        obj.uploadNewImageToSignOrInitialMetadata = SettingsMetadata.constructFromObject(data.uploadNewImageToSignOrInitialMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/AdminMessage} adminMessage
    */
-  exports.prototype['adminMessage'] = undefined;
+  exports.prototype.adminMessage = undefined;
   /**
    * @member {module:model/AskAnAdmin} askAnAdmin
    */
-  exports.prototype['askAnAdmin'] = undefined;
+  exports.prototype.askAnAdmin = undefined;
   /**
-   * 
+   *
    * @member {String} enableAdminMessage
    */
-  exports.prototype['enableAdminMessage'] = undefined;
+  exports.prototype.enableAdminMessage = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableAdminMessageMetadata
    */
-  exports.prototype['enableAdminMessageMetadata'] = undefined;
+  exports.prototype.enableAdminMessageMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableAdvancedPaymentsReactEdit
    */
-  exports.prototype['enableAdvancedPaymentsReactEdit'] = undefined;
+  exports.prototype.enableAdvancedPaymentsReactEdit = undefined;
   /**
-   * 
+   *
    * @member {String} enableEasySignCanUseMultiTemplateApply
    */
-  exports.prototype['enableEasySignCanUseMultiTemplateApply'] = undefined;
+  exports.prototype.enableEasySignCanUseMultiTemplateApply = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableEasySignCanUseMultiTemplateApplyMetadata
    */
-  exports.prototype['enableEasySignCanUseMultiTemplateApplyMetadata'] = undefined;
+  exports.prototype.enableEasySignCanUseMultiTemplateApplyMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableEasySignTemplateUpload
    */
-  exports.prototype['enableEasySignTemplateUpload'] = undefined;
+  exports.prototype.enableEasySignTemplateUpload = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableEasySignTemplateUploadMetadata
    */
-  exports.prototype['enableEasySignTemplateUploadMetadata'] = undefined;
+  exports.prototype.enableEasySignTemplateUploadMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableEnvelopeCopyWithData
    */
-  exports.prototype['enableEnvelopeCopyWithData'] = undefined;
+  exports.prototype.enableEnvelopeCopyWithData = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableEnvelopeCopyWithDataMetadata
    */
-  exports.prototype['enableEnvelopeCopyWithDataMetadata'] = undefined;
+  exports.prototype.enableEnvelopeCopyWithDataMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} enableLegacyHomepageLink
    */
-  exports.prototype['enableLegacyHomepageLink'] = undefined;
+  exports.prototype.enableLegacyHomepageLink = undefined;
   /**
    * @member {module:model/SettingsMetadata} enableLegacyHomepageLinkMetadata
    */
-  exports.prototype['enableLegacyHomepageLinkMetadata'] = undefined;
+  exports.prototype.enableLegacyHomepageLinkMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} hasExternalLinkedAccounts
    */
-  exports.prototype['hasExternalLinkedAccounts'] = undefined;
+  exports.prototype.hasExternalLinkedAccounts = undefined;
   /**
    * @member {module:model/SettingsMetadata} hasExternalLinkedAccountsMetadata
    */
-  exports.prototype['hasExternalLinkedAccountsMetadata'] = undefined;
+  exports.prototype.hasExternalLinkedAccountsMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} hideSendAnEnvelope
    */
-  exports.prototype['hideSendAnEnvelope'] = undefined;
+  exports.prototype.hideSendAnEnvelope = undefined;
   /**
    * @member {module:model/SettingsMetadata} hideSendAnEnvelopeMetadata
    */
-  exports.prototype['hideSendAnEnvelopeMetadata'] = undefined;
+  exports.prototype.hideSendAnEnvelopeMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} hideUseATemplate
    */
-  exports.prototype['hideUseATemplate'] = undefined;
+  exports.prototype.hideUseATemplate = undefined;
   /**
-   * 
+   *
    * @member {String} hideUseATemplateInPrepare
    */
-  exports.prototype['hideUseATemplateInPrepare'] = undefined;
+  exports.prototype.hideUseATemplateInPrepare = undefined;
   /**
    * @member {module:model/SettingsMetadata} hideUseATemplateInPrepareMetadata
    */
-  exports.prototype['hideUseATemplateInPrepareMetadata'] = undefined;
+  exports.prototype.hideUseATemplateInPrepareMetadata = undefined;
   /**
    * @member {module:model/SettingsMetadata} hideUseATemplateMetadata
    */
-  exports.prototype['hideUseATemplateMetadata'] = undefined;
+  exports.prototype.hideUseATemplateMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} orderBasedRecipientIdGeneration
    */
-  exports.prototype['orderBasedRecipientIdGeneration'] = undefined;
+  exports.prototype.orderBasedRecipientIdGeneration = undefined;
   /**
    * @member {module:model/SettingsMetadata} orderBasedRecipientIdGenerationMetadata
    */
-  exports.prototype['orderBasedRecipientIdGenerationMetadata'] = undefined;
+  exports.prototype.orderBasedRecipientIdGenerationMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} removeEnvelopeForwarding
    */
-  exports.prototype['removeEnvelopeForwarding'] = undefined;
+  exports.prototype.removeEnvelopeForwarding = undefined;
   /**
    * @member {module:model/SettingsMetadata} removeEnvelopeForwardingMetadata
    */
-  exports.prototype['removeEnvelopeForwardingMetadata'] = undefined;
+  exports.prototype.removeEnvelopeForwardingMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} shouldRedactAccessCode
    */
-  exports.prototype['shouldRedactAccessCode'] = undefined;
+  exports.prototype.shouldRedactAccessCode = undefined;
   /**
    * @member {module:model/SettingsMetadata} shouldRedactAccessCodeMetadata
    */
-  exports.prototype['shouldRedactAccessCodeMetadata'] = undefined;
+  exports.prototype.shouldRedactAccessCodeMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} uploadNewImageToSignOrInitial
    */
-  exports.prototype['uploadNewImageToSignOrInitial'] = undefined;
+  exports.prototype.uploadNewImageToSignOrInitial = undefined;
   /**
    * @member {module:model/SettingsMetadata} uploadNewImageToSignOrInitialMetadata
    */
-  exports.prototype['uploadNewImageToSignOrInitialMetadata'] = undefined;
-
-
+  exports.prototype.uploadNewImageToSignOrInitialMetadata = undefined;
 
   return exports;
 }));
-
-

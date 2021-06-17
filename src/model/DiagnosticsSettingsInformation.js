@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.DiagnosticsSettingsInformation = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The DiagnosticsSettingsInformation model module.
    * @module model/DiagnosticsSettingsInformation
@@ -37,10 +34,8 @@
    * @alias module:model/DiagnosticsSettingsInformation
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/DiagnosticsSettingsInformation} obj Optional instance to populate.
    * @return {module:model/DiagnosticsSettingsInformation} The populated <code>DiagnosticsSettingsInformation</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('apiRequestLogging')) {
-        obj['apiRequestLogging'] = ApiClient.convertToType(data['apiRequestLogging'], 'String');
+        obj.apiRequestLogging = ApiClient.convertToType(data.apiRequestLogging, 'String');
       }
       if (data.hasOwnProperty('apiRequestLogMaxEntries')) {
-        obj['apiRequestLogMaxEntries'] = ApiClient.convertToType(data['apiRequestLogMaxEntries'], 'String');
+        obj.apiRequestLogMaxEntries = ApiClient.convertToType(data.apiRequestLogMaxEntries, 'String');
       }
       if (data.hasOwnProperty('apiRequestLogRemainingEntries')) {
-        obj['apiRequestLogRemainingEntries'] = ApiClient.convertToType(data['apiRequestLogRemainingEntries'], 'String');
+        obj.apiRequestLogRemainingEntries = ApiClient.convertToType(data.apiRequestLogRemainingEntries, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   *  When set to **true**, enables API request logging for the user. 
+   *  When set to **true**, enables API request logging for the user.
    * @member {String} apiRequestLogging
    */
-  exports.prototype['apiRequestLogging'] = undefined;
+  exports.prototype.apiRequestLogging = undefined;
   /**
    * Specifies the maximum number of API requests to log.
    * @member {String} apiRequestLogMaxEntries
    */
-  exports.prototype['apiRequestLogMaxEntries'] = undefined;
+  exports.prototype.apiRequestLogMaxEntries = undefined;
   /**
    * Indicates the remaining number of API requests that can be logged.
    * @member {String} apiRequestLogRemainingEntries
    */
-  exports.prototype['apiRequestLogRemainingEntries'] = undefined;
-
-
+  exports.prototype.apiRequestLogRemainingEntries = undefined;
 
   return exports;
 }));
-
-

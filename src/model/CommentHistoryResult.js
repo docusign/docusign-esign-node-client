@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Comment'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.CommentHistoryResult = factory(root.Docusign.ApiClient, root.Docusign.Comment);
   }
-}(this, function(ApiClient, Comment) {
-  'use strict';
-
-
+}(this, (ApiClient, Comment) => {
   /**
    * The CommentHistoryResult model module.
    * @module model/CommentHistoryResult
@@ -37,10 +34,8 @@
    * @alias module:model/CommentHistoryResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/CommentHistoryResult} obj Optional instance to populate.
    * @return {module:model/CommentHistoryResult} The populated <code>CommentHistoryResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('comments')) {
-        obj['comments'] = ApiClient.convertToType(data['comments'], [Comment]);
+        obj.comments = ApiClient.convertToType(data.comments, [Comment]);
       }
       if (data.hasOwnProperty('count')) {
-        obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+        obj.count = ApiClient.convertToType(data.count, 'Number');
       }
       if (data.hasOwnProperty('endTimetoken')) {
-        obj['endTimetoken'] = ApiClient.convertToType(data['endTimetoken'], 'String');
+        obj.endTimetoken = ApiClient.convertToType(data.endTimetoken, 'String');
       }
       if (data.hasOwnProperty('startTimetoken')) {
-        obj['startTimetoken'] = ApiClient.convertToType(data['startTimetoken'], 'String');
+        obj.startTimetoken = ApiClient.convertToType(data.startTimetoken, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/Comment>} comments
    */
-  exports.prototype['comments'] = undefined;
+  exports.prototype.comments = undefined;
   /**
-   * 
+   *
    * @member {Number} count
    */
-  exports.prototype['count'] = undefined;
+  exports.prototype.count = undefined;
   /**
-   * 
+   *
    * @member {String} endTimetoken
    */
-  exports.prototype['endTimetoken'] = undefined;
+  exports.prototype.endTimetoken = undefined;
   /**
-   * 
+   *
    * @member {String} startTimetoken
    */
-  exports.prototype['startTimetoken'] = undefined;
-
-
+  exports.prototype.startTimetoken = undefined;
 
   return exports;
 }));
-
-

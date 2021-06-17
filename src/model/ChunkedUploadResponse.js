@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ChunkedUploadPart'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ChunkedUploadResponse = factory(root.Docusign.ApiClient, root.Docusign.ChunkedUploadPart);
   }
-}(this, function(ApiClient, ChunkedUploadPart) {
-  'use strict';
-
-
+}(this, (ApiClient, ChunkedUploadPart) => {
   /**
    * The ChunkedUploadResponse model module.
    * @module model/ChunkedUploadResponse
@@ -37,10 +34,8 @@
    * @alias module:model/ChunkedUploadResponse
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,90 +45,86 @@
    * @param {module:model/ChunkedUploadResponse} obj Optional instance to populate.
    * @return {module:model/ChunkedUploadResponse} The populated <code>ChunkedUploadResponse</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('checksum')) {
-        obj['checksum'] = ApiClient.convertToType(data['checksum'], 'String');
+        obj.checksum = ApiClient.convertToType(data.checksum, 'String');
       }
       if (data.hasOwnProperty('chunkedUploadId')) {
-        obj['chunkedUploadId'] = ApiClient.convertToType(data['chunkedUploadId'], 'String');
+        obj.chunkedUploadId = ApiClient.convertToType(data.chunkedUploadId, 'String');
       }
       if (data.hasOwnProperty('chunkedUploadParts')) {
-        obj['chunkedUploadParts'] = ApiClient.convertToType(data['chunkedUploadParts'], [ChunkedUploadPart]);
+        obj.chunkedUploadParts = ApiClient.convertToType(data.chunkedUploadParts, [ChunkedUploadPart]);
       }
       if (data.hasOwnProperty('chunkedUploadUri')) {
-        obj['chunkedUploadUri'] = ApiClient.convertToType(data['chunkedUploadUri'], 'String');
+        obj.chunkedUploadUri = ApiClient.convertToType(data.chunkedUploadUri, 'String');
       }
       if (data.hasOwnProperty('committed')) {
-        obj['committed'] = ApiClient.convertToType(data['committed'], 'String');
+        obj.committed = ApiClient.convertToType(data.committed, 'String');
       }
       if (data.hasOwnProperty('expirationDateTime')) {
-        obj['expirationDateTime'] = ApiClient.convertToType(data['expirationDateTime'], 'String');
+        obj.expirationDateTime = ApiClient.convertToType(data.expirationDateTime, 'String');
       }
       if (data.hasOwnProperty('maxChunkedUploadParts')) {
-        obj['maxChunkedUploadParts'] = ApiClient.convertToType(data['maxChunkedUploadParts'], 'String');
+        obj.maxChunkedUploadParts = ApiClient.convertToType(data.maxChunkedUploadParts, 'String');
       }
       if (data.hasOwnProperty('maxTotalSize')) {
-        obj['maxTotalSize'] = ApiClient.convertToType(data['maxTotalSize'], 'String');
+        obj.maxTotalSize = ApiClient.convertToType(data.maxTotalSize, 'String');
       }
       if (data.hasOwnProperty('totalSize')) {
-        obj['totalSize'] = ApiClient.convertToType(data['totalSize'], 'String');
+        obj.totalSize = ApiClient.convertToType(data.totalSize, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} checksum
    */
-  exports.prototype['checksum'] = undefined;
+  exports.prototype.checksum = undefined;
   /**
-   * 
+   *
    * @member {String} chunkedUploadId
    */
-  exports.prototype['chunkedUploadId'] = undefined;
+  exports.prototype.chunkedUploadId = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ChunkedUploadPart>} chunkedUploadParts
    */
-  exports.prototype['chunkedUploadParts'] = undefined;
+  exports.prototype.chunkedUploadParts = undefined;
   /**
-   * 
+   *
    * @member {String} chunkedUploadUri
    */
-  exports.prototype['chunkedUploadUri'] = undefined;
+  exports.prototype.chunkedUploadUri = undefined;
   /**
-   * 
+   *
    * @member {String} committed
    */
-  exports.prototype['committed'] = undefined;
+  exports.prototype.committed = undefined;
   /**
-   * 
+   *
    * @member {String} expirationDateTime
    */
-  exports.prototype['expirationDateTime'] = undefined;
+  exports.prototype.expirationDateTime = undefined;
   /**
-   * 
+   *
    * @member {String} maxChunkedUploadParts
    */
-  exports.prototype['maxChunkedUploadParts'] = undefined;
+  exports.prototype.maxChunkedUploadParts = undefined;
   /**
-   * 
+   *
    * @member {String} maxTotalSize
    */
-  exports.prototype['maxTotalSize'] = undefined;
+  exports.prototype.maxTotalSize = undefined;
   /**
-   * 
+   *
    * @member {String} totalSize
    */
-  exports.prototype['totalSize'] = undefined;
-
-
+  exports.prototype.totalSize = undefined;
 
   return exports;
 }));
-
-

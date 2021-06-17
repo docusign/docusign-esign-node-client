@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EnvelopeMetadata = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The EnvelopeMetadata model module.
    * @module model/EnvelopeMetadata
@@ -37,10 +34,8 @@
    * @alias module:model/EnvelopeMetadata
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/EnvelopeMetadata} obj Optional instance to populate.
    * @return {module:model/EnvelopeMetadata} The populated <code>EnvelopeMetadata</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('allowAdvancedCorrect')) {
-        obj['allowAdvancedCorrect'] = ApiClient.convertToType(data['allowAdvancedCorrect'], 'String');
+        obj.allowAdvancedCorrect = ApiClient.convertToType(data.allowAdvancedCorrect, 'String');
       }
       if (data.hasOwnProperty('allowCorrect')) {
-        obj['allowCorrect'] = ApiClient.convertToType(data['allowCorrect'], 'String');
+        obj.allowCorrect = ApiClient.convertToType(data.allowCorrect, 'String');
       }
       if (data.hasOwnProperty('enableSignWithNotary')) {
-        obj['enableSignWithNotary'] = ApiClient.convertToType(data['enableSignWithNotary'], 'String');
+        obj.enableSignWithNotary = ApiClient.convertToType(data.enableSignWithNotary, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} allowAdvancedCorrect
    */
-  exports.prototype['allowAdvancedCorrect'] = undefined;
+  exports.prototype.allowAdvancedCorrect = undefined;
   /**
-   * 
+   *
    * @member {String} allowCorrect
    */
-  exports.prototype['allowCorrect'] = undefined;
+  exports.prototype.allowCorrect = undefined;
   /**
-   * 
+   *
    * @member {String} enableSignWithNotary
    */
-  exports.prototype['enableSignWithNotary'] = undefined;
-
-
+  exports.prototype.enableSignWithNotary = undefined;
 
   return exports;
 }));
-
-

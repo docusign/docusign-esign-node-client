@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/Expirations', 'model/Reminders'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Notification = factory(root.Docusign.ApiClient, root.Docusign.Expirations, root.Docusign.Reminders);
   }
-}(this, function(ApiClient, Expirations, Reminders) {
-  'use strict';
-
-
+}(this, (ApiClient, Expirations, Reminders) => {
   /**
    * The Notification model module.
    * @module model/Notification
@@ -38,10 +35,8 @@
    * @alias module:model/Notification
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,40 +46,36 @@
    * @param {module:model/Notification} obj Optional instance to populate.
    * @return {module:model/Notification} The populated <code>Notification</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('expirations')) {
-        obj['expirations'] = Expirations.constructFromObject(data['expirations']);
+        obj.expirations = Expirations.constructFromObject(data.expirations);
       }
       if (data.hasOwnProperty('reminders')) {
-        obj['reminders'] = Reminders.constructFromObject(data['reminders']);
+        obj.reminders = Reminders.constructFromObject(data.reminders);
       }
       if (data.hasOwnProperty('useAccountDefaults')) {
-        obj['useAccountDefaults'] = ApiClient.convertToType(data['useAccountDefaults'], 'String');
+        obj.useAccountDefaults = ApiClient.convertToType(data.useAccountDefaults, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/Expirations} expirations
    */
-  exports.prototype['expirations'] = undefined;
+  exports.prototype.expirations = undefined;
   /**
    * @member {module:model/Reminders} reminders
    */
-  exports.prototype['reminders'] = undefined;
+  exports.prototype.reminders = undefined;
   /**
    * When set to **true**, the account default notification settings are used for the envelope.
    * @member {String} useAccountDefaults
    */
-  exports.prototype['useAccountDefaults'] = undefined;
-
-
+  exports.prototype.useAccountDefaults = undefined;
 
   return exports;
 }));
-
-

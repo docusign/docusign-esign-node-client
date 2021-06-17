@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.FavoriteTemplatesContentItem = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails) => {
   /**
    * The FavoriteTemplatesContentItem model module.
    * @module model/FavoriteTemplatesContentItem
@@ -37,10 +34,8 @@
    * @alias module:model/FavoriteTemplatesContentItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,41 +45,37 @@
    * @param {module:model/FavoriteTemplatesContentItem} obj Optional instance to populate.
    * @return {module:model/FavoriteTemplatesContentItem} The populated <code>FavoriteTemplatesContentItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('favoritedDate')) {
-        obj['favoritedDate'] = ApiClient.convertToType(data['favoritedDate'], 'String');
+        obj.favoritedDate = ApiClient.convertToType(data.favoritedDate, 'String');
       }
       if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+        obj.templateId = ApiClient.convertToType(data.templateId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} favoritedDate
    */
-  exports.prototype['favoritedDate'] = undefined;
+  exports.prototype.favoritedDate = undefined;
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
    * @member {String} templateId
    */
-  exports.prototype['templateId'] = undefined;
-
-
+  exports.prototype.templateId = undefined;
 
   return exports;
 }));
-
-

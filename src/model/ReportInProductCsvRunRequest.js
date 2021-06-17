@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ReportInProductField'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReportInProductCsvRunRequest = factory(root.Docusign.ApiClient, root.Docusign.ReportInProductField);
   }
-}(this, function(ApiClient, ReportInProductField) {
-  'use strict';
-
-
+}(this, (ApiClient, ReportInProductField) => {
   /**
    * The ReportInProductCsvRunRequest model module.
    * @module model/ReportInProductCsvRunRequest
@@ -37,10 +34,8 @@
    * @alias module:model/ReportInProductCsvRunRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,226 +45,222 @@
    * @param {module:model/ReportInProductCsvRunRequest} obj Optional instance to populate.
    * @return {module:model/ReportInProductCsvRunRequest} The populated <code>ReportInProductCsvRunRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('customFieldFilter')) {
-        obj['customFieldFilter'] = ApiClient.convertToType(data['customFieldFilter'], 'String');
+        obj.customFieldFilter = ApiClient.convertToType(data.customFieldFilter, 'String');
       }
       if (data.hasOwnProperty('dateRangeCustomFromDate')) {
-        obj['dateRangeCustomFromDate'] = ApiClient.convertToType(data['dateRangeCustomFromDate'], 'String');
+        obj.dateRangeCustomFromDate = ApiClient.convertToType(data.dateRangeCustomFromDate, 'String');
       }
       if (data.hasOwnProperty('dateRangeCustomToDate')) {
-        obj['dateRangeCustomToDate'] = ApiClient.convertToType(data['dateRangeCustomToDate'], 'String');
+        obj.dateRangeCustomToDate = ApiClient.convertToType(data.dateRangeCustomToDate, 'String');
       }
       if (data.hasOwnProperty('dateRangeFilter')) {
-        obj['dateRangeFilter'] = ApiClient.convertToType(data['dateRangeFilter'], 'String');
+        obj.dateRangeFilter = ApiClient.convertToType(data.dateRangeFilter, 'String');
       }
       if (data.hasOwnProperty('envelopeDateTypeFilter')) {
-        obj['envelopeDateTypeFilter'] = ApiClient.convertToType(data['envelopeDateTypeFilter'], 'String');
+        obj.envelopeDateTypeFilter = ApiClient.convertToType(data.envelopeDateTypeFilter, 'String');
       }
       if (data.hasOwnProperty('envelopeRecipientNameContainsFilter')) {
-        obj['envelopeRecipientNameContainsFilter'] = ApiClient.convertToType(data['envelopeRecipientNameContainsFilter'], 'String');
+        obj.envelopeRecipientNameContainsFilter = ApiClient.convertToType(data.envelopeRecipientNameContainsFilter, 'String');
       }
       if (data.hasOwnProperty('envelopeStatusFilter')) {
-        obj['envelopeStatusFilter'] = ApiClient.convertToType(data['envelopeStatusFilter'], 'String');
+        obj.envelopeStatusFilter = ApiClient.convertToType(data.envelopeStatusFilter, 'String');
       }
       if (data.hasOwnProperty('envelopeSubjectContainsFilter')) {
-        obj['envelopeSubjectContainsFilter'] = ApiClient.convertToType(data['envelopeSubjectContainsFilter'], 'String');
+        obj.envelopeSubjectContainsFilter = ApiClient.convertToType(data.envelopeSubjectContainsFilter, 'String');
       }
       if (data.hasOwnProperty('fields')) {
-        obj['fields'] = ApiClient.convertToType(data['fields'], [ReportInProductField]);
+        obj.fields = ApiClient.convertToType(data.fields, [ReportInProductField]);
       }
       if (data.hasOwnProperty('forDownload')) {
-        obj['forDownload'] = ApiClient.convertToType(data['forDownload'], 'String');
+        obj.forDownload = ApiClient.convertToType(data.forDownload, 'String');
       }
       if (data.hasOwnProperty('isDashboard')) {
-        obj['isDashboard'] = ApiClient.convertToType(data['isDashboard'], 'String');
+        obj.isDashboard = ApiClient.convertToType(data.isDashboard, 'String');
       }
       if (data.hasOwnProperty('newLine')) {
-        obj['newLine'] = ApiClient.convertToType(data['newLine'], 'String');
+        obj.newLine = ApiClient.convertToType(data.newLine, 'String');
       }
       if (data.hasOwnProperty('overrideTimezoneKey')) {
-        obj['overrideTimezoneKey'] = ApiClient.convertToType(data['overrideTimezoneKey'], 'String');
+        obj.overrideTimezoneKey = ApiClient.convertToType(data.overrideTimezoneKey, 'String');
       }
       if (data.hasOwnProperty('periodLengthFilter')) {
-        obj['periodLengthFilter'] = ApiClient.convertToType(data['periodLengthFilter'], 'String');
+        obj.periodLengthFilter = ApiClient.convertToType(data.periodLengthFilter, 'String');
       }
       if (data.hasOwnProperty('quote')) {
-        obj['quote'] = ApiClient.convertToType(data['quote'], 'String');
+        obj.quote = ApiClient.convertToType(data.quote, 'String');
       }
       if (data.hasOwnProperty('reportCustomizedId')) {
-        obj['reportCustomizedId'] = ApiClient.convertToType(data['reportCustomizedId'], 'String');
+        obj.reportCustomizedId = ApiClient.convertToType(data.reportCustomizedId, 'String');
       }
       if (data.hasOwnProperty('reportDescription')) {
-        obj['reportDescription'] = ApiClient.convertToType(data['reportDescription'], 'String');
+        obj.reportDescription = ApiClient.convertToType(data.reportDescription, 'String');
       }
       if (data.hasOwnProperty('reportId')) {
-        obj['reportId'] = ApiClient.convertToType(data['reportId'], 'String');
+        obj.reportId = ApiClient.convertToType(data.reportId, 'String');
       }
       if (data.hasOwnProperty('reportInvocationType')) {
-        obj['reportInvocationType'] = ApiClient.convertToType(data['reportInvocationType'], 'String');
+        obj.reportInvocationType = ApiClient.convertToType(data.reportInvocationType, 'String');
       }
       if (data.hasOwnProperty('reportName')) {
-        obj['reportName'] = ApiClient.convertToType(data['reportName'], 'String');
+        obj.reportName = ApiClient.convertToType(data.reportName, 'String');
       }
       if (data.hasOwnProperty('sentByFilter')) {
-        obj['sentByFilter'] = ApiClient.convertToType(data['sentByFilter'], 'String');
+        obj.sentByFilter = ApiClient.convertToType(data.sentByFilter, 'String');
       }
       if (data.hasOwnProperty('sentByIds')) {
-        obj['sentByIds'] = ApiClient.convertToType(data['sentByIds'], 'String');
+        obj.sentByIds = ApiClient.convertToType(data.sentByIds, 'String');
       }
       if (data.hasOwnProperty('separator')) {
-        obj['separator'] = ApiClient.convertToType(data['separator'], 'String');
+        obj.separator = ApiClient.convertToType(data.separator, 'String');
       }
       if (data.hasOwnProperty('sortDirection')) {
-        obj['sortDirection'] = ApiClient.convertToType(data['sortDirection'], 'String');
+        obj.sortDirection = ApiClient.convertToType(data.sortDirection, 'String');
       }
       if (data.hasOwnProperty('sortField')) {
-        obj['sortField'] = ApiClient.convertToType(data['sortField'], 'String');
+        obj.sortField = ApiClient.convertToType(data.sortField, 'String');
       }
       if (data.hasOwnProperty('startPosition')) {
-        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+        obj.startPosition = ApiClient.convertToType(data.startPosition, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} customFieldFilter
    */
-  exports.prototype['customFieldFilter'] = undefined;
+  exports.prototype.customFieldFilter = undefined;
   /**
-   * 
+   *
    * @member {String} dateRangeCustomFromDate
    */
-  exports.prototype['dateRangeCustomFromDate'] = undefined;
+  exports.prototype.dateRangeCustomFromDate = undefined;
   /**
-   * 
+   *
    * @member {String} dateRangeCustomToDate
    */
-  exports.prototype['dateRangeCustomToDate'] = undefined;
+  exports.prototype.dateRangeCustomToDate = undefined;
   /**
-   * 
+   *
    * @member {String} dateRangeFilter
    */
-  exports.prototype['dateRangeFilter'] = undefined;
+  exports.prototype.dateRangeFilter = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeDateTypeFilter
    */
-  exports.prototype['envelopeDateTypeFilter'] = undefined;
+  exports.prototype.envelopeDateTypeFilter = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeRecipientNameContainsFilter
    */
-  exports.prototype['envelopeRecipientNameContainsFilter'] = undefined;
+  exports.prototype.envelopeRecipientNameContainsFilter = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeStatusFilter
    */
-  exports.prototype['envelopeStatusFilter'] = undefined;
+  exports.prototype.envelopeStatusFilter = undefined;
   /**
-   * 
+   *
    * @member {String} envelopeSubjectContainsFilter
    */
-  exports.prototype['envelopeSubjectContainsFilter'] = undefined;
+  exports.prototype.envelopeSubjectContainsFilter = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ReportInProductField>} fields
    */
-  exports.prototype['fields'] = undefined;
+  exports.prototype.fields = undefined;
   /**
-   * 
+   *
    * @member {String} forDownload
    */
-  exports.prototype['forDownload'] = undefined;
+  exports.prototype.forDownload = undefined;
   /**
-   * 
+   *
    * @member {String} isDashboard
    */
-  exports.prototype['isDashboard'] = undefined;
+  exports.prototype.isDashboard = undefined;
   /**
-   * 
+   *
    * @member {String} newLine
    */
-  exports.prototype['newLine'] = undefined;
+  exports.prototype.newLine = undefined;
   /**
-   * 
+   *
    * @member {String} overrideTimezoneKey
    */
-  exports.prototype['overrideTimezoneKey'] = undefined;
+  exports.prototype.overrideTimezoneKey = undefined;
   /**
-   * 
+   *
    * @member {String} periodLengthFilter
    */
-  exports.prototype['periodLengthFilter'] = undefined;
+  exports.prototype.periodLengthFilter = undefined;
   /**
-   * 
+   *
    * @member {String} quote
    */
-  exports.prototype['quote'] = undefined;
+  exports.prototype.quote = undefined;
   /**
-   * 
+   *
    * @member {String} reportCustomizedId
    */
-  exports.prototype['reportCustomizedId'] = undefined;
+  exports.prototype.reportCustomizedId = undefined;
   /**
-   * 
+   *
    * @member {String} reportDescription
    */
-  exports.prototype['reportDescription'] = undefined;
+  exports.prototype.reportDescription = undefined;
   /**
-   * 
+   *
    * @member {String} reportId
    */
-  exports.prototype['reportId'] = undefined;
+  exports.prototype.reportId = undefined;
   /**
-   * 
+   *
    * @member {String} reportInvocationType
    */
-  exports.prototype['reportInvocationType'] = undefined;
+  exports.prototype.reportInvocationType = undefined;
   /**
-   * 
+   *
    * @member {String} reportName
    */
-  exports.prototype['reportName'] = undefined;
+  exports.prototype.reportName = undefined;
   /**
-   * 
+   *
    * @member {String} sentByFilter
    */
-  exports.prototype['sentByFilter'] = undefined;
+  exports.prototype.sentByFilter = undefined;
   /**
-   * 
+   *
    * @member {String} sentByIds
    */
-  exports.prototype['sentByIds'] = undefined;
+  exports.prototype.sentByIds = undefined;
   /**
-   * 
+   *
    * @member {String} separator
    */
-  exports.prototype['separator'] = undefined;
+  exports.prototype.separator = undefined;
   /**
-   * 
+   *
    * @member {String} sortDirection
    */
-  exports.prototype['sortDirection'] = undefined;
+  exports.prototype.sortDirection = undefined;
   /**
-   * 
+   *
    * @member {String} sortField
    */
-  exports.prototype['sortField'] = undefined;
+  exports.prototype.sortField = undefined;
   /**
    * Starting position of the current result set.
    * @member {String} startPosition
    */
-  exports.prototype['startPosition'] = undefined;
-
-
+  exports.prototype.startPosition = undefined;
 
   return exports;
 }));
-
-

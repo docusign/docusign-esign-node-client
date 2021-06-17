@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountSignatureProviderOption = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The AccountSignatureProviderOption model module.
    * @module model/AccountSignatureProviderOption
@@ -37,10 +34,8 @@
    * @alias module:model/AccountSignatureProviderOption
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/AccountSignatureProviderOption} obj Optional instance to populate.
    * @return {module:model/AccountSignatureProviderOption} The populated <code>AccountSignatureProviderOption</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('signatureProviderOptionDisplayName')) {
-        obj['signatureProviderOptionDisplayName'] = ApiClient.convertToType(data['signatureProviderOptionDisplayName'], 'String');
+        obj.signatureProviderOptionDisplayName = ApiClient.convertToType(data.signatureProviderOptionDisplayName, 'String');
       }
       if (data.hasOwnProperty('signatureProviderOptionId')) {
-        obj['signatureProviderOptionId'] = ApiClient.convertToType(data['signatureProviderOptionId'], 'String');
+        obj.signatureProviderOptionId = ApiClient.convertToType(data.signatureProviderOptionId, 'String');
       }
       if (data.hasOwnProperty('signatureProviderOptionName')) {
-        obj['signatureProviderOptionName'] = ApiClient.convertToType(data['signatureProviderOptionName'], 'String');
+        obj.signatureProviderOptionName = ApiClient.convertToType(data.signatureProviderOptionName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} signatureProviderOptionDisplayName
    */
-  exports.prototype['signatureProviderOptionDisplayName'] = undefined;
+  exports.prototype.signatureProviderOptionDisplayName = undefined;
   /**
-   * 
+   *
    * @member {String} signatureProviderOptionId
    */
-  exports.prototype['signatureProviderOptionId'] = undefined;
+  exports.prototype.signatureProviderOptionId = undefined;
   /**
-   * 
+   *
    * @member {String} signatureProviderOptionName
    */
-  exports.prototype['signatureProviderOptionName'] = undefined;
-
-
+  exports.prototype.signatureProviderOptionName = undefined;
 
   return exports;
 }));
-
-

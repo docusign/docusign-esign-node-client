@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/WorkspaceUser'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.WorkspaceUserAuthorization = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.WorkspaceUser);
   }
-}(this, function(ApiClient, ErrorDetails, WorkspaceUser) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, WorkspaceUser) => {
   /**
    * The WorkspaceUserAuthorization model module.
    * @module model/WorkspaceUserAuthorization
@@ -38,10 +35,8 @@
    * @alias module:model/WorkspaceUserAuthorization
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,104 +46,100 @@
    * @param {module:model/WorkspaceUserAuthorization} obj Optional instance to populate.
    * @return {module:model/WorkspaceUserAuthorization} The populated <code>WorkspaceUserAuthorization</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('canDelete')) {
-        obj['canDelete'] = ApiClient.convertToType(data['canDelete'], 'String');
+        obj.canDelete = ApiClient.convertToType(data.canDelete, 'String');
       }
       if (data.hasOwnProperty('canMove')) {
-        obj['canMove'] = ApiClient.convertToType(data['canMove'], 'String');
+        obj.canMove = ApiClient.convertToType(data.canMove, 'String');
       }
       if (data.hasOwnProperty('canTransact')) {
-        obj['canTransact'] = ApiClient.convertToType(data['canTransact'], 'String');
+        obj.canTransact = ApiClient.convertToType(data.canTransact, 'String');
       }
       if (data.hasOwnProperty('canView')) {
-        obj['canView'] = ApiClient.convertToType(data['canView'], 'String');
+        obj.canView = ApiClient.convertToType(data.canView, 'String');
       }
       if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+        obj.created = ApiClient.convertToType(data.created, 'String');
       }
       if (data.hasOwnProperty('createdById')) {
-        obj['createdById'] = ApiClient.convertToType(data['createdById'], 'String');
+        obj.createdById = ApiClient.convertToType(data.createdById, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('modified')) {
-        obj['modified'] = ApiClient.convertToType(data['modified'], 'String');
+        obj.modified = ApiClient.convertToType(data.modified, 'String');
       }
       if (data.hasOwnProperty('modifiedById')) {
-        obj['modifiedById'] = ApiClient.convertToType(data['modifiedById'], 'String');
+        obj.modifiedById = ApiClient.convertToType(data.modifiedById, 'String');
       }
       if (data.hasOwnProperty('workspaceUserId')) {
-        obj['workspaceUserId'] = ApiClient.convertToType(data['workspaceUserId'], 'String');
+        obj.workspaceUserId = ApiClient.convertToType(data.workspaceUserId, 'String');
       }
       if (data.hasOwnProperty('workspaceUserInformation')) {
-        obj['workspaceUserInformation'] = WorkspaceUser.constructFromObject(data['workspaceUserInformation']);
+        obj.workspaceUserInformation = WorkspaceUser.constructFromObject(data.workspaceUserInformation);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} canDelete
    */
-  exports.prototype['canDelete'] = undefined;
+  exports.prototype.canDelete = undefined;
   /**
-   * 
+   *
    * @member {String} canMove
    */
-  exports.prototype['canMove'] = undefined;
+  exports.prototype.canMove = undefined;
   /**
-   * 
+   *
    * @member {String} canTransact
    */
-  exports.prototype['canTransact'] = undefined;
+  exports.prototype.canTransact = undefined;
   /**
-   * 
+   *
    * @member {String} canView
    */
-  exports.prototype['canView'] = undefined;
+  exports.prototype.canView = undefined;
   /**
    * The UTC DateTime when the workspace user authorization was created.
    * @member {String} created
    */
-  exports.prototype['created'] = undefined;
+  exports.prototype.created = undefined;
   /**
-   * 
+   *
    * @member {String} createdById
    */
-  exports.prototype['createdById'] = undefined;
+  exports.prototype.createdById = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} modified
    */
-  exports.prototype['modified'] = undefined;
+  exports.prototype.modified = undefined;
   /**
-   * 
+   *
    * @member {String} modifiedById
    */
-  exports.prototype['modifiedById'] = undefined;
+  exports.prototype.modifiedById = undefined;
   /**
-   * 
+   *
    * @member {String} workspaceUserId
    */
-  exports.prototype['workspaceUserId'] = undefined;
+  exports.prototype.workspaceUserId = undefined;
   /**
    * @member {module:model/WorkspaceUser} workspaceUserInformation
    */
-  exports.prototype['workspaceUserInformation'] = undefined;
-
-
+  exports.prototype.workspaceUserInformation = undefined;
 
   return exports;
 }));
-
-

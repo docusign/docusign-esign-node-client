@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SignSessionInfoRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SignSessionInfoRequest model module.
    * @module model/SignSessionInfoRequest
@@ -37,10 +34,8 @@
    * @alias module:model/SignSessionInfoRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/SignSessionInfoRequest} obj Optional instance to populate.
    * @return {module:model/SignSessionInfoRequest} The populated <code>SignSessionInfoRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('certificate')) {
-        obj['certificate'] = ApiClient.convertToType(data['certificate'], 'String');
+        obj.certificate = ApiClient.convertToType(data.certificate, 'String');
       }
       if (data.hasOwnProperty('maxSignatureLength')) {
-        obj['maxSignatureLength'] = ApiClient.convertToType(data['maxSignatureLength'], 'String');
+        obj.maxSignatureLength = ApiClient.convertToType(data.maxSignatureLength, 'String');
       }
       if (data.hasOwnProperty('returnFormat')) {
-        obj['returnFormat'] = ApiClient.convertToType(data['returnFormat'], 'String');
+        obj.returnFormat = ApiClient.convertToType(data.returnFormat, 'String');
       }
       if (data.hasOwnProperty('signingLocation')) {
-        obj['signingLocation'] = ApiClient.convertToType(data['signingLocation'], 'String');
+        obj.signingLocation = ApiClient.convertToType(data.signingLocation, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} certificate
    */
-  exports.prototype['certificate'] = undefined;
+  exports.prototype.certificate = undefined;
   /**
-   * 
+   *
    * @member {String} maxSignatureLength
    */
-  exports.prototype['maxSignatureLength'] = undefined;
+  exports.prototype.maxSignatureLength = undefined;
   /**
-   * 
+   *
    * @member {String} returnFormat
    */
-  exports.prototype['returnFormat'] = undefined;
+  exports.prototype.returnFormat = undefined;
   /**
    * Specifies the physical location where the signing takes place. It can have two enumeration values; InPerson and Online. The default value is Online.
    * @member {String} signingLocation
    */
-  exports.prototype['signingLocation'] = undefined;
-
-
+  exports.prototype.signingLocation = undefined;
 
   return exports;
 }));
-
-

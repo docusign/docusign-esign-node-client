@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ErrorDetails', 'model/TemplateMatch'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TemplateSummary = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.TemplateMatch);
   }
-}(this, function(ApiClient, ErrorDetails, TemplateMatch) {
-  'use strict';
-
-
+}(this, (ApiClient, ErrorDetails, TemplateMatch) => {
   /**
    * The TemplateSummary model module.
    * @module model/TemplateSummary
@@ -37,10 +34,8 @@
    * @alias module:model/TemplateSummary
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,80 +45,76 @@
    * @param {module:model/TemplateSummary} obj Optional instance to populate.
    * @return {module:model/TemplateSummary} The populated <code>TemplateSummary</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('applied')) {
-        obj['applied'] = ApiClient.convertToType(data['applied'], 'String');
+        obj.applied = ApiClient.convertToType(data.applied, 'String');
       }
       if (data.hasOwnProperty('documentId')) {
-        obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
+        obj.documentId = ApiClient.convertToType(data.documentId, 'String');
       }
       if (data.hasOwnProperty('documentName')) {
-        obj['documentName'] = ApiClient.convertToType(data['documentName'], 'String');
+        obj.documentName = ApiClient.convertToType(data.documentName, 'String');
       }
       if (data.hasOwnProperty('errorDetails')) {
-        obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+        obj.errorDetails = ErrorDetails.constructFromObject(data.errorDetails);
       }
       if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+        obj.name = ApiClient.convertToType(data.name, 'String');
       }
       if (data.hasOwnProperty('templateId')) {
-        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+        obj.templateId = ApiClient.convertToType(data.templateId, 'String');
       }
       if (data.hasOwnProperty('templateMatch')) {
-        obj['templateMatch'] = TemplateMatch.constructFromObject(data['templateMatch']);
+        obj.templateMatch = TemplateMatch.constructFromObject(data.templateMatch);
       }
       if (data.hasOwnProperty('uri')) {
-        obj['uri'] = ApiClient.convertToType(data['uri'], 'String');
+        obj.uri = ApiClient.convertToType(data.uri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} applied
    */
-  exports.prototype['applied'] = undefined;
+  exports.prototype.applied = undefined;
   /**
    * Specifies the document ID number that the tab is placed on. This must refer to an existing Document's ID attribute.
    * @member {String} documentId
    */
-  exports.prototype['documentId'] = undefined;
+  exports.prototype.documentId = undefined;
   /**
-   * 
+   *
    * @member {String} documentName
    */
-  exports.prototype['documentName'] = undefined;
+  exports.prototype.documentName = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */
-  exports.prototype['errorDetails'] = undefined;
+  exports.prototype.errorDetails = undefined;
   /**
-   * 
+   *
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype.name = undefined;
   /**
-   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value.
    * @member {String} templateId
    */
-  exports.prototype['templateId'] = undefined;
+  exports.prototype.templateId = undefined;
   /**
    * @member {module:model/TemplateMatch} templateMatch
    */
-  exports.prototype['templateMatch'] = undefined;
+  exports.prototype.templateMatch = undefined;
   /**
-   * 
+   *
    * @member {String} uri
    */
-  exports.prototype['uri'] = undefined;
-
-
+  exports.prototype.uri = undefined;
 
   return exports;
 }));
-
-

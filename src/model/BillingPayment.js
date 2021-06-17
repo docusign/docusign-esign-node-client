@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPayment = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BillingPayment model module.
    * @module model/BillingPayment
@@ -38,10 +35,8 @@
    * @alias module:model/BillingPayment
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,42 +46,38 @@
    * @param {module:model/BillingPayment} obj Optional instance to populate.
    * @return {module:model/BillingPayment} The populated <code>BillingPayment</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amount')) {
-        obj['amount'] = ApiClient.convertToType(data['amount'], 'String');
+        obj.amount = ApiClient.convertToType(data.amount, 'String');
       }
       if (data.hasOwnProperty('invoiceId')) {
-        obj['invoiceId'] = ApiClient.convertToType(data['invoiceId'], 'String');
+        obj.invoiceId = ApiClient.convertToType(data.invoiceId, 'String');
       }
       if (data.hasOwnProperty('paymentId')) {
-        obj['paymentId'] = ApiClient.convertToType(data['paymentId'], 'String');
+        obj.paymentId = ApiClient.convertToType(data.paymentId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Reserved: TBD
    * @member {String} amount
    */
-  exports.prototype['amount'] = undefined;
+  exports.prototype.amount = undefined;
   /**
    * Reserved: TBD
    * @member {String} invoiceId
    */
-  exports.prototype['invoiceId'] = undefined;
+  exports.prototype.invoiceId = undefined;
   /**
-   * 
+   *
    * @member {String} paymentId
    */
-  exports.prototype['paymentId'] = undefined;
-
-
+  exports.prototype.paymentId = undefined;
 
   return exports;
 }));
-
-

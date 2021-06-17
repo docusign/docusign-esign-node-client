@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ENoteConfiguration = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ENoteConfiguration model module.
    * @module model/ENoteConfiguration
@@ -37,10 +34,8 @@
    * @alias module:model/ENoteConfiguration
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,66 +45,62 @@
    * @param {module:model/ENoteConfiguration} obj Optional instance to populate.
    * @return {module:model/ENoteConfiguration} The populated <code>ENoteConfiguration</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('apiKey')) {
-        obj['apiKey'] = ApiClient.convertToType(data['apiKey'], 'String');
+        obj.apiKey = ApiClient.convertToType(data.apiKey, 'String');
       }
       if (data.hasOwnProperty('connectConfigured')) {
-        obj['connectConfigured'] = ApiClient.convertToType(data['connectConfigured'], 'String');
+        obj.connectConfigured = ApiClient.convertToType(data.connectConfigured, 'String');
       }
       if (data.hasOwnProperty('eNoteConfigured')) {
-        obj['eNoteConfigured'] = ApiClient.convertToType(data['eNoteConfigured'], 'String');
+        obj.eNoteConfigured = ApiClient.convertToType(data.eNoteConfigured, 'String');
       }
       if (data.hasOwnProperty('organization')) {
-        obj['organization'] = ApiClient.convertToType(data['organization'], 'String');
+        obj.organization = ApiClient.convertToType(data.organization, 'String');
       }
       if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+        obj.password = ApiClient.convertToType(data.password, 'String');
       }
       if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+        obj.userName = ApiClient.convertToType(data.userName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} apiKey
    */
-  exports.prototype['apiKey'] = undefined;
+  exports.prototype.apiKey = undefined;
   /**
-   * 
+   *
    * @member {String} connectConfigured
    */
-  exports.prototype['connectConfigured'] = undefined;
+  exports.prototype.connectConfigured = undefined;
   /**
-   * 
+   *
    * @member {String} eNoteConfigured
    */
-  exports.prototype['eNoteConfigured'] = undefined;
+  exports.prototype.eNoteConfigured = undefined;
   /**
-   * 
+   *
    * @member {String} organization
    */
-  exports.prototype['organization'] = undefined;
+  exports.prototype.organization = undefined;
   /**
-   * 
+   *
    * @member {String} password
    */
-  exports.prototype['password'] = undefined;
+  exports.prototype.password = undefined;
   /**
-   * 
+   *
    * @member {String} userName
    */
-  exports.prototype['userName'] = undefined;
-
-
+  exports.prototype.userName = undefined;
 
   return exports;
 }));
-
-

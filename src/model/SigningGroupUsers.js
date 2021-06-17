@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SigningGroupUser'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SigningGroupUsers = factory(root.Docusign.ApiClient, root.Docusign.SigningGroupUser);
   }
-}(this, function(ApiClient, SigningGroupUser) {
-  'use strict';
-
-
+}(this, (ApiClient, SigningGroupUser) => {
   /**
    * The SigningGroupUsers model module.
    * @module model/SigningGroupUsers
@@ -37,10 +34,8 @@
    * @alias module:model/SigningGroupUsers
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/SigningGroupUsers} obj Optional instance to populate.
    * @return {module:model/SigningGroupUsers} The populated <code>SigningGroupUsers</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('users')) {
-        obj['users'] = ApiClient.convertToType(data['users'], [SigningGroupUser]);
+        obj.users = ApiClient.convertToType(data.users, [SigningGroupUser]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/SigningGroupUser>} users
    */
-  exports.prototype['users'] = undefined;
-
-
+  exports.prototype.users = undefined;
 
   return exports;
 }));
-
-

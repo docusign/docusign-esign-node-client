@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/UserInformation'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.UserInformationList = factory(root.Docusign.ApiClient, root.Docusign.UserInformation);
   }
-}(this, function(ApiClient, UserInformation) {
-  'use strict';
-
-
+}(this, (ApiClient, UserInformation) => {
   /**
    * The UserInformationList model module.
    * @module model/UserInformationList
@@ -37,10 +34,8 @@
    * @alias module:model/UserInformationList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,74 +45,70 @@
    * @param {module:model/UserInformationList} obj Optional instance to populate.
    * @return {module:model/UserInformationList} The populated <code>UserInformationList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('endPosition')) {
-        obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
+        obj.endPosition = ApiClient.convertToType(data.endPosition, 'String');
       }
       if (data.hasOwnProperty('nextUri')) {
-        obj['nextUri'] = ApiClient.convertToType(data['nextUri'], 'String');
+        obj.nextUri = ApiClient.convertToType(data.nextUri, 'String');
       }
       if (data.hasOwnProperty('previousUri')) {
-        obj['previousUri'] = ApiClient.convertToType(data['previousUri'], 'String');
+        obj.previousUri = ApiClient.convertToType(data.previousUri, 'String');
       }
       if (data.hasOwnProperty('resultSetSize')) {
-        obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
+        obj.resultSetSize = ApiClient.convertToType(data.resultSetSize, 'String');
       }
       if (data.hasOwnProperty('startPosition')) {
-        obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
+        obj.startPosition = ApiClient.convertToType(data.startPosition, 'String');
       }
       if (data.hasOwnProperty('totalSetSize')) {
-        obj['totalSetSize'] = ApiClient.convertToType(data['totalSetSize'], 'String');
+        obj.totalSetSize = ApiClient.convertToType(data.totalSetSize, 'String');
       }
       if (data.hasOwnProperty('users')) {
-        obj['users'] = ApiClient.convertToType(data['users'], [UserInformation]);
+        obj.users = ApiClient.convertToType(data.users, [UserInformation]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * The last position in the result set. 
+   * The last position in the result set.
    * @member {String} endPosition
    */
-  exports.prototype['endPosition'] = undefined;
+  exports.prototype.endPosition = undefined;
   /**
-   * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null. 
+   * The URI to the next chunk of records based on the search request. If the endPosition is the entire results of the search, this is null.
    * @member {String} nextUri
    */
-  exports.prototype['nextUri'] = undefined;
+  exports.prototype.nextUri = undefined;
   /**
    * The postal code for the billing address.
    * @member {String} previousUri
    */
-  exports.prototype['previousUri'] = undefined;
+  exports.prototype.previousUri = undefined;
   /**
-   * The number of results returned in this response. 
+   * The number of results returned in this response.
    * @member {String} resultSetSize
    */
-  exports.prototype['resultSetSize'] = undefined;
+  exports.prototype.resultSetSize = undefined;
   /**
    * Starting position of the current result set.
    * @member {String} startPosition
    */
-  exports.prototype['startPosition'] = undefined;
+  exports.prototype.startPosition = undefined;
   /**
    * The total number of items available in the result set. This will always be greater than or equal to the value of the property returning the results in the in the response.
    * @member {String} totalSetSize
    */
-  exports.prototype['totalSetSize'] = undefined;
+  exports.prototype.totalSetSize = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/UserInformation>} users
    */
-  exports.prototype['users'] = undefined;
-
-
+  exports.prototype.users = undefined;
 
   return exports;
 }));
-
-

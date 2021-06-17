@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/BrandResources'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BrandResourcesList = factory(root.Docusign.ApiClient, root.Docusign.BrandResources);
   }
-}(this, function(ApiClient, BrandResources) {
-  'use strict';
-
-
+}(this, (ApiClient, BrandResources) => {
   /**
    * The BrandResourcesList model module.
    * @module model/BrandResourcesList
@@ -37,10 +34,8 @@
    * @alias module:model/BrandResourcesList
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/BrandResourcesList} obj Optional instance to populate.
    * @return {module:model/BrandResourcesList} The populated <code>BrandResourcesList</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('resourcesContentTypes')) {
-        obj['resourcesContentTypes'] = ApiClient.convertToType(data['resourcesContentTypes'], [BrandResources]);
+        obj.resourcesContentTypes = ApiClient.convertToType(data.resourcesContentTypes, [BrandResources]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/BrandResources>} resourcesContentTypes
    */
-  exports.prototype['resourcesContentTypes'] = undefined;
-
-
+  exports.prototype.resourcesContentTypes = undefined;
 
   return exports;
 }));
-
-

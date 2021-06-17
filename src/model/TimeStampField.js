@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/DocumentSecurityStore'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.TimeStampField = factory(root.Docusign.ApiClient, root.Docusign.DocumentSecurityStore);
   }
-}(this, function(ApiClient, DocumentSecurityStore) {
-  'use strict';
-
-
+}(this, (ApiClient, DocumentSecurityStore) => {
   /**
    * The TimeStampField model module.
    * @module model/TimeStampField
@@ -37,10 +34,8 @@
    * @alias module:model/TimeStampField
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,41 +45,37 @@
    * @param {module:model/TimeStampField} obj Optional instance to populate.
    * @return {module:model/TimeStampField} The populated <code>TimeStampField</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('documentSecurityStore')) {
-        obj['documentSecurityStore'] = DocumentSecurityStore.constructFromObject(data['documentSecurityStore']);
+        obj.documentSecurityStore = DocumentSecurityStore.constructFromObject(data.documentSecurityStore);
       }
       if (data.hasOwnProperty('maxTimeStampSignatureLength')) {
-        obj['maxTimeStampSignatureLength'] = ApiClient.convertToType(data['maxTimeStampSignatureLength'], 'String');
+        obj.maxTimeStampSignatureLength = ApiClient.convertToType(data.maxTimeStampSignatureLength, 'String');
       }
       if (data.hasOwnProperty('timeStampFieldName')) {
-        obj['timeStampFieldName'] = ApiClient.convertToType(data['timeStampFieldName'], 'String');
+        obj.timeStampFieldName = ApiClient.convertToType(data.timeStampFieldName, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {module:model/DocumentSecurityStore} documentSecurityStore
    */
-  exports.prototype['documentSecurityStore'] = undefined;
+  exports.prototype.documentSecurityStore = undefined;
   /**
-   * 
+   *
    * @member {String} maxTimeStampSignatureLength
    */
-  exports.prototype['maxTimeStampSignatureLength'] = undefined;
+  exports.prototype.maxTimeStampSignatureLength = undefined;
   /**
-   * 
+   *
    * @member {String} timeStampFieldName
    */
-  exports.prototype['timeStampFieldName'] = undefined;
-
-
+  exports.prototype.timeStampFieldName = undefined;
 
   return exports;
 }));
-
-

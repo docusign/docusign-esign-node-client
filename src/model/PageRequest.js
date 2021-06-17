@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.PageRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The PageRequest model module.
    * @module model/PageRequest
@@ -37,10 +34,8 @@
    * @alias module:model/PageRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,34 +45,30 @@
    * @param {module:model/PageRequest} obj Optional instance to populate.
    * @return {module:model/PageRequest} The populated <code>PageRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], 'String');
+        obj.password = ApiClient.convertToType(data.password, 'String');
       }
       if (data.hasOwnProperty('rotate')) {
-        obj['rotate'] = ApiClient.convertToType(data['rotate'], 'String');
+        obj.rotate = ApiClient.convertToType(data.rotate, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} password
    */
-  exports.prototype['password'] = undefined;
+  exports.prototype.password = undefined;
   /**
    * Sets the direction the page image is rotated. The possible settings are: left or right
    * @member {String} rotate
    */
-  exports.prototype['rotate'] = undefined;
-
-
+  exports.prototype.rotate = undefined;
 
   return exports;
 }));
-
-

@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountSignatureProviderOption', 'model/SignatureProviderRequiredOption'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountSignatureProvider = factory(root.Docusign.ApiClient, root.Docusign.AccountSignatureProviderOption, root.Docusign.SignatureProviderRequiredOption);
   }
-}(this, function(ApiClient, AccountSignatureProviderOption, SignatureProviderRequiredOption) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountSignatureProviderOption, SignatureProviderRequiredOption) => {
   /**
    * The AccountSignatureProvider model module.
    * @module model/AccountSignatureProvider
@@ -37,10 +34,8 @@
    * @alias module:model/AccountSignatureProvider
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,74 +45,70 @@
    * @param {module:model/AccountSignatureProvider} obj Optional instance to populate.
    * @return {module:model/AccountSignatureProvider} The populated <code>AccountSignatureProvider</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('isRequired')) {
-        obj['isRequired'] = ApiClient.convertToType(data['isRequired'], 'String');
+        obj.isRequired = ApiClient.convertToType(data.isRequired, 'String');
       }
       if (data.hasOwnProperty('priority')) {
-        obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
+        obj.priority = ApiClient.convertToType(data.priority, 'String');
       }
       if (data.hasOwnProperty('signatureProviderDisplayName')) {
-        obj['signatureProviderDisplayName'] = ApiClient.convertToType(data['signatureProviderDisplayName'], 'String');
+        obj.signatureProviderDisplayName = ApiClient.convertToType(data.signatureProviderDisplayName, 'String');
       }
       if (data.hasOwnProperty('signatureProviderId')) {
-        obj['signatureProviderId'] = ApiClient.convertToType(data['signatureProviderId'], 'String');
+        obj.signatureProviderId = ApiClient.convertToType(data.signatureProviderId, 'String');
       }
       if (data.hasOwnProperty('signatureProviderName')) {
-        obj['signatureProviderName'] = ApiClient.convertToType(data['signatureProviderName'], 'String');
+        obj.signatureProviderName = ApiClient.convertToType(data.signatureProviderName, 'String');
       }
       if (data.hasOwnProperty('signatureProviderOptionsMetadata')) {
-        obj['signatureProviderOptionsMetadata'] = ApiClient.convertToType(data['signatureProviderOptionsMetadata'], [AccountSignatureProviderOption]);
+        obj.signatureProviderOptionsMetadata = ApiClient.convertToType(data.signatureProviderOptionsMetadata, [AccountSignatureProviderOption]);
       }
       if (data.hasOwnProperty('signatureProviderRequiredOptions')) {
-        obj['signatureProviderRequiredOptions'] = ApiClient.convertToType(data['signatureProviderRequiredOptions'], [SignatureProviderRequiredOption]);
+        obj.signatureProviderRequiredOptions = ApiClient.convertToType(data.signatureProviderRequiredOptions, [SignatureProviderRequiredOption]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} isRequired
    */
-  exports.prototype['isRequired'] = undefined;
+  exports.prototype.isRequired = undefined;
   /**
-   * 
+   *
    * @member {String} priority
    */
-  exports.prototype['priority'] = undefined;
+  exports.prototype.priority = undefined;
   /**
-   * 
+   *
    * @member {String} signatureProviderDisplayName
    */
-  exports.prototype['signatureProviderDisplayName'] = undefined;
+  exports.prototype.signatureProviderDisplayName = undefined;
   /**
-   * 
+   *
    * @member {String} signatureProviderId
    */
-  exports.prototype['signatureProviderId'] = undefined;
+  exports.prototype.signatureProviderId = undefined;
   /**
-   * 
+   *
    * @member {String} signatureProviderName
    */
-  exports.prototype['signatureProviderName'] = undefined;
+  exports.prototype.signatureProviderName = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/AccountSignatureProviderOption>} signatureProviderOptionsMetadata
    */
-  exports.prototype['signatureProviderOptionsMetadata'] = undefined;
+  exports.prototype.signatureProviderOptionsMetadata = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/SignatureProviderRequiredOption>} signatureProviderRequiredOptions
    */
-  exports.prototype['signatureProviderRequiredOptions'] = undefined;
-
-
+  exports.prototype.signatureProviderRequiredOptions = undefined;
 
   return exports;
 }));
-
-

@@ -1,9 +1,9 @@
-var CODE = 'code';
-var TOKEN = 'token';
+const CODE = 'code';
+const TOKEN = 'token';
 
 module.exports = {
-  CODE: CODE,
-  TOKEN: TOKEN,
-}
+  CODE,
+  TOKEN,
+};
 
 Object.freeze(module.exports);

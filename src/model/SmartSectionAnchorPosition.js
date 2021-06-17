@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SmartSectionAnchorPosition = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SmartSectionAnchorPosition model module.
    * @module model/SmartSectionAnchorPosition
@@ -37,10 +34,8 @@
    * @alias module:model/SmartSectionAnchorPosition
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,42 +45,38 @@
    * @param {module:model/SmartSectionAnchorPosition} obj Optional instance to populate.
    * @return {module:model/SmartSectionAnchorPosition} The populated <code>SmartSectionAnchorPosition</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('pageNumber')) {
-        obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'Number');
+        obj.pageNumber = ApiClient.convertToType(data.pageNumber, 'Number');
       }
       if (data.hasOwnProperty('xPosition')) {
-        obj['xPosition'] = ApiClient.convertToType(data['xPosition'], 'Number');
+        obj.xPosition = ApiClient.convertToType(data.xPosition, 'Number');
       }
       if (data.hasOwnProperty('yPosition')) {
-        obj['yPosition'] = ApiClient.convertToType(data['yPosition'], 'Number');
+        obj.yPosition = ApiClient.convertToType(data.yPosition, 'Number');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * Specifies the page number on which the tab is located.
    * @member {Number} pageNumber
    */
-  exports.prototype['pageNumber'] = undefined;
+  exports.prototype.pageNumber = undefined;
   /**
    * This indicates the horizontal offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {Number} xPosition
    */
-  exports.prototype['xPosition'] = undefined;
+  exports.prototype.xPosition = undefined;
   /**
    * This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.
    * @member {Number} yPosition
    */
-  exports.prototype['yPosition'] = undefined;
-
-
+  exports.prototype.yPosition = undefined;
 
   return exports;
 }));
-
-

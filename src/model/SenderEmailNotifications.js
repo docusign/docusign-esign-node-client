@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.SenderEmailNotifications = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The SenderEmailNotifications model module.
    * @module model/SenderEmailNotifications
@@ -37,10 +34,8 @@
    * @alias module:model/SenderEmailNotifications
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,106 +45,102 @@
    * @param {module:model/SenderEmailNotifications} obj Optional instance to populate.
    * @return {module:model/SenderEmailNotifications} The populated <code>SenderEmailNotifications</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('changedSigner')) {
-        obj['changedSigner'] = ApiClient.convertToType(data['changedSigner'], 'String');
+        obj.changedSigner = ApiClient.convertToType(data.changedSigner, 'String');
       }
       if (data.hasOwnProperty('commentsOnlyPrivateAndMention')) {
-        obj['commentsOnlyPrivateAndMention'] = ApiClient.convertToType(data['commentsOnlyPrivateAndMention'], 'String');
+        obj.commentsOnlyPrivateAndMention = ApiClient.convertToType(data.commentsOnlyPrivateAndMention, 'String');
       }
       if (data.hasOwnProperty('commentsReceiveAll')) {
-        obj['commentsReceiveAll'] = ApiClient.convertToType(data['commentsReceiveAll'], 'String');
+        obj.commentsReceiveAll = ApiClient.convertToType(data.commentsReceiveAll, 'String');
       }
       if (data.hasOwnProperty('deliveryFailed')) {
-        obj['deliveryFailed'] = ApiClient.convertToType(data['deliveryFailed'], 'String');
+        obj.deliveryFailed = ApiClient.convertToType(data.deliveryFailed, 'String');
       }
       if (data.hasOwnProperty('envelopeComplete')) {
-        obj['envelopeComplete'] = ApiClient.convertToType(data['envelopeComplete'], 'String');
+        obj.envelopeComplete = ApiClient.convertToType(data.envelopeComplete, 'String');
       }
       if (data.hasOwnProperty('offlineSigningFailed')) {
-        obj['offlineSigningFailed'] = ApiClient.convertToType(data['offlineSigningFailed'], 'String');
+        obj.offlineSigningFailed = ApiClient.convertToType(data.offlineSigningFailed, 'String');
       }
       if (data.hasOwnProperty('powerformResponsesLimitNotificationEmail')) {
-        obj['powerformResponsesLimitNotificationEmail'] = ApiClient.convertToType(data['powerformResponsesLimitNotificationEmail'], 'String');
+        obj.powerformResponsesLimitNotificationEmail = ApiClient.convertToType(data.powerformResponsesLimitNotificationEmail, 'String');
       }
       if (data.hasOwnProperty('purgeDocuments')) {
-        obj['purgeDocuments'] = ApiClient.convertToType(data['purgeDocuments'], 'String');
+        obj.purgeDocuments = ApiClient.convertToType(data.purgeDocuments, 'String');
       }
       if (data.hasOwnProperty('recipientViewed')) {
-        obj['recipientViewed'] = ApiClient.convertToType(data['recipientViewed'], 'String');
+        obj.recipientViewed = ApiClient.convertToType(data.recipientViewed, 'String');
       }
       if (data.hasOwnProperty('senderEnvelopeDeclined')) {
-        obj['senderEnvelopeDeclined'] = ApiClient.convertToType(data['senderEnvelopeDeclined'], 'String');
+        obj.senderEnvelopeDeclined = ApiClient.convertToType(data.senderEnvelopeDeclined, 'String');
       }
       if (data.hasOwnProperty('withdrawnConsent')) {
-        obj['withdrawnConsent'] = ApiClient.convertToType(data['withdrawnConsent'], 'String');
+        obj.withdrawnConsent = ApiClient.convertToType(data.withdrawnConsent, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * When set to **true**, the sender receives notification if the signer changes.
    * @member {String} changedSigner
    */
-  exports.prototype['changedSigner'] = undefined;
+  exports.prototype.changedSigner = undefined;
   /**
-   * 
+   *
    * @member {String} commentsOnlyPrivateAndMention
    */
-  exports.prototype['commentsOnlyPrivateAndMention'] = undefined;
+  exports.prototype.commentsOnlyPrivateAndMention = undefined;
   /**
-   * 
+   *
    * @member {String} commentsReceiveAll
    */
-  exports.prototype['commentsReceiveAll'] = undefined;
+  exports.prototype.commentsReceiveAll = undefined;
   /**
    * When set to **true**, the sender receives notification if the delivery of the envelope fails.
    * @member {String} deliveryFailed
    */
-  exports.prototype['deliveryFailed'] = undefined;
+  exports.prototype.deliveryFailed = undefined;
   /**
    * When set to **true**, the user receives notification that the envelope has been completed.
    * @member {String} envelopeComplete
    */
-  exports.prototype['envelopeComplete'] = undefined;
+  exports.prototype.envelopeComplete = undefined;
   /**
    * When set to **true**, the user receives notification if the offline signing failed.
    * @member {String} offlineSigningFailed
    */
-  exports.prototype['offlineSigningFailed'] = undefined;
+  exports.prototype.offlineSigningFailed = undefined;
   /**
-   * 
+   *
    * @member {String} powerformResponsesLimitNotificationEmail
    */
-  exports.prototype['powerformResponsesLimitNotificationEmail'] = undefined;
+  exports.prototype.powerformResponsesLimitNotificationEmail = undefined;
   /**
-   * 
+   *
    * @member {String} purgeDocuments
    */
-  exports.prototype['purgeDocuments'] = undefined;
+  exports.prototype.purgeDocuments = undefined;
   /**
    * When set to **true**, the sender receives notification that the recipient viewed the enveloper.
    * @member {String} recipientViewed
    */
-  exports.prototype['recipientViewed'] = undefined;
+  exports.prototype.recipientViewed = undefined;
   /**
-   * 
+   *
    * @member {String} senderEnvelopeDeclined
    */
-  exports.prototype['senderEnvelopeDeclined'] = undefined;
+  exports.prototype.senderEnvelopeDeclined = undefined;
   /**
    * When set to **true**, the user receives notification if consent is withdrawn.
    * @member {String} withdrawnConsent
    */
-  exports.prototype['withdrawnConsent'] = undefined;
-
-
+  exports.prototype.withdrawnConsent = undefined;
 
   return exports;
 }));
-
-

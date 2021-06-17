@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ReportInProductListItem = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The ReportInProductListItem model module.
    * @module model/ReportInProductListItem
@@ -37,10 +34,8 @@
    * @alias module:model/ReportInProductListItem
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,130 +45,126 @@
    * @param {module:model/ReportInProductListItem} obj Optional instance to populate.
    * @return {module:model/ReportInProductListItem} The populated <code>ReportInProductListItem</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('getUri')) {
-        obj['getUri'] = ApiClient.convertToType(data['getUri'], 'String');
+        obj.getUri = ApiClient.convertToType(data.getUri, 'String');
       }
       if (data.hasOwnProperty('lastScheduledExecutionDate')) {
-        obj['lastScheduledExecutionDate'] = ApiClient.convertToType(data['lastScheduledExecutionDate'], 'String');
+        obj.lastScheduledExecutionDate = ApiClient.convertToType(data.lastScheduledExecutionDate, 'String');
       }
       if (data.hasOwnProperty('lastScheduledExecutionSuccessDate')) {
-        obj['lastScheduledExecutionSuccessDate'] = ApiClient.convertToType(data['lastScheduledExecutionSuccessDate'], 'String');
+        obj.lastScheduledExecutionSuccessDate = ApiClient.convertToType(data.lastScheduledExecutionSuccessDate, 'String');
       }
       if (data.hasOwnProperty('reportCustomizedId')) {
-        obj['reportCustomizedId'] = ApiClient.convertToType(data['reportCustomizedId'], 'String');
+        obj.reportCustomizedId = ApiClient.convertToType(data.reportCustomizedId, 'String');
       }
       if (data.hasOwnProperty('reportDescription')) {
-        obj['reportDescription'] = ApiClient.convertToType(data['reportDescription'], 'String');
+        obj.reportDescription = ApiClient.convertToType(data.reportDescription, 'String');
       }
       if (data.hasOwnProperty('reportId')) {
-        obj['reportId'] = ApiClient.convertToType(data['reportId'], 'String');
+        obj.reportId = ApiClient.convertToType(data.reportId, 'String');
       }
       if (data.hasOwnProperty('reportName')) {
-        obj['reportName'] = ApiClient.convertToType(data['reportName'], 'String');
+        obj.reportName = ApiClient.convertToType(data.reportName, 'String');
       }
       if (data.hasOwnProperty('reportType')) {
-        obj['reportType'] = ApiClient.convertToType(data['reportType'], 'String');
+        obj.reportType = ApiClient.convertToType(data.reportType, 'String');
       }
       if (data.hasOwnProperty('runUri')) {
-        obj['runUri'] = ApiClient.convertToType(data['runUri'], 'String');
+        obj.runUri = ApiClient.convertToType(data.runUri, 'String');
       }
       if (data.hasOwnProperty('saveUri')) {
-        obj['saveUri'] = ApiClient.convertToType(data['saveUri'], 'String');
+        obj.saveUri = ApiClient.convertToType(data.saveUri, 'String');
       }
       if (data.hasOwnProperty('scheduleCreateDate')) {
-        obj['scheduleCreateDate'] = ApiClient.convertToType(data['scheduleCreateDate'], 'String');
+        obj.scheduleCreateDate = ApiClient.convertToType(data.scheduleCreateDate, 'String');
       }
       if (data.hasOwnProperty('scheduleEndDate')) {
-        obj['scheduleEndDate'] = ApiClient.convertToType(data['scheduleEndDate'], 'String');
+        obj.scheduleEndDate = ApiClient.convertToType(data.scheduleEndDate, 'String');
       }
       if (data.hasOwnProperty('scheduleId')) {
-        obj['scheduleId'] = ApiClient.convertToType(data['scheduleId'], 'String');
+        obj.scheduleId = ApiClient.convertToType(data.scheduleId, 'String');
       }
       if (data.hasOwnProperty('scheduleRenewDurationDays')) {
-        obj['scheduleRenewDurationDays'] = ApiClient.convertToType(data['scheduleRenewDurationDays'], 'String');
+        obj.scheduleRenewDurationDays = ApiClient.convertToType(data.scheduleRenewDurationDays, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} getUri
    */
-  exports.prototype['getUri'] = undefined;
+  exports.prototype.getUri = undefined;
   /**
-   * 
+   *
    * @member {String} lastScheduledExecutionDate
    */
-  exports.prototype['lastScheduledExecutionDate'] = undefined;
+  exports.prototype.lastScheduledExecutionDate = undefined;
   /**
-   * 
+   *
    * @member {String} lastScheduledExecutionSuccessDate
    */
-  exports.prototype['lastScheduledExecutionSuccessDate'] = undefined;
+  exports.prototype.lastScheduledExecutionSuccessDate = undefined;
   /**
-   * 
+   *
    * @member {String} reportCustomizedId
    */
-  exports.prototype['reportCustomizedId'] = undefined;
+  exports.prototype.reportCustomizedId = undefined;
   /**
-   * 
+   *
    * @member {String} reportDescription
    */
-  exports.prototype['reportDescription'] = undefined;
+  exports.prototype.reportDescription = undefined;
   /**
-   * 
+   *
    * @member {String} reportId
    */
-  exports.prototype['reportId'] = undefined;
+  exports.prototype.reportId = undefined;
   /**
-   * 
+   *
    * @member {String} reportName
    */
-  exports.prototype['reportName'] = undefined;
+  exports.prototype.reportName = undefined;
   /**
-   * 
+   *
    * @member {String} reportType
    */
-  exports.prototype['reportType'] = undefined;
+  exports.prototype.reportType = undefined;
   /**
-   * 
+   *
    * @member {String} runUri
    */
-  exports.prototype['runUri'] = undefined;
+  exports.prototype.runUri = undefined;
   /**
-   * 
+   *
    * @member {String} saveUri
    */
-  exports.prototype['saveUri'] = undefined;
+  exports.prototype.saveUri = undefined;
   /**
-   * 
+   *
    * @member {String} scheduleCreateDate
    */
-  exports.prototype['scheduleCreateDate'] = undefined;
+  exports.prototype.scheduleCreateDate = undefined;
   /**
-   * 
+   *
    * @member {String} scheduleEndDate
    */
-  exports.prototype['scheduleEndDate'] = undefined;
+  exports.prototype.scheduleEndDate = undefined;
   /**
-   * 
+   *
    * @member {String} scheduleId
    */
-  exports.prototype['scheduleId'] = undefined;
+  exports.prototype.scheduleId = undefined;
   /**
-   * 
+   *
    * @member {String} scheduleRenewDurationDays
    */
-  exports.prototype['scheduleRenewDurationDays'] = undefined;
-
-
+  exports.prototype.scheduleRenewDurationDays = undefined;
 
   return exports;
 }));
-
-

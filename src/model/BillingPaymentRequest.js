@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.BillingPaymentRequest = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The BillingPaymentRequest model module.
    * @module model/BillingPaymentRequest
@@ -37,10 +34,8 @@
    * @alias module:model/BillingPaymentRequest
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/BillingPaymentRequest} obj Optional instance to populate.
    * @return {module:model/BillingPaymentRequest} The populated <code>BillingPaymentRequest</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('paymentAmount')) {
-        obj['paymentAmount'] = ApiClient.convertToType(data['paymentAmount'], 'String');
+        obj.paymentAmount = ApiClient.convertToType(data.paymentAmount, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
    * The payment amount for the past due invoices. This value must match the pastDueBalance value retrieved using Get Past Due Invoices.
    * @member {String} paymentAmount
    */
-  exports.prototype['paymentAmount'] = undefined;
-
-
+  exports.prototype.paymentAmount = undefined;
 
   return exports;
 }));
-
-

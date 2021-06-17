@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/WorkspaceSettings', 'model/WorkspaceUser'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.Workspace = factory(root.Docusign.ApiClient, root.Docusign.WorkspaceSettings, root.Docusign.WorkspaceUser);
   }
-}(this, function(ApiClient, WorkspaceSettings, WorkspaceUser) {
-  'use strict';
-
-
+}(this, (ApiClient, WorkspaceSettings, WorkspaceUser) => {
   /**
    * The Workspace model module.
    * @module model/Workspace
@@ -38,10 +35,8 @@
    * @alias module:model/Workspace
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -51,118 +46,114 @@
    * @param {module:model/Workspace} obj Optional instance to populate.
    * @return {module:model/Workspace} The populated <code>Workspace</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('billableAccountId')) {
-        obj['billableAccountId'] = ApiClient.convertToType(data['billableAccountId'], 'String');
+        obj.billableAccountId = ApiClient.convertToType(data.billableAccountId, 'String');
       }
       if (data.hasOwnProperty('callerInformation')) {
-        obj['callerInformation'] = WorkspaceUser.constructFromObject(data['callerInformation']);
+        obj.callerInformation = WorkspaceUser.constructFromObject(data.callerInformation);
       }
       if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+        obj.created = ApiClient.convertToType(data.created, 'String');
       }
       if (data.hasOwnProperty('createdByInformation')) {
-        obj['createdByInformation'] = WorkspaceUser.constructFromObject(data['createdByInformation']);
+        obj.createdByInformation = WorkspaceUser.constructFromObject(data.createdByInformation);
       }
       if (data.hasOwnProperty('lastModified')) {
-        obj['lastModified'] = ApiClient.convertToType(data['lastModified'], 'String');
+        obj.lastModified = ApiClient.convertToType(data.lastModified, 'String');
       }
       if (data.hasOwnProperty('lastModifiedByInformation')) {
-        obj['lastModifiedByInformation'] = WorkspaceUser.constructFromObject(data['lastModifiedByInformation']);
+        obj.lastModifiedByInformation = WorkspaceUser.constructFromObject(data.lastModifiedByInformation);
       }
       if (data.hasOwnProperty('settings')) {
-        obj['settings'] = WorkspaceSettings.constructFromObject(data['settings']);
+        obj.settings = WorkspaceSettings.constructFromObject(data.settings);
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('workspaceBaseUrl')) {
-        obj['workspaceBaseUrl'] = ApiClient.convertToType(data['workspaceBaseUrl'], 'String');
+        obj.workspaceBaseUrl = ApiClient.convertToType(data.workspaceBaseUrl, 'String');
       }
       if (data.hasOwnProperty('workspaceDescription')) {
-        obj['workspaceDescription'] = ApiClient.convertToType(data['workspaceDescription'], 'String');
+        obj.workspaceDescription = ApiClient.convertToType(data.workspaceDescription, 'String');
       }
       if (data.hasOwnProperty('workspaceId')) {
-        obj['workspaceId'] = ApiClient.convertToType(data['workspaceId'], 'String');
+        obj.workspaceId = ApiClient.convertToType(data.workspaceId, 'String');
       }
       if (data.hasOwnProperty('workspaceName')) {
-        obj['workspaceName'] = ApiClient.convertToType(data['workspaceName'], 'String');
+        obj.workspaceName = ApiClient.convertToType(data.workspaceName, 'String');
       }
       if (data.hasOwnProperty('workspaceUri')) {
-        obj['workspaceUri'] = ApiClient.convertToType(data['workspaceUri'], 'String');
+        obj.workspaceUri = ApiClient.convertToType(data.workspaceUri, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} billableAccountId
    */
-  exports.prototype['billableAccountId'] = undefined;
+  exports.prototype.billableAccountId = undefined;
   /**
    * @member {module:model/WorkspaceUser} callerInformation
    */
-  exports.prototype['callerInformation'] = undefined;
+  exports.prototype.callerInformation = undefined;
   /**
-   * 
+   *
    * @member {String} created
    */
-  exports.prototype['created'] = undefined;
+  exports.prototype.created = undefined;
   /**
    * @member {module:model/WorkspaceUser} createdByInformation
    */
-  exports.prototype['createdByInformation'] = undefined;
+  exports.prototype.createdByInformation = undefined;
   /**
    * Utc date and time the comment was last updated (can only be done by creator.)
    * @member {String} lastModified
    */
-  exports.prototype['lastModified'] = undefined;
+  exports.prototype.lastModified = undefined;
   /**
    * @member {module:model/WorkspaceUser} lastModifiedByInformation
    */
-  exports.prototype['lastModifiedByInformation'] = undefined;
+  exports.prototype.lastModifiedByInformation = undefined;
   /**
    * @member {module:model/WorkspaceSettings} settings
    */
-  exports.prototype['settings'] = undefined;
+  exports.prototype.settings = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
    * The relative URL that may be used to access the workspace.
    * @member {String} workspaceBaseUrl
    */
-  exports.prototype['workspaceBaseUrl'] = undefined;
+  exports.prototype.workspaceBaseUrl = undefined;
   /**
    * Text describing the purpose of the workspace.
    * @member {String} workspaceDescription
    */
-  exports.prototype['workspaceDescription'] = undefined;
+  exports.prototype.workspaceDescription = undefined;
   /**
    * The id of the workspace, always populated.
    * @member {String} workspaceId
    */
-  exports.prototype['workspaceId'] = undefined;
+  exports.prototype.workspaceId = undefined;
   /**
    * The name of the workspace.
    * @member {String} workspaceName
    */
-  exports.prototype['workspaceName'] = undefined;
+  exports.prototype.workspaceName = undefined;
   /**
    * The relative URI that may be used to access the workspace.
    * @member {String} workspaceUri
    */
-  exports.prototype['workspaceUri'] = undefined;
-
-
+  exports.prototype.workspaceUri = undefined;
 
   return exports;
 }));
-
-

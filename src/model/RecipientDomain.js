@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.RecipientDomain = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The RecipientDomain model module.
    * @module model/RecipientDomain
@@ -37,10 +34,8 @@
    * @alias module:model/RecipientDomain
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/RecipientDomain} obj Optional instance to populate.
    * @return {module:model/RecipientDomain} The populated <code>RecipientDomain</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('active')) {
-        obj['active'] = ApiClient.convertToType(data['active'], 'String');
+        obj.active = ApiClient.convertToType(data.active, 'String');
       }
       if (data.hasOwnProperty('domainCode')) {
-        obj['domainCode'] = ApiClient.convertToType(data['domainCode'], 'String');
+        obj.domainCode = ApiClient.convertToType(data.domainCode, 'String');
       }
       if (data.hasOwnProperty('domainName')) {
-        obj['domainName'] = ApiClient.convertToType(data['domainName'], 'String');
+        obj.domainName = ApiClient.convertToType(data.domainName, 'String');
       }
       if (data.hasOwnProperty('recipientDomainId')) {
-        obj['recipientDomainId'] = ApiClient.convertToType(data['recipientDomainId'], 'String');
+        obj.recipientDomainId = ApiClient.convertToType(data.recipientDomainId, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} active
    */
-  exports.prototype['active'] = undefined;
+  exports.prototype.active = undefined;
   /**
-   * 
+   *
    * @member {String} domainCode
    */
-  exports.prototype['domainCode'] = undefined;
+  exports.prototype.domainCode = undefined;
   /**
-   * 
+   *
    * @member {String} domainName
    */
-  exports.prototype['domainName'] = undefined;
+  exports.prototype.domainName = undefined;
   /**
-   * 
+   *
    * @member {String} recipientDomainId
    */
-  exports.prototype['recipientDomainId'] = undefined;
-
-
+  exports.prototype.recipientDomainId = undefined;
 
   return exports;
 }));
-
-

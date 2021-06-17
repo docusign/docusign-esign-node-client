@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.EventResult = factory(root.Docusign.ApiClient);
   }
-}(this, function(ApiClient) {
-  'use strict';
-
-
+}(this, (ApiClient) => {
   /**
    * The EventResult model module.
    * @module model/EventResult
@@ -37,10 +34,8 @@
    * @alias module:model/EventResult
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,50 +45,46 @@
    * @param {module:model/EventResult} obj Optional instance to populate.
    * @return {module:model/EventResult} The populated <code>EventResult</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('eventTimestamp')) {
-        obj['eventTimestamp'] = ApiClient.convertToType(data['eventTimestamp'], 'String');
+        obj.eventTimestamp = ApiClient.convertToType(data.eventTimestamp, 'String');
       }
       if (data.hasOwnProperty('failureDescription')) {
-        obj['failureDescription'] = ApiClient.convertToType(data['failureDescription'], 'String');
+        obj.failureDescription = ApiClient.convertToType(data.failureDescription, 'String');
       }
       if (data.hasOwnProperty('status')) {
-        obj['status'] = ApiClient.convertToType(data['status'], 'String');
+        obj.status = ApiClient.convertToType(data.status, 'String');
       }
       if (data.hasOwnProperty('vendorFailureStatusCode')) {
-        obj['vendorFailureStatusCode'] = ApiClient.convertToType(data['vendorFailureStatusCode'], 'String');
+        obj.vendorFailureStatusCode = ApiClient.convertToType(data.vendorFailureStatusCode, 'String');
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} eventTimestamp
    */
-  exports.prototype['eventTimestamp'] = undefined;
+  exports.prototype.eventTimestamp = undefined;
   /**
-   * 
+   *
    * @member {String} failureDescription
    */
-  exports.prototype['failureDescription'] = undefined;
+  exports.prototype.failureDescription = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
    */
-  exports.prototype['status'] = undefined;
+  exports.prototype.status = undefined;
   /**
-   * 
+   *
    * @member {String} vendorFailureStatusCode
    */
-  exports.prototype['vendorFailureStatusCode'] = undefined;
-
-
+  exports.prototype.vendorFailureStatusCode = undefined;
 
   return exports;
 }));
-
-

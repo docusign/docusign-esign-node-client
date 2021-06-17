@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/ConnectSalesforceField'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.ConnectSalesforceObject = factory(root.Docusign.ApiClient, root.Docusign.ConnectSalesforceField);
   }
-}(this, function(ApiClient, ConnectSalesforceField) {
-  'use strict';
-
-
+}(this, (ApiClient, ConnectSalesforceField) => {
   /**
    * The ConnectSalesforceObject model module.
    * @module model/ConnectSalesforceObject
@@ -37,10 +34,8 @@
    * @alias module:model/ConnectSalesforceObject
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,90 +45,86 @@
    * @param {module:model/ConnectSalesforceObject} obj Optional instance to populate.
    * @return {module:model/ConnectSalesforceObject} The populated <code>ConnectSalesforceObject</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('active')) {
-        obj['active'] = ApiClient.convertToType(data['active'], 'String');
+        obj.active = ApiClient.convertToType(data.active, 'String');
       }
       if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+        obj.description = ApiClient.convertToType(data.description, 'String');
       }
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+        obj.id = ApiClient.convertToType(data.id, 'String');
       }
       if (data.hasOwnProperty('insert')) {
-        obj['insert'] = ApiClient.convertToType(data['insert'], 'String');
+        obj.insert = ApiClient.convertToType(data.insert, 'String');
       }
       if (data.hasOwnProperty('onCompleteOnly')) {
-        obj['onCompleteOnly'] = ApiClient.convertToType(data['onCompleteOnly'], 'String');
+        obj.onCompleteOnly = ApiClient.convertToType(data.onCompleteOnly, 'String');
       }
       if (data.hasOwnProperty('selectFields')) {
-        obj['selectFields'] = ApiClient.convertToType(data['selectFields'], [ConnectSalesforceField]);
+        obj.selectFields = ApiClient.convertToType(data.selectFields, [ConnectSalesforceField]);
       }
       if (data.hasOwnProperty('sfObject')) {
-        obj['sfObject'] = ApiClient.convertToType(data['sfObject'], 'String');
+        obj.sfObject = ApiClient.convertToType(data.sfObject, 'String');
       }
       if (data.hasOwnProperty('sfObjectName')) {
-        obj['sfObjectName'] = ApiClient.convertToType(data['sfObjectName'], 'String');
+        obj.sfObjectName = ApiClient.convertToType(data.sfObjectName, 'String');
       }
       if (data.hasOwnProperty('updateFields')) {
-        obj['updateFields'] = ApiClient.convertToType(data['updateFields'], [ConnectSalesforceField]);
+        obj.updateFields = ApiClient.convertToType(data.updateFields, [ConnectSalesforceField]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} active
    */
-  exports.prototype['active'] = undefined;
+  exports.prototype.active = undefined;
   /**
-   * 
+   *
    * @member {String} description
    */
-  exports.prototype['description'] = undefined;
+  exports.prototype.description = undefined;
   /**
-   * 
+   *
    * @member {String} id
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype.id = undefined;
   /**
-   * 
+   *
    * @member {String} insert
    */
-  exports.prototype['insert'] = undefined;
+  exports.prototype.insert = undefined;
   /**
-   * 
+   *
    * @member {String} onCompleteOnly
    */
-  exports.prototype['onCompleteOnly'] = undefined;
+  exports.prototype.onCompleteOnly = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ConnectSalesforceField>} selectFields
    */
-  exports.prototype['selectFields'] = undefined;
+  exports.prototype.selectFields = undefined;
   /**
-   * 
+   *
    * @member {String} sfObject
    */
-  exports.prototype['sfObject'] = undefined;
+  exports.prototype.sfObject = undefined;
   /**
-   * 
+   *
    * @member {String} sfObjectName
    */
-  exports.prototype['sfObjectName'] = undefined;
+  exports.prototype.sfObjectName = undefined;
   /**
-   * 
+   *
    * @member {Array.<module:model/ConnectSalesforceField>} updateFields
    */
-  exports.prototype['updateFields'] = undefined;
-
-
+  exports.prototype.updateFields = undefined;
 
   return exports;
 }));
-
-

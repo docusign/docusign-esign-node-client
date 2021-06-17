@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/SettingsMetadata'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccessCodeFormat = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, SettingsMetadata) {
-  'use strict';
-
-
+}(this, (ApiClient, SettingsMetadata) => {
   /**
    * The AccessCodeFormat model module.
    * @module model/AccessCodeFormat
@@ -37,10 +34,8 @@
    * @alias module:model/AccessCodeFormat
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,93 +45,89 @@
    * @param {module:model/AccessCodeFormat} obj Optional instance to populate.
    * @return {module:model/AccessCodeFormat} The populated <code>AccessCodeFormat</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('formatRequired')) {
-        obj['formatRequired'] = ApiClient.convertToType(data['formatRequired'], 'String');
+        obj.formatRequired = ApiClient.convertToType(data.formatRequired, 'String');
       }
       if (data.hasOwnProperty('formatRequiredMetadata')) {
-        obj['formatRequiredMetadata'] = SettingsMetadata.constructFromObject(data['formatRequiredMetadata']);
+        obj.formatRequiredMetadata = SettingsMetadata.constructFromObject(data.formatRequiredMetadata);
       }
       if (data.hasOwnProperty('letterRequired')) {
-        obj['letterRequired'] = ApiClient.convertToType(data['letterRequired'], 'String');
+        obj.letterRequired = ApiClient.convertToType(data.letterRequired, 'String');
       }
       if (data.hasOwnProperty('letterRequiredMetadata')) {
-        obj['letterRequiredMetadata'] = SettingsMetadata.constructFromObject(data['letterRequiredMetadata']);
+        obj.letterRequiredMetadata = SettingsMetadata.constructFromObject(data.letterRequiredMetadata);
       }
       if (data.hasOwnProperty('minimumLength')) {
-        obj['minimumLength'] = ApiClient.convertToType(data['minimumLength'], 'String');
+        obj.minimumLength = ApiClient.convertToType(data.minimumLength, 'String');
       }
       if (data.hasOwnProperty('minimumLengthMetadata')) {
-        obj['minimumLengthMetadata'] = SettingsMetadata.constructFromObject(data['minimumLengthMetadata']);
+        obj.minimumLengthMetadata = SettingsMetadata.constructFromObject(data.minimumLengthMetadata);
       }
       if (data.hasOwnProperty('numberRequired')) {
-        obj['numberRequired'] = ApiClient.convertToType(data['numberRequired'], 'String');
+        obj.numberRequired = ApiClient.convertToType(data.numberRequired, 'String');
       }
       if (data.hasOwnProperty('numberRequiredMetadata')) {
-        obj['numberRequiredMetadata'] = SettingsMetadata.constructFromObject(data['numberRequiredMetadata']);
+        obj.numberRequiredMetadata = SettingsMetadata.constructFromObject(data.numberRequiredMetadata);
       }
       if (data.hasOwnProperty('specialCharacterRequired')) {
-        obj['specialCharacterRequired'] = ApiClient.convertToType(data['specialCharacterRequired'], 'String');
+        obj.specialCharacterRequired = ApiClient.convertToType(data.specialCharacterRequired, 'String');
       }
       if (data.hasOwnProperty('specialCharacterRequiredMetadata')) {
-        obj['specialCharacterRequiredMetadata'] = SettingsMetadata.constructFromObject(data['specialCharacterRequiredMetadata']);
+        obj.specialCharacterRequiredMetadata = SettingsMetadata.constructFromObject(data.specialCharacterRequiredMetadata);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {String} formatRequired
    */
-  exports.prototype['formatRequired'] = undefined;
+  exports.prototype.formatRequired = undefined;
   /**
    * @member {module:model/SettingsMetadata} formatRequiredMetadata
    */
-  exports.prototype['formatRequiredMetadata'] = undefined;
+  exports.prototype.formatRequiredMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} letterRequired
    */
-  exports.prototype['letterRequired'] = undefined;
+  exports.prototype.letterRequired = undefined;
   /**
    * @member {module:model/SettingsMetadata} letterRequiredMetadata
    */
-  exports.prototype['letterRequiredMetadata'] = undefined;
+  exports.prototype.letterRequiredMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} minimumLength
    */
-  exports.prototype['minimumLength'] = undefined;
+  exports.prototype.minimumLength = undefined;
   /**
    * @member {module:model/SettingsMetadata} minimumLengthMetadata
    */
-  exports.prototype['minimumLengthMetadata'] = undefined;
+  exports.prototype.minimumLengthMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} numberRequired
    */
-  exports.prototype['numberRequired'] = undefined;
+  exports.prototype.numberRequired = undefined;
   /**
    * @member {module:model/SettingsMetadata} numberRequiredMetadata
    */
-  exports.prototype['numberRequiredMetadata'] = undefined;
+  exports.prototype.numberRequiredMetadata = undefined;
   /**
-   * 
+   *
    * @member {String} specialCharacterRequired
    */
-  exports.prototype['specialCharacterRequired'] = undefined;
+  exports.prototype.specialCharacterRequired = undefined;
   /**
    * @member {module:model/SettingsMetadata} specialCharacterRequiredMetadata
    */
-  exports.prototype['specialCharacterRequiredMetadata'] = undefined;
-
-
+  exports.prototype.specialCharacterRequiredMetadata = undefined;
 
   return exports;
 }));
-
-

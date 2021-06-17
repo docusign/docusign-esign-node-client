@@ -9,7 +9,7 @@
  *
  */
 
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'model/AccountSignatureProvider'], factory);
@@ -23,10 +23,7 @@
     }
     root.Docusign.AccountSignatureProviders = factory(root.Docusign.ApiClient, root.Docusign.AccountSignatureProvider);
   }
-}(this, function(ApiClient, AccountSignatureProvider) {
-  'use strict';
-
-
+}(this, (ApiClient, AccountSignatureProvider) => {
   /**
    * The AccountSignatureProviders model module.
    * @module model/AccountSignatureProviders
@@ -37,10 +34,8 @@
    * @alias module:model/AccountSignatureProviders
    * @class
    */
-  var exports = function() {
-    var _this = this;
-
-
+  const exports = function () {
+    const _this = this;
   };
 
   /**
@@ -50,26 +45,22 @@
    * @param {module:model/AccountSignatureProviders} obj Optional instance to populate.
    * @return {module:model/AccountSignatureProviders} The populated <code>AccountSignatureProviders</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
+  exports.constructFromObject = function (data, obj) {
     if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('signatureProviders')) {
-        obj['signatureProviders'] = ApiClient.convertToType(data['signatureProviders'], [AccountSignatureProvider]);
+        obj.signatureProviders = ApiClient.convertToType(data.signatureProviders, [AccountSignatureProvider]);
       }
     }
     return obj;
-  }
+  };
 
   /**
-   * 
+   *
    * @member {Array.<module:model/AccountSignatureProvider>} signatureProviders
    */
-  exports.prototype['signatureProviders'] = undefined;
-
-
+  exports.prototype.signatureProviders = undefined;
 
   return exports;
 }));
-
-
