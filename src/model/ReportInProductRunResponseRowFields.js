@@ -93,6 +93,12 @@
       if (data.hasOwnProperty('createdDate')) {
         obj['createdDate'] = ApiClient.convertToType(data['createdDate'], 'String');
       }
+      if (data.hasOwnProperty('createdOn')) {
+        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
+      }
+      if (data.hasOwnProperty('creator')) {
+        obj['creator'] = ApiClient.convertToType(data['creator'], 'String');
+      }
       if (data.hasOwnProperty('customField')) {
         obj['customField'] = ApiClient.convertToType(data['customField'], 'String');
       }
@@ -216,8 +222,14 @@
       if (data.hasOwnProperty('lastActivityDate')) {
         obj['lastActivityDate'] = ApiClient.convertToType(data['lastActivityDate'], 'String');
       }
+      if (data.hasOwnProperty('lastModified')) {
+        obj['lastModified'] = ApiClient.convertToType(data['lastModified'], 'String');
+      }
       if (data.hasOwnProperty('lastSentDate')) {
         obj['lastSentDate'] = ApiClient.convertToType(data['lastSentDate'], 'String');
+      }
+      if (data.hasOwnProperty('lastUsed')) {
+        obj['lastUsed'] = ApiClient.convertToType(data['lastUsed'], 'String');
       }
       if (data.hasOwnProperty('metadataRemoved')) {
         obj['metadataRemoved'] = ApiClient.convertToType(data['metadataRemoved'], 'String');
@@ -260,6 +272,12 @@
       }
       if (data.hasOwnProperty('numberTotalRecipients')) {
         obj['numberTotalRecipients'] = ApiClient.convertToType(data['numberTotalRecipients'], 'String');
+      }
+      if (data.hasOwnProperty('owner')) {
+        obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
+      }
+      if (data.hasOwnProperty('ownerMail')) {
+        obj['ownerMail'] = ApiClient.convertToType(data['ownerMail'], 'String');
       }
       if (data.hasOwnProperty('periodEnd')) {
         obj['periodEnd'] = ApiClient.convertToType(data['periodEnd'], 'String');
@@ -311,6 +329,9 @@
       }
       if (data.hasOwnProperty('recipientName')) {
         obj['recipientName'] = ApiClient.convertToType(data['recipientName'], 'String');
+      }
+      if (data.hasOwnProperty('recipientRoleName')) {
+        obj['recipientRoleName'] = ApiClient.convertToType(data['recipientRoleName'], 'String');
       }
       if (data.hasOwnProperty('recipientTemplateRoleName')) {
         obj['recipientTemplateRoleName'] = ApiClient.convertToType(data['recipientTemplateRoleName'], 'String');
@@ -389,6 +410,12 @@
       }
       if (data.hasOwnProperty('successes')) {
         obj['successes'] = ApiClient.convertToType(data['successes'], 'String');
+      }
+      if (data.hasOwnProperty('templateId')) {
+        obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
+      }
+      if (data.hasOwnProperty('templateName')) {
+        obj['templateName'] = ApiClient.convertToType(data['templateName'], 'String');
       }
       if (data.hasOwnProperty('templatesCreated')) {
         obj['templatesCreated'] = ApiClient.convertToType(data['templatesCreated'], 'String');
@@ -519,6 +546,16 @@
    * @member {String} createdDate
    */
   exports.prototype['createdDate'] = undefined;
+  /**
+   * 
+   * @member {String} createdOn
+   */
+  exports.prototype['createdOn'] = undefined;
+  /**
+   * 
+   * @member {String} creator
+   */
+  exports.prototype['creator'] = undefined;
   /**
    * 
    * @member {String} customField
@@ -726,9 +763,19 @@
   exports.prototype['lastActivityDate'] = undefined;
   /**
    * 
+   * @member {String} lastModified
+   */
+  exports.prototype['lastModified'] = undefined;
+  /**
+   * 
    * @member {String} lastSentDate
    */
   exports.prototype['lastSentDate'] = undefined;
+  /**
+   * 
+   * @member {String} lastUsed
+   */
+  exports.prototype['lastUsed'] = undefined;
   /**
    * 
    * @member {String} metadataRemoved
@@ -799,6 +846,16 @@
    * @member {String} numberTotalRecipients
    */
   exports.prototype['numberTotalRecipients'] = undefined;
+  /**
+   * 
+   * @member {String} owner
+   */
+  exports.prototype['owner'] = undefined;
+  /**
+   * 
+   * @member {String} ownerMail
+   */
+  exports.prototype['ownerMail'] = undefined;
   /**
    * 
    * @member {String} periodEnd
@@ -884,6 +941,11 @@
    * @member {String} recipientName
    */
   exports.prototype['recipientName'] = undefined;
+  /**
+   * 
+   * @member {String} recipientRoleName
+   */
+  exports.prototype['recipientRoleName'] = undefined;
   /**
    * 
    * @member {String} recipientTemplateRoleName
@@ -1014,6 +1076,16 @@
    * @member {String} successes
    */
   exports.prototype['successes'] = undefined;
+  /**
+   * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
+   * @member {String} templateId
+   */
+  exports.prototype['templateId'] = undefined;
+  /**
+   * 
+   * @member {String} templateName
+   */
+  exports.prototype['templateName'] = undefined;
   /**
    * 
    * @member {String} templatesCreated

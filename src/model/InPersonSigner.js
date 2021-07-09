@@ -69,6 +69,9 @@
       if (data.hasOwnProperty('autoNavigation')) {
         obj['autoNavigation'] = ApiClient.convertToType(data['autoNavigation'], 'String');
       }
+      if (data.hasOwnProperty('autoRespondedReason')) {
+        obj['autoRespondedReason'] = ApiClient.convertToType(data['autoRespondedReason'], 'String');
+      }
       if (data.hasOwnProperty('canSignOffline')) {
         obj['canSignOffline'] = ApiClient.convertToType(data['canSignOffline'], 'String');
       }
@@ -358,6 +361,11 @@
    * @member {String} autoNavigation
    */
   exports.prototype['autoNavigation'] = undefined;
+  /**
+   * 
+   * @member {String} autoRespondedReason
+   */
+  exports.prototype['autoRespondedReason'] = undefined;
   /**
    * When set to **true**, specifies that the signer can perform the signing ceremony offline.
    * @member {String} canSignOffline

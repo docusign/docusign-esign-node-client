@@ -115,6 +115,12 @@
       if (data.hasOwnProperty('planName')) {
         obj['planName'] = ApiClient.convertToType(data['planName'], 'String');
       }
+      if (data.hasOwnProperty('planStartDate')) {
+        obj['planStartDate'] = ApiClient.convertToType(data['planStartDate'], 'String');
+      }
+      if (data.hasOwnProperty('renewalDate')) {
+        obj['renewalDate'] = ApiClient.convertToType(data['renewalDate'], 'String');
+      }
       if (data.hasOwnProperty('renewalStatus')) {
         obj['renewalStatus'] = ApiClient.convertToType(data['renewalStatus'], 'String');
       }
@@ -230,6 +236,16 @@
    * @member {String} planName
    */
   exports.prototype['planName'] = undefined;
+  /**
+   * 
+   * @member {String} planStartDate
+   */
+  exports.prototype['planStartDate'] = undefined;
+  /**
+   * 
+   * @member {String} renewalDate
+   */
+  exports.prototype['renewalDate'] = undefined;
   /**
    * The renewal status for the account. The acceptable values are:  * auto: The account automatically renews. * queued_for_close: Account will be closed at the billingPeriodEndDate. * queued_for_downgrade: Account will be downgraded at the billingPeriodEndDate.
    * @member {String} renewalStatus

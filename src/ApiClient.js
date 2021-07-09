@@ -667,9 +667,16 @@
           var result = {};
           for (var k in data) {
             if (data.hasOwnProperty(k)) {
+              if(keyType.includes('prefill')) {
+                console.log('starwars3')
+              }
               var key = exports.convertToType(k, keyType);
               var value = exports.convertToType(data[k], valueType);
               result[key] = value;
+              if(keyType.includes('prefill')) {
+                console.log('starwars4')
+                console.log(value)
+              }
             }
           }
           return result;

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EnvelopeFormDataPrefillFormData', 'model/FormDataItem', 'model/RecipientFormData'], factory);
+    define(['ApiClient', 'model/FormDataItem', 'model/PrefillFormData', 'model/RecipientFormData'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EnvelopeFormDataPrefillFormData'), require('./FormDataItem'), require('./RecipientFormData'));
+    module.exports = factory(require('../ApiClient'), require('./FormDataItem'), require('./PrefillFormData'), require('./RecipientFormData'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeFormData = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeFormDataPrefillFormData, root.Docusign.FormDataItem, root.Docusign.RecipientFormData);
+    root.Docusign.EnvelopeFormData = factory(root.Docusign.ApiClient, root.Docusign.FormDataItem, root.Docusign.PrefillFormData, root.Docusign.RecipientFormData);
   }
-}(this, function(ApiClient, EnvelopeFormDataPrefillFormData, FormDataItem, RecipientFormData) {
+}(this, function(ApiClient, FormDataItem, PrefillFormData, RecipientFormData) {
   'use strict';
 
 
@@ -64,7 +64,7 @@
         obj['formData'] = ApiClient.convertToType(data['formData'], [FormDataItem]);
       }
       if (data.hasOwnProperty('prefillFormData')) {
-        obj['prefillFormData'] = EnvelopeFormDataPrefillFormData.constructFromObject(data['prefillFormData']);
+        obj['prefillFormData'] = PrefillFormData.constructFromObject(data['prefillFormData']);
       }
       if (data.hasOwnProperty('recipientFormData')) {
         obj['recipientFormData'] = ApiClient.convertToType(data['recipientFormData'], [RecipientFormData]);
@@ -95,7 +95,7 @@
    */
   exports.prototype['formData'] = undefined;
   /**
-   * @member {module:model/EnvelopeFormDataPrefillFormData} prefillFormData
+   * @member {module:model/PrefillFormData} prefillFormData
    */
   exports.prototype['prefillFormData'] = undefined;
   /**
