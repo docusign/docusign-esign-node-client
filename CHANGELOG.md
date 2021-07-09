@@ -1,7 +1,7 @@
 # DocuSign Node Client Changelog
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
-## [v5.10.0-rc1] - eSignature API v2.1-21.1.02.00
+## [v5.10.0] - eSignature API v2.1-21.1.02.00
 ### Breaking
 - Removed methods `getAccountSettingsExport`,`getSealProviders` from Accounts.
 - Removed methods `createConnectSecret`,`deleteConnectSecret`,`generateConnectSecret`,`getConnectSecrets` from Connect.

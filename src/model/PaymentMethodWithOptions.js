@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('supportedCurrencies')) {
+        obj['supportedCurrencies'] = ApiClient.convertToType(data['supportedCurrencies'], ['String']);
+      }
       if (data.hasOwnProperty('supportedOptions')) {
         obj['supportedOptions'] = ApiClient.convertToType(data['supportedOptions'], ['String']);
       }
@@ -64,6 +67,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {Array.<String>} supportedCurrencies
+   */
+  exports.prototype['supportedCurrencies'] = undefined;
   /**
    * 
    * @member {Array.<String>} supportedOptions
