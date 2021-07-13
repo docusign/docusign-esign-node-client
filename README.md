@@ -1,26 +1,25 @@
-# The Official DocuSign eSignature Node Client SDK
+# The Official DocuSign eSignature Node.js Client SDK
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 
-[NPM module](https://www.npmjs.com/package/docusign-esign) that wraps the <a href="https://www.docusign.com">DocuSign</a> API
+[NPM module](https://www.npmjs.com/package/docusign-esign)
 
-[Documentation about the DocuSign API](https://developers.docusign.com/)
+[Documentation about DocuSign APIs](https://developers.docusign.com/)
 
-[Documentation about this package](http://docusign.github.io/docusign-node-client)
 <!---
 [Changelog](./CHANGELOG.md)
 commented out
 -->
 
 ## Requirements
-*   Node 4
+*   Node.js 4
 *   Free [developer account](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 
 ## Compatibility
-*   Node 4+
+*   Node.js 4+
 
 ## Installation
 This SDK is provided as open source, which enables you to customize its functionality to suit your particular use case. To do so, download or clone the repository. If the SDK’s given functionality meets your integration needs, or if you’re working through our [code examples](https://developers.docusign.com/docs/esign-rest-api/how-to/) from the [DocuSign Developer Center](https://developers.docusign.com/), you merely need to install it by following the instructions below.
@@ -45,7 +44,7 @@ This client has the following external dependencies:
 
 ## Code examples
 
-You can find on our GitHub a self-executing package of code examples for the eSignature C# SDK, called a [Launcher](https://github.com/docusign/code-examples-node/blob/master/README.md), that demonstrates common use cases. You can also download a version preconfigured for your DocuSign developer account from [Quickstart](https://developers.docusign.com/docs/esign-rest-api/quickstart/). These examples can use either the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) or [JSON Web Token (JWT)](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken) authentication workflows.
+You can find on our GitHub a self-executing package of code examples for the eSignature Node.js SDK, called a [Launcher](https://github.com/docusign/code-examples-node/blob/master/README.md), that demonstrates common use cases. You can also download a version preconfigured for your DocuSign developer account from [Quickstart](https://developers.docusign.com/docs/esign-rest-api/quickstart/). These examples can use either the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) or [JSON Web Token (JWT)](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-jsonwebtoken) authentication workflows.
 
 ## OAuth implementations
 For details regarding which type of OAuth grant will work best for your DocuSign integration, see [Choose OAuth Type](https://developers.docusign.com/platform/auth/choose/) in the [DocuSign Developer Center](https://developers.docusign.com/).
