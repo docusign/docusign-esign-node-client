@@ -159,6 +159,9 @@
       if (data.hasOwnProperty('formPageNumberMetadata')) {
         obj['formPageNumberMetadata'] = PropertyMetadata.constructFromObject(data['formPageNumberMetadata']);
       }
+      if (data.hasOwnProperty('handDrawRequired')) {
+        obj['handDrawRequired'] = ApiClient.convertToType(data['handDrawRequired'], 'String');
+      }
       if (data.hasOwnProperty('height')) {
         obj['height'] = ApiClient.convertToType(data['height'], 'String');
       }
@@ -458,6 +461,11 @@
    * @member {module:model/PropertyMetadata} formPageNumberMetadata
    */
   exports.prototype['formPageNumberMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} handDrawRequired
+   */
+  exports.prototype['handDrawRequired'] = undefined;
   /**
    * Height of the tab in pixels.
    * @member {String} height

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/RecipientTokenClientURLs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./RecipientTokenClientURLs'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.RecipientViewRequest = factory(root.Docusign.ApiClient);
+    root.Docusign.RecipientViewRequest = factory(root.Docusign.ApiClient, root.Docusign.RecipientTokenClientURLs);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, RecipientTokenClientURLs) {
   'use strict';
 
 
@@ -62,6 +62,9 @@
       }
       if (data.hasOwnProperty('authenticationMethod')) {
         obj['authenticationMethod'] = ApiClient.convertToType(data['authenticationMethod'], 'String');
+      }
+      if (data.hasOwnProperty('clientURLs')) {
+        obj['clientURLs'] = RecipientTokenClientURLs.constructFromObject(data['clientURLs']);
       }
       if (data.hasOwnProperty('clientUserId')) {
         obj['clientUserId'] = ApiClient.convertToType(data['clientUserId'], 'String');
@@ -121,6 +124,10 @@
    * @member {String} authenticationMethod
    */
   exports.prototype['authenticationMethod'] = undefined;
+  /**
+   * @member {module:model/RecipientTokenClientURLs} clientURLs
+   */
+  exports.prototype['clientURLs'] = undefined;
   /**
    * A sender created value that shows the recipient is embedded (captive).   Maximum length: 100 characters.
    * @member {String} clientUserId

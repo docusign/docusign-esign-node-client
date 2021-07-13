@@ -1753,6 +1753,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.allowAllLanguages 
      * @param {module:model/UserSettingsInformation} optsOrCallback.userSettingsInformation 
      * @param {module:api/UsersApi~updateSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -1788,6 +1789,7 @@ The supported image formats are: gif, png, jpeg, and bmp. The file must be less 
         'userId': userId
       };
       var queryParams = {
+        'allow_all_languages': optsOrCallback['allowAllLanguages']
       };
       var headerParams = {
       };
@@ -2061,6 +2063,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.allowAllLanguages 
      * @param {module:model/UserInformation} optsOrCallback.userInformation 
      * @param {module:api/UsersApi~updateUserCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformation}
@@ -2097,6 +2100,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         'userId': userId
       };
       var queryParams = {
+        'allow_all_languages': optsOrCallback['allowAllLanguages']
       };
       var headerParams = {
       };
@@ -2127,6 +2131,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * Change one or more user in the specified account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.allowAllLanguages 
      * @param {module:model/UserInformationList} optsOrCallback.userInformationList 
      * @param {module:api/UsersApi~updateUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformationList}
@@ -2157,6 +2162,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         'accountId': accountId
       };
       var queryParams = {
+        'allow_all_languages': optsOrCallback['allowAllLanguages']
       };
       var headerParams = {
       };

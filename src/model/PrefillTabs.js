@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Checkbox', 'model/RadioGroup', 'model/TabGroup', 'model/Text'], factory);
+    define(['ApiClient', 'model/Checkbox', 'model/RadioGroup', 'model/SenderCompany', 'model/SenderName', 'model/TabGroup', 'model/Text'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Checkbox'), require('./RadioGroup'), require('./TabGroup'), require('./Text'));
+    module.exports = factory(require('../ApiClient'), require('./Checkbox'), require('./RadioGroup'), require('./SenderCompany'), require('./SenderName'), require('./TabGroup'), require('./Text'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.PrefillTabs = factory(root.Docusign.ApiClient, root.Docusign.Checkbox, root.Docusign.RadioGroup, root.Docusign.TabGroup, root.Docusign.Text);
+    root.Docusign.PrefillTabs = factory(root.Docusign.ApiClient, root.Docusign.Checkbox, root.Docusign.RadioGroup, root.Docusign.SenderCompany, root.Docusign.SenderName, root.Docusign.TabGroup, root.Docusign.Text);
   }
-}(this, function(ApiClient, Checkbox, RadioGroup, TabGroup, Text) {
+}(this, function(ApiClient, Checkbox, RadioGroup, SenderCompany, SenderName, TabGroup, Text) {
   'use strict';
 
 
@@ -60,6 +60,12 @@
       if (data.hasOwnProperty('radioGroupTabs')) {
         obj['radioGroupTabs'] = ApiClient.convertToType(data['radioGroupTabs'], [RadioGroup]);
       }
+      if (data.hasOwnProperty('senderCompanyTabs')) {
+        obj['senderCompanyTabs'] = ApiClient.convertToType(data['senderCompanyTabs'], [SenderCompany]);
+      }
+      if (data.hasOwnProperty('senderNameTabs')) {
+        obj['senderNameTabs'] = ApiClient.convertToType(data['senderNameTabs'], [SenderName]);
+      }
       if (data.hasOwnProperty('tabGroups')) {
         obj['tabGroups'] = ApiClient.convertToType(data['tabGroups'], [TabGroup]);
       }
@@ -80,6 +86,16 @@
    * @member {Array.<module:model/RadioGroup>} radioGroupTabs
    */
   exports.prototype['radioGroupTabs'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/SenderCompany>} senderCompanyTabs
+   */
+  exports.prototype['senderCompanyTabs'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/SenderName>} senderNameTabs
+   */
+  exports.prototype['senderNameTabs'] = undefined;
   /**
    * 
    * @member {Array.<module:model/TabGroup>} tabGroups

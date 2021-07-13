@@ -9,7 +9,7 @@
 
 [Documentation about the DocuSign API](https://developers.docusign.com/)
 
-[Documentation about this package](http://docusign.github.io/docusign-node-client)
+[Documentation about this package](http://docusign.github.io/docusign-esign-node-client)
 <!---
 [Changelog](./CHANGELOG.md)
 commented out
