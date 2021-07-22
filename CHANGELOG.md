@@ -1,6 +1,11 @@
 # DocuSign Node Client Changelog
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
+## [v4.13.0] - eSignature API v2-21.2.00.00
+### Changed
+- Added support for version v2-21.2.00.00 of the DocuSign eSignature API.
+- Updated the SDK release version.
+
 ## [v4.12.0] - eSignature API v2-21.1.02.00
 ### Breaking
 - Removed methods `getAccountSettingsExport`,`getSealProviders` from Accounts.
