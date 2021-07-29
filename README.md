@@ -27,8 +27,10 @@ This SDK is provided as open source, which enables you to customize its function
 
 ### NPM:
 1. Open your preferred command-line console, then navigate to your project.
-2. In the console, type the following commands: \
-npm install docusign-esign -save
+2. In the console, type the following commands: 
+```
+npm install docusign-esign
+```
 
 ## Dependencies
 This client has the following external dependencies:
