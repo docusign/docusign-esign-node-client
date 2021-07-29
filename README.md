@@ -68,7 +68,7 @@ The DocuSign eSignature Node Client SDK is licensed under the [MIT License](http
 [npm-url]: https://npmjs.org/package/docusign-esign
 [downloads-image]: https://img.shields.io/npm/dm/docusign-esign.svg?style=flat
 [downloads-url]: https://npmjs.org/package/docusign-esign
-[travis-image]: https://img.shields.io/travis/docusign/docusign-node-client.svg?style=flat
-[travis-url]: https://travis-ci.org/docusign/docusign-node-client
+[travis-image]: https://travis-ci.com/docusign/docusign-esign-node-client.svg?branch=master
+[travis-url]: https://travis-ci.com/docusign/docusign-esign-node-client
 [coveralls-image]: https://coveralls.io/repos/github/docusign/DocuSign-Node-Client/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/docusign/DocuSign-Node-Client?branch=master
