@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RecipientAdditionalNotification', 'model/RecipientEmailNotification', 'model/RecipientSignatureProvider', 'model/Tabs'], factory);
+    define(['ApiClient', 'model/RecipientAdditionalNotification', 'model/RecipientEmailNotification', 'model/RecipientPhoneNumber', 'model/RecipientSignatureProvider', 'model/Tabs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RecipientAdditionalNotification'), require('./RecipientEmailNotification'), require('./RecipientSignatureProvider'), require('./Tabs'));
+    module.exports = factory(require('../ApiClient'), require('./RecipientAdditionalNotification'), require('./RecipientEmailNotification'), require('./RecipientPhoneNumber'), require('./RecipientSignatureProvider'), require('./Tabs'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateRole = factory(root.Docusign.ApiClient, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientSignatureProvider, root.Docusign.Tabs);
+    root.Docusign.TemplateRole = factory(root.Docusign.ApiClient, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientSignatureProvider, root.Docusign.Tabs);
   }
-}(this, function(ApiClient, RecipientAdditionalNotification, RecipientEmailNotification, RecipientSignatureProvider, Tabs) {
+}(this, function(ApiClient, RecipientAdditionalNotification, RecipientEmailNotification, RecipientPhoneNumber, RecipientSignatureProvider, Tabs) {
   'use strict';
 
 
@@ -80,6 +80,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('phoneNumber')) {
+        obj['phoneNumber'] = RecipientPhoneNumber.constructFromObject(data['phoneNumber']);
       }
       if (data.hasOwnProperty('recipientSignatureProviders')) {
         obj['recipientSignatureProviders'] = ApiClient.convertToType(data['recipientSignatureProviders'], [RecipientSignatureProvider]);
@@ -144,6 +147,10 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {module:model/RecipientPhoneNumber} phoneNumber
+   */
+  exports.prototype['phoneNumber'] = undefined;
   /**
    * 
    * @member {Array.<module:model/RecipientSignatureProvider>} recipientSignatureProviders

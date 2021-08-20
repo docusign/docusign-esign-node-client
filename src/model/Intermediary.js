@@ -186,9 +186,6 @@
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = RecipientPhoneNumber.constructFromObject(data['phoneNumber']);
       }
-      if (data.hasOwnProperty('phoneNumberMetadata')) {
-        obj['phoneNumberMetadata'] = PropertyMetadata.constructFromObject(data['phoneNumberMetadata']);
-      }
       if (data.hasOwnProperty('recipientAttachments')) {
         obj['recipientAttachments'] = ApiClient.convertToType(data['recipientAttachments'], [RecipientAttachment]);
       }
@@ -478,10 +475,6 @@
    * @member {module:model/RecipientPhoneNumber} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} phoneNumberMetadata
-   */
-  exports.prototype['phoneNumberMetadata'] = undefined;
   /**
    * Reserved:
    * @member {Array.<module:model/RecipientAttachment>} recipientAttachments

@@ -90,6 +90,9 @@
       if (data.hasOwnProperty('signatureName')) {
         obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
       }
+      if (data.hasOwnProperty('signatureType')) {
+        obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
+      }
       if (data.hasOwnProperty('stampFormat')) {
         obj['stampFormat'] = ApiClient.convertToType(data['stampFormat'], 'String');
       }
@@ -159,6 +162,11 @@
    * @member {String} signatureName
    */
   exports.prototype['signatureName'] = undefined;
+  /**
+   * 
+   * @member {String} signatureType
+   */
+  exports.prototype['signatureType'] = undefined;
   /**
    * 
    * @member {String} stampFormat

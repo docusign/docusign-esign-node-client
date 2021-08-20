@@ -316,12 +316,12 @@
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} bulkSendBatchId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {Number} optsOrCallback.count 
+     * @param {String} optsOrCallback.count 
      * @param {String} optsOrCallback.include 
      * @param {String} optsOrCallback.order 
      * @param {String} optsOrCallback.orderBy 
      * @param {String} optsOrCallback.searchText 
-     * @param {Number} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.startPosition 
      * @param {String} optsOrCallback.status 
      * @param {String} optsOrCallback.userId 
      * @param {module:api/BulkEnvelopesApi~getBulkSendBatchEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
