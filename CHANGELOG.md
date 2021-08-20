@@ -2,7 +2,13 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [v4.13.1] - eSignature API v2-21.2.00.00 (07/29/2021)
+## [v4.14.0-rc1] - eSignature API v2-21.2.02.00 - 2021-08-11
+### Changed
+- Added support for version v2-21.2.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+
+## [v4.13.1] - eSignature API v2-21.2.00.00 - 2021-07-29
 ### Changed
 - Updated Get Form Data unit test.
 - Updated Travis-CI badge in README.md
