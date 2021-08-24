@@ -219,9 +219,6 @@
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = RecipientPhoneNumber.constructFromObject(data['phoneNumber']);
       }
-      if (data.hasOwnProperty('phoneNumberMetadata')) {
-        obj['phoneNumberMetadata'] = PropertyMetadata.constructFromObject(data['phoneNumberMetadata']);
-      }
       if (data.hasOwnProperty('proofFile')) {
         obj['proofFile'] = RecipientProofFile.constructFromObject(data['proofFile']);
       }
@@ -594,10 +591,6 @@
    * @member {module:model/RecipientPhoneNumber} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
-  /**
-   * @member {module:model/PropertyMetadata} phoneNumberMetadata
-   */
-  exports.prototype['phoneNumberMetadata'] = undefined;
   /**
    * @member {module:model/RecipientProofFile} proofFile
    */

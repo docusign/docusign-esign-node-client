@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('address')) {
         obj['address'] = AddressInformation.constructFromObject(data['address']);
       }
+      if (data.hasOwnProperty('cardLastDigits')) {
+        obj['cardLastDigits'] = ApiClient.convertToType(data['cardLastDigits'], 'String');
+      }
       if (data.hasOwnProperty('cardNumber')) {
         obj['cardNumber'] = ApiClient.convertToType(data['cardNumber'], 'String');
       }
@@ -75,6 +78,9 @@
       if (data.hasOwnProperty('nameOnCard')) {
         obj['nameOnCard'] = ApiClient.convertToType(data['nameOnCard'], 'String');
       }
+      if (data.hasOwnProperty('tokenizedCard')) {
+        obj['tokenizedCard'] = ApiClient.convertToType(data['tokenizedCard'], 'String');
+      }
     }
     return obj;
   }
@@ -83,6 +89,11 @@
    * @member {module:model/AddressInformation} address
    */
   exports.prototype['address'] = undefined;
+  /**
+   * 
+   * @member {String} cardLastDigits
+   */
+  exports.prototype['cardLastDigits'] = undefined;
   /**
    * The number on the credit card.
    * @member {String} cardNumber
@@ -113,6 +124,11 @@
    * @member {String} nameOnCard
    */
   exports.prototype['nameOnCard'] = undefined;
+  /**
+   * 
+   * @member {String} tokenizedCard
+   */
+  exports.prototype['tokenizedCard'] = undefined;
 
 
 

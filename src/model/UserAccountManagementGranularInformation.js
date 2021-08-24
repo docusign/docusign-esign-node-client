@@ -72,6 +72,12 @@
       if (data.hasOwnProperty('canManageAdminsMetadata')) {
         obj['canManageAdminsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAdminsMetadata']);
       }
+      if (data.hasOwnProperty('canManageDocumentRetention')) {
+        obj['canManageDocumentRetention'] = ApiClient.convertToType(data['canManageDocumentRetention'], 'String');
+      }
+      if (data.hasOwnProperty('canManageDocumentRetentionMetadata')) {
+        obj['canManageDocumentRetentionMetadata'] = SettingsMetadata.constructFromObject(data['canManageDocumentRetentionMetadata']);
+      }
       if (data.hasOwnProperty('canManageEnvelopeTransfer')) {
         obj['canManageEnvelopeTransfer'] = ApiClient.convertToType(data['canManageEnvelopeTransfer'], 'String');
       }
@@ -136,6 +142,15 @@
    * @member {module:model/SettingsMetadata} canManageAdminsMetadata
    */
   exports.prototype['canManageAdminsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageDocumentRetention
+   */
+  exports.prototype['canManageDocumentRetention'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageDocumentRetentionMetadata
+   */
+  exports.prototype['canManageDocumentRetentionMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageEnvelopeTransfer

@@ -273,6 +273,9 @@
       if (data.hasOwnProperty('numberTotalRecipients')) {
         obj['numberTotalRecipients'] = ApiClient.convertToType(data['numberTotalRecipients'], 'String');
       }
+      if (data.hasOwnProperty('otherRecipientsList')) {
+        obj['otherRecipientsList'] = ApiClient.convertToType(data['otherRecipientsList'], 'String');
+      }
       if (data.hasOwnProperty('owner')) {
         obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
       }
@@ -374,6 +377,12 @@
       }
       if (data.hasOwnProperty('senderUserId')) {
         obj['senderUserId'] = ApiClient.convertToType(data['senderUserId'], 'String');
+      }
+      if (data.hasOwnProperty('signatureType')) {
+        obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
+      }
+      if (data.hasOwnProperty('signatureTypeValue')) {
+        obj['signatureTypeValue'] = ApiClient.convertToType(data['signatureTypeValue'], 'String');
       }
       if (data.hasOwnProperty('signDate')) {
         obj['signDate'] = ApiClient.convertToType(data['signDate'], 'String');
@@ -848,6 +857,11 @@
   exports.prototype['numberTotalRecipients'] = undefined;
   /**
    * 
+   * @member {String} otherRecipientsList
+   */
+  exports.prototype['otherRecipientsList'] = undefined;
+  /**
+   * 
    * @member {String} owner
    */
   exports.prototype['owner'] = undefined;
@@ -1016,6 +1030,16 @@
    * @member {String} senderUserId
    */
   exports.prototype['senderUserId'] = undefined;
+  /**
+   * 
+   * @member {String} signatureType
+   */
+  exports.prototype['signatureType'] = undefined;
+  /**
+   * 
+   * @member {String} signatureTypeValue
+   */
+  exports.prototype['signatureTypeValue'] = undefined;
   /**
    * 
    * @member {String} signDate

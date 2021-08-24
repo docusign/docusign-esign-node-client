@@ -60,6 +60,18 @@
       if (data.hasOwnProperty('planInformation')) {
         obj['planInformation'] = PlanInformation.constructFromObject(data['planInformation']);
       }
+      if (data.hasOwnProperty('promoCode')) {
+        obj['promoCode'] = ApiClient.convertToType(data['promoCode'], 'String');
+      }
+      if (data.hasOwnProperty('saleDiscount')) {
+        obj['saleDiscount'] = ApiClient.convertToType(data['saleDiscount'], 'String');
+      }
+      if (data.hasOwnProperty('saleDiscountPeriods')) {
+        obj['saleDiscountPeriods'] = ApiClient.convertToType(data['saleDiscountPeriods'], 'String');
+      }
+      if (data.hasOwnProperty('saleDiscountType')) {
+        obj['saleDiscountType'] = ApiClient.convertToType(data['saleDiscountType'], 'String');
+      }
     }
     return obj;
   }
@@ -73,6 +85,26 @@
    * @member {module:model/PlanInformation} planInformation
    */
   exports.prototype['planInformation'] = undefined;
+  /**
+   * 
+   * @member {String} promoCode
+   */
+  exports.prototype['promoCode'] = undefined;
+  /**
+   * 
+   * @member {String} saleDiscount
+   */
+  exports.prototype['saleDiscount'] = undefined;
+  /**
+   * 
+   * @member {String} saleDiscountPeriods
+   */
+  exports.prototype['saleDiscountPeriods'] = undefined;
+  /**
+   * 
+   * @member {String} saleDiscountType
+   */
+  exports.prototype['saleDiscountType'] = undefined;
 
 
 

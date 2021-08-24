@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('accountPaymentMethod')) {
         obj['accountPaymentMethod'] = ApiClient.convertToType(data['accountPaymentMethod'], 'String');
       }
+      if (data.hasOwnProperty('discountApplied')) {
+        obj['discountApplied'] = ApiClient.convertToType(data['discountApplied'], 'String');
+      }
       if (data.hasOwnProperty('downgradeEffectiveDate')) {
         obj['downgradeEffectiveDate'] = ApiClient.convertToType(data['downgradeEffectiveDate'], 'String');
       }
@@ -75,6 +78,18 @@
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
+      if (data.hasOwnProperty('promoCode')) {
+        obj['promoCode'] = ApiClient.convertToType(data['promoCode'], 'String');
+      }
+      if (data.hasOwnProperty('saleDiscount')) {
+        obj['saleDiscount'] = ApiClient.convertToType(data['saleDiscount'], 'String');
+      }
+      if (data.hasOwnProperty('saleDiscountPeriods')) {
+        obj['saleDiscountPeriods'] = ApiClient.convertToType(data['saleDiscountPeriods'], 'String');
+      }
+      if (data.hasOwnProperty('saleDiscountType')) {
+        obj['saleDiscountType'] = ApiClient.convertToType(data['saleDiscountType'], 'String');
+      }
     }
     return obj;
   }
@@ -84,6 +99,11 @@
    * @member {String} accountPaymentMethod
    */
   exports.prototype['accountPaymentMethod'] = undefined;
+  /**
+   * 
+   * @member {String} discountApplied
+   */
+  exports.prototype['discountApplied'] = undefined;
   /**
    * 
    * @member {String} downgradeEffectiveDate
@@ -114,6 +134,26 @@
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
+  /**
+   * 
+   * @member {String} promoCode
+   */
+  exports.prototype['promoCode'] = undefined;
+  /**
+   * 
+   * @member {String} saleDiscount
+   */
+  exports.prototype['saleDiscount'] = undefined;
+  /**
+   * 
+   * @member {String} saleDiscountPeriods
+   */
+  exports.prototype['saleDiscountPeriods'] = undefined;
+  /**
+   * 
+   * @member {String} saleDiscountType
+   */
+  exports.prototype['saleDiscountType'] = undefined;
 
 
 

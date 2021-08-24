@@ -127,6 +127,9 @@
       if (data.hasOwnProperty('seatDiscounts')) {
         obj['seatDiscounts'] = ApiClient.convertToType(data['seatDiscounts'], [SeatDiscount]);
       }
+      if (data.hasOwnProperty('subscriptionStartDate')) {
+        obj['subscriptionStartDate'] = ApiClient.convertToType(data['subscriptionStartDate'], 'String');
+      }
       if (data.hasOwnProperty('supportIncidentFee')) {
         obj['supportIncidentFee'] = ApiClient.convertToType(data['supportIncidentFee'], 'String');
       }
@@ -256,6 +259,11 @@
    * @member {Array.<module:model/SeatDiscount>} seatDiscounts
    */
   exports.prototype['seatDiscounts'] = undefined;
+  /**
+   * 
+   * @member {String} subscriptionStartDate
+   */
+  exports.prototype['subscriptionStartDate'] = undefined;
   /**
    * The support incident fee charged for each support incident.
    * @member {String} supportIncidentFee

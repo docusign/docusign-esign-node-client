@@ -93,6 +93,9 @@
       if (data.hasOwnProperty('signatureName')) {
         obj['signatureName'] = ApiClient.convertToType(data['signatureName'], 'String');
       }
+      if (data.hasOwnProperty('signatureType')) {
+        obj['signatureType'] = ApiClient.convertToType(data['signatureType'], 'String');
+      }
       if (data.hasOwnProperty('signatureUsers')) {
         obj['signatureUsers'] = ApiClient.convertToType(data['signatureUsers'], [SignatureUserDef]);
       }
@@ -170,6 +173,11 @@
    * @member {String} signatureName
    */
   exports.prototype['signatureName'] = undefined;
+  /**
+   * 
+   * @member {String} signatureType
+   */
+  exports.prototype['signatureType'] = undefined;
   /**
    * 
    * @member {Array.<module:model/SignatureUserDef>} signatureUsers

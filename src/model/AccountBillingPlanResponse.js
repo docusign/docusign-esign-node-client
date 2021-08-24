@@ -73,6 +73,9 @@
       if (data.hasOwnProperty('downgradePlanInformation')) {
         obj['downgradePlanInformation'] = DowngradePlanUpdateResponse.constructFromObject(data['downgradePlanInformation']);
       }
+      if (data.hasOwnProperty('entityName')) {
+        obj['entityName'] = ApiClient.convertToType(data['entityName'], 'String');
+      }
       if (data.hasOwnProperty('paymentMethod')) {
         obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
       }
@@ -114,6 +117,11 @@
    * @member {module:model/DowngradePlanUpdateResponse} downgradePlanInformation
    */
   exports.prototype['downgradePlanInformation'] = undefined;
+  /**
+   * 
+   * @member {String} entityName
+   */
+  exports.prototype['entityName'] = undefined;
   /**
    * 
    * @member {String} paymentMethod
