@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('hasIdentityAttempts')) {
+        obj['hasIdentityAttempts'] = ApiClient.convertToType(data['hasIdentityAttempts'], 'String');
+      }
       if (data.hasOwnProperty('isInProofFile')) {
         obj['isInProofFile'] = ApiClient.convertToType(data['isInProofFile'], 'String');
       }
@@ -61,6 +64,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} hasIdentityAttempts
+   */
+  exports.prototype['hasIdentityAttempts'] = undefined;
   /**
    * 
    * @member {String} isInProofFile
