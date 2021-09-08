@@ -418,7 +418,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
             envelopesApi.listRecipients(accountId, envelopeId, listRecipientsCallback)
         })
 
-        it('GET Template Recipients (27)', function (done) {
+        it('GET Template Recipients', function (done) {
             const callback = function (error, data, __response) {
                 if (error) {
                     return done(error);
@@ -431,7 +431,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
 
         })
 
-        it('Create Recipient tabs (21)', function (done) {
+        it('Create Recipient tabs', function (done) {
             const signHere = docusign.SignHere.constructFromObject({
                 documentId: '1',
                 pageNumber: '1',
@@ -457,7 +457,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
 
         })
 
-        it('Put Recipient tab (26)', function (done) {
+        it('Put Recipient tab', function (done) {
 
             const signHere = docusign.SignHere.constructFromObject({
                 documentId: '1',
@@ -482,7 +482,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
             envelopesApi.updateTabs(accountId, envelopeId, recipientId, {tabs}, callback)
         })
 
-        it('Delete Recipient (31)', function (done) {
+        it('Delete Recipient', function (done) {
             const recipientId = '1'
             const callback = function (error, data, __response) {
                 if (error) {
@@ -494,7 +494,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
             envelopesApi.deleteRecipient(accountId, envelopeId, recipientId, callback)
         })
 
-        it('Delete Recipients  (29)', function (done) {
+        it('Delete Recipients', function (done) {
             const signer = new docusign.Signer();
             signer.email = userName;
             signer.recipientId = '1';
@@ -513,7 +513,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
             envelopesApi.deleteRecipients(accountId, envelopeId, {recipients}, callback)
         })
 
-        it('Put status(23)', function (done) {
+        it('Put status', function (done) {
 
             const callback = function (error, envelope, __response) {
                 if (error) {
@@ -537,7 +537,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
             envelopesApi.getEnvelope(accountId, envelopeId, {}, callback)
         })
 
-        it('Get custom fields(24)', function (done) {
+        it('Get custom fields', function (done) {
             const callback = function (error, data, __response) {
                 if (error) {
                     return done(error);
@@ -602,7 +602,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
             usersApi.list(accountId, listUsersCallback)
         })
 
-        it('get user (30)', function (done) {
+        it('Get user', function (done) {
             const callback = function (error, data, __response) {
                 if (error) {
                     return done(error);
@@ -615,7 +615,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
 
         })
 
-        it('create user(22)', function (done) {
+        it('Create user', function (done) {
             const newUser = new docusign.UserInformation();
             newUser.company = 'TestCompany';
             newUser.email = 'test@email.com';
@@ -638,7 +638,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
         })
     })
     describe('DiagnosticsApi tests:', function () {
-        it('Get settings (19)', function (done) {
+        it('Get settings', function (done) {
             const diagnosticsApi = new docusign.DiagnosticsApi(apiClient);
 
             const callback = function (error, data, __response) {
@@ -662,7 +662,7 @@ describe('SDK Unit Tests With Callbacks (Sigma):', function (done) {
     describe('FoldersApi tests:', function () {
         const foldersApi = new docusign.FoldersApi(apiClient);
 
-        it('Put Folders(28)', function (done) {
+        it('Put Folders', function (done) {
             const foldersRequest = new docusign.FoldersRequest();
             foldersRequest.envelopeIds = [];
             foldersRequest.envelopeIds.push(envelopeId);

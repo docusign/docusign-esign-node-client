@@ -570,7 +570,7 @@ describe('SDK Unit Tests (Sigma):', function (done) {
                 });
         })
 
-        it('get user (30)', function (done) {
+        it('Get user', function (done) {
             usersApi.getInformation(accountId, userId)
                 .then((data) => {
                     assert.notStrictEqual(data, undefined)
