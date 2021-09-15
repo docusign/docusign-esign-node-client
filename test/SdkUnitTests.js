@@ -14,62 +14,59 @@ var superagent = require('superagent');
 var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 var fs = require('fs');
 
-var userName = config.email;
-var privateKey = config.privateKey;
-var integratorKey = config.integratorKey;
-var integratorKeyAuthCode = config.integratorKeyAuthCode;
-var templateId = config.templateId;
+const {
+  USER_NAME,
+  PRIVATE_KEY,
+  INTEGRATOR_KEY,
+  INTEGRATOR_KEY_AUTH_CODE,
+  INTEGRATOR_KEY_IMPLICIT,
+  CLIENT_SECRET,
+  TEMPLATE_ID,
+  BASE_PATH,
+  OAUTH_BASE_PATH,
+  SING_TEST1_FILE,
+  SING_TEST2_FILE,
+  LARGE_TEST_DOCUMENT1,
+  BRAND_LOGO_PATH,
+  BRAND_XML_PATH,
+  USER_ID,
+  REDIRECT_URI,
+  PRIVATE_KEY_FILENAME,
+  EXPIRES_IN,
+  getSignerTabsDefinition,
+  apiClient,
+  scopes
+}=require('./constants')
+let {ACCOUNT_ID,ENVELOPE_ID}=require('./constants')
 
-// for production environment update to "www.docusign.net/restapi"
-var basePath = restApi.BasePath.DEMO;
-var oAuthBasePath = oAuth.BasePath.DEMO;
-
-var SignTest1File = 'docs/SignTest1.pdf';
-var LargeTestDocument1 = 'docs/LargeTestDocument1.pdf';
-var brandLogoPath = 'img/docusign-lgo.png';
-var brandXmlPath = 'docs/brand.xml';
-var accountId = '';
-var envelopeId = '';
-var userId = config.userId;
-var RedirectURI = 'https://www.docusign.com/api';
-var privateKeyFilename = 'keys/docusign_private_key.txt';
-var expiresIn = 3600;
-
-if (privateKey) {
+if (PRIVATE_KEY) {
   var buf;
   if (typeof Buffer.from === 'function') {
     // Node 5.10+
-    buf = Buffer.from(privateKey, 'base64'); // Ta-da
+    buf = Buffer.from(PRIVATE_KEY, 'base64'); // Ta-da
   } else {
     // older Node versions, now deprecated
-    buf = new Buffer(privateKey, 'base64'); // Ta-da
+    buf = new Buffer(PRIVATE_KEY, 'base64'); // Ta-da
   }
 
   var text = buf.toString('ascii');
-  fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
+  // fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
 }
 
 describe('SDK Unit Tests:', function (done) {
-  var apiClient = new docusign.ApiClient({
-    basePath: basePath,
-    oAuthBasePath: oAuthBasePath
-  });
-  var scopes = [
-    oAuth.Scope.IMPERSONATION,
-    oAuth.Scope.SIGNATURE
-  ];
+
 
   before(function (done) {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
     // get DocuSign OAuth authorization url:
-    var oauthLoginUrl = apiClient.getJWTUri(integratorKey, RedirectURI, oAuthBasePath);
+    var oauthLoginUrl = apiClient.getJWTUri(INTEGRATOR_KEY, REDIRECT_URI, OAUTH_BASE_PATH);
     // open DocuSign OAuth authorization url in the browser, login and grant access
     console.log(oauthLoginUrl);
     // END OF NOTE
     var fs = require('fs');
-    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
-    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn)
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
+    apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN)
       .then(function (res) {
         var baseUri,
           accountDomain;
@@ -78,7 +75,7 @@ describe('SDK Unit Tests:', function (done) {
         // console.log(apiClient.getUserInfo(res.body.access_token));
         apiClient.getUserInfo(res.body.access_token)
           .then(function (userInfo) {
-            accountId = userInfo.accounts[0].accountId;
+            ACCOUNT_ID = userInfo.accounts[0].accountId;
             baseUri = userInfo.accounts[0].baseUri;
             accountDomain = baseUri.split('/v2');
             apiClient.setBasePath(accountDomain[0] + '/restapi');
@@ -122,8 +119,8 @@ describe('SDK Unit Tests:', function (done) {
    */
   it('should be able to request a JWT user token', function (done) {
     var fs = require('fs');
-    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
-    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn)
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
+    apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN)
       .then(function (response) {
         assert.ok(response.body.access_token);
         done();
@@ -135,9 +132,9 @@ describe('SDK Unit Tests:', function (done) {
 
   it('should be able to request a JWT application token', function (done) {
     var fs = require('fs');
-    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
 
-    apiClient.requestJWTApplicationToken(integratorKey, scopes, privateKeyFile, expiresIn)
+    apiClient.requestJWTApplicationToken(INTEGRATOR_KEY, scopes, privateKeyFile, EXPIRES_IN)
       .then(function (response) {
         assert.ok(response.body.access_token);
         done();
@@ -246,14 +243,14 @@ describe('SDK Unit Tests:', function (done) {
     var formattedScopes = scopes.join(encodeURI(' '));
     var authUri;
     var correctAuthUri;
-    authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
     correctAuthUri = 'https://' +
-      oAuthBasePath +
+      OAUTH_BASE_PATH +
       '/oauth/auth' +
       '?response_type=' + responseType +
       '&scope=' + formattedScopes +
-      '&client_id=' + integratorKeyAuthCode +
-      '&redirect_uri=' + encodeURIComponent(RedirectURI) +
+      '&client_id=' + INTEGRATOR_KEY_AUTH_CODE +
+      '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
       (randomState ? '&state=' + randomState : '');
 
     assert.equal(authUri, correctAuthUri);
@@ -264,7 +261,7 @@ describe('SDK Unit Tests:', function (done) {
     var responseType = apiClient.OAuth.ResponseType.CODE;
     var scopes = [apiClient.OAuth.Scope.EXTENDED];
     var randomState = '*^.$DGj*)+}Jk';
-    var authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    var authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
 
     superagent.get(authUri)
       .end(function (err, res) {
@@ -285,7 +282,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -309,7 +306,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     signer.name = 'Pat Developer';
     signer.recipientId = '1';
 
@@ -339,12 +336,12 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then(function (envelopeSummary) {
         // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
         assert.equal(envelopeSummary && Object.keys(envelopeSummary).length > 0, true);
-        envelopeId = envelopeSummary.envelopeId;
-        envelopesApi.updateRecipients(accountId, envelopeId, { recipients: envDef.recipients })
+        ENVELOPE_ID = envelopeSummary.envelopeId;
+        envelopesApi.updateRecipients(ACCOUNT_ID, ENVELOPE_ID, { recipients: envDef.recipients })
           .then(function (data) {
             done();
           })
@@ -463,13 +460,13 @@ describe('SDK Unit Tests:', function (done) {
     envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // / assign template information including ID and role(s)
-    envDef.templateId = templateId;
+    envDef.templateId = TEMPLATE_ID;
 
     // create a template role with a valid templateId and roleName and assign signer info
     var tRole = new docusign.TemplateRole();
     tRole.roleName = templateRoleName;
     tRole.name = 'Pat Developer';
-    tRole.email = userName;
+    tRole.email = USER_NAME;
 
     // create a list of template roles and add our newly created role
     var templateRolesList = [];
@@ -483,7 +480,7 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then(function (envelopeSummary) {
         // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
         assert.notEqual(envelopeSummary, {});
@@ -501,7 +498,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -525,7 +522,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -560,7 +557,7 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then(function (envelopeSummary) {
         if (envelopeSummary) {
           // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
@@ -570,8 +567,8 @@ describe('SDK Unit Tests:', function (done) {
           recipientView.clientUserId = clientUserId;
           recipientView.authenticationMethod = 'email';
           recipientView.userName = name;
-          recipientView.email = userName;
-          envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, { recipientViewRequest: recipientView })
+          recipientView.email = USER_NAME;
+          envelopesApi.createRecipientView(ACCOUNT_ID, envelopeSummary.envelopeId, { recipientViewRequest: recipientView })
             .then(function (viewUrl) {
               if (viewUrl) {
                 console.log('ViewUrl is ' + JSON.stringify(viewUrl));
@@ -597,7 +594,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -650,7 +647,7 @@ describe('SDK Unit Tests:', function (done) {
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, { envelopeTemplate: template })
+    templatesApi.createTemplate(ACCOUNT_ID, { envelopeTemplate: template })
       .then(function (templateSummary) {
         if (templateSummary) {
           done();
@@ -668,7 +665,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, LargeTestDocument1));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, LARGE_TEST_DOCUMENT1));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -692,7 +689,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -727,17 +724,17 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then(function (envelopeSummary) {
         if (envelopeSummary) {
           console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-          envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined')
+          envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined')
             .then(function (pdfBytes) {
               if (pdfBytes) {
                 try {
                   var fs = require('fs');
                   // download the document pdf
-                  var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+                  var filename = ACCOUNT_ID + '_' + envelopeSummary.envelopeId + '_combined.pdf';
                   var tempFile = path.resolve(__dirname, filename);
                   fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                     if (err) console.log('Error: ' + err);
@@ -765,16 +762,16 @@ describe('SDK Unit Tests:', function (done) {
   it('listDocuments', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.listDocuments(accountId, envelopeId)
+    envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID)
       .then(function (docsList) {
         if (docsList) {
-          assert.equal(envelopeId, docsList.envelopeId);
+          assert.equal(ENVELOPE_ID, docsList.envelopeId);
           console.log('EnvelopeDocumentsResult: ' + JSON.stringify(docsList));
 
-          envelopesApi.listDocuments(accountId, envelopeId)
+          envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID)
             .then(function (docsListNoOpt) {
               if (docsListNoOpt) {
-                assert.equal(envelopeId, docsListNoOpt.envelopeId);
+                assert.equal(ENVELOPE_ID, docsListNoOpt.envelopeId);
                 assert.equal(JSON.stringify(docsList), JSON.stringify(docsListNoOpt));
                 return done();
               }
@@ -795,8 +792,8 @@ describe('SDK Unit Tests:', function (done) {
   it('listStatusBody', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
     var envelopeIdsRequest = new docusign.EnvelopeIdsRequest();
-    envelopeIdsRequest.envelopeIds = [envelopeId];
-    envelopesApi.listStatus(accountId, { envelopeIdsRequest: envelopeIdsRequest, envelopeIds: 'request_body' })
+    envelopeIdsRequest.envelopeIds = [ENVELOPE_ID];
+    envelopesApi.listStatus(ACCOUNT_ID, { envelopeIdsRequest: envelopeIdsRequest, envelopeIds: 'request_body' })
       .then(function (data) {
         assert.notEqual(data.envelopes, undefined);
         assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
@@ -809,7 +806,7 @@ describe('SDK Unit Tests:', function (done) {
   });
   it('listStatusQuery', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
-    envelopesApi.listStatusChanges(accountId, { envelopeIds: envelopeId })
+    envelopesApi.listStatusChanges(ACCOUNT_ID, { envelopeIds: ENVELOPE_ID })
       .then(function (data) {
         assert.notEqual(data.envelopes, undefined);
         assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
@@ -857,7 +854,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -881,7 +878,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -925,17 +922,17 @@ describe('SDK Unit Tests:', function (done) {
 
           var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-          envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+          envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
             .then(function (envelopeSummary) {
               if (envelopeSummary) {
                 console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-                envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined')
+                envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined')
                   .then(function (pdfBytes) {
                     if (pdfBytes) {
                       try {
                         var fs = require('fs');
                         // download the document pdf
-                        var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+                        var filename = ACCOUNT_ID + '_' + envelopeSummary.envelopeId + '_combined.pdf';
                         var tempFile = path.resolve(__dirname, filename);
                         fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                           if (err) console.log('Error: ' + err);
@@ -1005,11 +1002,11 @@ describe('SDK Unit Tests:', function (done) {
 
   it('getTemplate', function (done) {
     var templatesApi = new docusign.TemplatesApi(apiClient);
-    templatesApi.get(accountId, templateId)
+    templatesApi.get(ACCOUNT_ID, TEMPLATE_ID)
       .then(function (envelopeTemplate) {
         if (envelopeTemplate) {
           console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplate));
-          templatesApi.get(accountId, templateId)
+          templatesApi.get(ACCOUNT_ID, TEMPLATE_ID)
             .then(function (envelopeTemplateNoOpts) {
               if (envelopeTemplateNoOpts) {
                 console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplateNoOpts));
@@ -1033,15 +1030,15 @@ describe('SDK Unit Tests:', function (done) {
 
   it('update primary account brandlogo', function (done) {
     var accountsApi = new docusign.AccountsApi(apiClient);
-    accountsApi.listBrands(accountId, { includeLogos: true })
+    accountsApi.listBrands(ACCOUNT_ID, { includeLogos: true })
       .then(function (brandsData) {
         var currentBrand = brandsData.brands[0];
-        var newLogoBytes = fs.readFileSync(path.resolve(__dirname, brandLogoPath));
-        accountsApi.deleteBrandLogoByType(accountId, currentBrand.brandId, 'Primary')
+        var newLogoBytes = fs.readFileSync(path.resolve(__dirname, BRAND_LOGO_PATH));
+        accountsApi.deleteBrandLogoByType(ACCOUNT_ID, currentBrand.brandId, 'Primary')
           .then(function () {
-            accountsApi.updateBrandLogoByType(newLogoBytes, accountId, currentBrand.brandId, 'Primary')
+            accountsApi.updateBrandLogoByType(newLogoBytes, ACCOUNT_ID, currentBrand.brandId, 'Primary')
               .then(function () {
-                accountsApi.getBrandLogoByType(accountId, currentBrand.brandId, 'Primary')
+                accountsApi.getBrandLogoByType(ACCOUNT_ID, currentBrand.brandId, 'Primary')
                   .then(function (brandLogo) {
                     assert.notEqual(brandLogo, undefined);
                     done();
@@ -1056,11 +1053,11 @@ describe('SDK Unit Tests:', function (done) {
 
   it('it updateBrandResourcesByContentType', function (done) {
     var accountsApi = new docusign.AccountsApi(apiClient);
-    accountsApi.listBrands(accountId, { includeLogos: true })
+    accountsApi.listBrands(ACCOUNT_ID, { includeLogos: true })
       .then(function (brandsData) {
         var currentBrand = brandsData.brands[0];
-        var brandXmlBuffer = fs.readFileSync(path.resolve(__dirname, brandXmlPath));
-        accountsApi.updateBrandResourcesByContentType(accountId, currentBrand.brandId, 'email', brandXmlBuffer)
+        var brandXmlBuffer = fs.readFileSync(path.resolve(__dirname, BRAND_XML_PATH));
+        accountsApi.updateBrandResourcesByContentType(ACCOUNT_ID, currentBrand.brandId, 'email', brandXmlBuffer)
           .then(function (data) {
             assert.notEqual(data.createdByUserInfo, undefined);
             assert.notEqual(data.resourcesContentUri, undefined);
@@ -1082,7 +1079,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -1148,11 +1145,11 @@ describe('SDK Unit Tests:', function (done) {
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, { envelopeTemplate: template })
+    templatesApi.createTemplate(ACCOUNT_ID, { envelopeTemplate: template })
       .then(function (templateSummary) {
         if (templateSummary) {
           console.log('TemplateSummary Number: ' + JSON.stringify(templateSummary));
-          templatesApi.getDocumentTabs(accountId, templateSummary.templateId, 1).then(function (template) {
+          templatesApi.getDocumentTabs(ACCOUNT_ID, templateSummary.templateId, 1).then(function (template) {
             console.log('TemplateSummary Number: ' + JSON.stringify(template));
             assert.equal(!!template.numberTabs, true);
             assert.equal(!!template.numberTabs.length, true);
@@ -1178,7 +1175,7 @@ describe('SDK Unit Tests:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -1202,7 +1199,7 @@ describe('SDK Unit Tests:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -1237,10 +1234,10 @@ describe('SDK Unit Tests:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then(function (envelopeSummary) {
         if (envelopeSummary) {
-          envelopesApi.update(accountId, envelopeSummary.envelopeId, { resendEnvelope: true })
+          envelopesApi.update(ACCOUNT_ID, envelopeSummary.envelopeId, { resendEnvelope: true })
             .then(function (envelopeUpdateSummary) {
               if (envelopeUpdateSummary) {
                 console.log('envelopeUpdateSummary: ' + JSON.stringify(envelopeUpdateSummary));
@@ -1266,13 +1263,13 @@ describe('SDK Unit Tests:', function (done) {
 
     // create an envelope to be signed
     var envDef = new docusign.EnvelopeDefinition();
-    envDef.templateId = templateId;
+    envDef.templateId = TEMPLATE_ID;
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef })
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then(function (envelopeSummary) {
         assert.equal(envelopeSummary && Object.keys(envelopeSummary).length > 0, true);
-        envelopeId = envelopeSummary.envelopeId;
-        envelopesApi.getFormData(accountId, envelopeId).then(function (envelopeFormData) {
+        ENVELOPE_ID = envelopeSummary.envelopeId;
+        envelopesApi.getFormData(ACCOUNT_ID, ENVELOPE_ID).then(function (envelopeFormData) {
           assert.notStrictEqual(envelopeFormData, undefined);
           assert.notStrictEqual(envelopeFormData.formData, undefined);
           assert.notStrictEqual(envelopeFormData.formData[0], undefined);
@@ -1295,4 +1292,5 @@ describe('SDK Unit Tests:', function (done) {
         }
       });
   });
+
 });

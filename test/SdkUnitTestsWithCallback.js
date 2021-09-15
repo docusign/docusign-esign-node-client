@@ -1,52 +1,57 @@
 var docusign = require('../src/index');
 var oAuth = docusign.ApiClient.OAuth;
 var restApi = docusign.ApiClient.RestApi;
-var config = require('../test-config');
+var config;
+try {
+    config = require('../test-config');
+} catch (err) {
+    console.error(err);
+}
 var assert = require('assert');
 var path = require('path');
 var superagent = require('superagent');
 
-var userName = config.email;
-var integratorKey = config.integratorKey;
-var integratorKeyAuthCode = config.integratorKeyAuthCode;
-// var IntegratorKeyImplicit = config.integratorKeyImplicit;
-// var ClientSecret = config.clientSecr
-var templateId = config.templateId;
+var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
+var fs = require('fs');
 
-// for production environment update to "www.docusign.net/restapi"
-var basePath = restApi.BasePath.DEMO;
-var oAuthBasePath = oAuth.BasePath.DEMO;
-
-var SignTest1File = 'docs/SignTest1.pdf';
-var LargeTestDocument1 = 'docs/LargeTestDocument1.pdf';
-var accountId = '';
-var envelopeId = '';
-var userId = config.userId;
-var RedirectURI = 'https://www.docusign.com/api';
-var privateKeyFilename = 'keys/docusign_private_key.txt';
-var expiresIn = 3600;
+const {
+  USER_NAME,
+  PRIVATE_KEY,
+  INTEGRATOR_KEY,
+  INTEGRATOR_KEY_AUTH_CODE,
+  INTEGRATOR_KEY_IMPLICIT,
+  CLIENT_SECRET,
+  TEMPLATE_ID,
+  BASE_PATH,
+  OAUTH_BASE_PATH,
+  SING_TEST1_FILE,
+  SING_TEST2_FILE,
+  LARGE_TEST_DOCUMENT1,
+  BRAND_LOGO_PATH,
+  BRAND_XML_PATH,
+  USER_ID,
+  REDIRECT_URI,
+  PRIVATE_KEY_FILENAME,
+  EXPIRES_IN,
+  getSignerTabsDefinition,
+  apiClient,
+  scopes
+}=require('./constants')
+let {ACCOUNT_ID,ENVELOPE_ID}=require('./constants')
 
 describe('SDK Unit Tests With Callbacks:', function (done) {
-  var apiClient = new docusign.ApiClient({
-    basePath: basePath,
-    oAuthBasePath: oAuthBasePath
-  });
-  var scopes = [
-    oAuth.Scope.IMPERSONATION,
-    oAuth.Scope.SIGNATURE
-  ];
 
   before(function (done) {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
     // get DocuSign OAuth authorization url:
-    var oauthLoginUrl = apiClient.getJWTUri(integratorKey, RedirectURI, oAuthBasePath);
+    var oauthLoginUrl = apiClient.getJWTUri(INTEGRATOR_KEY, REDIRECT_URI, OAUTH_BASE_PATH);
     // open DocuSign OAuth authorization url in the browser, login and grant access
     console.log(oauthLoginUrl);
     // END OF NOTE
     var fs = require('fs');
-    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
-    apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, res) {
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
+    apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN, function (err, res) {
       var baseUri,
         accountDomain;
       if (err) {
@@ -58,7 +63,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
         if (err) {
           return done(err);
         }
-        accountId = userInfo.accounts[0].accountId;
+        ACCOUNT_ID = userInfo.accounts[0].accountId;
         baseUri = userInfo.accounts[0].baseUri;
         accountDomain = baseUri.split('/v2');
         apiClient.setBasePath(accountDomain[0] + '/restapi');
@@ -92,9 +97,9 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
    */
   it('should be able to request a JWT user token', function (done) {
     var fs = require('fs');
-    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
     try {
-      apiClient.requestJWTUserToken(integratorKey, userId, scopes, privateKeyFile, expiresIn, function (err, response) {
+      apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN, function (err, response) {
         if (err) {
           return done(err);
         }
@@ -108,9 +113,9 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
   it('should be able to request a JWT application token', function (done) {
     var fs = require('fs');
-    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
+    var privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
 
-    apiClient.requestJWTApplicationToken(integratorKey, scopes, privateKeyFile, expiresIn, function (err, response) {
+    apiClient.requestJWTApplicationToken(INTEGRATOR_KEY, scopes, privateKeyFile, EXPIRES_IN, function (err, response) {
       if (err) {
         return done(err);
       }
@@ -134,7 +139,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     // that code and pass it to token endpoint as shown in the next
     // lines:
     var code = '<once_you_get_the_oauth_code_put_it_here>'
-    apiClient.generateAccessToken(IntegratorKeyAuthCode, ClientSecret, code, function(err, oAuthToken){
+    apiClient.generateAccessToken(IntegratorKeyAuthCode, CLIENT_SECRET, code, function(err, oAuthToken){
       assert.equal(err, undefined);
       assert.notEqual(oAuthToken, undefined);
       assert.notEqual(oAuthToken.accessToken, undefined);
@@ -149,7 +154,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
         assert.ok(userInfo.accounts.length > 0);
 
         console.log("UserInfo: " + userInfo);
-        // parse first account's basePath
+        // parse first account's BASE_PATH
         // below code required for production, no effect in demo (same
         // domain)
         apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
@@ -166,7 +171,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     var responseType = apiClient.OAuth.ResponseType.TOKEN; // Here we specify a response type of 'token', retrieving our oauth token directly
     var scopes = [apiClient.OAuth.Scope.EXTENDED];
     var randomState = '*^.$DGj*)+}Jk'; // after successful login you should compare the value of URI decoded "state" query param with the one created here. They should match
-    var authUri = apiClient.getAuthorizationUri(IntegratorKeyImplicit, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
+    var authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_IMPLICIT, scopes, RedirectURI, responseType, randomState); // get DocuSign OAuth authorization url
 
     // Open DocuSign OAuth login in a browser, res being your node.js response object.
       res.redirect(authUri);
@@ -188,7 +193,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
       assert.ok(userInfo.accounts.length > 0);
 
       console.log("UserInfo: " + userInfo);
-      // parse first account's basePath
+      // parse first account's BASE_PATH
       // below code required for production, no effect in demo (same
       // domain)
       apiClient.setBasePath(userInfo.accounts[0].baseUri + "/restapi");
@@ -207,14 +212,14 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     var formattedScopes = scopes.join(encodeURI(' '));
     var authUri;
     var correctAuthUri;
-    authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
     correctAuthUri = 'https://' +
-      oAuthBasePath +
+      OAUTH_BASE_PATH +
       '/oauth/auth' +
       '?response_type=' + responseType +
       '&scope=' + formattedScopes +
-      '&client_id=' + integratorKeyAuthCode +
-      '&redirect_uri=' + encodeURIComponent(RedirectURI) +
+      '&client_id=' + INTEGRATOR_KEY_AUTH_CODE +
+      '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
       (randomState ? '&state=' + randomState : '');
 
     assert.equal(authUri, correctAuthUri);
@@ -225,7 +230,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     var responseType = apiClient.OAuth.ResponseType.CODE;
     var scopes = [apiClient.OAuth.Scope.EXTENDED];
     var randomState = '*^.$DGj*)+}Jk';
-    var authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
+    var authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
 
     superagent.get(authUri)
       .end(function (err, res) {
@@ -240,13 +245,12 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
    * New Oauth Methods Tests End
    *
    */
-
   it('requestASignature', function (done) {
     var fileBytes = null;
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -270,7 +274,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     signer.name = 'Pat Developer';
     signer.recipientId = '1';
 
@@ -300,14 +304,14 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
 
       if (envelopeSummary) {
         console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-        envelopeId = envelopeSummary.envelopeId;
+        ENVELOPE_ID = envelopeSummary.envelopeId;
         done();
       }
     });
@@ -322,13 +326,13 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     envDef.emailBlurb = 'Hello, Please sign my Node SDK Envelope.';
 
     // / assign template information including ID and role(s)
-    envDef.templateId = templateId;
+    envDef.templateId = TEMPLATE_ID;
 
-    // create a template role with a valid templateId and roleName and assign signer info
+    // create a template role with a valid TEMPLATE_ID and roleName and assign signer info
     var tRole = new docusign.TemplateRole();
     tRole.roleName = templateRoleName;
     tRole.name = 'Pat Developer';
-    tRole.email = userName;
+    tRole.email = USER_NAME;
 
     // create a list of template roles and add our newly created role
     var templateRolesList = [];
@@ -342,7 +346,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -359,7 +363,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -383,7 +387,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -418,7 +422,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
@@ -431,8 +435,8 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
         recipientView.clientUserId = clientUserId;
         recipientView.authenticationMethod = 'email';
         recipientView.userName = name;
-        recipientView.email = userName;
-        envelopesApi.createRecipientView(accountId, envelopeSummary.envelopeId, { recipientViewRequest: recipientView }, function (error, viewUrl, response) {
+        recipientView.email = USER_NAME;
+        envelopesApi.createRecipientView(ACCOUNT_ID, envelopeSummary.envelopeId, { recipientViewRequest: recipientView }, function (error, viewUrl, response) {
           if (error) {
             return done(error);
           }
@@ -451,7 +455,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -504,7 +508,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var templatesApi = new docusign.TemplatesApi(apiClient);
 
-    templatesApi.createTemplate(accountId, { envelopeTemplate: template }, function (error, templateSummary, response) {
+    templatesApi.createTemplate(ACCOUNT_ID, { envelopeTemplate: template }, function (error, templateSummary, response) {
       if (error) {
         return done(error);
       }
@@ -521,7 +525,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, LargeTestDocument1));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, LARGE_TEST_DOCUMENT1));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -545,7 +549,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -580,14 +584,14 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
 
       if (envelopeSummary) {
         console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-        envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', function (err, pdfBytes, response) {
+        envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined', function (err, pdfBytes, response) {
           if (err) {
             return done(err);
           }
@@ -596,7 +600,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
             try {
               var fs = require('fs');
               // download the document pdf
-              var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+              var filename = ACCOUNT_ID + '_' + envelopeSummary.envelopeId + '_combined.pdf';
               var tempFile = path.resolve(__dirname, filename);
               fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                 if (err) console.log('Error: ' + err);
@@ -611,24 +615,25 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
       }
     });
   });
+
   it('listDocuments', function (done) {
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.listDocuments(accountId, envelopeId, function (error, docsList, response) {
+    envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID, function (error, docsList, response) {
       if (error) {
         return done(error);
       }
       if (docsList) {
-        assert.equal(envelopeId, docsList.envelopeId);
+        assert.equal(ENVELOPE_ID, docsList.envelopeId);
         console.log('EnvelopeDocumentsResult: ' + JSON.stringify(docsList));
 
-        envelopesApi.listDocuments(accountId, envelopeId, function (error, docsListNoOpt, response) {
+        envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID, function (error, docsListNoOpt, response) {
           if (error) {
             return done(error);
           }
 
           if (docsListNoOpt) {
-            assert.equal(envelopeId, docsListNoOpt.envelopeId);
+            assert.equal(ENVELOPE_ID, docsListNoOpt.envelopeId);
             assert.equal(JSON.stringify(docsList), JSON.stringify(docsListNoOpt));
             done();
           }
@@ -642,7 +647,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -666,7 +671,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -713,14 +718,14 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
         var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-        envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
+        envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
           if (error) {
             return done(error);
           }
 
           if (envelopeSummary) {
             console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
-            envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined', null, function (error, pdfBytes, response) {
+            envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined', null, function (error, pdfBytes, response) {
               if (error) {
                 return done(error);
               }
@@ -729,7 +734,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
                 try {
                   var fs = require('fs');
                   // download the document pdf
-                  var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
+                  var filename = ACCOUNT_ID + '_' + envelopeSummary.envelopeId + '_combined.pdf';
                   var tempFile = path.resolve(__dirname, filename);
                   fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                     if (err) console.log('Error: ' + err);
@@ -779,14 +784,14 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
   it('getTemplate', function (done) {
     var templatesApi = new docusign.TemplatesApi(apiClient);
-    templatesApi.get(accountId, templateId, null, function (error, envelopeTemplate, response) {
+    templatesApi.get(ACCOUNT_ID, TEMPLATE_ID, null, function (error, envelopeTemplate, response) {
       if (error) {
         return done(error);
       }
 
       if (envelopeTemplate) {
         console.log('EnvelopeTemplate: ' + JSON.stringify(envelopeTemplate));
-        templatesApi.get(accountId, templateId, function (error, envelopeTemplateNoOpts, response) {
+        templatesApi.get(ACCOUNT_ID, TEMPLATE_ID, function (error, envelopeTemplateNoOpts, response) {
           if (error) {
             return done(error);
           }
@@ -806,7 +811,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SING_TEST1_FILE));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -830,7 +835,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     // Add a recipient to sign the document
     var signer = new docusign.Signer();
-    signer.email = userName;
+    signer.email = USER_NAME;
     var name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -865,13 +870,13 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
 
     var envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    envelopesApi.createEnvelope(accountId, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, function (error, envelopeSummary, response) {
       if (error) {
         return done(error);
       }
 
       if (envelopeSummary) {
-        envelopesApi.update(accountId, envelopeSummary.envelopeId, { resendEnvelope: true }, function (error, envelopeUpdateSummary, response) {
+        envelopesApi.update(ACCOUNT_ID, envelopeSummary.envelopeId, { resendEnvelope: true }, function (error, envelopeUpdateSummary, response) {
           if (error) {
             return done(error);
           }
@@ -884,4 +889,5 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
       }
     });
   });
+
 });
