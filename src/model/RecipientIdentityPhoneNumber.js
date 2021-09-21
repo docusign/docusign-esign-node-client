@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('countryCode')) {
         obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
       }
+      if (data.hasOwnProperty('countryCodeLock')) {
+        obj['countryCodeLock'] = ApiClient.convertToType(data['countryCodeLock'], 'String');
+      }
       if (data.hasOwnProperty('extension')) {
         obj['extension'] = ApiClient.convertToType(data['extension'], 'String');
       }
@@ -72,6 +75,11 @@
    * @member {String} countryCode
    */
   exports.prototype['countryCode'] = undefined;
+  /**
+   * 
+   * @member {String} countryCodeLock
+   */
+  exports.prototype['countryCodeLock'] = undefined;
   /**
    * 
    * @member {String} extension
