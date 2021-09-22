@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('downgradeProductId')) {
+        obj['downgradeProductId'] = ApiClient.convertToType(data['downgradeProductId'], 'String');
+      }
+      if (data.hasOwnProperty('isDowngradeCancellation')) {
+        obj['isDowngradeCancellation'] = ApiClient.convertToType(data['isDowngradeCancellation'], 'String');
+      }
       if (data.hasOwnProperty('productId')) {
         obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
       }
@@ -65,6 +71,16 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} downgradeProductId
+   */
+  exports.prototype['downgradeProductId'] = undefined;
+  /**
+   * 
+   * @member {String} isDowngradeCancellation
+   */
+  exports.prototype['isDowngradeCancellation'] = undefined;
   /**
    * 
    * @member {String} productId

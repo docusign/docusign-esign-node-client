@@ -228,7 +228,7 @@ The following table provides a description of the different `chargeName` propert
 
 | chargeName | Description |
 | --- | --- |
-| id_check | IDÃÂÃÂÃÂÃÂ Check Charge |
+| id_check | IDÂ Check Charge |
 | in_person_signing | In Person Signing charge |
 | envelopes Included | Sent Envelopes for the account |
 | age_verify | Age verification check |
@@ -380,6 +380,7 @@ The response returns the billing plan information, including the currency code, 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeCreditCardInformation When set to **true**, excludes credit card information from the response.
+     * @param {String} optsOrCallback.includeDowngradeInformation 
      * @param {String} optsOrCallback.includeMetadata When set to **true**, the `canUpgrade` and `renewalStatus` properities are included the response and an array of `supportedCountries` property is added to the `billingAddress` information. 
      * @param {String} optsOrCallback.includeSuccessorPlans When set to **true**, excludes successor information from the response.
      * @param {module:api/BillingApi~getPlanCallback} callback The callback function, accepting three arguments: error, data, response
@@ -412,6 +413,7 @@ The response returns the billing plan information, including the currency code, 
       };
       var queryParams = {
         'include_credit_card_information': optsOrCallback['includeCreditCardInformation'],
+        'include_downgrade_information': optsOrCallback['includeDowngradeInformation'],
         'include_metadata': optsOrCallback['includeMetadata'],
         'include_successor_plans': optsOrCallback['includeSuccessorPlans']
       };

@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('deliveryMode')) {
+        obj['deliveryMode'] = ApiClient.convertToType(data['deliveryMode'], 'String');
+      }
       if (data.hasOwnProperty('envelopeEvents')) {
         obj['envelopeEvents'] = ApiClient.convertToType(data['envelopeEvents'], [EnvelopeEvent]);
       }
@@ -110,6 +113,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} deliveryMode
+   */
+  exports.prototype['deliveryMode'] = undefined;
   /**
    * A list of envelope-level event statuses that will trigger Connect to send updates to the endpoint specified in the `url` property.   To receive notifications, you must include either an `envelopeEvents` node or a `recipientEvents` node. You do not need to specify both.
    * @member {Array.<module:model/EnvelopeEvent>} envelopeEvents

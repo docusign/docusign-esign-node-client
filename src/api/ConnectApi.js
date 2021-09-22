@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation'], factory);
+	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedConnectUserInfoList', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedConnectUserInfoList'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation);
+    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedConnectUserInfoList, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation);
   }
-}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedUserInfoList, MobileNotifierConfigurationInformation) {
+}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedConnectUserInfoList, IntegratedUserInfoList, MobileNotifierConfigurationInformation) {
   'use strict';
 
   /**
@@ -465,6 +465,84 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getConnectAllUsers operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~getConnectAllUsersCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/IntegratedConnectUserInfoList} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns all users from the configured Connect service.
+     * @param {String} accountId 
+     * @param {String} connectId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.emailSubstring 
+     * @param {String} optsOrCallback.isRecipientConnectConfig 
+     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.status 
+     * @param {String} optsOrCallback.userNameSubstring 
+     * @param {module:api/ConnectApi~getConnectAllUsersCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/IntegratedConnectUserInfoList}
+     */
+    this.getConnectAllUsers = function(accountId, connectId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getConnectAllUsers");
+      }
+
+      // verify the required parameter 'connectId' is set
+      if (connectId === undefined || connectId === null) {
+        throw new Error("Missing the required parameter 'connectId' when calling getConnectAllUsers");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'connectId': connectId
+      };
+      var queryParams = {
+        'count': optsOrCallback['count'],
+        'email_substring': optsOrCallback['emailSubstring'],
+        'is_recipient_connect_config': optsOrCallback['isRecipientConnectConfig'],
+        'start_position': optsOrCallback['startPosition'],
+        'status': optsOrCallback['status'],
+        'user_name_substring': optsOrCallback['userNameSubstring']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = IntegratedConnectUserInfoList;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/{connectId}/all/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
