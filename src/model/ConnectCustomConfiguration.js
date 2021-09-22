@@ -69,6 +69,9 @@
       if (data.hasOwnProperty('connectId')) {
         obj['connectId'] = ApiClient.convertToType(data['connectId'], 'String');
       }
+      if (data.hasOwnProperty('deliveryMode')) {
+        obj['deliveryMode'] = ApiClient.convertToType(data['deliveryMode'], 'String');
+      }
       if (data.hasOwnProperty('enableLog')) {
         obj['enableLog'] = ApiClient.convertToType(data['enableLog'], 'String');
       }
@@ -192,12 +195,17 @@
    */
   exports.prototype['connectId'] = undefined;
   /**
+   * 
+   * @member {String} deliveryMode
+   */
+  exports.prototype['deliveryMode'] = undefined;
+  /**
    * This turns Connect logging on or off. When set to **true**, logging is turned on.
    * @member {String} enableLog
    */
   exports.prototype['enableLog'] = undefined;
   /**
-   * A comma separated list of Ã¯Â¿Â½EnvelopeÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
+   * A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
    * @member {Array.<String>} envelopeEvents
    */
   exports.prototype['envelopeEvents'] = undefined;
@@ -266,7 +274,7 @@
    */
   exports.prototype['password'] = undefined;
   /**
-   * A comma separated list of Ã¯Â¿Â½RecipientÃ¯Â¿Â½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
+   * A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
    * @member {Array.<String>} recipientEvents
    */
   exports.prototype['recipientEvents'] = undefined;
@@ -331,7 +339,7 @@
    */
   exports.prototype['urlToPublishTo'] = undefined;
   /**
-   * A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to Ã¯Â¿Â½falseÃ¯Â¿Â½ then you must provide a list of user idÃ¯Â¿Â½s.
+   * A comma separated list of userIds. This sets the users associated with the tracked envelope and recipient events. When one of the event occurs for a set user, the information is sent through Connect.   ###### Note: If allUsers is set to ï¿½falseï¿½ then you must provide a list of user idï¿½s.
    * @member {Array.<String>} userIds
    */
   exports.prototype['userIds'] = undefined;

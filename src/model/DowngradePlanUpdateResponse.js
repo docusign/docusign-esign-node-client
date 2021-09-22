@@ -78,6 +78,9 @@
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
+      if (data.hasOwnProperty('productId')) {
+        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
+      }
       if (data.hasOwnProperty('promoCode')) {
         obj['promoCode'] = ApiClient.convertToType(data['promoCode'], 'String');
       }
@@ -134,6 +137,11 @@
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
+  /**
+   * 
+   * @member {String} productId
+   */
+  exports.prototype['productId'] = undefined;
   /**
    * 
    * @member {String} promoCode

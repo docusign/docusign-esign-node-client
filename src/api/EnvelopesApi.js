@@ -3376,9 +3376,9 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to Ã¯Â¿Â½browserÃ¯Â¿Â½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.langCode2 
+     * @param {String} optsOrCallback.langCode2 The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/EnvelopesApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
@@ -3702,6 +3702,81 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/pages/{pageNumber}/page_image', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getDocumentResponsiveHtml operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getDocumentResponsiveHtmlCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get Responsive HTML for a document in an envelope.
+     * @param {String} accountId 
+     * @param {String} envelopeId 
+     * @param {String} documentId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeAnchorTabLocations 
+     * @param {module:api/EnvelopesApi~getDocumentResponsiveHtmlCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.getDocumentResponsiveHtml = function(accountId, envelopeId, documentId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getDocumentResponsiveHtml");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getDocumentResponsiveHtml");
+      }
+
+      // verify the required parameter 'documentId' is set
+      if (documentId === undefined || documentId === null) {
+        throw new Error("Missing the required parameter 'documentId' when calling getDocumentResponsiveHtml");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'documentId': documentId
+      };
+      var queryParams = {
+        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/documents/{documentId}/responsive_html', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -4789,6 +4864,74 @@ Older envelopes might only have chromed images. If getting the non-chromed image
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/recipients/{recipientId}/signature_image', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getResponsiveHtml operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getResponsiveHtmlCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DocumentHtmlDefinitionOriginals} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Get Responsive HTML for all documents in an envelope.
+     * @param {String} accountId 
+     * @param {String} envelopeId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeAnchorTabLocations 
+     * @param {module:api/EnvelopesApi~getResponsiveHtmlCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DocumentHtmlDefinitionOriginals}
+     */
+    this.getResponsiveHtml = function(accountId, envelopeId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getResponsiveHtml");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getResponsiveHtml");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DocumentHtmlDefinitionOriginals;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/responsive_html', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

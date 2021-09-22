@@ -874,6 +874,12 @@
       if (data.hasOwnProperty('enableEsignCommunitiesMetadata')) {
         obj['enableEsignCommunitiesMetadata'] = SettingsMetadata.constructFromObject(data['enableEsignCommunitiesMetadata']);
       }
+      if (data.hasOwnProperty('enableIDFxIntuitKBA')) {
+        obj['enableIDFxIntuitKBA'] = ApiClient.convertToType(data['enableIDFxIntuitKBA'], 'String');
+      }
+      if (data.hasOwnProperty('enableIDFxIntuitKBAMetadata')) {
+        obj['enableIDFxIntuitKBAMetadata'] = SettingsMetadata.constructFromObject(data['enableIDFxIntuitKBAMetadata']);
+      }
       if (data.hasOwnProperty('enableInBrowserEditor')) {
         obj['enableInBrowserEditor'] = ApiClient.convertToType(data['enableInBrowserEditor'], 'String');
       }
@@ -1185,6 +1191,12 @@
       }
       if (data.hasOwnProperty('identityVerificationMetadata')) {
         obj['identityVerificationMetadata'] = SettingsMetadata.constructFromObject(data['identityVerificationMetadata']);
+      }
+      if (data.hasOwnProperty('idfxPhoneAuthenticationOverride')) {
+        obj['idfxPhoneAuthenticationOverride'] = ApiClient.convertToType(data['idfxPhoneAuthenticationOverride'], 'String');
+      }
+      if (data.hasOwnProperty('idfxPhoneAuthenticationOverrideMetadata')) {
+        obj['idfxPhoneAuthenticationOverrideMetadata'] = SettingsMetadata.constructFromObject(data['idfxPhoneAuthenticationOverrideMetadata']);
       }
       if (data.hasOwnProperty('ignoreErrorIfAnchorTabNotFound')) {
         obj['ignoreErrorIfAnchorTabNotFound'] = ApiClient.convertToType(data['ignoreErrorIfAnchorTabNotFound'], 'String');
@@ -2952,6 +2964,15 @@
   exports.prototype['enableEsignCommunitiesMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableIDFxIntuitKBA
+   */
+  exports.prototype['enableIDFxIntuitKBA'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableIDFxIntuitKBAMetadata
+   */
+  exports.prototype['enableIDFxIntuitKBAMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableInBrowserEditor
    */
   exports.prototype['enableInBrowserEditor'] = undefined;
@@ -3418,6 +3439,15 @@
    * @member {module:model/SettingsMetadata} identityVerificationMetadata
    */
   exports.prototype['identityVerificationMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} idfxPhoneAuthenticationOverride
+   */
+  exports.prototype['idfxPhoneAuthenticationOverride'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} idfxPhoneAuthenticationOverrideMetadata
+   */
+  exports.prototype['idfxPhoneAuthenticationOverrideMetadata'] = undefined;
   /**
    * 
    * @member {String} ignoreErrorIfAnchorTabNotFound

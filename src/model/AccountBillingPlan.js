@@ -118,6 +118,9 @@
       if (data.hasOwnProperty('planStartDate')) {
         obj['planStartDate'] = ApiClient.convertToType(data['planStartDate'], 'String');
       }
+      if (data.hasOwnProperty('productId')) {
+        obj['productId'] = ApiClient.convertToType(data['productId'], 'String');
+      }
       if (data.hasOwnProperty('renewalDate')) {
         obj['renewalDate'] = ApiClient.convertToType(data['renewalDate'], 'String');
       }
@@ -244,6 +247,11 @@
    * @member {String} planStartDate
    */
   exports.prototype['planStartDate'] = undefined;
+  /**
+   * 
+   * @member {String} productId
+   */
+  exports.prototype['productId'] = undefined;
   /**
    * 
    * @member {String} renewalDate

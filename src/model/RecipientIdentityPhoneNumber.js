@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/PropertyMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./PropertyMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.RecipientIdentityPhoneNumber = factory(root.Docusign.ApiClient);
+    root.Docusign.RecipientIdentityPhoneNumber = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, PropertyMetadata) {
   'use strict';
 
 
@@ -57,11 +57,23 @@
       if (data.hasOwnProperty('countryCode')) {
         obj['countryCode'] = ApiClient.convertToType(data['countryCode'], 'String');
       }
+      if (data.hasOwnProperty('countryCodeLock')) {
+        obj['countryCodeLock'] = ApiClient.convertToType(data['countryCodeLock'], 'String');
+      }
+      if (data.hasOwnProperty('countryCodeMetadata')) {
+        obj['countryCodeMetadata'] = PropertyMetadata.constructFromObject(data['countryCodeMetadata']);
+      }
       if (data.hasOwnProperty('extension')) {
         obj['extension'] = ApiClient.convertToType(data['extension'], 'String');
       }
+      if (data.hasOwnProperty('extensionMetadata')) {
+        obj['extensionMetadata'] = PropertyMetadata.constructFromObject(data['extensionMetadata']);
+      }
       if (data.hasOwnProperty('number')) {
         obj['number'] = ApiClient.convertToType(data['number'], 'String');
+      }
+      if (data.hasOwnProperty('numberMetadata')) {
+        obj['numberMetadata'] = PropertyMetadata.constructFromObject(data['numberMetadata']);
       }
     }
     return obj;
@@ -74,14 +86,31 @@
   exports.prototype['countryCode'] = undefined;
   /**
    * 
+   * @member {String} countryCodeLock
+   */
+  exports.prototype['countryCodeLock'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} countryCodeMetadata
+   */
+  exports.prototype['countryCodeMetadata'] = undefined;
+  /**
+   * 
    * @member {String} extension
    */
   exports.prototype['extension'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} extensionMetadata
+   */
+  exports.prototype['extensionMetadata'] = undefined;
   /**
    * 
    * @member {String} number
    */
   exports.prototype['number'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} numberMetadata
+   */
+  exports.prototype['numberMetadata'] = undefined;
 
 
 

@@ -288,6 +288,12 @@
       if (data.hasOwnProperty('sharedMetadata')) {
         obj['sharedMetadata'] = PropertyMetadata.constructFromObject(data['sharedMetadata']);
       }
+      if (data.hasOwnProperty('shareToRecipients')) {
+        obj['shareToRecipients'] = ApiClient.convertToType(data['shareToRecipients'], 'String');
+      }
+      if (data.hasOwnProperty('shareToRecipientsMetadata')) {
+        obj['shareToRecipientsMetadata'] = PropertyMetadata.constructFromObject(data['shareToRecipientsMetadata']);
+      }
       if (data.hasOwnProperty('smartContractInformation')) {
         obj['smartContractInformation'] = SmartContractInformation.constructFromObject(data['smartContractInformation']);
       }
@@ -744,6 +750,15 @@
    * @member {module:model/PropertyMetadata} sharedMetadata
    */
   exports.prototype['sharedMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} shareToRecipients
+   */
+  exports.prototype['shareToRecipients'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} shareToRecipientsMetadata
+   */
+  exports.prototype['shareToRecipientsMetadata'] = undefined;
   /**
    * @member {module:model/SmartContractInformation} smartContractInformation
    */

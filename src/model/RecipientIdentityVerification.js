@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RecipientIdentityInputOption'], factory);
+    define(['ApiClient', 'model/PropertyMetadata', 'model/RecipientIdentityInputOption'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RecipientIdentityInputOption'));
+    module.exports = factory(require('../ApiClient'), require('./PropertyMetadata'), require('./RecipientIdentityInputOption'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.RecipientIdentityVerification = factory(root.Docusign.ApiClient, root.Docusign.RecipientIdentityInputOption);
+    root.Docusign.RecipientIdentityVerification = factory(root.Docusign.ApiClient, root.Docusign.PropertyMetadata, root.Docusign.RecipientIdentityInputOption);
   }
-}(this, function(ApiClient, RecipientIdentityInputOption) {
+}(this, function(ApiClient, PropertyMetadata, RecipientIdentityInputOption) {
   'use strict';
 
 
@@ -60,6 +60,9 @@
       if (data.hasOwnProperty('workflowId')) {
         obj['workflowId'] = ApiClient.convertToType(data['workflowId'], 'String');
       }
+      if (data.hasOwnProperty('workflowIdMetadata')) {
+        obj['workflowIdMetadata'] = PropertyMetadata.constructFromObject(data['workflowIdMetadata']);
+      }
     }
     return obj;
   }
@@ -74,6 +77,10 @@
    * @member {String} workflowId
    */
   exports.prototype['workflowId'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} workflowIdMetadata
+   */
+  exports.prototype['workflowIdMetadata'] = undefined;
 
 
 
