@@ -1,13 +1,14 @@
 const docusign = require('../src/index');
+
 const oAuth = docusign.ApiClient.OAuth;
 const restApi = docusign.ApiClient.RestApi;
 let config;
 
 try {
-    config = require('../test-config');
-    if(!config) throw new Error('missed required configs')
+  config = require('../test-config');
+  if (!config) throw new Error('missed required configs');
 } catch (err) {
-    console.error(err);
+  console.error(err);
 }
 
 const USER_NAME = config.email;
@@ -35,53 +36,53 @@ const PRIVATE_KEY_FILENAME = 'keys/docusign_private_key.txt';
 const EXPIRES_IN = 3600;
 
 function getSignerTabsDefinition() {
-    var signHere = docusign.SignHere.constructFromObject({
-        documentId: '1',
-        pageNumber: '1',
-        recipientId: '1',
-        xPosition: '100',
-        yPosition: '100'
-    });
+  const signHere = docusign.SignHere.constructFromObject({
+    documentId: '1',
+    pageNumber: '1',
+    recipientId: '1',
+    xPosition: '100',
+    yPosition: '100',
+  });
 
-    var signHereTabs = [];
-    signHereTabs.push(signHere);
-    var tabs = new docusign.Tabs();
-    tabs.signHereTabs = signHereTabs;
+  const signHereTabs = [];
+  signHereTabs.push(signHere);
+  const tabs = new docusign.Tabs();
+  tabs.signHereTabs = signHereTabs;
 
-    return tabs;
+  return tabs;
 }
 
-var apiClient = new docusign.ApiClient({
-    basePath: BASE_PATH,
-    oAuthBasePath: OAUTH_BASE_PATH
+const apiClient = new docusign.ApiClient({
+  basePath: BASE_PATH,
+  oAuthBasePath: OAUTH_BASE_PATH,
 });
-var scopes = [
-    oAuth.Scope.IMPERSONATION,
-    oAuth.Scope.SIGNATURE
+const scopes = [
+  oAuth.Scope.IMPERSONATION,
+  oAuth.Scope.SIGNATURE,
 ];
 
-module.exports={
-    USER_NAME,
-    PRIVATE_KEY,
-    INTEGRATOR_KEY,
-    INTEGRATOR_KEY_AUTH_CODE,
-    INTEGRATOR_KEY_IMPLICIT,
-    CLIENT_SECRET,
-    TEMPLATE_ID,
-    BASE_PATH,
-    OAUTH_BASE_PATH,
-    SING_TEST1_FILE,
-    SING_TEST2_FILE,
-    LARGE_TEST_DOCUMENT1,
-    BRAND_LOGO_PATH,
-    BRAND_XML_PATH,
-    ACCOUNT_ID,
-    ENVELOPE_ID,
-    USER_ID,
-    REDIRECT_URI,
-    PRIVATE_KEY_FILENAME,
-    EXPIRES_IN,
-    getSignerTabsDefinition,
-    apiClient,
-    scopes
-}
+module.exports = {
+  USER_NAME,
+  PRIVATE_KEY,
+  INTEGRATOR_KEY,
+  INTEGRATOR_KEY_AUTH_CODE,
+  INTEGRATOR_KEY_IMPLICIT,
+  CLIENT_SECRET,
+  TEMPLATE_ID,
+  BASE_PATH,
+  OAUTH_BASE_PATH,
+  SING_TEST1_FILE,
+  SING_TEST2_FILE,
+  LARGE_TEST_DOCUMENT1,
+  BRAND_LOGO_PATH,
+  BRAND_XML_PATH,
+  ACCOUNT_ID,
+  ENVELOPE_ID,
+  USER_ID,
+  REDIRECT_URI,
+  PRIVATE_KEY_FILENAME,
+  EXPIRES_IN,
+  getSignerTabsDefinition,
+  apiClient,
+  scopes,
+};

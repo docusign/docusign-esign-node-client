@@ -59,6 +59,9 @@
   },
   "devDependencies": {
     "docdash": "0.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
     "expect.js": "~0.3.1",
     "jsdoc": "3.5.5",
     "mocha": "~5.0.4",
