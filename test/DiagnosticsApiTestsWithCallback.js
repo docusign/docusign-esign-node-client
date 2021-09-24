@@ -21,7 +21,7 @@ const {
 } = require('./constants');
 let { ACCOUNT_ID } = require('./constants');
 
-describe('DiagnosticsApi Tests With Callbacks:', (done) => {
+describe('DiagnosticsApi Tests With Callbacks:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -55,7 +55,7 @@ describe('DiagnosticsApi Tests With Callbacks:', (done) => {
   });
 
   describe('DiagnosticsApi tests:', () => {
-    it('Get settings', (done) => {
+    it('getRequestLogSettings returns the correct request logging setting', (done) => {
       const diagnosticsApi = new docusign.DiagnosticsApi(apiClient);
 
       const callback = function (error, data, __response) {

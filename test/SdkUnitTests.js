@@ -2,12 +2,6 @@ const docusign = require('../src/index');
 
 const restApi = docusign.ApiClient.RestApi;
 
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
 const path = require('path');
 const superagent = require('superagent');
@@ -35,21 +29,7 @@ const {
 } = require('./constants');
 let { ACCOUNT_ID, ENVELOPE_ID } = require('./constants');
 
-if (PRIVATE_KEY) {
-  let buf;
-  if (typeof Buffer.from === 'function') {
-    // Node 5.10+
-    buf = Buffer.from(PRIVATE_KEY, 'base64'); // Ta-da
-  } else {
-    // older Node versions, now deprecated
-    buf = new Buffer(PRIVATE_KEY, 'base64'); // Ta-da
-  }
-
-  const text = buf.toString('ascii');
-  // fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
-}
-
-describe('SDK Unit Tests:', (done) => {
+describe('SDK Unit Tests:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -66,14 +46,12 @@ describe('SDK Unit Tests:', (done) => {
         let accountDomain;
         apiClient.addDefaultHeader('Authorization', `Bearer ${res.body.access_token}`);
 
-        // console.log(apiClient.getUserInfo(res.body.access_token));
         apiClient.getUserInfo(res.body.access_token)
           .then((userInfo) => {
             ACCOUNT_ID = userInfo.accounts[0].accountId;
             baseUri = userInfo.accounts[0].baseUri;
             accountDomain = baseUri.split('/v2');
             apiClient.setBasePath(`${accountDomain[0]}/restapi`);
-            // console.log('LoginInformation: ' + JSON.stringify(userInfo));
             done();
           })
           .catch((error) => {
@@ -235,7 +213,6 @@ describe('SDK Unit Tests:', (done) => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then((envelopeSummary) => {
-        // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
         assert.equal(envelopeSummary && Object.keys(envelopeSummary).length > 0, true);
         ENVELOPE_ID = envelopeSummary.envelopeId;
         envelopesApi.updateRecipients(ACCOUNT_ID, ENVELOPE_ID, { recipients: envDef.recipients })
@@ -282,7 +259,6 @@ describe('SDK Unit Tests:', (done) => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then((envelopeSummary) => {
-        // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
         assert.notEqual(envelopeSummary, {});
         done();
       })
@@ -360,7 +336,6 @@ describe('SDK Unit Tests:', (done) => {
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then((envelopeSummary) => {
         if (envelopeSummary) {
-          // console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
           const returnUrl = 'http://www.docusign.com/developer-center';
           const recipientView = new docusign.RecipientViewRequest();
           recipientView.returnUrl = returnUrl;
@@ -854,11 +829,9 @@ describe('SDK Unit Tests:', (done) => {
             return done();
           })
           .catch((error) =>
-            // console.log(error)
             done(error));
       })
       .catch((error) =>
-        // console.log(error)
         done(error));
   });
 
@@ -941,7 +914,7 @@ describe('SDK Unit Tests:', (done) => {
             console.log(`TemplateSummary Number: ${JSON.stringify(template)}`);
             assert.equal(!!template.numberTabs, true);
             assert.equal(!!template.numberTabs.length, true);
-            assert.equal(isNaN(template.numberTabs[0]), true);
+            assert.equal(Number.isNaN(template.numberTabs[0]), true);
             assert.equal(typeof (template.numberTabs[0]) === 'number', false);
             assert.equal(!!template.dateTabs, true);
             assert.equal(!!template.dateTabs.length, true);
@@ -951,7 +924,6 @@ describe('SDK Unit Tests:', (done) => {
       })
       .catch((error) => {
         if (error) {
-          // console.log('TemplateSummary Number Error: ' + JSON.stringify(templateSummary));
           console.error(error);
           return done(error);
         }

@@ -28,7 +28,7 @@ const {
 } = require('./constants');
 let { ACCOUNT_ID, ENVELOPE_ID } = require('./constants');
 
-describe('EnvelopesApi Tests With Callbacks:', (done) => {
+describe('EnvelopesApi Tests With Callbacks:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -64,7 +64,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
   describe('EnvelopesApi tests:', () => {
     const envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    it('Get envelope by id', (done) => {
+    it('getEnvelope returns correct envelope summary by envelopeId', (done) => {
       let fileBytes = null;
       try {
         // read file from a local directory
@@ -132,7 +132,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, createEnvelopeCallback);
     });
 
-    it('Get envelope recipients', (done) => {
+    it('listRecipients returns correct recipients of an envelope by envelope id', (done) => {
       const listRecipientsCallback = function (error, recipients, _response) {
         if (error) {
           return done(error);
@@ -147,7 +147,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.listRecipients(ACCOUNT_ID, ENVELOPE_ID, listRecipientsCallback);
     });
 
-    it('Create sender view', (done) => {
+    it('createSenderView creates a sender view for the envelope and returns correct url', (done) => {
       let fileBytes = null;
       try {
         // read file from a local directory
@@ -235,7 +235,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, createEnvelopeCallback);
     });
 
-    it('Update recipients', (done) => {
+    it('updateRecipients adds reciipients to the envelope if recipients option is provided with recipients data', (done) => {
       const newSigner = new docusign.Signer();
       newSigner.email = USER_NAME;
       newSigner.name = 'Signer2';
@@ -288,7 +288,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.updateRecipients(ACCOUNT_ID, ENVELOPE_ID, { recipients: newRecipients }, updateRecipientsCallback);
     });
 
-    it('Get audit events', (done) => {
+    it('listAuditEvents returns the correct envelope audit events for an envelope', (done) => {
       const listAuditEventsCallback = function (error, envelopeAuditEventResponse, _response) {
         if (error) {
           return done(error);
@@ -303,7 +303,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.listAuditEvents(ACCOUNT_ID, ENVELOPE_ID, listAuditEventsCallback);
     });
 
-    it('Update documents', (done) => {
+    it('updateDocuments adds documents to the envelope if envelopeDefinition option is provided with new envelope definition data', (done) => {
       let newFileBytes = null;
       try {
         // read file from a local directory
@@ -364,7 +364,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID, firstListDocumentsCallback);
     });
 
-    it('Get recipient tabs', (done) => {
+    it('listTabs returns the correct recipient tabs of the envelope by recipient id', (done) => {
       const listTabsCallback = function (error, tabs, _response) {
         if (error) {
           return done(error);
@@ -401,7 +401,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.listRecipients(ACCOUNT_ID, ENVELOPE_ID, callback);
     });
 
-    it('Create Recipient tabs', (done) => {
+    it('createTabs creates recipient tabs and adds them to the envelope recipient if tabs option is provided with tabs data', (done) => {
       const signHere = docusign.SignHere.constructFromObject({
         documentId: '1',
         pageNumber: '1',
@@ -426,7 +426,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.createTabs(ACCOUNT_ID, ENVELOPE_ID, recipientId, { tabs }, callback);
     });
 
-    it('Put Recipient tab', (done) => {
+    it('updateTabs adds recipient tabs to the envelope recipient if tabs option is provided with tabs data', (done) => {
       const signHere = docusign.SignHere.constructFromObject({
         documentId: '1',
         pageNumber: '1',
@@ -450,7 +450,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.updateTabs(ACCOUNT_ID, ENVELOPE_ID, recipientId, { tabs }, callback);
     });
 
-    it('Delete Recipient', (done) => {
+    it('deleteRecipient deletes a recipient from the envelope by recipient id', (done) => {
       const recipientId = '1';
       const callback = function (error, data, __response) {
         if (error) {
@@ -462,7 +462,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.deleteRecipient(ACCOUNT_ID, ENVELOPE_ID, recipientId, callback);
     });
 
-    it('Delete Recipients', (done) => {
+    it('deleteRecipient deletes the recipients from the envelope if recipient option is provided with recipients data', (done) => {
       const signer = new docusign.Signer();
       signer.email = USER_NAME;
       signer.recipientId = '1';
@@ -481,7 +481,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.deleteRecipients(ACCOUNT_ID, ENVELOPE_ID, { recipients }, callback);
     });
 
-    it('Put status', (done) => {
+    it('listStatus returns the envelope status for the specified envelopes if the envelopeIdsRequest, envelopeIds and transactionIds options are provided', (done) => {
       const callback = function (error, envelope, __response) {
         if (error) {
           return done(error);
@@ -504,7 +504,7 @@ describe('EnvelopesApi Tests With Callbacks:', (done) => {
       envelopesApi.getEnvelope(ACCOUNT_ID, ENVELOPE_ID, {}, callback);
     });
 
-    it('Get custom fields', (done) => {
+    it('listCustomFields returns the custom field information for the specified envelope', (done) => {
       const callback = function (error, data, __response) {
         if (error) {
           return done(error);

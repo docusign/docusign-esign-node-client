@@ -21,7 +21,7 @@ const {
 } = require('./constants');
 let { ACCOUNT_ID, ENVELOPE_ID } = require('./constants');
 
-describe('FoldersApi Tests With Callbacks:', (done) => {
+describe('FoldersApi Tests With Callbacks:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -57,7 +57,7 @@ describe('FoldersApi Tests With Callbacks:', (done) => {
   describe('FoldersApi tests:', () => {
     const foldersApi = new docusign.FoldersApi(apiClient);
 
-    it('Put Folders', (done) => {
+    it('moveEnvelopes should move the envelopes to the specified folder if the foldersRequest option is provided', (done) => {
       const foldersRequest = new docusign.FoldersRequest();
       foldersRequest.envelopeIds = [];
       foldersRequest.envelopeIds.push(ENVELOPE_ID);

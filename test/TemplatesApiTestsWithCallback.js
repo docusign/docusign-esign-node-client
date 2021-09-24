@@ -21,7 +21,7 @@ const {
 } = require('./constants');
 let { ACCOUNT_ID } = require('./constants');
 
-describe('TemplatesApi Tests With Callbacks:', (done) => {
+describe('TemplatesApi Tests With Callbacks:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -55,7 +55,7 @@ describe('TemplatesApi Tests With Callbacks:', (done) => {
   });
 
   describe('TemplatesApi tests:', () => {
-    it('Get templates', (done) => {
+    it('listTemplates returns the list of templates for the specified account', (done) => {
       const templatesApi = new docusign.TemplatesApi(apiClient);
 
       const listTemplatesCallback = function (error, templateResults, _response) {

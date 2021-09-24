@@ -19,9 +19,9 @@ const {
   apiClient,
   scopes,
 } = require('./constants');
-let { ACCOUNT_ID, ENVELOPE_ID } = require('./constants');
+let { ACCOUNT_ID } = require('./constants');
 
-describe('UsersApi Tests With Callbacks:', (done) => {
+describe('UsersApi Tests With Callbacks:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -57,7 +57,7 @@ describe('UsersApi Tests With Callbacks:', (done) => {
   describe('UsersApi tests:', () => {
     const usersApi = new docusign.UsersApi(apiClient);
 
-    it('Get users', (done) => {
+    it('should return the list of users for the specified account', (done) => {
       const listUsersCallback = function (error, userInformationList, __response) {
         if (error) {
           return done(error);
@@ -70,7 +70,7 @@ describe('UsersApi Tests With Callbacks:', (done) => {
       usersApi.list(ACCOUNT_ID, listUsersCallback);
     });
 
-    it('get user', (done) => {
+    it('getInformation returns the user information for a specified user', (done) => {
       const callback = function (error, data, __response) {
         if (error) {
           return done(error);
@@ -82,7 +82,7 @@ describe('UsersApi Tests With Callbacks:', (done) => {
       usersApi.getInformation(ACCOUNT_ID, USER_ID, callback);
     });
 
-    it('create user', (done) => {
+    it('should create and add new user to the specified account if newUsersDefinition option is provided with user data', (done) => {
       const newUser = new docusign.UserInformation();
       newUser.company = 'TestCompany';
       newUser.email = 'test@email.com';

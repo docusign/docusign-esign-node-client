@@ -14,7 +14,6 @@ const fs = require('fs');
 
 const {
   USER_NAME,
-  PRIVATE_KEY,
   INTEGRATOR_KEY,
   OAUTH_BASE_PATH,
   SING_TEST1_FILE,
@@ -29,21 +28,7 @@ const {
 } = require('./constants');
 let { ACCOUNT_ID, ENVELOPE_ID } = require('./constants');
 
-if (PRIVATE_KEY) {
-  let buf;
-  if (typeof Buffer.from === 'function') {
-    // Node 5.10+
-    buf = Buffer.from(PRIVATE_KEY, 'base64'); // Ta-da
-  } else {
-    // older Node versions, now deprecated
-    buf = new Buffer(PRIVATE_KEY, 'base64'); // Ta-da
-  }
-
-  const text = buf.toString('ascii');
-  // fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
-}
-
-describe('EnvelopesApi tests:', (done) => {
+describe('EnvelopesApi tests:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -60,14 +45,12 @@ describe('EnvelopesApi tests:', (done) => {
         let accountDomain;
         apiClient.addDefaultHeader('Authorization', `Bearer ${res.body.access_token}`);
 
-        // console.log(apiClient.getUserInfo(res.body.access_token));
         apiClient.getUserInfo(res.body.access_token)
           .then((userInfo) => {
             ACCOUNT_ID = userInfo.accounts[0].accountId;
             baseUri = userInfo.accounts[0].baseUri;
             accountDomain = baseUri.split('/v2');
             apiClient.setBasePath(`${accountDomain[0]}/restapi`);
-            // console.log('LoginInformation: ' + JSON.stringify(userInfo));
             done();
           })
           .catch((error) => {
@@ -86,7 +69,7 @@ describe('EnvelopesApi tests:', (done) => {
   describe('EnvelopesApi tests:', () => {
     const envelopesApi = new docusign.EnvelopesApi(apiClient);
 
-    it('Get envelope by id', (done) => {
+    it('getEnvelope returns correct envelope summary by envelope id', (done) => {
       let fileBytes = null;
       try {
         // read file from a local directory
@@ -153,7 +136,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Get envelope recipients', (done) => {
+    it('listRecipients returns correct recipients of an envelope by envelope id', (done) => {
       envelopesApi.listRecipients(ACCOUNT_ID, ENVELOPE_ID)
         .then((recipients) => {
           assert.notStrictEqual(recipients, undefined);
@@ -168,7 +151,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Create sender view', (done) => {
+    it('createSenderView creates a sender view for the envelope and returns correct url', (done) => {
       let fileBytes = null;
       try {
         // read file from a local directory
@@ -237,7 +220,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
     //
-    it('Update recipients', (done) => {
+    it('updateRecipients adds reciipients to the envelope if recipients option is provided with recipients data', (done) => {
       const newSigner = new docusign.Signer();
       newSigner.email = USER_NAME;
       newSigner.name = 'Signer2';
@@ -273,7 +256,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
     //
-    it('Get audit events', (done) => {
+    it('listAuditEvents returns the correct envelope audit events for an envelope', (done) => {
       //
       envelopesApi.listAuditEvents(ACCOUNT_ID, ENVELOPE_ID)
         .then((envelopeAuditEventResponse) => {
@@ -289,7 +272,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
     //
-    it('Update documents', (done) => {
+    it('updateDocuments adds documents to the envelope if envelopeDefinition option is provided with new envelope definition data', (done) => {
       let newFileBytes = null;
       try {
         // read file from a local directory
@@ -340,7 +323,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
     //
-    it('Get recipient tabs', (done) => {
+    it('listTabs returns the correct recipient tabs of the envelope by recipient id', (done) => {
       envelopesApi.listRecipients(ACCOUNT_ID, ENVELOPE_ID)
         .then((recipients) => {
           assert.notStrictEqual(recipients, undefined);
@@ -373,7 +356,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Create Recipient tabs', (done) => {
+    it('createTabs creates recipient tabs and adds them to the envelope recipient if tabs option is provided with tabs data', (done) => {
       const signHere = docusign.SignHere.constructFromObject({
         documentId: '1',
         pageNumber: '1',
@@ -399,7 +382,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Put Recipient tab', (done) => {
+    it('updateTabs adds recipient tabs to the envelope recipient if tabs option is provided with tabs data', (done) => {
       const signHere = docusign.SignHere.constructFromObject({
         documentId: '1',
         pageNumber: '1',
@@ -425,7 +408,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Delete Recipient', (done) => {
+    it('deleteRecipient deletes a recipient from the envelope by recipient id', (done) => {
       const recipientId = '1';
       envelopesApi.deleteRecipient(ACCOUNT_ID, ENVELOPE_ID, recipientId)
         .then((data) => {
@@ -439,7 +422,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Delete Recipients', (done) => {
+    it('deleteRecipient deletes the recipients from the envelope if recipient option is provided with recipients data', (done) => {
       const signer = new docusign.Signer();
       signer.email = USER_NAME;
       signer.recipientId = '1';
@@ -460,7 +443,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Put status', (done) => {
+    it('listStatus returns the envelope status for the specified envelopes if the envelopeIdsRequest, envelopeIds and transactionIds options are provided', (done) => {
       envelopesApi.getEnvelope(ACCOUNT_ID, ENVELOPE_ID)
         .then((envelope) => {
           assert.notStrictEqual(envelope, undefined);
@@ -485,7 +468,7 @@ describe('EnvelopesApi tests:', (done) => {
         });
     });
 
-    it('Get custom fields', (done) => {
+    it('listCustomFields returns the custom field information for the specified envelope', (done) => {
       envelopesApi.listCustomFields(ACCOUNT_ID, ENVELOPE_ID)
         .then((data) => {
           assert.notStrictEqual(data, undefined);

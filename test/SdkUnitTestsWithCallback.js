@@ -31,7 +31,7 @@ const {
 } = require('./constants');
 let { ACCOUNT_ID, ENVELOPE_ID } = require('./constants');
 
-describe('SDK Unit Tests With Callbacks:', (done) => {
+describe('SDK Unit Tests With Callbacks:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call

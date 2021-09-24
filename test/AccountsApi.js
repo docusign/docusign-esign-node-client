@@ -35,11 +35,10 @@ if (PRIVATE_KEY) {
   }
 
   const text = buf.toString('ascii');
-  // fs.writeFileSync(path.resolve('test', privateKeyFilename), text);
+  fs.writeFileSync(path.resolve('test', PRIVATE_KEY_FILENAME), text);
 }
 
-
-describe('AccountsApi tests:', (done) => {
+describe('AccountsApi tests:', () => {
   before((done) => {
     // IMPORTANT NOTE:
     // the first time you ask for a JWT access token, you should grant access by making the following call
@@ -56,14 +55,12 @@ describe('AccountsApi tests:', (done) => {
         let accountDomain;
         apiClient.addDefaultHeader('Authorization', `Bearer ${res.body.access_token}`);
 
-        // console.log(apiClient.getUserInfo(res.body.access_token));
         apiClient.getUserInfo(res.body.access_token)
           .then((userInfo) => {
             ACCOUNT_ID = userInfo.accounts[0].accountId;
             baseUri = userInfo.accounts[0].baseUri;
             accountDomain = baseUri.split('/v2');
             apiClient.setBasePath(`${accountDomain[0]}/restapi`);
-            // console.log('LoginInformation: ' + JSON.stringify(userInfo));
             done();
           })
           .catch((error) => {
@@ -80,7 +77,7 @@ describe('AccountsApi tests:', (done) => {
   });
 
   describe('AccountsApi tests:', () => {
-    it('Get account info', (done) => {
+    it('getAccountInformation returns correct account and account settings when includeAccountSettings set to true', (done) => {
       const accountsApi = new docusign.AccountsApi(apiClient);
       accountsApi.getAccountInformation(ACCOUNT_ID, { includeAccountSettings: true })
         .then((accountInfo) => {
