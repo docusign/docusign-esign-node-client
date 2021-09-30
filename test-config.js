@@ -1,3 +1,5 @@
+
+
 module.exports = {
   integratorKey: process.env.INTEGRATOR_KEY_JWT,
   apiEnv: 'demo',
