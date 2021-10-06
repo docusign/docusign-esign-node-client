@@ -574,14 +574,14 @@ describe('SDK Unit Tests:', () => {
     let options = {
       count: '70', fromDate: THIRTY_DAYS_AGO,
     };
-    envelopesApi.listStatusChanges(accountId, options)
+    envelopesApi.listStatusChanges(ACCOUNT_ID, options)
       .then((data) => {
         let envelopIds = data.envelopes.reduce((acc, envelope) => {
           if (!acc.length) return envelope.envelopeId;
           return `${acc}, ${envelope.envelopeId}`;
         }, '');
         console.log(envelopIds);
-        envelopesApi.listStatusChanges(accountId, { envelopeIds: envelopIds })
+        envelopesApi.listStatusChanges(ACCOUNT_ID, { envelopeIds: envelopIds })
           .then((data) => {
             assert.notEqual(data.envelopes, undefined);
             assert.notEqual(data.envelopes[0].attachmentsUri, undefined);

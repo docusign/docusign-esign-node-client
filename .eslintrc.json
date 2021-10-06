@@ -20,6 +20,7 @@
         "import/order": "off",
         "no-buffer-constructor": "off",
         "prefer-const": "off",
-        "implicit-arrow-linebreak": "off"
+        "implicit-arrow-linebreak": "off",
+        "no-multiple-empty-lines": "error"
     }
 }

@@ -30,6 +30,7 @@ const BRAND_LOGO_PATH = 'img/docusign-lgo.png';
 const BRAND_XML_PATH = 'docs/brand.xml';
 const ACCOUNT_ID = '';
 const ENVELOPE_ID = '';
+const RECIPIENT_ID = '';
 const USER_ID = config.userId;
 const REDIRECT_URI = 'https://www.docusign.com/api';
 const PRIVATE_KEY_FILENAME = 'keys/docusign_private_key.txt';
@@ -82,6 +83,7 @@ module.exports = {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
+  RECIPIENT_ID,
   getSignerTabsDefinition,
   apiClient,
   scopes,

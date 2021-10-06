@@ -1,13 +1,5 @@
 const docusign = require('../src/index');
-
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
-const path = require('path');
 
 const { JWTAuth } = require('./helpers');
 let { ACCOUNT_ID, apiClient } = require('./constants');
@@ -25,23 +17,21 @@ describe('DiagnosticsApi tests:', () => {
     }
   });
 
-  describe('DiagnosticsApi tests:', () => {
-    const diagnosticsApi = new docusign.DiagnosticsApi(apiClient);
-    it('getRequestLogSettings returns the correct request logging setting', (done) => {
-      diagnosticsApi.getRequestLogSettings()
-        .then((data) => {
-          assert.deepEqual(data, {
-            apiRequestLogging: 'false',
-            apiRequestLogMaxEntries: '50',
-            apiRequestLogRemainingEntries: '0',
-          });
-          done();
-        })
-        .catch((error) => {
-          if (error) {
-            return done(error);
-          }
+  const diagnosticsApi = new docusign.DiagnosticsApi(apiClient);
+  it('getRequestLogSettings returns the correct request logging setting', (done) => {
+    diagnosticsApi.getRequestLogSettings()
+      .then((data) => {
+        assert.deepEqual(data, {
+          apiRequestLogging: 'false',
+          apiRequestLogMaxEntries: '50',
+          apiRequestLogRemainingEntries: '0',
         });
-    });
+        done();
+      })
+      .catch((error) => {
+        if (error) {
+          return done(error);
+        }
+      });
   });
 });

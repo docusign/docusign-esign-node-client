@@ -1,13 +1,5 @@
 const docusign = require('../src/index');
-
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
-const path = require('path');
 
 const Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 
@@ -46,20 +38,18 @@ describe('AccountsApi tests:', () => {
     }
   });
 
-  describe('AccountsApi tests:', () => {
-    it('getAccountInformation returns correct account and account settings when includeAccountSettings set to true', (done) => {
-      const accountsApi = new docusign.AccountsApi(apiClient);
-      accountsApi.getAccountInformation(ACCOUNT_ID, { includeAccountSettings: true })
-        .then((accountInfo) => {
-          assert.notStrictEqual(accountInfo, undefined);
-          assert.notStrictEqual(accountInfo.accountSettings, undefined);
-          done();
-        })
-        .catch((error) => {
-          if (error) {
-            return done(error);
-          }
-        });
-    });
+  it('getAccountInformation returns correct account and account settings when includeAccountSettings set to true', (done) => {
+    const accountsApi = new docusign.AccountsApi(apiClient);
+    accountsApi.getAccountInformation(ACCOUNT_ID, { includeAccountSettings: true })
+      .then((accountInfo) => {
+        assert.notStrictEqual(accountInfo, undefined);
+        assert.notStrictEqual(accountInfo.accountSettings, undefined);
+        done();
+      })
+      .catch((error) => {
+        if (error) {
+          return done(error);
+        }
+      });
   });
 });

@@ -1,11 +1,4 @@
 const docusign = require('../src/index');
-
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
 
 const { JWTAuth } = require('./helpers');
@@ -24,23 +17,21 @@ describe('DiagnosticsApi Tests With Callbacks:', () => {
     }
   });
 
-  describe('DiagnosticsApi tests:', () => {
-    it('getRequestLogSettings returns the correct request logging setting', (done) => {
-      const diagnosticsApi = new docusign.DiagnosticsApi(apiClient);
+  it('getRequestLogSettings returns the correct request logging setting', (done) => {
+    const diagnosticsApi = new docusign.DiagnosticsApi(apiClient);
 
-      const callback = function (error, data, __response) {
-        if (error) {
-          return done(error);
-        }
-        assert.deepEqual(data, {
-          apiRequestLogging: 'false',
-          apiRequestLogMaxEntries: '50',
-          apiRequestLogRemainingEntries: '0',
-        });
-        done();
-      };
+    const callback = function (error, data, __response) {
+      if (error) {
+        return done(error);
+      }
+      assert.deepEqual(data, {
+        apiRequestLogging: 'false',
+        apiRequestLogMaxEntries: '50',
+        apiRequestLogRemainingEntries: '0',
+      });
+      done();
+    };
 
-      diagnosticsApi.getRequestLogSettings(ACCOUNT_ID, callback);
-    });
+    diagnosticsApi.getRequestLogSettings(ACCOUNT_ID, callback);
   });
 });

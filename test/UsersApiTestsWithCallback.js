@@ -1,16 +1,7 @@
 const docusign = require('../src/index');
-
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
-const path = require('path');
-
 const { JWTAuth } = require('./helpers');
-let { ACCOUNT_ID, apiClient } = require('./constants');
+let { ACCOUNT_ID, USER_ID, apiClient } = require('./constants');
 
 describe('UsersApi Tests With Callbacks:', () => {
   before((done) => {
@@ -25,53 +16,51 @@ describe('UsersApi Tests With Callbacks:', () => {
     }
   });
 
-  describe('UsersApi tests:', () => {
-    const usersApi = new docusign.UsersApi(apiClient);
+  const usersApi = new docusign.UsersApi(apiClient);
 
-    it('should return the list of users for the specified account', (done) => {
-      const listUsersCallback = function (error, userInformationList, __response) {
-        if (error) {
-          return done(error);
-        }
-        assert.notStrictEqual(userInformationList, undefined);
-        assert.notStrictEqual(userInformationList.users, undefined);
-        assert.notStrictEqual(userInformationList.users[0], undefined);
-        done();
-      };
-      usersApi.list(ACCOUNT_ID, listUsersCallback);
-    });
+  it('should return the list of users for the specified account', (done) => {
+    const listUsersCallback = function (error, userInformationList, __response) {
+      if (error) {
+        return done(error);
+      }
+      assert.notStrictEqual(userInformationList, undefined);
+      assert.notStrictEqual(userInformationList.users, undefined);
+      assert.notStrictEqual(userInformationList.users[0], undefined);
+      done();
+    };
+    usersApi.list(ACCOUNT_ID, listUsersCallback);
+  });
 
-    it('getInformation returns the user information for a specified user', (done) => {
-      const callback = function (error, data, __response) {
-        if (error) {
-          return done(error);
-        }
-        assert.notStrictEqual(data, undefined);
-        done();
-      };
+  it('getInformation returns the user information for a specified user', (done) => {
+    const callback = function (error, data, __response) {
+      if (error) {
+        return done(error);
+      }
+      assert.notStrictEqual(data, undefined);
+      done();
+    };
 
-      usersApi.getInformation(ACCOUNT_ID, USER_ID, callback);
-    });
+    usersApi.getInformation(ACCOUNT_ID, USER_ID, callback);
+  });
 
-    it('should create and add new user to the specified account if newUsersDefinition option is provided with user data', (done) => {
-      const newUser = new docusign.UserInformation();
-      newUser.company = 'TestCompany';
-      newUser.email = 'test@email.com';
-      newUser.firstName = 'First';
-      newUser.lastName = 'Last';
+  it('should create and add new user to the specified account if newUsersDefinition option is provided with user data', (done) => {
+    const newUser = new docusign.UserInformation();
+    newUser.company = 'TestCompany';
+    newUser.email = 'test@email.com';
+    newUser.firstName = 'First';
+    newUser.lastName = 'Last';
 
-      const newUsersDefinition = new docusign.NewUsersDefinition();
-      newUsersDefinition.newUsers = [];
-      newUsersDefinition.newUsers.push(newUser);
+    const newUsersDefinition = new docusign.NewUsersDefinition();
+    newUsersDefinition.newUsers = [];
+    newUsersDefinition.newUsers.push(newUser);
 
-      const callback = function (error, data, __response) {
-        if (error) {
-          return done(error);
-        }
-        assert.notStrictEqual(data, undefined);
-        done();
-      };
-      usersApi.create(ACCOUNT_ID, { newUsersDefinition }, callback);
-    });
+    const callback = function (error, data, __response) {
+      if (error) {
+        return done(error);
+      }
+      assert.notStrictEqual(data, undefined);
+      done();
+    };
+    usersApi.create(ACCOUNT_ID, { newUsersDefinition }, callback);
   });
 });

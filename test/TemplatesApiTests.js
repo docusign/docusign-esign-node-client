@@ -1,14 +1,5 @@
 const docusign = require('../src/index');
-
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
-const path = require('path');
-
 const { JWTAuth } = require('./helpers');
 let { ACCOUNT_ID, apiClient } = require('./constants');
 
@@ -25,21 +16,19 @@ describe('TemplatesApi tests:', () => {
     }
   });
 
-  describe('TemplatesApi tests:', () => {
-    it('listTemplates returns the list of templates for the specified account', (done) => {
-      const templatesApi = new docusign.TemplatesApi(apiClient);
-      templatesApi.listTemplates(ACCOUNT_ID)
-        .then((templateResults) => {
-          assert.notStrictEqual(templateResults, undefined);
-          assert.notStrictEqual(templateResults.envelopeTemplates, undefined);
-          assert.notStrictEqual(templateResults.envelopeTemplates[0], undefined);
-          done();
-        })
-        .catch((error) => {
-          if (error) {
-            return done(error);
-          }
-        });
-    });
+  it('listTemplates returns the list of templates for the specified account', (done) => {
+    const templatesApi = new docusign.TemplatesApi(apiClient);
+    templatesApi.listTemplates(ACCOUNT_ID)
+      .then((templateResults) => {
+        assert.notStrictEqual(templateResults, undefined);
+        assert.notStrictEqual(templateResults.envelopeTemplates, undefined);
+        assert.notStrictEqual(templateResults.envelopeTemplates[0], undefined);
+        done();
+      })
+      .catch((error) => {
+        if (error) {
+          return done(error);
+        }
+      });
   });
 });
