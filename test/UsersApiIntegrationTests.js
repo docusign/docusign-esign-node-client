@@ -40,6 +40,7 @@ describe('UsersApi tests:', () => {
         assert.notStrictEqual(data, undefined);
         assert.notStrictEqual(data.groupList, undefined);
         assert.notStrictEqual(data.userSettings, undefined);
+        assert.strictEqual(data.userId, USER_ID);
         done();
       })
       .catch((error) => {
@@ -54,6 +55,7 @@ describe('UsersApi tests:', () => {
     newUser.email = 'test@email.com';
     newUser.firstName = 'First';
     newUser.lastName = 'Last';
+    newUser.userName = 'TestUserName';
 
     const newUsersDefinition = new docusign.NewUsersDefinition();
     newUsersDefinition.newUsers = [];
@@ -62,9 +64,8 @@ describe('UsersApi tests:', () => {
     usersApi.create(ACCOUNT_ID, { newUsersDefinition })
       .then((data) => {
         assert.notStrictEqual(data, undefined);
-        assert.notStrictEqual(data.newUsers, undefined);
-        assert.notStrictEqual(data.newUsers[0], undefined);
         assert.equal(data.newUsers[0].email, 'test@email.com');
+        assert.equal(data.newUsers[0].userName, 'TestUserName');
         done();
       })
       .catch((error) => {

@@ -11,7 +11,7 @@ try {
   console.error(err);
 }
 
-const USER_NAME = config.email;
+const EMAIL = config.email;
 const PRIVATE_KEY = config.privateKey;
 const INTEGRATOR_KEY = config.integratorKey;
 const INTEGRATOR_KEY_AUTH_CODE = config.integratorKeyAuthCode;
@@ -63,7 +63,7 @@ const scopes = [
 ];
 
 module.exports = {
-  USER_NAME,
+  EMAIL,
   PRIVATE_KEY,
   INTEGRATOR_KEY,
   INTEGRATOR_KEY_AUTH_CODE,

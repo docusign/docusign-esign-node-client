@@ -1,12 +1,11 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const path = require('path');
-
 const Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 const fs = require('fs');
 
 const {
-  USER_NAME,
+  EMAIL,
   SING_TEST1_FILE,
   SING_TEST2_FILE,
   getSignerTabsDefinition,
@@ -62,7 +61,7 @@ describe('EnvelopesApi tests:', () => {
 
     // Add a recipient to sign the document
     const signer1 = new docusign.Signer();
-    signer1.email = USER_NAME;
+    signer1.email = EMAIL;
     signer1.name = 'Pat Developer';
     signer1.recipientId = '1';
 
@@ -95,8 +94,8 @@ describe('EnvelopesApi tests:', () => {
       .then((envelopeSummary) => envelopesApi.getEnvelope(ACCOUNT_ID, envelopeSummary.envelopeId))
       .then((envelope) => {
         assert.notStrictEqual(envelope, undefined);
-        assert.notStrictEqual(envelope.envelopeId, undefined);
-        assert.equal(envelope.status, 'created');
+        assert.strictEqual(envelope.envelopeId, ENVELOPE_ID);
+        assert.strictEqual(envelope.status, 'created');
         done();
       })
       .catch((error) => {
@@ -152,7 +151,7 @@ describe('EnvelopesApi tests:', () => {
 
     // Add a recipient to sign the document
     const signer = new docusign.Signer();
-    signer.email = USER_NAME;
+    signer.email = EMAIL;
     const name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -178,6 +177,10 @@ describe('EnvelopesApi tests:', () => {
         const returnUrlRequest = new docusign.ReturnUrlRequest();
         returnUrlRequest.returnUrl = returnUrl;
 
+        assert.notStrictEqual(envelopeSummary, undefined);
+        assert.notStrictEqual(envelopeSummary.envelopeId, undefined);
+        assert.equal(envelopeSummary.status, 'created');
+
         return envelopesApi.createSenderView(ACCOUNT_ID, envelopeSummary.envelopeId, { returnUrlRequest });
       })
       .then((viewUrl) => {
@@ -194,7 +197,7 @@ describe('EnvelopesApi tests:', () => {
   //
   it('updateRecipients adds reciipients to the envelope if recipients option is provided with recipients data', (done) => {
     const newSigner = new docusign.Signer();
-    newSigner.email = USER_NAME;
+    newSigner.email = EMAIL;
     newSigner.name = 'Signer2';
     newSigner.recipientId = '2';
 
@@ -303,6 +306,9 @@ describe('EnvelopesApi tests:', () => {
       })
       .then((tabs) => {
         assert.notStrictEqual(tabs, undefined);
+        assert.notStrictEqual(tabs.signHereTabs, undefined);
+        assert.notStrictEqual(tabs.signHereTabs[0], undefined);
+        assert.strictEqual(tabs.signHereTabs[0].tabType, 'signhere');
         done();
       })
       .catch((error) => {
@@ -316,6 +322,9 @@ describe('EnvelopesApi tests:', () => {
     envelopesApi.listRecipients(ACCOUNT_ID, ENVELOPE_ID)
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.signers, undefined);
+        assert.notStrictEqual(data.signers[0], undefined);
+        assert.strictEqual(data.signers[0].email, EMAIL);
         done();
       })
       .catch((error) => {
@@ -342,6 +351,13 @@ describe('EnvelopesApi tests:', () => {
     envelopesApi.createTabs(ACCOUNT_ID, ENVELOPE_ID, RECIPIENT_ID, { tabs })
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.signHereTabs, undefined);
+        assert.notStrictEqual(data.signHereTabs[0], undefined);
+        assert.strictEqual(data.signHereTabs[0].documentId, signHere.documentId);
+        assert.strictEqual(data.signHereTabs[0].pageNumber, signHere.pageNumber);
+        assert.strictEqual(data.signHereTabs[0].xPosition, signHere.xPosition);
+        assert.strictEqual(data.signHereTabs[0].yPosition, signHere.yPosition);
+        assert.strictEqual(data.signHereTabs[0].recipientId, RECIPIENT_ID);
         done();
       })
       .catch((error) => {
@@ -368,6 +384,10 @@ describe('EnvelopesApi tests:', () => {
     envelopesApi.updateTabs(ACCOUNT_ID, ENVELOPE_ID, RECIPIENT_ID, { tabs })
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.signHereTabs, undefined);
+        assert.notStrictEqual(data.signHereTabs[0], undefined);
+        assert.strictEqual(data.signHereTabs[0].documentId, signHere.documentId);
+        assert.strictEqual(data.signHereTabs[0].recipientId, RECIPIENT_ID);
         done();
       })
       .catch((error) => {
@@ -382,6 +402,9 @@ describe('EnvelopesApi tests:', () => {
     envelopesApi.deleteRecipient(ACCOUNT_ID, ENVELOPE_ID, recipientId)
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.signers, undefined);
+        assert.notStrictEqual(data.signers[0], undefined);
+        assert.strictEqual(data.signers[0].status, 'deleted');
         done();
       })
       .catch((error) => {
@@ -393,7 +416,7 @@ describe('EnvelopesApi tests:', () => {
 
   it('deleteRecipients deletes the recipients from the envelope if recipient option is provided with recipients data', (done) => {
     const signer = new docusign.Signer();
-    signer.email = USER_NAME;
+    signer.email = EMAIL;
     signer.recipientId = '1';
 
     const recipients = new docusign.Recipients();
@@ -403,6 +426,9 @@ describe('EnvelopesApi tests:', () => {
     envelopesApi.deleteRecipients(ACCOUNT_ID, ENVELOPE_ID, { recipients })
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.signers, undefined);
+        assert.notStrictEqual(data.signers[0], undefined);
+        assert.strictEqual(data.signers[0].recipientId, '1');
         done();
       })
       .catch((error) => {
@@ -428,6 +454,9 @@ describe('EnvelopesApi tests:', () => {
       })
       .then((envelopesInformation) => {
         assert.notStrictEqual(envelopesInformation, undefined);
+        assert.notStrictEqual(envelopesInformation.envelopes, undefined);
+        assert.notStrictEqual(envelopesInformation.envelopes[0], undefined);
+        assert.strictEqual(envelopesInformation.envelopes[0].envelopeId, ENVELOPE_ID);
         done();
       })
       .catch((error) => {
@@ -441,6 +470,8 @@ describe('EnvelopesApi tests:', () => {
     envelopesApi.listCustomFields(ACCOUNT_ID, ENVELOPE_ID)
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.listCustomFields, undefined);
+        assert.notStrictEqual(data.textCustomFields, undefined);
         done();
       })
       .catch((error) => {

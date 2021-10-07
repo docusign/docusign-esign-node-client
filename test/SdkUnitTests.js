@@ -10,7 +10,7 @@ const Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffe
 const fs = require('fs');
 
 const {
-  USER_NAME,
+  EMAIL,
   INTEGRATOR_KEY,
   INTEGRATOR_KEY_AUTH_CODE,
   TEMPLATE_ID,
@@ -157,7 +157,7 @@ describe('SDK Unit Tests:', () => {
 
     // Add a recipient to sign the document
     const signer = new docusign.Signer();
-    signer.email = USER_NAME;
+    signer.email = EMAIL;
     signer.name = 'Pat Developer';
     signer.recipientId = '1';
 
@@ -219,7 +219,7 @@ describe('SDK Unit Tests:', () => {
     const tRole = new docusign.TemplateRole();
     tRole.roleName = templateRoleName;
     tRole.name = 'Pat Developer';
-    tRole.email = USER_NAME;
+    tRole.email = EMAIL;
 
     // create a list of template roles and add our newly created role
     const templateRolesList = [];
@@ -274,7 +274,7 @@ describe('SDK Unit Tests:', () => {
 
     // Add a recipient to sign the document
     const signer = new docusign.Signer();
-    signer.email = USER_NAME;
+    signer.email = EMAIL;
     const name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -318,7 +318,7 @@ describe('SDK Unit Tests:', () => {
           recipientView.clientUserId = clientUserId;
           recipientView.authenticationMethod = 'email';
           recipientView.userName = name;
-          recipientView.email = USER_NAME;
+          recipientView.email = EMAIL;
           envelopesApi.createRecipientView(ACCOUNT_ID, envelopeSummary.envelopeId, { recipientViewRequest: recipientView })
             .then((viewUrl) => {
               if (viewUrl) {
@@ -440,7 +440,7 @@ describe('SDK Unit Tests:', () => {
 
     // Add a recipient to sign the document
     const signer = new docusign.Signer();
-    signer.email = USER_NAME;
+    signer.email = EMAIL;
     const name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -621,7 +621,7 @@ describe('SDK Unit Tests:', () => {
 
     // Add a recipient to sign the document
     const signer = new docusign.Signer();
-    signer.email = USER_NAME;
+    signer.email = EMAIL;
     const name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';
@@ -935,7 +935,7 @@ describe('SDK Unit Tests:', () => {
 
     // Add a recipient to sign the document
     const signer = new docusign.Signer();
-    signer.email = USER_NAME;
+    signer.email = EMAIL;
     const name = 'Pat Developer';
     signer.name = name;
     signer.recipientId = '1';

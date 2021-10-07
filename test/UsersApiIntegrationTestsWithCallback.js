@@ -40,6 +40,7 @@ describe('UsersApi Tests With Callbacks:', () => {
       assert.notStrictEqual(data, undefined);
       assert.notStrictEqual(data.groupList, undefined);
       assert.notStrictEqual(data.userSettings, undefined);
+      assert.strictEqual(data.userId, USER_ID);
       done();
     };
 
@@ -52,6 +53,7 @@ describe('UsersApi Tests With Callbacks:', () => {
     newUser.email = 'test@email.com';
     newUser.firstName = 'First';
     newUser.lastName = 'Last';
+    newUser.userName = 'TestUserName';
 
     const newUsersDefinition = new docusign.NewUsersDefinition();
     newUsersDefinition.newUsers = [];
@@ -62,9 +64,8 @@ describe('UsersApi Tests With Callbacks:', () => {
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
-      assert.notStrictEqual(data.newUsers, undefined);
-      assert.notStrictEqual(data.newUsers[0], undefined);
       assert.equal(data.newUsers[0].email, 'test@email.com');
+      assert.equal(data.newUsers[0].userName, 'TestUserName');
       done();
     };
     usersApi.create(ACCOUNT_ID, { newUsersDefinition }, callback);

@@ -4,15 +4,14 @@ const { JWTAuth } = require('./helpers');
 let {
   ACCOUNT_ID,
   SING_TEST1_FILE,
-  USER_NAME,
+  EMAIL,
   apiClient,
   getSignerTabsDefinition,
 } = require('./constants');
-
 const path = require('path');
 const fs = require('fs');
 
-describe('FoldersApi Tests With Callbacks:', () => {
+describe('FoldersApi tests:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
@@ -55,7 +54,7 @@ describe('FoldersApi Tests With Callbacks:', () => {
 
     // Add a recipient to sign the document
     const signer1 = new docusign.Signer();
-    signer1.email = USER_NAME;
+    signer1.email = EMAIL;
     signer1.name = 'Pat Developer';
     signer1.recipientId = '1';
 
@@ -76,29 +75,31 @@ describe('FoldersApi Tests With Callbacks:', () => {
     // send the envelope (otherwise it will be "created" in the Draft folder
     envDef.status = 'sent';
 
-    const moveEnvelopesCallback = function (error, data, __response) {
-      if (error) {
-        return done(error);
-      }
-      assert.notStrictEqual(data, undefined);
-      assert.notStrictEqual(data.envelopes, undefined);
-      assert.notStrictEqual(data.envelopes[0], undefined);
-      assert.notStrictEqual(data.envelopes[0].envelopeId, undefined);
-      done();
-    };
+    let envelopeId;
 
-    const createEnvelopeCallback = function (error, data, __response) {
-      if (error) {
-        return done(error);
-      }
+    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
+      .then((envelope) => {
+        assert.notStrictEqual(envelope, undefined);
 
-      const foldersRequest = new docusign.FoldersRequest();
-      foldersRequest.envelopeIds = [];
-      foldersRequest.envelopeIds.push(data.envelopeId);
+        envelopeId = envelope.envelopeId;
 
-      foldersApi.moveEnvelopes(ACCOUNT_ID, 'recyclebin', { foldersRequest }, moveEnvelopesCallback);
-    };
+        const foldersRequest = new docusign.FoldersRequest();
+        foldersRequest.envelopeIds = [];
+        foldersRequest.envelopeIds.push(envelopeId);
 
-    envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, createEnvelopeCallback);
+        return foldersApi.moveEnvelopes(ACCOUNT_ID, 'recyclebin', { foldersRequest });
+      })
+      .then((foldersResponse) => {
+        assert.notStrictEqual(foldersResponse, undefined);
+        assert.notStrictEqual(foldersResponse.envelopes, undefined);
+        assert.notStrictEqual(foldersResponse.envelopes[0], undefined);
+        assert.strictEqual(foldersResponse.envelopes[0].envelopeId, envelopeId);
+        done();
+      })
+      .catch((error) => {
+        if (error) {
+          return done(error);
+        }
+      });
   });
 });
