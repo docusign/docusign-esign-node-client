@@ -24,6 +24,7 @@ describe('UsersApi tests:', () => {
         assert.notStrictEqual(userInformationList, undefined);
         assert.notStrictEqual(userInformationList.users, undefined);
         assert.notStrictEqual(userInformationList.users[0], undefined);
+        assert.notStrictEqual(userInformationList.users[0].userId, undefined);
         done();
       })
       .catch((error) => {
@@ -37,6 +38,8 @@ describe('UsersApi tests:', () => {
     usersApi.getInformation(ACCOUNT_ID, USER_ID)
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.groupList, undefined);
+        assert.notStrictEqual(data.userSettings, undefined);
         done();
       })
       .catch((error) => {
@@ -59,6 +62,9 @@ describe('UsersApi tests:', () => {
     usersApi.create(ACCOUNT_ID, { newUsersDefinition })
       .then((data) => {
         assert.notStrictEqual(data, undefined);
+        assert.notStrictEqual(data.newUsers, undefined);
+        assert.notStrictEqual(data.newUsers[0], undefined);
+        assert.equal(data.newUsers[0].email, 'test@email.com');
         done();
       })
       .catch((error) => {

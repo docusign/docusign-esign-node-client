@@ -26,6 +26,7 @@ describe('UsersApi Tests With Callbacks:', () => {
       assert.notStrictEqual(userInformationList, undefined);
       assert.notStrictEqual(userInformationList.users, undefined);
       assert.notStrictEqual(userInformationList.users[0], undefined);
+      assert.notStrictEqual(userInformationList.users[0].userId, undefined);
       done();
     };
     usersApi.list(ACCOUNT_ID, listUsersCallback);
@@ -37,6 +38,8 @@ describe('UsersApi Tests With Callbacks:', () => {
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
+      assert.notStrictEqual(data.groupList, undefined);
+      assert.notStrictEqual(data.userSettings, undefined);
       done();
     };
 
@@ -59,6 +62,9 @@ describe('UsersApi Tests With Callbacks:', () => {
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
+      assert.notStrictEqual(data.newUsers, undefined);
+      assert.notStrictEqual(data.newUsers[0], undefined);
+      assert.equal(data.newUsers[0].email, 'test@email.com');
       done();
     };
     usersApi.create(ACCOUNT_ID, { newUsersDefinition }, callback);

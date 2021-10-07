@@ -81,6 +81,9 @@ describe('FoldersApi Tests With Callbacks:', () => {
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
+      assert.notStrictEqual(data.envelopes, undefined);
+      assert.notStrictEqual(data.envelopes[0], undefined);
+      assert.notStrictEqual(data.envelopes[0].envelopeId, undefined);
       done();
     };
 

@@ -26,6 +26,7 @@ describe('TemplatesApi Tests With Callbacks:', () => {
 
       assert.notStrictEqual(templateResults, undefined);
       assert.notStrictEqual(templateResults.envelopeTemplates, undefined);
+      assert.notStrictEqual(templateResults.envelopeTemplates[0], undefined);
       done();
     };
 

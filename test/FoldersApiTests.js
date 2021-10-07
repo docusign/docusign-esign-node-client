@@ -88,6 +88,9 @@ describe('FoldersApi tests:', () => {
       })
       .then((foldersResponse) => {
         assert.notStrictEqual(foldersResponse, undefined);
+        assert.notStrictEqual(foldersResponse.envelopes, undefined);
+        assert.notStrictEqual(foldersResponse.envelopes[0], undefined);
+        assert.notStrictEqual(foldersResponse.envelopes[0].envelopeId, undefined);
         done();
       })
       .catch((error) => {

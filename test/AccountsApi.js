@@ -44,6 +44,10 @@ describe('AccountsApi tests:', () => {
       .then((accountInfo) => {
         assert.notStrictEqual(accountInfo, undefined);
         assert.notStrictEqual(accountInfo.accountSettings, undefined);
+        assert.notStrictEqual(accountInfo.accountSettings.accessCodeFormat, undefined);
+        assert.notStrictEqual(accountInfo.accountSettings.accountNotification, undefined);
+        assert.notStrictEqual(accountInfo.accountSettings.accountUISettings, undefined);
+        assert.notStrictEqual(accountInfo.accountSettings.tabAccountSettings, undefined);
         done();
       })
       .catch((error) => {
