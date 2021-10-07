@@ -70,14 +70,20 @@ describe('EnvelopesApi tests:', () => {
     signer2.name = 'Pat Manager';
     signer2.recipientId = '2';
 
+    const signer3 = new docusign.Signer();
+    signer3.email = 'another2@email.com';
+    signer3.name = 'Pat Mentor';
+    signer3.recipientId = '3';
+
     const tabs = getSignerTabsDefinition();
     signer1.tabs = tabs;
     signer2.tabs = tabs;
+    signer3.tabs = tabs;
 
     // Above causes issue
     envDef.recipients = new docusign.Recipients();
     envDef.recipients.signers = [];
-    envDef.recipients.signers.push(signer1, signer2);
+    envDef.recipients.signers.push(signer1, signer2, signer3);
 
     // send the envelope (otherwise it will be "created" in the Draft folder
     envDef.status = 'created';
@@ -112,6 +118,15 @@ describe('EnvelopesApi tests:', () => {
         assert.notStrictEqual(recipients.signers, undefined);
         assert.notStrictEqual(recipients.signers[0], undefined);
         assert.notStrictEqual(recipients.signers[0].recipientIdGuid, undefined);
+        assert.strictEqual(recipients.signers[0].email, EMAIL);
+        assert.strictEqual(recipients.signers[0].name, 'Pat Developer');
+        assert.strictEqual(recipients.signers[0].recipientId, '1');
+        assert.strictEqual(recipients.signers[1].email, 'another@email.com');
+        assert.strictEqual(recipients.signers[1].name, 'Pat Manager');
+        assert.strictEqual(recipients.signers[1].recipientId, '2');
+        assert.strictEqual(recipients.signers[2].email, 'another2@email.com');
+        assert.strictEqual(recipients.signers[2].name, 'Pat Mentor');
+        assert.strictEqual(recipients.signers[2].recipientId, '3');
 
         RECIPIENT_ID = recipients.signers[0].recipientIdGuid;
         done();
@@ -221,7 +236,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .then((recipients) => {
         assert.notStrictEqual(recipients, undefined);
-        assert.equal(recipients.recipientCount, 2);
+        assert.equal(recipients.recipientCount, 3);
         done();
       })
       .catch((error) => {
@@ -286,6 +301,8 @@ describe('EnvelopesApi tests:', () => {
         assert.notStrictEqual(documents, undefined);
         assert.notStrictEqual(documents.envelopeDocuments, undefined);
         assert.equal(documents.envelopeDocuments.length, oldDocumentsCount + 1);
+        assert.notStrictEqual(documents.envelopeDocuments[oldDocumentsCount], undefined);
+        assert.equal(documents.envelopeDocuments[oldDocumentsCount].name, 'TestFile.docx');
         done();
       })
       .catch((error) => {
@@ -398,7 +415,7 @@ describe('EnvelopesApi tests:', () => {
   });
 
   it('deleteRecipient deletes a recipient from the envelope by recipient id', (done) => {
-    const recipientId = '1';
+    const recipientId = '2';
     envelopesApi.deleteRecipient(ACCOUNT_ID, ENVELOPE_ID, recipientId)
       .then((data) => {
         assert.notStrictEqual(data, undefined);
@@ -416,8 +433,9 @@ describe('EnvelopesApi tests:', () => {
 
   it('deleteRecipients deletes the recipients from the envelope if recipient option is provided with recipients data', (done) => {
     const signer = new docusign.Signer();
-    signer.email = EMAIL;
-    signer.recipientId = '1';
+    signer.email = 'another2@email.com';
+    signer.name = 'Pat Admin';
+    signer.recipientId = '3';
 
     const recipients = new docusign.Recipients();
     recipients.signers = [];
@@ -428,7 +446,8 @@ describe('EnvelopesApi tests:', () => {
         assert.notStrictEqual(data, undefined);
         assert.notStrictEqual(data.signers, undefined);
         assert.notStrictEqual(data.signers[0], undefined);
-        assert.strictEqual(data.signers[0].recipientId, '1');
+        assert.strictEqual(data.signers[0].recipientId, '3');
+        assert.strictEqual(data.signers[0].status, 'deleted');
         done();
       })
       .catch((error) => {
