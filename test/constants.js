@@ -12,7 +12,6 @@ try {
 }
 
 const EMAIL = config.email;
-const PRIVATE_KEY = config.privateKey;
 const INTEGRATOR_KEY = config.integratorKey;
 const INTEGRATOR_KEY_AUTH_CODE = config.integratorKeyAuthCode;
 const INTEGRATOR_KEY_IMPLICIT = config.integratorKeyImplicit;
@@ -64,7 +63,6 @@ const scopes = [
 
 module.exports = {
   EMAIL,
-  PRIVATE_KEY,
   INTEGRATOR_KEY,
   INTEGRATOR_KEY_AUTH_CODE,
   INTEGRATOR_KEY_IMPLICIT,
