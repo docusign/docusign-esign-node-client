@@ -52,6 +52,30 @@ For details regarding which type of OAuth grant will work best for your DocuSign
 
 For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
 
+## Tests
+### Test configuration
+1. Login with your DocuSign account on https://appdemo.docusign.com.
+2. Open Apps and Keys section in Settings and press Add App and Integration Key button.
+3. Enter App name, add secret key, generate RSA key and press Save button.
+4. Create new brand on https://admindemo.docusign.com/brands page and save its ID.
+5. Create new template on https://appdemo.docusign.com/templates page and save its ID.
+6. Create .env.example file copy with .env name and fill it with required data from steps 3-5.
+7. Write your generated private key to test\keys\docusign_private_key.txt file.
+
+### Test running
+In order to run tests you will have to install the [mocha](https://mochajs.org) test framework by running the following command:
+```
+$ npm install --save-dev mocha 
+```
+You can now run tests from [Mocha Test Explorer Extension](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) or by using `mocha` command in terminal:
+```
+$ ./node_modules/mocha/bin/mocha 
+```
+Some of the tests may run slow as they require performing more operations. Default mocha timeout is 2 seconds so you may need to increase it by using `mocha` command with `--timeout` option and provide timeout value in milliseconds:
+```
+$ ./node_modules/mocha/bin/mocha --timeout 10000
+```
+
 ## Support
 Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](http://stackoverflow.com/questions/tagged/docusignapi).
 

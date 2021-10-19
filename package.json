@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "csv-stringify": "^1.0.0",
+    "dotenv": "^10.0.0",
     "jsonwebtoken": "8.2.0",
     "passport-oauth2": "1.4.0",
     "safe-buffer": "^5.1.2",
