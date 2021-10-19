@@ -65,15 +65,15 @@ For security purposes, DocuSign recommends using the [Authorization Code Grant](
 ### Test running
 In order to run tests you will have to install the [mocha](https://mochajs.org) test framework by running the following command:
 ```
-$ npm install --save-dev mocha 
+$ npm install -g mocha 
 ```
 You can now run tests from [Mocha Test Explorer Extension](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) or by using `mocha` command in terminal:
 ```
-$ ./node_modules/mocha/bin/mocha 
+$ mocha 
 ```
 Some of the tests may run slow as they require performing more operations. Default mocha timeout is 2 seconds so you may need to increase it by using `mocha` command with `--timeout` option and provide timeout value in milliseconds:
 ```
-$ ./node_modules/mocha/bin/mocha --timeout 10000
+$ mocha --timeout 10000
 ```
 
 ## Support
