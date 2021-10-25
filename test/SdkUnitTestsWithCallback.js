@@ -1,18 +1,11 @@
 const docusign = require('../src/index');
 
 const restApi = docusign.ApiClient.RestApi;
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
 const path = require('path');
 const superagent = require('superagent');
 
 const Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
-const fs = require('fs');
 
 const {
   EMAIL,
@@ -26,11 +19,13 @@ const {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
-  scopes,
+  scopes
 } = require('./constants');
-
-let { ACCOUNT_ID, ENVELOPE_ID, apiClient } = require('./constants');
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
+let apiClient;
 
 describe('SDK Unit Tests With Callbacks:', () => {
   before((done) => {
@@ -47,7 +42,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
   it('oAuthBasePAth should update whenever BasePath does and match the environment', (done) => {
     const apiClient = new docusign.ApiClient({
-      basePath: restApi.BasePath.DEMO,
+      basePath: restApi.BasePath.DEMO
     });
     assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.DEMO);
     assert.notEqual(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
@@ -107,8 +102,8 @@ describe('SDK Unit Tests With Callbacks:', () => {
     authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
     correctAuthUri = `https://${
       OAUTH_BASE_PATH
-    }/oauth/auth`
-      + `?response_type=${responseType
+    }/oauth/auth` +
+      `?response_type=${responseType
       }&scope=${formattedScopes
       }&client_id=${INTEGRATOR_KEY_AUTH_CODE
       }&redirect_uri=${encodeURIComponent(REDIRECT_URI)

@@ -21,6 +21,9 @@
         "no-buffer-constructor": "off",
         "prefer-const": "off",
         "implicit-arrow-linebreak": "off",
-        "no-multiple-empty-lines": "error"
+        "no-multiple-empty-lines": "error",
+        "comma-dangle": "off",
+        "operator-linebreak": "off",
+        "space-before-function-paren": "off"
     }
 }

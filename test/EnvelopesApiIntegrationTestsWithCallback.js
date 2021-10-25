@@ -8,15 +8,14 @@ const {
   EMAIL,
   SING_TEST1_FILE,
   SING_TEST2_FILE,
-  getSignerTabsDefinition,
-} = require('./constants');
-let {
-  ACCOUNT_ID,
-  ENVELOPE_ID,
-  RECIPIENT_ID,
-  apiClient,
+  getSignerTabsDefinition
 } = require('./constants');
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
+let RECIPIENT_ID = '';
+let apiClient;
 
 describe('EnvelopesApi Tests With Callbacks:', () => {
   before((done) => {
@@ -414,7 +413,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];
@@ -446,7 +445,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];
@@ -523,6 +522,9 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
       return envelopesApi.listStatus(ACCOUNT_ID, { envelopeIdsRequest, envelopeIds, transactionIds },
         (error, envelopesInformation, __response) => {
+          if (error) {
+            return done(error);
+          }
           assert.notStrictEqual(envelopesInformation, undefined);
           assert.notStrictEqual(envelopesInformation.envelopes, undefined);
           assert.notStrictEqual(envelopesInformation.envelopes[0], undefined);

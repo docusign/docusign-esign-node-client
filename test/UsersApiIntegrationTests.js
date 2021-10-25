@@ -1,7 +1,10 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
-let { ACCOUNT_ID, USER_ID, apiClient } = require('./constants');
+const { USER_ID } = require('./constants');
+
+let ACCOUNT_ID = '';
+let apiClient;
 
 describe('UsersApi tests:', () => {
   before((done) => {

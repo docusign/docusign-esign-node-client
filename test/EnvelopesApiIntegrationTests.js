@@ -8,15 +8,14 @@ const {
   EMAIL,
   SING_TEST1_FILE,
   SING_TEST2_FILE,
-  getSignerTabsDefinition,
-} = require('./constants');
-let {
-  ACCOUNT_ID,
-  ENVELOPE_ID,
-  RECIPIENT_ID,
-  apiClient,
+  getSignerTabsDefinition
 } = require('./constants');
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
+let RECIPIENT_ID = '';
+let apiClient;
 
 describe('EnvelopesApi tests:', () => {
   before((done) => {
@@ -357,7 +356,7 @@ describe('EnvelopesApi tests:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];
@@ -390,7 +389,7 @@ describe('EnvelopesApi tests:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];

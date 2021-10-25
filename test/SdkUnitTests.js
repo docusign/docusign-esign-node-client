@@ -23,11 +23,13 @@ const {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
-  scopes,
+  scopes
 } = require('./constants');
-let { ACCOUNT_ID, ENVELOPE_ID, apiClient } = require('./constants');
-
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
+let apiClient;
 
 describe('SDK Unit Tests:', () => {
   before((done) => {
@@ -44,7 +46,7 @@ describe('SDK Unit Tests:', () => {
 
   it('oAuthBasePAth should update whenever BasePath does and match the environment', (done) => {
     const apiClient = new docusign.ApiClient({
-      basePath: restApi.BasePath.DEMO,
+      basePath: restApi.BasePath.DEMO
     });
     assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.DEMO);
     assert.notEqual(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
@@ -97,8 +99,8 @@ describe('SDK Unit Tests:', () => {
     authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
     correctAuthUri = `https://${
       OAUTH_BASE_PATH
-    }/oauth/auth`
-      + `?response_type=${responseType
+    }/oauth/auth` +
+      `?response_type=${responseType
       }&scope=${formattedScopes
       }&client_id=${INTEGRATOR_KEY_AUTH_CODE
       }&redirect_uri=${encodeURIComponent(REDIRECT_URI)
@@ -572,7 +574,7 @@ describe('SDK Unit Tests:', () => {
     let THIRTY_DAYS_AGO = new Date(new Date().setDate(new Date().getDate() - 30));
 
     let options = {
-      count: '70', fromDate: THIRTY_DAYS_AGO,
+      count: '70', fromDate: THIRTY_DAYS_AGO
     };
     envelopesApi.listStatusChanges(ACCOUNT_ID, options)
       .then((data) => {

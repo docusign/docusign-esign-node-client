@@ -35,13 +35,13 @@ const REDIRECT_URI = 'https://www.docusign.com/api';
 const PRIVATE_KEY_FILENAME = 'keys/docusign_private_key.txt';
 const EXPIRES_IN = 3600;
 
-function getSignerTabsDefinition() {
+function getSignerTabsDefinition () {
   const signHere = docusign.SignHere.constructFromObject({
     documentId: '1',
     pageNumber: '1',
     recipientId: '1',
     xPosition: '100',
-    yPosition: '100',
+    yPosition: '100'
   });
 
   const signHereTabs = [];
@@ -54,11 +54,11 @@ function getSignerTabsDefinition() {
 
 const apiClient = new docusign.ApiClient({
   basePath: BASE_PATH,
-  oAuthBasePath: OAUTH_BASE_PATH,
+  oAuthBasePath: OAUTH_BASE_PATH
 });
 const scopes = [
   oAuth.Scope.IMPERSONATION,
-  oAuth.Scope.SIGNATURE,
+  oAuth.Scope.SIGNATURE
 ];
 
 module.exports = {
@@ -84,5 +84,5 @@ module.exports = {
   RECIPIENT_ID,
   getSignerTabsDefinition,
   apiClient,
-  scopes,
+  scopes
 };

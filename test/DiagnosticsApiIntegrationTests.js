@@ -1,14 +1,14 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
-let { ACCOUNT_ID, apiClient } = require('./constants');
+
+let apiClient;
 
 describe('DiagnosticsApi tests:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
         apiClient = response.apiClient;
-        ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
@@ -23,7 +23,7 @@ describe('DiagnosticsApi tests:', () => {
         assert.deepEqual(data, {
           apiRequestLogging: 'false',
           apiRequestLogMaxEntries: '50',
-          apiRequestLogRemainingEntries: '0',
+          apiRequestLogRemainingEntries: '0'
         });
         done();
       })

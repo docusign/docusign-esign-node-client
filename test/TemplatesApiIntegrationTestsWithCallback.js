@@ -1,7 +1,9 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
-let { ACCOUNT_ID, apiClient } = require('./constants');
+
+let ACCOUNT_ID = '';
+let apiClient;
 
 describe('TemplatesApi Tests With Callbacks:', () => {
   before((done) => {

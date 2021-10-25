@@ -9,7 +9,7 @@ const {
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
   apiClient,
-  scopes,
+  scopes
 } = require('./constants');
 let { ACCOUNT_ID } = require('./constants');
 
@@ -17,7 +17,7 @@ const JWTAuth = async () => {
   // IMPORTANT NOTE:
   // the first time you ask for a JWT access token, you should grant access by making the following call
   // get DocuSign OAuth authorization url:
-  const oauthLoginUrl = apiClient.getJWTUri(INTEGRATOR_KEY, REDIRECT_URI, OAUTH_BASE_PATH);
+  apiClient.getJWTUri(INTEGRATOR_KEY, REDIRECT_URI, OAUTH_BASE_PATH);
   // open DocuSign OAuth authorization url in the browser, login and grant access
   // END OF NOTE
   const privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
