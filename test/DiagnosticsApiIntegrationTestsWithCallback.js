@@ -1,17 +1,16 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
-
-let apiClient;
+const { apiClient } = require('./constants');
 
 describe('DiagnosticsApi Tests With Callbacks:', () => {
   before((done) => {
     try {
-      JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
+      JWTAuth(done).then((_response) => {
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -21,6 +20,7 @@ describe('DiagnosticsApi Tests With Callbacks:', () => {
 
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.deepEqual(data, {

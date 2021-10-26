@@ -4,12 +4,12 @@ const { JWTAuth } = require('./helpers');
 let {
   SING_TEST1_FILE,
   EMAIL,
+  apiClient,
   getSignerTabsDefinition
 } = require('./constants');
 const path = require('path');
 const fs = require('fs');
 
-let apiClient;
 let ACCOUNT_ID = '';
 
 describe('FoldersApi Tests With Callbacks:', () => {
@@ -21,6 +21,7 @@ describe('FoldersApi Tests With Callbacks:', () => {
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -80,6 +81,7 @@ describe('FoldersApi Tests With Callbacks:', () => {
 
     const moveEnvelopesCallback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
@@ -91,6 +93,7 @@ describe('FoldersApi Tests With Callbacks:', () => {
 
     const createEnvelopeCallback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 

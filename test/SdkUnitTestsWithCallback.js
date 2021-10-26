@@ -19,23 +19,23 @@ const {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
+  apiClient,
   scopes
 } = require('./constants');
 const { JWTAuth } = require('./helpers');
 
 let ACCOUNT_ID = '';
 let ENVELOPE_ID = '';
-let apiClient;
 
 describe('SDK Unit Tests With Callbacks:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -69,12 +69,14 @@ describe('SDK Unit Tests With Callbacks:', () => {
     try {
       apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN, (err, response) => {
         if (err) {
+          console.error(err);
           return done(err);
         }
         assert.ok(response.body.access_token);
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -85,6 +87,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     apiClient.requestJWTApplicationToken(INTEGRATOR_KEY, scopes, privateKeyFile, EXPIRES_IN, (err, response) => {
       if (err) {
+        console.error(err);
         return done(err);
       }
       assert.ok(response.body.access_token);
@@ -193,6 +196,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -235,6 +239,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -311,6 +316,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -325,6 +331,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
         recipientView.email = EMAIL;
         envelopesApi.createRecipientView(ACCOUNT_ID, envelopeSummary.envelopeId, { recipientViewRequest: recipientView }, (error, viewUrl, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -397,6 +404,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     templatesApi.createTemplate(ACCOUNT_ID, { envelopeTemplate: template }, (error, templateSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -473,6 +481,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -480,6 +489,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
         console.log(`EnvelopeSummary: ${JSON.stringify(envelopeSummary)}`);
         envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined', (err, pdfBytes, response) => {
           if (err) {
+            console.error(err);
             return done(err);
           }
 
@@ -508,6 +518,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID, (error, docsList, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
       if (docsList) {
@@ -516,6 +527,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
         envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID, (error, docsListNoOpt, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -597,6 +609,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
     diagSettings.apiRequestLogging = 'true';
     diagApi.updateRequestLogSettings({ diagnosticsSettingsInformation: diagSettings }, (error, diagnosticsSettingsInformation, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -607,6 +620,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
         envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -614,6 +628,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
             console.log(`EnvelopeSummary: ${JSON.stringify(envelopeSummary)}`);
             envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined', null, (error, pdfBytes, response) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
 
@@ -640,6 +655,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
                     console.log(requestLogId);
                     diagApi.getRequestLog(requestLogId, (error, diagBytes, response) => {
                       if (error) {
+                        console.error(error);
                         return done(error);
                       }
 
@@ -673,6 +689,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
     const templatesApi = new docusign.TemplatesApi(apiClient);
     templatesApi.get(ACCOUNT_ID, TEMPLATE_ID, null, (error, envelopeTemplate, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -680,6 +697,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
         console.log(`EnvelopeTemplate: ${JSON.stringify(envelopeTemplate)}`);
         templatesApi.get(ACCOUNT_ID, TEMPLATE_ID, (error, envelopeTemplateNoOpts, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -759,12 +777,14 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
       if (envelopeSummary) {
         envelopesApi.update(ACCOUNT_ID, envelopeSummary.envelopeId, { resendEnvelope: true }, (error, envelopeUpdateSummary, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 

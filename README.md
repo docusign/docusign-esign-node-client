@@ -67,13 +67,9 @@ In order to run tests you will have to install the [mocha](https://mochajs.org) 
 ```
 $ npm install -g mocha 
 ```
-You can now run tests from [Mocha Test Explorer Extension](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) or by using `mocha` command in terminal:
+You can now run tests from [Mocha Test Explorer Extension](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) or by using `npm` command in terminal:
 ```
-$ mocha 
-```
-Some of the tests may run slow as they require performing more operations. Default mocha timeout is 2 seconds so you may need to increase it by using `mocha` command with `--timeout` option and provide timeout value in milliseconds:
-```
-$ mocha --timeout 10000
+$ npm run test 
 ```
 
 ## Support

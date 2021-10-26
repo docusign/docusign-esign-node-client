@@ -4,12 +4,12 @@ const { JWTAuth } = require('./helpers');
 let {
   SING_TEST1_FILE,
   EMAIL,
+  apiClient,
   getSignerTabsDefinition
 } = require('./constants');
 const path = require('path');
 const fs = require('fs');
 
-let apiClient;
 let ACCOUNT_ID = '';
 
 describe('FoldersApi tests:', () => {
@@ -21,6 +21,7 @@ describe('FoldersApi tests:', () => {
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -99,6 +100,7 @@ describe('FoldersApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });

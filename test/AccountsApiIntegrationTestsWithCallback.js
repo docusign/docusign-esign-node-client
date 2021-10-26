@@ -1,19 +1,19 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
+const { apiClient } = require('./constants');
 
-let apiClient;
 let ACCOUNT_ID = '';
 
 describe('AccountsApi Tests With Callbacks:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -23,6 +23,7 @@ describe('AccountsApi Tests With Callbacks:', () => {
 
     const getAccountInformationCallback = function (error, accountInfo, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 

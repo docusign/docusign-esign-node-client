@@ -1,19 +1,19 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
+const { apiClient } = require('./constants');
 
 let ACCOUNT_ID = '';
-let apiClient;
 
 describe('TemplatesApi tests:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -29,6 +29,7 @@ describe('TemplatesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });

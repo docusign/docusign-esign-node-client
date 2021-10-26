@@ -11,7 +11,6 @@ const {
   apiClient,
   scopes
 } = require('./constants');
-let { ACCOUNT_ID } = require('./constants');
 
 const JWTAuth = async () => {
   // IMPORTANT NOTE:
@@ -25,9 +24,8 @@ const JWTAuth = async () => {
   let baseUri;
   let accountDomain;
   apiClient.addDefaultHeader('Authorization', `Bearer ${res.body.access_token}`);
-
   const userInfo = await apiClient.getUserInfo(res.body.access_token);
-  ACCOUNT_ID = userInfo.accounts[0].accountId;
+  let ACCOUNT_ID = userInfo.accounts[0].accountId;
   baseUri = userInfo.accounts[0].baseUri;
   accountDomain = baseUri.split('/v2');
   apiClient.setBasePath(`${accountDomain[0]}/restapi`);

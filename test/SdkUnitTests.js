@@ -23,23 +23,23 @@ const {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
+  apiClient,
   scopes
 } = require('./constants');
 const { JWTAuth } = require('./helpers');
 
 let ACCOUNT_ID = '';
 let ENVELOPE_ID = '';
-let apiClient;
 
 describe('SDK Unit Tests:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -75,7 +75,12 @@ describe('SDK Unit Tests:', () => {
         assert.ok(response.body.access_token);
         done();
       })
-      .catch((err) => done(err));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('should be able to request a JWT application token', (done) => {
@@ -86,7 +91,13 @@ describe('SDK Unit Tests:', () => {
       .then((response) => {
         assert.ok(response.body.access_token);
         done();
-      }).catch((err) => done(err));
+      })
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('should return a properly formatted authorization uri', (done) => {
@@ -201,6 +212,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -242,6 +254,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -330,6 +343,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -337,6 +351,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -408,6 +423,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -501,6 +517,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -508,6 +525,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -531,6 +549,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -538,6 +557,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -564,7 +584,12 @@ describe('SDK Unit Tests:', () => {
         assert.notEqual(data.envelopes[0].statusChangedDateTime, undefined);
         done();
       })
-      .catch((error) => done(error));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('listStatusChangesOptions 70 envelopeIds', (done) => {
@@ -589,9 +614,20 @@ describe('SDK Unit Tests:', () => {
             assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
             assert.notEqual(data.envelopes[0].statusChangedDateTime, undefined);
             done();
-          }).catch((error, resp) => done(error));
+          })
+          .catch((error) => {
+            if (error) {
+              console.error(error);
+              return done(error);
+            }
+          });
       })
-      .catch((error) => done(error));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('getDiagnosticLogs', (done) => {
@@ -712,6 +748,7 @@ describe('SDK Unit Tests:', () => {
                               })
                               .catch((error) => {
                                 if (error) {
+                                  console.error(error);
                                   return done(error);
                                 }
                               });
@@ -719,6 +756,7 @@ describe('SDK Unit Tests:', () => {
                         })
                         .catch((error) => {
                           if (error) {
+                            console.error(error);
                             return done(error);
                           }
                         });
@@ -726,6 +764,7 @@ describe('SDK Unit Tests:', () => {
                   })
                   .catch((error) => {
                     if (error) {
+                      console.error(error);
                       return done(error);
                     }
                   });
@@ -733,6 +772,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -740,6 +780,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -761,6 +802,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -768,6 +810,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -790,7 +833,12 @@ describe('SDK Unit Tests:', () => {
                   });
               });
           })
-          .catch((error) => done(error));
+          .catch((error) => {
+            if (error) {
+              console.error(error);
+              return done(error);
+            }
+          });
       });
   });
 
@@ -806,11 +854,19 @@ describe('SDK Unit Tests:', () => {
             assert.notEqual(data.resourcesContentUri, undefined);
             return done();
           })
-          .catch((error) =>
-            done(error));
+          .catch((error) => {
+            if (error) {
+              console.error(error);
+              return done(error);
+            }
+          });
       })
-      .catch((error) =>
-        done(error));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('create template with date and number tabs', (done) => {
@@ -984,6 +1040,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -991,6 +1048,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -1020,12 +1078,14 @@ describe('SDK Unit Tests:', () => {
         })
           .catch((error) => {
             if (error) {
+              console.error(error);
               return done(error);
             }
           });
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
