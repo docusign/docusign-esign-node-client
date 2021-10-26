@@ -8,25 +8,24 @@ const {
   EMAIL,
   SING_TEST1_FILE,
   SING_TEST2_FILE,
-  getSignerTabsDefinition,
-} = require('./constants');
-let {
-  ACCOUNT_ID,
-  ENVELOPE_ID,
-  RECIPIENT_ID,
   apiClient,
+  getSignerTabsDefinition
 } = require('./constants');
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
+let RECIPIENT_ID = '';
 
 describe('EnvelopesApi tests:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -106,6 +105,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -133,6 +133,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -205,6 +206,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -241,6 +243,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -256,6 +259,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -307,6 +311,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -330,6 +335,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -346,6 +352,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -357,7 +364,7 @@ describe('EnvelopesApi tests:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];
@@ -379,6 +386,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -390,7 +398,7 @@ describe('EnvelopesApi tests:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];
@@ -409,6 +417,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -426,6 +435,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -452,6 +462,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -480,6 +491,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -495,6 +507,7 @@ describe('EnvelopesApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });

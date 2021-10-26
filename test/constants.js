@@ -27,21 +27,18 @@ const SING_TEST2_FILE = 'docs/SignTest1.docx';
 const LARGE_TEST_DOCUMENT1 = 'docs/LargeTestDocument1.pdf';
 const BRAND_LOGO_PATH = 'img/docusign-lgo.png';
 const BRAND_XML_PATH = 'docs/brand.xml';
-const ACCOUNT_ID = '';
-const ENVELOPE_ID = '';
-const RECIPIENT_ID = '';
 const USER_ID = config.userId;
 const REDIRECT_URI = 'https://www.docusign.com/api';
 const PRIVATE_KEY_FILENAME = 'keys/docusign_private_key.txt';
 const EXPIRES_IN = 3600;
 
-function getSignerTabsDefinition() {
+function getSignerTabsDefinition () {
   const signHere = docusign.SignHere.constructFromObject({
     documentId: '1',
     pageNumber: '1',
     recipientId: '1',
     xPosition: '100',
-    yPosition: '100',
+    yPosition: '100'
   });
 
   const signHereTabs = [];
@@ -54,11 +51,11 @@ function getSignerTabsDefinition() {
 
 const apiClient = new docusign.ApiClient({
   basePath: BASE_PATH,
-  oAuthBasePath: OAUTH_BASE_PATH,
+  oAuthBasePath: OAUTH_BASE_PATH
 });
 const scopes = [
   oAuth.Scope.IMPERSONATION,
-  oAuth.Scope.SIGNATURE,
+  oAuth.Scope.SIGNATURE
 ];
 
 module.exports = {
@@ -75,14 +72,11 @@ module.exports = {
   LARGE_TEST_DOCUMENT1,
   BRAND_LOGO_PATH,
   BRAND_XML_PATH,
-  ACCOUNT_ID,
-  ENVELOPE_ID,
   USER_ID,
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
-  RECIPIENT_ID,
   getSignerTabsDefinition,
   apiClient,
-  scopes,
+  scopes
 };

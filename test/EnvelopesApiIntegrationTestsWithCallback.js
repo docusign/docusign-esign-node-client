@@ -8,25 +8,24 @@ const {
   EMAIL,
   SING_TEST1_FILE,
   SING_TEST2_FILE,
-  getSignerTabsDefinition,
-} = require('./constants');
-let {
-  ACCOUNT_ID,
-  ENVELOPE_ID,
-  RECIPIENT_ID,
   apiClient,
+  getSignerTabsDefinition
 } = require('./constants');
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
+let RECIPIENT_ID = '';
 
 describe('EnvelopesApi Tests With Callbacks:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -92,6 +91,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const getEnvelopeCallback = function (error, envelope, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -103,6 +103,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const createEnvelopeCallback = function (error, envelopeSummary, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -121,6 +122,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
   it('listRecipients returns correct recipients of an envelope by envelope id', (done) => {
     const listRecipientsCallback = function (error, recipients, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -209,6 +211,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const createSenderViewCallback = function (error, viewUrl, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -219,6 +222,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const createEnvelopeCallback = function (error, envelopeSummary, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -269,6 +273,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const listRecipientsCallback = function (error, recipients, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -278,6 +283,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const updateRecipientsCallback = function (error, recipientsUpdateSummary, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -293,6 +299,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
   it('listAuditEvents returns the correct envelope audit events for an envelope', (done) => {
     const listAuditEventsCallback = function (error, envelopeAuditEventResponse, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -332,6 +339,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const secondListDocumentsCallback = function (error, documents, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -345,6 +353,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const updateDocumentsCallback = function (error, envelopeDocumentsResult, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -355,6 +364,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const firstListDocumentsCallback = function (error, oldDocuments, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -371,6 +381,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
   it('listTabs returns the correct recipient tabs of the envelope by recipient id', (done) => {
     const listTabsCallback = function (error, tabs, _response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -383,6 +394,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const listRecipientsCallback = function (err, recipients, _response) {
       if (err) {
+        console.error(err);
         return done(err);
       }
 
@@ -399,6 +411,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
   it('GET Template Recipients', (done) => {
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
@@ -414,7 +427,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];
@@ -424,6 +437,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
@@ -446,7 +460,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
       pageNumber: '1',
       recipientId: '1',
       xPosition: '200',
-      yPosition: '200',
+      yPosition: '200'
     });
 
     const signHereTabs = [];
@@ -456,6 +470,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
@@ -472,6 +487,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
     const recipientId = '2';
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
@@ -495,6 +511,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
@@ -510,6 +527,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
   it('listStatus returns the envelope status for the specified envelopes if the envelopeIdsRequest, envelopeIds and transactionIds options are provided', (done) => {
     const callback = function (error, envelope, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(envelope, undefined);
@@ -523,6 +541,10 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
       return envelopesApi.listStatus(ACCOUNT_ID, { envelopeIdsRequest, envelopeIds, transactionIds },
         (error, envelopesInformation, __response) => {
+          if (error) {
+            console.error(error);
+            return done(error);
+          }
           assert.notStrictEqual(envelopesInformation, undefined);
           assert.notStrictEqual(envelopesInformation.envelopes, undefined);
           assert.notStrictEqual(envelopesInformation.envelopes[0], undefined);
@@ -536,6 +558,7 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
   it('listCustomFields returns the custom field information for the specified envelope', (done) => {
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);

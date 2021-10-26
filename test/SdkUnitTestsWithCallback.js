@@ -1,18 +1,11 @@
 const docusign = require('../src/index');
 
 const restApi = docusign.ApiClient.RestApi;
-let config;
-try {
-  config = require('../test-config');
-} catch (err) {
-  console.error(err);
-}
 const assert = require('assert');
 const path = require('path');
 const superagent = require('superagent');
 
 const Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
-const fs = require('fs');
 
 const {
   EMAIL,
@@ -26,28 +19,30 @@ const {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
-  scopes,
+  apiClient,
+  scopes
 } = require('./constants');
-
-let { ACCOUNT_ID, ENVELOPE_ID, apiClient } = require('./constants');
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
 
 describe('SDK Unit Tests With Callbacks:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
 
   it('oAuthBasePAth should update whenever BasePath does and match the environment', (done) => {
     const apiClient = new docusign.ApiClient({
-      basePath: restApi.BasePath.DEMO,
+      basePath: restApi.BasePath.DEMO
     });
     assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.DEMO);
     assert.notEqual(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
@@ -74,12 +69,14 @@ describe('SDK Unit Tests With Callbacks:', () => {
     try {
       apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN, (err, response) => {
         if (err) {
+          console.error(err);
           return done(err);
         }
         assert.ok(response.body.access_token);
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -90,6 +87,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     apiClient.requestJWTApplicationToken(INTEGRATOR_KEY, scopes, privateKeyFile, EXPIRES_IN, (err, response) => {
       if (err) {
+        console.error(err);
         return done(err);
       }
       assert.ok(response.body.access_token);
@@ -107,8 +105,8 @@ describe('SDK Unit Tests With Callbacks:', () => {
     authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
     correctAuthUri = `https://${
       OAUTH_BASE_PATH
-    }/oauth/auth`
-      + `?response_type=${responseType
+    }/oauth/auth` +
+      `?response_type=${responseType
       }&scope=${formattedScopes
       }&client_id=${INTEGRATOR_KEY_AUTH_CODE
       }&redirect_uri=${encodeURIComponent(REDIRECT_URI)
@@ -198,6 +196,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -240,6 +239,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -316,6 +316,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -330,6 +331,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
         recipientView.email = EMAIL;
         envelopesApi.createRecipientView(ACCOUNT_ID, envelopeSummary.envelopeId, { recipientViewRequest: recipientView }, (error, viewUrl, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -402,6 +404,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     templatesApi.createTemplate(ACCOUNT_ID, { envelopeTemplate: template }, (error, templateSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -478,6 +481,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -485,6 +489,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
         console.log(`EnvelopeSummary: ${JSON.stringify(envelopeSummary)}`);
         envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined', (err, pdfBytes, response) => {
           if (err) {
+            console.error(err);
             return done(err);
           }
 
@@ -513,6 +518,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID, (error, docsList, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
       if (docsList) {
@@ -521,6 +527,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
         envelopesApi.listDocuments(ACCOUNT_ID, ENVELOPE_ID, (error, docsListNoOpt, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -602,6 +609,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
     diagSettings.apiRequestLogging = 'true';
     diagApi.updateRequestLogSettings({ diagnosticsSettingsInformation: diagSettings }, (error, diagnosticsSettingsInformation, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -612,6 +620,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
         envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -619,6 +628,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
             console.log(`EnvelopeSummary: ${JSON.stringify(envelopeSummary)}`);
             envelopesApi.getDocument(ACCOUNT_ID, envelopeSummary.envelopeId, 'combined', null, (error, pdfBytes, response) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
 
@@ -645,6 +655,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
                     console.log(requestLogId);
                     diagApi.getRequestLog(requestLogId, (error, diagBytes, response) => {
                       if (error) {
+                        console.error(error);
                         return done(error);
                       }
 
@@ -678,6 +689,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
     const templatesApi = new docusign.TemplatesApi(apiClient);
     templatesApi.get(ACCOUNT_ID, TEMPLATE_ID, null, (error, envelopeTemplate, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
@@ -685,6 +697,7 @@ describe('SDK Unit Tests With Callbacks:', () => {
         console.log(`EnvelopeTemplate: ${JSON.stringify(envelopeTemplate)}`);
         templatesApi.get(ACCOUNT_ID, TEMPLATE_ID, (error, envelopeTemplateNoOpts, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 
@@ -764,12 +777,14 @@ describe('SDK Unit Tests With Callbacks:', () => {
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, (error, envelopeSummary, response) => {
       if (error) {
+        console.error(error);
         return done(error);
       }
 
       if (envelopeSummary) {
         envelopesApi.update(ACCOUNT_ID, envelopeSummary.envelopeId, { resendEnvelope: true }, (error, envelopeUpdateSummary, response) => {
           if (error) {
+            console.error(error);
             return done(error);
           }
 

@@ -2,14 +2,15 @@ const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
 let {
-  ACCOUNT_ID,
   SING_TEST1_FILE,
   EMAIL,
   apiClient,
-  getSignerTabsDefinition,
+  getSignerTabsDefinition
 } = require('./constants');
 const path = require('path');
 const fs = require('fs');
+
+let ACCOUNT_ID = '';
 
 describe('FoldersApi tests:', () => {
   before((done) => {
@@ -20,6 +21,7 @@ describe('FoldersApi tests:', () => {
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -98,6 +100,7 @@ describe('FoldersApi tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });

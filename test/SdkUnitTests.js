@@ -23,28 +23,30 @@ const {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
-  scopes,
+  apiClient,
+  scopes
 } = require('./constants');
-let { ACCOUNT_ID, ENVELOPE_ID, apiClient } = require('./constants');
-
 const { JWTAuth } = require('./helpers');
+
+let ACCOUNT_ID = '';
+let ENVELOPE_ID = '';
 
 describe('SDK Unit Tests:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
 
   it('oAuthBasePAth should update whenever BasePath does and match the environment', (done) => {
     const apiClient = new docusign.ApiClient({
-      basePath: restApi.BasePath.DEMO,
+      basePath: restApi.BasePath.DEMO
     });
     assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.DEMO);
     assert.notEqual(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
@@ -73,7 +75,12 @@ describe('SDK Unit Tests:', () => {
         assert.ok(response.body.access_token);
         done();
       })
-      .catch((err) => done(err));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('should be able to request a JWT application token', (done) => {
@@ -84,7 +91,13 @@ describe('SDK Unit Tests:', () => {
       .then((response) => {
         assert.ok(response.body.access_token);
         done();
-      }).catch((err) => done(err));
+      })
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('should return a properly formatted authorization uri', (done) => {
@@ -97,8 +110,8 @@ describe('SDK Unit Tests:', () => {
     authUri = apiClient.getAuthorizationUri(INTEGRATOR_KEY_AUTH_CODE, scopes, REDIRECT_URI, responseType, randomState);
     correctAuthUri = `https://${
       OAUTH_BASE_PATH
-    }/oauth/auth`
-      + `?response_type=${responseType
+    }/oauth/auth` +
+      `?response_type=${responseType
       }&scope=${formattedScopes
       }&client_id=${INTEGRATOR_KEY_AUTH_CODE
       }&redirect_uri=${encodeURIComponent(REDIRECT_URI)
@@ -199,6 +212,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -240,6 +254,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -328,6 +343,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -335,6 +351,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -406,6 +423,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -499,6 +517,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -506,6 +525,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -529,6 +549,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -536,6 +557,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -562,7 +584,12 @@ describe('SDK Unit Tests:', () => {
         assert.notEqual(data.envelopes[0].statusChangedDateTime, undefined);
         done();
       })
-      .catch((error) => done(error));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('listStatusChangesOptions 70 envelopeIds', (done) => {
@@ -572,7 +599,7 @@ describe('SDK Unit Tests:', () => {
     let THIRTY_DAYS_AGO = new Date(new Date().setDate(new Date().getDate() - 30));
 
     let options = {
-      count: '70', fromDate: THIRTY_DAYS_AGO,
+      count: '70', fromDate: THIRTY_DAYS_AGO
     };
     envelopesApi.listStatusChanges(ACCOUNT_ID, options)
       .then((data) => {
@@ -587,9 +614,20 @@ describe('SDK Unit Tests:', () => {
             assert.notEqual(data.envelopes[0].attachmentsUri, undefined);
             assert.notEqual(data.envelopes[0].statusChangedDateTime, undefined);
             done();
-          }).catch((error, resp) => done(error));
+          })
+          .catch((error) => {
+            if (error) {
+              console.error(error);
+              return done(error);
+            }
+          });
       })
-      .catch((error) => done(error));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('getDiagnosticLogs', (done) => {
@@ -710,6 +748,7 @@ describe('SDK Unit Tests:', () => {
                               })
                               .catch((error) => {
                                 if (error) {
+                                  console.error(error);
                                   return done(error);
                                 }
                               });
@@ -717,6 +756,7 @@ describe('SDK Unit Tests:', () => {
                         })
                         .catch((error) => {
                           if (error) {
+                            console.error(error);
                             return done(error);
                           }
                         });
@@ -724,6 +764,7 @@ describe('SDK Unit Tests:', () => {
                   })
                   .catch((error) => {
                     if (error) {
+                      console.error(error);
                       return done(error);
                     }
                   });
@@ -731,6 +772,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -738,6 +780,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -759,6 +802,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -766,6 +810,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -788,7 +833,12 @@ describe('SDK Unit Tests:', () => {
                   });
               });
           })
-          .catch((error) => done(error));
+          .catch((error) => {
+            if (error) {
+              console.error(error);
+              return done(error);
+            }
+          });
       });
   });
 
@@ -804,11 +854,19 @@ describe('SDK Unit Tests:', () => {
             assert.notEqual(data.resourcesContentUri, undefined);
             return done();
           })
-          .catch((error) =>
-            done(error));
+          .catch((error) => {
+            if (error) {
+              console.error(error);
+              return done(error);
+            }
+          });
       })
-      .catch((error) =>
-        done(error));
+      .catch((error) => {
+        if (error) {
+          console.error(error);
+          return done(error);
+        }
+      });
   });
 
   it('create template with date and number tabs', (done) => {
@@ -982,6 +1040,7 @@ describe('SDK Unit Tests:', () => {
             })
             .catch((error) => {
               if (error) {
+                console.error(error);
                 return done(error);
               }
             });
@@ -989,6 +1048,7 @@ describe('SDK Unit Tests:', () => {
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });
@@ -1018,12 +1078,14 @@ describe('SDK Unit Tests:', () => {
         })
           .catch((error) => {
             if (error) {
+              console.error(error);
               return done(error);
             }
           });
       })
       .catch((error) => {
         if (error) {
+          console.error(error);
           return done(error);
         }
       });

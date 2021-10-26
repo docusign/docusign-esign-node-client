@@ -63,17 +63,13 @@ For security purposes, DocuSign recommends using the [Authorization Code Grant](
 7. Write your generated private key to test\keys\docusign_private_key.txt file.
 
 ### Test running
-In order to run tests you will have to install the [mocha](https://mochajs.org) test framework by running the following command:
+In order to run tests you will require the [mocha](https://mochajs.org) test framework. Make sure it is installed and if not, install it by running the following command:
 ```
-$ npm install -g mocha 
+$ npm install --save-dev mocha 
 ```
-You can now run tests from [Mocha Test Explorer Extension](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) or by using `mocha` command in terminal:
+You can now run tests from [Mocha Test Explorer Extension](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) or by using `npm` command in terminal:
 ```
-$ mocha 
-```
-Some of the tests may run slow as they require performing more operations. Default mocha timeout is 2 seconds so you may need to increase it by using `mocha` command with `--timeout` option and provide timeout value in milliseconds:
-```
-$ mocha --timeout 10000
+$ npm run test 
 ```
 
 ## Support

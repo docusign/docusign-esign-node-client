@@ -1,17 +1,19 @@
 const docusign = require('../src/index');
 const assert = require('assert');
 const { JWTAuth } = require('./helpers');
-let { ACCOUNT_ID, USER_ID, apiClient } = require('./constants');
+const { USER_ID, apiClient } = require('./constants');
+
+let ACCOUNT_ID = '';
 
 describe('UsersApi Tests With Callbacks:', () => {
   before((done) => {
     try {
       JWTAuth(done).then((response) => {
-        apiClient = response.apiClient;
         ACCOUNT_ID = response.ACCOUNT_ID;
         done();
       });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   });
@@ -21,6 +23,7 @@ describe('UsersApi Tests With Callbacks:', () => {
   it('should return the list of users for the specified account', (done) => {
     const listUsersCallback = function (error, userInformationList, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(userInformationList, undefined);
@@ -35,6 +38,7 @@ describe('UsersApi Tests With Callbacks:', () => {
   it('getInformation returns the user information for a specified user', (done) => {
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
@@ -61,6 +65,7 @@ describe('UsersApi Tests With Callbacks:', () => {
 
     const callback = function (error, data, __response) {
       if (error) {
+        console.error(error);
         return done(error);
       }
       assert.notStrictEqual(data, undefined);
