@@ -358,11 +358,35 @@
       if (data.hasOwnProperty('allowOpenTrustSignerCertificateMetadata')) {
         obj['allowOpenTrustSignerCertificateMetadata'] = SettingsMetadata.constructFromObject(data['allowOpenTrustSignerCertificateMetadata']);
       }
+      if (data.hasOwnProperty('allowOrganizationDocusignMonitor')) {
+        obj['allowOrganizationDocusignMonitor'] = ApiClient.convertToType(data['allowOrganizationDocusignMonitor'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationDocusignMonitorMetadata')) {
+        obj['allowOrganizationDocusignMonitorMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationDocusignMonitorMetadata']);
+      }
+      if (data.hasOwnProperty('allowOrganizationDomainUserManagement')) {
+        obj['allowOrganizationDomainUserManagement'] = ApiClient.convertToType(data['allowOrganizationDomainUserManagement'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationDomainUserManagementMetadata')) {
+        obj['allowOrganizationDomainUserManagementMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationDomainUserManagementMetadata']);
+      }
       if (data.hasOwnProperty('allowOrganizations')) {
         obj['allowOrganizations'] = ApiClient.convertToType(data['allowOrganizations'], 'String');
       }
       if (data.hasOwnProperty('allowOrganizationsMetadata')) {
         obj['allowOrganizationsMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationsMetadata']);
+      }
+      if (data.hasOwnProperty('allowOrganizationSsoManagement')) {
+        obj['allowOrganizationSsoManagement'] = ApiClient.convertToType(data['allowOrganizationSsoManagement'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationSsoManagementMetadata')) {
+        obj['allowOrganizationSsoManagementMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationSsoManagementMetadata']);
+      }
+      if (data.hasOwnProperty('allowOrganizationToUseRemoteNotary')) {
+        obj['allowOrganizationToUseRemoteNotary'] = ApiClient.convertToType(data['allowOrganizationToUseRemoteNotary'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationToUseRemoteNotaryMetadata')) {
+        obj['allowOrganizationToUseRemoteNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationToUseRemoteNotaryMetadata']);
       }
       if (data.hasOwnProperty('allowPaymentProcessing')) {
         obj['allowPaymentProcessing'] = ApiClient.convertToType(data['allowPaymentProcessing'], 'String');
@@ -1147,6 +1171,9 @@
       if (data.hasOwnProperty('guidedFormsHtmlAllowedMetadata')) {
         obj['guidedFormsHtmlAllowedMetadata'] = SettingsMetadata.constructFromObject(data['guidedFormsHtmlAllowedMetadata']);
       }
+      if (data.hasOwnProperty('hasRecipientConnectClaimedDomain')) {
+        obj['hasRecipientConnectClaimedDomain'] = ApiClient.convertToType(data['hasRecipientConnectClaimedDomain'], 'String');
+      }
       if (data.hasOwnProperty('hideAccountAddressInCoC')) {
         obj['hideAccountAddressInCoC'] = ApiClient.convertToType(data['hideAccountAddressInCoC'], 'String');
       }
@@ -1284,6 +1311,12 @@
       }
       if (data.hasOwnProperty('pkiSignDownloadedPDFDocsMetadata')) {
         obj['pkiSignDownloadedPDFDocsMetadata'] = SettingsMetadata.constructFromObject(data['pkiSignDownloadedPDFDocsMetadata']);
+      }
+      if (data.hasOwnProperty('readOnlyMode')) {
+        obj['readOnlyMode'] = ApiClient.convertToType(data['readOnlyMode'], 'String');
+      }
+      if (data.hasOwnProperty('readOnlyModeMetadata')) {
+        obj['readOnlyModeMetadata'] = SettingsMetadata.constructFromObject(data['readOnlyModeMetadata']);
       }
       if (data.hasOwnProperty('recipientsCanSignOffline')) {
         obj['recipientsCanSignOffline'] = ApiClient.convertToType(data['recipientsCanSignOffline'], 'String');
@@ -2189,6 +2222,24 @@
   exports.prototype['allowOpenTrustSignerCertificateMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowOrganizationDocusignMonitor
+   */
+  exports.prototype['allowOrganizationDocusignMonitor'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowOrganizationDocusignMonitorMetadata
+   */
+  exports.prototype['allowOrganizationDocusignMonitorMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowOrganizationDomainUserManagement
+   */
+  exports.prototype['allowOrganizationDomainUserManagement'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowOrganizationDomainUserManagementMetadata
+   */
+  exports.prototype['allowOrganizationDomainUserManagementMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowOrganizations
    */
   exports.prototype['allowOrganizations'] = undefined;
@@ -2196,6 +2247,24 @@
    * @member {module:model/SettingsMetadata} allowOrganizationsMetadata
    */
   exports.prototype['allowOrganizationsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowOrganizationSsoManagement
+   */
+  exports.prototype['allowOrganizationSsoManagement'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowOrganizationSsoManagementMetadata
+   */
+  exports.prototype['allowOrganizationSsoManagementMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowOrganizationToUseRemoteNotary
+   */
+  exports.prototype['allowOrganizationToUseRemoteNotary'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowOrganizationToUseRemoteNotaryMetadata
+   */
+  exports.prototype['allowOrganizationToUseRemoteNotaryMetadata'] = undefined;
   /**
    * 
    * @member {String} allowPaymentProcessing
@@ -3373,6 +3442,11 @@
   exports.prototype['guidedFormsHtmlAllowedMetadata'] = undefined;
   /**
    * 
+   * @member {String} hasRecipientConnectClaimedDomain
+   */
+  exports.prototype['hasRecipientConnectClaimedDomain'] = undefined;
+  /**
+   * 
    * @member {String} hideAccountAddressInCoC
    */
   exports.prototype['hideAccountAddressInCoC'] = undefined;
@@ -3580,6 +3654,15 @@
    * @member {module:model/SettingsMetadata} pkiSignDownloadedPDFDocsMetadata
    */
   exports.prototype['pkiSignDownloadedPDFDocsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} readOnlyMode
+   */
+  exports.prototype['readOnlyMode'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} readOnlyModeMetadata
+   */
+  exports.prototype['readOnlyModeMetadata'] = undefined;
   /**
    * 
    * @member {String} recipientsCanSignOffline

@@ -3581,7 +3581,7 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Put one branding logo.
      * @param {String} accountId The external account number (int) or account ID GUID.
-     * @param {String} brandId The id of the brand.
+     * @param {String} brandId The ID of the brand.
      * @param {String} logoType The type of logo. Valid values are:
 
 - `primary` 
@@ -3655,7 +3655,7 @@ Users with account administration privileges can retrieve shared access informat
     /**
      * Uploads a branding resource file.
      * @param {String} accountId The external account number (int) or account ID GUID.
-     * @param {String} brandId The id of the brand.
+     * @param {String} brandId The ID of the brand.
      * @param {String} resourceContentType The type of brand resource file that you are updating. Valid values are:
 
 - `sending`
