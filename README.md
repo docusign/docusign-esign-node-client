@@ -16,11 +16,11 @@ commented out
 -->
 
 ## Requirements
-*   Node 4
+*   Node version 14.15.5 or higher
 *   Free [developer account](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 
 ## Compatibility
-*   Node 4+
+*   Node version 14.15.5 or higher
 
 ## Installation
 This SDK is provided as open source, which enables you to customize its functionality to suit your particular use case. To do so, download or clone the repository. If the SDK’s given functionality meets your integration needs, or if you’re working through our [code examples](https://developers.docusign.com/docs/esign-rest-api/how-to/) from the [DocuSign Developer Center](https://developers.docusign.com/), you merely need to install it by following the instructions below.
@@ -73,7 +73,7 @@ MIICXAIBAAKBgQCqGKukO1De7zhZj6+H0qtjTkVxwTCpvKe4eCZ0FPqri0cb2JZfXJ/DgYSF6vUpwmJG
 The prefered operating system to run unit-tests is Microsoft Windows 10.
 
 ### Installing Node.js
-To run tests for this project, please, [install Node.js](https://nodejs.org/en/).
+To run tests for this project, please, [install Node.js](https://nodejs.org/en/) version 14.15.5 or higher.
 
 After downloading process is complete, you will need to open the installer and press the "Install" button.
 
