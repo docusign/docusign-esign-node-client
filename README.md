@@ -16,11 +16,11 @@ commented out
 -->
 
 ## Requirements
-*   Node 4
+*   Node version 14.15.5 or higher
 *   Free [developer account](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 
 ## Compatibility
-*   Node 4+
+*   Node version 14.15.5 or higher
 
 ## Installation
 This SDK is provided as open source, which enables you to customize its functionality to suit your particular use case. To do so, download or clone the repository. If the SDK’s given functionality meets your integration needs, or if you’re working through our [code examples](https://developers.docusign.com/docs/esign-rest-api/how-to/) from the [DocuSign Developer Center](https://developers.docusign.com/), you merely need to install it by following the instructions below.
@@ -61,6 +61,23 @@ For security purposes, DocuSign recommends using the [Authorization Code Grant](
 5. Create new template on https://appdemo.docusign.com/templates page and save its ID.
 6. Create .env.example file copy with .env name and fill it with required data from steps 3-5.
 7. Write your generated private key to test\keys\docusign_private_key.txt file.
+
+Note: private key must be written to a file in the following format
+```
+-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQCqGKukO1De7zhZj6+H0qtjTkVxwTCpvKe4eCZ0FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzW.....
+-----END RSA PRIVATE KEY-----
+```
+
+### Recomended operating system
+The prefered operating system to run unit-tests is Microsoft Windows 10.
+
+### Installing Node.js
+To run tests for this project, please, [install Node.js](https://nodejs.org/en/) version 14.15.5 or higher.
+
+After downloading process is complete, you will need to open the installer and press the "Install" button.
+
+Make sure the installation is successful before moving on to next steps.
 
 ### Test running
 In order to run tests you will require the [mocha](https://mochajs.org) test framework. Make sure it is installed and if not, install it by running the following command:
