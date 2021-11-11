@@ -16,8 +16,9 @@ const JWTAuth = async () => {
   // IMPORTANT NOTE:
   // the first time you ask for a JWT access token, you should grant access by making the following call
   // get DocuSign OAuth authorization url:
-  apiClient.getJWTUri(INTEGRATOR_KEY, REDIRECT_URI, OAUTH_BASE_PATH);
+  const authorizationUrl = apiClient.getJWTUri(INTEGRATOR_KEY, REDIRECT_URI, OAUTH_BASE_PATH);
   // open DocuSign OAuth authorization url in the browser, login and grant access
+  console.log('OAuth authorization url:', authorizationUrl);
   // END OF NOTE
   const privateKeyFile = fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_FILENAME));
   const res = await apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN);
