@@ -70,7 +70,7 @@ MIICXAIBAAKBgQCqGKukO1De7zhZj6+H0qtjTkVxwTCpvKe4eCZ0FPqri0cb2JZfXJ/DgYSF6vUpwmJG
 ```
 
 ### Recomended operating system
-The prefered operating system to run unit-tests is Microsoft Windows 10.
+The operating system to run unit-tests is Microsoft Windows 10.
 
 ### Installing Node.js
 To run tests for this project, please, [install Node.js](https://nodejs.org/en/) version 14.15.5 or higher.
