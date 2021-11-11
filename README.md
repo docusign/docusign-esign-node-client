@@ -80,6 +80,10 @@ After downloading process is complete, you will need to open the installer and p
 Make sure the installation is successful before moving on to next steps.
 
 ### Test running
+Install all the project dependencies by running the following command
+```
+$ npm install
+```
 In order to run tests you will require the [mocha](https://mochajs.org) test framework. Make sure it is installed and if not, install it by running the following command:
 ```
 $ npm install --save-dev mocha 
@@ -88,6 +92,7 @@ You can now run tests from [Mocha Test Explorer Extension](https://marketplace.v
 ```
 $ npm run test 
 ```
+If you are running the tests for the first time, you may need to grant permission to the application to make API calls. You can do this by opening OAuth authorization url from terminal output and pressing Accept button.
 
 ## Support
 Log issues against this client through GitHub. We also have an [active developer community on Stack Overflow](http://stackoverflow.com/questions/tagged/docusignapi).
