@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/OfflineAttributes', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientProofFile', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/AuthenticationStatus', 'model/DelegationInfo', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/OfflineAttributes', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientProofFile', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientProofFile'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DelegationInfo'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientProofFile'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Witness = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientProofFile, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
+    root.Docusign.Witness = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DelegationInfo, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientProofFile, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, OfflineAttributes, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientProofFile, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
+}(this, function(ApiClient, AuthenticationStatus, DelegationInfo, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, OfflineAttributes, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientProofFile, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
   'use strict';
 
 
@@ -107,6 +107,12 @@
       }
       if (data.hasOwnProperty('defaultRecipient')) {
         obj['defaultRecipient'] = ApiClient.convertToType(data['defaultRecipient'], 'String');
+      }
+      if (data.hasOwnProperty('delegatedBy')) {
+        obj['delegatedBy'] = DelegationInfo.constructFromObject(data['delegatedBy']);
+      }
+      if (data.hasOwnProperty('delegatedTo')) {
+        obj['delegatedTo'] = ApiClient.convertToType(data['delegatedTo'], [DelegationInfo]);
       }
       if (data.hasOwnProperty('deliveredDateTime')) {
         obj['deliveredDateTime'] = ApiClient.convertToType(data['deliveredDateTime'], 'String');
@@ -203,6 +209,9 @@
       }
       if (data.hasOwnProperty('notaryId')) {
         obj['notaryId'] = ApiClient.convertToType(data['notaryId'], 'String');
+      }
+      if (data.hasOwnProperty('notarySignerEmailSent')) {
+        obj['notarySignerEmailSent'] = ApiClient.convertToType(data['notarySignerEmailSent'], 'String');
       }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
@@ -430,6 +439,15 @@
    */
   exports.prototype['defaultRecipient'] = undefined;
   /**
+   * @member {module:model/DelegationInfo} delegatedBy
+   */
+  exports.prototype['delegatedBy'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/DelegationInfo>} delegatedTo
+   */
+  exports.prototype['delegatedTo'] = undefined;
+  /**
    * Reserved: For DocuSign use only.
    * @member {String} deliveredDateTime
    */
@@ -576,6 +594,11 @@
    * @member {String} notaryId
    */
   exports.prototype['notaryId'] = undefined;
+  /**
+   * 
+   * @member {String} notarySignerEmailSent
+   */
+  exports.prototype['notarySignerEmailSent'] = undefined;
   /**
    * Specifies a note that is unique to this recipient. This note is sent to the recipient via the signing email. The note displays in the signing UI near the upper left corner of the document on the signing screen.  Maximum Length: 1000 characters.
    * @member {String} note

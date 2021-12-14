@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('eventData')) {
         obj['eventData'] = ConnectEventData.constructFromObject(data['eventData']);
       }
+      if (data.hasOwnProperty('events')) {
+        obj['events'] = ApiClient.convertToType(data['events'], ['String']);
+      }
       if (data.hasOwnProperty('includeCertificateOfCompletion')) {
         obj['includeCertificateOfCompletion'] = ApiClient.convertToType(data['includeCertificateOfCompletion'], 'String');
       }
@@ -127,6 +130,11 @@
    * @member {module:model/ConnectEventData} eventData
    */
   exports.prototype['eventData'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} events
+   */
+  exports.prototype['events'] = undefined;
   /**
    * When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
    * @member {String} includeCertificateOfCompletion

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BulkSendErrorStatus'], factory);
+    define(['ApiClient', 'model/BulkSendEnvelopesInfo', 'model/BulkSendErrorStatus'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BulkSendErrorStatus'));
+    module.exports = factory(require('../ApiClient'), require('./BulkSendEnvelopesInfo'), require('./BulkSendErrorStatus'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BulkSendBatchStatus = factory(root.Docusign.ApiClient, root.Docusign.BulkSendErrorStatus);
+    root.Docusign.BulkSendBatchStatus = factory(root.Docusign.ApiClient, root.Docusign.BulkSendEnvelopesInfo, root.Docusign.BulkSendErrorStatus);
   }
-}(this, function(ApiClient, BulkSendErrorStatus) {
+}(this, function(ApiClient, BulkSendEnvelopesInfo, BulkSendErrorStatus) {
   'use strict';
 
 
@@ -68,6 +68,9 @@
       }
       if (data.hasOwnProperty('envelopeIdOrTemplateId')) {
         obj['envelopeIdOrTemplateId'] = ApiClient.convertToType(data['envelopeIdOrTemplateId'], 'String');
+      }
+      if (data.hasOwnProperty('envelopesInfo')) {
+        obj['envelopesInfo'] = BulkSendEnvelopesInfo.constructFromObject(data['envelopesInfo']);
       }
       if (data.hasOwnProperty('envelopesUri')) {
         obj['envelopesUri'] = ApiClient.convertToType(data['envelopesUri'], 'String');
@@ -125,6 +128,10 @@
    * @member {String} envelopeIdOrTemplateId
    */
   exports.prototype['envelopeIdOrTemplateId'] = undefined;
+  /**
+   * @member {module:model/BulkSendEnvelopesInfo} envelopesInfo
+   */
+  exports.prototype['envelopesInfo'] = undefined;
   /**
    * 
    * @member {String} envelopesUri

@@ -81,6 +81,9 @@
       if (data.hasOwnProperty('eventData')) {
         obj['eventData'] = ConnectEventData.constructFromObject(data['eventData']);
       }
+      if (data.hasOwnProperty('events')) {
+        obj['events'] = ApiClient.convertToType(data['events'], ['String']);
+      }
       if (data.hasOwnProperty('externalFolderId')) {
         obj['externalFolderId'] = ApiClient.convertToType(data['externalFolderId'], 'String');
       }
@@ -213,6 +216,11 @@
    * @member {module:model/ConnectEventData} eventData
    */
   exports.prototype['eventData'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} events
+   */
+  exports.prototype['events'] = undefined;
   /**
    * 
    * @member {String} externalFolderId

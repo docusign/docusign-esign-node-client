@@ -21,20 +21,20 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectUserInfo = factory(root.Docusign.ApiClient);
+    root.Docusign.ReservedDomainExistence = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The ConnectUserInfo model module.
-   * @module model/ConnectUserInfo
+   * The ReservedDomainExistence model module.
+   * @module model/ReservedDomainExistence
    */
 
   /**
-   * Constructs a new <code>ConnectUserInfo</code>.
-   * @alias module:model/ConnectUserInfo
+   * Constructs a new <code>ReservedDomainExistence</code>.
+   * @alias module:model/ReservedDomainExistence
    * @class
    */
   var exports = function() {
@@ -44,27 +44,21 @@
   };
 
   /**
-   * Constructs a <code>ConnectUserInfo</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ReservedDomainExistence</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ConnectUserInfo} obj Optional instance to populate.
-   * @return {module:model/ConnectUserInfo} The populated <code>ConnectUserInfo</code> instance.
+   * @param {module:model/ReservedDomainExistence} obj Optional instance to populate.
+   * @return {module:model/ReservedDomainExistence} The populated <code>ReservedDomainExistence</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('emailDomain')) {
+        obj['emailDomain'] = ApiClient.convertToType(data['emailDomain'], 'String');
       }
-      if (data.hasOwnProperty('isIncluded')) {
-        obj['isIncluded'] = ApiClient.convertToType(data['isIncluded'], 'String');
-      }
-      if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
-      }
-      if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      if (data.hasOwnProperty('isReserved')) {
+        obj['isReserved'] = ApiClient.convertToType(data['isReserved'], 'String');
       }
     }
     return obj;
@@ -72,24 +66,14 @@
 
   /**
    * 
-   * @member {String} email
+   * @member {String} emailDomain
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['emailDomain'] = undefined;
   /**
    * 
-   * @member {String} isIncluded
+   * @member {String} isReserved
    */
-  exports.prototype['isIncluded'] = undefined;
-  /**
-   * 
-   * @member {String} userId
-   */
-  exports.prototype['userId'] = undefined;
-  /**
-   * 
-   * @member {String} userName
-   */
-  exports.prototype['userName'] = undefined;
+  exports.prototype['isReserved'] = undefined;
 
 
 

@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('changedSigner')) {
         obj['changedSigner'] = ApiClient.convertToType(data['changedSigner'], 'String');
       }
+      if (data.hasOwnProperty('clickwrapResponsesLimitNotificationEmail')) {
+        obj['clickwrapResponsesLimitNotificationEmail'] = ApiClient.convertToType(data['clickwrapResponsesLimitNotificationEmail'], 'String');
+      }
       if (data.hasOwnProperty('commentsOnlyPrivateAndMention')) {
         obj['commentsOnlyPrivateAndMention'] = ApiClient.convertToType(data['commentsOnlyPrivateAndMention'], 'String');
       }
@@ -96,6 +99,11 @@
    * @member {String} changedSigner
    */
   exports.prototype['changedSigner'] = undefined;
+  /**
+   * 
+   * @member {String} clickwrapResponsesLimitNotificationEmail
+   */
+  exports.prototype['clickwrapResponsesLimitNotificationEmail'] = undefined;
   /**
    * 
    * @member {String} commentsOnlyPrivateAndMention

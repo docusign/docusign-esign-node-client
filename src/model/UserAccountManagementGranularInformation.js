@@ -84,6 +84,12 @@
       if (data.hasOwnProperty('canManageEnvelopeTransferMetadata')) {
         obj['canManageEnvelopeTransferMetadata'] = SettingsMetadata.constructFromObject(data['canManageEnvelopeTransferMetadata']);
       }
+      if (data.hasOwnProperty('canManageGroupsButNotUsers')) {
+        obj['canManageGroupsButNotUsers'] = ApiClient.convertToType(data['canManageGroupsButNotUsers'], 'String');
+      }
+      if (data.hasOwnProperty('canManageGroupsButNotUsersMetadata')) {
+        obj['canManageGroupsButNotUsersMetadata'] = SettingsMetadata.constructFromObject(data['canManageGroupsButNotUsersMetadata']);
+      }
       if (data.hasOwnProperty('canManageReporting')) {
         obj['canManageReporting'] = ApiClient.convertToType(data['canManageReporting'], 'String');
       }
@@ -160,6 +166,15 @@
    * @member {module:model/SettingsMetadata} canManageEnvelopeTransferMetadata
    */
   exports.prototype['canManageEnvelopeTransferMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageGroupsButNotUsers
+   */
+  exports.prototype['canManageGroupsButNotUsers'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageGroupsButNotUsersMetadata
+   */
+  exports.prototype['canManageGroupsButNotUsersMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageReporting

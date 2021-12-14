@@ -39,5 +39,4 @@ test/*/*.spec.js
 test/assert-equals.js
 src/OAuth.js
 src/RestApi.js
-src/ApiClient.js
 src/oauth/

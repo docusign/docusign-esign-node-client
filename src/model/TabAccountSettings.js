@@ -78,6 +78,12 @@
       if (data.hasOwnProperty('checkBoxTabsMetadata')) {
         obj['checkBoxTabsMetadata'] = SettingsMetadata.constructFromObject(data['checkBoxTabsMetadata']);
       }
+      if (data.hasOwnProperty('currencyTabsEnabled')) {
+        obj['currencyTabsEnabled'] = ApiClient.convertToType(data['currencyTabsEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('currencyTabsMetadata')) {
+        obj['currencyTabsMetadata'] = SettingsMetadata.constructFromObject(data['currencyTabsMetadata']);
+      }
       if (data.hasOwnProperty('dataFieldRegexEnabled')) {
         obj['dataFieldRegexEnabled'] = ApiClient.convertToType(data['dataFieldRegexEnabled'], 'String');
       }
@@ -220,6 +226,15 @@
    * @member {module:model/SettingsMetadata} checkBoxTabsMetadata
    */
   exports.prototype['checkBoxTabsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} currencyTabsEnabled
+   */
+  exports.prototype['currencyTabsEnabled'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} currencyTabsMetadata
+   */
+  exports.prototype['currencyTabsMetadata'] = undefined;
   /**
    * 
    * @member {String} dataFieldRegexEnabled

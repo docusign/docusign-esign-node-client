@@ -52,8 +52,8 @@
 
 
     /**
-     * (Optional) Callback function to receive the result of the deleteReport operation. If none specified a Promise will be returned.
-     * @callback module:api/OrganizationsApi~deleteReportCallback
+     * (Optional) Callback function to receive the result of the getReportV2 operation. If none specified a Promise will be returned.
+     * @callback module:api/OrganizationsApi~getReportV2Callback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
@@ -63,19 +63,19 @@
      * Retrieves org level report by correlation id and site.
      * @param {String} organizationId 
      * @param {String} reportCorrelationId 
-     * @param {module:api/OrganizationsApi~deleteReportCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/OrganizationsApi~getReportV2Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteReport = function(organizationId, reportCorrelationId, callback) {
+    this.getReportV2 = function(organizationId, reportCorrelationId, callback) {
       var postBody = null;
 
       // verify the required parameter 'organizationId' is set
       if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling deleteReport");
+        throw new Error("Missing the required parameter 'organizationId' when calling getReportV2");
       }
 
       // verify the required parameter 'reportCorrelationId' is set
       if (reportCorrelationId === undefined || reportCorrelationId === null) {
-        throw new Error("Missing the required parameter 'reportCorrelationId' when calling deleteReport");
+        throw new Error("Missing the required parameter 'reportCorrelationId' when calling getReportV2");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -102,64 +102,7 @@
       var returnType = null;
 
       return this.apiClient.callApi(
-        '/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the getReport operation. If none specified a Promise will be returned.
-     * @callback module:api/OrganizationsApi~getReportCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Retrieves org level report by correlation id and site.
-     * @param {String} organizationId 
-     * @param {String} reportCorrelationId 
-     * @param {module:api/OrganizationsApi~getReportCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-    this.getReport = function(organizationId, reportCorrelationId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'organizationId' is set
-      if (organizationId === undefined || organizationId === null) {
-        throw new Error("Missing the required parameter 'organizationId' when calling getReport");
-      }
-
-      // verify the required parameter 'reportCorrelationId' is set
-      if (reportCorrelationId === undefined || reportCorrelationId === null) {
-        throw new Error("Missing the required parameter 'reportCorrelationId' when calling getReport");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'organizationId': organizationId,
-        'reportCorrelationId': reportCorrelationId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/v2.1/organization_reporting/{organizationId}/reports/{reportCorrelationId}', 'GET',
+        '/v2.1/organization_reporting/{organizationId}/reportsv2/{reportCorrelationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

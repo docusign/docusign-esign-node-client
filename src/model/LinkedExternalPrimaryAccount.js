@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ExternalPrimaryAccountRecipientAuthRequirements'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ExternalPrimaryAccountRecipientAuthRequirements'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.LinkedExternalPrimaryAccount = factory(root.Docusign.ApiClient);
+    root.Docusign.LinkedExternalPrimaryAccount = factory(root.Docusign.ApiClient, root.Docusign.ExternalPrimaryAccountRecipientAuthRequirements);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ExternalPrimaryAccountRecipientAuthRequirements) {
   'use strict';
 
 
@@ -66,6 +66,9 @@
       if (data.hasOwnProperty('linkId')) {
         obj['linkId'] = ApiClient.convertToType(data['linkId'], 'String');
       }
+      if (data.hasOwnProperty('recipientAuthRequirements')) {
+        obj['recipientAuthRequirements'] = ExternalPrimaryAccountRecipientAuthRequirements.constructFromObject(data['recipientAuthRequirements']);
+      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
@@ -96,6 +99,10 @@
    * @member {String} linkId
    */
   exports.prototype['linkId'] = undefined;
+  /**
+   * @member {module:model/ExternalPrimaryAccountRecipientAuthRequirements} recipientAuthRequirements
+   */
+  exports.prototype['recipientAuthRequirements'] = undefined;
   /**
    * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
    * @member {String} status
