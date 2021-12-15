@@ -3717,9 +3717,9 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
     /**
      * Get Responsive HTML for a document in an envelope.
-     * @param {String} accountId 
-     * @param {String} envelopeId 
-     * @param {String} documentId 
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeAnchorTabLocations 
      * @param {module:api/EnvelopesApi~getDocumentResponsiveHtmlCallback} callback The callback function, accepting three arguments: error, data, response
@@ -4879,8 +4879,8 @@ Older envelopes might only have chromed images. If getting the non-chromed image
 
     /**
      * Get Responsive HTML for all documents in an envelope.
-     * @param {String} accountId 
-     * @param {String} envelopeId 
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeAnchorTabLocations 
      * @param {module:api/EnvelopesApi~getResponsiveHtmlCallback} callback The callback function, accepting three arguments: error, data, response

@@ -1187,6 +1187,7 @@ The response returns the list of users for the account along with the informatio
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
      * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 0 and less than or equal to 100. 
+     * @param {String} optsOrCallback.domainUsersOnly 
      * @param {String} optsOrCallback.email 
      * @param {String} optsOrCallback.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
      * @param {String} optsOrCallback.groupId Filters user records returned by one or more group Id's.
@@ -1227,6 +1228,7 @@ The response returns the list of users for the account along with the informatio
       var queryParams = {
         'additional_info': optsOrCallback['additionalInfo'],
         'count': optsOrCallback['count'],
+        'domain_users_only': optsOrCallback['domainUsersOnly'],
         'email': optsOrCallback['email'],
         'email_substring': optsOrCallback['emailSubstring'],
         'group_id': optsOrCallback['groupId'],

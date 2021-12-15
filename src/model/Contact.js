@@ -84,6 +84,9 @@
       if (data.hasOwnProperty('organization')) {
         obj['organization'] = ApiClient.convertToType(data['organization'], 'String');
       }
+      if (data.hasOwnProperty('roomContactType')) {
+        obj['roomContactType'] = ApiClient.convertToType(data['roomContactType'], 'String');
+      }
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
@@ -146,6 +149,11 @@
    * @member {String} organization
    */
   exports.prototype['organization'] = undefined;
+  /**
+   * 
+   * @member {String} roomContactType
+   */
+  exports.prototype['roomContactType'] = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared

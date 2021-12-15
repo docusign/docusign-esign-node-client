@@ -178,6 +178,12 @@
       if (data.hasOwnProperty('allowDataDownloadMetadata')) {
         obj['allowDataDownloadMetadata'] = SettingsMetadata.constructFromObject(data['allowDataDownloadMetadata']);
       }
+      if (data.hasOwnProperty('allowDelegatedSigning')) {
+        obj['allowDelegatedSigning'] = ApiClient.convertToType(data['allowDelegatedSigning'], 'String');
+      }
+      if (data.hasOwnProperty('allowDelegatedSigningMetadata')) {
+        obj['allowDelegatedSigningMetadata'] = SettingsMetadata.constructFromObject(data['allowDelegatedSigningMetadata']);
+      }
       if (data.hasOwnProperty('allowDocumentDisclosures')) {
         obj['allowDocumentDisclosures'] = ApiClient.convertToType(data['allowDocumentDisclosures'], 'String');
       }
@@ -658,6 +664,12 @@
       if (data.hasOwnProperty('captureVoiceRecordingMetadata')) {
         obj['captureVoiceRecordingMetadata'] = SettingsMetadata.constructFromObject(data['captureVoiceRecordingMetadata']);
       }
+      if (data.hasOwnProperty('cfr21SimplifiedSigningEnabled')) {
+        obj['cfr21SimplifiedSigningEnabled'] = ApiClient.convertToType(data['cfr21SimplifiedSigningEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('cfr21SimplifiedSigningEnabledMetadata')) {
+        obj['cfr21SimplifiedSigningEnabledMetadata'] = SettingsMetadata.constructFromObject(data['cfr21SimplifiedSigningEnabledMetadata']);
+      }
       if (data.hasOwnProperty('cfrUseWideImage')) {
         obj['cfrUseWideImage'] = ApiClient.convertToType(data['cfrUseWideImage'], 'String');
       }
@@ -802,6 +814,12 @@
       if (data.hasOwnProperty('documentVisibilityMetadata')) {
         obj['documentVisibilityMetadata'] = SettingsMetadata.constructFromObject(data['documentVisibilityMetadata']);
       }
+      if (data.hasOwnProperty('dss_SIGN_28411_EnableLeavePagePrompt_RadminOption')) {
+        obj['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = ApiClient.convertToType(data['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'], 'String');
+      }
+      if (data.hasOwnProperty('dss_SIGN_29182_SlideUpBar_RadminOption')) {
+        obj['dss_SIGN_29182_SlideUpBar_RadminOption'] = ApiClient.convertToType(data['dss_SIGN_29182_SlideUpBar_RadminOption'], 'String');
+      }
       if (data.hasOwnProperty('emailTemplateVersion')) {
         obj['emailTemplateVersion'] = ApiClient.convertToType(data['emailTemplateVersion'], 'String');
       }
@@ -903,6 +921,12 @@
       }
       if (data.hasOwnProperty('enableIDFxIntuitKBAMetadata')) {
         obj['enableIDFxIntuitKBAMetadata'] = SettingsMetadata.constructFromObject(data['enableIDFxIntuitKBAMetadata']);
+      }
+      if (data.hasOwnProperty('enableIDFxPhoneAuthentication')) {
+        obj['enableIDFxPhoneAuthentication'] = ApiClient.convertToType(data['enableIDFxPhoneAuthentication'], 'String');
+      }
+      if (data.hasOwnProperty('enableIDFxPhoneAuthenticationMetadata')) {
+        obj['enableIDFxPhoneAuthenticationMetadata'] = SettingsMetadata.constructFromObject(data['enableIDFxPhoneAuthenticationMetadata']);
       }
       if (data.hasOwnProperty('enableInBrowserEditor')) {
         obj['enableInBrowserEditor'] = ApiClient.convertToType(data['enableInBrowserEditor'], 'String');
@@ -1084,6 +1108,9 @@
       if (data.hasOwnProperty('enableSMSDeliveryAdditionalNotificationMetadata')) {
         obj['enableSMSDeliveryAdditionalNotificationMetadata'] = SettingsMetadata.constructFromObject(data['enableSMSDeliveryAdditionalNotificationMetadata']);
       }
+      if (data.hasOwnProperty('enableSMSDeliveryPrimary')) {
+        obj['enableSMSDeliveryPrimary'] = ApiClient.convertToType(data['enableSMSDeliveryPrimary'], 'String');
+      }
       if (data.hasOwnProperty('enableSocialIdLogin')) {
         obj['enableSocialIdLogin'] = ApiClient.convertToType(data['enableSocialIdLogin'], 'String');
       }
@@ -1138,6 +1165,12 @@
       if (data.hasOwnProperty('envelopeStampingDefaultValueMetadata')) {
         obj['envelopeStampingDefaultValueMetadata'] = SettingsMetadata.constructFromObject(data['envelopeStampingDefaultValueMetadata']);
       }
+      if (data.hasOwnProperty('exitPrompt')) {
+        obj['exitPrompt'] = ApiClient.convertToType(data['exitPrompt'], 'String');
+      }
+      if (data.hasOwnProperty('exitPromptMetadata')) {
+        obj['exitPromptMetadata'] = SettingsMetadata.constructFromObject(data['exitPromptMetadata']);
+      }
       if (data.hasOwnProperty('expressSend')) {
         obj['expressSend'] = ApiClient.convertToType(data['expressSend'], 'String');
       }
@@ -1164,6 +1197,12 @@
       }
       if (data.hasOwnProperty('faxOutEnabledMetadata')) {
         obj['faxOutEnabledMetadata'] = SettingsMetadata.constructFromObject(data['faxOutEnabledMetadata']);
+      }
+      if (data.hasOwnProperty('finishReminder')) {
+        obj['finishReminder'] = ApiClient.convertToType(data['finishReminder'], 'String');
+      }
+      if (data.hasOwnProperty('finishReminderMetadata')) {
+        obj['finishReminderMetadata'] = SettingsMetadata.constructFromObject(data['finishReminderMetadata']);
       }
       if (data.hasOwnProperty('guidedFormsHtmlAllowed')) {
         obj['guidedFormsHtmlAllowed'] = ApiClient.convertToType(data['guidedFormsHtmlAllowed'], 'String');
@@ -1407,6 +1446,12 @@
       }
       if (data.hasOwnProperty('sendingTagsFontSizeMetadata')) {
         obj['sendingTagsFontSizeMetadata'] = SettingsMetadata.constructFromObject(data['sendingTagsFontSizeMetadata']);
+      }
+      if (data.hasOwnProperty('sendLockoutRecipientNotification')) {
+        obj['sendLockoutRecipientNotification'] = ApiClient.convertToType(data['sendLockoutRecipientNotification'], 'String');
+      }
+      if (data.hasOwnProperty('sendLockoutRecipientNotificationMetadata')) {
+        obj['sendLockoutRecipientNotificationMetadata'] = SettingsMetadata.constructFromObject(data['sendLockoutRecipientNotificationMetadata']);
       }
       if (data.hasOwnProperty('sendToCertifiedDeliveryEnabled')) {
         obj['sendToCertifiedDeliveryEnabled'] = ApiClient.convertToType(data['sendToCertifiedDeliveryEnabled'], 'String');
@@ -1950,6 +1995,15 @@
    * @member {module:model/SettingsMetadata} allowDataDownloadMetadata
    */
   exports.prototype['allowDataDownloadMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowDelegatedSigning
+   */
+  exports.prototype['allowDelegatedSigning'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowDelegatedSigningMetadata
+   */
+  exports.prototype['allowDelegatedSigningMetadata'] = undefined;
   /**
    * 
    * @member {String} allowDocumentDisclosures
@@ -2673,6 +2727,15 @@
   exports.prototype['captureVoiceRecordingMetadata'] = undefined;
   /**
    * 
+   * @member {String} cfr21SimplifiedSigningEnabled
+   */
+  exports.prototype['cfr21SimplifiedSigningEnabled'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} cfr21SimplifiedSigningEnabledMetadata
+   */
+  exports.prototype['cfr21SimplifiedSigningEnabledMetadata'] = undefined;
+  /**
+   * 
    * @member {String} cfrUseWideImage
    */
   exports.prototype['cfrUseWideImage'] = undefined;
@@ -2889,6 +2952,16 @@
   exports.prototype['documentVisibilityMetadata'] = undefined;
   /**
    * 
+   * @member {String} dss_SIGN_28411_EnableLeavePagePrompt_RadminOption
+   */
+  exports.prototype['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = undefined;
+  /**
+   * 
+   * @member {String} dss_SIGN_29182_SlideUpBar_RadminOption
+   */
+  exports.prototype['dss_SIGN_29182_SlideUpBar_RadminOption'] = undefined;
+  /**
+   * 
    * @member {String} emailTemplateVersion
    */
   exports.prototype['emailTemplateVersion'] = undefined;
@@ -3040,6 +3113,15 @@
    * @member {module:model/SettingsMetadata} enableIDFxIntuitKBAMetadata
    */
   exports.prototype['enableIDFxIntuitKBAMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableIDFxPhoneAuthentication
+   */
+  exports.prototype['enableIDFxPhoneAuthentication'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableIDFxPhoneAuthenticationMetadata
+   */
+  exports.prototype['enableIDFxPhoneAuthenticationMetadata'] = undefined;
   /**
    * 
    * @member {String} enableInBrowserEditor
@@ -3312,6 +3394,11 @@
   exports.prototype['enableSMSDeliveryAdditionalNotificationMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableSMSDeliveryPrimary
+   */
+  exports.prototype['enableSMSDeliveryPrimary'] = undefined;
+  /**
+   * 
    * @member {String} enableSocialIdLogin
    */
   exports.prototype['enableSocialIdLogin'] = undefined;
@@ -3393,6 +3480,15 @@
   exports.prototype['envelopeStampingDefaultValueMetadata'] = undefined;
   /**
    * 
+   * @member {String} exitPrompt
+   */
+  exports.prototype['exitPrompt'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} exitPromptMetadata
+   */
+  exports.prototype['exitPromptMetadata'] = undefined;
+  /**
+   * 
    * @member {String} expressSend
    */
   exports.prototype['expressSend'] = undefined;
@@ -3431,6 +3527,15 @@
    * @member {module:model/SettingsMetadata} faxOutEnabledMetadata
    */
   exports.prototype['faxOutEnabledMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} finishReminder
+   */
+  exports.prototype['finishReminder'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} finishReminderMetadata
+   */
+  exports.prototype['finishReminderMetadata'] = undefined;
   /**
    * 
    * @member {String} guidedFormsHtmlAllowed
@@ -3800,6 +3905,15 @@
    * @member {module:model/SettingsMetadata} sendingTagsFontSizeMetadata
    */
   exports.prototype['sendingTagsFontSizeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} sendLockoutRecipientNotification
+   */
+  exports.prototype['sendLockoutRecipientNotification'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} sendLockoutRecipientNotificationMetadata
+   */
+  exports.prototype['sendLockoutRecipientNotificationMetadata'] = undefined;
   /**
    * 
    * @member {String} sendToCertifiedDeliveryEnabled

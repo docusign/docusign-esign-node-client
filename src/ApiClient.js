@@ -2,13 +2,12 @@
  * DocuSign REST API
  * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
  *
- * OpenAPI spec version: v2
+ * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
  *
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -25,6 +24,10 @@
   }
 }(this, function(superagent, opts) {
   'use strict';
+
+  var SCOPE_SIGNATURE = "signature";
+  var SCOPE_EXTENDED = "extended";
+  var SCOPE_IMPERSONATION = "impersonation";
 
   var removeNulls = function(obj) {
     var isArray = obj instanceof Array;
@@ -73,6 +76,7 @@
         'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
       });
 
+
     if (!callback){
       return new Promise(function(resolve, reject){
         request.end(function(err, data){
@@ -82,7 +86,7 @@
             resolve(data);
           }
         })
-      })
+      });
     } else {
       request.end(callback);
     }
@@ -106,7 +110,6 @@
 
   /**
    * @module ApiClient
-   * @version 3.0.0
    */
 
   /**
@@ -169,10 +172,10 @@
     this.cache = true;
   };
 
-  /**
+    /**
    * Gets the API endpoint base URL.
    */
-  exports.prototype.getBasePath = function getBasePath() {
+    exports.prototype.getBasePath = function getBasePath() {
     return this.basePath;
   };
 
@@ -184,10 +187,10 @@
     this.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(basePath);
   };
 
-  /**
+    /**
    * Gets the authentication server endpoint base URL.
    */
-  exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
+    exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
     return this.oAuthBasePath;
   };
 
@@ -282,9 +285,9 @@
   exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
     if (typeof window === 'undefined' &&
-      typeof require === 'function' &&
-      require('fs') &&
-      param instanceof require('fs').ReadStream) {
+        typeof require === 'function' &&
+        require('fs') &&
+        param instanceof require('fs').ReadStream) {
       return true;
     }
     // Buffer in Node.js
@@ -487,8 +490,8 @@
    * @returns {Object} The SuperAgent request object if a callback is specified, else {Promise} A {@link https://www.promisejs.org/|Promise} object.
    */
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-                                               queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-                                               returnType, callback) {
+      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+      returnType, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
@@ -580,35 +583,36 @@
       })
     }
 
-    var data = null;
-    if (!callback) {
-      return new Promise(function(resolve, reject){
-        request.end(function(error, data) {
-          if (error) {
-            reject(error);
-          } else {
-            try {
-              data = _this.deserialize(data, returnType);
-              resolve(data);
-            } catch(error) {
+
+      var data = null;
+      if (!callback) {
+        return new Promise(function(resolve, reject){
+          request.end(function(error, data) {
+            if (error) {
               reject(error);
+            } else {
+              try {
+                data = _this.deserialize(data, returnType);
+                resolve(data);
+              } catch(error){
+                reject(error);
+              }
+            }
+          })
+        });
+      } else {
+        request.end(function(error, response) {
+          if (!error) {
+            try {
+              data = _this.deserialize(response, returnType);
+            } catch (err) {
+              error = err;
             }
           }
-        })
-      });
-    } else {
-      request.end(function(error, response) {
-        if (!error) {
-          try {
-            data = _this.deserialize(response, returnType);
-          } catch (err) {
-            error = err;
-          }
-        }
-        callback(error, data, response);
-      });
-      return request;
-    }
+          callback(error, data, response);
+        });
+        return request;
+      }
   };
 
   /**
@@ -798,6 +802,7 @@
     var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
     var UserInfo = require('./OAuth').UserInfo;
 
+
     if(!callback) {
       try {
         return new Promise(function (resolve, reject) {
@@ -806,7 +811,7 @@
               reject(err);
             } else {
               try {
-                resolve(UserInfo.constructFromObject(res.body));
+                return resolve(UserInfo.constructFromObject(res.body));
               } catch (error) {
                 reject(error);
               }
@@ -814,7 +819,7 @@
           });
         });
       } catch (err) {
-        throw(err)
+        throw(err);
       }
     } else {
       request.end(function (err, res) {
@@ -839,7 +844,7 @@
     return "https://" + oAuthBasePath + "/oauth/auth" + "?" +
       "response_type=code&" +
       "client_id=" + encodeURIComponent(clientId) + "&" +
-      "scope=" + encodeURIComponent("signature impersonation") + "&" +
+      "scope=" + encodeURIComponent(`${SCOPE_SIGNATURE} ${SCOPE_IMPERSONATION}`) + "&" +
       "redirect_uri=" + encodeURIComponent(redirectURI);
   };
 
@@ -869,7 +874,7 @@
       aud: oAuthBasePath,
       iat: now,
       exp: later,
-      scope: "signature"
+      scope: SCOPE_SIGNATURE
     };
 
     var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
@@ -899,8 +904,8 @@
     return (
       Array.isArray(scopes)
       && scopes.length > 0
-      && scopes.every(function(scope){
-        return Object.keys(validScopes).some(function(key){
+      && scopes.every(function(scope) {
+        return Object.keys(validScopes).some(function(key) {
           return validScopes[key] === scope;
         })
       })

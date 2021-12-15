@@ -1,6 +1,6 @@
 {
   "name": "docusign-esign",
-  "version": "5.13.0",
+  "version": "5.14.0-rc1",
   "description": "DocuSign Node.js API client.",
   "license": "MIT",
   "main": "src/index.js",
@@ -36,7 +36,7 @@
     "push-docs": "git subtree push --prefix docs origin gh-pages",
     "update-docs": "./node_modules/.bin/jsdoc -c .jsdoc.json",
     "check-config": "./scripts/check-config.js",
-    "test": "semistandard --fix && ./node_modules/mocha/bin/mocha --reporter mocha-junit-reporter test/SdkUnitTests test/SdkUnitTestsWithCallback"
+    "test": "semistandard --fix && ./node_modules/mocha/bin/mocha --reporter mocha-junit-reporter --timeout 60000"
   },
   "semistandard": {
     "globals": [
@@ -53,7 +53,7 @@
   "dependencies": {
     "csv-stringify": "^1.0.0",
     "jsonwebtoken": "8.2.0",
-    "passport-oauth2": "1.4.0",
+    "passport-oauth2": "^1.6.1",
     "safe-buffer": "^5.1.2",
     "superagent": "3.8.2"
   },

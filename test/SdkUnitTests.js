@@ -1282,13 +1282,13 @@ describe('SDK Unit Tests:', function (done) {
           assert.notStrictEqual(envelopeFormData.prefillFormData.formData[0], undefined);
           assert.notStrictEqual(envelopeFormData.prefillFormData.formData[0].name, undefined);
           done();
+        })
+          .catch(function (error) {
+            if (error) {
+              return done(error);
+            }
+          });
       })
-      .catch(function (error) {
-        if (error) {
-          return done(error);
-        }
-      });
-    })
       .catch(function (error) {
         if (error) {
           return done(error);

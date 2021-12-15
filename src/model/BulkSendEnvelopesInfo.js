@@ -21,20 +21,20 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectUserInfo = factory(root.Docusign.ApiClient);
+    root.Docusign.BulkSendEnvelopesInfo = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The ConnectUserInfo model module.
-   * @module model/ConnectUserInfo
+   * The BulkSendEnvelopesInfo model module.
+   * @module model/BulkSendEnvelopesInfo
    */
 
   /**
-   * Constructs a new <code>ConnectUserInfo</code>.
-   * @alias module:model/ConnectUserInfo
+   * Constructs a new <code>BulkSendEnvelopesInfo</code>.
+   * @alias module:model/BulkSendEnvelopesInfo
    * @class
    */
   var exports = function() {
@@ -44,27 +44,24 @@
   };
 
   /**
-   * Constructs a <code>ConnectUserInfo</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>BulkSendEnvelopesInfo</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ConnectUserInfo} obj Optional instance to populate.
-   * @return {module:model/ConnectUserInfo} The populated <code>ConnectUserInfo</code> instance.
+   * @param {module:model/BulkSendEnvelopesInfo} obj Optional instance to populate.
+   * @return {module:model/BulkSendEnvelopesInfo} The populated <code>BulkSendEnvelopesInfo</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('completed')) {
+        obj['completed'] = ApiClient.convertToType(data['completed'], 'String');
       }
-      if (data.hasOwnProperty('isIncluded')) {
-        obj['isIncluded'] = ApiClient.convertToType(data['isIncluded'], 'String');
+      if (data.hasOwnProperty('declined')) {
+        obj['declined'] = ApiClient.convertToType(data['declined'], 'String');
       }
-      if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
-      }
-      if (data.hasOwnProperty('userName')) {
-        obj['userName'] = ApiClient.convertToType(data['userName'], 'String');
+      if (data.hasOwnProperty('voided')) {
+        obj['voided'] = ApiClient.convertToType(data['voided'], 'String');
       }
     }
     return obj;
@@ -72,24 +69,19 @@
 
   /**
    * 
-   * @member {String} email
+   * @member {String} completed
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['completed'] = undefined;
   /**
    * 
-   * @member {String} isIncluded
+   * @member {String} declined
    */
-  exports.prototype['isIncluded'] = undefined;
+  exports.prototype['declined'] = undefined;
   /**
    * 
-   * @member {String} userId
+   * @member {String} voided
    */
-  exports.prototype['userId'] = undefined;
-  /**
-   * 
-   * @member {String} userName
-   */
-  exports.prototype['userName'] = undefined;
+  exports.prototype['voided'] = undefined;
 
 
 

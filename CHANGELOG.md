@@ -2,6 +2,13 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v5.14.0-rc1] - eSignature API v2.1-21.4.00.00 - 2021-12-13
+### Changed
+- Added support for version v2.1-21.4.00.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+### Security
+- Version bump for passport-oauth2: [CVE-2021-41580](https://nvd.nist.gov/vuln/detail/CVE-2021-41580).
+
 ## [5.13.0] - ESignature API v2.1-21.3.02.00 - 2021-10-29
 ### Changed
 - Added support for version v2.1-21.3.02.00 of the DocuSign ESignature API.

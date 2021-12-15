@@ -481,12 +481,12 @@
 
     /**
      * Returns all users from the configured Connect service.
-     * @param {String} accountId 
-     * @param {String} connectId 
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} connectId The ID of the custom Connect configuration being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.domainUsersOnly 
      * @param {String} optsOrCallback.emailSubstring 
-     * @param {String} optsOrCallback.isRecipientConnectConfig 
      * @param {String} optsOrCallback.startPosition 
      * @param {String} optsOrCallback.status 
      * @param {String} optsOrCallback.userNameSubstring 
@@ -526,8 +526,8 @@
       };
       var queryParams = {
         'count': optsOrCallback['count'],
+        'domain_users_only': optsOrCallback['domainUsersOnly'],
         'email_substring': optsOrCallback['emailSubstring'],
-        'is_recipient_connect_config': optsOrCallback['isRecipientConnectConfig'],
         'start_position': optsOrCallback['startPosition'],
         'status': optsOrCallback['status'],
         'user_name_substring': optsOrCallback['userNameSubstring']

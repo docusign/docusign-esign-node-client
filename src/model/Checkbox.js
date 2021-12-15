@@ -213,6 +213,9 @@
       if (data.hasOwnProperty('nameMetadata')) {
         obj['nameMetadata'] = PropertyMetadata.constructFromObject(data['nameMetadata']);
       }
+      if (data.hasOwnProperty('originalValue')) {
+        obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
+      }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
       }
@@ -326,6 +329,9 @@
       }
       if (data.hasOwnProperty('underlineMetadata')) {
         obj['underlineMetadata'] = PropertyMetadata.constructFromObject(data['underlineMetadata']);
+      }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
       if (data.hasOwnProperty('width')) {
         obj['width'] = ApiClient.convertToType(data['width'], 'String');
@@ -588,6 +594,11 @@
    */
   exports.prototype['nameMetadata'] = undefined;
   /**
+   * The initial value of the tab when it was sent to the recipient. 
+   * @member {String} originalValue
+   */
+  exports.prototype['originalValue'] = undefined;
+  /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber
    */
@@ -758,6 +769,11 @@
    * @member {module:model/PropertyMetadata} underlineMetadata
    */
   exports.prototype['underlineMetadata'] = undefined;
+  /**
+   * Specifies the value of the tab. 
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width
