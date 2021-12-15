@@ -17,6 +17,7 @@ var INTEGRATOR_KEY_AUTH_CODE = config.integratorKeyAuthCode;
 var INTEGRATOR_KEY_IMPLICIT = config.integratorKeyImplicit;
 var CLIENT_SECRET = config.clientSecret;
 var TEMPLATE_ID = config.templateId;
+var PRIVATE_KEY = config.privateKey;
 
 // for production environment update to "www.docusign.net/restapi"
 var BASE_PATH = restApi.BasePath.DEMO;
@@ -76,6 +77,7 @@ module.exports = {
   REDIRECT_URI,
   PRIVATE_KEY_FILENAME,
   EXPIRES_IN,
+  PRIVATE_KEY,
   getSignerTabsDefinition,
   apiClient,
   scopes

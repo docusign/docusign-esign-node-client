@@ -11,8 +11,24 @@ var PRIVATE_KEY_FILENAME = constants.PRIVATE_KEY_FILENAME;
 var EXPIRES_IN = constants.EXPIRES_IN;
 var apiClient = constants.apiClient;
 var scopes = constants.scopes;
+var PRIVATE_KEY = config.PRIVATE_KEY;
 
 var JWTAuth = () => {
+
+  if (PRIVATE_KEY) {
+    var buf;
+    if (typeof Buffer.from === 'function') {
+      // Node 5.10+
+      buf = Buffer.from(PRIVATE_KEY, 'base64'); // Ta-da
+    } else {
+      // older Node versions, now deprecated
+      buf = new Buffer(PRIVATE_KEY, 'base64'); // Ta-da
+    }
+
+    var text = buf.toString('ascii');
+    fs.writeFileSync(path.resolve('test', PRIVATE_KEY_FILENAME), text);
+  }
+
   return new Promise(function (resolve, reject) {
     try {
       // IMPORTANT NOTE:
