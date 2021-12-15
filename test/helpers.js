@@ -12,7 +12,7 @@ var PRIVATE_KEY_FILENAME = constants.PRIVATE_KEY_FILENAME;
 var EXPIRES_IN = constants.EXPIRES_IN;
 var apiClient = constants.apiClient;
 var scopes = constants.scopes;
-var PRIVATE_KEY = config.PRIVATE_KEY;
+var PRIVATE_KEY = constants.PRIVATE_KEY;
 
 var JWTAuth = () => {
 
