@@ -2,6 +2,7 @@ var path = require('path');
 var fs = require('fs');
 
 var constants = require('./constants');
+var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 
 var INTEGRATOR_KEY = constants.INTEGRATOR_KEY;
 var OAUTH_BASE_PATH = constants.OAUTH_BASE_PATH;
