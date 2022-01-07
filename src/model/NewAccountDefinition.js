@@ -96,6 +96,9 @@
       if (data.hasOwnProperty('socialAccountInformation')) {
         obj['socialAccountInformation'] = SocialAccountInformation.constructFromObject(data['socialAccountInformation']);
       }
+      if (data.hasOwnProperty('taxExemptId')) {
+        obj['taxExemptId'] = ApiClient.convertToType(data['taxExemptId'], 'String');
+      }
     }
     return obj;
   }
@@ -161,6 +164,11 @@
    * @member {module:model/SocialAccountInformation} socialAccountInformation
    */
   exports.prototype['socialAccountInformation'] = undefined;
+  /**
+   * 
+   * @member {String} taxExemptId
+   */
+  exports.prototype['taxExemptId'] = undefined;
 
 
 

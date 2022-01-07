@@ -72,6 +72,12 @@
       if (data.hasOwnProperty('canManageAdminsMetadata')) {
         obj['canManageAdminsMetadata'] = SettingsMetadata.constructFromObject(data['canManageAdminsMetadata']);
       }
+      if (data.hasOwnProperty('canManageConnect')) {
+        obj['canManageConnect'] = ApiClient.convertToType(data['canManageConnect'], 'String');
+      }
+      if (data.hasOwnProperty('canManageConnectMetadata')) {
+        obj['canManageConnectMetadata'] = SettingsMetadata.constructFromObject(data['canManageConnectMetadata']);
+      }
       if (data.hasOwnProperty('canManageDocumentRetention')) {
         obj['canManageDocumentRetention'] = ApiClient.convertToType(data['canManageDocumentRetention'], 'String');
       }
@@ -148,6 +154,15 @@
    * @member {module:model/SettingsMetadata} canManageAdminsMetadata
    */
   exports.prototype['canManageAdminsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageConnect
+   */
+  exports.prototype['canManageConnect'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageConnectMetadata
+   */
+  exports.prototype['canManageConnectMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageDocumentRetention

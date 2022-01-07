@@ -383,6 +383,7 @@ The response returns the billing plan information, including the currency code, 
      * @param {String} optsOrCallback.includeDowngradeInformation 
      * @param {String} optsOrCallback.includeMetadata When set to **true**, the `canUpgrade` and `renewalStatus` properities are included the response and an array of `supportedCountries` property is added to the `billingAddress` information. 
      * @param {String} optsOrCallback.includeSuccessorPlans When set to **true**, excludes successor information from the response.
+     * @param {String} optsOrCallback.includeTaxExemptId 
      * @param {module:api/BillingApi~getPlanCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountBillingPlanResponse}
      */
@@ -415,7 +416,8 @@ The response returns the billing plan information, including the currency code, 
         'include_credit_card_information': optsOrCallback['includeCreditCardInformation'],
         'include_downgrade_information': optsOrCallback['includeDowngradeInformation'],
         'include_metadata': optsOrCallback['includeMetadata'],
-        'include_successor_plans': optsOrCallback['includeSuccessorPlans']
+        'include_successor_plans': optsOrCallback['includeSuccessorPlans'],
+        'include_tax_exempt_id': optsOrCallback['includeTaxExemptId']
       };
       var headerParams = {
       };

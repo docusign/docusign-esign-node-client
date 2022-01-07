@@ -139,6 +139,9 @@
       if (data.hasOwnProperty('supportPlanFee')) {
         obj['supportPlanFee'] = ApiClient.convertToType(data['supportPlanFee'], 'String');
       }
+      if (data.hasOwnProperty('taxExemptId')) {
+        obj['taxExemptId'] = ApiClient.convertToType(data['taxExemptId'], 'String');
+      }
     }
     return obj;
   }
@@ -282,6 +285,11 @@
    * @member {String} supportPlanFee
    */
   exports.prototype['supportPlanFee'] = undefined;
+  /**
+   * 
+   * @member {String} taxExemptId
+   */
+  exports.prototype['taxExemptId'] = undefined;
 
 
 

@@ -144,8 +144,14 @@
       if (data.hasOwnProperty('maximumLength')) {
         obj['maximumLength'] = ApiClient.convertToType(data['maximumLength'], 'String');
       }
+      if (data.hasOwnProperty('maxNumericalValue')) {
+        obj['maxNumericalValue'] = ApiClient.convertToType(data['maxNumericalValue'], 'String');
+      }
       if (data.hasOwnProperty('mergeField')) {
         obj['mergeField'] = MergeField.constructFromObject(data['mergeField']);
+      }
+      if (data.hasOwnProperty('minNumericalValue')) {
+        obj['minNumericalValue'] = ApiClient.convertToType(data['minNumericalValue'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -358,9 +364,19 @@
    */
   exports.prototype['maximumLength'] = undefined;
   /**
+   * 
+   * @member {String} maxNumericalValue
+   */
+  exports.prototype['maxNumericalValue'] = undefined;
+  /**
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
+  /**
+   * 
+   * @member {String} minNumericalValue
+   */
+  exports.prototype['minNumericalValue'] = undefined;
   /**
    * 
    * @member {String} name

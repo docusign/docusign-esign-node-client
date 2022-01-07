@@ -91,6 +91,9 @@
       if (data.hasOwnProperty('successorPlans')) {
         obj['successorPlans'] = ApiClient.convertToType(data['successorPlans'], [BillingPlan]);
       }
+      if (data.hasOwnProperty('taxExemptId')) {
+        obj['taxExemptId'] = ApiClient.convertToType(data['taxExemptId'], 'String');
+      }
     }
     return obj;
   }
@@ -146,6 +149,11 @@
    * @member {Array.<module:model/BillingPlan>} successorPlans
    */
   exports.prototype['successorPlans'] = undefined;
+  /**
+   * 
+   * @member {String} taxExemptId
+   */
+  exports.prototype['taxExemptId'] = undefined;
 
 
 

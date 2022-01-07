@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Attachment', 'model/CustomFields', 'model/Document', 'model/EmailSettings', 'model/EnvelopeDocument', 'model/EnvelopeMetadata', 'model/Folder', 'model/LockInformation', 'model/Notification', 'model/PowerForm', 'model/Recipients', 'model/UserInfo', 'model/Workflow'], factory);
+    define(['ApiClient', 'model/Attachment', 'model/CustomFields', 'model/Document', 'model/EmailSettings', 'model/EnvelopeCustomMetadata', 'model/EnvelopeDocument', 'model/EnvelopeMetadata', 'model/Folder', 'model/LockInformation', 'model/Notification', 'model/PowerForm', 'model/Recipients', 'model/UserInfo', 'model/Workflow'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CustomFields'), require('./Document'), require('./EmailSettings'), require('./EnvelopeDocument'), require('./EnvelopeMetadata'), require('./Folder'), require('./LockInformation'), require('./Notification'), require('./PowerForm'), require('./Recipients'), require('./UserInfo'), require('./Workflow'));
+    module.exports = factory(require('../ApiClient'), require('./Attachment'), require('./CustomFields'), require('./Document'), require('./EmailSettings'), require('./EnvelopeCustomMetadata'), require('./EnvelopeDocument'), require('./EnvelopeMetadata'), require('./Folder'), require('./LockInformation'), require('./Notification'), require('./PowerForm'), require('./Recipients'), require('./UserInfo'), require('./Workflow'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeTemplate = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeMetadata, root.Docusign.Folder, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PowerForm, root.Docusign.Recipients, root.Docusign.UserInfo, root.Docusign.Workflow);
+    root.Docusign.EnvelopeTemplate = factory(root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.CustomFields, root.Docusign.Document, root.Docusign.EmailSettings, root.Docusign.EnvelopeCustomMetadata, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeMetadata, root.Docusign.Folder, root.Docusign.LockInformation, root.Docusign.Notification, root.Docusign.PowerForm, root.Docusign.Recipients, root.Docusign.UserInfo, root.Docusign.Workflow);
   }
-}(this, function(ApiClient, Attachment, CustomFields, Document, EmailSettings, EnvelopeDocument, EnvelopeMetadata, Folder, LockInformation, Notification, PowerForm, Recipients, UserInfo, Workflow) {
+}(this, function(ApiClient, Attachment, CustomFields, Document, EmailSettings, EnvelopeCustomMetadata, EnvelopeDocument, EnvelopeMetadata, Folder, LockInformation, Notification, PowerForm, Recipients, UserInfo, Workflow) {
   'use strict';
 
 
@@ -164,6 +164,9 @@
       }
       if (data.hasOwnProperty('envelopeAttachments')) {
         obj['envelopeAttachments'] = ApiClient.convertToType(data['envelopeAttachments'], [Attachment]);
+      }
+      if (data.hasOwnProperty('envelopeCustomMetadata')) {
+        obj['envelopeCustomMetadata'] = EnvelopeCustomMetadata.constructFromObject(data['envelopeCustomMetadata']);
       }
       if (data.hasOwnProperty('envelopeDocuments')) {
         obj['envelopeDocuments'] = ApiClient.convertToType(data['envelopeDocuments'], [EnvelopeDocument]);
@@ -538,6 +541,10 @@
    * @member {Array.<module:model/Attachment>} envelopeAttachments
    */
   exports.prototype['envelopeAttachments'] = undefined;
+  /**
+   * @member {module:model/EnvelopeCustomMetadata} envelopeCustomMetadata
+   */
+  exports.prototype['envelopeCustomMetadata'] = undefined;
   /**
    * 
    * @member {Array.<module:model/EnvelopeDocument>} envelopeDocuments
