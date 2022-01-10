@@ -108,6 +108,9 @@
       if (data.hasOwnProperty('saleDiscountSeatPriceOverride')) {
         obj['saleDiscountSeatPriceOverride'] = ApiClient.convertToType(data['saleDiscountSeatPriceOverride'], 'String');
       }
+      if (data.hasOwnProperty('taxExemptId')) {
+        obj['taxExemptId'] = ApiClient.convertToType(data['taxExemptId'], 'String');
+      }
     }
     return obj;
   }
@@ -195,6 +198,11 @@
    * @member {String} saleDiscountSeatPriceOverride
    */
   exports.prototype['saleDiscountSeatPriceOverride'] = undefined;
+  /**
+   * 
+   * @member {String} taxExemptId
+   */
+  exports.prototype['taxExemptId'] = undefined;
 
 
 

@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('dsGroupId')) {
+        obj['dsGroupId'] = ApiClient.convertToType(data['dsGroupId'], 'String');
+      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
@@ -79,6 +82,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} dsGroupId
+   */
+  exports.prototype['dsGroupId'] = undefined;
   /**
    * @member {module:model/ErrorDetails} errorDetails
    */

@@ -60,6 +60,12 @@
       if (data.hasOwnProperty('bulkBatchSummaries')) {
         obj['bulkBatchSummaries'] = ApiClient.convertToType(data['bulkBatchSummaries'], [BulkSendBatchSummary]);
       }
+      if (data.hasOwnProperty('bulkProcessQueueLimit')) {
+        obj['bulkProcessQueueLimit'] = ApiClient.convertToType(data['bulkProcessQueueLimit'], 'String');
+      }
+      if (data.hasOwnProperty('bulkProcessTotalQueued')) {
+        obj['bulkProcessTotalQueued'] = ApiClient.convertToType(data['bulkProcessTotalQueued'], 'String');
+      }
       if (data.hasOwnProperty('endPosition')) {
         obj['endPosition'] = ApiClient.convertToType(data['endPosition'], 'String');
       }
@@ -98,6 +104,16 @@
    * @member {Array.<module:model/BulkSendBatchSummary>} bulkBatchSummaries
    */
   exports.prototype['bulkBatchSummaries'] = undefined;
+  /**
+   * 
+   * @member {String} bulkProcessQueueLimit
+   */
+  exports.prototype['bulkProcessQueueLimit'] = undefined;
+  /**
+   * 
+   * @member {String} bulkProcessTotalQueued
+   */
+  exports.prototype['bulkProcessTotalQueued'] = undefined;
   /**
    * The last position in the result set. 
    * @member {String} endPosition

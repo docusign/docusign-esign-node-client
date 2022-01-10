@@ -178,6 +178,12 @@
       if (data.hasOwnProperty('allowDataDownloadMetadata')) {
         obj['allowDataDownloadMetadata'] = SettingsMetadata.constructFromObject(data['allowDataDownloadMetadata']);
       }
+      if (data.hasOwnProperty('allowDelayedRouting')) {
+        obj['allowDelayedRouting'] = ApiClient.convertToType(data['allowDelayedRouting'], 'String');
+      }
+      if (data.hasOwnProperty('allowDelayedRoutingMetadata')) {
+        obj['allowDelayedRoutingMetadata'] = SettingsMetadata.constructFromObject(data['allowDelayedRoutingMetadata']);
+      }
       if (data.hasOwnProperty('allowDelegatedSigning')) {
         obj['allowDelegatedSigning'] = ApiClient.convertToType(data['allowDelegatedSigning'], 'String');
       }
@@ -453,6 +459,12 @@
       }
       if (data.hasOwnProperty('allowSafeBioPharmaSignerCertificateMetadata')) {
         obj['allowSafeBioPharmaSignerCertificateMetadata'] = SettingsMetadata.constructFromObject(data['allowSafeBioPharmaSignerCertificateMetadata']);
+      }
+      if (data.hasOwnProperty('allowScheduledSending')) {
+        obj['allowScheduledSending'] = ApiClient.convertToType(data['allowScheduledSending'], 'String');
+      }
+      if (data.hasOwnProperty('allowScheduledSendingMetadata')) {
+        obj['allowScheduledSendingMetadata'] = SettingsMetadata.constructFromObject(data['allowScheduledSendingMetadata']);
       }
       if (data.hasOwnProperty('allowSecurityAppliance')) {
         obj['allowSecurityAppliance'] = ApiClient.convertToType(data['allowSecurityAppliance'], 'String');
@@ -1997,6 +2009,15 @@
   exports.prototype['allowDataDownloadMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowDelayedRouting
+   */
+  exports.prototype['allowDelayedRouting'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowDelayedRoutingMetadata
+   */
+  exports.prototype['allowDelayedRoutingMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowDelegatedSigning
    */
   exports.prototype['allowDelegatedSigning'] = undefined;
@@ -2409,6 +2430,15 @@
    * @member {module:model/SettingsMetadata} allowSafeBioPharmaSignerCertificateMetadata
    */
   exports.prototype['allowSafeBioPharmaSignerCertificateMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowScheduledSending
+   */
+  exports.prototype['allowScheduledSending'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowScheduledSendingMetadata
+   */
+  exports.prototype['allowScheduledSendingMetadata'] = undefined;
   /**
    * 
    * @member {String} allowSecurityAppliance

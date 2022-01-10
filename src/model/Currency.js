@@ -222,11 +222,17 @@
       if (data.hasOwnProperty('maxLengthMetadata')) {
         obj['maxLengthMetadata'] = PropertyMetadata.constructFromObject(data['maxLengthMetadata']);
       }
+      if (data.hasOwnProperty('maxNumericalValue')) {
+        obj['maxNumericalValue'] = ApiClient.convertToType(data['maxNumericalValue'], 'String');
+      }
       if (data.hasOwnProperty('mergeField')) {
         obj['mergeField'] = MergeField.constructFromObject(data['mergeField']);
       }
       if (data.hasOwnProperty('mergeFieldXml')) {
         obj['mergeFieldXml'] = ApiClient.convertToType(data['mergeFieldXml'], 'String');
+      }
+      if (data.hasOwnProperty('minNumericalValue')) {
+        obj['minNumericalValue'] = ApiClient.convertToType(data['minNumericalValue'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -637,6 +643,11 @@
    */
   exports.prototype['maxLengthMetadata'] = undefined;
   /**
+   * 
+   * @member {String} maxNumericalValue
+   */
+  exports.prototype['maxNumericalValue'] = undefined;
+  /**
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
@@ -645,6 +656,11 @@
    * @member {String} mergeFieldXml
    */
   exports.prototype['mergeFieldXml'] = undefined;
+  /**
+   * 
+   * @member {String} minNumericalValue
+   */
+  exports.prototype['minNumericalValue'] = undefined;
   /**
    * 
    * @member {String} name
