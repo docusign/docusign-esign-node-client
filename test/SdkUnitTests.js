@@ -65,7 +65,9 @@ describe('SDK Unit Tests:', function (done) {
     // get DocuSign OAuth authorization url:
     var oauthLoginUrl = apiClient.getJWTUri(integratorKey, RedirectURI, oAuthBasePath);
     // open DocuSign OAuth authorization url in the browser, login and grant access
-    console.log(oauthLoginUrl);
+    console.log('OAuth Login URL:' + oauthLoginUrl);
+    console.log(`Node Version: ${process.version}`)
+
     // END OF NOTE
     var fs = require('fs');
     var privateKeyFile = fs.readFileSync(path.resolve(__dirname, privateKeyFilename));
@@ -98,6 +100,7 @@ describe('SDK Unit Tests:', function (done) {
       });
   });
   it('oAuthBasePAth should update whenever BasePath does and match the environment', function (done) {
+    console.log(`Node Version: ${process.version}`)
     var apiClient = new docusign.ApiClient({
       basePath: restApi.BasePath.DEMO
     });
@@ -240,6 +243,7 @@ describe('SDK Unit Tests:', function (done) {
   });
 
   it('should return a properly formatted authorization uri', function (done) {
+    console.log(`Node Version: ${process.version}`)
     var responseType = apiClient.OAuth.ResponseType.CODE;
     var scopes = [apiClient.OAuth.Scope.EXTENDED];
     var randomState = '*^.$DGj*)+}Jk';
