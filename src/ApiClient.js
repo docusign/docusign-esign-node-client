@@ -154,7 +154,7 @@
      * @type {Array.<String>}
      * @default {}
      */
-    this.defaultHeaders = { "X-DocuSign-SDK": "Node", "Node-Ver": process.version };
+    this.defaultHeaders = { "X-DocuSign-SDK": `Node - ${process.version}`, "Node-Ver": process.version };
 
     /**
      * The default HTTP timeout for all API calls.
