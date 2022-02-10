@@ -54,6 +54,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('action')) {
+        obj['action'] = ApiClient.convertToType(data['action'], 'String');
+      }
+      if (data.hasOwnProperty('actionStatus')) {
+        obj['actionStatus'] = ApiClient.convertToType(data['actionStatus'], 'String');
+      }
       if (data.hasOwnProperty('batchId')) {
         obj['batchId'] = ApiClient.convertToType(data['batchId'], 'String');
       }
@@ -103,6 +109,16 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} action
+   */
+  exports.prototype['action'] = undefined;
+  /**
+   * 
+   * @member {String} actionStatus
+   */
+  exports.prototype['actionStatus'] = undefined;
   /**
    * 
    * @member {String} batchId

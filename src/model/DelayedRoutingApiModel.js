@@ -54,34 +54,34 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ResumeDate')) {
-        obj['ResumeDate'] = ApiClient.convertToType(data['ResumeDate'], 'String');
+      if (data.hasOwnProperty('resumeDate')) {
+        obj['resumeDate'] = ApiClient.convertToType(data['resumeDate'], 'String');
       }
-      if (data.hasOwnProperty('Rules')) {
-        obj['Rules'] = ApiClient.convertToType(data['Rules'], [EnvelopeDelayRuleApiModel]);
+      if (data.hasOwnProperty('rules')) {
+        obj['rules'] = ApiClient.convertToType(data['rules'], [EnvelopeDelayRuleApiModel]);
       }
-      if (data.hasOwnProperty('Status')) {
-        obj['Status'] = ApiClient.convertToType(data['Status'], 'String');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * 
-   * @member {String} ResumeDate
+   * An ISO 8601 formatted datetime string indicating the date and time that the envelope is (or was) scheduled to be sent to the recipients associated with the current workflow step or null if the envelope has not yet begun processing the current workflow step.
+   * @member {String} resumeDate
    */
-  exports.prototype['ResumeDate'] = undefined;
+  exports.prototype['resumeDate'] = undefined;
   /**
-   * 
-   * @member {Array.<module:model/EnvelopeDelayRuleApiModel>} Rules
+   * A list of envelope delay rules specified by the user indicating how and when the envelope should be sent in the future for the current workflow step and its associated recipients. Currently only 1 rule may be specified.
+   * @member {Array.<module:model/EnvelopeDelayRuleApiModel>} rules
    */
-  exports.prototype['Rules'] = undefined;
+  exports.prototype['rules'] = undefined;
   /**
-   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
-   * @member {String} Status
+   * \"pending\" if the current workflow step has not been reached and the delay has not yet started. \"started\" if the delay is in progress. \"completed\" if the delay has elapsed and the envelope has been sent to the current workflow step's recipients.
+   * @member {String} status
    */
-  exports.prototype['Status'] = undefined;
+  exports.prototype['status'] = undefined;
 
 
 

@@ -2008,7 +2008,7 @@
    */
   exports.prototype['allowDataDownloadMetadata'] = undefined;
   /**
-   * 
+   * \"true\" if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \"false\" otherwise.
    * @member {String} allowDelayedRouting
    */
   exports.prototype['allowDelayedRouting'] = undefined;
@@ -2431,7 +2431,7 @@
    */
   exports.prototype['allowSafeBioPharmaSignerCertificateMetadata'] = undefined;
   /**
-   * 
+   * \"true\" if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \"false\" otherwise.
    * @member {String} allowScheduledSending
    */
   exports.prototype['allowScheduledSending'] = undefined;

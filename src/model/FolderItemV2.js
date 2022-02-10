@@ -78,6 +78,9 @@
       if (data.hasOwnProperty('is21CFRPart11')) {
         obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
       }
+      if (data.hasOwnProperty('lastModifiedDateTime')) {
+        obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
+      }
       if (data.hasOwnProperty('ownerName')) {
         obj['ownerName'] = ApiClient.convertToType(data['ownerName'], 'String');
       }
@@ -158,6 +161,11 @@
    * @member {String} is21CFRPart11
    */
   exports.prototype['is21CFRPart11'] = undefined;
+  /**
+   * The date and time the item was last modified.
+   * @member {String} lastModifiedDateTime
+   */
+  exports.prototype['lastModifiedDateTime'] = undefined;
   /**
    * 
    * @member {String} ownerName

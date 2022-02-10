@@ -102,6 +102,9 @@
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
+      if (data.hasOwnProperty('subGatewayName')) {
+        obj['subGatewayName'] = ApiClient.convertToType(data['subGatewayName'], 'String');
+      }
       if (data.hasOwnProperty('total')) {
         obj['total'] = Money.constructFromObject(data['total']);
       }
@@ -186,6 +189,11 @@
    * @member {String} status
    */
   exports.prototype['status'] = undefined;
+  /**
+   * 
+   * @member {String} subGatewayName
+   */
+  exports.prototype['subGatewayName'] = undefined;
   /**
    * @member {module:model/Money} total
    */
