@@ -78,6 +78,12 @@
       if (data.hasOwnProperty('groupNameMetadata')) {
         obj['groupNameMetadata'] = PropertyMetadata.constructFromObject(data['groupNameMetadata']);
       }
+      if (data.hasOwnProperty('originalValue')) {
+        obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
+      }
+      if (data.hasOwnProperty('originalValueMetadata')) {
+        obj['originalValueMetadata'] = PropertyMetadata.constructFromObject(data['originalValueMetadata']);
+      }
       if (data.hasOwnProperty('radios')) {
         obj['radios'] = ApiClient.convertToType(data['radios'], [Radio]);
       }
@@ -141,6 +147,12 @@
       if (data.hasOwnProperty('tooltipMetadata')) {
         obj['tooltipMetadata'] = PropertyMetadata.constructFromObject(data['tooltipMetadata']);
       }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
+      if (data.hasOwnProperty('valueMetadata')) {
+        obj['valueMetadata'] = PropertyMetadata.constructFromObject(data['valueMetadata']);
+      }
     }
     return obj;
   }
@@ -181,6 +193,15 @@
    * @member {module:model/PropertyMetadata} groupNameMetadata
    */
   exports.prototype['groupNameMetadata'] = undefined;
+  /**
+   * The initial value of the tab when it was sent to the recipient. 
+   * @member {String} originalValue
+   */
+  exports.prototype['originalValue'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} originalValueMetadata
+   */
+  exports.prototype['originalValueMetadata'] = undefined;
   /**
    * Specifies the locations and status for radio buttons that are grouped together.
    * @member {Array.<module:model/Radio>} radios
@@ -276,6 +297,15 @@
    * @member {module:model/PropertyMetadata} tooltipMetadata
    */
   exports.prototype['tooltipMetadata'] = undefined;
+  /**
+   * Specifies the value of the tab. 
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} valueMetadata
+   */
+  exports.prototype['valueMetadata'] = undefined;
 
 
 

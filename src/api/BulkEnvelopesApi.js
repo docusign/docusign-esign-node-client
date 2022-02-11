@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkSendBatchRequest', 'model/BulkSendBatchStatus', 'model/BulkSendBatchSummaries', 'model/BulkSendRequest', 'model/BulkSendResponse', 'model/BulkSendTestResponse', 'model/BulkSendingList', 'model/BulkSendingListSummaries', 'model/EnvelopesInformation', 'model/ErrorDetails'], factory);
+	define(['Configuration', 'ApiClient', 'model/BulkSendBatchActionRequest', 'model/BulkSendBatchRequest', 'model/BulkSendBatchStatus', 'model/BulkSendBatchSummaries', 'model/BulkSendRequest', 'model/BulkSendResponse', 'model/BulkSendTestResponse', 'model/BulkSendingList', 'model/BulkSendingListSummaries', 'model/EnvelopesInformation', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkSendBatchRequest'), require('../model/BulkSendBatchStatus'), require('../model/BulkSendBatchSummaries'), require('../model/BulkSendRequest'), require('../model/BulkSendResponse'), require('../model/BulkSendTestResponse'), require('../model/BulkSendingList'), require('../model/BulkSendingListSummaries'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkSendBatchActionRequest'), require('../model/BulkSendBatchRequest'), require('../model/BulkSendBatchStatus'), require('../model/BulkSendBatchSummaries'), require('../model/BulkSendRequest'), require('../model/BulkSendResponse'), require('../model/BulkSendTestResponse'), require('../model/BulkSendingList'), require('../model/BulkSendingListSummaries'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BulkEnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkSendBatchRequest, root.Docusign.BulkSendBatchStatus, root.Docusign.BulkSendBatchSummaries, root.Docusign.BulkSendRequest, root.Docusign.BulkSendResponse, root.Docusign.BulkSendTestResponse, root.Docusign.BulkSendingList, root.Docusign.BulkSendingListSummaries, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails);
+    root.Docusign.BulkEnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkSendBatchActionRequest, root.Docusign.BulkSendBatchRequest, root.Docusign.BulkSendBatchStatus, root.Docusign.BulkSendBatchSummaries, root.Docusign.BulkSendRequest, root.Docusign.BulkSendResponse, root.Docusign.BulkSendTestResponse, root.Docusign.BulkSendingList, root.Docusign.BulkSendingListSummaries, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails);
   }
-}(this, function(Configuration, ApiClient, BulkSendBatchRequest, BulkSendBatchStatus, BulkSendBatchSummaries, BulkSendRequest, BulkSendResponse, BulkSendTestResponse, BulkSendingList, BulkSendingListSummaries, EnvelopesInformation, ErrorDetails) {
+}(this, function(Configuration, ApiClient, BulkSendBatchActionRequest, BulkSendBatchRequest, BulkSendBatchStatus, BulkSendBatchSummaries, BulkSendRequest, BulkSendResponse, BulkSendTestResponse, BulkSendingList, BulkSendingListSummaries, EnvelopesInformation, ErrorDetails) {
   'use strict';
 
   /**
@@ -616,6 +616,80 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/bulk_send_lists', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the updateBulkSendBatchAction operation. If none specified a Promise will be returned.
+     * @callback module:api/BulkEnvelopesApi~updateBulkSendBatchActionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BulkSendBatchStatus} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Initiate a specific bulk send batch action
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} bulkSendBatchId 
+     * @param {String} bulkAction 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/BulkSendBatchActionRequest} optsOrCallback.bulkSendBatchActionRequest 
+     * @param {module:api/BulkEnvelopesApi~updateBulkSendBatchActionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BulkSendBatchStatus}
+     */
+    this.updateBulkSendBatchAction = function(accountId, bulkSendBatchId, bulkAction, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['bulkSendBatchActionRequest'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateBulkSendBatchAction");
+      }
+
+      // verify the required parameter 'bulkSendBatchId' is set
+      if (bulkSendBatchId === undefined || bulkSendBatchId === null) {
+        throw new Error("Missing the required parameter 'bulkSendBatchId' when calling updateBulkSendBatchAction");
+      }
+
+      // verify the required parameter 'bulkAction' is set
+      if (bulkAction === undefined || bulkAction === null) {
+        throw new Error("Missing the required parameter 'bulkAction' when calling updateBulkSendBatchAction");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'bulkSendBatchId': bulkSendBatchId,
+        'bulkAction': bulkAction
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = BulkSendBatchStatus;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/bulk_send_batch/{bulkSendBatchId}/{bulkAction}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

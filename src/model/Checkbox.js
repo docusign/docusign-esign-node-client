@@ -216,6 +216,9 @@
       if (data.hasOwnProperty('originalValue')) {
         obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
       }
+      if (data.hasOwnProperty('originalValueMetadata')) {
+        obj['originalValueMetadata'] = PropertyMetadata.constructFromObject(data['originalValueMetadata']);
+      }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
       }
@@ -251,6 +254,12 @@
       }
       if (data.hasOwnProperty('selectedMetadata')) {
         obj['selectedMetadata'] = PropertyMetadata.constructFromObject(data['selectedMetadata']);
+      }
+      if (data.hasOwnProperty('selectedOriginal')) {
+        obj['selectedOriginal'] = ApiClient.convertToType(data['selectedOriginal'], 'String');
+      }
+      if (data.hasOwnProperty('selectedOriginalMetadata')) {
+        obj['selectedOriginalMetadata'] = PropertyMetadata.constructFromObject(data['selectedOriginalMetadata']);
       }
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
@@ -332,6 +341,9 @@
       }
       if (data.hasOwnProperty('value')) {
         obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      }
+      if (data.hasOwnProperty('valueMetadata')) {
+        obj['valueMetadata'] = PropertyMetadata.constructFromObject(data['valueMetadata']);
       }
       if (data.hasOwnProperty('width')) {
         obj['width'] = ApiClient.convertToType(data['width'], 'String');
@@ -599,6 +611,10 @@
    */
   exports.prototype['originalValue'] = undefined;
   /**
+   * @member {module:model/PropertyMetadata} originalValueMetadata
+   */
+  exports.prototype['originalValueMetadata'] = undefined;
+  /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber
    */
@@ -652,6 +668,15 @@
    * @member {module:model/PropertyMetadata} selectedMetadata
    */
   exports.prototype['selectedMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} selectedOriginal
+   */
+  exports.prototype['selectedOriginal'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} selectedOriginalMetadata
+   */
+  exports.prototype['selectedOriginalMetadata'] = undefined;
   /**
    * When set to **true**, this custom tab is shared.
    * @member {String} shared
@@ -774,6 +799,10 @@
    * @member {String} value
    */
   exports.prototype['value'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} valueMetadata
+   */
+  exports.prototype['valueMetadata'] = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width

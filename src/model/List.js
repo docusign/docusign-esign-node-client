@@ -219,6 +219,12 @@
       if (data.hasOwnProperty('mergeFieldXml')) {
         obj['mergeFieldXml'] = ApiClient.convertToType(data['mergeFieldXml'], 'String');
       }
+      if (data.hasOwnProperty('originalValue')) {
+        obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
+      }
+      if (data.hasOwnProperty('originalValueMetadata')) {
+        obj['originalValueMetadata'] = PropertyMetadata.constructFromObject(data['originalValueMetadata']);
+      }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
       }
@@ -614,6 +620,15 @@
    * @member {String} mergeFieldXml
    */
   exports.prototype['mergeFieldXml'] = undefined;
+  /**
+   * The initial value of the tab when it was sent to the recipient. 
+   * @member {String} originalValue
+   */
+  exports.prototype['originalValue'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} originalValueMetadata
+   */
+  exports.prototype['originalValueMetadata'] = undefined;
   /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber

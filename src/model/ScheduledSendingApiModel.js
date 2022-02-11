@@ -54,34 +54,34 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ResumeDate')) {
-        obj['ResumeDate'] = ApiClient.convertToType(data['ResumeDate'], 'String');
+      if (data.hasOwnProperty('resumeDate')) {
+        obj['resumeDate'] = ApiClient.convertToType(data['resumeDate'], 'String');
       }
-      if (data.hasOwnProperty('Rules')) {
-        obj['Rules'] = ApiClient.convertToType(data['Rules'], [EnvelopeDelayRuleApiModel]);
+      if (data.hasOwnProperty('rules')) {
+        obj['rules'] = ApiClient.convertToType(data['rules'], [EnvelopeDelayRuleApiModel]);
       }
-      if (data.hasOwnProperty('Status')) {
-        obj['Status'] = ApiClient.convertToType(data['Status'], 'String');
+      if (data.hasOwnProperty('status')) {
+        obj['status'] = ApiClient.convertToType(data['status'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * 
-   * @member {String} ResumeDate
+   * An ISO 8601 formatted datetime string indicating the date and time that the envelope is (or was) scheduled to be sent or null if the envelope has not yet been sent.
+   * @member {String} resumeDate
    */
-  exports.prototype['ResumeDate'] = undefined;
+  exports.prototype['resumeDate'] = undefined;
   /**
-   * 
-   * @member {Array.<module:model/EnvelopeDelayRuleApiModel>} Rules
+   * A list of envelope delay rules specified by the user indicating how and when the envelope should be scheduled for sending in the future. Currently only 1 rule may be specified.
+   * @member {Array.<module:model/EnvelopeDelayRuleApiModel>} rules
    */
-  exports.prototype['Rules'] = undefined;
+  exports.prototype['rules'] = undefined;
   /**
-   * Indicates the envelope status. Valid values are:  * sent - The envelope is sent to the recipients.  * created - The envelope is saved as a draft and can be modified and sent later.
-   * @member {String} Status
+   * \"pending\" if the envelope has not yet been sent and the scheduled sending delay has not iniaited. \"started\" if the scheduled sending delay is in progress. \"completed\" if the scheduled sending delay has elapsed and the envelope has been sent.
+   * @member {String} status
    */
-  exports.prototype['Status'] = undefined;
+  exports.prototype['status'] = undefined;
 
 
 
