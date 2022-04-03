@@ -732,7 +732,7 @@
       "&scope=" + formattedScopes +
       "&client_id="+ clientId +
       "&redirect_uri=" + encodeURIComponent(redirectUri) +
-      (state ? "&state=" + state : '');
+      (state ? "&state=" + encodeURIComponent(state) : '');
   };
 
   /**
