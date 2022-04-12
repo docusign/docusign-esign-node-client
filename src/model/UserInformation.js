@@ -105,6 +105,9 @@
       if (data.hasOwnProperty('isAdmin')) {
         obj['isAdmin'] = ApiClient.convertToType(data['isAdmin'], 'String');
       }
+      if (data.hasOwnProperty('isAlternateAdmin')) {
+        obj['isAlternateAdmin'] = ApiClient.convertToType(data['isAlternateAdmin'], 'String');
+      }
       if (data.hasOwnProperty('isNAREnabled')) {
         obj['isNAREnabled'] = ApiClient.convertToType(data['isNAREnabled'], 'String');
       }
@@ -269,6 +272,11 @@
    * @member {String} isAdmin
    */
   exports.prototype['isAdmin'] = undefined;
+  /**
+   * 
+   * @member {String} isAlternateAdmin
+   */
+  exports.prototype['isAlternateAdmin'] = undefined;
   /**
    * 
    * @member {String} isNAREnabled

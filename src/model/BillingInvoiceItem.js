@@ -67,6 +67,12 @@
       if (data.hasOwnProperty('quantity')) {
         obj['quantity'] = ApiClient.convertToType(data['quantity'], 'String');
       }
+      if (data.hasOwnProperty('taxAmount')) {
+        obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'String');
+      }
+      if (data.hasOwnProperty('taxExemptAmount')) {
+        obj['taxExemptAmount'] = ApiClient.convertToType(data['taxExemptAmount'], 'String');
+      }
       if (data.hasOwnProperty('unitPrice')) {
         obj['unitPrice'] = ApiClient.convertToType(data['unitPrice'], 'String');
       }
@@ -94,6 +100,16 @@
    * @member {String} quantity
    */
   exports.prototype['quantity'] = undefined;
+  /**
+   * 
+   * @member {String} taxAmount
+   */
+  exports.prototype['taxAmount'] = undefined;
+  /**
+   * 
+   * @member {String} taxExemptAmount
+   */
+  exports.prototype['taxExemptAmount'] = undefined;
   /**
    * Reserved: TBD
    * @member {String} unitPrice

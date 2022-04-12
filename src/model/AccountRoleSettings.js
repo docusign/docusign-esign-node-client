@@ -279,6 +279,12 @@
       if (data.hasOwnProperty('vaultingModeMetadata')) {
         obj['vaultingModeMetadata'] = SettingsMetadata.constructFromObject(data['vaultingModeMetadata']);
       }
+      if (data.hasOwnProperty('webForms')) {
+        obj['webForms'] = ApiClient.convertToType(data['webForms'], 'String');
+      }
+      if (data.hasOwnProperty('webFormsMetadata')) {
+        obj['webFormsMetadata'] = SettingsMetadata.constructFromObject(data['webFormsMetadata']);
+      }
     }
     return obj;
   }
@@ -620,6 +626,15 @@
    * @member {module:model/SettingsMetadata} vaultingModeMetadata
    */
   exports.prototype['vaultingModeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} webForms
+   */
+  exports.prototype['webForms'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} webFormsMetadata
+   */
+  exports.prototype['webFormsMetadata'] = undefined;
 
 
 

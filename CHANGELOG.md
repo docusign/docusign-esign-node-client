@@ -2,6 +2,17 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v5.16.0] - eSignature API v2.1-22.1.01.00 - 2022-04-07
+### Changed
+- Added support for version v2.1-22.1.01.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+### Breaking
+- Following models are renamed
+
+    - `ScheduledSendingApiModel` is renamed to `ScheduledSending`
+    - `DelayedRoutingApiModel` is renamed to `DelayedRouting`
+
 ## [v5.15.0] - eSignature API v2.1-21.4.02.00 - 2022-02-08
 ### Changed
 - Added support for version v2.1-21.4.02.00 of the DocuSign ESignature API.

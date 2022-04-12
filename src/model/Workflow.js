@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ScheduledSendingApiModel', 'model/WorkflowStep'], factory);
+    define(['ApiClient', 'model/ScheduledSending', 'model/WorkflowStep'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ScheduledSendingApiModel'), require('./WorkflowStep'));
+    module.exports = factory(require('../ApiClient'), require('./ScheduledSending'), require('./WorkflowStep'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Workflow = factory(root.Docusign.ApiClient, root.Docusign.ScheduledSendingApiModel, root.Docusign.WorkflowStep);
+    root.Docusign.Workflow = factory(root.Docusign.ApiClient, root.Docusign.ScheduledSending, root.Docusign.WorkflowStep);
   }
-}(this, function(ApiClient, ScheduledSendingApiModel, WorkflowStep) {
+}(this, function(ApiClient, ScheduledSending, WorkflowStep) {
   'use strict';
 
 
@@ -57,11 +57,14 @@
       if (data.hasOwnProperty('currentWorkflowStepId')) {
         obj['currentWorkflowStepId'] = ApiClient.convertToType(data['currentWorkflowStepId'], 'String');
       }
+      if (data.hasOwnProperty('overwriteUpdateMode')) {
+        obj['overwriteUpdateMode'] = ApiClient.convertToType(data['overwriteUpdateMode'], 'String');
+      }
       if (data.hasOwnProperty('resumeDate')) {
         obj['resumeDate'] = ApiClient.convertToType(data['resumeDate'], 'String');
       }
       if (data.hasOwnProperty('scheduledSending')) {
-        obj['scheduledSending'] = ScheduledSendingApiModel.constructFromObject(data['scheduledSending']);
+        obj['scheduledSending'] = ScheduledSending.constructFromObject(data['scheduledSending']);
       }
       if (data.hasOwnProperty('workflowStatus')) {
         obj['workflowStatus'] = ApiClient.convertToType(data['workflowStatus'], 'String');
@@ -80,11 +83,16 @@
   exports.prototype['currentWorkflowStepId'] = undefined;
   /**
    * 
+   * @member {String} overwriteUpdateMode
+   */
+  exports.prototype['overwriteUpdateMode'] = undefined;
+  /**
+   * 
    * @member {String} resumeDate
    */
   exports.prototype['resumeDate'] = undefined;
   /**
-   * @member {module:model/ScheduledSendingApiModel} scheduledSending
+   * @member {module:model/ScheduledSending} scheduledSending
    */
   exports.prototype['scheduledSending'] = undefined;
   /**
