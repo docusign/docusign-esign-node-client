@@ -1186,6 +1186,7 @@ The response returns the list of users for the account along with the informatio
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
+     * @param {String} optsOrCallback.alternateAdminsOnly 
      * @param {String} optsOrCallback.count Number of records to return. The number must be greater than 0 and less than or equal to 100. 
      * @param {String} optsOrCallback.domainUsersOnly 
      * @param {String} optsOrCallback.email 
@@ -1227,6 +1228,7 @@ The response returns the list of users for the account along with the informatio
       };
       var queryParams = {
         'additional_info': optsOrCallback['additionalInfo'],
+        'alternate_admins_only': optsOrCallback['alternateAdminsOnly'],
         'count': optsOrCallback['count'],
         'domain_users_only': optsOrCallback['domainUsersOnly'],
         'email': optsOrCallback['email'],

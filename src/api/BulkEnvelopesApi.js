@@ -323,7 +323,6 @@
      * @param {String} optsOrCallback.searchText 
      * @param {String} optsOrCallback.startPosition 
      * @param {String} optsOrCallback.status 
-     * @param {String} optsOrCallback.userId 
      * @param {module:api/BulkEnvelopesApi~getBulkSendBatchEnvelopesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopesInformation}
      */
@@ -365,8 +364,7 @@
         'order_by': optsOrCallback['orderBy'],
         'search_text': optsOrCallback['searchText'],
         'start_position': optsOrCallback['startPosition'],
-        'status': optsOrCallback['status'],
-        'user_id': optsOrCallback['userId']
+        'status': optsOrCallback['status']
       };
       var headerParams = {
       };
@@ -457,9 +455,12 @@
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.batchIds 
      * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.fromDate 
      * @param {String} optsOrCallback.searchText 
      * @param {String} optsOrCallback.startPosition 
      * @param {String} optsOrCallback.status 
+     * @param {String} optsOrCallback.toDate 
+     * @param {String} optsOrCallback.userId 
      * @param {module:api/BulkEnvelopesApi~getBulkSendBatchesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BulkSendBatchSummaries}
      */
@@ -491,9 +492,12 @@
       var queryParams = {
         'batch_ids': optsOrCallback['batchIds'],
         'count': optsOrCallback['count'],
+        'from_date': optsOrCallback['fromDate'],
         'search_text': optsOrCallback['searchText'],
         'start_position': optsOrCallback['startPosition'],
-        'status': optsOrCallback['status']
+        'status': optsOrCallback['status'],
+        'to_date': optsOrCallback['toDate'],
+        'user_id': optsOrCallback['userId']
       };
       var headerParams = {
       };

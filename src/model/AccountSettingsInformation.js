@@ -307,6 +307,12 @@
       if (data.hasOwnProperty('allowInPerson')) {
         obj['allowInPerson'] = ApiClient.convertToType(data['allowInPerson'], 'String');
       }
+      if (data.hasOwnProperty('allowInPersonElectronicNotary')) {
+        obj['allowInPersonElectronicNotary'] = ApiClient.convertToType(data['allowInPersonElectronicNotary'], 'String');
+      }
+      if (data.hasOwnProperty('allowInPersonElectronicNotaryMetadata')) {
+        obj['allowInPersonElectronicNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowInPersonElectronicNotaryMetadata']);
+      }
       if (data.hasOwnProperty('allowInPersonMetadata')) {
         obj['allowInPersonMetadata'] = SettingsMetadata.constructFromObject(data['allowInPersonMetadata']);
       }
@@ -394,6 +400,12 @@
       if (data.hasOwnProperty('allowOrganizationSsoManagementMetadata')) {
         obj['allowOrganizationSsoManagementMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationSsoManagementMetadata']);
       }
+      if (data.hasOwnProperty('allowOrganizationToUseInPersonElectronicNotary')) {
+        obj['allowOrganizationToUseInPersonElectronicNotary'] = ApiClient.convertToType(data['allowOrganizationToUseInPersonElectronicNotary'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationToUseInPersonElectronicNotaryMetadata')) {
+        obj['allowOrganizationToUseInPersonElectronicNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationToUseInPersonElectronicNotaryMetadata']);
+      }
       if (data.hasOwnProperty('allowOrganizationToUseRemoteNotary')) {
         obj['allowOrganizationToUseRemoteNotary'] = ApiClient.convertToType(data['allowOrganizationToUseRemoteNotary'], 'String');
       }
@@ -405,12 +417,6 @@
       }
       if (data.hasOwnProperty('allowPaymentProcessingMetadata')) {
         obj['allowPaymentProcessingMetadata'] = SettingsMetadata.constructFromObject(data['allowPaymentProcessingMetadata']);
-      }
-      if (data.hasOwnProperty('allowPersonalSignerCertificate')) {
-        obj['allowPersonalSignerCertificate'] = ApiClient.convertToType(data['allowPersonalSignerCertificate'], 'String');
-      }
-      if (data.hasOwnProperty('allowPersonalSignerCertificateMetadata')) {
-        obj['allowPersonalSignerCertificateMetadata'] = SettingsMetadata.constructFromObject(data['allowPersonalSignerCertificateMetadata']);
       }
       if (data.hasOwnProperty('allowPhoneAuthentication')) {
         obj['allowPhoneAuthentication'] = ApiClient.convertToType(data['allowPhoneAuthentication'], 'String');
@@ -585,6 +591,12 @@
       }
       if (data.hasOwnProperty('allowValueInsightsMetadata')) {
         obj['allowValueInsightsMetadata'] = SettingsMetadata.constructFromObject(data['allowValueInsightsMetadata']);
+      }
+      if (data.hasOwnProperty('allowWebForms')) {
+        obj['allowWebForms'] = ApiClient.convertToType(data['allowWebForms'], 'String');
+      }
+      if (data.hasOwnProperty('allowWebFormsMetadata')) {
+        obj['allowWebFormsMetadata'] = SettingsMetadata.constructFromObject(data['allowWebFormsMetadata']);
       }
       if (data.hasOwnProperty('anchorPopulationScope')) {
         obj['anchorPopulationScope'] = ApiClient.convertToType(data['anchorPopulationScope'], 'String');
@@ -1771,6 +1783,9 @@
       if (data.hasOwnProperty('useSignatureProviderPlatformMetadata')) {
         obj['useSignatureProviderPlatformMetadata'] = SettingsMetadata.constructFromObject(data['useSignatureProviderPlatformMetadata']);
       }
+      if (data.hasOwnProperty('useSmartContractsV1')) {
+        obj['useSmartContractsV1'] = ApiClient.convertToType(data['useSmartContractsV1'], 'String');
+      }
       if (data.hasOwnProperty('validationsAllowed')) {
         obj['validationsAllowed'] = ApiClient.convertToType(data['validationsAllowed'], 'String');
       }
@@ -2202,6 +2217,15 @@
    */
   exports.prototype['allowInPerson'] = undefined;
   /**
+   * 
+   * @member {String} allowInPersonElectronicNotary
+   */
+  exports.prototype['allowInPersonElectronicNotary'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowInPersonElectronicNotaryMetadata
+   */
+  exports.prototype['allowInPersonElectronicNotaryMetadata'] = undefined;
+  /**
    * @member {module:model/SettingsMetadata} allowInPersonMetadata
    */
   exports.prototype['allowInPersonMetadata'] = undefined;
@@ -2333,6 +2357,15 @@
   exports.prototype['allowOrganizationSsoManagementMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowOrganizationToUseInPersonElectronicNotary
+   */
+  exports.prototype['allowOrganizationToUseInPersonElectronicNotary'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowOrganizationToUseInPersonElectronicNotaryMetadata
+   */
+  exports.prototype['allowOrganizationToUseInPersonElectronicNotaryMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowOrganizationToUseRemoteNotary
    */
   exports.prototype['allowOrganizationToUseRemoteNotary'] = undefined;
@@ -2349,15 +2382,6 @@
    * @member {module:model/SettingsMetadata} allowPaymentProcessingMetadata
    */
   exports.prototype['allowPaymentProcessingMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} allowPersonalSignerCertificate
-   */
-  exports.prototype['allowPersonalSignerCertificate'] = undefined;
-  /**
-   * @member {module:model/SettingsMetadata} allowPersonalSignerCertificateMetadata
-   */
-  exports.prototype['allowPersonalSignerCertificateMetadata'] = undefined;
   /**
    * 
    * @member {String} allowPhoneAuthentication
@@ -2620,6 +2644,15 @@
    * @member {module:model/SettingsMetadata} allowValueInsightsMetadata
    */
   exports.prototype['allowValueInsightsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowWebForms
+   */
+  exports.prototype['allowWebForms'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowWebFormsMetadata
+   */
+  exports.prototype['allowWebFormsMetadata'] = undefined;
   /**
    * 
    * @member {String} anchorPopulationScope
@@ -4403,6 +4436,11 @@
    * @member {module:model/SettingsMetadata} useSignatureProviderPlatformMetadata
    */
   exports.prototype['useSignatureProviderPlatformMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} useSmartContractsV1
+   */
+  exports.prototype['useSmartContractsV1'] = undefined;
   /**
    * 
    * @member {String} validationsAllowed

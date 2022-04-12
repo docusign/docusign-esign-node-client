@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DelayedRoutingApiModel', 'model/RecipientRouting'], factory);
+    define(['ApiClient', 'model/DelayedRouting', 'model/RecipientRouting'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DelayedRoutingApiModel'), require('./RecipientRouting'));
+    module.exports = factory(require('../ApiClient'), require('./DelayedRouting'), require('./RecipientRouting'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.WorkflowStep = factory(root.Docusign.ApiClient, root.Docusign.DelayedRoutingApiModel, root.Docusign.RecipientRouting);
+    root.Docusign.WorkflowStep = factory(root.Docusign.ApiClient, root.Docusign.DelayedRouting, root.Docusign.RecipientRouting);
   }
-}(this, function(ApiClient, DelayedRoutingApiModel, RecipientRouting) {
+}(this, function(ApiClient, DelayedRouting, RecipientRouting) {
   'use strict';
 
 
@@ -61,7 +61,7 @@
         obj['completedDate'] = ApiClient.convertToType(data['completedDate'], 'String');
       }
       if (data.hasOwnProperty('delayedRouting')) {
-        obj['delayedRouting'] = DelayedRoutingApiModel.constructFromObject(data['delayedRouting']);
+        obj['delayedRouting'] = DelayedRouting.constructFromObject(data['delayedRouting']);
       }
       if (data.hasOwnProperty('itemId')) {
         obj['itemId'] = ApiClient.convertToType(data['itemId'], 'String');
@@ -96,7 +96,7 @@
    */
   exports.prototype['completedDate'] = undefined;
   /**
-   * @member {module:model/DelayedRoutingApiModel} delayedRouting
+   * @member {module:model/DelayedRouting} delayedRouting
    */
   exports.prototype['delayedRouting'] = undefined;
   /**

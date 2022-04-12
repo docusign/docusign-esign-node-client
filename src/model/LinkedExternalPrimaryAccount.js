@@ -66,6 +66,9 @@
       if (data.hasOwnProperty('linkId')) {
         obj['linkId'] = ApiClient.convertToType(data['linkId'], 'String');
       }
+      if (data.hasOwnProperty('pdfFieldHandlingOption')) {
+        obj['pdfFieldHandlingOption'] = ApiClient.convertToType(data['pdfFieldHandlingOption'], 'String');
+      }
       if (data.hasOwnProperty('recipientAuthRequirements')) {
         obj['recipientAuthRequirements'] = ExternalPrimaryAccountRecipientAuthRequirements.constructFromObject(data['recipientAuthRequirements']);
       }
@@ -99,6 +102,11 @@
    * @member {String} linkId
    */
   exports.prototype['linkId'] = undefined;
+  /**
+   * 
+   * @member {String} pdfFieldHandlingOption
+   */
+  exports.prototype['pdfFieldHandlingOption'] = undefined;
   /**
    * @member {module:model/ExternalPrimaryAccountRecipientAuthRequirements} recipientAuthRequirements
    */

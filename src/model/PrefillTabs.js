@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Checkbox', 'model/RadioGroup', 'model/SenderCompany', 'model/SenderName', 'model/TabGroup', 'model/Text'], factory);
+    define(['ApiClient', 'model/Checkbox', 'model/Email', 'model/ModelDate', 'model/ModelNumber', 'model/RadioGroup', 'model/SenderCompany', 'model/SenderName', 'model/Ssn', 'model/TabGroup', 'model/Text', 'model/Zip'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Checkbox'), require('./RadioGroup'), require('./SenderCompany'), require('./SenderName'), require('./TabGroup'), require('./Text'));
+    module.exports = factory(require('../ApiClient'), require('./Checkbox'), require('./Email'), require('./ModelDate'), require('./ModelNumber'), require('./RadioGroup'), require('./SenderCompany'), require('./SenderName'), require('./Ssn'), require('./TabGroup'), require('./Text'), require('./Zip'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.PrefillTabs = factory(root.Docusign.ApiClient, root.Docusign.Checkbox, root.Docusign.RadioGroup, root.Docusign.SenderCompany, root.Docusign.SenderName, root.Docusign.TabGroup, root.Docusign.Text);
+    root.Docusign.PrefillTabs = factory(root.Docusign.ApiClient, root.Docusign.Checkbox, root.Docusign.Email, root.Docusign.ModelDate, root.Docusign.ModelNumber, root.Docusign.RadioGroup, root.Docusign.SenderCompany, root.Docusign.SenderName, root.Docusign.Ssn, root.Docusign.TabGroup, root.Docusign.Text, root.Docusign.Zip);
   }
-}(this, function(ApiClient, Checkbox, RadioGroup, SenderCompany, SenderName, TabGroup, Text) {
+}(this, function(ApiClient, Checkbox, Email, ModelDate, ModelNumber, RadioGroup, SenderCompany, SenderName, Ssn, TabGroup, Text, Zip) {
   'use strict';
 
 
@@ -57,6 +57,15 @@
       if (data.hasOwnProperty('checkboxTabs')) {
         obj['checkboxTabs'] = ApiClient.convertToType(data['checkboxTabs'], [Checkbox]);
       }
+      if (data.hasOwnProperty('dateTabs')) {
+        obj['dateTabs'] = ApiClient.convertToType(data['dateTabs'], [ModelDate]);
+      }
+      if (data.hasOwnProperty('emailTabs')) {
+        obj['emailTabs'] = ApiClient.convertToType(data['emailTabs'], [Email]);
+      }
+      if (data.hasOwnProperty('numberTabs')) {
+        obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], [ModelNumber]);
+      }
       if (data.hasOwnProperty('radioGroupTabs')) {
         obj['radioGroupTabs'] = ApiClient.convertToType(data['radioGroupTabs'], [RadioGroup]);
       }
@@ -66,11 +75,17 @@
       if (data.hasOwnProperty('senderNameTabs')) {
         obj['senderNameTabs'] = ApiClient.convertToType(data['senderNameTabs'], [SenderName]);
       }
+      if (data.hasOwnProperty('ssnTabs')) {
+        obj['ssnTabs'] = ApiClient.convertToType(data['ssnTabs'], [Ssn]);
+      }
       if (data.hasOwnProperty('tabGroups')) {
         obj['tabGroups'] = ApiClient.convertToType(data['tabGroups'], [TabGroup]);
       }
       if (data.hasOwnProperty('textTabs')) {
         obj['textTabs'] = ApiClient.convertToType(data['textTabs'], [Text]);
+      }
+      if (data.hasOwnProperty('zipTabs')) {
+        obj['zipTabs'] = ApiClient.convertToType(data['zipTabs'], [Zip]);
       }
     }
     return obj;
@@ -81,6 +96,21 @@
    * @member {Array.<module:model/Checkbox>} checkboxTabs
    */
   exports.prototype['checkboxTabs'] = undefined;
+  /**
+   * Specifies a tab on the document where you want the recipient to enter a date. Date tabs are single-line fields that allow date information to be entered in any format. The tooltip for this tab recommends entering the date as MM/DD/YYYY, but this is not enforced. The format entered by the signer is retained.   If you need a particular date format enforced, DocuSign recommends using a Text tab with a Validation Pattern and Validation Message to enforce the format.
+   * @member {Array.<module:model/ModelDate>} dateTabs
+   */
+  exports.prototype['dateTabs'] = undefined;
+  /**
+   * Specifies a tag on the document where you want the recipient to enter an email. Email tags are single-line fields that accept any characters. The system checks that a valid email format (i.e. xxx@yyy.zzz) is entered in the tag. It uses the same parameters as a Text tab, with the validation message and pattern set for email information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+   * @member {Array.<module:model/Email>} emailTabs
+   */
+  exports.prototype['emailTabs'] = undefined;
+  /**
+   * Specifies a tag on the document where you want the recipient to enter a number. It uses the same parameters as a Text tab, with the validation message and pattern set for number information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response. 
+   * @member {Array.<module:model/ModelNumber>} numberTabs
+   */
+  exports.prototype['numberTabs'] = undefined;
   /**
    * Specifies a tag on the document in a location where the recipient can select one option from a group of options using a radio button. The radio buttons do not have to be on the same page in a document.
    * @member {Array.<module:model/RadioGroup>} radioGroupTabs
@@ -97,6 +127,11 @@
    */
   exports.prototype['senderNameTabs'] = undefined;
   /**
+   * Specifies a tag on the document where you want the recipient to enter a Social Security Number (SSN). A SSN can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for SSN information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+   * @member {Array.<module:model/Ssn>} ssnTabs
+   */
+  exports.prototype['ssnTabs'] = undefined;
+  /**
    * 
    * @member {Array.<module:model/TabGroup>} tabGroups
    */
@@ -106,6 +141,11 @@
    * @member {Array.<module:model/Text>} textTabs
    */
   exports.prototype['textTabs'] = undefined;
+  /**
+   * Specifies a tag on the document where you want the recipient to enter a ZIP code. The ZIP code can be a five numbers or the ZIP+4 format with nine numbers. The zip code can be typed with or without dashes. It uses the same parameters as a Text tab, with the validation message and pattern set for ZIP code information.  When getting information that includes this tab type, the original value of the tab when the associated envelope was sent is included in the response.
+   * @member {Array.<module:model/Zip>} zipTabs
+   */
+  exports.prototype['zipTabs'] = undefined;
 
 
 
