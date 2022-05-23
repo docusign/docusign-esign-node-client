@@ -655,6 +655,9 @@
       if (data.hasOwnProperty('bulkSend')) {
         obj['bulkSend'] = ApiClient.convertToType(data['bulkSend'], 'String');
       }
+      if (data.hasOwnProperty('bulkSendActionResendLimit')) {
+        obj['bulkSendActionResendLimit'] = ApiClient.convertToType(data['bulkSendActionResendLimit'], 'String');
+      }
       if (data.hasOwnProperty('bulkSendMaxCopiesInBatch')) {
         obj['bulkSendMaxCopiesInBatch'] = ApiClient.convertToType(data['bulkSendMaxCopiesInBatch'], 'String');
       }
@@ -904,6 +907,9 @@
       if (data.hasOwnProperty('enableClickwrapsMetadata')) {
         obj['enableClickwrapsMetadata'] = SettingsMetadata.constructFromObject(data['enableClickwrapsMetadata']);
       }
+      if (data.hasOwnProperty('enableCombinedPDFDownloadForSBS')) {
+        obj['enableCombinedPDFDownloadForSBS'] = ApiClient.convertToType(data['enableCombinedPDFDownloadForSBS'], 'String');
+      }
       if (data.hasOwnProperty('enableCommentsHistoryDownloadInSigning')) {
         obj['enableCommentsHistoryDownloadInSigning'] = ApiClient.convertToType(data['enableCommentsHistoryDownloadInSigning'], 'String');
       }
@@ -940,6 +946,12 @@
       if (data.hasOwnProperty('enableEsignCommunitiesMetadata')) {
         obj['enableEsignCommunitiesMetadata'] = SettingsMetadata.constructFromObject(data['enableEsignCommunitiesMetadata']);
       }
+      if (data.hasOwnProperty('enableIDFxAccountlessSMSAuthForPart11')) {
+        obj['enableIDFxAccountlessSMSAuthForPart11'] = ApiClient.convertToType(data['enableIDFxAccountlessSMSAuthForPart11'], 'String');
+      }
+      if (data.hasOwnProperty('enableIDFxAccountlessSMSAuthForPart11Metadata')) {
+        obj['enableIDFxAccountlessSMSAuthForPart11Metadata'] = SettingsMetadata.constructFromObject(data['enableIDFxAccountlessSMSAuthForPart11Metadata']);
+      }
       if (data.hasOwnProperty('enableIDFxIntuitKBA')) {
         obj['enableIDFxIntuitKBA'] = ApiClient.convertToType(data['enableIDFxIntuitKBA'], 'String');
       }
@@ -957,6 +969,12 @@
       }
       if (data.hasOwnProperty('enableInBrowserEditorMetadata')) {
         obj['enableInBrowserEditorMetadata'] = SettingsMetadata.constructFromObject(data['enableInBrowserEditorMetadata']);
+      }
+      if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentType')) {
+        obj['enableKeyTermsSuggestionsByDocumentType'] = ApiClient.convertToType(data['enableKeyTermsSuggestionsByDocumentType'], 'String');
+      }
+      if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentTypeMetadata')) {
+        obj['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = SettingsMetadata.constructFromObject(data['enableKeyTermsSuggestionsByDocumentTypeMetadata']);
       }
       if (data.hasOwnProperty('enablePaymentProcessing')) {
         obj['enablePaymentProcessing'] = ApiClient.convertToType(data['enablePaymentProcessing'], 'String');
@@ -1029,6 +1047,12 @@
       }
       if (data.hasOwnProperty('enableSearchMetadata')) {
         obj['enableSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableSearchMetadata']);
+      }
+      if (data.hasOwnProperty('enableSearchSiteSpecificApi')) {
+        obj['enableSearchSiteSpecificApi'] = ApiClient.convertToType(data['enableSearchSiteSpecificApi'], 'String');
+      }
+      if (data.hasOwnProperty('enableSearchSiteSpecificApiMetadata')) {
+        obj['enableSearchSiteSpecificApiMetadata'] = SettingsMetadata.constructFromObject(data['enableSearchSiteSpecificApiMetadata']);
       }
       if (data.hasOwnProperty('enableSearchUI')) {
         obj['enableSearchUI'] = ApiClient.convertToType(data['enableSearchUI'], 'String');
@@ -2217,11 +2241,12 @@
    */
   exports.prototype['allowInPerson'] = undefined;
   /**
-   * 
+   * Account Level Flag that determines the availability to perform In Person Electronic Notarial (IPEN) actions
    * @member {String} allowInPersonElectronicNotary
    */
   exports.prototype['allowInPersonElectronicNotary'] = undefined;
   /**
+   * MetaData for the allowInPersonElectronicNotary flag
    * @member {module:model/SettingsMetadata} allowInPersonElectronicNotaryMetadata
    */
   exports.prototype['allowInPersonElectronicNotaryMetadata'] = undefined;
@@ -2356,11 +2381,12 @@
    */
   exports.prototype['allowOrganizationSsoManagementMetadata'] = undefined;
   /**
-   * 
+   * Organization Level Flag that determines the availability to perform In Person Electronic Notarial (IPEN) actions
    * @member {String} allowOrganizationToUseInPersonElectronicNotary
    */
   exports.prototype['allowOrganizationToUseInPersonElectronicNotary'] = undefined;
   /**
+   * MetaData for the allowOrganizationToUseInPersonElectronicNotary flag
    * @member {module:model/SettingsMetadata} allowOrganizationToUseInPersonElectronicNotaryMetadata
    */
   exports.prototype['allowOrganizationToUseInPersonElectronicNotaryMetadata'] = undefined;
@@ -2740,6 +2766,11 @@
   exports.prototype['bulkSend'] = undefined;
   /**
    * 
+   * @member {String} bulkSendActionResendLimit
+   */
+  exports.prototype['bulkSendActionResendLimit'] = undefined;
+  /**
+   * 
    * @member {String} bulkSendMaxCopiesInBatch
    */
   exports.prototype['bulkSendMaxCopiesInBatch'] = undefined;
@@ -3115,6 +3146,11 @@
   exports.prototype['enableClickwrapsMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableCombinedPDFDownloadForSBS
+   */
+  exports.prototype['enableCombinedPDFDownloadForSBS'] = undefined;
+  /**
+   * 
    * @member {String} enableCommentsHistoryDownloadInSigning
    */
   exports.prototype['enableCommentsHistoryDownloadInSigning'] = undefined;
@@ -3169,6 +3205,15 @@
   exports.prototype['enableEsignCommunitiesMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableIDFxAccountlessSMSAuthForPart11
+   */
+  exports.prototype['enableIDFxAccountlessSMSAuthForPart11'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableIDFxAccountlessSMSAuthForPart11Metadata
+   */
+  exports.prototype['enableIDFxAccountlessSMSAuthForPart11Metadata'] = undefined;
+  /**
+   * 
    * @member {String} enableIDFxIntuitKBA
    */
   exports.prototype['enableIDFxIntuitKBA'] = undefined;
@@ -3194,6 +3239,15 @@
    * @member {module:model/SettingsMetadata} enableInBrowserEditorMetadata
    */
   exports.prototype['enableInBrowserEditorMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableKeyTermsSuggestionsByDocumentType
+   */
+  exports.prototype['enableKeyTermsSuggestionsByDocumentType'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableKeyTermsSuggestionsByDocumentTypeMetadata
+   */
+  exports.prototype['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = undefined;
   /**
    * 
    * @member {String} enablePaymentProcessing
@@ -3302,6 +3356,15 @@
    * @member {module:model/SettingsMetadata} enableSearchMetadata
    */
   exports.prototype['enableSearchMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableSearchSiteSpecificApi
+   */
+  exports.prototype['enableSearchSiteSpecificApi'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableSearchSiteSpecificApiMetadata
+   */
+  exports.prototype['enableSearchSiteSpecificApiMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSearchUI

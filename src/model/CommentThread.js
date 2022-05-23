@@ -120,6 +120,12 @@
       if (data.hasOwnProperty('boldMetadata')) {
         obj['boldMetadata'] = PropertyMetadata.constructFromObject(data['boldMetadata']);
       }
+      if (data.hasOwnProperty('caption')) {
+        obj['caption'] = ApiClient.convertToType(data['caption'], 'String');
+      }
+      if (data.hasOwnProperty('captionMetadata')) {
+        obj['captionMetadata'] = PropertyMetadata.constructFromObject(data['captionMetadata']);
+      }
       if (data.hasOwnProperty('comments')) {
         obj['comments'] = ApiClient.convertToType(data['comments'], [Comment]);
       }
@@ -415,6 +421,15 @@
    * @member {module:model/PropertyMetadata} boldMetadata
    */
   exports.prototype['boldMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} caption
+   */
+  exports.prototype['caption'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} captionMetadata
+   */
+  exports.prototype['captionMetadata'] = undefined;
   /**
    * 
    * @member {Array.<module:model/Comment>} comments

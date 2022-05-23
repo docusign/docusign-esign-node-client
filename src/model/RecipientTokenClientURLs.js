@@ -54,10 +54,90 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('OnAccessCodeFailed')) {
+        obj['OnAccessCodeFailed'] = ApiClient.convertToType(data['OnAccessCodeFailed'], 'String');
+      }
+      if (data.hasOwnProperty('OnCancel')) {
+        obj['OnCancel'] = ApiClient.convertToType(data['OnCancel'], 'String');
+      }
+      if (data.hasOwnProperty('OnDecline')) {
+        obj['OnDecline'] = ApiClient.convertToType(data['OnDecline'], 'String');
+      }
+      if (data.hasOwnProperty('OnException')) {
+        obj['OnException'] = ApiClient.convertToType(data['OnException'], 'String');
+      }
+      if (data.hasOwnProperty('OnFaxPending')) {
+        obj['OnFaxPending'] = ApiClient.convertToType(data['OnFaxPending'], 'String');
+      }
+      if (data.hasOwnProperty('OnIdCheckFailed')) {
+        obj['OnIdCheckFailed'] = ApiClient.convertToType(data['OnIdCheckFailed'], 'String');
+      }
+      if (data.hasOwnProperty('OnSessionTimeout')) {
+        obj['OnSessionTimeout'] = ApiClient.convertToType(data['OnSessionTimeout'], 'String');
+      }
+      if (data.hasOwnProperty('OnSigningComplete')) {
+        obj['OnSigningComplete'] = ApiClient.convertToType(data['OnSigningComplete'], 'String');
+      }
+      if (data.hasOwnProperty('OnTTLExpired')) {
+        obj['OnTTLExpired'] = ApiClient.convertToType(data['OnTTLExpired'], 'String');
+      }
+      if (data.hasOwnProperty('OnViewingComplete')) {
+        obj['OnViewingComplete'] = ApiClient.convertToType(data['OnViewingComplete'], 'String');
+      }
     }
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} OnAccessCodeFailed
+   */
+  exports.prototype['OnAccessCodeFailed'] = undefined;
+  /**
+   * 
+   * @member {String} OnCancel
+   */
+  exports.prototype['OnCancel'] = undefined;
+  /**
+   * 
+   * @member {String} OnDecline
+   */
+  exports.prototype['OnDecline'] = undefined;
+  /**
+   * 
+   * @member {String} OnException
+   */
+  exports.prototype['OnException'] = undefined;
+  /**
+   * 
+   * @member {String} OnFaxPending
+   */
+  exports.prototype['OnFaxPending'] = undefined;
+  /**
+   * 
+   * @member {String} OnIdCheckFailed
+   */
+  exports.prototype['OnIdCheckFailed'] = undefined;
+  /**
+   * 
+   * @member {String} OnSessionTimeout
+   */
+  exports.prototype['OnSessionTimeout'] = undefined;
+  /**
+   * 
+   * @member {String} OnSigningComplete
+   */
+  exports.prototype['OnSigningComplete'] = undefined;
+  /**
+   * 
+   * @member {String} OnTTLExpired
+   */
+  exports.prototype['OnTTLExpired'] = undefined;
+  /**
+   * 
+   * @member {String} OnViewingComplete
+   */
+  exports.prototype['OnViewingComplete'] = undefined;
 
 
 

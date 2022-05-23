@@ -54,8 +54,14 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accountBalance')) {
+        obj['accountBalance'] = ApiClient.convertToType(data['accountBalance'], 'String');
+      }
       if (data.hasOwnProperty('billingInvoices')) {
         obj['billingInvoices'] = ApiClient.convertToType(data['billingInvoices'], [BillingInvoice]);
+      }
+      if (data.hasOwnProperty('currencyCode')) {
+        obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
       }
       if (data.hasOwnProperty('pastDueBalance')) {
         obj['pastDueBalance'] = ApiClient.convertToType(data['pastDueBalance'], 'String');
@@ -68,10 +74,20 @@
   }
 
   /**
+   * 
+   * @member {String} accountBalance
+   */
+  exports.prototype['accountBalance'] = undefined;
+  /**
    * Reserved: TBD
    * @member {Array.<module:model/BillingInvoice>} billingInvoices
    */
   exports.prototype['billingInvoices'] = undefined;
+  /**
+   * 
+   * @member {String} currencyCode
+   */
+  exports.prototype['currencyCode'] = undefined;
   /**
    * 
    * @member {String} pastDueBalance

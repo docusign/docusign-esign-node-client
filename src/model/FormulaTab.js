@@ -120,6 +120,12 @@
       if (data.hasOwnProperty('boldMetadata')) {
         obj['boldMetadata'] = PropertyMetadata.constructFromObject(data['boldMetadata']);
       }
+      if (data.hasOwnProperty('caption')) {
+        obj['caption'] = ApiClient.convertToType(data['caption'], 'String');
+      }
+      if (data.hasOwnProperty('captionMetadata')) {
+        obj['captionMetadata'] = PropertyMetadata.constructFromObject(data['captionMetadata']);
+      }
       if (data.hasOwnProperty('concealValueOnDocument')) {
         obj['concealValueOnDocument'] = ApiClient.convertToType(data['concealValueOnDocument'], 'String');
       }
@@ -526,6 +532,15 @@
    * @member {module:model/PropertyMetadata} boldMetadata
    */
   exports.prototype['boldMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} caption
+   */
+  exports.prototype['caption'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} captionMetadata
+   */
+  exports.prototype['captionMetadata'] = undefined;
   /**
    * When set to **true**, the field appears normally while the recipient is adding or modifying the information in the field, but the data is not visible (the characters are hidden by asterisks) to any other signer or the sender.  When an envelope is completed the information is available to the sender through the Form Data link in the DocuSign Console.  This setting applies only to text boxes and does not affect list boxes, radio buttons, or check boxes.
    * @member {String} concealValueOnDocument

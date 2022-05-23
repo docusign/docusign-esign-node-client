@@ -114,6 +114,12 @@
       if (data.hasOwnProperty('anchorYOffsetMetadata')) {
         obj['anchorYOffsetMetadata'] = PropertyMetadata.constructFromObject(data['anchorYOffsetMetadata']);
       }
+      if (data.hasOwnProperty('caption')) {
+        obj['caption'] = ApiClient.convertToType(data['caption'], 'String');
+      }
+      if (data.hasOwnProperty('captionMetadata')) {
+        obj['captionMetadata'] = PropertyMetadata.constructFromObject(data['captionMetadata']);
+      }
       if (data.hasOwnProperty('caseSensitive')) {
         obj['caseSensitive'] = ApiClient.convertToType(data['caseSensitive'], 'Boolean');
       }
@@ -400,6 +406,15 @@
    * @member {module:model/PropertyMetadata} anchorYOffsetMetadata
    */
   exports.prototype['anchorYOffsetMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} caption
+   */
+  exports.prototype['caption'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} captionMetadata
+   */
+  exports.prototype['captionMetadata'] = undefined;
   /**
    * 
    * @member {Boolean} caseSensitive

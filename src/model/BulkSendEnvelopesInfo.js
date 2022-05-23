@@ -54,11 +54,41 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('authoritativeCopy')) {
+        obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'String');
+      }
       if (data.hasOwnProperty('completed')) {
         obj['completed'] = ApiClient.convertToType(data['completed'], 'String');
       }
+      if (data.hasOwnProperty('correct')) {
+        obj['correct'] = ApiClient.convertToType(data['correct'], 'String');
+      }
+      if (data.hasOwnProperty('created')) {
+        obj['created'] = ApiClient.convertToType(data['created'], 'String');
+      }
       if (data.hasOwnProperty('declined')) {
         obj['declined'] = ApiClient.convertToType(data['declined'], 'String');
+      }
+      if (data.hasOwnProperty('deleted')) {
+        obj['deleted'] = ApiClient.convertToType(data['deleted'], 'String');
+      }
+      if (data.hasOwnProperty('delivered')) {
+        obj['delivered'] = ApiClient.convertToType(data['delivered'], 'String');
+      }
+      if (data.hasOwnProperty('digitalSignaturesPending')) {
+        obj['digitalSignaturesPending'] = ApiClient.convertToType(data['digitalSignaturesPending'], 'String');
+      }
+      if (data.hasOwnProperty('sent')) {
+        obj['sent'] = ApiClient.convertToType(data['sent'], 'String');
+      }
+      if (data.hasOwnProperty('signed')) {
+        obj['signed'] = ApiClient.convertToType(data['signed'], 'String');
+      }
+      if (data.hasOwnProperty('timedOut')) {
+        obj['timedOut'] = ApiClient.convertToType(data['timedOut'], 'String');
+      }
+      if (data.hasOwnProperty('transferCompleted')) {
+        obj['transferCompleted'] = ApiClient.convertToType(data['transferCompleted'], 'String');
       }
       if (data.hasOwnProperty('voided')) {
         obj['voided'] = ApiClient.convertToType(data['voided'], 'String');
@@ -68,15 +98,65 @@
   }
 
   /**
+   * Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+   * @member {String} authoritativeCopy
+   */
+  exports.prototype['authoritativeCopy'] = undefined;
+  /**
    * 
    * @member {String} completed
    */
   exports.prototype['completed'] = undefined;
   /**
    * 
+   * @member {String} correct
+   */
+  exports.prototype['correct'] = undefined;
+  /**
+   * 
+   * @member {String} created
+   */
+  exports.prototype['created'] = undefined;
+  /**
+   * 
    * @member {String} declined
    */
   exports.prototype['declined'] = undefined;
+  /**
+   * 
+   * @member {String} deleted
+   */
+  exports.prototype['deleted'] = undefined;
+  /**
+   * 
+   * @member {String} delivered
+   */
+  exports.prototype['delivered'] = undefined;
+  /**
+   * 
+   * @member {String} digitalSignaturesPending
+   */
+  exports.prototype['digitalSignaturesPending'] = undefined;
+  /**
+   * 
+   * @member {String} sent
+   */
+  exports.prototype['sent'] = undefined;
+  /**
+   * 
+   * @member {String} signed
+   */
+  exports.prototype['signed'] = undefined;
+  /**
+   * 
+   * @member {String} timedOut
+   */
+  exports.prototype['timedOut'] = undefined;
+  /**
+   * 
+   * @member {String} transferCompleted
+   */
+  exports.prototype['transferCompleted'] = undefined;
   /**
    * 
    * @member {String} voided
