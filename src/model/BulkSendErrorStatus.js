@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('created')) {
         obj['created'] = ApiClient.convertToType(data['created'], 'String');
       }
+      if (data.hasOwnProperty('envelopeId')) {
+        obj['envelopeId'] = ApiClient.convertToType(data['envelopeId'], 'String');
+      }
       if (data.hasOwnProperty('errorMessage')) {
         obj['errorMessage'] = ApiClient.convertToType(data['errorMessage'], 'String');
       }
@@ -72,6 +75,11 @@
    * @member {String} created
    */
   exports.prototype['created'] = undefined;
+  /**
+   * The envelope ID of the envelope status that failed to post.
+   * @member {String} envelopeId
+   */
+  exports.prototype['envelopeId'] = undefined;
   /**
    * 
    * @member {String} errorMessage

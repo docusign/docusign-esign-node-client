@@ -84,11 +84,11 @@
       if (data.hasOwnProperty('enableEnvelopeCopyWithDataMetadata')) {
         obj['enableEnvelopeCopyWithDataMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeCopyWithDataMetadata']);
       }
-      if (data.hasOwnProperty('enableLegacyHomepageLink')) {
-        obj['enableLegacyHomepageLink'] = ApiClient.convertToType(data['enableLegacyHomepageLink'], 'String');
+      if (data.hasOwnProperty('enableLegacySendflowLink')) {
+        obj['enableLegacySendflowLink'] = ApiClient.convertToType(data['enableLegacySendflowLink'], 'String');
       }
-      if (data.hasOwnProperty('enableLegacyHomepageLinkMetadata')) {
-        obj['enableLegacyHomepageLinkMetadata'] = SettingsMetadata.constructFromObject(data['enableLegacyHomepageLinkMetadata']);
+      if (data.hasOwnProperty('enableLegacySendflowLinkMetadata')) {
+        obj['enableLegacySendflowLinkMetadata'] = SettingsMetadata.constructFromObject(data['enableLegacySendflowLinkMetadata']);
       }
       if (data.hasOwnProperty('hasExternalLinkedAccounts')) {
         obj['hasExternalLinkedAccounts'] = ApiClient.convertToType(data['hasExternalLinkedAccounts'], 'String');
@@ -188,13 +188,13 @@
   exports.prototype['enableEnvelopeCopyWithDataMetadata'] = undefined;
   /**
    * 
-   * @member {String} enableLegacyHomepageLink
+   * @member {String} enableLegacySendflowLink
    */
-  exports.prototype['enableLegacyHomepageLink'] = undefined;
+  exports.prototype['enableLegacySendflowLink'] = undefined;
   /**
-   * @member {module:model/SettingsMetadata} enableLegacyHomepageLinkMetadata
+   * @member {module:model/SettingsMetadata} enableLegacySendflowLinkMetadata
    */
-  exports.prototype['enableLegacyHomepageLinkMetadata'] = undefined;
+  exports.prototype['enableLegacySendflowLinkMetadata'] = undefined;
   /**
    * 
    * @member {String} hasExternalLinkedAccounts

@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('allUsers')) {
         obj['allUsers'] = ApiClient.convertToType(data['allUsers'], 'String');
       }
+      if (data.hasOwnProperty('allUsersExcept')) {
+        obj['allUsersExcept'] = ApiClient.convertToType(data['allUsersExcept'], 'String');
+      }
       if (data.hasOwnProperty('configurationType')) {
         obj['configurationType'] = ApiClient.convertToType(data['configurationType'], 'String');
       }
@@ -89,6 +92,9 @@
       }
       if (data.hasOwnProperty('externalFolderLabel')) {
         obj['externalFolderLabel'] = ApiClient.convertToType(data['externalFolderLabel'], 'String');
+      }
+      if (data.hasOwnProperty('groupIds')) {
+        obj['groupIds'] = ApiClient.convertToType(data['groupIds'], ['String']);
       }
       if (data.hasOwnProperty('includeCertificateOfCompletion')) {
         obj['includeCertificateOfCompletion'] = ApiClient.convertToType(data['includeCertificateOfCompletion'], 'String');
@@ -188,6 +194,11 @@
    */
   exports.prototype['allUsers'] = undefined;
   /**
+   * 
+   * @member {String} allUsersExcept
+   */
+  exports.prototype['allUsersExcept'] = undefined;
+  /**
    * If merge field's are being used, specifies the type of the merge field. The only  supported value is **salesforce**.
    * @member {String} configurationType
    */
@@ -231,6 +242,11 @@
    * @member {String} externalFolderLabel
    */
   exports.prototype['externalFolderLabel'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} groupIds
+   */
+  exports.prototype['groupIds'] = undefined;
   /**
    * When set to **true**, the Connect Service includes the Certificate of Completion with completed envelopes. 
    * @member {String} includeCertificateOfCompletion

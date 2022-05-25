@@ -126,6 +126,12 @@
       if (data.hasOwnProperty('buttonTextMetadata')) {
         obj['buttonTextMetadata'] = PropertyMetadata.constructFromObject(data['buttonTextMetadata']);
       }
+      if (data.hasOwnProperty('caption')) {
+        obj['caption'] = ApiClient.convertToType(data['caption'], 'String');
+      }
+      if (data.hasOwnProperty('captionMetadata')) {
+        obj['captionMetadata'] = PropertyMetadata.constructFromObject(data['captionMetadata']);
+      }
       if (data.hasOwnProperty('conditionalParentLabel')) {
         obj['conditionalParentLabel'] = ApiClient.convertToType(data['conditionalParentLabel'], 'String');
       }
@@ -424,6 +430,15 @@
    * @member {module:model/PropertyMetadata} buttonTextMetadata
    */
   exports.prototype['buttonTextMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} caption
+   */
+  exports.prototype['caption'] = undefined;
+  /**
+   * @member {module:model/PropertyMetadata} captionMetadata
+   */
+  exports.prototype['captionMetadata'] = undefined;
   /**
    * For conditional fields this is the TabLabel of the parent tab that controls this tab's visibility.
    * @member {String} conditionalParentLabel

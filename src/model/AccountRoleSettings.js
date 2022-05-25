@@ -210,6 +210,12 @@
       if (data.hasOwnProperty('enableApiRequestLoggingMetadata')) {
         obj['enableApiRequestLoggingMetadata'] = SettingsMetadata.constructFromObject(data['enableApiRequestLoggingMetadata']);
       }
+      if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentType')) {
+        obj['enableKeyTermsSuggestionsByDocumentType'] = ApiClient.convertToType(data['enableKeyTermsSuggestionsByDocumentType'], 'String');
+      }
+      if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentTypeMetadata')) {
+        obj['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = SettingsMetadata.constructFromObject(data['enableKeyTermsSuggestionsByDocumentTypeMetadata']);
+      }
       if (data.hasOwnProperty('enableRecipientViewingNotifications')) {
         obj['enableRecipientViewingNotifications'] = ApiClient.convertToType(data['enableRecipientViewingNotifications'], 'String');
       }
@@ -523,6 +529,15 @@
    * @member {module:model/SettingsMetadata} enableApiRequestLoggingMetadata
    */
   exports.prototype['enableApiRequestLoggingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableKeyTermsSuggestionsByDocumentType
+   */
+  exports.prototype['enableKeyTermsSuggestionsByDocumentType'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableKeyTermsSuggestionsByDocumentTypeMetadata
+   */
+  exports.prototype['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = undefined;
   /**
    * 
    * @member {String} enableRecipientViewingNotifications

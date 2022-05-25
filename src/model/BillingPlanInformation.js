@@ -69,6 +69,9 @@
       if (data.hasOwnProperty('downgradeReason')) {
         obj['downgradeReason'] = ApiClient.convertToType(data['downgradeReason'], 'String');
       }
+      if (data.hasOwnProperty('enablePreAuth')) {
+        obj['enablePreAuth'] = ApiClient.convertToType(data['enablePreAuth'], 'String');
+      }
       if (data.hasOwnProperty('enableSupport')) {
         obj['enableSupport'] = ApiClient.convertToType(data['enableSupport'], 'String');
       }
@@ -86,6 +89,9 @@
       }
       if (data.hasOwnProperty('planInformation')) {
         obj['planInformation'] = PlanInformation.constructFromObject(data['planInformation']);
+      }
+      if (data.hasOwnProperty('processPayment')) {
+        obj['processPayment'] = ApiClient.convertToType(data['processPayment'], 'String');
       }
       if (data.hasOwnProperty('referralInformation')) {
         obj['referralInformation'] = ReferralInformation.constructFromObject(data['referralInformation']);
@@ -138,6 +144,11 @@
   exports.prototype['downgradeReason'] = undefined;
   /**
    * 
+   * @member {String} enablePreAuth
+   */
+  exports.prototype['enablePreAuth'] = undefined;
+  /**
+   * 
    * @member {String} enableSupport
    */
   exports.prototype['enableSupport'] = undefined;
@@ -164,6 +175,11 @@
    * @member {module:model/PlanInformation} planInformation
    */
   exports.prototype['planInformation'] = undefined;
+  /**
+   * 
+   * @member {String} processPayment
+   */
+  exports.prototype['processPayment'] = undefined;
   /**
    * @member {module:model/ReferralInformation} referralInformation
    */

@@ -213,6 +213,12 @@
       if (data.hasOwnProperty('enableDSProMetadata')) {
         obj['enableDSProMetadata'] = SettingsMetadata.constructFromObject(data['enableDSProMetadata']);
       }
+      if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentType')) {
+        obj['enableKeyTermsSuggestionsByDocumentType'] = ApiClient.convertToType(data['enableKeyTermsSuggestionsByDocumentType'], 'String');
+      }
+      if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentTypeMetadata')) {
+        obj['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = SettingsMetadata.constructFromObject(data['enableKeyTermsSuggestionsByDocumentTypeMetadata']);
+      }
       if (data.hasOwnProperty('enableSequentialSigningAPI')) {
         obj['enableSequentialSigningAPI'] = ApiClient.convertToType(data['enableSequentialSigningAPI'], 'String');
       }
@@ -666,6 +672,15 @@
    * @member {module:model/SettingsMetadata} enableDSProMetadata
    */
   exports.prototype['enableDSProMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableKeyTermsSuggestionsByDocumentType
+   */
+  exports.prototype['enableKeyTermsSuggestionsByDocumentType'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableKeyTermsSuggestionsByDocumentTypeMetadata
+   */
+  exports.prototype['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSequentialSigningAPI

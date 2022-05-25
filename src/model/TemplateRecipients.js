@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Agent', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Editor', 'model/ErrorDetails', 'model/InPersonSigner', 'model/Intermediary', 'model/NotaryRecipient', 'model/SealSign', 'model/Signer', 'model/Witness'], factory);
+    define(['ApiClient', 'model/Agent', 'model/CarbonCopy', 'model/CertifiedDelivery', 'model/Editor', 'model/ErrorDetails', 'model/InPersonSigner', 'model/Intermediary', 'model/NotaryRecipient', 'model/Participant', 'model/SealSign', 'model/Signer', 'model/Witness'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Agent'), require('./CarbonCopy'), require('./CertifiedDelivery'), require('./Editor'), require('./ErrorDetails'), require('./InPersonSigner'), require('./Intermediary'), require('./NotaryRecipient'), require('./SealSign'), require('./Signer'), require('./Witness'));
+    module.exports = factory(require('../ApiClient'), require('./Agent'), require('./CarbonCopy'), require('./CertifiedDelivery'), require('./Editor'), require('./ErrorDetails'), require('./InPersonSigner'), require('./Intermediary'), require('./NotaryRecipient'), require('./Participant'), require('./SealSign'), require('./Signer'), require('./Witness'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateRecipients = factory(root.Docusign.ApiClient, root.Docusign.Agent, root.Docusign.CarbonCopy, root.Docusign.CertifiedDelivery, root.Docusign.Editor, root.Docusign.ErrorDetails, root.Docusign.InPersonSigner, root.Docusign.Intermediary, root.Docusign.NotaryRecipient, root.Docusign.SealSign, root.Docusign.Signer, root.Docusign.Witness);
+    root.Docusign.TemplateRecipients = factory(root.Docusign.ApiClient, root.Docusign.Agent, root.Docusign.CarbonCopy, root.Docusign.CertifiedDelivery, root.Docusign.Editor, root.Docusign.ErrorDetails, root.Docusign.InPersonSigner, root.Docusign.Intermediary, root.Docusign.NotaryRecipient, root.Docusign.Participant, root.Docusign.SealSign, root.Docusign.Signer, root.Docusign.Witness);
   }
-}(this, function(ApiClient, Agent, CarbonCopy, CertifiedDelivery, Editor, ErrorDetails, InPersonSigner, Intermediary, NotaryRecipient, SealSign, Signer, Witness) {
+}(this, function(ApiClient, Agent, CarbonCopy, CertifiedDelivery, Editor, ErrorDetails, InPersonSigner, Intermediary, NotaryRecipient, Participant, SealSign, Signer, Witness) {
   'use strict';
 
 
@@ -80,6 +80,9 @@
       }
       if (data.hasOwnProperty('notaries')) {
         obj['notaries'] = ApiClient.convertToType(data['notaries'], [NotaryRecipient]);
+      }
+      if (data.hasOwnProperty('participants')) {
+        obj['participants'] = ApiClient.convertToType(data['participants'], [Participant]);
       }
       if (data.hasOwnProperty('recipientCount')) {
         obj['recipientCount'] = ApiClient.convertToType(data['recipientCount'], 'String');
@@ -141,6 +144,11 @@
    * @member {Array.<module:model/NotaryRecipient>} notaries
    */
   exports.prototype['notaries'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Participant>} participants
+   */
+  exports.prototype['participants'] = undefined;
   /**
    * The list of recipient event statuses that will trigger Connect to send updates to the url. It can be a two-part list with:  * recipientEventStatusCode - The recipient status, this can be Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded. * includeDocuments - When set to **true**, the envelope time zone information is included in the message.
    * @member {String} recipientCount

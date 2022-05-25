@@ -96,6 +96,9 @@
       if (data.hasOwnProperty('queued')) {
         obj['queued'] = ApiClient.convertToType(data['queued'], 'String');
       }
+      if (data.hasOwnProperty('resendsRemaining')) {
+        obj['resendsRemaining'] = ApiClient.convertToType(data['resendsRemaining'], 'String');
+      }
       if (data.hasOwnProperty('senderUserId')) {
         obj['senderUserId'] = ApiClient.convertToType(data['senderUserId'], 'String');
       }
@@ -178,6 +181,11 @@
    * @member {String} queued
    */
   exports.prototype['queued'] = undefined;
+  /**
+   * 
+   * @member {String} resendsRemaining
+   */
+  exports.prototype['resendsRemaining'] = undefined;
   /**
    * 
    * @member {String} senderUserId
