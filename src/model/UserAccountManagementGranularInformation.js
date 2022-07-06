@@ -114,6 +114,12 @@
       if (data.hasOwnProperty('canManageSigningGroupsMetadata')) {
         obj['canManageSigningGroupsMetadata'] = SettingsMetadata.constructFromObject(data['canManageSigningGroupsMetadata']);
       }
+      if (data.hasOwnProperty('canManageStamps')) {
+        obj['canManageStamps'] = ApiClient.convertToType(data['canManageStamps'], 'String');
+      }
+      if (data.hasOwnProperty('canManageStampsMetadata')) {
+        obj['canManageStampsMetadata'] = SettingsMetadata.constructFromObject(data['canManageStampsMetadata']);
+      }
       if (data.hasOwnProperty('canManageUsers')) {
         obj['canManageUsers'] = ApiClient.convertToType(data['canManageUsers'], 'String');
       }
@@ -217,6 +223,15 @@
    * @member {module:model/SettingsMetadata} canManageSigningGroupsMetadata
    */
   exports.prototype['canManageSigningGroupsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageStamps
+   */
+  exports.prototype['canManageStamps'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageStampsMetadata
+   */
+  exports.prototype['canManageStampsMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageUsers

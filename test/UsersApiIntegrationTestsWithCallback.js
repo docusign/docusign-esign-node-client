@@ -4,7 +4,7 @@ var JWTAuth = require('./helpers').JWTAuth;
 var constants = require('./constants');
 var USER_ID = constants.USER_ID;
 var apiClient = constants.apiClient;
-var EMAIL = constants.EMAIL;
+// var EMAIL = constants.EMAIL;
 var ACCOUNT_ID = '';
 
 describe('UsersApi Tests With Callbacks:', () => {
@@ -56,28 +56,28 @@ describe('UsersApi Tests With Callbacks:', () => {
     usersApi.getInformation(ACCOUNT_ID, USER_ID, callback);
   });
 
-  it('should create and add new user to the specified account if newUsersDefinition option is provided with user data', (done) => {
-    var newUser = new docusign.UserInformation();
-    newUser.company = 'TestCompany';
-    newUser.email = EMAIL;
-    newUser.firstName = 'First';
-    newUser.lastName = 'Last';
-    newUser.userName = 'TestUserName';
+  // it('should create and add new user to the specified account if newUsersDefinition option is provided with user data', (done) => {
+  //   var newUser = new docusign.UserInformation();
+  //   newUser.company = 'TestCompany';
+  //   newUser.email = EMAIL;
+  //   newUser.firstName = 'First';
+  //   newUser.lastName = 'Last';
+  //   newUser.userName = 'TestUserName';
 
-    var newUsersDefinition = new docusign.NewUsersDefinition();
-    newUsersDefinition.newUsers = [];
-    newUsersDefinition.newUsers.push(newUser);
+  //   var newUsersDefinition = new docusign.NewUsersDefinition();
+  //   newUsersDefinition.newUsers = [];
+  //   newUsersDefinition.newUsers.push(newUser);
 
-    var callback = function (error, data, __response) {
-      if (error) {
-        console.error(error);
-        return done(error);
-      }
-      assert.notStrictEqual(data, undefined);
-      assert.equal(data.newUsers[0].email, EMAIL);
-      assert.equal(data.newUsers[0].userName, 'TestUserName');
-      done();
-    };
-    usersApi.create(ACCOUNT_ID, { newUsersDefinition }, callback);
-  });
+  //   var callback = function (error, data, __response) {
+  //     if (error) {
+  //       console.error(error);
+  //       return done(error);
+  //     }
+  //     assert.notStrictEqual(data, undefined);
+  //     assert.equal(data.newUsers[0].email, EMAIL);
+  //     assert.equal(data.newUsers[0].userName, 'TestUserName');
+  //     done();
+  //   };
+  //   usersApi.create(ACCOUNT_ID, { newUsersDefinition }, callback);
+  // });
 });

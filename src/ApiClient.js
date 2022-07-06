@@ -497,7 +497,7 @@
     var url = this.buildUrl(path, pathParams);
     var request = superagent(httpMethod, url);
     var _formParams = this.normalizeParams(formParams);
-    var body = bodyParam || {};
+    var body = httpMethod.toUpperCase() === 'GET' && !bodyParam ? undefined : bodyParam || {};
 
     // apply authentications
     this.applyAuthToRequest(request, authNames);

@@ -75,6 +75,9 @@
       if (data.hasOwnProperty('deliveryMode')) {
         obj['deliveryMode'] = ApiClient.convertToType(data['deliveryMode'], 'String');
       }
+      if (data.hasOwnProperty('disabledBy')) {
+        obj['disabledBy'] = ApiClient.convertToType(data['disabledBy'], 'String');
+      }
       if (data.hasOwnProperty('enableLog')) {
         obj['enableLog'] = ApiClient.convertToType(data['enableLog'], 'String');
       }
@@ -213,6 +216,11 @@
    * @member {String} deliveryMode
    */
   exports.prototype['deliveryMode'] = undefined;
+  /**
+   * 
+   * @member {String} disabledBy
+   */
+  exports.prototype['disabledBy'] = undefined;
   /**
    * This turns Connect logging on or off. When set to **true**, logging is turned on.
    * @member {String} enableLog

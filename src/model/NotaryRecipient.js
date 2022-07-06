@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthenticationStatus', 'model/DelegationInfo', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/OfflineAttributes', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientProofFile', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/AuthenticationStatus', 'model/ConsentDetails', 'model/DelegationInfo', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/OfflineAttributes', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientProofFile', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureInformation', 'model/RecipientSignatureProvider', 'model/SocialAuthentication', 'model/Tabs', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DelegationInfo'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientProofFile'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./ConsentDetails'), require('./DelegationInfo'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./OfflineAttributes'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientProofFile'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureInformation'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'), require('./Tabs'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.NotaryRecipient = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DelegationInfo, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientProofFile, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
+    root.Docusign.NotaryRecipient = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.ConsentDetails, root.Docusign.DelegationInfo, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.OfflineAttributes, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientProofFile, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureInformation, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication, root.Docusign.Tabs, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, AuthenticationStatus, DelegationInfo, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, OfflineAttributes, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientProofFile, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
+}(this, function(ApiClient, AuthenticationStatus, ConsentDetails, DelegationInfo, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, OfflineAttributes, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientProofFile, RecipientSMSAuthentication, RecipientSignatureInformation, RecipientSignatureProvider, SocialAuthentication, Tabs, UserInfo) {
   'use strict';
 
 
@@ -92,6 +92,9 @@
       }
       if (data.hasOwnProperty('completedCount')) {
         obj['completedCount'] = ApiClient.convertToType(data['completedCount'], 'String');
+      }
+      if (data.hasOwnProperty('consentDetailsList')) {
+        obj['consentDetailsList'] = ApiClient.convertToType(data['consentDetailsList'], [ConsentDetails]);
       }
       if (data.hasOwnProperty('creationReason')) {
         obj['creationReason'] = ApiClient.convertToType(data['creationReason'], 'String');
@@ -221,6 +224,9 @@
       }
       if (data.hasOwnProperty('notarySigners')) {
         obj['notarySigners'] = ApiClient.convertToType(data['notarySigners'], ['String']);
+      }
+      if (data.hasOwnProperty('notarySourceType')) {
+        obj['notarySourceType'] = ApiClient.convertToType(data['notarySourceType'], 'String');
       }
       if (data.hasOwnProperty('notaryType')) {
         obj['notaryType'] = ApiClient.convertToType(data['notaryType'], 'String');
@@ -419,6 +425,11 @@
    * @member {String} completedCount
    */
   exports.prototype['completedCount'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/ConsentDetails>} consentDetailsList
+   */
+  exports.prototype['consentDetailsList'] = undefined;
   /**
    * 
    * @member {String} creationReason
@@ -620,6 +631,11 @@
    * @member {Array.<String>} notarySigners
    */
   exports.prototype['notarySigners'] = undefined;
+  /**
+   * 
+   * @member {String} notarySourceType
+   */
+  exports.prototype['notarySourceType'] = undefined;
   /**
    * 
    * @member {String} notaryType

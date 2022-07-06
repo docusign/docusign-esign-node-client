@@ -434,6 +434,8 @@
      * @param {String} optsOrCallback.fromDate 
      * @param {String} optsOrCallback.order 
      * @param {String} optsOrCallback.orderBy 
+     * @param {String} optsOrCallback.searchFields 
+     * @param {String} optsOrCallback.searchText 
      * @param {String} optsOrCallback.toDate 
      * @param {module:api/PowerFormsApi~listPowerFormsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerFormsResponse}
@@ -467,6 +469,8 @@
         'from_date': optsOrCallback['fromDate'],
         'order': optsOrCallback['order'],
         'order_by': optsOrCallback['orderBy'],
+        'search_fields': optsOrCallback['searchFields'],
+        'search_text': optsOrCallback['searchText'],
         'to_date': optsOrCallback['toDate']
       };
       var headerParams = {

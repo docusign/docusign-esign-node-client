@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthenticationStatus', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/AuthenticationStatus', 'model/ConsentDetails', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./ConsentDetails'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Intermediary = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
+    root.Docusign.Intermediary = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.ConsentDetails, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, AuthenticationStatus, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
+}(this, function(ApiClient, AuthenticationStatus, ConsentDetails, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
   'use strict';
 
 
@@ -77,6 +77,9 @@
       }
       if (data.hasOwnProperty('completedCount')) {
         obj['completedCount'] = ApiClient.convertToType(data['completedCount'], 'String');
+      }
+      if (data.hasOwnProperty('consentDetailsList')) {
+        obj['consentDetailsList'] = ApiClient.convertToType(data['consentDetailsList'], [ConsentDetails]);
       }
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], ['String']);
@@ -313,6 +316,11 @@
    * @member {String} completedCount
    */
   exports.prototype['completedCount'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/ConsentDetails>} consentDetailsList
+   */
+  exports.prototype['consentDetailsList'] = undefined;
   /**
    * An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
    * @member {Array.<String>} customFields
