@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('bulkListId')) {
+        obj['bulkListId'] = ApiClient.convertToType(data['bulkListId'], 'String');
+      }
       if (data.hasOwnProperty('resumeDate')) {
         obj['resumeDate'] = ApiClient.convertToType(data['resumeDate'], 'String');
       }
@@ -67,6 +70,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} bulkListId
+   */
+  exports.prototype['bulkListId'] = undefined;
   /**
    * 
    * @member {String} resumeDate

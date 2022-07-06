@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccountSettingsInformation', 'model/RecipientDomain'], factory);
+    define(['ApiClient', 'model/AccountSettingsInformation', 'model/BrandsResponse', 'model/RecipientDomain'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccountSettingsInformation'), require('./RecipientDomain'));
+    module.exports = factory(require('../ApiClient'), require('./AccountSettingsInformation'), require('./BrandsResponse'), require('./RecipientDomain'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountSettingsInformation, root.Docusign.RecipientDomain);
+    root.Docusign.AccountInformation = factory(root.Docusign.ApiClient, root.Docusign.AccountSettingsInformation, root.Docusign.BrandsResponse, root.Docusign.RecipientDomain);
   }
-}(this, function(ApiClient, AccountSettingsInformation, RecipientDomain) {
+}(this, function(ApiClient, AccountSettingsInformation, BrandsResponse, RecipientDomain) {
   'use strict';
 
 
@@ -84,6 +84,9 @@
       }
       if (data.hasOwnProperty('billingProfile')) {
         obj['billingProfile'] = ApiClient.convertToType(data['billingProfile'], 'String');
+      }
+      if (data.hasOwnProperty('brands')) {
+        obj['brands'] = BrandsResponse.constructFromObject(data['brands']);
       }
       if (data.hasOwnProperty('canUpgrade')) {
         obj['canUpgrade'] = ApiClient.convertToType(data['canUpgrade'], 'String');
@@ -219,6 +222,10 @@
    * @member {String} billingProfile
    */
   exports.prototype['billingProfile'] = undefined;
+  /**
+   * @member {module:model/BrandsResponse} brands
+   */
+  exports.prototype['brands'] = undefined;
   /**
    * When set to **true**, specifies that you can upgrade the account through the API.
    * @member {String} canUpgrade

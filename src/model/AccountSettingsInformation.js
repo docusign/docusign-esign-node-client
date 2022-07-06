@@ -322,6 +322,12 @@
       if (data.hasOwnProperty('allowManagedStampsMetadata')) {
         obj['allowManagedStampsMetadata'] = SettingsMetadata.constructFromObject(data['allowManagedStampsMetadata']);
       }
+      if (data.hasOwnProperty('allowManagingEnvelopesOnBehalfOfOthers')) {
+        obj['allowManagingEnvelopesOnBehalfOfOthers'] = ApiClient.convertToType(data['allowManagingEnvelopesOnBehalfOfOthers'], 'String');
+      }
+      if (data.hasOwnProperty('allowManagingEnvelopesOnBehalfOfOthersMetadata')) {
+        obj['allowManagingEnvelopesOnBehalfOfOthersMetadata'] = SettingsMetadata.constructFromObject(data['allowManagingEnvelopesOnBehalfOfOthersMetadata']);
+      }
       if (data.hasOwnProperty('allowMarkup')) {
         obj['allowMarkup'] = ApiClient.convertToType(data['allowMarkup'], 'String');
       }
@@ -412,6 +418,12 @@
       if (data.hasOwnProperty('allowOrganizationToUseRemoteNotaryMetadata')) {
         obj['allowOrganizationToUseRemoteNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationToUseRemoteNotaryMetadata']);
       }
+      if (data.hasOwnProperty('allowOrganizationToUseThirdPartyElectronicNotary')) {
+        obj['allowOrganizationToUseThirdPartyElectronicNotary'] = ApiClient.convertToType(data['allowOrganizationToUseThirdPartyElectronicNotary'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationToUseThirdPartyElectronicNotaryMetadata')) {
+        obj['allowOrganizationToUseThirdPartyElectronicNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationToUseThirdPartyElectronicNotaryMetadata']);
+      }
       if (data.hasOwnProperty('allowPaymentProcessing')) {
         obj['allowPaymentProcessing'] = ApiClient.convertToType(data['allowPaymentProcessing'], 'String');
       }
@@ -477,6 +489,12 @@
       }
       if (data.hasOwnProperty('allowSecurityApplianceMetadata')) {
         obj['allowSecurityApplianceMetadata'] = SettingsMetadata.constructFromObject(data['allowSecurityApplianceMetadata']);
+      }
+      if (data.hasOwnProperty('allowSendingEnvelopesOnBehalfOfOthers')) {
+        obj['allowSendingEnvelopesOnBehalfOfOthers'] = ApiClient.convertToType(data['allowSendingEnvelopesOnBehalfOfOthers'], 'String');
+      }
+      if (data.hasOwnProperty('allowSendingEnvelopesOnBehalfOfOthersMetadata')) {
+        obj['allowSendingEnvelopesOnBehalfOfOthersMetadata'] = SettingsMetadata.constructFromObject(data['allowSendingEnvelopesOnBehalfOfOthersMetadata']);
       }
       if (data.hasOwnProperty('allowSendToCertifiedDelivery')) {
         obj['allowSendToCertifiedDelivery'] = ApiClient.convertToType(data['allowSendToCertifiedDelivery'], 'String');
@@ -579,6 +597,12 @@
       }
       if (data.hasOwnProperty('allowSupplementalDocumentsMetadata')) {
         obj['allowSupplementalDocumentsMetadata'] = SettingsMetadata.constructFromObject(data['allowSupplementalDocumentsMetadata']);
+      }
+      if (data.hasOwnProperty('allowThirdPartyElectronicNotary')) {
+        obj['allowThirdPartyElectronicNotary'] = ApiClient.convertToType(data['allowThirdPartyElectronicNotary'], 'String');
+      }
+      if (data.hasOwnProperty('allowThirdPartyElectronicNotaryMetadata')) {
+        obj['allowThirdPartyElectronicNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowThirdPartyElectronicNotaryMetadata']);
       }
       if (data.hasOwnProperty('allowUsersToAccessDirectory')) {
         obj['allowUsersToAccessDirectory'] = ApiClient.convertToType(data['allowUsersToAccessDirectory'], 'String');
@@ -2264,6 +2288,15 @@
    */
   exports.prototype['allowManagedStampsMetadata'] = undefined;
   /**
+   * 
+   * @member {String} allowManagingEnvelopesOnBehalfOfOthers
+   */
+  exports.prototype['allowManagingEnvelopesOnBehalfOfOthers'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowManagingEnvelopesOnBehalfOfOthersMetadata
+   */
+  exports.prototype['allowManagingEnvelopesOnBehalfOfOthersMetadata'] = undefined;
+  /**
    * When set to **true**, Document Markup is enabled for envelope. Account must have Document Markup enabled to use this
    * @member {String} allowMarkup
    */
@@ -2401,6 +2434,15 @@
   exports.prototype['allowOrganizationToUseRemoteNotaryMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowOrganizationToUseThirdPartyElectronicNotary
+   */
+  exports.prototype['allowOrganizationToUseThirdPartyElectronicNotary'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowOrganizationToUseThirdPartyElectronicNotaryMetadata
+   */
+  exports.prototype['allowOrganizationToUseThirdPartyElectronicNotaryMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowPaymentProcessing
    */
   exports.prototype['allowPaymentProcessing'] = undefined;
@@ -2498,6 +2540,15 @@
    * @member {module:model/SettingsMetadata} allowSecurityApplianceMetadata
    */
   exports.prototype['allowSecurityApplianceMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowSendingEnvelopesOnBehalfOfOthers
+   */
+  exports.prototype['allowSendingEnvelopesOnBehalfOfOthers'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowSendingEnvelopesOnBehalfOfOthersMetadata
+   */
+  exports.prototype['allowSendingEnvelopesOnBehalfOfOthersMetadata'] = undefined;
   /**
    * 
    * @member {String} allowSendToCertifiedDelivery
@@ -2652,6 +2703,15 @@
    * @member {module:model/SettingsMetadata} allowSupplementalDocumentsMetadata
    */
   exports.prototype['allowSupplementalDocumentsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowThirdPartyElectronicNotary
+   */
+  exports.prototype['allowThirdPartyElectronicNotary'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowThirdPartyElectronicNotaryMetadata
+   */
+  exports.prototype['allowThirdPartyElectronicNotaryMetadata'] = undefined;
   /**
    * 
    * @member {String} allowUsersToAccessDirectory

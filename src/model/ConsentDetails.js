@@ -21,20 +21,20 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopePublishTransactionErrorRollup = factory(root.Docusign.ApiClient);
+    root.Docusign.ConsentDetails = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The EnvelopePublishTransactionErrorRollup model module.
-   * @module model/EnvelopePublishTransactionErrorRollup
+   * The ConsentDetails model module.
+   * @module model/ConsentDetails
    */
 
   /**
-   * Constructs a new <code>EnvelopePublishTransactionErrorRollup</code>.
-   * @alias module:model/EnvelopePublishTransactionErrorRollup
+   * Constructs a new <code>ConsentDetails</code>.
+   * @alias module:model/ConsentDetails
    * @class
    */
   var exports = function() {
@@ -44,21 +44,24 @@
   };
 
   /**
-   * Constructs a <code>EnvelopePublishTransactionErrorRollup</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ConsentDetails</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/EnvelopePublishTransactionErrorRollup} obj Optional instance to populate.
-   * @return {module:model/EnvelopePublishTransactionErrorRollup} The populated <code>EnvelopePublishTransactionErrorRollup</code> instance.
+   * @param {module:model/ConsentDetails} obj Optional instance to populate.
+   * @return {module:model/ConsentDetails} The populated <code>ConsentDetails</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('count')) {
-        obj['count'] = ApiClient.convertToType(data['count'], 'String');
+      if (data.hasOwnProperty('consentKey')) {
+        obj['consentKey'] = ApiClient.convertToType(data['consentKey'], 'String');
       }
-      if (data.hasOwnProperty('errorType')) {
-        obj['errorType'] = ApiClient.convertToType(data['errorType'], 'String');
+      if (data.hasOwnProperty('deliveryMethod')) {
+        obj['deliveryMethod'] = ApiClient.convertToType(data['deliveryMethod'], 'String');
+      }
+      if (data.hasOwnProperty('signerConsentStatus')) {
+        obj['signerConsentStatus'] = ApiClient.convertToType(data['signerConsentStatus'], 'String');
       }
     }
     return obj;
@@ -66,14 +69,19 @@
 
   /**
    * 
-   * @member {String} count
+   * @member {String} consentKey
    */
-  exports.prototype['count'] = undefined;
+  exports.prototype['consentKey'] = undefined;
+  /**
+   * Reserved: For DocuSign use only.
+   * @member {String} deliveryMethod
+   */
+  exports.prototype['deliveryMethod'] = undefined;
   /**
    * 
-   * @member {String} errorType
+   * @member {String} signerConsentStatus
    */
-  exports.prototype['errorType'] = undefined;
+  exports.prototype['signerConsentStatus'] = undefined;
 
 
 
