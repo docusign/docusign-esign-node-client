@@ -66,6 +66,7 @@
   }
 
   /**
+   * An object that contains details about the billing plan.
    * @member {module:model/BillingPlan} billingPlan
    */
   exports.prototype['billingPlan'] = undefined;

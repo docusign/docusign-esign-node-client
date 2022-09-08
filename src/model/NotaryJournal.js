@@ -87,6 +87,7 @@
    */
   exports.prototype['documentName'] = undefined;
   /**
+   * The notary's jurisdiction. 
    * @member {module:model/Jurisdiction} jurisdiction
    */
   exports.prototype['jurisdiction'] = undefined;
@@ -96,6 +97,7 @@
    */
   exports.prototype['notaryJournalId'] = undefined;
   /**
+   * Additional journal data such as the witness list and signature image.
    * @member {module:model/NotaryJournalMetaData} notaryJournalMetaData
    */
   exports.prototype['notaryJournalMetaData'] = undefined;

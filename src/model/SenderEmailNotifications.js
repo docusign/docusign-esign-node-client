@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SenderEmailNotifications</code>.
+   * Contains the settings for the email notifications that senders receive about the envelopes that they send.
    * @alias module:model/SenderEmailNotifications
    * @class
    */

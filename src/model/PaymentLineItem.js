@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PaymentLineItem</code>.
+   * A line item describes details about an individual line item in a payment request.  
    * @alias module:model/PaymentLineItem
    * @class
    */

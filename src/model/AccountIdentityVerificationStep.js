@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccountIdentityVerificationStep</code>.
+   * Information about a specific step in an Identity Verification workflow.
    * @alias module:model/AccountIdentityVerificationStep
    * @class
    */

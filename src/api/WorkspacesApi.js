@@ -122,6 +122,7 @@
 
     /**
      * Creates a workspace file.
+     * This method adds a file to a workspace.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {String} folderId The ID of the folder being accessed.
@@ -246,6 +247,9 @@
 
     /**
      * Deletes workspace one or more specific files/folders from the given folder or root.
+     * This method deletes one or more files or sub-folders from a workspace folder or root.
+
+Note: To delete items from a workspace, the `status` of the workspace must be `active`.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} workspaceId Specifies the workspace ID GUID.
      * @param {String} folderId The ID of the folder being accessed.

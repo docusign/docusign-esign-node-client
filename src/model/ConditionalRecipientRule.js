@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConditionalRecipientRule</code>.
+   * A rule that defines a set of recipients and the conditions under which they will be used for the envelope.
    * @alias module:model/ConditionalRecipientRule
    * @class
    */
@@ -81,6 +82,7 @@
    */
   exports.prototype['order'] = undefined;
   /**
+   * A set of recipients that may be used for the envelope, depending on the `conditions` defined.
    * @member {module:model/RecipientGroup} recipientGroup
    */
   exports.prototype['recipientGroup'] = undefined;

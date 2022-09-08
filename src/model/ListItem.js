@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ListItem</code>.
+   * One of the selectable items in the `listItems` property of a [`list`](/docs/esign-rest-api/reference/envelopes/enveloperecipienttabs/create/) tab.
    * @alias module:model/ListItem
    * @class
    */
@@ -82,6 +83,7 @@
    */
   exports.prototype['selected'] = undefined;
   /**
+   * Metadata that indicates whether the `selected` property is editable.
    * @member {module:model/PropertyMetadata} selectedMetadata
    */
   exports.prototype['selectedMetadata'] = undefined;
@@ -91,6 +93,7 @@
    */
   exports.prototype['text'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} textMetadata
    */
   exports.prototype['textMetadata'] = undefined;
@@ -100,6 +103,7 @@
    */
   exports.prototype['value'] = undefined;
   /**
+   * Metadata that indicates whether the `value` property is editable.
    * @member {module:model/PropertyMetadata} valueMetadata
    */
   exports.prototype['valueMetadata'] = undefined;

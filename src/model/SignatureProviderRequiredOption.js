@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SignatureProviderRequiredOption</code>.
+   * Contains additional information that a specific signature provider requires.
    * @alias module:model/SignatureProviderRequiredOption
    * @class
    */

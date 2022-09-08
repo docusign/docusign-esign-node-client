@@ -186,6 +186,9 @@
       if (data.hasOwnProperty('shared')) {
         obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
+      if (data.hasOwnProperty('signatureProviderId')) {
+        obj['signatureProviderId'] = ApiClient.convertToType(data['signatureProviderId'], 'String');
+      }
       if (data.hasOwnProperty('stampType')) {
         obj['stampType'] = ApiClient.convertToType(data['stampType'], 'String');
       }
@@ -350,6 +353,7 @@
    */
   exports.prototype['lastModifiedByUserId'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/LocalePolicyTab} localePolicy
    */
   exports.prototype['localePolicy'] = undefined;
@@ -369,6 +373,7 @@
    */
   exports.prototype['maxNumericalValue'] = undefined;
   /**
+   * Contains the information necessary to map the tab to a field in SalesForce.
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
@@ -434,10 +439,16 @@
   exports.prototype['shared'] = undefined;
   /**
    * 
+   * @member {String} signatureProviderId
+   */
+  exports.prototype['signatureProviderId'] = undefined;
+  /**
+   * 
    * @member {String} stampType
    */
   exports.prototype['stampType'] = undefined;
   /**
+   * Metadata that indicates whether the `stampType` property is editable.
    * @member {module:model/PropertyMetadata} stampTypeMetadata
    */
   exports.prototype['stampTypeMetadata'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PowerFormsResponse</code>.
+   * A list of PowerForms.
    * @alias module:model/PowerFormsResponse
    * @class
    */

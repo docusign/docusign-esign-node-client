@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendingCopyTab</code>.
+   * A tab associated with the bulk send recipient. In a bulk send request, each recipient tab must match a recipient tab on the envelope or template that you want to send. To match up, the `tabLabel` for this tab and the `tabLabel` for the corresponding tab on the envelope or template must be the same.  For example, if the envelope has a placeholder text tab with the `tabLabel` `childName`, you must assign the same `tabLabel` `childName` to the tab here that you are populating with that information.
    * @alias module:model/BulkSendingCopyTab
    * @class
    */

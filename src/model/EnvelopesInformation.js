@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopesInformation</code>.
+   * Result set for the Envelopes: listStatusChanges method
    * @alias module:model/EnvelopesInformation
    * @class
    */

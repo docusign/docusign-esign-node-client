@@ -113,6 +113,7 @@
 
     /**
      * Get metadata for a given credit card.
+     * This method returns information about a credit card associated with an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/BillingApi~getCreditCardInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreditCardInformation}
@@ -164,6 +165,7 @@
 
     /**
      * Returns downgrade plan information for the specified account.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/BillingApi~getDowngradeRequestBillingInfoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DowngradRequestBillingInfoResponse}
@@ -804,6 +806,7 @@ Privileges required: account administrator
 
     /**
      * Queues downgrade billing plan request for an account.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/DowngradeBillingPlanInformation} optsOrCallback.downgradeBillingPlanInformation 

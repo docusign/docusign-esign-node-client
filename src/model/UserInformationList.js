@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>UserInformationList</code>.
+   * Contains a list of account users.
    * @alias module:model/UserInformationList
    * @class
    */

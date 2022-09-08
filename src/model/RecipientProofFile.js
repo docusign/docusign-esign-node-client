@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientProofFile</code>.
+   * The proof file of the recipient. [ID Evidence](/docs/idevidence-api/) uses proof files to store the identification data that recipients submit when verifying their ID with [ID Verification](/docs/esign-rest-api/esign101/concepts/documents/)
    * @alias module:model/RecipientProofFile
    * @class
    */

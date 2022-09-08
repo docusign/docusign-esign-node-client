@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientUpdateResponse</code>.
+   * The recipient details that are returned after you update the recipient.
    * @alias module:model/RecipientUpdateResponse
    * @class
    */
@@ -79,6 +80,7 @@
    */
   exports.prototype['combined'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -93,6 +95,7 @@
    */
   exports.prototype['recipientIdGuid'] = undefined;
   /**
+   * All of the tabs associated with the recipient.
    * @member {module:model/Tabs} tabs
    */
   exports.prototype['tabs'] = undefined;

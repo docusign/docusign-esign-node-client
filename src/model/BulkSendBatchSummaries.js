@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendBatchSummaries</code>.
+   * A list of bulk send batch summaries. 
    * @alias module:model/BulkSendBatchSummaries
    * @class
    */

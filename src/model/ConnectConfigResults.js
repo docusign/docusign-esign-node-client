@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConnectConfigResults</code>.
+   * This object contains the results of a ConnectConfigurations::GET method.
    * @alias module:model/ConnectConfigResults
    * @class
    */

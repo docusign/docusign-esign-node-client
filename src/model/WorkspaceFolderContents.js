@@ -89,6 +89,7 @@
    */
   exports.prototype['endPosition'] = undefined;
   /**
+   * The folder from which to return items. You can enter either the folder name or folder ID.
    * @member {module:model/WorkspaceItem} folder
    */
   exports.prototype['folder'] = undefined;

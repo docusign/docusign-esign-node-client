@@ -83,6 +83,7 @@
    */
   exports.prototype['currencyCode'] = undefined;
   /**
+   * 
    * @member {module:model/BillingInvoice} invoice
    */
   exports.prototype['invoice'] = undefined;

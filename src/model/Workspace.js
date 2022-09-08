@@ -104,6 +104,7 @@
    */
   exports.prototype['billableAccountId'] = undefined;
   /**
+   * 
    * @member {module:model/WorkspaceUser} callerInformation
    */
   exports.prototype['callerInformation'] = undefined;
@@ -113,6 +114,7 @@
    */
   exports.prototype['created'] = undefined;
   /**
+   * Details about the user who created the workspace.
    * @member {module:model/WorkspaceUser} createdByInformation
    */
   exports.prototype['createdByInformation'] = undefined;
@@ -122,10 +124,12 @@
    */
   exports.prototype['lastModified'] = undefined;
   /**
+   * Details about the user who last modified the workspace.
    * @member {module:model/WorkspaceUser} lastModifiedByInformation
    */
   exports.prototype['lastModifiedByInformation'] = undefined;
   /**
+   * Information about the settings for the workspace.
    * @member {module:model/WorkspaceSettings} settings
    */
   exports.prototype['settings'] = undefined;

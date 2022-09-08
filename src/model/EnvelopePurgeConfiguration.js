@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopePurgeConfiguration</code>.
+   * Contains information about the current envelope purge configuration for an account, which enables account administrators to purge documents from completed and voided envelopes after a set number of days (`retentionDays`). 
    * @alias module:model/EnvelopePurgeConfiguration
    * @class
    */

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientRouting</code>.
+   * Describes the recipient routing rules.
    * @alias module:model/RecipientRouting
    * @class
    */
@@ -62,6 +63,7 @@
   }
 
   /**
+   * The recipient routing rules.
    * @member {module:model/RecipientRules} rules
    */
   exports.prototype['rules'] = undefined;

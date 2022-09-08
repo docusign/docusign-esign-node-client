@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendRequest</code>.
+   * This object contains information about the envelope or template that you want to send in bulk.
    * @alias module:model/BulkSendRequest
    * @class
    */

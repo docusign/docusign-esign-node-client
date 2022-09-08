@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConnectSalesforceField</code>.
+   * This object is used to match a DocuSign field to a Salesforce field so that Docusign can send information to your Salesforce account.
    * @alias module:model/ConnectSalesforceField
    * @class
    */

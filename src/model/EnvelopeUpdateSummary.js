@@ -86,6 +86,7 @@
   }
 
   /**
+   * An object that describes the status of the bulk send envelopes.
    * @member {module:model/BulkEnvelopeStatus} bulkEnvelopeStatus
    */
   exports.prototype['bulkEnvelopeStatus'] = undefined;
@@ -95,6 +96,7 @@
    */
   exports.prototype['envelopeId'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -104,6 +106,7 @@
    */
   exports.prototype['listCustomFieldUpdateResults'] = undefined;
   /**
+   * Provides lock information about an envelope that a user has locked.
    * @member {module:model/LockInformation} lockInformation
    */
   exports.prototype['lockInformation'] = undefined;
@@ -118,6 +121,7 @@
    */
   exports.prototype['recipientUpdateResults'] = undefined;
   /**
+   * 
    * @member {module:model/Tabs} tabUpdateResults
    */
   exports.prototype['tabUpdateResults'] = undefined;

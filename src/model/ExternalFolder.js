@@ -94,6 +94,7 @@
    */
   exports.prototype['endPosition'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ExternalDocServiceErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

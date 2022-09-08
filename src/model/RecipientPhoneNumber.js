@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientPhoneNumber</code>.
+   * Describes the recipient phone number.
    * @alias module:model/RecipientPhoneNumber
    * @class
    */
@@ -76,6 +77,7 @@
    */
   exports.prototype['countryCode'] = undefined;
   /**
+   * Metadata that indicates if the `countryCode` property is editable.
    * @member {module:model/PropertyMetadata} countryCodeMetadata
    */
   exports.prototype['countryCodeMetadata'] = undefined;
@@ -85,6 +87,7 @@
    */
   exports.prototype['number'] = undefined;
   /**
+   * Metadata that indicates if the `number` property is editable.
    * @member {module:model/PropertyMetadata} numberMetadata
    */
   exports.prototype['numberMetadata'] = undefined;

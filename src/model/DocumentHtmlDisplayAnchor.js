@@ -82,6 +82,7 @@
    */
   exports.prototype['caseSensitive'] = undefined;
   /**
+   * This object defines how the HTML section inside the `startAnchor` and `endAnchor` displays.
    * @member {module:model/DocumentHtmlDisplaySettings} displaySettings
    */
   exports.prototype['displaySettings'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendingListSummaries</code>.
+   * This complex type contains summaries that provide basic information about the bulk send lists that belong to the current user.
    * @alias module:model/BulkSendingListSummaries
    * @class
    */

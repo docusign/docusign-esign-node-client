@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Group</code>.
+   * This object contains information about a group.
    * @alias module:model/Group
    * @class
    */
@@ -88,6 +89,7 @@
    */
   exports.prototype['dsGroupId'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

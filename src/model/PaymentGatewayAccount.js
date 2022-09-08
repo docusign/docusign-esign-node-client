@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PaymentGatewayAccount</code>.
+   * This object contains details about a payment gateway account.
    * @alias module:model/PaymentGatewayAccount
    * @class
    */
@@ -106,6 +107,7 @@
    */
   exports.prototype['allowCustomMetadata'] = undefined;
   /**
+   * This property contains metadata about the payment gateway account's configuration such as the API key, `userId`, and `merchantId` details.
    * @member {module:model/PaymentGatewayAccountSetting} config
    */
   exports.prototype['config'] = undefined;
@@ -145,6 +147,7 @@
    */
   exports.prototype['paymentGatewayDisplayName'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PayPalLegacySettings} payPalLegacySettings
    */
   exports.prototype['payPalLegacySettings'] = undefined;

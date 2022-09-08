@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientNamesResponse</code>.
+   * This response object contains a list of recipients.
    * @alias module:model/RecipientNamesResponse
    * @class
    */

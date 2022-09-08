@@ -81,6 +81,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * A complex element containing up to four Question/Answer pairs for forgotten password information.
    * @member {module:model/ForgottenPasswordInformation} forgottenPasswordInfo
    */
   exports.prototype['forgottenPasswordInfo'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccountIdentityVerificationWorkflow</code>.
+   * Specifies an Identity Verification workflow.
    * @alias module:model/AccountIdentityVerificationWorkflow
    * @class
    */
@@ -95,6 +96,7 @@
    */
   exports.prototype['inputOptions'] = undefined;
   /**
+   * The signature provider associated with the Identity Verification workflow.
    * @member {module:model/AccountSignatureProvider} signatureProvider
    */
   exports.prototype['signatureProvider'] = undefined;

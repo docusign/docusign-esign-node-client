@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendingList</code>.
+   * This object contains the details for the bulk send list.
    * @alias module:model/BulkSendingList
    * @class
    */

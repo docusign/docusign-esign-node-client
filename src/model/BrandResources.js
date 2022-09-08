@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BrandResources</code>.
+   * Information about the resource files that the brand uses for the email, signing, sending, and captive (embedded) signing experiences.
    * @alias module:model/BrandResources
    * @class
    */
@@ -83,6 +84,7 @@
   }
 
   /**
+   * The user ID of the user who created the brand resource.
    * @member {module:model/UserInfo} createdByUserInfo
    */
   exports.prototype['createdByUserInfo'] = undefined;
@@ -97,6 +99,7 @@
    */
   exports.prototype['dataNotSavedNotInMaster'] = undefined;
   /**
+   * Information about the user who last modified the brand resource.
    * @member {module:model/UserInfo} modifiedByUserInfo
    */
   exports.prototype['modifiedByUserInfo'] = undefined;

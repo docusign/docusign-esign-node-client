@@ -193,6 +193,7 @@
    */
   exports.prototype['addressFormat'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} addressFormatMetadata
    */
   exports.prototype['addressFormatMetadata'] = undefined;
@@ -207,6 +208,7 @@
    */
   exports.prototype['calendarType'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} calendarTypeMetadata
    */
   exports.prototype['calendarTypeMetadata'] = undefined;
@@ -216,6 +218,7 @@
    */
   exports.prototype['cultureName'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} cultureNameMetadata
    */
   exports.prototype['cultureNameMetadata'] = undefined;
@@ -225,6 +228,7 @@
    */
   exports.prototype['currencyCode'] = undefined;
   /**
+   * Metadata that indicates whether the `currencyCode` property is editable.
    * @member {module:model/SettingsMetadata} currencyCodeMetadata
    */
   exports.prototype['currencyCodeMetadata'] = undefined;
@@ -234,6 +238,7 @@
    */
   exports.prototype['currencyNegativeFormat'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} currencyNegativeFormatMetadata
    */
   exports.prototype['currencyNegativeFormatMetadata'] = undefined;
@@ -243,6 +248,7 @@
    */
   exports.prototype['currencyPositiveFormat'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} currencyPositiveFormatMetadata
    */
   exports.prototype['currencyPositiveFormatMetadata'] = undefined;
@@ -272,6 +278,7 @@
    */
   exports.prototype['dateFormat'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} dateFormatMetadata
    */
   exports.prototype['dateFormatMetadata'] = undefined;
@@ -341,6 +348,7 @@
    */
   exports.prototype['initialFormat'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} initialFormatMetadata
    */
   exports.prototype['initialFormatMetadata'] = undefined;
@@ -350,6 +358,7 @@
    */
   exports.prototype['nameFormat'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} nameFormatMetadata
    */
   exports.prototype['nameFormatMetadata'] = undefined;
@@ -359,6 +368,7 @@
    */
   exports.prototype['signDateFormat'] = undefined;
   /**
+   * Metadata that indicates whether the `signDateFormat` property is editable. 
    * @member {module:model/SettingsMetadata} signDateFormatMetadata
    */
   exports.prototype['signDateFormatMetadata'] = undefined;
@@ -368,6 +378,7 @@
    */
   exports.prototype['signTimeFormat'] = undefined;
   /**
+   * Metadata that indicates whether the `signTimeFormat` property is editable. 
    * @member {module:model/SettingsMetadata} signTimeFormatMetadata
    */
   exports.prototype['signTimeFormatMetadata'] = undefined;
@@ -377,6 +388,7 @@
    */
   exports.prototype['timeFormat'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} timeFormatMetadata
    */
   exports.prototype['timeFormatMetadata'] = undefined;
@@ -386,6 +398,7 @@
    */
   exports.prototype['timeZone'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} timeZoneMetadata
    */
   exports.prototype['timeZoneMetadata'] = undefined;

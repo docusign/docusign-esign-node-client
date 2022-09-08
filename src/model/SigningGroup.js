@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SigningGroup</code>.
+   * Contains details about a signing group. Signing groups enable you to send an envelope to a predefined group of recipients and have any one member of the group sign your documents. When you send an envelope to a signing group, anyone in the group can open it and sign it with their own signature.
    * @alias module:model/SigningGroup
    * @class
    */
@@ -99,6 +100,7 @@
    */
   exports.prototype['createdBy'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

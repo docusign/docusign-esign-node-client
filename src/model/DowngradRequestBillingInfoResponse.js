@@ -65,6 +65,7 @@
   }
 
   /**
+   * 
    * @member {module:model/DowngradePlanUpdateResponse} downgradePlanInformation
    */
   exports.prototype['downgradePlanInformation'] = undefined;

@@ -95,6 +95,7 @@
   }
 
   /**
+   * The user's address.
    * @member {module:model/AddressInformation} address
    */
   exports.prototype['address'] = undefined;
@@ -139,10 +140,12 @@
    */
   exports.prototype['title'] = undefined;
   /**
+   * A complex element consisting of:   - `lastSentDateTime`: The date and time the user last sent an envelope.  - `lastSignedDateTime`: The date and time the user last signed an envelope. - `sentCount`: The number of envelopes the user has sent. - `signedCount`: The number of envelopes the user has signed.  
    * @member {module:model/UsageHistory} usageHistory
    */
   exports.prototype['usageHistory'] = undefined;
   /**
+   * 
    * @member {module:model/UserInformation} userDetails
    */
   exports.prototype['userDetails'] = undefined;

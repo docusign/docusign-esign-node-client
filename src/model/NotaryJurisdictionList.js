@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>NotaryJurisdictionList</code>.
+   * A paged list of jurisdictions.
    * @alias module:model/NotaryJurisdictionList
    * @class
    */

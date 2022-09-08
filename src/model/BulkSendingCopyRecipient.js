@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendingCopyRecipient</code>.
+   * This object contains details about a bulk send recipient.
    * @alias module:model/BulkSendingCopyRecipient
    * @class
    */
@@ -156,6 +157,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * An optional complex type that sets a specific email subject and body for this recipient's notification email.   **Note:** You can set the `emailNotification` property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level `emailSubject` and `emailBlurb`. 
    * @member {module:model/RecipientEmailNotification} emailNotification
    */
   exports.prototype['emailNotification'] = undefined;
@@ -185,6 +187,7 @@
    */
   exports.prototype['idCheckConfigurationName'] = undefined;
   /**
+   * An object that contains input information related to a recipient ID check.
    * @member {module:model/IdCheckInformationInput} idCheckInformationInput
    */
   exports.prototype['idCheckInformationInput'] = undefined;
@@ -204,6 +207,7 @@
    */
   exports.prototype['note'] = undefined;
   /**
+   * When `idCheckConfigurationName` is set to `Phone Auth $`, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * `recipMayProvideNumber`: Boolean. When **true,** the recipient can use whatever phone number they choose. * `senderProvidedNumbers`: ArrayOfStrings.  A list of phone numbers the recipient can use. * `recordVoicePrint`: Reserved for DocuSign. * `validateRecipProvidedNumber`: Reserved for DocuSign.  
    * @member {module:model/RecipientPhoneAuthentication} phoneAuthentication
    */
   exports.prototype['phoneAuthentication'] = undefined;
@@ -233,6 +237,7 @@
    */
   exports.prototype['signingGroupId'] = undefined;
   /**
+   * When `idCheckConfigurationName` is set to `SMS Auth $`, you use this complex type to provide the recipient authentication method details. It contains the element `senderProvidedNumbers`, which is an array of phone numbers that the recipient can use for SMS text authentication.   
    * @member {module:model/RecipientSMSAuthentication} smsAuthentication
    */
   exports.prototype['smsAuthentication'] = undefined;

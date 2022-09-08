@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PermissionProfileInformation</code>.
+   * Contains details about the permission profiles associated with an account.
    * @alias module:model/PermissionProfileInformation
    * @class
    */

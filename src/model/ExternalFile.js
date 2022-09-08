@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ExternalFile</code>.
+   * This object contains information about a file or folder in cloud storage.
    * @alias module:model/ExternalFile
    * @class
    */

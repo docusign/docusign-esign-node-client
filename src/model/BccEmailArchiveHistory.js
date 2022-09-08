@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BccEmailArchiveHistory</code>.
+   * Contains details about the history of the BCC email archive configuration.
    * @alias module:model/BccEmailArchiveHistory
    * @class
    */
@@ -97,6 +98,7 @@
    */
   exports.prototype['modified'] = undefined;
   /**
+   * Details about the user who last modified the BCC email archive configuration.
    * @member {module:model/UserInfo} modifiedBy
    */
   exports.prototype['modifiedBy'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>DirectDebitProcessorInformation</code>.
+   * Contains information about a bank that processes a customer's direct debit payments.
    * @alias module:model/DirectDebitProcessorInformation
    * @class
    */

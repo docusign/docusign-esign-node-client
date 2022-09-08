@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeIdsRequest</code>.
+   * Lists of envelope and transaction IDs to use in the results.  If you use this request body with Envelopes: listStatus, you must set one or both of the following query parameters to the special value `request_body`:  - `envelope_ids=request_body` - `transaction_ids=request_body` 
    * @alias module:model/EnvelopeIdsRequest
    * @class
    */

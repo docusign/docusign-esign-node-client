@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ChunkedUploadPart</code>.
+   * An object that contains information about the chunked upload part.
    * @alias module:model/ChunkedUploadPart
    * @class
    */

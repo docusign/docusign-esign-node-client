@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccountPasswordQuestionsRequired</code>.
+   * Information about the number of password questions required (0 to 4) to confirm a user's identity when a user needs to reset their password.
    * @alias module:model/AccountPasswordQuestionsRequired
    * @class
    */

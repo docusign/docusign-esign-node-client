@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>IdCheckConfiguration</code>.
+   * A complex object specifying ID check configuration.
    * @alias module:model/IdCheckConfiguration
    * @class
    */

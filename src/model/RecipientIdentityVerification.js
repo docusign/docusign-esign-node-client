@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientIdentityVerification</code>.
+   * Specifies ID Verification applied on an envelope by workflow ID. See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods.
    * @alias module:model/RecipientIdentityVerification
    * @class
    */
@@ -78,6 +79,7 @@
    */
   exports.prototype['workflowId'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} workflowIdMetadata
    */
   exports.prototype['workflowIdMetadata'] = undefined;

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/CommentHistoryResult', 'model/CommentsPublish', 'model/ConnectHistoricalEnvelopeRepublish', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/Document', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopePublishTransaction', 'model/EnvelopeSummary', 'model/EnvelopeTransferRule', 'model/EnvelopeTransferRuleInformation', 'model/EnvelopeTransferRuleRequest', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/IdEvidenceResourceToken', 'model/IdEvidenceViewLink', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewUrl', 'model/Workflow'], factory);
+	define(['Configuration', 'ApiClient', 'model/Attachment', 'model/ChunkedUploadRequest', 'model/ChunkedUploadResponse', 'model/CommentHistoryResult', 'model/CommentsPublish', 'model/ConnectHistoricalEnvelopeRepublish', 'model/ConsoleViewRequest', 'model/ConsumerDisclosure', 'model/CorrectViewRequest', 'model/CustomFields', 'model/CustomFieldsEnvelope', 'model/DelayedRouting', 'model/Document', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/DocumentTemplateList', 'model/DocumentVisibilityList', 'model/EmailSettings', 'model/Envelope', 'model/EnvelopeAttachmentsRequest', 'model/EnvelopeAttachmentsResult', 'model/EnvelopeAuditEventResponse', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeDocumentsResult', 'model/EnvelopeFormData', 'model/EnvelopeIdsRequest', 'model/EnvelopeNotificationRequest', 'model/EnvelopePublishTransaction', 'model/EnvelopeSummary', 'model/EnvelopeTransferRule', 'model/EnvelopeTransferRuleInformation', 'model/EnvelopeTransferRuleRequest', 'model/EnvelopeUpdateSummary', 'model/EnvelopesInformation', 'model/ErrorDetails', 'model/IdEvidenceResourceToken', 'model/IdEvidenceViewLink', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/RecipientViewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/ScheduledSending', 'model/Tabs', 'model/TemplateDocumentVisibilityList', 'model/TemplateInformation', 'model/UserSignature', 'model/ViewUrl', 'model/Workflow', 'model/WorkflowStep'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/Attachment'), require('../model/ChunkedUploadRequest'), require('../model/ChunkedUploadResponse'), require('../model/CommentHistoryResult'), require('../model/CommentsPublish'), require('../model/ConnectHistoricalEnvelopeRepublish'), require('../model/ConsoleViewRequest'), require('../model/ConsumerDisclosure'), require('../model/CorrectViewRequest'), require('../model/CustomFields'), require('../model/CustomFieldsEnvelope'), require('../model/Document'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/DocumentTemplateList'), require('../model/DocumentVisibilityList'), require('../model/EmailSettings'), require('../model/Envelope'), require('../model/EnvelopeAttachmentsRequest'), require('../model/EnvelopeAttachmentsResult'), require('../model/EnvelopeAuditEventResponse'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeDocumentsResult'), require('../model/EnvelopeFormData'), require('../model/EnvelopeIdsRequest'), require('../model/EnvelopeNotificationRequest'), require('../model/EnvelopePublishTransaction'), require('../model/EnvelopeSummary'), require('../model/EnvelopeTransferRule'), require('../model/EnvelopeTransferRuleInformation'), require('../model/EnvelopeTransferRuleRequest'), require('../model/EnvelopeUpdateSummary'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'), require('../model/IdEvidenceResourceToken'), require('../model/IdEvidenceViewLink'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientPreviewRequest'), require('../model/RecipientViewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateDocumentVisibilityList'), require('../model/TemplateInformation'), require('../model/UserSignature'), require('../model/ViewUrl'), require('../model/Workflow'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/Attachment'), require('../model/ChunkedUploadRequest'), require('../model/ChunkedUploadResponse'), require('../model/CommentHistoryResult'), require('../model/CommentsPublish'), require('../model/ConnectHistoricalEnvelopeRepublish'), require('../model/ConsoleViewRequest'), require('../model/ConsumerDisclosure'), require('../model/CorrectViewRequest'), require('../model/CustomFields'), require('../model/CustomFieldsEnvelope'), require('../model/DelayedRouting'), require('../model/Document'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/DocumentTemplateList'), require('../model/DocumentVisibilityList'), require('../model/EmailSettings'), require('../model/Envelope'), require('../model/EnvelopeAttachmentsRequest'), require('../model/EnvelopeAttachmentsResult'), require('../model/EnvelopeAuditEventResponse'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeDocumentsResult'), require('../model/EnvelopeFormData'), require('../model/EnvelopeIdsRequest'), require('../model/EnvelopeNotificationRequest'), require('../model/EnvelopePublishTransaction'), require('../model/EnvelopeSummary'), require('../model/EnvelopeTransferRule'), require('../model/EnvelopeTransferRuleInformation'), require('../model/EnvelopeTransferRuleRequest'), require('../model/EnvelopeUpdateSummary'), require('../model/EnvelopesInformation'), require('../model/ErrorDetails'), require('../model/IdEvidenceResourceToken'), require('../model/IdEvidenceViewLink'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientPreviewRequest'), require('../model/RecipientViewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/ScheduledSending'), require('../model/Tabs'), require('../model/TemplateDocumentVisibilityList'), require('../model/TemplateInformation'), require('../model/UserSignature'), require('../model/ViewUrl'), require('../model/Workflow'), require('../model/WorkflowStep'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.ChunkedUploadRequest, root.Docusign.ChunkedUploadResponse, root.Docusign.CommentHistoryResult, root.Docusign.CommentsPublish, root.Docusign.ConnectHistoricalEnvelopeRepublish, root.Docusign.ConsoleViewRequest, root.Docusign.ConsumerDisclosure, root.Docusign.CorrectViewRequest, root.Docusign.CustomFields, root.Docusign.CustomFieldsEnvelope, root.Docusign.Document, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.DocumentTemplateList, root.Docusign.DocumentVisibilityList, root.Docusign.EmailSettings, root.Docusign.Envelope, root.Docusign.EnvelopeAttachmentsRequest, root.Docusign.EnvelopeAttachmentsResult, root.Docusign.EnvelopeAuditEventResponse, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeDocumentsResult, root.Docusign.EnvelopeFormData, root.Docusign.EnvelopeIdsRequest, root.Docusign.EnvelopeNotificationRequest, root.Docusign.EnvelopePublishTransaction, root.Docusign.EnvelopeSummary, root.Docusign.EnvelopeTransferRule, root.Docusign.EnvelopeTransferRuleInformation, root.Docusign.EnvelopeTransferRuleRequest, root.Docusign.EnvelopeUpdateSummary, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails, root.Docusign.IdEvidenceResourceToken, root.Docusign.IdEvidenceViewLink, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientPreviewRequest, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateDocumentVisibilityList, root.Docusign.TemplateInformation, root.Docusign.UserSignature, root.Docusign.ViewUrl, root.Docusign.Workflow);
+    root.Docusign.EnvelopesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.Attachment, root.Docusign.ChunkedUploadRequest, root.Docusign.ChunkedUploadResponse, root.Docusign.CommentHistoryResult, root.Docusign.CommentsPublish, root.Docusign.ConnectHistoricalEnvelopeRepublish, root.Docusign.ConsoleViewRequest, root.Docusign.ConsumerDisclosure, root.Docusign.CorrectViewRequest, root.Docusign.CustomFields, root.Docusign.CustomFieldsEnvelope, root.Docusign.DelayedRouting, root.Docusign.Document, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.DocumentTemplateList, root.Docusign.DocumentVisibilityList, root.Docusign.EmailSettings, root.Docusign.Envelope, root.Docusign.EnvelopeAttachmentsRequest, root.Docusign.EnvelopeAttachmentsResult, root.Docusign.EnvelopeAuditEventResponse, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeDocumentsResult, root.Docusign.EnvelopeFormData, root.Docusign.EnvelopeIdsRequest, root.Docusign.EnvelopeNotificationRequest, root.Docusign.EnvelopePublishTransaction, root.Docusign.EnvelopeSummary, root.Docusign.EnvelopeTransferRule, root.Docusign.EnvelopeTransferRuleInformation, root.Docusign.EnvelopeTransferRuleRequest, root.Docusign.EnvelopeUpdateSummary, root.Docusign.EnvelopesInformation, root.Docusign.ErrorDetails, root.Docusign.IdEvidenceResourceToken, root.Docusign.IdEvidenceViewLink, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientPreviewRequest, root.Docusign.RecipientViewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.ScheduledSending, root.Docusign.Tabs, root.Docusign.TemplateDocumentVisibilityList, root.Docusign.TemplateInformation, root.Docusign.UserSignature, root.Docusign.ViewUrl, root.Docusign.Workflow, root.Docusign.WorkflowStep);
   }
-}(this, function(Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, CommentHistoryResult, CommentsPublish, ConnectHistoricalEnvelopeRepublish, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, Document, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocument, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopePublishTransaction, EnvelopeSummary, EnvelopeTransferRule, EnvelopeTransferRuleInformation, EnvelopeTransferRuleRequest, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, IdEvidenceResourceToken, IdEvidenceViewLink, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewUrl, Workflow) {
+}(this, function(Configuration, ApiClient, Attachment, ChunkedUploadRequest, ChunkedUploadResponse, CommentHistoryResult, CommentsPublish, ConnectHistoricalEnvelopeRepublish, ConsoleViewRequest, ConsumerDisclosure, CorrectViewRequest, CustomFields, CustomFieldsEnvelope, DelayedRouting, Document, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, DocumentTemplateList, DocumentVisibilityList, EmailSettings, Envelope, EnvelopeAttachmentsRequest, EnvelopeAttachmentsResult, EnvelopeAuditEventResponse, EnvelopeDefinition, EnvelopeDocument, EnvelopeDocumentsResult, EnvelopeFormData, EnvelopeIdsRequest, EnvelopeNotificationRequest, EnvelopePublishTransaction, EnvelopeSummary, EnvelopeTransferRule, EnvelopeTransferRuleInformation, EnvelopeTransferRuleRequest, EnvelopeUpdateSummary, EnvelopesInformation, ErrorDetails, IdEvidenceResourceToken, IdEvidenceViewLink, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, RecipientViewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, ScheduledSending, Tabs, TemplateDocumentVisibilityList, TemplateInformation, UserSignature, ViewUrl, Workflow, WorkflowStep) {
   'use strict';
 
   /**
@@ -208,6 +208,7 @@
 
     /**
      * Initiate a new ChunkedUpload.
+     * This method initiates a new chunked upload with the first part of the content.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/ChunkedUploadRequest} optsOrCallback.chunkedUploadRequest 
@@ -544,6 +545,13 @@ Each custom field used in an envelope must have a unique name.
 
     /**
      * Get Responsive HTML Preview for a document in an envelope.
+     * Creates a preview of the
+[responsive](/docs/esign-rest-api/esign101/concepts/responsive/)
+HTML version of a specific document.
+This method enables you to preview a PDF document
+conversion to responsive HTML across device types prior to sending.
+
+The request body is a `documentHtmlDefinition` object, which holds the responsive signing parameters that define how to generate the HTML version of the signing document.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -618,6 +626,30 @@ Each custom field used in an envelope must have a unique name.
 
     /**
      * Adds the tabs to an envelope document
+     * Adds tabs to the document specified by `documentId` in the
+envelope specified by `envelopeId`.
+
+In the request body, you only need to specify the tabs that your
+are adding. For example, to add a text
+[prefill tab](/docs/esign-rest-api/reference/envelopes/envelopedocumenttabs/create/#definition__tabs_prefilltabs),
+your request body might look like this:
+
+```
+{
+  "prefillTabs": {
+    "textTabs": [
+      {
+        "value": "a prefill text tab",
+        "pageNumber": "1",
+        "documentId": "1",
+        "xPosition": 316,
+        "yPosition": 97
+      }
+    ]
+  }
+}
+```
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -1103,6 +1135,7 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
 
     /**
      * Posts a list of comments for authorized user
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -1170,6 +1203,9 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
 
     /**
      * Provides a URL to start a recipient view of the Envelope UI
+     * This method returns a URL for an envelope recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients' experience.
+
+For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -1237,6 +1273,24 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
 
     /**
      * Provides a URL to start a shared recipient view of the Envelope UI
+     * Returns a URL that enables you to embed the DocuSign UI recipient view of a [shared envelope](https://support.docusign.com/en/guides/ndse-admin-guide-share-envelopes) in your applications. This is the view that a user sees of an envelope that a recipient on the same account has shared with them.
+
+Due to screen space issues,
+do not use an `<iframe>` for embedded operations on mobile devices.
+For iOS devices, DocuSign recommends using a WebView.
+
+### Revoking the URL
+
+You can revoke this URL by making
+a DELETE HTTP request to the URL
+with no request body.
+
+### Related topics
+
+- [Embedded signing and sending](/docs/esign-rest-api/esign101/concepts/embedding/)
+- [How to send an envelope via your app](/docs/esign-rest-api/how-to/embedded-sending/)
+- [How to embed the DocuSign UI in your app](/docs/esign-rest-api/how-to/embed-ui/)
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -1304,6 +1358,18 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
 
     /**
      * Add envelope transfer rules to an account.
+     * This method creates an envelope transfer rule.
+
+When you create an envelope transfer rule, you specify the following properties: 
+
+- `eventType`
+- `fromGroups`
+- `toUser`
+- `toFolder`
+- `carbonCopyOriginalOwner`
+- `enabled`
+
+**Note:** Only Administrators can create envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/EnvelopeTransferRuleRequest} optsOrCallback.envelopeTransferRuleRequest 
@@ -1349,6 +1415,73 @@ To prevent this, the query parameter `merge_roles_on_draft` should be added when
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/transfer_rules', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the createEnvelopeWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~createEnvelopeWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkflowStep} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Creates and adds a new workflow step definition for an envelope's workflow
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/WorkflowStep} optsOrCallback.workflowStep 
+     * @param {module:api/EnvelopesApi~createEnvelopeWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WorkflowStep}
+     */
+    this.createEnvelopeWorkflowStepDefinition = function(accountId, envelopeId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['workflowStep'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createEnvelopeWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling createEnvelopeWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = WorkflowStep;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1566,6 +1699,7 @@ For an in process envelope, one that has been sent and has not been completed or
 
     /**
      * Provides a link to access the Identity manual review related to a recipient.
+     * This method returns the URL of the page that allows a sender to [manually review](https://support.docusign.com/en/guides/ndse-user-guide-send-documents-with-id-verification) the ID of a recipient. 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
@@ -1631,6 +1765,7 @@ For an in process envelope, one that has been sent and has not been completed or
 
     /**
      * Returns a link to access to the identity events stored in the proof service related to this recipient.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
@@ -1696,6 +1831,7 @@ For an in process envelope, one that has been sent and has not been completed or
 
     /**
      * Returns a resource token to get access to the identity events stored in the proof service related to this recipient.
+     * Creates a resource token for a sender. This token allows a sender to return identification data for a recipient using the [ID Evidence API](/docs/idevidence-api/).
      * @param {String} tokenScopes 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
@@ -1840,6 +1976,18 @@ An entry is added into the Security Level section of the DocuSign Certificate of
 
     /**
      * Get Responsive HTML Preview for all documents in an envelope.
+     * Creates a preview of the
+[responsive](/docs/esign-rest-api/esign101/concepts/responsive/),
+HTML versions of all of the documents in an
+envelope. This method enables you to preview the
+PDF document conversions to responsive HTML across
+device types prior to sending.
+
+The request body is a `documentHtmlDefinition`
+object, which holds the responsive signing
+parameters that define how to generate the HTML
+version of the documents.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -2045,6 +2193,73 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
+     * (Optional) Callback function to receive the result of the createTemplateWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~createTemplateWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkflowStep} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Creates and adds a new workflow step definition for a template's workflow
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/WorkflowStep} optsOrCallback.workflowStep 
+     * @param {module:api/EnvelopesApi~createTemplateWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WorkflowStep}
+     */
+    this.createTemplateWorkflowStepDefinition = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['workflowStep'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createTemplateWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling createTemplateWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = WorkflowStep;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the deleteAttachments operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteAttachmentsCallback
      * @param {String} error Error message, if any.
@@ -2054,6 +2269,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
     /**
      * Delete one or more attachments from a DRAFT envelope.
+     * Deletes one or more attachments from a draft envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -2121,6 +2337,15 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
     /**
      * Delete an existing ChunkedUpload.
+     * Deletes a chunked upload that has been committed but not yet consumed.
+
+This method cannot be used to delete the following types of chunked uploads, which the system deletes automatically:
+
+
+- Chunked uploads that have been consumed by use in another API call.
+- Expired chunked uploads.
+
+**Note:** If you are aware of a chunked upload that can be discarded, the best practice is to explicitly delete it. If you wait for the system to automatically delete it after it expires, the chunked upload will continue to count against your quota.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} chunkedUploadId 
      * @param {module:api/EnvelopesApi~deleteChunkedUploadCallback} callback The callback function, accepting three arguments: error, data, response
@@ -2394,6 +2619,9 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
     /**
      * Deletes tabs from an envelope document
+     * Deletes tabs from the document specified by `documentId` in the
+envelope specified by `envelopeId`.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -2595,6 +2823,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
     /**
      * Revokes the correction view URL to the Envelope UI
+     * Revokes the correction view URL to the Envelope UI.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -2652,6 +2881,127 @@ Important: iFrames should not be used for embedded operations on mobile devices 
     };
 
     /**
+     * (Optional) Callback function to receive the result of the deleteEnvelopeDelayedRoutingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deleteEnvelopeDelayedRoutingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes the delayed routing rules for the specified envelope workflow step.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~deleteEnvelopeDelayedRoutingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteEnvelopeDelayedRoutingDefinition = function(accountId, envelopeId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteEnvelopeDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling deleteEnvelopeDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling deleteEnvelopeDelayedRoutingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteEnvelopeScheduledSendingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deleteEnvelopeScheduledSendingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes the scheduled sending rules for the envelope's workflow.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {module:api/EnvelopesApi~deleteEnvelopeScheduledSendingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteEnvelopeScheduledSendingDefinition = function(accountId, envelopeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteEnvelopeScheduledSendingDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling deleteEnvelopeScheduledSendingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the deleteEnvelopeTransferRules operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteEnvelopeTransferRulesCallback
      * @param {String} error Error message, if any.
@@ -2661,6 +3011,9 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
     /**
      * Delete envelope transfer rules for an account.
+     * This method deletes an envelope transfer rule.
+
+**Note:** Only Administrators can delete envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeTransferRuleId 
      * @param {module:api/EnvelopesApi~deleteEnvelopeTransferRulesCallback} callback The callback function, accepting three arguments: error, data, response
@@ -2718,6 +3071,8 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
     /**
      * Delete the workflow definition for an envelope.
+     * Deletes the specified envelope's workflow definition if it has one.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~deleteEnvelopeWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
@@ -2760,6 +3115,70 @@ Important: iFrames should not be used for embedded operations on mobile devices 
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteEnvelopeWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deleteEnvelopeWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes the envelope workflow step definition for an envelope's workflow by step id.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~deleteEnvelopeWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteEnvelopeWorkflowStepDefinition = function(accountId, envelopeId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteEnvelopeWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling deleteEnvelopeWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling deleteEnvelopeWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3036,6 +3455,127 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
     };
 
     /**
+     * (Optional) Callback function to receive the result of the deleteTemplateDelayedRoutingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deleteTemplateDelayedRoutingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes the delayed routing rules for the specified template workflow step.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~deleteTemplateDelayedRoutingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteTemplateDelayedRoutingDefinition = function(accountId, templateId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteTemplateDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteTemplateDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling deleteTemplateDelayedRoutingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteTemplateScheduledSendingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deleteTemplateScheduledSendingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes the scheduled sending rules for the template's workflow.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/EnvelopesApi~deleteTemplateScheduledSendingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteTemplateScheduledSendingDefinition = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteTemplateScheduledSendingDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteTemplateScheduledSendingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the deleteTemplateWorkflowDefinition operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~deleteTemplateWorkflowDefinitionCallback
      * @param {String} error Error message, if any.
@@ -3045,6 +3585,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
     /**
      * Delete the workflow definition for a template.
+     * Deletes the specified template's workflow definition if it has one.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {module:api/EnvelopesApi~deleteTemplateWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3087,6 +3628,70 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/workflow', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteTemplateWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~deleteTemplateWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes the workflow step definition for an template's workflow by step id.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~deleteTemplateWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteTemplateWorkflowStepDefinition = function(accountId, templateId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteTemplateWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling deleteTemplateWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling deleteTemplateWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3174,6 +3779,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
     /**
      * Retrieves an attachment from the envelope.
+     * Retrieves an attachment from an envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} attachmentId 
@@ -3238,6 +3844,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
     /**
      * Returns a list of attachments associated with the specified envelope
+     * Returns a list of attachments associated with a specified envelope
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~getAttachmentsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3296,6 +3903,9 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
     /**
      * Retrieves the current metadata of a ChunkedUpload.
+     * Returns the details (but not the content) about a chunked upload.
+
+**Note:** You cannot obtain details about a chunked upload that has expired, been deleted, or consumed by other actions.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} chunkedUploadId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -3364,6 +3974,13 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
 
     /**
      * Gets comment transcript for envelope and user
+     * Retrieves a PDF file containing all of the comments that senders and recipients have added to the documents in an envelope.
+
+The response body of this method is the PDF file as a byte
+stream.
+
+
+**Note:** Comments are disabled by default. To use the comments feature, an account administrator must enable comments on the account (in the `accountSettingsInformation` object, set the `enableSigningExtensionComments` property to **true**). 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -3438,7 +4055,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
      * @param {String} recipientId The ID of the recipient being accessed.
      * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.langCode2 The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} optsOrCallback.langCode2 The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/EnvelopesApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
@@ -3777,6 +4394,9 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
     /**
      * Returns tabs on the document.
+     * Returns the tabs on the document specified by `documentId` in the
+envelope specified by `envelopeId`.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -3975,6 +4595,71 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getEnvelopeDelayedRoutingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getEnvelopeDelayedRoutingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DelayedRouting} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the delayed routing rules for an envelope's workflow step definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~getEnvelopeDelayedRoutingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DelayedRouting}
+     */
+    this.getEnvelopeDelayedRoutingDefinition = function(accountId, envelopeId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling getEnvelopeDelayedRoutingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DelayedRouting;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getEnvelopeDocumentHtmlDefinitions operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEnvelopeDocumentHtmlDefinitionsCallback
      * @param {String} error Error message, if any.
@@ -3984,6 +4669,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
     /**
      * Get the Original HTML Definition used to generate the Responsive HTML for a given document.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -4049,6 +4735,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
     /**
      * Get the Original HTML Definition used to generate the Responsive HTML for the envelope.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~getEnvelopeHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -4098,6 +4785,64 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getEnvelopeScheduledSendingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getEnvelopeScheduledSendingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ScheduledSending} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the scheduled sending rules for an envelope's workflow definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {module:api/EnvelopesApi~getEnvelopeScheduledSendingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ScheduledSending}
+     */
+    this.getEnvelopeScheduledSendingDefinition = function(accountId, envelopeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeScheduledSendingDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeScheduledSendingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ScheduledSending;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getEnvelopeTransferRules operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getEnvelopeTransferRulesCallback
      * @param {String} error Error message, if any.
@@ -4107,6 +4852,9 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
     /**
      * Returns a list of envelope transfer rules in the specified account.
+     * This method retrieves a list of envelope transfer rules associated with an account.
+
+**Note:** Only Administrators can create and use envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count 
@@ -4170,6 +4918,7 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
     /**
      * Returns the workflow definition for an envelope.
+     * Returns an envelope's workflow definition if the envelope specified by `envelopeId` has one.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~getEnvelopeWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
@@ -4219,6 +4968,71 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getEnvelopeWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getEnvelopeWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkflowStep} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the workflow step definition for an envelope by step id.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~getEnvelopeWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WorkflowStep}
+     */
+    this.getEnvelopeWorkflowStepDefinition = function(accountId, envelopeId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopeWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopeWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling getEnvelopeWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = WorkflowStep;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getFormData operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getFormDataCallback
      * @param {String} error Error message, if any.
@@ -4228,6 +5042,14 @@ To retrieve the combined content replace the `{documentId}` parameter in the end
 
     /**
      * Returns envelope form data for an existing envelope.
+     * This method downloads the envelope and tab data (also called form data) from any in-process, completed, or canceled envelope that you sent or that is shared with you. Recipients who are also full administrators on an account can view form data for any envelopes that another user on the account has sent to them.
+
+**Note:** To use this feature, the Sending Setting "Allow sender to download form data" must be enabled for the account.
+
+### Related topics
+
+- [How to get envelope tab values](/docs/esign-rest-api/how-to/get-envelope-tab-values/)
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~getFormDataCallback} callback The callback function, accepting three arguments: error, data, response
@@ -4406,6 +5228,9 @@ If the call is made by the locked by user and the request has the same integrato
 
     /**
      * Returns tabs on the specified page.
+     * Returns the tabs from the page specified by `pageNumber` of the document specified by `documentId` in the
+envelope specified by `envelopeId`.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -4478,6 +5303,7 @@ If the call is made by the locked by user and the request has the same integrato
 
     /**
      * Returns document page image(s) based on input.
+     * Returns images of the pages in a document for display based on the parameters that you specify.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -4565,6 +5391,7 @@ If the call is made by the locked by user and the request has the same integrato
 
     /**
      * Returns document visibility for the recipients
+     * This method returns information about document visibility for a recipient.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
@@ -4864,6 +5691,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
 
     /**
      * Get encrypted tabs for envelope.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~getTabsBlobCallback} callback The callback function, accepting three arguments: error, data, response
@@ -4912,6 +5740,71 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getTemplateDelayedRoutingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getTemplateDelayedRoutingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DelayedRouting} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the delayed routing rules for a template's workflow step definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~getTemplateDelayedRoutingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DelayedRouting}
+     */
+    this.getTemplateDelayedRoutingDefinition = function(accountId, templateId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getTemplateDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getTemplateDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling getTemplateDelayedRoutingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DelayedRouting;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getTemplateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
@@ -4921,6 +5814,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
 
     /**
      * Returns document visibility for the recipients
+     * This method returns information about document visibility for a template recipient.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
@@ -4977,6 +5871,64 @@ Older envelopes might only have chromed images. If getting the non-chromed image
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getTemplateScheduledSendingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getTemplateScheduledSendingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ScheduledSending} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the scheduled sending rules for a template's workflow definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/EnvelopesApi~getTemplateScheduledSendingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ScheduledSending}
+     */
+    this.getTemplateScheduledSendingDefinition = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getTemplateScheduledSendingDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getTemplateScheduledSendingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ScheduledSending;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getTemplateWorkflowDefinition operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~getTemplateWorkflowDefinitionCallback
      * @param {String} error Error message, if any.
@@ -4986,6 +5938,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
 
     /**
      * Returns the workflow definition for a template.
+     * Returns template's workflow definition if the template specified by `templateId` has one.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {module:api/EnvelopesApi~getTemplateWorkflowDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
@@ -5029,6 +5982,71 @@ Older envelopes might only have chromed images. If getting the non-chromed image
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/workflow', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getTemplateWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getTemplateWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkflowStep} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the workflow step definition for a template by step id.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} workflowStepId 
+     * @param {module:api/EnvelopesApi~getTemplateWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WorkflowStep}
+     */
+    this.getTemplateWorkflowStepDefinition = function(accountId, templateId, workflowStepId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getTemplateWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getTemplateWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling getTemplateWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = WorkflowStep;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -5829,6 +6847,7 @@ Client applications should check that the statuses they are requesting make sens
 
     /**
      * Add an attachment to a DRAFT or IN-PROCESS envelope.
+     * Adds an attachment to a draft or in-process envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} attachmentId 
@@ -5903,6 +6922,11 @@ Client applications should check that the statuses they are requesting make sens
 
     /**
      * Add one or more attachments to a DRAFT or IN-PROCESS envelope.
+     * Adds one or more attachments to a draft or in-process envelope.
+
+Envelope attachments are files that an application can include in an envelope. They are not converted to PDF. Envelope attachments are available only through the API. There is no user interface in the DocuSign web application for them.
+
+For a list of supported file formats, see [Supported File Formats](https://support.docusign.com/guides/ndse-user-guide-supported-file-formats).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -6147,6 +7171,11 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
 
     /**
      * Integrity-Check and Commit a ChunkedUpload, readying it for use elsewhere.
+     * This method checks the integrity of a chunked upload and then commits it. When this request is successful, the chunked upload is then ready to be referenced in other API calls.
+
+If the request is unsuccessful, ensure that you have uploaded all of the parts by using the Update method.
+
+**Note:** After you commit a chunked upload, it no longer accepts additional parts.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} chunkedUploadId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -6215,6 +7244,21 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
 
     /**
      * Add a chunk, a chunk 'part', to an existing ChunkedUpload.
+     * Adds a chunk or part to an existing chunked upload. After you use the Create method to initiate a new chunked upload and upload the first part, 
+use this method to upload subsequent parts.
+
+For simplicity, DocuSign recommends that you upload the parts in their sequential order ( 1,2, 3, 4, etc.). The Create method adds the first part and assigns it the `sequence` value `0`. As a result, DocuSign recommends that you start with a `sequence` value of `1` when you use this method, and continue uploading parts contiguously until you have uploaded the entirety of the original content to DocuSign.
+
+Example:
+
+
+```
+PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/1
+PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/2
+PUT /v2.1/accounts/{accountId}/chunked_uploads/{chunkedUploadId}/3
+```
+
+**Note:** You cannot replace a part that DocuSign has already received, or add parts to a chunked upload that is already successfully committed.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} chunkedUploadId 
      * @param {String} chunkedUploadPartSeq 
@@ -6501,6 +7545,9 @@ Each custom field used in an envelope must have a unique name.
 
     /**
      * Updates the tabs for an envelope document
+     * Updates tabs in the document specified by `documentId` in the
+envelope specified by `envelopeId`.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -6704,6 +7751,147 @@ This can also be used to delete an individual email override setting by using an
     };
 
     /**
+     * (Optional) Callback function to receive the result of the updateEnvelopeDelayedRoutingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~updateEnvelopeDelayedRoutingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DelayedRouting} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the delayed routing rules for an envelope's workflow step definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} workflowStepId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/DelayedRouting} optsOrCallback.delayedRouting 
+     * @param {module:api/EnvelopesApi~updateEnvelopeDelayedRoutingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DelayedRouting}
+     */
+    this.updateEnvelopeDelayedRoutingDefinition = function(accountId, envelopeId, workflowStepId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['delayedRouting'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopeDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling updateEnvelopeDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling updateEnvelopeDelayedRoutingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DelayedRouting;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}/delayedRouting', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the updateEnvelopeScheduledSendingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~updateEnvelopeScheduledSendingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ScheduledSending} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the scheduled sending rules for an envelope's workflow definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ScheduledSending} optsOrCallback.scheduledSending 
+     * @param {module:api/EnvelopesApi~updateEnvelopeScheduledSendingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ScheduledSending}
+     */
+    this.updateEnvelopeScheduledSendingDefinition = function(accountId, envelopeId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['scheduledSending'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopeScheduledSendingDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling updateEnvelopeScheduledSendingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ScheduledSending;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/scheduledSending', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the updateEnvelopeTransferRule operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateEnvelopeTransferRuleCallback
      * @param {String} error Error message, if any.
@@ -6713,6 +7901,11 @@ This can also be used to delete an individual email override setting by using an
 
     /**
      * Update an envelope transfer rule for an account.
+     * This method changes the status of an envelope transfer rule. You use this method to change whether or not the rule is enabled.
+
+You must include the `envelopeTransferRuleId` both as a query parameter, and in the request body.
+
+**Note:** You cannot change any other information about the envelope transfer rule. Only Administrators can update an envelope transfer rule. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeTransferRuleId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -6780,6 +7973,9 @@ This can also be used to delete an individual email override setting by using an
 
     /**
      * Update envelope transfer rules for an account.
+     * This method changes the status for one or more envelope transfer rules based on the `envelopeTransferRuleId`s in the request body. You use this method to change whether or not the rules are enabled.
+
+**Note:** You cannot change any other information about the envelope transfer rule. Only Administrators can update envelope transfer rules. In addition, to use envelope transfer rules, the **Transfer Custody** feature must be enabled for your account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/EnvelopeTransferRuleInformation} optsOrCallback.envelopeTransferRuleInformation 
@@ -6840,6 +8036,7 @@ This can also be used to delete an individual email override setting by using an
 
     /**
      * Updates the envelope workflow definition for an envelope.
+     * Updates the specified envelope's workflow definition if  it has one.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -6892,6 +8089,80 @@ This can also be used to delete an individual email override setting by using an
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the updateEnvelopeWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~updateEnvelopeWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkflowStep} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the envelope workflow step definition for an envelope.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} workflowStepId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/WorkflowStep} optsOrCallback.workflowStep 
+     * @param {module:api/EnvelopesApi~updateEnvelopeWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WorkflowStep}
+     */
+    this.updateEnvelopeWorkflowStepDefinition = function(accountId, envelopeId, workflowStepId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['workflowStep'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateEnvelopeWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling updateEnvelopeWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling updateEnvelopeWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = WorkflowStep;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -6975,6 +8246,9 @@ This can also be used to delete an individual email override setting by using an
 
     /**
      * Sets envelope notification (Reminders/Expirations) structure for an existing envelope.
+     * This method sets the notifications (reminders and expirations) for an existing envelope. The request body sends a structure containing reminders and expirations settings. It also specifies whether to use the settings specified in the request, or the account default notification settings for the envelope.
+
+Note that this request only specifies when notifications are sent; it does not initiate sending of email messages.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -7042,6 +8316,9 @@ This can also be used to delete an individual email override setting by using an
 
     /**
      * Updates document visibility for the recipients
+     * This method updates document visibility for a recipient.
+
+**Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
@@ -7330,6 +8607,9 @@ If you send information for a recipient that does not already exist in a draft e
 
     /**
      * Updates document visibility for the recipients
+     * This method updates document visibility for one or more recipients based on the `recipientId` and `visible` values that you include in the request body.
+
+**Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -7546,6 +8826,7 @@ If you send information for a recipient that does not already exist in a draft e
 
     /**
      * Update encrypted tabs for envelope.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {module:api/EnvelopesApi~updateTabsBlobCallback} callback The callback function, accepting three arguments: error, data, response
@@ -7594,6 +8875,80 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
+     * (Optional) Callback function to receive the result of the updateTemplateDelayedRoutingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~updateTemplateDelayedRoutingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DelayedRouting} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the delayed routing rules for a template's workflow step definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} workflowStepId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/DelayedRouting} optsOrCallback.delayedRouting 
+     * @param {module:api/EnvelopesApi~updateTemplateDelayedRoutingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DelayedRouting}
+     */
+    this.updateTemplateDelayedRoutingDefinition = function(accountId, templateId, workflowStepId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['delayedRouting'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateTemplateDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateTemplateDelayedRoutingDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling updateTemplateDelayedRoutingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DelayedRouting;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}/delayedRouting', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the updateTemplateRecipientDocumentVisibility operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTemplateRecipientDocumentVisibilityCallback
      * @param {String} error Error message, if any.
@@ -7603,6 +8958,9 @@ If you send information for a recipient that does not already exist in a draft e
 
     /**
      * Updates document visibility for the recipients
+     * This method updates the document visibility for a template recipient.
+
+**Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
@@ -7677,6 +9035,10 @@ If you send information for a recipient that does not already exist in a draft e
 
     /**
      * Updates document visibility for the recipients
+     * This method updates document visibility for one or more template recipients based on the `recipientId` and `visible` values that you include in the request body.
+
+
+**Note:** A document cannot be hidden from a recipient if the recipient has tabs assigned to them on the document. Carbon Copy, Certified Delivery (Needs to Sign), Editor, and Agent recipients can always see all documents.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -7735,6 +9097,73 @@ If you send information for a recipient that does not already exist in a draft e
     };
 
     /**
+     * (Optional) Callback function to receive the result of the updateTemplateScheduledSendingDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~updateTemplateScheduledSendingDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ScheduledSending} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the scheduled sending rules for a template's workflow definition.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ScheduledSending} optsOrCallback.scheduledSending 
+     * @param {module:api/EnvelopesApi~updateTemplateScheduledSendingDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ScheduledSending}
+     */
+    this.updateTemplateScheduledSendingDefinition = function(accountId, templateId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['scheduledSending'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateTemplateScheduledSendingDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateTemplateScheduledSendingDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ScheduledSending;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/scheduledSending', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the updateTemplateWorkflowDefinition operation. If none specified a Promise will be returned.
      * @callback module:api/EnvelopesApi~updateTemplateWorkflowDefinitionCallback
      * @param {String} error Error message, if any.
@@ -7744,6 +9173,7 @@ If you send information for a recipient that does not already exist in a draft e
 
     /**
      * Updates the workflow definition for a template.
+     * Updates the specified template's workflow definition if  it has one.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -7796,6 +9226,80 @@ If you send information for a recipient that does not already exist in a draft e
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/workflow', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the updateTemplateWorkflowStepDefinition operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~updateTemplateWorkflowStepDefinitionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WorkflowStep} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the template workflow step definition for an envelope.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {String} workflowStepId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/WorkflowStep} optsOrCallback.workflowStep 
+     * @param {module:api/EnvelopesApi~updateTemplateWorkflowStepDefinitionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WorkflowStep}
+     */
+    this.updateTemplateWorkflowStepDefinition = function(accountId, templateId, workflowStepId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['workflowStep'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateTemplateWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling updateTemplateWorkflowStepDefinition");
+      }
+
+      // verify the required parameter 'workflowStepId' is set
+      if (workflowStepId === undefined || workflowStepId === null) {
+        throw new Error("Missing the required parameter 'workflowStepId' when calling updateTemplateWorkflowStepDefinition");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId,
+        'workflowStepId': workflowStepId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = WorkflowStep;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/workflow/steps/{workflowStepId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

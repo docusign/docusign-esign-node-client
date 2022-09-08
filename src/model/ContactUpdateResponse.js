@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ContactUpdateResponse</code>.
+   * This response objects shows the updated details for the contacts.
    * @alias module:model/ContactUpdateResponse
    * @class
    */

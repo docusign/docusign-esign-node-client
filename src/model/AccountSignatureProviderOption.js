@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccountSignatureProviderOption</code>.
+   * Reserved for DocuSign.
    * @alias module:model/AccountSignatureProviderOption
    * @class
    */

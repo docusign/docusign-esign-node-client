@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SmartSectionDisplaySettings</code>.
+   * These properties define how a Smart Section displays. A Smart Section is a type of display section.
    * @alias module:model/SmartSectionDisplaySettings
    * @class
    */
@@ -100,6 +101,7 @@
    */
   exports.prototype['cellStyle'] = undefined;
   /**
+   * This object defines the appearance and function of a collapsible section or item.
    * @member {module:model/SmartSectionCollapsibleDisplaySettings} collapsibleSettings
    */
   exports.prototype['collapsibleSettings'] = undefined;

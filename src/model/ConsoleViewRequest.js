@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConsoleViewRequest</code>.
+   * The request object for the [EnvelopeViews: createConsole](/docs/esign-rest-api/reference/envelopes/envelopeviews/createconsole/) method.
    * @alias module:model/ConsoleViewRequest
    * @class
    */

@@ -99,6 +99,7 @@
   }
 
   /**
+   * The billing address for the account.
    * @member {module:model/AccountAddress} billingAddress
    */
   exports.prototype['billingAddress'] = undefined;
@@ -108,26 +109,32 @@
    */
   exports.prototype['billingAddressIsCreditCardAddress'] = undefined;
   /**
+   * An object that contains details about the billing plan.
    * @member {module:model/AccountBillingPlan} billingPlan
    */
   exports.prototype['billingPlan'] = undefined;
   /**
+   * A complex type that has information about the credit card used to pay for this account.
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
   exports.prototype['creditCardInformation'] = undefined;
   /**
+   * Information about the bank that processes direct debits for the payment plan.
    * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
    */
   exports.prototype['directDebitProcessorInformation'] = undefined;
   /**
+   * 
    * @member {module:model/DowngradePlanUpdateResponse} downgradePlanInformation
    */
   exports.prototype['downgradePlanInformation'] = undefined;
   /**
+   * 
    * @member {module:model/DowngradeRequestInformation} downgradeRequestInformation
    */
   exports.prototype['downgradeRequestInformation'] = undefined;
   /**
+   * 
    * @member {module:model/BillingEntityInformationResponse} entityInformation
    */
   exports.prototype['entityInformation'] = undefined;
@@ -137,10 +144,12 @@
    */
   exports.prototype['paymentMethod'] = undefined;
   /**
+   * Information about the entity that processes payments for the billing plan.
    * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
    */
   exports.prototype['paymentProcessorInformation'] = undefined;
   /**
+   * A complex type that contains properties for entering referral and discount information.
    * @member {module:model/ReferralInformation} referralInformation
    */
   exports.prototype['referralInformation'] = undefined;

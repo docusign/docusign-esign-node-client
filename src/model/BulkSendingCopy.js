@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendingCopy</code>.
+   * This object contains the details to use for a specific copy, or instance, of the envelope. When you send an envelope by using a bulk send list, you can customize these properties for each instance.
    * @alias module:model/BulkSendingCopy
    * @class
    */

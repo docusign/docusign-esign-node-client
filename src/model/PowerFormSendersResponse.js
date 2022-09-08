@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PowerFormSendersResponse</code>.
+   * This object includes information about the users who have sent PowerForms.
    * @alias module:model/PowerFormSendersResponse
    * @class
    */

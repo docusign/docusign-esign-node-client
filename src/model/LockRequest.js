@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>LockRequest</code>.
+   * This request object contains information about the lock that you want to create or update.
    * @alias module:model/LockRequest
    * @class
    */

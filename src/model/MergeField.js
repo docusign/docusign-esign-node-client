@@ -101,6 +101,7 @@
    */
   exports.prototype['allowSenderToEdit'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `allowSenderToEdit` property.
    * @member {module:model/PropertyMetadata} allowSenderToEditMetadata
    */
   exports.prototype['allowSenderToEditMetadata'] = undefined;
@@ -110,6 +111,7 @@
    */
   exports.prototype['configurationType'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `configurationType` property.
    * @member {module:model/PropertyMetadata} configurationTypeMetadata
    */
   exports.prototype['configurationTypeMetadata'] = undefined;
@@ -124,10 +126,12 @@
    */
   exports.prototype['pathExtended'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} pathExtendedMetadata
    */
   exports.prototype['pathExtendedMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `path` property is editable. 
    * @member {module:model/PropertyMetadata} pathMetadata
    */
   exports.prototype['pathMetadata'] = undefined;
@@ -137,6 +141,7 @@
    */
   exports.prototype['row'] = undefined;
   /**
+   * Metadata that indicates whether the `row` property is editable. 
    * @member {module:model/PropertyMetadata} rowMetadata
    */
   exports.prototype['rowMetadata'] = undefined;
@@ -146,6 +151,7 @@
    */
   exports.prototype['writeBack'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `writeBack` property.
    * @member {module:model/PropertyMetadata} writeBackMetadata
    */
   exports.prototype['writeBackMetadata'] = undefined;

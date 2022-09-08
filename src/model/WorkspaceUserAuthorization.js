@@ -123,6 +123,7 @@
    */
   exports.prototype['createdById'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -142,6 +143,7 @@
    */
   exports.prototype['workspaceUserId'] = undefined;
   /**
+   * An object that provides details about the workspace user.
    * @member {module:model/WorkspaceUser} workspaceUserInformation
    */
   exports.prototype['workspaceUserInformation'] = undefined;

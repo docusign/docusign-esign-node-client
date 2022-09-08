@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeEvent</code>.
+   * For which envelope events should your webhook be called?
    * @alias module:model/EnvelopeEvent
    * @class
    */

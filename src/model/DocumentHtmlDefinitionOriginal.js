@@ -78,6 +78,7 @@
    */
   exports.prototype['documentIdGuid'] = undefined;
   /**
+   * Defines how to generate the responsive-formatted HTML for the document.
    * @member {module:model/DocumentHtmlDefinition} htmlDefinition
    */
   exports.prototype['htmlDefinition'] = undefined;

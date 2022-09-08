@@ -130,6 +130,12 @@
       if (data.hasOwnProperty('allowAgreementActionsMetadata')) {
         obj['allowAgreementActionsMetadata'] = SettingsMetadata.constructFromObject(data['allowAgreementActionsMetadata']);
       }
+      if (data.hasOwnProperty('allowAgreementOrchestrationWorkflows')) {
+        obj['allowAgreementOrchestrationWorkflows'] = ApiClient.convertToType(data['allowAgreementOrchestrationWorkflows'], 'String');
+      }
+      if (data.hasOwnProperty('allowAgreementOrchestrationWorkflowsMetadata')) {
+        obj['allowAgreementOrchestrationWorkflowsMetadata'] = SettingsMetadata.constructFromObject(data['allowAgreementOrchestrationWorkflowsMetadata']);
+      }
       if (data.hasOwnProperty('allowAutoNavSettings')) {
         obj['allowAutoNavSettings'] = ApiClient.convertToType(data['allowAutoNavSettings'], 'String');
       }
@@ -156,6 +162,9 @@
       }
       if (data.hasOwnProperty('allowConnectHttpListenerConfigs')) {
         obj['allowConnectHttpListenerConfigs'] = ApiClient.convertToType(data['allowConnectHttpListenerConfigs'], 'String');
+      }
+      if (data.hasOwnProperty('allowConnectOAuthUI')) {
+        obj['allowConnectOAuthUI'] = ApiClient.convertToType(data['allowConnectOAuthUI'], 'String');
       }
       if (data.hasOwnProperty('allowConnectSendFinishLater')) {
         obj['allowConnectSendFinishLater'] = ApiClient.convertToType(data['allowConnectSendFinishLater'], 'String');
@@ -189,6 +198,12 @@
       }
       if (data.hasOwnProperty('allowDelegatedSigningMetadata')) {
         obj['allowDelegatedSigningMetadata'] = SettingsMetadata.constructFromObject(data['allowDelegatedSigningMetadata']);
+      }
+      if (data.hasOwnProperty('allowDocGenDocuments')) {
+        obj['allowDocGenDocuments'] = ApiClient.convertToType(data['allowDocGenDocuments'], 'String');
+      }
+      if (data.hasOwnProperty('allowDocGenDocumentsMetadata')) {
+        obj['allowDocGenDocumentsMetadata'] = SettingsMetadata.constructFromObject(data['allowDocGenDocumentsMetadata']);
       }
       if (data.hasOwnProperty('allowDocumentDisclosures')) {
         obj['allowDocumentDisclosures'] = ApiClient.convertToType(data['allowDocumentDisclosures'], 'String');
@@ -279,6 +294,12 @@
       }
       if (data.hasOwnProperty('allowExternalSignaturePadMetadata')) {
         obj['allowExternalSignaturePadMetadata'] = SettingsMetadata.constructFromObject(data['allowExternalSignaturePadMetadata']);
+      }
+      if (data.hasOwnProperty('allowIDVForEUQualifiedSignatures')) {
+        obj['allowIDVForEUQualifiedSignatures'] = ApiClient.convertToType(data['allowIDVForEUQualifiedSignatures'], 'String');
+      }
+      if (data.hasOwnProperty('allowIDVForEUQualifiedSignaturesMetadata')) {
+        obj['allowIDVForEUQualifiedSignaturesMetadata'] = SettingsMetadata.constructFromObject(data['allowIDVForEUQualifiedSignaturesMetadata']);
       }
       if (data.hasOwnProperty('allowIDVLevel1')) {
         obj['allowIDVLevel1'] = ApiClient.convertToType(data['allowIDVLevel1'], 'String');
@@ -424,11 +445,23 @@
       if (data.hasOwnProperty('allowOrganizationToUseThirdPartyElectronicNotaryMetadata')) {
         obj['allowOrganizationToUseThirdPartyElectronicNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationToUseThirdPartyElectronicNotaryMetadata']);
       }
+      if (data.hasOwnProperty('allowParticipantRecipientType')) {
+        obj['allowParticipantRecipientType'] = ApiClient.convertToType(data['allowParticipantRecipientType'], 'String');
+      }
+      if (data.hasOwnProperty('allowParticipantRecipientTypeMetadata')) {
+        obj['allowParticipantRecipientTypeMetadata'] = SettingsMetadata.constructFromObject(data['allowParticipantRecipientTypeMetadata']);
+      }
       if (data.hasOwnProperty('allowPaymentProcessing')) {
         obj['allowPaymentProcessing'] = ApiClient.convertToType(data['allowPaymentProcessing'], 'String');
       }
       if (data.hasOwnProperty('allowPaymentProcessingMetadata')) {
         obj['allowPaymentProcessingMetadata'] = SettingsMetadata.constructFromObject(data['allowPaymentProcessingMetadata']);
+      }
+      if (data.hasOwnProperty('allowPerformanceAnalytics')) {
+        obj['allowPerformanceAnalytics'] = ApiClient.convertToType(data['allowPerformanceAnalytics'], 'String');
+      }
+      if (data.hasOwnProperty('allowPerformanceAnalyticsMetadata')) {
+        obj['allowPerformanceAnalyticsMetadata'] = SettingsMetadata.constructFromObject(data['allowPerformanceAnalyticsMetadata']);
       }
       if (data.hasOwnProperty('allowPhoneAuthentication')) {
         obj['allowPhoneAuthentication'] = ApiClient.convertToType(data['allowPhoneAuthentication'], 'String');
@@ -940,6 +973,12 @@
       if (data.hasOwnProperty('enableCommentsHistoryDownloadInSigningMetadata')) {
         obj['enableCommentsHistoryDownloadInSigningMetadata'] = SettingsMetadata.constructFromObject(data['enableCommentsHistoryDownloadInSigningMetadata']);
       }
+      if (data.hasOwnProperty('enableContactSuggestions')) {
+        obj['enableContactSuggestions'] = ApiClient.convertToType(data['enableContactSuggestions'], 'String');
+      }
+      if (data.hasOwnProperty('enableContactSuggestionsMetadata')) {
+        obj['enableContactSuggestionsMetadata'] = SettingsMetadata.constructFromObject(data['enableContactSuggestionsMetadata']);
+      }
       if (data.hasOwnProperty('enableCustomerSatisfactionMetricTracking')) {
         obj['enableCustomerSatisfactionMetricTracking'] = ApiClient.convertToType(data['enableCustomerSatisfactionMetricTracking'], 'String');
       }
@@ -963,6 +1002,12 @@
       }
       if (data.hasOwnProperty('enableEnvelopeStampingByDSAdminMetadata')) {
         obj['enableEnvelopeStampingByDSAdminMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeStampingByDSAdminMetadata']);
+      }
+      if (data.hasOwnProperty('enableESignAPIHourlyLimitManagement')) {
+        obj['enableESignAPIHourlyLimitManagement'] = ApiClient.convertToType(data['enableESignAPIHourlyLimitManagement'], 'String');
+      }
+      if (data.hasOwnProperty('enableESignAPIHourlyLimitManagementMetadata')) {
+        obj['enableESignAPIHourlyLimitManagementMetadata'] = SettingsMetadata.constructFromObject(data['enableESignAPIHourlyLimitManagementMetadata']);
       }
       if (data.hasOwnProperty('enableEsignCommunities')) {
         obj['enableEsignCommunities'] = ApiClient.convertToType(data['enableEsignCommunities'], 'String');
@@ -999,6 +1044,9 @@
       }
       if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentTypeMetadata')) {
         obj['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = SettingsMetadata.constructFromObject(data['enableKeyTermsSuggestionsByDocumentTypeMetadata']);
+      }
+      if (data.hasOwnProperty('enableParticipantRecipientSettingMetadata')) {
+        obj['enableParticipantRecipientSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableParticipantRecipientSettingMetadata']);
       }
       if (data.hasOwnProperty('enablePaymentProcessing')) {
         obj['enablePaymentProcessing'] = ApiClient.convertToType(data['enablePaymentProcessing'], 'String');
@@ -1231,6 +1279,18 @@
       if (data.hasOwnProperty('envelopeIntegrationEnabledMetadata')) {
         obj['envelopeIntegrationEnabledMetadata'] = SettingsMetadata.constructFromObject(data['envelopeIntegrationEnabledMetadata']);
       }
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMB')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMB'] = ApiClient.convertToType(data['EnvelopeLimitsTotalDocumentSizeAllowedInMB'], 'String');
+      }
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = ApiClient.convertToType(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = SettingsMetadata.constructFromObject(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata']);
+      }
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = SettingsMetadata.constructFromObject(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata']);
+      }
       if (data.hasOwnProperty('envelopeStampingDefaultValue')) {
         obj['envelopeStampingDefaultValue'] = ApiClient.convertToType(data['envelopeStampingDefaultValue'], 'String');
       }
@@ -1410,6 +1470,24 @@
       }
       if (data.hasOwnProperty('optOutNewPlatformSealPlatformMetadata')) {
         obj['optOutNewPlatformSealPlatformMetadata'] = SettingsMetadata.constructFromObject(data['optOutNewPlatformSealPlatformMetadata']);
+      }
+      if (data.hasOwnProperty('pdfMaxChunkedUploadPartSize')) {
+        obj['pdfMaxChunkedUploadPartSize'] = ApiClient.convertToType(data['pdfMaxChunkedUploadPartSize'], 'String');
+      }
+      if (data.hasOwnProperty('pdfMaxChunkedUploadPartSizeMetadata')) {
+        obj['pdfMaxChunkedUploadPartSizeMetadata'] = SettingsMetadata.constructFromObject(data['pdfMaxChunkedUploadPartSizeMetadata']);
+      }
+      if (data.hasOwnProperty('pdfMaxChunkedUploadTotalSize')) {
+        obj['pdfMaxChunkedUploadTotalSize'] = ApiClient.convertToType(data['pdfMaxChunkedUploadTotalSize'], 'String');
+      }
+      if (data.hasOwnProperty('pdfMaxChunkedUploadTotalSizeMetadata')) {
+        obj['pdfMaxChunkedUploadTotalSizeMetadata'] = SettingsMetadata.constructFromObject(data['pdfMaxChunkedUploadTotalSizeMetadata']);
+      }
+      if (data.hasOwnProperty('pdfMaxIndividualUploadSize')) {
+        obj['pdfMaxIndividualUploadSize'] = ApiClient.convertToType(data['pdfMaxIndividualUploadSize'], 'String');
+      }
+      if (data.hasOwnProperty('pdfMaxIndividualUploadSizeMetadata')) {
+        obj['pdfMaxIndividualUploadSizeMetadata'] = SettingsMetadata.constructFromObject(data['pdfMaxIndividualUploadSizeMetadata']);
       }
       if (data.hasOwnProperty('phoneAuthRecipientMayProvidePhoneNumber')) {
         obj['phoneAuthRecipientMayProvidePhoneNumber'] = ApiClient.convertToType(data['phoneAuthRecipientMayProvidePhoneNumber'], 'String');
@@ -1887,6 +1965,7 @@
   }
 
   /**
+   * Format of the string provided to a recipient in order to access an envelope.
    * @member {module:model/AccessCodeFormat} accessCodeFormat
    */
   exports.prototype['accessCodeFormat'] = undefined;
@@ -1896,6 +1975,7 @@
    */
   exports.prototype['accountDateTimeFormat'] = undefined;
   /**
+   * Metadata that indicates whether the `accountDateTimeFormat` property is editable.
    * @member {module:model/SettingsMetadata} accountDateTimeFormatMetadata
    */
   exports.prototype['accountDateTimeFormatMetadata'] = undefined;
@@ -1905,6 +1985,7 @@
    */
   exports.prototype['accountDefaultLanguage'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} accountDefaultLanguageMetadata
    */
   exports.prototype['accountDefaultLanguageMetadata'] = undefined;
@@ -1914,14 +1995,17 @@
    */
   exports.prototype['accountName'] = undefined;
   /**
+   * Metadata that indicates whether the `accountName` property is editable.
    * @member {module:model/SettingsMetadata} accountNameMetadata
    */
   exports.prototype['accountNameMetadata'] = undefined;
   /**
+   * An object that specifies notifications (expirations and reminders) for the envelope.
    * @member {module:model/AccountNotification} accountNotification
    */
   exports.prototype['accountNotification'] = undefined;
   /**
+   * An object that defines the settings to use in the UI.
    * @member {module:model/AccountUISettings} accountUISettings
    */
   exports.prototype['accountUISettings'] = undefined;
@@ -1931,6 +2015,7 @@
    */
   exports.prototype['adoptSigConfig'] = undefined;
   /**
+   * Metadata that indicates whether the `adoptSigConfig` property is editable. 
    * @member {module:model/SettingsMetadata} adoptSigConfigMetadata
    */
   exports.prototype['adoptSigConfigMetadata'] = undefined;
@@ -1940,6 +2025,7 @@
    */
   exports.prototype['advancedCorrect'] = undefined;
   /**
+   * Metadata that indicates whether the `advancedCorrect` property is editable. 
    * @member {module:model/SettingsMetadata} advancedCorrectMetadata
    */
   exports.prototype['advancedCorrectMetadata'] = undefined;
@@ -1949,6 +2035,7 @@
    */
   exports.prototype['allowAccessCodeFormat'] = undefined;
   /**
+   * Metadata that indicates whether the `allowAccessCodeFormat` property is editable. 
    * @member {module:model/SettingsMetadata} allowAccessCodeFormatMetadata
    */
   exports.prototype['allowAccessCodeFormatMetadata'] = undefined;
@@ -1958,6 +2045,7 @@
    */
   exports.prototype['allowAccountManagementGranular'] = undefined;
   /**
+   * Metadata that indicates whether the `allowAccountManagementGranular` property is editable. 
    * @member {module:model/SettingsMetadata} allowAccountManagementGranularMetadata
    */
   exports.prototype['allowAccountManagementGranularMetadata'] = undefined;
@@ -1967,6 +2055,7 @@
    */
   exports.prototype['allowAccountMemberNameChange'] = undefined;
   /**
+   * Metadata that indicates whether the `allowAccountMemberNameChange` property is editable. 
    * @member {module:model/SettingsMetadata} allowAccountMemberNameChangeMetadata
    */
   exports.prototype['allowAccountMemberNameChangeMetadata'] = undefined;
@@ -1976,6 +2065,7 @@
    */
   exports.prototype['allowAdvancedRecipientRoutingConditional'] = undefined;
   /**
+   * Metadata that indicates whether the ` allowAdvancedRecipientRoutingConditional` property is editable.
    * @member {module:model/SettingsMetadata} allowAdvancedRecipientRoutingConditionalMetadata
    */
   exports.prototype['allowAdvancedRecipientRoutingConditionalMetadata'] = undefined;
@@ -1985,6 +2075,7 @@
    */
   exports.prototype['allowAgentNameEmailEdit'] = undefined;
   /**
+   * Metadata that indicates whether the `allowAgentNameEmailEdit` property is editable. 
    * @member {module:model/SettingsMetadata} allowAgentNameEmailEditMetadata
    */
   exports.prototype['allowAgentNameEmailEditMetadata'] = undefined;
@@ -1994,15 +2085,26 @@
    */
   exports.prototype['allowAgreementActions'] = undefined;
   /**
+   * Metadata about the `allowAgreementActions` property.
    * @member {module:model/SettingsMetadata} allowAgreementActionsMetadata
    */
   exports.prototype['allowAgreementActionsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowAgreementOrchestrationWorkflows
+   */
+  exports.prototype['allowAgreementOrchestrationWorkflows'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowAgreementOrchestrationWorkflowsMetadata
+   */
+  exports.prototype['allowAgreementOrchestrationWorkflowsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowAutoNavSettings
    */
   exports.prototype['allowAutoNavSettings'] = undefined;
   /**
+   * Metadata that indicates whether the `allowAutoNavSettings` property is editable. 
    * @member {module:model/SettingsMetadata} allowAutoNavSettingsMetadata
    */
   exports.prototype['allowAutoNavSettingsMetadata'] = undefined;
@@ -2012,6 +2114,7 @@
    */
   exports.prototype['allowAutoTagging'] = undefined;
   /**
+   * Metadata that indicates whether the `allowAutoTagging` property is editable.
    * @member {module:model/SettingsMetadata} allowAutoTaggingMetadata
    */
   exports.prototype['allowAutoTaggingMetadata'] = undefined;
@@ -2021,6 +2124,7 @@
    */
   exports.prototype['allowBulkSend'] = undefined;
   /**
+   * Metadata that indicates whether the `allowBulkSend` property is editable. 
    * @member {module:model/SettingsMetadata} allowBulkSendMetadata
    */
   exports.prototype['allowBulkSendMetadata'] = undefined;
@@ -2030,6 +2134,7 @@
    */
   exports.prototype['allowCDWithdraw'] = undefined;
   /**
+   * Metadata that indicates whether the `allowCDWithdraw` property is editable. 
    * @member {module:model/SettingsMetadata} allowCDWithdrawMetadata
    */
   exports.prototype['allowCDWithdrawMetadata'] = undefined;
@@ -2040,10 +2145,16 @@
   exports.prototype['allowConnectHttpListenerConfigs'] = undefined;
   /**
    * 
+   * @member {String} allowConnectOAuthUI
+   */
+  exports.prototype['allowConnectOAuthUI'] = undefined;
+  /**
+   * 
    * @member {String} allowConnectSendFinishLater
    */
   exports.prototype['allowConnectSendFinishLater'] = undefined;
   /**
+   * Metadata that indicates whether the `allowConnectSendFinishLater` property is editable. 
    * @member {module:model/SettingsMetadata} allowConnectSendFinishLaterMetadata
    */
   exports.prototype['allowConnectSendFinishLaterMetadata'] = undefined;
@@ -2058,6 +2169,7 @@
    */
   exports.prototype['allowConsumerDisclosureOverride'] = undefined;
   /**
+   * Metadata that indicates whether the `allowConsumerDisclosureOverride` property is editable. 
    * @member {module:model/SettingsMetadata} allowConsumerDisclosureOverrideMetadata
    */
   exports.prototype['allowConsumerDisclosureOverrideMetadata'] = undefined;
@@ -2067,6 +2179,7 @@
    */
   exports.prototype['allowDataDownload'] = undefined;
   /**
+   * Metadata that indicates whether the `allowDataDownload` property is editable. 
    * @member {module:model/SettingsMetadata} allowDataDownloadMetadata
    */
   exports.prototype['allowDataDownloadMetadata'] = undefined;
@@ -2076,6 +2189,7 @@
    */
   exports.prototype['allowDelayedRouting'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowDelayedRoutingMetadata
    */
   exports.prototype['allowDelayedRoutingMetadata'] = undefined;
@@ -2085,15 +2199,26 @@
    */
   exports.prototype['allowDelegatedSigning'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowDelegatedSigningMetadata
    */
   exports.prototype['allowDelegatedSigningMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowDocGenDocuments
+   */
+  exports.prototype['allowDocGenDocuments'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowDocGenDocumentsMetadata
+   */
+  exports.prototype['allowDocGenDocumentsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowDocumentDisclosures
    */
   exports.prototype['allowDocumentDisclosures'] = undefined;
   /**
+   * Metadata that indicates whether the `allowDocumentDisclosures` property is editable. 
    * @member {module:model/SettingsMetadata} allowDocumentDisclosuresMetadata
    */
   exports.prototype['allowDocumentDisclosuresMetadata'] = undefined;
@@ -2103,6 +2228,7 @@
    */
   exports.prototype['allowDocumentsOnSignedEnvelopes'] = undefined;
   /**
+   * Metadata that indicates whether the `allowDocumentsOnSignedEnvelopes` property is editable. 
    * @member {module:model/SettingsMetadata} allowDocumentsOnSignedEnvelopesMetadata
    */
   exports.prototype['allowDocumentsOnSignedEnvelopesMetadata'] = undefined;
@@ -2112,6 +2238,7 @@
    */
   exports.prototype['allowDocumentVisibility'] = undefined;
   /**
+   * Metadata that indicates whether the `allowDocumentVisibility` property is editable. 
    * @member {module:model/SettingsMetadata} allowDocumentVisibilityMetadata
    */
   exports.prototype['allowDocumentVisibilityMetadata'] = undefined;
@@ -2121,6 +2248,7 @@
    */
   exports.prototype['allowEHankoStamps'] = undefined;
   /**
+   * Metadata that indicates whether the `allowEHankoStamps` property is editable. 
    * @member {module:model/SettingsMetadata} allowEHankoStampsMetadata
    */
   exports.prototype['allowEHankoStampsMetadata'] = undefined;
@@ -2130,6 +2258,7 @@
    */
   exports.prototype['allowENoteEOriginal'] = undefined;
   /**
+   * Metadata that indicates whether the `allowENoteEOriginal` property is editable. 
    * @member {module:model/SettingsMetadata} allowENoteEOriginalMetadata
    */
   exports.prototype['allowENoteEOriginalMetadata'] = undefined;
@@ -2139,6 +2268,7 @@
    */
   exports.prototype['allowEnvelopeCorrect'] = undefined;
   /**
+   * Metadata that indicates whether the `allowEnvelopeCorrect` property is editable. 
    * @member {module:model/SettingsMetadata} allowEnvelopeCorrectMetadata
    */
   exports.prototype['allowEnvelopeCorrectMetadata'] = undefined;
@@ -2148,6 +2278,7 @@
    */
   exports.prototype['allowEnvelopeCustodyTransfer'] = undefined;
   /**
+   * Metadata that indicates whether the `allowEnvelopeCustodyTransfer` property is editable. 
    * @member {module:model/SettingsMetadata} allowEnvelopeCustodyTransferMetadata
    */
   exports.prototype['allowEnvelopeCustodyTransferMetadata'] = undefined;
@@ -2157,6 +2288,7 @@
    */
   exports.prototype['allowEnvelopeCustomFields'] = undefined;
   /**
+   * Metadata that indicates whether the `allowEnvelopeCustomFields` property is editable. 
    * @member {module:model/SettingsMetadata} allowEnvelopeCustomFieldsMetadata
    */
   exports.prototype['allowEnvelopeCustomFieldsMetadata'] = undefined;
@@ -2166,6 +2298,7 @@
    */
   exports.prototype['allowEnvelopePublishReporting'] = undefined;
   /**
+   * Metadata that indicates whether the `allowEnvelopePublishReporting` property is editable. 
    * @member {module:model/SettingsMetadata} allowEnvelopePublishReportingMetadata
    */
   exports.prototype['allowEnvelopePublishReportingMetadata'] = undefined;
@@ -2175,6 +2308,7 @@
    */
   exports.prototype['allowEnvelopeReporting'] = undefined;
   /**
+   * Metadata that indicates whether the `allowEnvelopeReporting` property is editable. 
    * @member {module:model/SettingsMetadata} allowEnvelopeReportingMetadata
    */
   exports.prototype['allowEnvelopeReportingMetadata'] = undefined;
@@ -2184,6 +2318,7 @@
    */
   exports.prototype['allowExpression'] = undefined;
   /**
+   * Metadata that indicates whether the `allowExpression` property is editable. 
    * @member {module:model/SettingsMetadata} allowExpressionMetadata
    */
   exports.prototype['allowExpressionMetadata'] = undefined;
@@ -2193,6 +2328,7 @@
    */
   exports.prototype['allowExpressSignerCertificate'] = undefined;
   /**
+   * Metadata that indicates whether the `allowExpressSignerCertificate` property is editable. 
    * @member {module:model/SettingsMetadata} allowExpressSignerCertificateMetadata
    */
   exports.prototype['allowExpressSignerCertificateMetadata'] = undefined;
@@ -2202,6 +2338,7 @@
    */
   exports.prototype['allowExtendedSendingResourceFile'] = undefined;
   /**
+   * Metadata that indicates whether the `allowExtendedSendingResourceFile` property is editable. 
    * @member {module:model/SettingsMetadata} allowExtendedSendingResourceFileMetadata
    */
   exports.prototype['allowExtendedSendingResourceFileMetadata'] = undefined;
@@ -2211,6 +2348,7 @@
    */
   exports.prototype['allowExternalLinkedAccounts'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowExternalLinkedAccountsMetadata
    */
   exports.prototype['allowExternalLinkedAccountsMetadata'] = undefined;
@@ -2220,15 +2358,26 @@
    */
   exports.prototype['allowExternalSignaturePad'] = undefined;
   /**
+   * Metadata that indicates whether the `allowExternalSignaturePad` property is editable. 
    * @member {module:model/SettingsMetadata} allowExternalSignaturePadMetadata
    */
   exports.prototype['allowExternalSignaturePadMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowIDVForEUQualifiedSignatures
+   */
+  exports.prototype['allowIDVForEUQualifiedSignatures'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowIDVForEUQualifiedSignaturesMetadata
+   */
+  exports.prototype['allowIDVForEUQualifiedSignaturesMetadata'] = undefined;
   /**
    * 
    * @member {String} allowIDVLevel1
    */
   exports.prototype['allowIDVLevel1'] = undefined;
   /**
+   * Metadata that indicates whether the `allowIDVLevel1` property is editable.
    * @member {module:model/SettingsMetadata} allowIDVLevel1Metadata
    */
   exports.prototype['allowIDVLevel1Metadata'] = undefined;
@@ -2238,6 +2387,7 @@
    */
   exports.prototype['allowIDVLevel2'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowIDVLevel2Metadata
    */
   exports.prototype['allowIDVLevel2Metadata'] = undefined;
@@ -2247,6 +2397,7 @@
    */
   exports.prototype['allowIDVLevel3'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowIDVLevel3Metadata
    */
   exports.prototype['allowIDVLevel3Metadata'] = undefined;
@@ -2256,6 +2407,7 @@
    */
   exports.prototype['allowIDVPlatform'] = undefined;
   /**
+   * Metadata that indicates whether the `allowIDVPlatform` property is editable.
    * @member {module:model/SettingsMetadata} allowIDVPlatformMetadata
    */
   exports.prototype['allowIDVPlatformMetadata'] = undefined;
@@ -2275,6 +2427,7 @@
    */
   exports.prototype['allowInPersonElectronicNotaryMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `allowInPerson` property is editable. 
    * @member {module:model/SettingsMetadata} allowInPersonMetadata
    */
   exports.prototype['allowInPersonMetadata'] = undefined;
@@ -2284,6 +2437,7 @@
    */
   exports.prototype['allowManagedStamps'] = undefined;
   /**
+   * Metadata that indicates whether the `allowManagedStamps` property is editable. 
    * @member {module:model/SettingsMetadata} allowManagedStampsMetadata
    */
   exports.prototype['allowManagedStampsMetadata'] = undefined;
@@ -2302,6 +2456,7 @@
    */
   exports.prototype['allowMarkup'] = undefined;
   /**
+   * Metadata that indicates whether the `allowMarkup` property is editable. 
    * @member {module:model/SettingsMetadata} allowMarkupMetadata
    */
   exports.prototype['allowMarkupMetadata'] = undefined;
@@ -2311,6 +2466,7 @@
    */
   exports.prototype['allowMemberTimeZone'] = undefined;
   /**
+   * Metadata that indicates whether the `allowMemberTimeZone` property is editable. 
    * @member {module:model/SettingsMetadata} allowMemberTimeZoneMetadata
    */
   exports.prototype['allowMemberTimeZoneMetadata'] = undefined;
@@ -2320,6 +2476,7 @@
    */
   exports.prototype['allowMergeFields'] = undefined;
   /**
+   * Metadata that indicates whether the `allowMergeFields` property is editable. 
    * @member {module:model/SettingsMetadata} allowMergeFieldsMetadata
    */
   exports.prototype['allowMergeFieldsMetadata'] = undefined;
@@ -2329,6 +2486,7 @@
    */
   exports.prototype['allowMultipleBrandProfiles'] = undefined;
   /**
+   * Metadata that indicates whether the `allowMultipleBrandProfiles` property is editable. 
    * @member {module:model/SettingsMetadata} allowMultipleBrandProfilesMetadata
    */
   exports.prototype['allowMultipleBrandProfilesMetadata'] = undefined;
@@ -2338,6 +2496,7 @@
    */
   exports.prototype['allowMultipleSignerAttachments'] = undefined;
   /**
+   * Metadata that indicates whether the `allowMultipleSignerAttachments` property is editable. 
    * @member {module:model/SettingsMetadata} allowMultipleSignerAttachmentsMetadata
    */
   exports.prototype['allowMultipleSignerAttachmentsMetadata'] = undefined;
@@ -2347,6 +2506,7 @@
    */
   exports.prototype['allowNonUSPhoneAuth'] = undefined;
   /**
+   * Metadata that indicates whether the `allowNonUSPhoneAuth` property is editable. 
    * @member {module:model/SettingsMetadata} allowNonUSPhoneAuthMetadata
    */
   exports.prototype['allowNonUSPhoneAuthMetadata'] = undefined;
@@ -2356,6 +2516,7 @@
    */
   exports.prototype['allowOcrOfEnvelopeDocuments'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowOcrOfEnvelopeDocumentsMetadata
    */
   exports.prototype['allowOcrOfEnvelopeDocumentsMetadata'] = undefined;
@@ -2365,6 +2526,7 @@
    */
   exports.prototype['allowOfflineSigning'] = undefined;
   /**
+   * Metadata that indicates whether the `allowOfflineSigning` property is editable. 
    * @member {module:model/SettingsMetadata} allowOfflineSigningMetadata
    */
   exports.prototype['allowOfflineSigningMetadata'] = undefined;
@@ -2374,6 +2536,7 @@
    */
   exports.prototype['allowOpenTrustSignerCertificate'] = undefined;
   /**
+   * Metadata that indicates whether the `allowOpenTrustSignerCertificate` property is editable. 
    * @member {module:model/SettingsMetadata} allowOpenTrustSignerCertificateMetadata
    */
   exports.prototype['allowOpenTrustSignerCertificateMetadata'] = undefined;
@@ -2383,6 +2546,7 @@
    */
   exports.prototype['allowOrganizationDocusignMonitor'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowOrganizationDocusignMonitorMetadata
    */
   exports.prototype['allowOrganizationDocusignMonitorMetadata'] = undefined;
@@ -2392,6 +2556,7 @@
    */
   exports.prototype['allowOrganizationDomainUserManagement'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowOrganizationDomainUserManagementMetadata
    */
   exports.prototype['allowOrganizationDomainUserManagementMetadata'] = undefined;
@@ -2401,6 +2566,7 @@
    */
   exports.prototype['allowOrganizations'] = undefined;
   /**
+   * Metadata that indicates whether the `allowOrganizations` property is editable. 
    * @member {module:model/SettingsMetadata} allowOrganizationsMetadata
    */
   exports.prototype['allowOrganizationsMetadata'] = undefined;
@@ -2410,6 +2576,7 @@
    */
   exports.prototype['allowOrganizationSsoManagement'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowOrganizationSsoManagementMetadata
    */
   exports.prototype['allowOrganizationSsoManagementMetadata'] = undefined;
@@ -2429,11 +2596,12 @@
    */
   exports.prototype['allowOrganizationToUseRemoteNotary'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowOrganizationToUseRemoteNotaryMetadata
    */
   exports.prototype['allowOrganizationToUseRemoteNotaryMetadata'] = undefined;
   /**
-   * 
+   * Org level flag that determines the abailability to perform Third Party Notary (3PN) actions.
    * @member {String} allowOrganizationToUseThirdPartyElectronicNotary
    */
   exports.prototype['allowOrganizationToUseThirdPartyElectronicNotary'] = undefined;
@@ -2443,19 +2611,39 @@
   exports.prototype['allowOrganizationToUseThirdPartyElectronicNotaryMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowParticipantRecipientType
+   */
+  exports.prototype['allowParticipantRecipientType'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowParticipantRecipientTypeMetadata
+   */
+  exports.prototype['allowParticipantRecipientTypeMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowPaymentProcessing
    */
   exports.prototype['allowPaymentProcessing'] = undefined;
   /**
+   * Metadata that indicates whether the `allowPaymentProcessing` property is editable. 
    * @member {module:model/SettingsMetadata} allowPaymentProcessingMetadata
    */
   exports.prototype['allowPaymentProcessingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowPerformanceAnalytics
+   */
+  exports.prototype['allowPerformanceAnalytics'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowPerformanceAnalyticsMetadata
+   */
+  exports.prototype['allowPerformanceAnalyticsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowPhoneAuthentication
    */
   exports.prototype['allowPhoneAuthentication'] = undefined;
   /**
+   * Metadata that indicates whether the `allowPhoneAuthentication` property is editable. 
    * @member {module:model/SettingsMetadata} allowPhoneAuthenticationMetadata
    */
   exports.prototype['allowPhoneAuthenticationMetadata'] = undefined;
@@ -2465,6 +2653,7 @@
    */
   exports.prototype['allowPhoneAuthOverride'] = undefined;
   /**
+   * Metadata that indicates whether the `allowPhoneAuthOverride` property is editable. 
    * @member {module:model/SettingsMetadata} allowPhoneAuthOverrideMetadata
    */
   exports.prototype['allowPhoneAuthOverrideMetadata'] = undefined;
@@ -2474,6 +2663,7 @@
    */
   exports.prototype['allowPrivateSigningGroups'] = undefined;
   /**
+   * Metadata that indicates whether the `allowPrivateSigningGroups` property is editable. 
    * @member {module:model/SettingsMetadata} allowPrivateSigningGroupsMetadata
    */
   exports.prototype['allowPrivateSigningGroupsMetadata'] = undefined;
@@ -2483,6 +2673,7 @@
    */
   exports.prototype['allowRecipientConnect'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowRecipientConnectMetadata
    */
   exports.prototype['allowRecipientConnectMetadata'] = undefined;
@@ -2492,6 +2683,7 @@
    */
   exports.prototype['allowReminders'] = undefined;
   /**
+   * Metadata that indicates whether the `allowReminders` property is editable. 
    * @member {module:model/SettingsMetadata} allowRemindersMetadata
    */
   exports.prototype['allowRemindersMetadata'] = undefined;
@@ -2501,6 +2693,7 @@
    */
   exports.prototype['allowRemoteNotary'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowRemoteNotaryMetadata
    */
   exports.prototype['allowRemoteNotaryMetadata'] = undefined;
@@ -2510,6 +2703,7 @@
    */
   exports.prototype['allowResourceFileBranding'] = undefined;
   /**
+   * Metadata that indicates whether the `allowResourceFileBranding` property is editable. 
    * @member {module:model/SettingsMetadata} allowResourceFileBrandingMetadata
    */
   exports.prototype['allowResourceFileBrandingMetadata'] = undefined;
@@ -2519,6 +2713,7 @@
    */
   exports.prototype['allowSafeBioPharmaSignerCertificate'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSafeBioPharmaSignerCertificate` property is editable. 
    * @member {module:model/SettingsMetadata} allowSafeBioPharmaSignerCertificateMetadata
    */
   exports.prototype['allowSafeBioPharmaSignerCertificateMetadata'] = undefined;
@@ -2528,6 +2723,7 @@
    */
   exports.prototype['allowScheduledSending'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowScheduledSendingMetadata
    */
   exports.prototype['allowScheduledSendingMetadata'] = undefined;
@@ -2537,6 +2733,7 @@
    */
   exports.prototype['allowSecurityAppliance'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSecurityAppliance` property is editable. 
    * @member {module:model/SettingsMetadata} allowSecurityApplianceMetadata
    */
   exports.prototype['allowSecurityApplianceMetadata'] = undefined;
@@ -2555,6 +2752,7 @@
    */
   exports.prototype['allowSendToCertifiedDelivery'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSendToCertifiedDelivery` property is editable. 
    * @member {module:model/SettingsMetadata} allowSendToCertifiedDeliveryMetadata
    */
   exports.prototype['allowSendToCertifiedDeliveryMetadata'] = undefined;
@@ -2564,6 +2762,7 @@
    */
   exports.prototype['allowSendToIntermediary'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSendToIntermediary` property is editable. 
    * @member {module:model/SettingsMetadata} allowSendToIntermediaryMetadata
    */
   exports.prototype['allowSendToIntermediaryMetadata'] = undefined;
@@ -2573,6 +2772,7 @@
    */
   exports.prototype['allowServerTemplates'] = undefined;
   /**
+   * Metadata that indicates whether the `allowServerTemplates` property is editable. 
    * @member {module:model/SettingsMetadata} allowServerTemplatesMetadata
    */
   exports.prototype['allowServerTemplatesMetadata'] = undefined;
@@ -2582,6 +2782,7 @@
    */
   exports.prototype['allowSetEmbeddedRecipientStartURL'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowSetEmbeddedRecipientStartURLMetadata
    */
   exports.prototype['allowSetEmbeddedRecipientStartURLMetadata'] = undefined;
@@ -2591,6 +2792,7 @@
    */
   exports.prototype['allowSharedTabs'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSharedTabs` property is editable. 
    * @member {module:model/SettingsMetadata} allowSharedTabsMetadata
    */
   exports.prototype['allowSharedTabsMetadata'] = undefined;
@@ -2600,6 +2802,7 @@
    */
   exports.prototype['allowSignatureStamps'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSignatureStamps` property is editable. 
    * @member {module:model/SettingsMetadata} allowSignatureStampsMetadata
    */
   exports.prototype['allowSignatureStampsMetadata'] = undefined;
@@ -2609,6 +2812,7 @@
    */
   exports.prototype['allowSignDocumentFromHomePage'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSignDocumentFromHomePage` property is editable. 
    * @member {module:model/SettingsMetadata} allowSignDocumentFromHomePageMetadata
    */
   exports.prototype['allowSignDocumentFromHomePageMetadata'] = undefined;
@@ -2618,6 +2822,7 @@
    */
   exports.prototype['allowSignerReassign'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSignerReassign` property is editable. 
    * @member {module:model/SettingsMetadata} allowSignerReassignMetadata
    */
   exports.prototype['allowSignerReassignMetadata'] = undefined;
@@ -2627,6 +2832,7 @@
    */
   exports.prototype['allowSignerReassignOverride'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSignerReassignOverride` property is editable. 
    * @member {module:model/SettingsMetadata} allowSignerReassignOverrideMetadata
    */
   exports.prototype['allowSignerReassignOverrideMetadata'] = undefined;
@@ -2636,6 +2842,7 @@
    */
   exports.prototype['allowSigningExtensions'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSigningExtensions` property is editable. 
    * @member {module:model/SettingsMetadata} allowSigningExtensionsMetadata
    */
   exports.prototype['allowSigningExtensionsMetadata'] = undefined;
@@ -2645,6 +2852,7 @@
    */
   exports.prototype['allowSigningGroups'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSigningGroups` property is editable. 
    * @member {module:model/SettingsMetadata} allowSigningGroupsMetadata
    */
   exports.prototype['allowSigningGroupsMetadata'] = undefined;
@@ -2654,6 +2862,7 @@
    */
   exports.prototype['allowSigningInsights'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowSigningInsightsMetadata
    */
   exports.prototype['allowSigningInsightsMetadata'] = undefined;
@@ -2663,6 +2872,7 @@
    */
   exports.prototype['allowSigningRadioDeselect'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSigningRadioDeselect` property is editable. 
    * @member {module:model/SettingsMetadata} allowSigningRadioDeselectMetadata
    */
   exports.prototype['allowSigningRadioDeselectMetadata'] = undefined;
@@ -2682,6 +2892,7 @@
    */
   exports.prototype['allowSMSDelivery'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowSMSDeliveryMetadata
    */
   exports.prototype['allowSMSDeliveryMetadata'] = undefined;
@@ -2691,6 +2902,7 @@
    */
   exports.prototype['allowSocialIdLogin'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/SettingsMetadata} allowSocialIdLoginMetadata
    */
   exports.prototype['allowSocialIdLoginMetadata'] = undefined;
@@ -2700,11 +2912,12 @@
    */
   exports.prototype['allowSupplementalDocuments'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSupplementalDocuments` property is editable.
    * @member {module:model/SettingsMetadata} allowSupplementalDocumentsMetadata
    */
   exports.prototype['allowSupplementalDocumentsMetadata'] = undefined;
   /**
-   * 
+   * Account level flag that determines the availability to perform Third Party Notary (3PN) actions.
    * @member {String} allowThirdPartyElectronicNotary
    */
   exports.prototype['allowThirdPartyElectronicNotary'] = undefined;
@@ -2718,6 +2931,7 @@
    */
   exports.prototype['allowUsersToAccessDirectory'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowUsersToAccessDirectoryMetadata
    */
   exports.prototype['allowUsersToAccessDirectoryMetadata'] = undefined;
@@ -2727,6 +2941,7 @@
    */
   exports.prototype['allowValueInsights'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowValueInsightsMetadata
    */
   exports.prototype['allowValueInsightsMetadata'] = undefined;
@@ -2745,6 +2960,7 @@
    */
   exports.prototype['anchorPopulationScope'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorPopulationScope` property is editable. 
    * @member {module:model/SettingsMetadata} anchorPopulationScopeMetadata
    */
   exports.prototype['anchorPopulationScopeMetadata'] = undefined;
@@ -2754,6 +2970,7 @@
    */
   exports.prototype['anchorTagVersionedPlacementEnabled'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} anchorTagVersionedPlacementMetadataEnabled
    */
   exports.prototype['anchorTagVersionedPlacementMetadataEnabled'] = undefined;
@@ -2763,6 +2980,7 @@
    */
   exports.prototype['attachCompletedEnvelope'] = undefined;
   /**
+   * Metadata that indicates whether the `attachCompletedEnvelope` property is editable.
    * @member {module:model/SettingsMetadata} attachCompletedEnvelopeMetadata
    */
   exports.prototype['attachCompletedEnvelopeMetadata'] = undefined;
@@ -2772,6 +2990,7 @@
    */
   exports.prototype['authenticationCheck'] = undefined;
   /**
+   * Metadata that indicates whether the `authenticationCheck` property is editable. 
    * @member {module:model/SettingsMetadata} authenticationCheckMetadata
    */
   exports.prototype['authenticationCheckMetadata'] = undefined;
@@ -2781,6 +3000,7 @@
    */
   exports.prototype['autoNavRule'] = undefined;
   /**
+   * Metadata that indicates whether the `autoNavRule` property is editable. 
    * @member {module:model/SettingsMetadata} autoNavRuleMetadata
    */
   exports.prototype['autoNavRuleMetadata'] = undefined;
@@ -2790,6 +3010,7 @@
    */
   exports.prototype['autoProvisionSignerAccount'] = undefined;
   /**
+   * Metadata that indicates whether the `autoProvisionSignerAccount` property is editable. 
    * @member {module:model/SettingsMetadata} autoProvisionSignerAccountMetadata
    */
   exports.prototype['autoProvisionSignerAccountMetadata'] = undefined;
@@ -2799,6 +3020,7 @@
    */
   exports.prototype['bccEmailArchive'] = undefined;
   /**
+   * Metadata that indicates whether the `bccEmailArchive` property is editable. 
    * @member {module:model/SettingsMetadata} bccEmailArchiveMetadata
    */
   exports.prototype['bccEmailArchiveMetadata'] = undefined;
@@ -2808,14 +3030,17 @@
    */
   exports.prototype['betaSwitchConfiguration'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} betaSwitchConfigurationMetadata
    */
   exports.prototype['betaSwitchConfigurationMetadata'] = undefined;
   /**
+   * The billing address for the account.
    * @member {module:model/AddressInformation} billingAddress
    */
   exports.prototype['billingAddress'] = undefined;
   /**
+   * Metadata that indicates whether the `billingAddress` property is editable. 
    * @member {module:model/SettingsMetadata} billingAddressMetadata
    */
   exports.prototype['billingAddressMetadata'] = undefined;
@@ -2840,6 +3065,7 @@
    */
   exports.prototype['bulkSendMaxUnprocessedEnvelopesCount'] = undefined;
   /**
+   * Metadata that indicates whether the `bulkSend` property is editable. 
    * @member {module:model/SettingsMetadata} bulkSendMetadata
    */
   exports.prototype['bulkSendMetadata'] = undefined;
@@ -2849,6 +3075,7 @@
    */
   exports.prototype['canSelfBrandSend'] = undefined;
   /**
+   * Metadata that indicates whether the `canSelfBrandSend` property is editable. 
    * @member {module:model/SettingsMetadata} canSelfBrandSendMetadata
    */
   exports.prototype['canSelfBrandSendMetadata'] = undefined;
@@ -2858,6 +3085,7 @@
    */
   exports.prototype['canSelfBrandSign'] = undefined;
   /**
+   * Metadata that indicates whether the `canSelfBrandSign` property is editable. 
    * @member {module:model/SettingsMetadata} canSelfBrandSignMetadata
    */
   exports.prototype['canSelfBrandSignMetadata'] = undefined;
@@ -2867,6 +3095,7 @@
    */
   exports.prototype['canUseSalesforceOAuth'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canUseSalesforceOAuthMetadata
    */
   exports.prototype['canUseSalesforceOAuthMetadata'] = undefined;
@@ -2876,6 +3105,7 @@
    */
   exports.prototype['captureVoiceRecording'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} captureVoiceRecordingMetadata
    */
   exports.prototype['captureVoiceRecordingMetadata'] = undefined;
@@ -2885,6 +3115,7 @@
    */
   exports.prototype['cfr21SimplifiedSigningEnabled'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} cfr21SimplifiedSigningEnabledMetadata
    */
   exports.prototype['cfr21SimplifiedSigningEnabledMetadata'] = undefined;
@@ -2894,6 +3125,7 @@
    */
   exports.prototype['cfrUseWideImage'] = undefined;
   /**
+   * Metadata that indicates whether the `cfrUseWideImage` property is editable. 
    * @member {module:model/SettingsMetadata} cfrUseWideImageMetadata
    */
   exports.prototype['cfrUseWideImageMetadata'] = undefined;
@@ -2903,6 +3135,7 @@
    */
   exports.prototype['checkForMultipleAdminsOnAccount'] = undefined;
   /**
+   * Metadata that indicates whether the `checkForMultipleAdminsOnAccount` property is editable.
    * @member {module:model/SettingsMetadata} checkForMultipleAdminsOnAccountMetadata
    */
   exports.prototype['checkForMultipleAdminsOnAccountMetadata'] = undefined;
@@ -2912,6 +3145,7 @@
    */
   exports.prototype['chromeSignatureEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `chromeSignatureEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} chromeSignatureEnabledMetadata
    */
   exports.prototype['chromeSignatureEnabledMetadata'] = undefined;
@@ -2921,6 +3155,7 @@
    */
   exports.prototype['commentEmailShowMessageText'] = undefined;
   /**
+   * Metadata that indicates whether the `commentEmailShowMessageText` property is editable. 
    * @member {module:model/SettingsMetadata} commentEmailShowMessageTextMetadata
    */
   exports.prototype['commentEmailShowMessageTextMetadata'] = undefined;
@@ -2930,6 +3165,7 @@
    */
   exports.prototype['commentsAllowEnvelopeOverride'] = undefined;
   /**
+   * Metadata that indicates whether the `commentsAllowEnvelopeOverride` property is editable. 
    * @member {module:model/SettingsMetadata} commentsAllowEnvelopeOverrideMetadata
    */
   exports.prototype['commentsAllowEnvelopeOverrideMetadata'] = undefined;
@@ -2939,6 +3175,7 @@
    */
   exports.prototype['conditionalFieldsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `conditionalFieldsEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} conditionalFieldsEnabledMetadata
    */
   exports.prototype['conditionalFieldsEnabledMetadata'] = undefined;
@@ -2948,6 +3185,7 @@
    */
   exports.prototype['consumerDisclosureFrequency'] = undefined;
   /**
+   * Metadata that indicates whether the `consumerDisclosureFrequency` property is editable. 
    * @member {module:model/SettingsMetadata} consumerDisclosureFrequencyMetadata
    */
   exports.prototype['consumerDisclosureFrequencyMetadata'] = undefined;
@@ -2957,6 +3195,7 @@
    */
   exports.prototype['convertPdfFields'] = undefined;
   /**
+   * Metadata that indicates whether the `convertPdfFields` property is editable. 
    * @member {module:model/SettingsMetadata} convertPdfFieldsMetadata
    */
   exports.prototype['convertPdfFieldsMetadata'] = undefined;
@@ -2966,6 +3205,7 @@
    */
   exports.prototype['dataPopulationScope'] = undefined;
   /**
+   * Metadata that indicates whether the `dataPopulationScope` property is editable. 
    * @member {module:model/SettingsMetadata} dataPopulationScopeMetadata
    */
   exports.prototype['dataPopulationScopeMetadata'] = undefined;
@@ -2975,6 +3215,7 @@
    */
   exports.prototype['disableAutoTemplateMatching'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} disableAutoTemplateMatchingMetadata
    */
   exports.prototype['disableAutoTemplateMatchingMetadata'] = undefined;
@@ -2984,6 +3225,7 @@
    */
   exports.prototype['disableMobileApp'] = undefined;
   /**
+   * Metadata that indicates whether the `disableMobileApp` property is editable. 
    * @member {module:model/SettingsMetadata} disableMobileAppMetadata
    */
   exports.prototype['disableMobileAppMetadata'] = undefined;
@@ -2993,6 +3235,7 @@
    */
   exports.prototype['disableMobilePushNotifications'] = undefined;
   /**
+   * Metadata that indicates whether the `disableMobilePushNotifications` property is editable. 
    * @member {module:model/SettingsMetadata} disableMobilePushNotificationsMetadata
    */
   exports.prototype['disableMobilePushNotificationsMetadata'] = undefined;
@@ -3002,6 +3245,7 @@
    */
   exports.prototype['disableMobileSending'] = undefined;
   /**
+   * Metadata that indicates whether the `disableMobileSending` property is editable. 
    * @member {module:model/SettingsMetadata} disableMobileSendingMetadata
    */
   exports.prototype['disableMobileSendingMetadata'] = undefined;
@@ -3011,10 +3255,12 @@
    */
   exports.prototype['disableMultipleSessions'] = undefined;
   /**
+   * Metadata that indicates whether the `disableMultipleSessions` property is editable. 
    * @member {module:model/SettingsMetadata} disableMultipleSessionsMetadata
    */
   exports.prototype['disableMultipleSessionsMetadata'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} disablePurgeNotificationsForSenderMetadata
    */
   exports.prototype['disablePurgeNotificationsForSenderMetadata'] = undefined;
@@ -3024,6 +3270,7 @@
    */
   exports.prototype['disableSignerCertView'] = undefined;
   /**
+   * Metadata that indicates whether the `disableSignerCertView` property is editable. 
    * @member {module:model/SettingsMetadata} disableSignerCertViewMetadata
    */
   exports.prototype['disableSignerCertViewMetadata'] = undefined;
@@ -3033,6 +3280,7 @@
    */
   exports.prototype['disableSignerHistoryView'] = undefined;
   /**
+   * Metadata that indicates whether the `disableSignerHistoryView` property is editable. 
    * @member {module:model/SettingsMetadata} disableSignerHistoryViewMetadata
    */
   exports.prototype['disableSignerHistoryViewMetadata'] = undefined;
@@ -3042,6 +3290,7 @@
    */
   exports.prototype['disableStyleSignature'] = undefined;
   /**
+   * Metadata that indicates whether the `disableStyleSignature` property is editable. 
    * @member {module:model/SettingsMetadata} disableStyleSignatureMetadata
    */
   exports.prototype['disableStyleSignatureMetadata'] = undefined;
@@ -3051,6 +3300,7 @@
    */
   exports.prototype['disableUploadSignature'] = undefined;
   /**
+   * Metadata that indicates whether the `disableUploadSignature` property is editable. 
    * @member {module:model/SettingsMetadata} disableUploadSignatureMetadata
    */
   exports.prototype['disableUploadSignatureMetadata'] = undefined;
@@ -3060,6 +3310,7 @@
    */
   exports.prototype['disableUserSharing'] = undefined;
   /**
+   * Metadata that indicates whether the `disableUserSharing` property is editable. 
    * @member {module:model/SettingsMetadata} disableUserSharingMetadata
    */
   exports.prototype['disableUserSharingMetadata'] = undefined;
@@ -3069,6 +3320,7 @@
    */
   exports.prototype['displayBetaSwitch'] = undefined;
   /**
+   * Metadata that indicates whether the `displayBetaSwitch` property is editable. 
    * @member {module:model/SettingsMetadata} displayBetaSwitchMetadata
    */
   exports.prototype['displayBetaSwitchMetadata'] = undefined;
@@ -3078,6 +3330,7 @@
    */
   exports.prototype['documentConversionRestrictions'] = undefined;
   /**
+   * Metadata that indicates whether the `documentConversionRestrictions` property is editable. 
    * @member {module:model/SettingsMetadata} documentConversionRestrictionsMetadata
    */
   exports.prototype['documentConversionRestrictionsMetadata'] = undefined;
@@ -3087,6 +3340,7 @@
    */
   exports.prototype['documentRetention'] = undefined;
   /**
+   * Metadata that indicates whether the `documentRetention` property is editable. 
    * @member {module:model/SettingsMetadata} documentRetentionMetadata
    */
   exports.prototype['documentRetentionMetadata'] = undefined;
@@ -3101,6 +3355,7 @@
    */
   exports.prototype['documentVisibility'] = undefined;
   /**
+   * Metadata that indicates whether the `documentVisibility` property is editable. 
    * @member {module:model/SettingsMetadata} documentVisibilityMetadata
    */
   exports.prototype['documentVisibilityMetadata'] = undefined;
@@ -3120,6 +3375,7 @@
    */
   exports.prototype['emailTemplateVersion'] = undefined;
   /**
+   * Metadata that indicates whether the `emailTemplateVersion` property is editable. 
    * @member {module:model/SettingsMetadata} emailTemplateVersionMetadata
    */
   exports.prototype['emailTemplateVersionMetadata'] = undefined;
@@ -3129,6 +3385,7 @@
    */
   exports.prototype['enableAccessCodeGenerator'] = undefined;
   /**
+   * Metadata that indicates whether the `enableAccessCodeGenerator` property is editable. 
    * @member {module:model/SettingsMetadata} enableAccessCodeGeneratorMetadata
    */
   exports.prototype['enableAccessCodeGeneratorMetadata'] = undefined;
@@ -3138,6 +3395,7 @@
    */
   exports.prototype['enableAdvancedPayments'] = undefined;
   /**
+   * Metadata that indicates whether the `enableAdvancedPayments` property is editable. 
    * @member {module:model/SettingsMetadata} enableAdvancedPaymentsMetadata
    */
   exports.prototype['enableAdvancedPaymentsMetadata'] = undefined;
@@ -3147,6 +3405,7 @@
    */
   exports.prototype['enableAdvancedPowerForms'] = undefined;
   /**
+   * Metadata that indicates whether the `enableAdvancedPowerForms` property is editable. 
    * @member {module:model/SettingsMetadata} enableAdvancedPowerFormsMetadata
    */
   exports.prototype['enableAdvancedPowerFormsMetadata'] = undefined;
@@ -3156,6 +3415,7 @@
    */
   exports.prototype['enableAgreementActionsForCLM'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableAgreementActionsForCLMMetadata
    */
   exports.prototype['enableAgreementActionsForCLMMetadata'] = undefined;
@@ -3165,6 +3425,7 @@
    */
   exports.prototype['enableAgreementActionsForESign'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableAgreementActionsForESignMetadata
    */
   exports.prototype['enableAgreementActionsForESignMetadata'] = undefined;
@@ -3174,6 +3435,7 @@
    */
   exports.prototype['enableAutoNav'] = undefined;
   /**
+   * Metadata that indicates whether the `enableAutoNav` property is editable. 
    * @member {module:model/SettingsMetadata} enableAutoNavMetadata
    */
   exports.prototype['enableAutoNavMetadata'] = undefined;
@@ -3183,6 +3445,7 @@
    */
   exports.prototype['enableBccDummyLink'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableBccDummyLinkMetadata
    */
   exports.prototype['enableBccDummyLinkMetadata'] = undefined;
@@ -3192,6 +3455,7 @@
    */
   exports.prototype['enableCalculatedFields'] = undefined;
   /**
+   * Metadata that indicates whether the `enableCalculatedFields` property is editable. 
    * @member {module:model/SettingsMetadata} enableCalculatedFieldsMetadata
    */
   exports.prototype['enableCalculatedFieldsMetadata'] = undefined;
@@ -3201,6 +3465,7 @@
    */
   exports.prototype['enableClickwraps'] = undefined;
   /**
+   * Metadata that indicates whether the `enableClickwraps` property is editable. 
    * @member {module:model/SettingsMetadata} enableClickwrapsMetadata
    */
   exports.prototype['enableClickwrapsMetadata'] = undefined;
@@ -3215,15 +3480,26 @@
    */
   exports.prototype['enableCommentsHistoryDownloadInSigning'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableCommentsHistoryDownloadInSigningMetadata
    */
   exports.prototype['enableCommentsHistoryDownloadInSigningMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableContactSuggestions
+   */
+  exports.prototype['enableContactSuggestions'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableContactSuggestionsMetadata
+   */
+  exports.prototype['enableContactSuggestionsMetadata'] = undefined;
   /**
    * 
    * @member {String} enableCustomerSatisfactionMetricTracking
    */
   exports.prototype['enableCustomerSatisfactionMetricTracking'] = undefined;
   /**
+   * Metadata that indicates whether the `enableCustomerSatisfactionMetricTracking` property is editable. 
    * @member {module:model/SettingsMetadata} enableCustomerSatisfactionMetricTrackingMetadata
    */
   exports.prototype['enableCustomerSatisfactionMetricTrackingMetadata'] = undefined;
@@ -3233,6 +3509,7 @@
    */
   exports.prototype['enableDSPro'] = undefined;
   /**
+   * Metadata that indicates whether the `enableDSPro` property is editable. 
    * @member {module:model/SettingsMetadata} enableDSProMetadata
    */
   exports.prototype['enableDSProMetadata'] = undefined;
@@ -3242,6 +3519,7 @@
    */
   exports.prototype['enableEnvelopeStampingByAccountAdmin'] = undefined;
   /**
+   * Metadata that indicates whether the `enableEnvelopeStampingByAccountAdmin` property is editable. 
    * @member {module:model/SettingsMetadata} enableEnvelopeStampingByAccountAdminMetadata
    */
   exports.prototype['enableEnvelopeStampingByAccountAdminMetadata'] = undefined;
@@ -3251,15 +3529,26 @@
    */
   exports.prototype['enableEnvelopeStampingByDSAdmin'] = undefined;
   /**
+   * Metadata that indicates whether the `enableEnvelopeStampingByDSAdmin` property is editable. 
    * @member {module:model/SettingsMetadata} enableEnvelopeStampingByDSAdminMetadata
    */
   exports.prototype['enableEnvelopeStampingByDSAdminMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableESignAPIHourlyLimitManagement
+   */
+  exports.prototype['enableESignAPIHourlyLimitManagement'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableESignAPIHourlyLimitManagementMetadata
+   */
+  exports.prototype['enableESignAPIHourlyLimitManagementMetadata'] = undefined;
   /**
    * 
    * @member {String} enableEsignCommunities
    */
   exports.prototype['enableEsignCommunities'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableEsignCommunitiesMetadata
    */
   exports.prototype['enableEsignCommunitiesMetadata'] = undefined;
@@ -3278,6 +3567,7 @@
    */
   exports.prototype['enableIDFxIntuitKBA'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableIDFxIntuitKBAMetadata
    */
   exports.prototype['enableIDFxIntuitKBAMetadata'] = undefined;
@@ -3287,6 +3577,7 @@
    */
   exports.prototype['enableIDFxPhoneAuthentication'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableIDFxPhoneAuthenticationMetadata
    */
   exports.prototype['enableIDFxPhoneAuthenticationMetadata'] = undefined;
@@ -3296,6 +3587,7 @@
    */
   exports.prototype['enableInBrowserEditor'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableInBrowserEditorMetadata
    */
   exports.prototype['enableInBrowserEditorMetadata'] = undefined;
@@ -3309,11 +3601,16 @@
    */
   exports.prototype['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = undefined;
   /**
+   * @member {module:model/SettingsMetadata} enableParticipantRecipientSettingMetadata
+   */
+  exports.prototype['enableParticipantRecipientSettingMetadata'] = undefined;
+  /**
    * 
    * @member {String} enablePaymentProcessing
    */
   exports.prototype['enablePaymentProcessing'] = undefined;
   /**
+   * Metadata that indicates whether the `enablePaymentProcessing` property is editable. 
    * @member {module:model/SettingsMetadata} enablePaymentProcessingMetadata
    */
   exports.prototype['enablePaymentProcessingMetadata'] = undefined;
@@ -3323,6 +3620,7 @@
    */
   exports.prototype['enablePDFAConversion'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enablePDFAConversionMetadata
    */
   exports.prototype['enablePDFAConversionMetadata'] = undefined;
@@ -3337,10 +3635,12 @@
    */
   exports.prototype['enablePowerFormDirect'] = undefined;
   /**
+   * Metadata that indicates whether the `enablePowerFormDirect` property is editable. 
    * @member {module:model/SettingsMetadata} enablePowerFormDirectMetadata
    */
   exports.prototype['enablePowerFormDirectMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `enablePowerForm` property is editable. 
    * @member {module:model/SettingsMetadata} enablePowerFormMetadata
    */
   exports.prototype['enablePowerFormMetadata'] = undefined;
@@ -3350,6 +3650,7 @@
    */
   exports.prototype['enableRecipientDomainValidation'] = undefined;
   /**
+   * Metadata that indicates whether the `enableRecipientDomainValidation` property is editable. 
    * @member {module:model/SettingsMetadata} enableRecipientDomainValidationMetadata
    */
   exports.prototype['enableRecipientDomainValidationMetadata'] = undefined;
@@ -3359,6 +3660,7 @@
    */
   exports.prototype['enableRecipientMayProvidePhoneNumber'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableRecipientMayProvidePhoneNumberMetadata
    */
   exports.prototype['enableRecipientMayProvidePhoneNumberMetadata'] = undefined;
@@ -3368,6 +3670,7 @@
    */
   exports.prototype['enableReportLinks'] = undefined;
   /**
+   * Metadata that indicates whether the `enableReportLinks` property is editable. 
    * @member {module:model/SettingsMetadata} enableReportLinksMetadata
    */
   exports.prototype['enableReportLinksMetadata'] = undefined;
@@ -3377,6 +3680,7 @@
    */
   exports.prototype['enableRequireSignOnPaper'] = undefined;
   /**
+   * Metadata that indicates whether the `enableRequireSignOnPaper` property is editable. 
    * @member {module:model/SettingsMetadata} enableRequireSignOnPaperMetadata
    */
   exports.prototype['enableRequireSignOnPaperMetadata'] = undefined;
@@ -3386,6 +3690,7 @@
    */
   exports.prototype['enableReservedDomain'] = undefined;
   /**
+   * Metadata that indicates whether the `enableReservedDomain` property is editable. 
    * @member {module:model/SettingsMetadata} enableReservedDomainMetadata
    */
   exports.prototype['enableReservedDomainMetadata'] = undefined;
@@ -3395,6 +3700,7 @@
    */
   exports.prototype['enableResponsiveSigning'] = undefined;
   /**
+   * Metadata that indicates whether the `enableResponsiveSigning` property is editable. 
    * @member {module:model/SettingsMetadata} enableResponsiveSigningMetadata
    */
   exports.prototype['enableResponsiveSigningMetadata'] = undefined;
@@ -3404,6 +3710,7 @@
    */
   exports.prototype['enableScheduledRelease'] = undefined;
   /**
+   * Metadata that indicates whether the `enableScheduledRelease` property is editable. 
    * @member {module:model/SettingsMetadata} enableScheduledReleaseMetadata
    */
   exports.prototype['enableScheduledReleaseMetadata'] = undefined;
@@ -3413,6 +3720,7 @@
    */
   exports.prototype['enableSearch'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableSearchMetadata
    */
   exports.prototype['enableSearchMetadata'] = undefined;
@@ -3431,6 +3739,7 @@
    */
   exports.prototype['enableSearchUI'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableSearchUIMetadata
    */
   exports.prototype['enableSearchUIMetadata'] = undefined;
@@ -3440,6 +3749,7 @@
    */
   exports.prototype['enableSendingTagsFontSettings'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSendingTagsFontSettings` property is editable. 
    * @member {module:model/SettingsMetadata} enableSendingTagsFontSettingsMetadata
    */
   exports.prototype['enableSendingTagsFontSettingsMetadata'] = undefined;
@@ -3449,6 +3759,7 @@
    */
   exports.prototype['enableSendToAgent'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSendToAgent` property is editable. 
    * @member {module:model/SettingsMetadata} enableSendToAgentMetadata
    */
   exports.prototype['enableSendToAgentMetadata'] = undefined;
@@ -3458,6 +3769,7 @@
    */
   exports.prototype['enableSendToIntermediary'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSendToIntermediary` property is editable. 
    * @member {module:model/SettingsMetadata} enableSendToIntermediaryMetadata
    */
   exports.prototype['enableSendToIntermediaryMetadata'] = undefined;
@@ -3467,6 +3779,7 @@
    */
   exports.prototype['enableSendToManage'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSendToManage` property is editable. 
    * @member {module:model/SettingsMetadata} enableSendToManageMetadata
    */
   exports.prototype['enableSendToManageMetadata'] = undefined;
@@ -3476,6 +3789,7 @@
    */
   exports.prototype['enableSequentialSigningAPI'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSequentialSigningAPI` property is editable. 
    * @member {module:model/SettingsMetadata} enableSequentialSigningAPIMetadata
    */
   exports.prototype['enableSequentialSigningAPIMetadata'] = undefined;
@@ -3485,6 +3799,7 @@
    */
   exports.prototype['enableSequentialSigningUI'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSequentialSigningUI` property is editable. 
    * @member {module:model/SettingsMetadata} enableSequentialSigningUIMetadata
    */
   exports.prototype['enableSequentialSigningUIMetadata'] = undefined;
@@ -3494,6 +3809,7 @@
    */
   exports.prototype['enableSignerAttachments'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSignerAttachments` property is editable. 
    * @member {module:model/SettingsMetadata} enableSignerAttachmentsMetadata
    */
   exports.prototype['enableSignerAttachmentsMetadata'] = undefined;
@@ -3503,6 +3819,7 @@
    */
   exports.prototype['enableSigningExtensionComments'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSigningExtensionComments` property is editable. 
    * @member {module:model/SettingsMetadata} enableSigningExtensionCommentsMetadata
    */
   exports.prototype['enableSigningExtensionCommentsMetadata'] = undefined;
@@ -3512,6 +3829,7 @@
    */
   exports.prototype['enableSigningExtensionConversations'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSigningExtensionConversations` property is editable. 
    * @member {module:model/SettingsMetadata} enableSigningExtensionConversationsMetadata
    */
   exports.prototype['enableSigningExtensionConversationsMetadata'] = undefined;
@@ -3521,6 +3839,7 @@
    */
   exports.prototype['enableSigningOrderSettingsForAccount'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSigningOrderSettingsForAccount` property is editable. 
    * @member {module:model/SettingsMetadata} enableSigningOrderSettingsForAccountMetadata
    */
   exports.prototype['enableSigningOrderSettingsForAccountMetadata'] = undefined;
@@ -3530,6 +3849,7 @@
    */
   exports.prototype['enableSignOnPaper'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSignOnPaper` property is editable. 
    * @member {module:model/SettingsMetadata} enableSignOnPaperMetadata
    */
   exports.prototype['enableSignOnPaperMetadata'] = undefined;
@@ -3539,6 +3859,7 @@
    */
   exports.prototype['enableSignOnPaperOverride'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSignOnPaperOverride` property is editable. 
    * @member {module:model/SettingsMetadata} enableSignOnPaperOverrideMetadata
    */
   exports.prototype['enableSignOnPaperOverrideMetadata'] = undefined;
@@ -3548,6 +3869,7 @@
    */
   exports.prototype['enableSignWithNotary'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSignWithNotary` property is editable. 
    * @member {module:model/SettingsMetadata} enableSignWithNotaryMetadata
    */
   exports.prototype['enableSignWithNotaryMetadata'] = undefined;
@@ -3557,6 +3879,7 @@
    */
   exports.prototype['enableSmartContracts'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSmartContracts` property is editable.
    * @member {module:model/SettingsMetadata} enableSmartContractsMetadata
    */
   exports.prototype['enableSmartContractsMetadata'] = undefined;
@@ -3566,6 +3889,7 @@
    */
   exports.prototype['enableSMSAuthentication'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSMSAuthentication` property is editable. 
    * @member {module:model/SettingsMetadata} enableSMSAuthenticationMetadata
    */
   exports.prototype['enableSMSAuthenticationMetadata'] = undefined;
@@ -3575,6 +3899,7 @@
    */
   exports.prototype['enableSMSDeliveryAdditionalNotification'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableSMSDeliveryAdditionalNotificationMetadata
    */
   exports.prototype['enableSMSDeliveryAdditionalNotificationMetadata'] = undefined;
@@ -3589,6 +3914,7 @@
    */
   exports.prototype['enableSocialIdLogin'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/SettingsMetadata} enableSocialIdLoginMetadata
    */
   exports.prototype['enableSocialIdLoginMetadata'] = undefined;
@@ -3598,6 +3924,7 @@
    */
   exports.prototype['enableStrikeThrough'] = undefined;
   /**
+   * Metadata that indicates whether the `enableStrikeThrough` property is editable. 
    * @member {module:model/SettingsMetadata} enableStrikeThroughMetadata
    */
   exports.prototype['enableStrikeThroughMetadata'] = undefined;
@@ -3607,6 +3934,7 @@
    */
   exports.prototype['enableTransactionPoint'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} enableTransactionPointMetadata
    */
   exports.prototype['enableTransactionPointMetadata'] = undefined;
@@ -3616,6 +3944,7 @@
    */
   exports.prototype['enableVaulting'] = undefined;
   /**
+   * Metadata that indicates whether the `enableVaulting` property is editable. 
    * @member {module:model/SettingsMetadata} enableVaultingMetadata
    */
   exports.prototype['enableVaultingMetadata'] = undefined;
@@ -3625,6 +3954,7 @@
    */
   exports.prototype['enableWitnessing'] = undefined;
   /**
+   * Metadata that indicates whether the `enableWitnessing` property is editable. 
    * @member {module:model/SettingsMetadata} enableWitnessingMetadata
    */
   exports.prototype['enableWitnessingMetadata'] = undefined;
@@ -3634,6 +3964,7 @@
    */
   exports.prototype['enforceTemplateNameUniqueness'] = undefined;
   /**
+   * Metadata that indicates whether the `enforceTemplateNameUniqueness` property is editable. 
    * @member {module:model/SettingsMetadata} enforceTemplateNameUniquenessMetadata
    */
   exports.prototype['enforceTemplateNameUniquenessMetadata'] = undefined;
@@ -3643,6 +3974,7 @@
    */
   exports.prototype['envelopeIntegrationAllowed'] = undefined;
   /**
+   * Metadata that indicates whether the `envelopeIntegrationAllowed` property is editable. 
    * @member {module:model/SettingsMetadata} envelopeIntegrationAllowedMetadata
    */
   exports.prototype['envelopeIntegrationAllowedMetadata'] = undefined;
@@ -3652,15 +3984,35 @@
    */
   exports.prototype['envelopeIntegrationEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `envelopeIntegrationEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} envelopeIntegrationEnabledMetadata
    */
   exports.prototype['envelopeIntegrationEnabledMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} EnvelopeLimitsTotalDocumentSizeAllowedInMB
+   */
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMB'] = undefined;
+  /**
+   * 
+   * @member {String} EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled
+   */
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata
+   */
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata
+   */
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = undefined;
   /**
    * 
    * @member {String} envelopeStampingDefaultValue
    */
   exports.prototype['envelopeStampingDefaultValue'] = undefined;
   /**
+   * Metadata that indicates whether the `envelopeStampingDefaultValue` property is editable. 
    * @member {module:model/SettingsMetadata} envelopeStampingDefaultValueMetadata
    */
   exports.prototype['envelopeStampingDefaultValueMetadata'] = undefined;
@@ -3670,6 +4022,7 @@
    */
   exports.prototype['exitPrompt'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} exitPromptMetadata
    */
   exports.prototype['exitPromptMetadata'] = undefined;
@@ -3684,14 +4037,17 @@
    */
   exports.prototype['expressSendAllowTabs'] = undefined;
   /**
+   * Metadata that indicates whether the `expressSendAllowTabs` property is editable. 
    * @member {module:model/SettingsMetadata} expressSendAllowTabsMetadata
    */
   exports.prototype['expressSendAllowTabsMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `expressSend` property is editable. 
    * @member {module:model/SettingsMetadata} expressSendMetadata
    */
   exports.prototype['expressSendMetadata'] = undefined;
   /**
+   * A list of external document sources such as DropBox and OneDrive.
    * @member {module:model/ExternalDocumentSources} externalDocumentSources
    */
   exports.prototype['externalDocumentSources'] = undefined;
@@ -3701,6 +4057,7 @@
    */
   exports.prototype['externalSignaturePadType'] = undefined;
   /**
+   * Metadata that indicates whether the `externalSignaturePadType` property is editable. 
    * @member {module:model/SettingsMetadata} externalSignaturePadTypeMetadata
    */
   exports.prototype['externalSignaturePadTypeMetadata'] = undefined;
@@ -3710,6 +4067,7 @@
    */
   exports.prototype['faxOutEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `faxOutEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} faxOutEnabledMetadata
    */
   exports.prototype['faxOutEnabledMetadata'] = undefined;
@@ -3719,6 +4077,7 @@
    */
   exports.prototype['finishReminder'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} finishReminderMetadata
    */
   exports.prototype['finishReminderMetadata'] = undefined;
@@ -3728,6 +4087,7 @@
    */
   exports.prototype['guidedFormsHtmlAllowed'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} guidedFormsHtmlAllowedMetadata
    */
   exports.prototype['guidedFormsHtmlAllowedMetadata'] = undefined;
@@ -3742,6 +4102,7 @@
    */
   exports.prototype['hideAccountAddressInCoC'] = undefined;
   /**
+   * Metadata that indicates whether the `hideAccountAddressInCoC` property is editable. 
    * @member {module:model/SettingsMetadata} hideAccountAddressInCoCMetadata
    */
   exports.prototype['hideAccountAddressInCoCMetadata'] = undefined;
@@ -3751,6 +4112,7 @@
    */
   exports.prototype['hidePricing'] = undefined;
   /**
+   * Metadata that indicates whether the `hidePricing` property is editable. 
    * @member {module:model/SettingsMetadata} hidePricingMetadata
    */
   exports.prototype['hidePricingMetadata'] = undefined;
@@ -3770,10 +4132,12 @@
    */
   exports.prototype['idCheckExpireDays'] = undefined;
   /**
+   * Metadata that indicates whether the `idCheckExpireDays` property is editable. 
    * @member {module:model/SettingsMetadata} idCheckExpireDaysMetadata
    */
   exports.prototype['idCheckExpireDaysMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `idCheckExpire` property is editable. 
    * @member {module:model/SettingsMetadata} idCheckExpireMetadata
    */
   exports.prototype['idCheckExpireMetadata'] = undefined;
@@ -3783,6 +4147,7 @@
    */
   exports.prototype['idCheckExpireMinutes'] = undefined;
   /**
+   * Metadata that indicates whether the `idCheckExpireMinutes` property is editable. 
    * @member {module:model/SettingsMetadata} idCheckExpireMinutesMetadata
    */
   exports.prototype['idCheckExpireMinutesMetadata'] = undefined;
@@ -3792,6 +4157,7 @@
    */
   exports.prototype['idCheckRequired'] = undefined;
   /**
+   * Metadata that indicates whether the `idCheckRequired` property is editable. 
    * @member {module:model/SettingsMetadata} idCheckRequiredMetadata
    */
   exports.prototype['idCheckRequiredMetadata'] = undefined;
@@ -3801,6 +4167,7 @@
    */
   exports.prototype['identityVerification'] = undefined;
   /**
+   * Metadata that indicates whether the `identityVerification` property is editable. 
    * @member {module:model/SettingsMetadata} identityVerificationMetadata
    */
   exports.prototype['identityVerificationMetadata'] = undefined;
@@ -3810,6 +4177,7 @@
    */
   exports.prototype['idfxPhoneAuthenticationOverride'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} idfxPhoneAuthenticationOverrideMetadata
    */
   exports.prototype['idfxPhoneAuthenticationOverrideMetadata'] = undefined;
@@ -3819,6 +4187,7 @@
    */
   exports.prototype['ignoreErrorIfAnchorTabNotFound'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} ignoreErrorIfAnchorTabNotFoundMetadataEnabled
    */
   exports.prototype['ignoreErrorIfAnchorTabNotFoundMetadataEnabled'] = undefined;
@@ -3828,6 +4197,7 @@
    */
   exports.prototype['inPersonIDCheckQuestion'] = undefined;
   /**
+   * Metadata that indicates whether the `inPersonIDCheckQuestion` property is editable. 
    * @member {module:model/SettingsMetadata} inPersonIDCheckQuestionMetadata
    */
   exports.prototype['inPersonIDCheckQuestionMetadata'] = undefined;
@@ -3837,6 +4207,7 @@
    */
   exports.prototype['inPersonSigningEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `inPersonSigningEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} inPersonSigningEnabledMetadata
    */
   exports.prototype['inPersonSigningEnabledMetadata'] = undefined;
@@ -3846,6 +4217,7 @@
    */
   exports.prototype['inSessionEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `inSessionEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} inSessionEnabledMetadata
    */
   exports.prototype['inSessionEnabledMetadata'] = undefined;
@@ -3855,6 +4227,7 @@
    */
   exports.prototype['inSessionSuppressEmails'] = undefined;
   /**
+   * Metadata that indicates whether the `inSessionSuppressEmails` property is editable. 
    * @member {module:model/SettingsMetadata} inSessionSuppressEmailsMetadata
    */
   exports.prototype['inSessionSuppressEmailsMetadata'] = undefined;
@@ -3869,6 +4242,7 @@
    */
   exports.prototype['maximumSigningGroups'] = undefined;
   /**
+   * Metadata that indicates whether the `maximumSigningGroups` property is editable. 
    * @member {module:model/SettingsMetadata} maximumSigningGroupsMetadata
    */
   exports.prototype['maximumSigningGroupsMetadata'] = undefined;
@@ -3878,6 +4252,7 @@
    */
   exports.prototype['maximumUsersPerSigningGroup'] = undefined;
   /**
+   * Metadata that indicates whether the `maximumUsersPerSigningGroup` property is editable. 
    * @member {module:model/SettingsMetadata} maximumUsersPerSigningGroupMetadata
    */
   exports.prototype['maximumUsersPerSigningGroupMetadata'] = undefined;
@@ -3892,6 +4267,7 @@
    */
   exports.prototype['mobileSessionTimeout'] = undefined;
   /**
+   * Metadata that indicates whether the `mobileSessionTimeout` property is editable. 
    * @member {module:model/SettingsMetadata} mobileSessionTimeoutMetadata
    */
   exports.prototype['mobileSessionTimeoutMetadata'] = undefined;
@@ -3906,6 +4282,7 @@
    */
   exports.prototype['optInMobileSigningV02'] = undefined;
   /**
+   * Metadata that indicates whether the `optInMobileSigningV02` property is editable. 
    * @member {module:model/SettingsMetadata} optInMobileSigningV02Metadata
    */
   exports.prototype['optInMobileSigningV02Metadata'] = undefined;
@@ -3915,6 +4292,7 @@
    */
   exports.prototype['optOutAutoNavTextAndTabColorUpdates'] = undefined;
   /**
+   * Metadata that indicates whether the `optOutAutoNavTextAndTabColorUpdates` property is editable. 
    * @member {module:model/SettingsMetadata} optOutAutoNavTextAndTabColorUpdatesMetadata
    */
   exports.prototype['optOutAutoNavTextAndTabColorUpdatesMetadata'] = undefined;
@@ -3924,15 +4302,44 @@
    */
   exports.prototype['optOutNewPlatformSeal'] = undefined;
   /**
+   * Metadata that indicates whether the `optOutNewPlatformSealPlatform` property is editable. 
    * @member {module:model/SettingsMetadata} optOutNewPlatformSealPlatformMetadata
    */
   exports.prototype['optOutNewPlatformSealPlatformMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} pdfMaxChunkedUploadPartSize
+   */
+  exports.prototype['pdfMaxChunkedUploadPartSize'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} pdfMaxChunkedUploadPartSizeMetadata
+   */
+  exports.prototype['pdfMaxChunkedUploadPartSizeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} pdfMaxChunkedUploadTotalSize
+   */
+  exports.prototype['pdfMaxChunkedUploadTotalSize'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} pdfMaxChunkedUploadTotalSizeMetadata
+   */
+  exports.prototype['pdfMaxChunkedUploadTotalSizeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} pdfMaxIndividualUploadSize
+   */
+  exports.prototype['pdfMaxIndividualUploadSize'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} pdfMaxIndividualUploadSizeMetadata
+   */
+  exports.prototype['pdfMaxIndividualUploadSizeMetadata'] = undefined;
   /**
    * 
    * @member {String} phoneAuthRecipientMayProvidePhoneNumber
    */
   exports.prototype['phoneAuthRecipientMayProvidePhoneNumber'] = undefined;
   /**
+   * Metadata that indicates whether the `phoneAuthRecipientMayProvidePhoneNumber` property is editable. 
    * @member {module:model/SettingsMetadata} phoneAuthRecipientMayProvidePhoneNumberMetadata
    */
   exports.prototype['phoneAuthRecipientMayProvidePhoneNumberMetadata'] = undefined;
@@ -3942,6 +4349,7 @@
    */
   exports.prototype['pkiSignDownloadedPDFDocs'] = undefined;
   /**
+   * Metadata that indicates whether the `pkiSignDownloadedPDFDocs` property is editable. 
    * @member {module:model/SettingsMetadata} pkiSignDownloadedPDFDocsMetadata
    */
   exports.prototype['pkiSignDownloadedPDFDocsMetadata'] = undefined;
@@ -3951,6 +4359,7 @@
    */
   exports.prototype['readOnlyMode'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} readOnlyModeMetadata
    */
   exports.prototype['readOnlyModeMetadata'] = undefined;
@@ -3960,6 +4369,7 @@
    */
   exports.prototype['recipientsCanSignOffline'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientsCanSignOffline` property is editable. 
    * @member {module:model/SettingsMetadata} recipientsCanSignOfflineMetadata
    */
   exports.prototype['recipientsCanSignOfflineMetadata'] = undefined;
@@ -3969,6 +4379,7 @@
    */
   exports.prototype['recipientSigningAutoNavigationControl'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientSigningAutoNavigationControl` property is editable. 
    * @member {module:model/SettingsMetadata} recipientSigningAutoNavigationControlMetadata
    */
   exports.prototype['recipientSigningAutoNavigationControlMetadata'] = undefined;
@@ -3978,6 +4389,7 @@
    */
   exports.prototype['require21CFRpt11Compliance'] = undefined;
   /**
+   * Metadata that indicates whether the `require21CFRpt11Compliance` property is editable. 
    * @member {module:model/SettingsMetadata} require21CFRpt11ComplianceMetadata
    */
   exports.prototype['require21CFRpt11ComplianceMetadata'] = undefined;
@@ -3987,6 +4399,7 @@
    */
   exports.prototype['requireDeclineReason'] = undefined;
   /**
+   * Metadata that indicates whether the `requireDeclineReason` property is editable. 
    * @member {module:model/SettingsMetadata} requireDeclineReasonMetadata
    */
   exports.prototype['requireDeclineReasonMetadata'] = undefined;
@@ -3996,6 +4409,7 @@
    */
   exports.prototype['requireExternalUserManagement'] = undefined;
   /**
+   * Metadata that indicates whether the `requireExternalUserManagement` property is editable. 
    * @member {module:model/SettingsMetadata} requireExternalUserManagementMetadata
    */
   exports.prototype['requireExternalUserManagementMetadata'] = undefined;
@@ -4005,6 +4419,7 @@
    */
   exports.prototype['requireSignerCertificateType'] = undefined;
   /**
+   * Metadata that indicates whether the `requireSignerCertificateType` property is editable. 
    * @member {module:model/SettingsMetadata} requireSignerCertificateTypeMetadata
    */
   exports.prototype['requireSignerCertificateTypeMetadata'] = undefined;
@@ -4034,6 +4449,7 @@
    */
   exports.prototype['selfSignedRecipientEmailDocument'] = undefined;
   /**
+   * Metadata that indicates whether the `selfSignedRecipientEmailDocument` property is editable. 
    * @member {module:model/SettingsMetadata} selfSignedRecipientEmailDocumentMetadata
    */
   exports.prototype['selfSignedRecipientEmailDocumentMetadata'] = undefined;
@@ -4043,6 +4459,7 @@
    */
   exports.prototype['selfSignedRecipientEmailDocumentUserOverride'] = undefined;
   /**
+   * Metadata that indicates whether the `selfSignedRecipientEmailDocumentUserOverride` property is editable. 
    * @member {module:model/SettingsMetadata} selfSignedRecipientEmailDocumentUserOverrideMetadata
    */
   exports.prototype['selfSignedRecipientEmailDocumentUserOverrideMetadata'] = undefined;
@@ -4052,6 +4469,7 @@
    */
   exports.prototype['senderCanSignInEachLocation'] = undefined;
   /**
+   * Metadata that indicates whether the `senderCanSignInEachLocation` property is editable. 
    * @member {module:model/SettingsMetadata} senderCanSignInEachLocationMetadata
    */
   exports.prototype['senderCanSignInEachLocationMetadata'] = undefined;
@@ -4061,6 +4479,7 @@
    */
   exports.prototype['senderMustAuthenticateSigning'] = undefined;
   /**
+   * Metadata that indicates whether the `senderMustAuthenticateSigning` property is editable. 
    * @member {module:model/SettingsMetadata} senderMustAuthenticateSigningMetadata
    */
   exports.prototype['senderMustAuthenticateSigningMetadata'] = undefined;
@@ -4070,6 +4489,7 @@
    */
   exports.prototype['sendingTagsFontColor'] = undefined;
   /**
+   * Metadata that indicates whether the `sendingTagsFontColor` property is editable. 
    * @member {module:model/SettingsMetadata} sendingTagsFontColorMetadata
    */
   exports.prototype['sendingTagsFontColorMetadata'] = undefined;
@@ -4079,6 +4499,7 @@
    */
   exports.prototype['sendingTagsFontName'] = undefined;
   /**
+   * Metadata that indicates whether the `sendingTagsFontName` property is editable. 
    * @member {module:model/SettingsMetadata} sendingTagsFontNameMetadata
    */
   exports.prototype['sendingTagsFontNameMetadata'] = undefined;
@@ -4088,6 +4509,7 @@
    */
   exports.prototype['sendingTagsFontSize'] = undefined;
   /**
+   * Metadata that indicates whether the `sendingTagsFontSize` property is editable. 
    * @member {module:model/SettingsMetadata} sendingTagsFontSizeMetadata
    */
   exports.prototype['sendingTagsFontSizeMetadata'] = undefined;
@@ -4097,6 +4519,7 @@
    */
   exports.prototype['sendLockoutRecipientNotification'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} sendLockoutRecipientNotificationMetadata
    */
   exports.prototype['sendLockoutRecipientNotificationMetadata'] = undefined;
@@ -4106,6 +4529,7 @@
    */
   exports.prototype['sendToCertifiedDeliveryEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `sendToCertifiedDeliveryEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} sendToCertifiedDeliveryEnabledMetadata
    */
   exports.prototype['sendToCertifiedDeliveryEnabledMetadata'] = undefined;
@@ -4115,6 +4539,7 @@
    */
   exports.prototype['sessionTimeout'] = undefined;
   /**
+   * Metadata that indicates whether the `sessionTimeout` property is editable. 
    * @member {module:model/SettingsMetadata} sessionTimeoutMetadata
    */
   exports.prototype['sessionTimeoutMetadata'] = undefined;
@@ -4124,6 +4549,7 @@
    */
   exports.prototype['setRecipEmailLang'] = undefined;
   /**
+   * Metadata that indicates whether the `setRecipEmailLang` property is editable. 
    * @member {module:model/SettingsMetadata} setRecipEmailLangMetadata
    */
   exports.prototype['setRecipEmailLangMetadata'] = undefined;
@@ -4133,6 +4559,7 @@
    */
   exports.prototype['setRecipSignLang'] = undefined;
   /**
+   * Metadata that indicates whether the `setRecipSignLang` property is editable. 
    * @member {module:model/SettingsMetadata} setRecipSignLangMetadata
    */
   exports.prototype['setRecipSignLangMetadata'] = undefined;
@@ -4142,6 +4569,7 @@
    */
   exports.prototype['sharedTemplateFolders'] = undefined;
   /**
+   * Metadata that indicates whether the `sharedTemplateFolders` property is editable. 
    * @member {module:model/SettingsMetadata} sharedTemplateFoldersMetadata
    */
   exports.prototype['sharedTemplateFoldersMetadata'] = undefined;
@@ -4151,6 +4579,7 @@
    */
   exports.prototype['showCompleteDialogInEmbeddedSession'] = undefined;
   /**
+   * Metadata that indicates whether the `showCompleteDialogInEmbeddedSession` property is editable. 
    * @member {module:model/SettingsMetadata} showCompleteDialogInEmbeddedSessionMetadata
    */
   exports.prototype['showCompleteDialogInEmbeddedSessionMetadata'] = undefined;
@@ -4160,6 +4589,7 @@
    */
   exports.prototype['showConditionalRoutingOnSend'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} showConditionalRoutingOnSendMetadata
    */
   exports.prototype['showConditionalRoutingOnSendMetadata'] = undefined;
@@ -4169,6 +4599,7 @@
    */
   exports.prototype['showInitialConditionalFields'] = undefined;
   /**
+   * Metadata that indicates whether the `showInitialConditionalFields` property is editable. 
    * @member {module:model/SettingsMetadata} showInitialConditionalFieldsMetadata
    */
   exports.prototype['showInitialConditionalFieldsMetadata'] = undefined;
@@ -4178,6 +4609,7 @@
    */
   exports.prototype['showLocalizedWatermarks'] = undefined;
   /**
+   * Metadata that indicates whether the `showLocalizedWatermarks` property is editable. 
    * @member {module:model/SettingsMetadata} showLocalizedWatermarksMetadata
    */
   exports.prototype['showLocalizedWatermarksMetadata'] = undefined;
@@ -4187,6 +4619,7 @@
    */
   exports.prototype['showMaskedFieldsWhenDownloadingDocumentAsSender'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} showMaskedFieldsWhenDownloadingDocumentAsSenderMetadata
    */
   exports.prototype['showMaskedFieldsWhenDownloadingDocumentAsSenderMetadata'] = undefined;
@@ -4196,6 +4629,7 @@
    */
   exports.prototype['showTutorials'] = undefined;
   /**
+   * Metadata that indicates whether the `showTutorials` property is editable. 
    * @member {module:model/SettingsMetadata} showTutorialsMetadata
    */
   exports.prototype['showTutorialsMetadata'] = undefined;
@@ -4205,6 +4639,7 @@
    */
   exports.prototype['signatureProviders'] = undefined;
   /**
+   * Metadata that indicates whether the `signatureProviders` property is editable. 
    * @member {module:model/SettingsMetadata} signatureProvidersMetadata
    */
   exports.prototype['signatureProvidersMetadata'] = undefined;
@@ -4214,6 +4649,7 @@
    */
   exports.prototype['signDateFormat'] = undefined;
   /**
+   * Metadata that indicates whether the `signDateFormat` property is editable. 
    * @member {module:model/SettingsMetadata} signDateFormatMetadata
    */
   exports.prototype['signDateFormatMetadata'] = undefined;
@@ -4223,6 +4659,7 @@
    */
   exports.prototype['signDateTimeAccountLanguageOverride'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} signDateTimeAccountLanguageOverrideMetadata
    */
   exports.prototype['signDateTimeAccountLanguageOverrideMetadata'] = undefined;
@@ -4232,6 +4669,7 @@
    */
   exports.prototype['signDateTimeAccountTimezoneOverride'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} signDateTimeAccountTimezoneOverrideMetadata
    */
   exports.prototype['signDateTimeAccountTimezoneOverrideMetadata'] = undefined;
@@ -4241,6 +4679,7 @@
    */
   exports.prototype['signerAttachCertificateToEnvelopePDF'] = undefined;
   /**
+   * Metadata that indicates whether the `signerAttachCertificateToEnvelopePDF` property is editable. 
    * @member {module:model/SettingsMetadata} signerAttachCertificateToEnvelopePDFMetadata
    */
   exports.prototype['signerAttachCertificateToEnvelopePDFMetadata'] = undefined;
@@ -4250,6 +4689,7 @@
    */
   exports.prototype['signerAttachConcat'] = undefined;
   /**
+   * Metadata that indicates whether the `signerAttachConcat` property is editable. 
    * @member {module:model/SettingsMetadata} signerAttachConcatMetadata
    */
   exports.prototype['signerAttachConcatMetadata'] = undefined;
@@ -4259,6 +4699,7 @@
    */
   exports.prototype['signerCanCreateAccount'] = undefined;
   /**
+   * Metadata that indicates whether the `signerCanCreateAccount` property is editable. 
    * @member {module:model/SettingsMetadata} signerCanCreateAccountMetadata
    */
   exports.prototype['signerCanCreateAccountMetadata'] = undefined;
@@ -4268,6 +4709,7 @@
    */
   exports.prototype['signerCanSignOnMobile'] = undefined;
   /**
+   * Metadata that indicates whether the `signerCanSignOnMobile` property is editable. 
    * @member {module:model/SettingsMetadata} signerCanSignOnMobileMetadata
    */
   exports.prototype['signerCanSignOnMobileMetadata'] = undefined;
@@ -4277,6 +4719,7 @@
    */
   exports.prototype['signerInSessionUseEnvelopeCompleteEmail'] = undefined;
   /**
+   * Metadata that indicates whether the `signerInSessionUseEnvelopeCompleteEmail` property is editable. 
    * @member {module:model/SettingsMetadata} signerInSessionUseEnvelopeCompleteEmailMetadata
    */
   exports.prototype['signerInSessionUseEnvelopeCompleteEmailMetadata'] = undefined;
@@ -4286,6 +4729,7 @@
    */
   exports.prototype['signerLoginRequirements'] = undefined;
   /**
+   * Metadata that indicates whether the `signerLoginRequirements` property is editable. 
    * @member {module:model/SettingsMetadata} signerLoginRequirementsMetadata
    */
   exports.prototype['signerLoginRequirementsMetadata'] = undefined;
@@ -4295,6 +4739,7 @@
    */
   exports.prototype['signerMustHaveAccount'] = undefined;
   /**
+   * Metadata that indicates whether the `signerMustHaveAccount` property is editable. 
    * @member {module:model/SettingsMetadata} signerMustHaveAccountMetadata
    */
   exports.prototype['signerMustHaveAccountMetadata'] = undefined;
@@ -4304,6 +4749,7 @@
    */
   exports.prototype['signerMustLoginToSign'] = undefined;
   /**
+   * Metadata that indicates whether the `signerMustLoginToSign` property is editable. 
    * @member {module:model/SettingsMetadata} signerMustLoginToSignMetadata
    */
   exports.prototype['signerMustLoginToSignMetadata'] = undefined;
@@ -4313,6 +4759,7 @@
    */
   exports.prototype['signerShowSecureFieldInitialValues'] = undefined;
   /**
+   * Metadata that indicates whether the `signerShowSecureFieldInitialValues` property is editable. 
    * @member {module:model/SettingsMetadata} signerShowSecureFieldInitialValuesMetadata
    */
   exports.prototype['signerShowSecureFieldInitialValuesMetadata'] = undefined;
@@ -4322,6 +4769,7 @@
    */
   exports.prototype['signingSessionTimeout'] = undefined;
   /**
+   * Metadata that indicates whether the `signingSessionTimeout` property is editable. 
    * @member {module:model/SettingsMetadata} signingSessionTimeoutMetadata
    */
   exports.prototype['signingSessionTimeoutMetadata'] = undefined;
@@ -4331,6 +4779,7 @@
    */
   exports.prototype['signingUiVersion'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} signingUiVersionMetadata
    */
   exports.prototype['signingUiVersionMetadata'] = undefined;
@@ -4340,6 +4789,7 @@
    */
   exports.prototype['signTimeFormat'] = undefined;
   /**
+   * Metadata that indicates whether the `signTimeFormat` property is editable. 
    * @member {module:model/SettingsMetadata} signTimeFormatMetadata
    */
   exports.prototype['signTimeFormatMetadata'] = undefined;
@@ -4349,6 +4799,7 @@
    */
   exports.prototype['signTimeShowAmPm'] = undefined;
   /**
+   * Metadata that indicates whether the `signTimeShowAmPm` property is editable. 
    * @member {module:model/SettingsMetadata} signTimeShowAmPmMetadata
    */
   exports.prototype['signTimeShowAmPmMetadata'] = undefined;
@@ -4358,6 +4809,7 @@
    */
   exports.prototype['simplifiedSendingEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `simplifiedSendingEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} simplifiedSendingEnabledMetadata
    */
   exports.prototype['simplifiedSendingEnabledMetadata'] = undefined;
@@ -4367,6 +4819,7 @@
    */
   exports.prototype['singleSignOnEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `singleSignOnEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} singleSignOnEnabledMetadata
    */
   exports.prototype['singleSignOnEnabledMetadata'] = undefined;
@@ -4376,6 +4829,7 @@
    */
   exports.prototype['skipAuthCompletedEnvelopes'] = undefined;
   /**
+   * Metadata that indicates whether the `skipAuthCompletedEnvelopes` property is editable. 
    * @member {module:model/SettingsMetadata} skipAuthCompletedEnvelopesMetadata
    */
   exports.prototype['skipAuthCompletedEnvelopesMetadata'] = undefined;
@@ -4385,6 +4839,7 @@
    */
   exports.prototype['socialIdRecipAuth'] = undefined;
   /**
+   * Metadata that indicates whether the `socialIdRecipAuth` property is editable. 
    * @member {module:model/SettingsMetadata} socialIdRecipAuthMetadata
    */
   exports.prototype['socialIdRecipAuthMetadata'] = undefined;
@@ -4394,6 +4849,7 @@
    */
   exports.prototype['specifyDocumentVisibility'] = undefined;
   /**
+   * Metadata that indicates whether the `specifyDocumentVisibility` property is editable. 
    * @member {module:model/SettingsMetadata} specifyDocumentVisibilityMetadata
    */
   exports.prototype['specifyDocumentVisibilityMetadata'] = undefined;
@@ -4403,6 +4859,7 @@
    */
   exports.prototype['startInAdvancedCorrect'] = undefined;
   /**
+   * Metadata that indicates whether the `startInAdvancedCorrect` property is editable. 
    * @member {module:model/SettingsMetadata} startInAdvancedCorrectMetadata
    */
   exports.prototype['startInAdvancedCorrectMetadata'] = undefined;
@@ -4412,6 +4869,7 @@
    */
   exports.prototype['supplementalDocumentsMustAccept'] = undefined;
   /**
+   * Metadata that indicates whether the `supplementalDocumentsMustAccept` property is editable. 
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustAcceptMetadata
    */
   exports.prototype['supplementalDocumentsMustAcceptMetadata'] = undefined;
@@ -4421,6 +4879,7 @@
    */
   exports.prototype['supplementalDocumentsMustRead'] = undefined;
   /**
+   * Metadata that indicates whether the `supplementalDocumentsMustRead` property is editable. 
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustReadMetadata
    */
   exports.prototype['supplementalDocumentsMustReadMetadata'] = undefined;
@@ -4430,6 +4889,7 @@
    */
   exports.prototype['supplementalDocumentsMustView'] = undefined;
   /**
+   * Metadata that indicates whether the `supplementalDocumentsMustView` property is editable. 
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustViewMetadata
    */
   exports.prototype['supplementalDocumentsMustViewMetadata'] = undefined;
@@ -4439,10 +4899,12 @@
    */
   exports.prototype['suppressCertificateEnforcement'] = undefined;
   /**
+   * Metadata that indicates whether the `suppressCertificateEnforcement` property is editable. 
    * @member {module:model/SettingsMetadata} suppressCertificateEnforcementMetadata
    */
   exports.prototype['suppressCertificateEnforcementMetadata'] = undefined;
   /**
+   * Account-wide tab settings.
    * @member {module:model/TabAccountSettings} tabAccountSettings
    */
   exports.prototype['tabAccountSettings'] = undefined;
@@ -4452,6 +4914,7 @@
    */
   exports.prototype['timezoneOffsetAPI'] = undefined;
   /**
+   * Metadata that indicates whether the `timezoneOffsetAPI` property is editable. 
    * @member {module:model/SettingsMetadata} timezoneOffsetAPIMetadata
    */
   exports.prototype['timezoneOffsetAPIMetadata'] = undefined;
@@ -4461,6 +4924,7 @@
    */
   exports.prototype['timezoneOffsetUI'] = undefined;
   /**
+   * Metadata that indicates whether the `timezoneOffsetUI` property is editable. 
    * @member {module:model/SettingsMetadata} timezoneOffsetUIMetadata
    */
   exports.prototype['timezoneOffsetUIMetadata'] = undefined;
@@ -4475,6 +4939,7 @@
    */
   exports.prototype['useAccountLevelEmail'] = undefined;
   /**
+   * Metadata that indicates whether the `useAccountLevelEmail` property is editable. 
    * @member {module:model/SettingsMetadata} useAccountLevelEmailMetadata
    */
   exports.prototype['useAccountLevelEmailMetadata'] = undefined;
@@ -4484,6 +4949,7 @@
    */
   exports.prototype['useConsumerDisclosure'] = undefined;
   /**
+   * Metadata that indicates whether the `useConsumerDisclosure` property is editable. 
    * @member {module:model/SettingsMetadata} useConsumerDisclosureMetadata
    */
   exports.prototype['useConsumerDisclosureMetadata'] = undefined;
@@ -4493,6 +4959,7 @@
    */
   exports.prototype['useConsumerDisclosureWithinAccount'] = undefined;
   /**
+   * Metadata that indicates whether the `useConsumerDisclosureWithinAccount` property is editable. 
    * @member {module:model/SettingsMetadata} useConsumerDisclosureWithinAccountMetadata
    */
   exports.prototype['useConsumerDisclosureWithinAccountMetadata'] = undefined;
@@ -4502,6 +4969,7 @@
    */
   exports.prototype['useDerivedKeys'] = undefined;
   /**
+   * Metadata that indicates whether the `useDerivedKeys` property is editable. 
    * @member {module:model/SettingsMetadata} useDerivedKeysMetadata
    */
   exports.prototype['useDerivedKeysMetadata'] = undefined;
@@ -4511,6 +4979,7 @@
    */
   exports.prototype['useDocuSignExpressSignerCertificate'] = undefined;
   /**
+   * Metadata that indicates whether the `useDocuSignExpressSignerCertificate` property is editable. 
    * @member {module:model/SettingsMetadata} useDocuSignExpressSignerCertificateMetadata
    */
   exports.prototype['useDocuSignExpressSignerCertificateMetadata'] = undefined;
@@ -4520,6 +4989,7 @@
    */
   exports.prototype['useMultiAppGroupsData'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} useMultiAppGroupsDataMetadata
    */
   exports.prototype['useMultiAppGroupsDataMetadata'] = undefined;
@@ -4529,6 +4999,7 @@
    */
   exports.prototype['useNewBlobForPdf'] = undefined;
   /**
+   * Metadata that indicates whether the `useNewBlobForPdf` property is editable. 
    * @member {module:model/SettingsMetadata} useNewBlobForPdfMetadata
    */
   exports.prototype['useNewBlobForPdfMetadata'] = undefined;
@@ -4538,6 +5009,7 @@
    */
   exports.prototype['useSAFESignerCertificates'] = undefined;
   /**
+   * Metadata that indicates whether the `useSAFESignerCertificates` property is editable. 
    * @member {module:model/SettingsMetadata} useSAFESignerCertificatesMetadata
    */
   exports.prototype['useSAFESignerCertificatesMetadata'] = undefined;
@@ -4547,6 +5019,7 @@
    */
   exports.prototype['usesAPI'] = undefined;
   /**
+   * Metadata that indicates whether the `usesAPI` property is editable. 
    * @member {module:model/SettingsMetadata} usesAPIMetadata
    */
   exports.prototype['usesAPIMetadata'] = undefined;
@@ -4556,6 +5029,7 @@
    */
   exports.prototype['useSignatureProviderPlatform'] = undefined;
   /**
+   * Metadata that indicates whether the `useSignatureProviderPlatform` property is editable. 
    * @member {module:model/SettingsMetadata} useSignatureProviderPlatformMetadata
    */
   exports.prototype['useSignatureProviderPlatformMetadata'] = undefined;
@@ -4570,6 +5044,7 @@
    */
   exports.prototype['validationsAllowed'] = undefined;
   /**
+   * Metadata that indicates whether the `validationsAllowed` property is editable. 
    * @member {module:model/SettingsMetadata} validationsAllowedMetadata
    */
   exports.prototype['validationsAllowedMetadata'] = undefined;
@@ -4579,6 +5054,7 @@
    */
   exports.prototype['validationsBrand'] = undefined;
   /**
+   * Metadata that indicates whether the `validationsBrand` property is editable. 
    * @member {module:model/SettingsMetadata} validationsBrandMetadata
    */
   exports.prototype['validationsBrandMetadata'] = undefined;
@@ -4588,6 +5064,7 @@
    */
   exports.prototype['validationsCadence'] = undefined;
   /**
+   * Metadata that indicates whether the `validationsCadence` property is editable. 
    * @member {module:model/SettingsMetadata} validationsCadenceMetadata
    */
   exports.prototype['validationsCadenceMetadata'] = undefined;
@@ -4597,6 +5074,7 @@
    */
   exports.prototype['validationsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `validationsEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} validationsEnabledMetadata
    */
   exports.prototype['validationsEnabledMetadata'] = undefined;
@@ -4606,6 +5084,7 @@
    */
   exports.prototype['validationsReport'] = undefined;
   /**
+   * Metadata that indicates whether the `validationsReport` property is editable. 
    * @member {module:model/SettingsMetadata} validationsReportMetadata
    */
   exports.prototype['validationsReportMetadata'] = undefined;
@@ -4615,6 +5094,7 @@
    */
   exports.prototype['waterMarkEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `waterMarkEnabled` property is editable. 
    * @member {module:model/SettingsMetadata} waterMarkEnabledMetadata
    */
   exports.prototype['waterMarkEnabledMetadata'] = undefined;
@@ -4624,6 +5104,7 @@
    */
   exports.prototype['writeReminderToEnvelopeHistory'] = undefined;
   /**
+   * Metadata that indicates whether the `writeReminderToEnvelopeHistory` property is editable. 
    * @member {module:model/SettingsMetadata} writeReminderToEnvelopeHistoryMetadata
    */
   exports.prototype['writeReminderToEnvelopeHistoryMetadata'] = undefined;
@@ -4633,6 +5114,7 @@
    */
   exports.prototype['wurflMinAllowableScreenSize'] = undefined;
   /**
+   * Metadata that indicates whether the `wurflMinAllowableScreenSize` property is editable. 
    * @member {module:model/SettingsMetadata} wurflMinAllowableScreenSizeMetadata
    */
   exports.prototype['wurflMinAllowableScreenSizeMetadata'] = undefined;

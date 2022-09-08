@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>NewUsersSummary</code>.
+   * Object representing a summary of data for new users.
    * @alias module:model/NewUsersSummary
    * @class
    */

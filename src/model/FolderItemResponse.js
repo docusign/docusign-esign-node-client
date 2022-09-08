@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>FolderItemResponse</code>.
+   * Results from a folder item request.
    * @alias module:model/FolderItemResponse
    * @class
    */

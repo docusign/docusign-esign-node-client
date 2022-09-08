@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PaymentGatewayAccountsInfo</code>.
+   * Holds information about connected payment accounts.
    * @alias module:model/PaymentGatewayAccountsInfo
    * @class
    */

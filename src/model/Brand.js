@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Brand</code>.
+   * Information about a brand that is associated with an account. A brand applies custom styles and text to an envelope.
    * @alias module:model/Brand
    * @class
    */
@@ -139,6 +140,7 @@
    */
   exports.prototype['emailContent'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -168,10 +170,12 @@
    */
   exports.prototype['links'] = undefined;
   /**
+   * The URIs for retrieving the logos that are associated with the brand.
    * @member {module:model/BrandLogos} logos
    */
   exports.prototype['logos'] = undefined;
   /**
+   * An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the `resourceContentType` is `sending`, `signing`, `email`, or `signing_captive`.
    * @member {module:model/BrandResourceUrls} resources
    */
   exports.prototype['resources'] = undefined;

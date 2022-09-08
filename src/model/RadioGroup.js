@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RadioGroup</code>.
+   * This group tab is used to place radio buttons on a document. The `radios` property contains a list of [`radio`](/docs/esign-rest-api/reference/envelopes/enveloperecipienttabs/) objects  associated with the group. Only one radio button can be selected in a group. 
    * @alias module:model/RadioGroup
    * @class
    */
@@ -163,6 +164,7 @@
    */
   exports.prototype['conditionalParentLabel'] = undefined;
   /**
+   * Metadata that indicates whether the `conditionalParentLabel` property is editable.
    * @member {module:model/PropertyMetadata} conditionalParentLabelMetadata
    */
   exports.prototype['conditionalParentLabelMetadata'] = undefined;
@@ -172,6 +174,7 @@
    */
   exports.prototype['conditionalParentValue'] = undefined;
   /**
+   * Metadata that indicates whether the `conditionalParentValue` property is editable.
    * @member {module:model/PropertyMetadata} conditionalParentValueMetadata
    */
   exports.prototype['conditionalParentValueMetadata'] = undefined;
@@ -181,6 +184,7 @@
    */
   exports.prototype['documentId'] = undefined;
   /**
+   * Metadata that indicates whether the `documentId` property is editable.
    * @member {module:model/PropertyMetadata} documentIdMetadata
    */
   exports.prototype['documentIdMetadata'] = undefined;
@@ -190,6 +194,7 @@
    */
   exports.prototype['groupName'] = undefined;
   /**
+   * Metadata that indicates whether the `groupName` property is editable.
    * @member {module:model/PropertyMetadata} groupNameMetadata
    */
   exports.prototype['groupNameMetadata'] = undefined;
@@ -199,6 +204,7 @@
    */
   exports.prototype['originalValue'] = undefined;
   /**
+   * Metadata that indicates whether the `originalValue` property is editable.
    * @member {module:model/PropertyMetadata} originalValueMetadata
    */
   exports.prototype['originalValueMetadata'] = undefined;
@@ -218,10 +224,12 @@
    */
   exports.prototype['recipientIdGuid'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientIdGuid` property is editable.
    * @member {module:model/PropertyMetadata} recipientIdGuidMetadata
    */
   exports.prototype['recipientIdGuidMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientId` property is editable.
    * @member {module:model/PropertyMetadata} recipientIdMetadata
    */
   exports.prototype['recipientIdMetadata'] = undefined;
@@ -231,6 +239,7 @@
    */
   exports.prototype['requireAll'] = undefined;
   /**
+   * Metadata that indicates whether the `requireAll` property is editable.
    * @member {module:model/PropertyMetadata} requireAllMetadata
    */
   exports.prototype['requireAllMetadata'] = undefined;
@@ -240,6 +249,7 @@
    */
   exports.prototype['requireInitialOnSharedChange'] = undefined;
   /**
+   * Metadata that indicates whether the `requireInitialOnSharedChange` property is editable.
    * @member {module:model/PropertyMetadata} requireInitialOnSharedChangeMetadata
    */
   exports.prototype['requireInitialOnSharedChangeMetadata'] = undefined;
@@ -249,6 +259,7 @@
    */
   exports.prototype['shared'] = undefined;
   /**
+   * Metadata that indicates whether the `shared` property is editable.
    * @member {module:model/PropertyMetadata} sharedMetadata
    */
   exports.prototype['sharedMetadata'] = undefined;
@@ -258,6 +269,7 @@
    */
   exports.prototype['shareToRecipients'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} shareToRecipientsMetadata
    */
   exports.prototype['shareToRecipientsMetadata'] = undefined;
@@ -267,6 +279,7 @@
    */
   exports.prototype['tabType'] = undefined;
   /**
+   * Metadata that indicates whether the `tabType` property is editable.
    * @member {module:model/PropertyMetadata} tabTypeMetadata
    */
   exports.prototype['tabTypeMetadata'] = undefined;
@@ -276,6 +289,7 @@
    */
   exports.prototype['templateLocked'] = undefined;
   /**
+   * Metadata that indicates whether the `templateLocked` property is editable.
    * @member {module:model/PropertyMetadata} templateLockedMetadata
    */
   exports.prototype['templateLockedMetadata'] = undefined;
@@ -285,6 +299,7 @@
    */
   exports.prototype['templateRequired'] = undefined;
   /**
+   * Metadata that indicates whether the `templateRequired` property is editable.
    * @member {module:model/PropertyMetadata} templateRequiredMetadata
    */
   exports.prototype['templateRequiredMetadata'] = undefined;
@@ -294,6 +309,7 @@
    */
   exports.prototype['tooltip'] = undefined;
   /**
+   * Metadata that indicates whether the `tooltip` property is editable.
    * @member {module:model/PropertyMetadata} tooltipMetadata
    */
   exports.prototype['tooltipMetadata'] = undefined;
@@ -303,6 +319,7 @@
    */
   exports.prototype['value'] = undefined;
   /**
+   * Metadata that indicates whether the `value` property is editable.
    * @member {module:model/PropertyMetadata} valueMetadata
    */
   exports.prototype['valueMetadata'] = undefined;

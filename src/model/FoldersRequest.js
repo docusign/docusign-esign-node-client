@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>FoldersRequest</code>.
+   * Information for a folder request.
    * @alias module:model/FoldersRequest
    * @class
    */

@@ -61,6 +61,7 @@
 
     /**
      * Uses the specified bulk envelopes list to update the envelopes specified in the payload
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 
@@ -135,6 +136,7 @@
 
     /**
      * Deletes a specific bulk process list
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 
@@ -200,6 +202,7 @@
 
     /**
      * Gets a specific bulk process list
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 
@@ -264,6 +267,7 @@
 
     /**
      * Updates a specific bulk process list
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 

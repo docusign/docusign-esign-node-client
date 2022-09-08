@@ -65,10 +65,12 @@
   }
 
   /**
+   * The default notification settings for envelopes sent by using the console.
    * @member {module:model/NotificationDefaultSettings} apiEmailNotifications
    */
   exports.prototype['apiEmailNotifications'] = undefined;
   /**
+   * The default notification settings for envelopes sent by using the API.
    * @member {module:model/NotificationDefaultSettings} emailNotifications
    */
   exports.prototype['emailNotifications'] = undefined;

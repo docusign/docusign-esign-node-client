@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeId</code>.
+   * A tab that displays the envelope ID. Recipients cannot enter or change the information in this tab. 
    * @alias module:model/EnvelopeId
    * @class
    */
@@ -328,6 +329,7 @@
    */
   exports.prototype['anchorAllowWhiteSpaceInCharacters'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorAllowWhiteSpaceInCharacters` property is editable.
    * @member {module:model/PropertyMetadata} anchorAllowWhiteSpaceInCharactersMetadata
    */
   exports.prototype['anchorAllowWhiteSpaceInCharactersMetadata'] = undefined;
@@ -337,6 +339,7 @@
    */
   exports.prototype['anchorCaseSensitive'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorCaseSensitive` property is editable.
    * @member {module:model/PropertyMetadata} anchorCaseSensitiveMetadata
    */
   exports.prototype['anchorCaseSensitiveMetadata'] = undefined;
@@ -346,6 +349,7 @@
    */
   exports.prototype['anchorHorizontalAlignment'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorHorizontalAlignment` property is editable.
    * @member {module:model/PropertyMetadata} anchorHorizontalAlignmentMetadata
    */
   exports.prototype['anchorHorizontalAlignmentMetadata'] = undefined;
@@ -355,6 +359,7 @@
    */
   exports.prototype['anchorIgnoreIfNotPresent'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorIgnoreIfNotPresent` property is editable.
    * @member {module:model/PropertyMetadata} anchorIgnoreIfNotPresentMetadata
    */
   exports.prototype['anchorIgnoreIfNotPresentMetadata'] = undefined;
@@ -364,6 +369,7 @@
    */
   exports.prototype['anchorMatchWholeWord'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorMatchWholeWord` property is editable.
    * @member {module:model/PropertyMetadata} anchorMatchWholeWordMetadata
    */
   exports.prototype['anchorMatchWholeWordMetadata'] = undefined;
@@ -373,6 +379,7 @@
    */
   exports.prototype['anchorString'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorString` property is editable.
    * @member {module:model/PropertyMetadata} anchorStringMetadata
    */
   exports.prototype['anchorStringMetadata'] = undefined;
@@ -382,6 +389,7 @@
    */
   exports.prototype['anchorTabProcessorVersion'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} anchorTabProcessorVersionMetadata
    */
   exports.prototype['anchorTabProcessorVersionMetadata'] = undefined;
@@ -391,6 +399,7 @@
    */
   exports.prototype['anchorUnits'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorUnits` property is editable.
    * @member {module:model/PropertyMetadata} anchorUnitsMetadata
    */
   exports.prototype['anchorUnitsMetadata'] = undefined;
@@ -400,6 +409,7 @@
    */
   exports.prototype['anchorXOffset'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorXOffset` property is editable.
    * @member {module:model/PropertyMetadata} anchorXOffsetMetadata
    */
   exports.prototype['anchorXOffsetMetadata'] = undefined;
@@ -409,6 +419,7 @@
    */
   exports.prototype['anchorYOffset'] = undefined;
   /**
+   * Metadata that indicates whether the `anchorYOffset` property is editable.
    * @member {module:model/PropertyMetadata} anchorYOffsetMetadata
    */
   exports.prototype['anchorYOffsetMetadata'] = undefined;
@@ -418,6 +429,7 @@
    */
   exports.prototype['bold'] = undefined;
   /**
+   * Metadata that indicates whether the `bold` property is editable.
    * @member {module:model/PropertyMetadata} boldMetadata
    */
   exports.prototype['boldMetadata'] = undefined;
@@ -436,6 +448,7 @@
    */
   exports.prototype['conditionalParentLabel'] = undefined;
   /**
+   * Metadata that indicates whether the `conditionalParentLabel` property is editable.
    * @member {module:model/PropertyMetadata} conditionalParentLabelMetadata
    */
   exports.prototype['conditionalParentLabelMetadata'] = undefined;
@@ -445,6 +458,7 @@
    */
   exports.prototype['conditionalParentValue'] = undefined;
   /**
+   * Metadata that indicates whether the `conditionalParentValue` property is editable.
    * @member {module:model/PropertyMetadata} conditionalParentValueMetadata
    */
   exports.prototype['conditionalParentValueMetadata'] = undefined;
@@ -454,6 +468,7 @@
    */
   exports.prototype['customTabId'] = undefined;
   /**
+   * Metadata that indicates whether the `customTabId` property is editable.
    * @member {module:model/PropertyMetadata} customTabIdMetadata
    */
   exports.prototype['customTabIdMetadata'] = undefined;
@@ -463,10 +478,12 @@
    */
   exports.prototype['documentId'] = undefined;
   /**
+   * Metadata that indicates whether the `documentId` property is editable.
    * @member {module:model/PropertyMetadata} documentIdMetadata
    */
   exports.prototype['documentIdMetadata'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -481,10 +498,12 @@
    */
   exports.prototype['fontColor'] = undefined;
   /**
+   * Metadata that indicates whether the `fontColor` property is editable.
    * @member {module:model/PropertyMetadata} fontColorMetadata
    */
   exports.prototype['fontColorMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `font` property is editable.
    * @member {module:model/PropertyMetadata} fontMetadata
    */
   exports.prototype['fontMetadata'] = undefined;
@@ -494,6 +513,7 @@
    */
   exports.prototype['fontSize'] = undefined;
   /**
+   * Metadata that indicates whether the `fontSize` property is editable.
    * @member {module:model/PropertyMetadata} fontSizeMetadata
    */
   exports.prototype['fontSizeMetadata'] = undefined;
@@ -503,6 +523,7 @@
    */
   exports.prototype['formOrder'] = undefined;
   /**
+   * Metadata that indicates whether the `formOrder` property is editable.
    * @member {module:model/PropertyMetadata} formOrderMetadata
    */
   exports.prototype['formOrderMetadata'] = undefined;
@@ -512,6 +533,7 @@
    */
   exports.prototype['formPageLabel'] = undefined;
   /**
+   * Metadata that indicates whether the `formPageLabel` property is editable.
    * @member {module:model/PropertyMetadata} formPageLabelMetadata
    */
   exports.prototype['formPageLabelMetadata'] = undefined;
@@ -521,6 +543,7 @@
    */
   exports.prototype['formPageNumber'] = undefined;
   /**
+   * Metadata that indicates whether the `fromPageNumber` property is editable.
    * @member {module:model/PropertyMetadata} formPageNumberMetadata
    */
   exports.prototype['formPageNumberMetadata'] = undefined;
@@ -530,6 +553,7 @@
    */
   exports.prototype['height'] = undefined;
   /**
+   * Metadata that indicates whether the `height` property is editable.
    * @member {module:model/PropertyMetadata} heightMetadata
    */
   exports.prototype['heightMetadata'] = undefined;
@@ -539,14 +563,17 @@
    */
   exports.prototype['italic'] = undefined;
   /**
+   * Metadata that indicates whether the `italic` property is editable.
    * @member {module:model/PropertyMetadata} italicMetadata
    */
   exports.prototype['italicMetadata'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/LocalePolicyTab} localePolicy
    */
   exports.prototype['localePolicy'] = undefined;
   /**
+   * Contains the information necessary to map the tab to a field in SalesForce.
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
@@ -561,6 +588,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * Metadata that indicates whether the `name` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} nameMetadata
    */
   exports.prototype['nameMetadata'] = undefined;
@@ -570,6 +598,7 @@
    */
   exports.prototype['pageNumber'] = undefined;
   /**
+   * Metadata that indicates whether the `pageNumber` property is editable.
    * @member {module:model/PropertyMetadata} pageNumberMetadata
    */
   exports.prototype['pageNumberMetadata'] = undefined;
@@ -584,14 +613,17 @@
    */
   exports.prototype['recipientIdGuid'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientIdGuid` property is editable.
    * @member {module:model/PropertyMetadata} recipientIdGuidMetadata
    */
   exports.prototype['recipientIdGuidMetadata'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientId` property is editable.
    * @member {module:model/PropertyMetadata} recipientIdMetadata
    */
   exports.prototype['recipientIdMetadata'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SmartContractInformation} smartContractInformation
    */
   exports.prototype['smartContractInformation'] = undefined;
@@ -606,6 +638,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
+   * Metadata that indicates whether the `status` property is editable.
    * @member {module:model/PropertyMetadata} statusMetadata
    */
   exports.prototype['statusMetadata'] = undefined;
@@ -615,6 +648,7 @@
    */
   exports.prototype['tabGroupLabels'] = undefined;
   /**
+   * Metadata that indicates whether the `tabGroupLabels` property is editable.
    * @member {module:model/PropertyMetadata} tabGroupLabelsMetadata
    */
   exports.prototype['tabGroupLabelsMetadata'] = undefined;
@@ -624,6 +658,7 @@
    */
   exports.prototype['tabId'] = undefined;
   /**
+   * Metadata that indicates whether the `tabId` property is editable.
    * @member {module:model/PropertyMetadata} tabIdMetadata
    */
   exports.prototype['tabIdMetadata'] = undefined;
@@ -633,6 +668,7 @@
    */
   exports.prototype['tabLabel'] = undefined;
   /**
+   * Metadata that indicates whether the `tabLabel` property is editable.
    * @member {module:model/PropertyMetadata} tabLabelMetadata
    */
   exports.prototype['tabLabelMetadata'] = undefined;
@@ -642,6 +678,7 @@
    */
   exports.prototype['tabOrder'] = undefined;
   /**
+   * Metadata that indicates whether the `tabOrder` property is editable.
    * @member {module:model/PropertyMetadata} tabOrderMetadata
    */
   exports.prototype['tabOrderMetadata'] = undefined;
@@ -651,6 +688,7 @@
    */
   exports.prototype['tabType'] = undefined;
   /**
+   * Metadata that indicates whether the `tabType` property is editable.
    * @member {module:model/PropertyMetadata} tabTypeMetadata
    */
   exports.prototype['tabTypeMetadata'] = undefined;
@@ -660,6 +698,7 @@
    */
   exports.prototype['templateLocked'] = undefined;
   /**
+   * Metadata that indicates whether the `templateLocked` property is editable.
    * @member {module:model/PropertyMetadata} templateLockedMetadata
    */
   exports.prototype['templateLockedMetadata'] = undefined;
@@ -669,6 +708,7 @@
    */
   exports.prototype['templateRequired'] = undefined;
   /**
+   * Metadata that indicates whether the `templateRequired` property is editable.
    * @member {module:model/PropertyMetadata} templateRequiredMetadata
    */
   exports.prototype['templateRequiredMetadata'] = undefined;
@@ -678,6 +718,7 @@
    */
   exports.prototype['tooltip'] = undefined;
   /**
+   * Metadata that indicates whether the `toolTip` property is editable.
    * @member {module:model/PropertyMetadata} toolTipMetadata
    */
   exports.prototype['toolTipMetadata'] = undefined;
@@ -687,6 +728,7 @@
    */
   exports.prototype['underline'] = undefined;
   /**
+   * Metadata that indicates whether the `underline` property is editable.
    * @member {module:model/PropertyMetadata} underlineMetadata
    */
   exports.prototype['underlineMetadata'] = undefined;
@@ -696,6 +738,7 @@
    */
   exports.prototype['width'] = undefined;
   /**
+   * Metadata that indicates whether the `width` property is editable.
    * @member {module:model/PropertyMetadata} widthMetadata
    */
   exports.prototype['widthMetadata'] = undefined;
@@ -705,6 +748,7 @@
    */
   exports.prototype['xPosition'] = undefined;
   /**
+   * Metadata that indicates whether the `xPosition` property is editable.
    * @member {module:model/PropertyMetadata} xPositionMetadata
    */
   exports.prototype['xPositionMetadata'] = undefined;
@@ -714,6 +758,7 @@
    */
   exports.prototype['yPosition'] = undefined;
   /**
+   * Metadata that indicates whether the `yPosition` property is editable.
    * @member {module:model/PropertyMetadata} yPositionMetadata
    */
   exports.prototype['yPositionMetadata'] = undefined;

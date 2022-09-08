@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BrandEmailContent</code>.
+   * Deprecated.
    * @alias module:model/BrandEmailContent
    * @class
    */

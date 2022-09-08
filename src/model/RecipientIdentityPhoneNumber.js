@@ -90,6 +90,7 @@
    */
   exports.prototype['countryCodeLock'] = undefined;
   /**
+   * Metadata that indicates if the `countryCode` property is editable.
    * @member {module:model/PropertyMetadata} countryCodeMetadata
    */
   exports.prototype['countryCodeMetadata'] = undefined;
@@ -99,6 +100,7 @@
    */
   exports.prototype['extension'] = undefined;
   /**
+   * Metadata that indicates if the `extension` property is editable.
    * @member {module:model/PropertyMetadata} extensionMetadata
    */
   exports.prototype['extensionMetadata'] = undefined;
@@ -108,6 +110,7 @@
    */
   exports.prototype['number'] = undefined;
   /**
+   * Metadata that indicates if the `number` property is editable.
    * @member {module:model/PropertyMetadata} numberMetadata
    */
   exports.prototype['numberMetadata'] = undefined;

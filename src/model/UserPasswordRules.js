@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>UserPasswordRules</code>.
+   * Contains details about the password rules for a user.
    * @alias module:model/UserPasswordRules
    * @class
    */
@@ -65,6 +66,7 @@
   }
 
   /**
+   * Contains details about the password rules for the user.
    * @member {module:model/AccountPasswordRules} passwordRules
    */
   exports.prototype['passwordRules'] = undefined;

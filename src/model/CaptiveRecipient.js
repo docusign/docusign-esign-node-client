@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>CaptiveRecipient</code>.
+   * This object contains details about a captive (embedded) recipient.
    * @alias module:model/CaptiveRecipient
    * @class
    */
@@ -81,6 +82,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

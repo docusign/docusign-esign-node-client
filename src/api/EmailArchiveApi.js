@@ -61,6 +61,12 @@
 
     /**
      * Creates a blind carbon copy email archive entry
+     * This method creates a BCC email archive configuration for an account (adds a BCC email address to the account for archiving the emails that DocuSign generates).
+
+The only property that you must set in the request body is the BCC email address that you want to use.
+
+**Note:** An account can have up to five active and pending email archive addresses combined, but you must use this method to add them to the account one at a time. Each email address is considered a separate BCC email archive configuration.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/BccEmailArchive} optsOrCallback.bccEmailArchive 
@@ -121,6 +127,10 @@
 
     /**
      * Delete a blind carbon copy email archive for an account.
+     * This method deletes a BCC email archive configuration from an account.
+
+When you use this method, the status of the BCC email archive configuration switches to `closed` and the BCC email address is no longer used to archive DocuSign-generated email messages.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} bccEmailArchiveId 
      * @param {module:api/EmailArchiveApi~deleteBCCEmailArchiveCallback} callback The callback function, accepting three arguments: error, data, response
@@ -178,6 +188,7 @@
 
     /**
      * Get the blind carbon copy email archive history entries for the specified archive
+     * This method returns a specific BCC email archive configuration for an account, as well as the history of changes to the email address.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} bccEmailArchiveId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -248,6 +259,7 @@
 
     /**
      * Get the blind carbon copy email archive entries owned by the specified account
+     * This method retrieves all of the BCC email archive configurations associated with an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count 

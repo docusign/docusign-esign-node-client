@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ExternalDocumentSources</code>.
+   * A complex object specifying the external document sources.
    * @alias module:model/ExternalDocumentSources
    * @class
    */
@@ -94,6 +95,7 @@
    */
   exports.prototype['boxnetEnabled'] = undefined;
   /**
+   * Metadata indicating whether the `boxnetEnabled` property is editable.
    * @member {module:model/SettingsMetadata} boxnetMetadata
    */
   exports.prototype['boxnetMetadata'] = undefined;
@@ -103,6 +105,7 @@
    */
   exports.prototype['dropboxEnabled'] = undefined;
   /**
+   * Metadata indicating whether the `dropboxEnabled` property is editable.
    * @member {module:model/SettingsMetadata} dropboxMetadata
    */
   exports.prototype['dropboxMetadata'] = undefined;
@@ -112,6 +115,7 @@
    */
   exports.prototype['googleDriveEnabled'] = undefined;
   /**
+   * Metadata indicating whether the `googleDriveEnabled` property is editable.
    * @member {module:model/SettingsMetadata} googleDriveMetadata
    */
   exports.prototype['googleDriveMetadata'] = undefined;
@@ -121,6 +125,7 @@
    */
   exports.prototype['oneDriveEnabled'] = undefined;
   /**
+   * Metadata indicating whether the `oneDriveEnabled` property is editable.
    * @member {module:model/SettingsMetadata} oneDriveMetadata
    */
   exports.prototype['oneDriveMetadata'] = undefined;
@@ -130,6 +135,7 @@
    */
   exports.prototype['salesforceEnabled'] = undefined;
   /**
+   * Metadata indicating whether the `salesforceEnabled` property is editable.
    * @member {module:model/SettingsMetadata} salesforceMetadata
    */
   exports.prototype['salesforceMetadata'] = undefined;

@@ -117,78 +117,97 @@
   }
 
   /**
+   * The result of a user's attempt to authenticate by using an access code. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} accessCodeResult
    */
   exports.prototype['accessCodeResult'] = undefined;
   /**
+   * The result of an age verification check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} ageVerifyResult
    */
   exports.prototype['ageVerifyResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} anySocialIDResult
    */
   exports.prototype['anySocialIDResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} facebookResult
    */
   exports.prototype['facebookResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} googleResult
    */
   exports.prototype['googleResult'] = undefined;
   /**
+   * The result of an [Identity Verification][IDV] workflow.  [IDV]: /docs/esign-rest-api/reference/accounts/identityverifications/
    * @member {module:model/EventResult} identityVerificationResult
    */
   exports.prototype['identityVerificationResult'] = undefined;
   /**
+   * The result of an ID lookup authentication check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} idLookupResult
    */
   exports.prototype['idLookupResult'] = undefined;
   /**
+   * The result of the user's answers to ID challenge questions. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} idQuestionsResult
    */
   exports.prototype['idQuestionsResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} linkedinResult
    */
   exports.prototype['linkedinResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} liveIDResult
    */
   exports.prototype['liveIDResult'] = undefined;
   /**
+   * The result of an Office of Foreign Asset Control (OFAC) check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} ofacResult
    */
   exports.prototype['ofacResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} openIDResult
    */
   exports.prototype['openIDResult'] = undefined;
   /**
+   * The result of the user's attempt to authenticate by using two-factor authentication (2FA) through phone messaging. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} phoneAuthResult
    */
   exports.prototype['phoneAuthResult'] = undefined;
   /**
+   * Success/failure result of authentication using sign-in with a Salesforce account. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} salesforceResult
    */
   exports.prototype['salesforceResult'] = undefined;
   /**
+   * The result of the user's attempt to authenticate by using a signature provider.
    * @member {module:model/EventResult} signatureProviderResult
    */
   exports.prototype['signatureProviderResult'] = undefined;
   /**
+   * The result of the user's attempt to authenticate by using two-factor authentication (2FA) through SMS messaging on a mobile phone.
    * @member {module:model/EventResult} smsAuthResult
    */
   exports.prototype['smsAuthResult'] = undefined;
   /**
+   * The result of a Student Authentication Network (STAN) authentication check. It returns:  - `Status`: `Pass` or `Fail`. - `dateTime`: The date and time that the event occurred. - `FailureDescription`: A string containing the details about a failed authentication. - `VendorFailureStatusCode`: A string containing the vendor's status code for a failed authentication. 
    * @member {module:model/EventResult} sTANPinResult
    */
   exports.prototype['sTANPinResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} twitterResult
    */
   exports.prototype['twitterResult'] = undefined;
   /**
+   * Deprecated.
    * @member {module:model/EventResult} yahooResult
    */
   exports.prototype['yahooResult'] = undefined;

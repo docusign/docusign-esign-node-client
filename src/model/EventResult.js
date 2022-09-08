@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EventResult</code>.
+   * Information about the result of an event.
    * @alias module:model/EventResult
    * @class
    */

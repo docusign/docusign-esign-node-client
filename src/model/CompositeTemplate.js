@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>CompositeTemplate</code>.
+   * This object contains information about a [composite template][composite], which you can use to to apply multiple templates to a single envelope, combine templates with PDF forms, and combine templates with documents from cloud sources.  [composite]: /docs/esign-rest-api/esign101/concepts/templates/composite/
    * @alias module:model/CompositeTemplate
    * @class
    */
@@ -79,6 +80,7 @@
    */
   exports.prototype['compositeTemplateId'] = undefined;
   /**
+   * An optional document object that will act as the primary document in the composite template object. If the document node is present, it will take precedence over any server template or inline template documents. It always comes first. Only use this when you want to supply the document dynamically.
    * @member {module:model/Document} document
    */
   exports.prototype['document'] = undefined;

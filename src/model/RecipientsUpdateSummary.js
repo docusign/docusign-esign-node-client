@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientsUpdateSummary</code>.
+   * This is the response that the API returns after you update recipients.
    * @alias module:model/RecipientsUpdateSummary
    * @class
    */

@@ -273,6 +273,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
 
     /**
      * Replaces a particular contact associated with an account for the DocuSign service.
+     * This method deletes a contact associated with an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} contactId The unique identifier of a person in the contacts address book.
      * @param {module:api/UsersApi~deleteContactWithIdCallback} callback The callback function, accepting three arguments: error, data, response
@@ -331,6 +332,7 @@ If successful, 200-OK is returned, and a JSON structure containing the signature
 
     /**
      * Delete contacts associated with an account for the DocuSign service.
+     * This method deletes multiple contacts associated with an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
@@ -681,6 +683,18 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Gets a particular contact associated with the user's account.
+     * This method returns one or more contacts
+associated with a DocuSign account. You can also
+retrieve contacts from connected [cloud storage][CloudStorage] providers by using the
+`cloud_provider` query parameter. By default,
+contacts are retrieved from the DocuSign account's
+default address book.
+
+To return a specific contact, use the `contactId`
+query parameter. To return all contacts associated
+with an account, omit this parameter.
+
+[CloudStorage]: /docs/esign-rest-api/reference/cloudstorage/
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} contactId The unique identifier of a person in the contacts address book.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -1416,6 +1430,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Imports multiple new contacts into the contacts collection from CSV, JSON, or XML (based on content type).
+     * This method adds multiple contacts into a contacts list.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
@@ -1476,6 +1491,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Replaces contacts associated with an account for the DocuSign service.
+     * This method updates one or more contacts associated with an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/ContactModRequest} optsOrCallback.contactModRequest 
@@ -1997,6 +2013,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Adds/updates a user signature.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -2064,6 +2081,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Updates the specified user information.
+     * To update user information for a specific user, submit a [Users](#Users) object with updated field values in the request body of this operation.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -2133,6 +2151,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
 
     /**
      * Change one or more user in the specified account.
+     * This method updates the information about one or more account users.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.allowAllLanguages 

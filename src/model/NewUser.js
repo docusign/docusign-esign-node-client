@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>NewUser</code>.
+   * Object representing a new user.
    * @alias module:model/NewUser
    * @class
    */
@@ -107,6 +108,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

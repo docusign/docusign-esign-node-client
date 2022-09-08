@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientAdditionalNotification</code>.
+   * Describes an additional notification method.
    * @alias module:model/RecipientAdditionalNotification
    * @class
    */
@@ -71,6 +72,7 @@
   }
 
   /**
+   * The phone number to receive the additional notifcation.
    * @member {module:model/RecipientPhoneNumber} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
@@ -80,6 +82,7 @@
    */
   exports.prototype['secondaryDeliveryMethod'] = undefined;
   /**
+   * Metadata about the delivery method.
    * @member {module:model/PropertyMetadata} secondaryDeliveryMethodMetadata
    */
   exports.prototype['secondaryDeliveryMethodMetadata'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BccEmailArchiveList</code>.
+   * Contains a list of BCC email archive configurations.
    * @alias module:model/BccEmailArchiveList
    * @class
    */

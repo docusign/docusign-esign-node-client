@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BillingPlanInformation</code>.
+   * This object contains details about a billing plan.
    * @alias module:model/BillingPlanInformation
    * @class
    */
@@ -84,6 +85,9 @@
       if (data.hasOwnProperty('paymentMethod')) {
         obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
       }
+      if (data.hasOwnProperty('paymentProcessor')) {
+        obj['paymentProcessor'] = ApiClient.convertToType(data['paymentProcessor'], 'String');
+      }
       if (data.hasOwnProperty('paymentProcessorInformation')) {
         obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
       }
@@ -122,18 +126,22 @@
   }
 
   /**
+   * 
    * @member {module:model/AppStoreReceipt} appStoreReceipt
    */
   exports.prototype['appStoreReceipt'] = undefined;
   /**
+   * The billing address for the account.
    * @member {module:model/AccountAddress} billingAddress
    */
   exports.prototype['billingAddress'] = undefined;
   /**
+   * A complex type that has information about the credit card used to pay for this account.
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
   exports.prototype['creditCardInformation'] = undefined;
   /**
+   * Information about the bank that processes direct debits for the payment plan.
    * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
    */
   exports.prototype['directDebitProcessorInformation'] = undefined;
@@ -168,10 +176,17 @@
    */
   exports.prototype['paymentMethod'] = undefined;
   /**
+   * 
+   * @member {String} paymentProcessor
+   */
+  exports.prototype['paymentProcessor'] = undefined;
+  /**
+   * Information about the entity that processes payments for the billing plan.
    * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
    */
   exports.prototype['paymentProcessorInformation'] = undefined;
   /**
+   * An object used to identify the features and attributes of the account being created.
    * @member {module:model/PlanInformation} planInformation
    */
   exports.prototype['planInformation'] = undefined;
@@ -181,6 +196,7 @@
    */
   exports.prototype['processPayment'] = undefined;
   /**
+   * A complex type that contains properties for entering referral and discount information.
    * @member {module:model/ReferralInformation} referralInformation
    */
   exports.prototype['referralInformation'] = undefined;

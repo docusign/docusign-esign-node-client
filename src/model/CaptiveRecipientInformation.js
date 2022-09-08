@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>CaptiveRecipientInformation</code>.
+   * Contains information about captive (embedded) recipients.
    * @alias module:model/CaptiveRecipientInformation
    * @class
    */

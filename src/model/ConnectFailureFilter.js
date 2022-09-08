@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConnectFailureFilter</code>.
+   * A list of failed envelope IDs to retry.
    * @alias module:model/ConnectFailureFilter
    * @class
    */

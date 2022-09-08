@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PaymentMethodWithOptions</code>.
+   * This object contains information about a payment method that the gateway accepts and the payment options that are compatible with it.
    * @alias module:model/PaymentMethodWithOptions
    * @class
    */

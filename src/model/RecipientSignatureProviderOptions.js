@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientSignatureProviderOptions</code>.
+   * Option settings for the signature provider. Different providers require or use different options. [The current provider list and the options they require.](/docs/esign-rest-api/esign101/concepts/standards-based-signatures/)
    * @alias module:model/RecipientSignatureProviderOptions
    * @class
    */
@@ -88,6 +89,7 @@
    */
   exports.prototype['cpfNumber'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} cpfNumberMetadata
    */
   exports.prototype['cpfNumberMetadata'] = undefined;
@@ -97,6 +99,7 @@
    */
   exports.prototype['oneTimePassword'] = undefined;
   /**
+   * Metadata that indicates whether the `oneTimePassword` property is editable.
    * @member {module:model/PropertyMetadata} oneTimePasswordMetadata
    */
   exports.prototype['oneTimePasswordMetadata'] = undefined;
@@ -106,6 +109,7 @@
    */
   exports.prototype['signerRole'] = undefined;
   /**
+   * Metadata that indicates whether the `signerRole` property is editable.
    * @member {module:model/PropertyMetadata} signerRoleMetadata
    */
   exports.prototype['signerRoleMetadata'] = undefined;
@@ -115,6 +119,7 @@
    */
   exports.prototype['sms'] = undefined;
   /**
+   * Metadata that indicates whether the `sms` property is editable.
    * @member {module:model/PropertyMetadata} smsMetadata
    */
   exports.prototype['smsMetadata'] = undefined;

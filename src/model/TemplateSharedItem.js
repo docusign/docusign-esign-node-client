@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>TemplateSharedItem</code>.
+   * Information about shared templates.
    * @alias module:model/TemplateSharedItem
    * @class
    */
@@ -83,10 +84,12 @@
   }
 
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
   /**
+   * Information about the user who owns the template.
    * @member {module:model/UserInfo} owner
    */
   exports.prototype['owner'] = undefined;

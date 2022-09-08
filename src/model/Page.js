@@ -89,6 +89,7 @@
    */
   exports.prototype['dpi'] = undefined;
   /**
+   * If an error occurs, this property describes the error.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

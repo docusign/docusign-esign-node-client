@@ -61,6 +61,7 @@
 
     /**
      * Retrieves org level report by correlation id and site.
+     * 
      * @param {String} organizationId 
      * @param {String} reportCorrelationId 
      * @param {module:api/OrganizationsApi~getReportV2Callback} callback The callback function, accepting three arguments: error, data, response

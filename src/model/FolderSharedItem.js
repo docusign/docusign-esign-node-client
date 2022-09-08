@@ -92,6 +92,7 @@
   }
 
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -106,6 +107,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * Information about the user who owns the folder.
    * @member {module:model/UserInfo} owner
    */
   exports.prototype['owner'] = undefined;
@@ -140,6 +142,7 @@
    */
   exports.prototype['uri'] = undefined;
   /**
+   * Information about the user associated with the folder.
    * @member {module:model/UserInfo} user
    */
   exports.prototype['user'] = undefined;

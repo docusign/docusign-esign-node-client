@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>NotaryJurisdiction</code>.
+   * A notary jurisdiction.
    * @alias module:model/NotaryJurisdiction
    * @class
    */
@@ -95,10 +96,12 @@
    */
   exports.prototype['county'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
   /**
+   * Description of the jurisdiction for this notary. This is a read-only property.
    * @member {module:model/Jurisdiction} jurisdiction
    */
   exports.prototype['jurisdiction'] = undefined;

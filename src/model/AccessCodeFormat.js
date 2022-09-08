@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccessCodeFormat</code>.
+   * Object specifying the format of the string provided to a recipient in order to access an envelope.
    * @alias module:model/AccessCodeFormat
    * @class
    */
@@ -94,6 +95,7 @@
    */
   exports.prototype['formatRequired'] = undefined;
   /**
+   * Metadata indicating whether the `formatRequired` property is editable.
    * @member {module:model/SettingsMetadata} formatRequiredMetadata
    */
   exports.prototype['formatRequiredMetadata'] = undefined;
@@ -103,6 +105,7 @@
    */
   exports.prototype['letterRequired'] = undefined;
   /**
+   * Metadata indicating whether the `letterRequired` property is editable.
    * @member {module:model/SettingsMetadata} letterRequiredMetadata
    */
   exports.prototype['letterRequiredMetadata'] = undefined;
@@ -112,6 +115,7 @@
    */
   exports.prototype['minimumLength'] = undefined;
   /**
+   * Metadata indicating whether the `minimumLength` property is editable.
    * @member {module:model/SettingsMetadata} minimumLengthMetadata
    */
   exports.prototype['minimumLengthMetadata'] = undefined;
@@ -121,6 +125,7 @@
    */
   exports.prototype['numberRequired'] = undefined;
   /**
+   * Metadata indicating whether the `numberRequired` property is editable.
    * @member {module:model/SettingsMetadata} numberRequiredMetadata
    */
   exports.prototype['numberRequiredMetadata'] = undefined;
@@ -130,6 +135,7 @@
    */
   exports.prototype['specialCharacterRequired'] = undefined;
   /**
+   * Metadata indicating whether the `specialCharacterRequired` property is editable.
    * @member {module:model/SettingsMetadata} specialCharacterRequiredMetadata
    */
   exports.prototype['specialCharacterRequiredMetadata'] = undefined;

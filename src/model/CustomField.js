@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>CustomField</code>.
+   * This object provides details about a custom field.
    * @alias module:model/CustomField
    * @class
    */
@@ -88,6 +89,7 @@
    */
   exports.prototype['customFieldType'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

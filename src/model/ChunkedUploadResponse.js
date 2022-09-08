@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ChunkedUploadResponse</code>.
+   * This response object is returned after you upload a chunked upload.
    * @alias module:model/ChunkedUploadResponse
    * @class
    */

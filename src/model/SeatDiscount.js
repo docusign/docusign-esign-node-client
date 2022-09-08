@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SeatDiscount</code>.
+   * This object contains information about a seat discount.
    * @alias module:model/SeatDiscount
    * @class
    */

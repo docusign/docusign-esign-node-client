@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PowerFormRecipient</code>.
+   * **Note:** For a self-service PowerForm on a website, you can specify the intended recipients generically (for example, use `Member` as the `Name`), and omit personal details such as `email`.
    * @alias module:model/PowerFormRecipient
    * @class
    */

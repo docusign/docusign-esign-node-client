@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ENoteConfiguration</code>.
+   * This object contains information used to configure [eNote](https://www.docusign.com/products/enote) functionality. To use eNote, the Allow eNote for eOriginal account plan item must be on, and the Connect configuration for eOriginal must be set correctly.
    * @alias module:model/ENoteConfiguration
    * @class
    */

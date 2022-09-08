@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>CreditCardInformation</code>.
+   * This object contains information about a credit card that is associated with an account.
    * @alias module:model/CreditCardInformation
    * @class
    */
@@ -86,6 +87,7 @@
   }
 
   /**
+   * A complex element containing the credit card billing address information.
    * @member {module:model/AddressInformation} address
    */
   exports.prototype['address'] = undefined;

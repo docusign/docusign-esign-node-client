@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectDeleteFailureResult', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ErrorDetails', 'model/IntegratedConnectUserInfoList', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation'], factory);
+	define(['Configuration', 'ApiClient', 'model/ConnectConfigResults', 'model/ConnectCustomConfiguration', 'model/ConnectDeleteFailureResult', 'model/ConnectFailureFilter', 'model/ConnectFailureResults', 'model/ConnectLog', 'model/ConnectLogs', 'model/ConnectOAuthConfig', 'model/ErrorDetails', 'model/IntegratedConnectUserInfoList', 'model/IntegratedUserInfoList', 'model/MobileNotifierConfigurationInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectDeleteFailureResult'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ErrorDetails'), require('../model/IntegratedConnectUserInfoList'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/ConnectConfigResults'), require('../model/ConnectCustomConfiguration'), require('../model/ConnectDeleteFailureResult'), require('../model/ConnectFailureFilter'), require('../model/ConnectFailureResults'), require('../model/ConnectLog'), require('../model/ConnectLogs'), require('../model/ConnectOAuthConfig'), require('../model/ErrorDetails'), require('../model/IntegratedConnectUserInfoList'), require('../model/IntegratedUserInfoList'), require('../model/MobileNotifierConfigurationInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectDeleteFailureResult, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ErrorDetails, root.Docusign.IntegratedConnectUserInfoList, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation);
+    root.Docusign.ConnectApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.ConnectConfigResults, root.Docusign.ConnectCustomConfiguration, root.Docusign.ConnectDeleteFailureResult, root.Docusign.ConnectFailureFilter, root.Docusign.ConnectFailureResults, root.Docusign.ConnectLog, root.Docusign.ConnectLogs, root.Docusign.ConnectOAuthConfig, root.Docusign.ErrorDetails, root.Docusign.IntegratedConnectUserInfoList, root.Docusign.IntegratedUserInfoList, root.Docusign.MobileNotifierConfigurationInformation);
   }
-}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectDeleteFailureResult, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ErrorDetails, IntegratedConnectUserInfoList, IntegratedUserInfoList, MobileNotifierConfigurationInformation) {
+}(this, function(Configuration, ApiClient, ConnectConfigResults, ConnectCustomConfiguration, ConnectDeleteFailureResult, ConnectFailureFilter, ConnectFailureResults, ConnectLog, ConnectLogs, ConnectOAuthConfig, ErrorDetails, IntegratedConnectUserInfoList, IntegratedUserInfoList, MobileNotifierConfigurationInformation) {
   'use strict';
 
   /**
@@ -115,6 +115,66 @@
     };
 
     /**
+     * (Optional) Callback function to receive the result of the createConnectOAuthConfig operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~createConnectOAuthConfigCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ConnectOAuthConfig} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Sets the Connect OAuth Config for the account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ConnectOAuthConfig} optsOrCallback.connectOAuthConfig 
+     * @param {module:api/ConnectApi~createConnectOAuthConfigCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ConnectOAuthConfig}
+     */
+    this.createConnectOAuthConfig = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['connectOAuthConfig'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createConnectOAuthConfig");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ConnectOAuthConfig;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/oauth', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the deleteConfiguration operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~deleteConfigurationCallback
      * @param {String} error Error message, if any.
@@ -172,6 +232,56 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteConnectOAuthConfig operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~deleteConnectOAuthConfigCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Sets the Connect OAuth Config for the account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~deleteConnectOAuthConfigCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteConnectOAuthConfig = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteConnectOAuthConfig");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/oauth', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -481,6 +591,7 @@
 
     /**
      * Returns all users from the configured Connect service.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} connectId The ID of the custom Connect configuration being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -544,6 +655,57 @@
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/connect/{connectId}/all/users', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getConnectOAuthConfig operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~getConnectOAuthConfigCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ConnectOAuthConfig} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Sets the Connect OAuth Config for the account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/ConnectApi~getConnectOAuthConfigCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ConnectOAuthConfig}
+     */
+    this.getConnectOAuthConfig = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getConnectOAuthConfig");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ConnectOAuthConfig;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/oauth', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

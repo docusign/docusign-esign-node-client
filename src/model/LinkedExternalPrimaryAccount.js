@@ -108,6 +108,7 @@
    */
   exports.prototype['pdfFieldHandlingOption'] = undefined;
   /**
+   * 
    * @member {module:model/ExternalPrimaryAccountRecipientAuthRequirements} recipientAuthRequirements
    */
   exports.prototype['recipientAuthRequirements'] = undefined;

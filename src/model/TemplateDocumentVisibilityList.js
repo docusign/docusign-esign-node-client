@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>TemplateDocumentVisibilityList</code>.
+   * A list of `documentVisibility` objects that specify whether the documents associated with a template are visible to recipients.
    * @alias module:model/TemplateDocumentVisibilityList
    * @class
    */

@@ -132,6 +132,7 @@
   }
 
   /**
+   * 
    * @member {module:model/WorkspaceUserAuthorization} callerAuthorization
    */
   exports.prototype['callerAuthorization'] = undefined;
@@ -151,6 +152,7 @@
    */
   exports.prototype['createdById'] = undefined;
   /**
+   * Details about the user who created the workspace item.
    * @member {module:model/WorkspaceUser} createdByInformation
    */
   exports.prototype['createdByInformation'] = undefined;
@@ -190,6 +192,7 @@
    */
   exports.prototype['lastModifiedById'] = undefined;
   /**
+   * Details about the user who last modified the workspace item.
    * @member {module:model/WorkspaceUser} lastModifiedByInformation
    */
   exports.prototype['lastModifiedByInformation'] = undefined;
@@ -224,6 +227,7 @@
    */
   exports.prototype['thumbHeight'] = undefined;
   /**
+   * 
    * @member {module:model/Page} thumbnail
    */
   exports.prototype['thumbnail'] = undefined;
@@ -243,6 +247,7 @@
    */
   exports.prototype['uri'] = undefined;
   /**
+   * 
    * @member {module:model/WorkspaceUserAuthorization} userAuthorization
    */
   exports.prototype['userAuthorization'] = undefined;
