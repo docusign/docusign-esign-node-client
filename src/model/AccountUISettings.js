@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccountUISettings</code>.
+   * An object that defines the options that are available to non-administrators in the UI.
    * @alias module:model/AccountUISettings
    * @class
    */
@@ -143,10 +144,12 @@
   }
 
   /**
+   * 
    * @member {module:model/AdminMessage} adminMessage
    */
   exports.prototype['adminMessage'] = undefined;
   /**
+   * 
    * @member {module:model/AskAnAdmin} askAnAdmin
    */
   exports.prototype['askAnAdmin'] = undefined;
@@ -156,6 +159,7 @@
    */
   exports.prototype['enableAdminMessage'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableAdminMessageMetadata
    */
   exports.prototype['enableAdminMessageMetadata'] = undefined;
@@ -165,6 +169,7 @@
    */
   exports.prototype['enableEasySignCanUseMultiTemplateApply'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableEasySignCanUseMultiTemplateApplyMetadata
    */
   exports.prototype['enableEasySignCanUseMultiTemplateApplyMetadata'] = undefined;
@@ -174,6 +179,7 @@
    */
   exports.prototype['enableEasySignTemplateUpload'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableEasySignTemplateUploadMetadata
    */
   exports.prototype['enableEasySignTemplateUploadMetadata'] = undefined;
@@ -183,6 +189,7 @@
    */
   exports.prototype['enableEnvelopeCopyWithData'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableEnvelopeCopyWithDataMetadata
    */
   exports.prototype['enableEnvelopeCopyWithDataMetadata'] = undefined;
@@ -201,6 +208,7 @@
    */
   exports.prototype['hasExternalLinkedAccounts'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} hasExternalLinkedAccountsMetadata
    */
   exports.prototype['hasExternalLinkedAccountsMetadata'] = undefined;
@@ -210,6 +218,7 @@
    */
   exports.prototype['hideSendAnEnvelope'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} hideSendAnEnvelopeMetadata
    */
   exports.prototype['hideSendAnEnvelopeMetadata'] = undefined;
@@ -224,10 +233,12 @@
    */
   exports.prototype['hideUseATemplateInPrepare'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} hideUseATemplateInPrepareMetadata
    */
   exports.prototype['hideUseATemplateInPrepareMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} hideUseATemplateMetadata
    */
   exports.prototype['hideUseATemplateMetadata'] = undefined;
@@ -237,6 +248,7 @@
    */
   exports.prototype['orderBasedRecipientIdGeneration'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} orderBasedRecipientIdGenerationMetadata
    */
   exports.prototype['orderBasedRecipientIdGenerationMetadata'] = undefined;
@@ -246,6 +258,7 @@
    */
   exports.prototype['removeEnvelopeForwarding'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} removeEnvelopeForwardingMetadata
    */
   exports.prototype['removeEnvelopeForwardingMetadata'] = undefined;
@@ -255,6 +268,7 @@
    */
   exports.prototype['shouldRedactAccessCode'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} shouldRedactAccessCodeMetadata
    */
   exports.prototype['shouldRedactAccessCodeMetadata'] = undefined;
@@ -264,6 +278,7 @@
    */
   exports.prototype['uploadNewImageToSignOrInitial'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} uploadNewImageToSignOrInitialMetadata
    */
   exports.prototype['uploadNewImageToSignOrInitialMetadata'] = undefined;

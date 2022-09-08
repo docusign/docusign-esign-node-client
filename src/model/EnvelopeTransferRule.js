@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeTransferRule</code>.
+   * This object contains details about an envelope transfer rule.
    * @alias module:model/EnvelopeTransferRule
    * @class
    */
@@ -109,10 +110,12 @@
    */
   exports.prototype['eventType'] = undefined;
   /**
+   * Information about the group that triggers the transfer.
    * @member {module:model/Group} fromGroup
    */
   exports.prototype['fromGroup'] = undefined;
   /**
+   * Information about the user who triggers the transfer.
    * @member {module:model/UserInformation} fromUser
    */
   exports.prototype['fromUser'] = undefined;
@@ -122,14 +125,17 @@
    */
   exports.prototype['modifiedDate'] = undefined;
   /**
+   * Information about the user who last modified the envelope transfer rule.
    * @member {module:model/UserInformation} modifiedUser
    */
   exports.prototype['modifiedUser'] = undefined;
   /**
+   * Information about the destination folder to which the envelope is transferred.
    * @member {module:model/Folder} toFolder
    */
   exports.prototype['toFolder'] = undefined;
   /**
+   * Information about the user to which the envelope is transferred.
    * @member {module:model/UserInformation} toUser
    */
   exports.prototype['toUser'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeDocument</code>.
+   * This object contains details about the envelope document.
    * @alias module:model/EnvelopeDocument
    * @class
    */
@@ -152,6 +153,7 @@
    */
   exports.prototype['authoritativeCopy'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `authoritativeCopy` property. Not applicable for template documents.
    * @member {module:model/PropertyMetadata} authoritativeCopyMetadata
    */
   exports.prototype['authoritativeCopyMetadata'] = undefined;
@@ -171,6 +173,7 @@
    */
   exports.prototype['display'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `display` property. Not applicable for template documents.
    * @member {module:model/PropertyMetadata} displayMetadata
    */
   exports.prototype['displayMetadata'] = undefined;
@@ -195,6 +198,7 @@
    */
   exports.prototype['documentIdGuid'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -204,6 +208,7 @@
    */
   exports.prototype['includeInDownload'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `includeInDownload` property. Not applicable for template documents.
    * @member {module:model/PropertyMetadata} includeInDownloadMetadata
    */
   exports.prototype['includeInDownloadMetadata'] = undefined;
@@ -213,6 +218,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `name` property. Not applicable for template documents.
    * @member {module:model/PropertyMetadata} nameMetadata
    */
   exports.prototype['nameMetadata'] = undefined;
@@ -232,6 +238,7 @@
    */
   exports.prototype['signerMustAcknowledge'] = undefined;
   /**
+   * Metadata that indicates if the sender can edit the `signerMustAcknowledge` property. Not applicable for template documents.
    * @member {module:model/PropertyMetadata} signerMustAcknowledgeMetadata
    */
   exports.prototype['signerMustAcknowledgeMetadata'] = undefined;

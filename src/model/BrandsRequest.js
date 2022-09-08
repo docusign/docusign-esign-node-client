@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BrandsRequest</code>.
+   * Details about one or more brands.
    * @alias module:model/BrandsRequest
    * @class
    */

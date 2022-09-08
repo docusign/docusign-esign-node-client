@@ -72,18 +72,22 @@
   }
 
   /**
+   * An object that specifies recipient address information and how it is displayed.
    * @member {module:model/AddressInformationInput} addressInformationInput
    */
   exports.prototype['addressInformationInput'] = undefined;
   /**
+   * An object that specifies recipient date of birth information and how it is displayed.
    * @member {module:model/DobInformationInput} dobInformationInput
    */
   exports.prototype['dobInformationInput'] = undefined;
   /**
+   * An object that specifies the last four digits of the recipient's Social Security Number (SSN).
    * @member {module:model/Ssn4InformationInput} ssn4InformationInput
    */
   exports.prototype['ssn4InformationInput'] = undefined;
   /**
+   * An object that specifies the recipient's Social Security Number (SSN) information. Note that ssn9 information cannot be returned in a response.
    * @member {module:model/Ssn9InformationInput} ssn9InformationInput
    */
   exports.prototype['ssn9InformationInput'] = undefined;

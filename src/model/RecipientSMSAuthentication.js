@@ -71,6 +71,7 @@
    */
   exports.prototype['senderProvidedNumbers'] = undefined;
   /**
+   * Metadata that indicates whether the `senderProvidedNumbers` property can be edited.
    * @member {module:model/PropertyMetadata} senderProvidedNumbersMetadata
    */
   exports.prototype['senderProvidedNumbersMetadata'] = undefined;

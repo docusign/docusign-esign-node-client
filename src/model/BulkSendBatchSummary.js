@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendBatchSummary</code>.
+   * Summary status of a single batch.
    * @alias module:model/BulkSendBatchSummary
    * @class
    */

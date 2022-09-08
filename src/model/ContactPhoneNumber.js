@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ContactPhoneNumber</code>.
+   * Details about the phone numbers associated with a specific contact.
    * @alias module:model/ContactPhoneNumber
    * @class
    */

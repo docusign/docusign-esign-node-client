@@ -61,6 +61,7 @@
 
     /**
      * Uses the specified bulk envelopes list to update the envelopes specified in the payload
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {module:api/BulkProcessDataApi~createBulkProcessRequestCallback} callback The callback function, accepting three arguments: error, data, response
@@ -118,6 +119,7 @@
 
     /**
      * Uses the specified bulk envelopes list to update the envelopes specified in the payload
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 
@@ -192,6 +194,7 @@
 
     /**
      * Deletes a specific bulk process list
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 
@@ -257,6 +260,7 @@
 
     /**
      * Deletes a specific bulk process list
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -324,6 +328,7 @@
 
     /**
      * Gets a specific bulk process list
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 
@@ -388,6 +393,7 @@
 
     /**
      * Lists top-level details for all bulk process lists visible to the current user
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {module:api/BulkProcessDataApi~getBulkProcessListsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -446,6 +452,7 @@
 
     /**
      * Updates a specific bulk process list
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} processAction 
      * @param {String} bulkProcessListId 

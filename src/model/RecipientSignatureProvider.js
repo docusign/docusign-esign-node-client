@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientSignatureProvider</code>.
+   * An Electronic or Standards Based Signature (digital signature) provider for the signer to use. [More information](/docs/esign-rest-api/esign101/concepts/standards-based-signatures/). 
    * @alias module:model/RecipientSignatureProvider
    * @class
    */
@@ -89,10 +90,12 @@
    */
   exports.prototype['signatureProviderName'] = undefined;
   /**
+   * Metadata that indicates whether the `signatureProviderName` property is editable. 
    * @member {module:model/PropertyMetadata} signatureProviderNameMetadata
    */
   exports.prototype['signatureProviderNameMetadata'] = undefined;
   /**
+   * Not applicable for this object.
    * @member {module:model/RecipientSignatureProviderOptions} signatureProviderOptions
    */
   exports.prototype['signatureProviderOptions'] = undefined;

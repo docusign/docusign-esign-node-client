@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>FolderItemV2</code>.
+   * Information about folder item results.
    * @alias module:model/FolderItemV2
    * @class
    */
@@ -172,6 +173,7 @@
    */
   exports.prototype['ownerName'] = undefined;
   /**
+   * An array of recipient objects that provides details about the recipients of the envelope.
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;

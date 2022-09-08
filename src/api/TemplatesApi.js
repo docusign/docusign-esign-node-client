@@ -204,6 +204,7 @@
 
     /**
      * Provides a URL to start an edit view of the Template UI
+     * This method returns a URL for starting an edit view of a template that uses the DocuSign Template UI.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -577,6 +578,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
     /**
      * Post Responsive HTML Preview for a document in a template.
+     * Creates a preview of the
+[responsive](/docs/esign-rest-api/esign101/concepts/responsive/),
+HTML version of a specific template document. This
+method enables you to preview a PDF document
+conversion to responsive HTML across device types
+prior to sending.
+
+The request body is a `documentHtmlDefinition`
+object, which holds the responsive signing
+parameters that define how to generate the HTML
+version of the signing document.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -651,6 +663,30 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
     /**
      * Adds the tabs to a tempate
+     * Adds tabs to the document specified by `documentId` in the
+template specified by `templateId`.
+
+In the request body, you only need to specify the tabs that your
+are adding. For example, to add a text
+[prefill tab](/docs/esign-rest-api/reference/templates/templatedocumenttabs/create/#definition__templatetabs_prefilltabs),
+your request body might look like this:
+
+```
+{
+  "prefillTabs": {
+    "textTabs": [
+      {
+        "value": "a prefill text tab",
+        "pageNumber": "1",
+        "documentId": "1",
+        "xPosition": 316,
+        "yPosition": 97
+      }
+    ]
+  }
+}
+```
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -725,6 +761,9 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
     /**
      * Provides a URL to start a recipient view of the Envelope UI
+     * This method returns a URL for a template recipient preview  in the DocuSign UI that you can embed in your application. You use this method to enable the sender to preview the recipients' experience.
+
+For more information, see [Preview and Send](https://support.docusign.com/en/guides/ndse-user-guide-send-your-documents).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -792,6 +831,17 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
     /**
      * Get Responsive HTML Preview for all documents in a template.
+     * Creates a preview of the
+[responsive](/docs/esign-rest-api/esign101/concepts/responsive/),
+HTML versions of all of the documents associated
+with a template. This method enables you to
+preview the PDF document conversions to responsive
+HTML across device types prior to sending.
+
+The request body is a `documentHtmlDefinition`
+object, which holds the responsive signing
+parameters that define how to generate the HTML
+version of the documents.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -1578,6 +1628,9 @@ For cases where another recipient (such as an Agent, Editor, or Intermediary rec
 
     /**
      * Deletes tabs from an envelope document
+     * Deletes tabs from the document specified by `documentId` in the
+template specified by `templateId`.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -1890,6 +1943,10 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
 
     /**
      * Returns tabs on the document.
+     * Returns the tabs on the document specified by `documentId` in the
+template specified by `templateId`.
+
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -2085,6 +2142,9 @@ If the call is made by the user who has the lock and the request has the same in
 
     /**
      * Returns tabs on the specified page.
+     * Returns the tabs from the page specified by `pageNumber` of the document specified by `documentId` in the
+template specified by `templateId`.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -2157,6 +2217,7 @@ If the call is made by the user who has the lock and the request has the same in
 
     /**
      * Returns document page image(s) based on input.
+     * Returns images of the pages in a template document for display based on the parameters that you specify.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -2244,6 +2305,7 @@ If the call is made by the user who has the lock and the request has the same in
 
     /**
      * Get the Original HTML Definition used to generate the Responsive HTML for a given document in a template.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.
@@ -2309,6 +2371,7 @@ If the call is made by the user who has the lock and the request has the same in
 
     /**
      * Get the Original HTML Definition used to generate the Responsive HTML for the template.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {module:api/TemplatesApi~getTemplateHtmlDefinitionsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3693,6 +3756,9 @@ You can edit the following properties: `email`, `userName`, `routingOrder`, `fax
 
     /**
      * Updates the tabs for a template
+     * Updates tabs in the document specified by `documentId` in the
+template specified by `templateId`.
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {String} documentId The ID of the document being accessed.

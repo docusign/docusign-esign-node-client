@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Money</code>.
+   * Describes information about the `total` of a payment. 
    * @alias module:model/Money
    * @class
    */

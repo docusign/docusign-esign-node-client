@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Document</code>.
+   * A document object.
    * @alias module:model/Document
    * @class
    */
@@ -179,6 +180,7 @@
    */
   exports.prototype['fileFormatHint'] = undefined;
   /**
+   * Defines how to generate the responsive-formatted HTML for the document. See [Responsive signing](/docs/esign-rest-api/esign101/concepts/responsive/) in the [eSignature concepts guide](/docs/esign-rest-api/esign101/concepts/).
    * @member {module:model/DocumentHtmlDefinition} htmlDefinition
    */
   exports.prototype['htmlDefinition'] = undefined;
@@ -233,6 +235,7 @@
    */
   exports.prototype['signerMustAcknowledgeUseAccountDefault'] = undefined;
   /**
+   * A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
    * @member {module:model/Tabs} tabs
    */
   exports.prototype['tabs'] = undefined;

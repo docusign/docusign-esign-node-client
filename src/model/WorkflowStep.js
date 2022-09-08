@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>WorkflowStep</code>.
+   * Describes a single step in a workflow.
    * @alias module:model/WorkflowStep
    * @class
    */
@@ -96,6 +97,7 @@
    */
   exports.prototype['completedDate'] = undefined;
   /**
+   * A complex element that specifies the delayed routing settings for the workflow step.
    * @member {module:model/DelayedRouting} delayedRouting
    */
   exports.prototype['delayedRouting'] = undefined;
@@ -105,6 +107,7 @@
    */
   exports.prototype['itemId'] = undefined;
   /**
+   * The rules for recipient routing.
    * @member {module:model/RecipientRouting} recipientRouting
    */
   exports.prototype['recipientRouting'] = undefined;

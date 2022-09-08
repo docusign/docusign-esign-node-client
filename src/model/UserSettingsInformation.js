@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>UserSettingsInformation</code>.
+   * Properties that configure the settings for a user. Some elements of this object have a `metadata` property, which includes the following: - `rights`: The calling users permissions to edit this setting (can be `editable` or `read_only`) - `uiHint`: Internally used to build UIs (can be `available` or `hidden`) - `options`: The values supported for this setting (not all settings have this element)
    * @alias module:model/UserSettingsInformation
    * @class
    */
@@ -434,6 +435,7 @@
   }
 
   /**
+   * Describes which account management capabilities a user has.
    * @member {module:model/UserAccountManagementGranularInformation} accountManagementGranular
    */
   exports.prototype['accountManagementGranular'] = undefined;
@@ -443,6 +445,7 @@
    */
   exports.prototype['adminOnly'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} adminOnlyMetadata
    */
   exports.prototype['adminOnlyMetadata'] = undefined;
@@ -457,6 +460,7 @@
    */
   exports.prototype['allowEnvelopeTransferTo'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} allowEnvelopeTransferToMetadata
    */
   exports.prototype['allowEnvelopeTransferToMetadata'] = undefined;
@@ -466,6 +470,7 @@
    */
   exports.prototype['allowEsealRecipients'] = undefined;
   /**
+   * Metadata about the `allowEsealRecipientsMetadata` property.
    * @member {module:model/SettingsMetadata} allowEsealRecipientsMetadata
    */
   exports.prototype['allowEsealRecipientsMetadata'] = undefined;
@@ -475,6 +480,7 @@
    */
   exports.prototype['allowPowerFormsAdminToAccessAllPowerFormEnvelope'] = undefined;
   /**
+   * Metadata about the `allowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata` property.
    * @member {module:model/SettingsMetadata} allowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata
    */
   exports.prototype['allowPowerFormsAdminToAccessAllPowerFormEnvelopeMetadata'] = undefined;
@@ -484,6 +490,7 @@
    */
   exports.prototype['allowRecipientLanguageSelection'] = undefined;
   /**
+   * Metadata for allowRecipientLanguageSelection.
    * @member {module:model/SettingsMetadata} allowRecipientLanguageSelectionMetadata
    */
   exports.prototype['allowRecipientLanguageSelectionMetadata'] = undefined;
@@ -493,6 +500,7 @@
    */
   exports.prototype['allowSendOnBehalfOf'] = undefined;
   /**
+   * Metadata for allowSendOnBehalfOf.
    * @member {module:model/SettingsMetadata} allowSendOnBehalfOfMetadata
    */
   exports.prototype['allowSendOnBehalfOfMetadata'] = undefined;
@@ -502,6 +510,7 @@
    */
   exports.prototype['allowSupplementalDocuments'] = undefined;
   /**
+   * Metadata that indicates whether the `allowSupplementalDocuments` property is editable.
    * @member {module:model/SettingsMetadata} allowSupplementalDocumentsMetadata
    */
   exports.prototype['allowSupplementalDocumentsMetadata'] = undefined;
@@ -516,6 +525,7 @@
    */
   exports.prototype['apiAccountWideAccess'] = undefined;
   /**
+   * Metadata for apiAccountWideAccess.
    * @member {module:model/SettingsMetadata} apiAccountWideAccessMetadata
    */
   exports.prototype['apiAccountWideAccessMetadata'] = undefined;
@@ -525,6 +535,7 @@
    */
   exports.prototype['apiCanExportAC'] = undefined;
   /**
+   * Metadata about the `apiCanExportACMetadata` property.
    * @member {module:model/SettingsMetadata} apiCanExportACMetadata
    */
   exports.prototype['apiCanExportACMetadata'] = undefined;
@@ -534,6 +545,7 @@
    */
   exports.prototype['bulkSend'] = undefined;
   /**
+   * Metadata that indicates whether the `bulkSend` property is editable. 
    * @member {module:model/SettingsMetadata} bulkSendMetadata
    */
   exports.prototype['bulkSendMetadata'] = undefined;
@@ -543,6 +555,7 @@
    */
   exports.prototype['canChargeAccount'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} canChargeAccountMetadata
    */
   exports.prototype['canChargeAccountMetadata'] = undefined;
@@ -552,6 +565,7 @@
    */
   exports.prototype['canEditSharedAddressbook'] = undefined;
   /**
+   * Metadata about the `canEditSharedAddressbookMetadata` property.
    * @member {module:model/SettingsMetadata} canEditSharedAddressbookMetadata
    */
   exports.prototype['canEditSharedAddressbookMetadata'] = undefined;
@@ -561,6 +575,7 @@
    */
   exports.prototype['canLockEnvelopes'] = undefined;
   /**
+   * Metadata about the `canLockEnvelopes` property.
    * @member {module:model/SettingsMetadata} canLockEnvelopesMetadata
    */
   exports.prototype['canLockEnvelopesMetadata'] = undefined;
@@ -570,6 +585,7 @@
    */
   exports.prototype['canManageAccount'] = undefined;
   /**
+   * Metadata about the `canManageAccountMetadata` property.
    * @member {module:model/SettingsMetadata} canManageAccountMetadata
    */
   exports.prototype['canManageAccountMetadata'] = undefined;
@@ -579,6 +595,7 @@
    */
   exports.prototype['canManageDistributor'] = undefined;
   /**
+   * Metadata about the `canManageDistributor` property.
    * @member {module:model/SettingsMetadata} canManageDistributorMetadata
    */
   exports.prototype['canManageDistributorMetadata'] = undefined;
@@ -588,6 +605,7 @@
    */
   exports.prototype['canManageTemplates'] = undefined;
   /**
+   * Metadata about the `canManageTemplates` property.
    * @member {module:model/SettingsMetadata} canManageTemplatesMetadata
    */
   exports.prototype['canManageTemplatesMetadata'] = undefined;
@@ -597,6 +615,7 @@
    */
   exports.prototype['canSendAPIRequests'] = undefined;
   /**
+   * Metadata about the `canSendAPIRequests` property.
    * @member {module:model/SettingsMetadata} canSendAPIRequestsMetadata
    */
   exports.prototype['canSendAPIRequestsMetadata'] = undefined;
@@ -606,6 +625,7 @@
    */
   exports.prototype['canSendEnvelope'] = undefined;
   /**
+   * Metadata about the `canSendEnvelope` property.
    * @member {module:model/SettingsMetadata} canSendEnvelopeMetadata
    */
   exports.prototype['canSendEnvelopeMetadata'] = undefined;
@@ -615,6 +635,7 @@
    */
   exports.prototype['canSendEnvelopesViaSMS'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canSendEnvelopesViaSMSMetadata
    */
   exports.prototype['canSendEnvelopesViaSMSMetadata'] = undefined;
@@ -624,6 +645,7 @@
    */
   exports.prototype['canSignEnvelope'] = undefined;
   /**
+   * Metadata about the `canSignEnvelope` property.
    * @member {module:model/SettingsMetadata} canSignEnvelopeMetadata
    */
   exports.prototype['canSignEnvelopeMetadata'] = undefined;
@@ -633,6 +655,7 @@
    */
   exports.prototype['canUseScratchpad'] = undefined;
   /**
+   * Metadata about the `canUseScratchpad` property.
    * @member {module:model/SettingsMetadata} canUseScratchpadMetadata
    */
   exports.prototype['canUseScratchpadMetadata'] = undefined;
@@ -642,6 +665,7 @@
    */
   exports.prototype['canUseSmartContracts'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} canUseSmartContractsMetadata
    */
   exports.prototype['canUseSmartContractsMetadata'] = undefined;
@@ -651,6 +675,7 @@
    */
   exports.prototype['disableDocumentUpload'] = undefined;
   /**
+   * Metadata that indicates whether the `disableDocumentUpload` property is editable. 
    * @member {module:model/SettingsMetadata} disableDocumentUploadMetadata
    */
   exports.prototype['disableDocumentUploadMetadata'] = undefined;
@@ -660,6 +685,7 @@
    */
   exports.prototype['disableOtherActions'] = undefined;
   /**
+   * Metadata that indicates whether the `disableOtherActions` property is editable. 
    * @member {module:model/SettingsMetadata} disableOtherActionsMetadata
    */
   exports.prototype['disableOtherActionsMetadata'] = undefined;
@@ -669,6 +695,7 @@
    */
   exports.prototype['enableDSPro'] = undefined;
   /**
+   * Metadata that indicates whether the `enableDSPro` property is editable. 
    * @member {module:model/SettingsMetadata} enableDSProMetadata
    */
   exports.prototype['enableDSProMetadata'] = undefined;
@@ -687,6 +714,7 @@
    */
   exports.prototype['enableSequentialSigningAPI'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSequentialSigningAPI` property is editable. 
    * @member {module:model/SettingsMetadata} enableSequentialSigningAPIMetadata
    */
   exports.prototype['enableSequentialSigningAPIMetadata'] = undefined;
@@ -696,6 +724,7 @@
    */
   exports.prototype['enableSequentialSigningUI'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSequentialSigningUI` property is editable. 
    * @member {module:model/SettingsMetadata} enableSequentialSigningUIMetadata
    */
   exports.prototype['enableSequentialSigningUIMetadata'] = undefined;
@@ -705,6 +734,7 @@
    */
   exports.prototype['enableSignerAttachments'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSignerAttachments` property is editable. 
    * @member {module:model/SettingsMetadata} enableSignerAttachmentsMetadata
    */
   exports.prototype['enableSignerAttachmentsMetadata'] = undefined;
@@ -714,6 +744,7 @@
    */
   exports.prototype['enableSignOnPaperOverride'] = undefined;
   /**
+   * Metadata that indicates whether the `enableSignOnPaperOverride` property is editable. 
    * @member {module:model/SettingsMetadata} enableSignOnPaperOverrideMetadata
    */
   exports.prototype['enableSignOnPaperOverrideMetadata'] = undefined;
@@ -723,6 +754,7 @@
    */
   exports.prototype['enableTransactionPoint'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} enableTransactionPointMetadata
    */
   exports.prototype['enableTransactionPointMetadata'] = undefined;
@@ -732,6 +764,7 @@
    */
   exports.prototype['enableVaulting'] = undefined;
   /**
+   * Metadata that indicates whether the `enableVaulting` property is editable. 
    * @member {module:model/SettingsMetadata} enableVaultingMetadata
    */
   exports.prototype['enableVaultingMetadata'] = undefined;
@@ -746,10 +779,12 @@
    */
   exports.prototype['locale'] = undefined;
   /**
+   * Metadata about the `locale` property.
    * @member {module:model/SettingsMetadata} localeMetadata
    */
   exports.prototype['localeMetadata'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/LocalePolicy} localePolicy
    */
   exports.prototype['localePolicy'] = undefined;
@@ -759,6 +794,7 @@
    */
   exports.prototype['manageClickwrapsMode'] = undefined;
   /**
+   * Metadata about the `manageClickwrapsMode` property.
    * @member {module:model/SettingsMetadata} manageClickwrapsModeMetadata
    */
   exports.prototype['manageClickwrapsModeMetadata'] = undefined;
@@ -768,6 +804,7 @@
    */
   exports.prototype['modifiedBy'] = undefined;
   /**
+   * Metadata about the `modifiedBy` property.
    * @member {module:model/SettingsMetadata} modifiedByMetadata
    */
   exports.prototype['modifiedByMetadata'] = undefined;
@@ -777,6 +814,7 @@
    */
   exports.prototype['modifiedDate'] = undefined;
   /**
+   * Metadata about the `modifiedDate` property.
    * @member {module:model/SettingsMetadata} modifiedDateMetadata
    */
   exports.prototype['modifiedDateMetadata'] = undefined;
@@ -786,6 +824,7 @@
    */
   exports.prototype['modifiedPage'] = undefined;
   /**
+   * Metadata about the `modifiedPage` property.
    * @member {module:model/SettingsMetadata} modifiedPageMetadata
    */
   exports.prototype['modifiedPageMetadata'] = undefined;
@@ -795,6 +834,7 @@
    */
   exports.prototype['newSendUI'] = undefined;
   /**
+   * Metadata about the `newSendUI` property.
    * @member {module:model/SettingsMetadata} newSendUIMetadata
    */
   exports.prototype['newSendUIMetadata'] = undefined;
@@ -804,6 +844,7 @@
    */
   exports.prototype['powerFormMode'] = undefined;
   /**
+   * Metadata about the `powerFormMode` property.
    * @member {module:model/SettingsMetadata} powerFormModeMetadata
    */
   exports.prototype['powerFormModeMetadata'] = undefined;
@@ -813,6 +854,7 @@
    */
   exports.prototype['recipientViewedNotification'] = undefined;
   /**
+   * Metadata about the `recipientViewedNotification` property.
    * @member {module:model/SettingsMetadata} recipientViewedNotificationMetadata
    */
   exports.prototype['recipientViewedNotificationMetadata'] = undefined;
@@ -827,14 +869,17 @@
    */
   exports.prototype['selfSignedRecipientEmailDocument'] = undefined;
   /**
+   * Metadata that indicates whether the `selfSignedRecipientEmailDocument` property is editable. 
    * @member {module:model/SettingsMetadata} selfSignedRecipientEmailDocumentMetadata
    */
   exports.prototype['selfSignedRecipientEmailDocumentMetadata'] = undefined;
   /**
+   *   An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   
    * @member {module:model/SenderEmailNotifications} senderEmailNotifications
    */
   exports.prototype['senderEmailNotifications'] = undefined;
   /**
+   * An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. 
    * @member {module:model/SignerEmailNotifications} signerEmailNotifications
    */
   exports.prototype['signerEmailNotifications'] = undefined;
@@ -849,6 +894,7 @@
    */
   exports.prototype['supplementalDocumentsMustAccept'] = undefined;
   /**
+   * Metadata that indicates whether the `supplementalDocumentsMustAccept` property is editable. 
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustAcceptMetadata
    */
   exports.prototype['supplementalDocumentsMustAcceptMetadata'] = undefined;
@@ -858,6 +904,7 @@
    */
   exports.prototype['supplementalDocumentsMustRead'] = undefined;
   /**
+   * Metadata that indicates whether the `supplementalDocumentsMustRead` property is editable. 
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustReadMetadata
    */
   exports.prototype['supplementalDocumentsMustReadMetadata'] = undefined;
@@ -867,6 +914,7 @@
    */
   exports.prototype['supplementalDocumentsMustView'] = undefined;
   /**
+   * Metadata that indicates whether the `supplementalDocumentsMustView` property is editable. 
    * @member {module:model/SettingsMetadata} supplementalDocumentsMustViewMetadata
    */
   exports.prototype['supplementalDocumentsMustViewMetadata'] = undefined;
@@ -876,6 +924,7 @@
    */
   exports.prototype['templateActiveCreation'] = undefined;
   /**
+   * Metadata about the `templateActiveCreation` property.
    * @member {module:model/SettingsMetadata} templateActiveCreationMetadata
    */
   exports.prototype['templateActiveCreationMetadata'] = undefined;
@@ -885,6 +934,7 @@
    */
   exports.prototype['templateApplyNotify'] = undefined;
   /**
+   * Metadata about the `templateApplyNotify` property.
    * @member {module:model/SettingsMetadata} templateApplyNotifyMetadata
    */
   exports.prototype['templateApplyNotifyMetadata'] = undefined;
@@ -894,6 +944,7 @@
    */
   exports.prototype['templateAutoMatching'] = undefined;
   /**
+   * Metadata about the `templateAutoMatching` property.
    * @member {module:model/SettingsMetadata} templateAutoMatchingMetadata
    */
   exports.prototype['templateAutoMatchingMetadata'] = undefined;
@@ -903,6 +954,7 @@
    */
   exports.prototype['templateMatchingSensitivity'] = undefined;
   /**
+   * Metadata about the `tempalteMatchingSensitivity` property.
    * @member {module:model/SettingsMetadata} templateMatchingSensitivityMetadata
    */
   exports.prototype['templateMatchingSensitivityMetadata'] = undefined;
@@ -912,6 +964,7 @@
    */
   exports.prototype['templatePageLevelMatching'] = undefined;
   /**
+   * Metadata about the `templatePageLevelMatching` property.
    * @member {module:model/SettingsMetadata} templatePageLevelMatchingMetadata
    */
   exports.prototype['templatePageLevelMatchingMetadata'] = undefined;
@@ -921,6 +974,7 @@
    */
   exports.prototype['timezoneDST'] = undefined;
   /**
+   * Metadata about the `timezoneDST` property.
    * @member {module:model/SettingsMetadata} timezoneDSTMetadata
    */
   exports.prototype['timezoneDSTMetadata'] = undefined;
@@ -930,6 +984,7 @@
    */
   exports.prototype['timezoneMask'] = undefined;
   /**
+   * Metadata about the `timezoneMask` property.
    * @member {module:model/SettingsMetadata} timezoneMaskMetadata
    */
   exports.prototype['timezoneMaskMetadata'] = undefined;
@@ -939,6 +994,7 @@
    */
   exports.prototype['timezoneOffset'] = undefined;
   /**
+   * Metadata about the `timezoneOffset` property.
    * @member {module:model/SettingsMetadata} timezoneOffsetMetadata
    */
   exports.prototype['timezoneOffsetMetadata'] = undefined;
@@ -948,6 +1004,7 @@
    */
   exports.prototype['timezoneSendingPref'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} timezoneSendingPrefMetadata
    */
   exports.prototype['timezoneSendingPrefMetadata'] = undefined;
@@ -957,6 +1014,7 @@
    */
   exports.prototype['timezoneSigningPref'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} timezoneSigningPrefMetadata
    */
   exports.prototype['timezoneSigningPrefMetadata'] = undefined;
@@ -966,6 +1024,7 @@
    */
   exports.prototype['transactionPointSiteNameURL'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} transactionPointSiteNameURLMetadata
    */
   exports.prototype['transactionPointSiteNameURLMetadata'] = undefined;
@@ -975,6 +1034,7 @@
    */
   exports.prototype['transactionPointUserName'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} transactionPointUserNameMetadata
    */
   exports.prototype['transactionPointUserNameMetadata'] = undefined;
@@ -984,6 +1044,7 @@
    */
   exports.prototype['vaultingMode'] = undefined;
   /**
+   * Metadata about the `vaultingMode` property.
    * @member {module:model/SettingsMetadata} vaultingModeMetadata
    */
   exports.prototype['vaultingModeMetadata'] = undefined;

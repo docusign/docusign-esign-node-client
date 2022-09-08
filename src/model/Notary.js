@@ -86,6 +86,7 @@
    */
   exports.prototype['searchable'] = undefined;
   /**
+   * Information about the user registering to be a notary.
    * @member {module:model/UserInformation} userInfo
    */
   exports.prototype['userInfo'] = undefined;

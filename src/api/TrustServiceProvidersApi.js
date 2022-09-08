@@ -61,6 +61,7 @@
 
     /**
      * Returns Account available seals for specified account.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/TrustServiceProvidersApi~getSealProvidersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSeals}

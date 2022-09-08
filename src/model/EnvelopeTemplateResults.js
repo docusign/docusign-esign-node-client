@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeTemplateResults</code>.
+   * Information about templates.
    * @alias module:model/EnvelopeTemplateResults
    * @class
    */

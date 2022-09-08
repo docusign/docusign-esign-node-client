@@ -83,6 +83,7 @@
   }
 
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -97,6 +98,7 @@
    */
   exports.prototype['lockedByApp'] = undefined;
   /**
+   * A complex type containing information about the user that has the envelope or template locked.
    * @member {module:model/UserInfo} lockedByUser
    */
   exports.prototype['lockedByUser'] = undefined;

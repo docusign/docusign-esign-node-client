@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BrandLink</code>.
+   * Information about a link that a brand uses.
    * @alias module:model/BrandLink
    * @class
    */

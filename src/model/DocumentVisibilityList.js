@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>DocumentVisibilityList</code>.
+   * A list of `documentVisibility` objects that specify whether documents are visible to recipients.
    * @alias module:model/DocumentVisibilityList
    * @class
    */

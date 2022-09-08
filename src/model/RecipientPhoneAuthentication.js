@@ -89,6 +89,7 @@
    */
   exports.prototype['recipMayProvideNumber'] = undefined;
   /**
+   * Metadata that indicates whether the `recipMayProvideNumber` property can be edited.
    * @member {module:model/PropertyMetadata} recipMayProvideNumberMetadata
    */
   exports.prototype['recipMayProvideNumberMetadata'] = undefined;
@@ -98,6 +99,7 @@
    */
   exports.prototype['recordVoicePrint'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} recordVoicePrintMetadata
    */
   exports.prototype['recordVoicePrintMetadata'] = undefined;
@@ -107,6 +109,7 @@
    */
   exports.prototype['senderProvidedNumbers'] = undefined;
   /**
+   * Metadata that indicates whether the `senderProvidedNumbers` property can be edited.
    * @member {module:model/PropertyMetadata} senderProvidedNumbersMetadata
    */
   exports.prototype['senderProvidedNumbersMetadata'] = undefined;
@@ -116,6 +119,7 @@
    */
   exports.prototype['validateRecipProvidedNumber'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} validateRecipProvidedNumberMetadata
    */
   exports.prototype['validateRecipProvidedNumberMetadata'] = undefined;

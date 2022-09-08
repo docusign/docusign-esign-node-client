@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendingListSummary</code>.
+   * This object contains basic information about a bulk send list.
    * @alias module:model/BulkSendingListSummary
    * @class
    */

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>UserInformation</code>.
+   * User information.
    * @alias module:model/UserInformation
    * @class
    */
@@ -236,6 +237,7 @@
    */
   exports.prototype['enableConnectForUser'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -245,6 +247,7 @@
    */
   exports.prototype['firstName'] = undefined;
   /**
+   * A complex element containing up to four Question/Answer pairs for forgotten password information.
    * @member {module:model/ForgottenPasswordInformation} forgottenPasswordInfo
    */
   exports.prototype['forgottenPasswordInfo'] = undefined;
@@ -259,6 +262,7 @@
    */
   exports.prototype['hasRemoteNotary'] = undefined;
   /**
+   * Specifies the email for the signing host. It is a Required element for In Person Signers recipient Type.  Maximum Length: 100 characters.
    * @member {module:model/AddressInformation} homeAddress
    */
   exports.prototype['homeAddress'] = undefined;
@@ -388,6 +392,7 @@
    */
   exports.prototype['userProfileLastModifiedDate'] = undefined;
   /**
+   * The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings.
    * @member {module:model/UserSettingsInformation} userSettings
    */
   exports.prototype['userSettings'] = undefined;
@@ -402,6 +407,7 @@
    */
   exports.prototype['userType'] = undefined;
   /**
+   * 
    * @member {module:model/AddressInformation} workAddress
    */
   exports.prototype['workAddress'] = undefined;

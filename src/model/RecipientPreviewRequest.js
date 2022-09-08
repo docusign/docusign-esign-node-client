@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientPreviewRequest</code>.
+   * This request object contains the information necessary to create a recipient preview.
    * @alias module:model/RecipientPreviewRequest
    * @class
    */
@@ -107,6 +108,7 @@
    */
   exports.prototype['authenticationMethod'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientTokenClientURLs} clientURLs
    */
   exports.prototype['clientURLs'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientOption</code>.
+   * Describes a recipient who is a member of a conditional group.
    * @alias module:model/RecipientOption
    * @class
    */

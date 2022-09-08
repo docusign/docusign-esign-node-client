@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConnectFailureResult</code>.
+   * This object contains details about a Connect failure result.
    * @alias module:model/ConnectFailureResult
    * @class
    */

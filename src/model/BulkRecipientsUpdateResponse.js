@@ -62,6 +62,7 @@
   }
 
   /**
+   * 
    * @member {module:model/Signer} signer
    */
   exports.prototype['signer'] = undefined;

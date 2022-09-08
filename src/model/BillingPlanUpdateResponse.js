@@ -89,6 +89,7 @@
    */
   exports.prototype['accountPaymentMethod'] = undefined;
   /**
+   * 
    * @member {module:model/BillingPlanPreview} billingPlanPreview
    */
   exports.prototype['billingPlanPreview'] = undefined;

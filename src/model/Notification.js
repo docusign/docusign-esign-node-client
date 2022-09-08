@@ -69,10 +69,12 @@
   }
 
   /**
+   * A complex element that specifies the expiration settings for the envelope.
    * @member {module:model/Expirations} expirations
    */
   exports.prototype['expirations'] = undefined;
   /**
+   * A complex element that specifies reminder settings for the envelope.
    * @member {module:model/Reminders} reminders
    */
   exports.prototype['reminders'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>TextCustomField</code>.
+   * This object represents a free text custom field where envelope creators and senders can enter custom data.
    * @alias module:model/TextCustomField
    * @class
    */
@@ -85,6 +86,7 @@
    */
   exports.prototype['configurationType'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

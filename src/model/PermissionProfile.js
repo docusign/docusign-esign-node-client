@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PermissionProfile</code>.
+   * This object defines the account permissions for a profile that you can apply to a group of users.
    * @alias module:model/PermissionProfile
    * @class
    */
@@ -100,6 +101,7 @@
    */
   exports.prototype['permissionProfileName'] = undefined;
   /**
+   * This object specifies the permissions that are associated with the account permission profile.
    * @member {module:model/AccountRoleSettings} settings
    */
   exports.prototype['settings'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>UserAccountManagementGranularInformation</code>.
+   * Describes which account management capabilities a user has.
    * @alias module:model/UserAccountManagementGranularInformation
    * @class
    */
@@ -139,6 +140,7 @@
    */
   exports.prototype['canManageAccountSecuritySettings'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageAccountSecuritySettingsMetadata
    */
   exports.prototype['canManageAccountSecuritySettingsMetadata'] = undefined;
@@ -148,6 +150,7 @@
    */
   exports.prototype['canManageAccountSettings'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageAccountSettingsMetadata
    */
   exports.prototype['canManageAccountSettingsMetadata'] = undefined;
@@ -157,6 +160,7 @@
    */
   exports.prototype['canManageAdmins'] = undefined;
   /**
+   * Metadata that indicates whether the `canManageAdmins` property is editable. 
    * @member {module:model/SettingsMetadata} canManageAdminsMetadata
    */
   exports.prototype['canManageAdminsMetadata'] = undefined;
@@ -166,6 +170,7 @@
    */
   exports.prototype['canManageConnect'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageConnectMetadata
    */
   exports.prototype['canManageConnectMetadata'] = undefined;
@@ -175,6 +180,7 @@
    */
   exports.prototype['canManageDocumentRetention'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageDocumentRetentionMetadata
    */
   exports.prototype['canManageDocumentRetentionMetadata'] = undefined;
@@ -184,6 +190,7 @@
    */
   exports.prototype['canManageEnvelopeTransfer'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageEnvelopeTransferMetadata
    */
   exports.prototype['canManageEnvelopeTransferMetadata'] = undefined;
@@ -193,6 +200,7 @@
    */
   exports.prototype['canManageGroupsButNotUsers'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageGroupsButNotUsersMetadata
    */
   exports.prototype['canManageGroupsButNotUsersMetadata'] = undefined;
@@ -202,6 +210,7 @@
    */
   exports.prototype['canManageReporting'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageReportingMetadata
    */
   exports.prototype['canManageReportingMetadata'] = undefined;
@@ -211,6 +220,7 @@
    */
   exports.prototype['canManageSharing'] = undefined;
   /**
+   * Metadata that indicates whether the `canManageSharing` property is editable. 
    * @member {module:model/SettingsMetadata} canManageSharingMetadata
    */
   exports.prototype['canManageSharingMetadata'] = undefined;
@@ -220,6 +230,7 @@
    */
   exports.prototype['canManageSigningGroups'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageSigningGroupsMetadata
    */
   exports.prototype['canManageSigningGroupsMetadata'] = undefined;
@@ -238,6 +249,7 @@
    */
   exports.prototype['canManageUsers'] = undefined;
   /**
+   * Metadata that indicates whether the `canManageUsers` property is editable. 
    * @member {module:model/SettingsMetadata} canManageUsersMetadata
    */
   exports.prototype['canManageUsersMetadata'] = undefined;

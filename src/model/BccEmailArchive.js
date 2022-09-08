@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BccEmailArchive</code>.
+   * This object contains information abut a BCC email archive configuration (a BCC email address used to archive DocuSign-generated emails).
    * @alias module:model/BccEmailArchive
    * @class
    */
@@ -104,6 +105,7 @@
    */
   exports.prototype['created'] = undefined;
   /**
+   * Details about the user who created the BCC email archive configuration.
    * @member {module:model/UserInfo} createdBy
    */
   exports.prototype['createdBy'] = undefined;
@@ -123,6 +125,7 @@
    */
   exports.prototype['modified'] = undefined;
   /**
+   * Details about the user who last modified the BCC email archive configuration.
    * @member {module:model/UserInfo} modifiedBy
    */
   exports.prototype['modifiedBy'] = undefined;

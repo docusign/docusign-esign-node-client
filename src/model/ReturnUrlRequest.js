@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ReturnUrlRequest</code>.
+   * The request body for the [EnvelopeViews: createSender](/docs/esign-rest-api/reference/envelopes/envelopeviews/createsender/) method.
    * @alias module:model/ReturnUrlRequest
    * @class
    */

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>TemplateRole</code>.
+   * Information about a specific role.
    * @alias module:model/TemplateRole
    * @class
    */
@@ -129,6 +130,7 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * An optional complex type that sets a specific email subject and body for this recipient's notification email.   **Note:** You can set the `emailNotification` property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level `emailSubject` and `emailBlurb`. 
    * @member {module:model/RecipientEmailNotification} emailNotification
    */
   exports.prototype['emailNotification'] = undefined;
@@ -148,6 +150,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * Describes the recipient phone number.
    * @member {module:model/RecipientPhoneNumber} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
@@ -172,6 +175,7 @@
    */
   exports.prototype['signingGroupId'] = undefined;
   /**
+   * A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
    * @member {module:model/Tabs} tabs
    */
   exports.prototype['tabs'] = undefined;

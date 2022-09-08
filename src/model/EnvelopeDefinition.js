@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeDefinition</code>.
+   * Envelope object definition.
    * @alias module:model/EnvelopeDefinition
    * @class
    */
@@ -431,6 +432,7 @@
    */
   exports.prototype['createdDateTime'] = undefined;
   /**
+   * An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.   **Note:** Any custom fields you set with this API method will _replace_ custom fields you have defined with [Envelope Custom Fields in Admin](https://support.docusign.com/en/guides/ndse-admin-guide-document-labels), whether the **Show field to envelope creators** or **Make fields required for envelopes** options are checked or not. 
    * @member {module:model/CustomFields} customFields
    */
   exports.prototype['customFields'] = undefined;
@@ -485,6 +487,7 @@
    */
   exports.prototype['emailBlurb'] = undefined;
   /**
+   * This optional complex element enables the sender to override some envelope email setting information. This can be used to override the Reply To email address and name associated with the envelope, as well as the BCC email addresses to which an envelope is sent. When the `emailSettings` information is used for an envelope, it only applies to that envelope.  **Important Note:** The `emailSettings` information is not returned in the GET method for envelope status. Use GET /email_settings to return information about the emailSettings.
    * @member {module:model/EmailSettings} emailSettings
    */
   exports.prototype['emailSettings'] = undefined;
@@ -509,6 +512,7 @@
    */
   exports.prototype['envelopeAttachments'] = undefined;
   /**
+   * 
    * @member {module:model/EnvelopeCustomMetadata} envelopeCustomMetadata
    */
   exports.prototype['envelopeCustomMetadata'] = undefined;
@@ -533,6 +537,7 @@
    */
   exports.prototype['envelopeLocation'] = undefined;
   /**
+   * Metadata about the features that are enabled for the envelope.
    * @member {module:model/EnvelopeMetadata} envelopeMetadata
    */
   exports.prototype['envelopeMetadata'] = undefined;
@@ -542,6 +547,7 @@
    */
   exports.prototype['envelopeUri'] = undefined;
   /**
+   * This optional object is used to register a webhook that will receive status changes for this envelope.
    * @member {module:model/EventNotification} eventNotification
    */
   exports.prototype['eventNotification'] = undefined;
@@ -626,6 +632,7 @@
    */
   exports.prototype['location'] = undefined;
   /**
+   * Provides lock information about an envelope that a user has locked.
    * @member {module:model/LockInformation} lockInformation
    */
   exports.prototype['lockInformation'] = undefined;
@@ -635,6 +642,7 @@
    */
   exports.prototype['messageLock'] = undefined;
   /**
+   * An optional complex element that specifies the notification options for the envelope.
    * @member {module:model/Notification} notification
    */
   exports.prototype['notification'] = undefined;
@@ -649,6 +657,7 @@
    */
   exports.prototype['password'] = undefined;
   /**
+   * Information about any PowerForms that are included in the envelope.
    * @member {module:model/PowerForm} powerForm
    */
   exports.prototype['powerForm'] = undefined;
@@ -668,6 +677,7 @@
    */
   exports.prototype['purgeState'] = undefined;
   /**
+   * Specifies the envelope recipients.
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;
@@ -682,10 +692,12 @@
    */
   exports.prototype['recipientsUri'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientViewRequest} recipientViewRequest
    */
   exports.prototype['recipientViewRequest'] = undefined;
   /**
+   * Information about the sender of the envelope.
    * @member {module:model/UserInfo} sender
    */
   exports.prototype['sender'] = undefined;
@@ -755,6 +767,7 @@
    */
   exports.prototype['voidedReason'] = undefined;
   /**
+   * Describes the workflow for this envelope.
    * @member {module:model/Workflow} workflow
    */
   exports.prototype['workflow'] = undefined;

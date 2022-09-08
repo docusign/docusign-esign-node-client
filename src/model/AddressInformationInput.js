@@ -69,6 +69,7 @@
   }
 
   /**
+   * A complex type that contains the following information for the new account: `address1`, `address2`, `city`, `country`, `fax`, `phone`, `postalCode` and `stateOrProvince`.  The maximum characters for the strings are: * `address1`, `address2`, `city`, `country` and `stateOrProvince`: 100 characters * `postalCode`, `phone`, and `fax`: 20 characters  **Note:** If country is US (United States), `stateOrProvince` codes are validated. Otherwise, `stateOrProvince` is treated as a non-validated string used to specify a state, province, or region.
    * @member {module:model/AddressInformation} addressInformation
    */
   exports.prototype['addressInformation'] = undefined;

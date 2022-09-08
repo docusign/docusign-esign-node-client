@@ -82,6 +82,7 @@
    */
   exports.prototype['downgradeEventType'] = undefined;
   /**
+   * An object used to identify the features and attributes of the account being created.
    * @member {module:model/PlanInformation} planInformation
    */
   exports.prototype['planInformation'] = undefined;

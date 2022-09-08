@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConsumerDisclosure</code>.
+   * Details about consumer disclosures.
    * @alias module:model/ConsumerDisclosure
    * @class
    */
@@ -165,6 +166,7 @@
    */
   exports.prototype['allowCDWithdraw'] = undefined;
   /**
+   * Metadata that indicates whether the `allowCDWithdraw` property is editable. 
    * @member {module:model/SettingsMetadata} allowCDWithdrawMetadata
    */
   exports.prototype['allowCDWithdrawMetadata'] = undefined;
@@ -249,6 +251,7 @@
    */
   exports.prototype['useConsumerDisclosureWithinAccount'] = undefined;
   /**
+   * Metadata that indicates whether the `useConsumerDisclosureWithinAccount` property is editable. 
    * @member {module:model/SettingsMetadata} useConsumerDisclosureWithinAccountMetadata
    */
   exports.prototype['useConsumerDisclosureWithinAccountMetadata'] = undefined;

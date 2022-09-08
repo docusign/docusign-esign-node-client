@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>NotificationDefaultSettings</code>.
+   * Contains details about the default notification settings for the envelope notifications that senders and signers receive.
    * @alias module:model/NotificationDefaultSettings
    * @class
    */
@@ -65,10 +66,12 @@
   }
 
   /**
+   *   An array of email notifications that sets the email the user receives when they are a sender. When the specific email notification is set to true, the user will receive those types of email notifications from DocuSign.   The user inherits the default account sender email notification settings when the user is created. The email notifications are:  * envelopeComplete * changedSigner  * senderEnvelopeDeclined  * withdrawnConsent  * recipientViewed  * deliveryFailed   
    * @member {module:model/SenderEmailNotifications} senderEmailNotifications
    */
   exports.prototype['senderEmailNotifications'] = undefined;
   /**
+   * An array of email notifications that specifies the email the user receives when they are a recipient. When the specific email notification is set to true, the user receives those types of email notifications from DocuSign. The user inherits the default account email notification settings when the user is created. 
    * @member {module:model/SignerEmailNotifications} signerEmailNotifications
    */
   exports.prototype['signerEmailNotifications'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendResponse</code>.
+   * The object contains the response to a bulk send request.
    * @alias module:model/BulkSendResponse
    * @class
    */

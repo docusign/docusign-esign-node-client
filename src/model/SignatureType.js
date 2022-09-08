@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SignatureType</code>.
+   * This object contains information about the type of signature.
    * @alias module:model/SignatureType
    * @class
    */

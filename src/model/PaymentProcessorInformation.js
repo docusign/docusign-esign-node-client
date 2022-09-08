@@ -68,6 +68,7 @@
   }
 
   /**
+   * The mailing address associated with the payment processor.
    * @member {module:model/AddressInformation} address
    */
   exports.prototype['address'] = undefined;

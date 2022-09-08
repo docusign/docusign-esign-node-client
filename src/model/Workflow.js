@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Workflow</code>.
+   * Describes the workflow for an envelope.
    * @alias module:model/Workflow
    * @class
    */
@@ -92,6 +93,7 @@
    */
   exports.prototype['resumeDate'] = undefined;
   /**
+   * An object that describes the settings for scheduled sending.
    * @member {module:model/ScheduledSending} scheduledSending
    */
   exports.prototype['scheduledSending'] = undefined;

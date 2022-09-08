@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>EnvelopeFormData</code>.
+   * Describes the form data of the envelope.
    * @alias module:model/EnvelopeFormData
    * @class
    */
@@ -95,6 +96,7 @@
    */
   exports.prototype['formData'] = undefined;
   /**
+   * An array of `formDataItem` objects for [prefill tabs](/docs/esign-rest-api/reference/envelopes/envelopedocumenttabs/create/#definition__tabs_prefilltabs). 
    * @member {module:model/PrefillFormData} prefillFormData
    */
   exports.prototype['prefillFormData'] = undefined;

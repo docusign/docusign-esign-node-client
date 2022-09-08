@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Filter</code>.
+   * Use this object to create a filtered view of the items in a folder.
    * @alias module:model/Filter
    * @class
    */

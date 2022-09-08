@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>WorkspaceSettings</code>.
+   * This object provides information about the settings for the workspace.
    * @alias module:model/WorkspaceSettings
    * @class
    */

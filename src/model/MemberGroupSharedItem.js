@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>MemberGroupSharedItem</code>.
+   * Information about items shared among groups.
    * @alias module:model/MemberGroupSharedItem
    * @class
    */
@@ -68,10 +69,12 @@
   }
 
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
   /**
+   * The group sharing the item.
    * @member {module:model/Group} group
    */
   exports.prototype['group'] = undefined;

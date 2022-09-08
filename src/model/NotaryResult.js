@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>NotaryResult</code>.
+   * Describes a single notary jurisdiction.
    * @alias module:model/NotaryResult
    * @class
    */
@@ -70,6 +71,7 @@
    */
   exports.prototype['jurisdictions'] = undefined;
   /**
+   * 
    * @member {module:model/Notary} notary
    */
   exports.prototype['notary'] = undefined;

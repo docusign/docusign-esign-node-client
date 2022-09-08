@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PowerForm</code>.
+   * Contains details about a PowerForm.
    * @alias module:model/PowerForm
    * @class
    */
@@ -159,6 +160,7 @@
    */
   exports.prototype['envelopes'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SealSign</code>.
+   * Specifies one or more electronic seals to apply on documents. An electronic seal recipient is a legal entity rather than an actual person. Electronic Seals can be used by organizations and governments to show evidence of origin and integrity of documents. Even though electronic seals can be represented by a tab in a document, they do not require user interaction and apply automatically in the order specified by the sender. The sender is therefore the person authorizing usage of the electronic seal in the flow.  Example:   ```json \"recipients\": {       \"seals\": [         {           \"recipientId\": \"1\",           \"routingOrder\" : 1,           \"recipientSignatureProviders\": [             {               \"sealName\": \"52e9d968-xxxx-xxxx-xxxx-4682bc45c106\"             }        ]      }    ]  },     .     .     . ``` For more information about Electronic Seals, see [Apply Electronic Seals to Your Documents](https://support.docusign.com/en/guides/ndse-user-guide-apply-electronic-seals). 
    * @alias module:model/SealSign
    * @class
    */
@@ -235,6 +236,7 @@
    */
   exports.prototype['accessCode'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/PropertyMetadata} accessCodeMetadata
    */
   exports.prototype['accessCodeMetadata'] = undefined;
@@ -289,6 +291,7 @@
    */
   exports.prototype['deliveryMethod'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} deliveryMethodMetadata
    */
   exports.prototype['deliveryMethodMetadata'] = undefined;
@@ -308,6 +311,7 @@
    */
   exports.prototype['documentVisibility'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/RecipientEmailNotification} emailNotification
    */
   exports.prototype['emailNotification'] = undefined;
@@ -317,6 +321,7 @@
    */
   exports.prototype['embeddedRecipientStartURL'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -326,6 +331,7 @@
    */
   exports.prototype['faxNumber'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} faxNumberMetadata
    */
   exports.prototype['faxNumberMetadata'] = undefined;
@@ -335,14 +341,17 @@
    */
   exports.prototype['idCheckConfigurationName'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/PropertyMetadata} idCheckConfigurationNameMetadata
    */
   exports.prototype['idCheckConfigurationNameMetadata'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/IdCheckInformationInput} idCheckInformationInput
    */
   exports.prototype['idCheckInformationInput'] = undefined;
   /**
+   * Specifies the ID Verification workflow applied on an envelope by workflow ID. <br/>See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. <br/>This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods. <br/>Note that ID Verification and ID Check are two distinct methods. ID Verification checks recipients' identity by verifying their ID while ID Check relies on data available on public records (such as current and former address).
    * @member {module:model/RecipientIdentityVerification} identityVerification
    */
   exports.prototype['identityVerification'] = undefined;
@@ -372,10 +381,12 @@
    */
   exports.prototype['note'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/PropertyMetadata} noteMetadata
    */
   exports.prototype['noteMetadata'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/RecipientPhoneAuthentication} phoneAuthentication
    */
   exports.prototype['phoneAuthentication'] = undefined;
@@ -385,6 +396,7 @@
    */
   exports.prototype['recipientAttachments'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/AuthenticationStatus} recipientAuthenticationStatus
    */
   exports.prototype['recipientAuthenticationStatus'] = undefined;
@@ -414,6 +426,7 @@
    */
   exports.prototype['recipientType'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientType` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} recipientTypeMetadata
    */
   exports.prototype['recipientTypeMetadata'] = undefined;
@@ -423,6 +436,7 @@
    */
   exports.prototype['requireIdLookup'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/PropertyMetadata} requireIdLookupMetadata
    */
   exports.prototype['requireIdLookupMetadata'] = undefined;
@@ -437,6 +451,7 @@
    */
   exports.prototype['routingOrder'] = undefined;
   /**
+   * Metadata that indicates whether the `routingOrder` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} routingOrderMetadata
    */
   exports.prototype['routingOrderMetadata'] = undefined;
@@ -451,6 +466,7 @@
    */
   exports.prototype['signedDateTime'] = undefined;
   /**
+   * Not applicable.
    * @member {module:model/RecipientSMSAuthentication} smsAuthentication
    */
   exports.prototype['smsAuthentication'] = undefined;
@@ -475,6 +491,7 @@
    */
   exports.prototype['suppressEmails'] = undefined;
   /**
+   * A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
    * @member {module:model/Tabs} tabs
    */
   exports.prototype['tabs'] = undefined;

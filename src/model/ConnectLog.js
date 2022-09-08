@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ConnectLog</code>.
+   * Contains information about a Connect log entry.
    * @alias module:model/ConnectLog
    * @class
    */

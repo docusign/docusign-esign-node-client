@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendBatchStatus</code>.
+   * Result of `getBulkSendBatchStatus`
    * @alias module:model/BulkSendBatchStatus
    * @class
    */
@@ -148,6 +149,7 @@
    */
   exports.prototype['envelopeIdOrTemplateId'] = undefined;
   /**
+   * 
    * @member {module:model/BulkSendEnvelopesInfo} envelopesInfo
    */
   exports.prototype['envelopesInfo'] = undefined;

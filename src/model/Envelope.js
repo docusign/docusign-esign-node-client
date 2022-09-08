@@ -378,6 +378,7 @@
    */
   exports.prototype['createdDateTime'] = undefined;
   /**
+   * An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.
    * @member {module:model/CustomFields} customFields
    */
   exports.prototype['customFields'] = undefined;
@@ -427,6 +428,7 @@
    */
   exports.prototype['emailBlurb'] = undefined;
   /**
+   * A complex type that contains email settings.
    * @member {module:model/EmailSettings} emailSettings
    */
   exports.prototype['emailSettings'] = undefined;
@@ -451,6 +453,7 @@
    */
   exports.prototype['envelopeAttachments'] = undefined;
   /**
+   * 
    * @member {module:model/EnvelopeCustomMetadata} envelopeCustomMetadata
    */
   exports.prototype['envelopeCustomMetadata'] = undefined;
@@ -475,6 +478,7 @@
    */
   exports.prototype['envelopeLocation'] = undefined;
   /**
+   * Provides information about the features and services that are enabled for the envelope, including the Correct feature, the Advanced Correct feature, and DocuSign eNotary service.
    * @member {module:model/EnvelopeMetadata} envelopeMetadata
    */
   exports.prototype['envelopeMetadata'] = undefined;
@@ -559,6 +563,7 @@
    */
   exports.prototype['location'] = undefined;
   /**
+   * Provides lock information about an envelope that a user has locked.
    * @member {module:model/LockInformation} lockInformation
    */
   exports.prototype['lockInformation'] = undefined;
@@ -568,6 +573,7 @@
    */
   exports.prototype['messageLock'] = undefined;
   /**
+   * 
    * @member {module:model/Notification} notification
    */
   exports.prototype['notification'] = undefined;
@@ -577,6 +583,7 @@
    */
   exports.prototype['notificationUri'] = undefined;
   /**
+   * Information about any PowerForms that are included in the envelope.
    * @member {module:model/PowerForm} powerForm
    */
   exports.prototype['powerForm'] = undefined;
@@ -596,6 +603,7 @@
    */
   exports.prototype['purgeState'] = undefined;
   /**
+   * An array of recipient objects that provides details about the recipients of the envelope.
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;
@@ -610,6 +618,7 @@
    */
   exports.prototype['recipientsUri'] = undefined;
   /**
+   * Information about the sender of the envelope.
    * @member {module:model/UserInfo} sender
    */
   exports.prototype['sender'] = undefined;
@@ -669,6 +678,7 @@
    */
   exports.prototype['voidedReason'] = undefined;
   /**
+   * 
    * @member {module:model/Workflow} workflow
    */
   exports.prototype['workflow'] = undefined;

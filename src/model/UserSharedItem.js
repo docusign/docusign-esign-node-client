@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>UserSharedItem</code>.
+   * Information about a shared item.
    * @alias module:model/UserSharedItem
    * @class
    */
@@ -68,6 +69,7 @@
   }
 
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -77,6 +79,7 @@
    */
   exports.prototype['shared'] = undefined;
   /**
+   * The user whose sharing information is being requested.
    * @member {module:model/UserInfo} user
    */
   exports.prototype['user'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ListCustomField</code>.
+   * This object represents a list custom field from which envelope creators and senders can select custom data.
    * @alias module:model/ListCustomField
    * @class
    */
@@ -88,6 +89,7 @@
    */
   exports.prototype['configurationType'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

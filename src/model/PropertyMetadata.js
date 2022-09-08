@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PropertyMetadata</code>.
+   * Metadata about a property.
    * @alias module:model/PropertyMetadata
    * @class
    */

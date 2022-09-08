@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendTestResponse</code>.
+   * This object contains the results of a bulk send test.
    * @alias module:model/BulkSendTestResponse
    * @class
    */

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Folder</code>.
+   * This object contains details about a folder.
    * @alias module:model/Folder
    * @class
    */
@@ -104,10 +105,12 @@
   }
 
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
   /**
+   * An object used to present a filtered view of the items in a folder.
    * @member {module:model/Filter} filter
    */
   exports.prototype['filter'] = undefined;
@@ -147,6 +150,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * Information about the user who owns the folder.
    * @member {module:model/UserInfo} owner
    */
   exports.prototype['owner'] = undefined;

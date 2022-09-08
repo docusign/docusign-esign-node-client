@@ -196,6 +196,7 @@
    */
   exports.prototype['allowTabOrder'] = undefined;
   /**
+   * Metadata that indicates whether the `allowTabOrder` property is editable. 
    * @member {module:model/SettingsMetadata} allowTabOrderMetadata
    */
   exports.prototype['allowTabOrderMetadata'] = undefined;
@@ -205,6 +206,7 @@
    */
   exports.prototype['approveDeclineTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `approveDeclineTabs` property is editable. 
    * @member {module:model/SettingsMetadata} approveDeclineTabsMetadata
    */
   exports.prototype['approveDeclineTabsMetadata'] = undefined;
@@ -214,6 +216,7 @@
    */
   exports.prototype['calculatedFieldsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `calculatedFields` property is editable. 
    * @member {module:model/SettingsMetadata} calculatedFieldsMetadata
    */
   exports.prototype['calculatedFieldsMetadata'] = undefined;
@@ -223,6 +226,7 @@
    */
   exports.prototype['checkboxTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `checkBoxTabs` property is editable.
    * @member {module:model/SettingsMetadata} checkBoxTabsMetadata
    */
   exports.prototype['checkBoxTabsMetadata'] = undefined;
@@ -232,6 +236,7 @@
    */
   exports.prototype['currencyTabsEnabled'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} currencyTabsMetadata
    */
   exports.prototype['currencyTabsMetadata'] = undefined;
@@ -241,6 +246,7 @@
    */
   exports.prototype['dataFieldRegexEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `dataFieldRegex` property is editable. 
    * @member {module:model/SettingsMetadata} dataFieldRegexMetadata
    */
   exports.prototype['dataFieldRegexMetadata'] = undefined;
@@ -250,6 +256,7 @@
    */
   exports.prototype['dataFieldSizeEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `dataFieldSize` property is editable. 
    * @member {module:model/SettingsMetadata} dataFieldSizeMetadata
    */
   exports.prototype['dataFieldSizeMetadata'] = undefined;
@@ -259,6 +266,7 @@
    */
   exports.prototype['drawTabsEnabled'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} drawTabsMetadata
    */
   exports.prototype['drawTabsMetadata'] = undefined;
@@ -268,6 +276,7 @@
    */
   exports.prototype['firstLastEmailTabsEnabled'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} firstLastEmailTabsMetadata
    */
   exports.prototype['firstLastEmailTabsMetadata'] = undefined;
@@ -277,6 +286,7 @@
    */
   exports.prototype['listTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `listTabs` property is editable. 
    * @member {module:model/SettingsMetadata} listTabsMetadata
    */
   exports.prototype['listTabsMetadata'] = undefined;
@@ -286,6 +296,7 @@
    */
   exports.prototype['noteTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `noteTabs` property is editable. 
    * @member {module:model/SettingsMetadata} noteTabsMetadata
    */
   exports.prototype['noteTabsMetadata'] = undefined;
@@ -295,6 +306,7 @@
    */
   exports.prototype['prefillTabsEnabled'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} prefillTabsMetadata
    */
   exports.prototype['prefillTabsMetadata'] = undefined;
@@ -304,6 +316,7 @@
    */
   exports.prototype['radioTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `radioTabs` property is editable. 
    * @member {module:model/SettingsMetadata} radioTabsMetadata
    */
   exports.prototype['radioTabsMetadata'] = undefined;
@@ -313,6 +326,7 @@
    */
   exports.prototype['savingCustomTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `savingCustomTabs` property is editable. 
    * @member {module:model/SettingsMetadata} savingCustomTabsMetadata
    */
   exports.prototype['savingCustomTabsMetadata'] = undefined;
@@ -322,6 +336,7 @@
    */
   exports.prototype['senderToChangeTabAssignmentsEnabled'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} senderToChangeTabAssignmentsMetadata
    */
   exports.prototype['senderToChangeTabAssignmentsMetadata'] = undefined;
@@ -331,6 +346,7 @@
    */
   exports.prototype['sharedCustomTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `sharedCustomTabs` property is editable. 
    * @member {module:model/SettingsMetadata} sharedCustomTabsMetadata
    */
   exports.prototype['sharedCustomTabsMetadata'] = undefined;
@@ -340,6 +356,7 @@
    */
   exports.prototype['tabDataLabelEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `tabDataLabel` property is editable. 
    * @member {module:model/SettingsMetadata} tabDataLabelMetadata
    */
   exports.prototype['tabDataLabelMetadata'] = undefined;
@@ -349,6 +366,7 @@
    */
   exports.prototype['tabLocationEnabled'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} tabLocationMetadata
    */
   exports.prototype['tabLocationMetadata'] = undefined;
@@ -358,6 +376,7 @@
    */
   exports.prototype['tabLockingEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `tabLocking` property is editable. 
    * @member {module:model/SettingsMetadata} tabLockingMetadata
    */
   exports.prototype['tabLockingMetadata'] = undefined;
@@ -367,6 +386,7 @@
    */
   exports.prototype['tabScaleEnabled'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/SettingsMetadata} tabScaleMetadata
    */
   exports.prototype['tabScaleMetadata'] = undefined;
@@ -376,6 +396,7 @@
    */
   exports.prototype['tabTextFormattingEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `tabTextFormatting` property is editable. 
    * @member {module:model/SettingsMetadata} tabTextFormattingMetadata
    */
   exports.prototype['tabTextFormattingMetadata'] = undefined;
@@ -385,6 +406,7 @@
    */
   exports.prototype['textTabsEnabled'] = undefined;
   /**
+   * Metadata that indicates whether the `textTabs` property is editable. 
    * @member {module:model/SettingsMetadata} textTabsMetadata
    */
   exports.prototype['textTabsMetadata'] = undefined;

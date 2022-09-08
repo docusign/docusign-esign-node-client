@@ -367,6 +367,7 @@
    */
   exports.prototype['accessCode'] = undefined;
   /**
+   * Metadata that indicates whether the `accessCode` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} accessCodeMetadata
    */
   exports.prototype['accessCodeMetadata'] = undefined;
@@ -456,6 +457,7 @@
    */
   exports.prototype['defaultRecipient'] = undefined;
   /**
+   * 
    * @member {module:model/DelegationInfo} delegatedBy
    */
   exports.prototype['delegatedBy'] = undefined;
@@ -475,6 +477,7 @@
    */
   exports.prototype['deliveryMethod'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} deliveryMethodMetadata
    */
   exports.prototype['deliveryMethodMetadata'] = undefined;
@@ -499,10 +502,12 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * Metadata that indicates whether the `email` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} emailMetadata
    */
   exports.prototype['emailMetadata'] = undefined;
   /**
+   * An optional complex type that sets a specific email subject and body for this recipient's notification email.   **Note:** You can set the `emailNotification` property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level `emailSubject` and `emailBlurb`. 
    * @member {module:model/RecipientEmailNotification} emailNotification
    */
   exports.prototype['emailNotification'] = undefined;
@@ -517,6 +522,7 @@
    */
   exports.prototype['embeddedRecipientStartURL'] = undefined;
   /**
+   * This object describes errors that occur. It is only valid for responses and ignored in requests.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -531,6 +537,7 @@
    */
   exports.prototype['faxNumber'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} faxNumberMetadata
    */
   exports.prototype['faxNumberMetadata'] = undefined;
@@ -540,6 +547,7 @@
    */
   exports.prototype['firstName'] = undefined;
   /**
+   * Metadata that indicates whether the `firstName` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} firstNameMetadata
    */
   exports.prototype['firstNameMetadata'] = undefined;
@@ -549,6 +557,7 @@
    */
   exports.prototype['fullName'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} fullNameMetadata
    */
   exports.prototype['fullNameMetadata'] = undefined;
@@ -558,14 +567,17 @@
    */
   exports.prototype['idCheckConfigurationName'] = undefined;
   /**
+   * Metadata that indicates whether the `idCheckConfigurationName` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} idCheckConfigurationNameMetadata
    */
   exports.prototype['idCheckConfigurationNameMetadata'] = undefined;
   /**
+   * An object that contains input information related to a recipient ID check.
    * @member {module:model/IdCheckInformationInput} idCheckInformationInput
    */
   exports.prototype['idCheckInformationInput'] = undefined;
   /**
+   * Specifies the ID Verification workflow applied on an envelope by workflow ID. <br/>See the [list](/docs/esign-rest-api/reference/accounts/identityverifications/list/) method in the [IdentityVerifications](/docs/esign-rest-api/reference/accounts/identityverifications/) resource for more information on how to retrieve workflow IDs available for an account. <br/>This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods. <br/>Note that ID Verification and ID Check are two distinct methods. ID Verification checks recipients' identity by verifying their ID while ID Check relies on data available on public records (such as current and former address).
    * @member {module:model/RecipientIdentityVerification} identityVerification
    */
   exports.prototype['identityVerification'] = undefined;
@@ -580,6 +592,7 @@
    */
   exports.prototype['isBulkRecipient'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/PropertyMetadata} isBulkRecipientMetadata
    */
   exports.prototype['isBulkRecipientMetadata'] = undefined;
@@ -589,6 +602,7 @@
    */
   exports.prototype['lastName'] = undefined;
   /**
+   * Metadata that indicates whether the `lastName` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} lastNameMetadata
    */
   exports.prototype['lastNameMetadata'] = undefined;
@@ -613,6 +627,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * Metadata that indicates whether the `name` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} nameMetadata
    */
   exports.prototype['nameMetadata'] = undefined;
@@ -647,22 +662,27 @@
    */
   exports.prototype['note'] = undefined;
   /**
+   * Metadata that indicates whether the `note` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} noteMetadata
    */
   exports.prototype['noteMetadata'] = undefined;
   /**
+   * Reserved for DocuSign.
    * @member {module:model/OfflineAttributes} offlineAttributes
    */
   exports.prototype['offlineAttributes'] = undefined;
   /**
+   * When `idCheckConfigurationName` is set to `Phone Auth $`, you use this complex type to provide the recipient authentication method details. It contains the following elements:  * `recipMayProvideNumber`: Boolean. When **true,** the recipient can use whatever phone number they choose. * `senderProvidedNumbers`: ArrayOfStrings.  A list of phone numbers the recipient can use. * `recordVoicePrint`: Reserved for DocuSign. * `validateRecipProvidedNumber`: Reserved for DocuSign.  
    * @member {module:model/RecipientPhoneAuthentication} phoneAuthentication
    */
   exports.prototype['phoneAuthentication'] = undefined;
   /**
+   * Describes the recipient phone number.
    * @member {module:model/RecipientPhoneNumber} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientProofFile} proofFile
    */
   exports.prototype['proofFile'] = undefined;
@@ -672,6 +692,7 @@
    */
   exports.prototype['recipientAttachments'] = undefined;
   /**
+   * Information about the recipient's authentication status. This property is read-only.
    * @member {module:model/AuthenticationStatus} recipientAuthenticationStatus
    */
   exports.prototype['recipientAuthenticationStatus'] = undefined;
@@ -706,6 +727,7 @@
    */
   exports.prototype['recipientType'] = undefined;
   /**
+   * Metadata that indicates whether the `recipientType` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} recipientTypeMetadata
    */
   exports.prototype['recipientTypeMetadata'] = undefined;
@@ -715,6 +737,7 @@
    */
   exports.prototype['requireIdLookup'] = undefined;
   /**
+   * Metadata that indicates whether the `requireIdLookup` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} requireIdLookupMetadata
    */
   exports.prototype['requireIdLookupMetadata'] = undefined;
@@ -744,6 +767,7 @@
    */
   exports.prototype['routingOrder'] = undefined;
   /**
+   * Metadata that indicates whether the `routingOrder` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} routingOrderMetadata
    */
   exports.prototype['routingOrderMetadata'] = undefined;
@@ -753,6 +777,7 @@
    */
   exports.prototype['sentDateTime'] = undefined;
   /**
+   * Allows the sender to pre-specify the signature name, signature initials and signature font used in the signature stamp for the recipient.  Used only with recipient types In Person Signers and Signers.
    * @member {module:model/RecipientSignatureInformation} signatureInfo
    */
   exports.prototype['signatureInfo'] = undefined;
@@ -767,6 +792,7 @@
    */
   exports.prototype['signInEachLocation'] = undefined;
   /**
+   * Metadata that indicates whether the `signInEachLocation` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} signInEachLocationMetadata
    */
   exports.prototype['signInEachLocationMetadata'] = undefined;
@@ -776,6 +802,7 @@
    */
   exports.prototype['signingGroupId'] = undefined;
   /**
+   * Metadata that indicates whether the `signingGroupId` property is editable. This property is read-only.
    * @member {module:model/PropertyMetadata} signingGroupIdMetadata
    */
   exports.prototype['signingGroupIdMetadata'] = undefined;
@@ -790,6 +817,7 @@
    */
   exports.prototype['signingGroupUsers'] = undefined;
   /**
+   * When `idCheckConfigurationName` is set to `SMS Auth $`, you use this complex type to provide the recipient authentication method details. It contains the element `senderProvidedNumbers`, which is an array of phone numbers that the recipient can use for SMS text authentication.   
    * @member {module:model/RecipientSMSAuthentication} smsAuthentication
    */
   exports.prototype['smsAuthentication'] = undefined;
@@ -814,6 +842,7 @@
    */
   exports.prototype['suppressEmails'] = undefined;
   /**
+   * A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
    * @member {module:model/Tabs} tabs
    */
   exports.prototype['tabs'] = undefined;

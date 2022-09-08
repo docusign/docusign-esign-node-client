@@ -87,6 +87,9 @@
       if (data.hasOwnProperty('paymentMethod')) {
         obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
       }
+      if (data.hasOwnProperty('paymentProcessor')) {
+        obj['paymentProcessor'] = ApiClient.convertToType(data['paymentProcessor'], 'String');
+      }
       if (data.hasOwnProperty('paymentProcessorInformation')) {
         obj['paymentProcessorInformation'] = PaymentProcessorInformation.constructFromObject(data['paymentProcessorInformation']);
       }
@@ -115,18 +118,22 @@
    */
   exports.prototype['accountName'] = undefined;
   /**
+   * The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
    * @member {module:model/AccountSettingsInformation} accountSettings
    */
   exports.prototype['accountSettings'] = undefined;
   /**
+   * A complex type that contains the following information for the new account: `Street1`, `Street2`, `City`, `State`, `Zip`, `Phone`, and `Fax`.
    * @member {module:model/AccountAddress} addressInformation
    */
   exports.prototype['addressInformation'] = undefined;
   /**
+   * A complex type that has information about the credit card used to pay for this account.
    * @member {module:model/CreditCardInformation} creditCardInformation
    */
   exports.prototype['creditCardInformation'] = undefined;
   /**
+   * Information about the bank that processes direct debits for the payment plan.
    * @member {module:model/DirectDebitProcessorInformation} directDebitProcessorInformation
    */
   exports.prototype['directDebitProcessorInformation'] = undefined;
@@ -151,6 +158,7 @@
    */
   exports.prototype['envelopePartitionId'] = undefined;
   /**
+   * A complex type with the initial user information for the new account. Note that some user information is set internally based on the plan and cannot be overridden.
    * @member {module:model/UserInformation} initialUser
    */
   exports.prototype['initialUser'] = undefined;
@@ -160,10 +168,17 @@
    */
   exports.prototype['paymentMethod'] = undefined;
   /**
+   * 
+   * @member {String} paymentProcessor
+   */
+  exports.prototype['paymentProcessor'] = undefined;
+  /**
+   * Information about the entity that processes payments for the billing plan.
    * @member {module:model/PaymentProcessorInformation} paymentProcessorInformation
    */
   exports.prototype['paymentProcessorInformation'] = undefined;
   /**
+   * An object used to identify the features and attributes of the account being created.
    * @member {module:model/PlanInformation} planInformation
    */
   exports.prototype['planInformation'] = undefined;
@@ -173,10 +188,12 @@
    */
   exports.prototype['processPayment'] = undefined;
   /**
+   * A complex type that contains properties for entering referral and discount information.
    * @member {module:model/ReferralInformation} referralInformation
    */
   exports.prototype['referralInformation'] = undefined;
   /**
+   * Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.
    * @member {module:model/SocialAccountInformation} socialAccountInformation
    */
   exports.prototype['socialAccountInformation'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>Jurisdiction</code>.
+   * Describes the jurisdiction of a notary. This is read-only object.
    * @alias module:model/Jurisdiction
    * @class
    */

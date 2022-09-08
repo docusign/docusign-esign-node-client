@@ -177,6 +177,7 @@ A 201 code is returned if the call succeeded.  While the call may have succeed, 
 
     /**
      * Adds/updates one or more account signatures. This request may include images in multi-part format.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.decodeOnly 
@@ -304,6 +305,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Creates an acount custom field.
+     * This method creates a custom field and makes it available for all new envelopes associated with an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.applyToTemplates 
@@ -366,6 +368,12 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Creates a new permission profile in the specified account.
+     * This method creates a new permission profile for an account.
+
+### Related topics
+
+- [How to create a permission profile](/docs/esign-rest-api/how-to/permission-profile-creating/)
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.include 
@@ -428,6 +436,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Close the specified signature by Id.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {module:api/AccountsApi~deleteAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -485,6 +494,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Deletes a signature, initials, or stamps image.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
@@ -550,6 +560,9 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Removes a brand.
+     * This method deletes a brand from an account.
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {module:api/AccountsApi~deleteBrandCallback} callback The callback function, accepting three arguments: error, data, response
@@ -607,6 +620,9 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Delete one branding logo.
+     * This method deletes a single logo from an account brand.
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {String} logoType One of **Primary**, **Secondary** or **Email**.
@@ -800,6 +816,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Delete an existing account custom field.
+     * This method deletes an existing account custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} customFieldId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -867,6 +884,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Deletes configuration information for the eNote eOriginal integration.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~deleteENoteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -917,6 +935,14 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Deletes a permissions profile within the specified account.
+     * This method deletes a permission profile from an account.
+
+To delete a permission profile, it must not have any users associated with it. When you use this method to delete a permission profile, you can reassign the users associated with it to a new permission profile at the same time by using the `move_users_to` query parameter.
+
+
+### Related topics
+
+- [How to delete a permission profile](/docs/esign-rest-api/how-to/permission-profile-deleting/)
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} permissionProfileId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -984,6 +1010,15 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
     /**
      * Get the list of identity verification options for an account
+     * This method returns a list of Identity Verification workflows that are available to an account.
+
+**Note:** To use this method, you must either be an account administrator or a sender.
+
+### Related topics
+
+- [How to require ID Verification (IDV) for a recipient](/docs/esign-rest-api/how-to/id-verification/)
+
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getAccountIdentityVerificationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountIdentityVerificationResponse}
@@ -1100,6 +1135,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
     /**
      * Returns information about a single signature by specifed signatureId.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {module:api/AccountsApi~getAccountSignatureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1158,6 +1194,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
     /**
      * Returns a signature, initials, or stamps image.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
@@ -1233,6 +1270,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
     /**
      * Returns the managed signature definitions for the account
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.stampFormat 
@@ -1298,6 +1336,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
     /**
      * Returns tab settings list for specified account
+     * This method returns information about the tab types and tab functionality that is currently enabled for an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getAccountTabSettingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TabAccountSettings}
@@ -1349,6 +1388,7 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
     /**
      * Get all payment gateway account for the provided accountId
+     * This method returns a list of payment gateway accounts and basic information about them.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getAllPaymentGatewayAccountsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentGatewayAccountsInfo}
@@ -1464,6 +1504,9 @@ Privileges required: account administrator
 
     /**
      * Get information for a specific brand.
+     * This method returns details about an account brand.
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -1534,6 +1577,9 @@ Privileges required: account administrator
 
     /**
      * Export a specific brand.
+     * This method exports information about a brand to an XML file.
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {module:api/AccountsApi~getBrandExportFileCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1591,6 +1637,9 @@ Privileges required: account administrator
 
     /**
      * Obtains the specified image for a brand.
+     * This method returns a specific logo that is used in a brand.
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {String} logoType One of **Primary**, **Secondary** or **Email**.
@@ -1656,6 +1705,9 @@ Privileges required: account administrator
 
     /**
      * Returns the specified account's list of branding resources (metadata).
+     * This method returns metadata about the branding resources that are associated with an account.
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {module:api/AccountsApi~getBrandResourcesCallback} callback The callback function, accepting three arguments: error, data, response
@@ -1714,6 +1766,13 @@ Privileges required: account administrator
 
     /**
      * Returns the specified branding resource file.
+     * This method returns a specific branding resource file.
+
+A brand uses a set of brand resource files to control the sending, signing, email message, and captive (embedded) signing experiences.  You can modify the default email messages and formats in these files and upload them to your brand to customize the user experience.
+
+**Important:** When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file. 
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {String} resourceContentType 
@@ -1911,6 +1970,7 @@ Privileges required: account administrator
 
     /**
      * Returns the configuration information for the eNote eOriginal integration.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getENoteConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ENoteConfiguration}
@@ -1962,6 +2022,9 @@ Privileges required: account administrator
 
     /**
      * Select envelope purge configuration.
+     * An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (`retentionDays`). This method retrieves the current envelope purge configuration for your account.
+
+**Note:** To use this method, you must be an account administrator.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getEnvelopePurgeConfigurationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopePurgeConfiguration}
@@ -2013,6 +2076,7 @@ Privileges required: account administrator
 
     /**
      * Retrieves the list of favorited templates for this caller
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getFavoriteTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FavoriteTemplatesInfo}
@@ -2064,6 +2128,7 @@ Privileges required: account administrator
 
     /**
      * Returns default user level settings for a specified account
+     * This method returns the default settings for the email notifications that signers and senders receive about envelopes.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getNotificationDefaultsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NotificationDefaults}
@@ -2115,6 +2180,7 @@ Privileges required: account administrator
 
     /**
      * Get the password rules
+     * This method retrieves the password rules for an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getPasswordRulesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountPasswordRules}
@@ -2166,6 +2232,7 @@ Privileges required: account administrator
 
     /**
      * Get membership account password rules
+     * 
      * @param {module:api/AccountsApi~getPasswordRules_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserPasswordRules}
      */
@@ -2210,6 +2277,12 @@ Privileges required: account administrator
 
     /**
      * Returns a permissions profile in the specified account.
+     * This method returns information about a specific permission profile that is associated with an account.
+
+### Related topics
+
+- [How to set a permission profile](/docs/esign-rest-api/how-to/permission-profile-setting/)
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} permissionProfileId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -2323,6 +2396,13 @@ Privileges required: account administrator
 
     /**
      * Gets list of supported languages for recipient language setting.
+     * Retrieves a list of supported languages that you can set for an individual recipient when creating an envelope, as well as their simple type enumeration values. These are the languages that you can set for the standard email format and signing view for each recipient.
+
+For example, in the recipient's email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.
+
+**Note:** Setting a language for a recipient affects only the DocuSign standard text. Any custom text that you enter for the `emailBody` and `emailSubject` of the notification is not translated, and appears exactly as you enter it.
+
+For more information, see [Set Recipient Language and Specify Custom Email Messages](https://support.docusign.com/en/guides/ndse-user-guide-recipient-language).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getSupportedLanguagesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SupportedLanguages}
@@ -2374,6 +2454,7 @@ Privileges required: account administrator
 
     /**
      * Get watermark information.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~getWatermarkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Watermark}
@@ -2425,6 +2506,7 @@ Privileges required: account administrator
 
     /**
      * Get watermark preview.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/Watermark} optsOrCallback.watermark 
@@ -2859,6 +2941,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Returns Account available signature providers for specified account.
+     * Returns a list of signature providers that the specified account can use.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {module:api/AccountsApi~listSignatureProvidersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccountSignatureProviders}
@@ -2962,6 +3045,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Unfavorite a template
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo 
@@ -3022,6 +3106,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates a account signature.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/AccountSignaturesInformation} optsOrCallback.accountSignaturesInformation 
@@ -3082,6 +3167,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates a account signature.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -3151,6 +3237,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Sets a signature, initials, or stamps image.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
@@ -3226,6 +3313,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Modifies tab settings for specified account
+     * This method modifies the tab types and tab functionality that is enabled for an account.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/TabAccountSettings} optsOrCallback.tabAccountSettings 
@@ -3286,6 +3374,9 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates an existing brand.
+     * This method updates an account brand. 
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} brandId The unique identifier of a brand.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -3355,6 +3446,13 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Put one branding logo.
+     * This method updates a single brand logo.
+
+You pass in the new version of the resource in the `Content-Disposition` header. Example:
+
+`Content-Disposition: form-data; name="file"; filename="logo.jpg"`
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
      * @param {String} accountId The external account number (int) or account ID GUID.
      * @param {String} brandId The ID of the brand.
      * @param {String} logoType The type of logo. Valid values are:
@@ -3429,6 +3527,17 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Uploads a branding resource file.
+     * This method updates a branding resource file.
+
+You pass in the new version of the resource file in the `Content-Disposition` header. Example:
+
+`Content-Disposition: form-data; name="file"; filename="DocuSign_SigningResource_4328673.xml"`
+
+**Note:** Branding for either signing or sending must be enabled for the account (`canSelfBrandSend` , `canSelfBrandSign`, or both of these account settings must be **true**).
+
+**Important:** Customizing resource files is an advanced branding configuration option which can significantly impact your account, and should be done only by someone with expertise in XML and HTML. The master resource files are subject to change without notice. If you customize your resource files, after each release, DocuSign recommends you review any changes and update your custom files as needed.
+
+When you upload a modified resource file, only the elements that differ from the master resource file are saved as your resource file. Similarly, when you download your resource files, only the modified elements are included in the file.
      * @param {String} accountId The external account number (int) or account ID GUID.
      * @param {String} brandId The ID of the brand.
      * @param {String} resourceContentType The type of brand resource file that you are updating. Valid values are:
@@ -3506,6 +3615,56 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Update Consumer Disclosure.
+     * Account administrators can use this method to perform the following tasks:
+
+- Customize values in the default disclosure.
+- Switch to a custom disclosure that uses your own text and HTML formatting.
+- Change values in your existing consumer disclosure. 
+
+To specify the signer language version of the disclosure that you are updating, use the optional `langCode` query parameter.
+
+**Note:** Only account administrators can use this method. Each time you change the disclosure content, all unsigned recipients of outstanding documents will be required to accept a new version. 
+
+## Updating the default disclosure
+
+When you update the default disclosure, you can edit all properties except for the following ones:
+
+- `accountEsignId`: This property is read-only.
+- `custom`: The default value is **false.** Editing this property causes the default disclosure to switch to a custom disclosure.
+- `esignAgreement`: This property is read-only.
+- `esignText`: You cannot edit this property when `custom` is set to **false.** The API returns a 200 OK HTTP response, but does not update the `esignText`.
+- Metadata properties: These properties are read-only.
+
+**Note:** The text of the default disclosure is always in English.
+
+## Switching to a custom disclosure
+
+To switch to a custom disclosure, set the `custom` property to **true** and customize the value for the `eSignText` property. 
+
+You can also edit all of the other properties except for the following ones:
+
+- `accountEsignId`: This property is read-only.
+- `esignAgreement`: This property is read-only.
+- Metadata properties: These properties are read-only.
+
+**Note:** When you use a custom disclosure, you can create versions of it in different signer languages and se the `langCode` parameter to specify the signer language version that you are updating.
+
+**Important:**  When you switch from a default to a custom disclosure, note the following information:
+
+- You will not be able to return to using the default disclosure.
+- Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.
+
+## Updating a custom disclosure
+
+When you update a custom disclosure, you can update all of the properties except for the following ones:
+
+- `accountEsignId`: This property is read-only. 
+- `esignAgreement`: This property is read-only.
+- Metadata properties: These properties are read-only.
+
+**Important:** Only the disclosure for the currently selected signer language is saved. DocuSign will not automatically translate your custom disclosure. You must create a disclosure for each language that your signers use.
+
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -3575,6 +3734,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates an existing account custom field.
+     * This method updates an existing account custom field.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} customFieldId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -3644,6 +3804,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates configuration information for the eNote eOriginal integration.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/ENoteConfiguration} optsOrCallback.eNoteConfiguration 
@@ -3704,6 +3865,11 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates envelope purge configuration.
+     * An envelope purge configuration enables account administrators to permanently remove documents and their field data from completed and voided envelopes after a specified retention period (`retentionDays`). This method sets the envelope purge configuration for your account.
+
+**Note:** To use this method, you must be an account administrator.
+
+For more information, see [Purge Envelopes](https://support.docusign.com/en/guides/ndse-user-guide-purge-envelopes).
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/EnvelopePurgeConfiguration} optsOrCallback.envelopePurgeConfiguration 
@@ -3764,6 +3930,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Favorites a template
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/FavoriteTemplatesInfo} optsOrCallback.favoriteTemplatesInfo 
@@ -3824,6 +3991,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates default user level settings for a specified account
+     * This method changes the default settings for the email notifications that signers and senders receive about envelopes.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/NotificationDefaults} optsOrCallback.notificationDefaults 
@@ -3884,6 +4052,9 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Update the password rules
+     * This method updates the password rules for an account.
+
+**Note:** To update the password rules for an account, you must be an account administrator.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/AccountPasswordRules} optsOrCallback.accountPasswordRules 
@@ -3944,6 +4115,12 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Updates a permission profile within the specified account.
+     * This method updates an account permission profile.
+
+### Related topics
+
+- [How to update individual permission settings](/docs/esign-rest-api/how-to/permission-profile-updating/)
+
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} permissionProfileId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -4140,6 +4317,7 @@ Users with account administration privileges can retrieve shared access informat
 
     /**
      * Update watermark information.
+     * 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/Watermark} optsOrCallback.watermark 

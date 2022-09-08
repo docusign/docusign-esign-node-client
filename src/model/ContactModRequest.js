@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ContactModRequest</code>.
+   * The request object containing the new information for the contacts.
    * @alias module:model/ContactModRequest
    * @class
    */

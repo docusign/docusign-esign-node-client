@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientViewRequest</code>.
+   * The request body for the [EnvelopeViews: createRecipient](/docs/esign-rest-api/reference/envelopes/envelopeviews/createrecipient/) and [EnvelopeViews: createSharedRecipient](/docs/esign-rest-api/reference/envelopes/envelopeviews/createsharedrecipient/) methods.
    * @alias module:model/RecipientViewRequest
    * @class
    */
@@ -125,6 +126,7 @@
    */
   exports.prototype['authenticationMethod'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientTokenClientURLs} clientURLs
    */
   exports.prototype['clientURLs'] = undefined;

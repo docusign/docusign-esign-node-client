@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>DocumentHtmlCollapsibleDisplaySettings</code>.
+   * Display settings for collapsible section.
    * @alias module:model/DocumentHtmlCollapsibleDisplaySettings
    * @class
    */

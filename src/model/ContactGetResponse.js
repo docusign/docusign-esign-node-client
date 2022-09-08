@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ContactGetResponse</code>.
+   * This response object contains information about the contacts associated with an account.
    * @alias module:model/ContactGetResponse
    * @class
    */

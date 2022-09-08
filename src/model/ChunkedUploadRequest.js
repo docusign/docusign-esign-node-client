@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>ChunkedUploadRequest</code>.
+   * This is the request object for uploading a chunked upload.
    * @alias module:model/ChunkedUploadRequest
    * @class
    */

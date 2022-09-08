@@ -73,6 +73,7 @@
    */
   exports.prototype['action'] = undefined;
   /**
+   * 
    * @member {module:model/Notification} notification
    */
   exports.prototype['notification'] = undefined;

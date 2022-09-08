@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccountNotification</code>.
+   * A complex element that specifies notifications (expirations and reminders) for the envelope.
    * @alias module:model/AccountNotification
    * @class
    */
@@ -68,10 +69,12 @@
   }
 
   /**
+   * A complex element that specifies the expiration settings for the envelope.
    * @member {module:model/Expirations} expirations
    */
   exports.prototype['expirations'] = undefined;
   /**
+   * A complex element that specifies reminder settings for the envelope.
    * @member {module:model/Reminders} reminders
    */
   exports.prototype['reminders'] = undefined;

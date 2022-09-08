@@ -82,6 +82,7 @@
    */
   exports.prototype['emailBody'] = undefined;
   /**
+   * Metadata that indicates whether the `emailBody` property can be edited.
    * @member {module:model/PropertyMetadata} emailBodyMetadata
    */
   exports.prototype['emailBodyMetadata'] = undefined;
@@ -91,6 +92,7 @@
    */
   exports.prototype['emailSubject'] = undefined;
   /**
+   * Metadata that indicates whether the `emailSubject` property can be edited.
    * @member {module:model/PropertyMetadata} emailSubjectMetadata
    */
   exports.prototype['emailSubjectMetadata'] = undefined;
@@ -100,6 +102,7 @@
    */
   exports.prototype['supportedLanguage'] = undefined;
   /**
+   * Metadata that indicates whether the `supportedLanguage` property can be edited.
    * @member {module:model/PropertyMetadata} supportedLanguageMetadata
    */
   exports.prototype['supportedLanguageMetadata'] = undefined;

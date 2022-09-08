@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BrandLogos</code>.
+   * The URIs for retrieving the logos that are associated with the brand.  These are read-only properties that provide a URI to logos in use. To update a logo use [AccountBrands: updateLogo](/docs/esign-rest-api/reference/accounts/accountbrands/updatelogo/). 
    * @alias module:model/BrandLogos
    * @class
    */

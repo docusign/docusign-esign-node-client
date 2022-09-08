@@ -100,6 +100,7 @@
    */
   exports.prototype['cellStyle'] = undefined;
   /**
+   * This object defines the appearance and function of a collapsible section or item.
    * @member {module:model/DocumentHtmlCollapsibleDisplaySettings} collapsibleSettings
    */
   exports.prototype['collapsibleSettings'] = undefined;

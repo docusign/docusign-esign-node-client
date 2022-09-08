@@ -61,6 +61,7 @@
 
     /**
      * Add a notary to the system
+     * Registers the current user as a notary.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/Notary} optsOrCallback.notary 
      * @param {module:api/NotaryApi~createNotaryCallback} callback The callback function, accepting three arguments: error, data, response
@@ -114,6 +115,7 @@
 
     /**
      * Add a notary jurisdiction to the system
+     * Creates a jurisdiction object.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/NotaryJurisdiction} optsOrCallback.notaryJurisdiction 
      * @param {module:api/NotaryApi~createNotaryJurisdictionsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -167,6 +169,7 @@
 
     /**
      * Delete a notary jurisdiction a specified user.
+     * Deletes the specified jurisdiction.
      * @param {String} jurisdictionId 
      * @param {module:api/NotaryApi~deleteNotaryJurisdictionCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -217,6 +220,8 @@
 
     /**
      * Get notary settings for a user
+     * Gets settings for a notary user.
+The current user must be a notary.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeJurisdictions 
      * @param {module:api/NotaryApi~getNotaryCallback} callback The callback function, accepting three arguments: error, data, response
@@ -271,6 +276,11 @@
 
     /**
      * Get notary a jurisdiction for a user
+     * Gets a jurisdiction object for the current user.  The following restrictions apply:
+
+- The current user must be a notary.
+- The `jurisdictionId` must be a jurisdiction that the notary is registered for.
+
      * @param {String} jurisdictionId 
      * @param {module:api/NotaryApi~getNotaryJurisdictionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NotaryJurisdiction}
@@ -322,6 +332,7 @@
 
     /**
      * Get notary seal for a jurisdiction
+     * 
      * @param {String} jurisdictionId 
      * @param {module:api/NotaryApi~getNotaryJurisdictionSealCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -372,6 +383,8 @@
 
     /**
      * Get notary jurisdictions for a user
+     * Returns a list of jurisdictions that the notary is registered in.
+The current user must be a notary.
      * @param {module:api/NotaryApi~getNotaryJurisdictionsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NotaryJurisdictionList}
      */
@@ -416,6 +429,7 @@
 
     /**
      * Get notary jurisdictions for a user
+     * 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.count 
      * @param {String} optsOrCallback.searchText 
@@ -474,6 +488,7 @@
 
     /**
      * Update a notary
+     * Updates notary information for the current user.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/Notary} optsOrCallback.notary 
      * @param {module:api/NotaryApi~updateNotaryCallback} callback The callback function, accepting three arguments: error, data, response
@@ -527,6 +542,65 @@
 
     /**
      * Update a notary jurisdiction
+     * Updates the jurisdiction information about a notary.
+
+The following restrictions apply:
+
+- The current user must be a notary.
+- The `jurisdictionId` path parameter must be a jurisdiction that the notary is registered for.
+- The `jurisdictionId` path parameter must match the request body's `jurisdiction.jurisdictionId`.
+
+The request body must have a full `jurisdiction` object for the jurisdiction property.
+The best way to do this is to use `getNotaryJurisdiction` to obtain the current values and update the properties you want to change.
+
+For example, assume `getNotaryJurisdiction` returns this:
+
+```
+{
+    "jurisdiction": {
+        "jurisdictionId": "15",
+        "name": "Iowa",
+        "county": "",
+        "enabled": "true",
+        "countyInSeal": "false",
+        "commissionIdInSeal": "true",
+        "stateNameInSeal": "true",
+        "notaryPublicInSeal": "true",
+        "allowSystemCreatedSeal": "true",
+        "allowUserUploadedSeal": "false"
+    },
+    "commissionId": "123456",
+    "commissionExpiration": "2020-08-31T07:00:00.0000000Z",
+    "registeredName": "Bob Notary",
+    "county": "Adams",
+    "sealType": "system_created"
+}
+```
+
+If you want to change the name of the notary from "Bob Notary" to "Robert Notary", your request body would be:
+
+```
+{
+    "jurisdiction": {
+        "jurisdictionId": "15",
+        "name": "Iowa",
+        "county": "",
+        "enabled": "true",
+        "countyInSeal": "false",
+        "commissionIdInSeal": "true",
+        "stateNameInSeal": "true",
+        "notaryPublicInSeal": "true",
+        "allowSystemCreatedSeal": "true",
+        "allowUserUploadedSeal": "false"
+    },
+    "commissionId": "123456",
+    "commissionExpiration": "2020-08-31T07:00:00.0000000Z",
+    "registeredName": "Robert Notary",
+    "county": "Adams",
+    "sealType": "system_created"
+}
+```
+
      * @param {String} jurisdictionId 
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/NotaryJurisdiction} optsOrCallback.notaryJurisdiction 

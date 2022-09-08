@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>BulkSendErrorStatus</code>.
+   * A single bulk send error report.
    * @alias module:model/BulkSendErrorStatus
    * @class
    */

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SettingsMetadata</code>.
+   * Metadata that indicates whether a property is editable and describes setting-specific options.
    * @alias module:model/SettingsMetadata
    * @class
    */

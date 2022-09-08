@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>DocumentHtmlDefinition</code>.
+   * Holds the properties that define how to generate the responsive-formatted HTML for the document. See [Responsive signing](/docs/esign-rest-api/esign101/concepts/responsive/) in the [eSignature concepts guide](/docs/esign-rest-api/esign101/concepts/).
    * @alias module:model/DocumentHtmlDefinition
    * @class
    */

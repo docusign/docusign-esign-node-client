@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>PaymentDetails</code>.
+   * When a formula tab has a `paymentDetails` property, the formula tab is a payment item. See [Requesting Payments Along with Signatures][paymentguide] in the DocuSign Support Center to learn more about payments.  [paymentguide]:     https://support.docusign.com/en/guides/requesting-payments-along-with-signatures 
    * @alias module:model/PaymentDetails
    * @class
    */
@@ -128,6 +129,7 @@
    */
   exports.prototype['currencyCode'] = undefined;
   /**
+   * Metadata that indicates whether the `currencyCode` property is editable.
    * @member {module:model/PropertyMetadata} currencyCodeMetadata
    */
   exports.prototype['currencyCodeMetadata'] = undefined;
@@ -152,6 +154,7 @@
    */
   exports.prototype['gatewayAccountId'] = undefined;
   /**
+   * Metadata that indicates whether the `gatewayAccountId` property is editable.
    * @member {module:model/PropertyMetadata} gatewayAccountIdMetadata
    */
   exports.prototype['gatewayAccountIdMetadata'] = undefined;
@@ -181,6 +184,7 @@
    */
   exports.prototype['paymentSourceId'] = undefined;
   /**
+   * 
    * @member {module:model/PaymentSignerValues} signerValues
    */
   exports.prototype['signerValues'] = undefined;
@@ -195,6 +199,7 @@
    */
   exports.prototype['subGatewayName'] = undefined;
   /**
+   * This read-only property is a currency-formatted string that represents the total of all the line items. The total is available only after the document is completed, which is when all recipients have paid and have completed all required fields. 
    * @member {module:model/Money} total
    */
   exports.prototype['total'] = undefined;

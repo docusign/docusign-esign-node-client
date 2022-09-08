@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>RecipientGroup</code>.
+   * Describes a group of recipients.
    * @alias module:model/RecipientGroup
    * @class
    */

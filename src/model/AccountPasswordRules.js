@@ -129,6 +129,7 @@
    */
   exports.prototype['expirePasswordDays'] = undefined;
   /**
+   * Metadata that indicates whether the `expirePasswordDays` property is editable. 
    * @member {module:model/AccountPasswordExpirePasswordDays} expirePasswordDaysMetadata
    */
   exports.prototype['expirePasswordDaysMetadata'] = undefined;
@@ -138,6 +139,7 @@
    */
   exports.prototype['lockoutDurationMinutes'] = undefined;
   /**
+   * Metadata that indicates whether the `lockoutDurationMinutes` property is editable. 
    * @member {module:model/AccountPasswordLockoutDurationMinutes} lockoutDurationMinutesMetadata
    */
   exports.prototype['lockoutDurationMinutesMetadata'] = undefined;
@@ -147,6 +149,7 @@
    */
   exports.prototype['lockoutDurationType'] = undefined;
   /**
+   * Metadata that indicates whether the `lockoutDurationType` property is editable. 
    * @member {module:model/AccountPasswordLockoutDurationType} lockoutDurationTypeMetadata
    */
   exports.prototype['lockoutDurationTypeMetadata'] = undefined;
@@ -156,6 +159,7 @@
    */
   exports.prototype['minimumPasswordAgeDays'] = undefined;
   /**
+   * Metadata that indicates whether the `minimumPasswordAgeDays` property is editable. 
    * @member {module:model/AccountPasswordMinimumPasswordAgeDays} minimumPasswordAgeDaysMetadata
    */
   exports.prototype['minimumPasswordAgeDaysMetadata'] = undefined;
@@ -165,6 +169,7 @@
    */
   exports.prototype['minimumPasswordLength'] = undefined;
   /**
+   * Metadata that indicates whether the `minimumPasswordLength` property is editable. 
    * @member {module:model/AccountMinimumPasswordLength} minimumPasswordLengthMetadata
    */
   exports.prototype['minimumPasswordLengthMetadata'] = undefined;
@@ -199,6 +204,7 @@
    */
   exports.prototype['passwordStrengthType'] = undefined;
   /**
+   * Metadata that indicates whether the `passwordStrengthType` property is editable. 
    * @member {module:model/AccountPasswordStrengthType} passwordStrengthTypeMetadata
    */
   exports.prototype['passwordStrengthTypeMetadata'] = undefined;
@@ -208,6 +214,7 @@
    */
   exports.prototype['questionsRequired'] = undefined;
   /**
+   * Metadata that indicates whether the `questionsRequired` property is editable. 
    * @member {module:model/AccountPasswordQuestionsRequired} questionsRequiredMetadata
    */
   exports.prototype['questionsRequiredMetadata'] = undefined;

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>SupportedLanguages</code>.
+   * A list of supported languages.
    * @alias module:model/SupportedLanguages
    * @class
    */

@@ -34,6 +34,7 @@
 
   /**
    * Constructs a new <code>AccountSignatureProvider</code>.
+   * Contains information abotu the signature provider associated with the Identity Verification workflow.  If empty, then this specific workflow is not intended for signers. 
    * @alias module:model/AccountSignatureProvider
    * @class
    */
