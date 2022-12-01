@@ -118,6 +118,9 @@
       if (data.hasOwnProperty('includeHMAC')) {
         obj['includeHMAC'] = ApiClient.convertToType(data['includeHMAC'], 'String');
       }
+      if (data.hasOwnProperty('includeOAuth')) {
+        obj['includeOAuth'] = ApiClient.convertToType(data['includeOAuth'], 'String');
+      }
       if (data.hasOwnProperty('includeSenderAccountasCustomField')) {
         obj['includeSenderAccountasCustomField'] = ApiClient.convertToType(data['includeSenderAccountasCustomField'], 'String');
       }
@@ -287,6 +290,11 @@
    * @member {String} includeHMAC
    */
   exports.prototype['includeHMAC'] = undefined;
+  /**
+   * 
+   * @member {String} includeOAuth
+   */
+  exports.prototype['includeOAuth'] = undefined;
   /**
    * When set to **true**, Connect will include the sender account as Custom Field in the data.
    * @member {String} includeSenderAccountasCustomField

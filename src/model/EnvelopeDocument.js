@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/NameValue', 'model/Page', 'model/PropertyMetadata', 'model/SignatureType'], factory);
+    define(['ApiClient', 'model/DocGenFormField', 'model/DocGenSyntaxError', 'model/ErrorDetails', 'model/NameValue', 'model/Page', 'model/PropertyMetadata', 'model/SignatureType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./NameValue'), require('./Page'), require('./PropertyMetadata'), require('./SignatureType'));
+    module.exports = factory(require('../ApiClient'), require('./DocGenFormField'), require('./DocGenSyntaxError'), require('./ErrorDetails'), require('./NameValue'), require('./Page'), require('./PropertyMetadata'), require('./SignatureType'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeDocument = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.NameValue, root.Docusign.Page, root.Docusign.PropertyMetadata, root.Docusign.SignatureType);
+    root.Docusign.EnvelopeDocument = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormField, root.Docusign.DocGenSyntaxError, root.Docusign.ErrorDetails, root.Docusign.NameValue, root.Docusign.Page, root.Docusign.PropertyMetadata, root.Docusign.SignatureType);
   }
-}(this, function(ApiClient, ErrorDetails, NameValue, Page, PropertyMetadata, SignatureType) {
+}(this, function(ApiClient, DocGenFormField, DocGenSyntaxError, ErrorDetails, NameValue, Page, PropertyMetadata, SignatureType) {
   'use strict';
 
 
@@ -79,6 +79,15 @@
       if (data.hasOwnProperty('displayMetadata')) {
         obj['displayMetadata'] = PropertyMetadata.constructFromObject(data['displayMetadata']);
       }
+      if (data.hasOwnProperty('docGenDocumentStatus')) {
+        obj['docGenDocumentStatus'] = ApiClient.convertToType(data['docGenDocumentStatus'], 'String');
+      }
+      if (data.hasOwnProperty('docGenErrors')) {
+        obj['docGenErrors'] = ApiClient.convertToType(data['docGenErrors'], [DocGenSyntaxError]);
+      }
+      if (data.hasOwnProperty('docGenFormFields')) {
+        obj['docGenFormFields'] = ApiClient.convertToType(data['docGenFormFields'], [DocGenFormField]);
+      }
       if (data.hasOwnProperty('documentBase64')) {
         obj['documentBase64'] = ApiClient.convertToType(data['documentBase64'], 'String');
       }
@@ -99,6 +108,9 @@
       }
       if (data.hasOwnProperty('includeInDownloadMetadata')) {
         obj['includeInDownloadMetadata'] = PropertyMetadata.constructFromObject(data['includeInDownloadMetadata']);
+      }
+      if (data.hasOwnProperty('isDocGenDocument')) {
+        obj['isDocGenDocument'] = ApiClient.convertToType(data['isDocGenDocument'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -179,6 +191,21 @@
   exports.prototype['displayMetadata'] = undefined;
   /**
    * 
+   * @member {String} docGenDocumentStatus
+   */
+  exports.prototype['docGenDocumentStatus'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/DocGenSyntaxError>} docGenErrors
+   */
+  exports.prototype['docGenErrors'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/DocGenFormField>} docGenFormFields
+   */
+  exports.prototype['docGenFormFields'] = undefined;
+  /**
+   * 
    * @member {String} documentBase64
    */
   exports.prototype['documentBase64'] = undefined;
@@ -212,6 +239,11 @@
    * @member {module:model/PropertyMetadata} includeInDownloadMetadata
    */
   exports.prototype['includeInDownloadMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} isDocGenDocument
+   */
+  exports.prototype['isDocGenDocument'] = undefined;
   /**
    * 
    * @member {String} name

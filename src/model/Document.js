@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DocumentHtmlDefinition', 'model/MatchBox', 'model/NameValue', 'model/Tabs'], factory);
+    define(['ApiClient', 'model/DocGenFormField', 'model/DocumentHtmlDefinition', 'model/MatchBox', 'model/NameValue', 'model/Tabs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DocumentHtmlDefinition'), require('./MatchBox'), require('./NameValue'), require('./Tabs'));
+    module.exports = factory(require('../ApiClient'), require('./DocGenFormField'), require('./DocumentHtmlDefinition'), require('./MatchBox'), require('./NameValue'), require('./Tabs'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.DocumentHtmlDefinition, root.Docusign.MatchBox, root.Docusign.NameValue, root.Docusign.Tabs);
+    root.Docusign.Document = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormField, root.Docusign.DocumentHtmlDefinition, root.Docusign.MatchBox, root.Docusign.NameValue, root.Docusign.Tabs);
   }
-}(this, function(ApiClient, DocumentHtmlDefinition, MatchBox, NameValue, Tabs) {
+}(this, function(ApiClient, DocGenFormField, DocumentHtmlDefinition, MatchBox, NameValue, Tabs) {
   'use strict';
 
 
@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('display')) {
         obj['display'] = ApiClient.convertToType(data['display'], 'String');
       }
+      if (data.hasOwnProperty('docGenFormFields')) {
+        obj['docGenFormFields'] = ApiClient.convertToType(data['docGenFormFields'], [DocGenFormField]);
+      }
       if (data.hasOwnProperty('documentBase64')) {
         obj['documentBase64'] = ApiClient.convertToType(data['documentBase64'], 'String');
       }
@@ -87,6 +90,9 @@
       }
       if (data.hasOwnProperty('includeInDownload')) {
         obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
+      }
+      if (data.hasOwnProperty('isDocGenDocument')) {
+        obj['isDocGenDocument'] = ApiClient.convertToType(data['isDocGenDocument'], 'String');
       }
       if (data.hasOwnProperty('matchBoxes')) {
         obj['matchBoxes'] = ApiClient.convertToType(data['matchBoxes'], [MatchBox]);
@@ -150,6 +156,11 @@
    */
   exports.prototype['display'] = undefined;
   /**
+   * 
+   * @member {Array.<module:model/DocGenFormField>} docGenFormFields
+   */
+  exports.prototype['docGenFormFields'] = undefined;
+  /**
    * The document's bytes. This field can be used to include a base64 version of the document bytes within an envelope definition instead of sending the document using a multi-part HTTP request. The maximum document size is smaller if this field is used due to the overhead of the base64 encoding.
    * @member {String} documentBase64
    */
@@ -189,6 +200,11 @@
    * @member {String} includeInDownload
    */
   exports.prototype['includeInDownload'] = undefined;
+  /**
+   * 
+   * @member {String} isDocGenDocument
+   */
+  exports.prototype['isDocGenDocument'] = undefined;
   /**
    * Matchboxes define areas in a document for document matching when you are creating envelopes. They are only used when you upload and edit a template.   A matchbox consists of 5 elements:  * pageNumber - The document page number  on which the matchbox will appear.  * xPosition - The x position of the matchbox on a page.  * yPosition - The y position of the matchbox on a page. * width - The width of the matchbox.  * height - The height of the matchbox.  
    * @member {Array.<module:model/MatchBox>} matchBoxes
