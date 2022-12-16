@@ -231,6 +231,9 @@
       if (data.hasOwnProperty('is21CFRPart11')) {
         obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
       }
+      if (data.hasOwnProperty('isDocGenTemplate')) {
+        obj['isDocGenTemplate'] = ApiClient.convertToType(data['isDocGenTemplate'], 'String');
+      }
       if (data.hasOwnProperty('isDynamicEnvelope')) {
         obj['isDynamicEnvelope'] = ApiClient.convertToType(data['isDynamicEnvelope'], 'String');
       }
@@ -653,6 +656,11 @@
    * @member {String} is21CFRPart11
    */
   exports.prototype['is21CFRPart11'] = undefined;
+  /**
+   * 
+   * @member {String} isDocGenTemplate
+   */
+  exports.prototype['isDocGenTemplate'] = undefined;
   /**
    * 
    * @member {String} isDynamicEnvelope

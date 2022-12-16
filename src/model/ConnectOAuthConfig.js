@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('clientSecret')) {
         obj['clientSecret'] = ApiClient.convertToType(data['clientSecret'], 'String');
       }
+      if (data.hasOwnProperty('customParameters')) {
+        obj['customParameters'] = ApiClient.convertToType(data['customParameters'], 'String');
+      }
       if (data.hasOwnProperty('scope')) {
         obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
       }
@@ -85,6 +88,11 @@
    * @member {String} clientSecret
    */
   exports.prototype['clientSecret'] = undefined;
+  /**
+   * 
+   * @member {String} customParameters
+   */
+  exports.prototype['customParameters'] = undefined;
   /**
    * 
    * @member {String} scope

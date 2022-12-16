@@ -85,6 +85,9 @@
       if (data.hasOwnProperty('includeHMAC')) {
         obj['includeHMAC'] = ApiClient.convertToType(data['includeHMAC'], 'String');
       }
+      if (data.hasOwnProperty('includeOAuth')) {
+        obj['includeOAuth'] = ApiClient.convertToType(data['includeOAuth'], 'String');
+      }
       if (data.hasOwnProperty('includeSenderAccountAsCustomField')) {
         obj['includeSenderAccountAsCustomField'] = ApiClient.convertToType(data['includeSenderAccountAsCustomField'], 'String');
       }
@@ -166,6 +169,11 @@
    * @member {String} includeHMAC
    */
   exports.prototype['includeHMAC'] = undefined;
+  /**
+   * 
+   * @member {String} includeOAuth
+   */
+  exports.prototype['includeOAuth'] = undefined;
   /**
    * When set to **true**, the sender account ID is included as a envelope custom field in the data. 
    * @member {String} includeSenderAccountAsCustomField

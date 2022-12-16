@@ -73,6 +73,9 @@
       if (data.hasOwnProperty('workflowId')) {
         obj['workflowId'] = ApiClient.convertToType(data['workflowId'], 'String');
       }
+      if (data.hasOwnProperty('workflowLabel')) {
+        obj['workflowLabel'] = ApiClient.convertToType(data['workflowLabel'], 'String');
+      }
       if (data.hasOwnProperty('workflowResourceKey')) {
         obj['workflowResourceKey'] = ApiClient.convertToType(data['workflowResourceKey'], 'String');
       }
@@ -110,6 +113,11 @@
    * @member {String} workflowId
    */
   exports.prototype['workflowId'] = undefined;
+  /**
+   * 
+   * @member {String} workflowLabel
+   */
+  exports.prototype['workflowLabel'] = undefined;
   /**
    * 
    * @member {String} workflowResourceKey

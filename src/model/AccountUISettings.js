@@ -61,6 +61,12 @@
       if (data.hasOwnProperty('askAnAdmin')) {
         obj['askAnAdmin'] = AskAnAdmin.constructFromObject(data['askAnAdmin']);
       }
+      if (data.hasOwnProperty('clickwrapSchemaVersion')) {
+        obj['clickwrapSchemaVersion'] = ApiClient.convertToType(data['clickwrapSchemaVersion'], 'String');
+      }
+      if (data.hasOwnProperty('clickwrapSchemaVersionMetadata')) {
+        obj['clickwrapSchemaVersionMetadata'] = SettingsMetadata.constructFromObject(data['clickwrapSchemaVersionMetadata']);
+      }
       if (data.hasOwnProperty('enableAdminMessage')) {
         obj['enableAdminMessage'] = ApiClient.convertToType(data['enableAdminMessage'], 'String');
       }
@@ -153,6 +159,15 @@
    * @member {module:model/AskAnAdmin} askAnAdmin
    */
   exports.prototype['askAnAdmin'] = undefined;
+  /**
+   * 
+   * @member {String} clickwrapSchemaVersion
+   */
+  exports.prototype['clickwrapSchemaVersion'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} clickwrapSchemaVersionMetadata
+   */
+  exports.prototype['clickwrapSchemaVersionMetadata'] = undefined;
   /**
    * 
    * @member {String} enableAdminMessage

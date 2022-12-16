@@ -725,14 +725,14 @@
     if (!responseType) throw new Error('Error responseType is required');
 
     var formattedScopes = scopes.join(encodeURI(' '));
-    return  "https://" +
+    return "https://" +
       this.getOAuthBasePath() +
       "/oauth/auth"+
       "?response_type=" + responseType +
       "&scope=" + formattedScopes +
       "&client_id="+ clientId +
       "&redirect_uri=" + encodeURIComponent(redirectUri) +
-      (state ? "&state=" + state : '');
+      (state ? "&state=" + encodeURIComponent(state) : '');
   };
 
   /**

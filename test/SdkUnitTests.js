@@ -254,7 +254,7 @@ describe('SDK Unit Tests:', function (done) {
       '&scope=' + formattedScopes +
       '&client_id=' + integratorKeyAuthCode +
       '&redirect_uri=' + encodeURIComponent(RedirectURI) +
-      (randomState ? '&state=' + randomState : '');
+      (randomState ? '&state=' + encodeURIComponent(randomState) : '');
 
     assert.equal(authUri, correctAuthUri);
     done();

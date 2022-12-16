@@ -916,6 +916,12 @@
       if (data.hasOwnProperty('enableAccessCodeGeneratorMetadata')) {
         obj['enableAccessCodeGeneratorMetadata'] = SettingsMetadata.constructFromObject(data['enableAccessCodeGeneratorMetadata']);
       }
+      if (data.hasOwnProperty('enableAdmHealthcare')) {
+        obj['enableAdmHealthcare'] = ApiClient.convertToType(data['enableAdmHealthcare'], 'String');
+      }
+      if (data.hasOwnProperty('enableAdmHealthcareMetadata')) {
+        obj['enableAdmHealthcareMetadata'] = SettingsMetadata.constructFromObject(data['enableAdmHealthcareMetadata']);
+      }
       if (data.hasOwnProperty('enableAdvancedPayments')) {
         obj['enableAdvancedPayments'] = ApiClient.convertToType(data['enableAdvancedPayments'], 'String');
       }
@@ -957,6 +963,36 @@
       }
       if (data.hasOwnProperty('enableCalculatedFieldsMetadata')) {
         obj['enableCalculatedFieldsMetadata'] = SettingsMetadata.constructFromObject(data['enableCalculatedFieldsMetadata']);
+      }
+      if (data.hasOwnProperty('enableClickPlus')) {
+        obj['enableClickPlus'] = ApiClient.convertToType(data['enableClickPlus'], 'String');
+      }
+      if (data.hasOwnProperty('enableClickPlusConditionalContent')) {
+        obj['enableClickPlusConditionalContent'] = ApiClient.convertToType(data['enableClickPlusConditionalContent'], 'String');
+      }
+      if (data.hasOwnProperty('enableClickPlusConditionalContentMetaData')) {
+        obj['enableClickPlusConditionalContentMetaData'] = SettingsMetadata.constructFromObject(data['enableClickPlusConditionalContentMetaData']);
+      }
+      if (data.hasOwnProperty('enableClickPlusCustomFields')) {
+        obj['enableClickPlusCustomFields'] = ApiClient.convertToType(data['enableClickPlusCustomFields'], 'String');
+      }
+      if (data.hasOwnProperty('enableClickPlusCustomFieldsMetaData')) {
+        obj['enableClickPlusCustomFieldsMetaData'] = SettingsMetadata.constructFromObject(data['enableClickPlusCustomFieldsMetaData']);
+      }
+      if (data.hasOwnProperty('enableClickPlusCustomStyle')) {
+        obj['enableClickPlusCustomStyle'] = ApiClient.convertToType(data['enableClickPlusCustomStyle'], 'String');
+      }
+      if (data.hasOwnProperty('enableClickPlusCustomStyleMetaData')) {
+        obj['enableClickPlusCustomStyleMetaData'] = SettingsMetadata.constructFromObject(data['enableClickPlusCustomStyleMetaData']);
+      }
+      if (data.hasOwnProperty('enableClickPlusDynamicContent')) {
+        obj['enableClickPlusDynamicContent'] = ApiClient.convertToType(data['enableClickPlusDynamicContent'], 'String');
+      }
+      if (data.hasOwnProperty('enableClickPlusDynamicContentMetaData')) {
+        obj['enableClickPlusDynamicContentMetaData'] = SettingsMetadata.constructFromObject(data['enableClickPlusDynamicContentMetaData']);
+      }
+      if (data.hasOwnProperty('enableClickPlusMetaData')) {
+        obj['enableClickPlusMetaData'] = SettingsMetadata.constructFromObject(data['enableClickPlusMetaData']);
       }
       if (data.hasOwnProperty('enableClickwraps')) {
         obj['enableClickwraps'] = ApiClient.convertToType(data['enableClickwraps'], 'String');
@@ -1291,6 +1327,12 @@
       if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata')) {
         obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = SettingsMetadata.constructFromObject(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata']);
       }
+      if (data.hasOwnProperty('envelopeSearchMode')) {
+        obj['envelopeSearchMode'] = ApiClient.convertToType(data['envelopeSearchMode'], 'String');
+      }
+      if (data.hasOwnProperty('envelopeSearchModeMetadata')) {
+        obj['envelopeSearchModeMetadata'] = SettingsMetadata.constructFromObject(data['envelopeSearchModeMetadata']);
+      }
       if (data.hasOwnProperty('envelopeStampingDefaultValue')) {
         obj['envelopeStampingDefaultValue'] = ApiClient.convertToType(data['envelopeStampingDefaultValue'], 'String');
       }
@@ -1390,6 +1432,12 @@
       if (data.hasOwnProperty('identityVerificationMetadata')) {
         obj['identityVerificationMetadata'] = SettingsMetadata.constructFromObject(data['identityVerificationMetadata']);
       }
+      if (data.hasOwnProperty('idfxKBAAuthenticationOverride')) {
+        obj['idfxKBAAuthenticationOverride'] = ApiClient.convertToType(data['idfxKBAAuthenticationOverride'], 'String');
+      }
+      if (data.hasOwnProperty('idfxKBAAuthenticationOverrideMetadata')) {
+        obj['idfxKBAAuthenticationOverrideMetadata'] = SettingsMetadata.constructFromObject(data['idfxKBAAuthenticationOverrideMetadata']);
+      }
       if (data.hasOwnProperty('idfxPhoneAuthenticationOverride')) {
         obj['idfxPhoneAuthenticationOverride'] = ApiClient.convertToType(data['idfxPhoneAuthenticationOverride'], 'String');
       }
@@ -1443,6 +1491,12 @@
       }
       if (data.hasOwnProperty('maxNumberOfCustomStamps')) {
         obj['maxNumberOfCustomStamps'] = ApiClient.convertToType(data['maxNumberOfCustomStamps'], 'String');
+      }
+      if (data.hasOwnProperty('mergeMixedModeResults')) {
+        obj['mergeMixedModeResults'] = ApiClient.convertToType(data['mergeMixedModeResults'], 'String');
+      }
+      if (data.hasOwnProperty('mergeMixedModeResultsMetadata')) {
+        obj['mergeMixedModeResultsMetadata'] = SettingsMetadata.constructFromObject(data['mergeMixedModeResultsMetadata']);
       }
       if (data.hasOwnProperty('mobileSessionTimeout')) {
         obj['mobileSessionTimeout'] = ApiClient.convertToType(data['mobileSessionTimeout'], 'String');
@@ -1879,6 +1933,12 @@
       if (data.hasOwnProperty('useDocuSignExpressSignerCertificateMetadata')) {
         obj['useDocuSignExpressSignerCertificateMetadata'] = SettingsMetadata.constructFromObject(data['useDocuSignExpressSignerCertificateMetadata']);
       }
+      if (data.hasOwnProperty('useEnvelopeSearchMixedMode')) {
+        obj['useEnvelopeSearchMixedMode'] = ApiClient.convertToType(data['useEnvelopeSearchMixedMode'], 'String');
+      }
+      if (data.hasOwnProperty('useEnvelopeSearchMixedModeMetadata')) {
+        obj['useEnvelopeSearchMixedModeMetadata'] = SettingsMetadata.constructFromObject(data['useEnvelopeSearchMixedModeMetadata']);
+      }
       if (data.hasOwnProperty('useMultiAppGroupsData')) {
         obj['useMultiAppGroupsData'] = ApiClient.convertToType(data['useMultiAppGroupsData'], 'String');
       }
@@ -1890,6 +1950,12 @@
       }
       if (data.hasOwnProperty('useNewBlobForPdfMetadata')) {
         obj['useNewBlobForPdfMetadata'] = SettingsMetadata.constructFromObject(data['useNewBlobForPdfMetadata']);
+      }
+      if (data.hasOwnProperty('useNewEnvelopeSearch')) {
+        obj['useNewEnvelopeSearch'] = ApiClient.convertToType(data['useNewEnvelopeSearch'], 'String');
+      }
+      if (data.hasOwnProperty('useNewEnvelopeSearchMetadata')) {
+        obj['useNewEnvelopeSearchMetadata'] = SettingsMetadata.constructFromObject(data['useNewEnvelopeSearchMetadata']);
       }
       if (data.hasOwnProperty('useSAFESignerCertificates')) {
         obj['useSAFESignerCertificates'] = ApiClient.convertToType(data['useSAFESignerCertificates'], 'String');
@@ -2184,7 +2250,7 @@
    */
   exports.prototype['allowDataDownloadMetadata'] = undefined;
   /**
-   * \"true\" if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \"false\" otherwise.
+   * \\\"true\\\" if the account has permission to use the delayed routing feature to insert delays before routing an envelope to a recipient, \\\"false\\\" otherwise.
    * @member {String} allowDelayedRouting
    */
   exports.prototype['allowDelayedRouting'] = undefined;
@@ -2718,7 +2784,7 @@
    */
   exports.prototype['allowSafeBioPharmaSignerCertificateMetadata'] = undefined;
   /**
-   * \"true\" if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \"false\" otherwise.
+   * \\\"true\\\" if the account has permission to use the scheduled sending feature to send envelopes at a specified datetime in the future, \\\"false\\\" otherwise.
    * @member {String} allowScheduledSending
    */
   exports.prototype['allowScheduledSending'] = undefined;
@@ -3391,6 +3457,15 @@
   exports.prototype['enableAccessCodeGeneratorMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableAdmHealthcare
+   */
+  exports.prototype['enableAdmHealthcare'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableAdmHealthcareMetadata
+   */
+  exports.prototype['enableAdmHealthcareMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableAdvancedPayments
    */
   exports.prototype['enableAdvancedPayments'] = undefined;
@@ -3459,6 +3534,51 @@
    * @member {module:model/SettingsMetadata} enableCalculatedFieldsMetadata
    */
   exports.prototype['enableCalculatedFieldsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableClickPlus
+   */
+  exports.prototype['enableClickPlus'] = undefined;
+  /**
+   * 
+   * @member {String} enableClickPlusConditionalContent
+   */
+  exports.prototype['enableClickPlusConditionalContent'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableClickPlusConditionalContentMetaData
+   */
+  exports.prototype['enableClickPlusConditionalContentMetaData'] = undefined;
+  /**
+   * 
+   * @member {String} enableClickPlusCustomFields
+   */
+  exports.prototype['enableClickPlusCustomFields'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableClickPlusCustomFieldsMetaData
+   */
+  exports.prototype['enableClickPlusCustomFieldsMetaData'] = undefined;
+  /**
+   * 
+   * @member {String} enableClickPlusCustomStyle
+   */
+  exports.prototype['enableClickPlusCustomStyle'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableClickPlusCustomStyleMetaData
+   */
+  exports.prototype['enableClickPlusCustomStyleMetaData'] = undefined;
+  /**
+   * 
+   * @member {String} enableClickPlusDynamicContent
+   */
+  exports.prototype['enableClickPlusDynamicContent'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableClickPlusDynamicContentMetaData
+   */
+  exports.prototype['enableClickPlusDynamicContentMetaData'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableClickPlusMetaData
+   */
+  exports.prototype['enableClickPlusMetaData'] = undefined;
   /**
    * 
    * @member {String} enableClickwraps
@@ -4008,6 +4128,15 @@
   exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = undefined;
   /**
    * 
+   * @member {String} envelopeSearchMode
+   */
+  exports.prototype['envelopeSearchMode'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} envelopeSearchModeMetadata
+   */
+  exports.prototype['envelopeSearchModeMetadata'] = undefined;
+  /**
+   * 
    * @member {String} envelopeStampingDefaultValue
    */
   exports.prototype['envelopeStampingDefaultValue'] = undefined;
@@ -4173,6 +4302,15 @@
   exports.prototype['identityVerificationMetadata'] = undefined;
   /**
    * 
+   * @member {String} idfxKBAAuthenticationOverride
+   */
+  exports.prototype['idfxKBAAuthenticationOverride'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} idfxKBAAuthenticationOverrideMetadata
+   */
+  exports.prototype['idfxKBAAuthenticationOverrideMetadata'] = undefined;
+  /**
+   * 
    * @member {String} idfxPhoneAuthenticationOverride
    */
   exports.prototype['idfxPhoneAuthenticationOverride'] = undefined;
@@ -4261,6 +4399,15 @@
    * @member {String} maxNumberOfCustomStamps
    */
   exports.prototype['maxNumberOfCustomStamps'] = undefined;
+  /**
+   * 
+   * @member {String} mergeMixedModeResults
+   */
+  exports.prototype['mergeMixedModeResults'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} mergeMixedModeResultsMetadata
+   */
+  exports.prototype['mergeMixedModeResultsMetadata'] = undefined;
   /**
    * 
    * @member {String} mobileSessionTimeout
@@ -4985,6 +5132,15 @@
   exports.prototype['useDocuSignExpressSignerCertificateMetadata'] = undefined;
   /**
    * 
+   * @member {String} useEnvelopeSearchMixedMode
+   */
+  exports.prototype['useEnvelopeSearchMixedMode'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} useEnvelopeSearchMixedModeMetadata
+   */
+  exports.prototype['useEnvelopeSearchMixedModeMetadata'] = undefined;
+  /**
+   * 
    * @member {String} useMultiAppGroupsData
    */
   exports.prototype['useMultiAppGroupsData'] = undefined;
@@ -5003,6 +5159,15 @@
    * @member {module:model/SettingsMetadata} useNewBlobForPdfMetadata
    */
   exports.prototype['useNewBlobForPdfMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} useNewEnvelopeSearch
+   */
+  exports.prototype['useNewEnvelopeSearch'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} useNewEnvelopeSearchMetadata
+   */
+  exports.prototype['useNewEnvelopeSearchMetadata'] = undefined;
   /**
    * 
    * @member {String} useSAFESignerCertificates
