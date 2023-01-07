@@ -3825,7 +3825,7 @@ If the envelope is `In Process`, meaning that it has been sent and has not  been
       var authNames = ['docusignAccessCode'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/attachments/{attachmentId}', 'GET',
