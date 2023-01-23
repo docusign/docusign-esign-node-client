@@ -2,6 +2,11 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v6.0.0] - eSignature API v2.1-22.3.01.00 - 2023-01-23
+### Breaking 
+  - Deprecating Node versions <12
+### Security
+  - Update jsonwebtoken package to 9.0.0 addressing CVE-2022-23529
 ## [v5.20.0] - eSignature API v2.1-22.3.01.00 - 2022-11-22
 ### Changed
 - Added support for version v2.1-22.3.01.00 of the DocuSign ESignature API.

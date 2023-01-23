@@ -39,7 +39,7 @@ This client has the following external dependencies:
 
 **Optional:**
 *   Async v2.6.2
-*   Jsonwebtoken v8.2.0
+*   Jsonwebtoken v9.0.0
 *   Passport-oauth2
 *   Path
 
