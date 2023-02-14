@@ -21,20 +21,20 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.IdEvidenceViewLink = factory(root.Docusign.ApiClient);
+    root.Docusign.BulksendingCopyDocGenFormField = factory(root.Docusign.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The IdEvidenceViewLink model module.
-   * @module model/IdEvidenceViewLink
+   * The BulksendingCopyDocGenFormField model module.
+   * @module model/BulksendingCopyDocGenFormField
    */
 
   /**
-   * Constructs a new <code>IdEvidenceViewLink</code>.
-   * @alias module:model/IdEvidenceViewLink
+   * Constructs a new <code>BulksendingCopyDocGenFormField</code>.
+   * @alias module:model/BulksendingCopyDocGenFormField
    * @class
    */
   var exports = function() {
@@ -44,18 +44,21 @@
   };
 
   /**
-   * Constructs a <code>IdEvidenceViewLink</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>BulksendingCopyDocGenFormField</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/IdEvidenceViewLink} obj Optional instance to populate.
-   * @return {module:model/IdEvidenceViewLink} The populated <code>IdEvidenceViewLink</code> instance.
+   * @param {module:model/BulksendingCopyDocGenFormField} obj Optional instance to populate.
+   * @return {module:model/BulksendingCopyDocGenFormField} The populated <code>BulksendingCopyDocGenFormField</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('viewLink')) {
-        obj['viewLink'] = ApiClient.convertToType(data['viewLink'], 'String');
+      if (data.hasOwnProperty('label')) {
+        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      }
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
     }
     return obj;
@@ -63,9 +66,14 @@
 
   /**
    * 
-   * @member {String} viewLink
+   * @member {String} label
    */
-  exports.prototype['viewLink'] = undefined;
+  exports.prototype['label'] = undefined;
+  /**
+   * Specifies the value of the tab. 
+   * @member {String} value
+   */
+  exports.prototype['value'] = undefined;
 
 
 

@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('workflowIdMetadata')) {
         obj['workflowIdMetadata'] = PropertyMetadata.constructFromObject(data['workflowIdMetadata']);
       }
+      if (data.hasOwnProperty('workflowLabel')) {
+        obj['workflowLabel'] = ApiClient.convertToType(data['workflowLabel'], 'String');
+      }
     }
     return obj;
   }
@@ -83,6 +86,11 @@
    * @member {module:model/PropertyMetadata} workflowIdMetadata
    */
   exports.prototype['workflowIdMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} workflowLabel
+   */
+  exports.prototype['workflowLabel'] = undefined;
 
 
 

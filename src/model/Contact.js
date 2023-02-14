@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ContactPhoneNumber', 'model/ErrorDetails'], factory);
+    define(['ApiClient', 'model/ContactPhoneNumber', 'model/ErrorDetails', 'model/NotaryContactDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ContactPhoneNumber'), require('./ErrorDetails'));
+    module.exports = factory(require('../ApiClient'), require('./ContactPhoneNumber'), require('./ErrorDetails'), require('./NotaryContactDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Contact = factory(root.Docusign.ApiClient, root.Docusign.ContactPhoneNumber, root.Docusign.ErrorDetails);
+    root.Docusign.Contact = factory(root.Docusign.ApiClient, root.Docusign.ContactPhoneNumber, root.Docusign.ErrorDetails, root.Docusign.NotaryContactDetails);
   }
-}(this, function(ApiClient, ContactPhoneNumber, ErrorDetails) {
+}(this, function(ApiClient, ContactPhoneNumber, ErrorDetails, NotaryContactDetails) {
   'use strict';
 
 
@@ -80,6 +80,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('notaryContactDetails')) {
+        obj['notaryContactDetails'] = NotaryContactDetails.constructFromObject(data['notaryContactDetails']);
       }
       if (data.hasOwnProperty('organization')) {
         obj['organization'] = ApiClient.convertToType(data['organization'], 'String');
@@ -145,6 +148,10 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {module:model/NotaryContactDetails} notaryContactDetails
+   */
+  exports.prototype['notaryContactDetails'] = undefined;
   /**
    * 
    * @member {String} organization

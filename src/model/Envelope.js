@@ -93,6 +93,9 @@
       if (data.hasOwnProperty('brandLock')) {
         obj['brandLock'] = ApiClient.convertToType(data['brandLock'], 'String');
       }
+      if (data.hasOwnProperty('burnDefaultTabData')) {
+        obj['burnDefaultTabData'] = ApiClient.convertToType(data['burnDefaultTabData'], 'String');
+      }
       if (data.hasOwnProperty('certificateUri')) {
         obj['certificateUri'] = ApiClient.convertToType(data['certificateUri'], 'String');
       }
@@ -357,6 +360,11 @@
    * @member {String} brandLock
    */
   exports.prototype['brandLock'] = undefined;
+  /**
+   * 
+   * @member {String} burnDefaultTabData
+   */
+  exports.prototype['burnDefaultTabData'] = undefined;
   /**
    * Retrieves a URI for an endpoint that allows you to easily retrieve certificate information.
    * @member {String} certificateUri

@@ -1281,6 +1281,66 @@
     };
 
     /**
+     * (Optional) Callback function to receive the result of the updateConnectOAuthConfig operation. If none specified a Promise will be returned.
+     * @callback module:api/ConnectApi~updateConnectOAuthConfigCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ConnectOAuthConfig} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the existing Connect OAuth Config for the account.
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/ConnectOAuthConfig} optsOrCallback.connectOAuthConfig 
+     * @param {module:api/ConnectApi~updateConnectOAuthConfigCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ConnectOAuthConfig}
+     */
+    this.updateConnectOAuthConfig = function(accountId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['connectOAuthConfig'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateConnectOAuthConfig");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ConnectOAuthConfig;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/connect/oauth', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the updateMobileNotifiers operation. If none specified a Promise will be returned.
      * @callback module:api/ConnectApi~updateMobileNotifiersCallback
      * @param {String} error Error message, if any.

@@ -64,9 +64,11 @@
      * Retrieves a list of the folders for the account, including the folder hierarchy. You can specify whether to return just the template folder or template folder and normal folders by setting the `template` query string parameter.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count 
      * @param {String} optsOrCallback.include 
      * @param {String} optsOrCallback.includeItems 
      * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.subFolderDepth 
      * @param {String} optsOrCallback.template Specifies the items that are returned. Valid values are:   * include - The folder list will return normal folders plus template folders.  * only - Only the list of template folders are returned.
      * @param {String} optsOrCallback.userFilter 
      * @param {module:api/FoldersApi~listCallback} callback The callback function, accepting three arguments: error, data, response
@@ -98,9 +100,11 @@
         'accountId': accountId
       };
       var queryParams = {
+        'count': optsOrCallback['count'],
         'include': optsOrCallback['include'],
         'include_items': optsOrCallback['includeItems'],
         'start_position': optsOrCallback['startPosition'],
+        'sub_folder_depth': optsOrCallback['subFolderDepth'],
         'template': optsOrCallback['template'],
         'user_filter': optsOrCallback['userFilter']
       };

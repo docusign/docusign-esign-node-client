@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BulkSendingCopyTab', 'model/IdCheckInformationInput', 'model/RecipientEmailNotification', 'model/RecipientPhoneAuthentication', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureProvider', 'model/SocialAuthentication'], factory);
+    define(['ApiClient', 'model/BulkSendingCopyTab', 'model/IdCheckInformationInput', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientSMSAuthentication', 'model/RecipientSignatureProvider', 'model/SocialAuthentication'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BulkSendingCopyTab'), require('./IdCheckInformationInput'), require('./RecipientEmailNotification'), require('./RecipientPhoneAuthentication'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'));
+    module.exports = factory(require('../ApiClient'), require('./BulkSendingCopyTab'), require('./IdCheckInformationInput'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientSMSAuthentication'), require('./RecipientSignatureProvider'), require('./SocialAuthentication'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BulkSendingCopyRecipient = factory(root.Docusign.ApiClient, root.Docusign.BulkSendingCopyTab, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication);
+    root.Docusign.BulkSendingCopyRecipient = factory(root.Docusign.ApiClient, root.Docusign.BulkSendingCopyTab, root.Docusign.IdCheckInformationInput, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientSMSAuthentication, root.Docusign.RecipientSignatureProvider, root.Docusign.SocialAuthentication);
   }
-}(this, function(ApiClient, BulkSendingCopyTab, IdCheckInformationInput, RecipientEmailNotification, RecipientPhoneAuthentication, RecipientSMSAuthentication, RecipientSignatureProvider, SocialAuthentication) {
+}(this, function(ApiClient, BulkSendingCopyTab, IdCheckInformationInput, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientSMSAuthentication, RecipientSignatureProvider, SocialAuthentication) {
   'use strict';
 
 
@@ -93,6 +93,9 @@
       }
       if (data.hasOwnProperty('identificationMethod')) {
         obj['identificationMethod'] = ApiClient.convertToType(data['identificationMethod'], 'String');
+      }
+      if (data.hasOwnProperty('identityVerification')) {
+        obj['identityVerification'] = RecipientIdentityVerification.constructFromObject(data['identityVerification']);
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -196,6 +199,10 @@
    * @member {String} identificationMethod
    */
   exports.prototype['identificationMethod'] = undefined;
+  /**
+   * @member {module:model/RecipientIdentityVerification} identityVerification
+   */
+  exports.prototype['identityVerification'] = undefined;
   /**
    * 
    * @member {String} name
