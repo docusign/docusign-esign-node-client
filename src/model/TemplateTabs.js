@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/CommentThread', 'model/CommissionCounty', 'model/CommissionExpiration', 'model/CommissionNumber', 'model/CommissionState', 'model/Company', 'model/Currency', 'model/DateSigned', 'model/Decline', 'model/Draw', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/ModelDate', 'model/ModelNumber', 'model/Notarize', 'model/NotarySeal', 'model/Note', 'model/PhoneNumber', 'model/PolyLineOverlay', 'model/PrefillTabs', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/SmartSection', 'model/Ssn', 'model/TabGroup', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
+    define(['ApiClient', 'model/Approve', 'model/Checkbox', 'model/CommentThread', 'model/CommissionCounty', 'model/CommissionExpiration', 'model/CommissionNumber', 'model/CommissionState', 'model/Company', 'model/Currency', 'model/DateSigned', 'model/Decline', 'model/Draw', 'model/Email', 'model/EmailAddress', 'model/EnvelopeId', 'model/FirstName', 'model/FormulaTab', 'model/FullName', 'model/InitialHere', 'model/LastName', 'model/List', 'model/ModelDate', 'model/ModelNumber', 'model/Notarize', 'model/NotarySeal', 'model/Note', 'model/Numerical', 'model/PhoneNumber', 'model/PolyLineOverlay', 'model/PrefillTabs', 'model/RadioGroup', 'model/SignHere', 'model/SignerAttachment', 'model/SmartSection', 'model/Ssn', 'model/TabGroup', 'model/Text', 'model/Title', 'model/View', 'model/Zip'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./CommentThread'), require('./CommissionCounty'), require('./CommissionExpiration'), require('./CommissionNumber'), require('./CommissionState'), require('./Company'), require('./Currency'), require('./DateSigned'), require('./Decline'), require('./Draw'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./ModelDate'), require('./ModelNumber'), require('./Notarize'), require('./NotarySeal'), require('./Note'), require('./PhoneNumber'), require('./PolyLineOverlay'), require('./PrefillTabs'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./SmartSection'), require('./Ssn'), require('./TabGroup'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
+    module.exports = factory(require('../ApiClient'), require('./Approve'), require('./Checkbox'), require('./CommentThread'), require('./CommissionCounty'), require('./CommissionExpiration'), require('./CommissionNumber'), require('./CommissionState'), require('./Company'), require('./Currency'), require('./DateSigned'), require('./Decline'), require('./Draw'), require('./Email'), require('./EmailAddress'), require('./EnvelopeId'), require('./FirstName'), require('./FormulaTab'), require('./FullName'), require('./InitialHere'), require('./LastName'), require('./List'), require('./ModelDate'), require('./ModelNumber'), require('./Notarize'), require('./NotarySeal'), require('./Note'), require('./Numerical'), require('./PhoneNumber'), require('./PolyLineOverlay'), require('./PrefillTabs'), require('./RadioGroup'), require('./SignHere'), require('./SignerAttachment'), require('./SmartSection'), require('./Ssn'), require('./TabGroup'), require('./Text'), require('./Title'), require('./View'), require('./Zip'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateTabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.CommentThread, root.Docusign.CommissionCounty, root.Docusign.CommissionExpiration, root.Docusign.CommissionNumber, root.Docusign.CommissionState, root.Docusign.Company, root.Docusign.Currency, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Draw, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.ModelDate, root.Docusign.ModelNumber, root.Docusign.Notarize, root.Docusign.NotarySeal, root.Docusign.Note, root.Docusign.PhoneNumber, root.Docusign.PolyLineOverlay, root.Docusign.PrefillTabs, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.SmartSection, root.Docusign.Ssn, root.Docusign.TabGroup, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
+    root.Docusign.TemplateTabs = factory(root.Docusign.ApiClient, root.Docusign.Approve, root.Docusign.Checkbox, root.Docusign.CommentThread, root.Docusign.CommissionCounty, root.Docusign.CommissionExpiration, root.Docusign.CommissionNumber, root.Docusign.CommissionState, root.Docusign.Company, root.Docusign.Currency, root.Docusign.DateSigned, root.Docusign.Decline, root.Docusign.Draw, root.Docusign.Email, root.Docusign.EmailAddress, root.Docusign.EnvelopeId, root.Docusign.FirstName, root.Docusign.FormulaTab, root.Docusign.FullName, root.Docusign.InitialHere, root.Docusign.LastName, root.Docusign.List, root.Docusign.ModelDate, root.Docusign.ModelNumber, root.Docusign.Notarize, root.Docusign.NotarySeal, root.Docusign.Note, root.Docusign.Numerical, root.Docusign.PhoneNumber, root.Docusign.PolyLineOverlay, root.Docusign.PrefillTabs, root.Docusign.RadioGroup, root.Docusign.SignHere, root.Docusign.SignerAttachment, root.Docusign.SmartSection, root.Docusign.Ssn, root.Docusign.TabGroup, root.Docusign.Text, root.Docusign.Title, root.Docusign.View, root.Docusign.Zip);
   }
-}(this, function(ApiClient, Approve, Checkbox, CommentThread, CommissionCounty, CommissionExpiration, CommissionNumber, CommissionState, Company, Currency, DateSigned, Decline, Draw, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, ModelDate, ModelNumber, Notarize, NotarySeal, Note, PhoneNumber, PolyLineOverlay, PrefillTabs, RadioGroup, SignHere, SignerAttachment, SmartSection, Ssn, TabGroup, Text, Title, View, Zip) {
+}(this, function(ApiClient, Approve, Checkbox, CommentThread, CommissionCounty, CommissionExpiration, CommissionNumber, CommissionState, Company, Currency, DateSigned, Decline, Draw, Email, EmailAddress, EnvelopeId, FirstName, FormulaTab, FullName, InitialHere, LastName, List, ModelDate, ModelNumber, Notarize, NotarySeal, Note, Numerical, PhoneNumber, PolyLineOverlay, PrefillTabs, RadioGroup, SignHere, SignerAttachment, SmartSection, Ssn, TabGroup, Text, Title, View, Zip) {
   'use strict';
 
 
@@ -131,6 +131,9 @@
       }
       if (data.hasOwnProperty('numberTabs')) {
         obj['numberTabs'] = ApiClient.convertToType(data['numberTabs'], [ModelNumber]);
+      }
+      if (data.hasOwnProperty('numericalTabs')) {
+        obj['numericalTabs'] = ApiClient.convertToType(data['numericalTabs'], [Numerical]);
       }
       if (data.hasOwnProperty('phoneNumberTabs')) {
         obj['phoneNumberTabs'] = ApiClient.convertToType(data['phoneNumberTabs'], [PhoneNumber]);
@@ -305,6 +308,11 @@
    * @member {Array.<module:model/ModelNumber>} numberTabs
    */
   exports.prototype['numberTabs'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/Numerical>} numericalTabs
+   */
+  exports.prototype['numericalTabs'] = undefined;
   /**
    * 
    * @member {Array.<module:model/PhoneNumber>} phoneNumberTabs

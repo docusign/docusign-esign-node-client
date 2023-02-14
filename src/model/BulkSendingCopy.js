@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BulkSendingCopyCustomField', 'model/BulkSendingCopyRecipient'], factory);
+    define(['ApiClient', 'model/BulkSendingCopyCustomField', 'model/BulkSendingCopyRecipient', 'model/BulksendingCopyDocGenFormField'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BulkSendingCopyCustomField'), require('./BulkSendingCopyRecipient'));
+    module.exports = factory(require('../ApiClient'), require('./BulkSendingCopyCustomField'), require('./BulkSendingCopyRecipient'), require('./BulksendingCopyDocGenFormField'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BulkSendingCopy = factory(root.Docusign.ApiClient, root.Docusign.BulkSendingCopyCustomField, root.Docusign.BulkSendingCopyRecipient);
+    root.Docusign.BulkSendingCopy = factory(root.Docusign.ApiClient, root.Docusign.BulkSendingCopyCustomField, root.Docusign.BulkSendingCopyRecipient, root.Docusign.BulksendingCopyDocGenFormField);
   }
-}(this, function(ApiClient, BulkSendingCopyCustomField, BulkSendingCopyRecipient) {
+}(this, function(ApiClient, BulkSendingCopyCustomField, BulkSendingCopyRecipient, BulksendingCopyDocGenFormField) {
   'use strict';
 
 
@@ -58,6 +58,9 @@
       if (data.hasOwnProperty('customFields')) {
         obj['customFields'] = ApiClient.convertToType(data['customFields'], [BulkSendingCopyCustomField]);
       }
+      if (data.hasOwnProperty('docGenFormFields')) {
+        obj['docGenFormFields'] = ApiClient.convertToType(data['docGenFormFields'], [BulksendingCopyDocGenFormField]);
+      }
       if (data.hasOwnProperty('emailBlurb')) {
         obj['emailBlurb'] = ApiClient.convertToType(data['emailBlurb'], 'String');
       }
@@ -76,6 +79,11 @@
    * @member {Array.<module:model/BulkSendingCopyCustomField>} customFields
    */
   exports.prototype['customFields'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/BulksendingCopyDocGenFormField>} docGenFormFields
+   */
+  exports.prototype['docGenFormFields'] = undefined;
   /**
    * 
    * @member {String} emailBlurb

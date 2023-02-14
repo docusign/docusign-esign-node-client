@@ -97,6 +97,12 @@
       if (data.hasOwnProperty('canManageGroupsButNotUsersMetadata')) {
         obj['canManageGroupsButNotUsersMetadata'] = SettingsMetadata.constructFromObject(data['canManageGroupsButNotUsersMetadata']);
       }
+      if (data.hasOwnProperty('canManageJointAgreements')) {
+        obj['canManageJointAgreements'] = ApiClient.convertToType(data['canManageJointAgreements'], 'String');
+      }
+      if (data.hasOwnProperty('canManageJointAgreementsMetadata')) {
+        obj['canManageJointAgreementsMetadata'] = SettingsMetadata.constructFromObject(data['canManageJointAgreementsMetadata']);
+      }
       if (data.hasOwnProperty('canManageReporting')) {
         obj['canManageReporting'] = ApiClient.convertToType(data['canManageReporting'], 'String');
       }
@@ -204,6 +210,15 @@
    * @member {module:model/SettingsMetadata} canManageGroupsButNotUsersMetadata
    */
   exports.prototype['canManageGroupsButNotUsersMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageJointAgreements
+   */
+  exports.prototype['canManageJointAgreements'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} canManageJointAgreementsMetadata
+   */
+  exports.prototype['canManageJointAgreementsMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageReporting

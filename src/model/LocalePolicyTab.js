@@ -93,6 +93,9 @@
       if (data.hasOwnProperty('timeZone')) {
         obj['timeZone'] = ApiClient.convertToType(data['timeZone'], 'String');
       }
+      if (data.hasOwnProperty('useLongCurrencyFormat')) {
+        obj['useLongCurrencyFormat'] = ApiClient.convertToType(data['useLongCurrencyFormat'], 'String');
+      }
     }
     return obj;
   }
@@ -162,6 +165,11 @@
    * @member {String} timeZone
    */
   exports.prototype['timeZone'] = undefined;
+  /**
+   * 
+   * @member {String} useLongCurrencyFormat
+   */
+  exports.prototype['useLongCurrencyFormat'] = undefined;
 
 
 

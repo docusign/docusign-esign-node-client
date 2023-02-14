@@ -637,6 +637,12 @@
       if (data.hasOwnProperty('allowThirdPartyElectronicNotaryMetadata')) {
         obj['allowThirdPartyElectronicNotaryMetadata'] = SettingsMetadata.constructFromObject(data['allowThirdPartyElectronicNotaryMetadata']);
       }
+      if (data.hasOwnProperty('allowTransactionsWorkspace')) {
+        obj['allowTransactionsWorkspace'] = ApiClient.convertToType(data['allowTransactionsWorkspace'], 'String');
+      }
+      if (data.hasOwnProperty('allowTransactionsWorkspaceMetadata')) {
+        obj['allowTransactionsWorkspaceMetadata'] = SettingsMetadata.constructFromObject(data['allowTransactionsWorkspaceMetadata']);
+      }
       if (data.hasOwnProperty('allowUsersToAccessDirectory')) {
         obj['allowUsersToAccessDirectory'] = ApiClient.convertToType(data['allowUsersToAccessDirectory'], 'String');
       }
@@ -654,6 +660,12 @@
       }
       if (data.hasOwnProperty('allowWebFormsMetadata')) {
         obj['allowWebFormsMetadata'] = SettingsMetadata.constructFromObject(data['allowWebFormsMetadata']);
+      }
+      if (data.hasOwnProperty('allowWhatsAppDelivery')) {
+        obj['allowWhatsAppDelivery'] = ApiClient.convertToType(data['allowWhatsAppDelivery'], 'String');
+      }
+      if (data.hasOwnProperty('allowWhatsAppDeliveryMetadata')) {
+        obj['allowWhatsAppDeliveryMetadata'] = SettingsMetadata.constructFromObject(data['allowWhatsAppDeliveryMetadata']);
       }
       if (data.hasOwnProperty('anchorPopulationScope')) {
         obj['anchorPopulationScope'] = ApiClient.convertToType(data['anchorPopulationScope'], 'String');
@@ -1027,6 +1039,9 @@
       if (data.hasOwnProperty('enableDSProMetadata')) {
         obj['enableDSProMetadata'] = SettingsMetadata.constructFromObject(data['enableDSProMetadata']);
       }
+      if (data.hasOwnProperty('enableEnforceTlsEmailsSettingMetadata')) {
+        obj['enableEnforceTlsEmailsSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableEnforceTlsEmailsSettingMetadata']);
+      }
       if (data.hasOwnProperty('enableEnvelopeStampingByAccountAdmin')) {
         obj['enableEnvelopeStampingByAccountAdmin'] = ApiClient.convertToType(data['enableEnvelopeStampingByAccountAdmin'], 'String');
       }
@@ -1068,6 +1083,12 @@
       }
       if (data.hasOwnProperty('enableIDFxPhoneAuthenticationMetadata')) {
         obj['enableIDFxPhoneAuthenticationMetadata'] = SettingsMetadata.constructFromObject(data['enableIDFxPhoneAuthenticationMetadata']);
+      }
+      if (data.hasOwnProperty('enableIdfxPhoneAuthSignatureAuthStatus')) {
+        obj['enableIdfxPhoneAuthSignatureAuthStatus'] = ApiClient.convertToType(data['enableIdfxPhoneAuthSignatureAuthStatus'], 'String');
+      }
+      if (data.hasOwnProperty('enableIdfxPhoneAuthSignatureAuthStatusMetadata')) {
+        obj['enableIdfxPhoneAuthSignatureAuthStatusMetadata'] = SettingsMetadata.constructFromObject(data['enableIdfxPhoneAuthSignatureAuthStatusMetadata']);
       }
       if (data.hasOwnProperty('enableInBrowserEditor')) {
         obj['enableInBrowserEditor'] = ApiClient.convertToType(data['enableInBrowserEditor'], 'String');
@@ -1303,6 +1324,12 @@
       if (data.hasOwnProperty('enforceTemplateNameUniquenessMetadata')) {
         obj['enforceTemplateNameUniquenessMetadata'] = SettingsMetadata.constructFromObject(data['enforceTemplateNameUniquenessMetadata']);
       }
+      if (data.hasOwnProperty('enforceTlsEmails')) {
+        obj['enforceTlsEmails'] = ApiClient.convertToType(data['enforceTlsEmails'], 'String');
+      }
+      if (data.hasOwnProperty('enforceTlsEmailsMetadata')) {
+        obj['enforceTlsEmailsMetadata'] = SettingsMetadata.constructFromObject(data['enforceTlsEmailsMetadata']);
+      }
       if (data.hasOwnProperty('envelopeIntegrationAllowed')) {
         obj['envelopeIntegrationAllowed'] = ApiClient.convertToType(data['envelopeIntegrationAllowed'], 'String');
       }
@@ -1315,17 +1342,17 @@
       if (data.hasOwnProperty('envelopeIntegrationEnabledMetadata')) {
         obj['envelopeIntegrationEnabledMetadata'] = SettingsMetadata.constructFromObject(data['envelopeIntegrationEnabledMetadata']);
       }
-      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMB')) {
-        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMB'] = ApiClient.convertToType(data['EnvelopeLimitsTotalDocumentSizeAllowedInMB'], 'String');
+      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMB')) {
+        obj['envelopeLimitsTotalDocumentSizeAllowedInMB'] = ApiClient.convertToType(data['envelopeLimitsTotalDocumentSizeAllowedInMB'], 'String');
       }
-      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled')) {
-        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = ApiClient.convertToType(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'], 'String');
+      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMBEnabled')) {
+        obj['envelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = ApiClient.convertToType(data['envelopeLimitsTotalDocumentSizeAllowedInMBEnabled'], 'String');
       }
-      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata')) {
-        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = SettingsMetadata.constructFromObject(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata']);
+      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata')) {
+        obj['envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = SettingsMetadata.constructFromObject(data['envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata']);
       }
-      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata')) {
-        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = SettingsMetadata.constructFromObject(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata']);
+      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMBMetadata')) {
+        obj['envelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = SettingsMetadata.constructFromObject(data['envelopeLimitsTotalDocumentSizeAllowedInMBMetadata']);
       }
       if (data.hasOwnProperty('envelopeSearchMode')) {
         obj['envelopeSearchMode'] = ApiClient.convertToType(data['envelopeSearchMode'], 'String');
@@ -1383,6 +1410,12 @@
       }
       if (data.hasOwnProperty('guidedFormsHtmlAllowedMetadata')) {
         obj['guidedFormsHtmlAllowedMetadata'] = SettingsMetadata.constructFromObject(data['guidedFormsHtmlAllowedMetadata']);
+      }
+      if (data.hasOwnProperty('guidedFormsHtmlConversionPolicy')) {
+        obj['guidedFormsHtmlConversionPolicy'] = ApiClient.convertToType(data['guidedFormsHtmlConversionPolicy'], 'String');
+      }
+      if (data.hasOwnProperty('guidedFormsHtmlConversionPolicyMetadata')) {
+        obj['guidedFormsHtmlConversionPolicyMetadata'] = SettingsMetadata.constructFromObject(data['guidedFormsHtmlConversionPolicyMetadata']);
       }
       if (data.hasOwnProperty('hasRecipientConnectClaimedDomain')) {
         obj['hasRecipientConnectClaimedDomain'] = ApiClient.convertToType(data['hasRecipientConnectClaimedDomain'], 'String');
@@ -1608,6 +1641,9 @@
       }
       if (data.hasOwnProperty('rsaVeridUserId')) {
         obj['rsaVeridUserId'] = ApiClient.convertToType(data['rsaVeridUserId'], 'String');
+      }
+      if (data.hasOwnProperty('sbsTransactionLevel')) {
+        obj['sbsTransactionLevel'] = ApiClient.convertToType(data['sbsTransactionLevel'], 'String');
       }
       if (data.hasOwnProperty('selfSignedRecipientEmailDocument')) {
         obj['selfSignedRecipientEmailDocument'] = ApiClient.convertToType(data['selfSignedRecipientEmailDocument'], 'String');
@@ -2993,6 +3029,15 @@
   exports.prototype['allowThirdPartyElectronicNotaryMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowTransactionsWorkspace
+   */
+  exports.prototype['allowTransactionsWorkspace'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowTransactionsWorkspaceMetadata
+   */
+  exports.prototype['allowTransactionsWorkspaceMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowUsersToAccessDirectory
    */
   exports.prototype['allowUsersToAccessDirectory'] = undefined;
@@ -3020,6 +3065,15 @@
    * @member {module:model/SettingsMetadata} allowWebFormsMetadata
    */
   exports.prototype['allowWebFormsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowWhatsAppDelivery
+   */
+  exports.prototype['allowWhatsAppDelivery'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} allowWhatsAppDeliveryMetadata
+   */
+  exports.prototype['allowWhatsAppDeliveryMetadata'] = undefined;
   /**
    * 
    * @member {String} anchorPopulationScope
@@ -3634,6 +3688,10 @@
    */
   exports.prototype['enableDSProMetadata'] = undefined;
   /**
+   * @member {module:model/SettingsMetadata} enableEnforceTlsEmailsSettingMetadata
+   */
+  exports.prototype['enableEnforceTlsEmailsSettingMetadata'] = undefined;
+  /**
    * 
    * @member {String} enableEnvelopeStampingByAccountAdmin
    */
@@ -3701,6 +3759,15 @@
    * @member {module:model/SettingsMetadata} enableIDFxPhoneAuthenticationMetadata
    */
   exports.prototype['enableIDFxPhoneAuthenticationMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableIdfxPhoneAuthSignatureAuthStatus
+   */
+  exports.prototype['enableIdfxPhoneAuthSignatureAuthStatus'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enableIdfxPhoneAuthSignatureAuthStatusMetadata
+   */
+  exports.prototype['enableIdfxPhoneAuthSignatureAuthStatusMetadata'] = undefined;
   /**
    * 
    * @member {String} enableInBrowserEditor
@@ -4090,6 +4157,15 @@
   exports.prototype['enforceTemplateNameUniquenessMetadata'] = undefined;
   /**
    * 
+   * @member {String} enforceTlsEmails
+   */
+  exports.prototype['enforceTlsEmails'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} enforceTlsEmailsMetadata
+   */
+  exports.prototype['enforceTlsEmailsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} envelopeIntegrationAllowed
    */
   exports.prototype['envelopeIntegrationAllowed'] = undefined;
@@ -4110,22 +4186,22 @@
   exports.prototype['envelopeIntegrationEnabledMetadata'] = undefined;
   /**
    * 
-   * @member {String} EnvelopeLimitsTotalDocumentSizeAllowedInMB
+   * @member {String} envelopeLimitsTotalDocumentSizeAllowedInMB
    */
-  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMB'] = undefined;
+  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMB'] = undefined;
   /**
    * 
-   * @member {String} EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled
+   * @member {String} envelopeLimitsTotalDocumentSizeAllowedInMBEnabled
    */
-  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = undefined;
+  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = undefined;
   /**
-   * @member {module:model/SettingsMetadata} EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata
+   * @member {module:model/SettingsMetadata} envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata
    */
-  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = undefined;
+  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = undefined;
   /**
-   * @member {module:model/SettingsMetadata} EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata
+   * @member {module:model/SettingsMetadata} envelopeLimitsTotalDocumentSizeAllowedInMBMetadata
    */
-  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = undefined;
+  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = undefined;
   /**
    * 
    * @member {String} envelopeSearchMode
@@ -4220,6 +4296,15 @@
    * @member {module:model/SettingsMetadata} guidedFormsHtmlAllowedMetadata
    */
   exports.prototype['guidedFormsHtmlAllowedMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} guidedFormsHtmlConversionPolicy
+   */
+  exports.prototype['guidedFormsHtmlConversionPolicy'] = undefined;
+  /**
+   * @member {module:model/SettingsMetadata} guidedFormsHtmlConversionPolicyMetadata
+   */
+  exports.prototype['guidedFormsHtmlConversionPolicyMetadata'] = undefined;
   /**
    * 
    * @member {String} hasRecipientConnectClaimedDomain
@@ -4590,6 +4675,11 @@
    * @member {String} rsaVeridUserId
    */
   exports.prototype['rsaVeridUserId'] = undefined;
+  /**
+   * 
+   * @member {String} sbsTransactionLevel
+   */
+  exports.prototype['sbsTransactionLevel'] = undefined;
   /**
    * 
    * @member {String} selfSignedRecipientEmailDocument

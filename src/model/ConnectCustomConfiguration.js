@@ -127,6 +127,9 @@
       if (data.hasOwnProperty('includeTimeZoneInformation')) {
         obj['includeTimeZoneInformation'] = ApiClient.convertToType(data['includeTimeZoneInformation'], 'String');
       }
+      if (data.hasOwnProperty('integratorManaged')) {
+        obj['integratorManaged'] = ApiClient.convertToType(data['integratorManaged'], 'String');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -305,6 +308,11 @@
    * @member {String} includeTimeZoneInformation
    */
   exports.prototype['includeTimeZoneInformation'] = undefined;
+  /**
+   * 
+   * @member {String} integratorManaged
+   */
+  exports.prototype['integratorManaged'] = undefined;
   /**
    * The name of the Connect configuration. The name helps identify the configuration in the list.
    * @member {String} name

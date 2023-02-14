@@ -94,6 +94,9 @@
       if (data.hasOwnProperty('includeTimeZone')) {
         obj['includeTimeZone'] = ApiClient.convertToType(data['includeTimeZone'], 'String');
       }
+      if (data.hasOwnProperty('integratorManaged')) {
+        obj['integratorManaged'] = ApiClient.convertToType(data['integratorManaged'], 'String');
+      }
       if (data.hasOwnProperty('loggingEnabled')) {
         obj['loggingEnabled'] = ApiClient.convertToType(data['loggingEnabled'], 'String');
       }
@@ -184,6 +187,11 @@
    * @member {String} includeTimeZone
    */
   exports.prototype['includeTimeZone'] = undefined;
+  /**
+   * 
+   * @member {String} integratorManaged
+   */
+  exports.prototype['integratorManaged'] = undefined;
   /**
    * When set to **true**, logging is turned on for envelope events on the Web Console Connect page. 
    * @member {String} loggingEnabled

@@ -67,6 +67,9 @@
       if (data.hasOwnProperty('defaultRecipient')) {
         obj['defaultRecipient'] = ApiClient.convertToType(data['defaultRecipient'], 'String');
       }
+      if (data.hasOwnProperty('deliveryMethod')) {
+        obj['deliveryMethod'] = ApiClient.convertToType(data['deliveryMethod'], 'String');
+      }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
@@ -124,6 +127,11 @@
    * @member {String} defaultRecipient
    */
   exports.prototype['defaultRecipient'] = undefined;
+  /**
+   * Reserved: For DocuSign use only.
+   * @member {String} deliveryMethod
+   */
+  exports.prototype['deliveryMethod'] = undefined;
   /**
    * Specifies the email associated with a role name.
    * @member {String} email

@@ -210,6 +210,9 @@
       if (data.hasOwnProperty('validationPattern')) {
         obj['validationPattern'] = ApiClient.convertToType(data['validationPattern'], 'String');
       }
+      if (data.hasOwnProperty('validationType')) {
+        obj['validationType'] = ApiClient.convertToType(data['validationType'], 'String');
+      }
       if (data.hasOwnProperty('width')) {
         obj['width'] = ApiClient.convertToType(data['width'], 'String');
       }
@@ -477,6 +480,11 @@
    * @member {String} validationPattern
    */
   exports.prototype['validationPattern'] = undefined;
+  /**
+   * 
+   * @member {String} validationType
+   */
+  exports.prototype['validationType'] = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width
