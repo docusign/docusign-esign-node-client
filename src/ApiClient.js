@@ -65,15 +65,10 @@
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
   
-  const generateRequest = function (saRequest, shouldProxy = false) {
+  const configureProxy = function (saRequest) {
     const PROXY_URL = process.env.HTTP_PROXY;
-    // const CA_CERT = process.env.CA_CERT;
-    // if (caCert && CA_CERT) {
-    //   let ca = fs.readFileSync(CA_CERT); // should be the 
-    //   saRequest.ca(ca);
-    // }
 
-    if (shouldProxy && PROXY_URL) {
+    if (PROXY_URL) {
       proxy(saRequest, PROXY_URL)
     } 
     
@@ -83,7 +78,7 @@
   var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
 
     var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
-    generateRequest(request, true)
+    configureProxy(request)
       .timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
@@ -516,10 +511,9 @@
     var _this = this;
     var url = this.buildUrl(path, pathParams);
     
-    debugger;
     var saRequest = superagent(httpMethod, url);
 
-    var request = generateRequest(saRequest, true, true);
+    var request = configureProxy(saRequest);
     var _formParams = this.normalizeParams(formParams);
     var body = httpMethod.toUpperCase() === 'GET' && !bodyParam ? undefined : bodyParam || {};
 
@@ -783,7 +777,7 @@
       },
       OAuthToken = require('./OAuth').OAuthToken,
       request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
-      generateRequest(request, true)
+      configureProxy(request)
         .send(postData)
         .set(headers)
         .type("application/x-www-form-urlencoded");
@@ -825,7 +819,7 @@
     }
 
     var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo")
-    generateRequest(request, true).set(headers);
+    configureProxy(request).set(headers);
     var UserInfo = require('./OAuth').UserInfo;
 
 
@@ -906,6 +900,7 @@
     var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
 
     superagent('post', 'https://' + this.getOAuthBasePath() + '/oauth/token')
+      configureProxy(request)
       .timeout(this.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
