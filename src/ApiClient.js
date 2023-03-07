@@ -8,13 +8,13 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['superagent'], factory);
+    define(['superagent', 'superagent-proxy'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superagent'));
+    module.exports = factory(require('superagent'), require('superagent-proxy'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
@@ -22,9 +22,10 @@
     }
     root.Docusign.ApiClient = factory(root.superagent, opts);
   }
-}(this, function(superagent, opts) {
+}(this, function(superagent, proxy, opts) {
   'use strict';
-
+  const proxyUrl = process.env.HTTP_PROXY;
+  
   var SCOPE_SIGNATURE = "signature";
   var SCOPE_EXTENDED = "extended";
   var SCOPE_IMPERSONATION = "impersonation";
@@ -64,9 +65,19 @@
     }
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
+  
+  const generateRequest = function (saRequest, proxyUrl) {
+    if (proxyUrl) {
+      proxy(saRequest, proxyUrl)
+    } 
+    
+    return saRequest;
+  }
 
   var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
+
     var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
+    generateRequest(request, proxyUrl)
       .timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
@@ -489,13 +500,23 @@
    * @param {module:ApiClient~callApiCallback} callback The callback function. If this is left undefined, this method will return a promise instead.
    * @returns {Object} The SuperAgent request object if a callback is specified, else {Promise} A {@link https://www.promisejs.org/|Promise} object.
    */
+  const fs = require('fs');
+
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+      
+    queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
       returnType, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
-    var request = superagent(httpMethod, url);
+    
+    debugger;
+    var saRequest = superagent(httpMethod, url);
+
+    let ca = fs.readFileSync('./sftrust.crt'); // should be the 
+
+    saRequest.ca(ca);
+    var request = generateRequest(saRequest, proxyUrl);
     var _formParams = this.normalizeParams(formParams);
     var body = httpMethod.toUpperCase() === 'GET' && !bodyParam ? undefined : bodyParam || {};
 
@@ -759,6 +780,7 @@
       },
       OAuthToken = require('./OAuth').OAuthToken,
       request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
+      generateRequest(request, proxyUrl)
         .send(postData)
         .set(headers)
         .type("application/x-www-form-urlencoded");
@@ -799,7 +821,8 @@
       "Pragma": "no-cache"
     }
 
-    var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
+    var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo")
+    generateRequest(request, proxyUrl).set(headers);
     var UserInfo = require('./OAuth').UserInfo;
 
 
