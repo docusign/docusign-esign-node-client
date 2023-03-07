@@ -55,7 +55,8 @@
     "jsonwebtoken": "^9.0.0",
     "passport-oauth2": "^1.6.1",
     "safe-buffer": "^5.1.2",
-    "superagent": "3.8.2"
+    "superagent": "3.8.2",
+    "superagent-proxy": "^3.0.0"
   },
   "devDependencies": {
     "docdash": "0.4.0",
