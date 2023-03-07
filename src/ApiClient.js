@@ -24,7 +24,6 @@
   }
 }(this, function(superagent, proxy, opts) {
   'use strict';
-  const proxyUrl = process.env.HTTP_PROXY;
   
   var SCOPE_SIGNATURE = "signature";
   var SCOPE_EXTENDED = "extended";
@@ -66,9 +65,16 @@
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
   
-  const generateRequest = function (saRequest, proxyUrl) {
-    if (proxyUrl) {
-      proxy(saRequest, proxyUrl)
+  const generateRequest = function (saRequest, shouldProxy = false, caCert = false) {
+    const PROXY_URL = process.env.HTTP_PROXY;
+    const CA_CERT = process.env.CA_CERT;
+    if (caCert && CA_CERT) {
+      let ca = fs.readFileSync(CA_CERT); // should be the 
+      saRequest.ca(ca);
+    }
+
+    if (shouldProxy && PROXY_URL) {
+      proxy(saRequest, PROXY_URL)
     } 
     
     return saRequest;
@@ -77,7 +83,7 @@
   var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
 
     var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
-    generateRequest(request, proxyUrl)
+    generateRequest(request, true)
       .timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
@@ -513,10 +519,7 @@
     debugger;
     var saRequest = superagent(httpMethod, url);
 
-    let ca = fs.readFileSync('./sftrust.crt'); // should be the 
-
-    saRequest.ca(ca);
-    var request = generateRequest(saRequest, proxyUrl);
+    var request = generateRequest(saRequest, true, true);
     var _formParams = this.normalizeParams(formParams);
     var body = httpMethod.toUpperCase() === 'GET' && !bodyParam ? undefined : bodyParam || {};
 
@@ -780,7 +783,7 @@
       },
       OAuthToken = require('./OAuth').OAuthToken,
       request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
-      generateRequest(request, proxyUrl)
+      generateRequest(request, true)
         .send(postData)
         .set(headers)
         .type("application/x-www-form-urlencoded");
@@ -822,7 +825,7 @@
     }
 
     var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo")
-    generateRequest(request, proxyUrl).set(headers);
+    generateRequest(request, true).set(headers);
     var UserInfo = require('./OAuth').UserInfo;
 
 
