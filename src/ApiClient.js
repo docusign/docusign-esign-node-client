@@ -65,13 +65,13 @@
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
   
-  const generateRequest = function (saRequest, shouldProxy = false, caCert = false) {
+  const generateRequest = function (saRequest, shouldProxy = false) {
     const PROXY_URL = process.env.HTTP_PROXY;
-    const CA_CERT = process.env.CA_CERT;
-    if (caCert && CA_CERT) {
-      let ca = fs.readFileSync(CA_CERT); // should be the 
-      saRequest.ca(ca);
-    }
+    // const CA_CERT = process.env.CA_CERT;
+    // if (caCert && CA_CERT) {
+    //   let ca = fs.readFileSync(CA_CERT); // should be the 
+    //   saRequest.ca(ca);
+    // }
 
     if (shouldProxy && PROXY_URL) {
       proxy(saRequest, PROXY_URL)
