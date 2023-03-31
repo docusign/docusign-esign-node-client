@@ -562,6 +562,7 @@
    */
   exports.prototype['enableKeyTermsSuggestionsByDocumentType'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableKeyTermsSuggestionsByDocumentTypeMetadata
    */
   exports.prototype['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = undefined;
@@ -686,6 +687,7 @@
    */
   exports.prototype['webForms'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} webFormsMetadata
    */
   exports.prototype['webFormsMetadata'] = undefined;

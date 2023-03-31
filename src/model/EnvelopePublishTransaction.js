@@ -153,6 +153,7 @@
    */
   exports.prototype['submissionDate'] = undefined;
   /**
+   * 
    * @member {module:model/UserInfo} submittedByUserInfo
    */
   exports.prototype['submittedByUserInfo'] = undefined;

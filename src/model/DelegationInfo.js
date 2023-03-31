@@ -54,17 +54,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      if (data.hasOwnProperty('Email')) {
+        obj['Email'] = ApiClient.convertToType(data['Email'], 'String');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('Name')) {
+        obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
       }
-      if (data.hasOwnProperty('userAuthorizationId')) {
-        obj['userAuthorizationId'] = ApiClient.convertToType(data['userAuthorizationId'], 'String');
+      if (data.hasOwnProperty('UserAuthorizationId')) {
+        obj['UserAuthorizationId'] = ApiClient.convertToType(data['UserAuthorizationId'], 'String');
       }
-      if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      if (data.hasOwnProperty('UserId')) {
+        obj['UserId'] = ApiClient.convertToType(data['UserId'], 'String');
       }
     }
     return obj;
@@ -72,24 +72,24 @@
 
   /**
    * 
-   * @member {String} email
+   * @member {String} Email
    */
-  exports.prototype['email'] = undefined;
+  exports.prototype['Email'] = undefined;
   /**
    * 
-   * @member {String} name
+   * @member {String} Name
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['Name'] = undefined;
   /**
    * 
-   * @member {String} userAuthorizationId
+   * @member {String} UserAuthorizationId
    */
-  exports.prototype['userAuthorizationId'] = undefined;
+  exports.prototype['UserAuthorizationId'] = undefined;
   /**
    * 
-   * @member {String} userId
+   * @member {String} UserId
    */
-  exports.prototype['userId'] = undefined;
+  exports.prototype['UserId'] = undefined;
 
 
 

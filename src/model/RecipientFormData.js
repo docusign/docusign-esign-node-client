@@ -54,11 +54,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('declinedTime')) {
-        obj['declinedTime'] = ApiClient.convertToType(data['declinedTime'], 'String');
+      if (data.hasOwnProperty('DeclinedTime')) {
+        obj['DeclinedTime'] = ApiClient.convertToType(data['DeclinedTime'], 'String');
       }
-      if (data.hasOwnProperty('deliveredTime')) {
-        obj['deliveredTime'] = ApiClient.convertToType(data['deliveredTime'], 'String');
+      if (data.hasOwnProperty('DeliveredTime')) {
+        obj['DeliveredTime'] = ApiClient.convertToType(data['DeliveredTime'], 'String');
       }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
@@ -72,11 +72,11 @@
       if (data.hasOwnProperty('recipientId')) {
         obj['recipientId'] = ApiClient.convertToType(data['recipientId'], 'String');
       }
-      if (data.hasOwnProperty('sentTime')) {
-        obj['sentTime'] = ApiClient.convertToType(data['sentTime'], 'String');
+      if (data.hasOwnProperty('SentTime')) {
+        obj['SentTime'] = ApiClient.convertToType(data['SentTime'], 'String');
       }
-      if (data.hasOwnProperty('signedTime')) {
-        obj['signedTime'] = ApiClient.convertToType(data['signedTime'], 'String');
+      if (data.hasOwnProperty('SignedTime')) {
+        obj['SignedTime'] = ApiClient.convertToType(data['SignedTime'], 'String');
       }
     }
     return obj;
@@ -84,14 +84,14 @@
 
   /**
    * 
-   * @member {String} declinedTime
+   * @member {String} DeclinedTime
    */
-  exports.prototype['declinedTime'] = undefined;
+  exports.prototype['DeclinedTime'] = undefined;
   /**
    * 
-   * @member {String} deliveredTime
+   * @member {String} DeliveredTime
    */
-  exports.prototype['deliveredTime'] = undefined;
+  exports.prototype['DeliveredTime'] = undefined;
   /**
    * 
    * @member {String} email
@@ -114,14 +114,14 @@
   exports.prototype['recipientId'] = undefined;
   /**
    * 
-   * @member {String} sentTime
+   * @member {String} SentTime
    */
-  exports.prototype['sentTime'] = undefined;
+  exports.prototype['SentTime'] = undefined;
   /**
    * 
-   * @member {String} signedTime
+   * @member {String} SignedTime
    */
-  exports.prototype['signedTime'] = undefined;
+  exports.prototype['SignedTime'] = undefined;
 
 
 

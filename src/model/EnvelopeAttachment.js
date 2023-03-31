@@ -92,7 +92,7 @@
    */
   exports.prototype['attachmentType'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

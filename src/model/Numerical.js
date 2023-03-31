@@ -249,6 +249,9 @@
       if (data.hasOwnProperty('numericalValue')) {
         obj['numericalValue'] = ApiClient.convertToType(data['numericalValue'], 'String');
       }
+      if (data.hasOwnProperty('originalNumericalValue')) {
+        obj['originalNumericalValue'] = ApiClient.convertToType(data['originalNumericalValue'], 'String');
+      }
       if (data.hasOwnProperty('originalValue')) {
         obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
       }
@@ -412,6 +415,7 @@
    */
   exports.prototype['anchorAllowWhiteSpaceInCharacters'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorAllowWhiteSpaceInCharactersMetadata
    */
   exports.prototype['anchorAllowWhiteSpaceInCharactersMetadata'] = undefined;
@@ -421,6 +425,7 @@
    */
   exports.prototype['anchorCaseSensitive'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorCaseSensitiveMetadata
    */
   exports.prototype['anchorCaseSensitiveMetadata'] = undefined;
@@ -430,6 +435,7 @@
    */
   exports.prototype['anchorHorizontalAlignment'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorHorizontalAlignmentMetadata
    */
   exports.prototype['anchorHorizontalAlignmentMetadata'] = undefined;
@@ -439,6 +445,7 @@
    */
   exports.prototype['anchorIgnoreIfNotPresent'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorIgnoreIfNotPresentMetadata
    */
   exports.prototype['anchorIgnoreIfNotPresentMetadata'] = undefined;
@@ -448,6 +455,7 @@
    */
   exports.prototype['anchorMatchWholeWord'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorMatchWholeWordMetadata
    */
   exports.prototype['anchorMatchWholeWordMetadata'] = undefined;
@@ -457,6 +465,7 @@
    */
   exports.prototype['anchorString'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorStringMetadata
    */
   exports.prototype['anchorStringMetadata'] = undefined;
@@ -466,6 +475,7 @@
    */
   exports.prototype['anchorTabProcessorVersion'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorTabProcessorVersionMetadata
    */
   exports.prototype['anchorTabProcessorVersionMetadata'] = undefined;
@@ -475,6 +485,7 @@
    */
   exports.prototype['anchorUnits'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorUnitsMetadata
    */
   exports.prototype['anchorUnitsMetadata'] = undefined;
@@ -484,6 +495,7 @@
    */
   exports.prototype['anchorXOffset'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorXOffsetMetadata
    */
   exports.prototype['anchorXOffsetMetadata'] = undefined;
@@ -493,6 +505,7 @@
    */
   exports.prototype['anchorYOffset'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} anchorYOffsetMetadata
    */
   exports.prototype['anchorYOffsetMetadata'] = undefined;
@@ -502,6 +515,7 @@
    */
   exports.prototype['bold'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} boldMetadata
    */
   exports.prototype['boldMetadata'] = undefined;
@@ -511,6 +525,7 @@
    */
   exports.prototype['caption'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} captionMetadata
    */
   exports.prototype['captionMetadata'] = undefined;
@@ -520,6 +535,7 @@
    */
   exports.prototype['concealValueOnDocument'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} concealValueOnDocumentMetadata
    */
   exports.prototype['concealValueOnDocumentMetadata'] = undefined;
@@ -529,6 +545,7 @@
    */
   exports.prototype['conditionalParentLabel'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} conditionalParentLabelMetadata
    */
   exports.prototype['conditionalParentLabelMetadata'] = undefined;
@@ -538,6 +555,7 @@
    */
   exports.prototype['conditionalParentValue'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} conditionalParentValueMetadata
    */
   exports.prototype['conditionalParentValueMetadata'] = undefined;
@@ -547,6 +565,7 @@
    */
   exports.prototype['customTabId'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} customTabIdMetadata
    */
   exports.prototype['customTabIdMetadata'] = undefined;
@@ -556,6 +575,7 @@
    */
   exports.prototype['disableAutoSize'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} disableAutoSizeMetadata
    */
   exports.prototype['disableAutoSizeMetadata'] = undefined;
@@ -565,10 +585,12 @@
    */
   exports.prototype['documentId'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} documentIdMetadata
    */
   exports.prototype['documentIdMetadata'] = undefined;
   /**
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -583,10 +605,12 @@
    */
   exports.prototype['fontColor'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} fontColorMetadata
    */
   exports.prototype['fontColorMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} fontMetadata
    */
   exports.prototype['fontMetadata'] = undefined;
@@ -596,6 +620,7 @@
    */
   exports.prototype['fontSize'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} fontSizeMetadata
    */
   exports.prototype['fontSizeMetadata'] = undefined;
@@ -605,6 +630,7 @@
    */
   exports.prototype['formOrder'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} formOrderMetadata
    */
   exports.prototype['formOrderMetadata'] = undefined;
@@ -614,6 +640,7 @@
    */
   exports.prototype['formPageLabel'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} formPageLabelMetadata
    */
   exports.prototype['formPageLabelMetadata'] = undefined;
@@ -623,6 +650,7 @@
    */
   exports.prototype['formPageNumber'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} formPageNumberMetadata
    */
   exports.prototype['formPageNumberMetadata'] = undefined;
@@ -632,6 +660,7 @@
    */
   exports.prototype['height'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} heightMetadata
    */
   exports.prototype['heightMetadata'] = undefined;
@@ -641,10 +670,12 @@
    */
   exports.prototype['italic'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} italicMetadata
    */
   exports.prototype['italicMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/LocalePolicyTab} localePolicy
    */
   exports.prototype['localePolicy'] = undefined;
@@ -654,6 +685,7 @@
    */
   exports.prototype['locked'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} lockedMetadata
    */
   exports.prototype['lockedMetadata'] = undefined;
@@ -663,6 +695,7 @@
    */
   exports.prototype['maxLength'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} maxLengthMetadata
    */
   exports.prototype['maxLengthMetadata'] = undefined;
@@ -672,6 +705,7 @@
    */
   exports.prototype['maxNumericalValue'] = undefined;
   /**
+   * 
    * @member {module:model/MergeField} mergeField
    */
   exports.prototype['mergeField'] = undefined;
@@ -691,6 +725,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} nameMetadata
    */
   exports.prototype['nameMetadata'] = undefined;
@@ -700,11 +735,17 @@
    */
   exports.prototype['numericalValue'] = undefined;
   /**
+   * 
+   * @member {String} originalNumericalValue
+   */
+  exports.prototype['originalNumericalValue'] = undefined;
+  /**
    * The initial value of the tab when it was sent to the recipient. 
    * @member {String} originalValue
    */
   exports.prototype['originalValue'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} originalValueMetadata
    */
   exports.prototype['originalValueMetadata'] = undefined;
@@ -714,6 +755,7 @@
    */
   exports.prototype['pageNumber'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} pageNumberMetadata
    */
   exports.prototype['pageNumberMetadata'] = undefined;
@@ -728,10 +770,12 @@
    */
   exports.prototype['recipientIdGuid'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} recipientIdGuidMetadata
    */
   exports.prototype['recipientIdGuidMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} recipientIdMetadata
    */
   exports.prototype['recipientIdMetadata'] = undefined;
@@ -741,6 +785,7 @@
    */
   exports.prototype['requireAll'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} requireAllMetadata
    */
   exports.prototype['requireAllMetadata'] = undefined;
@@ -750,6 +795,7 @@
    */
   exports.prototype['required'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} requiredMetadata
    */
   exports.prototype['requiredMetadata'] = undefined;
@@ -759,6 +805,7 @@
    */
   exports.prototype['requireInitialOnSharedChange'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} requireInitialOnSharedChangeMetadata
    */
   exports.prototype['requireInitialOnSharedChangeMetadata'] = undefined;
@@ -768,6 +815,7 @@
    */
   exports.prototype['senderRequired'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} senderRequiredMetadata
    */
   exports.prototype['senderRequiredMetadata'] = undefined;
@@ -777,6 +825,7 @@
    */
   exports.prototype['shared'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} sharedMetadata
    */
   exports.prototype['sharedMetadata'] = undefined;
@@ -786,10 +835,12 @@
    */
   exports.prototype['shareToRecipients'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} shareToRecipientsMetadata
    */
   exports.prototype['shareToRecipientsMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/SmartContractInformation} smartContractInformation
    */
   exports.prototype['smartContractInformation'] = undefined;
@@ -804,6 +855,7 @@
    */
   exports.prototype['status'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} statusMetadata
    */
   exports.prototype['statusMetadata'] = undefined;
@@ -813,6 +865,7 @@
    */
   exports.prototype['tabGroupLabels'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} tabGroupLabelsMetadata
    */
   exports.prototype['tabGroupLabelsMetadata'] = undefined;
@@ -822,6 +875,7 @@
    */
   exports.prototype['tabId'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} tabIdMetadata
    */
   exports.prototype['tabIdMetadata'] = undefined;
@@ -831,6 +885,7 @@
    */
   exports.prototype['tabLabel'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} tabLabelMetadata
    */
   exports.prototype['tabLabelMetadata'] = undefined;
@@ -840,6 +895,7 @@
    */
   exports.prototype['tabOrder'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} tabOrderMetadata
    */
   exports.prototype['tabOrderMetadata'] = undefined;
@@ -849,6 +905,7 @@
    */
   exports.prototype['tabType'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} tabTypeMetadata
    */
   exports.prototype['tabTypeMetadata'] = undefined;
@@ -858,6 +915,7 @@
    */
   exports.prototype['templateLocked'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} templateLockedMetadata
    */
   exports.prototype['templateLockedMetadata'] = undefined;
@@ -867,6 +925,7 @@
    */
   exports.prototype['templateRequired'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} templateRequiredMetadata
    */
   exports.prototype['templateRequiredMetadata'] = undefined;
@@ -876,6 +935,7 @@
    */
   exports.prototype['tooltip'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} toolTipMetadata
    */
   exports.prototype['toolTipMetadata'] = undefined;
@@ -885,6 +945,7 @@
    */
   exports.prototype['underline'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} underlineMetadata
    */
   exports.prototype['underlineMetadata'] = undefined;
@@ -899,6 +960,7 @@
    */
   exports.prototype['value'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} valueMetadata
    */
   exports.prototype['valueMetadata'] = undefined;
@@ -908,6 +970,7 @@
    */
   exports.prototype['width'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} widthMetadata
    */
   exports.prototype['widthMetadata'] = undefined;
@@ -917,6 +980,7 @@
    */
   exports.prototype['xPosition'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} xPositionMetadata
    */
   exports.prototype['xPositionMetadata'] = undefined;
@@ -926,6 +990,7 @@
    */
   exports.prototype['yPosition'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} yPositionMetadata
    */
   exports.prototype['yPositionMetadata'] = undefined;

@@ -440,7 +440,7 @@
    */
   exports.prototype['createdDateTime'] = undefined;
   /**
-   * An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.   **Note:** Any custom fields you set with this API method will _replace_ custom fields you have defined with [Envelope Custom Fields in Admin](https://support.docusign.com/en/guides/ndse-admin-guide-document-labels), whether the **Show field to envelope creators** or **Make fields required for envelopes** options are checked or not. 
+   * An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
    * @member {module:model/CustomFields} customFields
    */
   exports.prototype['customFields'] = undefined;
@@ -685,7 +685,7 @@
    */
   exports.prototype['purgeState'] = undefined;
   /**
-   * Specifies the envelope recipients.
+   * An array of powerform recipients.
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;

@@ -134,7 +134,7 @@
    */
   exports.prototype['emails'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -149,6 +149,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * 
    * @member {module:model/NotaryContactDetails} notaryContactDetails
    */
   exports.prototype['notaryContactDetails'] = undefined;

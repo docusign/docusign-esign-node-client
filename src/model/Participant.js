@@ -72,6 +72,9 @@
       if (data.hasOwnProperty('autoRespondedReason')) {
         obj['autoRespondedReason'] = ApiClient.convertToType(data['autoRespondedReason'], 'String');
       }
+      if (data.hasOwnProperty('bulkSendV2Recipient')) {
+        obj['bulkSendV2Recipient'] = ApiClient.convertToType(data['bulkSendV2Recipient'], 'String');
+      }
       if (data.hasOwnProperty('clientUserId')) {
         obj['clientUserId'] = ApiClient.convertToType(data['clientUserId'], 'String');
       }
@@ -286,6 +289,7 @@
    */
   exports.prototype['accessCode'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} accessCodeMetadata
    */
   exports.prototype['accessCodeMetadata'] = undefined;
@@ -309,6 +313,11 @@
    * @member {String} autoRespondedReason
    */
   exports.prototype['autoRespondedReason'] = undefined;
+  /**
+   * 
+   * @member {String} bulkSendV2Recipient
+   */
+  exports.prototype['bulkSendV2Recipient'] = undefined;
   /**
    * Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
    * @member {String} clientUserId
@@ -350,6 +359,7 @@
    */
   exports.prototype['deliveryMethod'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} deliveryMethodMetadata
    */
   exports.prototype['deliveryMethodMetadata'] = undefined;
@@ -374,10 +384,12 @@
    */
   exports.prototype['email'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} emailMetadata
    */
   exports.prototype['emailMetadata'] = undefined;
   /**
+   * A complex type that contains information sets the language of the recipient's email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and `EmailBlurb` property settings. 
    * @member {module:model/RecipientEmailNotification} emailNotification
    */
   exports.prototype['emailNotification'] = undefined;
@@ -392,6 +404,7 @@
    */
   exports.prototype['embeddedRecipientStartURL'] = undefined;
   /**
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -401,6 +414,7 @@
    */
   exports.prototype['faxNumber'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} faxNumberMetadata
    */
   exports.prototype['faxNumberMetadata'] = undefined;
@@ -410,6 +424,7 @@
    */
   exports.prototype['firstName'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} firstNameMetadata
    */
   exports.prototype['firstNameMetadata'] = undefined;
@@ -419,6 +434,7 @@
    */
   exports.prototype['fullName'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} fullNameMetadata
    */
   exports.prototype['fullNameMetadata'] = undefined;
@@ -428,14 +444,17 @@
    */
   exports.prototype['idCheckConfigurationName'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} idCheckConfigurationNameMetadata
    */
   exports.prototype['idCheckConfigurationNameMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/IdCheckInformationInput} idCheckInformationInput
    */
   exports.prototype['idCheckInformationInput'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientIdentityVerification} identityVerification
    */
   exports.prototype['identityVerification'] = undefined;
@@ -450,6 +469,7 @@
    */
   exports.prototype['lastName'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} lastNameMetadata
    */
   exports.prototype['lastNameMetadata'] = undefined;
@@ -469,6 +489,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} nameMetadata
    */
   exports.prototype['nameMetadata'] = undefined;
@@ -478,6 +499,7 @@
    */
   exports.prototype['note'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} noteMetadata
    */
   exports.prototype['noteMetadata'] = undefined;
@@ -492,10 +514,12 @@
    */
   exports.prototype['participateForGuid'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientPhoneAuthentication} phoneAuthentication
    */
   exports.prototype['phoneAuthentication'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientPhoneNumber} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
@@ -505,6 +529,7 @@
    */
   exports.prototype['recipientAttachments'] = undefined;
   /**
+   * 
    * @member {module:model/AuthenticationStatus} recipientAuthenticationStatus
    */
   exports.prototype['recipientAuthenticationStatus'] = undefined;
@@ -529,6 +554,7 @@
    */
   exports.prototype['recipientType'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} recipientTypeMetadata
    */
   exports.prototype['recipientTypeMetadata'] = undefined;
@@ -538,6 +564,7 @@
    */
   exports.prototype['requireIdLookup'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} requireIdLookupMetadata
    */
   exports.prototype['requireIdLookupMetadata'] = undefined;
@@ -552,6 +579,7 @@
    */
   exports.prototype['routingOrder'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} routingOrderMetadata
    */
   exports.prototype['routingOrderMetadata'] = undefined;
@@ -571,6 +599,7 @@
    */
   exports.prototype['signingGroupId'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} signingGroupIdMetadata
    */
   exports.prototype['signingGroupIdMetadata'] = undefined;
@@ -585,6 +614,7 @@
    */
   exports.prototype['signingGroupUsers'] = undefined;
   /**
+   * 
    * @member {module:model/RecipientSMSAuthentication} smsAuthentication
    */
   exports.prototype['smsAuthentication'] = undefined;
