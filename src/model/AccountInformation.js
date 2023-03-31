@@ -184,7 +184,7 @@
    */
   exports.prototype['accountName'] = undefined;
   /**
-   * The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
+   * The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden.
    * @member {module:model/AccountSettingsInformation} accountSettings
    */
   exports.prototype['accountSettings'] = undefined;
@@ -224,6 +224,7 @@
    */
   exports.prototype['billingProfile'] = undefined;
   /**
+   * 
    * @member {module:model/BrandsResponse} brands
    */
   exports.prototype['brands'] = undefined;

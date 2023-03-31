@@ -165,6 +165,7 @@
    */
   exports.prototype['clickwrapSchemaVersion'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} clickwrapSchemaVersionMetadata
    */
   exports.prototype['clickwrapSchemaVersionMetadata'] = undefined;
@@ -214,6 +215,7 @@
    */
   exports.prototype['enableLegacySendflowLink'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableLegacySendflowLinkMetadata
    */
   exports.prototype['enableLegacySendflowLinkMetadata'] = undefined;

@@ -118,7 +118,7 @@
    */
   exports.prototype['accountName'] = undefined;
   /**
-   * The list of account settings accountsettings that determine the features available for the account. Note that some features are determined by the plan used to create the account and cannot be overridden.  
+   * The list of account settings. These determine the features available for the account. Note that some features are determined by the plan used to create the account, and cannot be overridden.
    * @member {module:model/AccountSettingsInformation} accountSettings
    */
   exports.prototype['accountSettings'] = undefined;
@@ -193,7 +193,7 @@
    */
   exports.prototype['referralInformation'] = undefined;
   /**
-   * Contains properties that map a DocuSign user to a social account such as Facebook or Yahoo.
+   * Contains properties that map a DocuSign user to a social account (Facebook, Yahoo, etc.)
    * @member {module:model/SocialAccountInformation} socialAccountInformation
    */
   exports.prototype['socialAccountInformation'] = undefined;

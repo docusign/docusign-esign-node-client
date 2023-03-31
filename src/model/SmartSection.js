@@ -422,6 +422,7 @@
    */
   exports.prototype['caption'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} captionMetadata
    */
   exports.prototype['captionMetadata'] = undefined;
@@ -481,12 +482,12 @@
    */
   exports.prototype['endAnchor'] = undefined;
   /**
-   * The last index position in the result set. 
+   * The last position in the result set. 
    * @member {module:model/SmartSectionAnchorPosition} endPosition
    */
   exports.prototype['endPosition'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -626,7 +627,7 @@
    */
   exports.prototype['startAnchor'] = undefined;
   /**
-   * The starting index position of the current result set.
+   * Starting position of the current result set.
    * @member {module:model/SmartSectionAnchorPosition} startPosition
    */
   exports.prototype['startPosition'] = undefined;

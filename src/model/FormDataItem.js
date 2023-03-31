@@ -66,6 +66,9 @@
       if (data.hasOwnProperty('numericalValue')) {
         obj['numericalValue'] = ApiClient.convertToType(data['numericalValue'], 'String');
       }
+      if (data.hasOwnProperty('originalNumericalValue')) {
+        obj['originalNumericalValue'] = ApiClient.convertToType(data['originalNumericalValue'], 'String');
+      }
       if (data.hasOwnProperty('originalValue')) {
         obj['originalValue'] = ApiClient.convertToType(data['originalValue'], 'String');
       }
@@ -77,7 +80,7 @@
   }
 
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -96,6 +99,11 @@
    * @member {String} numericalValue
    */
   exports.prototype['numericalValue'] = undefined;
+  /**
+   * 
+   * @member {String} originalNumericalValue
+   */
+  exports.prototype['originalNumericalValue'] = undefined;
   /**
    * The initial value of the tab when it was sent to the recipient. 
    * @member {String} originalValue

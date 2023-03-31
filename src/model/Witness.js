@@ -85,6 +85,9 @@
       if (data.hasOwnProperty('bulkRecipientsUri')) {
         obj['bulkRecipientsUri'] = ApiClient.convertToType(data['bulkRecipientsUri'], 'String');
       }
+      if (data.hasOwnProperty('bulkSendV2Recipient')) {
+        obj['bulkSendV2Recipient'] = ApiClient.convertToType(data['bulkSendV2Recipient'], 'String');
+      }
       if (data.hasOwnProperty('canSignOffline')) {
         obj['canSignOffline'] = ApiClient.convertToType(data['canSignOffline'], 'String');
       }
@@ -407,6 +410,11 @@
    */
   exports.prototype['bulkRecipientsUri'] = undefined;
   /**
+   * 
+   * @member {String} bulkSendV2Recipient
+   */
+  exports.prototype['bulkSendV2Recipient'] = undefined;
+  /**
    * When set to **true**, specifies that the signer can perform the signing ceremony offline.
    * @member {String} canSignOffline
    */
@@ -502,7 +510,7 @@
    */
   exports.prototype['emailMetadata'] = undefined;
   /**
-   * An optional complex type that sets a specific email subject and body for this recipient's notification email.   **Note:** You can set the `emailNotification` property separately for each recipient. If you set the value only for certain recipients, the other recipients will inherit the this value from the top-level `emailSubject` and `emailBlurb`. 
+   * A complex type that contains information sets the language of the recipient's email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and `EmailBlurb` property settings. 
    * @member {module:model/RecipientEmailNotification} emailNotification
    */
   exports.prototype['emailNotification'] = undefined;
@@ -517,7 +525,7 @@
    */
   exports.prototype['embeddedRecipientStartURL'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

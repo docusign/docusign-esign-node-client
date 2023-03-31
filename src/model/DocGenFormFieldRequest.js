@@ -12,29 +12,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/DocGenFormFields'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./DocGenFormFields'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.BulksendingCopyDocGenFormField = factory(root.Docusign.ApiClient);
+    root.Docusign.DocGenFormFieldRequest = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormFields);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, DocGenFormFields) {
   'use strict';
 
 
   /**
-   * The BulksendingCopyDocGenFormField model module.
-   * @module model/BulksendingCopyDocGenFormField
+   * The DocGenFormFieldRequest model module.
+   * @module model/DocGenFormFieldRequest
    */
 
   /**
-   * Constructs a new <code>BulksendingCopyDocGenFormField</code>.
-   * @alias module:model/BulksendingCopyDocGenFormField
+   * Constructs a new <code>DocGenFormFieldRequest</code>.
+   * @alias module:model/DocGenFormFieldRequest
    * @class
    */
   var exports = function() {
@@ -44,21 +44,18 @@
   };
 
   /**
-   * Constructs a <code>BulksendingCopyDocGenFormField</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>DocGenFormFieldRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/BulksendingCopyDocGenFormField} obj Optional instance to populate.
-   * @return {module:model/BulksendingCopyDocGenFormField} The populated <code>BulksendingCopyDocGenFormField</code> instance.
+   * @param {module:model/DocGenFormFieldRequest} obj Optional instance to populate.
+   * @return {module:model/DocGenFormFieldRequest} The populated <code>DocGenFormFieldRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      if (data.hasOwnProperty('docGenFormFields')) {
+        obj['docGenFormFields'] = ApiClient.convertToType(data['docGenFormFields'], [DocGenFormFields]);
       }
     }
     return obj;
@@ -66,14 +63,9 @@
 
   /**
    * 
-   * @member {String} name
+   * @member {Array.<module:model/DocGenFormFields>} docGenFormFields
    */
-  exports.prototype['name'] = undefined;
-  /**
-   * Specifies the value of the tab. 
-   * @member {String} value
-   */
-  exports.prototype['value'] = undefined;
+  exports.prototype['docGenFormFields'] = undefined;
 
 
 

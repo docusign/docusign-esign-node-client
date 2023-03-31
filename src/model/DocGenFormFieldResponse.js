@@ -12,30 +12,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/Group'], factory);
+    define(['ApiClient', 'model/DocGenFormFields', 'model/ErrorDetails'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./Group'));
+    module.exports = factory(require('../ApiClient'), require('./DocGenFormFields'), require('./ErrorDetails'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.MemberGroupSharedItem = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.Group);
+    root.Docusign.DocGenFormFieldResponse = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormFields, root.Docusign.ErrorDetails);
   }
-}(this, function(ApiClient, ErrorDetails, Group) {
+}(this, function(ApiClient, DocGenFormFields, ErrorDetails) {
   'use strict';
 
 
   /**
-   * The MemberGroupSharedItem model module.
-   * @module model/MemberGroupSharedItem
+   * The DocGenFormFieldResponse model module.
+   * @module model/DocGenFormFieldResponse
    */
 
   /**
-   * Constructs a new <code>MemberGroupSharedItem</code>.
-   * Information about items shared among groups.
-   * @alias module:model/MemberGroupSharedItem
+   * Constructs a new <code>DocGenFormFieldResponse</code>.
+   * @alias module:model/DocGenFormFieldResponse
    * @class
    */
   var exports = function() {
@@ -45,44 +44,36 @@
   };
 
   /**
-   * Constructs a <code>MemberGroupSharedItem</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>DocGenFormFieldResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/MemberGroupSharedItem} obj Optional instance to populate.
-   * @return {module:model/MemberGroupSharedItem} The populated <code>MemberGroupSharedItem</code> instance.
+   * @param {module:model/DocGenFormFieldResponse} obj Optional instance to populate.
+   * @return {module:model/DocGenFormFieldResponse} The populated <code>DocGenFormFieldResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('docGenFormFields')) {
+        obj['docGenFormFields'] = ApiClient.convertToType(data['docGenFormFields'], [DocGenFormFields]);
+      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
-      }
-      if (data.hasOwnProperty('group')) {
-        obj['group'] = Group.constructFromObject(data['group']);
-      }
-      if (data.hasOwnProperty('shared')) {
-        obj['shared'] = ApiClient.convertToType(data['shared'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * 
+   * @member {Array.<module:model/DocGenFormFields>} docGenFormFields
+   */
+  exports.prototype['docGenFormFields'] = undefined;
+  /**
    * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
-  /**
-   * The group sharing the item.
-   * @member {module:model/Group} group
-   */
-  exports.prototype['group'] = undefined;
-  /**
-   * When set to **true**, this custom tab is shared.
-   * @member {String} shared
-   */
-  exports.prototype['shared'] = undefined;
 
 
 
