@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignature', 'model/AccountSignatureDefinition', 'model/AccountSignatureProviders', 'model/AccountSignaturesInformation', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserPasswordRules', 'model/Watermark'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignature', 'model/AccountSignatureDefinition', 'model/AccountSignatureProviders', 'model/AccountSignaturesInformation', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/RecipientNamesResponse', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserAuthorization', 'model/UserAuthorizationCreateRequest', 'model/UserAuthorizationUpdateRequest', 'model/UserAuthorizations', 'model/UserAuthorizationsDeleteRequest', 'model/UserAuthorizationsDeleteResponse', 'model/UserAuthorizationsRequest', 'model/UserAuthorizationsResponse', 'model/UserPasswordRules', 'model/Watermark'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignature'), require('../model/AccountSignatureDefinition'), require('../model/AccountSignatureProviders'), require('../model/AccountSignaturesInformation'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserPasswordRules'), require('../model/Watermark'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignature'), require('../model/AccountSignatureDefinition'), require('../model/AccountSignatureProviders'), require('../model/AccountSignaturesInformation'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/RecipientNamesResponse'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserAuthorization'), require('../model/UserAuthorizationCreateRequest'), require('../model/UserAuthorizationUpdateRequest'), require('../model/UserAuthorizations'), require('../model/UserAuthorizationsDeleteRequest'), require('../model/UserAuthorizationsDeleteResponse'), require('../model/UserAuthorizationsRequest'), require('../model/UserAuthorizationsResponse'), require('../model/UserPasswordRules'), require('../model/Watermark'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignature, root.Docusign.AccountSignatureDefinition, root.Docusign.AccountSignatureProviders, root.Docusign.AccountSignaturesInformation, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
+    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignature, root.Docusign.AccountSignatureDefinition, root.Docusign.AccountSignatureProviders, root.Docusign.AccountSignaturesInformation, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.RecipientNamesResponse, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserAuthorization, root.Docusign.UserAuthorizationCreateRequest, root.Docusign.UserAuthorizationUpdateRequest, root.Docusign.UserAuthorizations, root.Docusign.UserAuthorizationsDeleteRequest, root.Docusign.UserAuthorizationsDeleteResponse, root.Docusign.UserAuthorizationsRequest, root.Docusign.UserAuthorizationsResponse, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
   }
-}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignature, AccountSignatureDefinition, AccountSignatureProviders, AccountSignaturesInformation, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, SupportedLanguages, TabAccountSettings, UserPasswordRules, Watermark) {
+}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignature, AccountSignatureDefinition, AccountSignatureProviders, AccountSignaturesInformation, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, RecipientNamesResponse, SupportedLanguages, TabAccountSettings, UserAuthorization, UserAuthorizationCreateRequest, UserAuthorizationUpdateRequest, UserAuthorizations, UserAuthorizationsDeleteRequest, UserAuthorizationsDeleteResponse, UserAuthorizationsRequest, UserAuthorizationsResponse, UserPasswordRules, Watermark) {
   'use strict';
 
   /**
@@ -421,6 +421,140 @@ When brand profile files are being uploaded, they must be combined into one zip 
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/permission_profiles', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the createUserAuthorization operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~createUserAuthorizationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserAuthorization} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Creates the user authorization
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserAuthorizationCreateRequest} optsOrCallback.userAuthorizationCreateRequest 
+     * @param {module:api/AccountsApi~createUserAuthorizationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserAuthorization}
+     */
+    this.createUserAuthorization = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userAuthorizationCreateRequest'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createUserAuthorization");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling createUserAuthorization");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserAuthorization;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorization', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the createUserAuthorizations operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~createUserAuthorizationsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserAuthorizationsResponse} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Creates ot updates user authorizations
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserAuthorizationsRequest} optsOrCallback.userAuthorizationsRequest 
+     * @param {module:api/AccountsApi~createUserAuthorizationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserAuthorizationsResponse}
+     */
+    this.createUserAuthorizations = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userAuthorizationsRequest'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling createUserAuthorizations");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling createUserAuthorizations");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserAuthorizationsResponse;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorizations', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1001,6 +1135,137 @@ To delete a permission profile, it must not have any users associated with it. W
     };
 
     /**
+     * (Optional) Callback function to receive the result of the deleteUserAuthorization operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~deleteUserAuthorizationCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Deletes the user authorization
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {String} authorizationId 
+     * @param {module:api/AccountsApi~deleteUserAuthorizationCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteUserAuthorization = function(accountId, userId, authorizationId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteUserAuthorization");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling deleteUserAuthorization");
+      }
+
+      // verify the required parameter 'authorizationId' is set
+      if (authorizationId === undefined || authorizationId === null) {
+        throw new Error("Missing the required parameter 'authorizationId' when calling deleteUserAuthorization");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId,
+        'authorizationId': authorizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the deleteUserAuthorizations operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~deleteUserAuthorizationsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserAuthorizationsDeleteResponse} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Creates ot updates user authorizations
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserAuthorizationsDeleteRequest} optsOrCallback.userAuthorizationsDeleteRequest 
+     * @param {module:api/AccountsApi~deleteUserAuthorizationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserAuthorizationsDeleteResponse}
+     */
+    this.deleteUserAuthorizations = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userAuthorizationsDeleteRequest'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling deleteUserAuthorizations");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling deleteUserAuthorizations");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserAuthorizationsDeleteResponse;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorizations', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getAccountIdentityVerification operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getAccountIdentityVerificationCallback
      * @param {String} error Error message, if any.
@@ -1373,6 +1638,84 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/settings/tabs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getAgentUserAuthorizations operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getAgentUserAuthorizationsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserAuthorizations} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the agent user authorizations
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.activeOnly 
+     * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.emailSubstring 
+     * @param {String} optsOrCallback.permissions 
+     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.userNameSubstring 
+     * @param {module:api/AccountsApi~getAgentUserAuthorizationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserAuthorizations}
+     */
+    this.getAgentUserAuthorizations = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getAgentUserAuthorizations");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling getAgentUserAuthorizations");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId
+      };
+      var queryParams = {
+        'active_only': optsOrCallback['activeOnly'],
+        'count': optsOrCallback['count'],
+        'email_substring': optsOrCallback['emailSubstring'],
+        'permissions': optsOrCallback['permissions'],
+        'start_position': optsOrCallback['startPosition'],
+        'user_name_substring': optsOrCallback['userNameSubstring']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserAuthorizations;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorizations/agent', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -1851,7 +2194,7 @@ A brand uses a set of brand resource files to control the sending, signing, emai
      * Gets the Electronic Record and Signature Disclosure.
      * Retrieves the Electronic Record and Signature Disclosure, with HTML formatting, for the requested envelope recipient. This might be different than the current account disclosure depending on account settings, such as branding, and when the account disclosure was last updated. An optional query string can be included to return the language for the disclosure.  
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/AccountsApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ConsumerDisclosure}
      */
@@ -2342,6 +2685,84 @@ A brand uses a set of brand resource files to control the sending, signing, emai
     };
 
     /**
+     * (Optional) Callback function to receive the result of the getPrincipalUserAuthorizations operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getPrincipalUserAuthorizationsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserAuthorizations} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the principal user authorizations
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.activeOnly 
+     * @param {String} optsOrCallback.count 
+     * @param {String} optsOrCallback.emailSubstring 
+     * @param {String} optsOrCallback.permissions 
+     * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.userNameSubstring 
+     * @param {module:api/AccountsApi~getPrincipalUserAuthorizationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserAuthorizations}
+     */
+    this.getPrincipalUserAuthorizations = function(accountId, userId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getPrincipalUserAuthorizations");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling getPrincipalUserAuthorizations");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId
+      };
+      var queryParams = {
+        'active_only': optsOrCallback['activeOnly'],
+        'count': optsOrCallback['count'],
+        'email_substring': optsOrCallback['emailSubstring'],
+        'permissions': optsOrCallback['permissions'],
+        'start_position': optsOrCallback['startPosition'],
+        'user_name_substring': optsOrCallback['userNameSubstring']
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserAuthorizations;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorizations', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
      * (Optional) Callback function to receive the result of the getProvisioning operation. If none specified a Promise will be returned.
      * @callback module:api/AccountsApi~getProvisioningCallback
      * @param {String} error Error message, if any.
@@ -2439,6 +2860,71 @@ For more information, see [Set Recipient Language and Specify Custom Email Messa
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/supported_languages', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getUserAuthorization operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~getUserAuthorizationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserAuthorization} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Returns the user authorization for a given authorization id
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {String} authorizationId 
+     * @param {module:api/AccountsApi~getUserAuthorizationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserAuthorization}
+     */
+    this.getUserAuthorization = function(accountId, userId, authorizationId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getUserAuthorization");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling getUserAuthorization");
+      }
+
+      // verify the required parameter 'authorizationId' is set
+      if (authorizationId === undefined || authorizationId === null) {
+        throw new Error("Missing the required parameter 'authorizationId' when calling getUserAuthorization");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId,
+        'authorizationId': authorizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserAuthorization;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3666,7 +4152,7 @@ When you update a custom disclosure, you can update all of the properties except
 
 
      * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeMetadata 
      * @param {module:model/ConsumerDisclosure} optsOrCallback.consumerDisclosure 
@@ -4302,6 +4788,80 @@ For more information, see [Purge Envelopes](https://support.docusign.com/en/guid
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/shared_access', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the updateUserAuthorization operation. If none specified a Promise will be returned.
+     * @callback module:api/AccountsApi~updateUserAuthorizationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserAuthorization} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Updates the user authorization
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
+     * @param {String} authorizationId 
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {module:model/UserAuthorizationUpdateRequest} optsOrCallback.userAuthorizationUpdateRequest 
+     * @param {module:api/AccountsApi~updateUserAuthorizationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserAuthorization}
+     */
+    this.updateUserAuthorization = function(accountId, userId, authorizationId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
+      var postBody = optsOrCallback['userAuthorizationUpdateRequest'];
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling updateUserAuthorization");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling updateUserAuthorization");
+      }
+
+      // verify the required parameter 'authorizationId' is set
+      if (authorizationId === undefined || authorizationId === null) {
+        throw new Error("Missing the required parameter 'authorizationId' when calling updateUserAuthorization");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'userId': userId,
+        'authorizationId': authorizationId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserAuthorization;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/users/{userId}/authorization/{authorizationId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

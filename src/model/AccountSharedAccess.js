@@ -97,7 +97,7 @@
    */
   exports.prototype['endPosition'] = undefined;
   /**
-   * A complex type containing an errorCode and message identifying the error that occurred.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

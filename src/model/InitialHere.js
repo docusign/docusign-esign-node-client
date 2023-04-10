@@ -405,6 +405,7 @@
    */
   exports.prototype['caption'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} captionMetadata
    */
   exports.prototype['captionMetadata'] = undefined;
@@ -449,7 +450,7 @@
    */
   exports.prototype['documentIdMetadata'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -559,7 +560,7 @@
    */
   exports.prototype['recipientIdMetadata'] = undefined;
   /**
-   * Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.
+   *  Sets the size for the InitialHere tab. It can be value from 0.5 to 1.0, where 1.0 represents full size and 0.5 is 50% size.
    * @member {String} scaleValue
    */
   exports.prototype['scaleValue'] = undefined;

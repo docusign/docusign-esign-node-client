@@ -237,7 +237,7 @@
    */
   exports.prototype['enableConnectForUser'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -392,7 +392,7 @@
    */
   exports.prototype['userProfileLastModifiedDate'] = undefined;
   /**
-   * The collection of settings representing the actions a user can perform. See [userSettingsInformation](/docs/esign-rest-api/reference/users/users/get/#userSettingsInformation) for available settings.
+   *  The name/value pair information for user settings. These determine the actions that a user can take in the account. The `[ML:userSettings]` are listed and described below.
    * @member {module:model/UserSettingsInformation} userSettings
    */
   exports.prototype['userSettings'] = undefined;

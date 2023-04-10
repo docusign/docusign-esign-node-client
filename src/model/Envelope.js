@@ -386,7 +386,7 @@
    */
   exports.prototype['createdDateTime'] = undefined;
   /**
-   * An optional array of strings that enables the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each `customField` string can be a maximum of 100 characters.
+   * An optional array of strings that allows the sender to provide custom data about the recipient. This information is returned in the envelope status but otherwise not used by DocuSign. Each customField string can be a maximum of 100 characters.
    * @member {module:model/CustomFields} customFields
    */
   exports.prototype['customFields'] = undefined;
@@ -611,7 +611,7 @@
    */
   exports.prototype['purgeState'] = undefined;
   /**
-   * An array of recipient objects that provides details about the recipients of the envelope.
+   * An array of powerform recipients.
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;

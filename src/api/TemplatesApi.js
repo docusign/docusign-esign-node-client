@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/BulkRecipientsUpdateResponse', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
+	define(['Configuration', 'ApiClient', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/ReturnUrlRequest', 'model/Tabs', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/ViewUrl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/BulkRecipientsUpdateResponse'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientPreviewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/ViewUrl'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientPreviewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/ReturnUrlRequest'), require('../model/Tabs'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/ViewUrl'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.BulkRecipientsUpdateResponse, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientPreviewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.ViewUrl);
+    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientPreviewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.ReturnUrlRequest, root.Docusign.Tabs, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.ViewUrl);
   }
-}(this, function(Configuration, ApiClient, BulkRecipientsUpdateResponse, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) {
+}(this, function(Configuration, ApiClient, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, Recipients, RecipientsUpdateSummary, ReturnUrlRequest, Tabs, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, ViewUrl) {
   'use strict';
 
   /**
@@ -894,72 +894,6 @@ version of the documents.
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}/responsive_html_preview', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the deleteBulkRecipients operation. If none specified a Promise will be returned.
-     * @callback module:api/TemplatesApi~deleteBulkRecipientsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/BulkRecipientsUpdateResponse} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Deletes the bulk recipient list on a template.
-     * Deletes the bulk recipient list on a template.
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} templateId The ID of the template being accessed.
-     * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {module:api/TemplatesApi~deleteBulkRecipientsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/BulkRecipientsUpdateResponse}
-     */
-    this.deleteBulkRecipients = function(accountId, templateId, recipientId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling deleteBulkRecipients");
-      }
-
-      // verify the required parameter 'templateId' is set
-      if (templateId === undefined || templateId === null) {
-        throw new Error("Missing the required parameter 'templateId' when calling deleteBulkRecipients");
-      }
-
-      // verify the required parameter 'recipientId' is set
-      if (recipientId === undefined || recipientId === null) {
-        throw new Error("Missing the required parameter 'recipientId' when calling deleteBulkRecipients");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId,
-        'recipientId': recipientId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = BulkRecipientsUpdateResponse;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/templates/{templateId}/recipients/{recipientId}/bulk_recipients', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
