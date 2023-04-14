@@ -173,7 +173,7 @@
    */
   exports.prototype['ownerName'] = undefined;
   /**
-   * An array of recipient objects that provides details about the recipients of the envelope.
+   * An array of powerform recipients.
    * @member {module:model/Recipients} recipients
    */
   exports.prototype['recipients'] = undefined;

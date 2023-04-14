@@ -54,8 +54,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('label')) {
-        obj['label'] = ApiClient.convertToType(data['label'], 'String');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('value')) {
         obj['value'] = ApiClient.convertToType(data['value'], 'String');
@@ -66,9 +66,9 @@
 
   /**
    * 
-   * @member {String} label
+   * @member {String} name
    */
-  exports.prototype['label'] = undefined;
+  exports.prototype['name'] = undefined;
   /**
    * Specifies the value of the tab. 
    * @member {String} value

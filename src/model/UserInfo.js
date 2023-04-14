@@ -69,6 +69,9 @@
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('ipAddress')) {
+        obj['ipAddress'] = ApiClient.convertToType(data['ipAddress'], 'String');
+      }
       if (data.hasOwnProperty('loginStatus')) {
         obj['loginStatus'] = ApiClient.convertToType(data['loginStatus'], 'String');
       }
@@ -118,10 +121,15 @@
    */
   exports.prototype['email'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} ipAddress
+   */
+  exports.prototype['ipAddress'] = undefined;
   /**
    * 
    * @member {String} loginStatus

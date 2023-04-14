@@ -439,6 +439,7 @@
    */
   exports.prototype['caption'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} captionMetadata
    */
   exports.prototype['captionMetadata'] = undefined;
@@ -483,7 +484,7 @@
    */
   exports.prototype['documentIdMetadata'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

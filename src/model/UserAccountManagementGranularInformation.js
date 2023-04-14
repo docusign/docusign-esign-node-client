@@ -216,6 +216,7 @@
    */
   exports.prototype['canManageJointAgreements'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageJointAgreementsMetadata
    */
   exports.prototype['canManageJointAgreementsMetadata'] = undefined;
@@ -255,6 +256,7 @@
    */
   exports.prototype['canManageStamps'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} canManageStampsMetadata
    */
   exports.prototype['canManageStampsMetadata'] = undefined;

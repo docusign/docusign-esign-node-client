@@ -78,12 +78,6 @@
       if (data.hasOwnProperty('checkBoxTabsMetadata')) {
         obj['checkBoxTabsMetadata'] = SettingsMetadata.constructFromObject(data['checkBoxTabsMetadata']);
       }
-      if (data.hasOwnProperty('currencyTabsEnabled')) {
-        obj['currencyTabsEnabled'] = ApiClient.convertToType(data['currencyTabsEnabled'], 'String');
-      }
-      if (data.hasOwnProperty('currencyTabsMetadata')) {
-        obj['currencyTabsMetadata'] = SettingsMetadata.constructFromObject(data['currencyTabsMetadata']);
-      }
       if (data.hasOwnProperty('dataFieldRegexEnabled')) {
         obj['dataFieldRegexEnabled'] = ApiClient.convertToType(data['dataFieldRegexEnabled'], 'String');
       }
@@ -119,6 +113,12 @@
       }
       if (data.hasOwnProperty('noteTabsMetadata')) {
         obj['noteTabsMetadata'] = SettingsMetadata.constructFromObject(data['noteTabsMetadata']);
+      }
+      if (data.hasOwnProperty('numericalTabsEnabled')) {
+        obj['numericalTabsEnabled'] = ApiClient.convertToType(data['numericalTabsEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('numericalTabsMetadata')) {
+        obj['numericalTabsMetadata'] = SettingsMetadata.constructFromObject(data['numericalTabsMetadata']);
       }
       if (data.hasOwnProperty('prefillTabsEnabled')) {
         obj['prefillTabsEnabled'] = ApiClient.convertToType(data['prefillTabsEnabled'], 'String');
@@ -232,16 +232,6 @@
   exports.prototype['checkBoxTabsMetadata'] = undefined;
   /**
    * 
-   * @member {String} currencyTabsEnabled
-   */
-  exports.prototype['currencyTabsEnabled'] = undefined;
-  /**
-   * 
-   * @member {module:model/SettingsMetadata} currencyTabsMetadata
-   */
-  exports.prototype['currencyTabsMetadata'] = undefined;
-  /**
-   * 
    * @member {String} dataFieldRegexEnabled
    */
   exports.prototype['dataFieldRegexEnabled'] = undefined;
@@ -300,6 +290,16 @@
    * @member {module:model/SettingsMetadata} noteTabsMetadata
    */
   exports.prototype['noteTabsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} numericalTabsEnabled
+   */
+  exports.prototype['numericalTabsEnabled'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} numericalTabsMetadata
+   */
+  exports.prototype['numericalTabsMetadata'] = undefined;
   /**
    * 
    * @member {String} prefillTabsEnabled

@@ -65,6 +65,7 @@
   }
 
   /**
+   * 
    * @member {module:model/ConnectCustomConfiguration} config
    */
   exports.prototype['config'] = undefined;

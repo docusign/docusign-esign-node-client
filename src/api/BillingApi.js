@@ -230,7 +230,7 @@ The following table provides a description of the different `chargeName` propert
 
 | chargeName | Description |
 | --- | --- |
-| id_check | IDÂ Check Charge |
+| id_check | IDÂ Check Charge |
 | in_person_signing | In Person Signing charge |
 | envelopes Included | Sent Envelopes for the account |
 | age_verify | Age verification check |

@@ -70,6 +70,9 @@
       if (data.hasOwnProperty('autoRespondedReason')) {
         obj['autoRespondedReason'] = ApiClient.convertToType(data['autoRespondedReason'], 'String');
       }
+      if (data.hasOwnProperty('bulkSendV2Recipient')) {
+        obj['bulkSendV2Recipient'] = ApiClient.convertToType(data['bulkSendV2Recipient'], 'String');
+      }
       if (data.hasOwnProperty('clientUserId')) {
         obj['clientUserId'] = ApiClient.convertToType(data['clientUserId'], 'String');
       }
@@ -256,6 +259,11 @@
    */
   exports.prototype['autoRespondedReason'] = undefined;
   /**
+   * 
+   * @member {String} bulkSendV2Recipient
+   */
+  exports.prototype['bulkSendV2Recipient'] = undefined;
+  /**
    * Specifies whether the recipient is embedded or remote.   If the `clientUserId` property is not null then the recipient is embedded. Note that if the `ClientUserId` property is set and either `SignerMustHaveAccount` or `SignerMustLoginToSign` property of the account settings is set to  **true**, an error is generated on sending.ng.   Maximum length: 100 characters. 
    * @member {String} clientUserId
    */
@@ -311,7 +319,7 @@
    */
   exports.prototype['documentVisibility'] = undefined;
   /**
-   * Not applicable.
+   * A complex type that contains information sets the language of the recipient's email information.   **IMPORTANT**: If you enable email notification for one recipient, you must enable email notification for all recipients as it overrides the Envelope Subject and `EmailBlurb` property settings. 
    * @member {module:model/RecipientEmailNotification} emailNotification
    */
   exports.prototype['emailNotification'] = undefined;
@@ -321,7 +329,7 @@
    */
   exports.prototype['embeddedRecipientStartURL'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;

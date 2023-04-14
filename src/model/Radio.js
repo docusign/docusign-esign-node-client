@@ -160,6 +160,9 @@
       if (data.hasOwnProperty('lockedMetadata')) {
         obj['lockedMetadata'] = PropertyMetadata.constructFromObject(data['lockedMetadata']);
       }
+      if (data.hasOwnProperty('mergeFieldXml')) {
+        obj['mergeFieldXml'] = ApiClient.convertToType(data['mergeFieldXml'], 'String');
+      }
       if (data.hasOwnProperty('pageNumber')) {
         obj['pageNumber'] = ApiClient.convertToType(data['pageNumber'], 'String');
       }
@@ -340,11 +343,12 @@
    */
   exports.prototype['caption'] = undefined;
   /**
+   * 
    * @member {module:model/PropertyMetadata} captionMetadata
    */
   exports.prototype['captionMetadata'] = undefined;
   /**
-   * This object describes errors that occur. It is only valid for responses and ignored in requests.
+   * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
@@ -398,6 +402,11 @@
    * @member {module:model/PropertyMetadata} lockedMetadata
    */
   exports.prototype['lockedMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} mergeFieldXml
+   */
+  exports.prototype['mergeFieldXml'] = undefined;
   /**
    * Specifies the page number on which the tab is located.
    * @member {String} pageNumber

@@ -223,6 +223,12 @@
       if (data.hasOwnProperty('allowDocumentVisibilityMetadata')) {
         obj['allowDocumentVisibilityMetadata'] = SettingsMetadata.constructFromObject(data['allowDocumentVisibilityMetadata']);
       }
+      if (data.hasOwnProperty('allowEditingEnvelopesOnBehalfOfOthers')) {
+        obj['allowEditingEnvelopesOnBehalfOfOthers'] = ApiClient.convertToType(data['allowEditingEnvelopesOnBehalfOfOthers'], 'String');
+      }
+      if (data.hasOwnProperty('allowEditingEnvelopesOnBehalfOfOthersMetadata')) {
+        obj['allowEditingEnvelopesOnBehalfOfOthersMetadata'] = SettingsMetadata.constructFromObject(data['allowEditingEnvelopesOnBehalfOfOthersMetadata']);
+      }
       if (data.hasOwnProperty('allowEHankoStamps')) {
         obj['allowEHankoStamps'] = ApiClient.convertToType(data['allowEHankoStamps'], 'String');
       }
@@ -910,6 +916,9 @@
       if (data.hasOwnProperty('documentVisibilityMetadata')) {
         obj['documentVisibilityMetadata'] = SettingsMetadata.constructFromObject(data['documentVisibilityMetadata']);
       }
+      if (data.hasOwnProperty('dss_EnableProvisioningPenConfiguration_RadminOption')) {
+        obj['dss_EnableProvisioningPenConfiguration_RadminOption'] = ApiClient.convertToType(data['dss_EnableProvisioningPenConfiguration_RadminOption'], 'String');
+      }
       if (data.hasOwnProperty('dss_SIGN_28411_EnableLeavePagePrompt_RadminOption')) {
         obj['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = ApiClient.convertToType(data['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'], 'String');
       }
@@ -1342,17 +1351,17 @@
       if (data.hasOwnProperty('envelopeIntegrationEnabledMetadata')) {
         obj['envelopeIntegrationEnabledMetadata'] = SettingsMetadata.constructFromObject(data['envelopeIntegrationEnabledMetadata']);
       }
-      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMB')) {
-        obj['envelopeLimitsTotalDocumentSizeAllowedInMB'] = ApiClient.convertToType(data['envelopeLimitsTotalDocumentSizeAllowedInMB'], 'String');
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMB')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMB'] = ApiClient.convertToType(data['EnvelopeLimitsTotalDocumentSizeAllowedInMB'], 'String');
       }
-      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMBEnabled')) {
-        obj['envelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = ApiClient.convertToType(data['envelopeLimitsTotalDocumentSizeAllowedInMBEnabled'], 'String');
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = ApiClient.convertToType(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'], 'String');
       }
-      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata')) {
-        obj['envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = SettingsMetadata.constructFromObject(data['envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata']);
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = SettingsMetadata.constructFromObject(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata']);
       }
-      if (data.hasOwnProperty('envelopeLimitsTotalDocumentSizeAllowedInMBMetadata')) {
-        obj['envelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = SettingsMetadata.constructFromObject(data['envelopeLimitsTotalDocumentSizeAllowedInMBMetadata']);
+      if (data.hasOwnProperty('EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata')) {
+        obj['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = SettingsMetadata.constructFromObject(data['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata']);
       }
       if (data.hasOwnProperty('envelopeSearchMode')) {
         obj['envelopeSearchMode'] = ApiClient.convertToType(data['envelopeSearchMode'], 'String');
@@ -1507,6 +1516,9 @@
       if (data.hasOwnProperty('inSessionSuppressEmailsMetadata')) {
         obj['inSessionSuppressEmailsMetadata'] = SettingsMetadata.constructFromObject(data['inSessionSuppressEmailsMetadata']);
       }
+      if (data.hasOwnProperty('isConnectDocumentFieldsEnabled')) {
+        obj['isConnectDocumentFieldsEnabled'] = ApiClient.convertToType(data['isConnectDocumentFieldsEnabled'], 'String');
+      }
       if (data.hasOwnProperty('linkedExternalPrimaryAccounts')) {
         obj['linkedExternalPrimaryAccounts'] = ApiClient.convertToType(data['linkedExternalPrimaryAccounts'], [LinkedExternalPrimaryAccount]);
       }
@@ -1545,6 +1557,9 @@
       }
       if (data.hasOwnProperty('optInMobileSigningV02Metadata')) {
         obj['optInMobileSigningV02Metadata'] = SettingsMetadata.constructFromObject(data['optInMobileSigningV02Metadata']);
+      }
+      if (data.hasOwnProperty('optInUniversalSignatures')) {
+        obj['optInUniversalSignatures'] = ApiClient.convertToType(data['optInUniversalSignatures'], 'String');
       }
       if (data.hasOwnProperty('optOutAutoNavTextAndTabColorUpdates')) {
         obj['optOutAutoNavTextAndTabColorUpdates'] = ApiClient.convertToType(data['optOutAutoNavTextAndTabColorUpdates'], 'String');
@@ -2197,6 +2212,7 @@
    */
   exports.prototype['allowAgreementOrchestrationWorkflows'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowAgreementOrchestrationWorkflowsMetadata
    */
   exports.prototype['allowAgreementOrchestrationWorkflowsMetadata'] = undefined;
@@ -2311,6 +2327,7 @@
    */
   exports.prototype['allowDocGenDocuments'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowDocGenDocumentsMetadata
    */
   exports.prototype['allowDocGenDocumentsMetadata'] = undefined;
@@ -2344,6 +2361,16 @@
    * @member {module:model/SettingsMetadata} allowDocumentVisibilityMetadata
    */
   exports.prototype['allowDocumentVisibilityMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowEditingEnvelopesOnBehalfOfOthers
+   */
+  exports.prototype['allowEditingEnvelopesOnBehalfOfOthers'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowEditingEnvelopesOnBehalfOfOthersMetadata
+   */
+  exports.prototype['allowEditingEnvelopesOnBehalfOfOthersMetadata'] = undefined;
   /**
    * 
    * @member {String} allowEHankoStamps
@@ -2470,6 +2497,7 @@
    */
   exports.prototype['allowIDVForEUQualifiedSignatures'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowIDVForEUQualifiedSignaturesMetadata
    */
   exports.prototype['allowIDVForEUQualifiedSignaturesMetadata'] = undefined;
@@ -2524,7 +2552,7 @@
    */
   exports.prototype['allowInPersonElectronicNotary'] = undefined;
   /**
-   * MetaData for the allowInPersonElectronicNotary flag
+   * MetaData for the Account Level Flag that determines the availability to perform In Person Electronic Notarial (IPEN) actions
    * @member {module:model/SettingsMetadata} allowInPersonElectronicNotaryMetadata
    */
   exports.prototype['allowInPersonElectronicNotaryMetadata'] = undefined;
@@ -2549,6 +2577,7 @@
    */
   exports.prototype['allowManagingEnvelopesOnBehalfOfOthers'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowManagingEnvelopesOnBehalfOfOthersMetadata
    */
   exports.prototype['allowManagingEnvelopesOnBehalfOfOthersMetadata'] = undefined;
@@ -2688,7 +2717,7 @@
    */
   exports.prototype['allowOrganizationToUseInPersonElectronicNotary'] = undefined;
   /**
-   * MetaData for the allowOrganizationToUseInPersonElectronicNotary flag
+   * MetaData for the Organization Level Flag that determines the availability to perform In Person Electronic Notarial (IPEN) actions
    * @member {module:model/SettingsMetadata} allowOrganizationToUseInPersonElectronicNotaryMetadata
    */
   exports.prototype['allowOrganizationToUseInPersonElectronicNotaryMetadata'] = undefined;
@@ -2708,6 +2737,7 @@
    */
   exports.prototype['allowOrganizationToUseThirdPartyElectronicNotary'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowOrganizationToUseThirdPartyElectronicNotaryMetadata
    */
   exports.prototype['allowOrganizationToUseThirdPartyElectronicNotaryMetadata'] = undefined;
@@ -2717,6 +2747,7 @@
    */
   exports.prototype['allowParticipantRecipientType'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowParticipantRecipientTypeMetadata
    */
   exports.prototype['allowParticipantRecipientTypeMetadata'] = undefined;
@@ -2736,6 +2767,7 @@
    */
   exports.prototype['allowPerformanceAnalytics'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowPerformanceAnalyticsMetadata
    */
   exports.prototype['allowPerformanceAnalyticsMetadata'] = undefined;
@@ -2845,6 +2877,7 @@
    */
   exports.prototype['allowSendingEnvelopesOnBehalfOfOthers'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowSendingEnvelopesOnBehalfOfOthersMetadata
    */
   exports.prototype['allowSendingEnvelopesOnBehalfOfOthersMetadata'] = undefined;
@@ -3024,6 +3057,7 @@
    */
   exports.prototype['allowThirdPartyElectronicNotary'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowThirdPartyElectronicNotaryMetadata
    */
   exports.prototype['allowThirdPartyElectronicNotaryMetadata'] = undefined;
@@ -3033,6 +3067,7 @@
    */
   exports.prototype['allowTransactionsWorkspace'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowTransactionsWorkspaceMetadata
    */
   exports.prototype['allowTransactionsWorkspaceMetadata'] = undefined;
@@ -3062,6 +3097,7 @@
    */
   exports.prototype['allowWebForms'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowWebFormsMetadata
    */
   exports.prototype['allowWebFormsMetadata'] = undefined;
@@ -3071,6 +3107,7 @@
    */
   exports.prototype['allowWhatsAppDelivery'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} allowWhatsAppDeliveryMetadata
    */
   exports.prototype['allowWhatsAppDeliveryMetadata'] = undefined;
@@ -3481,6 +3518,11 @@
   exports.prototype['documentVisibilityMetadata'] = undefined;
   /**
    * 
+   * @member {String} dss_EnableProvisioningPenConfiguration_RadminOption
+   */
+  exports.prototype['dss_EnableProvisioningPenConfiguration_RadminOption'] = undefined;
+  /**
+   * 
    * @member {String} dss_SIGN_28411_EnableLeavePagePrompt_RadminOption
    */
   exports.prototype['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = undefined;
@@ -3515,6 +3557,7 @@
    */
   exports.prototype['enableAdmHealthcare'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableAdmHealthcareMetadata
    */
   exports.prototype['enableAdmHealthcareMetadata'] = undefined;
@@ -3599,6 +3642,7 @@
    */
   exports.prototype['enableClickPlusConditionalContent'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableClickPlusConditionalContentMetaData
    */
   exports.prototype['enableClickPlusConditionalContentMetaData'] = undefined;
@@ -3608,6 +3652,7 @@
    */
   exports.prototype['enableClickPlusCustomFields'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableClickPlusCustomFieldsMetaData
    */
   exports.prototype['enableClickPlusCustomFieldsMetaData'] = undefined;
@@ -3617,6 +3662,7 @@
    */
   exports.prototype['enableClickPlusCustomStyle'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableClickPlusCustomStyleMetaData
    */
   exports.prototype['enableClickPlusCustomStyleMetaData'] = undefined;
@@ -3626,10 +3672,12 @@
    */
   exports.prototype['enableClickPlusDynamicContent'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableClickPlusDynamicContentMetaData
    */
   exports.prototype['enableClickPlusDynamicContentMetaData'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableClickPlusMetaData
    */
   exports.prototype['enableClickPlusMetaData'] = undefined;
@@ -3664,6 +3712,7 @@
    */
   exports.prototype['enableContactSuggestions'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableContactSuggestionsMetadata
    */
   exports.prototype['enableContactSuggestionsMetadata'] = undefined;
@@ -3688,6 +3737,7 @@
    */
   exports.prototype['enableDSProMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableEnforceTlsEmailsSettingMetadata
    */
   exports.prototype['enableEnforceTlsEmailsSettingMetadata'] = undefined;
@@ -3717,6 +3767,7 @@
    */
   exports.prototype['enableESignAPIHourlyLimitManagement'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableESignAPIHourlyLimitManagementMetadata
    */
   exports.prototype['enableESignAPIHourlyLimitManagementMetadata'] = undefined;
@@ -3736,6 +3787,7 @@
    */
   exports.prototype['enableIDFxAccountlessSMSAuthForPart11'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableIDFxAccountlessSMSAuthForPart11Metadata
    */
   exports.prototype['enableIDFxAccountlessSMSAuthForPart11Metadata'] = undefined;
@@ -3765,6 +3817,7 @@
    */
   exports.prototype['enableIdfxPhoneAuthSignatureAuthStatus'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableIdfxPhoneAuthSignatureAuthStatusMetadata
    */
   exports.prototype['enableIdfxPhoneAuthSignatureAuthStatusMetadata'] = undefined;
@@ -3784,10 +3837,12 @@
    */
   exports.prototype['enableKeyTermsSuggestionsByDocumentType'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableKeyTermsSuggestionsByDocumentTypeMetadata
    */
   exports.prototype['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableParticipantRecipientSettingMetadata
    */
   exports.prototype['enableParticipantRecipientSettingMetadata'] = undefined;
@@ -3917,6 +3972,7 @@
    */
   exports.prototype['enableSearchSiteSpecificApi'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enableSearchSiteSpecificApiMetadata
    */
   exports.prototype['enableSearchSiteSpecificApiMetadata'] = undefined;
@@ -4161,6 +4217,7 @@
    */
   exports.prototype['enforceTlsEmails'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} enforceTlsEmailsMetadata
    */
   exports.prototype['enforceTlsEmailsMetadata'] = undefined;
@@ -4186,28 +4243,31 @@
   exports.prototype['envelopeIntegrationEnabledMetadata'] = undefined;
   /**
    * 
-   * @member {String} envelopeLimitsTotalDocumentSizeAllowedInMB
+   * @member {String} EnvelopeLimitsTotalDocumentSizeAllowedInMB
    */
-  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMB'] = undefined;
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMB'] = undefined;
   /**
    * 
-   * @member {String} envelopeLimitsTotalDocumentSizeAllowedInMBEnabled
+   * @member {String} EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled
    */
-  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = undefined;
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabled'] = undefined;
   /**
-   * @member {module:model/SettingsMetadata} envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata
+   * 
+   * @member {module:model/SettingsMetadata} EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata
    */
-  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = undefined;
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBEnabledMetadata'] = undefined;
   /**
-   * @member {module:model/SettingsMetadata} envelopeLimitsTotalDocumentSizeAllowedInMBMetadata
+   * 
+   * @member {module:model/SettingsMetadata} EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata
    */
-  exports.prototype['envelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = undefined;
+  exports.prototype['EnvelopeLimitsTotalDocumentSizeAllowedInMBMetadata'] = undefined;
   /**
    * 
    * @member {String} envelopeSearchMode
    */
   exports.prototype['envelopeSearchMode'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} envelopeSearchModeMetadata
    */
   exports.prototype['envelopeSearchModeMetadata'] = undefined;
@@ -4302,6 +4362,7 @@
    */
   exports.prototype['guidedFormsHtmlConversionPolicy'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} guidedFormsHtmlConversionPolicyMetadata
    */
   exports.prototype['guidedFormsHtmlConversionPolicyMetadata'] = undefined;
@@ -4391,6 +4452,7 @@
    */
   exports.prototype['idfxKBAAuthenticationOverride'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} idfxKBAAuthenticationOverrideMetadata
    */
   exports.prototype['idfxKBAAuthenticationOverrideMetadata'] = undefined;
@@ -4456,6 +4518,11 @@
   exports.prototype['inSessionSuppressEmailsMetadata'] = undefined;
   /**
    * 
+   * @member {String} isConnectDocumentFieldsEnabled
+   */
+  exports.prototype['isConnectDocumentFieldsEnabled'] = undefined;
+  /**
+   * 
    * @member {Array.<module:model/LinkedExternalPrimaryAccount>} linkedExternalPrimaryAccounts
    */
   exports.prototype['linkedExternalPrimaryAccounts'] = undefined;
@@ -4490,6 +4557,7 @@
    */
   exports.prototype['mergeMixedModeResults'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} mergeMixedModeResultsMetadata
    */
   exports.prototype['mergeMixedModeResultsMetadata'] = undefined;
@@ -4520,6 +4588,11 @@
   exports.prototype['optInMobileSigningV02Metadata'] = undefined;
   /**
    * 
+   * @member {String} optInUniversalSignatures
+   */
+  exports.prototype['optInUniversalSignatures'] = undefined;
+  /**
+   * 
    * @member {String} optOutAutoNavTextAndTabColorUpdates
    */
   exports.prototype['optOutAutoNavTextAndTabColorUpdates'] = undefined;
@@ -4544,6 +4617,7 @@
    */
   exports.prototype['pdfMaxChunkedUploadPartSize'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} pdfMaxChunkedUploadPartSizeMetadata
    */
   exports.prototype['pdfMaxChunkedUploadPartSizeMetadata'] = undefined;
@@ -4553,6 +4627,7 @@
    */
   exports.prototype['pdfMaxChunkedUploadTotalSize'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} pdfMaxChunkedUploadTotalSizeMetadata
    */
   exports.prototype['pdfMaxChunkedUploadTotalSizeMetadata'] = undefined;
@@ -4562,6 +4637,7 @@
    */
   exports.prototype['pdfMaxIndividualUploadSize'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} pdfMaxIndividualUploadSizeMetadata
    */
   exports.prototype['pdfMaxIndividualUploadSizeMetadata'] = undefined;
@@ -5226,6 +5302,7 @@
    */
   exports.prototype['useEnvelopeSearchMixedMode'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} useEnvelopeSearchMixedModeMetadata
    */
   exports.prototype['useEnvelopeSearchMixedModeMetadata'] = undefined;
@@ -5255,6 +5332,7 @@
    */
   exports.prototype['useNewEnvelopeSearch'] = undefined;
   /**
+   * 
    * @member {module:model/SettingsMetadata} useNewEnvelopeSearchMetadata
    */
   exports.prototype['useNewEnvelopeSearchMetadata'] = undefined;
