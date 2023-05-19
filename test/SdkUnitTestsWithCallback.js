@@ -602,12 +602,12 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
                 if (err) console.log('Error: ' + err);
               });
               console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
-              done();
             } catch (ex) {
               console.log('Exception: ' + ex);
             }
           }
         });
+        done();
       }
     });
   });

@@ -743,7 +743,6 @@ describe('SDK Unit Tests:', function (done) {
                     if (err) console.log('Error: ' + err);
                   });
                   console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
-                  done();
                 } catch (ex) {
                   console.log('Exception: ' + ex);
                 }
@@ -754,6 +753,7 @@ describe('SDK Unit Tests:', function (done) {
                 return done(error);
               }
             });
+          done();
         }
       })
       .catch(function (error) {
