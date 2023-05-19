@@ -8,13 +8,13 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-(function(root, factory) {
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['superagent'], factory);
+    define(['superagent', 'superagent-proxy'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superagent'));
+    module.exports = factory(require('superagent'), require('superagent-proxy'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
@@ -22,9 +22,9 @@
     }
     root.Docusign.ApiClient = factory(root.superagent, opts);
   }
-}(this, function(superagent, opts) {
+}(this, function(superagent, proxy, opts) {
   'use strict';
-
+  
   var SCOPE_SIGNATURE = "signature";
   var SCOPE_EXTENDED = "extended";
   var SCOPE_IMPERSONATION = "impersonation";
@@ -64,9 +64,21 @@
     }
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
+  
+  const configureProxy = function (saRequest) {
+    const PROXY_URL = process.env.HTTP_PROXY;
+
+    if (PROXY_URL) {
+      proxy(saRequest, PROXY_URL)
+    } 
+    
+    return saRequest;
+  }
 
   var sendJWTTokenRequest = function (assertion, oAuthBasePath, callback) {
+
     var request = superagent.post("https://" + oAuthBasePath + "/oauth/token")
+    configureProxy(request)
       .timeout(exports.prototype.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
@@ -489,13 +501,19 @@
    * @param {module:ApiClient~callApiCallback} callback The callback function. If this is left undefined, this method will return a promise instead.
    * @returns {Object} The SuperAgent request object if a callback is specified, else {Promise} A {@link https://www.promisejs.org/|Promise} object.
    */
+  const fs = require('fs');
+
   exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
+      
+    queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
       returnType, callback) {
 
     var _this = this;
     var url = this.buildUrl(path, pathParams);
-    var request = superagent(httpMethod, url);
+    
+    var saRequest = superagent(httpMethod, url);
+
+    var request = configureProxy(saRequest);
     var _formParams = this.normalizeParams(formParams);
     var body = httpMethod.toUpperCase() === 'GET' && !bodyParam ? undefined : bodyParam || {};
 
@@ -759,6 +777,7 @@
       },
       OAuthToken = require('./OAuth').OAuthToken,
       request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
+      configureProxy(request)
         .send(postData)
         .set(headers)
         .type("application/x-www-form-urlencoded");
@@ -799,7 +818,8 @@
       "Pragma": "no-cache"
     }
 
-    var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
+    var request = superagent.get("https://" + this.getOAuthBasePath() + "/oauth/userinfo")
+    configureProxy(request).set(headers);
     var UserInfo = require('./OAuth').UserInfo;
 
 
@@ -880,6 +900,7 @@
     var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
 
     superagent('post', 'https://' + this.getOAuthBasePath() + '/oauth/token')
+      configureProxy(request)
       .timeout(this.timeout)
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
