@@ -94,6 +94,24 @@
       if (data.hasOwnProperty('advancedCorrectMetadata')) {
         obj['advancedCorrectMetadata'] = SettingsMetadata.constructFromObject(data['advancedCorrectMetadata']);
       }
+      if (data.hasOwnProperty('advancedSearchEnableTabField')) {
+        obj['advancedSearchEnableTabField'] = ApiClient.convertToType(data['advancedSearchEnableTabField'], 'String');
+      }
+      if (data.hasOwnProperty('advancedSearchEnableTabFieldMetadata')) {
+        obj['advancedSearchEnableTabFieldMetadata'] = SettingsMetadata.constructFromObject(data['advancedSearchEnableTabFieldMetadata']);
+      }
+      if (data.hasOwnProperty('advancedSearchEnableTemplateIdField')) {
+        obj['advancedSearchEnableTemplateIdField'] = ApiClient.convertToType(data['advancedSearchEnableTemplateIdField'], 'String');
+      }
+      if (data.hasOwnProperty('advancedSearchEnableTemplateIdFieldMetadata')) {
+        obj['advancedSearchEnableTemplateIdFieldMetadata'] = SettingsMetadata.constructFromObject(data['advancedSearchEnableTemplateIdFieldMetadata']);
+      }
+      if (data.hasOwnProperty('advancedSearchEnableTemplateNameField')) {
+        obj['advancedSearchEnableTemplateNameField'] = ApiClient.convertToType(data['advancedSearchEnableTemplateNameField'], 'String');
+      }
+      if (data.hasOwnProperty('advancedSearchEnableTemplateNameFieldMetadata')) {
+        obj['advancedSearchEnableTemplateNameFieldMetadata'] = SettingsMetadata.constructFromObject(data['advancedSearchEnableTemplateNameFieldMetadata']);
+      }
       if (data.hasOwnProperty('allowAccessCodeFormat')) {
         obj['allowAccessCodeFormat'] = ApiClient.convertToType(data['allowAccessCodeFormat'], 'String');
       }
@@ -411,6 +429,12 @@
       }
       if (data.hasOwnProperty('allowOrganizationDocusignMonitor')) {
         obj['allowOrganizationDocusignMonitor'] = ApiClient.convertToType(data['allowOrganizationDocusignMonitor'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationDocusignMonitorLite')) {
+        obj['allowOrganizationDocusignMonitorLite'] = ApiClient.convertToType(data['allowOrganizationDocusignMonitorLite'], 'String');
+      }
+      if (data.hasOwnProperty('allowOrganizationDocusignMonitorLiteMetadata')) {
+        obj['allowOrganizationDocusignMonitorLiteMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationDocusignMonitorLiteMetadata']);
       }
       if (data.hasOwnProperty('allowOrganizationDocusignMonitorMetadata')) {
         obj['allowOrganizationDocusignMonitorMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationDocusignMonitorMetadata']);
@@ -826,6 +850,12 @@
       if (data.hasOwnProperty('dataPopulationScopeMetadata')) {
         obj['dataPopulationScopeMetadata'] = SettingsMetadata.constructFromObject(data['dataPopulationScopeMetadata']);
       }
+      if (data.hasOwnProperty('defaultToAdvancedEnvelopesFilterForm')) {
+        obj['defaultToAdvancedEnvelopesFilterForm'] = ApiClient.convertToType(data['defaultToAdvancedEnvelopesFilterForm'], 'String');
+      }
+      if (data.hasOwnProperty('defaultToAdvancedEnvelopesFilterFormMetadata')) {
+        obj['defaultToAdvancedEnvelopesFilterFormMetadata'] = SettingsMetadata.constructFromObject(data['defaultToAdvancedEnvelopesFilterFormMetadata']);
+      }
       if (data.hasOwnProperty('disableAutoTemplateMatching')) {
         obj['disableAutoTemplateMatching'] = ApiClient.convertToType(data['disableAutoTemplateMatching'], 'String');
       }
@@ -937,11 +967,23 @@
       if (data.hasOwnProperty('enableAccessCodeGeneratorMetadata')) {
         obj['enableAccessCodeGeneratorMetadata'] = SettingsMetadata.constructFromObject(data['enableAccessCodeGeneratorMetadata']);
       }
+      if (data.hasOwnProperty('enableAccountWideSearch')) {
+        obj['enableAccountWideSearch'] = ApiClient.convertToType(data['enableAccountWideSearch'], 'String');
+      }
+      if (data.hasOwnProperty('enableAccountWideSearchMetadata')) {
+        obj['enableAccountWideSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableAccountWideSearchMetadata']);
+      }
       if (data.hasOwnProperty('enableAdmHealthcare')) {
         obj['enableAdmHealthcare'] = ApiClient.convertToType(data['enableAdmHealthcare'], 'String');
       }
       if (data.hasOwnProperty('enableAdmHealthcareMetadata')) {
         obj['enableAdmHealthcareMetadata'] = SettingsMetadata.constructFromObject(data['enableAdmHealthcareMetadata']);
+      }
+      if (data.hasOwnProperty('enableAdvancedEnvelopesSearch')) {
+        obj['enableAdvancedEnvelopesSearch'] = ApiClient.convertToType(data['enableAdvancedEnvelopesSearch'], 'String');
+      }
+      if (data.hasOwnProperty('enableAdvancedEnvelopesSearchMetadata')) {
+        obj['enableAdvancedEnvelopesSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableAdvancedEnvelopesSearchMetadata']);
       }
       if (data.hasOwnProperty('enableAdvancedPayments')) {
         obj['enableAdvancedPayments'] = ApiClient.convertToType(data['enableAdvancedPayments'], 'String');
@@ -1041,6 +1083,48 @@
       }
       if (data.hasOwnProperty('enableCustomerSatisfactionMetricTrackingMetadata')) {
         obj['enableCustomerSatisfactionMetricTrackingMetadata'] = SettingsMetadata.constructFromObject(data['enableCustomerSatisfactionMetricTrackingMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigEUAdvancedPens')) {
+        obj['enableDSigEUAdvancedPens'] = ApiClient.convertToType(data['enableDSigEUAdvancedPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigEUAdvancedPensMetadata')) {
+        obj['enableDSigEUAdvancedPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigEUAdvancedPensMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigExpressPens')) {
+        obj['enableDSigExpressPens'] = ApiClient.convertToType(data['enableDSigExpressPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigExpressPensMetadata')) {
+        obj['enableDSigExpressPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigExpressPensMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigIDCheckForAESPens')) {
+        obj['enableDSigIDCheckForAESPens'] = ApiClient.convertToType(data['enableDSigIDCheckForAESPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigIDCheckForAESPensMetadata')) {
+        obj['enableDSigIDCheckForAESPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigIDCheckForAESPensMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigIDCheckInPersonForQESPens')) {
+        obj['enableDSigIDCheckInPersonForQESPens'] = ApiClient.convertToType(data['enableDSigIDCheckInPersonForQESPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigIDCheckInPersonForQESPensMetadata')) {
+        obj['enableDSigIDCheckInPersonForQESPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigIDCheckInPersonForQESPensMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigIDCheckRemoteForQESPens')) {
+        obj['enableDSigIDCheckRemoteForQESPens'] = ApiClient.convertToType(data['enableDSigIDCheckRemoteForQESPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigIDCheckRemoteForQESPensMetadata')) {
+        obj['enableDSigIDCheckRemoteForQESPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigIDCheckRemoteForQESPensMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigIDVerificationPens')) {
+        obj['enableDSigIDVerificationPens'] = ApiClient.convertToType(data['enableDSigIDVerificationPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigIDVerificationPensMetadata')) {
+        obj['enableDSigIDVerificationPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigIDVerificationPensMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigIDVerificationPremierPens')) {
+        obj['enableDSigIDVerificationPremierPens'] = ApiClient.convertToType(data['enableDSigIDVerificationPremierPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigIDVerificationPremierPensMetadata')) {
+        obj['enableDSigIDVerificationPremierPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigIDVerificationPremierPensMetadata']);
       }
       if (data.hasOwnProperty('enableDSPro')) {
         obj['enableDSPro'] = ApiClient.convertToType(data['enableDSPro'], 'String');
@@ -2008,6 +2092,12 @@
       if (data.hasOwnProperty('useNewEnvelopeSearchMetadata')) {
         obj['useNewEnvelopeSearchMetadata'] = SettingsMetadata.constructFromObject(data['useNewEnvelopeSearchMetadata']);
       }
+      if (data.hasOwnProperty('useNewEnvelopeSearchOnlyWhenSearchingAfterDate')) {
+        obj['useNewEnvelopeSearchOnlyWhenSearchingAfterDate'] = ApiClient.convertToType(data['useNewEnvelopeSearchOnlyWhenSearchingAfterDate'], 'String');
+      }
+      if (data.hasOwnProperty('useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata')) {
+        obj['useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata'] = SettingsMetadata.constructFromObject(data['useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata']);
+      }
       if (data.hasOwnProperty('useSAFESignerCertificates')) {
         obj['useSAFESignerCertificates'] = ApiClient.convertToType(data['useSAFESignerCertificates'], 'String');
       }
@@ -2146,6 +2236,36 @@
    * @member {module:model/SettingsMetadata} advancedCorrectMetadata
    */
   exports.prototype['advancedCorrectMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} advancedSearchEnableTabField
+   */
+  exports.prototype['advancedSearchEnableTabField'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} advancedSearchEnableTabFieldMetadata
+   */
+  exports.prototype['advancedSearchEnableTabFieldMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} advancedSearchEnableTemplateIdField
+   */
+  exports.prototype['advancedSearchEnableTemplateIdField'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} advancedSearchEnableTemplateIdFieldMetadata
+   */
+  exports.prototype['advancedSearchEnableTemplateIdFieldMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} advancedSearchEnableTemplateNameField
+   */
+  exports.prototype['advancedSearchEnableTemplateNameField'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} advancedSearchEnableTemplateNameFieldMetadata
+   */
+  exports.prototype['advancedSearchEnableTemplateNameFieldMetadata'] = undefined;
   /**
    * 
    * @member {String} allowAccessCodeFormat
@@ -2678,6 +2798,16 @@
   exports.prototype['allowOrganizationDocusignMonitor'] = undefined;
   /**
    * 
+   * @member {String} allowOrganizationDocusignMonitorLite
+   */
+  exports.prototype['allowOrganizationDocusignMonitorLite'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowOrganizationDocusignMonitorLiteMetadata
+   */
+  exports.prototype['allowOrganizationDocusignMonitorLiteMetadata'] = undefined;
+  /**
+   * 
    * @member {module:model/SettingsMetadata} allowOrganizationDocusignMonitorMetadata
    */
   exports.prototype['allowOrganizationDocusignMonitorMetadata'] = undefined;
@@ -2737,7 +2867,7 @@
    */
   exports.prototype['allowOrganizationToUseThirdPartyElectronicNotary'] = undefined;
   /**
-   * 
+   * Metadata for the org level flag that dtermines the availablity to perform Third Party Notary (3PN) actions.
    * @member {module:model/SettingsMetadata} allowOrganizationToUseThirdPartyElectronicNotaryMetadata
    */
   exports.prototype['allowOrganizationToUseThirdPartyElectronicNotaryMetadata'] = undefined;
@@ -3368,6 +3498,16 @@
   exports.prototype['dataPopulationScopeMetadata'] = undefined;
   /**
    * 
+   * @member {String} defaultToAdvancedEnvelopesFilterForm
+   */
+  exports.prototype['defaultToAdvancedEnvelopesFilterForm'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} defaultToAdvancedEnvelopesFilterFormMetadata
+   */
+  exports.prototype['defaultToAdvancedEnvelopesFilterFormMetadata'] = undefined;
+  /**
+   * 
    * @member {String} disableAutoTemplateMatching
    */
   exports.prototype['disableAutoTemplateMatching'] = undefined;
@@ -3553,6 +3693,16 @@
   exports.prototype['enableAccessCodeGeneratorMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableAccountWideSearch
+   */
+  exports.prototype['enableAccountWideSearch'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableAccountWideSearchMetadata
+   */
+  exports.prototype['enableAccountWideSearchMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableAdmHealthcare
    */
   exports.prototype['enableAdmHealthcare'] = undefined;
@@ -3561,6 +3711,16 @@
    * @member {module:model/SettingsMetadata} enableAdmHealthcareMetadata
    */
   exports.prototype['enableAdmHealthcareMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableAdvancedEnvelopesSearch
+   */
+  exports.prototype['enableAdvancedEnvelopesSearch'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableAdvancedEnvelopesSearchMetadata
+   */
+  exports.prototype['enableAdvancedEnvelopesSearchMetadata'] = undefined;
   /**
    * 
    * @member {String} enableAdvancedPayments
@@ -3726,6 +3886,76 @@
    * @member {module:model/SettingsMetadata} enableCustomerSatisfactionMetricTrackingMetadata
    */
   exports.prototype['enableCustomerSatisfactionMetricTrackingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigEUAdvancedPens
+   */
+  exports.prototype['enableDSigEUAdvancedPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigEUAdvancedPensMetadata
+   */
+  exports.prototype['enableDSigEUAdvancedPensMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigExpressPens
+   */
+  exports.prototype['enableDSigExpressPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigExpressPensMetadata
+   */
+  exports.prototype['enableDSigExpressPensMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigIDCheckForAESPens
+   */
+  exports.prototype['enableDSigIDCheckForAESPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigIDCheckForAESPensMetadata
+   */
+  exports.prototype['enableDSigIDCheckForAESPensMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigIDCheckInPersonForQESPens
+   */
+  exports.prototype['enableDSigIDCheckInPersonForQESPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigIDCheckInPersonForQESPensMetadata
+   */
+  exports.prototype['enableDSigIDCheckInPersonForQESPensMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigIDCheckRemoteForQESPens
+   */
+  exports.prototype['enableDSigIDCheckRemoteForQESPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigIDCheckRemoteForQESPensMetadata
+   */
+  exports.prototype['enableDSigIDCheckRemoteForQESPensMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigIDVerificationPens
+   */
+  exports.prototype['enableDSigIDVerificationPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigIDVerificationPensMetadata
+   */
+  exports.prototype['enableDSigIDVerificationPensMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigIDVerificationPremierPens
+   */
+  exports.prototype['enableDSigIDVerificationPremierPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigIDVerificationPremierPensMetadata
+   */
+  exports.prototype['enableDSigIDVerificationPremierPensMetadata'] = undefined;
   /**
    * 
    * @member {String} enableDSPro
@@ -5336,6 +5566,16 @@
    * @member {module:model/SettingsMetadata} useNewEnvelopeSearchMetadata
    */
   exports.prototype['useNewEnvelopeSearchMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} useNewEnvelopeSearchOnlyWhenSearchingAfterDate
+   */
+  exports.prototype['useNewEnvelopeSearchOnlyWhenSearchingAfterDate'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata
+   */
+  exports.prototype['useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata'] = undefined;
   /**
    * 
    * @member {String} useSAFESignerCertificates

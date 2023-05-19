@@ -58,6 +58,12 @@
       if (data.hasOwnProperty('adminMessage')) {
         obj['adminMessage'] = AdminMessage.constructFromObject(data['adminMessage']);
       }
+      if (data.hasOwnProperty('allowUsersToEditSharedAccess')) {
+        obj['allowUsersToEditSharedAccess'] = ApiClient.convertToType(data['allowUsersToEditSharedAccess'], 'String');
+      }
+      if (data.hasOwnProperty('allowUsersToEditSharedAccessMetadata')) {
+        obj['allowUsersToEditSharedAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowUsersToEditSharedAccessMetadata']);
+      }
       if (data.hasOwnProperty('askAnAdmin')) {
         obj['askAnAdmin'] = AskAnAdmin.constructFromObject(data['askAnAdmin']);
       }
@@ -154,6 +160,16 @@
    * @member {module:model/AdminMessage} adminMessage
    */
   exports.prototype['adminMessage'] = undefined;
+  /**
+   * 
+   * @member {String} allowUsersToEditSharedAccess
+   */
+  exports.prototype['allowUsersToEditSharedAccess'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowUsersToEditSharedAccessMetadata
+   */
+  exports.prototype['allowUsersToEditSharedAccessMetadata'] = undefined;
   /**
    * 
    * @member {module:model/AskAnAdmin} askAnAdmin
