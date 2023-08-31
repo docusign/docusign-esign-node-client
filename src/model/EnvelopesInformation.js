@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('envelopes')) {
         obj['envelopes'] = ApiClient.convertToType(data['envelopes'], [Envelope]);
       }
+      if (data.hasOwnProperty('envelopeSearchSource')) {
+        obj['envelopeSearchSource'] = ApiClient.convertToType(data['envelopeSearchSource'], 'String');
+      }
       if (data.hasOwnProperty('envelopeTransactionStatuses')) {
         obj['envelopeTransactionStatuses'] = ApiClient.convertToType(data['envelopeTransactionStatuses'], [EnvelopeTransactionStatus]);
       }
@@ -107,6 +110,11 @@
    * @member {Array.<module:model/Envelope>} envelopes
    */
   exports.prototype['envelopes'] = undefined;
+  /**
+   * 
+   * @member {String} envelopeSearchSource
+   */
+  exports.prototype['envelopeSearchSource'] = undefined;
   /**
    * 
    * @member {Array.<module:model/EnvelopeTransactionStatus>} envelopeTransactionStatuses

@@ -231,6 +231,9 @@
       if (data.hasOwnProperty('notarySourceType')) {
         obj['notarySourceType'] = ApiClient.convertToType(data['notarySourceType'], 'String');
       }
+      if (data.hasOwnProperty('notaryThirdPartyPartner')) {
+        obj['notaryThirdPartyPartner'] = ApiClient.convertToType(data['notaryThirdPartyPartner'], 'String');
+      }
       if (data.hasOwnProperty('notaryType')) {
         obj['notaryType'] = ApiClient.convertToType(data['notaryType'], 'String');
       }
@@ -659,6 +662,11 @@
    * @member {String} notarySourceType
    */
   exports.prototype['notarySourceType'] = undefined;
+  /**
+   * 
+   * @member {String} notaryThirdPartyPartner
+   */
+  exports.prototype['notaryThirdPartyPartner'] = undefined;
   /**
    * 
    * @member {String} notaryType

@@ -64,6 +64,12 @@
       if (data.hasOwnProperty('inputOptions')) {
         obj['inputOptions'] = ApiClient.convertToType(data['inputOptions'], [AccountIdentityInputOption]);
       }
+      if (data.hasOwnProperty('isDisabled')) {
+        obj['isDisabled'] = ApiClient.convertToType(data['isDisabled'], 'String');
+      }
+      if (data.hasOwnProperty('ownerType')) {
+        obj['ownerType'] = ApiClient.convertToType(data['ownerType'], 'String');
+      }
       if (data.hasOwnProperty('signatureProvider')) {
         obj['signatureProvider'] = AccountSignatureProvider.constructFromObject(data['signatureProvider']);
       }
@@ -98,6 +104,16 @@
    * @member {Array.<module:model/AccountIdentityInputOption>} inputOptions
    */
   exports.prototype['inputOptions'] = undefined;
+  /**
+   * 
+   * @member {String} isDisabled
+   */
+  exports.prototype['isDisabled'] = undefined;
+  /**
+   * 
+   * @member {String} ownerType
+   */
+  exports.prototype['ownerType'] = undefined;
   /**
    * The signature provider associated with the Identity Verification workflow.
    * @member {module:model/AccountSignatureProvider} signatureProvider

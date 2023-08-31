@@ -109,6 +109,9 @@
       if (data.hasOwnProperty('includeInDownloadMetadata')) {
         obj['includeInDownloadMetadata'] = PropertyMetadata.constructFromObject(data['includeInDownloadMetadata']);
       }
+      if (data.hasOwnProperty('isAceGenDocument')) {
+        obj['isAceGenDocument'] = ApiClient.convertToType(data['isAceGenDocument'], 'String');
+      }
       if (data.hasOwnProperty('isDocGenDocument')) {
         obj['isDocGenDocument'] = ApiClient.convertToType(data['isDocGenDocument'], 'String');
       }
@@ -239,6 +242,11 @@
    * @member {module:model/PropertyMetadata} includeInDownloadMetadata
    */
   exports.prototype['includeInDownloadMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} isAceGenDocument
+   */
+  exports.prototype['isAceGenDocument'] = undefined;
   /**
    * 
    * @member {String} isDocGenDocument

@@ -234,6 +234,9 @@
       if (data.hasOwnProperty('is21CFRPart11')) {
         obj['is21CFRPart11'] = ApiClient.convertToType(data['is21CFRPart11'], 'String');
       }
+      if (data.hasOwnProperty('isAceGenTemplate')) {
+        obj['isAceGenTemplate'] = ApiClient.convertToType(data['isAceGenTemplate'], 'String');
+      }
       if (data.hasOwnProperty('isDocGenTemplate')) {
         obj['isDocGenTemplate'] = ApiClient.convertToType(data['isDocGenTemplate'], 'String');
       }
@@ -664,6 +667,11 @@
    * @member {String} is21CFRPart11
    */
   exports.prototype['is21CFRPart11'] = undefined;
+  /**
+   * 
+   * @member {String} isAceGenTemplate
+   */
+  exports.prototype['isAceGenTemplate'] = undefined;
   /**
    * 
    * @member {String} isDocGenTemplate

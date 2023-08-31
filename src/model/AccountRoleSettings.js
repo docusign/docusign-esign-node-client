@@ -115,6 +115,12 @@
       if (data.hasOwnProperty('allowedClickwrapsAccessMetadata')) {
         obj['allowedClickwrapsAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedClickwrapsAccessMetadata']);
       }
+      if (data.hasOwnProperty('allowedOrchestrationAccess')) {
+        obj['allowedOrchestrationAccess'] = ApiClient.convertToType(data['allowedOrchestrationAccess'], 'String');
+      }
+      if (data.hasOwnProperty('allowedOrchestrationAccessMetadata')) {
+        obj['allowedOrchestrationAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedOrchestrationAccessMetadata']);
+      }
       if (data.hasOwnProperty('allowedTemplateAccess')) {
         obj['allowedTemplateAccess'] = ApiClient.convertToType(data['allowedTemplateAccess'], 'String');
       }
@@ -169,6 +175,12 @@
       if (data.hasOwnProperty('allowTaggingInSendAndCorrectMetadata')) {
         obj['allowTaggingInSendAndCorrectMetadata'] = SettingsMetadata.constructFromObject(data['allowTaggingInSendAndCorrectMetadata']);
       }
+      if (data.hasOwnProperty('allowTransactions')) {
+        obj['allowTransactions'] = ApiClient.convertToType(data['allowTransactions'], 'String');
+      }
+      if (data.hasOwnProperty('allowTransactionsMetadata')) {
+        obj['allowTransactionsMetadata'] = SettingsMetadata.constructFromObject(data['allowTransactionsMetadata']);
+      }
       if (data.hasOwnProperty('allowVaulting')) {
         obj['allowVaulting'] = ApiClient.convertToType(data['allowVaulting'], 'String');
       }
@@ -181,11 +193,29 @@
       if (data.hasOwnProperty('allowWetSigningOverrideMetadata')) {
         obj['allowWetSigningOverrideMetadata'] = SettingsMetadata.constructFromObject(data['allowWetSigningOverrideMetadata']);
       }
+      if (data.hasOwnProperty('canCreateTransaction')) {
+        obj['canCreateTransaction'] = ApiClient.convertToType(data['canCreateTransaction'], 'String');
+      }
+      if (data.hasOwnProperty('canCreateTransactionMetadata')) {
+        obj['canCreateTransactionMetadata'] = SettingsMetadata.constructFromObject(data['canCreateTransactionMetadata']);
+      }
       if (data.hasOwnProperty('canCreateWorkspaces')) {
         obj['canCreateWorkspaces'] = ApiClient.convertToType(data['canCreateWorkspaces'], 'String');
       }
       if (data.hasOwnProperty('canCreateWorkspacesMetadata')) {
         obj['canCreateWorkspacesMetadata'] = SettingsMetadata.constructFromObject(data['canCreateWorkspacesMetadata']);
+      }
+      if (data.hasOwnProperty('canDeleteDocumentsInTransaction')) {
+        obj['canDeleteDocumentsInTransaction'] = ApiClient.convertToType(data['canDeleteDocumentsInTransaction'], 'String');
+      }
+      if (data.hasOwnProperty('canDeleteDocumentsInTransactionMetadata')) {
+        obj['canDeleteDocumentsInTransactionMetadata'] = SettingsMetadata.constructFromObject(data['canDeleteDocumentsInTransactionMetadata']);
+      }
+      if (data.hasOwnProperty('canDeleteTransaction')) {
+        obj['canDeleteTransaction'] = ApiClient.convertToType(data['canDeleteTransaction'], 'String');
+      }
+      if (data.hasOwnProperty('canDeleteTransactionMetadata')) {
+        obj['canDeleteTransactionMetadata'] = SettingsMetadata.constructFromObject(data['canDeleteTransactionMetadata']);
       }
       if (data.hasOwnProperty('canSendEnvelopesViaSMS')) {
         obj['canSendEnvelopesViaSMS'] = ApiClient.convertToType(data['canSendEnvelopesViaSMS'], 'String');
@@ -398,6 +428,16 @@
   exports.prototype['allowedClickwrapsAccessMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowedOrchestrationAccess
+   */
+  exports.prototype['allowedOrchestrationAccess'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowedOrchestrationAccessMetadata
+   */
+  exports.prototype['allowedOrchestrationAccessMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowedTemplateAccess
    */
   exports.prototype['allowedTemplateAccess'] = undefined;
@@ -488,6 +528,16 @@
   exports.prototype['allowTaggingInSendAndCorrectMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowTransactions
+   */
+  exports.prototype['allowTransactions'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowTransactionsMetadata
+   */
+  exports.prototype['allowTransactionsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowVaulting
    */
   exports.prototype['allowVaulting'] = undefined;
@@ -508,6 +558,16 @@
   exports.prototype['allowWetSigningOverrideMetadata'] = undefined;
   /**
    * 
+   * @member {String} canCreateTransaction
+   */
+  exports.prototype['canCreateTransaction'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canCreateTransactionMetadata
+   */
+  exports.prototype['canCreateTransactionMetadata'] = undefined;
+  /**
+   * 
    * @member {String} canCreateWorkspaces
    */
   exports.prototype['canCreateWorkspaces'] = undefined;
@@ -516,6 +576,26 @@
    * @member {module:model/SettingsMetadata} canCreateWorkspacesMetadata
    */
   exports.prototype['canCreateWorkspacesMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canDeleteDocumentsInTransaction
+   */
+  exports.prototype['canDeleteDocumentsInTransaction'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canDeleteDocumentsInTransactionMetadata
+   */
+  exports.prototype['canDeleteDocumentsInTransactionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canDeleteTransaction
+   */
+  exports.prototype['canDeleteTransaction'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canDeleteTransactionMetadata
+   */
+  exports.prototype['canDeleteTransactionMetadata'] = undefined;
   /**
    * 
    * @member {String} canSendEnvelopesViaSMS
