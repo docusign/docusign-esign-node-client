@@ -67,6 +67,12 @@
       if (data.hasOwnProperty('allowAutoTagging')) {
         obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
       }
+      if (data.hasOwnProperty('allowedOrchestrationAccess')) {
+        obj['allowedOrchestrationAccess'] = ApiClient.convertToType(data['allowedOrchestrationAccess'], 'String');
+      }
+      if (data.hasOwnProperty('allowedOrchestrationAccessMetadata')) {
+        obj['allowedOrchestrationAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedOrchestrationAccessMetadata']);
+      }
       if (data.hasOwnProperty('allowEnvelopeTransferTo')) {
         obj['allowEnvelopeTransferTo'] = ApiClient.convertToType(data['allowEnvelopeTransferTo'], 'String');
       }
@@ -103,6 +109,12 @@
       if (data.hasOwnProperty('allowSupplementalDocumentsMetadata')) {
         obj['allowSupplementalDocumentsMetadata'] = SettingsMetadata.constructFromObject(data['allowSupplementalDocumentsMetadata']);
       }
+      if (data.hasOwnProperty('allowTransactions')) {
+        obj['allowTransactions'] = ApiClient.convertToType(data['allowTransactions'], 'String');
+      }
+      if (data.hasOwnProperty('allowTransactionsMetadata')) {
+        obj['allowTransactionsMetadata'] = SettingsMetadata.constructFromObject(data['allowTransactionsMetadata']);
+      }
       if (data.hasOwnProperty('anchorTagVersionedPlacementEnabled')) {
         obj['anchorTagVersionedPlacementEnabled'] = ApiClient.convertToType(data['anchorTagVersionedPlacementEnabled'], 'String');
       }
@@ -129,6 +141,24 @@
       }
       if (data.hasOwnProperty('canChargeAccountMetadata')) {
         obj['canChargeAccountMetadata'] = SettingsMetadata.constructFromObject(data['canChargeAccountMetadata']);
+      }
+      if (data.hasOwnProperty('canCreateTransaction')) {
+        obj['canCreateTransaction'] = ApiClient.convertToType(data['canCreateTransaction'], 'String');
+      }
+      if (data.hasOwnProperty('canCreateTransactionMetadata')) {
+        obj['canCreateTransactionMetadata'] = SettingsMetadata.constructFromObject(data['canCreateTransactionMetadata']);
+      }
+      if (data.hasOwnProperty('canDeleteDocumentsInTransaction')) {
+        obj['canDeleteDocumentsInTransaction'] = ApiClient.convertToType(data['canDeleteDocumentsInTransaction'], 'String');
+      }
+      if (data.hasOwnProperty('canDeleteDocumentsInTransactionMetadata')) {
+        obj['canDeleteDocumentsInTransactionMetadata'] = SettingsMetadata.constructFromObject(data['canDeleteDocumentsInTransactionMetadata']);
+      }
+      if (data.hasOwnProperty('canDeleteTransaction')) {
+        obj['canDeleteTransaction'] = ApiClient.convertToType(data['canDeleteTransaction'], 'String');
+      }
+      if (data.hasOwnProperty('canDeleteTransactionMetadata')) {
+        obj['canDeleteTransactionMetadata'] = SettingsMetadata.constructFromObject(data['canDeleteTransactionMetadata']);
       }
       if (data.hasOwnProperty('canEditSharedAddressbook')) {
         obj['canEditSharedAddressbook'] = ApiClient.convertToType(data['canEditSharedAddressbook'], 'String');
@@ -456,6 +486,16 @@
   exports.prototype['allowAutoTagging'] = undefined;
   /**
    * 
+   * @member {String} allowedOrchestrationAccess
+   */
+  exports.prototype['allowedOrchestrationAccess'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowedOrchestrationAccessMetadata
+   */
+  exports.prototype['allowedOrchestrationAccessMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowEnvelopeTransferTo
    */
   exports.prototype['allowEnvelopeTransferTo'] = undefined;
@@ -516,6 +556,16 @@
   exports.prototype['allowSupplementalDocumentsMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowTransactions
+   */
+  exports.prototype['allowTransactions'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowTransactionsMetadata
+   */
+  exports.prototype['allowTransactionsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} anchorTagVersionedPlacementEnabled
    */
   exports.prototype['anchorTagVersionedPlacementEnabled'] = undefined;
@@ -559,6 +609,36 @@
    * @member {module:model/SettingsMetadata} canChargeAccountMetadata
    */
   exports.prototype['canChargeAccountMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canCreateTransaction
+   */
+  exports.prototype['canCreateTransaction'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canCreateTransactionMetadata
+   */
+  exports.prototype['canCreateTransactionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canDeleteDocumentsInTransaction
+   */
+  exports.prototype['canDeleteDocumentsInTransaction'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canDeleteDocumentsInTransactionMetadata
+   */
+  exports.prototype['canDeleteDocumentsInTransactionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canDeleteTransaction
+   */
+  exports.prototype['canDeleteTransaction'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canDeleteTransactionMetadata
+   */
+  exports.prototype['canDeleteTransactionMetadata'] = undefined;
   /**
    * 
    * @member {String} canEditSharedAddressbook

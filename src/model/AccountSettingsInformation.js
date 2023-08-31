@@ -130,6 +130,12 @@
       if (data.hasOwnProperty('allowAccountMemberNameChangeMetadata')) {
         obj['allowAccountMemberNameChangeMetadata'] = SettingsMetadata.constructFromObject(data['allowAccountMemberNameChangeMetadata']);
       }
+      if (data.hasOwnProperty('allowACE')) {
+        obj['allowACE'] = ApiClient.convertToType(data['allowACE'], 'String');
+      }
+      if (data.hasOwnProperty('allowACEMetadata')) {
+        obj['allowACEMetadata'] = SettingsMetadata.constructFromObject(data['allowACEMetadata']);
+      }
       if (data.hasOwnProperty('allowAdvancedRecipientRoutingConditional')) {
         obj['allowAdvancedRecipientRoutingConditional'] = ApiClient.convertToType(data['allowAdvancedRecipientRoutingConditional'], 'String');
       }
@@ -148,11 +154,11 @@
       if (data.hasOwnProperty('allowAgreementActionsMetadata')) {
         obj['allowAgreementActionsMetadata'] = SettingsMetadata.constructFromObject(data['allowAgreementActionsMetadata']);
       }
-      if (data.hasOwnProperty('allowAgreementOrchestrationWorkflows')) {
-        obj['allowAgreementOrchestrationWorkflows'] = ApiClient.convertToType(data['allowAgreementOrchestrationWorkflows'], 'String');
+      if (data.hasOwnProperty('allowAgreementOrchestrations')) {
+        obj['allowAgreementOrchestrations'] = ApiClient.convertToType(data['allowAgreementOrchestrations'], 'String');
       }
-      if (data.hasOwnProperty('allowAgreementOrchestrationWorkflowsMetadata')) {
-        obj['allowAgreementOrchestrationWorkflowsMetadata'] = SettingsMetadata.constructFromObject(data['allowAgreementOrchestrationWorkflowsMetadata']);
+      if (data.hasOwnProperty('allowAgreementOrchestrationsMetadata')) {
+        obj['allowAgreementOrchestrationsMetadata'] = SettingsMetadata.constructFromObject(data['allowAgreementOrchestrationsMetadata']);
       }
       if (data.hasOwnProperty('allowAutoNavSettings')) {
         obj['allowAutoNavSettings'] = ApiClient.convertToType(data['allowAutoNavSettings'], 'String');
@@ -180,6 +186,9 @@
       }
       if (data.hasOwnProperty('allowConnectHttpListenerConfigs')) {
         obj['allowConnectHttpListenerConfigs'] = ApiClient.convertToType(data['allowConnectHttpListenerConfigs'], 'String');
+      }
+      if (data.hasOwnProperty('AllowConnectIdentityVerificationUI')) {
+        obj['AllowConnectIdentityVerificationUI'] = ApiClient.convertToType(data['AllowConnectIdentityVerificationUI'], 'String');
       }
       if (data.hasOwnProperty('allowConnectOAuthUI')) {
         obj['allowConnectOAuthUI'] = ApiClient.convertToType(data['allowConnectOAuthUI'], 'String');
@@ -331,6 +340,12 @@
       if (data.hasOwnProperty('allowIDVLevel1Metadata')) {
         obj['allowIDVLevel1Metadata'] = SettingsMetadata.constructFromObject(data['allowIDVLevel1Metadata']);
       }
+      if (data.hasOwnProperty('allowIDVLevel1Trial')) {
+        obj['allowIDVLevel1Trial'] = ApiClient.convertToType(data['allowIDVLevel1Trial'], 'String');
+      }
+      if (data.hasOwnProperty('allowIDVLevel1TrialMetadata')) {
+        obj['allowIDVLevel1TrialMetadata'] = SettingsMetadata.constructFromObject(data['allowIDVLevel1TrialMetadata']);
+      }
       if (data.hasOwnProperty('allowIDVLevel2')) {
         obj['allowIDVLevel2'] = ApiClient.convertToType(data['allowIDVLevel2'], 'String');
       }
@@ -430,11 +445,11 @@
       if (data.hasOwnProperty('allowOrganizationDocusignMonitor')) {
         obj['allowOrganizationDocusignMonitor'] = ApiClient.convertToType(data['allowOrganizationDocusignMonitor'], 'String');
       }
-      if (data.hasOwnProperty('allowOrganizationDocusignMonitorLite')) {
-        obj['allowOrganizationDocusignMonitorLite'] = ApiClient.convertToType(data['allowOrganizationDocusignMonitorLite'], 'String');
+      if (data.hasOwnProperty('allowOrganizationDocusignMonitorFree')) {
+        obj['allowOrganizationDocusignMonitorFree'] = ApiClient.convertToType(data['allowOrganizationDocusignMonitorFree'], 'String');
       }
-      if (data.hasOwnProperty('allowOrganizationDocusignMonitorLiteMetadata')) {
-        obj['allowOrganizationDocusignMonitorLiteMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationDocusignMonitorLiteMetadata']);
+      if (data.hasOwnProperty('allowOrganizationDocusignMonitorFreeMetadata')) {
+        obj['allowOrganizationDocusignMonitorFreeMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationDocusignMonitorFreeMetadata']);
       }
       if (data.hasOwnProperty('allowOrganizationDocusignMonitorMetadata')) {
         obj['allowOrganizationDocusignMonitorMetadata'] = SettingsMetadata.constructFromObject(data['allowOrganizationDocusignMonitorMetadata']);
@@ -672,6 +687,12 @@
       }
       if (data.hasOwnProperty('allowTransactionsWorkspaceMetadata')) {
         obj['allowTransactionsWorkspaceMetadata'] = SettingsMetadata.constructFromObject(data['allowTransactionsWorkspaceMetadata']);
+      }
+      if (data.hasOwnProperty('allowTransactionsWorkspaceOriginal')) {
+        obj['allowTransactionsWorkspaceOriginal'] = ApiClient.convertToType(data['allowTransactionsWorkspaceOriginal'], 'String');
+      }
+      if (data.hasOwnProperty('allowTransactionsWorkspaceOriginalMetadata')) {
+        obj['allowTransactionsWorkspaceOriginalMetadata'] = SettingsMetadata.constructFromObject(data['allowTransactionsWorkspaceOriginalMetadata']);
       }
       if (data.hasOwnProperty('allowUsersToAccessDirectory')) {
         obj['allowUsersToAccessDirectory'] = ApiClient.convertToType(data['allowUsersToAccessDirectory'], 'String');
@@ -946,6 +967,12 @@
       if (data.hasOwnProperty('documentVisibilityMetadata')) {
         obj['documentVisibilityMetadata'] = SettingsMetadata.constructFromObject(data['documentVisibilityMetadata']);
       }
+      if (data.hasOwnProperty('draftEnvelopeRetention')) {
+        obj['draftEnvelopeRetention'] = ApiClient.convertToType(data['draftEnvelopeRetention'], 'String');
+      }
+      if (data.hasOwnProperty('draftEnvelopeRetentionMetadata')) {
+        obj['draftEnvelopeRetentionMetadata'] = SettingsMetadata.constructFromObject(data['draftEnvelopeRetentionMetadata']);
+      }
       if (data.hasOwnProperty('dss_EnableProvisioningPenConfiguration_RadminOption')) {
         obj['dss_EnableProvisioningPenConfiguration_RadminOption'] = ApiClient.convertToType(data['dss_EnableProvisioningPenConfiguration_RadminOption'], 'String');
       }
@@ -1183,6 +1210,24 @@
       if (data.hasOwnProperty('enableIdfxPhoneAuthSignatureAuthStatusMetadata')) {
         obj['enableIdfxPhoneAuthSignatureAuthStatusMetadata'] = SettingsMetadata.constructFromObject(data['enableIdfxPhoneAuthSignatureAuthStatusMetadata']);
       }
+      if (data.hasOwnProperty('enableInboxBrowseViewsPoweredByElasticSearch')) {
+        obj['enableInboxBrowseViewsPoweredByElasticSearch'] = ApiClient.convertToType(data['enableInboxBrowseViewsPoweredByElasticSearch'], 'String');
+      }
+      if (data.hasOwnProperty('enableInboxBrowseViewsPoweredByElasticSearchMetadata')) {
+        obj['enableInboxBrowseViewsPoweredByElasticSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableInboxBrowseViewsPoweredByElasticSearchMetadata']);
+      }
+      if (data.hasOwnProperty('enableInboxRelevanceSort')) {
+        obj['enableInboxRelevanceSort'] = ApiClient.convertToType(data['enableInboxRelevanceSort'], 'String');
+      }
+      if (data.hasOwnProperty('enableInboxRelevanceSortForRecentAccounts')) {
+        obj['enableInboxRelevanceSortForRecentAccounts'] = ApiClient.convertToType(data['enableInboxRelevanceSortForRecentAccounts'], 'String');
+      }
+      if (data.hasOwnProperty('enableInboxRelevanceSortForRecentAccountsMetadata')) {
+        obj['enableInboxRelevanceSortForRecentAccountsMetadata'] = SettingsMetadata.constructFromObject(data['enableInboxRelevanceSortForRecentAccountsMetadata']);
+      }
+      if (data.hasOwnProperty('enableInboxRelevanceSortMetadata')) {
+        obj['enableInboxRelevanceSortMetadata'] = SettingsMetadata.constructFromObject(data['enableInboxRelevanceSortMetadata']);
+      }
       if (data.hasOwnProperty('enableInBrowserEditor')) {
         obj['enableInBrowserEditor'] = ApiClient.convertToType(data['enableInBrowserEditor'], 'String');
       }
@@ -1269,6 +1314,12 @@
       }
       if (data.hasOwnProperty('enableSearchMetadata')) {
         obj['enableSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableSearchMetadata']);
+      }
+      if (data.hasOwnProperty('enableSearchServiceAzureUri')) {
+        obj['enableSearchServiceAzureUri'] = ApiClient.convertToType(data['enableSearchServiceAzureUri'], 'String');
+      }
+      if (data.hasOwnProperty('enableSearchServiceAzureUriMetadata')) {
+        obj['enableSearchServiceAzureUriMetadata'] = SettingsMetadata.constructFromObject(data['enableSearchServiceAzureUriMetadata']);
       }
       if (data.hasOwnProperty('enableSearchSiteSpecificApi')) {
         obj['enableSearchSiteSpecificApi'] = ApiClient.convertToType(data['enableSearchSiteSpecificApi'], 'String');
@@ -1404,6 +1455,12 @@
       }
       if (data.hasOwnProperty('enableVaultingMetadata')) {
         obj['enableVaultingMetadata'] = SettingsMetadata.constructFromObject(data['enableVaultingMetadata']);
+      }
+      if (data.hasOwnProperty('enableWebFormsSeparateUserPermissions')) {
+        obj['enableWebFormsSeparateUserPermissions'] = ApiClient.convertToType(data['enableWebFormsSeparateUserPermissions'], 'String');
+      }
+      if (data.hasOwnProperty('enableWebFormsSeparateUserPermissionsMetadata')) {
+        obj['enableWebFormsSeparateUserPermissionsMetadata'] = SettingsMetadata.constructFromObject(data['enableWebFormsSeparateUserPermissionsMetadata']);
       }
       if (data.hasOwnProperty('enableWitnessing')) {
         obj['enableWitnessing'] = ApiClient.convertToType(data['enableWitnessing'], 'String');
@@ -2098,6 +2155,12 @@
       if (data.hasOwnProperty('useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata')) {
         obj['useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata'] = SettingsMetadata.constructFromObject(data['useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata']);
       }
+      if (data.hasOwnProperty('useNewEnvelopeSearchOnlyWithSearchTerm')) {
+        obj['useNewEnvelopeSearchOnlyWithSearchTerm'] = ApiClient.convertToType(data['useNewEnvelopeSearchOnlyWithSearchTerm'], 'String');
+      }
+      if (data.hasOwnProperty('useNewEnvelopeSearchOnlyWithSearchTermMetadata')) {
+        obj['useNewEnvelopeSearchOnlyWithSearchTermMetadata'] = SettingsMetadata.constructFromObject(data['useNewEnvelopeSearchOnlyWithSearchTermMetadata']);
+      }
       if (data.hasOwnProperty('useSAFESignerCertificates')) {
         obj['useSAFESignerCertificates'] = ApiClient.convertToType(data['useSAFESignerCertificates'], 'String');
       }
@@ -2298,6 +2361,16 @@
   exports.prototype['allowAccountMemberNameChangeMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowACE
+   */
+  exports.prototype['allowACE'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowACEMetadata
+   */
+  exports.prototype['allowACEMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowAdvancedRecipientRoutingConditional
    */
   exports.prototype['allowAdvancedRecipientRoutingConditional'] = undefined;
@@ -2328,14 +2401,14 @@
   exports.prototype['allowAgreementActionsMetadata'] = undefined;
   /**
    * 
-   * @member {String} allowAgreementOrchestrationWorkflows
+   * @member {String} allowAgreementOrchestrations
    */
-  exports.prototype['allowAgreementOrchestrationWorkflows'] = undefined;
+  exports.prototype['allowAgreementOrchestrations'] = undefined;
   /**
    * 
-   * @member {module:model/SettingsMetadata} allowAgreementOrchestrationWorkflowsMetadata
+   * @member {module:model/SettingsMetadata} allowAgreementOrchestrationsMetadata
    */
-  exports.prototype['allowAgreementOrchestrationWorkflowsMetadata'] = undefined;
+  exports.prototype['allowAgreementOrchestrationsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowAutoNavSettings
@@ -2381,6 +2454,11 @@
    * @member {String} allowConnectHttpListenerConfigs
    */
   exports.prototype['allowConnectHttpListenerConfigs'] = undefined;
+  /**
+   * 
+   * @member {String} AllowConnectIdentityVerificationUI
+   */
+  exports.prototype['AllowConnectIdentityVerificationUI'] = undefined;
   /**
    * 
    * @member {String} allowConnectOAuthUI
@@ -2633,6 +2711,16 @@
   exports.prototype['allowIDVLevel1Metadata'] = undefined;
   /**
    * 
+   * @member {String} allowIDVLevel1Trial
+   */
+  exports.prototype['allowIDVLevel1Trial'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowIDVLevel1TrialMetadata
+   */
+  exports.prototype['allowIDVLevel1TrialMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowIDVLevel2
    */
   exports.prototype['allowIDVLevel2'] = undefined;
@@ -2798,14 +2886,14 @@
   exports.prototype['allowOrganizationDocusignMonitor'] = undefined;
   /**
    * 
-   * @member {String} allowOrganizationDocusignMonitorLite
+   * @member {String} allowOrganizationDocusignMonitorFree
    */
-  exports.prototype['allowOrganizationDocusignMonitorLite'] = undefined;
+  exports.prototype['allowOrganizationDocusignMonitorFree'] = undefined;
   /**
    * 
-   * @member {module:model/SettingsMetadata} allowOrganizationDocusignMonitorLiteMetadata
+   * @member {module:model/SettingsMetadata} allowOrganizationDocusignMonitorFreeMetadata
    */
-  exports.prototype['allowOrganizationDocusignMonitorLiteMetadata'] = undefined;
+  exports.prototype['allowOrganizationDocusignMonitorFreeMetadata'] = undefined;
   /**
    * 
    * @member {module:model/SettingsMetadata} allowOrganizationDocusignMonitorMetadata
@@ -3201,6 +3289,16 @@
    * @member {module:model/SettingsMetadata} allowTransactionsWorkspaceMetadata
    */
   exports.prototype['allowTransactionsWorkspaceMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowTransactionsWorkspaceOriginal
+   */
+  exports.prototype['allowTransactionsWorkspaceOriginal'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowTransactionsWorkspaceOriginalMetadata
+   */
+  exports.prototype['allowTransactionsWorkspaceOriginalMetadata'] = undefined;
   /**
    * 
    * @member {String} allowUsersToAccessDirectory
@@ -3658,6 +3756,16 @@
   exports.prototype['documentVisibilityMetadata'] = undefined;
   /**
    * 
+   * @member {String} draftEnvelopeRetention
+   */
+  exports.prototype['draftEnvelopeRetention'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} draftEnvelopeRetentionMetadata
+   */
+  exports.prototype['draftEnvelopeRetentionMetadata'] = undefined;
+  /**
+   * 
    * @member {String} dss_EnableProvisioningPenConfiguration_RadminOption
    */
   exports.prototype['dss_EnableProvisioningPenConfiguration_RadminOption'] = undefined;
@@ -3702,12 +3810,12 @@
    */
   exports.prototype['enableAccountWideSearchMetadata'] = undefined;
   /**
-   * 
+   * Account Level Flag that determines the availability to use ADM Healthcare fields
    * @member {String} enableAdmHealthcare
    */
   exports.prototype['enableAdmHealthcare'] = undefined;
   /**
-   * 
+   * Metadata for account Level Flag that determines the availability to use ADM Healthcare fields
    * @member {module:model/SettingsMetadata} enableAdmHealthcareMetadata
    */
   exports.prototype['enableAdmHealthcareMetadata'] = undefined;
@@ -4053,6 +4161,36 @@
   exports.prototype['enableIdfxPhoneAuthSignatureAuthStatusMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableInboxBrowseViewsPoweredByElasticSearch
+   */
+  exports.prototype['enableInboxBrowseViewsPoweredByElasticSearch'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableInboxBrowseViewsPoweredByElasticSearchMetadata
+   */
+  exports.prototype['enableInboxBrowseViewsPoweredByElasticSearchMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableInboxRelevanceSort
+   */
+  exports.prototype['enableInboxRelevanceSort'] = undefined;
+  /**
+   * 
+   * @member {String} enableInboxRelevanceSortForRecentAccounts
+   */
+  exports.prototype['enableInboxRelevanceSortForRecentAccounts'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableInboxRelevanceSortForRecentAccountsMetadata
+   */
+  exports.prototype['enableInboxRelevanceSortForRecentAccountsMetadata'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableInboxRelevanceSortMetadata
+   */
+  exports.prototype['enableInboxRelevanceSortMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableInBrowserEditor
    */
   exports.prototype['enableInBrowserEditor'] = undefined;
@@ -4196,6 +4334,16 @@
    * @member {module:model/SettingsMetadata} enableSearchMetadata
    */
   exports.prototype['enableSearchMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableSearchServiceAzureUri
+   */
+  exports.prototype['enableSearchServiceAzureUri'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableSearchServiceAzureUriMetadata
+   */
+  exports.prototype['enableSearchServiceAzureUriMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSearchSiteSpecificApi
@@ -4421,6 +4569,16 @@
    * @member {module:model/SettingsMetadata} enableVaultingMetadata
    */
   exports.prototype['enableVaultingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableWebFormsSeparateUserPermissions
+   */
+  exports.prototype['enableWebFormsSeparateUserPermissions'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableWebFormsSeparateUserPermissionsMetadata
+   */
+  exports.prototype['enableWebFormsSeparateUserPermissionsMetadata'] = undefined;
   /**
    * 
    * @member {String} enableWitnessing
@@ -5576,6 +5734,16 @@
    * @member {module:model/SettingsMetadata} useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata
    */
   exports.prototype['useNewEnvelopeSearchOnlyWhenSearchingAfterDateMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} useNewEnvelopeSearchOnlyWithSearchTerm
+   */
+  exports.prototype['useNewEnvelopeSearchOnlyWithSearchTerm'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} useNewEnvelopeSearchOnlyWithSearchTermMetadata
+   */
+  exports.prototype['useNewEnvelopeSearchOnlyWithSearchTermMetadata'] = undefined;
   /**
    * 
    * @member {String} useSAFESignerCertificates

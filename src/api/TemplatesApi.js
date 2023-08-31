@@ -1716,6 +1716,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
      * @param {String} documentId The ID of the document being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.encrypt 
+     * @param {String} optsOrCallback.fileType 
      * @param {String} optsOrCallback.showChanges 
      * @param {module:api/TemplatesApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
@@ -1759,6 +1760,7 @@ You can specify the ID of the document to retrieve or can specify `combined` to 
       };
       var queryParams = {
         'encrypt': optsOrCallback['encrypt'],
+        'file_type': optsOrCallback['fileType'],
         'show_changes': optsOrCallback['showChanges']
       };
       var headerParams = {

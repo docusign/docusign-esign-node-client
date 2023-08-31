@@ -79,6 +79,9 @@
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('isOrganizationBrand')) {
+        obj['isOrganizationBrand'] = ApiClient.convertToType(data['isOrganizationBrand'], 'String');
+      }
       if (data.hasOwnProperty('isOverridingCompanyName')) {
         obj['isOverridingCompanyName'] = ApiClient.convertToType(data['isOverridingCompanyName'], 'Boolean');
       }
@@ -96,6 +99,9 @@
       }
       if (data.hasOwnProperty('logos')) {
         obj['logos'] = BrandLogos.constructFromObject(data['logos']);
+      }
+      if (data.hasOwnProperty('organizationBrandLogo')) {
+        obj['organizationBrandLogo'] = ApiClient.convertToType(data['organizationBrandLogo'], 'String');
       }
       if (data.hasOwnProperty('resources')) {
         obj['resources'] = BrandResourceUrls.constructFromObject(data['resources']);
@@ -146,6 +152,11 @@
   exports.prototype['errorDetails'] = undefined;
   /**
    * 
+   * @member {String} isOrganizationBrand
+   */
+  exports.prototype['isOrganizationBrand'] = undefined;
+  /**
+   * 
    * @member {Boolean} isOverridingCompanyName
    */
   exports.prototype['isOverridingCompanyName'] = undefined;
@@ -174,6 +185,11 @@
    * @member {module:model/BrandLogos} logos
    */
   exports.prototype['logos'] = undefined;
+  /**
+   * 
+   * @member {String} organizationBrandLogo
+   */
+  exports.prototype['organizationBrandLogo'] = undefined;
   /**
    * An object containing the URLs for the four DocuSign master resource files that the brand uses for sending, signing, email messages, and captive (embedded) signing. You can modify the default email messages and formats in these file to customize the user experience.  **Note:** This object is returned only when the `resourceContentType` is `sending`, `signing`, `email`, or `signing_captive`.
    * @member {module:model/BrandResourceUrls} resources
