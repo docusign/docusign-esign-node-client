@@ -1935,12 +1935,13 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
+     * @param {Blob} imageBytes Image content.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.transparentPng 
      * @param {module:api/UsersApi~updateSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserSignature}
      */
-    this.updateSignatureImage = function(accountId, userId, signatureId, imageType, optsOrCallback, callback) {
+    this.updateSignatureImage = function(imageBytes, accountId, userId, signatureId, imageType, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -1948,7 +1949,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
         optsOrCallback = {};
       }
 
-      var postBody = null;
+      var postBody = imageBytes;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -1968,6 +1969,11 @@ For example encode "Bob Smith" as "Bob%20Smith".
       // verify the required parameter 'imageType' is set
       if (imageType === undefined || imageType === null) {
         throw new Error("Missing the required parameter 'imageType' when calling updateSignatureImage");
+      }
+
+      // verify the required parameter 'imageBytes' is set
+      if (imageBytes === undefined || imageBytes === null) {
+        throw new Error("Missing the required parameter 'imageBytes' when calling updateSignatureImage");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
