@@ -976,6 +976,9 @@
       if (data.hasOwnProperty('dss_EnableProvisioningPenConfiguration_RadminOption')) {
         obj['dss_EnableProvisioningPenConfiguration_RadminOption'] = ApiClient.convertToType(data['dss_EnableProvisioningPenConfiguration_RadminOption'], 'String');
       }
+      if (data.hasOwnProperty('dss_EnableSignatureTypeCustomTagRadmin_RadminOption')) {
+        obj['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'] = ApiClient.convertToType(data['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'], 'String');
+      }
       if (data.hasOwnProperty('dss_SIGN_28411_EnableLeavePagePrompt_RadminOption')) {
         obj['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = ApiClient.convertToType(data['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'], 'String');
       }
@@ -1239,6 +1242,12 @@
       }
       if (data.hasOwnProperty('enableKeyTermsSuggestionsByDocumentTypeMetadata')) {
         obj['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = SettingsMetadata.constructFromObject(data['enableKeyTermsSuggestionsByDocumentTypeMetadata']);
+      }
+      if (data.hasOwnProperty('enableLargeFileSupport')) {
+        obj['enableLargeFileSupport'] = ApiClient.convertToType(data['enableLargeFileSupport'], 'String');
+      }
+      if (data.hasOwnProperty('enableLargeFileSupportMetadata')) {
+        obj['enableLargeFileSupportMetadata'] = SettingsMetadata.constructFromObject(data['enableLargeFileSupportMetadata']);
       }
       if (data.hasOwnProperty('enableParticipantRecipientSettingMetadata')) {
         obj['enableParticipantRecipientSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableParticipantRecipientSettingMetadata']);
@@ -3771,6 +3780,11 @@
   exports.prototype['dss_EnableProvisioningPenConfiguration_RadminOption'] = undefined;
   /**
    * 
+   * @member {String} dss_EnableSignatureTypeCustomTagRadmin_RadminOption
+   */
+  exports.prototype['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'] = undefined;
+  /**
+   * 
    * @member {String} dss_SIGN_28411_EnableLeavePagePrompt_RadminOption
    */
   exports.prototype['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = undefined;
@@ -4209,6 +4223,16 @@
    * @member {module:model/SettingsMetadata} enableKeyTermsSuggestionsByDocumentTypeMetadata
    */
   exports.prototype['enableKeyTermsSuggestionsByDocumentTypeMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableLargeFileSupport
+   */
+  exports.prototype['enableLargeFileSupport'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableLargeFileSupportMetadata
+   */
+  exports.prototype['enableLargeFileSupportMetadata'] = undefined;
   /**
    * 
    * @member {module:model/SettingsMetadata} enableParticipantRecipientSettingMetadata

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldValidation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldValidation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient);
+    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldValidation);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, DocGenFormFieldOption, DocGenFormFieldValidation) {
   'use strict';
 
 
@@ -54,17 +54,29 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('options')) {
+        obj['options'] = ApiClient.convertToType(data['options'], [DocGenFormFieldOption]);
+      }
+      if (data.hasOwnProperty('predefinedValidation')) {
+        obj['predefinedValidation'] = ApiClient.convertToType(data['predefinedValidation'], 'String');
+      }
       if (data.hasOwnProperty('required')) {
         obj['required'] = ApiClient.convertToType(data['required'], 'String');
       }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('validation')) {
+        obj['validation'] = DocGenFormFieldValidation.constructFromObject(data['validation']);
       }
       if (data.hasOwnProperty('value')) {
         obj['value'] = ApiClient.convertToType(data['value'], 'String');
@@ -73,6 +85,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
   /**
    * 
    * @member {String} label
@@ -84,6 +101,16 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * 
+   * @member {Array.<module:model/DocGenFormFieldOption>} options
+   */
+  exports.prototype['options'] = undefined;
+  /**
+   * 
+   * @member {String} predefinedValidation
+   */
+  exports.prototype['predefinedValidation'] = undefined;
+  /**
    * When set to **true**, the signer is required to fill out this tab
    * @member {String} required
    */
@@ -93,6 +120,11 @@
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
+  /**
+   * 
+   * @member {module:model/DocGenFormFieldValidation} validation
+   */
+  exports.prototype['validation'] = undefined;
   /**
    * Specifies the value of the tab. 
    * @member {String} value

@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('assignTabsToRecipientId')) {
         obj['assignTabsToRecipientId'] = ApiClient.convertToType(data['assignTabsToRecipientId'], 'String');
       }
+      if (data.hasOwnProperty('authoritativeCopy')) {
+        obj['authoritativeCopy'] = ApiClient.convertToType(data['authoritativeCopy'], 'Boolean');
+      }
       if (data.hasOwnProperty('display')) {
         obj['display'] = ApiClient.convertToType(data['display'], 'String');
       }
@@ -150,6 +153,11 @@
    * @member {String} assignTabsToRecipientId
    */
   exports.prototype['assignTabsToRecipientId'] = undefined;
+  /**
+   * Specifies the Authoritative copy feature. If set to true the Authoritative copy feature is enabled.
+   * @member {Boolean} authoritativeCopy
+   */
+  exports.prototype['authoritativeCopy'] = undefined;
   /**
    * 
    * @member {String} display
