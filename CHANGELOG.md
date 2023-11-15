@@ -2,6 +2,11 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v6.5.1] - eSignature API v2.1-23.3.01.02 - 2023-11-15
+### Changed
+- Rolled back the superagent-proxy package version from 3.0.0 to 2.0.0
+- Updated the SDK release version.
+
 ## [v6.5.0] - eSignature API v2.1-23.3.01.02 - 2023-10-25
 ### Changed
 - Added support for version v2.1-23.3.01.02 of the DocuSign ESignature API.
