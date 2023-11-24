@@ -589,16 +589,15 @@
     }
 
     if (request.header['Accept'] === 'application/pdf') {
+      // Copy of https://github.com/visionmedia/superagent/blob/master/src/node/parsers/image.js until superagent can be upgraded
       request.parse( function (res, fn) {
-        res.data = '';
-        res.setEncoding('binary');
-        res.on( 'data', function (chunk) { res.data += chunk; } );
-        res.on( 'end', function () {
-          try {
-            fn( null, res.data );
-          } catch ( err ) {
-            fn( err );
-          }
+        res.data = []; // Binary data needs binary storage
+
+        res.on('data', (chunk) => {
+          res.data.push(chunk);
+        });
+        res.on('end', () => {
+          fn(null, Buffer.concat(res.data));
         });
       })
     }
