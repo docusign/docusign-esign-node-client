@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldValidation'], factory);
+    define(['ApiClient', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldRowValue', 'model/DocGenFormFieldValidation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldValidation'));
+    module.exports = factory(require('../ApiClient'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldRowValue'), require('./DocGenFormFieldValidation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldValidation);
+    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldRowValue, root.Docusign.DocGenFormFieldValidation);
   }
-}(this, function(ApiClient, DocGenFormFieldOption, DocGenFormFieldValidation) {
+}(this, function(ApiClient, DocGenFormFieldOption, DocGenFormFieldRowValue, DocGenFormFieldValidation) {
   'use strict';
 
 
@@ -72,6 +72,9 @@
       if (data.hasOwnProperty('required')) {
         obj['required'] = ApiClient.convertToType(data['required'], 'String');
       }
+      if (data.hasOwnProperty('rowValues')) {
+        obj['rowValues'] = ApiClient.convertToType(data['rowValues'], [DocGenFormFieldRowValue]);
+      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
@@ -115,6 +118,11 @@
    * @member {String} required
    */
   exports.prototype['required'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/DocGenFormFieldRowValue>} rowValues
+   */
+  exports.prototype['rowValues'] = undefined;
   /**
    * 
    * @member {String} type

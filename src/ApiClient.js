@@ -26,6 +26,13 @@
 }(this, function(superagent, superagentProxy, opts) {
   'use strict';
 
+  /**
+    * The default HTTP headers to be included for all API calls.
+    * @type {Array.<String>}
+    * @default {}
+    */
+  var defaultHeaders = { "X-DocuSign-SDK": "Node", "Node-Ver": process.version, "User-Agent": `Swagger-Codegen/v2.1/6.6.0-rc1/node/${process.version}` };
+
   var SCOPE_SIGNATURE = "signature";
   var SCOPE_EXTENDED = "extended";
   var SCOPE_IMPERSONATION = "impersonation";
@@ -70,6 +77,9 @@
     var request = superagentProxy(superagent)
       .post("https://" + oAuthBasePath + "/oauth/token");
 
+    // set header parameters
+    request.set(defaultHeaders);
+    
     if (proxy)
       request.proxy(proxy)
 
@@ -163,12 +173,6 @@
     this.authentications = {
       'docusignAccessCode': {type: 'oauth2'}
     };
-    /**
-     * The default HTTP headers to be included for all API calls.
-     * @type {Array.<String>}
-     * @default {}
-     */
-    this.defaultHeaders = { "X-DocuSign-SDK": "Node", "Node-Ver": process.version };
 
     /**
      * The default HTTP timeout for all API calls.
@@ -219,7 +223,7 @@
    * Adds request headers to the API client. Useful for Authentication.
    */
   exports.prototype.addDefaultHeader = function addDefaultHeader(header, value) {
-    this.defaultHeaders[header] = value;
+    defaultHeaders[header] = value;
   };
 
   /**
@@ -529,7 +533,7 @@
     request.query(this.normalizeParams(queryParams));
 
     // set header parameters
-    request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
+    request.set(defaultHeaders).set(this.normalizeParams(headerParams));
 
     // set request timeout
     request.timeout(this.timeout);
@@ -775,7 +779,8 @@
       headers = {
         "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
         "Cache-Control": "no-store",
-        "Pragma": "no-cache"
+        "Pragma": "no-cache",
+        ...defaultHeaders
       },
       OAuthToken = require('./OAuth').OAuthToken,
       request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
@@ -816,7 +821,8 @@
     var headers = {
       "Authorization": "Bearer " + accessToken,
       "Cache-Control": "no-store",
-      "Pragma": "no-cache"
+      "Pragma": "no-cache",
+      ...defaultHeaders
     }
 
     var request = superagentProxy(superagent).get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
@@ -909,6 +915,7 @@
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Cache-Control', 'no-store')
       .set('Pragma', 'no-cache')
+      .set(defaultHeaders)
       .send({
         'assertion': assertion,
         'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
@@ -937,6 +944,10 @@
     );
   };
 
+  exports.prototype.sendJWTTokenRequest = function(assertion, callback) {
+    return sendJWTTokenRequest(assertion, this.oAuthBasePath, this.proxy, callback);
+  };
+  
   exports.prototype.requestJWTUserToken = function(clientId, userId, scopes, rsaPrivateKey, expiresIn, callback) {
     var privateKey = rsaPrivateKey,
       assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn, userId);
