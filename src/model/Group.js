@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accessType')) {
+        obj['accessType'] = ApiClient.convertToType(data['accessType'], 'String');
+      }
       if (data.hasOwnProperty('dsGroupId')) {
         obj['dsGroupId'] = ApiClient.convertToType(data['dsGroupId'], 'String');
       }
@@ -83,6 +86,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} accessType
+   */
+  exports.prototype['accessType'] = undefined;
   /**
    * 
    * @member {String} dsGroupId

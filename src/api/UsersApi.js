@@ -1935,7 +1935,7 @@ For example encode "Bob Smith" as "Bob%20Smith".
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {String} signatureId The ID of the signature being accessed.
      * @param {String} imageType One of **signature_image** or **initials_image**.
-     * @param {Blob} imageBytes Image content.
+     * @param {Blob} imageBytes Updated image content.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.transparentPng 
      * @param {module:api/UsersApi~updateSignatureImageCallback} callback The callback function, accepting three arguments: error, data, response

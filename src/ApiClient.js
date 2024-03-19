@@ -8,29 +8,43 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+  if (typeof define === "function" && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['superagent'], factory);
-    define(['superagent-proxy'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+    define(["axios"], factory);
+    define(["@devhigley/parse-proxy"], factory);
+  } else if (typeof module === "object" && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('superagent'), require('superagent-proxy'));
+    module.exports = factory(
+      require("axios"),
+      require("@devhigley/parse-proxy")
+    );
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ApiClient = factory(root.superagent, root.superagentProxy, opts);
+    root.Docusign.ApiClient = factory(root.axios, opts);
   }
-}(this, function(superagent, superagentProxy, opts) {
-  'use strict';
+})(this, function (axios, parseProxy, opts) {
+  "use strict";
+
+  /**
+   * The default HTTP headers to be included for all API calls.
+   * @type {Array.<String>}
+   * @default {}
+   */
+  var defaultHeaders = {
+    "X-DocuSign-SDK": "Node",
+    "Node-Ver": process.version,
+    "User-Agent": `Swagger-Codegen/v2.1/6.6.0-rc1/node/${process.version}`,
+  };
 
   var SCOPE_SIGNATURE = "signature";
   var SCOPE_EXTENDED = "extended";
   var SCOPE_IMPERSONATION = "impersonation";
 
-  var removeNulls = function(obj) {
+  var removeNulls = function (obj) {
     var isArray = obj instanceof Array;
     for (var k in obj) {
       if (typeof obj[k] === "object") removeNulls(obj[k]);
@@ -40,16 +54,23 @@
     return obj;
   };
 
-  var generateAndSignJWTAssertion = function(clientId, scopes, privateKey, oAuthBasePath, expiresIn, userId) {
-    if(typeof expiresIn !== 'number' || expiresIn < 0)
+  var generateAndSignJWTAssertion = function (
+    clientId,
+    scopes,
+    privateKey,
+    oAuthBasePath,
+    expiresIn,
+    userId
+  ) {
+    if (typeof expiresIn !== "number" || expiresIn < 0)
       throw new Error("Invalid expires in param detected");
 
     var MILLESECONDS_PER_SECOND = 1000,
       JWT_SIGNING_ALGO = "RS256",
       now = Math.floor(Date.now() / MILLESECONDS_PER_SECOND),
       later = now + expiresIn,
-      jwt = require('jsonwebtoken'),
-      parsedScopes = Array.isArray(scopes) ? scopes.join(' ') : scopes;
+      jwt = require("jsonwebtoken"),
+      parsedScopes = Array.isArray(scopes) ? scopes.join(" ") : scopes;
 
     var jwtPayload = {
       iss: clientId,
@@ -60,55 +81,82 @@
     };
 
     /** optional parameters  **/
-    if(userId) {
+    if (userId) {
       jwtPayload.sub = userId;
     }
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
   };
 
-  var sendJWTTokenRequest = function (assertion, oAuthBasePath, proxy, callback) {
-    var request = superagentProxy(superagent)
-      .post("https://" + oAuthBasePath + "/oauth/token");
+  var sendJWTTokenRequest = function (
+    assertion,
+    oAuthBasePath,
+    proxy,
+    callback
+  ) {
+    const requestConfig = {
+      baseURL: `https://${oAuthBasePath}`,
+      method: "post",
+      url: "/oauth/token",
+      headers: {
+        ...defaultHeaders,
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cache-Control": "no-store",
+        Pragma: "no-cache",
+      },
+      timeout: exports.prototype.timeout,
+      data: {
+        assertion: assertion,
+        grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      },
+    };
 
-    if (proxy)
-      request.proxy(proxy)
+    if (proxy) {
+      const proxyObj = parseProxy(proxy);
+      requestConfig.proxy = proxyObj[0];
+    }
 
-    request.timeout(exports.prototype.timeout)        
-      .set('Content-Type', 'application/x-www-form-urlencoded')
-      .set('Cache-Control', 'no-store')
-      .set('Pragma', 'no-cache')
-      .send({
-        'assertion': assertion,
-        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
-      });
+    const oauthRequest = axios.request(requestConfig);
 
-
-    if (!callback){
-      return new Promise(function(resolve, reject){
-        request.end(function(err, data){
-          if (err){
+    if (!callback) {
+      return new Promise(function (resolve, reject) {
+        oauthRequest
+          .then((response) => {
+            const updatedObj = generateResponseObjectWithBodyProp(response);
+            resolve(updatedObj);
+          })
+          .catch((err) => {
             reject(err);
-          } else {
-            resolve(data);
-          }
-        })
+          });
       });
     } else {
-      request.end(callback);
+      oauthRequest
+        .then((response) => {
+          const updatedObj = generateResponseObjectWithBodyProp(response);
+          callback(null, updatedObj);
+        })
+        .catch((err) => {
+          callback(err);
+        });
     }
   };
 
-  var deriveOAuthBasePathFromRestBasePath = function(basePath) {
+  const generateResponseObjectWithBodyProp = (respObj) => {
+    const { data: body, ...rest } = respObj;
+    const updatedObj = { body, ...rest };
+    return updatedObj;
+  };
+
+  var deriveOAuthBasePathFromRestBasePath = function (basePath) {
     if (basePath == null) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
-    if (basePath.includes('https://stage')) {
+    if (basePath.includes("https://stage")) {
       return exports.prototype.OAuth.BasePath.STAGE;
     }
-    if (basePath.includes('https://demo')) {
+    if (basePath.includes("https://demo")) {
       return exports.prototype.OAuth.BasePath.DEMO;
     }
-    if (basePath.includes('https://www.docusign')) {
+    if (basePath.includes("https://www.docusign")) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
     return exports.prototype.OAuth.BasePath.PRODUCTION;
@@ -125,20 +173,20 @@
    * @alias module:ApiClient
    * @class
    */
-  var exports = function(opts) {
+  var exports = function (opts) {
     var defaults = {
-      basePath: 'https://www.docusign.net/restapi'.replace(/\/+$/, ''),
-      oAuthBasePath: require('./OAuth').BasePath.PRODUCTION,
+      basePath: "https://www.docusign.net/restapi".replace(/\/+$/, ""),
+      oAuthBasePath: require("./OAuth").BasePath.PRODUCTION,
     };
 
-    opts = Object.assign({},defaults, opts);
+    opts = Object.assign({}, defaults, opts);
     opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
 
     /**
      * The full URI for the desired proxy.
-     * A complete list of supported proxies can be found here: https://www.npmjs.com/package/proxy-agent.     
+     * A complete list of supported proxies can be found here: https://www.npmjs.com/package/proxy-agent.
      * @type {String}
-     * @default 
+     * @default
      */
     this.proxy = opts.proxy;
 
@@ -161,14 +209,8 @@
      * @type {Array.<String>}
      */
     this.authentications = {
-      'docusignAccessCode': {type: 'oauth2'}
+      docusignAccessCode: { type: "oauth2" },
     };
-    /**
-     * The default HTTP headers to be included for all API calls.
-     * @type {Array.<String>}
-     * @default {}
-     */
-    this.defaultHeaders = { "X-DocuSign-SDK": "Node", "Node-Ver": process.version };
 
     /**
      * The default HTTP timeout for all API calls.
@@ -186,10 +228,10 @@
     this.cache = true;
   };
 
-    /**
+  /**
    * Gets the API endpoint base URL.
    */
-    exports.prototype.getBasePath = function getBasePath() {
+  exports.prototype.getBasePath = function getBasePath() {
     return this.basePath;
   };
 
@@ -201,25 +243,30 @@
     this.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(basePath);
   };
 
-    /**
+  /**
    * Gets the authentication server endpoint base URL.
    */
-    exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
+  exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
     return this.oAuthBasePath;
   };
 
   /**
    * Sets the authentication server endpoint base URL.
    */
-  exports.prototype.setOAuthBasePath = function setOAuthBasePath(oAuthBasePath) {
+  exports.prototype.setOAuthBasePath = function setOAuthBasePath(
+    oAuthBasePath
+  ) {
     this.oAuthBasePath = oAuthBasePath;
   };
 
   /**
    * Adds request headers to the API client. Useful for Authentication.
    */
-  exports.prototype.addDefaultHeader = function addDefaultHeader(header, value) {
-    this.defaultHeaders[header] = value;
+  exports.prototype.addDefaultHeader = function addDefaultHeader(
+    header,
+    value
+  ) {
+    defaultHeaders[header] = value;
   };
 
   /**
@@ -227,9 +274,9 @@
    * @param param The actual parameter.
    * @returns {String} The string representation of <code>param</code>.
    */
-  exports.prototype.paramToString = function(param) {
+  exports.prototype.paramToString = function (param) {
     if (param == undefined || param == null) {
-      return '';
+      return "";
     }
     if (param instanceof Date) {
       return param.toJSON();
@@ -244,13 +291,13 @@
    * @param {Object} pathParams The parameter values to append.
    * @returns {String} The encoded path with parameter values substituted.
    */
-  exports.prototype.buildUrl = function(path, pathParams) {
+  exports.prototype.buildUrl = function (path, pathParams) {
     if (!path.match(/^\//)) {
-      path = '/' + path;
+      path = "/" + path;
     }
     var url = this.basePath + path;
     var _this = this;
-    url = url.replace(/\{([\w-]+)\}/g, function(fullMatch, key) {
+    url = url.replace(/\{([\w-]+)\}/g, function (fullMatch, key) {
       var value;
       if (pathParams.hasOwnProperty(key)) {
         value = _this.paramToString(pathParams[key]);
@@ -273,8 +320,10 @@
    * @param {String} contentType The MIME content type to check.
    * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
    */
-  exports.prototype.isJsonMime = function(contentType) {
-    return Boolean(contentType != null && contentType.match(/^application\/json(;.*)?$/i));
+  exports.prototype.isJsonMime = function (contentType) {
+    return Boolean(
+      contentType != null && contentType.match(/^application\/json(;.*)?$/i)
+    );
   };
 
   /**
@@ -282,7 +331,7 @@
    * @param {Array.<String>} contentTypes
    * @returns {String} The chosen content type, preferring JSON.
    */
-  exports.prototype.jsonPreferredMime = function(contentTypes) {
+  exports.prototype.jsonPreferredMime = function (contentTypes) {
     for (var i = 0; i < contentTypes.length; i++) {
       if (this.isJsonMime(contentTypes[i])) {
         return contentTypes[i];
@@ -296,24 +345,26 @@
    * @param param The parameter to check.
    * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
    */
-  exports.prototype.isFileParam = function(param) {
+  exports.prototype.isFileParam = function (param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
-    if (typeof window === 'undefined' &&
-        typeof require === 'function' &&
-        require('fs') &&
-        param instanceof require('fs').ReadStream) {
+    if (
+      typeof window === "undefined" &&
+      typeof require === "function" &&
+      require("fs") &&
+      param instanceof require("fs").ReadStream
+    ) {
       return true;
     }
     // Buffer in Node.js
-    if (typeof Buffer === 'function' && param instanceof Buffer) {
+    if (typeof Buffer === "function" && param instanceof Buffer) {
       return true;
     }
     // Blob in browser
-    if (typeof Blob === 'function' && param instanceof Blob) {
+    if (typeof Blob === "function" && param instanceof Blob) {
       return true;
     }
     // File in browser (it seems File object is also instance of Blob, but keep this for safe)
-    if (typeof File === 'function' && param instanceof File) {
+    if (typeof File === "function" && param instanceof File) {
       return true;
     }
     return false;
@@ -329,10 +380,14 @@
    * @param {Object.<String, Object>} params The parameters as object properties.
    * @returns {Object.<String, Object>} normalized parameters.
    */
-  exports.prototype.normalizeParams = function(params) {
+  exports.prototype.normalizeParams = function (params) {
     var newParams = {};
     for (var key in params) {
-      if (params.hasOwnProperty(key) && params[key] != undefined && params[key] != null) {
+      if (
+        params.hasOwnProperty(key) &&
+        params[key] != undefined &&
+        params[key] != null
+      ) {
         var value = params[key];
         if (this.isFileParam(value) || Array.isArray(value)) {
           newParams[key] = value;
@@ -342,7 +397,7 @@
       }
     }
     return newParams;
-  };
+  };  
 
   /**
    * Enumeration of collection format separator strategies.
@@ -354,27 +409,27 @@
      * Comma-separated values. Value: <code>csv</code>
      * @const
      */
-    CSV: ',',
+    CSV: ",",
     /**
      * Space-separated values. Value: <code>ssv</code>
      * @const
      */
-    SSV: ' ',
+    SSV: " ",
     /**
      * Tab-separated values. Value: <code>tsv</code>
      * @const
      */
-    TSV: '\t',
+    TSV: "\t",
     /**
      * Pipe(|)-separated values. Value: <code>pipes</code>
      * @const
      */
-    PIPES: '|',
+    PIPES: "|",
     /**
      * Native array. Value: <code>multi</code>
      * @const
      */
-    MULTI: 'multi'
+    MULTI: "multi",
   };
 
   /**
@@ -384,71 +439,83 @@
    * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
    * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
    */
-  exports.prototype.buildCollectionParam = function buildCollectionParam(param, collectionFormat) {
+  exports.prototype.buildCollectionParam = function buildCollectionParam(
+    param,
+    collectionFormat
+  ) {
     if (param == null) {
       return null;
     }
     switch (collectionFormat) {
-      case 'csv':
-        return param.map(this.paramToString).join(',');
-      case 'ssv':
-        return param.map(this.paramToString).join(' ');
-      case 'tsv':
-        return param.map(this.paramToString).join('\t');
-      case 'pipes':
-        return param.map(this.paramToString).join('|');
-      case 'multi':
-        // return the array directly as SuperAgent will handle it as expected
+      case "csv":
+        return param.map(this.paramToString).join(",");
+      case "ssv":
+        return param.map(this.paramToString).join(" ");
+      case "tsv":
+        return param.map(this.paramToString).join("\t");
+      case "pipes":
+        return param.map(this.paramToString).join("|");
+      case "multi":
+        // return the array directly as axios will handle it as expected
         return param.map(this.paramToString);
       default:
-        throw new Error('Unknown collection format: ' + collectionFormat);
+        throw new Error("Unknown collection format: " + collectionFormat);
     }
   };
 
   /**
    * Applies authentication headers to the request.
-   * @param {Object} request The request object created by a <code>superagent()</code> call.
+   * @param {Object} requestConfig The request configuration object used for Axios Request.
    * @param {Array.<String>} authNames An array of authentication method names.
    */
-  exports.prototype.applyAuthToRequest = function(request, authNames) {
+  exports.prototype.applyAuthToRequest = function (requestConfig, authNames) {
     var _this = this;
-    authNames.forEach(function(authName) {
+    authNames.forEach(function (authName) {
       var auth = _this.authentications[authName];
       switch (auth.type) {
-        case 'basic':
+        case "basic":
           if (auth.username || auth.password) {
-            request.auth(auth.username || '', auth.password || '');
+            requestConfig.auth = {
+              username: auth.username || "",
+              password: auth.password || "",
+            };
           }
           break;
-        case 'apiKey':
+        case "apiKey":
           if (auth.apiKey) {
             var data = {};
             if (auth.apiKeyPrefix) {
-              data[auth.name] = auth.apiKeyPrefix + ' ' + auth.apiKey;
+              data[auth.name] = auth.apiKeyPrefix + " " + auth.apiKey;
             } else {
               data[auth.name] = auth.apiKey;
             }
-            if (auth['in'] === 'header') {
-              request.set(data);
+            if (auth["in"] === "header") {
+              requestConfig.headers = {
+                ...requestConfig.headers,
+                ...data,
+              };
             } else {
-              request.query(data);
+              requestConfig.params = { ...requestConfig.params, ...data };
             }
           }
           break;
-        case 'oauth2':
+        case "oauth2":
           if (auth.accessToken) {
-            request.set({'Authorization': 'Bearer ' + auth.accessToken});
+            requestConfig.headers = {
+              ...requestConfig.headers,
+              Authorization: "Bearer " + auth.accessToken,
+            };
           }
           break;
         default:
-          throw new Error('Unknown authentication type: ' + auth.type);
+          throw new Error("Unknown authentication type: " + auth.type);
       }
     });
   };
 
   /**
    * Deserializes an HTTP response body into a value of the specified type.
-   * @param {Object} response A SuperAgent response object.
+   * @param {Object} response An Axios response object.
    * @param {(String|Array.<String>|Object.<String, Object>|Function)} returnType The type to return. Pass a string for simple types
    * or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
    * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
@@ -459,21 +526,17 @@
     if (response == null || returnType == null || response.status == 204) {
       return null;
     }
-    // Rely on SuperAgent for parsing response body.
-    // See http://visionmedia.github.io/superagent/#parsing-response-bodies
-    var data = response.body || (response.res && response.res.data);
-    if (data == null || (typeof data === 'object' && typeof data.length === 'undefined' && !Object.keys(data).length)) {
-      // SuperAgent does not always produce a body; use the unparsed response as a fallback
-      data = response.text;
-    }
+    // Rely on Axios Response Schema.
+    // See https://axios-http.com/docs/res_schema
+    var data = response.data;
     return exports.convertToType(data, returnType);
   };
 
-  exports.prototype.hasBufferFormParam = function(formParams) {
+  exports.prototype.hasBufferFormParam = function (formParams) {
     if (!formParams) {
       return false;
     }
-    return Object.keys(formParams).some(function(key) {
+    return Object.keys(formParams).some(function (key) {
       return formParams[key] instanceof Buffer;
     });
   };
@@ -501,138 +564,172 @@
    * @param {(String|Array|ObjectFunction)} returnType The required type to return; can be a string for simple types or the
    * constructor for a complex type.
    * @param {module:ApiClient~callApiCallback} callback The callback function. If this is left undefined, this method will return a promise instead.
-   * @returns {Object} The SuperAgent request object if a callback is specified, else {Promise} A {@link https://www.promisejs.org/|Promise} object.
+   * @returns {Object} The axios request object if a callback is specified, else {Promise} A {@link https://www.promisejs.org/|Promise} object.
    */
-  exports.prototype.callApi = function callApi(path, httpMethod, pathParams,
-      queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
-      returnType, callback) {
-
+  exports.prototype.callApi = function callApi(
+    path,
+    httpMethod,
+    pathParams,
+    queryParams,
+    headerParams,
+    formParams,
+    bodyParam,
+    authNames,
+    contentTypes,
+    accepts,
+    returnType,
+    callback
+  ) {
     var _this = this;
     var url = this.buildUrl(path, pathParams);
-    var request = superagentProxy(superagent(httpMethod, url));
 
-    //apply proxy if specified
-    if(this.proxy) {
-      request.proxy(this.proxy);
+    const requestConfig = {
+      method: httpMethod,
+      url,
+      timeout: this.timeout,
+      paramsSerializer:{
+        indexes: null,
+      }
+    };
+
+    if (this.proxy) {
+      const proxyObj = parseProxy(this.proxy);
+      requestConfig.proxy = proxyObj[0];
     }
-    
+
     var _formParams = this.normalizeParams(formParams);
-    var body = httpMethod.toUpperCase() === 'GET' && !bodyParam ? undefined : bodyParam || {};
+    var body =
+      httpMethod.toUpperCase() === "GET" && !bodyParam
+        ? undefined
+        : bodyParam || {};
 
     // apply authentications
-    this.applyAuthToRequest(request, authNames);
+    this.applyAuthToRequest(requestConfig, authNames);
 
     // set query parameters
-    if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-      queryParams['_'] = new Date().getTime();
+    if (httpMethod.toUpperCase() === "GET" && this.cache === false) {
+      queryParams["_"] = new Date().getTime();
     }
-    request.query(this.normalizeParams(queryParams));
+    const _queryParams = this.normalizeParams(queryParams);
+    requestConfig.params = { ...requestConfig.params, ..._queryParams };    
 
     // set header parameters
-    request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
+    const _headerParams = this.normalizeParams(headerParams);
+    requestConfig.headers = {
+      ...requestConfig.headers,
+      ...defaultHeaders,
+      ..._headerParams,
+    };
 
     // set request timeout
-    request.timeout(this.timeout);
+    requestConfig.timeout = this.timeout;
 
     var contentType = this.jsonPreferredMime(contentTypes);
+
     if (contentType) {
-      // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
-      if(contentType != 'multipart/form-data') {
-        request.type(contentType);
+      if (contentType != "multipart/form-data") {
+        requestConfig.headers = {
+          ...requestConfig.headers,
+          "Content-Type": contentType,
+        };
       }
-    } else if (!request.header['Content-Type']) {
-      request.type('application/json');
+    } else if (!requestConfig.headers["Content-Type"]) {
+      requestConfig.headers = {
+        ...requestConfig.headers,
+        "Content-Type": "application/json",
+      };
     }
 
-    if (contentType === 'application/x-www-form-urlencoded') {
-      request.send(this.normalizeParams(formParams));
-    } else if (contentType == 'multipart/form-data') {
+    if (contentType === "application/x-www-form-urlencoded") {
+      //automatic serialization happens with axios. ref: https://axios-http.com/docs/urlencoded
+      requestConfig.data = this.normalizeParams(formParams);
+    } else if (contentType == "multipart/form-data") {
       if (this.hasBufferFormParam(_formParams)) {
-        request.set({
-          'Content-Disposition': 'form-data; name="file"; filename="file.xml"'
-        });
-        request.set({
-          'Content-Type': 'application/octet-stream'
-        });
-        var formAttachmentKey = Object.keys(formParams).find(function(key) {
+        requestConfig.headers = {
+          ...requestConfig.headers,
+          "Content-Disposition": 'form-data; name="file"; filename="file.xml"',
+          "Content-Type": "application/octet-stream",
+        };
+        var formAttachmentKey = Object.keys(formParams).find(function (key) {
           return _this.isFileParam(_formParams[key]);
         });
-        request.send(removeNulls(formParams[formAttachmentKey]));
+        requestConfig.data = removeNulls(formParams[formAttachmentKey]);
       } else {
+        //automatic serialization for formData is supported in axios as of 0.27.0. ref: https://axios-http.com/docs/multipart
+        requestConfig.headers = {
+          ...requestConfig.headers,
+          "Content-Type": "multipart/form-data",
+        };
         var _formParams = this.normalizeParams(formParams);
-        for (var key in _formParams) {
-          if (_formParams.hasOwnProperty(key)) {
-            if (this.isFileParam(_formParams[key])) {
-              // file field
-              request.attach(key, _formParams[key]);
-            } else {
-              request.field(key, _formParams[key]);
-            }
-          }
-        }
+        requestConfig.data = _formParams;
       }
     } else if (body) {
-      request.send(removeNulls(body));
+      requestConfig.data = removeNulls(body);
     }
 
     var accept = this.jsonPreferredMime(accepts);
+
     if (accept) {
-      request.accept(accept);
+      requestConfig.headers = { ...requestConfig.headers, Accept: accept };
     }
 
-    var data;
-    if (request.header['Accept'] === 'application/pdf') {
-      request.buffer();
-      data = '';
-    } else {
-      data = '';
+    if (requestConfig.headers["Accept"] === "application/pdf") {
+      requestConfig.responseType = "stream";
     }
 
-    if (request.header['Accept'] === 'application/pdf') {
-      request.parse( function (res, fn) {
-        res.data = '';
-        res.setEncoding('binary');
-        res.on( 'data', function (chunk) { res.data += chunk; } );
-        res.on( 'end', function () {
-          try {
-            fn( null, res.data );
-          } catch ( err ) {
-            fn( err );
-          }
-        });
-      })
-    }
+    const request = axios.request(requestConfig);
 
-
-      var data = null;
-      if (!callback) {
-        return new Promise(function(resolve, reject){
-          request.end(function(error, data) {
-            if (error) {
-              reject(error);
-            } else {
-              try {
-                data = _this.deserialize(data, returnType);
+    var data = null;
+    if (!callback) {
+      return new Promise(function (resolve, reject) {
+        request
+          .then((response) => {
+            try {
+              let streamData;
+              if (requestConfig.headers["Accept"] === "application/pdf") {
+                response.data.on("data", (chunks) => {
+                  streamData += chunks;
+                });
+                response.data.on("end", () => {
+                  resolve(streamData);
+                });
+              } else {
+                data = _this.deserialize(response, returnType);
                 resolve(data);
-              } catch(error){
-                reject(error);
               }
+            } catch (err) {
+              reject(err);
             }
           })
-        });
-      } else {
-        request.end(function(error, response) {
-          if (!error) {
-            try {
+          .catch((err) => {
+            reject(err);
+          });
+      });
+    } else {
+      request
+        .then((response) => {
+          try {
+            let streamData;
+            if (requestConfig.headers["Accept"] === "application/pdf") {
+              response.data.on("data", (chunks) => {
+                streamData += chunks;
+              });
+              response.data.on("end", () => {
+                callback(null, streamData, response);
+              });
+            } else {
               data = _this.deserialize(response, returnType);
-            } catch (err) {
-              error = err;
+              callback(null, data, response);
             }
+          } catch (err) {
+            callback(err);
           }
-          callback(error, data, response);
+        })
+        .catch((err) => {
+          callback(err);
         });
-        return request;
-      }
+      return request;
+    }
   };
 
   /**
@@ -640,8 +737,8 @@
    * @param {String} str The date value as a string.
    * @returns {Date} The parsed date object.
    */
-  exports.parseDate = function(str) {
-    return new Date(str.replace(/T/i, ' '));
+  exports.parseDate = function (str) {
+    return new Date(str.replace(/T/i, " "));
   };
 
   /**
@@ -653,32 +750,32 @@
    * all properties on <code>data<code> will be converted to this type.
    * @returns An instance of the specified type.
    */
-  exports.convertToType = function(data, type) {
+  exports.convertToType = function (data, type) {
     switch (type) {
-      case 'Boolean':
+      case "Boolean":
         return Boolean(data);
-      case 'Integer':
+      case "Integer":
         return parseInt(data, 10);
-      case 'Number':
+      case "Number":
         return parseFloat(data);
-      case 'String':
+      case "String":
         return String(data);
-      case 'Date':
+      case "Date":
         return this.parseDate(String(data));
       default:
         if (type === Object) {
           // generic object, return directly
           return data;
-        } else if (typeof type === 'function') {
+        } else if (typeof type === "function") {
           // for model type like: User
           return type.constructFromObject(data);
         } else if (Array.isArray(type)) {
           // for array type like: ['String']
           var itemType = type[0];
-          return data.map(function(item) {
+          return data.map(function (item) {
             return exports.convertToType(item, itemType);
           });
-        } else if (typeof type === 'object') {
+        } else if (typeof type === "object") {
           // for plain object type like: {'String': 'Integer'}
           var keyType, valueType;
           for (var k in type) {
@@ -709,7 +806,7 @@
    * @param data {Object|Array} The REST data.
    * @param obj {Object|Array} The target object or array.
    */
-  exports.constructFromObject = function(data, obj, itemType) {
+  exports.constructFromObject = function (data, obj, itemType) {
     if (Array.isArray(data)) {
       for (var i = 0; i < data.length; i++) {
         if (data.hasOwnProperty(i))
@@ -736,23 +833,36 @@
    * @param state Allows for arbitrary state that may be useful to your application.
    * The value in this parameter will be round-tripped along with the response so you can make sure it didn't change.
    */
-  exports.prototype.getAuthorizationUri = function(clientId, scopes, redirectUri, responseType, state) {
-    if (!clientId) throw new Error('Error clientId is required');
-    if (!scopes) throw new Error('Error scopes is required');
-    if (!scopes) throw new Error('Error scopes is required');
-    if (!this.hasNoInvalidScopes(scopes)) throw new Error('Error invalid scope detected');
-    if (!redirectUri) throw new Error('Error redirectUri is required');
-    if (!responseType) throw new Error('Error responseType is required');
+  exports.prototype.getAuthorizationUri = function (
+    clientId,
+    scopes,
+    redirectUri,
+    responseType,
+    state
+  ) {
+    if (!clientId) throw new Error("Error clientId is required");
+    if (!scopes) throw new Error("Error scopes is required");
+    if (!scopes) throw new Error("Error scopes is required");
+    if (!this.hasNoInvalidScopes(scopes))
+      throw new Error("Error invalid scope detected");
+    if (!redirectUri) throw new Error("Error redirectUri is required");
+    if (!responseType) throw new Error("Error responseType is required");
 
-    var formattedScopes = scopes.join(encodeURI(' '));
-    return "https://" +
+    var formattedScopes = scopes.join(encodeURI(" "));
+    return (
+      "https://" +
       this.getOAuthBasePath() +
-      "/oauth/auth"+
-      "?response_type=" + responseType +
-      "&scope=" + formattedScopes +
-      "&client_id="+ clientId +
-      "&redirect_uri=" + encodeURIComponent(redirectUri) +
-      (state ? "&state=" + encodeURIComponent(state) : '');
+      "/oauth/auth" +
+      "?response_type=" +
+      responseType +
+      "&scope=" +
+      formattedScopes +
+      "&client_id=" +
+      clientId +
+      "&redirect_uri=" +
+      encodeURIComponent(redirectUri) +
+      (state ? "&state=" + encodeURIComponent(state) : "")
+    );
   };
 
   /**
@@ -762,47 +872,60 @@
    * @param code The authorization code that you received from the <i>getAuthorizationUri</i> callback.
    * @return OAuthToken object.xx
    */
-  exports.prototype.generateAccessToken = function(clientId, clientSecret, code, callback) {
-    if (!clientId) throw new Error('Error clientId is required', null);
-    if (!clientSecret) throw new Error('Error clientSecret is required', null);
-    if (!code) throw new Error('Error code is required', null);
+  exports.prototype.generateAccessToken = function (
+    clientId,
+    clientSecret,
+    code,
+    callback
+  ) {
+    if (!clientId) throw new Error("Error clientId is required", null);
+    if (!clientSecret) throw new Error("Error clientSecret is required", null);
+    if (!code) throw new Error("Error code is required", null);
 
     var clientString = clientId + ":" + clientSecret,
       postData = {
-        "grant_type": "authorization_code",
+        grant_type: "authorization_code",
         code: code,
       },
       headers = {
-        "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
+        Authorization: "Basic " + new Buffer(clientString).toString("base64"),
         "Cache-Control": "no-store",
-        "Pragma": "no-cache"
+        Pragma: "no-cache",
+        ...defaultHeaders,
       },
-      OAuthToken = require('./OAuth').OAuthToken,
-      request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
-        .send(postData)
-        .set(headers)
-        .type("application/x-www-form-urlencoded");
+      OAuthToken = require("./OAuth").OAuthToken;
+
+    const requestConfig = {
+      baseURL: `https://${oAuthBasePath}`,
+      method: "post",
+      url: "/oauth/token",
+      headers: {
+        ...headers,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      data: postData,
+    };
+    const request = axios.request(requestConfig);
 
     if (!callback) {
       return new Promise(function (resolve, reject) {
-        request.end(function (err, res) {
-          if (err) {
+        request
+          .then((response) => {
+            resolve(OAuthToken.constructFromObject(response.data));
+          })
+          .catch((err) => {
             reject(err);
-          } else {
-            resolve(OAuthToken.constructFromObject(res.body))
-          }
-        });
+          });
       });
     } else {
-      request.end(function (err, res) {
-        var OAuthToken;
-        if (err) {
-          return callback(err, res);
-        } else {
-          OAuthToken = require('./OAuth').OAuthToken;
-          return callback(err, OAuthToken.constructFromObject(res.body))
-        }
-      });
+      request
+        .then((response) => {
+          let OAuthToken = require("./OAuth").OAuthToken;
+          return callback(null, OAuthToken.constructFromObject(response.data));
+        })
+        .catch((err) => {
+          return callback(err);
+        });
     }
   };
 
@@ -810,50 +933,57 @@
    * @param accessToken the bearer token to use to authenticate for this call.
    * @return OAuth UserInfo model
    */
-  exports.prototype.getUserInfo = function(accessToken, callback) {
-    if(!accessToken) throw new Error('Error accessToken is required',null);
+  exports.prototype.getUserInfo = function (accessToken, callback) {
+    if (!accessToken) throw new Error("Error accessToken is required", null);
 
     var headers = {
-      "Authorization": "Bearer " + accessToken,
+      Authorization: "Bearer " + accessToken,
       "Cache-Control": "no-store",
-      "Pragma": "no-cache"
-    }
+      Pragma: "no-cache",
+      ...defaultHeaders,
+    };
 
-    var request = superagentProxy(superagent).get("https://" + this.getOAuthBasePath() + "/oauth/userinfo").set(headers);
-
+    const requestConfig = {
+      baseURL: `https://${this.oAuthBasePath}`,
+      method: "get",
+      url: "/oauth/userinfo",
+      headers: headers,
+    };
     if (this.proxy) {
-      request.proxy(this.proxy);
+      const proxyObj = parseProxy(this.proxy);
+      requestConfig.proxy = proxyObj[0];
     }
-    
-    var UserInfo = require('./OAuth').UserInfo;
 
+    const request = axios.request(requestConfig);
 
-    if(!callback) {
+    var UserInfo = require("./OAuth").UserInfo;
+
+    if (!callback) {
       try {
         return new Promise(function (resolve, reject) {
-          request.end(function (err, res) {
-            if (err) {
-              reject(err);
-            } else {
+          request
+            .then((response) => {
               try {
-                return resolve(UserInfo.constructFromObject(res.body));
-              } catch (error) {
-                reject(error);
+                return resolve(UserInfo.constructFromObject(response.data));
+              } catch (err) {
+                throw err;
               }
-            }
-          });
+            })
+            .catch((err) => {
+              reject(err);
+            });
         });
       } catch (err) {
-        throw(err);
+        throw err;
       }
     } else {
-      request.end(function (err, res) {
-        if (err) {
-          return callback(err, res);
-        } else {
-          return callback(err, UserInfo.constructFromObject(res.body));
-        }
-      });
+      request
+        .then((response) => {
+          return callback(null, UserInfo.constructFromObject(response.data));
+        })
+        .catch((err) => {
+          return callback(err);
+        });
     }
   };
 
@@ -865,12 +995,26 @@
    * 			  and account.docusign.com for the production platform)
    * @returns {string} the OAuth JWT grant uri as a String
    */
-  exports.prototype.getJWTUri = function(clientId, redirectURI, oAuthBasePath) {
-    return "https://" + oAuthBasePath + "/oauth/auth" + "?" +
+  exports.prototype.getJWTUri = function (
+    clientId,
+    redirectURI,
+    oAuthBasePath
+  ) {
+    return (
+      "https://" +
+      oAuthBasePath +
+      "/oauth/auth" +
+      "?" +
       "response_type=code&" +
-      "client_id=" + encodeURIComponent(clientId) + "&" +
-      "scope=" + encodeURIComponent(`${SCOPE_SIGNATURE} ${SCOPE_IMPERSONATION}`) + "&" +
-      "redirect_uri=" + encodeURIComponent(redirectURI);
+      "client_id=" +
+      encodeURIComponent(clientId) +
+      "&" +
+      "scope=" +
+      encodeURIComponent(`${SCOPE_SIGNATURE} ${SCOPE_IMPERSONATION}`) +
+      "&" +
+      "redirect_uri=" +
+      encodeURIComponent(redirectURI)
+    );
   };
 
   /**
@@ -884,14 +1028,23 @@
    * @param expiresIn in seconds for the token time-to-live
    * @param callback the callback function.
    */
-  exports.prototype.configureJWTAuthorizationFlow = function(privateKeyFilename, oAuthBasePath, clientId, userId, expiresIn, callback) {
-    console.warn('configureJWTAuthorizationFlow is a deprecated function! Please use requestJWTUserToken()')
+  exports.prototype.configureJWTAuthorizationFlow = function (
+    privateKeyFilename,
+    oAuthBasePath,
+    clientId,
+    userId,
+    expiresIn,
+    callback
+  ) {
+    console.warn(
+      "configureJWTAuthorizationFlow is a deprecated function! Please use requestJWTUserToken()"
+    );
     var _this = this;
-    var jwt = require('jsonwebtoken')
-      , fs  = require('fs')
-      , private_key = fs.readFileSync(privateKeyFilename)
-      , now         = Math.floor(Date.now() / 1000)
-      , later       = now + expiresIn;
+    var jwt = require("jsonwebtoken"),
+      fs = require("fs"),
+      private_key = fs.readFileSync(privateKeyFilename),
+      now = Math.floor(Date.now() / 1000),
+      later = now + expiresIn;
 
     var jwt_payload = {
       iss: clientId,
@@ -899,60 +1052,124 @@
       aud: oAuthBasePath,
       iat: now,
       exp: later,
-      scope: SCOPE_SIGNATURE
+      scope: SCOPE_SIGNATURE,
     };
 
-    var assertion = jwt.sign(jwt_payload, private_key, {algorithm: 'RS256'});
+    var assertion = jwt.sign(jwt_payload, private_key, { algorithm: "RS256" });
 
-    superagent('post', 'https://' + this.getOAuthBasePath() + '/oauth/token')
-      .timeout(this.timeout)
-      .set('Content-Type', 'application/x-www-form-urlencoded')
-      .set('Cache-Control', 'no-store')
-      .set('Pragma', 'no-cache')
-      .send({
-        'assertion': assertion,
-        'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer'
-      })
-      .end(function(err, res) {
-        if (callback) {
-          if (!err && res.body && res.body.access_token) {
-            _this.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
-          }
-          callback(err, res);
+    const requestConfig = {
+      baseURL: `https://${oAuthBasePath}`,
+      method: "post",
+      url: "/oauth/token",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cache-Control": "no-store",
+        Pragma: "no-cache",
+        ...defaultHeaders,
+      },
+      timeout: this.timeout,
+      data: {
+        assertion: assertion,
+        grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      },
+    };
+
+    const request = axios.request(requestConfig);
+    const onSuccess = (response) => {
+      if (callback) {
+        if (response.data && response.data.access_token) {
+          _this.addDefaultHeader(
+            "Authorization",
+            "Bearer " + response.data.access_token
+          );
         }
-      });
+        callback(null, response);
+      }
+    };
+
+    const onFailure = (error) => {
+      if (callback) {
+        callback(error);
+      }
+    };
+    request.then(onSuccess, onFailure);
   };
 
-  exports.prototype.hasNoInvalidScopes = function(scopes) {
-    var validScopes = require('./oauth/Scope');
+  exports.prototype.hasNoInvalidScopes = function (scopes) {
+    var validScopes = require("./oauth/Scope");
 
     return (
-      Array.isArray(scopes)
-      && scopes.length > 0
-      && scopes.every(function(scope) {
-        return Object.keys(validScopes).some(function(key) {
+      Array.isArray(scopes) &&
+      scopes.length > 0 &&
+      scopes.every(function (scope) {
+        return Object.keys(validScopes).some(function (key) {
           return validScopes[key] === scope;
-        })
+        });
       })
     );
   };
 
-  exports.prototype.requestJWTUserToken = function(clientId, userId, scopes, rsaPrivateKey, expiresIn, callback) {
-    var privateKey = rsaPrivateKey,
-      assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn, userId);
-
-    return sendJWTTokenRequest(assertion, this.oAuthBasePath, this.proxy, callback);
+  exports.prototype.sendJWTTokenRequest = function (assertion, callback) {
+    return sendJWTTokenRequest(
+      assertion,
+      this.oAuthBasePath,
+      this.proxy,
+      callback
+    );
   };
 
-  exports.prototype.requestJWTApplicationToken = function(clientId, scopes, rsaPrivateKey, expiresIn, callback) {
+  exports.prototype.requestJWTUserToken = function (
+    clientId,
+    userId,
+    scopes,
+    rsaPrivateKey,
+    expiresIn,
+    callback
+  ) {
     var privateKey = rsaPrivateKey,
-      assertion = generateAndSignJWTAssertion(clientId, scopes, privateKey, this.getOAuthBasePath(), expiresIn);
+      assertion = generateAndSignJWTAssertion(
+        clientId,
+        scopes,
+        privateKey,
+        this.getOAuthBasePath(),
+        expiresIn,
+        userId
+      );
 
-    return sendJWTTokenRequest(assertion, this.oAuthBasePath, this.proxy, callback);
+    return sendJWTTokenRequest(
+      assertion,
+      this.oAuthBasePath,
+      this.proxy,
+      callback
+    );
   };
 
-  exports.prototype.OAuth = require('./OAuth');
-  exports.prototype.RestApi = require('./RestApi');
+  exports.prototype.requestJWTApplicationToken = function (
+    clientId,
+    scopes,
+    rsaPrivateKey,
+    expiresIn,
+    callback
+  ) {
+    var privateKey = rsaPrivateKey,
+      assertion = generateAndSignJWTAssertion(
+        clientId,
+        scopes,
+        privateKey,
+        this.getOAuthBasePath(),
+        expiresIn
+      );
+
+    return sendJWTTokenRequest(
+      assertion,
+      this.oAuthBasePath,
+      this.proxy,
+      callback
+    );
+  };
+
+  exports.prototype.OAuth = require("./OAuth");
+  exports.prototype.RestApi = require("./RestApi");
   /**
    * The default API client implementation.
    * @type {module:ApiClient}
@@ -960,7 +1177,7 @@
   exports.instance = new exports(opts);
 
   return exports;
-}));
+});
 
-module.exports.OAuth = require('./OAuth');
-module.exports.RestApi = require('./RestApi');
+module.exports.OAuth = require("./OAuth");
+module.exports.RestApi = require("./RestApi");
