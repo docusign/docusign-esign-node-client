@@ -9,7 +9,7 @@ try {
 }
 var assert = require('assert');
 var path = require('path');
-var superagent = require('superagent');
+var axios = require('axios');
 
 var Buffer = global.Buffer.from ? global.Buffer : require('safe-buffer').Buffer;
 var fs = require('fs');
@@ -266,11 +266,13 @@ describe('SDK Unit Tests:', function (done) {
     var randomState = '*^.$DGj*)+}Jk';
     var authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
 
-    superagent.get(authUri)
-      .end(function (err, res) {
-        assert.equal(err, undefined);
-        assert.equal(res.statusCode, 200);
+    axios.get(authUri)
+      .then(function (res) {        
+        assert.equal(res.status, 200);
         done();
+      })
+      .catch((err)=>{
+        assert.notEqual(err, undefined);
       });
   });
 

@@ -2,6 +2,17 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v6.6.0-rc2] - eSignature API v2.1-23.4.02.00 - 2024-03-19
+### Changed
+- Substituted the superagent proxy with Axios 1.6.8, addressing security vulnerabilities.
+- Updated the SDK release version.
+
+## [v6.6.0-rc1] - eSignature API v2.1-23.4.02.00 - 2024-03-12
+### Changed
+- Added user-generated JWT assertion support via sendJWTTokenRequest.
+- Added support for version v2.1-23.4.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v6.5.1] - eSignature API v2.1-23.3.01.02 - 2023-11-15
 ### Changed
 - Rolled back the superagent-proxy package version from 3.0.0 to 2.0.0

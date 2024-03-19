@@ -35,7 +35,7 @@ This client has the following external dependencies:
 
 **Minimum:**
 *   DocuSign-eSign
-*   Superagent 3.8.2
+*   axios 1.6.8
 
 **Optional:**
 *   Async v2.6.2

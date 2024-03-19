@@ -1114,6 +1114,12 @@
       if (data.hasOwnProperty('enableCustomerSatisfactionMetricTrackingMetadata')) {
         obj['enableCustomerSatisfactionMetricTrackingMetadata'] = SettingsMetadata.constructFromObject(data['enableCustomerSatisfactionMetricTrackingMetadata']);
       }
+      if (data.hasOwnProperty('enableDataVerificationExtensions')) {
+        obj['enableDataVerificationExtensions'] = ApiClient.convertToType(data['enableDataVerificationExtensions'], 'String');
+      }
+      if (data.hasOwnProperty('enableDataVerificationExtensionsMetadata')) {
+        obj['enableDataVerificationExtensionsMetadata'] = SettingsMetadata.constructFromObject(data['enableDataVerificationExtensionsMetadata']);
+      }
       if (data.hasOwnProperty('enableDSigEUAdvancedPens')) {
         obj['enableDSigEUAdvancedPens'] = ApiClient.convertToType(data['enableDSigEUAdvancedPens'], 'String');
       }
@@ -1459,11 +1465,23 @@
       if (data.hasOwnProperty('enableTransactionPointMetadata')) {
         obj['enableTransactionPointMetadata'] = SettingsMetadata.constructFromObject(data['enableTransactionPointMetadata']);
       }
+      if (data.hasOwnProperty('enableUnifiedRepository')) {
+        obj['enableUnifiedRepository'] = ApiClient.convertToType(data['enableUnifiedRepository'], 'String');
+      }
+      if (data.hasOwnProperty('enableUnifiedRepositoryMetadata')) {
+        obj['enableUnifiedRepositoryMetadata'] = SettingsMetadata.constructFromObject(data['enableUnifiedRepositoryMetadata']);
+      }
       if (data.hasOwnProperty('enableVaulting')) {
         obj['enableVaulting'] = ApiClient.convertToType(data['enableVaulting'], 'String');
       }
       if (data.hasOwnProperty('enableVaultingMetadata')) {
         obj['enableVaultingMetadata'] = SettingsMetadata.constructFromObject(data['enableVaultingMetadata']);
+      }
+      if (data.hasOwnProperty('enableWebFormsRuntimeAPIs')) {
+        obj['enableWebFormsRuntimeAPIs'] = ApiClient.convertToType(data['enableWebFormsRuntimeAPIs'], 'String');
+      }
+      if (data.hasOwnProperty('enableWebFormsRuntimeAPIsMetadata')) {
+        obj['enableWebFormsRuntimeAPIsMetadata'] = SettingsMetadata.constructFromObject(data['enableWebFormsRuntimeAPIsMetadata']);
       }
       if (data.hasOwnProperty('enableWebFormsSeparateUserPermissions')) {
         obj['enableWebFormsSeparateUserPermissions'] = ApiClient.convertToType(data['enableWebFormsSeparateUserPermissions'], 'String');
@@ -1563,6 +1581,12 @@
       }
       if (data.hasOwnProperty('finishReminderMetadata')) {
         obj['finishReminderMetadata'] = SettingsMetadata.constructFromObject(data['finishReminderMetadata']);
+      }
+      if (data.hasOwnProperty('forbidAddingUserStamps')) {
+        obj['forbidAddingUserStamps'] = ApiClient.convertToType(data['forbidAddingUserStamps'], 'String');
+      }
+      if (data.hasOwnProperty('forbidAddingUserStampsMetadata')) {
+        obj['forbidAddingUserStampsMetadata'] = SettingsMetadata.constructFromObject(data['forbidAddingUserStampsMetadata']);
       }
       if (data.hasOwnProperty('guidedFormsHtmlAllowed')) {
         obj['guidedFormsHtmlAllowed'] = ApiClient.convertToType(data['guidedFormsHtmlAllowed'], 'String');
@@ -4010,6 +4034,16 @@
   exports.prototype['enableCustomerSatisfactionMetricTrackingMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableDataVerificationExtensions
+   */
+  exports.prototype['enableDataVerificationExtensions'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDataVerificationExtensionsMetadata
+   */
+  exports.prototype['enableDataVerificationExtensionsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableDSigEUAdvancedPens
    */
   exports.prototype['enableDSigEUAdvancedPens'] = undefined;
@@ -4585,6 +4619,16 @@
   exports.prototype['enableTransactionPointMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableUnifiedRepository
+   */
+  exports.prototype['enableUnifiedRepository'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableUnifiedRepositoryMetadata
+   */
+  exports.prototype['enableUnifiedRepositoryMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableVaulting
    */
   exports.prototype['enableVaulting'] = undefined;
@@ -4593,6 +4637,16 @@
    * @member {module:model/SettingsMetadata} enableVaultingMetadata
    */
   exports.prototype['enableVaultingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableWebFormsRuntimeAPIs
+   */
+  exports.prototype['enableWebFormsRuntimeAPIs'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableWebFormsRuntimeAPIsMetadata
+   */
+  exports.prototype['enableWebFormsRuntimeAPIsMetadata'] = undefined;
   /**
    * 
    * @member {String} enableWebFormsSeparateUserPermissions
@@ -4758,6 +4812,16 @@
    * @member {module:model/SettingsMetadata} finishReminderMetadata
    */
   exports.prototype['finishReminderMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} forbidAddingUserStamps
+   */
+  exports.prototype['forbidAddingUserStamps'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} forbidAddingUserStampsMetadata
+   */
+  exports.prototype['forbidAddingUserStampsMetadata'] = undefined;
   /**
    * 
    * @member {String} guidedFormsHtmlAllowed

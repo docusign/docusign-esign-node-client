@@ -4,7 +4,7 @@ var restApi = docusign.ApiClient.RestApi;
 var config = require('../test-config');
 var assert = require('assert');
 var path = require('path');
-var superagent = require('superagent');
+var axios = require('axios');
 
 var userName = config.email;
 var integratorKey = config.integratorKey;
@@ -227,11 +227,13 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     var randomState = '*^.$DGj*)+}Jk';
     var authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
 
-    superagent.get(authUri)
-      .end(function (err, res) {
-        assert.equal(err, undefined);
-        assert.equal(res.statusCode, 200);
+    axios.get(authUri)
+      .then(function (res) {        
+        assert.equal(res.status, 200);
         done();
+      })
+      .catch((err)=>{
+        assert.notEqual(err, undefined);
       });
   });
 

@@ -64,6 +64,12 @@
       if (data.hasOwnProperty('adminOnlyMetadata')) {
         obj['adminOnlyMetadata'] = SettingsMetadata.constructFromObject(data['adminOnlyMetadata']);
       }
+      if (data.hasOwnProperty('allowAccessToAllAccountAgreements')) {
+        obj['allowAccessToAllAccountAgreements'] = ApiClient.convertToType(data['allowAccessToAllAccountAgreements'], 'String');
+      }
+      if (data.hasOwnProperty('allowAccessToAllAccountAgreementsMetadata')) {
+        obj['allowAccessToAllAccountAgreementsMetadata'] = SettingsMetadata.constructFromObject(data['allowAccessToAllAccountAgreementsMetadata']);
+      }
       if (data.hasOwnProperty('allowAutoTagging')) {
         obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
       }
@@ -479,6 +485,16 @@
    * @member {module:model/SettingsMetadata} adminOnlyMetadata
    */
   exports.prototype['adminOnlyMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowAccessToAllAccountAgreements
+   */
+  exports.prototype['allowAccessToAllAccountAgreements'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowAccessToAllAccountAgreementsMetadata
+   */
+  exports.prototype['allowAccessToAllAccountAgreementsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowAutoTagging
