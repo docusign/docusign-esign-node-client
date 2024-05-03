@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accountAgreementsAccessType')) {
+        obj['accountAgreementsAccessType'] = ApiClient.convertToType(data['accountAgreementsAccessType'], 'String');
+      }
+      if (data.hasOwnProperty('accountAgreementsAccessTypeMetadata')) {
+        obj['accountAgreementsAccessTypeMetadata'] = SettingsMetadata.constructFromObject(data['accountAgreementsAccessTypeMetadata']);
+      }
       if (data.hasOwnProperty('accountManagementGranular')) {
         obj['accountManagementGranular'] = UserAccountManagementGranularInformation.constructFromObject(data['accountManagementGranular']);
       }
@@ -142,6 +148,12 @@
       if (data.hasOwnProperty('bulkSendMetadata')) {
         obj['bulkSendMetadata'] = SettingsMetadata.constructFromObject(data['bulkSendMetadata']);
       }
+      if (data.hasOwnProperty('canBulkUploadAgreements')) {
+        obj['canBulkUploadAgreements'] = ApiClient.convertToType(data['canBulkUploadAgreements'], 'String');
+      }
+      if (data.hasOwnProperty('canBulkUploadAgreementsMetadata')) {
+        obj['canBulkUploadAgreementsMetadata'] = SettingsMetadata.constructFromObject(data['canBulkUploadAgreementsMetadata']);
+      }
       if (data.hasOwnProperty('canChargeAccount')) {
         obj['canChargeAccount'] = ApiClient.convertToType(data['canChargeAccount'], 'String');
       }
@@ -183,6 +195,12 @@
       }
       if (data.hasOwnProperty('canManageAccountMetadata')) {
         obj['canManageAccountMetadata'] = SettingsMetadata.constructFromObject(data['canManageAccountMetadata']);
+      }
+      if (data.hasOwnProperty('canManageAgreementParties')) {
+        obj['canManageAgreementParties'] = ApiClient.convertToType(data['canManageAgreementParties'], 'String');
+      }
+      if (data.hasOwnProperty('canManageAgreementPartiesMetadata')) {
+        obj['canManageAgreementPartiesMetadata'] = SettingsMetadata.constructFromObject(data['canManageAgreementPartiesMetadata']);
       }
       if (data.hasOwnProperty('canManageDistributor')) {
         obj['canManageDistributor'] = ApiClient.convertToType(data['canManageDistributor'], 'String');
@@ -471,6 +489,16 @@
   }
 
   /**
+   * 
+   * @member {String} accountAgreementsAccessType
+   */
+  exports.prototype['accountAgreementsAccessType'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} accountAgreementsAccessTypeMetadata
+   */
+  exports.prototype['accountAgreementsAccessTypeMetadata'] = undefined;
+  /**
    * Describes which account management capabilities a user has.
    * @member {module:model/UserAccountManagementGranularInformation} accountManagementGranular
    */
@@ -617,6 +645,16 @@
   exports.prototype['bulkSendMetadata'] = undefined;
   /**
    * 
+   * @member {String} canBulkUploadAgreements
+   */
+  exports.prototype['canBulkUploadAgreements'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canBulkUploadAgreementsMetadata
+   */
+  exports.prototype['canBulkUploadAgreementsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} canChargeAccount
    */
   exports.prototype['canChargeAccount'] = undefined;
@@ -685,6 +723,16 @@
    * @member {module:model/SettingsMetadata} canManageAccountMetadata
    */
   exports.prototype['canManageAccountMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageAgreementParties
+   */
+  exports.prototype['canManageAgreementParties'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canManageAgreementPartiesMetadata
+   */
+  exports.prototype['canManageAgreementPartiesMetadata'] = undefined;
   /**
    * 
    * @member {String} canManageDistributor

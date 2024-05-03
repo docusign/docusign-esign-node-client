@@ -73,6 +73,9 @@
       if (data.hasOwnProperty('groupType')) {
         obj['groupType'] = ApiClient.convertToType(data['groupType'], 'String');
       }
+      if (data.hasOwnProperty('lastModifiedOn')) {
+        obj['lastModifiedOn'] = ApiClient.convertToType(data['lastModifiedOn'], 'String');
+      }
       if (data.hasOwnProperty('permissionProfileId')) {
         obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
       }
@@ -116,6 +119,11 @@
    * @member {String} groupType
    */
   exports.prototype['groupType'] = undefined;
+  /**
+   * 
+   * @member {String} lastModifiedOn
+   */
+  exports.prototype['lastModifiedOn'] = undefined;
   /**
    * The ID of the permission profile associated with the group.
    * @member {String} permissionProfileId

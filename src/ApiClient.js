@@ -270,6 +270,16 @@
   };
 
   /**
+   * Sets default JWT authorization token for APIs.
+   */
+  exports.prototype.setJWTToken = function setJWTToken(token) {
+    if(!token){
+      throw new Error("Missing the required parameter 'token' when calling setJWTToken.");
+    }
+    defaultHeaders["Authorization"] = `Bearer ${token}`;
+  };
+
+  /**
    * Returns a string representation for an actual parameter.
    * @param param The actual parameter.
    * @returns {String} The string representation of <code>param</code>.
@@ -397,7 +407,7 @@
       }
     }
     return newParams;
-  };  
+  };
 
   /**
    * Enumeration of collection format separator strategies.
@@ -611,7 +621,7 @@
       queryParams["_"] = new Date().getTime();
     }
     const _queryParams = this.normalizeParams(queryParams);
-    requestConfig.params = { ...requestConfig.params, ..._queryParams };    
+    requestConfig.params = { ...requestConfig.params, ..._queryParams };
 
     // set header parameters
     const _headerParams = this.normalizeParams(headerParams);

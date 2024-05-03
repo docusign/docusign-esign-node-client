@@ -193,14 +193,14 @@ describe('EnvelopesApi tests:', () => {
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef })
       .then((envelopeSummary) => {
         var returnUrl = 'http://www.docusign.com/developer-center';
-        var returnUrlRequest = new docusign.ReturnUrlRequest();
-        returnUrlRequest.returnUrl = returnUrl;
+        var envelopeViewRequest = new docusign.EnvelopeViewRequest();
+        envelopeViewRequest.returnUrl = returnUrl;
 
         assert.notStrictEqual(envelopeSummary, undefined);
         assert.notStrictEqual(envelopeSummary.envelopeId, undefined);
         assert.equal(envelopeSummary.status, 'created');
 
-        return envelopesApi.createSenderView(ACCOUNT_ID, envelopeSummary.envelopeId, { returnUrlRequest });
+        return envelopesApi.createSenderView(ACCOUNT_ID, envelopeSummary.envelopeId, { envelopeViewRequest });
       })
       .then((viewUrl) => {
         assert.notStrictEqual(viewUrl, undefined);

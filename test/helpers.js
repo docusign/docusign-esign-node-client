@@ -26,7 +26,7 @@ var JWTAuth = () => {
       apiClient.requestJWTUserToken(INTEGRATOR_KEY, USER_ID, scopes, privateKeyFile, EXPIRES_IN).then(function (res) {
         var baseUri;
         var accountDomain;
-        apiClient.addDefaultHeader('Authorization', `Bearer ${res.body.access_token}`);
+        apiClient.setJWTToken(res.body.access_token);
         apiClient.getUserInfo(res.body.access_token).then(function (userInfo) {
           var ACCOUNT_ID = userInfo.accounts[0].accountId;
           baseUri = userInfo.accounts[0].baseUri;
