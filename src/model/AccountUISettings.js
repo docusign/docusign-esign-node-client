@@ -97,6 +97,12 @@
       if (data.hasOwnProperty('enableEnvelopeCopyWithDataMetadata')) {
         obj['enableEnvelopeCopyWithDataMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeCopyWithDataMetadata']);
       }
+      if (data.hasOwnProperty('enableEnvelopeTypes')) {
+        obj['enableEnvelopeTypes'] = ApiClient.convertToType(data['enableEnvelopeTypes'], 'String');
+      }
+      if (data.hasOwnProperty('enableEnvelopeTypesMetadata')) {
+        obj['enableEnvelopeTypesMetadata'] = SettingsMetadata.constructFromObject(data['enableEnvelopeTypesMetadata']);
+      }
       if (data.hasOwnProperty('enableLegacySendflowLink')) {
         obj['enableLegacySendflowLink'] = ApiClient.convertToType(data['enableLegacySendflowLink'], 'String');
       }
@@ -225,6 +231,16 @@
    * @member {module:model/SettingsMetadata} enableEnvelopeCopyWithDataMetadata
    */
   exports.prototype['enableEnvelopeCopyWithDataMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableEnvelopeTypes
+   */
+  exports.prototype['enableEnvelopeTypes'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableEnvelopeTypesMetadata
+   */
+  exports.prototype['enableEnvelopeTypesMetadata'] = undefined;
   /**
    * 
    * @member {String} enableLegacySendflowLink

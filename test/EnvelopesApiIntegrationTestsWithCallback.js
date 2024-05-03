@@ -231,14 +231,14 @@ describe('EnvelopesApi Tests With Callbacks:', () => {
 
       assert.notStrictEqual(envelopeSummary, undefined);
       var returnUrl = 'http://www.docusign.com/developer-center';
-      var returnUrlRequest = new docusign.ReturnUrlRequest();
-      returnUrlRequest.returnUrl = returnUrl;
+      var envelopeViewRequest = new docusign.EnvelopeViewRequest();
+      envelopeViewRequest.returnUrl = returnUrl;
 
       assert.notStrictEqual(envelopeSummary, undefined);
       assert.notStrictEqual(envelopeSummary.envelopeId, undefined);
       assert.equal(envelopeSummary.status, 'created');
 
-      envelopesApi.createSenderView(ACCOUNT_ID, envelopeSummary.envelopeId, { returnUrlRequest }, createSenderViewCallback);
+      envelopesApi.createSenderView(ACCOUNT_ID, envelopeSummary.envelopeId, { envelopeViewRequest }, createSenderViewCallback);
     };
 
     envelopesApi.createEnvelope(ACCOUNT_ID, { envelopeDefinition: envDef }, createEnvelopeCallback);

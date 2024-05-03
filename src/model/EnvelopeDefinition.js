@@ -316,6 +316,9 @@
       if (data.hasOwnProperty('useDisclosure')) {
         obj['useDisclosure'] = ApiClient.convertToType(data['useDisclosure'], 'String');
       }
+      if (data.hasOwnProperty('uSigState')) {
+        obj['uSigState'] = ApiClient.convertToType(data['uSigState'], 'String');
+      }
       if (data.hasOwnProperty('voidedDateTime')) {
         obj['voidedDateTime'] = ApiClient.convertToType(data['voidedDateTime'], 'String');
       }
@@ -764,6 +767,11 @@
    * @member {String} useDisclosure
    */
   exports.prototype['useDisclosure'] = undefined;
+  /**
+   * 
+   * @member {String} uSigState
+   */
+  exports.prototype['uSigState'] = undefined;
   /**
    * The date and time the envelope or template was voided.
    * @member {String} voidedDateTime

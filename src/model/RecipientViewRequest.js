@@ -70,6 +70,9 @@
       if (data.hasOwnProperty('clientUserId')) {
         obj['clientUserId'] = ApiClient.convertToType(data['clientUserId'], 'String');
       }
+      if (data.hasOwnProperty('displayFormat')) {
+        obj['displayFormat'] = ApiClient.convertToType(data['displayFormat'], 'String');
+      }
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
@@ -135,6 +138,11 @@
    * @member {String} clientUserId
    */
   exports.prototype['clientUserId'] = undefined;
+  /**
+   * 
+   * @member {String} displayFormat
+   */
+  exports.prototype['displayFormat'] = undefined;
   /**
    * Specifies the email of the recipient. You can use either email and userName or userId to identify the recipient.
    * @member {String} email

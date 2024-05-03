@@ -52,7 +52,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
       if (err) {
         return done(err);
       }
-      apiClient.addDefaultHeader('Authorization', 'Bearer ' + res.body.access_token);
+      apiClient.setJWTToken(res.body.access_token)
 
       apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
         if (err) {
