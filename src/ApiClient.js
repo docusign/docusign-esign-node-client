@@ -906,7 +906,7 @@
       OAuthToken = require("./OAuth").OAuthToken;
 
     const requestConfig = {
-      baseURL: `https://${oAuthBasePath}`,
+      baseURL: `https://${this.oAuthBasePath}`,
       method: "post",
       url: "/oauth/token",
       headers: {
