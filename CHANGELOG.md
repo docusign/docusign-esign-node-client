@@ -2,6 +2,8 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v7.0.1] - eSignature API v2.1-24.1.01.00 - 2024-05-24
+## Resolved "Generate Access Token SDK Method is broken since most recent RC Version"
 ## [v7.0.0] - eSignature API v2.1-24.1.01.00 - 2024-05-22
 ## Endpoint-Specific Changes
 

@@ -8,12 +8,12 @@
  * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
  *
  */
-(function (root, factory) {
+(function(root, factory) {
   if (typeof define === "function" && define.amd) {
     // AMD. Register as an anonymous module.
     define(["axios"], factory);
     define(["@devhigley/parse-proxy"], factory);
-  } else if (typeof module === "object" && module.exports) {
+  } else if (typeof module === "object" && module.exports) {    
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(
       require("axios"),
@@ -24,27 +24,27 @@
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ApiClient = factory(root.axios, opts);
+    root.Docusign.ApiClient = factory(root.axios, root.parseProxy, opts);
   }
 })(this, function (axios, parseProxy, opts) {
   "use strict";
 
   /**
-   * The default HTTP headers to be included for all API calls.
-   * @type {Array.<String>}
-   * @default {}
-   */
+    * The default HTTP headers to be included for all API calls.
+    * @type {Array.<String>}
+    * @default {}
+    */
   var defaultHeaders = {
     "X-DocuSign-SDK": "Node",
     "Node-Ver": process.version,
-    "User-Agent": `Swagger-Codegen/v2.1/6.6.0-rc1/node/${process.version}`,
-  };
+    "User-Agent": `Swagger-Codegen/v2.1/7.0.1/node/${process.version}`,
+  };  
 
   var SCOPE_SIGNATURE = "signature";
   var SCOPE_EXTENDED = "extended";
   var SCOPE_IMPERSONATION = "impersonation";
 
-  var removeNulls = function (obj) {
+  var removeNulls = function(obj) {
     var isArray = obj instanceof Array;
     for (var k in obj) {
       if (typeof obj[k] === "object") removeNulls(obj[k]);
@@ -62,7 +62,7 @@
     expiresIn,
     userId
   ) {
-    if (typeof expiresIn !== "number" || expiresIn < 0)
+    if(typeof expiresIn !== "number" || expiresIn < 0)
       throw new Error("Invalid expires in param detected");
 
     var MILLESECONDS_PER_SECOND = 1000,
@@ -81,7 +81,7 @@
     };
 
     /** optional parameters  **/
-    if (userId) {
+    if(userId) {
       jwtPayload.sub = userId;
     }
     return jwt.sign(jwtPayload, privateKey, { algorithm: JWT_SIGNING_ALGO });
@@ -146,7 +146,7 @@
     return updatedObj;
   };
 
-  var deriveOAuthBasePathFromRestBasePath = function (basePath) {
+  var deriveOAuthBasePathFromRestBasePath = function(basePath) {
     if (basePath == null) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
@@ -173,20 +173,20 @@
    * @alias module:ApiClient
    * @class
    */
-  var exports = function (opts) {
+  var exports = function(opts) {
     var defaults = {
       basePath: "https://www.docusign.net/restapi".replace(/\/+$/, ""),
       oAuthBasePath: require("./OAuth").BasePath.PRODUCTION,
     };
 
-    opts = Object.assign({}, defaults, opts);
+    opts = Object.assign({},defaults, opts);
     opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
 
     /**
      * The full URI for the desired proxy.
-     * A complete list of supported proxies can be found here: https://www.npmjs.com/package/proxy-agent.
+     * A complete list of supported proxies can be found here: https://www.npmjs.com/package/proxy-agent.     
      * @type {String}
-     * @default
+     * @default 
      */
     this.proxy = opts.proxy;
 
@@ -209,7 +209,7 @@
      * @type {Array.<String>}
      */
     this.authentications = {
-      docusignAccessCode: { type: "oauth2" },
+      'docusignAccessCode': {type: "oauth2"}
     };
 
     /**
@@ -228,10 +228,10 @@
     this.cache = true;
   };
 
-  /**
+    /**
    * Gets the API endpoint base URL.
    */
-  exports.prototype.getBasePath = function getBasePath() {
+    exports.prototype.getBasePath = function getBasePath() {
     return this.basePath;
   };
 
@@ -243,10 +243,10 @@
     this.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(basePath);
   };
 
-  /**
+    /**
    * Gets the authentication server endpoint base URL.
    */
-  exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
+    exports.prototype.getOAuthBasePath = function getOAuthBasePath() {
     return this.oAuthBasePath;
   };
 
@@ -269,12 +269,12 @@
     defaultHeaders[header] = value;
   };
 
-  /**
+    /**
    * Sets default JWT authorization token for APIs.
    */
-  exports.prototype.setJWTToken = function setJWTToken(token) {
+    exports.prototype.setJWTToken = function setJWTToken(token) {
     if(!token){
-      throw new Error("Missing the required parameter 'token' when calling setJWTToken.");
+      throw new Error("Missing the required parameter 'token' when calling setJWTToken.")
     }
     defaultHeaders["Authorization"] = `Bearer ${token}`;
   };
@@ -284,7 +284,7 @@
    * @param param The actual parameter.
    * @returns {String} The string representation of <code>param</code>.
    */
-  exports.prototype.paramToString = function (param) {
+  exports.prototype.paramToString = function(param) {
     if (param == undefined || param == null) {
       return "";
     }
@@ -301,13 +301,13 @@
    * @param {Object} pathParams The parameter values to append.
    * @returns {String} The encoded path with parameter values substituted.
    */
-  exports.prototype.buildUrl = function (path, pathParams) {
+  exports.prototype.buildUrl = function(path, pathParams) {
     if (!path.match(/^\//)) {
       path = "/" + path;
     }
     var url = this.basePath + path;
     var _this = this;
-    url = url.replace(/\{([\w-]+)\}/g, function (fullMatch, key) {
+    url = url.replace(/\{([\w-]+)\}/g, function(fullMatch, key) {
       var value;
       if (pathParams.hasOwnProperty(key)) {
         value = _this.paramToString(pathParams[key]);
@@ -330,7 +330,7 @@
    * @param {String} contentType The MIME content type to check.
    * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
    */
-  exports.prototype.isJsonMime = function (contentType) {
+  exports.prototype.isJsonMime = function(contentType) {
     return Boolean(
       contentType != null && contentType.match(/^application\/json(;.*)?$/i)
     );
@@ -341,7 +341,7 @@
    * @param {Array.<String>} contentTypes
    * @returns {String} The chosen content type, preferring JSON.
    */
-  exports.prototype.jsonPreferredMime = function (contentTypes) {
+  exports.prototype.jsonPreferredMime = function(contentTypes) {
     for (var i = 0; i < contentTypes.length; i++) {
       if (this.isJsonMime(contentTypes[i])) {
         return contentTypes[i];
@@ -355,14 +355,14 @@
    * @param param The parameter to check.
    * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
    */
-  exports.prototype.isFileParam = function (param) {
+  exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
     if (
       typeof window === "undefined" &&
-      typeof require === "function" &&
-      require("fs") &&
-      param instanceof require("fs").ReadStream
-    ) {
+        typeof require === "function" &&
+        require("fs") &&
+        param instanceof require("fs").ReadStream
+        ) {
       return true;
     }
     // Buffer in Node.js
@@ -390,7 +390,7 @@
    * @param {Object.<String, Object>} params The parameters as object properties.
    * @returns {Object.<String, Object>} normalized parameters.
    */
-  exports.prototype.normalizeParams = function (params) {
+  exports.prototype.normalizeParams = function(params) {
     var newParams = {};
     for (var key in params) {
       if (
@@ -475,10 +475,10 @@
 
   /**
    * Applies authentication headers to the request.
-   * @param {Object} requestConfig The request configuration object used for Axios Request.
+   * @param {Object} requestConfig The request configuration object used for <code>Axios</code> request.
    * @param {Array.<String>} authNames An array of authentication method names.
    */
-  exports.prototype.applyAuthToRequest = function (requestConfig, authNames) {
+  exports.prototype.applyAuthToRequest = function(requestConfig, authNames) {
     var _this = this;
     authNames.forEach(function (authName) {
       var auth = _this.authentications[authName];
@@ -542,11 +542,11 @@
     return exports.convertToType(data, returnType);
   };
 
-  exports.prototype.hasBufferFormParam = function (formParams) {
+  exports.prototype.hasBufferFormParam = function(formParams) {
     if (!formParams) {
       return false;
     }
-    return Object.keys(formParams).some(function (key) {
+    return Object.keys(formParams).some(function(key) {
       return formParams[key] instanceof Buffer;
     });
   };
@@ -592,14 +592,14 @@
   ) {
     var _this = this;
     var url = this.buildUrl(path, pathParams);
-
+    
     const requestConfig = {
       method: httpMethod,
       url,
       timeout: this.timeout,
-      paramsSerializer:{
+      paramsSerializer: {
         indexes: null,
-      }
+      },
     };
 
     if (this.proxy) {
@@ -689,7 +689,7 @@
 
     const request = axios.request(requestConfig);
 
-    var data = null;
+      var data = null;
     if (!callback) {
       return new Promise(function (resolve, reject) {
         request
@@ -747,7 +747,7 @@
    * @param {String} str The date value as a string.
    * @returns {Date} The parsed date object.
    */
-  exports.parseDate = function (str) {
+  exports.parseDate = function(str) {
     return new Date(str.replace(/T/i, " "));
   };
 
@@ -760,7 +760,7 @@
    * all properties on <code>data<code> will be converted to this type.
    * @returns An instance of the specified type.
    */
-  exports.convertToType = function (data, type) {
+  exports.convertToType = function(data, type) {
     switch (type) {
       case "Boolean":
         return Boolean(data);
@@ -782,7 +782,7 @@
         } else if (Array.isArray(type)) {
           // for array type like: ['String']
           var itemType = type[0];
-          return data.map(function (item) {
+          return data.map(function(item) {
             return exports.convertToType(item, itemType);
           });
         } else if (typeof type === "object") {
@@ -816,7 +816,7 @@
    * @param data {Object|Array} The REST data.
    * @param obj {Object|Array} The target object or array.
    */
-  exports.constructFromObject = function (data, obj, itemType) {
+  exports.constructFromObject = function(data, obj, itemType) {
     if (Array.isArray(data)) {
       for (var i = 0; i < data.length; i++) {
         if (data.hasOwnProperty(i))
@@ -905,8 +905,8 @@
       },
       OAuthToken = require("./OAuth").OAuthToken;
 
-    const requestConfig = {
-      baseURL: `https://${oAuthBasePath}`,
+      const requestConfig = {
+      baseURL: `https://${this.oAuthBasePath}`,
       method: "post",
       url: "/oauth/token",
       headers: {
@@ -943,8 +943,8 @@
    * @param accessToken the bearer token to use to authenticate for this call.
    * @return OAuth UserInfo model
    */
-  exports.prototype.getUserInfo = function (accessToken, callback) {
-    if (!accessToken) throw new Error("Error accessToken is required", null);
+  exports.prototype.getUserInfo = function(accessToken, callback) {
+    if(!accessToken) throw new Error("Error accessToken is required", null);
 
     var headers = {
       Authorization: "Bearer " + accessToken,
@@ -965,7 +965,7 @@
     }
 
     const request = axios.request(requestConfig);
-
+    
     var UserInfo = require("./OAuth").UserInfo;
 
     if (!callback) {
@@ -1009,7 +1009,7 @@
     clientId,
     redirectURI,
     oAuthBasePath
-  ) {
+  ) {    
     return (
       "https://" +
       oAuthBasePath +
@@ -1051,10 +1051,10 @@
     );
     var _this = this;
     var jwt = require("jsonwebtoken"),
-      fs = require("fs"),
+      fs  = require("fs"),
       private_key = fs.readFileSync(privateKeyFilename),
-      now = Math.floor(Date.now() / 1000),
-      later = now + expiresIn;
+      now         = Math.floor(Date.now() / 1000),
+      later       = now + expiresIn;
 
     var jwt_payload = {
       iss: clientId,
@@ -1065,7 +1065,7 @@
       scope: SCOPE_SIGNATURE,
     };
 
-    var assertion = jwt.sign(jwt_payload, private_key, { algorithm: "RS256" });
+    var assertion = jwt.sign(jwt_payload, private_key, {algorithm: "RS256"});
 
     const requestConfig = {
       baseURL: `https://${oAuthBasePath}`,
@@ -1105,21 +1105,21 @@
     request.then(onSuccess, onFailure);
   };
 
-  exports.prototype.hasNoInvalidScopes = function (scopes) {
+  exports.prototype.hasNoInvalidScopes = function(scopes) {
     var validScopes = require("./oauth/Scope");
 
     return (
       Array.isArray(scopes) &&
       scopes.length > 0 &&
-      scopes.every(function (scope) {
-        return Object.keys(validScopes).some(function (key) {
+      scopes.every(function(scope) {
+        return Object.keys(validScopes).some(function(key) {
           return validScopes[key] === scope;
         });
       })
     );
   };
 
-  exports.prototype.sendJWTTokenRequest = function (assertion, callback) {
+  exports.prototype.sendJWTTokenRequest = function(assertion, callback) {
     return sendJWTTokenRequest(
       assertion,
       this.oAuthBasePath,
@@ -1127,8 +1127,8 @@
       callback
     );
   };
-
-  exports.prototype.requestJWTUserToken = function (
+  
+  exports.prototype.requestJWTUserToken = function(
     clientId,
     userId,
     scopes,
@@ -1154,7 +1154,7 @@
     );
   };
 
-  exports.prototype.requestJWTApplicationToken = function (
+  exports.prototype.requestJWTApplicationToken = function(
     clientId,
     scopes,
     rsaPrivateKey,
