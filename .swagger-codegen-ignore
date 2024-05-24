@@ -32,7 +32,6 @@ git_push.sh
 LICENSE
 .travis.yml
 mocha.opts
-package.json
 
 # Specific src and test files
 docs/*.md
@@ -41,4 +40,3 @@ test/assert-equals.js
 src/OAuth.js
 src/RestApi.js
 src/oauth/
-src/ApiClient.js

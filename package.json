@@ -1,6 +1,6 @@
 {
   "name": "docusign-esign",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "DocuSign Node.js API client.",
   "license": "MIT",
   "main": "src/index.js",
@@ -50,13 +50,13 @@
       "/scripts"
     ]
   },
-  "dependencies": {
+  "dependencies": {    
     "axios": "^1.6.8",
+    "@devhigley/parse-proxy":"^1.0.3",        
     "csv-stringify": "^1.0.0",
     "jsonwebtoken": "^9.0.0",    
-    "@devhigley/parse-proxy":"^1.0.3",
     "passport-oauth2": "^1.6.1",    
-    "safe-buffer": "^5.1.2"
+    "safe-buffer": "^5.1.2"    
   },
   "devDependencies": {
     "docdash": "0.4.0",
