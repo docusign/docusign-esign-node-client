@@ -5,6 +5,7 @@ var config = require('../test-config');
 var assert = require('assert');
 var path = require('path');
 var axios = require('axios');
+const { ValidatePdf } = require('./helpers');
 
 var userName = config.email;
 var integratorKey = config.integratorKey;
@@ -18,7 +19,6 @@ var basePath = restApi.BasePath.DEMO;
 var oAuthBasePath = oAuth.BasePath.DEMO;
 
 var SignTest1File = 'docs/SignTest1.pdf';
-var LargeTestDocument1 = 'docs/LargeTestDocument1.pdf';
 var accountId = '';
 var envelopeId = '';
 var userId = config.userId;
@@ -52,7 +52,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
       if (err) {
         return done(err);
       }
-      apiClient.setJWTToken(res.body.access_token)
+      apiClient.setJWTToken(res.body.access_token);
 
       apiClient.getUserInfo(res.body.access_token, function (err, userInfo) {
         if (err) {
@@ -228,11 +228,11 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     var authUri = apiClient.getAuthorizationUri(integratorKeyAuthCode, scopes, RedirectURI, responseType, randomState);
 
     axios.get(authUri)
-      .then(function (res) {        
+      .then(function (res) {
         assert.equal(res.status, 200);
         done();
       })
-      .catch((err)=>{
+      .catch((err) => {
         assert.notEqual(err, undefined);
       });
   });
@@ -523,7 +523,7 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     try {
       var fs = require('fs');
       // read file from a local directory
-      fileBytes = fs.readFileSync(path.resolve(__dirname, LargeTestDocument1));
+      fileBytes = fs.readFileSync(path.resolve(__dirname, SignTest1File));
     } catch (ex) {
       // handle error
       console.log('Exception: ' + ex);
@@ -602,6 +602,13 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
               var tempFile = path.resolve(__dirname, filename);
               fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                 if (err) console.log('Error: ' + err);
+                ValidatePdf(tempFile).then(() => {
+                  done();
+                }).catch((error) => {
+                  if (error) {
+                    return done(error);
+                  }
+                });
               });
               console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
             } catch (ex) {
@@ -609,7 +616,6 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
             }
           }
         });
-        done();
       }
     });
   });
@@ -735,42 +741,48 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
                   var tempFile = path.resolve(__dirname, filename);
                   fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
                     if (err) console.log('Error: ' + err);
+                    ValidatePdf(tempFile).then(() => {
+                      diagApi.listRequestLogs(null, function (error, logsList, response) {
+                        if (error) {
+                          return done(error);
+                        }
+
+                        if (logsList) {
+                          var requestLogId = logsList.apiRequestLogs[0].requestLogId;
+                          console.log(requestLogId);
+                          diagApi.getRequestLog(requestLogId, function (error, diagBytes, response) {
+                            if (error) {
+                              return done(error);
+                            }
+
+                            if (diagBytes) {
+                              try {
+                                var fs = require('fs');
+                                // download the document pdf
+                                var filename = requestLogId + '.txt';
+                                var tempFile = path.resolve(__dirname, filename);
+                                fs.writeFile(tempFile, diagBytes, function (err) {
+                                  if (err) console.log('Error: ' + err);
+                                });
+                                console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
+                                done();
+                              } catch (ex) {
+                                console.log('Exception: ' + ex);
+                              }
+                            }
+                          });
+                        }
+                      });
+                    }).catch(error => {
+                      if (error) {
+                        return done(error);
+                      }
+                    });
                   });
                   console.log('Document from envelope ' + envelopeSummary.envelopeId + ' has been downloaded to ' + tempFile);
                 } catch (ex) {
                   console.log('Exception: ' + ex);
                 }
-                diagApi.listRequestLogs(null, function (error, logsList, response) {
-                  if (error) {
-                    return done(error);
-                  }
-
-                  if (logsList) {
-                    var requestLogId = logsList.apiRequestLogs[0].requestLogId;
-                    console.log(requestLogId);
-                    diagApi.getRequestLog(requestLogId, function (error, diagBytes, response) {
-                      if (error) {
-                        return done(error);
-                      }
-
-                      if (diagBytes) {
-                        try {
-                          var fs = require('fs');
-                          // download the document pdf
-                          var filename = requestLogId + '.txt';
-                          var tempFile = path.resolve(__dirname, filename);
-                          fs.writeFile(tempFile, diagBytes, function (err) {
-                            if (err) console.log('Error: ' + err);
-                          });
-                          console.log('Diagnostics ID ' + requestLogId + ' data has been downloaded to ' + tempFile);
-                          done();
-                        } catch (ex) {
-                          console.log('Exception: ' + ex);
-                        }
-                      }
-                    });
-                  }
-                });
               }
             });
           }
