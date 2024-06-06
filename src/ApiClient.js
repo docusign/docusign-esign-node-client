@@ -37,7 +37,7 @@
   var defaultHeaders = {
     "X-DocuSign-SDK": "Node",
     "Node-Ver": process.version,
-    "User-Agent": `Swagger-Codegen/v2.1/7.0.1/node/${process.version}`,
+    "User-Agent": `Swagger-Codegen/v2.1/7.0.2/node/${process.version}`,
   };  
 
   var SCOPE_SIGNATURE = "signature";
@@ -695,13 +695,13 @@
         request
           .then((response) => {
             try {
-              let streamData;
+              const streamData = [];
               if (requestConfig.headers["Accept"] === "application/pdf") {
-                response.data.on("data", (chunks) => {
-                  streamData += chunks;
+                response.data.on("data", (chunk) => {
+                  streamData.push(chunk);
                 });
                 response.data.on("end", () => {
-                  resolve(streamData);
+                  resolve(Buffer.concat(streamData));
                 });
               } else {
                 data = _this.deserialize(response, returnType);
@@ -719,13 +719,13 @@
       request
         .then((response) => {
           try {
-            let streamData;
+            const streamData = [];
             if (requestConfig.headers["Accept"] === "application/pdf") {
-              response.data.on("data", (chunks) => {
-                streamData += chunks;
+              response.data.on("data", (chunk) => {
+                streamData.push(chunk);
               });
               response.data.on("end", () => {
-                callback(null, streamData, response);
+                callback(null, Buffer.concat(streamData), response);
               });
             } else {
               data = _this.deserialize(response, returnType);
