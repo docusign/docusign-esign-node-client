@@ -1,6 +1,6 @@
 /**
- * DocuSign REST API
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * Docusign eSignature REST API
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -86,6 +86,9 @@
       }
       if (data.hasOwnProperty('bulkSendV2Recipient')) {
         obj['bulkSendV2Recipient'] = ApiClient.convertToType(data['bulkSendV2Recipient'], 'String');
+      }
+      if (data.hasOwnProperty('canNotaryCorrectEnvelope')) {
+        obj['canNotaryCorrectEnvelope'] = ApiClient.convertToType(data['canNotaryCorrectEnvelope'], 'String');
       }
       if (data.hasOwnProperty('canSignOffline')) {
         obj['canSignOffline'] = ApiClient.convertToType(data['canSignOffline'], 'String');
@@ -422,6 +425,11 @@
    * @member {String} bulkSendV2Recipient
    */
   exports.prototype['bulkSendV2Recipient'] = undefined;
+  /**
+   * 
+   * @member {String} canNotaryCorrectEnvelope
+   */
+  exports.prototype['canNotaryCorrectEnvelope'] = undefined;
   /**
    * When set to **true**, specifies that the signer can perform the signing ceremony offline.
    * @member {String} canSignOffline

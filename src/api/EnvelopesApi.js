@@ -1,6 +1,6 @@
 /**
- * DocuSign REST API
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * Docusign eSignature REST API
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -336,7 +336,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {module:model/CorrectViewRequest} optsOrCallback.correctViewRequest 
+     * @param {module:model/EnvelopeViewRequest} optsOrCallback.envelopeViewRequest 
      * @param {module:api/EnvelopesApi~createCorrectViewCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ViewUrl}
      */
@@ -348,7 +348,7 @@ Important: iFrames should not be used for embedded operations on mobile devices 
         optsOrCallback = {};
       }
 
-      var postBody = optsOrCallback['correctViewRequest'];
+      var postBody = optsOrCallback['envelopeViewRequest'];
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
@@ -4543,6 +4543,7 @@ envelope specified by `envelopeId`.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.advancedUpdate When true, envelope information can be added or modified.
      * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.includeAnchorTabLocations 
      * @param {module:api/EnvelopesApi~getEnvelopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Envelope}
      */
@@ -4579,7 +4580,8 @@ envelope specified by `envelopeId`.
       };
       var queryParams = {
         'advanced_update': optsOrCallback['advancedUpdate'],
-        'include': optsOrCallback['include']
+        'include': optsOrCallback['include'],
+        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations']
       };
       var headerParams = {
       };
@@ -7170,6 +7172,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.advancedUpdate When set to **true**, allows the caller to update recipients, tabs, custom fields, notification, email settings and other envelope attributes.
+     * @param {String} optsOrCallback.recycleOnVoid 
      * @param {String} optsOrCallback.resendEnvelope When set to **true**, sends the specified envelope again.
      * @param {module:model/Envelope} optsOrCallback.envelope 
      * @param {module:api/EnvelopesApi~updateCallback} callback The callback function, accepting three arguments: error, data, response
@@ -7208,6 +7211,7 @@ If `purgeState="documents_queued"` is used in the request, then only the documen
       };
       var queryParams = {
         'advanced_update': optsOrCallback['advancedUpdate'],
+        'recycle_on_void': optsOrCallback['recycleOnVoid'],
         'resend_envelope': optsOrCallback['resendEnvelope']
       };
       var headerParams = {
