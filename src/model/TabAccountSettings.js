@@ -1,6 +1,6 @@
 /**
- * DocuSign REST API
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * Docusign eSignature REST API
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -95,6 +95,12 @@
       }
       if (data.hasOwnProperty('drawTabsMetadata')) {
         obj['drawTabsMetadata'] = SettingsMetadata.constructFromObject(data['drawTabsMetadata']);
+      }
+      if (data.hasOwnProperty('enableTabAgreementDetails')) {
+        obj['enableTabAgreementDetails'] = ApiClient.convertToType(data['enableTabAgreementDetails'], 'String');
+      }
+      if (data.hasOwnProperty('enableTabAgreementDetailsMetadata')) {
+        obj['enableTabAgreementDetailsMetadata'] = SettingsMetadata.constructFromObject(data['enableTabAgreementDetailsMetadata']);
       }
       if (data.hasOwnProperty('firstLastEmailTabsEnabled')) {
         obj['firstLastEmailTabsEnabled'] = ApiClient.convertToType(data['firstLastEmailTabsEnabled'], 'String');
@@ -260,6 +266,16 @@
    * @member {module:model/SettingsMetadata} drawTabsMetadata
    */
   exports.prototype['drawTabsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableTabAgreementDetails
+   */
+  exports.prototype['enableTabAgreementDetails'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableTabAgreementDetailsMetadata
+   */
+  exports.prototype['enableTabAgreementDetailsMetadata'] = undefined;
   /**
    * 
    * @member {String} firstLastEmailTabsEnabled

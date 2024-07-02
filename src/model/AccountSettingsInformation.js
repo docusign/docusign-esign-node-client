@@ -1,6 +1,6 @@
 /**
- * DocuSign REST API
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * Docusign eSignature REST API
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -886,6 +886,12 @@
       if (data.hasOwnProperty('dataPopulationScopeMetadata')) {
         obj['dataPopulationScopeMetadata'] = SettingsMetadata.constructFromObject(data['dataPopulationScopeMetadata']);
       }
+      if (data.hasOwnProperty('defaultSigningResponsiveView')) {
+        obj['defaultSigningResponsiveView'] = ApiClient.convertToType(data['defaultSigningResponsiveView'], 'String');
+      }
+      if (data.hasOwnProperty('defaultSigningResponsiveViewMetadata')) {
+        obj['defaultSigningResponsiveViewMetadata'] = SettingsMetadata.constructFromObject(data['defaultSigningResponsiveViewMetadata']);
+      }
       if (data.hasOwnProperty('defaultToAdvancedEnvelopesFilterForm')) {
         obj['defaultToAdvancedEnvelopesFilterForm'] = ApiClient.convertToType(data['defaultToAdvancedEnvelopesFilterForm'], 'String');
       }
@@ -1000,6 +1006,9 @@
       if (data.hasOwnProperty('dss_EnableSignatureTypeCustomTagRadmin_RadminOption')) {
         obj['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'] = ApiClient.convertToType(data['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'], 'String');
       }
+      if (data.hasOwnProperty('dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb')) {
+        obj['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'] = ApiClient.convertToType(data['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'], 'String');
+      }
       if (data.hasOwnProperty('dss_SIGN_28411_EnableLeavePagePrompt_RadminOption')) {
         obj['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = ApiClient.convertToType(data['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'], 'String');
       }
@@ -1023,6 +1032,12 @@
       }
       if (data.hasOwnProperty('enableAccountWideSearchMetadata')) {
         obj['enableAccountWideSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableAccountWideSearchMetadata']);
+      }
+      if (data.hasOwnProperty('enableAdditionalAdvancedWebFormsFeatures')) {
+        obj['enableAdditionalAdvancedWebFormsFeatures'] = ApiClient.convertToType(data['enableAdditionalAdvancedWebFormsFeatures'], 'String');
+      }
+      if (data.hasOwnProperty('enableAdditionalAdvancedWebFormsFeaturesMetadata')) {
+        obj['enableAdditionalAdvancedWebFormsFeaturesMetadata'] = SettingsMetadata.constructFromObject(data['enableAdditionalAdvancedWebFormsFeaturesMetadata']);
       }
       if (data.hasOwnProperty('enableAdmHealthcare')) {
         obj['enableAdmHealthcare'] = ApiClient.convertToType(data['enableAdmHealthcare'], 'String');
@@ -1356,12 +1371,6 @@
       }
       if (data.hasOwnProperty('enableResponsiveSigningMetadata')) {
         obj['enableResponsiveSigningMetadata'] = SettingsMetadata.constructFromObject(data['enableResponsiveSigningMetadata']);
-      }
-      if (data.hasOwnProperty('enableSaveAsEnvelopeCustomFieldInWebForms')) {
-        obj['enableSaveAsEnvelopeCustomFieldInWebForms'] = ApiClient.convertToType(data['enableSaveAsEnvelopeCustomFieldInWebForms'], 'String');
-      }
-      if (data.hasOwnProperty('enableSaveAsEnvelopeCustomFieldInWebFormsMetadata')) {
-        obj['enableSaveAsEnvelopeCustomFieldInWebFormsMetadata'] = SettingsMetadata.constructFromObject(data['enableSaveAsEnvelopeCustomFieldInWebFormsMetadata']);
       }
       if (data.hasOwnProperty('enableScheduledRelease')) {
         obj['enableScheduledRelease'] = ApiClient.convertToType(data['enableScheduledRelease'], 'String');
@@ -3693,6 +3702,16 @@
   exports.prototype['dataPopulationScopeMetadata'] = undefined;
   /**
    * 
+   * @member {String} defaultSigningResponsiveView
+   */
+  exports.prototype['defaultSigningResponsiveView'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} defaultSigningResponsiveViewMetadata
+   */
+  exports.prototype['defaultSigningResponsiveViewMetadata'] = undefined;
+  /**
+   * 
    * @member {String} defaultToAdvancedEnvelopesFilterForm
    */
   exports.prototype['defaultToAdvancedEnvelopesFilterForm'] = undefined;
@@ -3883,6 +3902,11 @@
   exports.prototype['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'] = undefined;
   /**
    * 
+   * @member {String} dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb
+   */
+  exports.prototype['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'] = undefined;
+  /**
+   * 
    * @member {String} dss_SIGN_28411_EnableLeavePagePrompt_RadminOption
    */
   exports.prototype['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = undefined;
@@ -3921,6 +3945,16 @@
    * @member {module:model/SettingsMetadata} enableAccountWideSearchMetadata
    */
   exports.prototype['enableAccountWideSearchMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableAdditionalAdvancedWebFormsFeatures
+   */
+  exports.prototype['enableAdditionalAdvancedWebFormsFeatures'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableAdditionalAdvancedWebFormsFeaturesMetadata
+   */
+  exports.prototype['enableAdditionalAdvancedWebFormsFeaturesMetadata'] = undefined;
   /**
    * Account Level Flag that determines the availability to use ADM Healthcare fields
    * @member {String} enableAdmHealthcare
@@ -4476,16 +4510,6 @@
    * @member {module:model/SettingsMetadata} enableResponsiveSigningMetadata
    */
   exports.prototype['enableResponsiveSigningMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} enableSaveAsEnvelopeCustomFieldInWebForms
-   */
-  exports.prototype['enableSaveAsEnvelopeCustomFieldInWebForms'] = undefined;
-  /**
-   * 
-   * @member {module:model/SettingsMetadata} enableSaveAsEnvelopeCustomFieldInWebFormsMetadata
-   */
-  exports.prototype['enableSaveAsEnvelopeCustomFieldInWebFormsMetadata'] = undefined;
   /**
    * 
    * @member {String} enableScheduledRelease

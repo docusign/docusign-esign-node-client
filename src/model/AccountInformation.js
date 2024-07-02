@@ -1,6 +1,6 @@
 /**
- * DocuSign REST API
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * Docusign eSignature REST API
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -129,6 +129,9 @@
       }
       if (data.hasOwnProperty('forgottenPasswordQuestionsCount')) {
         obj['forgottenPasswordQuestionsCount'] = ApiClient.convertToType(data['forgottenPasswordQuestionsCount'], 'String');
+      }
+      if (data.hasOwnProperty('freeEnvelopeSendsRemainingForAdvancedDocGen')) {
+        obj['freeEnvelopeSendsRemainingForAdvancedDocGen'] = ApiClient.convertToType(data['freeEnvelopeSendsRemainingForAdvancedDocGen'], 'Number');
       }
       if (data.hasOwnProperty('isDowngrade')) {
         obj['isDowngrade'] = ApiClient.convertToType(data['isDowngrade'], 'String');
@@ -298,6 +301,11 @@
    * @member {String} forgottenPasswordQuestionsCount
    */
   exports.prototype['forgottenPasswordQuestionsCount'] = undefined;
+  /**
+   * 
+   * @member {Number} freeEnvelopeSendsRemainingForAdvancedDocGen
+   */
+  exports.prototype['freeEnvelopeSendsRemainingForAdvancedDocGen'] = undefined;
   /**
    * 
    * @member {String} isDowngrade
