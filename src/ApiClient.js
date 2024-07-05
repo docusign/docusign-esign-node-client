@@ -1,6 +1,6 @@
 /**
- * DocuSign REST API
- * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ * Docusign eSignature REST API
+ * The Docusign eSignature REST API provides you with a powerful, convenient, and simple Web services API for interacting with Docusign.
  *
  * OpenAPI spec version: v2.1
  * Contact: devcenter@docusign.com
@@ -37,7 +37,7 @@
   var defaultHeaders = {
     "X-DocuSign-SDK": "Node",
     "Node-Ver": process.version,
-    "User-Agent": `Swagger-Codegen/v2.1/7.0.2/node/${process.version}`,
+    "User-Agent": `Swagger-Codegen/v2.1/8.0.0-rc1/node/${process.version}`,
   };  
 
   var SCOPE_SIGNATURE = "signature";
