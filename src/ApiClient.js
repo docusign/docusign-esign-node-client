@@ -34,12 +34,6 @@
     * @type {Array.<String>}
     * @default {}
     */
-  var defaultHeaders = {
-    "X-DocuSign-SDK": "Node",
-    "Node-Ver": process.version,
-    "User-Agent": `Swagger-Codegen/v2.1/8.0.0-rc1/node/${process.version}`,
-  };  
-
   var SCOPE_SIGNATURE = "signature";
   var SCOPE_EXTENDED = "extended";
   var SCOPE_IMPERSONATION = "impersonation";
@@ -91,6 +85,7 @@
     assertion,
     oAuthBasePath,
     proxy,
+    defaultHeaders,
     callback
   ) {
     const requestConfig = {
@@ -162,6 +157,14 @@
     return exports.prototype.OAuth.BasePath.PRODUCTION;
   };
 
+  const encodeBase64 = (str) => {
+    if (typeof Buffer !== 'undefined') {
+      return Buffer.from(str).toString('base64');
+    } else {
+      return btoa(unescape(encodeURIComponent(str)));
+    }
+  }
+
   /**
    * @module ApiClient
    */
@@ -179,7 +182,13 @@
       oAuthBasePath: require("./OAuth").BasePath.PRODUCTION,
     };
 
-    opts = Object.assign({},defaults, opts);
+    this.defaultHeaders = {
+      "X-DocuSign-SDK": "Node",
+      "Node-Ver": process.version,
+      "User-Agent": `Swagger-Codegen/v2.1/8.0.0-rc2/node/${process.version}`,
+    };  
+
+    opts = {...defaults, ...opts};
     opts.oAuthBasePath = deriveOAuthBasePathFromRestBasePath(opts.basePath);
 
     /**
@@ -266,7 +275,7 @@
     header,
     value
   ) {
-    defaultHeaders[header] = value;
+    this.defaultHeaders[header] = value;
   };
 
     /**
@@ -276,7 +285,7 @@
     if(!token){
       throw new Error("Missing the required parameter 'token' when calling setJWTToken.")
     }
-    defaultHeaders["Authorization"] = `Bearer ${token}`;
+    this.defaultHeaders["Authorization"] = `Bearer ${token}`;
   };
 
   /**
@@ -627,7 +636,7 @@
     const _headerParams = this.normalizeParams(headerParams);
     requestConfig.headers = {
       ...requestConfig.headers,
-      ...defaultHeaders,
+      ...this.defaultHeaders,
       ..._headerParams,
     };
 
@@ -878,7 +887,7 @@
   /**
    * @param clientId OAuth2 client ID: Identifies the client making the request.
    * Client applications may be scoped to a limited set of system access.
-   * @param clientSecret the secret key you generated when you set up the integration in DocuSign Admin console.
+   * @param clientSecret the secret key you generated when you set up the integration in Docusign Admin console.
    * @param code The authorization code that you received from the <i>getAuthorizationUri</i> callback.
    * @return OAuthToken object.xx
    */
@@ -898,10 +907,10 @@
         code: code,
       },
       headers = {
-        Authorization: "Basic " + new Buffer(clientString).toString("base64"),
+        ...this.defaultHeaders,
+        Authorization: "Basic " + encodeBase64(clientString),
         "Cache-Control": "no-store",
         Pragma: "no-cache",
-        ...defaultHeaders,
       },
       OAuthToken = require("./OAuth").OAuthToken;
 
@@ -947,10 +956,10 @@
     if(!accessToken) throw new Error("Error accessToken is required", null);
 
     var headers = {
+      ...this.defaultHeaders,
       Authorization: "Bearer " + accessToken,
       "Cache-Control": "no-store",
       Pragma: "no-cache",
-      ...defaultHeaders,
     };
 
     const requestConfig = {
@@ -1001,7 +1010,7 @@
    * Helper method to build the OAuth JWT grant uri (used once to get a user consent for impersonation)
    * @param clientId OAuth2 client ID
    * @param redirectURI OAuth2 redirect uri
-   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
+   * @param oAuthBasePath Docusign OAuth base path (account-d.docusign.com for the developer sandbox
    * 			  and account.docusign.com for the production platform)
    * @returns {string} the OAuth JWT grant uri as a String
    */
@@ -1029,12 +1038,12 @@
 
   /**
    * @deprecated since version 4.1.0
-   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
+   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign
    * @param privateKeyFilename the filename of the RSA private key
-   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
+   * @param oAuthBasePath Docusign OAuth base path (account-d.docusign.com for the developer sandbox
    *   			and account.docusign.com for the production platform)
-   * @param clientId DocuSign OAuth Client Id (AKA Integrator Key)
-   * @param userId DocuSign user Id to be impersonated (This is a UUID)
+   * @param clientId Docusign OAuth Client Id (AKA Integrator Key)
+   * @param userId Docusign user Id to be impersonated (This is a UUID)
    * @param expiresIn in seconds for the token time-to-live
    * @param callback the callback function.
    */
@@ -1072,10 +1081,10 @@
       method: "post",
       url: "/oauth/token",
       headers: {
+        ...this.defaultHeaders,
         "Content-Type": "application/x-www-form-urlencoded",
         "Cache-Control": "no-store",
         Pragma: "no-cache",
-        ...defaultHeaders,
       },
       timeout: this.timeout,
       data: {
@@ -1124,6 +1133,7 @@
       assertion,
       this.oAuthBasePath,
       this.proxy,
+      this.defaultHeaders,
       callback
     );
   };
@@ -1150,6 +1160,7 @@
       assertion,
       this.oAuthBasePath,
       this.proxy,
+      this.defaultHeaders,
       callback
     );
   };
@@ -1174,6 +1185,7 @@
       assertion,
       this.oAuthBasePath,
       this.proxy,
+      this.defaultHeaders,
       callback
     );
   };

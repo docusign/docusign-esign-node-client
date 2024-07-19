@@ -2,6 +2,11 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v8.0.0-rc2] - eSignature API v2.1-24.2.00.00 - 2024-07-19
+### Changed
+- Converted `defaultHeaders` from a shared global state to a local state within each `ApiClient` instance.
+- Fixed the overriding of the Authorization header in `GetUserInfo` when `defaultHeaders` already had an Authorization header.
+- Updated the SDK release version.
 ## [v8.0.0-rc1] - eSignature API v2.1-24.2.00.00 - 2024-07-02
 ### Breaking Changes
 
