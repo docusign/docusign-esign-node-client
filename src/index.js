@@ -20,7 +20,7 @@
   'use strict';
 
   /**
-   * DocuSign Node.js API client..<br>
+   * Docusign Node.js API client..<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
