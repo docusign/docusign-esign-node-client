@@ -32,7 +32,7 @@ This client SDK is provided as open source, which enables you to customize its f
 <a id="versionInformation"></a>
 ### Version Information
 - **API version**: v2.1
-- **Latest SDK version**: 7.0.2
+- **Latest SDK version**: 7.0.3
 
 <a id="requirements"></a>
 ## Requirements
