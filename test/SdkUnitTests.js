@@ -733,15 +733,17 @@ describe('SDK Unit Tests:', function (done) {
       .then(function (envelopeSummary) {
         if (envelopeSummary) {
           console.log('EnvelopeSummary: ' + JSON.stringify(envelopeSummary));
+          apiClient.addDefaultHeader('Content-Transfer-Encoding', 'base64');
           envelopesApi.getDocument(accountId, envelopeSummary.envelopeId, 'combined')
             .then(function (pdfBytes) {
+              apiClient.addDefaultHeader('Content-Transfer-Encoding', undefined);
               if (pdfBytes) {
                 try {
                   var fs = require('fs');
                   // download the document pdf
                   var filename = accountId + '_' + envelopeSummary.envelopeId + '_combined.pdf';
                   var tempFile = path.resolve(__dirname, filename);
-                  fs.writeFile(tempFile, Buffer.from(pdfBytes, 'binary'), function (err) {
+                  fs.writeFile(tempFile, pdfBytes, 'base64', function (err) {
                     if (err) console.log('Error: ' + err);
                     ValidatePdf(tempFile).then(() => {
                       done();

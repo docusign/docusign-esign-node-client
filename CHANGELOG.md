@@ -2,6 +2,11 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v8.0.1] - eSignature API v2.1-24.2.00.00 - 2024-08-22
+### Changed
+- Fixed issue with document downloads when `Content-Transfer-Encoding` is set to `base64`.
+- Updated the SDK release version.
+
 ## [v8.0.0] - eSignature API v2.1-24.2.00.00 - 2024-07-25
 ### Breaking Changes
 
