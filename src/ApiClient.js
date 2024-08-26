@@ -185,7 +185,7 @@
     this.defaultHeaders = {
       "X-DocuSign-SDK": "Node",
       "Node-Ver": process.version,
-      "User-Agent": `Swagger-Codegen/v2.1/8.0.0/node/${process.version}`,
+      "User-Agent": `Swagger-Codegen/v2.1/8.0.1/node/${process.version}`,
     };  
 
     opts = {...defaults, ...opts};
@@ -704,13 +704,19 @@
         request
           .then((response) => {
             try {
-              const streamData = [];
+              let streamData = [];
               if (requestConfig.headers["Accept"] === "application/pdf") {
                 response.data.on("data", (chunk) => {
-                  streamData.push(chunk);
+                  streamData.push(requestConfig.headers["Content-Transfer-Encoding"] === "base64" ? chunk.toString() : chunk);
                 });
                 response.data.on("end", () => {
-                  resolve(Buffer.concat(streamData));
+                  let res = '';
+                  if(!!streamData.length && streamData[0] instanceof Uint8Array) {
+                    res = Buffer.concat(streamData);
+                  } else {
+                    res = streamData.join('');
+                  }
+                  resolve(res);
                 });
               } else {
                 data = _this.deserialize(response, returnType);
@@ -728,13 +734,19 @@
       request
         .then((response) => {
           try {
-            const streamData = [];
+            let streamData = [];
             if (requestConfig.headers["Accept"] === "application/pdf") {
               response.data.on("data", (chunk) => {
-                streamData.push(chunk);
+                streamData.push(requestConfig.headers["Content-Transfer-Encoding"] === "base64" ? chunk.toString() : chunk);
               });
               response.data.on("end", () => {
-                callback(null, Buffer.concat(streamData), response);
+                let res = '';
+                if(!!streamData.length && streamData[0] instanceof Uint8Array) {
+                  res = Buffer.concat(streamData);
+                } else {
+                  res = streamData.join('');
+                }
+                callback(null, res, response);
               });
             } else {
               data = _this.deserialize(response, returnType);
