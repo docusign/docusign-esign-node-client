@@ -43,7 +43,6 @@
     for (var k in obj) {
       if (typeof obj[k] === "object") removeNulls(obj[k]);
       if (isArray && obj.length === k) removeNulls(obj);
-      if (obj[k] instanceof Array && obj[k].length === 0) delete obj[k];
     }
     return obj;
   };
@@ -145,9 +144,6 @@
     if (basePath == null) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
-    if (basePath.includes("https://stage")) {
-      return exports.prototype.OAuth.BasePath.STAGE;
-    }
     if (basePath.includes("https://demo")) {
       return exports.prototype.OAuth.BasePath.DEMO;
     }
@@ -185,7 +181,7 @@
     this.defaultHeaders = {
       "X-DocuSign-SDK": "Node",
       "Node-Ver": process.version,
-      "User-Agent": `Swagger-Codegen/v2.1/8.0.1/node/${process.version}`,
+      "User-Agent": `Swagger-Codegen/v2.1/8.1.0-rc1/node/${process.version}`,
     };  
 
     opts = {...defaults, ...opts};

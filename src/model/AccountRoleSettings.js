@@ -115,6 +115,12 @@
       if (data.hasOwnProperty('allowedClickwrapsAccessMetadata')) {
         obj['allowedClickwrapsAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedClickwrapsAccessMetadata']);
       }
+      if (data.hasOwnProperty('allowedDocumentTemplateLibraryAccess')) {
+        obj['allowedDocumentTemplateLibraryAccess'] = ApiClient.convertToType(data['allowedDocumentTemplateLibraryAccess'], 'String');
+      }
+      if (data.hasOwnProperty('allowedDocumentTemplateLibraryAccessMetadata')) {
+        obj['allowedDocumentTemplateLibraryAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedDocumentTemplateLibraryAccessMetadata']);
+      }
       if (data.hasOwnProperty('allowedOrchestrationAccess')) {
         obj['allowedOrchestrationAccess'] = ApiClient.convertToType(data['allowedOrchestrationAccess'], 'String');
       }
@@ -426,6 +432,16 @@
    * @member {module:model/SettingsMetadata} allowedClickwrapsAccessMetadata
    */
   exports.prototype['allowedClickwrapsAccessMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowedDocumentTemplateLibraryAccess
+   */
+  exports.prototype['allowedDocumentTemplateLibraryAccess'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowedDocumentTemplateLibraryAccessMetadata
+   */
+  exports.prototype['allowedDocumentTemplateLibraryAccessMetadata'] = undefined;
   /**
    * 
    * @member {String} allowedOrchestrationAccess

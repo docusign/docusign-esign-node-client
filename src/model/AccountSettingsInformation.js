@@ -184,8 +184,14 @@
       if (data.hasOwnProperty('allowCDWithdrawMetadata')) {
         obj['allowCDWithdrawMetadata'] = SettingsMetadata.constructFromObject(data['allowCDWithdrawMetadata']);
       }
+      if (data.hasOwnProperty('allowConnectAuthoritativeCopyReadyEventUI')) {
+        obj['allowConnectAuthoritativeCopyReadyEventUI'] = ApiClient.convertToType(data['allowConnectAuthoritativeCopyReadyEventUI'], 'String');
+      }
       if (data.hasOwnProperty('allowConnectEnvelopeRemovedEvent')) {
         obj['allowConnectEnvelopeRemovedEvent'] = ApiClient.convertToType(data['allowConnectEnvelopeRemovedEvent'], 'String');
+      }
+      if (data.hasOwnProperty('allowConnectExtensionUI')) {
+        obj['allowConnectExtensionUI'] = ApiClient.convertToType(data['allowConnectExtensionUI'], 'String');
       }
       if (data.hasOwnProperty('allowConnectHttpListenerConfigs')) {
         obj['allowConnectHttpListenerConfigs'] = ApiClient.convertToType(data['allowConnectHttpListenerConfigs'], 'String');
@@ -438,6 +444,12 @@
       }
       if (data.hasOwnProperty('allowOfflineSigningMetadata')) {
         obj['allowOfflineSigningMetadata'] = SettingsMetadata.constructFromObject(data['allowOfflineSigningMetadata']);
+      }
+      if (data.hasOwnProperty('allowOnlyStandaloneWebForms')) {
+        obj['allowOnlyStandaloneWebForms'] = ApiClient.convertToType(data['allowOnlyStandaloneWebForms'], 'String');
+      }
+      if (data.hasOwnProperty('allowOnlyStandaloneWebFormsMetadata')) {
+        obj['allowOnlyStandaloneWebFormsMetadata'] = SettingsMetadata.constructFromObject(data['allowOnlyStandaloneWebFormsMetadata']);
       }
       if (data.hasOwnProperty('allowOpenTrustSignerCertificate')) {
         obj['allowOpenTrustSignerCertificate'] = ApiClient.convertToType(data['allowOpenTrustSignerCertificate'], 'String');
@@ -850,6 +862,9 @@
       if (data.hasOwnProperty('chromeSignatureEnabledMetadata')) {
         obj['chromeSignatureEnabledMetadata'] = SettingsMetadata.constructFromObject(data['chromeSignatureEnabledMetadata']);
       }
+      if (data.hasOwnProperty('cloudReady')) {
+        obj['cloudReady'] = ApiClient.convertToType(data['cloudReady'], 'String');
+      }
       if (data.hasOwnProperty('commentEmailShowMessageText')) {
         obj['commentEmailShowMessageText'] = ApiClient.convertToType(data['commentEmailShowMessageText'], 'String');
       }
@@ -903,12 +918,6 @@
       }
       if (data.hasOwnProperty('disableAutoTemplateMatchingMetadata')) {
         obj['disableAutoTemplateMatchingMetadata'] = SettingsMetadata.constructFromObject(data['disableAutoTemplateMatchingMetadata']);
-      }
-      if (data.hasOwnProperty('disableBulkSendRecipientLimit')) {
-        obj['disableBulkSendRecipientLimit'] = ApiClient.convertToType(data['disableBulkSendRecipientLimit'], 'String');
-      }
-      if (data.hasOwnProperty('disableBulkSendRecipientLimitMetaData')) {
-        obj['disableBulkSendRecipientLimitMetaData'] = SettingsMetadata.constructFromObject(data['disableBulkSendRecipientLimitMetaData']);
       }
       if (data.hasOwnProperty('disableMobileApp')) {
         obj['disableMobileApp'] = ApiClient.convertToType(data['disableMobileApp'], 'String');
@@ -1000,12 +1009,6 @@
       if (data.hasOwnProperty('draftEnvelopeRetentionMetadata')) {
         obj['draftEnvelopeRetentionMetadata'] = SettingsMetadata.constructFromObject(data['draftEnvelopeRetentionMetadata']);
       }
-      if (data.hasOwnProperty('dss_EnableProvisioningPenConfiguration_RadminOption')) {
-        obj['dss_EnableProvisioningPenConfiguration_RadminOption'] = ApiClient.convertToType(data['dss_EnableProvisioningPenConfiguration_RadminOption'], 'String');
-      }
-      if (data.hasOwnProperty('dss_EnableSignatureTypeCustomTagRadmin_RadminOption')) {
-        obj['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'] = ApiClient.convertToType(data['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'], 'String');
-      }
       if (data.hasOwnProperty('dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb')) {
         obj['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'] = ApiClient.convertToType(data['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'], 'String');
       }
@@ -1081,11 +1084,23 @@
       if (data.hasOwnProperty('enableAgreementActionsForESignMetadata')) {
         obj['enableAgreementActionsForESignMetadata'] = SettingsMetadata.constructFromObject(data['enableAgreementActionsForESignMetadata']);
       }
+      if (data.hasOwnProperty('enableAIContractReview')) {
+        obj['enableAIContractReview'] = ApiClient.convertToType(data['enableAIContractReview'], 'String');
+      }
+      if (data.hasOwnProperty('enableAIContractReviewMetadata')) {
+        obj['enableAIContractReviewMetadata'] = SettingsMetadata.constructFromObject(data['enableAIContractReviewMetadata']);
+      }
       if (data.hasOwnProperty('enableAutoNav')) {
         obj['enableAutoNav'] = ApiClient.convertToType(data['enableAutoNav'], 'String');
       }
       if (data.hasOwnProperty('enableAutoNavMetadata')) {
         obj['enableAutoNavMetadata'] = SettingsMetadata.constructFromObject(data['enableAutoNavMetadata']);
+      }
+      if (data.hasOwnProperty('enableBatchUpdateEnvelopeTypes')) {
+        obj['enableBatchUpdateEnvelopeTypes'] = ApiClient.convertToType(data['enableBatchUpdateEnvelopeTypes'], 'String');
+      }
+      if (data.hasOwnProperty('enableBatchUpdateEnvelopeTypesMetadata')) {
+        obj['enableBatchUpdateEnvelopeTypesMetadata'] = SettingsMetadata.constructFromObject(data['enableBatchUpdateEnvelopeTypesMetadata']);
       }
       if (data.hasOwnProperty('enableBccDummyLink')) {
         obj['enableBccDummyLink'] = ApiClient.convertToType(data['enableBccDummyLink'], 'String');
@@ -1156,6 +1171,18 @@
       if (data.hasOwnProperty('enableContentSearchMetadata')) {
         obj['enableContentSearchMetadata'] = SettingsMetadata.constructFromObject(data['enableContentSearchMetadata']);
       }
+      if (data.hasOwnProperty('enableCoupaCore')) {
+        obj['enableCoupaCore'] = ApiClient.convertToType(data['enableCoupaCore'], 'String');
+      }
+      if (data.hasOwnProperty('enableCoupaCoreMetaData')) {
+        obj['enableCoupaCoreMetaData'] = SettingsMetadata.constructFromObject(data['enableCoupaCoreMetaData']);
+      }
+      if (data.hasOwnProperty('enableCustomDataVerificationExtensions')) {
+        obj['enableCustomDataVerificationExtensions'] = ApiClient.convertToType(data['enableCustomDataVerificationExtensions'], 'String');
+      }
+      if (data.hasOwnProperty('enableCustomDataVerificationExtensionsMetadata')) {
+        obj['enableCustomDataVerificationExtensionsMetadata'] = SettingsMetadata.constructFromObject(data['enableCustomDataVerificationExtensionsMetadata']);
+      }
       if (data.hasOwnProperty('enableCustomerSatisfactionMetricTracking')) {
         obj['enableCustomerSatisfactionMetricTracking'] = ApiClient.convertToType(data['enableCustomerSatisfactionMetricTracking'], 'String');
       }
@@ -1167,6 +1194,12 @@
       }
       if (data.hasOwnProperty('enableDataVerificationExtensionsMetadata')) {
         obj['enableDataVerificationExtensionsMetadata'] = SettingsMetadata.constructFromObject(data['enableDataVerificationExtensionsMetadata']);
+      }
+      if (data.hasOwnProperty('enableDocumentTemplateLibrary')) {
+        obj['enableDocumentTemplateLibrary'] = ApiClient.convertToType(data['enableDocumentTemplateLibrary'], 'String');
+      }
+      if (data.hasOwnProperty('enableDocumentTemplateLibraryMetadata')) {
+        obj['enableDocumentTemplateLibraryMetadata'] = SettingsMetadata.constructFromObject(data['enableDocumentTemplateLibraryMetadata']);
       }
       if (data.hasOwnProperty('enableDSigEUAdvancedPens')) {
         obj['enableDSigEUAdvancedPens'] = ApiClient.convertToType(data['enableDSigEUAdvancedPens'], 'String');
@@ -1297,11 +1330,41 @@
       if (data.hasOwnProperty('enableLargeFileSupportMetadata')) {
         obj['enableLargeFileSupportMetadata'] = SettingsMetadata.constructFromObject(data['enableLargeFileSupportMetadata']);
       }
+      if (data.hasOwnProperty('enableLegacySharedEnvelopes')) {
+        obj['enableLegacySharedEnvelopes'] = ApiClient.convertToType(data['enableLegacySharedEnvelopes'], 'String');
+      }
+      if (data.hasOwnProperty('enableLegacySharedEnvelopesMetadata')) {
+        obj['enableLegacySharedEnvelopesMetadata'] = SettingsMetadata.constructFromObject(data['enableLegacySharedEnvelopesMetadata']);
+      }
+      if (data.hasOwnProperty('enableLicenseManagement')) {
+        obj['enableLicenseManagement'] = ApiClient.convertToType(data['enableLicenseManagement'], 'String');
+      }
+      if (data.hasOwnProperty('enableLicenseManagementMetadata')) {
+        obj['enableLicenseManagementMetadata'] = SettingsMetadata.constructFromObject(data['enableLicenseManagementMetadata']);
+      }
       if (data.hasOwnProperty('enableMultiUserRepositoryFeatures')) {
         obj['enableMultiUserRepositoryFeatures'] = ApiClient.convertToType(data['enableMultiUserRepositoryFeatures'], 'String');
       }
       if (data.hasOwnProperty('enableMultiUserRepositoryFeaturesMetadata')) {
         obj['enableMultiUserRepositoryFeaturesMetadata'] = SettingsMetadata.constructFromObject(data['enableMultiUserRepositoryFeaturesMetadata']);
+      }
+      if (data.hasOwnProperty('enableNavigatorPartialIngestion')) {
+        obj['enableNavigatorPartialIngestion'] = ApiClient.convertToType(data['enableNavigatorPartialIngestion'], 'String');
+      }
+      if (data.hasOwnProperty('enableNavigatorPartialIngestionMetadata')) {
+        obj['enableNavigatorPartialIngestionMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorPartialIngestionMetadata']);
+      }
+      if (data.hasOwnProperty('enableNavigatorTrial')) {
+        obj['enableNavigatorTrial'] = ApiClient.convertToType(data['enableNavigatorTrial'], 'String');
+      }
+      if (data.hasOwnProperty('enableNavigatorTrialMetadata')) {
+        obj['enableNavigatorTrialMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorTrialMetadata']);
+      }
+      if (data.hasOwnProperty('enableObligationManagement')) {
+        obj['enableObligationManagement'] = ApiClient.convertToType(data['enableObligationManagement'], 'String');
+      }
+      if (data.hasOwnProperty('enableObligationManagementMetadata')) {
+        obj['enableObligationManagementMetadata'] = SettingsMetadata.constructFromObject(data['enableObligationManagementMetadata']);
       }
       if (data.hasOwnProperty('enableParticipantRecipientSettingMetadata')) {
         obj['enableParticipantRecipientSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableParticipantRecipientSettingMetadata']);
@@ -1444,6 +1507,12 @@
       if (data.hasOwnProperty('enableSigningExtensionConversationsMetadata')) {
         obj['enableSigningExtensionConversationsMetadata'] = SettingsMetadata.constructFromObject(data['enableSigningExtensionConversationsMetadata']);
       }
+      if (data.hasOwnProperty('enableSigningGroupContinuePageSetting')) {
+        obj['enableSigningGroupContinuePageSetting'] = ApiClient.convertToType(data['enableSigningGroupContinuePageSetting'], 'String');
+      }
+      if (data.hasOwnProperty('enableSigningGroupContinuePageSettingMetadata')) {
+        obj['enableSigningGroupContinuePageSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableSigningGroupContinuePageSettingMetadata']);
+      }
       if (data.hasOwnProperty('enableSigningOrderSettingsForAccount')) {
         obj['enableSigningOrderSettingsForAccount'] = ApiClient.convertToType(data['enableSigningOrderSettingsForAccount'], 'String');
       }
@@ -1536,6 +1605,12 @@
       }
       if (data.hasOwnProperty('enableWitnessingMetadata')) {
         obj['enableWitnessingMetadata'] = SettingsMetadata.constructFromObject(data['enableWitnessingMetadata']);
+      }
+      if (data.hasOwnProperty('enableWorkdayFinancialsExtension')) {
+        obj['enableWorkdayFinancialsExtension'] = ApiClient.convertToType(data['enableWorkdayFinancialsExtension'], 'String');
+      }
+      if (data.hasOwnProperty('enableWorkdayFinancialsExtensionMetaData')) {
+        obj['enableWorkdayFinancialsExtensionMetaData'] = SettingsMetadata.constructFromObject(data['enableWorkdayFinancialsExtensionMetaData']);
       }
       if (data.hasOwnProperty('enforceTemplateNameUniqueness')) {
         obj['enforceTemplateNameUniqueness'] = ApiClient.convertToType(data['enforceTemplateNameUniqueness'], 'String');
@@ -1735,6 +1810,12 @@
       if (data.hasOwnProperty('isConnectDocumentFieldsEnabled')) {
         obj['isConnectDocumentFieldsEnabled'] = ApiClient.convertToType(data['isConnectDocumentFieldsEnabled'], 'String');
       }
+      if (data.hasOwnProperty('isvEmbed')) {
+        obj['isvEmbed'] = ApiClient.convertToType(data['isvEmbed'], 'String');
+      }
+      if (data.hasOwnProperty('isvEmbedMetaData')) {
+        obj['isvEmbedMetaData'] = SettingsMetadata.constructFromObject(data['isvEmbedMetaData']);
+      }
       if (data.hasOwnProperty('isvOemEmbed')) {
         obj['isvOemEmbed'] = ApiClient.convertToType(data['isvOemEmbed'], 'String');
       }
@@ -1795,6 +1876,15 @@
       if (data.hasOwnProperty('optOutNewPlatformSealPlatformMetadata')) {
         obj['optOutNewPlatformSealPlatformMetadata'] = SettingsMetadata.constructFromObject(data['optOutNewPlatformSealPlatformMetadata']);
       }
+      if (data.hasOwnProperty('originalAccountSite')) {
+        obj['originalAccountSite'] = ApiClient.convertToType(data['originalAccountSite'], 'String');
+      }
+      if (data.hasOwnProperty('participantCopyOptOut')) {
+        obj['participantCopyOptOut'] = ApiClient.convertToType(data['participantCopyOptOut'], 'String');
+      }
+      if (data.hasOwnProperty('participantCopyOptOutMetadata')) {
+        obj['participantCopyOptOutMetadata'] = SettingsMetadata.constructFromObject(data['participantCopyOptOutMetadata']);
+      }
       if (data.hasOwnProperty('pdfMaxChunkedUploadPartSize')) {
         obj['pdfMaxChunkedUploadPartSize'] = ApiClient.convertToType(data['pdfMaxChunkedUploadPartSize'], 'String');
       }
@@ -1843,6 +1933,12 @@
       if (data.hasOwnProperty('recipientSigningAutoNavigationControlMetadata')) {
         obj['recipientSigningAutoNavigationControlMetadata'] = SettingsMetadata.constructFromObject(data['recipientSigningAutoNavigationControlMetadata']);
       }
+      if (data.hasOwnProperty('recycleBinEnvelopeRetention')) {
+        obj['recycleBinEnvelopeRetention'] = ApiClient.convertToType(data['recycleBinEnvelopeRetention'], 'String');
+      }
+      if (data.hasOwnProperty('recycleBinEnvelopeRetentionMetadata')) {
+        obj['recycleBinEnvelopeRetentionMetadata'] = SettingsMetadata.constructFromObject(data['recycleBinEnvelopeRetentionMetadata']);
+      }
       if (data.hasOwnProperty('require21CFRpt11Compliance')) {
         obj['require21CFRpt11Compliance'] = ApiClient.convertToType(data['require21CFRpt11Compliance'], 'String');
       }
@@ -1878,9 +1974,6 @@
       }
       if (data.hasOwnProperty('rsaVeridUserId')) {
         obj['rsaVeridUserId'] = ApiClient.convertToType(data['rsaVeridUserId'], 'String');
-      }
-      if (data.hasOwnProperty('sbsTransactionLevel')) {
-        obj['sbsTransactionLevel'] = ApiClient.convertToType(data['sbsTransactionLevel'], 'String');
       }
       if (data.hasOwnProperty('selfSignedRecipientEmailDocument')) {
         obj['selfSignedRecipientEmailDocument'] = ApiClient.convertToType(data['selfSignedRecipientEmailDocument'], 'String');
@@ -2175,6 +2268,12 @@
       }
       if (data.hasOwnProperty('universalSignatureOptIn')) {
         obj['universalSignatureOptIn'] = ApiClient.convertToType(data['universalSignatureOptIn'], 'String');
+      }
+      if (data.hasOwnProperty('universalSignatureSkipPlatformSignature')) {
+        obj['universalSignatureSkipPlatformSignature'] = ApiClient.convertToType(data['universalSignatureSkipPlatformSignature'], 'String');
+      }
+      if (data.hasOwnProperty('universalSignatureSkipPlatformSignatureMetadata')) {
+        obj['universalSignatureSkipPlatformSignatureMetadata'] = SettingsMetadata.constructFromObject(data['universalSignatureSkipPlatformSignatureMetadata']);
       }
       if (data.hasOwnProperty('useAccountLevelEmail')) {
         obj['useAccountLevelEmail'] = ApiClient.convertToType(data['useAccountLevelEmail'], 'String');
@@ -2532,9 +2631,19 @@
   exports.prototype['allowCDWithdrawMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowConnectAuthoritativeCopyReadyEventUI
+   */
+  exports.prototype['allowConnectAuthoritativeCopyReadyEventUI'] = undefined;
+  /**
+   * 
    * @member {String} allowConnectEnvelopeRemovedEvent
    */
   exports.prototype['allowConnectEnvelopeRemovedEvent'] = undefined;
+  /**
+   * 
+   * @member {String} allowConnectExtensionUI
+   */
+  exports.prototype['allowConnectExtensionUI'] = undefined;
   /**
    * 
    * @member {String} allowConnectHttpListenerConfigs
@@ -2955,6 +3064,16 @@
    * @member {module:model/SettingsMetadata} allowOfflineSigningMetadata
    */
   exports.prototype['allowOfflineSigningMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowOnlyStandaloneWebForms
+   */
+  exports.prototype['allowOnlyStandaloneWebForms'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowOnlyStandaloneWebFormsMetadata
+   */
+  exports.prototype['allowOnlyStandaloneWebFormsMetadata'] = undefined;
   /**
    * 
    * @member {String} allowOpenTrustSignerCertificate
@@ -3642,6 +3761,11 @@
   exports.prototype['chromeSignatureEnabledMetadata'] = undefined;
   /**
    * 
+   * @member {String} cloudReady
+   */
+  exports.prototype['cloudReady'] = undefined;
+  /**
+   * 
    * @member {String} commentEmailShowMessageText
    */
   exports.prototype['commentEmailShowMessageText'] = undefined;
@@ -3730,16 +3854,6 @@
    * @member {module:model/SettingsMetadata} disableAutoTemplateMatchingMetadata
    */
   exports.prototype['disableAutoTemplateMatchingMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} disableBulkSendRecipientLimit
-   */
-  exports.prototype['disableBulkSendRecipientLimit'] = undefined;
-  /**
-   * 
-   * @member {module:model/SettingsMetadata} disableBulkSendRecipientLimitMetaData
-   */
-  exports.prototype['disableBulkSendRecipientLimitMetaData'] = undefined;
   /**
    * 
    * @member {String} disableMobileApp
@@ -3892,16 +4006,6 @@
   exports.prototype['draftEnvelopeRetentionMetadata'] = undefined;
   /**
    * 
-   * @member {String} dss_EnableProvisioningPenConfiguration_RadminOption
-   */
-  exports.prototype['dss_EnableProvisioningPenConfiguration_RadminOption'] = undefined;
-  /**
-   * 
-   * @member {String} dss_EnableSignatureTypeCustomTagRadmin_RadminOption
-   */
-  exports.prototype['dss_EnableSignatureTypeCustomTagRadmin_RadminOption'] = undefined;
-  /**
-   * 
    * @member {String} dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb
    */
   exports.prototype['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'] = undefined;
@@ -4027,6 +4131,16 @@
   exports.prototype['enableAgreementActionsForESignMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableAIContractReview
+   */
+  exports.prototype['enableAIContractReview'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableAIContractReviewMetadata
+   */
+  exports.prototype['enableAIContractReviewMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableAutoNav
    */
   exports.prototype['enableAutoNav'] = undefined;
@@ -4035,6 +4149,16 @@
    * @member {module:model/SettingsMetadata} enableAutoNavMetadata
    */
   exports.prototype['enableAutoNavMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableBatchUpdateEnvelopeTypes
+   */
+  exports.prototype['enableBatchUpdateEnvelopeTypes'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableBatchUpdateEnvelopeTypesMetadata
+   */
+  exports.prototype['enableBatchUpdateEnvelopeTypesMetadata'] = undefined;
   /**
    * 
    * @member {String} enableBccDummyLink
@@ -4152,6 +4276,26 @@
   exports.prototype['enableContentSearchMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableCoupaCore
+   */
+  exports.prototype['enableCoupaCore'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableCoupaCoreMetaData
+   */
+  exports.prototype['enableCoupaCoreMetaData'] = undefined;
+  /**
+   * 
+   * @member {String} enableCustomDataVerificationExtensions
+   */
+  exports.prototype['enableCustomDataVerificationExtensions'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableCustomDataVerificationExtensionsMetadata
+   */
+  exports.prototype['enableCustomDataVerificationExtensionsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableCustomerSatisfactionMetricTracking
    */
   exports.prototype['enableCustomerSatisfactionMetricTracking'] = undefined;
@@ -4170,6 +4314,16 @@
    * @member {module:model/SettingsMetadata} enableDataVerificationExtensionsMetadata
    */
   exports.prototype['enableDataVerificationExtensionsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDocumentTemplateLibrary
+   */
+  exports.prototype['enableDocumentTemplateLibrary'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDocumentTemplateLibraryMetadata
+   */
+  exports.prototype['enableDocumentTemplateLibraryMetadata'] = undefined;
   /**
    * 
    * @member {String} enableDSigEUAdvancedPens
@@ -4387,6 +4541,26 @@
   exports.prototype['enableLargeFileSupportMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableLegacySharedEnvelopes
+   */
+  exports.prototype['enableLegacySharedEnvelopes'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableLegacySharedEnvelopesMetadata
+   */
+  exports.prototype['enableLegacySharedEnvelopesMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableLicenseManagement
+   */
+  exports.prototype['enableLicenseManagement'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableLicenseManagementMetadata
+   */
+  exports.prototype['enableLicenseManagementMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableMultiUserRepositoryFeatures
    */
   exports.prototype['enableMultiUserRepositoryFeatures'] = undefined;
@@ -4395,6 +4569,36 @@
    * @member {module:model/SettingsMetadata} enableMultiUserRepositoryFeaturesMetadata
    */
   exports.prototype['enableMultiUserRepositoryFeaturesMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableNavigatorPartialIngestion
+   */
+  exports.prototype['enableNavigatorPartialIngestion'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableNavigatorPartialIngestionMetadata
+   */
+  exports.prototype['enableNavigatorPartialIngestionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableNavigatorTrial
+   */
+  exports.prototype['enableNavigatorTrial'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableNavigatorTrialMetadata
+   */
+  exports.prototype['enableNavigatorTrialMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableObligationManagement
+   */
+  exports.prototype['enableObligationManagement'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableObligationManagementMetadata
+   */
+  exports.prototype['enableObligationManagementMetadata'] = undefined;
   /**
    * 
    * @member {module:model/SettingsMetadata} enableParticipantRecipientSettingMetadata
@@ -4632,6 +4836,16 @@
   exports.prototype['enableSigningExtensionConversationsMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableSigningGroupContinuePageSetting
+   */
+  exports.prototype['enableSigningGroupContinuePageSetting'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableSigningGroupContinuePageSettingMetadata
+   */
+  exports.prototype['enableSigningGroupContinuePageSettingMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableSigningOrderSettingsForAccount
    */
   exports.prototype['enableSigningOrderSettingsForAccount'] = undefined;
@@ -4785,6 +4999,16 @@
    * @member {module:model/SettingsMetadata} enableWitnessingMetadata
    */
   exports.prototype['enableWitnessingMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableWorkdayFinancialsExtension
+   */
+  exports.prototype['enableWorkdayFinancialsExtension'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableWorkdayFinancialsExtensionMetaData
+   */
+  exports.prototype['enableWorkdayFinancialsExtensionMetaData'] = undefined;
   /**
    * 
    * @member {String} enforceTemplateNameUniqueness
@@ -5117,6 +5341,16 @@
   exports.prototype['isConnectDocumentFieldsEnabled'] = undefined;
   /**
    * 
+   * @member {String} isvEmbed
+   */
+  exports.prototype['isvEmbed'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} isvEmbedMetaData
+   */
+  exports.prototype['isvEmbedMetaData'] = undefined;
+  /**
+   * 
    * @member {String} isvOemEmbed
    */
   exports.prototype['isvOemEmbed'] = undefined;
@@ -5217,6 +5451,21 @@
   exports.prototype['optOutNewPlatformSealPlatformMetadata'] = undefined;
   /**
    * 
+   * @member {String} originalAccountSite
+   */
+  exports.prototype['originalAccountSite'] = undefined;
+  /**
+   * 
+   * @member {String} participantCopyOptOut
+   */
+  exports.prototype['participantCopyOptOut'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} participantCopyOptOutMetadata
+   */
+  exports.prototype['participantCopyOptOutMetadata'] = undefined;
+  /**
+   * 
    * @member {String} pdfMaxChunkedUploadPartSize
    */
   exports.prototype['pdfMaxChunkedUploadPartSize'] = undefined;
@@ -5297,6 +5546,16 @@
   exports.prototype['recipientSigningAutoNavigationControlMetadata'] = undefined;
   /**
    * 
+   * @member {String} recycleBinEnvelopeRetention
+   */
+  exports.prototype['recycleBinEnvelopeRetention'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} recycleBinEnvelopeRetentionMetadata
+   */
+  exports.prototype['recycleBinEnvelopeRetentionMetadata'] = undefined;
+  /**
+   * 
    * @member {String} require21CFRpt11Compliance
    */
   exports.prototype['require21CFRpt11Compliance'] = undefined;
@@ -5355,11 +5614,6 @@
    * @member {String} rsaVeridUserId
    */
   exports.prototype['rsaVeridUserId'] = undefined;
-  /**
-   * 
-   * @member {String} sbsTransactionLevel
-   */
-  exports.prototype['sbsTransactionLevel'] = undefined;
   /**
    * 
    * @member {String} selfSignedRecipientEmailDocument
@@ -5850,6 +6104,16 @@
    * @member {String} universalSignatureOptIn
    */
   exports.prototype['universalSignatureOptIn'] = undefined;
+  /**
+   * 
+   * @member {String} universalSignatureSkipPlatformSignature
+   */
+  exports.prototype['universalSignatureSkipPlatformSignature'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} universalSignatureSkipPlatformSignatureMetadata
+   */
+  exports.prototype['universalSignatureSkipPlatformSignatureMetadata'] = undefined;
   /**
    * 
    * @member {String} useAccountLevelEmail

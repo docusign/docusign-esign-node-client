@@ -2,6 +2,11 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v8.1.0-rc1] - eSignature API v2.1-25.1.00.02 - 2025-04-14
+### Changed
+- Added support for version v2.1-25.1.00.02 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
 ## [v8.0.1] - eSignature API v2.1-24.2.00.00 - 2024-08-22
 ### Changed
 - Fixed issue with document downloads when `Content-Transfer-Encoding` is set to `base64`.

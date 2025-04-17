@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation', 'model/SmartSectionAnchorPosition', 'model/SmartSectionDisplaySettings'], factory);
+    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/ErrorDetails', 'model/ExtensionData', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation', 'model/SmartSectionAnchorPosition', 'model/SmartSectionDisplaySettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'), require('./SmartSectionAnchorPosition'), require('./SmartSectionDisplaySettings'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./ErrorDetails'), require('./ExtensionData'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'), require('./SmartSectionAnchorPosition'), require('./SmartSectionDisplaySettings'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.SmartSection = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation, root.Docusign.SmartSectionAnchorPosition, root.Docusign.SmartSectionDisplaySettings);
+    root.Docusign.SmartSection = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.ErrorDetails, root.Docusign.ExtensionData, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation, root.Docusign.SmartSectionAnchorPosition, root.Docusign.SmartSectionDisplaySettings);
   }
-}(this, function(ApiClient, ErrorDetails, MergeField, PropertyMetadata, SmartContractInformation, SmartSectionAnchorPosition, SmartSectionDisplaySettings) {
+}(this, function(ApiClient, ConnectedObjectDetails, ErrorDetails, ExtensionData, MergeField, PropertyMetadata, SmartContractInformation, SmartSectionAnchorPosition, SmartSectionDisplaySettings) {
   'use strict';
 
 
@@ -54,6 +54,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('agreementAttribute')) {
+        obj['agreementAttribute'] = ApiClient.convertToType(data['agreementAttribute'], 'String');
+      }
+      if (data.hasOwnProperty('agreementAttributeLocked')) {
+        obj['agreementAttributeLocked'] = ApiClient.convertToType(data['agreementAttributeLocked'], 'String');
+      }
       if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharacters')) {
         obj['anchorAllowWhiteSpaceInCharacters'] = ApiClient.convertToType(data['anchorAllowWhiteSpaceInCharacters'], 'String');
       }
@@ -135,6 +141,9 @@
       if (data.hasOwnProperty('conditionalParentValueMetadata')) {
         obj['conditionalParentValueMetadata'] = PropertyMetadata.constructFromObject(data['conditionalParentValueMetadata']);
       }
+      if (data.hasOwnProperty('connectedObjectDetails')) {
+        obj['connectedObjectDetails'] = ConnectedObjectDetails.constructFromObject(data['connectedObjectDetails']);
+      }
       if (data.hasOwnProperty('customTabId')) {
         obj['customTabId'] = ApiClient.convertToType(data['customTabId'], 'String');
       }
@@ -158,6 +167,9 @@
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('extensionData')) {
+        obj['extensionData'] = ExtensionData.constructFromObject(data['extensionData']);
       }
       if (data.hasOwnProperty('formOrder')) {
         obj['formOrder'] = ApiClient.convertToType(data['formOrder'], 'String');
@@ -249,6 +261,9 @@
       if (data.hasOwnProperty('statusMetadata')) {
         obj['statusMetadata'] = PropertyMetadata.constructFromObject(data['statusMetadata']);
       }
+      if (data.hasOwnProperty('tabFullyQualifiedPath')) {
+        obj['tabFullyQualifiedPath'] = ApiClient.convertToType(data['tabFullyQualifiedPath'], 'String');
+      }
       if (data.hasOwnProperty('tabGroupLabels')) {
         obj['tabGroupLabels'] = ApiClient.convertToType(data['tabGroupLabels'], ['String']);
       }
@@ -294,6 +309,9 @@
       if (data.hasOwnProperty('toolTipMetadata')) {
         obj['toolTipMetadata'] = PropertyMetadata.constructFromObject(data['toolTipMetadata']);
       }
+      if (data.hasOwnProperty('warningDetails')) {
+        obj['warningDetails'] = ErrorDetails.constructFromObject(data['warningDetails']);
+      }
       if (data.hasOwnProperty('width')) {
         obj['width'] = ApiClient.convertToType(data['width'], 'String');
       }
@@ -316,6 +334,16 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} agreementAttribute
+   */
+  exports.prototype['agreementAttribute'] = undefined;
+  /**
+   * 
+   * @member {String} agreementAttributeLocked
+   */
+  exports.prototype['agreementAttributeLocked'] = undefined;
   /**
    * 
    * @member {String} anchorAllowWhiteSpaceInCharacters
@@ -452,6 +480,11 @@
    */
   exports.prototype['conditionalParentValueMetadata'] = undefined;
   /**
+   * 
+   * @member {module:model/ConnectedObjectDetails} connectedObjectDetails
+   */
+  exports.prototype['connectedObjectDetails'] = undefined;
+  /**
    * The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.
    * @member {String} customTabId
    */
@@ -491,6 +524,11 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {module:model/ExtensionData} extensionData
+   */
+  exports.prototype['extensionData'] = undefined;
   /**
    * 
    * @member {String} formOrder
@@ -643,6 +681,11 @@
   exports.prototype['statusMetadata'] = undefined;
   /**
    * 
+   * @member {String} tabFullyQualifiedPath
+   */
+  exports.prototype['tabFullyQualifiedPath'] = undefined;
+  /**
+   * 
    * @member {Array.<String>} tabGroupLabels
    */
   exports.prototype['tabGroupLabels'] = undefined;
@@ -716,6 +759,11 @@
    * @member {module:model/PropertyMetadata} toolTipMetadata
    */
   exports.prototype['toolTipMetadata'] = undefined;
+  /**
+   * 
+   * @member {module:model/ErrorDetails} warningDetails
+   */
+  exports.prototype['warningDetails'] = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width

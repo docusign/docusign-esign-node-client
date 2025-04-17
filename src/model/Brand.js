@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BrandEmailContent', 'model/BrandLink', 'model/BrandLogos', 'model/BrandResourceUrls', 'model/ErrorDetails', 'model/NameValue'], factory);
+    define(['ApiClient', 'model/BrandEmailContent', 'model/BrandLogos', 'model/BrandResourceUrls', 'model/ErrorDetails', 'model/NameValue'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BrandEmailContent'), require('./BrandLink'), require('./BrandLogos'), require('./BrandResourceUrls'), require('./ErrorDetails'), require('./NameValue'));
+    module.exports = factory(require('../ApiClient'), require('./BrandEmailContent'), require('./BrandLogos'), require('./BrandResourceUrls'), require('./ErrorDetails'), require('./NameValue'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Brand = factory(root.Docusign.ApiClient, root.Docusign.BrandEmailContent, root.Docusign.BrandLink, root.Docusign.BrandLogos, root.Docusign.BrandResourceUrls, root.Docusign.ErrorDetails, root.Docusign.NameValue);
+    root.Docusign.Brand = factory(root.Docusign.ApiClient, root.Docusign.BrandEmailContent, root.Docusign.BrandLogos, root.Docusign.BrandResourceUrls, root.Docusign.ErrorDetails, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, BrandEmailContent, BrandLink, BrandLogos, BrandResourceUrls, ErrorDetails, NameValue) {
+}(this, function(ApiClient, BrandEmailContent, BrandLogos, BrandResourceUrls, ErrorDetails, NameValue) {
   'use strict';
 
 
@@ -95,7 +95,7 @@
         obj['landingPages'] = ApiClient.convertToType(data['landingPages'], [NameValue]);
       }
       if (data.hasOwnProperty('links')) {
-        obj['links'] = ApiClient.convertToType(data['links'], [BrandLink]);
+        obj['links'] = ApiClient.convertToType(data['links'], 'String');
       }
       if (data.hasOwnProperty('logos')) {
         obj['logos'] = BrandLogos.constructFromObject(data['logos']);
@@ -177,7 +177,7 @@
   exports.prototype['landingPages'] = undefined;
   /**
    * 
-   * @member {Array.<module:model/BrandLink>} links
+   * @member {String} links
    */
   exports.prototype['links'] = undefined;
   /**

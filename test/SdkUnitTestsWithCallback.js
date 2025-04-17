@@ -74,9 +74,6 @@ describe('SDK Unit Tests With Callbacks:', function (done) {
     assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.DEMO);
     assert.notEqual(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
 
-    apiClient.setBasePath(restApi.BasePath.STAGE);
-    assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.STAGE);
-
     apiClient.setBasePath(restApi.BasePath.PRODUCTION);
     assert.equal(apiClient.oAuthBasePath, apiClient.OAuth.BasePath.PRODUCTION);
 

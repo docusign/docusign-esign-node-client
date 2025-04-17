@@ -73,6 +73,9 @@
       if (data.hasOwnProperty('groupType')) {
         obj['groupType'] = ApiClient.convertToType(data['groupType'], 'String');
       }
+      if (data.hasOwnProperty('isManagedByScim')) {
+        obj['isManagedByScim'] = ApiClient.convertToType(data['isManagedByScim'], 'String');
+      }
       if (data.hasOwnProperty('lastModifiedOn')) {
         obj['lastModifiedOn'] = ApiClient.convertToType(data['lastModifiedOn'], 'String');
       }
@@ -119,6 +122,11 @@
    * @member {String} groupType
    */
   exports.prototype['groupType'] = undefined;
+  /**
+   * 
+   * @member {String} isManagedByScim
+   */
+  exports.prototype['isManagedByScim'] = undefined;
   /**
    * 
    * @member {String} lastModifiedOn

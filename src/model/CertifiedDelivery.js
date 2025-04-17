@@ -115,6 +115,9 @@
       if (data.hasOwnProperty('designatorIdGuid')) {
         obj['designatorIdGuid'] = ApiClient.convertToType(data['designatorIdGuid'], 'String');
       }
+      if (data.hasOwnProperty('documentTemplateId')) {
+        obj['documentTemplateId'] = ApiClient.convertToType(data['documentTemplateId'], 'String');
+      }
       if (data.hasOwnProperty('documentVisibility')) {
         obj['documentVisibility'] = ApiClient.convertToType(data['documentVisibility'], [DocumentVisibility]);
       }
@@ -286,6 +289,9 @@
       if (data.hasOwnProperty('userId')) {
         obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
       }
+      if (data.hasOwnProperty('webFormRecipientViewId')) {
+        obj['webFormRecipientViewId'] = ApiClient.convertToType(data['webFormRecipientViewId'], 'String');
+      }
     }
     return obj;
   }
@@ -390,6 +396,11 @@
    * @member {String} designatorIdGuid
    */
   exports.prototype['designatorIdGuid'] = undefined;
+  /**
+   * 
+   * @member {String} documentTemplateId
+   */
+  exports.prototype['documentTemplateId'] = undefined;
   /**
    * 
    * @member {Array.<module:model/DocumentVisibility>} documentVisibility
@@ -675,6 +686,11 @@
    * @member {String} userId
    */
   exports.prototype['userId'] = undefined;
+  /**
+   * 
+   * @member {String} webFormRecipientViewId
+   */
+  exports.prototype['webFormRecipientViewId'] = undefined;
 
 
 
