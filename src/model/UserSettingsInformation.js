@@ -79,6 +79,12 @@
       if (data.hasOwnProperty('allowAutoTagging')) {
         obj['allowAutoTagging'] = ApiClient.convertToType(data['allowAutoTagging'], 'String');
       }
+      if (data.hasOwnProperty('allowedDocumentTemplateLibraryAccess')) {
+        obj['allowedDocumentTemplateLibraryAccess'] = ApiClient.convertToType(data['allowedDocumentTemplateLibraryAccess'], 'String');
+      }
+      if (data.hasOwnProperty('allowedDocumentTemplateLibraryAccessMetadata')) {
+        obj['allowedDocumentTemplateLibraryAccessMetadata'] = SettingsMetadata.constructFromObject(data['allowedDocumentTemplateLibraryAccessMetadata']);
+      }
       if (data.hasOwnProperty('allowedOrchestrationAccess')) {
         obj['allowedOrchestrationAccess'] = ApiClient.convertToType(data['allowedOrchestrationAccess'], 'String');
       }
@@ -313,6 +319,18 @@
       if (data.hasOwnProperty('expressSendOnly')) {
         obj['expressSendOnly'] = ApiClient.convertToType(data['expressSendOnly'], 'String');
       }
+      if (data.hasOwnProperty('isManagedByScim')) {
+        obj['isManagedByScim'] = ApiClient.convertToType(data['isManagedByScim'], 'String');
+      }
+      if (data.hasOwnProperty('isManagedByScimMetadata')) {
+        obj['isManagedByScimMetadata'] = SettingsMetadata.constructFromObject(data['isManagedByScimMetadata']);
+      }
+      if (data.hasOwnProperty('isMembershipManagedByScim')) {
+        obj['isMembershipManagedByScim'] = ApiClient.convertToType(data['isMembershipManagedByScim'], 'String');
+      }
+      if (data.hasOwnProperty('isMembershipManagedByScimMetadata')) {
+        obj['isMembershipManagedByScimMetadata'] = SettingsMetadata.constructFromObject(data['isMembershipManagedByScimMetadata']);
+      }
       if (data.hasOwnProperty('locale')) {
         obj['locale'] = ApiClient.convertToType(data['locale'], 'String');
       }
@@ -528,6 +546,16 @@
    * @member {String} allowAutoTagging
    */
   exports.prototype['allowAutoTagging'] = undefined;
+  /**
+   * 
+   * @member {String} allowedDocumentTemplateLibraryAccess
+   */
+  exports.prototype['allowedDocumentTemplateLibraryAccess'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowedDocumentTemplateLibraryAccessMetadata
+   */
+  exports.prototype['allowedDocumentTemplateLibraryAccessMetadata'] = undefined;
   /**
    * 
    * @member {String} allowedOrchestrationAccess
@@ -918,6 +946,26 @@
    * @member {String} expressSendOnly
    */
   exports.prototype['expressSendOnly'] = undefined;
+  /**
+   * 
+   * @member {String} isManagedByScim
+   */
+  exports.prototype['isManagedByScim'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} isManagedByScimMetadata
+   */
+  exports.prototype['isManagedByScimMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} isMembershipManagedByScim
+   */
+  exports.prototype['isMembershipManagedByScim'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} isMembershipManagedByScimMetadata
+   */
+  exports.prototype['isMembershipManagedByScimMetadata'] = undefined;
   /**
    * 
    * @member {String} locale

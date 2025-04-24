@@ -84,6 +84,9 @@
       if (data.hasOwnProperty('showHeaderActions')) {
         obj['showHeaderActions'] = ApiClient.convertToType(data['showHeaderActions'], 'String');
       }
+      if (data.hasOwnProperty('showSignNow')) {
+        obj['showSignNow'] = ApiClient.convertToType(data['showSignNow'], 'String');
+      }
       if (data.hasOwnProperty('startingScreen')) {
         obj['startingScreen'] = ApiClient.convertToType(data['startingScreen'], 'String');
       }
@@ -147,6 +150,11 @@
    * @member {String} showHeaderActions
    */
   exports.prototype['showHeaderActions'] = undefined;
+  /**
+   * 
+   * @member {String} showSignNow
+   */
+  exports.prototype['showSignNow'] = undefined;
   /**
    * 
    * @member {String} startingScreen

@@ -60,6 +60,9 @@
       if (data.hasOwnProperty('phoneNumberList')) {
         obj['phoneNumberList'] = ApiClient.convertToType(data['phoneNumberList'], [RecipientIdentityPhoneNumber]);
       }
+      if (data.hasOwnProperty('stringValue')) {
+        obj['stringValue'] = ApiClient.convertToType(data['stringValue'], 'String');
+      }
       if (data.hasOwnProperty('valueType')) {
         obj['valueType'] = ApiClient.convertToType(data['valueType'], 'String');
       }
@@ -77,6 +80,11 @@
    * @member {Array.<module:model/RecipientIdentityPhoneNumber>} phoneNumberList
    */
   exports.prototype['phoneNumberList'] = undefined;
+  /**
+   * 
+   * @member {String} stringValue
+   */
+  exports.prototype['stringValue'] = undefined;
   /**
    * 
    * @member {String} valueType

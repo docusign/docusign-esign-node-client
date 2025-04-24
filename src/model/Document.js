@@ -79,6 +79,12 @@
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
       }
+      if (data.hasOwnProperty('documentTemplateAgreementTypeId')) {
+        obj['documentTemplateAgreementTypeId'] = ApiClient.convertToType(data['documentTemplateAgreementTypeId'], 'String');
+      }
+      if (data.hasOwnProperty('documentTemplateId')) {
+        obj['documentTemplateId'] = ApiClient.convertToType(data['documentTemplateId'], 'String');
+      }
       if (data.hasOwnProperty('encryptedWithKeyManager')) {
         obj['encryptedWithKeyManager'] = ApiClient.convertToType(data['encryptedWithKeyManager'], 'String');
       }
@@ -183,6 +189,16 @@
    * @member {String} documentId
    */
   exports.prototype['documentId'] = undefined;
+  /**
+   * 
+   * @member {String} documentTemplateAgreementTypeId
+   */
+  exports.prototype['documentTemplateAgreementTypeId'] = undefined;
+  /**
+   * 
+   * @member {String} documentTemplateId
+   */
+  exports.prototype['documentTemplateId'] = undefined;
   /**
    * When set to **true**, the document is been already encrypted by the sender for use with the DocuSign Key Manager Security Appliance.  
    * @member {String} encryptedWithKeyManager

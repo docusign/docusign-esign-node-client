@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/PropertyMetadata'], factory);
+    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/ErrorDetails', 'model/ExtensionData', 'model/PropertyMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./PropertyMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./ErrorDetails'), require('./ExtensionData'), require('./PropertyMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Radio = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.PropertyMetadata);
+    root.Docusign.Radio = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.ErrorDetails, root.Docusign.ExtensionData, root.Docusign.PropertyMetadata);
   }
-}(this, function(ApiClient, ErrorDetails, PropertyMetadata) {
+}(this, function(ApiClient, ConnectedObjectDetails, ErrorDetails, ExtensionData, PropertyMetadata) {
   'use strict';
 
 
@@ -127,8 +127,14 @@
       if (data.hasOwnProperty('captionMetadata')) {
         obj['captionMetadata'] = PropertyMetadata.constructFromObject(data['captionMetadata']);
       }
+      if (data.hasOwnProperty('connectedObjectDetails')) {
+        obj['connectedObjectDetails'] = ConnectedObjectDetails.constructFromObject(data['connectedObjectDetails']);
+      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('extensionData')) {
+        obj['extensionData'] = ExtensionData.constructFromObject(data['extensionData']);
       }
       if (data.hasOwnProperty('font')) {
         obj['font'] = ApiClient.convertToType(data['font'], 'String');
@@ -186,6 +192,9 @@
       }
       if (data.hasOwnProperty('statusMetadata')) {
         obj['statusMetadata'] = PropertyMetadata.constructFromObject(data['statusMetadata']);
+      }
+      if (data.hasOwnProperty('tabFullyQualifiedPath')) {
+        obj['tabFullyQualifiedPath'] = ApiClient.convertToType(data['tabFullyQualifiedPath'], 'String');
       }
       if (data.hasOwnProperty('tabId')) {
         obj['tabId'] = ApiClient.convertToType(data['tabId'], 'String');
@@ -348,10 +357,20 @@
    */
   exports.prototype['captionMetadata'] = undefined;
   /**
+   * 
+   * @member {module:model/ConnectedObjectDetails} connectedObjectDetails
+   */
+  exports.prototype['connectedObjectDetails'] = undefined;
+  /**
    * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {module:model/ExtensionData} extensionData
+   */
+  exports.prototype['extensionData'] = undefined;
   /**
    * The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
    * @member {String} font
@@ -447,6 +466,11 @@
    * @member {module:model/PropertyMetadata} statusMetadata
    */
   exports.prototype['statusMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} tabFullyQualifiedPath
+   */
+  exports.prototype['tabFullyQualifiedPath'] = undefined;
   /**
    * The unique identifier for the tab. The tabid can be retrieved with the [ML:GET call].     
    * @member {String} tabId

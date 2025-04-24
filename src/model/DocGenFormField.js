@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldRowValue', 'model/DocGenFormFieldValidation'], factory);
+    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldRowValue', 'model/DocGenFormFieldValidation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldRowValue'), require('./DocGenFormFieldValidation'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldRowValue'), require('./DocGenFormFieldValidation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldRowValue, root.Docusign.DocGenFormFieldValidation);
+    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldRowValue, root.Docusign.DocGenFormFieldValidation);
   }
-}(this, function(ApiClient, DocGenFormFieldOption, DocGenFormFieldRowValue, DocGenFormFieldValidation) {
+}(this, function(ApiClient, ConnectedObjectDetails, DocGenFormFieldOption, DocGenFormFieldRowValue, DocGenFormFieldValidation) {
   'use strict';
 
 
@@ -54,8 +54,14 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('connectedObjectDetails')) {
+        obj['connectedObjectDetails'] = ConnectedObjectDetails.constructFromObject(data['connectedObjectDetails']);
+      }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('fullyQualifiedPath')) {
+        obj['fullyQualifiedPath'] = ApiClient.convertToType(data['fullyQualifiedPath'], 'String');
       }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
@@ -65,6 +71,9 @@
       }
       if (data.hasOwnProperty('options')) {
         obj['options'] = ApiClient.convertToType(data['options'], [DocGenFormFieldOption]);
+      }
+      if (data.hasOwnProperty('order')) {
+        obj['order'] = ApiClient.convertToType(data['order'], 'String');
       }
       if (data.hasOwnProperty('predefinedValidation')) {
         obj['predefinedValidation'] = ApiClient.convertToType(data['predefinedValidation'], 'String');
@@ -90,9 +99,19 @@
 
   /**
    * 
+   * @member {module:model/ConnectedObjectDetails} connectedObjectDetails
+   */
+  exports.prototype['connectedObjectDetails'] = undefined;
+  /**
+   * 
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
+  /**
+   * 
+   * @member {String} fullyQualifiedPath
+   */
+  exports.prototype['fullyQualifiedPath'] = undefined;
   /**
    * 
    * @member {String} label
@@ -108,6 +127,11 @@
    * @member {Array.<module:model/DocGenFormFieldOption>} options
    */
   exports.prototype['options'] = undefined;
+  /**
+   * 
+   * @member {String} order
+   */
+  exports.prototype['order'] = undefined;
   /**
    * 
    * @member {String} predefinedValidation

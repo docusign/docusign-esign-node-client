@@ -78,6 +78,9 @@
       if (data.hasOwnProperty('resultSetSize')) {
         obj['resultSetSize'] = ApiClient.convertToType(data['resultSetSize'], 'String');
       }
+      if (data.hasOwnProperty('skyDriveSkipToken')) {
+        obj['skyDriveSkipToken'] = ApiClient.convertToType(data['skyDriveSkipToken'], 'String');
+      }
       if (data.hasOwnProperty('startPosition')) {
         obj['startPosition'] = ApiClient.convertToType(data['startPosition'], 'String');
       }
@@ -128,6 +131,11 @@
    * @member {String} resultSetSize
    */
   exports.prototype['resultSetSize'] = undefined;
+  /**
+   * 
+   * @member {String} skyDriveSkipToken
+   */
+  exports.prototype['skyDriveSkipToken'] = undefined;
   /**
    * Starting position of the current result set.
    * @member {String} startPosition

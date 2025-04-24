@@ -73,6 +73,12 @@
       if (data.hasOwnProperty('clickwrapSchemaVersionMetadata')) {
         obj['clickwrapSchemaVersionMetadata'] = SettingsMetadata.constructFromObject(data['clickwrapSchemaVersionMetadata']);
       }
+      if (data.hasOwnProperty('disableWebAppAccess')) {
+        obj['disableWebAppAccess'] = ApiClient.convertToType(data['disableWebAppAccess'], 'String');
+      }
+      if (data.hasOwnProperty('disableWebAppAccessMetadata')) {
+        obj['disableWebAppAccessMetadata'] = SettingsMetadata.constructFromObject(data['disableWebAppAccessMetadata']);
+      }
       if (data.hasOwnProperty('enableAdminMessage')) {
         obj['enableAdminMessage'] = ApiClient.convertToType(data['enableAdminMessage'], 'String');
       }
@@ -191,6 +197,16 @@
    * @member {module:model/SettingsMetadata} clickwrapSchemaVersionMetadata
    */
   exports.prototype['clickwrapSchemaVersionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} disableWebAppAccess
+   */
+  exports.prototype['disableWebAppAccess'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} disableWebAppAccessMetadata
+   */
+  exports.prototype['disableWebAppAccessMetadata'] = undefined;
   /**
    * 
    * @member {String} enableAdminMessage

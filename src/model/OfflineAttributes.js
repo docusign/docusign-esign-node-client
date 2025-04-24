@@ -34,7 +34,7 @@
 
   /**
    * Constructs a new <code>OfflineAttributes</code>.
-   * Reserved for DocuSign use.
+   * DocuSign internal use, but it is needed for swagger tools (go lang, Elixir/OTP) to generate client library. 
    * @alias module:model/OfflineAttributes
    * @class
    */

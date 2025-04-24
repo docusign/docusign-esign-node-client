@@ -63,11 +63,23 @@
       if (data.hasOwnProperty('email')) {
         obj['email'] = ApiClient.convertToType(data['email'], 'String');
       }
+      if (data.hasOwnProperty('exemptMembersOfSameAccountFromAuth')) {
+        obj['exemptMembersOfSameAccountFromAuth'] = ApiClient.convertToType(data['exemptMembersOfSameAccountFromAuth'], 'String');
+      }
       if (data.hasOwnProperty('linkId')) {
         obj['linkId'] = ApiClient.convertToType(data['linkId'], 'String');
       }
       if (data.hasOwnProperty('pdfFieldHandlingOption')) {
         obj['pdfFieldHandlingOption'] = ApiClient.convertToType(data['pdfFieldHandlingOption'], 'String');
+      }
+      if (data.hasOwnProperty('pdfFieldHandlingPrefillTabPermission')) {
+        obj['pdfFieldHandlingPrefillTabPermission'] = ApiClient.convertToType(data['pdfFieldHandlingPrefillTabPermission'], 'String');
+      }
+      if (data.hasOwnProperty('pdfFieldHandlingStandardInputTabPermission')) {
+        obj['pdfFieldHandlingStandardInputTabPermission'] = ApiClient.convertToType(data['pdfFieldHandlingStandardInputTabPermission'], 'String');
+      }
+      if (data.hasOwnProperty('pdfFieldHandlingStandardTabPermission')) {
+        obj['pdfFieldHandlingStandardTabPermission'] = ApiClient.convertToType(data['pdfFieldHandlingStandardTabPermission'], 'String');
       }
       if (data.hasOwnProperty('recipientAuthRequirements')) {
         obj['recipientAuthRequirements'] = ExternalPrimaryAccountRecipientAuthRequirements.constructFromObject(data['recipientAuthRequirements']);
@@ -99,6 +111,11 @@
   exports.prototype['email'] = undefined;
   /**
    * 
+   * @member {String} exemptMembersOfSameAccountFromAuth
+   */
+  exports.prototype['exemptMembersOfSameAccountFromAuth'] = undefined;
+  /**
+   * 
    * @member {String} linkId
    */
   exports.prototype['linkId'] = undefined;
@@ -107,6 +124,21 @@
    * @member {String} pdfFieldHandlingOption
    */
   exports.prototype['pdfFieldHandlingOption'] = undefined;
+  /**
+   * 
+   * @member {String} pdfFieldHandlingPrefillTabPermission
+   */
+  exports.prototype['pdfFieldHandlingPrefillTabPermission'] = undefined;
+  /**
+   * 
+   * @member {String} pdfFieldHandlingStandardInputTabPermission
+   */
+  exports.prototype['pdfFieldHandlingStandardInputTabPermission'] = undefined;
+  /**
+   * 
+   * @member {String} pdfFieldHandlingStandardTabPermission
+   */
+  exports.prototype['pdfFieldHandlingStandardTabPermission'] = undefined;
   /**
    * 
    * @member {module:model/ExternalPrimaryAccountRecipientAuthRequirements} recipientAuthRequirements

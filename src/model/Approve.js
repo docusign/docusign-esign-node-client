@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ErrorDetails', 'model/LocalePolicyTab', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation'], factory);
+    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/ErrorDetails', 'model/ExtensionData', 'model/LocalePolicyTab', 'model/MergeField', 'model/PropertyMetadata', 'model/SmartContractInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ErrorDetails'), require('./LocalePolicyTab'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./ErrorDetails'), require('./ExtensionData'), require('./LocalePolicyTab'), require('./MergeField'), require('./PropertyMetadata'), require('./SmartContractInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Approve = factory(root.Docusign.ApiClient, root.Docusign.ErrorDetails, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation);
+    root.Docusign.Approve = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.ErrorDetails, root.Docusign.ExtensionData, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation);
   }
-}(this, function(ApiClient, ErrorDetails, LocalePolicyTab, MergeField, PropertyMetadata, SmartContractInformation) {
+}(this, function(ApiClient, ConnectedObjectDetails, ErrorDetails, ExtensionData, LocalePolicyTab, MergeField, PropertyMetadata, SmartContractInformation) {
   'use strict';
 
 
@@ -55,6 +55,12 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('agreementAttribute')) {
+        obj['agreementAttribute'] = ApiClient.convertToType(data['agreementAttribute'], 'String');
+      }
+      if (data.hasOwnProperty('agreementAttributeLocked')) {
+        obj['agreementAttributeLocked'] = ApiClient.convertToType(data['agreementAttributeLocked'], 'String');
+      }
       if (data.hasOwnProperty('anchorAllowWhiteSpaceInCharacters')) {
         obj['anchorAllowWhiteSpaceInCharacters'] = ApiClient.convertToType(data['anchorAllowWhiteSpaceInCharacters'], 'String');
       }
@@ -145,6 +151,9 @@
       if (data.hasOwnProperty('conditionalParentValueMetadata')) {
         obj['conditionalParentValueMetadata'] = PropertyMetadata.constructFromObject(data['conditionalParentValueMetadata']);
       }
+      if (data.hasOwnProperty('connectedObjectDetails')) {
+        obj['connectedObjectDetails'] = ConnectedObjectDetails.constructFromObject(data['connectedObjectDetails']);
+      }
       if (data.hasOwnProperty('customTabId')) {
         obj['customTabId'] = ApiClient.convertToType(data['customTabId'], 'String');
       }
@@ -159,6 +168,9 @@
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('extensionData')) {
+        obj['extensionData'] = ExtensionData.constructFromObject(data['extensionData']);
       }
       if (data.hasOwnProperty('font')) {
         obj['font'] = ApiClient.convertToType(data['font'], 'String');
@@ -247,6 +259,9 @@
       if (data.hasOwnProperty('statusMetadata')) {
         obj['statusMetadata'] = PropertyMetadata.constructFromObject(data['statusMetadata']);
       }
+      if (data.hasOwnProperty('tabFullyQualifiedPath')) {
+        obj['tabFullyQualifiedPath'] = ApiClient.convertToType(data['tabFullyQualifiedPath'], 'String');
+      }
       if (data.hasOwnProperty('tabGroupLabels')) {
         obj['tabGroupLabels'] = ApiClient.convertToType(data['tabGroupLabels'], ['String']);
       }
@@ -301,6 +316,9 @@
       if (data.hasOwnProperty('underlineMetadata')) {
         obj['underlineMetadata'] = PropertyMetadata.constructFromObject(data['underlineMetadata']);
       }
+      if (data.hasOwnProperty('warningDetails')) {
+        obj['warningDetails'] = ErrorDetails.constructFromObject(data['warningDetails']);
+      }
       if (data.hasOwnProperty('width')) {
         obj['width'] = ApiClient.convertToType(data['width'], 'String');
       }
@@ -323,6 +341,16 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} agreementAttribute
+   */
+  exports.prototype['agreementAttribute'] = undefined;
+  /**
+   * 
+   * @member {String} agreementAttributeLocked
+   */
+  exports.prototype['agreementAttributeLocked'] = undefined;
   /**
    * 
    * @member {String} anchorAllowWhiteSpaceInCharacters
@@ -474,6 +502,11 @@
    */
   exports.prototype['conditionalParentValueMetadata'] = undefined;
   /**
+   * 
+   * @member {module:model/ConnectedObjectDetails} connectedObjectDetails
+   */
+  exports.prototype['connectedObjectDetails'] = undefined;
+  /**
    * The DocuSign generated custom tab ID for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.
    * @member {String} customTabId
    */
@@ -498,6 +531,11 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {module:model/ExtensionData} extensionData
+   */
+  exports.prototype['extensionData'] = undefined;
   /**
    * The font to be used for the tab value. Supported Fonts: Arial, Arial, ArialNarrow, Calibri, CourierNew, Garamond, Georgia, Helvetica,   LucidaConsole, Tahoma, TimesNewRoman, Trebuchet, Verdana, MSGothic, MSMincho, Default.
    * @member {String} font
@@ -645,6 +683,11 @@
   exports.prototype['statusMetadata'] = undefined;
   /**
    * 
+   * @member {String} tabFullyQualifiedPath
+   */
+  exports.prototype['tabFullyQualifiedPath'] = undefined;
+  /**
+   * 
    * @member {Array.<String>} tabGroupLabels
    */
   exports.prototype['tabGroupLabels'] = undefined;
@@ -733,6 +776,11 @@
    * @member {module:model/PropertyMetadata} underlineMetadata
    */
   exports.prototype['underlineMetadata'] = undefined;
+  /**
+   * 
+   * @member {module:model/ErrorDetails} warningDetails
+   */
+  exports.prototype['warningDetails'] = undefined;
   /**
    * Width of the tab in pixels.
    * @member {String} width

@@ -486,11 +486,13 @@ You specify the format in which you want to retrieve the data in the `Accept` he
      * This method returns a list of PowerForms that are available to the user.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.count 
      * @param {String} optsOrCallback.fromDate 
      * @param {String} optsOrCallback.order 
      * @param {String} optsOrCallback.orderBy 
      * @param {String} optsOrCallback.searchFields 
      * @param {String} optsOrCallback.searchText 
+     * @param {String} optsOrCallback.startPosition 
      * @param {String} optsOrCallback.toDate 
      * @param {module:api/PowerFormsApi~listPowerFormsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PowerFormsResponse}
@@ -521,11 +523,13 @@ You specify the format in which you want to retrieve the data in the `Accept` he
         'accountId': accountId
       };
       var queryParams = {
+        'count': optsOrCallback['count'],
         'from_date': optsOrCallback['fromDate'],
         'order': optsOrCallback['order'],
         'order_by': optsOrCallback['orderBy'],
         'search_fields': optsOrCallback['searchFields'],
         'search_text': optsOrCallback['searchText'],
+        'start_position': optsOrCallback['startPosition'],
         'to_date': optsOrCallback['toDate']
       };
       var headerParams = {

@@ -67,6 +67,12 @@
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
+      if (data.hasOwnProperty('licenseStatus')) {
+        obj['licenseStatus'] = ApiClient.convertToType(data['licenseStatus'], 'String');
+      }
+      if (data.hasOwnProperty('licenseType')) {
+        obj['licenseType'] = ApiClient.convertToType(data['licenseType'], 'String');
+      }
       if (data.hasOwnProperty('membershipId')) {
         obj['membershipId'] = ApiClient.convertToType(data['membershipId'], 'String');
       }
@@ -112,6 +118,16 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} licenseStatus
+   */
+  exports.prototype['licenseStatus'] = undefined;
+  /**
+   * 
+   * @member {String} licenseType
+   */
+  exports.prototype['licenseType'] = undefined;
   /**
    * 
    * @member {String} membershipId

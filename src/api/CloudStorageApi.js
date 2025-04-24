@@ -357,6 +357,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
      * @param {String} optsOrCallback.order An optional value that sets the direction order used to sort the item list.   Valid values are:   * asc = ascending sort order * desc = descending sort order 
      * @param {String} optsOrCallback.orderBy An optional value that sets the file attribute used to sort the item list.   Valid values are:   * modified * name  
      * @param {String} optsOrCallback.searchText 
+     * @param {String} optsOrCallback.skyDriveSkipToken 
      * @param {String} optsOrCallback.startPosition Indicates the starting point of the first item included in the response set. It uses a 0-based index. The default setting for this is 0.  
      * @param {module:api/CloudStorageApi~listCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExternalFolder}
@@ -411,6 +412,7 @@ Valid values are the service name ("Box") or the numerical serviceId ("4136").
         'order': optsOrCallback['order'],
         'order_by': optsOrCallback['orderBy'],
         'search_text': optsOrCallback['searchText'],
+        'sky_drive_skip_token': optsOrCallback['skyDriveSkipToken'],
         'start_position': optsOrCallback['startPosition']
       };
       var headerParams = {

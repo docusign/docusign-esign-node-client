@@ -100,8 +100,17 @@
       if (data.hasOwnProperty('documentIdGuid')) {
         obj['documentIdGuid'] = ApiClient.convertToType(data['documentIdGuid'], 'String');
       }
+      if (data.hasOwnProperty('documentTemplateAgreementTypeId')) {
+        obj['documentTemplateAgreementTypeId'] = ApiClient.convertToType(data['documentTemplateAgreementTypeId'], 'String');
+      }
+      if (data.hasOwnProperty('documentTemplateId')) {
+        obj['documentTemplateId'] = ApiClient.convertToType(data['documentTemplateId'], 'String');
+      }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('hasDigitalSignature')) {
+        obj['hasDigitalSignature'] = ApiClient.convertToType(data['hasDigitalSignature'], 'String');
       }
       if (data.hasOwnProperty('includeInDownload')) {
         obj['includeInDownload'] = ApiClient.convertToType(data['includeInDownload'], 'String');
@@ -114,6 +123,12 @@
       }
       if (data.hasOwnProperty('isDocGenDocument')) {
         obj['isDocGenDocument'] = ApiClient.convertToType(data['isDocGenDocument'], 'String');
+      }
+      if (data.hasOwnProperty('isExternallyAvailable')) {
+        obj['isExternallyAvailable'] = ApiClient.convertToType(data['isExternallyAvailable'], 'String');
+      }
+      if (data.hasOwnProperty('isFlattened')) {
+        obj['isFlattened'] = ApiClient.convertToType(data['isFlattened'], 'String');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -228,10 +243,25 @@
    */
   exports.prototype['documentIdGuid'] = undefined;
   /**
+   * 
+   * @member {String} documentTemplateAgreementTypeId
+   */
+  exports.prototype['documentTemplateAgreementTypeId'] = undefined;
+  /**
+   * 
+   * @member {String} documentTemplateId
+   */
+  exports.prototype['documentTemplateId'] = undefined;
+  /**
    * Array or errors.
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {String} hasDigitalSignature
+   */
+  exports.prototype['hasDigitalSignature'] = undefined;
   /**
    * 
    * @member {String} includeInDownload
@@ -252,6 +282,16 @@
    * @member {String} isDocGenDocument
    */
   exports.prototype['isDocGenDocument'] = undefined;
+  /**
+   * 
+   * @member {String} isExternallyAvailable
+   */
+  exports.prototype['isExternallyAvailable'] = undefined;
+  /**
+   * 
+   * @member {String} isFlattened
+   */
+  exports.prototype['isFlattened'] = undefined;
   /**
    * 
    * @member {String} name

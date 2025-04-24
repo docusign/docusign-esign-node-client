@@ -771,6 +771,7 @@ To return additional user information that details the last login date, login st
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.additionalInfo When set to **true**, the full list of user information is returned for each user in the account.
      * @param {String} optsOrCallback.email 
+     * @param {String} optsOrCallback.includeLicense 
      * @param {module:api/UsersApi~getInformationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserInformation}
      */
@@ -807,7 +808,8 @@ To return additional user information that details the last login date, login st
       };
       var queryParams = {
         'additional_info': optsOrCallback['additionalInfo'],
-        'email': optsOrCallback['email']
+        'email': optsOrCallback['email'],
+        'include_license': optsOrCallback['includeLicense']
       };
       var headerParams = {
       };
@@ -1206,6 +1208,7 @@ The response returns the list of users for the account along with the informatio
      * @param {String} optsOrCallback.email 
      * @param {String} optsOrCallback.emailSubstring Filters the returned user records by the email address or a sub-string of email address.
      * @param {String} optsOrCallback.groupId Filters user records returned by one or more group Id's.
+     * @param {String} optsOrCallback.includeLicense 
      * @param {String} optsOrCallback.includeUsersettingsForCsv 
      * @param {String} optsOrCallback.loginStatus 
      * @param {String} optsOrCallback.notGroupId 
@@ -1248,6 +1251,7 @@ The response returns the list of users for the account along with the informatio
         'email': optsOrCallback['email'],
         'email_substring': optsOrCallback['emailSubstring'],
         'group_id': optsOrCallback['groupId'],
+        'include_license': optsOrCallback['includeLicense'],
         'include_usersettings_for_csv': optsOrCallback['includeUsersettingsForCsv'],
         'login_status': optsOrCallback['loginStatus'],
         'not_group_id': optsOrCallback['notGroupId'],

@@ -109,6 +109,12 @@
       if (data.hasOwnProperty('isAlternateAdmin')) {
         obj['isAlternateAdmin'] = ApiClient.convertToType(data['isAlternateAdmin'], 'String');
       }
+      if (data.hasOwnProperty('isManagedByScim')) {
+        obj['isManagedByScim'] = ApiClient.convertToType(data['isManagedByScim'], 'String');
+      }
+      if (data.hasOwnProperty('isMembershipManagedByScim')) {
+        obj['isMembershipManagedByScim'] = ApiClient.convertToType(data['isMembershipManagedByScim'], 'String');
+      }
       if (data.hasOwnProperty('isNAREnabled')) {
         obj['isNAREnabled'] = ApiClient.convertToType(data['isNAREnabled'], 'String');
       }
@@ -120,6 +126,12 @@
       }
       if (data.hasOwnProperty('lastName')) {
         obj['lastName'] = ApiClient.convertToType(data['lastName'], 'String');
+      }
+      if (data.hasOwnProperty('licenseStatus')) {
+        obj['licenseStatus'] = ApiClient.convertToType(data['licenseStatus'], 'String');
+      }
+      if (data.hasOwnProperty('licenseType')) {
+        obj['licenseType'] = ApiClient.convertToType(data['licenseType'], 'String');
       }
       if (data.hasOwnProperty('loginStatus')) {
         obj['loginStatus'] = ApiClient.convertToType(data['loginStatus'], 'String');
@@ -283,6 +295,16 @@
   exports.prototype['isAlternateAdmin'] = undefined;
   /**
    * 
+   * @member {String} isManagedByScim
+   */
+  exports.prototype['isManagedByScim'] = undefined;
+  /**
+   * 
+   * @member {String} isMembershipManagedByScim
+   */
+  exports.prototype['isMembershipManagedByScim'] = undefined;
+  /**
+   * 
    * @member {String} isNAREnabled
    */
   exports.prototype['isNAREnabled'] = undefined;
@@ -301,6 +323,16 @@
    * @member {String} lastName
    */
   exports.prototype['lastName'] = undefined;
+  /**
+   * 
+   * @member {String} licenseStatus
+   */
+  exports.prototype['licenseStatus'] = undefined;
+  /**
+   * 
+   * @member {String} licenseType
+   */
+  exports.prototype['licenseType'] = undefined;
   /**
    * Shows the current status of the user's password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
    * @member {String} loginStatus
