@@ -957,6 +957,57 @@
   };
 
   /**
+   * @param clientId OAuth2 client ID: Identifies the client making the request.
+   * Client applications may be scoped to a limited set of system access.
+   * @param clientSecret the secret key you generated when you set up the integration in DocuSign Admin console.
+   * @param refreshToken The refresh token that you received from a previous <i>generateAccessToken</i> or <i>refreshAccessToken</i> callback.
+   * @return OAuthToken object.xx
+   */
+  exports.prototype.refreshAccessToken = function(clientId, clientSecret, refreshToken, callback) {
+    if (!clientId) throw new Error('Error clientId is required', null);
+    if (!clientSecret) throw new Error('Error clientSecret is required', null);
+    if (!refreshToken) throw new Error('Error refreshToken is required', null);
+
+    var clientString = clientId + ":" + clientSecret,
+      postData = {
+        "grant_type": "refresh_token",
+        "refresh_token": refreshToken,
+      },
+      headers = {
+        "Authorization": "Basic " + (new Buffer(clientString).toString('base64')),
+        "Cache-Control": "no-store",
+        "Pragma": "no-cache"
+      },
+      OAuthToken = require('./OAuth').OAuthToken,
+      request = superagent.post("https://" + this.getOAuthBasePath() + "/oauth/token")
+        .send(postData)
+        .set(headers)
+        .type("application/x-www-form-urlencoded");
+
+    if (!callback) {
+      return new Promise(function (resolve, reject) {
+        request.end(function (err, res) {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(OAuthToken.constructFromObject(res.body))
+          }
+        });
+      });
+    } else {
+      request.end(function (err, res) {
+        var OAuthToken;
+        if (err) {
+          return callback(err, res);
+        } else {
+          OAuthToken = require('./OAuth').OAuthToken;
+          return callback(err, OAuthToken.constructFromObject(res.body))
+        }
+      });
+    }
+  };
+
+  /**
    * @param accessToken the bearer token to use to authenticate for this call.
    * @return OAuth UserInfo model
    */
