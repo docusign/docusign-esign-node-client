@@ -2495,6 +2495,7 @@ template specified by `templateId`.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.includeAgreementType 
      * @param {String} optsOrCallback.includeTabs 
      * @param {module:api/TemplatesApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
@@ -2531,6 +2532,7 @@ template specified by `templateId`.
         'templateId': templateId
       };
       var queryParams = {
+        'include_agreement_type': optsOrCallback['includeAgreementType'],
         'include_tabs': optsOrCallback['includeTabs']
       };
       var headerParams = {

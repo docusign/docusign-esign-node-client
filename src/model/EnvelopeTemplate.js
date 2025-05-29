@@ -219,9 +219,6 @@
       if (data.hasOwnProperty('hasComments')) {
         obj['hasComments'] = ApiClient.convertToType(data['hasComments'], 'String');
       }
-      if (data.hasOwnProperty('hasDocumentTemplateLibrary')) {
-        obj['hasDocumentTemplateLibrary'] = ApiClient.convertToType(data['hasDocumentTemplateLibrary'], 'String');
-      }
       if (data.hasOwnProperty('hasFormDataChanged')) {
         obj['hasFormDataChanged'] = ApiClient.convertToType(data['hasFormDataChanged'], 'String');
       }
@@ -648,11 +645,6 @@
    * @member {String} hasComments
    */
   exports.prototype['hasComments'] = undefined;
-  /**
-   * 
-   * @member {String} hasDocumentTemplateLibrary
-   */
-  exports.prototype['hasDocumentTemplateLibrary'] = undefined;
   /**
    * 
    * @member {String} hasFormDataChanged

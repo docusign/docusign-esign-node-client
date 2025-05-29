@@ -4057,7 +4057,7 @@ stream.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {String} recipientId The ID of the recipient being accessed.
-     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
+     * @param {String} langCode The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.langCode2 The simple type enumeration the language used in the response. The supported languages, with the language value shown in parenthesis, are:Arabic (ar), Armenian (hy), Bulgarian (bg), Czech (cs), Chinese Simplified (zh_CN), Chinese Traditional (zh_TW), Croatian (hr), Danish (da), Dutch (nl), English US (en), English UK (en_GB), Estonian (et), Farsi (fa), Finnish (fi), French (fr), French Canada (fr_CA), German (de), Greek (el), Hebrew (he), Hindi (hi), Hungarian (hu), Bahasa Indonesia (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv), Lithuanian (lt), Bahasa Melayu (ms), Norwegian (no), Polish (pl), Portuguese (pt), Portuguese Brazil (pt_BR), Romanian (ro), Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),Spanish Latin America (es_MX), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk) and Vietnamese (vi). Additionally, the value can be set to ï¿½browserï¿½ to automatically detect the browser language being used by the viewer and display the disclosure in that language.
      * @param {module:api/EnvelopesApi~getConsumerDisclosureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -6129,10 +6129,19 @@ Older envelopes might only have chromed images. If getting the non-chromed image
      * Gets the envelope audit events for the specified envelope.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
+     * @param {String} optsOrCallback.locale Locale setting for the response, e.g., 'en-US'.
      * @param {module:api/EnvelopesApi~listAuditEventsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeAuditEventResponse}
      */
-    this.listAuditEvents = function(accountId, envelopeId, callback) {
+    this.listAuditEvents = function(accountId, envelopeId, optsOrCallback, callback) {
+      optsOrCallback = optsOrCallback || {};
+
+      if (typeof optsOrCallback === 'function') {
+        callback = optsOrCallback;
+        optsOrCallback = {};
+      }
+
       var postBody = null;
 
       // verify the required parameter 'accountId' is set
@@ -6157,6 +6166,7 @@ Older envelopes might only have chromed images. If getting the non-chromed image
         'envelopeId': envelopeId
       };
       var queryParams = {
+        'locale': optsOrCallback['locale']
       };
       var headerParams = {
       };
@@ -6317,6 +6327,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.documentsByUserid 
+     * @param {String} optsOrCallback.includeAgreementType 
      * @param {String} optsOrCallback.includeDocgenFormfields 
      * @param {String} optsOrCallback.includeDocumentSize 
      * @param {String} optsOrCallback.includeMetadata 
@@ -6359,6 +6370,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
       };
       var queryParams = {
         'documents_by_userid': optsOrCallback['documentsByUserid'],
+        'include_agreement_type': optsOrCallback['includeAgreementType'],
         'include_docgen_formfields': optsOrCallback['includeDocgenFormfields'],
         'include_document_size': optsOrCallback['includeDocumentSize'],
         'include_metadata': optsOrCallback['includeMetadata'],

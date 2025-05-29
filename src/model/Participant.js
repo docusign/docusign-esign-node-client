@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AuthenticationStatus', 'model/ConsentDetails', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/UserInfo'], factory);
+    define(['ApiClient', 'model/AuthenticationStatus', 'model/ConsentDetails', 'model/DocumentVisibility', 'model/ErrorDetails', 'model/FeatureAvailableMetadata', 'model/IdCheckInformationInput', 'model/PropertyMetadata', 'model/RecipientAdditionalNotification', 'model/RecipientAttachment', 'model/RecipientEmailNotification', 'model/RecipientIdentityVerification', 'model/RecipientPhoneAuthentication', 'model/RecipientPhoneNumber', 'model/RecipientProofFile', 'model/RecipientSMSAuthentication', 'model/SocialAuthentication', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./ConsentDetails'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
+    module.exports = factory(require('../ApiClient'), require('./AuthenticationStatus'), require('./ConsentDetails'), require('./DocumentVisibility'), require('./ErrorDetails'), require('./FeatureAvailableMetadata'), require('./IdCheckInformationInput'), require('./PropertyMetadata'), require('./RecipientAdditionalNotification'), require('./RecipientAttachment'), require('./RecipientEmailNotification'), require('./RecipientIdentityVerification'), require('./RecipientPhoneAuthentication'), require('./RecipientPhoneNumber'), require('./RecipientProofFile'), require('./RecipientSMSAuthentication'), require('./SocialAuthentication'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Participant = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.ConsentDetails, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
+    root.Docusign.Participant = factory(root.Docusign.ApiClient, root.Docusign.AuthenticationStatus, root.Docusign.ConsentDetails, root.Docusign.DocumentVisibility, root.Docusign.ErrorDetails, root.Docusign.FeatureAvailableMetadata, root.Docusign.IdCheckInformationInput, root.Docusign.PropertyMetadata, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientAttachment, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientIdentityVerification, root.Docusign.RecipientPhoneAuthentication, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientProofFile, root.Docusign.RecipientSMSAuthentication, root.Docusign.SocialAuthentication, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, AuthenticationStatus, ConsentDetails, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
+}(this, function(ApiClient, AuthenticationStatus, ConsentDetails, DocumentVisibility, ErrorDetails, FeatureAvailableMetadata, IdCheckInformationInput, PropertyMetadata, RecipientAdditionalNotification, RecipientAttachment, RecipientEmailNotification, RecipientIdentityVerification, RecipientPhoneAuthentication, RecipientPhoneNumber, RecipientProofFile, RecipientSMSAuthentication, SocialAuthentication, UserInfo) {
   'use strict';
 
 
@@ -200,6 +200,9 @@
       }
       if (data.hasOwnProperty('phoneNumber')) {
         obj['phoneNumber'] = RecipientPhoneNumber.constructFromObject(data['phoneNumber']);
+      }
+      if (data.hasOwnProperty('proofFile')) {
+        obj['proofFile'] = RecipientProofFile.constructFromObject(data['proofFile']);
       }
       if (data.hasOwnProperty('recipientAttachments')) {
         obj['recipientAttachments'] = ApiClient.convertToType(data['recipientAttachments'], [RecipientAttachment]);
@@ -534,6 +537,11 @@
    * @member {module:model/RecipientPhoneNumber} phoneNumber
    */
   exports.prototype['phoneNumber'] = undefined;
+  /**
+   * 
+   * @member {module:model/RecipientProofFile} proofFile
+   */
+  exports.prototype['proofFile'] = undefined;
   /**
    * Reserved:
    * @member {Array.<module:model/RecipientAttachment>} recipientAttachments

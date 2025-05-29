@@ -67,6 +67,9 @@
       if (data.hasOwnProperty('display')) {
         obj['display'] = ApiClient.convertToType(data['display'], 'String');
       }
+      if (data.hasOwnProperty('docGenDocumentStatus')) {
+        obj['docGenDocumentStatus'] = ApiClient.convertToType(data['docGenDocumentStatus'], 'String');
+      }
       if (data.hasOwnProperty('docGenFormFields')) {
         obj['docGenFormFields'] = ApiClient.convertToType(data['docGenFormFields'], [DocGenFormField]);
       }
@@ -78,9 +81,6 @@
       }
       if (data.hasOwnProperty('documentId')) {
         obj['documentId'] = ApiClient.convertToType(data['documentId'], 'String');
-      }
-      if (data.hasOwnProperty('documentTemplateAgreementTypeId')) {
-        obj['documentTemplateAgreementTypeId'] = ApiClient.convertToType(data['documentTemplateAgreementTypeId'], 'String');
       }
       if (data.hasOwnProperty('documentTemplateId')) {
         obj['documentTemplateId'] = ApiClient.convertToType(data['documentTemplateId'], 'String');
@@ -171,6 +171,11 @@
   exports.prototype['display'] = undefined;
   /**
    * 
+   * @member {String} docGenDocumentStatus
+   */
+  exports.prototype['docGenDocumentStatus'] = undefined;
+  /**
+   * 
    * @member {Array.<module:model/DocGenFormField>} docGenFormFields
    */
   exports.prototype['docGenFormFields'] = undefined;
@@ -189,11 +194,6 @@
    * @member {String} documentId
    */
   exports.prototype['documentId'] = undefined;
-  /**
-   * 
-   * @member {String} documentTemplateAgreementTypeId
-   */
-  exports.prototype['documentTemplateAgreementTypeId'] = undefined;
   /**
    * 
    * @member {String} documentTemplateId

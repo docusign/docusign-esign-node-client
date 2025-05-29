@@ -136,6 +136,9 @@
       if (data.hasOwnProperty('isDowngrade')) {
         obj['isDowngrade'] = ApiClient.convertToType(data['isDowngrade'], 'String');
       }
+      if (data.hasOwnProperty('isFreeToTrialEligible')) {
+        obj['isFreeToTrialEligible'] = ApiClient.convertToType(data['isFreeToTrialEligible'], 'String');
+      }
       if (data.hasOwnProperty('paymentMethod')) {
         obj['paymentMethod'] = ApiClient.convertToType(data['paymentMethod'], 'String');
       }
@@ -311,6 +314,11 @@
    * @member {String} isDowngrade
    */
   exports.prototype['isDowngrade'] = undefined;
+  /**
+   * 
+   * @member {String} isFreeToTrialEligible
+   */
+  exports.prototype['isFreeToTrialEligible'] = undefined;
   /**
    * 
    * @member {String} paymentMethod
