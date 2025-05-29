@@ -58,6 +58,12 @@
       if (data.hasOwnProperty('addedRecipientIds')) {
         obj['addedRecipientIds'] = ApiClient.convertToType(data['addedRecipientIds'], ['String']);
       }
+      if (data.hasOwnProperty('agreementType')) {
+        obj['agreementType'] = ApiClient.convertToType(data['agreementType'], 'String');
+      }
+      if (data.hasOwnProperty('agreementTypeSource')) {
+        obj['agreementTypeSource'] = ApiClient.convertToType(data['agreementTypeSource'], 'String');
+      }
       if (data.hasOwnProperty('attachmentTabId')) {
         obj['attachmentTabId'] = ApiClient.convertToType(data['attachmentTabId'], 'String');
       }
@@ -99,9 +105,6 @@
       }
       if (data.hasOwnProperty('documentIdGuid')) {
         obj['documentIdGuid'] = ApiClient.convertToType(data['documentIdGuid'], 'String');
-      }
-      if (data.hasOwnProperty('documentTemplateAgreementTypeId')) {
-        obj['documentTemplateAgreementTypeId'] = ApiClient.convertToType(data['documentTemplateAgreementTypeId'], 'String');
       }
       if (data.hasOwnProperty('documentTemplateId')) {
         obj['documentTemplateId'] = ApiClient.convertToType(data['documentTemplateId'], 'String');
@@ -174,6 +177,16 @@
   exports.prototype['addedRecipientIds'] = undefined;
   /**
    * 
+   * @member {String} agreementType
+   */
+  exports.prototype['agreementType'] = undefined;
+  /**
+   * 
+   * @member {String} agreementTypeSource
+   */
+  exports.prototype['agreementTypeSource'] = undefined;
+  /**
+   * 
    * @member {String} attachmentTabId
    */
   exports.prototype['attachmentTabId'] = undefined;
@@ -242,11 +255,6 @@
    * @member {String} documentIdGuid
    */
   exports.prototype['documentIdGuid'] = undefined;
-  /**
-   * 
-   * @member {String} documentTemplateAgreementTypeId
-   */
-  exports.prototype['documentTemplateAgreementTypeId'] = undefined;
   /**
    * 
    * @member {String} documentTemplateId

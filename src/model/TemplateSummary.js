@@ -67,9 +67,6 @@
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
       }
-      if (data.hasOwnProperty('hasDocumentTemplateLibrary')) {
-        obj['hasDocumentTemplateLibrary'] = ApiClient.convertToType(data['hasDocumentTemplateLibrary'], 'String');
-      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -106,11 +103,6 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
-  /**
-   * 
-   * @member {String} hasDocumentTemplateLibrary
-   */
-  exports.prototype['hasDocumentTemplateLibrary'] = undefined;
   /**
    * 
    * @member {String} name

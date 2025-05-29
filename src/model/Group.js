@@ -74,13 +74,16 @@
         obj['groupType'] = ApiClient.convertToType(data['groupType'], 'String');
       }
       if (data.hasOwnProperty('isManagedByScim')) {
-        obj['isManagedByScim'] = ApiClient.convertToType(data['isManagedByScim'], 'String');
+        obj['isManagedByScim'] = ApiClient.convertToType(data['isManagedByScim'], 'Boolean');
       }
       if (data.hasOwnProperty('lastModifiedOn')) {
         obj['lastModifiedOn'] = ApiClient.convertToType(data['lastModifiedOn'], 'String');
       }
       if (data.hasOwnProperty('permissionProfileId')) {
         obj['permissionProfileId'] = ApiClient.convertToType(data['permissionProfileId'], 'String');
+      }
+      if (data.hasOwnProperty('userGroupType')) {
+        obj['userGroupType'] = ApiClient.convertToType(data['userGroupType'], 'String');
       }
       if (data.hasOwnProperty('users')) {
         obj['users'] = ApiClient.convertToType(data['users'], [UserInfo]);
@@ -124,7 +127,7 @@
   exports.prototype['groupType'] = undefined;
   /**
    * 
-   * @member {String} isManagedByScim
+   * @member {Boolean} isManagedByScim
    */
   exports.prototype['isManagedByScim'] = undefined;
   /**
@@ -137,6 +140,11 @@
    * @member {String} permissionProfileId
    */
   exports.prototype['permissionProfileId'] = undefined;
+  /**
+   * 
+   * @member {String} userGroupType
+   */
+  exports.prototype['userGroupType'] = undefined;
   /**
    * 
    * @member {Array.<module:model/UserInfo>} users
