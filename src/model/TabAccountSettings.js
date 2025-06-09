@@ -192,6 +192,12 @@
       if (data.hasOwnProperty('textTabsMetadata')) {
         obj['textTabsMetadata'] = SettingsMetadata.constructFromObject(data['textTabsMetadata']);
       }
+      if (data.hasOwnProperty('uriTabsEnabled')) {
+        obj['uriTabsEnabled'] = ApiClient.convertToType(data['uriTabsEnabled'], 'String');
+      }
+      if (data.hasOwnProperty('uriTabsMetadata')) {
+        obj['uriTabsMetadata'] = SettingsMetadata.constructFromObject(data['uriTabsMetadata']);
+      }
     }
     return obj;
   }
@@ -426,6 +432,16 @@
    * @member {module:model/SettingsMetadata} textTabsMetadata
    */
   exports.prototype['textTabsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} uriTabsEnabled
+   */
+  exports.prototype['uriTabsEnabled'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} uriTabsMetadata
+   */
+  exports.prototype['uriTabsMetadata'] = undefined;
 
 
 
