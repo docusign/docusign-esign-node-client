@@ -1114,6 +1114,12 @@
       if (data.hasOwnProperty('enableAIContractReviewMetadata')) {
         obj['enableAIContractReviewMetadata'] = SettingsMetadata.constructFromObject(data['enableAIContractReviewMetadata']);
       }
+      if (data.hasOwnProperty('enableAISenderMessage')) {
+        obj['enableAISenderMessage'] = ApiClient.convertToType(data['enableAISenderMessage'], 'String');
+      }
+      if (data.hasOwnProperty('enableAISenderMessageMetadata')) {
+        obj['enableAISenderMessageMetadata'] = SettingsMetadata.constructFromObject(data['enableAISenderMessageMetadata']);
+      }
       if (data.hasOwnProperty('enableAISuggestedFieldsAdvanced')) {
         obj['enableAISuggestedFieldsAdvanced'] = ApiClient.convertToType(data['enableAISuggestedFieldsAdvanced'], 'String');
       }
@@ -4269,6 +4275,16 @@
    * @member {module:model/SettingsMetadata} enableAIContractReviewMetadata
    */
   exports.prototype['enableAIContractReviewMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableAISenderMessage
+   */
+  exports.prototype['enableAISenderMessage'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableAISenderMessageMetadata
+   */
+  exports.prototype['enableAISenderMessageMetadata'] = undefined;
   /**
    * 
    * @member {String} enableAISuggestedFieldsAdvanced
