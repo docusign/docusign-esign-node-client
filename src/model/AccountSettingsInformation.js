@@ -919,6 +919,12 @@
       if (data.hasOwnProperty('defaultSigningResponsiveViewMetadata')) {
         obj['defaultSigningResponsiveViewMetadata'] = SettingsMetadata.constructFromObject(data['defaultSigningResponsiveViewMetadata']);
       }
+      if (data.hasOwnProperty('defaultSigningResponsiveViewUseGrade')) {
+        obj['defaultSigningResponsiveViewUseGrade'] = ApiClient.convertToType(data['defaultSigningResponsiveViewUseGrade'], 'String');
+      }
+      if (data.hasOwnProperty('defaultSigningResponsiveViewUseGradeMetadata')) {
+        obj['defaultSigningResponsiveViewUseGradeMetadata'] = SettingsMetadata.constructFromObject(data['defaultSigningResponsiveViewUseGradeMetadata']);
+      }
       if (data.hasOwnProperty('defaultToAdvancedEnvelopesFilterForm')) {
         obj['defaultToAdvancedEnvelopesFilterForm'] = ApiClient.convertToType(data['defaultToAdvancedEnvelopesFilterForm'], 'String');
       }
@@ -1285,6 +1291,18 @@
       if (data.hasOwnProperty('enableDSigIDVerificationPremierPensMetadata')) {
         obj['enableDSigIDVerificationPremierPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigIDVerificationPremierPensMetadata']);
       }
+      if (data.hasOwnProperty('enableDSigPenGroupEuQes')) {
+        obj['enableDSigPenGroupEuQes'] = ApiClient.convertToType(data['enableDSigPenGroupEuQes'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigPenGroupEuQesMetadata')) {
+        obj['enableDSigPenGroupEuQesMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigPenGroupEuQesMetadata']);
+      }
+      if (data.hasOwnProperty('enableDSigPlgEuQesPens')) {
+        obj['enableDSigPlgEuQesPens'] = ApiClient.convertToType(data['enableDSigPlgEuQesPens'], 'String');
+      }
+      if (data.hasOwnProperty('enableDSigPlgEuQesPensMetadata')) {
+        obj['enableDSigPlgEuQesPensMetadata'] = SettingsMetadata.constructFromObject(data['enableDSigPlgEuQesPensMetadata']);
+      }
       if (data.hasOwnProperty('enableDSPro')) {
         obj['enableDSPro'] = ApiClient.convertToType(data['enableDSPro'], 'String');
       }
@@ -1567,11 +1585,11 @@
       if (data.hasOwnProperty('enableSignerAttachmentsMetadata')) {
         obj['enableSignerAttachmentsMetadata'] = SettingsMetadata.constructFromObject(data['enableSignerAttachmentsMetadata']);
       }
-      if (data.hasOwnProperty('EnableSigningAIFeaturesPlan')) {
-        obj['EnableSigningAIFeaturesPlan'] = ApiClient.convertToType(data['EnableSigningAIFeaturesPlan'], 'String');
+      if (data.hasOwnProperty('enableSigningAIFeaturesPlan')) {
+        obj['enableSigningAIFeaturesPlan'] = ApiClient.convertToType(data['enableSigningAIFeaturesPlan'], 'String');
       }
-      if (data.hasOwnProperty('EnableSigningAIFeaturesPlanMetadata')) {
-        obj['EnableSigningAIFeaturesPlanMetadata'] = SettingsMetadata.constructFromObject(data['EnableSigningAIFeaturesPlanMetadata']);
+      if (data.hasOwnProperty('enableSigningAIFeaturesPlanMetadata')) {
+        obj['enableSigningAIFeaturesPlanMetadata'] = SettingsMetadata.constructFromObject(data['enableSigningAIFeaturesPlanMetadata']);
       }
       if (data.hasOwnProperty('enableSigningAIFeaturesSetting')) {
         obj['enableSigningAIFeaturesSetting'] = ApiClient.convertToType(data['enableSigningAIFeaturesSetting'], 'String');
@@ -3952,6 +3970,16 @@
   exports.prototype['defaultSigningResponsiveViewMetadata'] = undefined;
   /**
    * 
+   * @member {String} defaultSigningResponsiveViewUseGrade
+   */
+  exports.prototype['defaultSigningResponsiveViewUseGrade'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} defaultSigningResponsiveViewUseGradeMetadata
+   */
+  exports.prototype['defaultSigningResponsiveViewUseGradeMetadata'] = undefined;
+  /**
+   * 
    * @member {String} defaultToAdvancedEnvelopesFilterForm
    */
   exports.prototype['defaultToAdvancedEnvelopesFilterForm'] = undefined;
@@ -4562,6 +4590,26 @@
   exports.prototype['enableDSigIDVerificationPremierPensMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableDSigPenGroupEuQes
+   */
+  exports.prototype['enableDSigPenGroupEuQes'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigPenGroupEuQesMetadata
+   */
+  exports.prototype['enableDSigPenGroupEuQesMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableDSigPlgEuQesPens
+   */
+  exports.prototype['enableDSigPlgEuQesPens'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableDSigPlgEuQesPensMetadata
+   */
+  exports.prototype['enableDSigPlgEuQesPensMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableDSPro
    */
   exports.prototype['enableDSPro'] = undefined;
@@ -5032,14 +5080,14 @@
   exports.prototype['enableSignerAttachmentsMetadata'] = undefined;
   /**
    * 
-   * @member {String} EnableSigningAIFeaturesPlan
+   * @member {String} enableSigningAIFeaturesPlan
    */
-  exports.prototype['EnableSigningAIFeaturesPlan'] = undefined;
+  exports.prototype['enableSigningAIFeaturesPlan'] = undefined;
   /**
    * 
-   * @member {module:model/SettingsMetadata} EnableSigningAIFeaturesPlanMetadata
+   * @member {module:model/SettingsMetadata} enableSigningAIFeaturesPlanMetadata
    */
-  exports.prototype['EnableSigningAIFeaturesPlanMetadata'] = undefined;
+  exports.prototype['enableSigningAIFeaturesPlanMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSigningAIFeaturesSetting

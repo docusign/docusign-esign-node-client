@@ -136,6 +136,9 @@
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
+      if (data.hasOwnProperty('pausePublish')) {
+        obj['pausePublish'] = ApiClient.convertToType(data['pausePublish'], 'String');
+      }
       if (data.hasOwnProperty('recipientEvents')) {
         obj['recipientEvents'] = ApiClient.convertToType(data['recipientEvents'], ['String']);
       }
@@ -323,6 +326,11 @@
    * @member {String} password
    */
   exports.prototype['password'] = undefined;
+  /**
+   * 
+   * @member {String} pausePublish
+   */
+  exports.prototype['pausePublish'] = undefined;
   /**
    * A comma separated list of ï¿½Recipientï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.
    * @member {Array.<String>} recipientEvents
