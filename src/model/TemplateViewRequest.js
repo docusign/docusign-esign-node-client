@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/TemplateViewSettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./TemplateViewSettings'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateViewRequest = factory(root.Docusign.ApiClient);
+    root.Docusign.TemplateViewRequest = factory(root.Docusign.ApiClient, root.Docusign.TemplateViewSettings);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, TemplateViewSettings) {
   'use strict';
 
 
@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('returnUrl')) {
         obj['returnUrl'] = ApiClient.convertToType(data['returnUrl'], 'String');
       }
+      if (data.hasOwnProperty('settings')) {
+        obj['settings'] = TemplateViewSettings.constructFromObject(data['settings']);
+      }
       if (data.hasOwnProperty('viewAccess')) {
         obj['viewAccess'] = ApiClient.convertToType(data['viewAccess'], 'String');
       }
@@ -69,6 +72,11 @@
    * @member {String} returnUrl
    */
   exports.prototype['returnUrl'] = undefined;
+  /**
+   * 
+   * @member {module:model/TemplateViewSettings} settings
+   */
+  exports.prototype['settings'] = undefined;
   /**
    * 
    * @member {String} viewAccess
