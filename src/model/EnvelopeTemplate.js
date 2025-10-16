@@ -246,6 +246,9 @@
       if (data.hasOwnProperty('isSignatureProviderEnvelope')) {
         obj['isSignatureProviderEnvelope'] = ApiClient.convertToType(data['isSignatureProviderEnvelope'], 'String');
       }
+      if (data.hasOwnProperty('isTicketRelatedEnvelope')) {
+        obj['isTicketRelatedEnvelope'] = ApiClient.convertToType(data['isTicketRelatedEnvelope'], 'String');
+      }
       if (data.hasOwnProperty('lastModified')) {
         obj['lastModified'] = ApiClient.convertToType(data['lastModified'], 'String');
       }
@@ -690,6 +693,11 @@
    * @member {String} isSignatureProviderEnvelope
    */
   exports.prototype['isSignatureProviderEnvelope'] = undefined;
+  /**
+   * 
+   * @member {String} isTicketRelatedEnvelope
+   */
+  exports.prototype['isTicketRelatedEnvelope'] = undefined;
   /**
    * 
    * @member {String} lastModified

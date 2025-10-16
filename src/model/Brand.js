@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BrandEmailContent', 'model/BrandLink', 'model/BrandLogos', 'model/BrandResourceUrls', 'model/ErrorDetails', 'model/NameValue'], factory);
+    define(['ApiClient', 'model/BrandEmailContent', 'model/BrandLink', 'model/BrandLogoIds', 'model/BrandLogos', 'model/BrandResourceUrls', 'model/ErrorDetails', 'model/NameValue'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BrandEmailContent'), require('./BrandLink'), require('./BrandLogos'), require('./BrandResourceUrls'), require('./ErrorDetails'), require('./NameValue'));
+    module.exports = factory(require('../ApiClient'), require('./BrandEmailContent'), require('./BrandLink'), require('./BrandLogoIds'), require('./BrandLogos'), require('./BrandResourceUrls'), require('./ErrorDetails'), require('./NameValue'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.Brand = factory(root.Docusign.ApiClient, root.Docusign.BrandEmailContent, root.Docusign.BrandLink, root.Docusign.BrandLogos, root.Docusign.BrandResourceUrls, root.Docusign.ErrorDetails, root.Docusign.NameValue);
+    root.Docusign.Brand = factory(root.Docusign.ApiClient, root.Docusign.BrandEmailContent, root.Docusign.BrandLink, root.Docusign.BrandLogoIds, root.Docusign.BrandLogos, root.Docusign.BrandResourceUrls, root.Docusign.ErrorDetails, root.Docusign.NameValue);
   }
-}(this, function(ApiClient, BrandEmailContent, BrandLink, BrandLogos, BrandResourceUrls, ErrorDetails, NameValue) {
+}(this, function(ApiClient, BrandEmailContent, BrandLink, BrandLogoIds, BrandLogos, BrandResourceUrls, ErrorDetails, NameValue) {
   'use strict';
 
 
@@ -96,6 +96,9 @@
       }
       if (data.hasOwnProperty('links')) {
         obj['links'] = ApiClient.convertToType(data['links'], [BrandLink]);
+      }
+      if (data.hasOwnProperty('logoIds')) {
+        obj['logoIds'] = BrandLogoIds.constructFromObject(data['logoIds']);
       }
       if (data.hasOwnProperty('logos')) {
         obj['logos'] = BrandLogos.constructFromObject(data['logos']);
@@ -180,6 +183,11 @@
    * @member {Array.<module:model/BrandLink>} links
    */
   exports.prototype['links'] = undefined;
+  /**
+   * 
+   * @member {module:model/BrandLogoIds} logoIds
+   */
+  exports.prototype['logoIds'] = undefined;
   /**
    * The URIs for retrieving the logos that are associated with the brand.
    * @member {module:model/BrandLogos} logos

@@ -213,6 +213,9 @@
       if (data.hasOwnProperty('isSignatureProviderEnvelope')) {
         obj['isSignatureProviderEnvelope'] = ApiClient.convertToType(data['isSignatureProviderEnvelope'], 'String');
       }
+      if (data.hasOwnProperty('isTicketRelatedEnvelope')) {
+        obj['isTicketRelatedEnvelope'] = ApiClient.convertToType(data['isTicketRelatedEnvelope'], 'String');
+      }
       if (data.hasOwnProperty('lastModifiedDateTime')) {
         obj['lastModifiedDateTime'] = ApiClient.convertToType(data['lastModifiedDateTime'], 'String');
       }
@@ -563,6 +566,11 @@
    * @member {String} isSignatureProviderEnvelope
    */
   exports.prototype['isSignatureProviderEnvelope'] = undefined;
+  /**
+   * 
+   * @member {String} isTicketRelatedEnvelope
+   */
+  exports.prototype['isTicketRelatedEnvelope'] = undefined;
   /**
    * The date and time the item was last modified.
    * @member {String} lastModifiedDateTime

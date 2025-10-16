@@ -58,11 +58,17 @@
       if (data.hasOwnProperty('signatureProviderOptionDisplayName')) {
         obj['signatureProviderOptionDisplayName'] = ApiClient.convertToType(data['signatureProviderOptionDisplayName'], 'String');
       }
+      if (data.hasOwnProperty('signatureProviderOptionHintOverrideValue')) {
+        obj['signatureProviderOptionHintOverrideValue'] = ApiClient.convertToType(data['signatureProviderOptionHintOverrideValue'], 'String');
+      }
       if (data.hasOwnProperty('signatureProviderOptionId')) {
         obj['signatureProviderOptionId'] = ApiClient.convertToType(data['signatureProviderOptionId'], 'String');
       }
       if (data.hasOwnProperty('signatureProviderOptionName')) {
         obj['signatureProviderOptionName'] = ApiClient.convertToType(data['signatureProviderOptionName'], 'String');
+      }
+      if (data.hasOwnProperty('signatureProviderOptionRegexValidationPattern')) {
+        obj['signatureProviderOptionRegexValidationPattern'] = ApiClient.convertToType(data['signatureProviderOptionRegexValidationPattern'], 'String');
       }
     }
     return obj;
@@ -75,6 +81,11 @@
   exports.prototype['signatureProviderOptionDisplayName'] = undefined;
   /**
    * 
+   * @member {String} signatureProviderOptionHintOverrideValue
+   */
+  exports.prototype['signatureProviderOptionHintOverrideValue'] = undefined;
+  /**
+   * 
    * @member {String} signatureProviderOptionId
    */
   exports.prototype['signatureProviderOptionId'] = undefined;
@@ -83,6 +94,11 @@
    * @member {String} signatureProviderOptionName
    */
   exports.prototype['signatureProviderOptionName'] = undefined;
+  /**
+   * 
+   * @member {String} signatureProviderOptionRegexValidationPattern
+   */
+  exports.prototype['signatureProviderOptionRegexValidationPattern'] = undefined;
 
 
 
