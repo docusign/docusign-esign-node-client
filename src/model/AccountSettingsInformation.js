@@ -193,6 +193,9 @@
       if (data.hasOwnProperty('allowConnectAuthoritativeCopyReadyEventUI')) {
         obj['allowConnectAuthoritativeCopyReadyEventUI'] = ApiClient.convertToType(data['allowConnectAuthoritativeCopyReadyEventUI'], 'String');
       }
+      if (data.hasOwnProperty('allowConnectEnvelopeReminderSentEventUI')) {
+        obj['allowConnectEnvelopeReminderSentEventUI'] = ApiClient.convertToType(data['allowConnectEnvelopeReminderSentEventUI'], 'String');
+      }
       if (data.hasOwnProperty('allowConnectEnvelopeRemovedEvent')) {
         obj['allowConnectEnvelopeRemovedEvent'] = ApiClient.convertToType(data['allowConnectEnvelopeRemovedEvent'], 'String');
       }
@@ -937,6 +940,12 @@
       if (data.hasOwnProperty('disableAutoTemplateMatchingMetadata')) {
         obj['disableAutoTemplateMatchingMetadata'] = SettingsMetadata.constructFromObject(data['disableAutoTemplateMatchingMetadata']);
       }
+      if (data.hasOwnProperty('disableLegacyKba')) {
+        obj['disableLegacyKba'] = ApiClient.convertToType(data['disableLegacyKba'], 'String');
+      }
+      if (data.hasOwnProperty('disableLegacyKbaMetadata')) {
+        obj['disableLegacyKbaMetadata'] = SettingsMetadata.constructFromObject(data['disableLegacyKbaMetadata']);
+      }
       if (data.hasOwnProperty('disableLegacySharedEnvelopes')) {
         obj['disableLegacySharedEnvelopes'] = ApiClient.convertToType(data['disableLegacySharedEnvelopes'], 'String');
       }
@@ -1126,17 +1135,17 @@
       if (data.hasOwnProperty('enableAISenderMessageMetadata')) {
         obj['enableAISenderMessageMetadata'] = SettingsMetadata.constructFromObject(data['enableAISenderMessageMetadata']);
       }
-      if (data.hasOwnProperty('enableAISuggestedFieldsAdvanced')) {
-        obj['enableAISuggestedFieldsAdvanced'] = ApiClient.convertToType(data['enableAISuggestedFieldsAdvanced'], 'String');
+      if (data.hasOwnProperty('enableAISuggestedFields')) {
+        obj['enableAISuggestedFields'] = ApiClient.convertToType(data['enableAISuggestedFields'], 'String');
       }
-      if (data.hasOwnProperty('enableAISuggestedFieldsAdvancedMetadata')) {
-        obj['enableAISuggestedFieldsAdvancedMetadata'] = SettingsMetadata.constructFromObject(data['enableAISuggestedFieldsAdvancedMetadata']);
+      if (data.hasOwnProperty('enableAISuggestedFieldsAutoPlace')) {
+        obj['enableAISuggestedFieldsAutoPlace'] = ApiClient.convertToType(data['enableAISuggestedFieldsAutoPlace'], 'String');
       }
-      if (data.hasOwnProperty('enableAISuggestedFieldsBasic')) {
-        obj['enableAISuggestedFieldsBasic'] = ApiClient.convertToType(data['enableAISuggestedFieldsBasic'], 'String');
+      if (data.hasOwnProperty('enableAISuggestedFieldsAutoPlaceMetadata')) {
+        obj['enableAISuggestedFieldsAutoPlaceMetadata'] = SettingsMetadata.constructFromObject(data['enableAISuggestedFieldsAutoPlaceMetadata']);
       }
-      if (data.hasOwnProperty('enableAISuggestedFieldsBasicMetadata')) {
-        obj['enableAISuggestedFieldsBasicMetadata'] = SettingsMetadata.constructFromObject(data['enableAISuggestedFieldsBasicMetadata']);
+      if (data.hasOwnProperty('enableAISuggestedFieldsMetadata')) {
+        obj['enableAISuggestedFieldsMetadata'] = SettingsMetadata.constructFromObject(data['enableAISuggestedFieldsMetadata']);
       }
       if (data.hasOwnProperty('enableAutoNav')) {
         obj['enableAutoNav'] = ApiClient.convertToType(data['enableAutoNav'], 'String');
@@ -1161,6 +1170,12 @@
       }
       if (data.hasOwnProperty('enableCalculatedFieldsMetadata')) {
         obj['enableCalculatedFieldsMetadata'] = SettingsMetadata.constructFromObject(data['enableCalculatedFieldsMetadata']);
+      }
+      if (data.hasOwnProperty('enableCFRRapidSigningEmbeddedAuth')) {
+        obj['enableCFRRapidSigningEmbeddedAuth'] = ApiClient.convertToType(data['enableCFRRapidSigningEmbeddedAuth'], 'String');
+      }
+      if (data.hasOwnProperty('enableCFRRapidSigningEmbeddedAuthMetadata')) {
+        obj['enableCFRRapidSigningEmbeddedAuthMetadata'] = SettingsMetadata.constructFromObject(data['enableCFRRapidSigningEmbeddedAuthMetadata']);
       }
       if (data.hasOwnProperty('enableClickPlus')) {
         obj['enableClickPlus'] = ApiClient.convertToType(data['enableClickPlus'], 'String');
@@ -1425,6 +1440,24 @@
       }
       if (data.hasOwnProperty('enableMultiUserRepositoryFeaturesMetadata')) {
         obj['enableMultiUserRepositoryFeaturesMetadata'] = SettingsMetadata.constructFromObject(data['enableMultiUserRepositoryFeaturesMetadata']);
+      }
+      if (data.hasOwnProperty('enableNavigatorAPIDataIn')) {
+        obj['enableNavigatorAPIDataIn'] = ApiClient.convertToType(data['enableNavigatorAPIDataIn'], 'String');
+      }
+      if (data.hasOwnProperty('enableNavigatorAPIDataInMetadata')) {
+        obj['enableNavigatorAPIDataInMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorAPIDataInMetadata']);
+      }
+      if (data.hasOwnProperty('enableNavigatorAPIDataOut')) {
+        obj['enableNavigatorAPIDataOut'] = ApiClient.convertToType(data['enableNavigatorAPIDataOut'], 'String');
+      }
+      if (data.hasOwnProperty('enableNavigatorAPIDataOutMetadata')) {
+        obj['enableNavigatorAPIDataOutMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorAPIDataOutMetadata']);
+      }
+      if (data.hasOwnProperty('enableNavigatorAPIUtilities')) {
+        obj['enableNavigatorAPIUtilities'] = ApiClient.convertToType(data['enableNavigatorAPIUtilities'], 'String');
+      }
+      if (data.hasOwnProperty('enableNavigatorAPIUtilitiesMetadata')) {
+        obj['enableNavigatorAPIUtilitiesMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorAPIUtilitiesMetadata']);
       }
       if (data.hasOwnProperty('enableNavigatorForHR')) {
         obj['enableNavigatorForHR'] = ApiClient.convertToType(data['enableNavigatorForHR'], 'String');
@@ -2760,6 +2793,11 @@
   exports.prototype['allowConnectAuthoritativeCopyReadyEventUI'] = undefined;
   /**
    * 
+   * @member {String} allowConnectEnvelopeReminderSentEventUI
+   */
+  exports.prototype['allowConnectEnvelopeReminderSentEventUI'] = undefined;
+  /**
+   * 
    * @member {String} allowConnectEnvelopeRemovedEvent
    */
   exports.prototype['allowConnectEnvelopeRemovedEvent'] = undefined;
@@ -4000,6 +4038,16 @@
   exports.prototype['disableAutoTemplateMatchingMetadata'] = undefined;
   /**
    * 
+   * @member {String} disableLegacyKba
+   */
+  exports.prototype['disableLegacyKba'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} disableLegacyKbaMetadata
+   */
+  exports.prototype['disableLegacyKbaMetadata'] = undefined;
+  /**
+   * 
    * @member {String} disableLegacySharedEnvelopes
    */
   exports.prototype['disableLegacySharedEnvelopes'] = undefined;
@@ -4315,24 +4363,24 @@
   exports.prototype['enableAISenderMessageMetadata'] = undefined;
   /**
    * 
-   * @member {String} enableAISuggestedFieldsAdvanced
+   * @member {String} enableAISuggestedFields
    */
-  exports.prototype['enableAISuggestedFieldsAdvanced'] = undefined;
+  exports.prototype['enableAISuggestedFields'] = undefined;
   /**
    * 
-   * @member {module:model/SettingsMetadata} enableAISuggestedFieldsAdvancedMetadata
+   * @member {String} enableAISuggestedFieldsAutoPlace
    */
-  exports.prototype['enableAISuggestedFieldsAdvancedMetadata'] = undefined;
+  exports.prototype['enableAISuggestedFieldsAutoPlace'] = undefined;
   /**
    * 
-   * @member {String} enableAISuggestedFieldsBasic
+   * @member {module:model/SettingsMetadata} enableAISuggestedFieldsAutoPlaceMetadata
    */
-  exports.prototype['enableAISuggestedFieldsBasic'] = undefined;
+  exports.prototype['enableAISuggestedFieldsAutoPlaceMetadata'] = undefined;
   /**
    * 
-   * @member {module:model/SettingsMetadata} enableAISuggestedFieldsBasicMetadata
+   * @member {module:model/SettingsMetadata} enableAISuggestedFieldsMetadata
    */
-  exports.prototype['enableAISuggestedFieldsBasicMetadata'] = undefined;
+  exports.prototype['enableAISuggestedFieldsMetadata'] = undefined;
   /**
    * 
    * @member {String} enableAutoNav
@@ -4373,6 +4421,16 @@
    * @member {module:model/SettingsMetadata} enableCalculatedFieldsMetadata
    */
   exports.prototype['enableCalculatedFieldsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableCFRRapidSigningEmbeddedAuth
+   */
+  exports.prototype['enableCFRRapidSigningEmbeddedAuth'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableCFRRapidSigningEmbeddedAuthMetadata
+   */
+  exports.prototype['enableCFRRapidSigningEmbeddedAuthMetadata'] = undefined;
   /**
    * 
    * @member {String} enableClickPlus
@@ -4813,6 +4871,36 @@
    * @member {module:model/SettingsMetadata} enableMultiUserRepositoryFeaturesMetadata
    */
   exports.prototype['enableMultiUserRepositoryFeaturesMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableNavigatorAPIDataIn
+   */
+  exports.prototype['enableNavigatorAPIDataIn'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableNavigatorAPIDataInMetadata
+   */
+  exports.prototype['enableNavigatorAPIDataInMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableNavigatorAPIDataOut
+   */
+  exports.prototype['enableNavigatorAPIDataOut'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableNavigatorAPIDataOutMetadata
+   */
+  exports.prototype['enableNavigatorAPIDataOutMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableNavigatorAPIUtilities
+   */
+  exports.prototype['enableNavigatorAPIUtilities'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableNavigatorAPIUtilitiesMetadata
+   */
+  exports.prototype['enableNavigatorAPIUtilitiesMetadata'] = undefined;
   /**
    * 
    * @member {String} enableNavigatorForHR

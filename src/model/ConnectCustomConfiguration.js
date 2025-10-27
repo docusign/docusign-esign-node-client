@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ConnectEventData', 'model/ConnectSalesforceObject'], factory);
+    define(['ApiClient', 'model/ConnectEventData', 'model/ConnectOAuthConfig', 'model/ConnectSalesforceObject'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ConnectEventData'), require('./ConnectSalesforceObject'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectEventData'), require('./ConnectOAuthConfig'), require('./ConnectSalesforceObject'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ConnectCustomConfiguration = factory(root.Docusign.ApiClient, root.Docusign.ConnectEventData, root.Docusign.ConnectSalesforceObject);
+    root.Docusign.ConnectCustomConfiguration = factory(root.Docusign.ApiClient, root.Docusign.ConnectEventData, root.Docusign.ConnectOAuthConfig, root.Docusign.ConnectSalesforceObject);
   }
-}(this, function(ApiClient, ConnectEventData, ConnectSalesforceObject) {
+}(this, function(ApiClient, ConnectEventData, ConnectOAuthConfig, ConnectSalesforceObject) {
   'use strict';
 
 
@@ -82,6 +82,9 @@
       if (data.hasOwnProperty('enableLog')) {
         obj['enableLog'] = ApiClient.convertToType(data['enableLog'], 'String');
       }
+      if (data.hasOwnProperty('enableOAuthPerConfiguration')) {
+        obj['enableOAuthPerConfiguration'] = ApiClient.convertToType(data['enableOAuthPerConfiguration'], 'String');
+      }
       if (data.hasOwnProperty('envelopeEvents')) {
         obj['envelopeEvents'] = ApiClient.convertToType(data['envelopeEvents'], ['String']);
       }
@@ -132,6 +135,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('oAuthConfiguration')) {
+        obj['oAuthConfiguration'] = ConnectOAuthConfig.constructFromObject(data['oAuthConfiguration']);
       }
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -237,6 +243,11 @@
    */
   exports.prototype['enableLog'] = undefined;
   /**
+   * 
+   * @member {String} enableOAuthPerConfiguration
+   */
+  exports.prototype['enableOAuthPerConfiguration'] = undefined;
+  /**
    * A comma separated list of ï¿½Envelopeï¿½ related events that are tracked through Connect. The possible event values are: Sent, Delivered, Completed, Declined, and Voided.
    * @member {Array.<String>} envelopeEvents
    */
@@ -321,6 +332,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * 
+   * @member {module:model/ConnectOAuthConfig} oAuthConfiguration
+   */
+  exports.prototype['oAuthConfiguration'] = undefined;
   /**
    * 
    * @member {String} password
