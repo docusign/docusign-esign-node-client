@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('maximumReminderCount')) {
+        obj['maximumReminderCount'] = ApiClient.convertToType(data['maximumReminderCount'], 'String');
+      }
       if (data.hasOwnProperty('reminderDelay')) {
         obj['reminderDelay'] = ApiClient.convertToType(data['reminderDelay'], 'String');
       }
@@ -68,6 +71,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} maximumReminderCount
+   */
+  exports.prototype['maximumReminderCount'] = undefined;
   /**
    * An interger that sets the number of days after the recipient receives the envelope that reminder emails are sent to the recipient.
    * @member {String} reminderDelay
