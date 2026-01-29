@@ -124,6 +124,9 @@
       if (data.hasOwnProperty('shareToRecipientsMetadata')) {
         obj['shareToRecipientsMetadata'] = PropertyMetadata.constructFromObject(data['shareToRecipientsMetadata']);
       }
+      if (data.hasOwnProperty('source')) {
+        obj['source'] = ApiClient.convertToType(data['source'], 'String');
+      }
       if (data.hasOwnProperty('tabType')) {
         obj['tabType'] = ApiClient.convertToType(data['tabType'], 'String');
       }
@@ -273,6 +276,11 @@
    * @member {module:model/PropertyMetadata} shareToRecipientsMetadata
    */
   exports.prototype['shareToRecipientsMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} source
+   */
+  exports.prototype['source'] = undefined;
   /**
    * 
    * @member {String} tabType

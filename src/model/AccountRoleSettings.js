@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/SettingsMetadata'], factory);
+    define(['ApiClient', 'model/AccountManagementGranular', 'model/SettingsMetadata'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./SettingsMetadata'));
+    module.exports = factory(require('../ApiClient'), require('./AccountManagementGranular'), require('./SettingsMetadata'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountRoleSettings = factory(root.Docusign.ApiClient, root.Docusign.SettingsMetadata);
+    root.Docusign.AccountRoleSettings = factory(root.Docusign.ApiClient, root.Docusign.AccountManagementGranular, root.Docusign.SettingsMetadata);
   }
-}(this, function(ApiClient, SettingsMetadata) {
+}(this, function(ApiClient, AccountManagementGranular, SettingsMetadata) {
   'use strict';
 
 
@@ -55,6 +55,15 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('accountAgreementsAccessType')) {
+        obj['accountAgreementsAccessType'] = ApiClient.convertToType(data['accountAgreementsAccessType'], 'String');
+      }
+      if (data.hasOwnProperty('accountAgreementsAccessTypeMetadata')) {
+        obj['accountAgreementsAccessTypeMetadata'] = SettingsMetadata.constructFromObject(data['accountAgreementsAccessTypeMetadata']);
+      }
+      if (data.hasOwnProperty('accountManagementGranular')) {
+        obj['accountManagementGranular'] = AccountManagementGranular.constructFromObject(data['accountManagementGranular']);
+      }
       if (data.hasOwnProperty('allowAccountManagement')) {
         obj['allowAccountManagement'] = ApiClient.convertToType(data['allowAccountManagement'], 'String');
       }
@@ -199,6 +208,12 @@
       if (data.hasOwnProperty('allowWetSigningOverrideMetadata')) {
         obj['allowWetSigningOverrideMetadata'] = SettingsMetadata.constructFromObject(data['allowWetSigningOverrideMetadata']);
       }
+      if (data.hasOwnProperty('canBulkUploadAgreements')) {
+        obj['canBulkUploadAgreements'] = ApiClient.convertToType(data['canBulkUploadAgreements'], 'String');
+      }
+      if (data.hasOwnProperty('canBulkUploadAgreementsMetadata')) {
+        obj['canBulkUploadAgreementsMetadata'] = SettingsMetadata.constructFromObject(data['canBulkUploadAgreementsMetadata']);
+      }
       if (data.hasOwnProperty('canCreateTransaction')) {
         obj['canCreateTransaction'] = ApiClient.convertToType(data['canCreateTransaction'], 'String');
       }
@@ -222,6 +237,18 @@
       }
       if (data.hasOwnProperty('canDeleteTransactionMetadata')) {
         obj['canDeleteTransactionMetadata'] = SettingsMetadata.constructFromObject(data['canDeleteTransactionMetadata']);
+      }
+      if (data.hasOwnProperty('canManageAgreementDeskRequest')) {
+        obj['canManageAgreementDeskRequest'] = ApiClient.convertToType(data['canManageAgreementDeskRequest'], 'String');
+      }
+      if (data.hasOwnProperty('canManageAgreementDeskRequestMetadata')) {
+        obj['canManageAgreementDeskRequestMetadata'] = SettingsMetadata.constructFromObject(data['canManageAgreementDeskRequestMetadata']);
+      }
+      if (data.hasOwnProperty('canManageAgreementDeskRequestSetting')) {
+        obj['canManageAgreementDeskRequestSetting'] = ApiClient.convertToType(data['canManageAgreementDeskRequestSetting'], 'String');
+      }
+      if (data.hasOwnProperty('canManageAgreementDeskRequestSettingMetadata')) {
+        obj['canManageAgreementDeskRequestSettingMetadata'] = SettingsMetadata.constructFromObject(data['canManageAgreementDeskRequestSettingMetadata']);
       }
       if (data.hasOwnProperty('canSendEnvelopesViaSMS')) {
         obj['canSendEnvelopesViaSMS'] = ApiClient.convertToType(data['canSendEnvelopesViaSMS'], 'String');
@@ -270,6 +297,12 @@
       }
       if (data.hasOwnProperty('enableTransactionPointIntegrationMetadata')) {
         obj['enableTransactionPointIntegrationMetadata'] = SettingsMetadata.constructFromObject(data['enableTransactionPointIntegrationMetadata']);
+      }
+      if (data.hasOwnProperty('playbookAccess')) {
+        obj['playbookAccess'] = ApiClient.convertToType(data['playbookAccess'], 'String');
+      }
+      if (data.hasOwnProperty('playbookAccessMetadata')) {
+        obj['playbookAccessMetadata'] = SettingsMetadata.constructFromObject(data['playbookAccessMetadata']);
       }
       if (data.hasOwnProperty('powerFormRole')) {
         obj['powerFormRole'] = ApiClient.convertToType(data['powerFormRole'], 'String');
@@ -332,6 +365,21 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} accountAgreementsAccessType
+   */
+  exports.prototype['accountAgreementsAccessType'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} accountAgreementsAccessTypeMetadata
+   */
+  exports.prototype['accountAgreementsAccessTypeMetadata'] = undefined;
+  /**
+   * 
+   * @member {module:model/AccountManagementGranular} accountManagementGranular
+   */
+  exports.prototype['accountManagementGranular'] = undefined;
   /**
    * 
    * @member {String} allowAccountManagement
@@ -574,6 +622,16 @@
   exports.prototype['allowWetSigningOverrideMetadata'] = undefined;
   /**
    * 
+   * @member {String} canBulkUploadAgreements
+   */
+  exports.prototype['canBulkUploadAgreements'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canBulkUploadAgreementsMetadata
+   */
+  exports.prototype['canBulkUploadAgreementsMetadata'] = undefined;
+  /**
+   * 
    * @member {String} canCreateTransaction
    */
   exports.prototype['canCreateTransaction'] = undefined;
@@ -612,6 +670,26 @@
    * @member {module:model/SettingsMetadata} canDeleteTransactionMetadata
    */
   exports.prototype['canDeleteTransactionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageAgreementDeskRequest
+   */
+  exports.prototype['canManageAgreementDeskRequest'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canManageAgreementDeskRequestMetadata
+   */
+  exports.prototype['canManageAgreementDeskRequestMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canManageAgreementDeskRequestSetting
+   */
+  exports.prototype['canManageAgreementDeskRequestSetting'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canManageAgreementDeskRequestSettingMetadata
+   */
+  exports.prototype['canManageAgreementDeskRequestSettingMetadata'] = undefined;
   /**
    * 
    * @member {String} canSendEnvelopesViaSMS
@@ -692,6 +770,16 @@
    * @member {module:model/SettingsMetadata} enableTransactionPointIntegrationMetadata
    */
   exports.prototype['enableTransactionPointIntegrationMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} playbookAccess
+   */
+  exports.prototype['playbookAccess'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} playbookAccessMetadata
+   */
+  exports.prototype['playbookAccessMetadata'] = undefined;
   /**
    * 
    * @member {String} powerFormRole

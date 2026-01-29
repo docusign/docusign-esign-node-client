@@ -382,6 +382,12 @@
       if (data.hasOwnProperty('allowIDVPlatformMetadata')) {
         obj['allowIDVPlatformMetadata'] = SettingsMetadata.constructFromObject(data['allowIDVPlatformMetadata']);
       }
+      if (data.hasOwnProperty('allowIdvRiskAssessment')) {
+        obj['allowIdvRiskAssessment'] = ApiClient.convertToType(data['allowIdvRiskAssessment'], 'String');
+      }
+      if (data.hasOwnProperty('allowIdvRiskAssessmentMetadata')) {
+        obj['allowIdvRiskAssessmentMetadata'] = SettingsMetadata.constructFromObject(data['allowIdvRiskAssessmentMetadata']);
+      }
       if (data.hasOwnProperty('allowInPerson')) {
         obj['allowInPerson'] = ApiClient.convertToType(data['allowInPerson'], 'String');
       }
@@ -1477,6 +1483,12 @@
       if (data.hasOwnProperty('enableNavigatorTrialMetadata')) {
         obj['enableNavigatorTrialMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorTrialMetadata']);
       }
+      if (data.hasOwnProperty('enableNotaryOnDemandWitness')) {
+        obj['enableNotaryOnDemandWitness'] = ApiClient.convertToType(data['enableNotaryOnDemandWitness'], 'String');
+      }
+      if (data.hasOwnProperty('enableNotaryOnDemandWitnessMetadata')) {
+        obj['enableNotaryOnDemandWitnessMetadata'] = SettingsMetadata.constructFromObject(data['enableNotaryOnDemandWitnessMetadata']);
+      }
       if (data.hasOwnProperty('enableObligationManagement')) {
         obj['enableObligationManagement'] = ApiClient.convertToType(data['enableObligationManagement'], 'String');
       }
@@ -1618,8 +1630,8 @@
       if (data.hasOwnProperty('enableSignerAttachmentsMetadata')) {
         obj['enableSignerAttachmentsMetadata'] = SettingsMetadata.constructFromObject(data['enableSignerAttachmentsMetadata']);
       }
-      if (data.hasOwnProperty('enableSigningAIFeaturesPlan')) {
-        obj['enableSigningAIFeaturesPlan'] = ApiClient.convertToType(data['enableSigningAIFeaturesPlan'], 'String');
+      if (data.hasOwnProperty('EnableSigningAIFeaturesPlan')) {
+        obj['EnableSigningAIFeaturesPlan'] = ApiClient.convertToType(data['EnableSigningAIFeaturesPlan'], 'String');
       }
       if (data.hasOwnProperty('enableSigningAIFeaturesPlanMetadata')) {
         obj['enableSigningAIFeaturesPlanMetadata'] = SettingsMetadata.constructFromObject(data['enableSigningAIFeaturesPlanMetadata']);
@@ -3106,6 +3118,16 @@
    * @member {module:model/SettingsMetadata} allowIDVPlatformMetadata
    */
   exports.prototype['allowIDVPlatformMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowIdvRiskAssessment
+   */
+  exports.prototype['allowIdvRiskAssessment'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowIdvRiskAssessmentMetadata
+   */
+  exports.prototype['allowIdvRiskAssessmentMetadata'] = undefined;
   /**
    * 
    * @member {String} allowInPerson
@@ -4933,6 +4955,16 @@
   exports.prototype['enableNavigatorTrialMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableNotaryOnDemandWitness
+   */
+  exports.prototype['enableNotaryOnDemandWitness'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableNotaryOnDemandWitnessMetadata
+   */
+  exports.prototype['enableNotaryOnDemandWitnessMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableObligationManagement
    */
   exports.prototype['enableObligationManagement'] = undefined;
@@ -5168,9 +5200,9 @@
   exports.prototype['enableSignerAttachmentsMetadata'] = undefined;
   /**
    * 
-   * @member {String} enableSigningAIFeaturesPlan
+   * @member {String} EnableSigningAIFeaturesPlan
    */
-  exports.prototype['enableSigningAIFeaturesPlan'] = undefined;
+  exports.prototype['EnableSigningAIFeaturesPlan'] = undefined;
   /**
    * 
    * @member {module:model/SettingsMetadata} enableSigningAIFeaturesPlanMetadata

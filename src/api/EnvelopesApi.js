@@ -4544,6 +4544,7 @@ envelope specified by `envelopeId`.
      * @param {String} optsOrCallback.advancedUpdate When true, envelope information can be added or modified.
      * @param {String} optsOrCallback.include 
      * @param {String} optsOrCallback.includeAnchorTabLocations 
+     * @param {String} optsOrCallback.userId 
      * @param {module:api/EnvelopesApi~getEnvelopeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Envelope}
      */
@@ -4581,7 +4582,8 @@ envelope specified by `envelopeId`.
       var queryParams = {
         'advanced_update': optsOrCallback['advancedUpdate'],
         'include': optsOrCallback['include'],
-        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations']
+        'include_anchor_tab_locations': optsOrCallback['includeAnchorTabLocations'],
+        'user_id': optsOrCallback['userId']
       };
       var headerParams = {
       };
