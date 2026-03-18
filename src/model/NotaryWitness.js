@@ -318,6 +318,9 @@
       if (data.hasOwnProperty('signingGroupName')) {
         obj['signingGroupName'] = ApiClient.convertToType(data['signingGroupName'], 'String');
       }
+      if (data.hasOwnProperty('signingGroupType')) {
+        obj['signingGroupType'] = ApiClient.convertToType(data['signingGroupType'], 'String');
+      }
       if (data.hasOwnProperty('signingGroupUsers')) {
         obj['signingGroupUsers'] = ApiClient.convertToType(data['signingGroupUsers'], [UserInfo]);
       }
@@ -807,6 +810,11 @@
    * @member {String} signingGroupName
    */
   exports.prototype['signingGroupName'] = undefined;
+  /**
+   * 
+   * @member {String} signingGroupType
+   */
+  exports.prototype['signingGroupType'] = undefined;
   /**
    * A complex type that contains information about users in the signing group.
    * @member {Array.<module:model/UserInfo>} signingGroupUsers
