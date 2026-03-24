@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldRowValue', 'model/DocGenFormFieldValidation'], factory);
+    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldRowValue', 'model/DocGenFormFieldValidation', 'model/DocGenFormat'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldRowValue'), require('./DocGenFormFieldValidation'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldRowValue'), require('./DocGenFormFieldValidation'), require('./DocGenFormat'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldRowValue, root.Docusign.DocGenFormFieldValidation);
+    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldRowValue, root.Docusign.DocGenFormFieldValidation, root.Docusign.DocGenFormat);
   }
-}(this, function(ApiClient, ConnectedObjectDetails, DocGenFormFieldOption, DocGenFormFieldRowValue, DocGenFormFieldValidation) {
+}(this, function(ApiClient, ConnectedObjectDetails, DocGenFormFieldOption, DocGenFormFieldRowValue, DocGenFormFieldValidation, DocGenFormat) {
   'use strict';
 
 
@@ -60,8 +60,14 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
+      if (data.hasOwnProperty('format')) {
+        obj['format'] = DocGenFormat.constructFromObject(data['format']);
+      }
       if (data.hasOwnProperty('fullyQualifiedPath')) {
         obj['fullyQualifiedPath'] = ApiClient.convertToType(data['fullyQualifiedPath'], 'String');
+      }
+      if (data.hasOwnProperty('hidden')) {
+        obj['hidden'] = ApiClient.convertToType(data['hidden'], 'String');
       }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
@@ -77,6 +83,9 @@
       }
       if (data.hasOwnProperty('predefinedValidation')) {
         obj['predefinedValidation'] = ApiClient.convertToType(data['predefinedValidation'], 'String');
+      }
+      if (data.hasOwnProperty('readOnly')) {
+        obj['readOnly'] = ApiClient.convertToType(data['readOnly'], 'String');
       }
       if (data.hasOwnProperty('required')) {
         obj['required'] = ApiClient.convertToType(data['required'], 'String');
@@ -109,9 +118,19 @@
   exports.prototype['description'] = undefined;
   /**
    * 
+   * @member {module:model/DocGenFormat} format
+   */
+  exports.prototype['format'] = undefined;
+  /**
+   * 
    * @member {String} fullyQualifiedPath
    */
   exports.prototype['fullyQualifiedPath'] = undefined;
+  /**
+   * 
+   * @member {String} hidden
+   */
+  exports.prototype['hidden'] = undefined;
   /**
    * 
    * @member {String} label
@@ -137,6 +156,11 @@
    * @member {String} predefinedValidation
    */
   exports.prototype['predefinedValidation'] = undefined;
+  /**
+   * 
+   * @member {String} readOnly
+   */
+  exports.prototype['readOnly'] = undefined;
   /**
    * When set to **true**, the signer is required to fill out this tab
    * @member {String} required

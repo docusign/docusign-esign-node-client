@@ -178,6 +178,12 @@
       if (data.hasOwnProperty('allowBulkSendMetadata')) {
         obj['allowBulkSendMetadata'] = SettingsMetadata.constructFromObject(data['allowBulkSendMetadata']);
       }
+      if (data.hasOwnProperty('allowBYOIDV')) {
+        obj['allowBYOIDV'] = ApiClient.convertToType(data['allowBYOIDV'], 'String');
+      }
+      if (data.hasOwnProperty('allowBYOIDVMetadata')) {
+        obj['allowBYOIDVMetadata'] = SettingsMetadata.constructFromObject(data['allowBYOIDVMetadata']);
+      }
       if (data.hasOwnProperty('allowCDWithdraw')) {
         obj['allowCDWithdraw'] = ApiClient.convertToType(data['allowCDWithdraw'], 'String');
       }
@@ -345,6 +351,18 @@
       }
       if (data.hasOwnProperty('allowExternalSignaturePadMetadata')) {
         obj['allowExternalSignaturePadMetadata'] = SettingsMetadata.constructFromObject(data['allowExternalSignaturePadMetadata']);
+      }
+      if (data.hasOwnProperty('allowFedRampIDVLevel1')) {
+        obj['allowFedRampIDVLevel1'] = ApiClient.convertToType(data['allowFedRampIDVLevel1'], 'String');
+      }
+      if (data.hasOwnProperty('allowFedRampIDVLevel1Metadata')) {
+        obj['allowFedRampIDVLevel1Metadata'] = SettingsMetadata.constructFromObject(data['allowFedRampIDVLevel1Metadata']);
+      }
+      if (data.hasOwnProperty('allowFedRampIDVLevel2')) {
+        obj['allowFedRampIDVLevel2'] = ApiClient.convertToType(data['allowFedRampIDVLevel2'], 'String');
+      }
+      if (data.hasOwnProperty('allowFedRampIDVLevel2Metadata')) {
+        obj['allowFedRampIDVLevel2Metadata'] = SettingsMetadata.constructFromObject(data['allowFedRampIDVLevel2Metadata']);
       }
       if (data.hasOwnProperty('allowIDVForEUQualifiedSignatures')) {
         obj['allowIDVForEUQualifiedSignatures'] = ApiClient.convertToType(data['allowIDVForEUQualifiedSignatures'], 'String');
@@ -1048,9 +1066,6 @@
       if (data.hasOwnProperty('draftEnvelopeRetentionMetadata')) {
         obj['draftEnvelopeRetentionMetadata'] = SettingsMetadata.constructFromObject(data['draftEnvelopeRetentionMetadata']);
       }
-      if (data.hasOwnProperty('dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb')) {
-        obj['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'] = ApiClient.convertToType(data['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'], 'String');
-      }
       if (data.hasOwnProperty('dss_SIGN_28411_EnableLeavePagePrompt_RadminOption')) {
         obj['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = ApiClient.convertToType(data['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'], 'String');
       }
@@ -1471,6 +1486,12 @@
       if (data.hasOwnProperty('enableNavigatorForHRMetadata')) {
         obj['enableNavigatorForHRMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorForHRMetadata']);
       }
+      if (data.hasOwnProperty('enableNavigatorHierarchyAI')) {
+        obj['enableNavigatorHierarchyAI'] = ApiClient.convertToType(data['enableNavigatorHierarchyAI'], 'String');
+      }
+      if (data.hasOwnProperty('enableNavigatorHierarchyAIMetadata')) {
+        obj['enableNavigatorHierarchyAIMetadata'] = SettingsMetadata.constructFromObject(data['enableNavigatorHierarchyAIMetadata']);
+      }
       if (data.hasOwnProperty('enableNavigatorPartialIngestion')) {
         obj['enableNavigatorPartialIngestion'] = ApiClient.convertToType(data['enableNavigatorPartialIngestion'], 'String');
       }
@@ -1630,17 +1651,11 @@
       if (data.hasOwnProperty('enableSignerAttachmentsMetadata')) {
         obj['enableSignerAttachmentsMetadata'] = SettingsMetadata.constructFromObject(data['enableSignerAttachmentsMetadata']);
       }
-      if (data.hasOwnProperty('EnableSigningAIFeaturesPlan')) {
-        obj['EnableSigningAIFeaturesPlan'] = ApiClient.convertToType(data['EnableSigningAIFeaturesPlan'], 'String');
+      if (data.hasOwnProperty('enableSigningAIFeaturesPlan')) {
+        obj['enableSigningAIFeaturesPlan'] = ApiClient.convertToType(data['enableSigningAIFeaturesPlan'], 'String');
       }
       if (data.hasOwnProperty('enableSigningAIFeaturesPlanMetadata')) {
         obj['enableSigningAIFeaturesPlanMetadata'] = SettingsMetadata.constructFromObject(data['enableSigningAIFeaturesPlanMetadata']);
-      }
-      if (data.hasOwnProperty('enableSigningAIFeaturesSetting')) {
-        obj['enableSigningAIFeaturesSetting'] = ApiClient.convertToType(data['enableSigningAIFeaturesSetting'], 'String');
-      }
-      if (data.hasOwnProperty('enableSigningAIFeaturesSettingMetadata')) {
-        obj['enableSigningAIFeaturesSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableSigningAIFeaturesSettingMetadata']);
       }
       if (data.hasOwnProperty('enableSigningExtensionComments')) {
         obj['enableSigningExtensionComments'] = ApiClient.convertToType(data['enableSigningExtensionComments'], 'String');
@@ -2780,6 +2795,16 @@
   exports.prototype['allowBulkSendMetadata'] = undefined;
   /**
    * 
+   * @member {String} allowBYOIDV
+   */
+  exports.prototype['allowBYOIDV'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowBYOIDVMetadata
+   */
+  exports.prototype['allowBYOIDVMetadata'] = undefined;
+  /**
+   * 
    * @member {String} allowCDWithdraw
    */
   exports.prototype['allowCDWithdraw'] = undefined;
@@ -3058,6 +3083,26 @@
    * @member {module:model/SettingsMetadata} allowExternalSignaturePadMetadata
    */
   exports.prototype['allowExternalSignaturePadMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowFedRampIDVLevel1
+   */
+  exports.prototype['allowFedRampIDVLevel1'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowFedRampIDVLevel1Metadata
+   */
+  exports.prototype['allowFedRampIDVLevel1Metadata'] = undefined;
+  /**
+   * 
+   * @member {String} allowFedRampIDVLevel2
+   */
+  exports.prototype['allowFedRampIDVLevel2'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} allowFedRampIDVLevel2Metadata
+   */
+  exports.prototype['allowFedRampIDVLevel2Metadata'] = undefined;
   /**
    * 
    * @member {String} allowIDVForEUQualifiedSignatures
@@ -4230,11 +4275,6 @@
   exports.prototype['draftEnvelopeRetentionMetadata'] = undefined;
   /**
    * 
-   * @member {String} dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb
-   */
-  exports.prototype['dss_SCOREFDN_196_Rebrand_DocuSignIsNotAVerb'] = undefined;
-  /**
-   * 
    * @member {String} dss_SIGN_28411_EnableLeavePagePrompt_RadminOption
    */
   exports.prototype['dss_SIGN_28411_EnableLeavePagePrompt_RadminOption'] = undefined;
@@ -4935,6 +4975,16 @@
   exports.prototype['enableNavigatorForHRMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableNavigatorHierarchyAI
+   */
+  exports.prototype['enableNavigatorHierarchyAI'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableNavigatorHierarchyAIMetadata
+   */
+  exports.prototype['enableNavigatorHierarchyAIMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableNavigatorPartialIngestion
    */
   exports.prototype['enableNavigatorPartialIngestion'] = undefined;
@@ -5200,24 +5250,14 @@
   exports.prototype['enableSignerAttachmentsMetadata'] = undefined;
   /**
    * 
-   * @member {String} EnableSigningAIFeaturesPlan
+   * @member {String} enableSigningAIFeaturesPlan
    */
-  exports.prototype['EnableSigningAIFeaturesPlan'] = undefined;
+  exports.prototype['enableSigningAIFeaturesPlan'] = undefined;
   /**
    * 
    * @member {module:model/SettingsMetadata} enableSigningAIFeaturesPlanMetadata
    */
   exports.prototype['enableSigningAIFeaturesPlanMetadata'] = undefined;
-  /**
-   * 
-   * @member {String} enableSigningAIFeaturesSetting
-   */
-  exports.prototype['enableSigningAIFeaturesSetting'] = undefined;
-  /**
-   * 
-   * @member {module:model/SettingsMetadata} enableSigningAIFeaturesSettingMetadata
-   */
-  exports.prototype['enableSigningAIFeaturesSettingMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSigningExtensionComments

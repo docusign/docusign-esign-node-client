@@ -181,7 +181,7 @@
     this.defaultHeaders = {
       "X-DocuSign-SDK": "Node",
       "Node-Ver": process.version,
-      "User-Agent": `Swagger-Codegen/v2.1/8.6.0/node/${process.version}`,
+      "User-Agent": `Swagger-Codegen/v2.1/8.7.0/node/${process.version}`,
     };  
 
     opts = {...defaults, ...opts};
