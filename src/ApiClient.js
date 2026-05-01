@@ -12,22 +12,42 @@
   if (typeof define === "function" && define.amd) {
     // AMD. Register as an anonymous module.
     define(["axios"], factory);
-    define(["@devhigley/parse-proxy"], factory);
-  } else if (typeof module === "object" && module.exports) {    
+  } else if (typeof module === "object" && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(
-      require("axios"),
-      require("@devhigley/parse-proxy")
+      require("axios")
     );
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.ApiClient = factory(root.axios, root.parseProxy, opts);
+    root.Docusign.ApiClient = factory(root.axios, opts);
   }
-})(this, function (axios, parseProxy, opts) {
+})(this, function (axios, opts) {
   "use strict";
+
+  var DEFAULT_PROXY_PORTS = { "http:": 80, "https:": 443 };
+  var parseProxy = function (proxyUri) {
+    var input = /:\/\//.test(proxyUri) ? proxyUri : "http://" + proxyUri;
+    var parsed = new URL(input);
+    // URL strips the default port for the scheme (e.g. http://x:80 -> port "").
+    // Restore it from the protocol so axios receives an explicit port.
+    var proxyConfig = {
+      host: parsed.hostname,
+      port: parsed.port
+        ? parseInt(parsed.port, 10)
+        : DEFAULT_PROXY_PORTS[parsed.protocol],
+      protocol: parsed.protocol.replace(":", ""),
+    };
+    if (parsed.username || parsed.password) {
+      proxyConfig.auth = {
+        username: decodeURIComponent(parsed.username),
+        password: decodeURIComponent(parsed.password),
+      };
+    }
+    return proxyConfig;
+  };
 
   /**
     * The default HTTP headers to be included for all API calls.
@@ -105,8 +125,7 @@
     };
 
     if (proxy) {
-      const proxyObj = parseProxy(proxy);
-      requestConfig.proxy = proxyObj[0];
+      requestConfig.proxy = parseProxy(proxy);
     }
 
     const oauthRequest = axios.request(requestConfig);
@@ -608,8 +627,7 @@
     };
 
     if (this.proxy) {
-      const proxyObj = parseProxy(this.proxy);
-      requestConfig.proxy = proxyObj[0];
+      requestConfig.proxy = parseProxy(this.proxy);
     }
 
     var _formParams = this.normalizeParams(formParams);
@@ -977,8 +995,7 @@
       headers: headers,
     };
     if (this.proxy) {
-      const proxyObj = parseProxy(this.proxy);
-      requestConfig.proxy = proxyObj[0];
+      requestConfig.proxy = parseProxy(this.proxy);
     }
 
     const request = axios.request(requestConfig);

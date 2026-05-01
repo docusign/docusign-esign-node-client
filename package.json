@@ -52,7 +52,6 @@
   },
   "dependencies": {    
     "axios": "^1.6.8",
-    "@devhigley/parse-proxy":"^1.0.3",        
     "csv-stringify": "^1.0.0",
     "jsonwebtoken": "^9.0.0",    
     "passport-oauth2": "^1.6.1",    

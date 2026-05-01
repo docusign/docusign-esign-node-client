@@ -56,7 +56,6 @@ This client has the following external dependencies:
 **Minimum:**
 *   docusign-esign
 *   Axios v1.6.8+
-*   @devhigley/parse-proxy v1.0.3+
 *   Csv-stringify v1.0.0+
 *   Jsonwebtoken v9.0.0+
 *   Passport-oauth2 v1.6.1+
