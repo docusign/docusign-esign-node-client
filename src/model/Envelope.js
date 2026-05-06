@@ -273,9 +273,6 @@
       if (data.hasOwnProperty('statusChangedDateTime')) {
         obj['statusChangedDateTime'] = ApiClient.convertToType(data['statusChangedDateTime'], 'String');
       }
-      if (data.hasOwnProperty('statusDateTime')) {
-        obj['statusDateTime'] = ApiClient.convertToType(data['statusDateTime'], 'String');
-      }
       if (data.hasOwnProperty('templatesUri')) {
         obj['templatesUri'] = ApiClient.convertToType(data['templatesUri'], 'String');
       }
@@ -666,11 +663,6 @@
    * @member {String} statusChangedDateTime
    */
   exports.prototype['statusChangedDateTime'] = undefined;
-  /**
-   * 
-   * @member {String} statusDateTime
-   */
-  exports.prototype['statusDateTime'] = undefined;
   /**
    * Contains a URI for an endpoint which you can use to retrieve the templates.
    * @member {String} templatesUri

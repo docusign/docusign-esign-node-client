@@ -127,6 +127,9 @@
       if (data.hasOwnProperty('isDocGenDocument')) {
         obj['isDocGenDocument'] = ApiClient.convertToType(data['isDocGenDocument'], 'String');
       }
+      if (data.hasOwnProperty('isEdited')) {
+        obj['isEdited'] = ApiClient.convertToType(data['isEdited'], 'String');
+      }
       if (data.hasOwnProperty('isExternallyAvailable')) {
         obj['isExternallyAvailable'] = ApiClient.convertToType(data['isExternallyAvailable'], 'String');
       }
@@ -290,6 +293,11 @@
    * @member {String} isDocGenDocument
    */
   exports.prototype['isDocGenDocument'] = undefined;
+  /**
+   * 
+   * @member {String} isEdited
+   */
+  exports.prototype['isEdited'] = undefined;
   /**
    * 
    * @member {String} isExternallyAvailable

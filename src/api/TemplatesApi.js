@@ -2496,6 +2496,7 @@ template specified by `templateId`.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.includeAgreementType 
+     * @param {String} optsOrCallback.includeIsEdited 
      * @param {String} optsOrCallback.includeTabs 
      * @param {module:api/TemplatesApi~listDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateDocumentsResult}
@@ -2533,6 +2534,7 @@ template specified by `templateId`.
       };
       var queryParams = {
         'include_agreement_type': optsOrCallback['includeAgreementType'],
+        'include_is_edited': optsOrCallback['includeIsEdited'],
         'include_tabs': optsOrCallback['includeTabs']
       };
       var headerParams = {
@@ -2725,6 +2727,7 @@ template specified by `templateId`.
      * @param {String} optsOrCallback.include A comma separated list of additional template attributes to include in the response. Valid values are: recipients, folders, documents, custom_fields, and notifications.
      * @param {String} optsOrCallback.isDeletedTemplateOnly 
      * @param {String} optsOrCallback.isDownload 
+     * @param {String} optsOrCallback.linkConfigurationId 
      * @param {String} optsOrCallback.modifiedFromDate 
      * @param {String} optsOrCallback.modifiedToDate 
      * @param {String} optsOrCallback.order Sets the direction order used to sort the list. Valid values are: -asc = ascending sort order (a to z)  -desc = descending sort order (z to a)
@@ -2777,6 +2780,7 @@ template specified by `templateId`.
         'include': optsOrCallback['include'],
         'is_deleted_template_only': optsOrCallback['isDeletedTemplateOnly'],
         'is_download': optsOrCallback['isDownload'],
+        'link_configuration_id': optsOrCallback['linkConfigurationId'],
         'modified_from_date': optsOrCallback['modifiedFromDate'],
         'modified_to_date': optsOrCallback['modifiedToDate'],
         'order': optsOrCallback['order'],

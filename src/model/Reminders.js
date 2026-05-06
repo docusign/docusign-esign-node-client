@@ -67,6 +67,9 @@
       if (data.hasOwnProperty('reminderFrequency')) {
         obj['reminderFrequency'] = ApiClient.convertToType(data['reminderFrequency'], 'String');
       }
+      if (data.hasOwnProperty('smartReminderEnabled')) {
+        obj['smartReminderEnabled'] = ApiClient.convertToType(data['smartReminderEnabled'], 'String');
+      }
     }
     return obj;
   }
@@ -91,6 +94,11 @@
    * @member {String} reminderFrequency
    */
   exports.prototype['reminderFrequency'] = undefined;
+  /**
+   * 
+   * @member {String} smartReminderEnabled
+   */
+  exports.prototype['smartReminderEnabled'] = undefined;
 
 
 

@@ -2,6 +2,20 @@
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
 
+## [v9.0.0] - eSignature API v2.1-26.1.02.00 - 2026-05-04
+### Removed
+- Removed the deprecated `listRecipientNamesByEmail` endpoint (`/v2.1/accounts/{accountId}/recipient_names`).
+
+### Added
+- **Accounts API**: Template completion-rate methods (`getCompletionRateForTemplate`, `getCompletionRateForTemplateOwner`).
+- **Connect API**: Secret key management methods (`createConnectSecret`, `getConnectSecret`, `deleteConnectSecret`).
+- **Models**: `SenderCompletionInfo`, `TemplateCompletionInfo`, `TemplateCompletionRateResponse`, `UserCompletionRateResponse`.
+
+### Changed
+- Added support for version v2.1-26.1.02.00 of the DocuSign ESignature API.
+- Updated the SDK release version to 9.0.0.
+- Added query parameters: `includeIsEdited` and `linkConfigurationId` for document listing methods.
+
 ## [v8.7.0] - eSignature API v2.1-26.1.00.00 - 2026-03-05
 ### Changed
 - Added support for version v2.1-26.1.00.00 of the DocuSign ESignature API.
