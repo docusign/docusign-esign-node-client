@@ -1186,6 +1186,12 @@
       if (data.hasOwnProperty('enableBccDummyLinkMetadata')) {
         obj['enableBccDummyLinkMetadata'] = SettingsMetadata.constructFromObject(data['enableBccDummyLinkMetadata']);
       }
+      if (data.hasOwnProperty('enableCacPivSignatureGroup')) {
+        obj['enableCacPivSignatureGroup'] = ApiClient.convertToType(data['enableCacPivSignatureGroup'], 'String');
+      }
+      if (data.hasOwnProperty('enableCacPivSignatureGroupMetadata')) {
+        obj['enableCacPivSignatureGroupMetadata'] = SettingsMetadata.constructFromObject(data['enableCacPivSignatureGroupMetadata']);
+      }
       if (data.hasOwnProperty('enableCalculatedFields')) {
         obj['enableCalculatedFields'] = ApiClient.convertToType(data['enableCalculatedFields'], 'String');
       }
@@ -1260,6 +1266,12 @@
       }
       if (data.hasOwnProperty('enableCoupaCoreExtensionMetadata')) {
         obj['enableCoupaCoreExtensionMetadata'] = SettingsMetadata.constructFromObject(data['enableCoupaCoreExtensionMetadata']);
+      }
+      if (data.hasOwnProperty('enableCoupaIAMConnector')) {
+        obj['enableCoupaIAMConnector'] = ApiClient.convertToType(data['enableCoupaIAMConnector'], 'String');
+      }
+      if (data.hasOwnProperty('enableCoupaIAMConnectorMetadata')) {
+        obj['enableCoupaIAMConnectorMetadata'] = SettingsMetadata.constructFromObject(data['enableCoupaIAMConnectorMetadata']);
       }
       if (data.hasOwnProperty('enableCustomDataVerificationExtensions')) {
         obj['enableCustomDataVerificationExtensions'] = ApiClient.convertToType(data['enableCustomDataVerificationExtensions'], 'String');
@@ -1383,6 +1395,24 @@
       }
       if (data.hasOwnProperty('enableGenerationWith3PIntegrationMetaData')) {
         obj['enableGenerationWith3PIntegrationMetaData'] = SettingsMetadata.constructFromObject(data['enableGenerationWith3PIntegrationMetaData']);
+      }
+      if (data.hasOwnProperty('enableGreenhouseApp')) {
+        obj['enableGreenhouseApp'] = ApiClient.convertToType(data['enableGreenhouseApp'], 'String');
+      }
+      if (data.hasOwnProperty('enableGreenhouseAppMetadata')) {
+        obj['enableGreenhouseAppMetadata'] = SettingsMetadata.constructFromObject(data['enableGreenhouseAppMetadata']);
+      }
+      if (data.hasOwnProperty('enableI9OnDemand')) {
+        obj['enableI9OnDemand'] = ApiClient.convertToType(data['enableI9OnDemand'], 'String');
+      }
+      if (data.hasOwnProperty('enableI9OnDemandMetadata')) {
+        obj['enableI9OnDemandMetadata'] = SettingsMetadata.constructFromObject(data['enableI9OnDemandMetadata']);
+      }
+      if (data.hasOwnProperty('enableIAMClauseLibrary')) {
+        obj['enableIAMClauseLibrary'] = ApiClient.convertToType(data['enableIAMClauseLibrary'], 'String');
+      }
+      if (data.hasOwnProperty('enableIAMClauseLibraryMetadata')) {
+        obj['enableIAMClauseLibraryMetadata'] = SettingsMetadata.constructFromObject(data['enableIAMClauseLibraryMetadata']);
       }
       if (data.hasOwnProperty('enableIDFxAccountlessSMSAuthForPart11')) {
         obj['enableIDFxAccountlessSMSAuthForPart11'] = ApiClient.convertToType(data['enableIDFxAccountlessSMSAuthForPart11'], 'String');
@@ -1779,6 +1809,12 @@
       }
       if (data.hasOwnProperty('enableWorkdayFinancialsExtensionMetaData')) {
         obj['enableWorkdayFinancialsExtensionMetaData'] = SettingsMetadata.constructFromObject(data['enableWorkdayFinancialsExtensionMetaData']);
+      }
+      if (data.hasOwnProperty('enableWorkdayHRApp')) {
+        obj['enableWorkdayHRApp'] = ApiClient.convertToType(data['enableWorkdayHRApp'], 'String');
+      }
+      if (data.hasOwnProperty('enableWorkdayHRAppMetadata')) {
+        obj['enableWorkdayHRAppMetadata'] = SettingsMetadata.constructFromObject(data['enableWorkdayHRAppMetadata']);
       }
       if (data.hasOwnProperty('enforceTemplateNameUniqueness')) {
         obj['enforceTemplateNameUniqueness'] = ApiClient.convertToType(data['enforceTemplateNameUniqueness'], 'String');
@@ -4475,6 +4511,16 @@
   exports.prototype['enableBccDummyLinkMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableCacPivSignatureGroup
+   */
+  exports.prototype['enableCacPivSignatureGroup'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableCacPivSignatureGroupMetadata
+   */
+  exports.prototype['enableCacPivSignatureGroupMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableCalculatedFields
    */
   exports.prototype['enableCalculatedFields'] = undefined;
@@ -4598,6 +4644,16 @@
    * @member {module:model/SettingsMetadata} enableCoupaCoreExtensionMetadata
    */
   exports.prototype['enableCoupaCoreExtensionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableCoupaIAMConnector
+   */
+  exports.prototype['enableCoupaIAMConnector'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableCoupaIAMConnectorMetadata
+   */
+  exports.prototype['enableCoupaIAMConnectorMetadata'] = undefined;
   /**
    * 
    * @member {String} enableCustomDataVerificationExtensions
@@ -4803,6 +4859,36 @@
    * @member {module:model/SettingsMetadata} enableGenerationWith3PIntegrationMetaData
    */
   exports.prototype['enableGenerationWith3PIntegrationMetaData'] = undefined;
+  /**
+   * 
+   * @member {String} enableGreenhouseApp
+   */
+  exports.prototype['enableGreenhouseApp'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableGreenhouseAppMetadata
+   */
+  exports.prototype['enableGreenhouseAppMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableI9OnDemand
+   */
+  exports.prototype['enableI9OnDemand'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableI9OnDemandMetadata
+   */
+  exports.prototype['enableI9OnDemandMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableIAMClauseLibrary
+   */
+  exports.prototype['enableIAMClauseLibrary'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableIAMClauseLibraryMetadata
+   */
+  exports.prototype['enableIAMClauseLibraryMetadata'] = undefined;
   /**
    * 
    * @member {String} enableIDFxAccountlessSMSAuthForPart11
@@ -5463,6 +5549,16 @@
    * @member {module:model/SettingsMetadata} enableWorkdayFinancialsExtensionMetaData
    */
   exports.prototype['enableWorkdayFinancialsExtensionMetaData'] = undefined;
+  /**
+   * 
+   * @member {String} enableWorkdayHRApp
+   */
+  exports.prototype['enableWorkdayHRApp'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableWorkdayHRAppMetadata
+   */
+  exports.prototype['enableWorkdayHRAppMetadata'] = undefined;
   /**
    * 
    * @member {String} enforceTemplateNameUniqueness

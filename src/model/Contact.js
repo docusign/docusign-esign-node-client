@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('canManage')) {
+        obj['canManage'] = ApiClient.convertToType(data['canManage'], 'String');
+      }
       if (data.hasOwnProperty('cloudProvider')) {
         obj['cloudProvider'] = ApiClient.convertToType(data['cloudProvider'], 'String');
       }
@@ -103,6 +106,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} canManage
+   */
+  exports.prototype['canManage'] = undefined;
   /**
    * 
    * @member {String} cloudProvider

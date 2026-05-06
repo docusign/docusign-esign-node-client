@@ -304,6 +304,9 @@
       if (data.hasOwnProperty('templateRequiredMetadata')) {
         obj['templateRequiredMetadata'] = PropertyMetadata.constructFromObject(data['templateRequiredMetadata']);
       }
+      if (data.hasOwnProperty('timestampStandardized')) {
+        obj['timestampStandardized'] = ApiClient.convertToType(data['timestampStandardized'], 'String');
+      }
       if (data.hasOwnProperty('tooltip')) {
         obj['tooltip'] = ApiClient.convertToType(data['tooltip'], 'String');
       }
@@ -762,6 +765,11 @@
    * @member {module:model/PropertyMetadata} templateRequiredMetadata
    */
   exports.prototype['templateRequiredMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} timestampStandardized
+   */
+  exports.prototype['timestampStandardized'] = undefined;
   /**
    * 
    * @member {String} tooltip

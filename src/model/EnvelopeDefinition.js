@@ -301,9 +301,6 @@
       if (data.hasOwnProperty('statusChangedDateTime')) {
         obj['statusChangedDateTime'] = ApiClient.convertToType(data['statusChangedDateTime'], 'String');
       }
-      if (data.hasOwnProperty('statusDateTime')) {
-        obj['statusDateTime'] = ApiClient.convertToType(data['statusDateTime'], 'String');
-      }
       if (data.hasOwnProperty('templateId')) {
         obj['templateId'] = ApiClient.convertToType(data['templateId'], 'String');
       }
@@ -745,11 +742,6 @@
    * @member {String} statusChangedDateTime
    */
   exports.prototype['statusChangedDateTime'] = undefined;
-  /**
-   * 
-   * @member {String} statusDateTime
-   */
-  exports.prototype['statusDateTime'] = undefined;
   /**
    * The unique identifier of the template. If this is not provided, DocuSign will generate a value. 
    * @member {String} templateId

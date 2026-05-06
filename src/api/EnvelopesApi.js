@@ -6399,6 +6399,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
      * @param {String} optsOrCallback.includeAgreementType 
      * @param {String} optsOrCallback.includeDocgenFormfields 
      * @param {String} optsOrCallback.includeDocumentSize 
+     * @param {String} optsOrCallback.includeIsEdited 
      * @param {String} optsOrCallback.includeMetadata 
      * @param {String} optsOrCallback.includeTabs 
      * @param {String} optsOrCallback.recipientId 
@@ -6442,6 +6443,7 @@ There are two types of envelope custom fields, text, and list. A text custom fie
         'include_agreement_type': optsOrCallback['includeAgreementType'],
         'include_docgen_formfields': optsOrCallback['includeDocgenFormfields'],
         'include_document_size': optsOrCallback['includeDocumentSize'],
+        'include_is_edited': optsOrCallback['includeIsEdited'],
         'include_metadata': optsOrCallback['includeMetadata'],
         'include_tabs': optsOrCallback['includeTabs'],
         'recipient_id': optsOrCallback['recipientId'],

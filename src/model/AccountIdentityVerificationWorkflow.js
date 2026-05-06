@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('defaultName')) {
         obj['defaultName'] = ApiClient.convertToType(data['defaultName'], 'String');
       }
+      if (data.hasOwnProperty('displayOrder')) {
+        obj['displayOrder'] = ApiClient.convertToType(data['displayOrder'], 'String');
+      }
       if (data.hasOwnProperty('inputOptions')) {
         obj['inputOptions'] = ApiClient.convertToType(data['inputOptions'], [AccountIdentityInputOption]);
       }
@@ -99,6 +102,11 @@
    * @member {String} defaultName
    */
   exports.prototype['defaultName'] = undefined;
+  /**
+   * 
+   * @member {String} displayOrder
+   */
+  exports.prototype['displayOrder'] = undefined;
   /**
    * 
    * @member {Array.<module:model/AccountIdentityInputOption>} inputOptions
