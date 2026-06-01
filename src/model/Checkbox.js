@@ -103,6 +103,9 @@
       if (data.hasOwnProperty('anchorTabProcessorVersionMetadata')) {
         obj['anchorTabProcessorVersionMetadata'] = PropertyMetadata.constructFromObject(data['anchorTabProcessorVersionMetadata']);
       }
+      if (data.hasOwnProperty('anchorTabScope')) {
+        obj['anchorTabScope'] = ApiClient.convertToType(data['anchorTabScope'], 'String');
+      }
       if (data.hasOwnProperty('anchorUnits')) {
         obj['anchorUnits'] = ApiClient.convertToType(data['anchorUnits'], 'String');
       }
@@ -460,6 +463,11 @@
    * @member {module:model/PropertyMetadata} anchorTabProcessorVersionMetadata
    */
   exports.prototype['anchorTabProcessorVersionMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} anchorTabScope
+   */
+  exports.prototype['anchorTabScope'] = undefined;
   /**
    * Specifies units of the X and Y offset. Units could be pixels, millimeters, centimeters, or inches.
    * @member {String} anchorUnits

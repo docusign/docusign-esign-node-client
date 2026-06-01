@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccessCodeFormat', 'model/AccountIdentityVerificationWorkflow', 'model/AccountNotification', 'model/AccountUISettings', 'model/AddressInformation', 'model/ExternalDocumentSources', 'model/IdCheckConfiguration', 'model/LinkedExternalPrimaryAccount', 'model/SettingsMetadata', 'model/TabAccountSettings'], factory);
+    define(['ApiClient', 'model/AccessCodeFormat', 'model/AccountIdentityVerificationWorkflow', 'model/AccountNotification', 'model/AccountUISettings', 'model/AdditionalSetting', 'model/AddressInformation', 'model/ExternalDocumentSources', 'model/IdCheckConfiguration', 'model/LinkedExternalPrimaryAccount', 'model/SettingsMetadata', 'model/TabAccountSettings'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./AccessCodeFormat'), require('./AccountIdentityVerificationWorkflow'), require('./AccountNotification'), require('./AccountUISettings'), require('./AddressInformation'), require('./ExternalDocumentSources'), require('./IdCheckConfiguration'), require('./LinkedExternalPrimaryAccount'), require('./SettingsMetadata'), require('./TabAccountSettings'));
+    module.exports = factory(require('../ApiClient'), require('./AccessCodeFormat'), require('./AccountIdentityVerificationWorkflow'), require('./AccountNotification'), require('./AccountUISettings'), require('./AdditionalSetting'), require('./AddressInformation'), require('./ExternalDocumentSources'), require('./IdCheckConfiguration'), require('./LinkedExternalPrimaryAccount'), require('./SettingsMetadata'), require('./TabAccountSettings'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.AccessCodeFormat, root.Docusign.AccountIdentityVerificationWorkflow, root.Docusign.AccountNotification, root.Docusign.AccountUISettings, root.Docusign.AddressInformation, root.Docusign.ExternalDocumentSources, root.Docusign.IdCheckConfiguration, root.Docusign.LinkedExternalPrimaryAccount, root.Docusign.SettingsMetadata, root.Docusign.TabAccountSettings);
+    root.Docusign.AccountSettingsInformation = factory(root.Docusign.ApiClient, root.Docusign.AccessCodeFormat, root.Docusign.AccountIdentityVerificationWorkflow, root.Docusign.AccountNotification, root.Docusign.AccountUISettings, root.Docusign.AdditionalSetting, root.Docusign.AddressInformation, root.Docusign.ExternalDocumentSources, root.Docusign.IdCheckConfiguration, root.Docusign.LinkedExternalPrimaryAccount, root.Docusign.SettingsMetadata, root.Docusign.TabAccountSettings);
   }
-}(this, function(ApiClient, AccessCodeFormat, AccountIdentityVerificationWorkflow, AccountNotification, AccountUISettings, AddressInformation, ExternalDocumentSources, IdCheckConfiguration, LinkedExternalPrimaryAccount, SettingsMetadata, TabAccountSettings) {
+}(this, function(ApiClient, AccessCodeFormat, AccountIdentityVerificationWorkflow, AccountNotification, AccountUISettings, AdditionalSetting, AddressInformation, ExternalDocumentSources, IdCheckConfiguration, LinkedExternalPrimaryAccount, SettingsMetadata, TabAccountSettings) {
   'use strict';
 
 
@@ -82,6 +82,9 @@
       if (data.hasOwnProperty('accountUISettings')) {
         obj['accountUISettings'] = AccountUISettings.constructFromObject(data['accountUISettings']);
       }
+      if (data.hasOwnProperty('additionalSettings')) {
+        obj['additionalSettings'] = ApiClient.convertToType(data['additionalSettings'], [AdditionalSetting]);
+      }
       if (data.hasOwnProperty('adoptSigConfig')) {
         obj['adoptSigConfig'] = ApiClient.convertToType(data['adoptSigConfig'], 'String');
       }
@@ -111,6 +114,12 @@
       }
       if (data.hasOwnProperty('advancedSearchEnableTemplateNameFieldMetadata')) {
         obj['advancedSearchEnableTemplateNameFieldMetadata'] = SettingsMetadata.constructFromObject(data['advancedSearchEnableTemplateNameFieldMetadata']);
+      }
+      if (data.hasOwnProperty('aiAssistedWebFormCreationLevel')) {
+        obj['aiAssistedWebFormCreationLevel'] = ApiClient.convertToType(data['aiAssistedWebFormCreationLevel'], 'String');
+      }
+      if (data.hasOwnProperty('aiAssistedWebFormCreationLevelMetadata')) {
+        obj['aiAssistedWebFormCreationLevelMetadata'] = SettingsMetadata.constructFromObject(data['aiAssistedWebFormCreationLevelMetadata']);
       }
       if (data.hasOwnProperty('allowAccessCodeFormat')) {
         obj['allowAccessCodeFormat'] = ApiClient.convertToType(data['allowAccessCodeFormat'], 'String');
@@ -1414,6 +1423,12 @@
       if (data.hasOwnProperty('enableIAMClauseLibraryMetadata')) {
         obj['enableIAMClauseLibraryMetadata'] = SettingsMetadata.constructFromObject(data['enableIAMClauseLibraryMetadata']);
       }
+      if (data.hasOwnProperty('enableIAMforXEmbeddedUX')) {
+        obj['enableIAMforXEmbeddedUX'] = ApiClient.convertToType(data['enableIAMforXEmbeddedUX'], 'String');
+      }
+      if (data.hasOwnProperty('enableIAMforXEmbeddedUXMetadata')) {
+        obj['enableIAMforXEmbeddedUXMetadata'] = SettingsMetadata.constructFromObject(data['enableIAMforXEmbeddedUXMetadata']);
+      }
       if (data.hasOwnProperty('enableIDFxAccountlessSMSAuthForPart11')) {
         obj['enableIDFxAccountlessSMSAuthForPart11'] = ApiClient.convertToType(data['enableIDFxAccountlessSMSAuthForPart11'], 'String');
       }
@@ -1614,6 +1629,12 @@
       }
       if (data.hasOwnProperty('enableResponsiveSigningMetadata')) {
         obj['enableResponsiveSigningMetadata'] = SettingsMetadata.constructFromObject(data['enableResponsiveSigningMetadata']);
+      }
+      if (data.hasOwnProperty('enableReviewerEventsSetting')) {
+        obj['enableReviewerEventsSetting'] = ApiClient.convertToType(data['enableReviewerEventsSetting'], 'String');
+      }
+      if (data.hasOwnProperty('enableReviewerEventsSettingMetadata')) {
+        obj['enableReviewerEventsSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableReviewerEventsSettingMetadata']);
       }
       if (data.hasOwnProperty('enableSAPAribaExtension')) {
         obj['enableSAPAribaExtension'] = ApiClient.convertToType(data['enableSAPAribaExtension'], 'String');
@@ -2671,6 +2692,11 @@
   exports.prototype['accountUISettings'] = undefined;
   /**
    * 
+   * @member {Array.<module:model/AdditionalSetting>} additionalSettings
+   */
+  exports.prototype['additionalSettings'] = undefined;
+  /**
+   * 
    * @member {String} adoptSigConfig
    */
   exports.prototype['adoptSigConfig'] = undefined;
@@ -2719,6 +2745,16 @@
    * @member {module:model/SettingsMetadata} advancedSearchEnableTemplateNameFieldMetadata
    */
   exports.prototype['advancedSearchEnableTemplateNameFieldMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} aiAssistedWebFormCreationLevel
+   */
+  exports.prototype['aiAssistedWebFormCreationLevel'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} aiAssistedWebFormCreationLevelMetadata
+   */
+  exports.prototype['aiAssistedWebFormCreationLevelMetadata'] = undefined;
   /**
    * 
    * @member {String} allowAccessCodeFormat
@@ -4891,6 +4927,16 @@
   exports.prototype['enableIAMClauseLibraryMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableIAMforXEmbeddedUX
+   */
+  exports.prototype['enableIAMforXEmbeddedUX'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableIAMforXEmbeddedUXMetadata
+   */
+  exports.prototype['enableIAMforXEmbeddedUXMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableIDFxAccountlessSMSAuthForPart11
    */
   exports.prototype['enableIDFxAccountlessSMSAuthForPart11'] = undefined;
@@ -5224,6 +5270,16 @@
    * @member {module:model/SettingsMetadata} enableResponsiveSigningMetadata
    */
   exports.prototype['enableResponsiveSigningMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableReviewerEventsSetting
+   */
+  exports.prototype['enableReviewerEventsSetting'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableReviewerEventsSettingMetadata
+   */
+  exports.prototype['enableReviewerEventsSettingMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSAPAribaExtension

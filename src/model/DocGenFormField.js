@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('connectedObjectDetails')) {
         obj['connectedObjectDetails'] = ConnectedObjectDetails.constructFromObject(data['connectedObjectDetails']);
       }
+      if (data.hasOwnProperty('defaultValue')) {
+        obj['defaultValue'] = ApiClient.convertToType(data['defaultValue'], 'String');
+      }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
@@ -111,6 +114,11 @@
    * @member {module:model/ConnectedObjectDetails} connectedObjectDetails
    */
   exports.prototype['connectedObjectDetails'] = undefined;
+  /**
+   * 
+   * @member {String} defaultValue
+   */
+  exports.prototype['defaultValue'] = undefined;
   /**
    * 
    * @member {String} description
