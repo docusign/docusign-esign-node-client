@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EnvelopesSharesResponseItem'], factory);
+    define(['ApiClient', 'model/EnvelopesShareResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EnvelopesSharesResponseItem'));
+    module.exports = factory(require('../ApiClient'), require('./EnvelopesShareResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopesSharesResponse = factory(root.Docusign.ApiClient, root.Docusign.EnvelopesSharesResponseItem);
+    root.Docusign.EnvelopesSharesResponse = factory(root.Docusign.ApiClient, root.Docusign.EnvelopesShareResponse);
   }
-}(this, function(ApiClient, EnvelopesSharesResponseItem) {
+}(this, function(ApiClient, EnvelopesShareResponse) {
   'use strict';
 
 
@@ -55,7 +55,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('shares')) {
-        obj['shares'] = ApiClient.convertToType(data['shares'], [EnvelopesSharesResponseItem]);
+        obj['shares'] = ApiClient.convertToType(data['shares'], [EnvelopesShareResponse]);
       }
     }
     return obj;
@@ -63,7 +63,7 @@
 
   /**
    * 
-   * @member {Array.<module:model/EnvelopesSharesResponseItem>} shares
+   * @member {Array.<module:model/EnvelopesShareResponse>} shares
    */
   exports.prototype['shares'] = undefined;
 
