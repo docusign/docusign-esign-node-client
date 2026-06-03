@@ -1,9 +1,0 @@
-dir: src
-
-packageJson: package.json
-
-articles:
-  - Overview: README.md
-
-branches:
-  - 3.0.0
