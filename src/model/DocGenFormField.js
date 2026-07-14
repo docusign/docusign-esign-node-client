@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
+      if (data.hasOwnProperty('filter')) {
+        obj['filter'] = ApiClient.convertToType(data['filter'], Object);
+      }
       if (data.hasOwnProperty('format')) {
         obj['format'] = DocGenFormat.constructFromObject(data['format']);
       }
@@ -70,7 +73,7 @@
         obj['fullyQualifiedPath'] = ApiClient.convertToType(data['fullyQualifiedPath'], 'String');
       }
       if (data.hasOwnProperty('hidden')) {
-        obj['hidden'] = ApiClient.convertToType(data['hidden'], 'String');
+        obj['hidden'] = ApiClient.convertToType(data['hidden'], 'Boolean');
       }
       if (data.hasOwnProperty('label')) {
         obj['label'] = ApiClient.convertToType(data['label'], 'String');
@@ -88,7 +91,7 @@
         obj['predefinedValidation'] = ApiClient.convertToType(data['predefinedValidation'], 'String');
       }
       if (data.hasOwnProperty('readOnly')) {
-        obj['readOnly'] = ApiClient.convertToType(data['readOnly'], 'String');
+        obj['readOnly'] = ApiClient.convertToType(data['readOnly'], 'Boolean');
       }
       if (data.hasOwnProperty('required')) {
         obj['required'] = ApiClient.convertToType(data['required'], 'String');
@@ -126,6 +129,11 @@
   exports.prototype['description'] = undefined;
   /**
    * 
+   * @member {Object} filter
+   */
+  exports.prototype['filter'] = undefined;
+  /**
+   * 
    * @member {module:model/DocGenFormat} format
    */
   exports.prototype['format'] = undefined;
@@ -136,7 +144,7 @@
   exports.prototype['fullyQualifiedPath'] = undefined;
   /**
    * 
-   * @member {String} hidden
+   * @member {Boolean} hidden
    */
   exports.prototype['hidden'] = undefined;
   /**
@@ -166,7 +174,7 @@
   exports.prototype['predefinedValidation'] = undefined;
   /**
    * 
-   * @member {String} readOnly
+   * @member {Boolean} readOnly
    */
   exports.prototype['readOnly'] = undefined;
   /**

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/Tabs', 'model/TemplateAutoMatchList', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/TemplateViewRequest', 'model/ViewUrl'], factory);
+	define(['Configuration', 'ApiClient', 'model/CustomFields', 'model/DocumentFieldsInformation', 'model/DocumentHtmlDefinition', 'model/DocumentHtmlDefinitionOriginals', 'model/DocumentHtmlDefinitions', 'model/EnvelopeDefinition', 'model/EnvelopeDocument', 'model/EnvelopeTemplate', 'model/EnvelopeTemplateResults', 'model/ErrorDetails', 'model/GroupInformation', 'model/LockInformation', 'model/LockRequest', 'model/Notification', 'model/PageImages', 'model/PageRequest', 'model/RecipientPreviewRequest', 'model/Recipients', 'model/RecipientsUpdateSummary', 'model/Tabs', 'model/TemplateAutoMatchList', 'model/TemplateCompletionRateResponse', 'model/TemplateCustomFields', 'model/TemplateDocumentsResult', 'model/TemplateNotificationRequest', 'model/TemplateRecipients', 'model/TemplateSummary', 'model/TemplateTabs', 'model/TemplateUpdateSummary', 'model/TemplateViewRequest', 'model/UserCompletionRateResponse', 'model/ViewUrl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientPreviewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/Tabs'), require('../model/TemplateAutoMatchList'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/TemplateViewRequest'), require('../model/ViewUrl'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/CustomFields'), require('../model/DocumentFieldsInformation'), require('../model/DocumentHtmlDefinition'), require('../model/DocumentHtmlDefinitionOriginals'), require('../model/DocumentHtmlDefinitions'), require('../model/EnvelopeDefinition'), require('../model/EnvelopeDocument'), require('../model/EnvelopeTemplate'), require('../model/EnvelopeTemplateResults'), require('../model/ErrorDetails'), require('../model/GroupInformation'), require('../model/LockInformation'), require('../model/LockRequest'), require('../model/Notification'), require('../model/PageImages'), require('../model/PageRequest'), require('../model/RecipientPreviewRequest'), require('../model/Recipients'), require('../model/RecipientsUpdateSummary'), require('../model/Tabs'), require('../model/TemplateAutoMatchList'), require('../model/TemplateCompletionRateResponse'), require('../model/TemplateCustomFields'), require('../model/TemplateDocumentsResult'), require('../model/TemplateNotificationRequest'), require('../model/TemplateRecipients'), require('../model/TemplateSummary'), require('../model/TemplateTabs'), require('../model/TemplateUpdateSummary'), require('../model/TemplateViewRequest'), require('../model/UserCompletionRateResponse'), require('../model/ViewUrl'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientPreviewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.Tabs, root.Docusign.TemplateAutoMatchList, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.TemplateViewRequest, root.Docusign.ViewUrl);
+    root.Docusign.TemplatesApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.CustomFields, root.Docusign.DocumentFieldsInformation, root.Docusign.DocumentHtmlDefinition, root.Docusign.DocumentHtmlDefinitionOriginals, root.Docusign.DocumentHtmlDefinitions, root.Docusign.EnvelopeDefinition, root.Docusign.EnvelopeDocument, root.Docusign.EnvelopeTemplate, root.Docusign.EnvelopeTemplateResults, root.Docusign.ErrorDetails, root.Docusign.GroupInformation, root.Docusign.LockInformation, root.Docusign.LockRequest, root.Docusign.Notification, root.Docusign.PageImages, root.Docusign.PageRequest, root.Docusign.RecipientPreviewRequest, root.Docusign.Recipients, root.Docusign.RecipientsUpdateSummary, root.Docusign.Tabs, root.Docusign.TemplateAutoMatchList, root.Docusign.TemplateCompletionRateResponse, root.Docusign.TemplateCustomFields, root.Docusign.TemplateDocumentsResult, root.Docusign.TemplateNotificationRequest, root.Docusign.TemplateRecipients, root.Docusign.TemplateSummary, root.Docusign.TemplateTabs, root.Docusign.TemplateUpdateSummary, root.Docusign.TemplateViewRequest, root.Docusign.UserCompletionRateResponse, root.Docusign.ViewUrl);
   }
-}(this, function(Configuration, ApiClient, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, Recipients, RecipientsUpdateSummary, Tabs, TemplateAutoMatchList, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, TemplateViewRequest, ViewUrl) {
+}(this, function(Configuration, ApiClient, CustomFields, DocumentFieldsInformation, DocumentHtmlDefinition, DocumentHtmlDefinitionOriginals, DocumentHtmlDefinitions, EnvelopeDefinition, EnvelopeDocument, EnvelopeTemplate, EnvelopeTemplateResults, ErrorDetails, GroupInformation, LockInformation, LockRequest, Notification, PageImages, PageRequest, RecipientPreviewRequest, Recipients, RecipientsUpdateSummary, Tabs, TemplateAutoMatchList, TemplateCompletionRateResponse, TemplateCustomFields, TemplateDocumentsResult, TemplateNotificationRequest, TemplateRecipients, TemplateSummary, TemplateTabs, TemplateUpdateSummary, TemplateViewRequest, UserCompletionRateResponse, ViewUrl) {
   'use strict';
 
   /**
@@ -1693,6 +1693,115 @@ template specified by `templateId`.
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/templates/{templateId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getCompletionRateForTemplate operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~getCompletionRateForTemplateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TemplateCompletionRateResponse} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Gets completion rate for the template
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} templateId The ID of the template being accessed.
+     * @param {module:api/TemplatesApi~getCompletionRateForTemplateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TemplateCompletionRateResponse}
+     */
+    this.getCompletionRateForTemplate = function(accountId, templateId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getCompletionRateForTemplate");
+      }
+
+      // verify the required parameter 'templateId' is set
+      if (templateId === undefined || templateId === null) {
+        throw new Error("Missing the required parameter 'templateId' when calling getCompletionRateForTemplate");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'templateId': templateId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TemplateCompletionRateResponse;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/{templateId}/insights/completionRate', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getCompletionRateForTemplateOwner operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~getCompletionRateForTemplateOwnerCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserCompletionRateResponse} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Gets completion rate for the user
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {module:api/TemplatesApi~getCompletionRateForTemplateOwnerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserCompletionRateResponse}
+     */
+    this.getCompletionRateForTemplateOwner = function(accountId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getCompletionRateForTemplateOwner");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = UserCompletionRateResponse;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/templates/insights/completionRate', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -3688,8 +3797,8 @@ template specified by `templateId`.
     };
 
     /**
-     * (Optional) Callback function to receive the result of the updateTemplates operation. If none specified a Promise will be returned.
-     * @callback module:api/TemplatesApi~updateTemplatesCallback
+     * (Optional) Callback function to receive the result of the updateTemplatesAutoMatch operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~updateTemplatesAutoMatchCallback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateAutoMatchList} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
@@ -3700,10 +3809,10 @@ template specified by `templateId`.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/TemplateAutoMatchList} optsOrCallback.templateAutoMatchList 
-     * @param {module:api/TemplatesApi~updateTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TemplatesApi~updateTemplatesAutoMatchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateAutoMatchList}
      */
-    this.updateTemplates = function(accountId, optsOrCallback, callback) {
+    this.updateTemplatesAutoMatch = function(accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3715,7 +3824,7 @@ template specified by `templateId`.
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateTemplates");
+        throw new Error("Missing the required parameter 'accountId' when calling updateTemplatesAutoMatch");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
@@ -3748,8 +3857,8 @@ template specified by `templateId`.
     };
 
     /**
-     * (Optional) Callback function to receive the result of the updateTemplatesAutoMatch operation. If none specified a Promise will be returned.
-     * @callback module:api/TemplatesApi~updateTemplatesAutoMatchCallback
+     * (Optional) Callback function to receive the result of the updateTemplatesAutoMatch_0 operation. If none specified a Promise will be returned.
+     * @callback module:api/TemplatesApi~updateTemplatesAutoMatch_0Callback
      * @param {String} error Error message, if any.
      * @param {module:model/TemplateAutoMatchList} data The data returned by the service call.
      * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
@@ -3760,10 +3869,10 @@ template specified by `templateId`.
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {module:model/TemplateAutoMatchList} optsOrCallback.templateAutoMatchList 
-     * @param {module:api/TemplatesApi~updateTemplatesAutoMatchCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/TemplatesApi~updateTemplatesAutoMatch_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TemplateAutoMatchList}
      */
-    this.updateTemplatesAutoMatch = function(accountId, optsOrCallback, callback) {
+    this.updateTemplatesAutoMatch_0 = function(accountId, optsOrCallback, callback) {
       optsOrCallback = optsOrCallback || {};
 
       if (typeof optsOrCallback === 'function') {
@@ -3775,7 +3884,7 @@ template specified by `templateId`.
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling updateTemplatesAutoMatch");
+        throw new Error("Missing the required parameter 'accountId' when calling updateTemplatesAutoMatch_0");
       }
 
       if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){

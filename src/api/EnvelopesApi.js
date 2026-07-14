@@ -248,7 +248,7 @@
       };
 
       var authNames = ['docusignAccessCode'];
-      var contentTypes = ['multipart/form-data'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChunkedUploadResponse;
 
@@ -5290,6 +5290,129 @@ envelope specified by `envelopeId`.
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/workflow/steps/{workflowStepId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getEnvelopesShare operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getEnvelopesShareCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EnvelopesShareResponse} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Gets a single envelope share by shareId
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {String} shareId 
+     * @param {module:api/EnvelopesApi~getEnvelopesShareCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EnvelopesShareResponse}
+     */
+    this.getEnvelopesShare = function(accountId, envelopeId, shareId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopesShare");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopesShare");
+      }
+
+      // verify the required parameter 'shareId' is set
+      if (shareId === undefined || shareId === null) {
+        throw new Error("Missing the required parameter 'shareId' when calling getEnvelopesShare");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId,
+        'shareId': shareId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = EnvelopesShareResponse;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares/{shareId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    };
+
+    /**
+     * (Optional) Callback function to receive the result of the getEnvelopesShares operation. If none specified a Promise will be returned.
+     * @callback module:api/EnvelopesApi~getEnvelopesSharesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EnvelopesSharesResponse} data The data returned by the service call.
+     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
+     */
+
+    /**
+     * Gets all shares for an envelope
+     * @param {String} accountId The external account number (int) or account ID Guid.
+     * @param {String} envelopeId The envelopeId Guid of the envelope being accessed.
+     * @param {module:api/EnvelopesApi~getEnvelopesSharesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EnvelopesSharesResponse}
+     */
+    this.getEnvelopesShares = function(accountId, envelopeId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'accountId' is set
+      if (accountId === undefined || accountId === null) {
+        throw new Error("Missing the required parameter 'accountId' when calling getEnvelopesShares");
+      }
+
+      // verify the required parameter 'envelopeId' is set
+      if (envelopeId === undefined || envelopeId === null) {
+        throw new Error("Missing the required parameter 'envelopeId' when calling getEnvelopesShares");
+      }
+
+      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
+        if (typeof optsOrCallback !== 'undefined') {
+          optsOrCallback = callback;
+        }
+        callback = arguments[arguments.length-1];
+      }
+
+      var pathParams = {
+        'accountId': accountId,
+        'envelopeId': envelopeId
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['docusignAccessCode'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = EnvelopesSharesResponse;
+
+      return this.apiClient.callApi(
+        '/v2.1/accounts/{accountId}/envelopes/{envelopeId}/shares', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

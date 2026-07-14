@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/RecipientAdditionalNotification', 'model/RecipientEmailNotification', 'model/RecipientPhoneNumber', 'model/RecipientSignatureProvider', 'model/Tabs'], factory);
+    define(['ApiClient', 'model/RecipientAdditionalNotification', 'model/RecipientEmailNotification', 'model/RecipientPhoneNumber', 'model/RecipientSignatureProvider', 'model/Tabs', 'model/UserInfo'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./RecipientAdditionalNotification'), require('./RecipientEmailNotification'), require('./RecipientPhoneNumber'), require('./RecipientSignatureProvider'), require('./Tabs'));
+    module.exports = factory(require('../ApiClient'), require('./RecipientAdditionalNotification'), require('./RecipientEmailNotification'), require('./RecipientPhoneNumber'), require('./RecipientSignatureProvider'), require('./Tabs'), require('./UserInfo'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.TemplateRole = factory(root.Docusign.ApiClient, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientSignatureProvider, root.Docusign.Tabs);
+    root.Docusign.TemplateRole = factory(root.Docusign.ApiClient, root.Docusign.RecipientAdditionalNotification, root.Docusign.RecipientEmailNotification, root.Docusign.RecipientPhoneNumber, root.Docusign.RecipientSignatureProvider, root.Docusign.Tabs, root.Docusign.UserInfo);
   }
-}(this, function(ApiClient, RecipientAdditionalNotification, RecipientEmailNotification, RecipientPhoneNumber, RecipientSignatureProvider, Tabs) {
+}(this, function(ApiClient, RecipientAdditionalNotification, RecipientEmailNotification, RecipientPhoneNumber, RecipientSignatureProvider, Tabs, UserInfo) {
   'use strict';
 
 
@@ -99,6 +99,15 @@
       }
       if (data.hasOwnProperty('signingGroupId')) {
         obj['signingGroupId'] = ApiClient.convertToType(data['signingGroupId'], 'String');
+      }
+      if (data.hasOwnProperty('signingGroupName')) {
+        obj['signingGroupName'] = ApiClient.convertToType(data['signingGroupName'], 'String');
+      }
+      if (data.hasOwnProperty('signingGroupType')) {
+        obj['signingGroupType'] = ApiClient.convertToType(data['signingGroupType'], 'String');
+      }
+      if (data.hasOwnProperty('signingGroupUsers')) {
+        obj['signingGroupUsers'] = ApiClient.convertToType(data['signingGroupUsers'], [UserInfo]);
       }
       if (data.hasOwnProperty('tabs')) {
         obj['tabs'] = Tabs.constructFromObject(data['tabs']);
@@ -182,6 +191,21 @@
    * @member {String} signingGroupId
    */
   exports.prototype['signingGroupId'] = undefined;
+  /**
+   * The display name for the signing group.   Maximum Length: 100 characters. 
+   * @member {String} signingGroupName
+   */
+  exports.prototype['signingGroupName'] = undefined;
+  /**
+   * 
+   * @member {String} signingGroupType
+   */
+  exports.prototype['signingGroupType'] = undefined;
+  /**
+   * A complex type that contains information about users in the signing group.
+   * @member {Array.<module:model/UserInfo>} signingGroupUsers
+   */
+  exports.prototype['signingGroupUsers'] = undefined;
   /**
    * A list of tabs, which are represented graphically as symbols on documents at the time of signing. Tabs show recipients where to sign, initial, or enter data. They may also display data to the recipients.
    * @member {module:model/Tabs} tabs
