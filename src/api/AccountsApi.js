@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignature', 'model/AccountSignatureDefinition', 'model/AccountSignatureProviders', 'model/AccountSignaturesInformation', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/TemplateCompletionRateResponse', 'model/UserAuthorization', 'model/UserAuthorizationCreateRequest', 'model/UserAuthorizationUpdateRequest', 'model/UserAuthorizations', 'model/UserAuthorizationsDeleteRequest', 'model/UserAuthorizationsDeleteResponse', 'model/UserAuthorizationsRequest', 'model/UserAuthorizationsResponse', 'model/UserCompletionRateResponse', 'model/UserPasswordRules', 'model/Watermark'], factory);
+	define(['Configuration', 'ApiClient', 'model/AccountIdentityVerificationResponse', 'model/AccountInformation', 'model/AccountPasswordRules', 'model/AccountSettingsInformation', 'model/AccountSharedAccess', 'model/AccountSignature', 'model/AccountSignatureDefinition', 'model/AccountSignatureProviders', 'model/AccountSignaturesInformation', 'model/BillingChargeResponse', 'model/Brand', 'model/BrandResources', 'model/BrandResourcesList', 'model/BrandsRequest', 'model/BrandsResponse', 'model/CaptiveRecipientInformation', 'model/ConsumerDisclosure', 'model/CustomField', 'model/CustomFields', 'model/ENoteConfiguration', 'model/EnvelopePurgeConfiguration', 'model/ErrorDetails', 'model/FavoriteTemplatesInfo', 'model/FileTypeList', 'model/NewAccountDefinition', 'model/NewAccountSummary', 'model/NotificationDefaults', 'model/PaymentGatewayAccountsInfo', 'model/PermissionProfile', 'model/PermissionProfileInformation', 'model/ProvisioningInformation', 'model/SupportedLanguages', 'model/TabAccountSettings', 'model/UserAuthorization', 'model/UserAuthorizationCreateRequest', 'model/UserAuthorizationUpdateRequest', 'model/UserAuthorizations', 'model/UserAuthorizationsDeleteRequest', 'model/UserAuthorizationsDeleteResponse', 'model/UserAuthorizationsRequest', 'model/UserAuthorizationsResponse', 'model/UserPasswordRules', 'model/Watermark'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignature'), require('../model/AccountSignatureDefinition'), require('../model/AccountSignatureProviders'), require('../model/AccountSignaturesInformation'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/TemplateCompletionRateResponse'), require('../model/UserAuthorization'), require('../model/UserAuthorizationCreateRequest'), require('../model/UserAuthorizationUpdateRequest'), require('../model/UserAuthorizations'), require('../model/UserAuthorizationsDeleteRequest'), require('../model/UserAuthorizationsDeleteResponse'), require('../model/UserAuthorizationsRequest'), require('../model/UserAuthorizationsResponse'), require('../model/UserCompletionRateResponse'), require('../model/UserPasswordRules'), require('../model/Watermark'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AccountIdentityVerificationResponse'), require('../model/AccountInformation'), require('../model/AccountPasswordRules'), require('../model/AccountSettingsInformation'), require('../model/AccountSharedAccess'), require('../model/AccountSignature'), require('../model/AccountSignatureDefinition'), require('../model/AccountSignatureProviders'), require('../model/AccountSignaturesInformation'), require('../model/BillingChargeResponse'), require('../model/Brand'), require('../model/BrandResources'), require('../model/BrandResourcesList'), require('../model/BrandsRequest'), require('../model/BrandsResponse'), require('../model/CaptiveRecipientInformation'), require('../model/ConsumerDisclosure'), require('../model/CustomField'), require('../model/CustomFields'), require('../model/ENoteConfiguration'), require('../model/EnvelopePurgeConfiguration'), require('../model/ErrorDetails'), require('../model/FavoriteTemplatesInfo'), require('../model/FileTypeList'), require('../model/NewAccountDefinition'), require('../model/NewAccountSummary'), require('../model/NotificationDefaults'), require('../model/PaymentGatewayAccountsInfo'), require('../model/PermissionProfile'), require('../model/PermissionProfileInformation'), require('../model/ProvisioningInformation'), require('../model/SupportedLanguages'), require('../model/TabAccountSettings'), require('../model/UserAuthorization'), require('../model/UserAuthorizationCreateRequest'), require('../model/UserAuthorizationUpdateRequest'), require('../model/UserAuthorizations'), require('../model/UserAuthorizationsDeleteRequest'), require('../model/UserAuthorizationsDeleteResponse'), require('../model/UserAuthorizationsRequest'), require('../model/UserAuthorizationsResponse'), require('../model/UserPasswordRules'), require('../model/Watermark'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignature, root.Docusign.AccountSignatureDefinition, root.Docusign.AccountSignatureProviders, root.Docusign.AccountSignaturesInformation, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.TemplateCompletionRateResponse, root.Docusign.UserAuthorization, root.Docusign.UserAuthorizationCreateRequest, root.Docusign.UserAuthorizationUpdateRequest, root.Docusign.UserAuthorizations, root.Docusign.UserAuthorizationsDeleteRequest, root.Docusign.UserAuthorizationsDeleteResponse, root.Docusign.UserAuthorizationsRequest, root.Docusign.UserAuthorizationsResponse, root.Docusign.UserCompletionRateResponse, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
+    root.Docusign.AccountsApi = factory(root.Docusign.Configuration, root.Docusign.ApiClient, root.Docusign.AccountIdentityVerificationResponse, root.Docusign.AccountInformation, root.Docusign.AccountPasswordRules, root.Docusign.AccountSettingsInformation, root.Docusign.AccountSharedAccess, root.Docusign.AccountSignature, root.Docusign.AccountSignatureDefinition, root.Docusign.AccountSignatureProviders, root.Docusign.AccountSignaturesInformation, root.Docusign.BillingChargeResponse, root.Docusign.Brand, root.Docusign.BrandResources, root.Docusign.BrandResourcesList, root.Docusign.BrandsRequest, root.Docusign.BrandsResponse, root.Docusign.CaptiveRecipientInformation, root.Docusign.ConsumerDisclosure, root.Docusign.CustomField, root.Docusign.CustomFields, root.Docusign.ENoteConfiguration, root.Docusign.EnvelopePurgeConfiguration, root.Docusign.ErrorDetails, root.Docusign.FavoriteTemplatesInfo, root.Docusign.FileTypeList, root.Docusign.NewAccountDefinition, root.Docusign.NewAccountSummary, root.Docusign.NotificationDefaults, root.Docusign.PaymentGatewayAccountsInfo, root.Docusign.PermissionProfile, root.Docusign.PermissionProfileInformation, root.Docusign.ProvisioningInformation, root.Docusign.SupportedLanguages, root.Docusign.TabAccountSettings, root.Docusign.UserAuthorization, root.Docusign.UserAuthorizationCreateRequest, root.Docusign.UserAuthorizationUpdateRequest, root.Docusign.UserAuthorizations, root.Docusign.UserAuthorizationsDeleteRequest, root.Docusign.UserAuthorizationsDeleteResponse, root.Docusign.UserAuthorizationsRequest, root.Docusign.UserAuthorizationsResponse, root.Docusign.UserPasswordRules, root.Docusign.Watermark);
   }
-}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignature, AccountSignatureDefinition, AccountSignatureProviders, AccountSignaturesInformation, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, SupportedLanguages, TabAccountSettings, TemplateCompletionRateResponse, UserAuthorization, UserAuthorizationCreateRequest, UserAuthorizationUpdateRequest, UserAuthorizations, UserAuthorizationsDeleteRequest, UserAuthorizationsDeleteResponse, UserAuthorizationsRequest, UserAuthorizationsResponse, UserCompletionRateResponse, UserPasswordRules, Watermark) {
+}(this, function(Configuration, ApiClient, AccountIdentityVerificationResponse, AccountInformation, AccountPasswordRules, AccountSettingsInformation, AccountSharedAccess, AccountSignature, AccountSignatureDefinition, AccountSignatureProviders, AccountSignaturesInformation, BillingChargeResponse, Brand, BrandResources, BrandResourcesList, BrandsRequest, BrandsResponse, CaptiveRecipientInformation, ConsumerDisclosure, CustomField, CustomFields, ENoteConfiguration, EnvelopePurgeConfiguration, ErrorDetails, FavoriteTemplatesInfo, FileTypeList, NewAccountDefinition, NewAccountSummary, NotificationDefaults, PaymentGatewayAccountsInfo, PermissionProfile, PermissionProfileInformation, ProvisioningInformation, SupportedLanguages, TabAccountSettings, UserAuthorization, UserAuthorizationCreateRequest, UserAuthorizationUpdateRequest, UserAuthorizations, UserAuthorizationsDeleteRequest, UserAuthorizationsDeleteResponse, UserAuthorizationsRequest, UserAuthorizationsResponse, UserPasswordRules, Watermark) {
   'use strict';
 
   /**
@@ -1684,6 +1684,8 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
      * @param {String} optsOrCallback.includeClosedUsers 
      * @param {String} optsOrCallback.permissions 
      * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.taskSource 
+     * @param {String} optsOrCallback.taskType 
      * @param {String} optsOrCallback.userNameSubstring 
      * @param {module:api/AccountsApi~getAgentUserAuthorizationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserAuthorizations}
@@ -1726,6 +1728,8 @@ The `canUpgrade` property contains is a Boolean that indicates whether the accou
         'include_closed_users': optsOrCallback['includeClosedUsers'],
         'permissions': optsOrCallback['permissions'],
         'start_position': optsOrCallback['startPosition'],
+        'task_source': optsOrCallback['taskSource'],
+        'task_type': optsOrCallback['taskType'],
         'user_name_substring': optsOrCallback['userNameSubstring']
       };
       var headerParams = {
@@ -2201,115 +2205,6 @@ A brand uses a set of brand resource files to control the sending, signing, emai
 
       return this.apiClient.callApi(
         '/v2.1/accounts/{accountId}/brands/{brandId}/resources/{resourceContentType}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the getCompletionRateForTemplate operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~getCompletionRateForTemplateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TemplateCompletionRateResponse} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Gets completion rate for the template
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {String} templateId The ID of the template being accessed.
-     * @param {module:api/AccountsApi~getCompletionRateForTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TemplateCompletionRateResponse}
-     */
-    this.getCompletionRateForTemplate = function(accountId, templateId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getCompletionRateForTemplate");
-      }
-
-      // verify the required parameter 'templateId' is set
-      if (templateId === undefined || templateId === null) {
-        throw new Error("Missing the required parameter 'templateId' when calling getCompletionRateForTemplate");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId,
-        'templateId': templateId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = TemplateCompletionRateResponse;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/templates/{templateId}/insights/completionRate', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the getCompletionRateForTemplateOwner operation. If none specified a Promise will be returned.
-     * @callback module:api/AccountsApi~getCompletionRateForTemplateOwnerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/UserCompletionRateResponse} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * Gets completion rate for the user
-     * @param {String} accountId The external account number (int) or account ID Guid.
-     * @param {module:api/AccountsApi~getCompletionRateForTemplateOwnerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/UserCompletionRateResponse}
-     */
-    this.getCompletionRateForTemplateOwner = function(accountId, callback) {
-      var postBody = null;
-
-      // verify the required parameter 'accountId' is set
-      if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getCompletionRateForTemplateOwner");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'accountId': accountId
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['docusignAccessCode'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = UserCompletionRateResponse;
-
-      return this.apiClient.callApi(
-        '/v2.1/accounts/{accountId}/templates/insights/completionRate', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -2836,6 +2731,8 @@ A brand uses a set of brand resource files to control the sending, signing, emai
      * @param {String} optsOrCallback.includeClosedUsers 
      * @param {String} optsOrCallback.permissions 
      * @param {String} optsOrCallback.startPosition 
+     * @param {String} optsOrCallback.taskSource 
+     * @param {String} optsOrCallback.taskType 
      * @param {String} optsOrCallback.userNameSubstring 
      * @param {module:api/AccountsApi~getPrincipalUserAuthorizationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserAuthorizations}
@@ -2878,6 +2775,8 @@ A brand uses a set of brand resource files to control the sending, signing, emai
         'include_closed_users': optsOrCallback['includeClosedUsers'],
         'permissions': optsOrCallback['permissions'],
         'start_position': optsOrCallback['startPosition'],
+        'task_source': optsOrCallback['taskSource'],
+        'task_type': optsOrCallback['taskType'],
         'user_name_substring': optsOrCallback['userNameSubstring']
       };
       var headerParams = {

@@ -66,6 +66,12 @@
       if (data.hasOwnProperty('startDate')) {
         obj['startDate'] = ApiClient.convertToType(data['startDate'], 'String');
       }
+      if (data.hasOwnProperty('taskSource')) {
+        obj['taskSource'] = ApiClient.convertToType(data['taskSource'], 'String');
+      }
+      if (data.hasOwnProperty('taskType')) {
+        obj['taskType'] = ApiClient.convertToType(data['taskType'], 'String');
+      }
     }
     return obj;
   }
@@ -90,6 +96,16 @@
    * @member {String} startDate
    */
   exports.prototype['startDate'] = undefined;
+  /**
+   * 
+   * @member {String} taskSource
+   */
+  exports.prototype['taskSource'] = undefined;
+  /**
+   * 
+   * @member {String} taskType
+   */
+  exports.prototype['taskType'] = undefined;
 
 
 

@@ -235,6 +235,9 @@
       if (data.hasOwnProperty('allowConnectUnifiedPayloadUI')) {
         obj['allowConnectUnifiedPayloadUI'] = ApiClient.convertToType(data['allowConnectUnifiedPayloadUI'], 'String');
       }
+      if (data.hasOwnProperty('allowConnectWorkspaceUploadRequestUI')) {
+        obj['allowConnectWorkspaceUploadRequestUI'] = ApiClient.convertToType(data['allowConnectWorkspaceUploadRequestUI'], 'String');
+      }
       if (data.hasOwnProperty('allowConsumerDisclosureOverride')) {
         obj['allowConsumerDisclosureOverride'] = ApiClient.convertToType(data['allowConsumerDisclosureOverride'], 'String');
       }
@@ -1152,6 +1155,12 @@
       }
       if (data.hasOwnProperty('enableAgreementDeskAdvancedMetaData')) {
         obj['enableAgreementDeskAdvancedMetaData'] = SettingsMetadata.constructFromObject(data['enableAgreementDeskAdvancedMetaData']);
+      }
+      if (data.hasOwnProperty('enableAIAgents')) {
+        obj['enableAIAgents'] = ApiClient.convertToType(data['enableAIAgents'], 'String');
+      }
+      if (data.hasOwnProperty('enableAIAgentsMetadata')) {
+        obj['enableAIAgentsMetadata'] = SettingsMetadata.constructFromObject(data['enableAIAgentsMetadata']);
       }
       if (data.hasOwnProperty('enableAIContractReview')) {
         obj['enableAIContractReview'] = ApiClient.convertToType(data['enableAIContractReview'], 'String');
@@ -2947,6 +2956,11 @@
   exports.prototype['allowConnectUnifiedPayloadUI'] = undefined;
   /**
    * 
+   * @member {String} allowConnectWorkspaceUploadRequestUI
+   */
+  exports.prototype['allowConnectWorkspaceUploadRequestUI'] = undefined;
+  /**
+   * 
    * @member {String} allowConsumerDisclosureOverride
    */
   exports.prototype['allowConsumerDisclosureOverride'] = undefined;
@@ -4475,6 +4489,16 @@
    * @member {module:model/SettingsMetadata} enableAgreementDeskAdvancedMetaData
    */
   exports.prototype['enableAgreementDeskAdvancedMetaData'] = undefined;
+  /**
+   * 
+   * @member {String} enableAIAgents
+   */
+  exports.prototype['enableAIAgents'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableAIAgentsMetadata
+   */
+  exports.prototype['enableAIAgentsMetadata'] = undefined;
   /**
    * 
    * @member {String} enableAIContractReview
