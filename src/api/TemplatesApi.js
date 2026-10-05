@@ -1644,6 +1644,7 @@ template specified by `templateId`.
      * @param {String} templateId The ID of the template being accessed.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
      * @param {String} optsOrCallback.include 
+     * @param {String} optsOrCallback.linkConfigurationId 
      * @param {module:api/TemplatesApi~getCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EnvelopeTemplate}
      */
@@ -1679,7 +1680,8 @@ template specified by `templateId`.
         'templateId': templateId
       };
       var queryParams = {
-        'include': optsOrCallback['include']
+        'include': optsOrCallback['include'],
+        'link_configuration_id': optsOrCallback['linkConfigurationId']
       };
       var headerParams = {
       };

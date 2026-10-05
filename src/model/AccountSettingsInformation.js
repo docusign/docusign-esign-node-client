@@ -1072,6 +1072,12 @@
       if (data.hasOwnProperty('documentVisibilityMetadata')) {
         obj['documentVisibilityMetadata'] = SettingsMetadata.constructFromObject(data['documentVisibilityMetadata']);
       }
+      if (data.hasOwnProperty('docusignPDF')) {
+        obj['docusignPDF'] = ApiClient.convertToType(data['docusignPDF'], 'String');
+      }
+      if (data.hasOwnProperty('docusignPDFMetadata')) {
+        obj['docusignPDFMetadata'] = SettingsMetadata.constructFromObject(data['docusignPDFMetadata']);
+      }
       if (data.hasOwnProperty('draftEnvelopeRetention')) {
         obj['draftEnvelopeRetention'] = ApiClient.convertToType(data['draftEnvelopeRetention'], 'String');
       }
@@ -1408,6 +1414,12 @@
       if (data.hasOwnProperty('enableEsignTaskListMetadata')) {
         obj['enableEsignTaskListMetadata'] = SettingsMetadata.constructFromObject(data['enableEsignTaskListMetadata']);
       }
+      if (data.hasOwnProperty('enableGenAndAPI')) {
+        obj['enableGenAndAPI'] = ApiClient.convertToType(data['enableGenAndAPI'], 'String');
+      }
+      if (data.hasOwnProperty('enableGenAndAPIMetadata')) {
+        obj['enableGenAndAPIMetadata'] = SettingsMetadata.constructFromObject(data['enableGenAndAPIMetadata']);
+      }
       if (data.hasOwnProperty('enableGenerationWith3PIntegration')) {
         obj['enableGenerationWith3PIntegration'] = ApiClient.convertToType(data['enableGenerationWith3PIntegration'], 'String');
       }
@@ -1431,6 +1443,12 @@
       }
       if (data.hasOwnProperty('enableIAMClauseLibraryMetadata')) {
         obj['enableIAMClauseLibraryMetadata'] = SettingsMetadata.constructFromObject(data['enableIAMClauseLibraryMetadata']);
+      }
+      if (data.hasOwnProperty('enableIAMDataConnector')) {
+        obj['enableIAMDataConnector'] = ApiClient.convertToType(data['enableIAMDataConnector'], 'String');
+      }
+      if (data.hasOwnProperty('enableIAMDataConnectorMetadata')) {
+        obj['enableIAMDataConnectorMetadata'] = SettingsMetadata.constructFromObject(data['enableIAMDataConnectorMetadata']);
       }
       if (data.hasOwnProperty('enableIAMforXEmbeddedUX')) {
         obj['enableIAMforXEmbeddedUX'] = ApiClient.convertToType(data['enableIAMforXEmbeddedUX'], 'String');
@@ -1570,6 +1588,9 @@
       if (data.hasOwnProperty('enableObligationManagementMetadata')) {
         obj['enableObligationManagementMetadata'] = SettingsMetadata.constructFromObject(data['enableObligationManagementMetadata']);
       }
+      if (data.hasOwnProperty('enableOwnerInsightsAndRecommendationsSettingMetadata')) {
+        obj['enableOwnerInsightsAndRecommendationsSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableOwnerInsightsAndRecommendationsSettingMetadata']);
+      }
       if (data.hasOwnProperty('enableParticipantRecipientSettingMetadata')) {
         obj['enableParticipantRecipientSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableParticipantRecipientSettingMetadata']);
       }
@@ -1668,6 +1689,9 @@
       }
       if (data.hasOwnProperty('enableSearchSiteSpecificApiMetadata')) {
         obj['enableSearchSiteSpecificApiMetadata'] = SettingsMetadata.constructFromObject(data['enableSearchSiteSpecificApiMetadata']);
+      }
+      if (data.hasOwnProperty('enableSenderInsightsAndRecommendationsSettingMetadata')) {
+        obj['enableSenderInsightsAndRecommendationsSettingMetadata'] = SettingsMetadata.constructFromObject(data['enableSenderInsightsAndRecommendationsSettingMetadata']);
       }
       if (data.hasOwnProperty('enableSendingTagsFontSettings')) {
         obj['enableSendingTagsFontSettings'] = ApiClient.convertToType(data['enableSendingTagsFontSettings'], 'String');
@@ -4351,6 +4375,16 @@
   exports.prototype['documentVisibilityMetadata'] = undefined;
   /**
    * 
+   * @member {String} docusignPDF
+   */
+  exports.prototype['docusignPDF'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} docusignPDFMetadata
+   */
+  exports.prototype['docusignPDFMetadata'] = undefined;
+  /**
+   * 
    * @member {String} draftEnvelopeRetention
    */
   exports.prototype['draftEnvelopeRetention'] = undefined;
@@ -4911,6 +4945,16 @@
   exports.prototype['enableEsignTaskListMetadata'] = undefined;
   /**
    * 
+   * @member {String} enableGenAndAPI
+   */
+  exports.prototype['enableGenAndAPI'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableGenAndAPIMetadata
+   */
+  exports.prototype['enableGenAndAPIMetadata'] = undefined;
+  /**
+   * 
    * @member {String} enableGenerationWith3PIntegration
    */
   exports.prototype['enableGenerationWith3PIntegration'] = undefined;
@@ -4949,6 +4993,16 @@
    * @member {module:model/SettingsMetadata} enableIAMClauseLibraryMetadata
    */
   exports.prototype['enableIAMClauseLibraryMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} enableIAMDataConnector
+   */
+  exports.prototype['enableIAMDataConnector'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableIAMDataConnectorMetadata
+   */
+  exports.prototype['enableIAMDataConnectorMetadata'] = undefined;
   /**
    * 
    * @member {String} enableIAMforXEmbeddedUX
@@ -5181,6 +5235,11 @@
   exports.prototype['enableObligationManagementMetadata'] = undefined;
   /**
    * 
+   * @member {module:model/SettingsMetadata} enableOwnerInsightsAndRecommendationsSettingMetadata
+   */
+  exports.prototype['enableOwnerInsightsAndRecommendationsSettingMetadata'] = undefined;
+  /**
+   * 
    * @member {module:model/SettingsMetadata} enableParticipantRecipientSettingMetadata
    */
   exports.prototype['enableParticipantRecipientSettingMetadata'] = undefined;
@@ -5344,6 +5403,11 @@
    * @member {module:model/SettingsMetadata} enableSearchSiteSpecificApiMetadata
    */
   exports.prototype['enableSearchSiteSpecificApiMetadata'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} enableSenderInsightsAndRecommendationsSettingMetadata
+   */
+  exports.prototype['enableSenderInsightsAndRecommendationsSettingMetadata'] = undefined;
   /**
    * 
    * @member {String} enableSendingTagsFontSettings

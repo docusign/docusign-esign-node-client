@@ -153,6 +153,9 @@
       if (data.hasOwnProperty('envelopeAttachments')) {
         obj['envelopeAttachments'] = ApiClient.convertToType(data['envelopeAttachments'], [Attachment]);
       }
+      if (data.hasOwnProperty('envelopeClassification')) {
+        obj['envelopeClassification'] = ApiClient.convertToType(data['envelopeClassification'], 'String');
+      }
       if (data.hasOwnProperty('envelopeCustomMetadata')) {
         obj['envelopeCustomMetadata'] = EnvelopeCustomMetadata.constructFromObject(data['envelopeCustomMetadata']);
       }
@@ -290,6 +293,9 @@
       }
       if (data.hasOwnProperty('voidedReason')) {
         obj['voidedReason'] = ApiClient.convertToType(data['voidedReason'], 'String');
+      }
+      if (data.hasOwnProperty('watermarkLanguage')) {
+        obj['watermarkLanguage'] = ApiClient.convertToType(data['watermarkLanguage'], 'String');
       }
       if (data.hasOwnProperty('workflow')) {
         obj['workflow'] = Workflow.constructFromObject(data['workflow']);
@@ -463,6 +469,11 @@
    * @member {Array.<module:model/Attachment>} envelopeAttachments
    */
   exports.prototype['envelopeAttachments'] = undefined;
+  /**
+   * 
+   * @member {String} envelopeClassification
+   */
+  exports.prototype['envelopeClassification'] = undefined;
   /**
    * 
    * @member {module:model/EnvelopeCustomMetadata} envelopeCustomMetadata
@@ -693,6 +704,11 @@
    * @member {String} voidedReason
    */
   exports.prototype['voidedReason'] = undefined;
+  /**
+   * 
+   * @member {String} watermarkLanguage
+   */
+  exports.prototype['watermarkLanguage'] = undefined;
   /**
    * 
    * @member {module:model/Workflow} workflow

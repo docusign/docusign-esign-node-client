@@ -168,6 +168,9 @@
       if (data.hasOwnProperty('envelopeAttachments')) {
         obj['envelopeAttachments'] = ApiClient.convertToType(data['envelopeAttachments'], [Attachment]);
       }
+      if (data.hasOwnProperty('envelopeClassification')) {
+        obj['envelopeClassification'] = ApiClient.convertToType(data['envelopeClassification'], 'String');
+      }
       if (data.hasOwnProperty('envelopeCustomMetadata')) {
         obj['envelopeCustomMetadata'] = EnvelopeCustomMetadata.constructFromObject(data['envelopeCustomMetadata']);
       }
@@ -215,6 +218,9 @@
       }
       if (data.hasOwnProperty('folders')) {
         obj['folders'] = ApiClient.convertToType(data['folders'], [Folder]);
+      }
+      if (data.hasOwnProperty('hasAuthorizedSignatoryRecipient')) {
+        obj['hasAuthorizedSignatoryRecipient'] = ApiClient.convertToType(data['hasAuthorizedSignatoryRecipient'], 'String');
       }
       if (data.hasOwnProperty('hasComments')) {
         obj['hasComments'] = ApiClient.convertToType(data['hasComments'], 'String');
@@ -362,6 +368,9 @@
       }
       if (data.hasOwnProperty('voidedReason')) {
         obj['voidedReason'] = ApiClient.convertToType(data['voidedReason'], 'String');
+      }
+      if (data.hasOwnProperty('watermarkLanguage')) {
+        obj['watermarkLanguage'] = ApiClient.convertToType(data['watermarkLanguage'], 'String');
       }
       if (data.hasOwnProperty('workflow')) {
         obj['workflow'] = Workflow.constructFromObject(data['workflow']);
@@ -562,6 +571,11 @@
   exports.prototype['envelopeAttachments'] = undefined;
   /**
    * 
+   * @member {String} envelopeClassification
+   */
+  exports.prototype['envelopeClassification'] = undefined;
+  /**
+   * 
    * @member {module:model/EnvelopeCustomMetadata} envelopeCustomMetadata
    */
   exports.prototype['envelopeCustomMetadata'] = undefined;
@@ -640,6 +654,11 @@
    * @member {Array.<module:model/Folder>} folders
    */
   exports.prototype['folders'] = undefined;
+  /**
+   * 
+   * @member {String} hasAuthorizedSignatoryRecipient
+   */
+  exports.prototype['hasAuthorizedSignatoryRecipient'] = undefined;
   /**
    * 
    * @member {String} hasComments
@@ -885,6 +904,11 @@
    * @member {String} voidedReason
    */
   exports.prototype['voidedReason'] = undefined;
+  /**
+   * 
+   * @member {String} watermarkLanguage
+   */
+  exports.prototype['watermarkLanguage'] = undefined;
   /**
    * 
    * @member {module:model/Workflow} workflow

@@ -55,6 +55,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('hasAutoAttachedRiskAssessment')) {
+        obj['hasAutoAttachedRiskAssessment'] = ApiClient.convertToType(data['hasAutoAttachedRiskAssessment'], 'String');
+      }
       if (data.hasOwnProperty('inputOptions')) {
         obj['inputOptions'] = ApiClient.convertToType(data['inputOptions'], [RecipientIdentityInputOption]);
       }
@@ -71,6 +74,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {String} hasAutoAttachedRiskAssessment
+   */
+  exports.prototype['hasAutoAttachedRiskAssessment'] = undefined;
   /**
    * 
    * @member {Array.<module:model/RecipientIdentityInputOption>} inputOptions

@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EnvelopeAuditEvent'], factory);
+    define(['ApiClient', 'model/EnvelopeAuditEvent', 'model/PaymentAuditEvent'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./EnvelopeAuditEvent'));
+    module.exports = factory(require('../ApiClient'), require('./EnvelopeAuditEvent'), require('./PaymentAuditEvent'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.EnvelopeAuditEventResponse = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeAuditEvent);
+    root.Docusign.EnvelopeAuditEventResponse = factory(root.Docusign.ApiClient, root.Docusign.EnvelopeAuditEvent, root.Docusign.PaymentAuditEvent);
   }
-}(this, function(ApiClient, EnvelopeAuditEvent) {
+}(this, function(ApiClient, EnvelopeAuditEvent, PaymentAuditEvent) {
   'use strict';
 
 
@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('auditEvents')) {
         obj['auditEvents'] = ApiClient.convertToType(data['auditEvents'], [EnvelopeAuditEvent]);
       }
+      if (data.hasOwnProperty('paymentEvents')) {
+        obj['paymentEvents'] = ApiClient.convertToType(data['paymentEvents'], [PaymentAuditEvent]);
+      }
     }
     return obj;
   }
@@ -66,6 +69,11 @@
    * @member {Array.<module:model/EnvelopeAuditEvent>} auditEvents
    */
   exports.prototype['auditEvents'] = undefined;
+  /**
+   * 
+   * @member {Array.<module:model/PaymentAuditEvent>} paymentEvents
+   */
+  exports.prototype['paymentEvents'] = undefined;
 
 
 

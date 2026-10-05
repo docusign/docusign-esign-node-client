@@ -63,6 +63,9 @@
       if (data.hasOwnProperty('permission')) {
         obj['permission'] = ApiClient.convertToType(data['permission'], 'String');
       }
+      if (data.hasOwnProperty('shareId')) {
+        obj['shareId'] = ApiClient.convertToType(data['shareId'], 'String');
+      }
     }
     return obj;
   }
@@ -82,6 +85,11 @@
    * @member {String} permission
    */
   exports.prototype['permission'] = undefined;
+  /**
+   * 
+   * @member {String} shareId
+   */
+  exports.prototype['shareId'] = undefined;
 
 
 

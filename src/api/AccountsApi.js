@@ -512,7 +512,7 @@ When brand profile files are being uploaded, they must be combined into one zip 
      */
 
     /**
-     * Creates ot updates user authorizations
+     * Creates or updates user authorizations
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
@@ -1217,7 +1217,7 @@ To delete a permission profile, it must not have any users associated with it. W
      */
 
     /**
-     * Creates ot updates user authorizations
+     * Deletes user authorizations
      * @param {String} accountId The external account number (int) or account ID Guid.
      * @param {String} userId The user ID of the user being accessed. Generally this is the user ID of the authenticated user, but if the authenticated user is an Admin on the account, this may be another user the Admin user is accessing.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.

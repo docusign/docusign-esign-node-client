@@ -1050,20 +1050,20 @@ describe('SDK Unit Tests:', function (done) {
       .then(function (brandsData) {
         var currentBrand = brandsData.brands[0];
         var newLogoBytes = fs.readFileSync(path.resolve(__dirname, brandLogoPath));
-        accountsApi.deleteBrandLogoByType(accountId, currentBrand.brandId, 'Primary')
+        return accountsApi.deleteBrandLogoByType(accountId, currentBrand.brandId, 'Primary')
           .then(function () {
-            accountsApi.updateBrandLogoByType(newLogoBytes, accountId, currentBrand.brandId, 'Primary')
-              .then(function () {
-                accountsApi.getBrandLogoByType(accountId, currentBrand.brandId, 'Primary')
-                  .then(function (brandLogo) {
-                    assert.notEqual(brandLogo, undefined);
-                    done();
-                  });
-              });
+            return accountsApi.updateBrandLogoByType(newLogoBytes, accountId, currentBrand.brandId, 'Primary');
           })
-          .catch(function (error) {
-            return done(error);
+          .then(function () {
+            return accountsApi.getBrandLogoByType(accountId, currentBrand.brandId, 'Primary');
+          })
+          .then(function (brandLogo) {
+            assert.notEqual(brandLogo, undefined);
+            done();
           });
+      })
+      .catch(function (error) {
+        return done(error);
       });
   });
 

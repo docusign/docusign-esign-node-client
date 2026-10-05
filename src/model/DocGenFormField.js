@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldRowValue', 'model/DocGenFormFieldValidation', 'model/DocGenFormat'], factory);
+    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/DocGenFormField', 'model/DocGenFormFieldOption', 'model/DocGenFormFieldRowValue', 'model/DocGenFormFieldValidation', 'model/DocGenFormat'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldRowValue'), require('./DocGenFormFieldValidation'), require('./DocGenFormat'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./DocGenFormField'), require('./DocGenFormFieldOption'), require('./DocGenFormFieldRowValue'), require('./DocGenFormFieldValidation'), require('./DocGenFormat'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldRowValue, root.Docusign.DocGenFormFieldValidation, root.Docusign.DocGenFormat);
+    root.Docusign.DocGenFormField = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.DocGenFormField, root.Docusign.DocGenFormFieldOption, root.Docusign.DocGenFormFieldRowValue, root.Docusign.DocGenFormFieldValidation, root.Docusign.DocGenFormat);
   }
-}(this, function(ApiClient, ConnectedObjectDetails, DocGenFormFieldOption, DocGenFormFieldRowValue, DocGenFormFieldValidation, DocGenFormat) {
+}(this, function(ApiClient, ConnectedObjectDetails, DocGenFormField, DocGenFormFieldOption, DocGenFormFieldRowValue, DocGenFormFieldValidation, DocGenFormat) {
   'use strict';
 
 
@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('children')) {
+        obj['children'] = ApiClient.convertToType(data['children'], [DocGenFormField]);
+      }
       if (data.hasOwnProperty('connectedObjectDetails')) {
         obj['connectedObjectDetails'] = ConnectedObjectDetails.constructFromObject(data['connectedObjectDetails']);
       }
@@ -112,6 +115,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {Array.<module:model/DocGenFormField>} children
+   */
+  exports.prototype['children'] = undefined;
   /**
    * 
    * @member {module:model/ConnectedObjectDetails} connectedObjectDetails

@@ -135,6 +135,9 @@
       if (data.hasOwnProperty('allowViewUsers')) {
         obj['allowViewUsers'] = ApiClient.convertToType(data['allowViewUsers'], 'String');
       }
+      if (data.hasOwnProperty('viewOnlyAccountAdminPages')) {
+        obj['viewOnlyAccountAdminPages'] = ApiClient.convertToType(data['viewOnlyAccountAdminPages'], 'String');
+      }
     }
     return obj;
   }
@@ -274,6 +277,11 @@
    * @member {String} allowViewUsers
    */
   exports.prototype['allowViewUsers'] = undefined;
+  /**
+   * 
+   * @member {String} viewOnlyAccountAdminPages
+   */
+  exports.prototype['viewOnlyAccountAdminPages'] = undefined;
 
 
 
