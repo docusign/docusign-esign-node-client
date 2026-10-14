@@ -57,6 +57,9 @@
       if (data.hasOwnProperty('authorizations')) {
         obj['authorizations'] = ApiClient.convertToType(data['authorizations'], [UserAuthorizationCreateRequestWithId]);
       }
+      if (data.hasOwnProperty('sendNotification')) {
+        obj['sendNotification'] = ApiClient.convertToType(data['sendNotification'], 'String');
+      }
     }
     return obj;
   }
@@ -66,6 +69,11 @@
    * @member {Array.<module:model/UserAuthorizationCreateRequestWithId>} authorizations
    */
   exports.prototype['authorizations'] = undefined;
+  /**
+   * 
+   * @member {String} sendNotification
+   */
+  exports.prototype['sendNotification'] = undefined;
 
 
 

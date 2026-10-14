@@ -133,6 +133,9 @@
       if (data.hasOwnProperty('licenseType')) {
         obj['licenseType'] = ApiClient.convertToType(data['licenseType'], 'String');
       }
+      if (data.hasOwnProperty('licenseTypes')) {
+        obj['licenseTypes'] = ApiClient.convertToType(data['licenseTypes'], ['String']);
+      }
       if (data.hasOwnProperty('loginStatus')) {
         obj['loginStatus'] = ApiClient.convertToType(data['loginStatus'], 'String');
       }
@@ -333,6 +336,11 @@
    * @member {String} licenseType
    */
   exports.prototype['licenseType'] = undefined;
+  /**
+   * 
+   * @member {Array.<String>} licenseTypes
+   */
+  exports.prototype['licenseTypes'] = undefined;
   /**
    * Shows the current status of the user's password. Possible values are:   * password_reset * password_active * password_expired * password_locked * password_reset_failed  
    * @member {String} loginStatus

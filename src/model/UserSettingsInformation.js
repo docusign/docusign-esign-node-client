@@ -331,6 +331,18 @@
       if (data.hasOwnProperty('isMembershipManagedByScimMetadata')) {
         obj['isMembershipManagedByScimMetadata'] = SettingsMetadata.constructFromObject(data['isMembershipManagedByScimMetadata']);
       }
+      if (data.hasOwnProperty('isMembershipRedacted')) {
+        obj['isMembershipRedacted'] = ApiClient.convertToType(data['isMembershipRedacted'], 'String');
+      }
+      if (data.hasOwnProperty('isMembershipRedactedMetadata')) {
+        obj['isMembershipRedactedMetadata'] = SettingsMetadata.constructFromObject(data['isMembershipRedactedMetadata']);
+      }
+      if (data.hasOwnProperty('isUserRedacted')) {
+        obj['isUserRedacted'] = ApiClient.convertToType(data['isUserRedacted'], 'String');
+      }
+      if (data.hasOwnProperty('isUserRedactedMetadata')) {
+        obj['isUserRedactedMetadata'] = SettingsMetadata.constructFromObject(data['isUserRedactedMetadata']);
+      }
       if (data.hasOwnProperty('locale')) {
         obj['locale'] = ApiClient.convertToType(data['locale'], 'String');
       }
@@ -381,6 +393,12 @@
       }
       if (data.hasOwnProperty('recipientViewedNotificationMetadata')) {
         obj['recipientViewedNotificationMetadata'] = SettingsMetadata.constructFromObject(data['recipientViewedNotificationMetadata']);
+      }
+      if (data.hasOwnProperty('redactAtMetadata')) {
+        obj['redactAtMetadata'] = SettingsMetadata.constructFromObject(data['redactAtMetadata']);
+      }
+      if (data.hasOwnProperty('redactMembershipAt')) {
+        obj['redactMembershipAt'] = ApiClient.convertToType(data['redactMembershipAt'], 'String');
       }
       if (data.hasOwnProperty('sealIdentifiers')) {
         obj['sealIdentifiers'] = ApiClient.convertToType(data['sealIdentifiers'], [SealIdentifier]);
@@ -968,6 +986,26 @@
   exports.prototype['isMembershipManagedByScimMetadata'] = undefined;
   /**
    * 
+   * @member {String} isMembershipRedacted
+   */
+  exports.prototype['isMembershipRedacted'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} isMembershipRedactedMetadata
+   */
+  exports.prototype['isMembershipRedactedMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} isUserRedacted
+   */
+  exports.prototype['isUserRedacted'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} isUserRedactedMetadata
+   */
+  exports.prototype['isUserRedactedMetadata'] = undefined;
+  /**
+   * 
    * @member {String} locale
    */
   exports.prototype['locale'] = undefined;
@@ -1051,6 +1089,16 @@
    * @member {module:model/SettingsMetadata} recipientViewedNotificationMetadata
    */
   exports.prototype['recipientViewedNotificationMetadata'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} redactAtMetadata
+   */
+  exports.prototype['redactAtMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} redactMembershipAt
+   */
+  exports.prototype['redactMembershipAt'] = undefined;
   /**
    * 
    * @member {Array.<module:model/SealIdentifier>} sealIdentifiers

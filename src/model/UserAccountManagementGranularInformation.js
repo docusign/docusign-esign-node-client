@@ -133,6 +133,12 @@
       if (data.hasOwnProperty('canManageUsersMetadata')) {
         obj['canManageUsersMetadata'] = SettingsMetadata.constructFromObject(data['canManageUsersMetadata']);
       }
+      if (data.hasOwnProperty('canViewOnlyAccountAdminPages')) {
+        obj['canViewOnlyAccountAdminPages'] = ApiClient.convertToType(data['canViewOnlyAccountAdminPages'], 'String');
+      }
+      if (data.hasOwnProperty('canViewOnlyAccountAdminPagesMetadata')) {
+        obj['canViewOnlyAccountAdminPagesMetadata'] = SettingsMetadata.constructFromObject(data['canViewOnlyAccountAdminPagesMetadata']);
+      }
       if (data.hasOwnProperty('canViewUsers')) {
         obj['canViewUsers'] = ApiClient.convertToType(data['canViewUsers'], 'String');
       }
@@ -270,6 +276,16 @@
    * @member {module:model/SettingsMetadata} canManageUsersMetadata
    */
   exports.prototype['canManageUsersMetadata'] = undefined;
+  /**
+   * 
+   * @member {String} canViewOnlyAccountAdminPages
+   */
+  exports.prototype['canViewOnlyAccountAdminPages'] = undefined;
+  /**
+   * 
+   * @member {module:model/SettingsMetadata} canViewOnlyAccountAdminPagesMetadata
+   */
+  exports.prototype['canViewOnlyAccountAdminPagesMetadata'] = undefined;
   /**
    * 
    * @member {String} canViewUsers

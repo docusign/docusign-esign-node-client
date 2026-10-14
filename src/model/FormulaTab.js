@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/ErrorDetails', 'model/ExtensionData', 'model/LocalePolicyTab', 'model/MergeField', 'model/PaymentDetails', 'model/PropertyMetadata', 'model/SmartContractInformation'], factory);
+    define(['ApiClient', 'model/ConnectedObjectDetails', 'model/ErrorDetails', 'model/ExtendPaymentConfiguration', 'model/ExtensionData', 'model/LocalePolicyTab', 'model/MergeField', 'model/PaymentDetails', 'model/PropertyMetadata', 'model/SmartContractInformation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./ErrorDetails'), require('./ExtensionData'), require('./LocalePolicyTab'), require('./MergeField'), require('./PaymentDetails'), require('./PropertyMetadata'), require('./SmartContractInformation'));
+    module.exports = factory(require('../ApiClient'), require('./ConnectedObjectDetails'), require('./ErrorDetails'), require('./ExtendPaymentConfiguration'), require('./ExtensionData'), require('./LocalePolicyTab'), require('./MergeField'), require('./PaymentDetails'), require('./PropertyMetadata'), require('./SmartContractInformation'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.FormulaTab = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.ErrorDetails, root.Docusign.ExtensionData, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PaymentDetails, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation);
+    root.Docusign.FormulaTab = factory(root.Docusign.ApiClient, root.Docusign.ConnectedObjectDetails, root.Docusign.ErrorDetails, root.Docusign.ExtendPaymentConfiguration, root.Docusign.ExtensionData, root.Docusign.LocalePolicyTab, root.Docusign.MergeField, root.Docusign.PaymentDetails, root.Docusign.PropertyMetadata, root.Docusign.SmartContractInformation);
   }
-}(this, function(ApiClient, ConnectedObjectDetails, ErrorDetails, ExtensionData, LocalePolicyTab, MergeField, PaymentDetails, PropertyMetadata, SmartContractInformation) {
+}(this, function(ApiClient, ConnectedObjectDetails, ErrorDetails, ExtendPaymentConfiguration, ExtensionData, LocalePolicyTab, MergeField, PaymentDetails, PropertyMetadata, SmartContractInformation) {
   'use strict';
 
 
@@ -177,6 +177,9 @@
       }
       if (data.hasOwnProperty('errorDetails')) {
         obj['errorDetails'] = ErrorDetails.constructFromObject(data['errorDetails']);
+      }
+      if (data.hasOwnProperty('extendPaymentConfiguration')) {
+        obj['extendPaymentConfiguration'] = ExtendPaymentConfiguration.constructFromObject(data['extendPaymentConfiguration']);
       }
       if (data.hasOwnProperty('extensionData')) {
         obj['extensionData'] = ExtensionData.constructFromObject(data['extensionData']);
@@ -660,6 +663,11 @@
    * @member {module:model/ErrorDetails} errorDetails
    */
   exports.prototype['errorDetails'] = undefined;
+  /**
+   * 
+   * @member {module:model/ExtendPaymentConfiguration} extendPaymentConfiguration
+   */
+  exports.prototype['extendPaymentConfiguration'] = undefined;
   /**
    * 
    * @member {module:model/ExtensionData} extensionData

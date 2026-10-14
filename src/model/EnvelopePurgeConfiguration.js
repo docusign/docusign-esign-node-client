@@ -55,11 +55,20 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('applyPurgePolicyForUnaccountedRecipients')) {
+        obj['applyPurgePolicyForUnaccountedRecipients'] = ApiClient.convertToType(data['applyPurgePolicyForUnaccountedRecipients'], 'String');
+      }
       if (data.hasOwnProperty('purgeEnvelopes')) {
         obj['purgeEnvelopes'] = ApiClient.convertToType(data['purgeEnvelopes'], 'String');
       }
+      if (data.hasOwnProperty('purgeEnvelopesReceived')) {
+        obj['purgeEnvelopesReceived'] = ApiClient.convertToType(data['purgeEnvelopesReceived'], 'String');
+      }
       if (data.hasOwnProperty('redactPII')) {
         obj['redactPII'] = ApiClient.convertToType(data['redactPII'], 'String');
+      }
+      if (data.hasOwnProperty('redactPIIReceived')) {
+        obj['redactPIIReceived'] = ApiClient.convertToType(data['redactPIIReceived'], 'String');
       }
       if (data.hasOwnProperty('removeTabsAndEnvelopeAttachments')) {
         obj['removeTabsAndEnvelopeAttachments'] = ApiClient.convertToType(data['removeTabsAndEnvelopeAttachments'], 'String');
@@ -73,14 +82,29 @@
 
   /**
    * 
+   * @member {String} applyPurgePolicyForUnaccountedRecipients
+   */
+  exports.prototype['applyPurgePolicyForUnaccountedRecipients'] = undefined;
+  /**
+   * 
    * @member {String} purgeEnvelopes
    */
   exports.prototype['purgeEnvelopes'] = undefined;
   /**
    * 
+   * @member {String} purgeEnvelopesReceived
+   */
+  exports.prototype['purgeEnvelopesReceived'] = undefined;
+  /**
+   * 
    * @member {String} redactPII
    */
   exports.prototype['redactPII'] = undefined;
+  /**
+   * 
+   * @member {String} redactPIIReceived
+   */
+  exports.prototype['redactPIIReceived'] = undefined;
   /**
    * 
    * @member {String} removeTabsAndEnvelopeAttachments

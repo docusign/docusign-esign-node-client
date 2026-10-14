@@ -163,6 +163,9 @@
       if (data.hasOwnProperty('salesforceCallBackUrl')) {
         obj['salesforceCallBackUrl'] = ApiClient.convertToType(data['salesforceCallBackUrl'], 'String');
       }
+      if (data.hasOwnProperty('salesforceCodeVerifier')) {
+        obj['salesforceCodeVerifier'] = ApiClient.convertToType(data['salesforceCodeVerifier'], 'String');
+      }
       if (data.hasOwnProperty('salesforceDocumentsAsContentFiles')) {
         obj['salesforceDocumentsAsContentFiles'] = ApiClient.convertToType(data['salesforceDocumentsAsContentFiles'], 'String');
       }
@@ -377,6 +380,11 @@
    * @member {String} salesforceCallBackUrl
    */
   exports.prototype['salesforceCallBackUrl'] = undefined;
+  /**
+   * 
+   * @member {String} salesforceCodeVerifier
+   */
+  exports.prototype['salesforceCodeVerifier'] = undefined;
   /**
    * 
    * @member {String} salesforceDocumentsAsContentFiles

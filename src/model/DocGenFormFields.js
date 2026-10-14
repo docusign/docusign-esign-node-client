@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DocGenFormField', 'model/DocGenSyntaxError'], factory);
+    define(['ApiClient', 'model/DocGenConditionalRule', 'model/DocGenFormField', 'model/DocGenSyntaxError'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DocGenFormField'), require('./DocGenSyntaxError'));
+    module.exports = factory(require('../ApiClient'), require('./DocGenConditionalRule'), require('./DocGenFormField'), require('./DocGenSyntaxError'));
   } else {
     // Browser globals (root is window)
     if (!root.Docusign) {
       root.Docusign = {};
     }
-    root.Docusign.DocGenFormFields = factory(root.Docusign.ApiClient, root.Docusign.DocGenFormField, root.Docusign.DocGenSyntaxError);
+    root.Docusign.DocGenFormFields = factory(root.Docusign.ApiClient, root.Docusign.DocGenConditionalRule, root.Docusign.DocGenFormField, root.Docusign.DocGenSyntaxError);
   }
-}(this, function(ApiClient, DocGenFormField, DocGenSyntaxError) {
+}(this, function(ApiClient, DocGenConditionalRule, DocGenFormField, DocGenSyntaxError) {
   'use strict';
 
 
@@ -54,6 +54,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('docGenConditionalRules')) {
+        obj['docGenConditionalRules'] = ApiClient.convertToType(data['docGenConditionalRules'], [DocGenConditionalRule]);
+      }
       if (data.hasOwnProperty('docGenDocumentStatus')) {
         obj['docGenDocumentStatus'] = ApiClient.convertToType(data['docGenDocumentStatus'], 'String');
       }
@@ -70,6 +73,11 @@
     return obj;
   }
 
+  /**
+   * 
+   * @member {Array.<module:model/DocGenConditionalRule>} docGenConditionalRules
+   */
+  exports.prototype['docGenConditionalRules'] = undefined;
   /**
    * 
    * @member {String} docGenDocumentStatus
